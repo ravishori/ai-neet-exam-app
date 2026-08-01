@@ -28,7 +28,7 @@ Foundation (SP0) → Identity (SP1) → Academic Engine (SP2)
 | SP4 | Assessment Engine — practice, mock tests, scoring | **done** — practice + mock generation, timed attempts, scoring (+4/−1) verified via curl and full browser click-through |
 | SP5 | AI Gateway — Tutor, Question Generator, Planner, Evaluator | **done** — provider abstraction + cost/latency logging, all 4 agents, fallback-mode (no API key) verified end-to-end via curl and browser click-through |
 | SP6 | Learning/Mastery (Concept → mastery score, 2-level) | **done** — concept-level mastery persisted + topic-level rollup computed live, recomputed on attempt submission, verified via curl and browser click-through (dashboard, topic list, concept page) |
-| SP7 | Recommendation + spaced-repetition revision | not started |
+| SP7 | Recommendation + spaced-repetition revision | **done** — fixed-interval revision schedule by mastery_level + rule-based recommendation ranking (due → weak → new), dashboard widgets verified via curl and browser click-through (including the "Practice now" generate→start→navigate flow) |
 | SP8 | Analytics dashboard | not started |
 | SP9 | Commerce (Razorpay), Admin, hardening, deploy | not started |
 
