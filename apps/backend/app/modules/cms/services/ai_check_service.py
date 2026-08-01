@@ -1,20 +1,14 @@
-"""AI-assist pass for submitted content — see ADR-0004 / ECAEP spec.
+"""AI-assist pass for submitted content — see ADR-0004 / ADR-0014 / ECAEP spec.
 
-Real grammar/NCERT-alignment/duplicate-detection checks land in Sprint 5
-once the AI Gateway exists. Until then this is a pass-through stub that
-still writes a report shaped the same way the real Evaluator agent will,
-so the workflow and UI never need to change when it's wired up for real.
+Delegates to the real Evaluator agent (app/modules/ai/services/evaluator_service.py).
+Kept as its own thin function so ECAEP's import stays stable regardless of how the
+AI module's internals evolve — same signature and report shape as the Sprint 3 stub.
 """
 
-from datetime import UTC, datetime
+from sqlalchemy.ext.asyncio import AsyncSession
 
 
-def run_ai_check(*, content_type: str, body: dict) -> dict:
-    return {
-        "status": "skipped",
-        "reason": "AI Gateway not yet wired up (Sprint 5) — content proceeds to human review unchecked.",
-        "flags": [],
-        "similarity_matches": [],
-        "confidence": None,
-        "checked_at": datetime.now(UTC).isoformat(),
-    }
+async def run_ai_check(session: AsyncSession, *, content_type: str, body: dict) -> dict:
+    from app.modules.ai.services.evaluator_service import EvaluatorService
+
+    return await EvaluatorService(session).evaluate(content_type=content_type, body=body)

@@ -6,6 +6,7 @@ const STUDENT_LINKS = [
   { href: "/student/practice", label: "Practice" },
   { href: "/student/mock-tests", label: "Mock Tests" },
   { href: "/student/attempts", label: "Attempts" },
+  { href: "/student/study-plan", label: "Study Plan" },
   { href: "/student/profile", label: "Profile" },
   { href: "/student/settings", label: "Settings" },
 ];

@@ -5,6 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { AiTutorBox } from "@/components/ai-tutor-box";
 import { academicApi } from "@/features/academic/api";
 import { cmsApi, type ConceptNoteBody, type QuestionBody } from "@/features/cms/api";
 
@@ -92,6 +93,8 @@ export default function ConceptDetailPage() {
             No published content for this concept yet — visit /admin/content to author some.
           </p>
         )}
+
+        <AiTutorBox conceptId={conceptId} />
       </div>
     </main>
   );

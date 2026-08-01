@@ -109,7 +109,7 @@ class ContentWorkflowService:
             raise ContentWorkflowError(f"Cannot submit content in state {item.status}")
 
         latest = await self.repo.get_version(item.latest_version_id)
-        report = run_ai_check(content_type=item.content_type, body=latest.body)
+        report = await run_ai_check(self.session, content_type=item.content_type, body=latest.body)
         latest.ai_check_report = report
         latest.workflow_state = "IN_REVIEW"  # AI_CHECKED is instantaneous in v1 — see ai_check_service.py
         item.status = "IN_REVIEW"
