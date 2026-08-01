@@ -1,0 +1,73 @@
+name: trinetra
+
+services:
+  postgres:
+    image: pgvector/pgvector:pg17 # postgres:17 + pgvector preinstalled
+    environment:
+      POSTGRES_USER: trinetra_app
+      POSTGRES_PASSWORD: trinetra_dev_pw
+      POSTGRES_DB: trinetra_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ../../database/schema_init.sql:/docker-entrypoint-initdb.d/1-schema.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  mailpit:
+    image: axllent/mailpit
+    ports:
+      - "8025:8025" # web UI
+      - "1025:1025" # SMTP
+
+  backend:
+    build:
+      context: ../../apps/backend
+    command: ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
+    env_file:
+      - ../../apps/backend/.env
+    environment:
+      DATABASE_URL: postgresql+asyncpg://trinetra_app:trinetra_dev_pw@postgres:5432/trinetra_db
+      DATABASE_URL_SYNC: postgresql+psycopg://trinetra_app:trinetra_dev_pw@postgres:5432/trinetra_db
+      REDIS_URL: redis://redis:6379/0
+    ports:
+      - "8000:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    volumes:
+      - ../../apps/backend:/app
+
+  web:
+    build:
+      context: ../../apps/web
+    env_file:
+      - ../../apps/web/.env.local
+    environment:
+      NEXT_PUBLIC_API_URL: http://localhost:8000
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+
+volumes:
+  postgres_data:
+  redis_data:
