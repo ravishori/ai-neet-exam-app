@@ -1,0 +1,36 @@
+# --- Python / backend ---
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+apps/backend/.env
+apps/backend/*.env
+!apps/backend/.env.example
+
+# --- Node / frontend ---
+node_modules/
+.next/
+out/
+.turbo/
+apps/web/.env*.local
+!apps/web/.env.example
+npm-debug.log*
+
+# --- Docs (Word lock/temp files) ---
+~$*.docx
+~WRL*.tmp
+
+# --- OS / editor ---
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# --- Local data ---
+*.db
+*.sqlite3
+/database/backups/
