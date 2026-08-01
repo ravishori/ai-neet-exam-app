@@ -24,6 +24,7 @@ from app.modules.cms.api.cms_router import router as cms_router
 from app.modules.identity.api.auth_router import router as auth_router
 from app.modules.identity.api.roles_router import router as roles_router
 from app.modules.identity.api.users_router import router as users_router
+from app.modules.learning.api.mastery_router import router as mastery_router
 from app.shared.responses import envelope
 
 settings = get_settings()
@@ -73,6 +74,7 @@ app.include_router(academic_router)
 app.include_router(cms_router)
 app.include_router(assessment_router)
 app.include_router(ai_router)
+app.include_router(mastery_router)
 
 
 @app.get("/health")

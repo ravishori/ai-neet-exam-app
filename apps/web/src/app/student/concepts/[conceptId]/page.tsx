@@ -6,8 +6,10 @@ import { useQuery } from "@tanstack/react-query";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { AiTutorBox } from "@/components/ai-tutor-box";
+import { MasteryBadge, MasteryBar } from "@/components/mastery-badge";
 import { academicApi } from "@/features/academic/api";
 import { cmsApi, type ConceptNoteBody, type QuestionBody } from "@/features/cms/api";
+import { learningApi } from "@/features/learning/api";
 
 export default function ConceptDetailPage() {
   const { conceptId } = useParams<{ conceptId: string }>();
@@ -18,6 +20,10 @@ export default function ConceptDetailPage() {
   const { data: content } = useQuery({
     queryKey: ["cms", "published", conceptId],
     queryFn: () => cmsApi.publishedForConcept(conceptId),
+  });
+  const { data: mastery } = useQuery({
+    queryKey: ["learning", "concept-mastery", conceptId],
+    queryFn: () => learningApi.conceptMastery(conceptId),
   });
 
   if (isLoading) {
@@ -43,6 +49,25 @@ export default function ConceptDetailPage() {
             <p className="text-sm text-muted-foreground">{concept.summary}</p>
           </CardContent>
         </Card>
+
+        {mastery && (
+          <Card>
+            <CardHeader>
+              <div className="flex items-center justify-between">
+                <CardTitle className="text-base">Your mastery</CardTitle>
+                <MasteryBadge level={mastery.mastery_level} />
+              </div>
+            </CardHeader>
+            <CardContent className="flex flex-col gap-2">
+              <MasteryBar score={mastery.mastery_score} />
+              <p className="text-xs text-muted-foreground">
+                {mastery.attempts_count === 0
+                  ? "Answer a practice question on this concept to start tracking mastery."
+                  : `${mastery.correct_count}/${mastery.attempts_count} correct across your attempts.`}
+              </p>
+            </CardContent>
+          </Card>
+        )}
 
         {notes.map((item) => {
           const body = item.latest_version?.body as unknown as ConceptNoteBody | undefined;

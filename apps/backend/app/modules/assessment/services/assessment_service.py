@@ -7,6 +7,7 @@ from app.core.exceptions import AppError
 from app.core.logging import get_logger
 from app.modules.assessment.models import Assessment, AssessmentQuestion, Attempt, AttemptAnswer
 from app.modules.assessment.repositories.assessment_repository import AssessmentRepository, sample_question_ids
+from app.modules.learning.services.mastery_service import MasteryService
 
 logger = get_logger("assessment")
 
@@ -183,4 +184,7 @@ class AssessmentService:
         attempt.skipped_count = skipped
         await self.repo.commit()
         logger.info("attempt_submitted", attempt_id=str(attempt_id), score=score)
+
+        await MasteryService(self.session).recompute_for_content_items(user_id, question_ids)
+
         return await self.repo.get_attempt(attempt_id)
