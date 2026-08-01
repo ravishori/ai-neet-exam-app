@@ -9,7 +9,7 @@ from app.modules.identity.dependencies import get_current_user, require_permissi
 from app.modules.identity.models.user import User
 from app.modules.identity.repositories.role_repository import RoleRepository
 from app.modules.identity.repositories.user_repository import UserRepository
-from app.modules.identity.schemas.user import UserCreateRequest, UserResponse, UserUpdateRequest
+from app.modules.identity.schemas.user import AdminUserUpdateRequest, UserCreateRequest, UserResponse, UserUpdateRequest
 from app.modules.identity.services.password_service import hash_password, validate_password_policy
 from app.shared.responses import envelope
 
@@ -98,12 +98,25 @@ async def create_user(payload: UserCreateRequest, db: AsyncSession = Depends(get
 
 
 @router.patch("/{user_id}", dependencies=[Depends(require_permission("users.manage")), Depends(verify_csrf)])
-async def update_user(user_id: uuid.UUID, payload: UserUpdateRequest, db: AsyncSession = Depends(get_db)):
+async def update_user(user_id: uuid.UUID, payload: AdminUserUpdateRequest, db: AsyncSession = Depends(get_db)):
     repo = UserRepository(db)
     target = await repo.get_by_id(user_id)
     if not target:
         raise NotFoundError("User not found")
-    for field, value in payload.model_dump(exclude_unset=True).items():
+
+    fields = payload.model_dump(exclude_unset=True, exclude={"role_codes"})
+    for field, value in fields.items():
         setattr(target, field, value)
+
+    if payload.role_codes is not None:
+        role_repo = RoleRepository(db)
+        await role_repo.replace_roles(user_id, payload.role_codes)
+        # replace_roles does a bulk DELETE, which the ORM's identity map doesn't
+        # know invalidates `target.roles` — expire it so the re-fetch below
+        # actually reloads the relationship instead of returning the stale
+        # in-memory collection (session is expire_on_commit=False).
+        db.expire(target, ["roles"])
+
     await db.commit()
-    return envelope(success=True, data=_to_response(target))
+    updated = await repo.get_by_id(user_id)  # re-fetch with roles eager-loaded
+    return envelope(success=True, data=_to_response(updated))

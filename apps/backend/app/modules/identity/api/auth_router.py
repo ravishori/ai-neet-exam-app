@@ -3,6 +3,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.database import get_db
 from app.core.exceptions import AppError
+from app.core.rate_limit import rate_limit
 from app.modules.identity.cookies import clear_auth_cookies, set_auth_cookies
 from app.modules.identity.dependencies import REFRESH_COOKIE, get_current_user
 from app.modules.identity.models.user import User
@@ -39,7 +40,7 @@ def _user_to_me(user: User) -> dict:
     ).model_dump()
 
 
-@router.post("/register")
+@router.post("/register", dependencies=[Depends(rate_limit("register", limit=5, window_seconds=60))])
 async def register(payload: RegisterRequest, request: Request, db: AsyncSession = Depends(get_db)):
     service = AuthService(db)
     user = await service.register(
@@ -63,7 +64,7 @@ async def register(payload: RegisterRequest, request: Request, db: AsyncSession 
     return result
 
 
-@router.post("/login")
+@router.post("/login", dependencies=[Depends(rate_limit("login", limit=10, window_seconds=60))])
 async def login(payload: LoginRequest, request: Request, db: AsyncSession = Depends(get_db)):
     ip, user_agent = _client_meta(request)
     service = AuthService(db)
@@ -80,7 +81,7 @@ async def login(payload: LoginRequest, request: Request, db: AsyncSession = Depe
     return result
 
 
-@router.post("/refresh")
+@router.post("/refresh", dependencies=[Depends(rate_limit("refresh", limit=20, window_seconds=60))])
 async def refresh(request: Request, db: AsyncSession = Depends(get_db)):
     refresh_token = request.cookies.get(REFRESH_COOKIE)
     if not refresh_token:

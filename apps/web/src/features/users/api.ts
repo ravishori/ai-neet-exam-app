@@ -21,8 +21,15 @@ export type UserUpdateInput = {
   phone?: string;
 };
 
+export type AdminUserUpdateInput = {
+  status?: string;
+  role_codes?: string[];
+};
+
 export const usersApi = {
   me: () => apiClient.get<UserProfile>("/api/v1/users/me"),
   updateMe: (data: UserUpdateInput) => apiClient.patch<UserProfile>("/api/v1/users/me", data),
   list: () => apiClient.get<UserProfile[]>("/api/v1/users"),
+  updateUser: (userId: string, data: AdminUserUpdateInput) =>
+    apiClient.patch<UserProfile>(`/api/v1/users/${userId}`, data),
 };

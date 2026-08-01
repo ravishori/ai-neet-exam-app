@@ -34,6 +34,26 @@ class Settings(BaseSettings):
         return self.environment == "production"
 
 
+# Known dev-only placeholders — never valid in production. Catching these at
+# startup beats discovering a weak/default secret after a real deploy.
+_KNOWN_DEV_JWT_SECRETS = {
+    "dev-only-secret-not-for-production-abc123",
+    "change-me-in-every-real-environment",
+}
+
+
+def _validate_production_settings(settings: Settings) -> None:
+    if not settings.is_production:
+        return
+    if settings.jwt_secret in _KNOWN_DEV_JWT_SECRETS or len(settings.jwt_secret) < 32:
+        raise RuntimeError(
+            "JWT_SECRET is missing, a known dev placeholder, or too short (<32 chars) "
+            "while ENVIRONMENT=production. Set a real, unique secret before starting."
+        )
+
+
 @lru_cache
 def get_settings() -> Settings:
-    return Settings()
+    settings = Settings()
+    _validate_production_settings(settings)
+    return settings

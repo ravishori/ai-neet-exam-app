@@ -32,3 +32,10 @@ class UserCreateRequest(BaseModel):
     first_name: str | None = None
     last_name: str | None = None
     role_codes: list[str] = Field(default_factory=lambda: ["STUDENT"])
+
+
+class AdminUserUpdateRequest(BaseModel):
+    """Admin-only fields for PATCH /users/{id} — never accepted on the self-service /users/me route."""
+
+    status: str | None = Field(default=None, max_length=20)
+    role_codes: list[str] | None = None

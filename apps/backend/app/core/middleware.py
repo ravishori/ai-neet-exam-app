@@ -29,3 +29,18 @@ class RequestContextMiddleware(BaseHTTPMiddleware):
             trace_id=trace_id,
         )
         return response
+
+
+class SecurityHeadersMiddleware(BaseHTTPMiddleware):
+    """Baseline security headers — see ADR-0018. Nothing in this app needs
+    camera/mic/geolocation, and every response is JSON or same-origin, so
+    these are safe defaults rather than something requiring per-route tuning.
+    """
+
+    async def dispatch(self, request: Request, call_next):
+        response = await call_next(request)
+        response.headers["X-Content-Type-Options"] = "nosniff"
+        response.headers["X-Frame-Options"] = "DENY"
+        response.headers["Referrer-Policy"] = "strict-origin-when-cross-origin"
+        response.headers["Permissions-Policy"] = "camera=(), microphone=(), geolocation=()"
+        return response

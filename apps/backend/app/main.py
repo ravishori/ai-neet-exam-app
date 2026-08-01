@@ -1,6 +1,5 @@
 from contextlib import asynccontextmanager
 
-import redis.asyncio as redis
 from fastapi import FastAPI
 from fastapi.exceptions import RequestValidationError
 from fastapi.middleware.cors import CORSMiddleware
@@ -16,12 +15,14 @@ from app.core.exceptions import (
     validation_exception_handler,
 )
 from app.core.logging import configure_logging, get_logger
-from app.core.middleware import RequestContextMiddleware
+from app.core.middleware import RequestContextMiddleware, SecurityHeadersMiddleware
+from app.core.redis import close_redis, get_redis, init_redis
 from app.modules.academic.api.academic_router import router as academic_router
 from app.modules.ai.api.ai_router import router as ai_router
 from app.modules.analytics.api.analytics_router import router as analytics_router
 from app.modules.assessment.api.assessment_router import router as assessment_router
 from app.modules.cms.api.cms_router import router as cms_router
+from app.modules.commerce.api.commerce_router import router as commerce_router
 from app.modules.identity.api.auth_router import router as auth_router
 from app.modules.identity.api.roles_router import router as roles_router
 from app.modules.identity.api.users_router import router as users_router
@@ -32,18 +33,14 @@ settings = get_settings()
 configure_logging(settings.environment)
 logger = get_logger("startup")
 
-redis_client: redis.Redis | None = None
-
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    global redis_client
     logger.info("starting_up", environment=settings.environment)
-    redis_client = redis.from_url(settings.redis_url, decode_responses=True)
+    init_redis()
     yield
     logger.info("shutting_down")
-    if redis_client:
-        await redis_client.aclose()
+    await close_redis()
     await engine.dispose()
 
 
@@ -55,6 +52,7 @@ app = FastAPI(
 )
 
 app.add_middleware(RequestContextMiddleware)
+app.add_middleware(SecurityHeadersMiddleware)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=settings.cors_origin_list,
@@ -77,6 +75,7 @@ app.include_router(assessment_router)
 app.include_router(ai_router)
 app.include_router(mastery_router)
 app.include_router(analytics_router)
+app.include_router(commerce_router)
 
 
 @app.get("/health")
@@ -93,6 +92,7 @@ async def live():
 async def ready():
     db_ok = await check_database_connection()
     redis_ok = False
+    redis_client = get_redis()
     if redis_client:
         try:
             redis_ok = await redis_client.ping()

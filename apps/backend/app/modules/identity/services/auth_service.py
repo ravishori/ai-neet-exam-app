@@ -87,6 +87,10 @@ class AuthService:
             await self._record_login_attempt(user.id, email, False, "account_locked", ip_address, user_agent)
             raise AuthError("Account temporarily locked due to repeated failed attempts", code="ACCOUNT_LOCKED")
 
+        if user and user.status != "active":
+            await self._record_login_attempt(user.id, email, False, "account_suspended", ip_address, user_agent)
+            raise AuthError("This account has been suspended", code="ACCOUNT_SUSPENDED")
+
         if not user or not verify_password(password, user.password_hash):
             if user:
                 user.failed_login_attempts += 1
