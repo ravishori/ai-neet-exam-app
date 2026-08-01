@@ -24,13 +24,35 @@ PERMISSIONS = [
     ("reports.view", "View student/performance reports"),
     ("analytics.view", "View analytics dashboards"),
     ("ai.use", "Use AI Tutor / Planner / Question Generator"),
+    # ECAEP (Sprint 3) — see docs/architecture/ecaep.md
+    ("content.create", "Create content drafts (concept notes, questions, flashcards, ...)"),
+    ("content.edit_own_draft", "Edit your own draft/changes-requested content"),
+    ("content.submit_for_review", "Submit a draft for AI check + review"),
+    ("content.review", "Review submitted content"),
+    ("content.approve", "Approve reviewed content"),
+    ("content.publish", "Publish approved content"),
+    ("content.archive", "Archive published content"),
+    ("content.force_edit_published", "Hotfix published content, bypassing the review pipeline"),
 ]
 
 ROLE_PERMISSIONS = {
     "SUPER_ADMIN": [code for code, _ in PERMISSIONS],
-    "ADMIN": ["questions.read", "questions.create", "questions.update", "questions.delete", "users.manage", "reports.view", "analytics.view"],
-    "CONTENT_MANAGER": ["questions.read", "questions.create", "questions.update"],
-    "TEACHER": ["questions.read", "questions.create", "reports.view"],
+    "ADMIN": [
+        "questions.read", "questions.create", "questions.update", "questions.delete",
+        "users.manage", "reports.view", "analytics.view",
+        "content.create", "content.edit_own_draft", "content.submit_for_review",
+        "content.review", "content.approve", "content.publish", "content.archive",
+        "content.force_edit_published",
+    ],
+    "CONTENT_MANAGER": [
+        "questions.read", "questions.create", "questions.update",
+        "content.create", "content.edit_own_draft", "content.submit_for_review",
+        "content.review", "content.approve", "content.publish", "content.archive",
+    ],
+    "TEACHER": [
+        "questions.read", "questions.create", "reports.view",
+        "content.create", "content.edit_own_draft", "content.submit_for_review",
+    ],
     "STUDENT": ["questions.read", "ai.use"],
     "SUPPORT": ["reports.view"],
 }

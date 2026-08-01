@@ -8,6 +8,7 @@ from app.core.database import Base
 
 # imports below register models on Base.metadata as modules are added
 from app.modules.academic import models as academic_models  # noqa: F401
+from app.modules.cms import models as cms_models  # noqa: F401
 from app.modules.identity import models as identity_models  # noqa: F401
 from app.modules.system import models as system_models  # noqa: F401
 
