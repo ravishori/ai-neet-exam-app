@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
@@ -11,6 +11,7 @@ import { ConceptPicker } from "@/components/concept-picker";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { ApiError } from "@/lib/api-client";
+import { academicApi } from "@/features/academic/api";
 import { cmsApi, type ContentType } from "@/features/cms/api";
 
 const CONTENT_TYPES: ContentType[] = ["CONCEPT_NOTE", "QUESTION", "FLASHCARD", "DIAGRAM", "VIDEO_REF", "FORMULA_SHEET"];
@@ -21,11 +22,36 @@ const LANGUAGES = [
 
 export default function NewContentPage() {
   const router = useRouter();
+  const queryClient = useQueryClient();
   const [contentType, setContentType] = useState<ContentType>("CONCEPT_NOTE");
   const [conceptId, setConceptId] = useState<string | null>(null);
+  const [microCompetencyId, setMicroCompetencyId] = useState<string | null>(null);
+  const [newMicroCompetencyName, setNewMicroCompetencyName] = useState("");
   const [language, setLanguage] = useState("en");
   const [title, setTitle] = useState("");
   const [slug, setSlug] = useState("");
+
+  const microCompetenciesQuery = useQuery({
+    queryKey: ["academic", "micro-competencies", conceptId],
+    queryFn: () => academicApi.microCompetencies(conceptId!),
+    enabled: !!conceptId && contentType === "QUESTION",
+  });
+
+  const createMicroCompetency = useMutation({
+    mutationFn: () =>
+      academicApi.createMicroCompetency(conceptId!, {
+        code: newMicroCompetencyName.toLowerCase().replace(/[^a-z0-9]+/g, "-").slice(0, 80),
+        name: newMicroCompetencyName,
+      }),
+    onSuccess: (created) => {
+      queryClient.setQueryData(
+        ["academic", "micro-competencies", conceptId],
+        (prev: typeof microCompetenciesQuery.data) => [...(prev ?? []), created]
+      );
+      setMicroCompetencyId(created.id);
+      setNewMicroCompetencyName("");
+    },
+  });
 
   // Concept note fields
   const [summary, setSummary] = useState("");
@@ -71,6 +97,7 @@ export default function NewContentPage() {
     mutation.mutate({
       content_type: contentType,
       concept_id: conceptId ?? undefined,
+      micro_competency_id: contentType === "QUESTION" ? (microCompetencyId ?? undefined) : undefined,
       title,
       slug,
       language,
@@ -117,7 +144,13 @@ export default function NewContentPage() {
 
             <div className="flex flex-col gap-1.5">
               <Label>Concept</Label>
-              <ConceptPicker value={conceptId} onChange={setConceptId} />
+              <ConceptPicker
+                value={conceptId}
+                onChange={(id) => {
+                  setConceptId(id);
+                  setMicroCompetencyId(null);
+                }}
+              />
             </div>
 
             <div className="flex flex-col gap-1.5">
@@ -167,6 +200,39 @@ export default function NewContentPage() {
 
             {contentType === "QUESTION" && (
               <>
+                {conceptId && (
+                  <div className="flex flex-col gap-1.5">
+                    <Label>Micro-competency (optional)</Label>
+                    <select
+                      className="h-9 rounded-md border bg-background px-2 text-sm"
+                      value={microCompetencyId ?? ""}
+                      onChange={(e) => setMicroCompetencyId(e.target.value || null)}
+                    >
+                      <option value="">None</option>
+                      {microCompetenciesQuery.data?.map((mc) => (
+                        <option key={mc.id} value={mc.id}>
+                          {mc.name}
+                        </option>
+                      ))}
+                    </select>
+                    <div className="flex gap-2">
+                      <Input
+                        placeholder="New micro-competency name…"
+                        value={newMicroCompetencyName}
+                        onChange={(e) => setNewMicroCompetencyName(e.target.value)}
+                      />
+                      <Button
+                        type="button"
+                        size="sm"
+                        variant="outline"
+                        disabled={!newMicroCompetencyName || createMicroCompetency.isPending}
+                        onClick={() => createMicroCompetency.mutate()}
+                      >
+                        {createMicroCompetency.isPending ? "Adding…" : "Add"}
+                      </Button>
+                    </div>
+                  </div>
+                )}
                 <div className="flex flex-col gap-1.5">
                   <Label htmlFor="stem">Question</Label>
                   <textarea

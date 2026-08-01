@@ -6,6 +6,7 @@ from pydantic import BaseModel, Field
 class ContentItemCreateRequest(BaseModel):
     content_type: str
     concept_id: str | None = None
+    micro_competency_id: str | None = None
     title: str = Field(max_length=300)
     slug: str = Field(max_length=320)
     tags: list[str] = Field(default_factory=list)
@@ -40,6 +41,7 @@ class ContentItemResponse(BaseModel):
     id: str
     content_type: str
     concept_id: str | None
+    micro_competency_id: str | None
     title: str
     slug: str
     tags: list[str]

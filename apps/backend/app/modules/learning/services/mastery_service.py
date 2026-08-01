@@ -3,7 +3,7 @@ from datetime import UTC, datetime, timedelta
 
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.modules.learning.models import ConceptMastery
+from app.modules.learning.models import ConceptMastery, MicroCompetencyMastery
 from app.modules.learning.repositories.mastery_repository import MasteryRepository
 
 MASTERY_ATTEMPT_FLOOR = 3
@@ -40,13 +40,36 @@ class MasteryService:
         self.repo = MasteryRepository(session)
 
     async def recompute_for_content_items(self, user_id: uuid.UUID, content_item_ids: list[uuid.UUID]) -> None:
+        # Micro-competencies first (ADR-0021) — concept-level rollup below
+        # reads their just-recomputed mastery for any concept that has them.
+        micro_competency_ids = await self.repo.micro_competency_ids_for_content_items(content_item_ids)
+        for mc_id in micro_competency_ids:
+            await self._recompute_micro_competency(user_id, mc_id)
+
         concept_ids = await self.repo.concept_ids_for_content_items(content_item_ids)
         for concept_id in concept_ids:
             await self._recompute_one(user_id, concept_id)
         await self.repo.commit()
 
+    async def _recompute_micro_competency(self, user_id: uuid.UUID, micro_competency_id: uuid.UUID) -> None:
+        attempts_count, correct_count, last_attempt_at = await self.repo.aggregate_answers_for_micro_competency(
+            user_id, micro_competency_id
+        )
+        score, level = compute_mastery(attempts_count, correct_count)
+
+        row = await self.repo.get_micro_competency_mastery(user_id, micro_competency_id)
+        if row is None:
+            row = MicroCompetencyMastery(user_id=user_id, micro_competency_id=micro_competency_id)
+            self.repo.add_micro_competency_mastery(row)
+
+        row.attempts_count = attempts_count
+        row.correct_count = correct_count
+        row.mastery_score = score
+        row.mastery_level = level
+        row.last_attempt_at = last_attempt_at
+
     async def _recompute_one(self, user_id: uuid.UUID, concept_id: uuid.UUID) -> None:
-        attempts_count, correct_count, last_attempt_at = await self.repo.aggregate_answers(user_id, concept_id)
+        attempts_count, correct_count, last_attempt_at = await self._concept_level_counts(user_id, concept_id)
         score, level = compute_mastery(attempts_count, correct_count)
 
         row = await self.repo.get(user_id, concept_id)
@@ -60,6 +83,29 @@ class MasteryService:
         row.mastery_level = level
         row.last_attempt_at = last_attempt_at
         row.next_review_at = next_review_at_for(level)
+
+    async def _concept_level_counts(self, user_id: uuid.UUID, concept_id: uuid.UUID) -> tuple[int, int, datetime | None]:
+        """Rolls up from the concept's micro-competencies (weighted by their
+        own attempt counts, so a heavily-drilled skill counts more than one
+        answered once) when any of them have attempts. Falls back to the
+        direct concept-wide aggregate — today's ADR-0015 behavior — for a
+        concept with no micro-competencies, or none attempted yet. See
+        ADR-0021."""
+        micro_competencies = await self.repo.get_micro_competencies_for_concept(concept_id)
+        if micro_competencies:
+            attempted_rows = []
+            for mc in micro_competencies:
+                row = await self.repo.get_micro_competency_mastery(user_id, mc.id)
+                if row and row.attempts_count > 0:
+                    attempted_rows.append(row)
+
+            if attempted_rows:
+                attempts_count = sum(r.attempts_count for r in attempted_rows)
+                correct_count = sum(r.correct_count for r in attempted_rows)
+                last_attempt_at = max(r.last_attempt_at for r in attempted_rows if r.last_attempt_at)
+                return attempts_count, correct_count, last_attempt_at
+
+        return await self.repo.aggregate_answers(user_id, concept_id)
 
     async def get_concept_mastery(self, user_id: uuid.UUID, concept_id: uuid.UUID) -> dict:
         row = await self.repo.get(user_id, concept_id)
@@ -78,6 +124,10 @@ class MasteryService:
     async def get_overview(self, user_id: uuid.UUID) -> list[dict]:
         return await self.repo.get_overview(user_id)
 
+    async def get_micro_competency_breakdown(self, user_id: uuid.UUID, concept_id: uuid.UUID) -> list[dict]:
+        pairs = await self.repo.get_micro_competency_mastery_for_concept(user_id, concept_id)
+        return [{"micro_competency_id": str(mc.id), "name": mc.name, **_mc_row_to_dict(row)} for mc, row in pairs]
+
 
 def _row_to_dict(concept_id: uuid.UUID, row: ConceptMastery | None) -> dict:
     if row is None:
@@ -91,6 +141,24 @@ def _row_to_dict(concept_id: uuid.UUID, row: ConceptMastery | None) -> dict:
         }
     return {
         "concept_id": str(concept_id),
+        "attempts_count": row.attempts_count,
+        "correct_count": row.correct_count,
+        "mastery_score": row.mastery_score,
+        "mastery_level": row.mastery_level,
+        "last_attempt_at": row.last_attempt_at.isoformat() if row.last_attempt_at else None,
+    }
+
+
+def _mc_row_to_dict(row: MicroCompetencyMastery | None) -> dict:
+    if row is None:
+        return {
+            "attempts_count": 0,
+            "correct_count": 0,
+            "mastery_score": 0,
+            "mastery_level": "NOT_STARTED",
+            "last_attempt_at": None,
+        }
+    return {
         "attempts_count": row.attempts_count,
         "correct_count": row.correct_count,
         "mastery_score": row.mastery_score,

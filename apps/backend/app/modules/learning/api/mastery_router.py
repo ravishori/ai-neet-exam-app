@@ -19,6 +19,14 @@ async def get_concept_mastery(concept_id: uuid.UUID, user: User = Depends(get_cu
     return envelope(success=True, data=result)
 
 
+@router.get("/mastery/concepts/{concept_id}/micro-competencies")
+async def get_concept_micro_competency_breakdown(
+    concept_id: uuid.UUID, user: User = Depends(get_current_user), db: AsyncSession = Depends(get_db)
+):
+    result = await MasteryService(db).get_micro_competency_breakdown(user.id, concept_id)
+    return envelope(success=True, data=result)
+
+
 @router.get("/mastery/topics/{topic_id}")
 async def get_topic_mastery(topic_id: uuid.UUID, user: User = Depends(get_current_user), db: AsyncSession = Depends(get_db)):
     result = await MasteryService(db).get_topic_mastery(user.id, topic_id)

@@ -19,6 +19,11 @@ class ContentItem(Base, AuditedBase):
     concept_id: Mapped[uuid.UUID | None] = mapped_column(
         UUID(as_uuid=True), ForeignKey("academic.concepts.id", ondelete="SET NULL"), nullable=True
     )
+    # One optional micro-competency this QUESTION tests — see ADR-0021.
+    # Nullable/optional: existing and future untagged questions stay valid.
+    micro_competency_id: Mapped[uuid.UUID | None] = mapped_column(
+        UUID(as_uuid=True), ForeignKey("academic.micro_competencies.id", ondelete="SET NULL"), nullable=True
+    )
     title: Mapped[str] = mapped_column(String(300), nullable=False)
     slug: Mapped[str] = mapped_column(String(320), nullable=False)
     tags: Mapped[list[str]] = mapped_column(ARRAY(String), default=list, nullable=False)

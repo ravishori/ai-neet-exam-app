@@ -20,6 +20,7 @@ export type Concept = {
   difficulty: string;
   display_order: number;
 };
+export type MicroCompetency = { id: string; concept_id: string; code: string; name: string; display_order: number };
 
 export const academicApi = {
   subjects: () => apiClient.get<Subject[]>("/api/v1/subjects"),
@@ -30,4 +31,8 @@ export const academicApi = {
   topic: (id: string) => apiClient.get<Topic>(`/api/v1/topics/${id}`),
   concepts: (topicId: string) => apiClient.get<Concept[]>(`/api/v1/topics/${topicId}/concepts`),
   concept: (id: string) => apiClient.get<Concept>(`/api/v1/concepts/${id}`),
+  microCompetencies: (conceptId: string) =>
+    apiClient.get<MicroCompetency[]>(`/api/v1/concepts/${conceptId}/micro-competencies`),
+  createMicroCompetency: (conceptId: string, data: { code: string; name: string; display_order?: number }) =>
+    apiClient.post<MicroCompetency>(`/api/v1/concepts/${conceptId}/micro-competencies`, data),
 };

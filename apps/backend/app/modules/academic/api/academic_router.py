@@ -1,16 +1,23 @@
 import uuid
 
 from fastapi import APIRouter, Depends
+from pydantic import BaseModel, Field
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.database import get_db
 from app.core.exceptions import NotFoundError
-from app.modules.academic.models import Chapter, Concept, Exam, Subject, Topic
+from app.modules.academic.models import Chapter, Concept, Exam, MicroCompetency, Subject, Topic
 from app.modules.academic.repositories.academic_repository import AcademicRepository
-from app.modules.identity.dependencies import get_current_user
+from app.modules.identity.dependencies import get_current_user, require_permission, verify_csrf
 from app.shared.responses import envelope
 
 router = APIRouter(prefix="/api/v1", tags=["academic"], dependencies=[Depends(get_current_user)])
+
+
+class MicroCompetencyCreateRequest(BaseModel):
+    code: str = Field(max_length=80)
+    name: str = Field(max_length=300)
+    display_order: int = 0
 
 
 def _exam(e: Exam) -> dict:
@@ -52,6 +59,16 @@ def _concept(co: Concept) -> dict:
         "ncert_reference": co.ncert_reference,
         "difficulty": co.difficulty,
         "display_order": co.display_order,
+    }
+
+
+def _micro_competency(mc: MicroCompetency) -> dict:
+    return {
+        "id": str(mc.id),
+        "concept_id": str(mc.concept_id),
+        "code": mc.code,
+        "name": mc.name,
+        "display_order": mc.display_order,
     }
 
 
@@ -149,3 +166,28 @@ async def get_concept(concept_id: uuid.UUID, db: AsyncSession = Depends(get_db))
     if not concept:
         raise NotFoundError("Concept not found")
     return envelope(success=True, data=_concept(concept))
+
+
+@router.get("/concepts/{concept_id}/micro-competencies")
+async def list_concept_micro_competencies(concept_id: uuid.UUID, db: AsyncSession = Depends(get_db)):
+    repo = AcademicRepository(db)
+    micro_competencies = await repo.list_micro_competencies(concept_id)
+    return envelope(success=True, data=[_micro_competency(mc) for mc in micro_competencies])
+
+
+@router.post(
+    "/concepts/{concept_id}/micro-competencies",
+    dependencies=[Depends(require_permission("content.create")), Depends(verify_csrf)],
+)
+async def create_concept_micro_competency(
+    concept_id: uuid.UUID, payload: MicroCompetencyCreateRequest, db: AsyncSession = Depends(get_db)
+):
+    repo = AcademicRepository(db)
+    if not await repo.get_concept(concept_id):
+        raise NotFoundError("Concept not found")
+
+    micro_competency = MicroCompetency(
+        concept_id=concept_id, code=payload.code, name=payload.name, display_order=payload.display_order
+    )
+    await repo.add_micro_competency(micro_competency)
+    return envelope(success=True, data=_micro_competency(micro_competency), status_code=201)

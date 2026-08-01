@@ -45,10 +45,22 @@ export type RecommendationItem = {
   mastery_score: number | null;
 };
 
+export type MicroCompetencyMastery = {
+  micro_competency_id: string;
+  name: string;
+  attempts_count: number;
+  correct_count: number;
+  mastery_score: number;
+  mastery_level: MasteryLevel;
+  last_attempt_at: string | null;
+};
+
 export const learningApi = {
   conceptMastery: (conceptId: string) => apiClient.get<ConceptMastery>(`/api/v1/learning/mastery/concepts/${conceptId}`),
   topicMastery: (topicId: string) => apiClient.get<TopicMastery>(`/api/v1/learning/mastery/topics/${topicId}`),
   overview: () => apiClient.get<SubjectMasteryOverview[]>("/api/v1/learning/mastery/overview"),
   revisionDue: () => apiClient.get<RevisionDueItem[]>("/api/v1/learning/revision/due"),
   recommendations: () => apiClient.get<RecommendationItem[]>("/api/v1/learning/recommendations"),
+  microCompetencyBreakdown: (conceptId: string) =>
+    apiClient.get<MicroCompetencyMastery[]>(`/api/v1/learning/mastery/concepts/${conceptId}/micro-competencies`),
 };

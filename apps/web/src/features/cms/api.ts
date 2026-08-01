@@ -18,6 +18,7 @@ export type ContentItem = {
   id: string;
   content_type: ContentType;
   concept_id: string | null;
+  micro_competency_id: string | null;
   title: string;
   slug: string;
   tags: string[];
@@ -56,6 +57,7 @@ export const cmsApi = {
   create: (data: {
     content_type: ContentType;
     concept_id?: string;
+    micro_competency_id?: string;
     title: string;
     slug: string;
     tags?: string[];

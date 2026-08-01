@@ -4,10 +4,10 @@ from datetime import datetime
 from sqlalchemy import func, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.modules.academic.models import Chapter, Concept, Subject, Topic
+from app.modules.academic.models import Chapter, Concept, MicroCompetency, Subject, Topic
 from app.modules.assessment.models import Attempt, AttemptAnswer
 from app.modules.cms.models import ContentItem
-from app.modules.learning.models import ConceptMastery
+from app.modules.learning.models import ConceptMastery, MicroCompetencyMastery
 
 
 class MasteryRepository:
@@ -41,6 +41,71 @@ class MasteryRepository:
         )
         attempts_count, correct_count, last_attempt_at = result.one()
         return attempts_count or 0, correct_count or 0, last_attempt_at
+
+    async def micro_competency_ids_for_content_items(self, content_item_ids: list[uuid.UUID]) -> set[uuid.UUID]:
+        if not content_item_ids:
+            return set()
+        result = await self.session.execute(
+            select(ContentItem.micro_competency_id).where(
+                ContentItem.id.in_(content_item_ids), ContentItem.micro_competency_id.is_not(None)
+            )
+        )
+        return {row for row in result.scalars().all() if row is not None}
+
+    async def aggregate_answers_for_micro_competency(
+        self, user_id: uuid.UUID, micro_competency_id: uuid.UUID
+    ) -> tuple[int, int, datetime | None]:
+        result = await self.session.execute(
+            select(
+                func.count(AttemptAnswer.id),
+                func.count(AttemptAnswer.id).filter(AttemptAnswer.is_correct.is_(True)),
+                func.max(AttemptAnswer.answered_at),
+            )
+            .join(Attempt, Attempt.id == AttemptAnswer.attempt_id)
+            .join(ContentItem, ContentItem.id == AttemptAnswer.content_item_id)
+            .where(
+                Attempt.user_id == user_id,
+                ContentItem.micro_competency_id == micro_competency_id,
+                AttemptAnswer.is_correct.is_not(None),
+            )
+        )
+        attempts_count, correct_count, last_attempt_at = result.one()
+        return attempts_count or 0, correct_count or 0, last_attempt_at
+
+    async def get_micro_competency_mastery(
+        self, user_id: uuid.UUID, micro_competency_id: uuid.UUID
+    ) -> MicroCompetencyMastery | None:
+        result = await self.session.execute(
+            select(MicroCompetencyMastery).where(
+                MicroCompetencyMastery.user_id == user_id,
+                MicroCompetencyMastery.micro_competency_id == micro_competency_id,
+            )
+        )
+        return result.scalar_one_or_none()
+
+    def add_micro_competency_mastery(self, row: MicroCompetencyMastery) -> None:
+        self.session.add(row)
+
+    async def get_micro_competencies_for_concept(self, concept_id: uuid.UUID) -> list[MicroCompetency]:
+        result = await self.session.execute(
+            select(MicroCompetency).where(MicroCompetency.concept_id == concept_id).order_by(MicroCompetency.display_order)
+        )
+        return list(result.scalars().all())
+
+    async def get_micro_competency_mastery_for_concept(
+        self, user_id: uuid.UUID, concept_id: uuid.UUID
+    ) -> list[tuple[MicroCompetency, MicroCompetencyMastery | None]]:
+        result = await self.session.execute(
+            select(MicroCompetency, MicroCompetencyMastery)
+            .outerjoin(
+                MicroCompetencyMastery,
+                (MicroCompetencyMastery.micro_competency_id == MicroCompetency.id)
+                & (MicroCompetencyMastery.user_id == user_id),
+            )
+            .where(MicroCompetency.concept_id == concept_id)
+            .order_by(MicroCompetency.display_order)
+        )
+        return list(result.all())
 
     async def get(self, user_id: uuid.UUID, concept_id: uuid.UUID) -> ConceptMastery | None:
         result = await self.session.execute(

@@ -4,7 +4,7 @@ from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
 
-from app.modules.academic.models import Chapter, Concept, Exam, Subject, Topic
+from app.modules.academic.models import Chapter, Concept, Exam, MicroCompetency, Subject, Topic
 
 
 class AcademicRepository:
@@ -63,3 +63,13 @@ class AcademicRepository:
     async def get_concept(self, concept_id: uuid.UUID) -> Concept | None:
         result = await self.session.execute(select(Concept).where(Concept.id == concept_id))
         return result.scalar_one_or_none()
+
+    async def list_micro_competencies(self, concept_id: uuid.UUID) -> list[MicroCompetency]:
+        result = await self.session.execute(
+            select(MicroCompetency).where(MicroCompetency.concept_id == concept_id).order_by(MicroCompetency.display_order)
+        )
+        return list(result.scalars().all())
+
+    async def add_micro_competency(self, micro_competency: MicroCompetency) -> None:
+        self.session.add(micro_competency)
+        await self.session.commit()

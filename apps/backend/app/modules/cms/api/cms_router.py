@@ -37,6 +37,7 @@ def _item(item: ContentItem) -> dict:
         "id": str(item.id),
         "content_type": item.content_type,
         "concept_id": str(item.concept_id) if item.concept_id else None,
+        "micro_competency_id": str(item.micro_competency_id) if item.micro_competency_id else None,
         "title": item.title,
         "slug": item.slug,
         "tags": item.tags,
@@ -58,9 +59,11 @@ async def create_content_item(
 ):
     service = ContentWorkflowService(db)
     concept_id = uuid.UUID(payload.concept_id) if payload.concept_id else None
+    micro_competency_id = uuid.UUID(payload.micro_competency_id) if payload.micro_competency_id else None
     item = await service.create_item(
         content_type=payload.content_type,
         concept_id=concept_id,
+        micro_competency_id=micro_competency_id,
         title=payload.title,
         slug=payload.slug,
         tags=payload.tags,

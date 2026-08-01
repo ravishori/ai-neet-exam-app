@@ -28,6 +28,10 @@ export default function ConceptDetailPage() {
     queryKey: ["learning", "concept-mastery", conceptId],
     queryFn: () => learningApi.conceptMastery(conceptId),
   });
+  const { data: microBreakdown } = useQuery({
+    queryKey: ["learning", "micro-competency-breakdown", conceptId],
+    queryFn: () => learningApi.microCompetencyBreakdown(conceptId),
+  });
 
   if (isLoading) {
     return <main className="flex-1 px-6 py-12 text-center text-sm text-muted-foreground">Loading…</main>;
@@ -68,6 +72,31 @@ export default function ConceptDetailPage() {
                   ? "Answer a practice question on this concept to start tracking mastery."
                   : `${mastery.correct_count}/${mastery.attempts_count} correct across your attempts.`}
               </p>
+            </CardContent>
+          </Card>
+        )}
+
+        {!!microBreakdown?.length && (
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-base">Mastery by micro-competency</CardTitle>
+              <CardDescription>How you&apos;re doing on each specific skill within this concept.</CardDescription>
+            </CardHeader>
+            <CardContent className="flex flex-col gap-3">
+              {microBreakdown.map((mc) => (
+                <div key={mc.micro_competency_id} className="flex flex-col gap-1">
+                  <div className="flex items-center justify-between gap-2">
+                    <p className="text-sm">{mc.name}</p>
+                    <MasteryBadge level={mc.mastery_level} />
+                  </div>
+                  <MasteryBar score={mc.mastery_score} />
+                  <p className="text-xs text-muted-foreground">
+                    {mc.attempts_count === 0
+                      ? "No attempts yet."
+                      : `${mc.correct_count}/${mc.attempts_count} correct.`}
+                  </p>
+                </div>
+              ))}
             </CardContent>
           </Card>
         )}

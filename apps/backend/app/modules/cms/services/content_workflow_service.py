@@ -39,6 +39,7 @@ class ContentWorkflowService:
         language: str,
         body: dict,
         author_id: uuid.UUID,
+        micro_competency_id: uuid.UUID | None = None,
     ) -> ContentItem:
         if content_type not in CONTENT_TYPES:
             raise AppError(f"Unknown content_type: {content_type}", code="INVALID_CONTENT_TYPE", status_code=400)
@@ -47,6 +48,7 @@ class ContentWorkflowService:
         item = ContentItem(
             content_type=content_type,
             concept_id=concept_id,
+            micro_competency_id=micro_competency_id,
             title=title,
             slug=slug,
             tags=tags,
