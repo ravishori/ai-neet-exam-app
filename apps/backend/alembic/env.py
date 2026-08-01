@@ -7,6 +7,7 @@ from app.core.config import get_settings
 from app.core.database import Base
 
 # imports below register models on Base.metadata as modules are added
+from app.modules.academic import models as academic_models  # noqa: F401
 from app.modules.identity import models as identity_models  # noqa: F401
 from app.modules.system import models as system_models  # noqa: F401
 
@@ -27,6 +28,10 @@ def run_migrations_offline() -> None:
         target_metadata=target_metadata,
         literal_binds=True,
         dialect_opts={"paramstyle": "named"},
+        # Every table in this project lives in a named schema (identity,
+        # academic, cms, ...), never `public` — without this, autogenerate
+        # only diffs `public` and thinks every existing table is new.
+        include_schemas=True,
     )
     with context.begin_transaction():
         context.run_migrations()
@@ -40,7 +45,7 @@ def run_migrations_online() -> None:
     )
 
     with connectable.connect() as connection:
-        context.configure(connection=connection, target_metadata=target_metadata)
+        context.configure(connection=connection, target_metadata=target_metadata, include_schemas=True)
         with context.begin_transaction():
             context.run_migrations()
 

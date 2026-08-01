@@ -1,7 +1,11 @@
 "use client";
 
+import Link from "next/link";
+
 import { Badge } from "@/components/ui/badge";
+import { buttonVariants } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
 import { useMe } from "@/features/auth/use-auth";
 
 export default function StudentDashboardPage() {
@@ -14,10 +18,15 @@ export default function StudentDashboardPage() {
           {isLoading ? "Loading…" : `Welcome, ${user?.first_name ?? user?.email}`}
         </h1>
         <p className="mt-1 text-sm text-muted-foreground">
-          Real widgets (mastery, revision queue, recommended practice) land once Academic +
-          Assessment + Learning modules exist.
+          Real widgets (mastery, revision queue, recommended practice) land once Assessment +
+          Learning modules exist.
         </p>
       </div>
+
+      <Link href="/student/subjects" className={cn(buttonVariants())}>
+        Browse subjects
+      </Link>
+
       {user && (
         <Card className="w-full max-w-sm">
           <CardHeader>

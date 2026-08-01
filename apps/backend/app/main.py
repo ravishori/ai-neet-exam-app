@@ -17,6 +17,7 @@ from app.core.exceptions import (
 )
 from app.core.logging import configure_logging, get_logger
 from app.core.middleware import RequestContextMiddleware
+from app.modules.academic.api.academic_router import router as academic_router
 from app.modules.identity.api.auth_router import router as auth_router
 from app.modules.identity.api.roles_router import router as roles_router
 from app.modules.identity.api.users_router import router as users_router
@@ -65,6 +66,7 @@ app.add_exception_handler(Exception, unhandled_exception_handler)
 app.include_router(auth_router)
 app.include_router(users_router)
 app.include_router(roles_router)
+app.include_router(academic_router)
 
 
 @app.get("/health")
