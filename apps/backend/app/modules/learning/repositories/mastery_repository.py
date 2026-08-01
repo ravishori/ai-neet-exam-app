@@ -4,7 +4,7 @@ from datetime import datetime
 from sqlalchemy import func, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.modules.academic.models import Concept
+from app.modules.academic.models import Chapter, Concept, Subject, Topic
 from app.modules.assessment.models import Attempt, AttemptAnswer
 from app.modules.cms.models import ContentItem
 from app.modules.learning.models import ConceptMastery
@@ -66,8 +66,6 @@ class MasteryRepository:
         return list(result.all())
 
     async def get_overview(self, user_id: uuid.UUID) -> list[dict]:
-        from app.modules.academic.models import Chapter, Subject, Topic
-
         result = await self.session.execute(
             select(
                 Subject.id,
@@ -98,3 +96,36 @@ class MasteryRepository:
             }
             for row in result.all()
         ]
+
+    async def get_due_for_revision(self, user_id: uuid.UUID, now: datetime, limit: int) -> list[tuple[Concept, ConceptMastery]]:
+        result = await self.session.execute(
+            select(Concept, ConceptMastery)
+            .join(ConceptMastery, ConceptMastery.concept_id == Concept.id)
+            .where(ConceptMastery.user_id == user_id, ConceptMastery.next_review_at <= now)
+            .order_by(ConceptMastery.next_review_at)
+            .limit(limit)
+        )
+        return list(result.all())
+
+    async def get_weak_concepts(self, user_id: uuid.UUID, limit: int) -> list[tuple[Concept, ConceptMastery]]:
+        result = await self.session.execute(
+            select(Concept, ConceptMastery)
+            .join(ConceptMastery, ConceptMastery.concept_id == Concept.id)
+            .where(ConceptMastery.user_id == user_id, ConceptMastery.mastery_level == "PRACTICING")
+            .order_by(ConceptMastery.mastery_score)
+            .limit(limit)
+        )
+        return list(result.all())
+
+    async def get_new_concepts(self, user_id: uuid.UUID, limit: int) -> list[Concept]:
+        attempted = select(ConceptMastery.concept_id).where(ConceptMastery.user_id == user_id)
+        result = await self.session.execute(
+            select(Concept)
+            .join(Topic, Topic.id == Concept.topic_id)
+            .join(Chapter, Chapter.id == Topic.chapter_id)
+            .join(Subject, Subject.id == Chapter.subject_id)
+            .where(Concept.id.not_in(attempted))
+            .order_by(Subject.display_order, Chapter.display_order, Topic.display_order, Concept.display_order)
+            .limit(limit)
+        )
+        return list(result.scalars().all())

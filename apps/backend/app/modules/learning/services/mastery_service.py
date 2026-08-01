@@ -1,4 +1,5 @@
 import uuid
+from datetime import UTC, datetime, timedelta
 
 from sqlalchemy.ext.asyncio import AsyncSession
 
@@ -7,6 +8,10 @@ from app.modules.learning.repositories.mastery_repository import MasteryReposito
 
 MASTERY_ATTEMPT_FLOOR = 3
 MASTERY_SCORE_THRESHOLD = 80
+
+# Simplified spaced repetition — see ADR-0016. No ease factor, no history:
+# the schedule is just "how soon should this mastery_level resurface".
+REVIEW_INTERVAL_DAYS = {"LEARNING": 1, "PRACTICING": 3, "MASTERED": 7}
 
 
 def compute_mastery(attempts_count: int, correct_count: int) -> tuple[int, str]:
@@ -20,6 +25,13 @@ def compute_mastery(attempts_count: int, correct_count: int) -> tuple[int, str]:
     if score >= MASTERY_SCORE_THRESHOLD:
         return score, "MASTERED"
     return score, "PRACTICING"
+
+
+def next_review_at_for(level: str) -> datetime | None:
+    interval_days = REVIEW_INTERVAL_DAYS.get(level)
+    if interval_days is None:
+        return None
+    return datetime.now(UTC) + timedelta(days=interval_days)
 
 
 class MasteryService:
@@ -47,6 +59,7 @@ class MasteryService:
         row.mastery_score = score
         row.mastery_level = level
         row.last_attempt_at = last_attempt_at
+        row.next_review_at = next_review_at_for(level)
 
     async def get_concept_mastery(self, user_id: uuid.UUID, concept_id: uuid.UUID) -> dict:
         row = await self.repo.get(user_id, concept_id)

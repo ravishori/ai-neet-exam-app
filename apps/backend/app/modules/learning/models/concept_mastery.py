@@ -26,6 +26,7 @@ class ConceptMastery(Base):
     mastery_score: Mapped[int] = mapped_column(Integer, default=0, nullable=False)
     mastery_level: Mapped[str] = mapped_column(String(20), default="NOT_STARTED", nullable=False)
     last_attempt_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+    next_review_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
     updated_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True), server_default=func.now(), onupdate=func.now()
     )
