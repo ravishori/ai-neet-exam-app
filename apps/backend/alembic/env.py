@@ -6,8 +6,9 @@ from sqlalchemy import engine_from_config, pool
 from app.core.config import get_settings
 from app.core.database import Base
 
-# noqa imports below register models on Base.metadata as modules are added
-# from app.modules.identity import models as identity_models  # noqa: F401
+# imports below register models on Base.metadata as modules are added
+from app.modules.identity import models as identity_models  # noqa: F401
+from app.modules.system import models as system_models  # noqa: F401
 
 config = context.config
 settings = get_settings()

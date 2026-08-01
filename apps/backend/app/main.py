@@ -17,6 +17,9 @@ from app.core.exceptions import (
 )
 from app.core.logging import configure_logging, get_logger
 from app.core.middleware import RequestContextMiddleware
+from app.modules.identity.api.auth_router import router as auth_router
+from app.modules.identity.api.roles_router import router as roles_router
+from app.modules.identity.api.users_router import router as users_router
 from app.shared.responses import envelope
 
 settings = get_settings()
@@ -58,6 +61,10 @@ app.add_exception_handler(AppError, app_error_handler)
 app.add_exception_handler(StarletteHTTPException, http_exception_handler)
 app.add_exception_handler(RequestValidationError, validation_exception_handler)
 app.add_exception_handler(Exception, unhandled_exception_handler)
+
+app.include_router(auth_router)
+app.include_router(users_router)
+app.include_router(roles_router)
 
 
 @app.get("/health")
