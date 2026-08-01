@@ -24,7 +24,7 @@ Foundation (SP0) → Identity (SP1) → Academic Engine (SP2)
 | SP0 | Repo, Docker, Postgres, FastAPI, Next.js foundation | **done** — verified against real Postgres 18 + Redis, both apps run and render |
 | SP1 | Identity & Auth — JWT, RBAC, sessions | **done** — register/login/refresh/logout/CSRF/permissions verified via curl + browser click-through |
 | SP2 | Academic Engine — exam→subject→chapter→topic→concept | **done** — NEET seeded (4 subjects, 30 chapters, 4 fully-fleshed), full hierarchy verified |
-| SP3 | ECAEP content model + Question Bank | not started |
+| SP3 | ECAEP content model + Question Bank | **done** — full workflow (draft→submit→review→publish→archive) verified via curl and browser click-through, coverage grid live |
 | SP4 | Assessment Engine — practice, mock tests, scoring | not started |
 | SP5 | AI Gateway — Tutor, Question Generator, Planner, Evaluator | not started |
 | SP6 | Learning/Mastery (Concept → mastery score, 2-level) | not started |
