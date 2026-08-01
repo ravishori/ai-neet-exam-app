@@ -26,7 +26,7 @@ Foundation (SP0) → Identity (SP1) → Academic Engine (SP2)
 | SP2 | Academic Engine — exam→subject→chapter→topic→concept | **done** — NEET seeded (4 subjects, 30 chapters, 4 fully-fleshed), full hierarchy verified |
 | SP3 | ECAEP content model + Question Bank | **done** — full workflow (draft→submit→review→publish→archive) verified via curl and browser click-through, coverage grid live |
 | SP4 | Assessment Engine — practice, mock tests, scoring | **done** — practice + mock generation, timed attempts, scoring (+4/−1) verified via curl and full browser click-through |
-| SP5 | AI Gateway — Tutor, Question Generator, Planner, Evaluator | not started |
+| SP5 | AI Gateway — Tutor, Question Generator, Planner, Evaluator | **done** — provider abstraction + cost/latency logging, all 4 agents, fallback-mode (no API key) verified end-to-end via curl and browser click-through |
 | SP6 | Learning/Mastery (Concept → mastery score, 2-level) | not started |
 | SP7 | Recommendation + spaced-repetition revision | not started |
 | SP8 | Analytics dashboard | not started |
