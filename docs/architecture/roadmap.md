@@ -27,7 +27,7 @@ Foundation (SP0) → Identity (SP1) → Academic Engine (SP2)
 | SP3 | ECAEP content model + Question Bank | **done** — full workflow (draft→submit→review→publish→archive) verified via curl and browser click-through, coverage grid live |
 | SP4 | Assessment Engine — practice, mock tests, scoring | **done** — practice + mock generation, timed attempts, scoring (+4/−1) verified via curl and full browser click-through |
 | SP5 | AI Gateway — Tutor, Question Generator, Planner, Evaluator | **done** — provider abstraction + cost/latency logging, all 4 agents, fallback-mode (no API key) verified end-to-end via curl and browser click-through |
-| SP6 | Learning/Mastery (Concept → mastery score, 2-level) | not started |
+| SP6 | Learning/Mastery (Concept → mastery score, 2-level) | **done** — concept-level mastery persisted + topic-level rollup computed live, recomputed on attempt submission, verified via curl and browser click-through (dashboard, topic list, concept page) |
 | SP7 | Recommendation + spaced-repetition revision | not started |
 | SP8 | Analytics dashboard | not started |
 | SP9 | Commerce (Razorpay), Admin, hardening, deploy | not started |
