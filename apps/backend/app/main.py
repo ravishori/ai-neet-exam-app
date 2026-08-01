@@ -19,6 +19,7 @@ from app.core.logging import configure_logging, get_logger
 from app.core.middleware import RequestContextMiddleware
 from app.modules.academic.api.academic_router import router as academic_router
 from app.modules.ai.api.ai_router import router as ai_router
+from app.modules.analytics.api.analytics_router import router as analytics_router
 from app.modules.assessment.api.assessment_router import router as assessment_router
 from app.modules.cms.api.cms_router import router as cms_router
 from app.modules.identity.api.auth_router import router as auth_router
@@ -75,6 +76,7 @@ app.include_router(cms_router)
 app.include_router(assessment_router)
 app.include_router(ai_router)
 app.include_router(mastery_router)
+app.include_router(analytics_router)
 
 
 @app.get("/health")
