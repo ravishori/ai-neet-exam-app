@@ -30,8 +30,9 @@ Foundation (SP0) → Identity (SP1) → Academic Engine (SP2)
 | SP6 | Learning/Mastery (Concept → mastery score, 2-level) | **done** — concept-level mastery persisted + topic-level rollup computed live, recomputed on attempt submission, verified via curl and browser click-through (dashboard, topic list, concept page) |
 | SP7 | Recommendation + spaced-repetition revision | **done** — fixed-interval revision schedule by mastery_level + rule-based recommendation ranking (due → weak → new), dashboard widgets verified via curl and browser click-through (including the "Practice now" generate→start→navigate flow) |
 | SP8 | Analytics dashboard | **done** — admin-only assessment analytics (totals, by-type, 14-day trend, weakest concepts platform-wide) + AI usage/cost analytics, computed live with no new schema, verified via curl (incl. permission boundary) and browser click-through |
-| SP9 | Commerce (Razorpay), Admin, hardening, deploy | not started |
+| SP9 | Commerce (Razorpay), Admin, hardening, deploy | **done** — one-time Razorpay purchase with no fake-payment fallback (real order creation + HMAC signature verification, honest 503 without live keys), admin role/status management (found and fixed a real gap: suspended users could still log in), rate limiting + security headers, Coolify-ready prod compose + Dockerfile hardening + runbook. Verified via unit tests, full pytest suite, curl, and browser click-through |
 
+This closes out the originally-scoped 9-sprint roadmap (SP0–SP9).
 Everything in the BRD beyond this list (Knowledge Graph, Micro-Competency
 layer, Digital Twin, multi-tenancy, 12-agent AI OS, multi-language,
 native mobile) is backlog — see ADR-0007.
