@@ -47,6 +47,11 @@
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
+  --shadow-xs: var(--elevation-xs);
+  --shadow-sm: var(--elevation-sm);
+  --shadow-md: var(--elevation-md);
+  --shadow-lg: var(--elevation-lg);
+  --ease-out-smooth: var(--motion-ease-out);
 }
 
 :root {
@@ -56,32 +61,37 @@
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
+  --primary: oklch(0.47 0.19 264);
+  --primary-foreground: oklch(0.98 0.01 264);
+  --secondary: oklch(0.96 0.01 264);
+  --secondary-foreground: oklch(0.32 0.05 264);
+  --muted: oklch(0.97 0.005 264);
   --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
+  --accent: oklch(0.95 0.02 264);
+  --accent-foreground: oklch(0.32 0.1 264);
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
+  --ring: oklch(0.55 0.19 264);
+  --chart-1: oklch(0.55 0.18 264);
+  --chart-2: oklch(0.6 0.12 180);
+  --chart-3: oklch(0.7 0.15 70);
+  --chart-4: oklch(0.6 0.19 20);
+  --chart-5: oklch(0.55 0.05 264);
   --radius: 0.625rem;
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-primary: oklch(0.47 0.19 264);
+  --sidebar-primary-foreground: oklch(0.98 0.01 264);
+  --sidebar-accent: oklch(0.95 0.02 264);
+  --sidebar-accent-foreground: oklch(0.32 0.1 264);
   --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --sidebar-ring: oklch(0.55 0.19 264);
+  --elevation-xs: 0 1px 2px 0 oklch(0.2 0.02 264 / 0.04);
+  --elevation-sm: 0 1px 3px 0 oklch(0.2 0.02 264 / 0.07), 0 1px 2px -1px oklch(0.2 0.02 264 / 0.06);
+  --elevation-md: 0 4px 6px -1px oklch(0.2 0.02 264 / 0.08), 0 2px 4px -2px oklch(0.2 0.02 264 / 0.06);
+  --elevation-lg: 0 10px 15px -3px oklch(0.2 0.02 264 / 0.09), 0 4px 6px -4px oklch(0.2 0.02 264 / 0.06);
+  --motion-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .dark {
@@ -91,31 +101,36 @@
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.205 0 0);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
+  --primary: oklch(0.72 0.16 264);
+  --primary-foreground: oklch(0.16 0.02 264);
+  --secondary: oklch(0.27 0.02 264);
+  --secondary-foreground: oklch(0.9 0.02 264);
+  --muted: oklch(0.269 0.005 264);
   --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
+  --accent: oklch(0.28 0.03 264);
+  --accent-foreground: oklch(0.9 0.03 264);
   --destructive: oklch(0.704 0.191 22.216);
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
+  --ring: oklch(0.6 0.18 264);
+  --chart-1: oklch(0.7 0.16 264);
+  --chart-2: oklch(0.72 0.11 180);
+  --chart-3: oklch(0.78 0.14 70);
+  --chart-4: oklch(0.72 0.17 20);
+  --chart-5: oklch(0.65 0.05 264);
   --sidebar: oklch(0.205 0 0);
   --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.72 0.16 264);
+  --sidebar-primary-foreground: oklch(0.16 0.02 264);
+  --sidebar-accent: oklch(0.28 0.03 264);
+  --sidebar-accent-foreground: oklch(0.9 0.03 264);
   --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  --sidebar-ring: oklch(0.6 0.18 264);
+  --elevation-xs: 0 1px 2px 0 oklch(0 0 0 / 0.16);
+  --elevation-sm: 0 1px 3px 0 oklch(0 0 0 / 0.24), 0 1px 2px -1px oklch(0 0 0 / 0.2);
+  --elevation-md: 0 4px 6px -1px oklch(0 0 0 / 0.28), 0 2px 4px -2px oklch(0 0 0 / 0.22);
+  --elevation-lg: 0 10px 15px -3px oklch(0 0 0 / 0.32), 0 4px 6px -4px oklch(0 0 0 / 0.24);
+  --motion-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @layer base {
@@ -127,6 +142,30 @@
   }
   html {
     @apply font-sans;
+  }
+}
+
+/* Reusable page/card entrance motion (respects prefers-reduced-motion via
+   tw-animate-css's own guard). Interactive primitives (Dialog, Popover,
+   Tooltip, Accordion, ...) already animate via their own data-state hooks
+   and tw-animate-css utilities — these two are for plain content reveals. */
+@media (prefers-reduced-motion: no-preference) {
+  .animate-fade-in {
+    animation: fade-in 0.35s var(--motion-ease-out) both;
+  }
+  .animate-fade-slide-up {
+    animation: fade-slide-up 0.35s var(--motion-ease-out) both;
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes fade-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(0.5rem);
   }
 }
 
