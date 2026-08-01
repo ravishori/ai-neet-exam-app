@@ -43,7 +43,7 @@ export default function ConceptDetailPage() {
 
   return (
     <main className="flex flex-1 justify-center px-6 py-12">
-      <div className="flex w-full max-w-2xl flex-col gap-4">
+      <div className="flex w-full max-w-3xl flex-col gap-4">
         <Card>
           <CardHeader>
             <div className="flex items-center justify-between">

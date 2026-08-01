@@ -32,7 +32,7 @@ class TutorService:
             system_prompt=tutor_prompts.SYSTEM_PROMPT,
             user_prompt=user_prompt,
             user_id=user_id,
-            max_tokens=800,
+            max_tokens=4096,
         )
         return {
             "answer": response.text,
