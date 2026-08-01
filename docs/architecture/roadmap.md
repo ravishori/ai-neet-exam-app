@@ -22,7 +22,7 @@ Foundation (SP0) → Identity (SP1) → Academic Engine (SP2)
 | Sprint | Scope | Status |
 |---|---|---|
 | SP0 | Repo, Docker, Postgres, FastAPI, Next.js foundation | **done** — verified against real Postgres 18 + Redis, both apps run and render |
-| SP1 | Identity & Auth — JWT, RBAC, sessions | not started |
+| SP1 | Identity & Auth — JWT, RBAC, sessions | **done** — register/login/refresh/logout/CSRF/permissions verified via curl + browser click-through |
 | SP2 | Academic Engine — exam→subject→chapter→topic→concept | not started |
 | SP3 | ECAEP content model + Question Bank | not started |
 | SP4 | Assessment Engine — practice, mock tests, scoring | not started |
