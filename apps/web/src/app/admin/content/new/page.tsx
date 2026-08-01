@@ -14,11 +14,16 @@ import { ApiError } from "@/lib/api-client";
 import { cmsApi, type ContentType } from "@/features/cms/api";
 
 const CONTENT_TYPES: ContentType[] = ["CONCEPT_NOTE", "QUESTION", "FLASHCARD", "DIAGRAM", "VIDEO_REF", "FORMULA_SHEET"];
+const LANGUAGES = [
+  { code: "en", label: "English" },
+  { code: "hi", label: "हिन्दी (Hindi)" },
+];
 
 export default function NewContentPage() {
   const router = useRouter();
   const [contentType, setContentType] = useState<ContentType>("CONCEPT_NOTE");
   const [conceptId, setConceptId] = useState<string | null>(null);
+  const [language, setLanguage] = useState("en");
   const [title, setTitle] = useState("");
   const [slug, setSlug] = useState("");
 
@@ -68,6 +73,7 @@ export default function NewContentPage() {
       concept_id: conceptId ?? undefined,
       title,
       slug,
+      language,
       body: buildBody(),
     });
   };
@@ -112,6 +118,21 @@ export default function NewContentPage() {
             <div className="flex flex-col gap-1.5">
               <Label>Concept</Label>
               <ConceptPicker value={conceptId} onChange={setConceptId} />
+            </div>
+
+            <div className="flex flex-col gap-1.5">
+              <Label>Language</Label>
+              <select
+                className="h-9 w-56 rounded-md border bg-background px-2 text-sm"
+                value={language}
+                onChange={(e) => setLanguage(e.target.value)}
+              >
+                {LANGUAGES.map((l) => (
+                  <option key={l.code} value={l.code}>
+                    {l.label}
+                  </option>
+                ))}
+              </select>
             </div>
 
             <div className="grid grid-cols-2 gap-3">

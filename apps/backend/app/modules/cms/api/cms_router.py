@@ -159,8 +159,29 @@ async def get_coverage(db: AsyncSession = Depends(get_db)):
 
 
 @router.get("/concepts/{concept_id}/published", dependencies=[Depends(get_current_user)])
-async def get_published_content_for_concept(concept_id: uuid.UUID, db: AsyncSession = Depends(get_db)):
-    """Student-facing: every authenticated user can read published content — no editorial permission needed."""
+async def get_published_content_for_concept(
+    concept_id: uuid.UUID,
+    language: str | None = None,
+    user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db),
+):
+    """Student-facing: every authenticated user can read published content — no editorial permission needed.
+
+    Defaults to the caller's preferred_language (ADR-0019); falls back to
+    English with `language_fallback: true` in meta if nothing's been
+    translated for this concept yet, rather than returning an empty list.
+    """
+    requested_language = language or user.preferred_language
     repo = CmsRepository(db)
-    items = await repo.list_items(concept_id=concept_id, status="PUBLISHED")
-    return envelope(success=True, data=[_item(i) for i in items])
+    items = await repo.list_items(concept_id=concept_id, status="PUBLISHED", language=requested_language)
+
+    language_fallback = False
+    if not items and requested_language != "en":
+        items = await repo.list_items(concept_id=concept_id, status="PUBLISHED", language="en")
+        language_fallback = True
+
+    return envelope(
+        success=True,
+        data=[_item(i) for i in items],
+        meta={"language": requested_language, "language_fallback": language_fallback},
+    )

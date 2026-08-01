@@ -16,6 +16,7 @@ export class ApiError extends Error {
 type Envelope<T> = {
   success: boolean;
   data: T | null;
+  meta: Record<string, unknown>;
   errors: { code: string; message: string; field?: string }[];
 };
 
@@ -25,7 +26,7 @@ function readCookie(name: string): string | null {
   return match ? decodeURIComponent(match[1]) : null;
 }
 
-async function request<T>(path: string, options: RequestInit = {}, _retried = false): Promise<T> {
+async function request<T>(path: string, options: RequestInit = {}, _retried = false): Promise<Envelope<T>> {
   const method = (options.method ?? "GET").toUpperCase();
   const isMutating = method !== "GET" && method !== "HEAD";
   const headers = new Headers(options.headers);
@@ -58,11 +59,14 @@ async function request<T>(path: string, options: RequestInit = {}, _retried = fa
     );
     throw new ApiError(first?.message ?? "Request failed", first?.code ?? "UNKNOWN_ERROR", response.status, fieldErrors);
   }
-  return body.data as T;
+  return body;
 }
 
 export const apiClient = {
-  get: <T>(path: string) => request<T>(path),
-  post: <T>(path: string, data?: unknown) => request<T>(path, { method: "POST", body: data ? JSON.stringify(data) : undefined }),
-  patch: <T>(path: string, data?: unknown) => request<T>(path, { method: "PATCH", body: data ? JSON.stringify(data) : undefined }),
+  get: <T>(path: string) => request<T>(path).then((body) => body.data as T),
+  getFull: <T>(path: string) => request<T>(path),
+  post: <T>(path: string, data?: unknown) =>
+    request<T>(path, { method: "POST", body: data ? JSON.stringify(data) : undefined }).then((body) => body.data as T),
+  patch: <T>(path: string, data?: unknown) =>
+    request<T>(path, { method: "PATCH", body: data ? JSON.stringify(data) : undefined }).then((body) => body.data as T),
 };

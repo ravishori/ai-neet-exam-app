@@ -10,6 +10,7 @@ export type UserProfile = {
   status: string;
   email_verified: boolean;
   roles: string[];
+  preferred_language: string;
   last_login_at: string | null;
   created_at: string;
 };
@@ -19,6 +20,7 @@ export type UserUpdateInput = {
   last_name?: string;
   display_name?: string;
   phone?: string;
+  preferred_language?: string;
 };
 
 export type AdminUserUpdateInput = {

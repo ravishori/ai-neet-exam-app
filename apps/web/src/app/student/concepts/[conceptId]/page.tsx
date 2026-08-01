@@ -10,6 +10,7 @@ import { MasteryBadge, MasteryBar } from "@/components/mastery-badge";
 import { academicApi } from "@/features/academic/api";
 import { cmsApi, type ConceptNoteBody, type QuestionBody } from "@/features/cms/api";
 import { learningApi } from "@/features/learning/api";
+import { usersApi } from "@/features/users/api";
 
 export default function ConceptDetailPage() {
   const { conceptId } = useParams<{ conceptId: string }>();
@@ -17,9 +18,11 @@ export default function ConceptDetailPage() {
     queryKey: ["academic", "concept", conceptId],
     queryFn: () => academicApi.concept(conceptId),
   });
+  const { data: profile } = useQuery({ queryKey: ["users", "me"], queryFn: usersApi.me });
   const { data: content } = useQuery({
-    queryKey: ["cms", "published", conceptId],
-    queryFn: () => cmsApi.publishedForConcept(conceptId),
+    queryKey: ["cms", "published", conceptId, profile?.preferred_language],
+    queryFn: () => cmsApi.publishedForConcept(conceptId, profile?.preferred_language),
+    enabled: !!profile,
   });
   const { data: mastery } = useQuery({
     queryKey: ["learning", "concept-mastery", conceptId],
@@ -31,8 +34,8 @@ export default function ConceptDetailPage() {
   }
   if (!concept) return null;
 
-  const notes = content?.filter((c) => c.content_type === "CONCEPT_NOTE") ?? [];
-  const questions = content?.filter((c) => c.content_type === "QUESTION") ?? [];
+  const notes = content?.items.filter((c) => c.content_type === "CONCEPT_NOTE") ?? [];
+  const questions = content?.items.filter((c) => c.content_type === "QUESTION") ?? [];
 
   return (
     <main className="flex flex-1 justify-center px-6 py-12">
@@ -67,6 +70,12 @@ export default function ConceptDetailPage() {
               </p>
             </CardContent>
           </Card>
+        )}
+
+        {content?.languageFallback && (
+          <p className="rounded-md border border-dashed p-3 text-xs text-muted-foreground">
+            Showing English — this concept hasn&apos;t been translated to {content.language === "hi" ? "Hindi" : content.language} yet.
+          </p>
         )}
 
         {notes.map((item) => {

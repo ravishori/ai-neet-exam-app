@@ -33,7 +33,12 @@ class CmsRepository:
         return result.scalar_one_or_none()
 
     async def list_items(
-        self, *, content_type: str | None = None, concept_id: uuid.UUID | None = None, status: str | None = None
+        self,
+        *,
+        content_type: str | None = None,
+        concept_id: uuid.UUID | None = None,
+        status: str | None = None,
+        language: str | None = None,
     ) -> list[ContentItem]:
         query = select(ContentItem).options(selectinload(ContentItem.versions)).order_by(ContentItem.created_at.desc())
         if content_type:
@@ -42,6 +47,8 @@ class CmsRepository:
             query = query.where(ContentItem.concept_id == concept_id)
         if status:
             query = query.where(ContentItem.status == status)
+        if language:
+            query = query.where(ContentItem.language == language)
         result = await self.session.execute(query)
         return list(result.scalars().all())
 

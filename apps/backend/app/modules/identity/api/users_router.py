@@ -27,6 +27,7 @@ def _to_response(user: User) -> dict:
         status=user.status,
         email_verified=user.email_verified,
         roles=user.role_codes,
+        preferred_language=user.preferred_language,
         last_login_at=user.last_login_at,
         created_at=user.created_at,
     ).model_dump()

@@ -76,7 +76,9 @@ export default function ContentListPage() {
               <CardHeader className="flex-row items-center justify-between space-y-0">
                 <div>
                   <CardTitle className="text-base">{item.title}</CardTitle>
-                  <p className="text-sm text-muted-foreground">{item.content_type}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {item.content_type} · {item.language}
+                  </p>
                 </div>
                 <Badge variant={STATE_VARIANT[item.status]}>{item.status}</Badge>
               </CardHeader>

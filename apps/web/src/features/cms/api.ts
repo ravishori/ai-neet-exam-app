@@ -59,6 +59,7 @@ export const cmsApi = {
     title: string;
     slug: string;
     tags?: string[];
+    language?: string;
     body: Record<string, unknown>;
   }) => apiClient.post<ContentItem>("/api/v1/cms/content-items", data),
   updateDraft: (id: string, data: { body: Record<string, unknown>; change_summary?: string }) =>
@@ -69,6 +70,13 @@ export const cmsApi = {
   publish: (id: string) => apiClient.post<ContentItem>(`/api/v1/cms/content-items/${id}/publish`),
   archive: (id: string) => apiClient.post<ContentItem>(`/api/v1/cms/content-items/${id}/archive`),
   coverage: () => apiClient.get<CoverageRow[]>("/api/v1/cms/coverage"),
-  publishedForConcept: (conceptId: string) =>
-    apiClient.get<ContentItem[]>(`/api/v1/cms/concepts/${conceptId}/published`),
+  publishedForConcept: async (conceptId: string, language?: string) => {
+    const qs = language ? `?language=${encodeURIComponent(language)}` : "";
+    const envelope = await apiClient.getFull<ContentItem[]>(`/api/v1/cms/concepts/${conceptId}/published${qs}`);
+    return {
+      items: envelope.data ?? [],
+      language: (envelope.meta.language as string) ?? "en",
+      languageFallback: Boolean(envelope.meta.language_fallback),
+    };
+  },
 };

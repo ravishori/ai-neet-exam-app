@@ -13,6 +13,7 @@ class UserResponse(BaseModel):
     status: str
     email_verified: bool
     roles: list[str]
+    preferred_language: str
     last_login_at: datetime | None
     created_at: datetime
 
