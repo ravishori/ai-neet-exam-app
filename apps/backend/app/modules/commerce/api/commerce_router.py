@@ -5,6 +5,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.config import get_settings
 from app.core.database import get_db
+from app.core.rate_limit import rate_limit_per_user
 from app.modules.commerce.models import Order
 from app.modules.commerce.schemas.commerce import VerifyPaymentRequest
 from app.modules.commerce.services.commerce_service import CommerceService
@@ -27,13 +28,19 @@ def _order_response(order: Order) -> dict:
     }
 
 
-@router.post("/orders", dependencies=[Depends(verify_csrf)])
+@router.post(
+    "/orders",
+    dependencies=[Depends(verify_csrf), Depends(rate_limit_per_user("commerce.create_order", limit=10, window_seconds=600))],
+)
 async def create_order(user: User = Depends(get_current_user), db: AsyncSession = Depends(get_db)):
     order = await CommerceService(db).create_order(user.id)
     return envelope(success=True, data=_order_response(order), status_code=201)
 
 
-@router.post("/orders/{order_id}/verify", dependencies=[Depends(verify_csrf)])
+@router.post(
+    "/orders/{order_id}/verify",
+    dependencies=[Depends(verify_csrf), Depends(rate_limit_per_user("commerce.verify_order", limit=10, window_seconds=600))],
+)
 async def verify_order(
     order_id: uuid.UUID,
     payload: VerifyPaymentRequest,

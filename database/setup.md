@@ -25,6 +25,20 @@ schemas (`identity, academic, cms, assessment, ai, analytics, commerce,
 system`). This is the reproducible path — `database/schema_init.sql` is kept
 only as a manual reference/fallback.
 
+## 3. Integration test database (one-time, per ADR-0020)
+
+```bash
+psql -U postgres -h localhost -c "CREATE DATABASE trinetra_test_db OWNER trinetra_app;"
+cd apps/backend
+DATABASE_URL="postgresql+asyncpg://trinetra_app:trinetra_dev_pw@localhost:5432/trinetra_test_db" \
+DATABASE_URL_SYNC="postgresql+psycopg://trinetra_app:trinetra_dev_pw@localhost:5432/trinetra_test_db" \
+alembic upgrade head
+```
+
+`conftest.py` points every test run at this database automatically —
+never the dev database. Re-run the `alembic upgrade head` step above
+whenever a new migration is added; `pytest` doesn't run migrations itself.
+
 ## Known local gaps (this machine, 2026-08-01)
 
 - `pgcrypto` fails to load (`pgcrypto.dll` procedure not found) on this

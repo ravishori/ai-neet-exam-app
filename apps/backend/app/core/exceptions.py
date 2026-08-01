@@ -2,7 +2,10 @@ from fastapi import Request
 from fastapi.exceptions import RequestValidationError
 from starlette.exceptions import HTTPException as StarletteHTTPException
 
+from app.core.logging import get_logger
 from app.shared.responses import envelope
+
+logger = get_logger("exceptions")
 
 
 class AppError(Exception):
@@ -56,6 +59,18 @@ async def validation_exception_handler(request: Request, exc: RequestValidationE
 
 async def unhandled_exception_handler(request: Request, exc: Exception):
     trace_id = getattr(request.state, "trace_id", None)
+    # The client only ever sees the generic message below — never leak
+    # exception details externally — but without this, an unhandled error
+    # is otherwise invisible server-side too, once a handler is registered
+    # for the base Exception class (Starlette's own default traceback
+    # logging is bypassed the moment a custom handler takes over).
+    logger.error(
+        "unhandled_exception",
+        method=request.method,
+        path=request.url.path,
+        trace_id=trace_id,
+        exc_info=exc,
+    )
     return envelope(
         success=False,
         errors=[{"code": "INTERNAL_ERROR", "message": "Something went wrong. Try again shortly."}],

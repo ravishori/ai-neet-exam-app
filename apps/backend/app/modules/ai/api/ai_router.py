@@ -5,6 +5,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.database import get_db
 from app.core.exceptions import NotFoundError
+from app.core.rate_limit import rate_limit_per_user
 from app.modules.ai.models import StudyPlan
 from app.modules.ai.repositories.ai_repository import AIRepository
 from app.modules.ai.schemas.ai import GenerateQuestionRequest, StudyPlanRequest, TutorExplainRequest
@@ -42,7 +43,14 @@ def _study_plan(p: StudyPlan) -> dict:
     }
 
 
-@router.post("/tutor/explain", dependencies=[Depends(require_permission("ai.use")), Depends(verify_csrf)])
+@router.post(
+    "/tutor/explain",
+    dependencies=[
+        Depends(require_permission("ai.use")),
+        Depends(verify_csrf),
+        Depends(rate_limit_per_user("ai.tutor", limit=20, window_seconds=300)),
+    ],
+)
 async def tutor_explain(payload: TutorExplainRequest, user: User = Depends(get_current_user), db: AsyncSession = Depends(get_db)):
     service = TutorService(db)
     result = await service.explain(concept_id=uuid.UUID(payload.concept_id), question=payload.question, user_id=user.id)
@@ -51,7 +59,11 @@ async def tutor_explain(payload: TutorExplainRequest, user: User = Depends(get_c
 
 @router.post(
     "/questions/generate",
-    dependencies=[Depends(require_permission("content.create")), Depends(verify_csrf)],
+    dependencies=[
+        Depends(require_permission("content.create")),
+        Depends(verify_csrf),
+        Depends(rate_limit_per_user("ai.question_generator", limit=10, window_seconds=600)),
+    ],
 )
 async def generate_question(payload: GenerateQuestionRequest, user: User = Depends(get_current_user), db: AsyncSession = Depends(get_db)):
     service = QuestionGeneratorService(db)
@@ -59,7 +71,14 @@ async def generate_question(payload: GenerateQuestionRequest, user: User = Depen
     return envelope(success=True, data={**_content_item(item), "is_fallback": is_fallback}, status_code=201)
 
 
-@router.post("/study-plan", dependencies=[Depends(require_permission("ai.use")), Depends(verify_csrf)])
+@router.post(
+    "/study-plan",
+    dependencies=[
+        Depends(require_permission("ai.use")),
+        Depends(verify_csrf),
+        Depends(rate_limit_per_user("ai.study_planner", limit=5, window_seconds=3600)),
+    ],
+)
 async def generate_study_plan(payload: StudyPlanRequest, user: User = Depends(get_current_user), db: AsyncSession = Depends(get_db)):
     service = StudyPlannerService(db)
     plan = await service.generate(
