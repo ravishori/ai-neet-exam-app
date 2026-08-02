@@ -20,6 +20,7 @@ from app.modules.ingestion.services.pdf_extraction_service import (
     extract_pages,
     split_into_sections,
 )
+from app.modules.ingestion.services.language_service import LANGUAGE_NAMES, detect_language, normalize_unicode, resolve_content_language
 from app.modules.ingestion.services.visual_asset_detection_service import crop_and_store, detect_visual_assets
 from app.modules.knowledge.models import KnowledgeUnit
 from app.modules.knowledge.services.knowledge_rendering import render_facts_for_prompt
@@ -169,12 +170,17 @@ class IngestionPipelineService:
         matched: list[tuple[ExtractedSection, IngestionSection, Concept]] = []
         for section in sections:
             result = await self.repo.match_concept_for_heading(job.chapter_id, section.heading)
+            normalized_text = normalize_unicode(section.text)
+            detected = detect_language(normalized_text)
             section_row = IngestionSection(
                 job_id=job.id,
                 heading=section.heading,
                 source_page=section.source_page,
-                raw_text=section.text,
+                raw_text=normalized_text,
                 matched_concept_id=result[0].id if result else None,
+                language_code=detected.language_code,
+                language_name=LANGUAGE_NAMES[detected.language_code],
+                language_confidence=detected.confidence,
             )
             self.repo.add_section(section_row)
             if result:
@@ -227,7 +233,9 @@ class IngestionPipelineService:
             await self._generate_questions_for_section(
                 job=job, section=section, section_row=section_row, concept=concept, unit=unit, author_id=author_id
             )
-            await self._generate_flashcards_for_section(job=job, section=section, concept=concept, unit=unit, author_id=author_id)
+            await self._generate_flashcards_for_section(
+                job=job, section=section, section_row=section_row, concept=concept, unit=unit, author_id=author_id
+            )
 
         await self.repo.commit()
 
@@ -241,6 +249,7 @@ class IngestionPipelineService:
         unit: KnowledgeUnit,
         author_id: uuid.UUID,
     ) -> None:
+        content_language = resolve_content_language(section_row.language_code, get_settings().supported_language_list)
         user_prompt = ingestion_mcq.build_prompt(
             concept_name=concept.name,
             section_heading=section.heading,
@@ -278,7 +287,7 @@ class IngestionPipelineService:
                 title=f"Ingested question — {concept.name} (p.{section.source_page})",
                 slug=f"ingested-{concept.code}-{uuid.uuid4().hex[:8]}",
                 tags=["ai-generated", "ingested", f"source-page-{section.source_page}"],
-                language="en",
+                language=content_language,
                 body=validated,
                 author_id=author_id,
                 knowledge_unit_refs=[(unit.id, unit.version)],
@@ -293,8 +302,16 @@ class IngestionPipelineService:
         await self.repo.commit()
 
     async def _generate_flashcards_for_section(
-        self, *, job: IngestionJob, section: ExtractedSection, concept: Concept, unit: KnowledgeUnit, author_id: uuid.UUID
+        self,
+        *,
+        job: IngestionJob,
+        section: ExtractedSection,
+        section_row: IngestionSection,
+        concept: Concept,
+        unit: KnowledgeUnit,
+        author_id: uuid.UUID,
     ) -> None:
+        content_language = resolve_content_language(section_row.language_code, get_settings().supported_language_list)
         user_prompt = ingestion_flashcards.build_prompt(
             concept_name=concept.name,
             section_heading=section.heading,
@@ -326,7 +343,7 @@ class IngestionPipelineService:
                 title=f"Ingested flashcard — {concept.name} (p.{section.source_page})",
                 slug=f"ingested-fc-{concept.code}-{uuid.uuid4().hex[:8]}",
                 tags=["ai-generated", "ingested", f"source-page-{section.source_page}"],
-                language="en",
+                language=content_language,
                 body=validated,
                 author_id=author_id,
                 knowledge_unit_refs=[(unit.id, unit.version)],
@@ -374,6 +391,12 @@ class IngestionPipelineService:
 
             units = [knowledge_units[row.id] for _, row in passed]
             excerpts = [(s.heading, render_facts_for_prompt(knowledge_units[row.id])) for s, row in passed]
+            # A note synthesizes across every passed section for this concept;
+            # sections within one concept are effectively always uniform in
+            # language in practice, so the first contributing section's
+            # detected language stands in for the whole note (KISS — see
+            # ADR-0027) rather than a per-section language mix.
+            content_language = resolve_content_language(passed[0][1].language_code, get_settings().supported_language_list)
             user_prompt = ingestion_concept_note.build_prompt(concept_name=concept.name, excerpts=excerpts)
             response = await self.gateway.generate(
                 agent_type="INGESTION_CONCEPT_NOTE",
@@ -399,7 +422,7 @@ class IngestionPipelineService:
                 title=f"Ingested note — {concept.name}",
                 slug=f"ingested-note-{concept.code}-{uuid.uuid4().hex[:8]}",
                 tags=["ai-generated", "ingested"],
-                language="en",
+                language=content_language,
                 body=validated,
                 author_id=author_id,
                 knowledge_unit_refs=[(u.id, u.version) for u in units],
@@ -435,6 +458,9 @@ class IngestionPipelineService:
         chapter = await self.repo.get_chapter(job.chapter_id)
         units = [knowledge_units[row.id] for _, row, _ in passed_matched]
         excerpts = [(section.heading, render_facts_for_prompt(knowledge_units[row.id])) for section, row, _ in passed_matched]
+        # Same first-contributing-section rule as concept notes (ADR-0027) —
+        # a chapter's sections are effectively always one language in practice.
+        content_language = resolve_content_language(passed_matched[0][1].language_code, get_settings().supported_language_list)
         user_prompt = ingestion_revision_sheet.build_prompt(chapter_name=chapter.name, excerpts=excerpts)
         response = await self.gateway.generate(
             agent_type="INGESTION_REVISION_SHEET",
@@ -460,7 +486,7 @@ class IngestionPipelineService:
             title=f"Ingested revision sheet — {chapter.name}",
             slug=f"ingested-revision-{chapter.code}-{uuid.uuid4().hex[:8]}",
             tags=["ai-generated", "ingested"],
-            language="en",
+            language=content_language,
             body=validated,
             author_id=author_id,
             knowledge_unit_refs=[(u.id, u.version) for u in units],

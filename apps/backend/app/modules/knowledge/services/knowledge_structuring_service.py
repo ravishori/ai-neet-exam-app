@@ -9,6 +9,7 @@ from app.modules.academic.models import Concept
 from app.modules.ai.gateway.ai_gateway import AIGateway
 from app.modules.ai.services.json_utils import parse_json_response
 from app.modules.ingestion.models import IngestionSection
+from app.modules.ingestion.services.language_service import clean_text
 from app.modules.knowledge.models import KnowledgeUnit
 from app.modules.knowledge.prompts import knowledge_structuring
 from app.modules.knowledge.repositories.knowledge_repository import KnowledgeRepository
@@ -41,10 +42,14 @@ class KnowledgeStructuringService:
         unless the AI call itself produced nothing usable (fallback mode or
         unparseable JSON), in which case no row is created at all rather
         than recording a unit with no real content to gate-check."""
+        # clean_text (ADR-0027) is applied here, at use time, rather than to
+        # the stored raw_text — punctuation/OCR-artifact normalization helps
+        # the model read the source cleanly without rewriting the citation
+        # text section.raw_text is kept as (see IngestionSection docstring).
         user_prompt = knowledge_structuring.build_prompt(
             concept_name=concept.name,
             section_heading=section.heading,
-            source_text=section.raw_text[:MAX_SECTION_CHARS_IN_PROMPT],
+            source_text=clean_text(section.raw_text)[:MAX_SECTION_CHARS_IN_PROMPT],
             source_page=section.source_page,
         )
         response = await self.gateway.generate(

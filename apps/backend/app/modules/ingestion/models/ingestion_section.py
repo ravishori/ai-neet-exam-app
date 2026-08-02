@@ -1,6 +1,6 @@
 import uuid
 
-from sqlalchemy import ForeignKey, Integer, String, Text
+from sqlalchemy import Float, ForeignKey, Integer, String, Text
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
@@ -26,5 +26,13 @@ class IngestionSection(Base, AuditedBase):
         UUID(as_uuid=True), ForeignKey("academic.concepts.id", ondelete="SET NULL")
     )
     questions_generated: Mapped[int] = mapped_column(Integer, default=0, nullable=False)
+
+    # Language metadata (ADR-0027) — nullable: historical rows created
+    # before this ADR have none, same non-backfill precedent as every prior
+    # additive column in this project (e.g. ADR-0025's traceability
+    # columns). Populated for every row created from this point forward.
+    language_code: Mapped[str | None] = mapped_column(String(10))  # "en" | "hi" | "mixed"
+    language_name: Mapped[str | None] = mapped_column(String(20))  # "English" | "Hindi" | "Mixed"
+    language_confidence: Mapped[float | None] = mapped_column(Float)
 
     job: Mapped["IngestionJob"] = relationship(back_populates="sections")

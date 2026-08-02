@@ -20,6 +20,11 @@ class Settings(BaseSettings):
 
     cors_origins: str = "http://localhost:3000"
 
+    # Language processing (ADR-0027) — adding a third language is a config
+    # change here plus whatever new detection/normalization rules it needs
+    # in LanguageService, not a schema or architecture change.
+    supported_languages: str = "en,hi"
+
     anthropic_api_key: str = ""
     ai_default_model: str = "claude-sonnet-4-6"
 
@@ -39,6 +44,10 @@ class Settings(BaseSettings):
     @property
     def cors_origin_list(self) -> list[str]:
         return [origin.strip() for origin in self.cors_origins.split(",") if origin.strip()]
+
+    @property
+    def supported_language_list(self) -> list[str]:
+        return [code.strip() for code in self.supported_languages.split(",") if code.strip()]
 
     @property
     def is_production(self) -> bool:
