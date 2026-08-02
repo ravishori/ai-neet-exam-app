@@ -44,6 +44,9 @@ def _job(job: IngestionJob) -> dict:
         "sections_detected": job.sections_detected,
         "questions_generated": job.questions_generated,
         "questions_deduped": job.questions_deduped,
+        "flashcards_generated": job.flashcards_generated,
+        "notes_generated": job.notes_generated,
+        "revision_sheets_generated": job.revision_sheets_generated,
         "created_at": job.created_at,
         "updated_at": job.updated_at,
     }

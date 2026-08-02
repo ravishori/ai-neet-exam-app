@@ -4,6 +4,7 @@ from sqlalchemy import select, text
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.modules.academic.models import Chapter, Concept
+from app.modules.cms.models import ContentItem
 from app.modules.ingestion.models import IngestionJob, IngestionSection
 
 # Empirically chosen against the real Current Electricity pilot chapter —
@@ -45,6 +46,10 @@ class IngestionRepository:
         result = await self.session.execute(select(Chapter).where(Chapter.code == chapter_code))
         return result.scalars().first()
 
+    async def get_chapter(self, chapter_id: uuid.UUID) -> Chapter | None:
+        result = await self.session.execute(select(Chapter).where(Chapter.id == chapter_id))
+        return result.scalar_one_or_none()
+
     async def match_concept_for_heading(self, chapter_id: uuid.UUID, heading: str) -> tuple[Concept, float] | None:
         """Best-matching concept under this chapter for a section heading,
         via Postgres trigram similarity — see CONCEPT_MATCH_THRESHOLD."""
@@ -85,6 +90,19 @@ class IngestionRepository:
                 """
             ),
             {"concept_id": str(concept_id), "stem": stem, "threshold": DEDUP_SIMILARITY_THRESHOLD},
+        )
+        return result.first() is not None
+
+    async def has_concept_note(self, concept_id: uuid.UUID) -> bool:
+        """True if this concept already has a non-archived CONCEPT_NOTE —
+        keeps re-running a job (or ingesting another chapter section that
+        maps to the same concept) from flooding duplicate notes."""
+        result = await self.session.execute(
+            select(ContentItem.id).where(
+                ContentItem.concept_id == concept_id,
+                ContentItem.content_type == "CONCEPT_NOTE",
+                ContentItem.status != "ARCHIVED",
+            )
         )
         return result.first() is not None
 

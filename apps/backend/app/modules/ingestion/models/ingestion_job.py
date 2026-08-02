@@ -1,6 +1,6 @@
 import uuid
 
-from sqlalchemy import ForeignKey, Integer, String, Text
+from sqlalchemy import ForeignKey, Index, Integer, String, Text
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
@@ -14,7 +14,11 @@ JOB_STATUSES = ("PENDING", "EXTRACTING", "MATCHING", "GENERATING", "COMPLETED", 
 
 class IngestionJob(Base, AuditedBase):
     __tablename__ = "ingestion_jobs"
-    __table_args__ = {"schema": "ingestion"}
+    __table_args__ = (
+        Index("ix_ingestion_jobs_checksum", "file_checksum"),
+        Index("ix_ingestion_jobs_status", "status"),
+        {"schema": "ingestion"},
+    )
 
     source_file_path: Mapped[str] = mapped_column(String(1000), nullable=False)
     file_checksum: Mapped[str] = mapped_column(String(64), nullable=False)  # sha256 hex
@@ -30,6 +34,9 @@ class IngestionJob(Base, AuditedBase):
     sections_detected: Mapped[int] = mapped_column(Integer, default=0, nullable=False)
     questions_generated: Mapped[int] = mapped_column(Integer, default=0, nullable=False)
     questions_deduped: Mapped[int] = mapped_column(Integer, default=0, nullable=False)
+    flashcards_generated: Mapped[int] = mapped_column(Integer, default=0, nullable=False)
+    notes_generated: Mapped[int] = mapped_column(Integer, default=0, nullable=False)
+    revision_sheets_generated: Mapped[int] = mapped_column(Integer, default=0, nullable=False)
 
     sections: Mapped[list["IngestionSection"]] = relationship(
         back_populates="job", order_by="IngestionSection.source_page", cascade="all, delete-orphan"
