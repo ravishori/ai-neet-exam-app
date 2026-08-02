@@ -30,6 +30,12 @@ class Settings(BaseSettings):
     # rejected otherwise. Defaults to <repo root>/StudyMaterial.
     study_material_dir: str = str(Path(__file__).resolve().parents[4] / "StudyMaterial")
 
+    # Visual asset crops (ADR-0026) — local filesystem for now, not object
+    # storage (no S3/Blob/GCS is provisioned for this project). Migrating to
+    # object storage is a distinct, separately-justified decision, not
+    # something to default toward speculatively.
+    visual_assets_dir: str = str(Path(__file__).resolve().parents[4] / "VisualAssets")
+
     @property
     def cors_origin_list(self) -> list[str]:
         return [origin.strip() for origin in self.cors_origins.split(",") if origin.strip()]

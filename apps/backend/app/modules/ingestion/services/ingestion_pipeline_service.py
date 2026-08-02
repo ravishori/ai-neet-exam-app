@@ -3,6 +3,7 @@ from collections import defaultdict
 
 from sqlalchemy.ext.asyncio import AsyncSession
 
+from app.core.config import get_settings
 from app.core.exceptions import NotFoundError
 from app.core.logging import get_logger
 from app.modules.academic.models import Concept
@@ -10,7 +11,7 @@ from app.modules.ai.gateway.ai_gateway import AIGateway
 from app.modules.ai.services.json_utils import parse_json_response
 from app.modules.cms.schemas.content_bodies import validate_body
 from app.modules.cms.services.content_workflow_service import ContentWorkflowService
-from app.modules.ingestion.models import IngestionJob, IngestionSection
+from app.modules.ingestion.models import IngestionJob, IngestionSection, VisualAsset
 from app.modules.ingestion.prompts import ingestion_concept_note, ingestion_flashcards, ingestion_mcq, ingestion_revision_sheet
 from app.modules.ingestion.repositories.ingestion_repository import IngestionRepository
 from app.modules.ingestion.services.pdf_extraction_service import (
@@ -19,6 +20,7 @@ from app.modules.ingestion.services.pdf_extraction_service import (
     extract_pages,
     split_into_sections,
 )
+from app.modules.ingestion.services.visual_asset_detection_service import crop_and_store, detect_visual_assets
 from app.modules.knowledge.models import KnowledgeUnit
 from app.modules.knowledge.services.knowledge_rendering import render_facts_for_prompt
 from app.modules.knowledge.services.knowledge_structuring_service import KnowledgeStructuringService
@@ -81,6 +83,7 @@ class IngestionPipelineService:
 
         try:
             sections = await self._run_extraction(job)
+            await self._run_asset_detection(job)
             matched = await self._run_matching(job, sections)
             knowledge_units = await self._run_structuring(job, matched, author_id)
             await self._run_generation(job, matched, knowledge_units, author_id)
@@ -113,6 +116,49 @@ class IngestionPipelineService:
         sections = split_into_sections(pages)
         job.sections_detected = len(sections)
         return sections
+
+    async def _run_asset_detection(self, job: IngestionJob) -> None:
+        """Detects visual assets (ADR-0026) — independent of section
+        matching, so it runs right after text extraction rather than after
+        _run_matching. A row is created for every detected asset, whether
+        or not its bounding box is confidently isolated (see
+        visual_asset_detection_service's module docstring); only the
+        review_status differs, never whether a row exists at all."""
+        job.stage_detail = "Detecting visual assets"
+        await self.repo.commit()
+
+        settings = get_settings()
+        detected = detect_visual_assets(job.source_file_path)
+        for asset in detected:
+            x0, y0, x1, y1 = asset.bounding_box
+            row = VisualAsset(
+                job_id=job.id,
+                source_page=asset.source_page,
+                bounding_box={"x0": x0, "y0": y0, "x1": x1, "y1": y1, "unit": "pdf_points_72dpi"},
+                asset_type=asset.asset_type,
+                detection_method=asset.detection_method,
+                review_status=asset.review_status,
+            )
+            crop_info = crop_and_store(job.source_file_path, asset, settings.visual_assets_dir)
+            row.storage_path = crop_info["storage_path"]
+            row.content_hash = crop_info["content_hash"]
+            row.width_px = crop_info["width_px"]
+            row.height_px = crop_info["height_px"]
+            row.render_dpi = crop_info["render_dpi"]
+
+            self.repo.add_visual_asset(row)
+            job.visual_assets_detected += 1
+            if asset.review_status == "NEEDS_MANUAL_BBOX":
+                job.visual_assets_needing_review += 1
+
+        job.stage_detail = f"Detected {job.visual_assets_detected} visual assets ({job.visual_assets_needing_review} need review)"
+        await self.repo.commit()
+        logger.info(
+            "ingestion_asset_detection_complete",
+            job_id=str(job.id),
+            detected=job.visual_assets_detected,
+            needing_review=job.visual_assets_needing_review,
+        )
 
     async def _run_matching(
         self, job: IngestionJob, sections: list[ExtractedSection]

@@ -5,7 +5,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.modules.academic.models import Chapter, Concept
 from app.modules.cms.models import ContentItem
-from app.modules.ingestion.models import IngestionJob, IngestionSection
+from app.modules.ingestion.models import IngestionJob, IngestionSection, VisualAsset
 
 # Empirically chosen against the real Current Electricity pilot chapter —
 # see ADR-0022. "3.4 OHM'S LAW" -> concept "Ohm's Law" scores 0.71;
@@ -41,6 +41,9 @@ class IngestionRepository:
 
     def add_section(self, section: IngestionSection) -> None:
         self.session.add(section)
+
+    def add_visual_asset(self, asset: VisualAsset) -> None:
+        self.session.add(asset)
 
     async def get_chapter_by_code(self, chapter_code: str) -> Chapter | None:
         result = await self.session.execute(select(Chapter).where(Chapter.code == chapter_code))

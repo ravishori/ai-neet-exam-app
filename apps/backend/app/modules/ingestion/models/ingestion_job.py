@@ -13,6 +13,9 @@ from app.shared.mixins import AuditedBase
 # GENERATING (ADR-0025) now reads only PASSED Knowledge Units, never raw
 # section text directly — a section/concept/chapter with no PASSED unit
 # is skipped, not silently generated from raw text.
+# Visual asset detection (ADR-0026) runs during EXTRACTING, alongside text
+# extraction — it doesn't get its own status, the same way section-splitting
+# doesn't.
 JOB_STATUSES = ("PENDING", "EXTRACTING", "MATCHING", "STRUCTURING", "GENERATING", "COMPLETED", "FAILED")
 
 
@@ -44,6 +47,8 @@ class IngestionJob(Base, AuditedBase):
     knowledge_units_created: Mapped[int] = mapped_column(Integer, default=0, nullable=False)
     knowledge_units_rejected: Mapped[int] = mapped_column(Integer, default=0, nullable=False)
     generation_skipped_no_knowledge_unit: Mapped[int] = mapped_column(Integer, default=0, nullable=False)
+    visual_assets_detected: Mapped[int] = mapped_column(Integer, default=0, nullable=False)
+    visual_assets_needing_review: Mapped[int] = mapped_column(Integer, default=0, nullable=False)
 
     sections: Mapped[list["IngestionSection"]] = relationship(
         back_populates="job", order_by="IngestionSection.source_page", cascade="all, delete-orphan"

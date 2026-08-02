@@ -49,6 +49,8 @@ def _job(job: IngestionJob) -> dict:
         "revision_sheets_generated": job.revision_sheets_generated,
         "knowledge_units_created": job.knowledge_units_created,
         "knowledge_units_rejected": job.knowledge_units_rejected,
+        "visual_assets_detected": job.visual_assets_detected,
+        "visual_assets_needing_review": job.visual_assets_needing_review,
         "created_at": job.created_at,
         "updated_at": job.updated_at,
     }
