@@ -47,6 +47,8 @@ def _job(job: IngestionJob) -> dict:
         "flashcards_generated": job.flashcards_generated,
         "notes_generated": job.notes_generated,
         "revision_sheets_generated": job.revision_sheets_generated,
+        "knowledge_units_created": job.knowledge_units_created,
+        "knowledge_units_rejected": job.knowledge_units_rejected,
         "created_at": job.created_at,
         "updated_at": job.updated_at,
     }

@@ -14,6 +14,7 @@ from app.modules.cms import models as cms_models  # noqa: F401
 from app.modules.commerce import models as commerce_models  # noqa: F401
 from app.modules.identity import models as identity_models  # noqa: F401
 from app.modules.ingestion import models as ingestion_models  # noqa: F401
+from app.modules.knowledge import models as knowledge_models  # noqa: F401
 from app.modules.learning import models as learning_models  # noqa: F401
 from app.modules.system import models as system_models  # noqa: F401
 

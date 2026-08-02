@@ -19,6 +19,7 @@ from app.modules.ingestion.services.pdf_extraction_service import (
     extract_pages,
     split_into_sections,
 )
+from app.modules.knowledge.services.knowledge_structuring_service import KnowledgeStructuringService
 
 logger = get_logger("ingestion")
 
@@ -38,6 +39,7 @@ class IngestionPipelineService:
         self.repo = IngestionRepository(session)
         self.workflow = ContentWorkflowService(session)
         self.gateway = AIGateway(session)
+        self.structuring = KnowledgeStructuringService(session)
 
     async def start_job(self, *, file_path: str, chapter_code: str) -> IngestionJob:
         checksum = compute_checksum(file_path)
@@ -74,6 +76,7 @@ class IngestionPipelineService:
         try:
             sections = await self._run_extraction(job)
             matched = await self._run_matching(job, sections)
+            await self._run_structuring(job, matched, author_id)
             await self._run_generation(job, matched, author_id)
             await self._run_concept_notes(job, matched, author_id)
             await self._run_revision_sheet(job, matched, author_id)
@@ -129,6 +132,27 @@ class IngestionPipelineService:
         await self.repo.flush()
         await self.repo.commit()
         return matched
+
+    async def _run_structuring(self, job: IngestionJob, matched: list[Matched], author_id: uuid.UUID) -> None:
+        """Creates a gate-checked Knowledge Unit per matched section — see
+        ADR-0024. Deliberately does not feed GENERATING below; that's PR 2.
+        A structuring failure (AI fallback, bad JSON, gate rejection) is
+        recorded and the pipeline proceeds — generation from raw text is
+        unaffected either way in this PR."""
+        job.status = "STRUCTURING"
+        job.stage_detail = f"Structuring knowledge units for {len(matched)} matched sections"
+        await self.repo.commit()
+
+        for _section, section_row, concept in matched:
+            unit = await self.structuring.structure_section(section=section_row, concept=concept, author_id=author_id)
+            if unit is None:
+                continue
+            if unit.validation_status == "PASSED":
+                job.knowledge_units_created += 1
+            else:
+                job.knowledge_units_rejected += 1
+
+        await self.repo.commit()
 
     async def _run_generation(self, job: IngestionJob, matched: list[Matched], author_id: uuid.UUID) -> None:
         job.status = "GENERATING"

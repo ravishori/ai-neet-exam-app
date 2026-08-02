@@ -7,9 +7,13 @@ from sqlalchemy.orm import Mapped, mapped_column, relationship
 from app.core.database import Base
 from app.shared.mixins import AuditedBase
 
-# PENDING -> EXTRACTING -> MATCHING -> GENERATING -> COMPLETED
-#                                                  \-> FAILED (any stage)
-JOB_STATUSES = ("PENDING", "EXTRACTING", "MATCHING", "GENERATING", "COMPLETED", "FAILED")
+# PENDING -> EXTRACTING -> MATCHING -> STRUCTURING -> GENERATING -> COMPLETED
+#                                                                 \-> FAILED (any stage)
+# STRUCTURING (ADR-0024) creates Knowledge Units from matched sections; it
+# runs before GENERATING but GENERATING still reads raw section text
+# directly in this PR — see ADR-0024 for why the two are deliberately not
+# yet connected.
+JOB_STATUSES = ("PENDING", "EXTRACTING", "MATCHING", "STRUCTURING", "GENERATING", "COMPLETED", "FAILED")
 
 
 class IngestionJob(Base, AuditedBase):
@@ -37,6 +41,8 @@ class IngestionJob(Base, AuditedBase):
     flashcards_generated: Mapped[int] = mapped_column(Integer, default=0, nullable=False)
     notes_generated: Mapped[int] = mapped_column(Integer, default=0, nullable=False)
     revision_sheets_generated: Mapped[int] = mapped_column(Integer, default=0, nullable=False)
+    knowledge_units_created: Mapped[int] = mapped_column(Integer, default=0, nullable=False)
+    knowledge_units_rejected: Mapped[int] = mapped_column(Integer, default=0, nullable=False)
 
     sections: Mapped[list["IngestionSection"]] = relationship(
         back_populates="job", order_by="IngestionSection.source_page", cascade="all, delete-orphan"
