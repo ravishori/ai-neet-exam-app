@@ -5,7 +5,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.exceptions import AppError
 from app.core.logging import get_logger
-from app.modules.cms.models import ContentItem, ContentReview, ContentVersion
+from app.modules.cms.models import ContentItem, ContentReview, ContentVersion, ContentVersionKnowledgeUnit
 from app.modules.cms.repositories.cms_repository import CmsRepository
 from app.modules.cms.schemas.content_bodies import CONTENT_TYPES, validate_body
 from app.modules.cms.services.ai_check_service import run_ai_check
@@ -40,7 +40,18 @@ class ContentWorkflowService:
         body: dict,
         author_id: uuid.UUID,
         micro_competency_id: uuid.UUID | None = None,
+        knowledge_unit_refs: list[tuple[uuid.UUID, int]] | None = None,
+        model_used: str | None = None,
+        prompt_version: str | None = None,
+        confidence_score: float | None = None,
+        generation_cost_usd: float | None = None,
     ) -> ContentItem:
+        """knowledge_unit_refs is the full set of (knowledge_unit_id, version)
+        pairs this content was generated from — see ADR-0025. When there is
+        exactly one, it's also mirrored onto the version's singular
+        knowledge_unit_id/knowledge_unit_version columns for easy querying;
+        with more than one, those two columns stay NULL and the join rows
+        below are the only complete record."""
         if content_type not in CONTENT_TYPES:
             raise AppError(f"Unknown content_type: {content_type}", code="INVALID_CONTENT_TYPE", status_code=400)
         validated_body = validate_body(content_type, body)
@@ -59,6 +70,7 @@ class ContentWorkflowService:
         self.repo.add_item(item)
         await self.repo.flush()
 
+        refs = knowledge_unit_refs or []
         version = ContentVersion(
             content_item_id=item.id,
             version_no=1,
@@ -66,9 +78,22 @@ class ContentWorkflowService:
             workflow_state="DRAFT",
             authored_by=author_id,
             authored_at=datetime.now(UTC),
+            knowledge_unit_id=refs[0][0] if len(refs) == 1 else None,
+            knowledge_unit_version=refs[0][1] if len(refs) == 1 else None,
+            model_used=model_used,
+            prompt_version=prompt_version,
+            confidence_score=confidence_score,
+            generation_cost_usd=generation_cost_usd,
         )
         self.repo.add_version(version)
         await self.repo.flush()
+
+        for unit_id, unit_version in refs:
+            self.repo.add_knowledge_unit_ref(
+                ContentVersionKnowledgeUnit(
+                    content_version_id=version.id, knowledge_unit_id=unit_id, knowledge_unit_version=unit_version
+                )
+            )
 
         item.latest_version_id = version.id
         await self.repo.commit()

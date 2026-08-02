@@ -25,6 +25,10 @@ def _build_provider() -> AIProvider:
     return FallbackProvider()
 
 
+def _estimate_cost(prompt_tokens: int, completion_tokens: int) -> float:
+    return prompt_tokens * _PRICE_PER_INPUT_TOKEN + completion_tokens * _PRICE_PER_OUTPUT_TOKEN
+
+
 class AIGateway:
     """The only way any agent talks to a model — logs cost/latency for every call."""
 
@@ -48,17 +52,19 @@ class AIGateway:
             error_message = None
         except Exception as exc:  # noqa: BLE001 — logged below, always re-raised
             latency_ms = int((time.perf_counter() - started) * 1000)
-            await self._log(agent_type, user_id, "error", 0, 0, latency_ms, is_fallback=False, success=False, error_message=str(exc))
+            await self._log(agent_type, user_id, "error", 0, 0, 0.0, latency_ms, is_fallback=False, success=False, error_message=str(exc))
             logger.error("ai_request_failed", agent_type=agent_type, error=str(exc))
             raise
 
         latency_ms = int((time.perf_counter() - started) * 1000)
+        response.cost_usd = _estimate_cost(response.prompt_tokens, response.completion_tokens)
         await self._log(
             agent_type,
             user_id,
             response.model,
             response.prompt_tokens,
             response.completion_tokens,
+            response.cost_usd,
             latency_ms,
             is_fallback=response.is_fallback,
             success=success,
@@ -73,13 +79,13 @@ class AIGateway:
         model: str,
         prompt_tokens: int,
         completion_tokens: int,
+        cost: float,
         latency_ms: int,
         *,
         is_fallback: bool,
         success: bool,
         error_message: str | None,
     ) -> None:
-        cost = prompt_tokens * _PRICE_PER_INPUT_TOKEN + completion_tokens * _PRICE_PER_OUTPUT_TOKEN
         self.session.add(
             AIRequestLog(
                 agent_type=agent_type,

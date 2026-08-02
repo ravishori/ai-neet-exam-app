@@ -9,10 +9,10 @@ from app.shared.mixins import AuditedBase
 
 # PENDING -> EXTRACTING -> MATCHING -> STRUCTURING -> GENERATING -> COMPLETED
 #                                                                 \-> FAILED (any stage)
-# STRUCTURING (ADR-0024) creates Knowledge Units from matched sections; it
-# runs before GENERATING but GENERATING still reads raw section text
-# directly in this PR — see ADR-0024 for why the two are deliberately not
-# yet connected.
+# STRUCTURING (ADR-0024) creates Knowledge Units from matched sections.
+# GENERATING (ADR-0025) now reads only PASSED Knowledge Units, never raw
+# section text directly — a section/concept/chapter with no PASSED unit
+# is skipped, not silently generated from raw text.
 JOB_STATUSES = ("PENDING", "EXTRACTING", "MATCHING", "STRUCTURING", "GENERATING", "COMPLETED", "FAILED")
 
 
@@ -43,6 +43,7 @@ class IngestionJob(Base, AuditedBase):
     revision_sheets_generated: Mapped[int] = mapped_column(Integer, default=0, nullable=False)
     knowledge_units_created: Mapped[int] = mapped_column(Integer, default=0, nullable=False)
     knowledge_units_rejected: Mapped[int] = mapped_column(Integer, default=0, nullable=False)
+    generation_skipped_no_knowledge_unit: Mapped[int] = mapped_column(Integer, default=0, nullable=False)
 
     sections: Mapped[list["IngestionSection"]] = relationship(
         back_populates="job", order_by="IngestionSection.source_page", cascade="all, delete-orphan"

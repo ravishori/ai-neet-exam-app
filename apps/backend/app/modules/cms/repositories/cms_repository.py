@@ -4,7 +4,7 @@ from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
 
-from app.modules.cms.models import ContentItem, ContentReview, ContentVersion
+from app.modules.cms.models import ContentItem, ContentReview, ContentVersion, ContentVersionKnowledgeUnit
 
 
 class CmsRepository:
@@ -19,6 +19,9 @@ class CmsRepository:
 
     def add_review(self, review: ContentReview) -> None:
         self.session.add(review)
+
+    def add_knowledge_unit_ref(self, ref: ContentVersionKnowledgeUnit) -> None:
+        self.session.add(ref)
 
     async def flush(self) -> None:
         await self.session.flush()

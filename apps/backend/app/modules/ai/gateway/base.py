@@ -9,6 +9,7 @@ class AIResponse:
     prompt_tokens: int
     completion_tokens: int
     is_fallback: bool = False
+    cost_usd: float = 0.0  # set by AIGateway.generate() after the provider returns
 
 
 class AIProvider(ABC):
