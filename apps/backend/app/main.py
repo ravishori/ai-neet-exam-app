@@ -26,6 +26,7 @@ from app.modules.commerce.api.commerce_router import router as commerce_router
 from app.modules.identity.api.auth_router import router as auth_router
 from app.modules.identity.api.roles_router import router as roles_router
 from app.modules.identity.api.users_router import router as users_router
+from app.modules.ingestion.api.ingestion_router import router as ingestion_router
 from app.modules.learning.api.mastery_router import router as mastery_router
 from app.shared.responses import envelope
 
@@ -76,6 +77,7 @@ app.include_router(ai_router)
 app.include_router(mastery_router)
 app.include_router(analytics_router)
 app.include_router(commerce_router)
+app.include_router(ingestion_router)
 
 
 @app.get("/health")

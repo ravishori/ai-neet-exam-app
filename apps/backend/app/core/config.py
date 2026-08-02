@@ -1,4 +1,5 @@
 from functools import lru_cache
+from pathlib import Path
 
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
@@ -24,6 +25,10 @@ class Settings(BaseSettings):
 
     razorpay_key_id: str = ""
     razorpay_key_secret: str = ""
+
+    # Ingestion pipeline (ADR-0022) — files must resolve inside this directory;
+    # rejected otherwise. Defaults to <repo root>/StudyMaterial.
+    study_material_dir: str = str(Path(__file__).resolve().parents[4] / "StudyMaterial")
 
     @property
     def cors_origin_list(self) -> list[str]:

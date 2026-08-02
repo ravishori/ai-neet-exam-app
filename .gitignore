@@ -34,3 +34,8 @@ Thumbs.db
 *.db
 *.sqlite3
 /database/backups/
+
+# --- Ingestion pilot source material (ADR-0022) — real copyrighted NCERT
+# PDFs, ~270MB, not code. Never belongs in git. ---
+/StudyMaterial/
+/StudyMaterial.zip
