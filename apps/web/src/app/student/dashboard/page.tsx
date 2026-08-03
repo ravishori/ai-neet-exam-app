@@ -8,9 +8,11 @@ import { Badge } from "@/components/ui/badge";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { MasteryBar } from "@/components/mastery-badge";
+import { ScoreTrendChart } from "@/components/score-trend-chart";
 import { cn } from "@/lib/utils";
 import { useMe } from "@/features/auth/use-auth";
 import { assessmentApi } from "@/features/assessment/api";
+import { computeScoreTrend } from "@/features/assessment/analytics";
 import { learningApi, type RecommendationReason } from "@/features/learning/api";
 
 const REASON_LABEL: Record<RecommendationReason, string> = {
@@ -41,6 +43,8 @@ export default function StudentDashboardPage() {
   const { data: overview } = useQuery({ queryKey: ["learning", "overview"], queryFn: learningApi.overview });
   const { data: revisionDue } = useQuery({ queryKey: ["learning", "revision-due"], queryFn: learningApi.revisionDue });
   const { data: recommendations } = useQuery({ queryKey: ["learning", "recommendations"], queryFn: learningApi.recommendations });
+  const { data: attempts } = useQuery({ queryKey: ["assessment", "attempts"], queryFn: assessmentApi.listAttempts });
+  const scoreTrend = attempts ? computeScoreTrend(attempts) : [];
 
   return (
     <main className="flex flex-1 flex-col items-center gap-6 px-6 py-16">
@@ -109,6 +113,22 @@ export default function StudentDashboardPage() {
                 <MasteryBar score={s.average_score} />
               </div>
             ))}
+          </CardContent>
+        </Card>
+      )}
+
+      {attempts && attempts.some((a) => a.status === "SUBMITTED") && (
+        <Card className="w-full max-w-sm">
+          <CardHeader>
+            <CardTitle className="text-base">Accuracy trend</CardTitle>
+            <CardDescription>
+              <Link href="/student/attempts" className="hover:underline">
+                Your last {scoreTrend.length} submitted attempts
+              </Link>
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <ScoreTrendChart points={scoreTrend} />
           </CardContent>
         </Card>
       )}

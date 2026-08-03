@@ -11,6 +11,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Skeleton } from "@/components/ui/skeleton";
 import { QuestionPalette, type PaletteQuestionStatus } from "@/components/question-palette";
 import { QuestionPanel } from "@/components/question-panel";
+import { TopicPerformanceBreakdown } from "@/components/topic-performance-breakdown";
 import { assessmentApi, type Confidence, type SaveAnswerInput } from "@/features/assessment/api";
 
 function useCountdown(startedAt: string, durationMinutes: number | null, onExpire: () => void) {
@@ -182,6 +183,18 @@ export default function AttemptRunnerPage() {
               </CardContent>
             )}
           </Card>
+
+          {isSubmitted && (
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-base">Performance by topic</CardTitle>
+                <CardDescription>How you did on each topic covered in this attempt.</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <TopicPerformanceBreakdown questions={questions} />
+              </CardContent>
+            </Card>
+          )}
 
           {/* Mobile/tablet: horizontal palette strip above the question. */}
           <div className="overflow-x-auto lg:hidden">
