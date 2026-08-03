@@ -7,6 +7,7 @@ from app.core.exceptions import AppError
 from app.core.logging import get_logger
 from app.modules.cms.models import ContentItem, ContentReview, ContentVersion, ContentVersionKnowledgeUnit
 from app.modules.cms.repositories.cms_repository import CmsRepository
+from app.modules.cms.repositories.search_repository import SearchRepository
 from app.modules.cms.schemas.content_bodies import CONTENT_TYPES, validate_body
 from app.modules.cms.services.ai_check_service import run_ai_check
 
@@ -182,6 +183,12 @@ class ContentWorkflowService:
         item.status = "PUBLISHED"
         item.current_version_id = latest.id
         await self.repo.commit()
+
+        if item.content_type == "QUESTION":
+            # PR 3 — search_text/search_vector only ever exist for PUBLISHED
+            # questions, mirroring the browse endpoint's PUBLISHED-only rule.
+            await SearchRepository(self.session).reindex_item(item.id)
+
         logger.info("content_published", item_id=str(item.id))
         return await self.repo.get_item(item.id)
 

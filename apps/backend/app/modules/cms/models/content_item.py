@@ -1,7 +1,7 @@
 import uuid
 
-from sqlalchemy import ARRAY, ForeignKey, String
-from sqlalchemy.dialects.postgresql import UUID
+from sqlalchemy import ARRAY, ForeignKey, String, Text
+from sqlalchemy.dialects.postgresql import TSVECTOR, UUID
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.core.database import Base
@@ -29,6 +29,15 @@ class ContentItem(Base, AuditedBase):
     tags: Mapped[list[str]] = mapped_column(ARRAY(String), default=list, nullable=False)
     language: Mapped[str] = mapped_column(String(10), default="en", nullable=False)
     status: Mapped[str] = mapped_column(String(30), default="DRAFT", nullable=False)
+
+    # Search index (PR 3) — maintained by SearchRepository.reindex_item(),
+    # called whenever a QUESTION is published. NULL for draft/unpublished
+    # rows and for content_types search doesn't cover yet. search_text is
+    # the plain-text source for the pg_trgm typo-tolerant fallback and for
+    # ts_headline snippets; search_vector is the weighted tsvector the GIN
+    # index and ts_rank actually query against.
+    search_text: Mapped[str | None] = mapped_column(Text)
+    search_vector: Mapped[str | None] = mapped_column(TSVECTOR)
 
     current_version_id: Mapped[uuid.UUID | None] = mapped_column(
         UUID(as_uuid=True), ForeignKey("cms.content_versions.id", use_alter=True, name="fk_current_version"), nullable=True

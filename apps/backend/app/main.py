@@ -22,6 +22,7 @@ from app.modules.ai.api.ai_router import router as ai_router
 from app.modules.analytics.api.analytics_router import router as analytics_router
 from app.modules.assessment.api.assessment_router import router as assessment_router
 from app.modules.cms.api.cms_router import router as cms_router
+from app.modules.cms.api.search_router import router as search_router
 from app.modules.commerce.api.commerce_router import router as commerce_router
 from app.modules.identity.api.auth_router import router as auth_router
 from app.modules.identity.api.roles_router import router as roles_router
@@ -72,6 +73,7 @@ app.include_router(users_router)
 app.include_router(roles_router)
 app.include_router(academic_router)
 app.include_router(cms_router)
+app.include_router(search_router)
 app.include_router(assessment_router)
 app.include_router(ai_router)
 app.include_router(mastery_router)
