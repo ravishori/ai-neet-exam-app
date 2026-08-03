@@ -15,13 +15,14 @@ database migration to undo.
 2. Set `ref` to the last known-good commit SHA or tag.
 3. This rebuilds and pushes GHCR images for that commit, then calls the
    Coolify deploy webhook — Coolify pulls git source at that ref and
-   rebuilds, exactly like any other deploy (`RUNBOOK.md` section 4).
+   rebuilds, exactly like any other deploy (`RUNBOOK.md` section 11,
+   Redeploys).
 
 **Manual fallback, directly in Coolify** (if the webhook secret isn't
 configured, or Actions is unavailable): Coolify's UI keeps previous
 builds — select the resource → redeploy a prior commit. This is the same
-procedure `RUNBOOK.md` section 5 already documented before this CI/CD
-work existed; nothing about it changed.
+procedure `RUNBOOK.md` section 12 (Rollback) already documented before
+this CI/CD work existed; nothing about it changed.
 
 Either way: **this only rolls back the application code**, not the
 database schema.
@@ -58,7 +59,16 @@ Alembic migration:
 3. If only the application code is at fault, Path A or B above is
    sufficient on its own — the schema stays as-is.
 
+## Persistent volumes are never touched by either path
+`postgres_data`, `redis_data`, `study_material_data`, and
+`visual_assets_data` (`RUNBOOK.md` section 8) are Docker named volumes
+outside the application containers' lifecycle — redeploying or rolling
+back the app images never recreates or clears them. Only deleting the
+Coolify resource entirely or running `docker volume rm` by hand removes
+them; neither rollback path here does that.
+
 ## Verifying a rollback worked
-Same checks as a normal deploy (`RUNBOOK.md` section 3):
+Same checks as a normal deploy (`RUNBOOK.md` section 9, First deploy):
 `https://<domain>/health`, `https://<domain>/ready`, and a real
-login round-trip through the frontend.
+login round-trip through the frontend. See
+`docs/deploy/VERIFICATION_CHECKLIST.md` for the full list.

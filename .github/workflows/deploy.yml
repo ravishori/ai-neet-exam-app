@@ -7,9 +7,10 @@ name: Deploy
 #      not the thing Coolify actually deploys from).
 #   2. Triggering Coolify's own redeploy via its webhook, once CI is green,
 #      so "push to main" -> "live" doesn't require a manual click.
-# Rollback (the `rollback` job below) reuses the same webhook to make
-# Coolify redeploy an arbitrary prior commit, automating the manual
-# "redeploy a prior commit" procedure from RUNBOOK.md section 5.
+# Rollback (the workflow_dispatch `ref` input below) reuses the same
+# webhook to make Coolify redeploy an arbitrary prior commit, automating
+# the manual "redeploy a prior commit" procedure from RUNBOOK.md
+# section 12 (Rollback).
 
 on:
   workflow_run:
