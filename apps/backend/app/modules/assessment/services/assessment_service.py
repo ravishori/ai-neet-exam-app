@@ -135,7 +135,15 @@ class AssessmentService:
         return attempt
 
     async def save_answer(
-        self, attempt_id: uuid.UUID, user_id: uuid.UUID, *, content_item_id: uuid.UUID, selected_option: str | None
+        self,
+        attempt_id: uuid.UUID,
+        user_id: uuid.UUID,
+        *,
+        content_item_id: uuid.UUID,
+        selected_option: str | None,
+        confidence: str | None = None,
+        marked_for_review: bool = False,
+        time_spent_seconds: int | None = None,
     ) -> None:
         attempt = await self._get_owned_attempt(attempt_id, user_id)
         if attempt.status != "IN_PROGRESS":
@@ -144,11 +152,27 @@ class AssessmentService:
         existing = await self.repo.get_answer(attempt_id, content_item_id)
         if existing:
             existing.selected_option = selected_option
+            existing.confidence = confidence
+            existing.marked_for_review = marked_for_review
+            # A question can be revisited across many short viewings —
+            # accumulate rather than overwrite, so total time reflects the
+            # whole solving experience, not just the last visit.
+            existing.time_spent_seconds = (existing.time_spent_seconds or 0) + (time_spent_seconds or 0)
         else:
             self.repo.add_answer(
-                AttemptAnswer(attempt_id=attempt_id, content_item_id=content_item_id, selected_option=selected_option)
+                AttemptAnswer(
+                    attempt_id=attempt_id,
+                    content_item_id=content_item_id,
+                    selected_option=selected_option,
+                    confidence=confidence,
+                    marked_for_review=marked_for_review,
+                    time_spent_seconds=time_spent_seconds,
+                )
             )
         await self.repo.commit()
+
+    async def get_question_history(self, user_id: uuid.UUID, content_item_id: uuid.UUID) -> list[AttemptAnswer]:
+        return await self.repo.answer_history_for_question(user_id, content_item_id)
 
     async def submit_attempt(self, attempt_id: uuid.UUID, user_id: uuid.UUID) -> Attempt:
         attempt = await self._get_owned_attempt(attempt_id, user_id)

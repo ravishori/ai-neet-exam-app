@@ -85,6 +85,22 @@ class AssessmentRepository:
         )
         return list(result.scalars().all())
 
+    async def answer_history_for_question(self, user_id: uuid.UUID, content_item_id: uuid.UUID) -> list[AttemptAnswer]:
+        """Every past *submitted* attempt this user made at this question —
+        the "Previous Attempts" panel (PR 11). Joins through Attempt since
+        AttemptAnswer carries no user_id of its own."""
+        result = await self.session.execute(
+            select(AttemptAnswer)
+            .join(Attempt, Attempt.id == AttemptAnswer.attempt_id)
+            .where(
+                Attempt.user_id == user_id,
+                AttemptAnswer.content_item_id == content_item_id,
+                Attempt.status == "SUBMITTED",
+            )
+            .order_by(AttemptAnswer.answered_at.desc())
+        )
+        return list(result.scalars().all())
+
 
 def sample_question_ids(all_ids: list[uuid.UUID], count: int) -> list[uuid.UUID]:
     if count >= len(all_ids):

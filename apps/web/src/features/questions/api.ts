@@ -19,14 +19,18 @@ export type QuestionSummary = {
   difficulty: string | null;
   bloom_level: string | null;
   pyq_year: number | null;
+  question_type: "MCQ";
   tags: string[];
   language: string;
   concept: NamedRef;
   topic: NamedRef;
   chapter: NamedRef;
   subject: NamedRef;
+  ncert_reference: string | null;
   images: QuestionImage[];
 };
+
+export type ReportReason = "WRONG_ANSWER" | "UNCLEAR" | "TYPO" | "OFFENSIVE" | "OTHER";
 
 export type ScopeType = "SUBJECT" | "CHAPTER" | "TOPIC" | "CONCEPT";
 
@@ -55,4 +59,7 @@ export const questionsApi = {
     return { data: body.data ?? [], meta: body.meta as QuestionListResult["meta"] };
   },
   get: (id: string) => apiClient.get<QuestionSummary>(`/api/v1/cms/questions/${id}`),
+  related: (id: string) => apiClient.get<QuestionSummary[]>(`/api/v1/cms/questions/${id}/related`),
+  report: (id: string, data: { reason: ReportReason; comment?: string }) =>
+    apiClient.post<{ reported: boolean }>(`/api/v1/cms/questions/${id}/report`, data),
 };

@@ -63,4 +63,11 @@ export const learningApi = {
   recommendations: () => apiClient.get<RecommendationItem[]>("/api/v1/learning/recommendations"),
   microCompetencyBreakdown: (conceptId: string) =>
     apiClient.get<MicroCompetencyMastery[]>(`/api/v1/learning/mastery/concepts/${conceptId}/micro-competencies`),
+  toggleBookmark: (contentItemId: string) =>
+    apiClient.post<{ bookmarked: boolean }>(`/api/v1/learning/questions/${contentItemId}/bookmark/toggle`),
+  getNote: (contentItemId: string) => apiClient.get<{ note_text: string | null }>(`/api/v1/learning/questions/${contentItemId}/note`),
+  upsertNote: (contentItemId: string, noteText: string) =>
+    apiClient.put<{ note_text: string | null }>(`/api/v1/learning/questions/${contentItemId}/note`, { note_text: noteText }),
+  deleteNote: (contentItemId: string) =>
+    apiClient.delete<{ note_text: string | null }>(`/api/v1/learning/questions/${contentItemId}/note`),
 };

@@ -26,6 +26,11 @@ class ReviewDecisionRequest(BaseModel):
     comment: str | None = None
 
 
+class ContentReportRequest(BaseModel):
+    reason: str  # WRONG_ANSWER | UNCLEAR | TYPO | OFFENSIVE | OTHER
+    comment: str | None = Field(default=None, max_length=1000)
+
+
 class ContentVersionResponse(BaseModel):
     id: str
     version_no: int

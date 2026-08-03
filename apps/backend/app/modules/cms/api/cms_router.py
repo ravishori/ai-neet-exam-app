@@ -4,16 +4,23 @@ from fastapi import APIRouter, Depends, Query
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.database import get_db
-from app.core.exceptions import NotFoundError, PermissionDeniedError
-from app.modules.cms.models import ContentItem, ContentVersion
+from app.core.exceptions import AppError, NotFoundError, PermissionDeniedError
+from app.modules.cms.models import ContentItem, ContentReport, ContentVersion
 from app.modules.cms.repositories.cms_repository import CmsRepository
-from app.modules.cms.schemas.content_item import ContentItemCreateRequest, ContentItemUpdateRequest, ReviewDecisionRequest
+from app.modules.cms.schemas.content_item import (
+    ContentItemCreateRequest,
+    ContentItemUpdateRequest,
+    ContentReportRequest,
+    ReviewDecisionRequest,
+)
 from app.modules.cms.services.content_workflow_service import ContentWorkflowService
 from app.modules.identity.dependencies import get_current_user, require_permission, verify_csrf
 from app.modules.identity.models.user import User
 from app.shared.responses import envelope
 
 router = APIRouter(prefix="/api/v1/cms", tags=["cms"])
+
+REPORT_REASONS = {"WRONG_ANSWER", "UNCLEAR", "TYPO", "OFFENSIVE", "OTHER"}
 
 
 def _version(v: ContentVersion | None) -> dict | None:
@@ -79,12 +86,14 @@ def _question_summary(item: ContentItem, names: dict, visual_assets_by_ku: dict 
         "difficulty": body.get("difficulty"),
         "bloom_level": body.get("bloom_level"),
         "pyq_year": body.get("pyq_year"),
+        "question_type": "MCQ",  # only MCQ exists in the schema today (PR 11) — static, not a new field
         "tags": item.tags,
         "language": item.language,
         "concept": concept_names.get("concept"),
         "topic": concept_names.get("topic"),
         "chapter": concept_names.get("chapter"),
         "subject": concept_names.get("subject"),
+        "ncert_reference": concept_names.get("ncert_reference"),
         "images": images,
     }
 
@@ -253,6 +262,50 @@ async def get_question(item_id: uuid.UUID, db: AsyncSession = Depends(get_db)):
         [version.knowledge_unit_id] if version and version.knowledge_unit_id else []
     )
     return envelope(success=True, data=_question_summary(item, names, visual_assets_by_ku))
+
+
+@router.get("/questions/{item_id}/related", dependencies=[Depends(require_permission("questions.read"))])
+async def get_related_questions(item_id: uuid.UUID, db: AsyncSession = Depends(get_db)):
+    """Other published questions on the same concept (PR 11) — the "Related
+    Questions" panel shown after submitting an answer."""
+    repo = CmsRepository(db)
+    item = await repo.get_item(item_id)
+    if not item or item.content_type != "QUESTION" or item.status != "PUBLISHED":
+        raise NotFoundError("Question not found")
+    if not item.concept_id:
+        return envelope(success=True, data=[])
+    related = await repo.related_questions(item.concept_id, exclude_item_id=item_id)
+    names = await repo.academic_names_for_concepts([item.concept_id])
+    return envelope(success=True, data=[_question_summary(i, names) for i in related])
+
+
+@router.post(
+    "/questions/{item_id}/report", dependencies=[Depends(get_current_user), Depends(verify_csrf)]
+)
+async def report_question(
+    item_id: uuid.UUID, payload: ContentReportRequest, user: User = Depends(get_current_user), db: AsyncSession = Depends(get_db)
+):
+    """Student-submitted "Report Issue" flag (PR 11). Independent of the
+    editorial ContentReview workflow — see ContentReport's docstring. No
+    admin UI exists yet to triage these; a real, flagged follow-up gap."""
+    if payload.reason not in REPORT_REASONS:
+        raise AppError(f"Unknown reason: {payload.reason}", code="INVALID_REASON", status_code=400)
+    repo = CmsRepository(db)
+    item = await repo.get_item(item_id)
+    if not item or item.content_type != "QUESTION" or item.status != "PUBLISHED":
+        raise NotFoundError("Question not found")
+    version = _question_version(item)
+    repo.add_report(
+        ContentReport(
+            content_item_id=item_id,
+            content_version_id=version.id if version else None,
+            reported_by=user.id,
+            reason=payload.reason,
+            comment=payload.comment,
+        )
+    )
+    await repo.commit()
+    return envelope(success=True, data={"reported": True}, status_code=201)
 
 
 @router.get("/flashcards", dependencies=[Depends(get_current_user)])

@@ -4,7 +4,7 @@ from sqlalchemy import func, select
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
 
-from app.modules.cms.models import ContentItem, ContentReview, ContentVersion, ContentVersionKnowledgeUnit
+from app.modules.cms.models import ContentItem, ContentReport, ContentReview, ContentVersion, ContentVersionKnowledgeUnit
 
 
 class CmsRepository:
@@ -152,6 +152,7 @@ class CmsRepository:
             select(
                 Concept.id,
                 Concept.name.label("concept_name"),
+                Concept.ncert_reference,
                 Topic.id.label("topic_id"),
                 Topic.name.label("topic_name"),
                 Chapter.id.label("chapter_id"),
@@ -167,12 +168,35 @@ class CmsRepository:
         return {
             row.id: {
                 "concept": {"id": str(row.id), "name": row.concept_name},
+                "ncert_reference": row.ncert_reference,
                 "topic": {"id": str(row.topic_id), "name": row.topic_name},
                 "chapter": {"id": str(row.chapter_id), "name": row.chapter_name},
                 "subject": {"id": str(row.subject_id), "name": row.subject_name},
             }
             for row in result.all()
         }
+
+    async def related_questions(self, concept_id: uuid.UUID, exclude_item_id: uuid.UUID, limit: int = 5) -> list[ContentItem]:
+        """Other PUBLISHED questions on the same concept — the simplest, most
+        directly-relevant notion of "related" available without a similarity
+        model (PR 11 scope; a real recommender is a future concern, not this
+        vertical slice)."""
+        result = await self.session.execute(
+            select(ContentItem)
+            .options(selectinload(ContentItem.versions))
+            .where(
+                ContentItem.content_type == "QUESTION",
+                ContentItem.status == "PUBLISHED",
+                ContentItem.concept_id == concept_id,
+                ContentItem.id != exclude_item_id,
+            )
+            .order_by(ContentItem.created_at.desc())
+            .limit(limit)
+        )
+        return list(result.scalars().unique().all())
+
+    def add_report(self, report: ContentReport) -> None:
+        self.session.add(report)
 
     async def visual_assets_for_knowledge_units(self, knowledge_unit_ids: list[uuid.UUID]) -> dict[uuid.UUID, list[dict]]:
         """Question images (PR 7) — reuses the existing VisualAsset.knowledge_unit_id
