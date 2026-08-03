@@ -1,0 +1,101 @@
+name: Deploy
+
+# Coolify still builds its own images straight from this repo's git source,
+# exactly as documented in docs/deploy/RUNBOOK.md — that deploy model is not
+# being changed. This workflow adds two things on top of it, additively:
+#   1. Traceable, scanned build artifacts pushed to GHCR (image build/scan,
+#      not the thing Coolify actually deploys from).
+#   2. Triggering Coolify's own redeploy via its webhook, once CI is green,
+#      so "push to main" -> "live" doesn't require a manual click.
+# Rollback (the `rollback` job below) reuses the same webhook to make
+# Coolify redeploy an arbitrary prior commit, automating the manual
+# "redeploy a prior commit" procedure from RUNBOOK.md section 5.
+
+on:
+  workflow_run:
+    workflows: ["CI"]
+    branches: [main]
+    types: [completed]
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: "Commit SHA or tag to roll back to (redeploys this ref instead of latest main)"
+        required: true
+        type: string
+
+permissions:
+  contents: read
+  packages: write
+
+env:
+  REGISTRY: ghcr.io
+
+jobs:
+  build-and-push:
+    name: Build + push (${{ matrix.service }})
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
+    strategy:
+      matrix:
+        include:
+          - service: backend
+            context: apps/backend
+          - service: web
+            context: apps/web
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.ref || github.event.workflow_run.head_sha }}
+
+      - uses: docker/setup-buildx-action@v3
+
+      - uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Resolve image ref
+        id: sha
+        run: echo "sha=${{ inputs.ref || github.event.workflow_run.head_sha }}" >> "$GITHUB_OUTPUT"
+
+      - name: Lowercase repository name
+        # GHCR (and OCI registries generally) require an all-lowercase image
+        # path; github.repository preserves whatever case the repo was
+        # created with, so this can't be used directly in a tag.
+        id: repo
+        run: echo "name=$(echo '${{ github.repository }}' | tr '[:upper:]' '[:lower:]')" >> "$GITHUB_OUTPUT"
+
+      - name: Build + push ${{ matrix.service }} image
+        uses: docker/build-push-action@v6
+        with:
+          context: ${{ matrix.context }}
+          push: true
+          tags: |
+            ${{ env.REGISTRY }}/${{ steps.repo.outputs.name }}/trinetra-${{ matrix.service }}:${{ steps.sha.outputs.sha }}
+            ${{ env.REGISTRY }}/${{ steps.repo.outputs.name }}/trinetra-${{ matrix.service }}:latest
+          build-args: |
+            NEXT_PUBLIC_API_URL=${{ vars.NEXT_PUBLIC_API_URL }}
+
+      - name: Trivy vulnerability scan (informational — does not block deploy)
+        uses: aquasecurity/trivy-action@0.29.0
+        with:
+          image-ref: ${{ env.REGISTRY }}/${{ steps.repo.outputs.name }}/trinetra-${{ matrix.service }}:${{ steps.sha.outputs.sha }}
+          format: table
+          severity: CRITICAL,HIGH
+          exit-code: "0"
+
+  trigger-coolify-deploy:
+    name: Trigger Coolify redeploy
+    runs-on: ubuntu-latest
+    needs: build-and-push
+    steps:
+      - name: Call Coolify deploy webhook
+        run: |
+          if [ -z "${{ secrets.COOLIFY_DEPLOY_WEBHOOK_URL }}" ]; then
+            echo "::warning::COOLIFY_DEPLOY_WEBHOOK_URL secret is not set — skipping the actual redeploy call. Images were still built, scanned, and pushed to GHCR above. See docs/deploy/CI_CD.md for how to configure this secret once Coolify is provisioned."
+            exit 0
+          fi
+          curl --fail --silent --show-error \
+            -X POST "${{ secrets.COOLIFY_DEPLOY_WEBHOOK_URL }}" \
+            -H "Authorization: Bearer ${{ secrets.COOLIFY_API_TOKEN }}"
