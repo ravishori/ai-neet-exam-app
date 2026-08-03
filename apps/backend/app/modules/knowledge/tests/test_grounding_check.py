@@ -1,6 +1,5 @@
 from app.modules.knowledge.services.grounding_check import check_grounding, is_fact_grounded
 
-
 SOURCE_TEXT = (
     "Ohm's law states that the current through a conductor is directly "
     "proportional to the potential difference across it, provided the "

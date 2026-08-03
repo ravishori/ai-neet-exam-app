@@ -14,13 +14,18 @@ from app.modules.cms.services.content_workflow_service import ContentWorkflowSer
 from app.modules.ingestion.models import IngestionJob, IngestionSection, VisualAsset
 from app.modules.ingestion.prompts import ingestion_concept_note, ingestion_flashcards, ingestion_mcq, ingestion_revision_sheet
 from app.modules.ingestion.repositories.ingestion_repository import IngestionRepository
+from app.modules.ingestion.services.language_service import (
+    LANGUAGE_NAMES,
+    detect_language,
+    normalize_unicode,
+    resolve_content_language,
+)
 from app.modules.ingestion.services.pdf_extraction_service import (
     ExtractedSection,
     compute_checksum,
     extract_pages,
     split_into_sections,
 )
-from app.modules.ingestion.services.language_service import LANGUAGE_NAMES, detect_language, normalize_unicode, resolve_content_language
 from app.modules.ingestion.services.visual_asset_detection_service import crop_and_store, detect_visual_assets
 from app.modules.knowledge.models import KnowledgeUnit
 from app.modules.knowledge.services.knowledge_rendering import render_facts_for_prompt

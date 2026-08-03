@@ -2,7 +2,6 @@ import uuid
 
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.modules.academic.models import Concept
 from app.modules.ai.repositories.ai_repository import AIRepository
 from app.modules.ingestion.models import VisualAsset
 from app.modules.knowledge.models import KnowledgeUnit

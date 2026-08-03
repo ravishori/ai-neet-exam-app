@@ -4,7 +4,7 @@ from fastapi import APIRouter, Depends
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.database import get_db
-from app.core.exceptions import AppError, NotFoundError
+from app.core.exceptions import NotFoundError
 from app.modules.assessment.models import Assessment, Attempt
 from app.modules.assessment.repositories.assessment_repository import AssessmentRepository
 from app.modules.assessment.schemas.assessment import AnswerRequest, GenerateRequest
