@@ -45,6 +45,15 @@ services:
       ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
       RAZORPAY_KEY_ID: ${RAZORPAY_KEY_ID:-}
       RAZORPAY_KEY_SECRET: ${RAZORPAY_KEY_SECRET:-}
+      # Explicit, container-appropriate paths for the two things this app
+      # writes to disk (ADR-0022 uploaded PDFs, ADR-0026 visual asset crops).
+      # Matches app/core/config.py's own container fallback default, made
+      # explicit here rather than relied on implicitly.
+      STUDY_MATERIAL_DIR: /data/studymaterial
+      VISUAL_ASSETS_DIR: /data/visualassets
+    volumes:
+      - study_material_data:/data/studymaterial
+      - visual_assets_data:/data/visualassets
     ports:
       - "8000:8000"
     depends_on:
@@ -67,8 +76,16 @@ services:
     ports:
       - "3000:3000"
     depends_on:
-      - backend
+      backend:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "node", "-e", "require('http').get('http://localhost:3000/', r => process.exit(r.statusCode < 500 ? 0 : 1)).on('error', () => process.exit(1))"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
 
 volumes:
   postgres_data:
   redis_data:
+  study_material_data:
+  visual_assets_data:

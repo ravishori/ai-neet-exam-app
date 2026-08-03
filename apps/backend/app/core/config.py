@@ -4,6 +4,20 @@ from pathlib import Path
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
+def _default_data_dir(name: str) -> str:
+    """<repo root>/<name> in a local checkout (apps/backend/app/core/config.py
+    has 4 directories above the repo root). The Docker image flattens that —
+    COPY . . puts this file at /app/app/core/config.py, only 3 directories
+    above /, so parents[4] doesn't exist there and would raise IndexError at
+    import time, before the app ever starts. Falls back to /data/<name> in
+    that case; STUDY_MATERIAL_DIR/VISUAL_ASSETS_DIR override either default
+    explicitly, same as any other setting."""
+    parents = Path(__file__).resolve().parents
+    if len(parents) > 4:
+        return str(parents[4] / name)
+    return f"/data/{name.lower()}"
+
+
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
 
@@ -32,14 +46,15 @@ class Settings(BaseSettings):
     razorpay_key_secret: str = ""
 
     # Ingestion pipeline (ADR-0022) — files must resolve inside this directory;
-    # rejected otherwise. Defaults to <repo root>/StudyMaterial.
-    study_material_dir: str = str(Path(__file__).resolve().parents[4] / "StudyMaterial")
+    # rejected otherwise. Defaults to <repo root>/StudyMaterial in a local
+    # checkout, /data/studymaterial in the Docker image — see _default_data_dir.
+    study_material_dir: str = _default_data_dir("StudyMaterial")
 
     # Visual asset crops (ADR-0026) — local filesystem for now, not object
     # storage (no S3/Blob/GCS is provisioned for this project). Migrating to
     # object storage is a distinct, separately-justified decision, not
     # something to default toward speculatively.
-    visual_assets_dir: str = str(Path(__file__).resolve().parents[4] / "VisualAssets")
+    visual_assets_dir: str = _default_data_dir("VisualAssets")
 
     @property
     def cors_origin_list(self) -> list[str]:
