@@ -55,24 +55,25 @@ class CmsRepository:
         result = await self.session.execute(query)
         return list(result.scalars().all())
 
-    async def list_questions(
+    async def _list_published_by_scope(
         self,
         *,
+        content_type: str,
         scope_type: str | None = None,
         scope_id: uuid.UUID | None = None,
         limit: int = 20,
         offset: int = 0,
     ) -> tuple[list[ContentItem], int]:
-        """Published questions only, optionally narrowed to one Subject/Chapter/Topic/Concept.
-
-        Mirrors the scope-join pattern in assessment_repository.published_question_ids_for_scope,
-        extended with a TOPIC level for the question browser's filter UI.
+        """Published content of one type, optionally narrowed to one Subject/Chapter/Topic/Concept.
+        Shared by list_questions (PR 2) and list_flashcards (PR 10) — same
+        scope-join pattern as assessment_repository.published_question_ids_for_scope,
+        extended with a TOPIC level for the browser filter UIs.
         """
         from app.modules.academic.models import Chapter, Concept, Topic
 
-        base = select(ContentItem).where(ContentItem.content_type == "QUESTION", ContentItem.status == "PUBLISHED")
+        base = select(ContentItem).where(ContentItem.content_type == content_type, ContentItem.status == "PUBLISHED")
         count_query = select(func.count(ContentItem.id)).where(
-            ContentItem.content_type == "QUESTION", ContentItem.status == "PUBLISHED"
+            ContentItem.content_type == content_type, ContentItem.status == "PUBLISHED"
         )
 
         if scope_type == "CONCEPT":
@@ -111,6 +112,30 @@ class CmsRepository:
         base = base.options(selectinload(ContentItem.versions)).order_by(ContentItem.created_at.desc()).limit(limit).offset(offset)
         result = await self.session.execute(base)
         return list(result.scalars().unique().all()), total
+
+    async def list_questions(
+        self,
+        *,
+        scope_type: str | None = None,
+        scope_id: uuid.UUID | None = None,
+        limit: int = 20,
+        offset: int = 0,
+    ) -> tuple[list[ContentItem], int]:
+        return await self._list_published_by_scope(
+            content_type="QUESTION", scope_type=scope_type, scope_id=scope_id, limit=limit, offset=offset
+        )
+
+    async def list_flashcards(
+        self,
+        *,
+        scope_type: str | None = None,
+        scope_id: uuid.UUID | None = None,
+        limit: int = 20,
+        offset: int = 0,
+    ) -> tuple[list[ContentItem], int]:
+        return await self._list_published_by_scope(
+            content_type="FLASHCARD", scope_type=scope_type, scope_id=scope_id, limit=limit, offset=offset
+        )
 
     async def academic_names_for_concepts(self, concept_ids: list[uuid.UUID]) -> dict[uuid.UUID, dict]:
         """Batch-load Concept/Topic/Chapter/Subject names for a page of questions.

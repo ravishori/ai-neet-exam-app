@@ -38,6 +38,7 @@ export type CoverageRow = {
 };
 
 export type ConceptNoteBody = { ncert_ref?: string; summary: string; sections: string[] };
+export type FlashcardBody = { front: string; back: string; image_url?: string | null };
 export type QuestionBody = {
   stem: string;
   options: { label: string; text: string }[];

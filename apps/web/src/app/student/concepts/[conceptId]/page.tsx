@@ -6,9 +6,10 @@ import { useQuery } from "@tanstack/react-query";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { AiTutorBox } from "@/components/ai-tutor-box";
+import { FlipCard } from "@/components/flip-card";
 import { MasteryBadge, MasteryBar } from "@/components/mastery-badge";
 import { academicApi } from "@/features/academic/api";
-import { cmsApi, type ConceptNoteBody, type QuestionBody } from "@/features/cms/api";
+import { cmsApi, type ConceptNoteBody, type FlashcardBody, type QuestionBody } from "@/features/cms/api";
 import { learningApi } from "@/features/learning/api";
 import { usersApi } from "@/features/users/api";
 
@@ -40,6 +41,7 @@ export default function ConceptDetailPage() {
 
   const notes = content?.items.filter((c) => c.content_type === "CONCEPT_NOTE") ?? [];
   const questions = content?.items.filter((c) => c.content_type === "QUESTION") ?? [];
+  const flashcards = content?.items.filter((c) => c.content_type === "FLASHCARD") ?? [];
 
   return (
     <main className="flex flex-1 justify-center px-6 py-12">
@@ -129,6 +131,23 @@ export default function ConceptDetailPage() {
           );
         })}
 
+        {!!flashcards.length && (
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-base">Flashcards</CardTitle>
+              <CardDescription>Quick revision — tap a card to flip it.</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                {flashcards.map((item) => {
+                  const body = item.latest_version?.body as unknown as FlashcardBody | undefined;
+                  return <FlipCard key={item.id} front={body?.front ?? ""} back={body?.back ?? ""} imageUrl={body?.image_url} />;
+                })}
+              </div>
+            </CardContent>
+          </Card>
+        )}
+
         {questions.map((item) => {
           const body = item.latest_version?.body as unknown as QuestionBody | undefined;
           return (
@@ -151,7 +170,7 @@ export default function ConceptDetailPage() {
           );
         })}
 
-        {notes.length === 0 && questions.length === 0 && (
+        {notes.length === 0 && questions.length === 0 && flashcards.length === 0 && (
           <p className="rounded-md border border-dashed p-4 text-sm text-muted-foreground">
             No published content for this concept yet — visit /admin/content to author some.
           </p>

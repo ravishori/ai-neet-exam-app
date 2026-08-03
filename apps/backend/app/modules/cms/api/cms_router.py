@@ -89,6 +89,26 @@ def _question_summary(item: ContentItem, names: dict, visual_assets_by_ku: dict 
     }
 
 
+def _flashcard_summary(item: ContentItem, names: dict) -> dict:
+    """PR 10 — student-facing flashcard browse/review. Flashcards carry no
+    answer to redact (unlike questions), so this is a plain projection."""
+    version = _question_version(item)
+    body = version.body if version else {}
+    concept_names = names.get(item.concept_id, {}) if item.concept_id else {}
+    return {
+        "id": str(item.id),
+        "front": body.get("front"),
+        "back": body.get("back"),
+        "image_url": body.get("image_url"),
+        "tags": item.tags,
+        "language": item.language,
+        "concept": concept_names.get("concept"),
+        "topic": concept_names.get("topic"),
+        "chapter": concept_names.get("chapter"),
+        "subject": concept_names.get("subject"),
+    }
+
+
 @router.post("/content-items", dependencies=[Depends(require_permission("content.create")), Depends(verify_csrf)])
 async def create_content_item(
     payload: ContentItemCreateRequest, user: User = Depends(get_current_user), db: AsyncSession = Depends(get_db)
@@ -233,6 +253,30 @@ async def get_question(item_id: uuid.UUID, db: AsyncSession = Depends(get_db)):
         [version.knowledge_unit_id] if version and version.knowledge_unit_id else []
     )
     return envelope(success=True, data=_question_summary(item, names, visual_assets_by_ku))
+
+
+@router.get("/flashcards", dependencies=[Depends(get_current_user)])
+async def browse_flashcards(
+    scope_type: str | None = None,  # SUBJECT | CHAPTER | TOPIC | CONCEPT
+    scope_id: uuid.UUID | None = None,
+    limit: int = Query(default=20, ge=1, le=100),
+    offset: int = Query(default=0, ge=0),
+    db: AsyncSession = Depends(get_db),
+):
+    """Student-facing flashcard browser (PR 10) — published flashcards only.
+    Gated the same as /concepts/{id}/published: every authenticated user can
+    read published educational content, no editorial permission needed —
+    flashcards carry no answer to protect the way questions.read protects
+    correct_option, so questions.read's stricter gate doesn't apply here."""
+    repo = CmsRepository(db)
+    items, total = await repo.list_flashcards(scope_type=scope_type, scope_id=scope_id, limit=limit, offset=offset)
+    concept_ids = [i.concept_id for i in items if i.concept_id]
+    names = await repo.academic_names_for_concepts(concept_ids)
+    return envelope(
+        success=True,
+        data=[_flashcard_summary(i, names) for i in items],
+        meta={"total": total, "limit": limit, "offset": offset},
+    )
 
 
 @router.get("/concepts/{concept_id}/published", dependencies=[Depends(get_current_user)])
