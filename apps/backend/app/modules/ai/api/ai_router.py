@@ -8,7 +8,7 @@ from app.core.exceptions import NotFoundError
 from app.core.rate_limit import rate_limit_per_user
 from app.modules.ai.models import StudyPlan
 from app.modules.ai.repositories.ai_repository import AIRepository
-from app.modules.ai.schemas.ai import GenerateQuestionRequest, StudyPlanRequest, TutorExplainRequest
+from app.modules.ai.schemas.ai import ExplainQuestionRequest, GenerateQuestionRequest, StudyPlanRequest, TutorExplainRequest
 from app.modules.ai.services.question_generator_service import QuestionGeneratorService
 from app.modules.ai.services.study_planner_service import StudyPlannerService
 from app.modules.ai.services.tutor_service import TutorService
@@ -54,6 +54,22 @@ def _study_plan(p: StudyPlan) -> dict:
 async def tutor_explain(payload: TutorExplainRequest, user: User = Depends(get_current_user), db: AsyncSession = Depends(get_db)):
     service = TutorService(db)
     result = await service.explain(concept_id=uuid.UUID(payload.concept_id), question=payload.question, user_id=user.id)
+    return envelope(success=True, data=result)
+
+
+@router.post(
+    "/tutor/explain-question",
+    dependencies=[
+        Depends(require_permission("ai.use")),
+        Depends(verify_csrf),
+        Depends(rate_limit_per_user("ai.tutor", limit=20, window_seconds=300)),
+    ],
+)
+async def tutor_explain_question(
+    payload: ExplainQuestionRequest, user: User = Depends(get_current_user), db: AsyncSession = Depends(get_db)
+):
+    service = TutorService(db)
+    result = await service.explain_question(question_id=uuid.UUID(payload.question_id), user_id=user.id)
     return envelope(success=True, data=result)
 
 

@@ -7,6 +7,7 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { QuestionExplainCard } from "@/components/question-explain-card";
 import { assessmentApi } from "@/features/assessment/api";
 
 function useCountdown(startedAt: string, durationMinutes: number | null, onExpire: () => void) {
@@ -129,6 +130,11 @@ export default function AttemptRunnerPage() {
               })}
               {isSubmitted && q.explanation && (
                 <p className="mt-2 text-sm text-muted-foreground">{q.explanation}</p>
+              )}
+              {isSubmitted && (
+                <div className="mt-2">
+                  <QuestionExplainCard questionId={q.content_item_id} />
+                </div>
               )}
             </CardContent>
           </Card>

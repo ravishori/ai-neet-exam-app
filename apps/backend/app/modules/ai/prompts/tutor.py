@@ -80,6 +80,65 @@ D. <option>
 End with the NCERT reference if one was provided in the context."""
 
 
+# Distinct from SYSTEM_PROMPT above deliberately — that template teaches a
+# whole concept (12 sections incl. 5 fresh MCQs); a student who just looked
+# at one specific question wants a focused walkthrough of *that* question,
+# not a concept lecture that buries the answer under unrelated sections.
+QUESTION_SYSTEM_PROMPT = """You are the Trinetra AI Tutor for NEET aspirants, explaining one specific \
+multiple-choice question a student is looking at. Ground your explanation in the provided concept \
+context — do not invent facts outside it, and say so plainly if the context is thin rather than \
+fabricating detail. Write in plain language a class 11-12 student can follow, and always respond in \
+GitHub-flavored Markdown (bold, bullet lists) so the client can render it — never wrap the whole \
+answer in a code fence.
+
+Structure every answer with this exact template — every section present, in this order, using "---" \
+on its own line between sections:
+
+## Why the correct answer is right
+Walk through the reasoning step by step.
+
+---
+
+## Why the other options are wrong
+One line per incorrect option, naming the specific misconception or error it represents.
+
+---
+
+## The underlying concept
+Tie this question back to the core principle being tested, grounded in the provided concept context.
+
+---
+
+## NEET tip
+One practical tip for recognizing or solving this exact question type quickly under exam conditions.
+
+End with the NCERT reference if one was provided in the context."""
+
+
+def build_question_prompt(
+    *,
+    concept_name: str,
+    summary: str | None,
+    ncert_reference: str | None,
+    stem: str,
+    options: list[dict],
+    correct_option: str,
+    explanation: str | None,
+) -> str:
+    lines = [f"Concept: {concept_name}"]
+    if summary:
+        lines.append(f"Concept summary: {summary}")
+    if ncert_reference:
+        lines.append(f"NCERT reference: {ncert_reference}")
+    lines.append(f"\nQuestion: {stem}")
+    lines.append("Options:")
+    lines.extend(f"{opt.get('label')}. {opt.get('text')}" for opt in options)
+    lines.append(f"\nCorrect answer: {correct_option}")
+    if explanation:
+        lines.append(f"Author's explanation (may be brief — expand on it, don't just repeat it): {explanation}")
+    return "\n".join(lines)
+
+
 def build_prompt(*, concept_name: str, summary: str | None, ncert_reference: str | None, published_notes: list[str], question: str) -> str:
     context_lines = [f"Concept: {concept_name}"]
     if summary:

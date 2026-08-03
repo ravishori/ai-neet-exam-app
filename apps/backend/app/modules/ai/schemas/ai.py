@@ -8,6 +8,10 @@ class TutorExplainRequest(BaseModel):
     question: str = Field(min_length=1, max_length=500)
 
 
+class ExplainQuestionRequest(BaseModel):
+    question_id: str
+
+
 class GenerateQuestionRequest(BaseModel):
     concept_id: str
 

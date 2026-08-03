@@ -55,3 +55,53 @@ class TutorService:
             "knowledge_units_cited": len(context["knowledge_units"]),
             "visual_assets_available": len(context["visual_assets"]),
         }
+
+    async def explain_question(self, *, question_id: uuid.UUID, user_id: uuid.UUID) -> dict:
+        """PR 8 — a focused walkthrough of one specific question, not the
+        full concept-teaching template explain() above uses. Deliberately
+        only reachable for PUBLISHED questions with the answer already
+        revealed to the caller elsewhere (the results/review screen after a
+        submitted attempt) — this never introduces a new way to see an
+        answer without practicing first; it explains an answer the student
+        can already see."""
+        from app.modules.cms.repositories.cms_repository import CmsRepository
+
+        cms_repo = CmsRepository(self.session)
+        item = await cms_repo.get_item(question_id)
+        if not item or item.content_type != "QUESTION" or item.status != "PUBLISHED":
+            raise NotFoundError("Question not found")
+        if not item.concept_id:
+            raise NotFoundError("This question has no linked concept to explain against")
+
+        by_id = {v.id: v for v in item.versions}
+        version = by_id.get(item.current_version_id)
+        body = version.body if version else {}
+
+        context = await self.knowledge.get_knowledge_context(item.concept_id)
+        concept = context["concept"]
+        if not concept:
+            raise NotFoundError("Concept not found")
+        grounded_explanation = await self.knowledge.get_teaching_explanation(item.concept_id)
+
+        user_prompt = tutor_prompts.build_question_prompt(
+            concept_name=concept.name,
+            summary=grounded_explanation or concept.summary,
+            ncert_reference=concept.ncert_reference,
+            stem=body.get("stem", ""),
+            options=body.get("options", []),
+            correct_option=body.get("correct_option", ""),
+            explanation=body.get("explanation"),
+        )
+        response = await self.gateway.generate(
+            agent_type="TUTOR",
+            system_prompt=tutor_prompts.QUESTION_SYSTEM_PROMPT,
+            user_prompt=user_prompt,
+            user_id=user_id,
+            max_tokens=2048,
+        )
+        return {
+            "answer": response.text,
+            "concept_name": concept.name,
+            "ncert_reference": concept.ncert_reference,
+            "is_fallback": response.is_fallback,
+        }

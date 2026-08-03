@@ -8,6 +8,13 @@ export type TutorAnswer = {
   cited_published_notes: number;
 };
 
+export type QuestionExplanation = {
+  answer: string;
+  concept_name: string;
+  ncert_reference: string | null;
+  is_fallback: boolean;
+};
+
 export type GeneratedQuestion = {
   id: string;
   content_type: string;
@@ -35,6 +42,8 @@ export type StudyPlan = {
 export const aiApi = {
   tutorExplain: (data: { concept_id: string; question: string }) =>
     apiClient.post<TutorAnswer>("/api/v1/ai/tutor/explain", data),
+  explainQuestion: (data: { question_id: string }) =>
+    apiClient.post<QuestionExplanation>("/api/v1/ai/tutor/explain-question", data),
   generateQuestion: (data: { concept_id: string }) =>
     apiClient.post<GeneratedQuestion>("/api/v1/ai/questions/generate", data),
   generateStudyPlan: (data: { target_score: number; current_score: number; exam_date: string; hours_per_day: number }) =>
