@@ -98,6 +98,20 @@ class KnowledgeStructuringService:
             validation_detail=detail,
         )
         self.repo.add(unit)
+        await self.repo.flush()
+
+        # Close the ADR-0026 gap (ADR-0028 Phase C): a VisualAsset detected
+        # on this section's source page is genuinely part of the knowledge
+        # this unit represents. Only for PASSED units — a FAILED unit's
+        # facts didn't pass the grounding/dedup gates, and citing a real
+        # figure from one would misrepresent the figure's provenance.
+        linked_assets = 0
+        if status == "PASSED":
+            page_assets = await self.repo.get_visual_assets_for_page(section.job_id, section.source_page)
+            for asset in page_assets:
+                asset.knowledge_unit_id = unit.id
+            linked_assets = len(page_assets)
+
         await self.repo.commit()
 
         logger.info(
@@ -106,5 +120,6 @@ class KnowledgeStructuringService:
             concept=concept.name,
             status=status,
             detail=detail,
+            visual_assets_linked=linked_assets,
         )
         return unit

@@ -7,7 +7,8 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from app.modules.academic.models import Chapter, Concept, MicroCompetency, Subject, Topic
 from app.modules.assessment.models import Attempt, AttemptAnswer
 from app.modules.cms.models import ContentItem
-from app.modules.learning.models import ConceptMastery, MicroCompetencyMastery
+from app.modules.cms.models.content_version_knowledge_unit import ContentVersionKnowledgeUnit
+from app.modules.learning.models import ConceptMastery, KnowledgeUnitMastery, MicroCompetencyMastery
 
 
 class MasteryRepository:
@@ -71,6 +72,70 @@ class MasteryRepository:
         )
         attempts_count, correct_count, last_attempt_at = result.one()
         return attempts_count or 0, correct_count or 0, last_attempt_at
+
+    async def knowledge_unit_ids_for_content_items(self, content_item_ids: list[uuid.UUID]) -> set[uuid.UUID]:
+        """Traces each content item to the Knowledge Unit(s) that grounded it
+        via the existing ADR-0025 lineage table — see ADR-0028 Phase D. Only
+        content items reachable from an AttemptAnswer are ever passed in
+        here, and only QUESTION items are ever answered, so no content_type
+        filter is needed: a CONCEPT_NOTE or FORMULA_SHEET id never appears
+        in content_item_ids in practice."""
+        if not content_item_ids:
+            return set()
+        result = await self.session.execute(
+            select(ContentVersionKnowledgeUnit.knowledge_unit_id)
+            .join(ContentItem, ContentItem.current_version_id == ContentVersionKnowledgeUnit.content_version_id)
+            .where(ContentItem.id.in_(content_item_ids))
+        )
+        return set(result.scalars().all())
+
+    async def aggregate_answers_for_knowledge_unit(
+        self, user_id: uuid.UUID, knowledge_unit_id: uuid.UUID
+    ) -> tuple[int, int, datetime | None]:
+        result = await self.session.execute(
+            select(
+                func.count(AttemptAnswer.id),
+                func.count(AttemptAnswer.id).filter(AttemptAnswer.is_correct.is_(True)),
+                func.max(AttemptAnswer.answered_at),
+            )
+            .join(Attempt, Attempt.id == AttemptAnswer.attempt_id)
+            .join(ContentItem, ContentItem.id == AttemptAnswer.content_item_id)
+            .join(
+                ContentVersionKnowledgeUnit,
+                ContentVersionKnowledgeUnit.content_version_id == ContentItem.current_version_id,
+            )
+            .where(
+                Attempt.user_id == user_id,
+                ContentVersionKnowledgeUnit.knowledge_unit_id == knowledge_unit_id,
+                AttemptAnswer.is_correct.is_not(None),
+            )
+        )
+        attempts_count, correct_count, last_attempt_at = result.one()
+        return attempts_count or 0, correct_count or 0, last_attempt_at
+
+    async def get_knowledge_unit_mastery(
+        self, user_id: uuid.UUID, knowledge_unit_id: uuid.UUID
+    ) -> KnowledgeUnitMastery | None:
+        result = await self.session.execute(
+            select(KnowledgeUnitMastery).where(
+                KnowledgeUnitMastery.user_id == user_id, KnowledgeUnitMastery.knowledge_unit_id == knowledge_unit_id
+            )
+        )
+        return result.scalar_one_or_none()
+
+    def add_knowledge_unit_mastery(self, row: KnowledgeUnitMastery) -> None:
+        self.session.add(row)
+
+    async def get_weak_knowledge_units(self, user_id: uuid.UUID, limit: int) -> list[KnowledgeUnitMastery]:
+        """The Knowledge-Unit-grained analogue of get_weak_concepts below —
+        see ADR-0028 Phase D / GetWeakAreas."""
+        result = await self.session.execute(
+            select(KnowledgeUnitMastery)
+            .where(KnowledgeUnitMastery.user_id == user_id, KnowledgeUnitMastery.mastery_level == "PRACTICING")
+            .order_by(KnowledgeUnitMastery.mastery_score)
+            .limit(limit)
+        )
+        return list(result.scalars().all())
 
     async def get_micro_competency_mastery(
         self, user_id: uuid.UUID, micro_competency_id: uuid.UUID

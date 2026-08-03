@@ -3,7 +3,7 @@ from datetime import UTC, datetime, timedelta
 
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.modules.learning.models import ConceptMastery, MicroCompetencyMastery
+from app.modules.learning.models import ConceptMastery, KnowledgeUnitMastery, MicroCompetencyMastery
 from app.modules.learning.repositories.mastery_repository import MasteryRepository
 
 MASTERY_ATTEMPT_FLOOR = 3
@@ -49,6 +49,15 @@ class MasteryService:
         concept_ids = await self.repo.concept_ids_for_content_items(content_item_ids)
         for concept_id in concept_ids:
             await self._recompute_one(user_id, concept_id)
+
+        # Knowledge-Unit-grained mastery (ADR-0028 Phase D) — independent of
+        # the concept/micro-competency rollups above, not a replacement for
+        # either. A content item with no Knowledge Unit lineage (pre-ADR-0024
+        # seeded questions) simply contributes nothing here.
+        knowledge_unit_ids = await self.repo.knowledge_unit_ids_for_content_items(content_item_ids)
+        for knowledge_unit_id in knowledge_unit_ids:
+            await self._recompute_knowledge_unit(user_id, knowledge_unit_id)
+
         await self.repo.commit()
 
     async def _recompute_micro_competency(self, user_id: uuid.UUID, micro_competency_id: uuid.UUID) -> None:
@@ -67,6 +76,39 @@ class MasteryService:
         row.mastery_score = score
         row.mastery_level = level
         row.last_attempt_at = last_attempt_at
+
+    async def _recompute_knowledge_unit(self, user_id: uuid.UUID, knowledge_unit_id: uuid.UUID) -> None:
+        attempts_count, correct_count, last_attempt_at = await self.repo.aggregate_answers_for_knowledge_unit(
+            user_id, knowledge_unit_id
+        )
+        score, level = compute_mastery(attempts_count, correct_count)
+
+        row = await self.repo.get_knowledge_unit_mastery(user_id, knowledge_unit_id)
+        if row is None:
+            row = KnowledgeUnitMastery(user_id=user_id, knowledge_unit_id=knowledge_unit_id)
+            self.repo.add_knowledge_unit_mastery(row)
+
+        row.attempts_count = attempts_count
+        row.correct_count = correct_count
+        row.mastery_score = score
+        row.mastery_level = level
+        row.last_attempt_at = last_attempt_at
+        row.next_review_at = next_review_at_for(level)
+
+    async def get_weak_knowledge_units(self, user_id: uuid.UUID, limit: int = 10) -> list[dict]:
+        """The Knowledge-Unit-grained analogue of get_weak_concept_names —
+        see ADR-0028 Phase D / KnowledgeService.get_weak_areas."""
+        rows = await self.repo.get_weak_knowledge_units(user_id, limit)
+        return [
+            {
+                "knowledge_unit_id": str(row.knowledge_unit_id),
+                "mastery_score": row.mastery_score,
+                "mastery_level": row.mastery_level,
+                "attempts_count": row.attempts_count,
+                "correct_count": row.correct_count,
+            }
+            for row in rows
+        ]
 
     async def _recompute_one(self, user_id: uuid.UUID, concept_id: uuid.UUID) -> None:
         attempts_count, correct_count, last_attempt_at = await self._concept_level_counts(user_id, concept_id)

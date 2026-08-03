@@ -15,7 +15,7 @@ from sqlalchemy import select
 from app.modules.academic.models import Concept
 from app.modules.ai.gateway.ai_gateway import AIGateway
 from app.modules.ai.gateway.base import AIResponse
-from app.modules.ingestion.models import IngestionJob, IngestionSection
+from app.modules.ingestion.models import IngestionJob, IngestionSection, VisualAsset
 from app.modules.knowledge.models import KnowledgeUnit
 from app.modules.knowledge.services.knowledge_structuring_service import KnowledgeStructuringService
 
@@ -159,3 +159,66 @@ async def test_malformed_json_response_creates_no_knowledge_unit(db_session, mon
     unit = await service.structure_section(section=section, concept=concept, author_id=uuid.uuid4())
 
     assert unit is None
+
+
+async def test_passed_unit_links_same_page_visual_assets(db_session, monkeypatch):
+    """ADR-0028 Phase C: closes the ADR-0026 gap where VisualAsset.knowledge_unit_id
+    was a real column nothing ever wrote to."""
+    concept = await _any_concept(db_session)
+    section = await _seed_section(db_session, concept_id=concept.id)
+    asset = VisualAsset(
+        job_id=section.job_id,
+        source_page=section.source_page,
+        asset_type="diagram",
+        detection_method="vector_cluster",
+        review_status="AUTO_DETECTED",
+    )
+    db_session.add(asset)
+    await db_session.flush()
+
+    async def fake_generate(self, **kwargs):
+        return _mock_response(
+            '{"structured_facts": ["Current through a conductor is proportional to potential '
+            'difference across it."], "summary": "Ohm\'s Law relates current and voltage.", '
+            '"extraction_confidence": 0.95}'
+        )
+
+    monkeypatch.setattr(AIGateway, "generate", fake_generate)
+
+    service = KnowledgeStructuringService(db_session)
+    unit = await service.structure_section(section=section, concept=concept, author_id=uuid.uuid4())
+
+    assert unit.validation_status == "PASSED"
+    await db_session.refresh(asset)
+    assert asset.knowledge_unit_id == unit.id
+
+
+async def test_failed_unit_does_not_link_visual_assets(db_session, monkeypatch):
+    """A FAILED unit's facts didn't pass the grounding gate — a real figure
+    shouldn't be cited as backing them."""
+    concept = await _any_concept(db_session)
+    section = await _seed_section(db_session, concept_id=concept.id)
+    asset = VisualAsset(
+        job_id=section.job_id,
+        source_page=section.source_page,
+        asset_type="diagram",
+        detection_method="vector_cluster",
+        review_status="AUTO_DETECTED",
+    )
+    db_session.add(asset)
+    await db_session.flush()
+
+    async def fake_generate(self, **kwargs):
+        return _mock_response(
+            '{"structured_facts": ["Photosynthesis occurs in chloroplasts during daylight hours."], '
+            '"summary": "Plants convert sunlight into energy.", "extraction_confidence": 0.9}'
+        )
+
+    monkeypatch.setattr(AIGateway, "generate", fake_generate)
+
+    service = KnowledgeStructuringService(db_session)
+    unit = await service.structure_section(section=section, concept=concept, author_id=uuid.uuid4())
+
+    assert unit.validation_status == "FAILED"
+    await db_session.refresh(asset)
+    assert asset.knowledge_unit_id is None

@@ -1,6 +1,7 @@
 import uuid
+from datetime import datetime
 
-from sqlalchemy import ForeignKey, Index, Integer, String, Text
+from sqlalchemy import DateTime, ForeignKey, Index, Integer, String, Text
 from sqlalchemy.dialects.postgresql import JSONB, UUID
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
@@ -62,5 +63,19 @@ class VisualAsset(Base, AuditedBase):
     content_hash: Mapped[str | None] = mapped_column(String(64))  # sha256 hex of the crop file
     vision_description: Mapped[str | None] = mapped_column(Text)
     ocr_text: Mapped[str | None] = mapped_column(Text)
+
+    # Approval timestamps (ADR-0028 Phase C) — added onto the *existing*
+    # review_status workflow above, deliberately not a second, parallel
+    # status enum: VisualAsset represents content *detected* from a source
+    # PDF, never AI-*generated*, so a "Pending/Generating/Generated" state
+    # machine doesn't describe anything real about this row. review_status
+    # already carries the approve/reject decision (VERIFIED/REJECTED); these
+    # columns record *when* and *by whom* and, for a rejection, *why* —
+    # information review_status alone can't hold.
+    approved_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
+    approved_by: Mapped[uuid.UUID | None] = mapped_column(
+        UUID(as_uuid=True), ForeignKey("identity.users.id", ondelete="SET NULL")
+    )
+    rejection_reason: Mapped[str | None] = mapped_column(Text)
 
     job: Mapped["IngestionJob"] = relationship()
