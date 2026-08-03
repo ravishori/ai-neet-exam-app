@@ -149,6 +149,37 @@ class CmsRepository:
             for row in result.all()
         }
 
+    async def visual_assets_for_knowledge_units(self, knowledge_unit_ids: list[uuid.UUID]) -> dict[uuid.UUID, list[dict]]:
+        """Question images (PR 7) — reuses the existing VisualAsset.knowledge_unit_id
+        FK (ADR-0026) and ContentVersion.knowledge_unit_id (ADR-0025) rather than
+        adding a new column: a question generated from exactly one KnowledgeUnit
+        already links to it, and a VisualAsset detected alongside that same KU
+        already links to it too. Only VERIFIED assets — review_status carries the
+        approve/reject decision, and nothing here should surface an unreviewed or
+        rejected crop to a student.
+        """
+        from app.modules.ingestion.models.visual_asset import VisualAsset
+
+        if not knowledge_unit_ids:
+            return {}
+        result = await self.session.execute(
+            select(VisualAsset).where(
+                VisualAsset.knowledge_unit_id.in_(knowledge_unit_ids), VisualAsset.review_status == "VERIFIED"
+            )
+        )
+        by_ku: dict[uuid.UUID, list[dict]] = {}
+        for asset in result.scalars().all():
+            by_ku.setdefault(asset.knowledge_unit_id, []).append(
+                {
+                    "id": str(asset.id),
+                    "asset_type": asset.asset_type,
+                    "alt_text": asset.vision_description,
+                    "width_px": asset.width_px,
+                    "height_px": asset.height_px,
+                }
+            )
+        return by_ku
+
     async def get_version(self, version_id: uuid.UUID) -> ContentVersion | None:
         result = await self.session.execute(select(ContentVersion).where(ContentVersion.id == version_id))
         return result.scalar_one_or_none()

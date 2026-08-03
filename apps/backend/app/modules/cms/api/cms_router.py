@@ -53,17 +53,25 @@ def _can_edit(item: ContentItem, user: User) -> bool:
     return "SUPER_ADMIN" in user.role_codes or "ADMIN" in user.role_codes or item.created_by == user.id
 
 
-def _question_body(item: ContentItem) -> dict:
+def _question_version(item: ContentItem) -> ContentVersion | None:
     by_id = {v.id: v for v in item.versions}
-    version = by_id.get(item.current_version_id)
+    return by_id.get(item.current_version_id)
+
+
+def _question_body(item: ContentItem) -> dict:
+    version = _question_version(item)
     return version.body if version else {}
 
 
-def _question_summary(item: ContentItem, names: dict) -> dict:
+def _question_summary(item: ContentItem, names: dict, visual_assets_by_ku: dict | None = None) -> dict:
     """Browse view — never includes correct_option/explanation, matching the
     _public_question pattern in assessment_router.py."""
-    body = _question_body(item)
+    version = _question_version(item)
+    body = version.body if version else {}
     concept_names = names.get(item.concept_id, {}) if item.concept_id else {}
+    images = []
+    if visual_assets_by_ku and version and version.knowledge_unit_id:
+        images = visual_assets_by_ku.get(version.knowledge_unit_id, [])
     return {
         "id": str(item.id),
         "stem": body.get("stem"),
@@ -77,6 +85,7 @@ def _question_summary(item: ContentItem, names: dict) -> dict:
         "topic": concept_names.get("topic"),
         "chapter": concept_names.get("chapter"),
         "subject": concept_names.get("subject"),
+        "images": images,
     }
 
 
@@ -203,9 +212,11 @@ async def browse_questions(
     items, total = await repo.list_questions(scope_type=scope_type, scope_id=scope_id, limit=limit, offset=offset)
     concept_ids = [i.concept_id for i in items if i.concept_id]
     names = await repo.academic_names_for_concepts(concept_ids)
+    ku_ids = [v.knowledge_unit_id for i in items if (v := _question_version(i)) and v.knowledge_unit_id]
+    visual_assets_by_ku = await repo.visual_assets_for_knowledge_units(ku_ids)
     return envelope(
         success=True,
-        data=[_question_summary(i, names) for i in items],
+        data=[_question_summary(i, names, visual_assets_by_ku) for i in items],
         meta={"total": total, "limit": limit, "offset": offset},
     )
 
@@ -217,7 +228,11 @@ async def get_question(item_id: uuid.UUID, db: AsyncSession = Depends(get_db)):
     if not item or item.content_type != "QUESTION" or item.status != "PUBLISHED":
         raise NotFoundError("Question not found")
     names = await repo.academic_names_for_concepts([item.concept_id] if item.concept_id else [])
-    return envelope(success=True, data=_question_summary(item, names))
+    version = _question_version(item)
+    visual_assets_by_ku = await repo.visual_assets_for_knowledge_units(
+        [version.knowledge_unit_id] if version and version.knowledge_unit_id else []
+    )
+    return envelope(success=True, data=_question_summary(item, names, visual_assets_by_ku))
 
 
 @router.get("/concepts/{concept_id}/published", dependencies=[Depends(get_current_user)])

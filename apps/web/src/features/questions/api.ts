@@ -4,6 +4,14 @@ export type QuestionOption = { label: string; text: string };
 
 export type NamedRef = { id: string; name: string } | null;
 
+export type QuestionImage = {
+  id: string;
+  asset_type: string;
+  alt_text: string | null;
+  width_px: number | null;
+  height_px: number | null;
+};
+
 export type QuestionSummary = {
   id: string;
   stem: string | null;
@@ -17,6 +25,7 @@ export type QuestionSummary = {
   topic: NamedRef;
   chapter: NamedRef;
   subject: NamedRef;
+  images: QuestionImage[];
 };
 
 export type ScopeType = "SUBJECT" | "CHAPTER" | "TOPIC" | "CONCEPT";
