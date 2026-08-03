@@ -28,6 +28,11 @@ class IngestionJob(Base, AuditedBase):
     )
 
     source_file_path: Mapped[str] = mapped_column(String(1000), nullable=False)
+    # Original client-supplied filename (e.g. "Physics Chapter 3.pdf") — for
+    # display in the admin UI's job list, since source_file_path is a
+    # server-generated safe path, not something a human recognizes. Nullable:
+    # jobs created via the pre-existing path-based endpoint have none.
+    original_filename: Mapped[str | None] = mapped_column(String(500))
     file_checksum: Mapped[str] = mapped_column(String(64), nullable=False)  # sha256 hex
     subject_id: Mapped[uuid.UUID | None] = mapped_column(
         UUID(as_uuid=True), ForeignKey("academic.subjects.id", ondelete="SET NULL")

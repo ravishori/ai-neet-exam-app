@@ -50,7 +50,9 @@ class IngestionPipelineService:
         self.gateway = AIGateway(session)
         self.structuring = KnowledgeStructuringService(session)
 
-    async def start_job(self, *, file_path: str, chapter_code: str) -> IngestionJob:
+    async def start_job(
+        self, *, file_path: str, chapter_code: str, original_filename: str | None = None
+    ) -> IngestionJob:
         checksum = compute_checksum(file_path)
         existing = await self.repo.get_job_by_checksum(checksum)
         if existing and existing.status == "COMPLETED":
@@ -63,6 +65,7 @@ class IngestionPipelineService:
 
         job = IngestionJob(
             source_file_path=file_path,
+            original_filename=original_filename,
             file_checksum=checksum,
             subject_id=chapter.subject_id,
             chapter_id=chapter.id,

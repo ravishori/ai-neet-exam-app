@@ -9,6 +9,7 @@ is monkeypatched to a no-op so tests don't make real AI calls or depend
 on wall-clock PDF processing time.
 """
 
+import uuid
 from pathlib import Path
 
 import pytest
@@ -103,6 +104,89 @@ async def test_start_job_creates_pending_job_against_real_pdf(client, db_session
     detail = await client.get(f"/api/v1/ingestion/jobs/{data['id']}")
     assert detail.status_code == 200
     assert detail.json()["data"]["id"] == data["id"]
+
+
+# Minimal but structurally real PDF bytes (correct %PDF- magic header) — the
+# upload endpoint only needs to validate the magic number and save the file;
+# real text extraction happens in the background task, which every test here
+# monkeypatches to a no-op, matching the existing tests above.
+_MINIMAL_PDF_BYTES = b"%PDF-1.4\n%%EOF\n"
+
+
+async def test_upload_rejects_non_pdf_content(client, db_session, register_user, monkeypatch):
+    monkeypatch.setattr("app.modules.ingestion.api.ingestion_router._run_pipeline_in_background", _noop_background)
+    await register_user(client, role_codes=["CONTENT_MANAGER"], db_session=db_session)
+
+    resp = await client.post(
+        "/api/v1/ingestion/upload",
+        files={"file": ("notes.txt", b"just some plain text, not a pdf", "text/plain")},
+        data={"chapter_code": "current-electricity"},
+        headers=csrf_headers(client),
+    )
+    assert resp.status_code == 400, resp.text
+    assert resp.json()["errors"][0]["code"] == "INVALID_FILE_TYPE"
+
+
+async def test_upload_requires_content_create_permission(client, db_session, register_user):
+    await register_user(client)  # default STUDENT role — no content.create
+
+    resp = await client.post(
+        "/api/v1/ingestion/upload",
+        files={"file": ("chapter.pdf", _MINIMAL_PDF_BYTES, "application/pdf")},
+        data={"chapter_code": "current-electricity"},
+        headers=csrf_headers(client),
+    )
+    assert resp.status_code == 403
+
+
+async def test_upload_creates_job_with_original_filename_and_saves_file(client, db_session, register_user, monkeypatch, tmp_path):
+    monkeypatch.setattr("app.modules.ingestion.api.ingestion_router._run_pipeline_in_background", _noop_background)
+    await register_user(client, role_codes=["CONTENT_MANAGER"], db_session=db_session)
+
+    resp = await client.post(
+        "/api/v1/ingestion/upload",
+        files={"file": ("Physics Chapter 3.pdf", _MINIMAL_PDF_BYTES, "application/pdf")},
+        data={"chapter_code": "current-electricity"},
+        headers=csrf_headers(client),
+    )
+    assert resp.status_code == 202, resp.text
+    data = resp.json()["data"]
+    assert data["status"] == "PENDING"
+    assert data["original_filename"] == "Physics Chapter 3.pdf"
+
+    from pathlib import Path
+
+    from app.modules.ingestion.models import IngestionJob
+
+    job = await db_session.get(IngestionJob, uuid.UUID(data["id"]))
+    saved_path = Path(job.source_file_path)
+    assert saved_path.is_file()
+    assert saved_path.read_bytes() == _MINIMAL_PDF_BYTES
+    assert "Uploads" in saved_path.parts
+    saved_path.unlink()  # test-created file on real disk, not the transactional test DB — clean up explicitly
+
+
+async def test_upload_rejects_unknown_chapter(client, db_session, register_user, monkeypatch):
+    monkeypatch.setattr("app.modules.ingestion.api.ingestion_router._run_pipeline_in_background", _noop_background)
+    await register_user(client, role_codes=["CONTENT_MANAGER"], db_session=db_session)
+
+    resp = await client.post(
+        "/api/v1/ingestion/upload",
+        files={"file": ("chapter.pdf", _MINIMAL_PDF_BYTES, "application/pdf")},
+        data={"chapter_code": "no-such-chapter"},
+        headers=csrf_headers(client),
+    )
+    assert resp.status_code == 404
+
+    # The file is saved to disk before the chapter lookup runs — clean up
+    # the orphaned upload so repeated test runs don't accumulate files.
+    from pathlib import Path
+
+    from app.core.config import get_settings
+
+    upload_dir = Path(get_settings().study_material_dir) / "Uploads"
+    for f in upload_dir.glob("*_chapter.pdf"):
+        f.unlink()
 
 
 async def test_start_job_reuses_completed_job_for_unchanged_checksum(client, db_session, register_user, monkeypatch):

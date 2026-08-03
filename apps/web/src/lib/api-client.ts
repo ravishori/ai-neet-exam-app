@@ -30,7 +30,10 @@ async function request<T>(path: string, options: RequestInit = {}, _retried = fa
   const method = (options.method ?? "GET").toUpperCase();
   const isMutating = method !== "GET" && method !== "HEAD";
   const headers = new Headers(options.headers);
-  if (options.body) headers.set("Content-Type", "application/json");
+  // FormData must NOT get an explicit Content-Type — the browser sets
+  // multipart/form-data with the correct boundary itself; overriding it
+  // (as every other mutating request does for its JSON body) breaks upload.
+  if (options.body && !(options.body instanceof FormData)) headers.set("Content-Type", "application/json");
   if (isMutating) {
     const csrf = readCookie("csrf_token");
     if (csrf) headers.set("X-CSRF-Token", csrf);
@@ -67,6 +70,8 @@ export const apiClient = {
   getFull: <T>(path: string) => request<T>(path),
   post: <T>(path: string, data?: unknown) =>
     request<T>(path, { method: "POST", body: data ? JSON.stringify(data) : undefined }).then((body) => body.data as T),
+  postForm: <T>(path: string, form: FormData) =>
+    request<T>(path, { method: "POST", body: form }).then((body) => body.data as T),
   patch: <T>(path: string, data?: unknown) =>
     request<T>(path, { method: "PATCH", body: data ? JSON.stringify(data) : undefined }).then((body) => body.data as T),
 };
