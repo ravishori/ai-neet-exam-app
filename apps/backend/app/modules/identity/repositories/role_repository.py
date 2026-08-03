@@ -1,4 +1,5 @@
 import uuid
+from typing import List
 
 from sqlalchemy import delete, select
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -45,3 +46,18 @@ class RoleRepository:
         link = UserRole(user_id=user_id, role_id=role_id)
         self.session.add(link)
         return link
+
+    async def list_all_permissions(self) -> List[Permission]:
+        result = await self.session.execute(select(Permission).order_by(Permission.code))
+        return list(result.scalars().all())
+
+    async def replace_permissions(self, role_id: uuid.UUID, permission_codes: List[str]) -> None:
+        """Admin Portal (PR11) Module 9 — full diff-and-sync, same pattern
+        as replace_roles above: the role ends up with exactly these
+        permissions, nothing more."""
+        await self.session.execute(delete(RolePermission).where(RolePermission.role_id == role_id))
+        if not permission_codes:
+            return
+        result = await self.session.execute(select(Permission).where(Permission.code.in_(permission_codes)))
+        for permission in result.scalars().all():
+            self.session.add(RolePermission(role_id=role_id, permission_id=permission.id))

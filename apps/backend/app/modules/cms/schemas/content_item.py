@@ -31,6 +31,15 @@ class ContentReportRequest(BaseModel):
     comment: str | None = Field(default=None, max_length=1000)
 
 
+class BulkContentActionRequest(BaseModel):
+    item_ids: list[str] = Field(min_length=1, max_length=200)
+    action: str  # publish | archive
+
+
+class ResolveReportRequest(BaseModel):
+    status: str  # RESOLVED | DISMISSED
+
+
 class ContentVersionResponse(BaseModel):
     id: str
     version_no: int

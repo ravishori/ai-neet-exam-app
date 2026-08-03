@@ -17,3 +17,12 @@ class RoleCreateRequest(BaseModel):
 class RoleUpdateRequest(BaseModel):
     name: str | None = Field(default=None, max_length=100)
     description: str | None = None
+
+
+class RolePermissionsUpdateRequest(BaseModel):
+    permission_codes: list[str] = Field(max_length=100)
+
+
+class PermissionResponse(BaseModel):
+    code: str
+    description: str | None

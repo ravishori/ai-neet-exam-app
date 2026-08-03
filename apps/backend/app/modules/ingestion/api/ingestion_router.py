@@ -1,8 +1,10 @@
 import re
 import uuid
+from datetime import UTC, datetime
 from pathlib import Path
 
-from fastapi import APIRouter, BackgroundTasks, Depends, File, Form, UploadFile
+from fastapi import APIRouter, BackgroundTasks, Depends, File, Form, Query, Request, UploadFile
+from pydantic import BaseModel, Field
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.config import get_settings
@@ -15,6 +17,7 @@ from app.modules.ingestion.models import IngestionJob
 from app.modules.ingestion.repositories.ingestion_repository import IngestionRepository
 from app.modules.ingestion.schemas.ingestion import StartIngestionJobRequest
 from app.modules.ingestion.services.ingestion_pipeline_service import IngestionPipelineService
+from app.modules.system.services.audit_service import AuditService, request_context
 from app.shared.responses import envelope
 
 logger = get_logger("ingestion")
@@ -161,10 +164,15 @@ async def upload_ingestion_pdf(
 
 
 @router.get("/jobs", dependencies=[Depends(require_permission("content.create"))])
-async def list_ingestion_jobs(db: AsyncSession = Depends(get_db)):
+async def list_ingestion_jobs(
+    status: str | None = None,
+    limit: int = Query(default=20, ge=1, le=100),
+    offset: int = Query(default=0, ge=0),
+    db: AsyncSession = Depends(get_db),
+):
     repo = IngestionRepository(db)
-    jobs = await repo.list_jobs()
-    return envelope(success=True, data=[_job(j) for j in jobs])
+    jobs, total = await repo.list_jobs_paginated(status=status, limit=limit, offset=offset)
+    return envelope(success=True, data=[_job(j) for j in jobs], meta={"total": total, "limit": limit, "offset": offset})
 
 
 @router.get("/jobs/{job_id}", dependencies=[Depends(require_permission("content.create"))])
@@ -174,3 +182,165 @@ async def get_ingestion_job(job_id: uuid.UUID, db: AsyncSession = Depends(get_db
     if not job:
         raise NotFoundError("Ingestion job not found")
     return envelope(success=True, data=_job(job))
+
+
+@router.get("/jobs/{job_id}/detail", dependencies=[Depends(require_permission("content.create"))])
+async def get_ingestion_job_detail(job_id: uuid.UUID, db: AsyncSession = Depends(get_db)):
+    """Admin Portal (PR11) Module 4 — the drill-down view: which sections,
+    knowledge units, and visual assets a job actually produced."""
+    from app.modules.knowledge.repositories.knowledge_repository import KnowledgeRepository
+
+    repo = IngestionRepository(db)
+    job = await repo.get_job(job_id)
+    if not job:
+        raise NotFoundError("Ingestion job not found")
+
+    sections = await repo.list_sections_for_job(job_id)
+    visual_assets = await repo.list_visual_assets_for_job(job_id)
+    knowledge_units = await KnowledgeRepository(db).list_for_job(job_id)
+
+    return envelope(
+        success=True,
+        data={
+            **_job(job),
+            "sections": [
+                {"id": str(s.id), "heading": s.heading, "source_page": s.source_page, "matched_concept_id": str(s.matched_concept_id) if s.matched_concept_id else None}
+                for s in sections
+            ],
+            "knowledge_units": [
+                {"id": str(u.id), "summary": u.summary, "validation_status": u.validation_status} for u in knowledge_units
+            ],
+            "visual_assets": [
+                {"id": str(a.id), "asset_type": a.asset_type, "review_status": a.review_status, "source_page": a.source_page}
+                for a in visual_assets
+            ],
+        },
+    )
+
+
+def _visual_asset(asset) -> dict:
+    return {
+        "id": str(asset.id),
+        "job_id": str(asset.job_id),
+        "knowledge_unit_id": str(asset.knowledge_unit_id) if asset.knowledge_unit_id else None,
+        "source_page": asset.source_page,
+        "width_px": asset.width_px,
+        "height_px": asset.height_px,
+        "asset_type": asset.asset_type,
+        "detection_method": asset.detection_method,
+        "review_status": asset.review_status,
+        "vision_description": asset.vision_description,
+        "approved_at": asset.approved_at,
+        "approved_by": str(asset.approved_by) if asset.approved_by else None,
+        "rejection_reason": asset.rejection_reason,
+        "has_image": bool(asset.storage_path),
+    }
+
+
+class RejectVisualAssetRequest(BaseModel):
+    reason: str = Field(min_length=1, max_length=1000)
+
+
+_ASSET_CONTENT_TYPE_BY_SUFFIX = {".png": "image/png", ".jpg": "image/jpeg", ".jpeg": "image/jpeg", ".webp": "image/webp"}
+
+
+@router.get("/visual-assets/{asset_id}/image", dependencies=[Depends(require_permission("visual_assets.review"))])
+async def get_visual_asset_image_for_review(asset_id: uuid.UUID, db: AsyncSession = Depends(get_db)):
+    """Admin-only image stream for the review queue — deliberately NOT
+    gated on review_status == VERIFIED like knowledge_router.py's
+    student-facing image endpoint, since a reviewer needs to see an
+    AUTO_DETECTED/NEEDS_MANUAL_BBOX asset's image *before* approving it."""
+    from fastapi.responses import FileResponse
+
+    repo = IngestionRepository(db)
+    asset = await repo.get_visual_asset(asset_id)
+    if not asset or not asset.storage_path:
+        raise NotFoundError("Visual asset not found")
+
+    settings = get_settings()
+    assets_root = Path(settings.visual_assets_dir).resolve()
+    resolved = Path(asset.storage_path).resolve()
+    if assets_root not in resolved.parents and resolved != assets_root:
+        raise AppError("Visual asset storage_path is outside the configured directory", code="INVALID_PATH", status_code=500)
+    if not resolved.is_file():
+        raise NotFoundError("Visual asset file is missing on disk")
+
+    content_type = _ASSET_CONTENT_TYPE_BY_SUFFIX.get(resolved.suffix.lower(), "application/octet-stream")
+    return FileResponse(resolved, media_type=content_type)
+
+
+@router.get("/visual-assets", dependencies=[Depends(require_permission("visual_assets.review"))])
+async def list_visual_assets(
+    review_status: str | None = None,
+    asset_type: str | None = None,
+    limit: int = Query(default=20, ge=1, le=100),
+    offset: int = Query(default=0, ge=0),
+    db: AsyncSession = Depends(get_db),
+):
+    """Admin Portal (PR11) Module 5 — Visual Asset Review queue."""
+    repo = IngestionRepository(db)
+    assets, total = await repo.list_visual_assets_paginated(
+        review_status=review_status, asset_type=asset_type, limit=limit, offset=offset
+    )
+    return envelope(success=True, data=[_visual_asset(a) for a in assets], meta={"total": total, "limit": limit, "offset": offset})
+
+
+@router.post(
+    "/visual-assets/{asset_id}/approve",
+    dependencies=[Depends(require_permission("visual_assets.review")), Depends(verify_csrf)],
+)
+async def approve_visual_asset(
+    asset_id: uuid.UUID, request: Request, user: User = Depends(get_current_user), db: AsyncSession = Depends(get_db)
+):
+    repo = IngestionRepository(db)
+    asset = await repo.get_visual_asset(asset_id)
+    if not asset:
+        raise NotFoundError("Visual asset not found")
+
+    asset.review_status = "VERIFIED"
+    asset.approved_at = datetime.now(UTC)
+    asset.approved_by = user.id
+    asset.rejection_reason = None
+    await repo.commit()
+
+    await AuditService(db).log(
+        actor_user_id=user.id,
+        action="visual_asset.approve",
+        entity_type="visual_asset",
+        entity_id=asset_id,
+        **request_context(request),
+    )
+    return envelope(success=True, data=_visual_asset(asset))
+
+
+@router.post(
+    "/visual-assets/{asset_id}/reject",
+    dependencies=[Depends(require_permission("visual_assets.review")), Depends(verify_csrf)],
+)
+async def reject_visual_asset(
+    asset_id: uuid.UUID,
+    payload: RejectVisualAssetRequest,
+    request: Request,
+    user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db),
+):
+    repo = IngestionRepository(db)
+    asset = await repo.get_visual_asset(asset_id)
+    if not asset:
+        raise NotFoundError("Visual asset not found")
+
+    asset.review_status = "REJECTED"
+    asset.approved_at = datetime.now(UTC)
+    asset.approved_by = user.id
+    asset.rejection_reason = payload.reason
+    await repo.commit()
+
+    await AuditService(db).log(
+        actor_user_id=user.id,
+        action="visual_asset.reject",
+        entity_type="visual_asset",
+        entity_id=asset_id,
+        metadata={"reason": payload.reason},
+        **request_context(request),
+    )
+    return envelope(success=True, data=_visual_asset(asset))

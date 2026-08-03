@@ -1,6 +1,6 @@
 import uuid
 
-from fastapi import APIRouter, Depends, Query
+from fastapi import APIRouter, Depends, Query, Request
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.database import get_db
@@ -8,14 +8,17 @@ from app.core.exceptions import AppError, NotFoundError, PermissionDeniedError
 from app.modules.cms.models import ContentItem, ContentReport, ContentVersion
 from app.modules.cms.repositories.cms_repository import CmsRepository
 from app.modules.cms.schemas.content_item import (
+    BulkContentActionRequest,
     ContentItemCreateRequest,
     ContentItemUpdateRequest,
     ContentReportRequest,
+    ResolveReportRequest,
     ReviewDecisionRequest,
 )
 from app.modules.cms.services.content_workflow_service import ContentWorkflowService
 from app.modules.identity.dependencies import get_current_user, require_permission, verify_csrf
 from app.modules.identity.models.user import User
+from app.modules.system.services.audit_service import AuditService, request_context
 from app.shared.responses import envelope
 
 router = APIRouter(prefix="/api/v1/cms", tags=["cms"])
@@ -144,15 +147,148 @@ async def list_content_items(
     content_type: str | None = None,
     concept_id: uuid.UUID | None = None,
     status: str | None = None,
+    search: str | None = None,
     mine: bool = False,
+    limit: int = Query(default=20, ge=1, le=100),
+    offset: int = Query(default=0, ge=0),
     user: User = Depends(get_current_user),
     db: AsyncSession = Depends(get_db),
 ):
     repo = CmsRepository(db)
-    items = await repo.list_items(content_type=content_type, concept_id=concept_id, status=status)
-    if mine:
-        items = [i for i in items if i.created_by == user.id]
-    return envelope(success=True, data=[_item(i) for i in items])
+    items, total = await repo.list_items_paginated(
+        content_type=content_type,
+        concept_id=concept_id,
+        status=status,
+        search=search,
+        created_by=user.id if mine else None,
+        limit=limit,
+        offset=offset,
+    )
+    return envelope(success=True, data=[_item(i) for i in items], meta={"total": total, "limit": limit, "offset": offset})
+
+
+@router.get("/ai-review-queue", dependencies=[Depends(require_permission("content.review"))])
+async def list_ai_review_queue(
+    status: str = "IN_REVIEW",
+    limit: int = Query(default=20, ge=1, le=100),
+    offset: int = Query(default=0, ge=0),
+    db: AsyncSession = Depends(get_db),
+):
+    """Admin Portal (PR11) Module 6 — content awaiting human review, with
+    the AI Evaluator's report (flags/confidence/reason) surfaced alongside
+    it. Reuses list_items_paginated (Module 2) rather than a new query —
+    ai_check_report already lives on latest_version and _item() already
+    serializes it; this endpoint's only job is a purpose-specific URL and
+    a default filter of IN_REVIEW (the state where a report is actually
+    actionable) instead of Question Management's "all statuses" default."""
+    repo = CmsRepository(db)
+    items, total = await repo.list_items_paginated(status=status, limit=limit, offset=offset)
+    return envelope(success=True, data=[_item(i) for i in items], meta={"total": total, "limit": limit, "offset": offset})
+
+
+BULK_ACTIONS = {"publish", "archive"}
+
+
+@router.post("/content-items/bulk", dependencies=[Depends(require_permission("content.publish")), Depends(verify_csrf)])
+async def bulk_content_action(
+    payload: BulkContentActionRequest,
+    request: Request,
+    user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db),
+):
+    """Admin Portal (PR11) Question Management — bulk publish/archive.
+    Each item is applied independently so one item in the wrong workflow
+    state doesn't block the rest of the batch; per-item outcomes are
+    returned so the UI can show exactly what succeeded."""
+    if payload.action not in BULK_ACTIONS:
+        raise AppError(f"Unknown bulk action: {payload.action}", code="INVALID_BULK_ACTION", status_code=400)
+
+    service = ContentWorkflowService(db)
+    audit = AuditService(db)
+    ctx = request_context(request)
+    results = []
+    for raw_id in payload.item_ids:
+        item_id = uuid.UUID(raw_id)
+        try:
+            if payload.action == "publish":
+                await service.publish(item_id)
+            else:
+                await service.archive(item_id)
+            await audit.log(
+                actor_user_id=user.id,
+                action=f"content.{payload.action}",
+                entity_type="content_item",
+                entity_id=item_id,
+                metadata={"bulk": True},
+                **ctx,
+            )
+            results.append({"id": raw_id, "success": True})
+        except AppError as exc:
+            results.append({"id": raw_id, "success": False, "error": exc.message})
+    return envelope(success=True, data=results)
+
+
+@router.get("/content-reports", dependencies=[Depends(require_permission("content.review"))])
+async def list_content_reports(
+    status: str | None = None,
+    limit: int = Query(default=20, ge=1, le=100),
+    offset: int = Query(default=0, ge=0),
+    db: AsyncSession = Depends(get_db),
+):
+    """Admin Portal (PR11) Question Management — the report-triage queue
+    that content_report.py's docstring flagged as missing since PR11's
+    student-facing Report Issue action shipped with nowhere for the reports
+    to be reviewed."""
+    repo = CmsRepository(db)
+    reports, total = await repo.list_reports(status=status, limit=limit, offset=offset)
+    return envelope(
+        success=True,
+        data=[
+            {
+                "id": str(r.id),
+                "content_item_id": str(r.content_item_id),
+                "reported_by": str(r.reported_by),
+                "reason": r.reason,
+                "comment": r.comment,
+                "status": r.status,
+                "created_at": r.created_at,
+            }
+            for r in reports
+        ],
+        meta={"total": total, "limit": limit, "offset": offset},
+    )
+
+
+@router.patch(
+    "/content-reports/{report_id}", dependencies=[Depends(require_permission("content.review")), Depends(verify_csrf)]
+)
+async def resolve_content_report(
+    report_id: uuid.UUID,
+    payload: ResolveReportRequest,
+    request: Request,
+    user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db),
+):
+    if payload.status not in {"RESOLVED", "DISMISSED"}:
+        raise AppError("status must be RESOLVED or DISMISSED", code="INVALID_REPORT_STATUS", status_code=400)
+
+    repo = CmsRepository(db)
+    report = await repo.get_report(report_id)
+    if not report:
+        raise NotFoundError("Report not found")
+
+    report.status = payload.status
+    await repo.commit()
+
+    await AuditService(db).log(
+        actor_user_id=user.id,
+        action="content_report.resolve",
+        entity_type="content_report",
+        entity_id=report_id,
+        metadata={"status": payload.status},
+        **request_context(request),
+    )
+    return envelope(success=True, data={"id": str(report.id), "status": report.status})
 
 
 @router.get("/content-items/{item_id}", dependencies=[Depends(require_permission("content.create"))])

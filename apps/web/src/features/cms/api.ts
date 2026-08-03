@@ -3,12 +3,20 @@ import { apiClient } from "@/lib/api-client";
 export type ContentType = "CONCEPT_NOTE" | "QUESTION" | "FLASHCARD" | "DIAGRAM" | "VIDEO_REF" | "FORMULA_SHEET";
 export type WorkflowState = "DRAFT" | "IN_REVIEW" | "CHANGES_REQUESTED" | "APPROVED" | "PUBLISHED" | "ARCHIVED";
 
+export type AiCheckReport = {
+  status: "completed" | "skipped" | "error";
+  reason: string;
+  flags: string[];
+  confidence: number | null;
+  checked_at: string;
+};
+
 export type ContentVersion = {
   id: string;
   version_no: number;
   body: Record<string, unknown>;
   workflow_state: WorkflowState;
-  ai_check_report: Record<string, unknown> | null;
+  ai_check_report: AiCheckReport | null;
   change_summary: string | null;
   authored_by: string | null;
   authored_at: string;
@@ -48,10 +56,62 @@ export type QuestionBody = {
   bloom_level?: string;
 };
 
+export type ContentReport = {
+  id: string;
+  content_item_id: string;
+  reported_by: string;
+  reason: string;
+  comment: string | null;
+  status: "OPEN" | "RESOLVED" | "DISMISSED";
+  created_at: string;
+};
+
+export type ListParams = {
+  content_type?: string;
+  concept_id?: string;
+  status?: string;
+  search?: string;
+  mine?: boolean;
+  limit?: number;
+  offset?: number;
+};
+
+export type ListResult = { data: ContentItem[]; meta: { total: number; limit: number; offset: number } };
+
+export type BulkActionResult = { id: string; success: boolean; error?: string };
+
 export const cmsApi = {
-  list: (params: { content_type?: string; concept_id?: string; status?: string; mine?: boolean } = {}) => {
-    const qs = new URLSearchParams(params as Record<string, string>).toString();
-    return apiClient.get<ContentItem[]>(`/api/v1/cms/content-items${qs ? `?${qs}` : ""}`);
+  list: async (params: ListParams = {}): Promise<ListResult> => {
+    const query = new URLSearchParams();
+    if (params.content_type) query.set("content_type", params.content_type);
+    if (params.concept_id) query.set("concept_id", params.concept_id);
+    if (params.status) query.set("status", params.status);
+    if (params.search) query.set("search", params.search);
+    if (params.mine) query.set("mine", "true");
+    query.set("limit", String(params.limit ?? 20));
+    query.set("offset", String(params.offset ?? 0));
+    const body = await apiClient.getFull<ContentItem[]>(`/api/v1/cms/content-items?${query.toString()}`);
+    return { data: body.data ?? [], meta: body.meta as ListResult["meta"] };
+  },
+  bulkAction: (itemIds: string[], action: "publish" | "archive") =>
+    apiClient.post<BulkActionResult[]>("/api/v1/cms/content-items/bulk", { item_ids: itemIds, action }),
+  listReports: async (params: { status?: string; limit?: number; offset?: number } = {}) => {
+    const query = new URLSearchParams();
+    if (params.status) query.set("status", params.status);
+    query.set("limit", String(params.limit ?? 20));
+    query.set("offset", String(params.offset ?? 0));
+    const body = await apiClient.getFull<ContentReport[]>(`/api/v1/cms/content-reports?${query.toString()}`);
+    return { data: body.data ?? [], meta: body.meta as ListResult["meta"] };
+  },
+  resolveReport: (id: string, status: "RESOLVED" | "DISMISSED") =>
+    apiClient.patch<ContentReport>(`/api/v1/cms/content-reports/${id}`, { status }),
+  aiReviewQueue: async (params: { status?: string; limit?: number; offset?: number } = {}): Promise<ListResult> => {
+    const query = new URLSearchParams();
+    if (params.status) query.set("status", params.status);
+    query.set("limit", String(params.limit ?? 20));
+    query.set("offset", String(params.offset ?? 0));
+    const body = await apiClient.getFull<ContentItem[]>(`/api/v1/cms/ai-review-queue?${query.toString()}`);
+    return { data: body.data ?? [], meta: body.meta as ListResult["meta"] };
   },
   get: (id: string) => apiClient.get<ContentItem>(`/api/v1/cms/content-items/${id}`),
   versions: (id: string) => apiClient.get<ContentVersion[]>(`/api/v1/cms/content-items/${id}/versions`),

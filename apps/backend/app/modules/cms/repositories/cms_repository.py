@@ -55,6 +55,65 @@ class CmsRepository:
         result = await self.session.execute(query)
         return list(result.scalars().all())
 
+    async def list_items_paginated(
+        self,
+        *,
+        content_type: str | None = None,
+        concept_id: uuid.UUID | None = None,
+        status: str | None = None,
+        search: str | None = None,
+        created_by: uuid.UUID | None = None,
+        limit: int = 20,
+        offset: int = 0,
+    ) -> tuple[list[ContentItem], int]:
+        """Admin Portal (PR11) Question Management — same filters as
+        list_items plus pagination and a title search, kept as a separate
+        method rather than changing list_items' return shape and breaking
+        its other callers (browse/publish endpoints, seed.py). created_by
+        replaces the old Python-side `mine` post-filter so pagination stays
+        correct (filtering after LIMIT/OFFSET would silently shrink pages)."""
+        base = select(ContentItem)
+        count_query = select(func.count(ContentItem.id))
+
+        if content_type:
+            base = base.where(ContentItem.content_type == content_type)
+            count_query = count_query.where(ContentItem.content_type == content_type)
+        if concept_id:
+            base = base.where(ContentItem.concept_id == concept_id)
+            count_query = count_query.where(ContentItem.concept_id == concept_id)
+        if status:
+            base = base.where(ContentItem.status == status)
+            count_query = count_query.where(ContentItem.status == status)
+        if search:
+            base = base.where(ContentItem.title.ilike(f"%{search}%"))
+            count_query = count_query.where(ContentItem.title.ilike(f"%{search}%"))
+        if created_by:
+            base = base.where(ContentItem.created_by == created_by)
+            count_query = count_query.where(ContentItem.created_by == created_by)
+
+        total = (await self.session.execute(count_query)).scalar_one()
+        base = base.options(selectinload(ContentItem.versions)).order_by(ContentItem.created_at.desc()).limit(limit).offset(offset)
+        result = await self.session.execute(base)
+        return list(result.scalars().unique().all()), total
+
+    async def list_reports(
+        self, *, status: str | None = None, limit: int = 20, offset: int = 0
+    ) -> tuple[list[ContentReport], int]:
+        base = select(ContentReport)
+        count_query = select(func.count(ContentReport.id))
+        if status:
+            base = base.where(ContentReport.status == status)
+            count_query = count_query.where(ContentReport.status == status)
+
+        total = (await self.session.execute(count_query)).scalar_one()
+        base = base.order_by(ContentReport.created_at.desc()).limit(limit).offset(offset)
+        result = await self.session.execute(base)
+        return list(result.scalars().all()), total
+
+    async def get_report(self, report_id: uuid.UUID) -> ContentReport | None:
+        result = await self.session.execute(select(ContentReport).where(ContentReport.id == report_id))
+        return result.scalar_one_or_none()
+
     async def _list_published_by_scope(
         self,
         *,

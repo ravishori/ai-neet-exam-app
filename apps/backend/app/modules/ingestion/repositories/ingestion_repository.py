@@ -1,6 +1,6 @@
 import uuid
 
-from sqlalchemy import select, text
+from sqlalchemy import func, select, text
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.modules.academic.models import Chapter, Concept
@@ -35,6 +35,65 @@ class IngestionRepository:
     async def list_jobs(self, limit: int = 50) -> list[IngestionJob]:
         result = await self.session.execute(select(IngestionJob).order_by(IngestionJob.created_at.desc()).limit(limit))
         return list(result.scalars().all())
+
+    async def list_jobs_paginated(
+        self, *, status: str | None = None, limit: int = 20, offset: int = 0
+    ) -> tuple[list[IngestionJob], int]:
+        """Admin Portal (PR11) Module 4 — the existing list_jobs() has no
+        pagination/filter and is used by the live-polling admin table, which
+        would break if changed; kept as a separate method instead."""
+        base = select(IngestionJob)
+        count_query = select(func.count(IngestionJob.id))
+        if status:
+            base = base.where(IngestionJob.status == status)
+            count_query = count_query.where(IngestionJob.status == status)
+
+        total = (await self.session.execute(count_query)).scalar_one()
+        base = base.order_by(IngestionJob.created_at.desc()).limit(limit).offset(offset)
+        result = await self.session.execute(base)
+        return list(result.scalars().all()), total
+
+    async def list_sections_for_job(self, job_id: uuid.UUID) -> list[IngestionSection]:
+        result = await self.session.execute(
+            select(IngestionSection).where(IngestionSection.job_id == job_id).order_by(IngestionSection.source_page)
+        )
+        return list(result.scalars().all())
+
+    async def list_visual_assets_for_job(self, job_id: uuid.UUID) -> list[VisualAsset]:
+        result = await self.session.execute(
+            select(VisualAsset).where(VisualAsset.job_id == job_id).order_by(VisualAsset.source_page)
+        )
+        return list(result.scalars().all())
+
+    async def list_visual_assets_paginated(
+        self,
+        *,
+        review_status: str | None = None,
+        asset_type: str | None = None,
+        limit: int = 20,
+        offset: int = 0,
+    ) -> tuple[list[VisualAsset], int]:
+        """Admin Portal (PR11) Module 5 — Visual Asset Review. No list/browse
+        endpoint existed for this table before PR11 — every prior consumer
+        only ever fetched VERIFIED assets scoped to one question/knowledge
+        unit (PR7's image serving, PR2's question browse)."""
+        base = select(VisualAsset)
+        count_query = select(func.count(VisualAsset.id))
+        if review_status:
+            base = base.where(VisualAsset.review_status == review_status)
+            count_query = count_query.where(VisualAsset.review_status == review_status)
+        if asset_type:
+            base = base.where(VisualAsset.asset_type == asset_type)
+            count_query = count_query.where(VisualAsset.asset_type == asset_type)
+
+        total = (await self.session.execute(count_query)).scalar_one()
+        base = base.order_by(VisualAsset.created_at.desc()).limit(limit).offset(offset)
+        result = await self.session.execute(base)
+        return list(result.scalars().all()), total
+
+    async def get_visual_asset(self, asset_id: uuid.UUID) -> VisualAsset | None:
+        result = await self.session.execute(select(VisualAsset).where(VisualAsset.id == asset_id))
+        return result.scalar_one_or_none()
 
     def add_job(self, job: IngestionJob) -> None:
         self.session.add(job)

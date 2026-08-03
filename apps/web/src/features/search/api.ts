@@ -57,4 +57,5 @@ export const searchApi = {
     const body = await apiClient.getFull<SearchResultItem[]>(`/api/v1/cms/search?${query.toString()}`);
     return { data: body.data ?? [], meta: body.meta as SearchResponse["meta"] };
   },
+  reindex: () => apiClient.post<{ reindexed_count: number }>("/api/v1/cms/search/reindex"),
 };

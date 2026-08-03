@@ -1,9 +1,9 @@
 import uuid
 
-from sqlalchemy import select, text
+from sqlalchemy import func, select, text
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.modules.ingestion.models import VisualAsset
+from app.modules.ingestion.models import IngestionSection, VisualAsset
 from app.modules.knowledge.models import KnowledgeUnit
 
 # Same threshold and rationale as the existing question-stem dedup in
@@ -89,3 +89,58 @@ class KnowledgeRepository:
 
     async def flush(self) -> None:
         await self.session.flush()
+
+    async def list_paginated(
+        self,
+        *,
+        validation_status: str | None = None,
+        concept_id: uuid.UUID | None = None,
+        limit: int = 20,
+        offset: int = 0,
+    ) -> tuple[list[KnowledgeUnit], int]:
+        """Admin Portal (PR11) Module 3 — Knowledge Unit Management. No
+        list/browse endpoint existed for this table before; every prior
+        consumer only ever fetched units scoped to one concept (AI Tutor,
+        content generation)."""
+        base = select(KnowledgeUnit)
+        count_query = select(func.count(KnowledgeUnit.id))
+
+        if validation_status:
+            base = base.where(KnowledgeUnit.validation_status == validation_status)
+            count_query = count_query.where(KnowledgeUnit.validation_status == validation_status)
+        if concept_id:
+            base = base.where(KnowledgeUnit.concept_id == concept_id)
+            count_query = count_query.where(KnowledgeUnit.concept_id == concept_id)
+
+        total = (await self.session.execute(count_query)).scalar_one()
+        base = base.order_by(KnowledgeUnit.created_at.desc()).limit(limit).offset(offset)
+        result = await self.session.execute(base)
+        return list(result.scalars().all()), total
+
+    async def list_for_job(self, job_id: uuid.UUID) -> list[KnowledgeUnit]:
+        """Admin Portal (PR11) Module 4 — knowledge units produced by one
+        ingestion job, for the job detail drill-down page. KnowledgeUnit has
+        no direct job_id column (only source_section_id), so this joins
+        through IngestionSection."""
+        result = await self.session.execute(
+            select(KnowledgeUnit)
+            .join(IngestionSection, IngestionSection.id == KnowledgeUnit.source_section_id)
+            .where(IngestionSection.job_id == job_id)
+            .order_by(KnowledgeUnit.created_at)
+        )
+        return list(result.scalars().all())
+
+    async def get_supersede_chain(self, unit_id: uuid.UUID) -> list[KnowledgeUnit]:
+        """Walk forward through superseded_by until the chain ends —
+        typically 1-2 hops, so a simple loop beats a recursive CTE here."""
+        chain: list[KnowledgeUnit] = []
+        current_id: uuid.UUID | None = unit_id
+        seen: set[uuid.UUID] = set()
+        while current_id and current_id not in seen:
+            seen.add(current_id)
+            unit = await self.get(current_id)
+            if not unit:
+                break
+            chain.append(unit)
+            current_id = unit.superseded_by
+        return chain

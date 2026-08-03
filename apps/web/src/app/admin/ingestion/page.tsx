@@ -1,7 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Badge } from "@/components/ui/badge";
@@ -13,6 +15,8 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { academicApi } from "@/features/academic/api";
 import { ingestionApi, type IngestionJob, type IngestionJobStatus } from "@/features/ingestion/api";
 import { ApiError } from "@/lib/api-client";
+
+const JOB_PAGE_SIZE = 20;
 
 const STATUS_VARIANT: Record<IngestionJobStatus, "default" | "secondary" | "destructive" | "outline"> = {
   PENDING: "outline",
@@ -29,7 +33,11 @@ const TERMINAL_STATUSES: IngestionJobStatus[] = ["COMPLETED", "FAILED"];
 function JobRow({ job }: { job: IngestionJob }) {
   return (
     <TableRow>
-      <TableCell className="font-medium">{job.original_filename ?? job.source_file_path}</TableCell>
+      <TableCell className="font-medium">
+        <Link href={`/admin/ingestion/${job.id}`} className="underline-offset-2 hover:underline">
+          {job.original_filename ?? job.source_file_path}
+        </Link>
+      </TableCell>
       <TableCell>
         <Badge variant={STATUS_VARIANT[job.status]}>{job.status}</Badge>
         {job.stage_detail && <span className="ml-2 text-xs text-muted-foreground">{job.stage_detail}</span>}
@@ -49,6 +57,8 @@ export default function IngestionUploadPage() {
   const [chapterCode, setChapterCode] = useState<string>("");
   const [file, setFile] = useState<File | null>(null);
   const [activeJobId, setActiveJobId] = useState<string | null>(null);
+  const [statusFilter, setStatusFilter] = useState<IngestionJobStatus | "">("");
+  const [page, setPage] = useState(0);
 
   const subjectsQuery = useQuery({ queryKey: ["academic", "subjects"], queryFn: academicApi.subjects });
   const chaptersQuery = useQuery({
@@ -57,6 +67,8 @@ export default function IngestionUploadPage() {
     enabled: !!subjectId,
   });
 
+  // Small, unpaginated poll — only used to find the just-started job for the
+  // live progress banner above the table.
   const jobsQuery = useQuery({
     queryKey: ["ingestion", "jobs"],
     queryFn: ingestionApi.jobs,
@@ -67,11 +79,22 @@ export default function IngestionUploadPage() {
     },
   });
 
+  const jobsTableQuery = useQuery({
+    queryKey: ["ingestion", "jobs-table", statusFilter, page],
+    queryFn: () => ingestionApi.jobsPaginated({ status: statusFilter || undefined, limit: JOB_PAGE_SIZE, offset: page * JOB_PAGE_SIZE }),
+    refetchInterval: (query) => {
+      const jobs = query.state.data?.data ?? [];
+      const stillRunning = jobs.some((j) => !TERMINAL_STATUSES.includes(j.status));
+      return stillRunning ? 2500 : false;
+    },
+  });
+
   const uploadMutation = useMutation({
     mutationFn: () => ingestionApi.upload(file!, chapterCode),
     onSuccess: (job) => {
       setActiveJobId(job.id);
       queryClient.invalidateQueries({ queryKey: ["ingestion", "jobs"] });
+      queryClient.invalidateQueries({ queryKey: ["ingestion", "jobs-table"] });
       setFile(null);
     },
   });
@@ -191,31 +214,67 @@ export default function IngestionUploadPage() {
       )}
 
       <Card className="w-full max-w-4xl">
-        <CardHeader>
+        <CardHeader className="flex-row items-center justify-between space-y-0">
           <CardTitle className="text-base">Recent ingestion jobs</CardTitle>
+          <select
+            className="h-8 rounded-md border bg-background px-2 text-sm"
+            value={statusFilter}
+            onChange={(e) => {
+              setStatusFilter(e.target.value as IngestionJobStatus | "");
+              setPage(0);
+            }}
+          >
+            <option value="">All statuses</option>
+            {Object.keys(STATUS_VARIANT).map((s) => (
+              <option key={s} value={s}>
+                {s}
+              </option>
+            ))}
+          </select>
         </CardHeader>
-        <CardContent>
-          {jobsQuery.data && jobsQuery.data.length > 0 ? (
-            <Table>
-              <TableHeader>
-                <TableRow>
-                  <TableHead>File</TableHead>
-                  <TableHead>Status</TableHead>
-                  <TableHead>Sections</TableHead>
-                  <TableHead>Questions</TableHead>
-                  <TableHead>Knowledge Units</TableHead>
-                  <TableHead>Visual Assets</TableHead>
-                  <TableHead>Started</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                {jobsQuery.data.map((job) => (
-                  <JobRow key={job.id} job={job} />
-                ))}
-              </TableBody>
-            </Table>
+        <CardContent className="flex flex-col gap-3">
+          {jobsTableQuery.data && jobsTableQuery.data.data.length > 0 ? (
+            <div className="overflow-x-auto">
+              <Table>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead>File</TableHead>
+                    <TableHead>Status</TableHead>
+                    <TableHead>Sections</TableHead>
+                    <TableHead>Questions</TableHead>
+                    <TableHead>Knowledge Units</TableHead>
+                    <TableHead>Visual Assets</TableHead>
+                    <TableHead>Started</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {jobsTableQuery.data.data.map((job) => (
+                    <JobRow key={job.id} job={job} />
+                  ))}
+                </TableBody>
+              </Table>
+            </div>
           ) : (
-            <EmptyState title="No ingestion jobs yet" description="Upload a PDF above to run the pipeline for the first time." />
+            <EmptyState title="No ingestion jobs match this filter" description="Upload a PDF above to run the pipeline for the first time." />
+          )}
+
+          {jobsTableQuery.data && jobsTableQuery.data.meta.total > JOB_PAGE_SIZE && (
+            <div className="flex items-center justify-between pt-2">
+              <Button variant="outline" size="sm" disabled={page === 0} onClick={() => setPage((p) => p - 1)}>
+                <ChevronLeft className="size-4" aria-hidden="true" /> Previous
+              </Button>
+              <span className="text-xs text-muted-foreground">
+                Page {page + 1} of {Math.max(1, Math.ceil(jobsTableQuery.data.meta.total / JOB_PAGE_SIZE))} · {jobsTableQuery.data.meta.total} total
+              </span>
+              <Button
+                variant="outline"
+                size="sm"
+                disabled={(page + 1) * JOB_PAGE_SIZE >= jobsTableQuery.data.meta.total}
+                onClick={() => setPage((p) => p + 1)}
+              >
+                Next <ChevronRight className="size-4" aria-hidden="true" />
+              </Button>
+            </div>
           )}
         </CardContent>
       </Card>

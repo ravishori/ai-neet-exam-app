@@ -33,6 +33,11 @@ PERMISSIONS = [
     ("content.publish", "Publish approved content"),
     ("content.archive", "Archive published content"),
     ("content.force_edit_published", "Hotfix published content, bypassing the review pipeline"),
+    # Admin Portal (PR11) — Content Operations
+    ("knowledge.manage", "View and manage Knowledge Units"),
+    ("visual_assets.review", "Approve or reject detected visual assets"),
+    ("search.admin", "Trigger search reindexing and view the search console"),
+    ("audit.view", "View the platform audit log"),
 ]
 
 ROLE_PERMISSIONS = {
@@ -43,11 +48,13 @@ ROLE_PERMISSIONS = {
         "content.create", "content.edit_own_draft", "content.submit_for_review",
         "content.review", "content.approve", "content.publish", "content.archive",
         "content.force_edit_published",
+        "knowledge.manage", "visual_assets.review", "search.admin", "audit.view",
     ],
     "CONTENT_MANAGER": [
         "questions.read", "questions.create", "questions.update",
         "content.create", "content.edit_own_draft", "content.submit_for_review",
         "content.review", "content.approve", "content.publish", "content.archive",
+        "knowledge.manage", "visual_assets.review",
     ],
     "TEACHER": [
         "questions.read", "questions.create", "reports.view",

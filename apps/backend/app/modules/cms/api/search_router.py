@@ -1,11 +1,14 @@
 import uuid
 
-from fastapi import APIRouter, Depends, Query
+from fastapi import APIRouter, Depends, Query, Request
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.database import get_db
+from app.modules.cms.repositories.search_repository import SearchRepository
 from app.modules.cms.services.search_service import SearchService
-from app.modules.identity.dependencies import require_permission
+from app.modules.identity.dependencies import get_current_user, require_permission, verify_csrf
+from app.modules.identity.models.user import User
+from app.modules.system.services.audit_service import AuditService, request_context
 from app.shared.responses import envelope
 
 router = APIRouter(prefix="/api/v1/cms", tags=["search"])
@@ -65,3 +68,20 @@ async def search_questions(
             "query": result.query,
         },
     )
+
+
+@router.post("/search/reindex", dependencies=[Depends(require_permission("search.admin")), Depends(verify_csrf)])
+async def reindex_search(request: Request, user: User = Depends(get_current_user), db: AsyncSession = Depends(get_db)):
+    """Admin Portal (PR11) Module 7 — exposes SearchRepository.reindex_all_published(),
+    which already existed as "an admin catch-up operation if search_text/
+    search_vector ever drift" (its own docstring) but had no endpoint."""
+    repo = SearchRepository(db)
+    count = await repo.reindex_all_published()
+
+    await AuditService(db).log(
+        actor_user_id=user.id,
+        action="search.reindex",
+        metadata={"reindexed_count": count},
+        **request_context(request),
+    )
+    return envelope(success=True, data={"reindexed_count": count})
