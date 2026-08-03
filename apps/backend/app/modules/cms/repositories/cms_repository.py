@@ -1,6 +1,6 @@
 import uuid
 
-from sqlalchemy import select
+from sqlalchemy import func, select
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
 
@@ -54,6 +54,100 @@ class CmsRepository:
             query = query.where(ContentItem.language == language)
         result = await self.session.execute(query)
         return list(result.scalars().all())
+
+    async def list_questions(
+        self,
+        *,
+        scope_type: str | None = None,
+        scope_id: uuid.UUID | None = None,
+        limit: int = 20,
+        offset: int = 0,
+    ) -> tuple[list[ContentItem], int]:
+        """Published questions only, optionally narrowed to one Subject/Chapter/Topic/Concept.
+
+        Mirrors the scope-join pattern in assessment_repository.published_question_ids_for_scope,
+        extended with a TOPIC level for the question browser's filter UI.
+        """
+        from app.modules.academic.models import Chapter, Concept, Topic
+
+        base = select(ContentItem).where(ContentItem.content_type == "QUESTION", ContentItem.status == "PUBLISHED")
+        count_query = select(func.count(ContentItem.id)).where(
+            ContentItem.content_type == "QUESTION", ContentItem.status == "PUBLISHED"
+        )
+
+        if scope_type == "CONCEPT":
+            base = base.where(ContentItem.concept_id == scope_id)
+            count_query = count_query.where(ContentItem.concept_id == scope_id)
+        elif scope_type == "TOPIC":
+            base = base.join(Concept, Concept.id == ContentItem.concept_id).where(Concept.topic_id == scope_id)
+            count_query = count_query.join(Concept, Concept.id == ContentItem.concept_id).where(Concept.topic_id == scope_id)
+        elif scope_type == "CHAPTER":
+            base = (
+                base.join(Concept, Concept.id == ContentItem.concept_id)
+                .join(Topic, Topic.id == Concept.topic_id)
+                .where(Topic.chapter_id == scope_id)
+            )
+            count_query = (
+                count_query.join(Concept, Concept.id == ContentItem.concept_id)
+                .join(Topic, Topic.id == Concept.topic_id)
+                .where(Topic.chapter_id == scope_id)
+            )
+        elif scope_type == "SUBJECT":
+            base = (
+                base.join(Concept, Concept.id == ContentItem.concept_id)
+                .join(Topic, Topic.id == Concept.topic_id)
+                .join(Chapter, Chapter.id == Topic.chapter_id)
+                .where(Chapter.subject_id == scope_id)
+            )
+            count_query = (
+                count_query.join(Concept, Concept.id == ContentItem.concept_id)
+                .join(Topic, Topic.id == Concept.topic_id)
+                .join(Chapter, Chapter.id == Topic.chapter_id)
+                .where(Chapter.subject_id == scope_id)
+            )
+        # scope_type None: no extra filter, browse everything published
+
+        total = (await self.session.execute(count_query)).scalar_one()
+        base = base.options(selectinload(ContentItem.versions)).order_by(ContentItem.created_at.desc()).limit(limit).offset(offset)
+        result = await self.session.execute(base)
+        return list(result.scalars().unique().all()), total
+
+    async def academic_names_for_concepts(self, concept_ids: list[uuid.UUID]) -> dict[uuid.UUID, dict]:
+        """Batch-load Concept/Topic/Chapter/Subject names for a page of questions.
+
+        One extra query per page rather than joining names into the paginated
+        question query itself, which would otherwise mix ORM entity + scalar
+        columns and complicate the limit/offset pagination above.
+        """
+        from app.modules.academic.models import Chapter, Concept, Subject, Topic
+
+        if not concept_ids:
+            return {}
+        result = await self.session.execute(
+            select(
+                Concept.id,
+                Concept.name.label("concept_name"),
+                Topic.id.label("topic_id"),
+                Topic.name.label("topic_name"),
+                Chapter.id.label("chapter_id"),
+                Chapter.name.label("chapter_name"),
+                Subject.id.label("subject_id"),
+                Subject.name.label("subject_name"),
+            )
+            .join(Topic, Topic.id == Concept.topic_id)
+            .join(Chapter, Chapter.id == Topic.chapter_id)
+            .join(Subject, Subject.id == Chapter.subject_id)
+            .where(Concept.id.in_(concept_ids))
+        )
+        return {
+            row.id: {
+                "concept": {"id": str(row.id), "name": row.concept_name},
+                "topic": {"id": str(row.topic_id), "name": row.topic_name},
+                "chapter": {"id": str(row.chapter_id), "name": row.chapter_name},
+                "subject": {"id": str(row.subject_id), "name": row.subject_name},
+            }
+            for row in result.all()
+        }
 
     async def get_version(self, version_id: uuid.UUID) -> ContentVersion | None:
         result = await self.session.execute(select(ContentVersion).where(ContentVersion.id == version_id))

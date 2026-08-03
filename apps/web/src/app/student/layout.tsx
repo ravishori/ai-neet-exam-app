@@ -3,6 +3,7 @@ import { AppHeader } from "@/components/app-header";
 const STUDENT_LINKS = [
   { href: "/student/dashboard", label: "Dashboard" },
   { href: "/student/subjects", label: "Subjects" },
+  { href: "/student/questions", label: "Questions" },
   { href: "/student/practice", label: "Practice" },
   { href: "/student/mock-tests", label: "Mock Tests" },
   { href: "/student/attempts", label: "Attempts" },

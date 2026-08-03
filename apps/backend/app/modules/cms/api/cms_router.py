@@ -1,6 +1,6 @@
 import uuid
 
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, Query
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.database import get_db
@@ -51,6 +51,33 @@ def _item(item: ContentItem) -> dict:
 
 def _can_edit(item: ContentItem, user: User) -> bool:
     return "SUPER_ADMIN" in user.role_codes or "ADMIN" in user.role_codes or item.created_by == user.id
+
+
+def _question_body(item: ContentItem) -> dict:
+    by_id = {v.id: v for v in item.versions}
+    version = by_id.get(item.current_version_id)
+    return version.body if version else {}
+
+
+def _question_summary(item: ContentItem, names: dict) -> dict:
+    """Browse view — never includes correct_option/explanation, matching the
+    _public_question pattern in assessment_router.py."""
+    body = _question_body(item)
+    concept_names = names.get(item.concept_id, {}) if item.concept_id else {}
+    return {
+        "id": str(item.id),
+        "stem": body.get("stem"),
+        "options": body.get("options", []),
+        "difficulty": body.get("difficulty"),
+        "bloom_level": body.get("bloom_level"),
+        "pyq_year": body.get("pyq_year"),
+        "tags": item.tags,
+        "language": item.language,
+        "concept": concept_names.get("concept"),
+        "topic": concept_names.get("topic"),
+        "chapter": concept_names.get("chapter"),
+        "subject": concept_names.get("subject"),
+    }
 
 
 @router.post("/content-items", dependencies=[Depends(require_permission("content.create")), Depends(verify_csrf)])
@@ -159,6 +186,38 @@ async def archive_content_item(item_id: uuid.UUID, db: AsyncSession = Depends(ge
 async def get_coverage(db: AsyncSession = Depends(get_db)):
     repo = CmsRepository(db)
     return envelope(success=True, data=await repo.coverage())
+
+
+@router.get("/questions", dependencies=[Depends(require_permission("questions.read"))])
+async def browse_questions(
+    scope_type: str | None = None,  # SUBJECT | CHAPTER | TOPIC | CONCEPT
+    scope_id: uuid.UUID | None = None,
+    limit: int = Query(default=20, ge=1, le=100),
+    offset: int = Query(default=0, ge=0),
+    db: AsyncSession = Depends(get_db),
+):
+    """Student-facing question browser — published questions only, never
+    leaks correct_option/explanation. Wires up the questions.read permission
+    seeded for every role since identity/seed.py but previously unused."""
+    repo = CmsRepository(db)
+    items, total = await repo.list_questions(scope_type=scope_type, scope_id=scope_id, limit=limit, offset=offset)
+    concept_ids = [i.concept_id for i in items if i.concept_id]
+    names = await repo.academic_names_for_concepts(concept_ids)
+    return envelope(
+        success=True,
+        data=[_question_summary(i, names) for i in items],
+        meta={"total": total, "limit": limit, "offset": offset},
+    )
+
+
+@router.get("/questions/{item_id}", dependencies=[Depends(require_permission("questions.read"))])
+async def get_question(item_id: uuid.UUID, db: AsyncSession = Depends(get_db)):
+    repo = CmsRepository(db)
+    item = await repo.get_item(item_id)
+    if not item or item.content_type != "QUESTION" or item.status != "PUBLISHED":
+        raise NotFoundError("Question not found")
+    names = await repo.academic_names_for_concepts([item.concept_id] if item.concept_id else [])
+    return envelope(success=True, data=_question_summary(item, names))
 
 
 @router.get("/concepts/{concept_id}/published", dependencies=[Depends(get_current_user)])
