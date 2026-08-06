@@ -1,0 +1,36 @@
+Here's how to run it locally — two servers (backend + frontend), both need Postgres and Redis already running.
+
+## 1. Backend (FastAPI, port 8000)
+
+bash
+cd D:/ravishori/AI Neet Exam App/apps/backend
+.\.venv\Scripts\python.exe -m uvicorn app.main:app --reload
+
+
+This uses the existing `.venv` and picks up `apps/backend/.env` (DB connection, JWT secret, etc. — already configured from earlier sessions).
+
+## 2. Frontend (Next.js, port 3000)
+
+In a separate terminal:
+
+bash
+cd /d "D:\ravishori\AI Neet Exam App\apps\web" && npm run dev
+
+
+Then open `http://localhost:3000` in a browser. `apps/web/.env.local` already points `NEXT_PUBLIC_API_URL` at `http://localhost:8000`.
+
+## Heads-up: ports 8000 and 3000 are currently occupied
+
+I just checked — there are stale processes still listening on both ports from earlier sessions, and on this machine Windows' own tools (`Get-Process`, `taskkill`) can't actually kill them (a recurring quirk on this setup). Two ways to handle it:
+
+- **Try killing them first**: 
+powershell
+Stop-Process -Id 19896,17972,25280 -Force
+
+If that works, the commands above will bind cleanly to 8000/3000.
+- **If that fails**, just run on different ports and point the frontend at the new backend port:
+  - Backend: add `--port 8010` to the uvicorn command
+  - Frontend: Next.js will auto-fallback to 3001 if 3000 is busy (it'll tell you in the terminal output)
+  - Edit `apps/web/.env.local`'s `NEXT_PUBLIC_API_URL` to match whatever port the backend actually started on, and add that frontend origin to `CORS_ORIGINS` in `apps/backend/.env`
+
+Want me to try clearing those ports for you now?

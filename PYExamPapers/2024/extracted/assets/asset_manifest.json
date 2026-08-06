@@ -1,0 +1,335 @@
+{
+  "total_assets": 15,
+  "assets": [
+    {
+      "id": "6fe242e8-3c4c-4e2a-9919-88cb44bb97e6",
+      "subject": "Botany",
+      "source_pdf_page": 1,
+      "bounding_box": {
+        "x0": 235.0,
+        "y0": 661.0,
+        "x1": 324.0,
+        "y1": 785.0,
+        "unit": "pdf_points_72dpi"
+      },
+      "width_px": 371,
+      "height_px": 517,
+      "render_dpi": 300,
+      "type": "image",
+      "ocr_text": null,
+      "vision_description": "Longitudinal-section diagram of a monocot (grass-type) seed: pericarp and endosperm on the outside; four labeled internal parts from top to bottom - A (coleoptile), B (plumule), C (radicle, the part that forms the root on germination), D (coleorhiza).",
+      "related_question_ids": [
+        3
+      ],
+      "crop_filename": "botany_p1_q3_6fe242e8.png"
+    },
+    {
+      "id": "9230661c-e5e0-4ed7-bd2d-1145a9432e11",
+      "subject": "Botany",
+      "source_pdf_page": 1,
+      "bounding_box": {
+        "x0": 386.0,
+        "y0": 367.0,
+        "x1": 544.0,
+        "y1": 475.0,
+        "unit": "pdf_points_72dpi"
+      },
+      "width_px": 659,
+      "height_px": 451,
+      "render_dpi": 300,
+      "type": "image",
+      "ocr_text": null,
+      "vision_description": "Two floral longitudinal-section diagrams side by side, labeled (A) and (B): each shows petals and stamens arranged around a central gynoecium at roughly the same level on the rim of a cup-shaped thalamus - both illustrating a perigynous flower arrangement.",
+      "related_question_ids": [
+        4
+      ],
+      "crop_filename": "botany_p1_q4_9230661c.png"
+    },
+    {
+      "id": "639dc50e-c4f2-4df4-a599-4b6a4dd8c9a6",
+      "subject": "Botany",
+      "source_pdf_page": 2,
+      "bounding_box": {
+        "x0": 113.0,
+        "y0": 104.0,
+        "x1": 258.0,
+        "y1": 186.0,
+        "unit": "pdf_points_72dpi"
+      },
+      "width_px": 605,
+      "height_px": 342,
+      "render_dpi": 300,
+      "type": "image",
+      "ocr_text": null,
+      "vision_description": "Cross-section diagram of a stomatal complex: label A points to the outer epidermal cells, B to the subsidiary cells, C to the guard cells bordering the central pore, D to the stomatal pore itself.",
+      "related_question_ids": [
+        7
+      ],
+      "crop_filename": "botany_p2_q7_639dc50e.png"
+    },
+    {
+      "id": "96cebdb2-ca9b-4a94-bee7-dbc14c343e7e",
+      "subject": "Botany",
+      "source_pdf_page": 6,
+      "bounding_box": {
+        "x0": 161.0,
+        "y0": 442.0,
+        "x1": 217.0,
+        "y1": 532.0,
+        "unit": "pdf_points_72dpi"
+      },
+      "width_px": 235,
+      "height_px": 376,
+      "render_dpi": 300,
+      "type": "image",
+      "ocr_text": null,
+      "vision_description": "A dense, compact, spike-like inflorescence with numerous long, thin, filamentous stamens projecting outward - a grass-type wind-pollinated inflorescence with well-exposed anthers.",
+      "related_question_ids": [
+        45
+      ],
+      "crop_filename": "botany_p6_q45_96cebdb2.png"
+    },
+    {
+      "id": "ac357255-9580-4147-9133-930cbc0b7f12",
+      "subject": "Zoology",
+      "source_pdf_page": 7,
+      "bounding_box": {
+        "x0": 352.0,
+        "y0": 138.0,
+        "x1": 419.0,
+        "y1": 255.0,
+        "unit": "pdf_points_72dpi"
+      },
+      "width_px": 280,
+      "height_px": 488,
+      "render_dpi": 300,
+      "type": "diagram",
+      "ocr_text": null,
+      "vision_description": "Histology illustration (a): long, cylindrical, striated, multinucleate muscle fibers - skeletal muscle (matched to Triceps in the answer key).",
+      "related_question_ids": [
+        54
+      ],
+      "crop_filename": "zoology_p7_q54_ac357255.png"
+    },
+    {
+      "id": "aecad22e-6a58-43ad-b04f-5237f77e03f2",
+      "subject": "Zoology",
+      "source_pdf_page": 7,
+      "bounding_box": {
+        "x0": 428.0,
+        "y0": 137.0,
+        "x1": 502.0,
+        "y1": 261.0,
+        "unit": "pdf_points_72dpi"
+      },
+      "width_px": 309,
+      "height_px": 518,
+      "render_dpi": 300,
+      "type": "diagram",
+      "ocr_text": null,
+      "vision_description": "Histology illustration (b): spindle-shaped, tapering, unstriated cells each with a single central nucleus - smooth muscle (matched to Stomach in the answer key).",
+      "related_question_ids": [
+        54
+      ],
+      "crop_filename": "zoology_p7_q54_aecad22e.png"
+    },
+    {
+      "id": "acb633d9-bdb7-419a-8798-7fb7c0ac26d7",
+      "subject": "Zoology",
+      "source_pdf_page": 7,
+      "bounding_box": {
+        "x0": 512.0,
+        "y0": 138.0,
+        "x1": 579.0,
+        "y1": 261.0,
+        "unit": "pdf_points_72dpi"
+      },
+      "width_px": 280,
+      "height_px": 513,
+      "render_dpi": 300,
+      "type": "diagram",
+      "ocr_text": null,
+      "vision_description": "Histology illustration (c): branched, striated muscle fibers - cardiac muscle (matched to Heart in the answer key).",
+      "related_question_ids": [
+        54
+      ],
+      "crop_filename": "zoology_p7_q54_acb633d9.png"
+    },
+    {
+      "id": "16810295-acbc-4510-adc2-16252ded60ac",
+      "subject": "Physics",
+      "source_pdf_page": 4,
+      "bounding_box": {
+        "x0": 88.0,
+        "y0": 667.0,
+        "x1": 148.0,
+        "y1": 719.0,
+        "unit": "pdf_points_72dpi"
+      },
+      "width_px": 251,
+      "height_px": 217,
+      "render_dpi": 300,
+      "type": "diagram",
+      "ocr_text": null,
+      "vision_description": "Graph option (a): 1/lambda^2 (y-axis) vs kinetic energy E (x-axis) - a concave-down curve through the origin that rises then flattens.",
+      "related_question_ids": [
+        28
+      ],
+      "crop_filename": "physics_p4_q28_16810295.png"
+    },
+    {
+      "id": "77108e32-7339-419e-8ab6-16aa5ab0bbe7",
+      "subject": "Physics",
+      "source_pdf_page": 4,
+      "bounding_box": {
+        "x0": 203.0,
+        "y0": 667.0,
+        "x1": 263.0,
+        "y1": 719.0,
+        "unit": "pdf_points_72dpi"
+      },
+      "width_px": 251,
+      "height_px": 217,
+      "render_dpi": 300,
+      "type": "diagram",
+      "ocr_text": null,
+      "vision_description": "Graph option (b): 1/lambda^2 vs E - a straight line through the origin with constant positive slope (the correct answer per the answer key).",
+      "related_question_ids": [
+        28
+      ],
+      "crop_filename": "physics_p4_q28_77108e32.png"
+    },
+    {
+      "id": "b84d6f66-be73-481d-ab87-d7778809d768",
+      "subject": "Physics",
+      "source_pdf_page": 4,
+      "bounding_box": {
+        "x0": 88.0,
+        "y0": 726.0,
+        "x1": 148.0,
+        "y1": 779.0,
+        "unit": "pdf_points_72dpi"
+      },
+      "width_px": 251,
+      "height_px": 221,
+      "render_dpi": 300,
+      "type": "diagram",
+      "ocr_text": null,
+      "vision_description": "Graph option (c): 1/lambda^2 vs E - a concave-up curve through the origin that rises slowly then steeply.",
+      "related_question_ids": [
+        28
+      ],
+      "crop_filename": "physics_p4_q28_b84d6f66.png"
+    },
+    {
+      "id": "846f0f0d-92f6-448d-a6c1-8a0ef2d363ba",
+      "subject": "Physics",
+      "source_pdf_page": 4,
+      "bounding_box": {
+        "x0": 203.0,
+        "y0": 727.0,
+        "x1": 263.0,
+        "y1": 780.0,
+        "unit": "pdf_points_72dpi"
+      },
+      "width_px": 251,
+      "height_px": 221,
+      "render_dpi": 300,
+      "type": "diagram",
+      "ocr_text": null,
+      "vision_description": "Graph option (d): 1/lambda^2 vs E - a decreasing curve, falling as E increases.",
+      "related_question_ids": [
+        28
+      ],
+      "crop_filename": "physics_p4_q28_846f0f0d.png"
+    },
+    {
+      "id": "f5b1f59b-9302-4e0e-9cf3-5f8d4241deba",
+      "subject": "Physics",
+      "source_pdf_page": 6,
+      "bounding_box": {
+        "x0": 361.0,
+        "y0": 122.0,
+        "x1": 465.0,
+        "y1": 204.0,
+        "unit": "pdf_points_72dpi"
+      },
+      "width_px": 434,
+      "height_px": 342,
+      "render_dpi": 300,
+      "type": "diagram",
+      "ocr_text": null,
+      "vision_description": "Wheatstone bridge circuit option (a): resistors 10 Ohm/10 Ohm (top arms) and 15 Ohm/5 Ohm (bottom arms), with a galvanometer G and a diode D in the bridge diagonals, battery E and key K in the main loop.",
+      "related_question_ids": [
+        43
+      ],
+      "crop_filename": "physics_p6_q43_f5b1f59b.png"
+    },
+    {
+      "id": "04c44bfc-e58b-4d66-bfa6-b71be20b435e",
+      "subject": "Physics",
+      "source_pdf_page": 6,
+      "bounding_box": {
+        "x0": 476.0,
+        "y0": 123.0,
+        "x1": 580.0,
+        "y1": 205.0,
+        "unit": "pdf_points_72dpi"
+      },
+      "width_px": 434,
+      "height_px": 343,
+      "render_dpi": 300,
+      "type": "diagram",
+      "ocr_text": null,
+      "vision_description": "Wheatstone bridge circuit option (b): same resistor values as (a), with the diode D in a different orientation/position in the bridge.",
+      "related_question_ids": [
+        43
+      ],
+      "crop_filename": "physics_p6_q43_04c44bfc.png"
+    },
+    {
+      "id": "d75501c0-aef1-48ea-8a3b-0a760d085bf8",
+      "subject": "Physics",
+      "source_pdf_page": 6,
+      "bounding_box": {
+        "x0": 361.0,
+        "y0": 208.0,
+        "x1": 465.0,
+        "y1": 291.0,
+        "unit": "pdf_points_72dpi"
+      },
+      "width_px": 434,
+      "height_px": 347,
+      "render_dpi": 300,
+      "type": "diagram",
+      "ocr_text": null,
+      "vision_description": "Wheatstone bridge circuit option (c): same resistor values, diode orientation matching the answer-key-confirmed balanced configuration.",
+      "related_question_ids": [
+        43
+      ],
+      "crop_filename": "physics_p6_q43_d75501c0.png"
+    },
+    {
+      "id": "ce0f360b-7d3b-480e-851b-044a10503fbf",
+      "subject": "Physics",
+      "source_pdf_page": 6,
+      "bounding_box": {
+        "x0": 476.0,
+        "y0": 209.0,
+        "x1": 580.0,
+        "y1": 292.0,
+        "unit": "pdf_points_72dpi"
+      },
+      "width_px": 434,
+      "height_px": 347,
+      "render_dpi": 300,
+      "type": "diagram",
+      "ocr_text": null,
+      "vision_description": "Wheatstone bridge circuit option (d): same resistor values, diode D in a fourth orientation/position.",
+      "related_question_ids": [
+        43
+      ],
+      "crop_filename": "physics_p6_q43_ce0f360b.png"
+    }
+  ]
+}
