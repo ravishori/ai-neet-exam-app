@@ -4,7 +4,7 @@ from fastapi import APIRouter, Depends
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.database import get_db
-from app.core.exceptions import NotFoundError
+from app.core.exceptions import AppError, NotFoundError
 from app.modules.assessment.models import Assessment, Attempt
 from app.modules.assessment.repositories.assessment_repository import AssessmentRepository
 from app.modules.assessment.schemas.assessment import AnswerRequest, GenerateRequest
@@ -126,6 +126,16 @@ async def generate_mock(payload: GenerateRequest, user: User = Depends(get_curre
     return envelope(success=True, data=_assessment(assessment), status_code=201)
 
 
+@router.post("/assessments/full-mock", dependencies=[Depends(verify_csrf)])
+async def generate_full_mock(user: User = Depends(get_current_user), db: AsyncSession = Depends(get_db)):
+    """Real NEET-pattern mock (up to 45 questions/subject, 180 minutes) —
+    distinct from generate_mock's scope-picker path, which stays as-is for
+    a custom-scope timed set. See AssessmentService.generate_full_mock."""
+    service = AssessmentService(db)
+    assessment, coverage = await service.generate_full_mock(user_id=user.id)
+    return envelope(success=True, data={**_assessment(assessment), "coverage": coverage}, status_code=201)
+
+
 @router.post("/assessments/{assessment_id}/attempts", dependencies=[Depends(verify_csrf)])
 async def start_attempt(assessment_id: uuid.UUID, user: User = Depends(get_current_user), db: AsyncSession = Depends(get_db)):
     service = AssessmentService(db)
@@ -143,9 +153,16 @@ async def list_attempts(user: User = Depends(get_current_user), db: AsyncSession
 @router.get("/attempts/{attempt_id}")
 async def get_attempt(attempt_id: uuid.UUID, user: User = Depends(get_current_user), db: AsyncSession = Depends(get_db)):
     repo = AssessmentRepository(db)
-    attempt = await repo.get_attempt(attempt_id)
-    if not attempt or attempt.user_id != user.id:
-        raise NotFoundError("Attempt not found")
+    # Routes through the service (not repo.get_attempt directly) so a
+    # timed attempt whose deadline has passed gets auto-submitted here —
+    # covers a student reopening a tab after time ran out without the
+    # client ever getting to fire its own auto-submit.
+    try:
+        attempt = await AssessmentService(db).get_attempt_for_student(attempt_id, user.id)
+    except AppError as e:
+        if e.code == "NOT_FOUND":
+            raise NotFoundError("Attempt not found") from None
+        raise
 
     assessment = await repo.get_assessment(attempt.assessment_id)
     question_ids = [q.content_item_id for q in assessment.questions]

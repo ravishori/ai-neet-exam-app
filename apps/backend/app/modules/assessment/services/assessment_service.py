@@ -1,10 +1,11 @@
 import uuid
-from datetime import UTC, datetime
+from datetime import UTC, datetime, timedelta
 
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.exceptions import AppError
 from app.core.logging import get_logger
+from app.modules.academic.repositories.academic_repository import AcademicRepository
 from app.modules.assessment.models import Assessment, AssessmentQuestion, Attempt, AttemptAnswer
 from app.modules.assessment.repositories.assessment_repository import AssessmentRepository, sample_question_ids
 from app.modules.learning.services.mastery_service import MasteryService
@@ -13,6 +14,14 @@ logger = get_logger("assessment")
 
 SCOPE_TYPES = {"CONCEPT", "CHAPTER", "SUBJECT", "FULL"}
 DEFAULT_PRACTICE_COUNT = 10
+
+# Real NEET pattern: 45 questions/subject (Physics, Chemistry, Botany,
+# Zoology) = 180 total, 200 marks, single 180-minute sitting — see
+# ADR-0013's "Consequences": with the seed content this session has (~8
+# questions across 4 subjects), a full mock degrades gracefully to
+# whatever's actually published per subject rather than failing outright.
+NEET_SUBJECT_QUESTION_QUOTA = 45
+FULL_MOCK_DURATION_MINUTES = 180
 
 
 class AssessmentWorkflowError(AppError):
@@ -31,6 +40,41 @@ class AssessmentService:
     def __init__(self, session: AsyncSession):
         self.session = session
         self.repo = AssessmentRepository(session)
+
+    async def _persist_assessment(
+        self,
+        *,
+        assessment_type: str,
+        scope_type: str,
+        scope_id: uuid.UUID | None,
+        selected: list[uuid.UUID],
+        marks: float,
+        negative_marks: float,
+        duration_minutes: int | None,
+        title: str,
+        author_id: uuid.UUID,
+    ) -> Assessment:
+        assessment = Assessment(
+            assessment_type=assessment_type,
+            scope_type=scope_type,
+            scope_id=scope_id,
+            title=title,
+            duration_minutes=duration_minutes,
+            marks_per_question=marks,
+            negative_marks_per_question=negative_marks,
+            question_count=len(selected),
+            created_by=author_id,
+        )
+        self.repo.add_assessment(assessment)
+        await self.repo.flush()
+
+        for order_no, content_item_id in enumerate(selected):
+            self.repo.add_question(
+                AssessmentQuestion(assessment_id=assessment.id, content_item_id=content_item_id, order_no=order_no)
+            )
+        await self.repo.commit()
+        logger.info("assessment_generated", assessment_id=str(assessment.id), type=assessment_type, count=len(selected))
+        return await self.repo.get_assessment(assessment.id)
 
     async def _generate(
         self,
@@ -59,28 +103,17 @@ class AssessmentService:
             )
 
         selected = sample_question_ids(available, question_count or len(available))
-
-        assessment = Assessment(
+        return await self._persist_assessment(
             assessment_type=assessment_type,
             scope_type=scope_type,
             scope_id=scope_id,
-            title=title,
+            selected=selected,
+            marks=marks,
+            negative_marks=negative_marks,
             duration_minutes=duration_minutes,
-            marks_per_question=marks,
-            negative_marks_per_question=negative_marks,
-            question_count=len(selected),
-            created_by=author_id,
+            title=title,
+            author_id=author_id,
         )
-        self.repo.add_assessment(assessment)
-        await self.repo.flush()
-
-        for order_no, content_item_id in enumerate(selected):
-            self.repo.add_question(
-                AssessmentQuestion(assessment_id=assessment.id, content_item_id=content_item_id, order_no=order_no)
-            )
-        await self.repo.commit()
-        logger.info("assessment_generated", assessment_id=str(assessment.id), type=assessment_type, count=len(selected))
-        return await self.repo.get_assessment(assessment.id)
 
     async def generate_practice(
         self, *, scope_type: str, scope_id: uuid.UUID | None, question_count: int | None, user_id: uuid.UUID
@@ -117,6 +150,54 @@ class AssessmentService:
         await self.repo.commit()
         return assessment
 
+    async def generate_full_mock(self, *, user_id: uuid.UUID) -> tuple[Assessment, list[dict]]:
+        """Real NEET-pattern mock: up to NEET_SUBJECT_QUESTION_QUOTA questions
+        per subject, fixed 180-minute duration — not "every published
+        question in scope" like generate_mock's FULL scope. Degrades
+        gracefully per subject when fewer than the quota is published yet
+        (ADR-0013's "Consequences": that's signal, not a bug), rather than
+        failing outright unless literally nothing is published anywhere.
+        Returns the assessment plus a per-subject coverage report so the
+        caller can show the student honestly what they're about to sit,
+        not a silently-shrunk paper."""
+        subjects = await AcademicRepository(self.session).list_subjects()
+
+        selected: list[uuid.UUID] = []
+        coverage: list[dict] = []
+        for subject in subjects:
+            available = await self.repo.published_question_ids_for_scope("SUBJECT", subject.id)
+            picked = sample_question_ids(available, min(len(available), NEET_SUBJECT_QUESTION_QUOTA))
+            selected.extend(picked)
+            coverage.append(
+                {
+                    "subject_id": str(subject.id),
+                    "subject_name": subject.name,
+                    "quota": NEET_SUBJECT_QUESTION_QUOTA,
+                    "available": len(available),
+                    "selected": len(picked),
+                }
+            )
+
+        if not selected:
+            raise AppError(
+                "No published questions available yet for a full mock.",
+                code="NO_QUESTIONS_AVAILABLE",
+                status_code=422,
+            )
+
+        assessment = await self._persist_assessment(
+            assessment_type="MOCK",
+            scope_type="FULL",
+            scope_id=None,
+            selected=selected,
+            marks=4,
+            negative_marks=1,
+            duration_minutes=FULL_MOCK_DURATION_MINUTES,
+            title="Full NEET mock",
+            author_id=user_id,
+        )
+        return assessment, coverage
+
     async def start_attempt(self, assessment_id: uuid.UUID, user_id: uuid.UUID) -> Attempt:
         assessment = await self.repo.get_assessment(assessment_id)
         if not assessment:
@@ -134,6 +215,29 @@ class AssessmentService:
             raise AppError("Attempt not found", code="NOT_FOUND", status_code=404)
         return attempt
 
+    async def _auto_submit_if_expired(self, attempt: Attempt, user_id: uuid.UUID) -> Attempt:
+        """Server-side deadline enforcement (closes the gap ADR-0013 flagged:
+        'the client auto-submits on timer expiry; the server trusts
+        submitted_at for v1'). Untimed assessments (duration_minutes is
+        None — every PRACTICE, and any MOCK generated before this existed)
+        are unaffected. A student who left an expired attempt open, or
+        whose auto-submit request never reached the server, gets it
+        force-submitted here the next time they touch it — not stuck
+        IN_PROGRESS forever, and not able to keep answering past time."""
+        if attempt.status != "IN_PROGRESS":
+            return attempt
+        assessment = await self.repo.get_assessment(attempt.assessment_id)
+        if assessment.duration_minutes is None:
+            return attempt
+        deadline = attempt.started_at + timedelta(minutes=assessment.duration_minutes)
+        if datetime.now(UTC) <= deadline:
+            return attempt
+        return await self.submit_attempt(attempt.id, user_id)
+
+    async def get_attempt_for_student(self, attempt_id: uuid.UUID, user_id: uuid.UUID) -> Attempt:
+        attempt = await self._get_owned_attempt(attempt_id, user_id)
+        return await self._auto_submit_if_expired(attempt, user_id)
+
     async def save_answer(
         self,
         attempt_id: uuid.UUID,
@@ -146,6 +250,10 @@ class AssessmentService:
         time_spent_seconds: int | None = None,
     ) -> None:
         attempt = await self._get_owned_attempt(attempt_id, user_id)
+        was_in_progress = attempt.status == "IN_PROGRESS"
+        attempt = await self._auto_submit_if_expired(attempt, user_id)
+        if was_in_progress and attempt.status != "IN_PROGRESS":
+            raise AssessmentWorkflowError("Time is up — this attempt has been submitted automatically", code="ATTEMPT_EXPIRED")
         if attempt.status != "IN_PROGRESS":
             raise AssessmentWorkflowError("Cannot answer a submitted attempt")
 
