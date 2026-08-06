@@ -1,0 +1,17 @@
+%% TALOS Volume 1 — Closed learning loop
+flowchart TD
+  P[Select concept / recommendation] --> Q[Generate or fetch practice set]
+  Q --> R[Attempt answers]
+  R --> S[Score engine]
+  S --> T[Persist attempt_answers]
+  T --> U[Recompute concept mastery]
+  U --> V[Recompute micro-competency mastery if tagged]
+  V --> W[Recompute knowledge_unit_mastery if linked]
+  W --> X[Update revision schedule by mastery_level]
+  X --> Y[Rank recommendations: due → weak → new]
+  Y --> Z[Student acts on next item]
+  Z --> P
+
+  S --> AA[Analytics aggregates live]
+  W --> AB[Tutor can cite published notes / KU facts]
+  AB --> Z

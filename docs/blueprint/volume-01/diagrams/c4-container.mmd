@@ -1,0 +1,27 @@
+%% TALOS Volume 1 — C4 Container
+%% C4 model Level 2
+C4Container
+  title TALOS Container Diagram
+
+  Person(student, "Student / Admin / Author", "Browser")
+
+  System_Boundary(talos, "TALOS on Coolify / Docker Compose") {
+    Container(web, "Web App", "Next.js 15, TS, Tailwind, shadcn/ui", "Route-grouped student + admin UI; CSRF-aware cookie client")
+    Container(api, "API App", "FastAPI, SQLAlchemy 2 async, Pydantic v2", "Modular monolith modules: identity, academic, cms, knowledge, ingestion, assessment, ai, learning, commerce, system")
+    ContainerDb(pg, "PostgreSQL 17+", "Schemas: identity, academic, cms, assessment, ai, analytics, commerce, system, knowledge, learning, ingestion")
+    ContainerDb(redis, "Redis 7", "Rate limits, short-lived caches, session helpers as used by modules")
+    Container(volumes, "Named volumes", "Docker", "postgres_data, redis_data, study_material_data, visual_assets_data")
+  }
+
+  System_Ext(claude, "Claude API", "Anthropic")
+  System_Ext(razorpay, "Razorpay", "Payments")
+  System_Ext(ghcr, "GHCR", "Image registry — traceability / rollback reference")
+
+  Rel(student, web, "HTTPS")
+  Rel(web, api, "JSON envelope over HTTPS; HTTP-only cookies")
+  Rel(api, pg, "async SQLAlchemy / Alembic")
+  Rel(api, redis, "TCP")
+  Rel(api, claude, "AI Gateway → ClaudeProvider or FallbackProvider")
+  Rel(api, razorpay, "Orders + HMAC verification")
+  Rel(api, volumes, "File paths for ingestion & visual assets")
+  Rel_Back(ghcr, api, "Built images tagged by git SHA (Coolify still builds from git)")

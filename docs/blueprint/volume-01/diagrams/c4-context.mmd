@@ -1,0 +1,29 @@
+%% TALOS Volume 1 — C4 Context
+%% C4 model Level 1
+C4Context
+  title TALOS System Context
+
+  Person(student, "NEET Student", "Practices, takes mocks, views mastery, uses AI Tutor")
+  Person(author, "Content Author / SME", "Authors via ECAEP; reviews AI-generated drafts")
+  Person(reviewer, "Reviewer / Approver", "ECAEP review → approve → publish")
+  Person(admin, "Platform Admin", "RBAC, analytics, commerce config, break-glass")
+
+  System(talos, "Trinetra AI Learning OS (TALOS)", "Modular monolith: Next.js + FastAPI + Postgres + Redis")
+
+  System_Ext(claude, "Anthropic Claude API", "Only wired AI provider behind AI Gateway")
+  System_Ext(razorpay, "Razorpay", "One-time purchase orders + webhook/HMAC verification")
+  System_Ext(coolify, "Coolify on Hetzner VPS", "Git-pull deploy, Traefik TLS, Docker Compose")
+  System_Ext(ncert, "NCERT-aligned source material", "Licensed/original content only — no coaching-corp dumps")
+  System_Ext(github, "GitHub Actions + GHCR", "CI, security scans, image push, deploy webhook")
+
+  Rel(student, talos, "HTTPS / cookies JWT")
+  Rel(author, talos, "HTTPS admin/CMS routes")
+  Rel(reviewer, talos, "ECAEP workflow actions")
+  Rel(admin, talos, "Admin APIs & dashboard")
+
+  Rel(talos, claude, "AI Gateway provider calls")
+  Rel(talos, razorpay, "Create order / verify payment")
+  Rel(coolify, talos, "Deploys compose stack")
+  Rel(github, coolify, "Deploy webhook after CI")
+  Rel(author, ncert, "Sources facts for authoring/ingestion")
+  Rel(talos, ncert, "Ingests study material under ADR-0005")

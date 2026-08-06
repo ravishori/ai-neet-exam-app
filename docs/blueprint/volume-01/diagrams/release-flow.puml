@@ -1,0 +1,51 @@
+@startuml TALOS_Release_Flow
+title TALOS Release Flow (ADR-0029 / docs/deploy)
+skinparam activityBackgroundColor #FEFEFE
+
+|Developer|
+start
+:Push / open PR to main;
+|GitHub Actions ci.yml|
+:backend-lint (ruff);
+:backend-test (postgres:17 + redis:7,\nalembic upgrade head, pytest --cov);
+:frontend-lint-typecheck;
+:frontend-test (vitest);
+:docker-build + Trivy scan;
+if (CI blocking jobs pass?) then (yes)
+else (no)
+  |Developer|
+  :Fix and push;
+  stop
+endif
+
+|GitHub Actions security.yml|
+:CodeQL / gitleaks / pip-audit / npm audit\n(informational until baseline triaged);
+
+|GitHub Actions deploy.yml|
+:Build & push GHCR images\nghcr.io/.../trinetra-backend\nghcr.io/.../trinetra-web;
+:Call Coolify deploy webhook\n(COOLIFY_DEPLOY_WEBHOOK_URL);
+
+|Coolify on Hetzner|
+:Pull git source at ref;
+:Build from docker-compose.prod.yml;
+:Replace running containers;\nvolumes persist;
+
+|On-call / Admin|
+:Verify /health /ready + login\n(VERIFICATION_CHECKLIST.md);
+
+if (Healthy?) then (yes)
+  :Release complete;
+  stop
+else (no)
+  :Rollback Path A: redeploy last good ref\nvia workflow_dispatch or Coolify UI;
+  if (Needs history fix?) then (yes)
+    :Rollback Path B: git revert + push;
+  endif
+  note right
+    DB migrations never auto-rollback.
+    alembic downgrade is manual only.
+  end note
+  stop
+endif
+
+@enduml

@@ -1,0 +1,92 @@
+%% TALOS Volume 1 — Platform capability map
+%% Source of truth: apps/backend/app/modules/*, docs/decisions/ADR-0001..0029
+flowchart TB
+  subgraph Identity["Identity & Access"]
+    I1[Register / Login / Refresh]
+    I2[RBAC roles & permissions]
+    I3[Sessions & CSRF]
+    I4[Admin user status]
+  end
+
+  subgraph Academic["Academic Engine"]
+    A1[Exam → Subject → Chapter]
+    A2[Topic → Concept]
+    A3[Micro-competency layer]
+    A4[Concept prerequisites]
+  end
+
+  subgraph CMS["CMS / ECAEP"]
+    C1[Content items & versions]
+    C2[Review & approve]
+    C3[Publish / archive]
+    C4[Search & coverage]
+  end
+
+  subgraph Knowledge["Knowledge Lifecycle"]
+    K1[Ingestion pipeline]
+    K2[Knowledge Units EKU]
+    K3[Visual assets]
+    K4[LanguageService]
+    K5[Grounding check]
+  end
+
+  subgraph Assessment["Assessment"]
+    S1[Practice generation]
+    S2[Mock tests]
+    S3[Timed attempts]
+    S4["Scoring +4 / −1"]
+  end
+
+  subgraph AI["AI Gateway"]
+    G1[Tutor]
+    G2[Question Generator]
+    G3[Study Planner]
+    G4[Evaluator]
+    G5[FallbackProvider]
+  end
+
+  subgraph Learning["Learning & Mastery"]
+    L1[Concept mastery]
+    L2[Micro-competency mastery]
+    L3[KU mastery]
+    L4[Recommendations]
+    L5[Spaced revision]
+  end
+
+  subgraph Analytics["Analytics"]
+    N1[Assessment aggregates]
+    N2[AI usage & cost]
+  end
+
+  subgraph Commerce["Commerce"]
+    P1[Razorpay orders]
+    P2[HMAC verify]
+    P3[Entitlements]
+  end
+
+  subgraph Platform["Platform / Ops"]
+    O1[Audit log]
+    O2[Admin dashboard]
+    O3[Health / ready]
+    O4[CI/CD Coolify]
+  end
+
+  subgraph Future["FUTURE — not in Volume 1 build"]
+    F1[Embeddings / RAG]
+    F2[Multi-exam beyond NEET]
+    F3[Subscriptions]
+    F4[Full knowledge graph]
+  end
+
+  Identity --> Academic
+  Academic --> CMS
+  Knowledge --> CMS
+  Knowledge --> AI
+  CMS --> Assessment
+  CMS --> AI
+  Assessment --> Learning
+  AI --> Learning
+  Learning --> Analytics
+  Identity --> Commerce
+  Commerce --> Assessment
+  Identity --> Platform

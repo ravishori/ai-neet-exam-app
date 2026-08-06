@@ -1,0 +1,49 @@
+@startuml TALOS_Stakeholder_Map
+title TALOS Stakeholder Map (Volume 1 Governance)
+skinparam rectangle {
+  BackgroundColor<<external>> #E8F4FC
+  BackgroundColor<<internal>> #F7F7F0
+  BackgroundColor<<future>> #F5E6E0
+}
+
+rectangle "External" <<external>> {
+  rectangle "NEET Students" as STU
+  rectangle "Parents (informational only — no portal in v1)" as PAR
+  rectangle "Anthropic Claude" as CLAUDE
+  rectangle "Razorpay" as RZP
+  rectangle "NTA / NEET exam calendar (informational)" as NTA
+  rectangle "NCERT / licensed sources" as NCERT
+}
+
+rectangle "Internal product org" <<internal>> {
+  rectangle "Product Owner" as PO
+  rectangle "Engineering (fullstack modular monolith)" as ENG
+  rectangle "Content / SME Authors" as AUTH
+  rectangle "Reviewers / Approvers" as REV
+  rectangle "Security Reviewer (gate)" as SEC
+  rectangle "Ops / Deploy Owner" as OPS
+}
+
+rectangle "Future / deferred stakeholders" <<future>> {
+  rectangle "Institution admins (multi-tenant)" as INST
+  rectangle "Native mobile users" as MOB
+  rectangle "Additional AI providers" as PROV
+}
+
+PO --> ENG : prioritizes ADRs / sprints
+PO --> AUTH : content roadmap
+AUTH --> REV : ECAEP submit
+REV --> STU : published content reaches learners
+ENG --> STU : ship features via Coolify
+ENG --> CLAUDE : AI Gateway
+ENG --> RZP : commerce
+OPS --> ENG : CI/CD + rollback
+SEC --> ENG : security review gates
+AUTH --> NCERT : source fidelity
+STU ..> NTA : exam date motivation
+PAR ..> STU : offline support only
+INST ..> PO : Phase 3+
+MOB ..> PO : Phase 3+
+PROV ..> ENG : second provider ADR
+
+@enduml

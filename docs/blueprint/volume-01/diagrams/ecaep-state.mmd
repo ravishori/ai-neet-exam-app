@@ -1,0 +1,29 @@
+%% TALOS Volume 1 — ECAEP state machine
+%% Source: docs/architecture/ecaep.md, ADR-0009
+stateDiagram-v2
+  [*] --> DRAFT: create / revise
+
+  DRAFT --> AI_CHECKED: submit
+  AI_CHECKED --> IN_REVIEW: auto (AI check complete)
+  IN_REVIEW --> APPROVED: approve
+  IN_REVIEW --> CHANGES_REQUESTED: request_changes
+  CHANGES_REQUESTED --> DRAFT: revise
+  APPROVED --> PUBLISHED: publish
+  PUBLISHED --> DRAFT: edit (new version; prior stays live)
+  PUBLISHED --> ARCHIVED: archive
+  ARCHIVED --> [*]
+
+  note right of AI_CHECKED
+    ai_check_report stored on
+    cms.content_versions
+  end note
+
+  note right of PUBLISHED
+    AI Tutor retrieval reads
+    PUBLISHED only
+  end note
+
+  note left of PUBLISHED
+    Admin break-glass:
+    force_edit_published
+  end note

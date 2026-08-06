@@ -1,0 +1,44 @@
+%% TALOS Volume 1 — Student journey
+flowchart LR
+  A[Register / Login] --> B[Browse academic hierarchy]
+  B --> C[Open concept]
+  C --> D{Has published content?}
+  D -->|yes| E[Read concept note / flashcards]
+  D -->|sparse| F[Ask AI Tutor]
+  E --> G[Start practice]
+  F --> G
+  G --> H[Answer MCQs timed/untimed]
+  H --> I[Submit attempt]
+  I --> J[Score +4/−1]
+  J --> K[Mastery recompute]
+  K --> L[Dashboard: weak / due / new]
+  L --> M[Spaced revision schedule]
+  M --> N[Mock test when ready]
+  N --> I
+  L --> O[Purchase entitlement if gated]
+  O --> G
+
+  subgraph Identity
+    A
+  end
+  subgraph Academic_CMS
+    B
+    C
+    E
+  end
+  subgraph AI
+    F
+  end
+  subgraph Assessment_Learning
+    G
+    H
+    I
+    J
+    K
+    L
+    M
+    N
+  end
+  subgraph Commerce
+    O
+  end

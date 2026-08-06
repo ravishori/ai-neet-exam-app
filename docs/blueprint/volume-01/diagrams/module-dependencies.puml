@@ -1,0 +1,66 @@
+@startuml TALOS_Module_Dependencies
+title TALOS Backend Module Dependencies (allowed direction)
+skinparam componentStyle rectangle
+skinparam packageStyle rectangle
+
+package "apps/backend/app/modules" {
+
+  [identity] as identity
+  [academic] as academic
+  [cms] as cms
+  [ingestion] as ingestion
+  [knowledge] as knowledge
+  [assessment] as assessment
+  [ai] as ai
+  [learning] as learning
+  [commerce] as commerce
+  [system] as system
+}
+
+package "shared / core" {
+  [shared.responses envelope] as envelope
+  [core.middleware trace_id] as mw
+  [core config / db] as core
+}
+
+identity --> core
+academic --> core
+cms --> academic
+cms --> identity
+ingestion --> cms
+ingestion --> academic
+ingestion --> knowledge
+knowledge --> academic
+knowledge --> cms
+assessment --> cms
+assessment --> academic
+assessment --> identity
+ai --> knowledge
+ai --> cms
+ai --> academic
+learning --> assessment
+learning --> cms
+learning --> academic
+learning --> knowledge
+commerce --> identity
+system --> identity
+system --> assessment
+system --> ai
+
+assessment --> envelope
+cms --> envelope
+identity --> envelope
+mw --> envelope
+
+note right of knowledge
+  KnowledgeUnit (EKU) is the
+  canonical structured hub
+  (ADR-0024..0028)
+end note
+
+note bottom of ai
+  AI Gateway + FallbackProvider
+  Four agents only in v1
+end note
+
+@enduml
