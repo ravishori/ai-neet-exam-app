@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Node
+node_modules/
+.next/
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+
+# Environment
+.env
+.env.*
+
+# Logs
+*.log
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Testing
+.coverage
+htmlcov/
+
+# Python cache
+.pytest_cache/
+
+# Cursor cache (keep workspace, ignore runtime cache)
+.cursor/cache/
+
+# Docker
+*.pid
