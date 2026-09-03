@@ -1,0 +1,306 @@
+{
+  "audit": "TALOS_PRODUCTION_SEED_V2_PRACTICE_E2E",
+  "date": "2026-09-04",
+  "captured_at": "2026-09-03T19:35:10.664424+00:00",
+  "git_head_file": "ref: refs/heads/main",
+  "verdict": "AMBER",
+  "complete_100_browser_claimed": false,
+  "complete_100_api_claimed": true,
+  "environment": {
+    "api": "http://127.0.0.1:8000",
+    "web": "http://127.0.0.1:3000",
+    "api_health": 200,
+    "web_status": 200,
+    "dsn_db": "trinetra_db"
+  },
+  "student_email": "seed-v2-e2e-84995e5bac@example.com",
+  "preflight": {
+    "allowlist_sha256": "a3a8242433b69e80b1754807949767318fa19c41699ecea42c4c246b035b3978",
+    "allowlist_sha_ok": true,
+    "found": 100,
+    "missing": [],
+    "extra": [],
+    "status_counts": {
+      "PUBLISHED": 100
+    },
+    "subject_counts": {
+      "Chemistry": 35,
+      "Zoology": 15,
+      "Botany": 15,
+      "Physics": 35
+    },
+    "published": 100,
+    "deleted": 0,
+    "superseded": 0,
+    "v1_published": 30,
+    "failures": [],
+    "pass": true,
+    "protected_snapshot": {
+      "t6d": {
+        "total": 100,
+        "published": 100,
+        "draft": 0,
+        "approved": 0,
+        "content_fp": "e0758fbcb071180b61a33f2b4581e894",
+        "tag": "physics-t6d-pilot-20260902"
+      },
+      "t6f2": {
+        "total": 938,
+        "published": 938,
+        "draft": 0,
+        "approved": 0,
+        "content_fp": "4396a9c5cbcbaeef29b17daa32696649",
+        "tag": "physics-t6f1-pilot-20260902"
+      },
+      "legacy": {
+        "total": 5000,
+        "published": 0,
+        "draft": 5000,
+        "approved": 0,
+        "content_fp": "13d51e697382663a28ffc44fd56aedb1",
+        "tag": "legacy-physics-5000-import-20260902"
+      }
+    }
+  },
+  "session": {
+    "assessment_id": "b05d514b-3ef0-4599-8331-7f75e54dab77",
+    "attempt_id": "79be727f-a857-44d7-9503-d512a54d9fc9",
+    "scope_type": "SEED_V2",
+    "requested": 100,
+    "returned": 100,
+    "available": 100,
+    "sha": "a3a8242433b69e80b1754807949767318fa19c41699ecea42c4c246b035b3978",
+    "outside_allowlist": [],
+    "subjects": {
+      "Physics": 35,
+      "Chemistry": 35,
+      "Zoology": 15,
+      "Botany": 15
+    }
+  },
+  "firewall": {
+    "v1": [],
+    "t6_legacy_tagged": [],
+    "historical": [],
+    "draft_approved_in_session": [],
+    "deleted": 0,
+    "superseded": 0,
+    "outside": [],
+    "pre_submit_answer_leak_ids": []
+  },
+  "student_flow_api": {
+    "samples": [
+      {
+        "slot": "physics-10-correct",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "slot": "chemistry-incorrect",
+        "id": "56d515a9-fb76-4c80-b9e7-88f7ef50b5d8",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "slot": "duplicate_answer_save",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "slot": "botany-correct",
+        "id": "09c44e57-2b1b-40e5-8af9-56b65ba7eb5b",
+        "status": 200
+      },
+      {
+        "slot": "zoology-correct",
+        "id": "63771831-5b56-4707-9036-fc3c80c05fb8",
+        "status": 200
+      }
+    ],
+    "progress": {
+      "status": "IN_PROGRESS",
+      "selected": 100,
+      "still_no_explanation": true
+    },
+    "submit_status": 200,
+    "duplicate_submit_status": 409,
+    "answer_after_submit_status": 409,
+    "score": {
+      "correct": 99,
+      "incorrect": 1,
+      "skipped": 0,
+      "score": 99.0,
+      "ok": true
+    },
+    "explanation_after_submit": true,
+    "restart_attempt_id": "f9c7df04-8c65-4d8b-84c8-696119394146",
+    "restart_ok": true,
+    "concurrent_attempt_id": "97745699-1f91-430a-a206-aecf536707ed",
+    "concurrent_ok": true
+  },
+  "visual_api": [
+    {
+      "slot": "physics-05",
+      "id": "9c51f8a1-bf72-4ca0-bcfd-e0aa5cb8ee53",
+      "in_session": true,
+      "stem": true,
+      "options": 4,
+      "images_in_attempt_payload": 0,
+      "db_visual_spec": true,
+      "answer_status": 200
+    },
+    {
+      "slot": "physics-21",
+      "id": "1633f068-f0df-4ff5-ac0c-57be4417f29e",
+      "in_session": true,
+      "stem": true,
+      "options": 4,
+      "images_in_attempt_payload": 0,
+      "db_visual_spec": true,
+      "answer_status": 200
+    },
+    {
+      "slot": "zoology-12",
+      "id": "ca0e7a05-38bb-4e12-a52d-4fd4c7a26b07",
+      "in_session": true,
+      "stem": true,
+      "options": 4,
+      "images_in_attempt_payload": 0,
+      "db_visual_spec": true,
+      "answer_status": 200
+    }
+  ],
+  "numerical_api": [
+    {
+      "slot": "physics-10",
+      "id": "2e43ef71-d72a-423a-b9be-2e44c51de8b1",
+      "in_session": true,
+      "options": 4,
+      "correct_used": "B",
+      "answer_status": 200
+    },
+    {
+      "slot": "physics-11",
+      "id": "5b4f381e-0dee-4118-b237-fbaabbe1d0f5",
+      "in_session": true,
+      "options": 4,
+      "correct_used": "B",
+      "answer_status": 200
+    },
+    {
+      "slot": "physics-20",
+      "id": "f60e3124-8aa0-4ff6-b3e1-f8ad81eadce9",
+      "in_session": true,
+      "options": 4,
+      "correct_used": "A",
+      "answer_status": 200
+    },
+    {
+      "slot": "physics-34",
+      "id": "b98e5873-8352-4bb6-9a30-368e2f0ce6f7",
+      "in_session": true,
+      "options": 4,
+      "correct_used": "B",
+      "answer_status": 200
+    }
+  ],
+  "v1_regression_api": {
+    "seed_v1_ok": true,
+    "hero_full_ok": true,
+    "v2_in_v1": []
+  },
+  "negative": {
+    "full_100_status": 422,
+    "full_100_rejected": true,
+    "forged_allowlist_still_seed_v2": true,
+    "forged_sha_ignored": true,
+    "forged_scope_status": 422,
+    "forged_scope_rejected_or_still_seed_v2": true,
+    "v1_ids_not_in_v2_session": true,
+    "historical_not_in_session": true,
+    "t6_legacy_not_in_session": true,
+    "outside": []
+  },
+  "logout_login_isolation": {
+    "other_user_get_attempt_status": 404,
+    "isolated": true
+  },
+  "me_still_authenticated": 200,
+  "integrity": {
+    "cohort_body_fp_unchanged": true,
+    "preflight_after_pass": true,
+    "protected_unchanged": true,
+    "publication_mutation": false,
+    "content_mutation": false
+  },
+  "failures": [],
+  "limitations": [
+    "Full 100-question click-through in the browser is not claimed here; API completed all 100.",
+    "Browser evidence is a separate Playwright/CJS audit.",
+    "Attempt GET in-progress omits correct_option/explanation by design; absolute client secrecy is not claimed."
+  ],
+  "git_commit": "916c157e0c5ff9a064d9050ac6c71e7520dbcc22",
+  "git_branch": "main",
+  "browser_e2e": {
+    "kind": "ACTUAL_BROWSER_E2E",
+    "script": "apps/web/e2e/seed-v2-live-practice-browser-audit.cjs",
+    "evidence": "docs/audits/TALOS_PRODUCTION_SEED_V2_LIVE_PRACTICE_BROWSER_EVIDENCE_20260904.json",
+    "pass": true,
+    "full_100_click_completion": false,
+    "cta_practice_now_unchanged": true,
+    "cta_seed_v1_visible": true,
+    "cta_seed_v2_visible": true,
+    "session_scope": "SEED_V2",
+    "returned": 100,
+    "outside_allowlist": 0,
+    "progress_q1_q2": true,
+    "refresh_kept_attempt": true,
+    "submit_sample_http": 200,
+    "explanation_after_submit": true,
+    "duplicate_submit": 409,
+    "mobile_overflow_px": 0,
+    "visual_img_count_on_physics_05": 0,
+    "diagram_svg_stored_in_db": true,
+    "diagram_svg_not_in_attempt_images": true
+  },
+  "playwright": {
+    "kind": "AUTOMATED_TEST",
+    "file": "apps/web/e2e/seed-v2-practice.spec.ts",
+    "projects": [
+      "mobile-390",
+      "laptop-1366"
+    ],
+    "passed": 2,
+    "failed": 0,
+    "axe_critical_serious": 0
+  },
+  "pytest_isolation": {
+    "kind": "AUTOMATED_TEST",
+    "passed": 11,
+    "failed": 0,
+    "files": [
+      "tests/test_seed_v2_practice_isolation.py",
+      "tests/test_seed_v1_practice_isolation.py"
+    ]
+  },
+  "api_db_e2e": {
+    "kind": "DATABASE_VERIFICATION+API_STUDENT_FLOW",
+    "pass": true,
+    "complete_100": true,
+    "score": {
+      "correct": 99,
+      "incorrect": 1,
+      "skipped": 0,
+      "score": 99.0,
+      "ok": true
+    }
+  },
+  "amber_reasons": [
+    "Student UI does not render stored diagram_svg/visual_spec (attempt images=0); isolation/scoring unaffected",
+    "Full 100-question click-through in the browser was not performed; API completed all 100",
+    "Browser logout/login UI not exercised; other-user GET attempt returns 404"
+  ],
+  "gemini_calls": 0,
+  "publication_authorization_reopened": false,
+  "v1_practice_modified": false
+}
