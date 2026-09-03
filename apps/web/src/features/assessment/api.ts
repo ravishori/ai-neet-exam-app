@@ -4,7 +4,7 @@ import type { NamedRef, QuestionImage } from "@/features/questions/api";
 export type Assessment = {
   id: string;
   assessment_type: "PRACTICE" | "MOCK";
-  scope_type: "CONCEPT" | "CHAPTER" | "SUBJECT" | "FULL";
+  scope_type: "CONCEPT" | "TOPIC" | "CHAPTER" | "SUBJECT" | "FULL" | "SEED_V1" | "SEED_V2";
   scope_id: string | null;
   title: string;
   duration_minutes: number | null;
@@ -60,7 +60,11 @@ export type AttemptDetail = AttemptSummary & {
   questions: AttemptQuestion[];
 };
 
-export type GenerateInput = { scope_type: "CONCEPT" | "CHAPTER" | "SUBJECT" | "FULL"; scope_id?: string; question_count?: number };
+export type GenerateInput = {
+  scope_type: "CONCEPT" | "TOPIC" | "CHAPTER" | "SUBJECT" | "FULL" | "SEED_V1" | "SEED_V2";
+  scope_id?: string;
+  question_count?: number;
+};
 
 export type SaveAnswerInput = {
   content_item_id: string;

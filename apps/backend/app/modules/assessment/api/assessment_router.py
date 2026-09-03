@@ -113,7 +113,8 @@ async def generate_practice(payload: GenerateRequest, user: User = Depends(get_c
     assessment = await service.generate_practice(
         scope_type=payload.scope_type, scope_id=scope_id, question_count=payload.question_count, user_id=user.id
     )
-    return envelope(success=True, data=_assessment(assessment), status_code=201)
+    meta = getattr(assessment, "_availability_meta", None)
+    return envelope(success=True, data=_assessment(assessment), meta=meta, status_code=201)
 
 
 @router.post("/assessments/mock", dependencies=[Depends(verify_csrf)])
@@ -123,7 +124,8 @@ async def generate_mock(payload: GenerateRequest, user: User = Depends(get_curre
     assessment = await service.generate_mock(
         scope_type=payload.scope_type, scope_id=scope_id, question_count=payload.question_count, user_id=user.id
     )
-    return envelope(success=True, data=_assessment(assessment), status_code=201)
+    meta = getattr(assessment, "_availability_meta", None)
+    return envelope(success=True, data=_assessment(assessment), meta=meta, status_code=201)
 
 
 @router.post("/assessments/full-mock", dependencies=[Depends(verify_csrf)])

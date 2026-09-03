@@ -15,10 +15,17 @@ class AssessmentRepository:
         self.session = session
 
     async def published_question_ids_for_scope(self, scope_type: str, scope_id: uuid.UUID | None) -> list[uuid.UUID]:
-        query = select(ContentItem.id).where(ContentItem.content_type == "QUESTION", ContentItem.status == "PUBLISHED")
+        query = select(ContentItem.id).where(
+            ContentItem.content_type == "QUESTION",
+            ContentItem.status == "PUBLISHED",
+            ContentItem.deleted_at.is_(None),
+        )
 
         if scope_type == "CONCEPT":
             query = query.where(ContentItem.concept_id == scope_id)
+        elif scope_type == "TOPIC":
+            # Questions whose concept belongs to this topic only (no sibling-topic leakage).
+            query = query.join(Concept, Concept.id == ContentItem.concept_id).where(Concept.topic_id == scope_id)
         elif scope_type == "CHAPTER":
             query = query.join(Concept, Concept.id == ContentItem.concept_id).join(Topic, Topic.id == Concept.topic_id).where(
                 Topic.chapter_id == scope_id
@@ -30,6 +37,19 @@ class AssessmentRepository:
                 .join(Chapter, Chapter.id == Topic.chapter_id)
                 .where(Chapter.subject_id == scope_id)
             )
+        elif scope_type == "SEED_V1":
+            # Server-owned frozen allowlist — never client-supplied UUIDs.
+            from app.modules.assessment.seed_v1_allowlist import seed_v1_uuids
+
+            query = query.where(ContentItem.id.in_(seed_v1_uuids()))
+        elif scope_type == "SEED_V2":
+            from sqlalchemy import not_
+            from sqlalchemy.dialects.postgresql import array as pg_array
+
+            from app.modules.assessment.seed_v2_allowlist import SEED_V2_SUPERSEDED_TAGS, seed_v2_uuids
+
+            query = query.where(ContentItem.id.in_(seed_v2_uuids()))
+            query = query.where(not_(ContentItem.tags.op("&&")(pg_array(list(SEED_V2_SUPERSEDED_TAGS)))))
         # FULL: no extra filter
 
         result = await self.session.execute(query)

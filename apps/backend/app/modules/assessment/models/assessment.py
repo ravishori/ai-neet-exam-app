@@ -8,7 +8,7 @@ from app.core.database import Base
 from app.shared.mixins import AuditedBase
 
 # assessment_type: PRACTICE | MOCK
-# scope_type: CONCEPT | CHAPTER | SUBJECT | FULL
+# scope_type: CONCEPT | TOPIC | CHAPTER | SUBJECT | FULL | SEED_V1 | SEED_V2
 
 
 class Assessment(Base, AuditedBase):
