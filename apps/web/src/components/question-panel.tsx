@@ -213,6 +213,20 @@ export function QuestionPanel({
         <MarkdownRenderer content={question.stem} />
       </div>
 
+      {question.diagram_svg ? (
+        <figure
+          className="overflow-x-auto rounded-xl border border-border bg-muted/30 p-3"
+          data-testid="question-diagram-svg"
+          aria-label="Diagram accompanying this question"
+        >
+          <img
+            src={`data:image/svg+xml;charset=utf-8,${encodeURIComponent(question.diagram_svg)}`}
+            alt="Diagram accompanying this question"
+            className="mx-auto h-auto max-h-72 w-auto max-w-full object-contain"
+          />
+        </figure>
+      ) : null}
+
       {question.images.length > 0 && (
         <div className="flex flex-wrap gap-3">
           {question.images.map((img) => (
@@ -232,27 +246,43 @@ export function QuestionPanel({
               key={opt.label}
               type="button"
               disabled={isSubmitted}
+              aria-pressed={isSelected}
+              aria-label={`Option ${opt.label}: ${opt.text}`}
               onClick={() => onSelectOption(opt.label)}
               className={cn(
-                "flex items-start gap-3 rounded-lg border p-3 text-left text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50 disabled:cursor-default",
+                "group/option relative flex min-h-[3.25rem] items-start gap-3 overflow-hidden rounded-xl border p-4 text-left text-sm shadow-xs transition-[border-color,background-color,box-shadow,transform] duration-200 touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50 disabled:cursor-default",
                 isCorrectOpt && "border-green-600 bg-green-50 dark:border-green-500 dark:bg-green-950",
                 isWrongSelected && "border-destructive bg-destructive/10",
-                !isSubmitted && isSelected && "border-primary bg-primary/5",
-                !isSubmitted && !isSelected && "border-border hover:border-primary/50 hover:bg-muted/50"
+                !isSubmitted &&
+                  isSelected &&
+                  "border-primary bg-primary/10 shadow-md ring-1 ring-primary/25",
+                !isSubmitted &&
+                  !isSelected &&
+                  "border-border bg-card/80 hover:border-primary/40 hover:bg-muted/40 hover:shadow-sm",
               )}
             >
               <span
+                aria-hidden
                 className={cn(
-                  "flex size-6 shrink-0 items-center justify-center rounded-full border text-xs font-semibold tabular-nums",
-                  isSelected || isCorrectOpt ? "border-current" : "border-muted-foreground/40 text-muted-foreground"
+                  "pointer-events-none absolute inset-0 opacity-0 transition-opacity",
+                  !isSubmitted && !isSelected && "group-hover/option:opacity-100",
+                  "bg-[radial-gradient(circle_at_0%_0%,color-mix(in_oklab,var(--primary)_12%,transparent),transparent_55%)]",
+                )}
+              />
+              <span
+                className={cn(
+                  "relative z-[1] flex size-7 shrink-0 items-center justify-center rounded-lg border text-xs font-semibold tabular-nums",
+                  isSelected || isCorrectOpt
+                    ? "border-current bg-background/80"
+                    : "border-muted-foreground/40 text-muted-foreground",
                 )}
                 aria-hidden="true"
               >
                 {optIdx < 4 ? String.fromCharCode(65 + optIdx) : opt.label}
               </span>
-              <span className="pt-0.5">{opt.text}</span>
-              {isCorrectOpt && <Check className="ml-auto size-4 shrink-0 text-green-600 dark:text-green-400" aria-hidden="true" />}
-              {isWrongSelected && <X className="ml-auto size-4 shrink-0 text-destructive" aria-hidden="true" />}
+              <span className="relative z-[1] min-w-0 flex-1 break-words pt-0.5 leading-relaxed">{opt.text}</span>
+              {isCorrectOpt && <Check className="relative z-[1] ml-auto size-4 shrink-0 text-green-600 dark:text-green-400" aria-hidden="true" />}
+              {isWrongSelected && <X className="relative z-[1] ml-auto size-4 shrink-0 text-destructive" aria-hidden="true" />}
             </button>
           );
         })}

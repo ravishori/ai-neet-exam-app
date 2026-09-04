@@ -71,6 +71,22 @@ def _question_meta(item, names: dict, visual_assets_by_ku: dict, bookmarked_ids:
     }
 
 
+def _diagram_svg_from_body(body: dict) -> str | None:
+    """Surface stored body.diagram_svg for student presentation (not KU assets).
+
+    Factory V2 visual questions keep SVG on the content version body; they are
+    not always linked via knowledge_unit visual_assets. Presentation only —
+    does not mutate content.
+    """
+    raw = body.get("diagram_svg")
+    if not isinstance(raw, str):
+        return None
+    svg = raw.strip()
+    if not svg or "<svg" not in svg.lower():
+        return None
+    return svg
+
+
 def _public_question(item, answer, names: dict, visual_assets_by_ku: dict, bookmarked_ids: set) -> dict:
     """In-progress view — never leaks correct_option/explanation."""
     body = get_content_body(item)
@@ -83,6 +99,7 @@ def _public_question(item, answer, names: dict, visual_assets_by_ku: dict, bookm
         "selected_option": answer.selected_option if answer else None,
         "confidence": answer.confidence if answer else None,
         "marked_for_review": answer.marked_for_review if answer else False,
+        "diagram_svg": _diagram_svg_from_body(body),
         **_question_meta(item, names, visual_assets_by_ku, bookmarked_ids),
     }
 
@@ -102,6 +119,7 @@ def _result_question(item, answer, names: dict, visual_assets_by_ku: dict, bookm
         "confidence": answer.confidence if answer else None,
         "marked_for_review": answer.marked_for_review if answer else False,
         "time_spent_seconds": answer.time_spent_seconds if answer else None,
+        "diagram_svg": _diagram_svg_from_body(body),
         **_question_meta(item, names, visual_assets_by_ku, bookmarked_ids),
     }
 

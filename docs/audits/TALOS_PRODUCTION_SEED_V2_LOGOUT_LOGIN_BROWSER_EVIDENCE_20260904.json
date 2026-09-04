@@ -1,0 +1,70 @@
+{
+  "captured_at": "2026-09-04T00:28:14.371Z",
+  "kind": "ACTUAL_BROWSER_E2E",
+  "web": "http://127.0.0.1:3000",
+  "api": "http://127.0.0.1:8000",
+  "pass": true,
+  "steps": [
+    {
+      "step": "cta_visibility",
+      "practice_now": true,
+      "seed_v1": true,
+      "seed_v2": true
+    },
+    {
+      "step": "seed_v2_started",
+      "scope_type": "SEED_V2",
+      "sha": "a3a8242433b69e80b1754807949767318fa19c41699ecea42c4c246b035b3978",
+      "question_count": 100
+    },
+    {
+      "step": "answered_option_a",
+      "url": "http://localhost:3000/student/attempts/1c2f6d97-e65c-42d0-a07a-50b5999f1430"
+    },
+    {
+      "step": "signed_out",
+      "url": "http://localhost:3000/login"
+    },
+    {
+      "step": "unauth_me",
+      "status": 401
+    },
+    {
+      "step": "attempt_after_logout",
+      "url": "http://localhost:3000/login?next=%2Fstudent%2Fattempts%2F1c2f6d97-e65c-42d0-a07a-50b5999f1430",
+      "blocked_or_no_options": true
+    },
+    {
+      "step": "login_api",
+      "status": 200,
+      "ok": true,
+      "url_after": "http://localhost:3000/login"
+    },
+    {
+      "step": "logged_in_again",
+      "url": "http://localhost:3000/student/dashboard"
+    },
+    {
+      "step": "dashboard_after_relogin",
+      "practice_now": true,
+      "seed_v1": true,
+      "seed_v2": true
+    },
+    {
+      "step": "resume_attempt",
+      "http": 200,
+      "status": "IN_PROGRESS",
+      "scope": "SEED_V2",
+      "qcount": 100
+    },
+    {
+      "step": "new_seed_v2_after_relogin",
+      "scope_type": "SEED_V2",
+      "question_count": 100,
+      "different_assessment": true
+    }
+  ],
+  "student_email": "seed-v2-logout-1788481694371@example.com",
+  "attempt_id": "1c2f6d97-e65c-42d0-a07a-50b5999f1430",
+  "observed_session_behavior": "prior_attempt_resumable_for_same_user_after_relogin"
+}

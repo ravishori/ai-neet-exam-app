@@ -69,10 +69,14 @@ async def _insert_question(
     tags: list[str] | None = None,
     correct: str = "A",
     status: str = "PUBLISHED",
+    diagram_svg: str | None = None,
 ) -> uuid.UUID:
     from app.modules.cms.models import ContentItem, ContentVersion
 
     body = _body(stem, correct=correct)
+    if diagram_svg is not None:
+        body["diagram_svg"] = diagram_svg
+        body["visual_spec"] = {"archetype": "test", "visual_is_ncert_evidence": False}
     item = ContentItem(
         id=item_id,
         content_type="QUESTION",
@@ -449,3 +453,39 @@ async def test_v1_practice_regression_hero_full_and_seed_v1(client, db_session, 
     seed_qs = (await client.get(f"/api/v1/attempts/{seed_attempt.json()['data']['id']}")).json()["data"]["questions"]
     assert {q["content_item_id"] for q in seed_qs} == {str(seed_v1)}
     assert str(outsider) not in {q["content_item_id"] for q in seed_qs}
+
+
+async def test_seed_v2_diagram_svg_surfaced_on_attempt(client, db_session, register_user):
+    """Body-stored diagram_svg must appear on attempt questions (presentation plumbing)."""
+    await register_user(client)
+    concept_id = await _concept_id(db_session)
+    qid = uuid.uuid4()
+    svg = '<svg xmlns="http://www.w3.org/2000/svg" width="120" height="80"><text x="4" y="20">V2 diagram</text></svg>'
+    await _insert_question(
+        db_session,
+        item_id=qid,
+        concept_id=concept_id,
+        stem="Visual stem?",
+        diagram_svg=svg,
+    )
+    plain = uuid.uuid4()
+    await _insert_question(db_session, item_id=plain, concept_id=concept_id, stem="No diagram?")
+    allow = [qid, plain]
+    p0, p1 = _v2_patches(allow)
+    with p0, p1:
+        gen = await client.post(
+            "/api/v1/assessments/practice",
+            json={"scope_type": "SEED_V2", "question_count": 100},
+            headers=csrf_headers(client),
+        )
+    assert gen.status_code == 201, gen.text
+    start = await client.post(
+        f"/api/v1/assessments/{gen.json()['data']['id']}/attempts",
+        headers=csrf_headers(client),
+    )
+    detail = await client.get(f"/api/v1/attempts/{start.json()['data']['id']}")
+    by_id = {q["content_item_id"]: q for q in detail.json()["data"]["questions"]}
+    assert by_id[str(qid)]["diagram_svg"] == svg
+    assert by_id[str(plain)].get("diagram_svg") in (None, "")
+    assert by_id[str(qid)].get("correct_option") is None
+    assert by_id[str(qid)].get("explanation") in (None, "")

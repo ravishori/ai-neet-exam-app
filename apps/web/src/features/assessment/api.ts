@@ -49,6 +49,8 @@ export type AttemptQuestion = AttemptQuestionMeta & {
   selected_option: string | null;
   confidence: Confidence | null;
   marked_for_review: boolean;
+  /** Inline SVG from CMS body (factory visuals); not NCERT evidence. */
+  diagram_svg?: string | null;
   correct_option?: string;
   explanation?: string;
   is_correct?: boolean | null;
