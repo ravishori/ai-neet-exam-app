@@ -8,15 +8,16 @@ from app.core.logging import get_logger
 from app.modules.cms.models import ContentItem, ContentReview, ContentVersion, ContentVersionKnowledgeUnit
 from app.modules.cms.repositories.cms_repository import CmsRepository
 from app.modules.cms.repositories.search_repository import SearchRepository
-from app.modules.cms.schemas.content_bodies import CONTENT_TYPES, validate_body
+from app.modules.cms.schemas.content_bodies import CONTENT_TYPES, assert_body_publishable
 from app.modules.cms.services.ai_check_service import run_ai_check
+from app.modules.cms.services.publication_gates import assert_question_publishable
 
 logger = get_logger("cms")
 
-# DRAFT -> AI_CHECKED -> IN_REVIEW -> APPROVED -> PUBLISHED
-#                                  \-> CHANGES_REQUESTED -> DRAFT (resubmit)
-# PUBLISHED -> ARCHIVED
-# PUBLISHED -> (edit) -> new DRAFT version, current_version_id keeps serving the old one
+# Actual v1 path (AI_CHECKED does not persist as item.status):
+# DRAFT -> IN_REVIEW -> APPROVED -> PUBLISHED -> ARCHIVED
+#                  \-> CHANGES_REQUESTED -> DRAFT (after edit)
+# Publish re-validates body; QUESTION also requires concept_id.
 
 
 class ContentWorkflowError(AppError):
@@ -55,7 +56,7 @@ class ContentWorkflowService:
         below are the only complete record."""
         if content_type not in CONTENT_TYPES:
             raise AppError(f"Unknown content_type: {content_type}", code="INVALID_CONTENT_TYPE", status_code=400)
-        validated_body = validate_body(content_type, body)
+        validated_body = assert_body_publishable(content_type, body)
 
         item = ContentItem(
             content_type=content_type,
@@ -108,8 +109,10 @@ class ContentWorkflowService:
         if item.status not in ("DRAFT", "CHANGES_REQUESTED"):
             raise ContentWorkflowError(f"Cannot edit content in state {item.status}")
 
-        validated_body = validate_body(item.content_type, body)
+        validated_body = assert_body_publishable(item.content_type, body)
         next_version_no = max((v.version_no for v in item.versions), default=0) + 1
+        by_id = {v.id: v for v in item.versions}
+        previous = by_id.get(item.latest_version_id)
 
         version = ContentVersion(
             content_item_id=item.id,
@@ -119,6 +122,13 @@ class ContentWorkflowService:
             authored_by=author_id,
             authored_at=datetime.now(UTC),
             change_summary=change_summary,
+            # Preserve truthful provenance lineage across draft edits
+            knowledge_unit_id=previous.knowledge_unit_id if previous else None,
+            knowledge_unit_version=previous.knowledge_unit_version if previous else None,
+            model_used=previous.model_used if previous else None,
+            prompt_version=previous.prompt_version if previous else None,
+            confidence_score=previous.confidence_score if previous else None,
+            generation_cost_usd=previous.generation_cost_usd if previous else None,
         )
         self.repo.add_version(version)
         await self.repo.flush()
@@ -137,6 +147,17 @@ class ContentWorkflowService:
             raise ContentWorkflowError(f"Cannot submit content in state {item.status}")
 
         latest = await self.repo.get_version(item.latest_version_id)
+        if not latest:
+            raise AppError("Content version not found", code="NOT_FOUND", status_code=404)
+        # Structural gate before entering the human review queue.
+        assert_body_publishable(item.content_type, latest.body)
+        if item.content_type == "QUESTION" and not item.concept_id:
+            raise AppError(
+                "QUESTION must be mapped to a concept before review.",
+                code="MISSING_ACADEMIC_MAPPING",
+                status_code=422,
+            )
+
         report = await run_ai_check(self.session, content_type=item.content_type, body=latest.body)
         latest.ai_check_report = report
         latest.workflow_state = "IN_REVIEW"  # AI_CHECKED is instantaneous in v1 — see ai_check_service.py
@@ -179,6 +200,25 @@ class ContentWorkflowService:
             raise ContentWorkflowError(f"Cannot publish content in state {item.status}")
 
         latest = await self.repo.get_version(item.latest_version_id)
+        if not latest:
+            raise AppError("Content version not found", code="NOT_FOUND", status_code=404)
+
+        # WAVE-P0-4 + T6-E-FIX: structural + scientific + NCERT + taxonomy +
+        # duplicate + provenance gates — server-side; no frontend-only bypass.
+        assert_body_publishable(item.content_type, latest.body)
+        if item.content_type == "QUESTION":
+            await assert_question_publishable(
+                self.session,
+                item_id=item.id,
+                status=item.status,
+                content_type=item.content_type,
+                concept_id=item.concept_id,
+                body=latest.body,
+                tags=list(item.tags or []),
+                model_used=latest.model_used,
+                knowledge_unit_id=latest.knowledge_unit_id,
+            )
+
         latest.workflow_state = "PUBLISHED"
         item.status = "PUBLISHED"
         item.current_version_id = latest.id
