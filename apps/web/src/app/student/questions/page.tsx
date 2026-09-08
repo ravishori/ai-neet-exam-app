@@ -13,10 +13,39 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Skeleton } from "@/components/ui/skeleton";
 import { academicApi } from "@/features/academic/api";
-import { questionsApi, type QuestionSummary, type ScopeType } from "@/features/questions/api";
+import { questionsApi, type ClassLevel, type QuestionSummary, type ScopeType } from "@/features/questions/api";
 import { searchApi, type SearchResultItem } from "@/features/search/api";
 
 const PAGE_SIZE = 20;
+
+function ProvenanceBadge({ q }: { q: QuestionSummary | SearchResultItem }) {
+  // Only render badges for provenance fields the API actually populated
+  // — never a fabricated "NCERT VERIFIED" claim.
+  const prov = "provenance" in q ? q.provenance : undefined;
+  const classLevel = "class_level" in q ? q.class_level : null;
+  const ncertLevel = prov?.ncert_verification_level ?? null;
+  const source = prov?.source ?? null;
+  const items: Array<{ label: string; tone: "primary" | "neutral" | "warn" | "info" }> = [];
+  if (classLevel) items.push({ label: `Class ${classLevel}`, tone: "info" });
+  if (source === "NCERT_INGESTED") items.push({ label: "NCERT source", tone: "primary" });
+  if (source === "AI_GENERATED") items.push({ label: "AI-generated", tone: "warn" });
+  if (ncertLevel) items.push({ label: `NCERT: ${ncertLevel}`, tone: "primary" });
+  if (items.length === 0) return null;
+  return (
+    <div className="flex flex-wrap items-center gap-1.5 text-xs">
+      {items.map((it) => (
+        <Badge
+          key={it.label}
+          variant={
+            it.tone === "primary" ? "default" : it.tone === "warn" ? "destructive" : it.tone === "info" ? "secondary" : "outline"
+          }
+        >
+          {it.label}
+        </Badge>
+      ))}
+    </div>
+  );
+}
 
 function QuestionOptions({ options }: { options: { label: string; text: string }[] }) {
   return (
@@ -70,12 +99,33 @@ export default function QuestionBrowserPage() {
   const [keyword, setKeyword] = useState("");
   const [submittedKeyword, setSubmittedKeyword] = useState("");
   const [subjectId, setSubjectId] = useState<string | null>(null);
+  const [classLevel, setClassLevel] = useState<ClassLevel | null>(null);
   const [chapterId, setChapterId] = useState<string | null>(null);
   const [topicId, setTopicId] = useState<string | null>(null);
   const [conceptId, setConceptId] = useState<string | null>(null);
   const [difficulty, setDifficulty] = useState<string>("");
   const [pyqYear, setPyqYear] = useState<string>("");
   const [offset, setOffset] = useState(0);
+
+  const hasActiveFilters =
+    !!subjectId ||
+    !!chapterId ||
+    !!topicId ||
+    !!conceptId ||
+    !!classLevel ||
+    !!difficulty ||
+    !!pyqYear;
+
+  const clearAllFilters = () => {
+    setSubjectId(null);
+    setChapterId(null);
+    setTopicId(null);
+    setConceptId(null);
+    setClassLevel(null);
+    setDifficulty("");
+    setPyqYear("");
+    setOffset(0);
+  };
 
   const subjectsQuery = useQuery({ queryKey: ["academic", "subjects"], queryFn: academicApi.subjects });
   const chaptersQuery = useQuery({
@@ -108,8 +158,14 @@ export default function QuestionBrowserPage() {
   const isSearching = submittedKeyword.trim().length > 0;
 
   const browseQuery = useQuery({
-    queryKey: ["questions", scope, offset],
-    queryFn: () => questionsApi.list({ ...scope, limit: PAGE_SIZE, offset }),
+    queryKey: ["questions", scope, classLevel, offset],
+    queryFn: () =>
+      questionsApi.list({
+        ...scope,
+        classLevel: classLevel ?? undefined,
+        limit: PAGE_SIZE,
+        offset,
+      }),
     enabled: !isSearching,
   });
 
@@ -170,17 +226,27 @@ export default function QuestionBrowserPage() {
 
       <Card>
         <CardContent className="flex flex-col gap-4 pt-6">
-          <form onSubmit={onSearchSubmit} className="flex gap-2">
+          <form onSubmit={onSearchSubmit} className="flex flex-wrap gap-2">
             <Input
               placeholder="Search question text, options, explanation, chapter, topic…"
               value={keyword}
               onChange={(e) => setKeyword(e.target.value)}
-              className="flex-1"
+              className="min-w-[12rem] flex-1"
             />
             <Button type="submit">Search</Button>
             {isSearching && (
               <Button type="button" variant="outline" onClick={clearSearch}>
                 Clear
+              </Button>
+            )}
+            {hasActiveFilters && (
+              <Button
+                type="button"
+                variant="outline"
+                onClick={clearAllFilters}
+                aria-label="Clear all Question Bank filters"
+              >
+                Clear all filters
               </Button>
             )}
           </form>
@@ -202,6 +268,24 @@ export default function QuestionBrowserPage() {
                     {s.name}
                   </option>
                 ))}
+              </select>
+            </div>
+
+            <div className="flex flex-col gap-1.5">
+              <Label>Class</Label>
+              <select
+                className="h-9 rounded-md border bg-background px-2 text-sm"
+                value={classLevel ?? ""}
+                onChange={(e) => {
+                  const v = e.target.value;
+                  setClassLevel(v === "11" || v === "12" ? (v as ClassLevel) : null);
+                  setOffset(0);
+                }}
+                aria-label="Filter by NCERT class"
+              >
+                <option value="">All classes</option>
+                <option value="11">Class 11</option>
+                <option value="12">Class 12</option>
               </select>
             </div>
 
@@ -356,6 +440,7 @@ export default function QuestionBrowserPage() {
                 <CardContent className="flex flex-col gap-3 pt-0">
                   <QuestionOptions options={q.options} />
                   <QuestionTags q={q} />
+                  <ProvenanceBadge q={q} />
                   {isSearching && "matched_fields" in q && (q as SearchResultItem).matched_fields.length > 0 && (
                     <p className="text-xs text-muted-foreground">
                       Matched in: {(q as SearchResultItem).matched_fields.map((f) => MATCHED_FIELD_LABEL[f] ?? f).join(", ")}

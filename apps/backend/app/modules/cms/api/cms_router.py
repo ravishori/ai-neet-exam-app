@@ -73,6 +73,78 @@ def _question_body(item: ContentItem) -> dict:
     return version.body if version else {}
 
 
+_CLASS_TAG_PREFIX = "class:"
+_NCERT_LEVEL_TAG_PREFIX = "ncert_level:"
+_NCERT_TAG_PREFIX = "ncert:"
+_SOURCE_PDF_TAG_PREFIX = "source_pdf:"
+
+
+def _class_from_tags(tags: list[str] | None) -> str | None:
+    """Return '11' or '12' from a content_items.tags list, or None.
+
+    Phase 2: the DB's only class taxonomy today is a ``class:<n>`` tag on
+    content_items — we surface it verbatim so the browse UI can label a card
+    with the class it was actually filed under (no derivation from prose)."""
+    for tag in tags or []:
+        if tag.startswith(_CLASS_TAG_PREFIX):
+            value = tag[len(_CLASS_TAG_PREFIX):].strip()
+            if value in ("11", "12"):
+                return value
+    return None
+
+
+def _first_tag_after(tags: list[str] | None, prefix: str) -> str | None:
+    for tag in tags or []:
+        if tag.startswith(prefix):
+            v = tag[len(prefix):].strip()
+            if v:
+                return v
+    return None
+
+
+def _provenance_block(item: ContentItem, version: ContentVersion | None) -> dict:
+    """Read-only projection of provenance fields ALREADY stored in the DB.
+
+    Never fabricates a source, verification level, page number, or a
+    "verified by NCERT" claim. Reads from:
+      - content_versions (authored_at, model_used, prompt_version, knowledge_unit_id, confidence_score)
+      - content_items.tags (ncert_level:, ncert:, source_pdf:, class:)
+
+    Distinguishes SOURCE (where the question came from) from
+    ALIGNMENT (which NCERT reference it maps to) from VERIFICATION
+    (which NCERT-level tag, if any, has been applied by the editorial
+    pipeline). Any missing field returns None — never a placeholder."""
+    tags = item.tags or []
+    ncert_verification_level = _first_tag_after(tags, _NCERT_LEVEL_TAG_PREFIX)
+    ncert_reference_tag = _first_tag_after(tags, _NCERT_TAG_PREFIX)
+    source_pdf = _first_tag_after(tags, _SOURCE_PDF_TAG_PREFIX)
+    model_used = version.model_used if version else None
+    prompt_version = version.prompt_version if version else None
+    confidence_score = version.confidence_score if version else None
+    knowledge_unit_id = str(version.knowledge_unit_id) if version and version.knowledge_unit_id else None
+    authored_at = version.authored_at.isoformat() if version and version.authored_at else None
+
+    # Coarse source label — derived only from data we have.
+    if model_used:
+        source = "AI_GENERATED"
+    elif source_pdf and source_pdf.lower().startswith("ncert"):
+        source = "NCERT_INGESTED"
+    else:
+        source = "PROJECT_AUTHORED"
+
+    return {
+        "source": source,
+        "ncert_verification_level": ncert_verification_level,
+        "ncert_reference_tag": ncert_reference_tag,
+        "source_pdf": source_pdf,
+        "model_used": model_used,
+        "prompt_version": prompt_version,
+        "confidence_score": confidence_score,
+        "knowledge_unit_id": knowledge_unit_id,
+        "authored_at": authored_at,
+    }
+
+
 def _question_summary(item: ContentItem, names: dict, visual_assets_by_ku: dict | None = None) -> dict:
     """Browse view — never includes correct_option/explanation, matching the
     _public_question pattern in assessment_router.py."""
@@ -97,6 +169,8 @@ def _question_summary(item: ContentItem, names: dict, visual_assets_by_ku: dict 
         "chapter": concept_names.get("chapter"),
         "subject": concept_names.get("subject"),
         "ncert_reference": concept_names.get("ncert_reference"),
+        "class_level": _class_from_tags(item.tags),
+        "provenance": _provenance_block(item, version),
         "images": images,
     }
 
@@ -366,15 +440,30 @@ async def get_coverage(db: AsyncSession = Depends(get_db)):
 async def browse_questions(
     scope_type: str | None = None,  # SUBJECT | CHAPTER | TOPIC | CONCEPT
     scope_id: uuid.UUID | None = None,
+    class_level: str | None = Query(default=None, description="Filter by NCERT class (11 or 12). Uses content_items.tags class:<n>."),
     limit: int = Query(default=20, ge=1, le=100),
     offset: int = Query(default=0, ge=0),
     db: AsyncSession = Depends(get_db),
 ):
     """Student-facing question browser — published questions only, never
     leaks correct_option/explanation. Wires up the questions.read permission
-    seeded for every role since identity/seed.py but previously unused."""
+    seeded for every role since identity/seed.py but previously unused.
+
+    Phase 2 (question bank filters):
+    - ``class_level`` narrows by NCERT class using the existing tag
+      ``class:11`` / ``class:12`` on content_items. No schema change; the
+      only class taxonomy the DB carries today lives in those tags.
+    """
+    if class_level is not None and class_level not in ("11", "12"):
+        raise AppError(
+            "class_level must be '11' or '12'.",
+            code="INVALID_CLASS_LEVEL",
+            status_code=400,
+        )
     repo = CmsRepository(db)
-    items, total = await repo.list_questions(scope_type=scope_type, scope_id=scope_id, limit=limit, offset=offset)
+    items, total = await repo.list_questions(
+        scope_type=scope_type, scope_id=scope_id, class_level=class_level, limit=limit, offset=offset
+    )
     concept_ids = [i.concept_id for i in items if i.concept_id]
     names = await repo.academic_names_for_concepts(concept_ids)
     ku_ids = [v.knowledge_unit_id for i in items if (v := _question_version(i)) and v.knowledge_unit_id]
@@ -382,7 +471,7 @@ async def browse_questions(
     return envelope(
         success=True,
         data=[_question_summary(i, names, visual_assets_by_ku) for i in items],
-        meta={"total": total, "limit": limit, "offset": offset},
+        meta={"total": total, "limit": limit, "offset": offset, "class_level": class_level},
     )
 
 

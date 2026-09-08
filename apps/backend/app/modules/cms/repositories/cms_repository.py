@@ -120,6 +120,7 @@ class CmsRepository:
         content_type: str,
         scope_type: str | None = None,
         scope_id: uuid.UUID | None = None,
+        class_level: str | None = None,
         limit: int = 20,
         offset: int = 0,
     ) -> tuple[list[ContentItem], int]:
@@ -127,6 +128,11 @@ class CmsRepository:
         Shared by list_questions (PR 2) and list_flashcards (PR 10) — same
         scope-join pattern as assessment_repository.published_question_ids_for_scope,
         extended with a TOPIC level for the browser filter UIs.
+
+        Phase 2: optional ``class_level`` narrows to Class 11 / Class 12 via
+        the existing ``content_items.tags`` array (values ``class:11`` /
+        ``class:12`` — see ingestion pipeline). No schema change: this reuses
+        the only class taxonomy the DB carries today.
         """
         from app.modules.academic.models import Chapter, Concept, Topic
 
@@ -167,6 +173,11 @@ class CmsRepository:
             )
         # scope_type None: no extra filter, browse everything published
 
+        if class_level in ("11", "12"):
+            tag_literal = f"class:{class_level}"
+            base = base.where(ContentItem.tags.any(tag_literal))
+            count_query = count_query.where(ContentItem.tags.any(tag_literal))
+
         total = (await self.session.execute(count_query)).scalar_one()
         base = base.options(selectinload(ContentItem.versions)).order_by(ContentItem.created_at.desc()).limit(limit).offset(offset)
         result = await self.session.execute(base)
@@ -177,11 +188,17 @@ class CmsRepository:
         *,
         scope_type: str | None = None,
         scope_id: uuid.UUID | None = None,
+        class_level: str | None = None,
         limit: int = 20,
         offset: int = 0,
     ) -> tuple[list[ContentItem], int]:
         return await self._list_published_by_scope(
-            content_type="QUESTION", scope_type=scope_type, scope_id=scope_id, limit=limit, offset=offset
+            content_type="QUESTION",
+            scope_type=scope_type,
+            scope_id=scope_id,
+            class_level=class_level,
+            limit=limit,
+            offset=offset,
         )
 
     async def list_flashcards(
