@@ -3,9 +3,19 @@
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useQuery } from "@tanstack/react-query";
+import { Layers } from "lucide-react";
 
+import {
+  PageHeader,
+  StudentPage,
+  SurfaceCard,
+  SurfaceCardDescription,
+  SurfaceCardHeader,
+  SurfaceCardTitle,
+} from "@/components/ds";
 import { Badge } from "@/components/ui/badge";
-import { Card, CardHeader, CardTitle } from "@/components/ui/card";
+import { EmptyState } from "@/components/ui/empty-state";
+import { Skeleton } from "@/components/ui/skeleton";
 import { academicApi } from "@/features/academic/api";
 
 export default function SubjectChaptersPage() {
@@ -20,27 +30,41 @@ export default function SubjectChaptersPage() {
     queryFn: () => academicApi.chapters(subjectId),
   });
 
-  if (isLoading) {
-    return <main className="flex-1 px-6 py-12 text-center text-sm text-muted-foreground">Loading…</main>;
-  }
-
   return (
-    <main className="flex-1 px-6 py-10">
-      <h1 className="mb-6 text-xl font-semibold">{subject?.name ?? "Chapters"}</h1>
-      <div className="grid gap-3">
-        {chapters?.map((chapter) => (
-          <Link key={chapter.id} href={`/student/chapters/${chapter.id}`}>
-            <Card className="transition-colors hover:bg-muted">
-              <CardHeader className="flex-row items-center justify-between space-y-0">
-                <CardTitle className="text-base">{chapter.name}</CardTitle>
-                {chapter.neet_weightage_percent != null && (
-                  <Badge variant="secondary">{chapter.neet_weightage_percent}% weightage</Badge>
-                )}
-              </CardHeader>
-            </Card>
-          </Link>
-        ))}
-      </div>
-    </main>
+    <StudentPage width="lg">
+      <PageHeader
+        eyebrow={subject?.name ?? "Subject"}
+        title="Chapters"
+        description="Open a chapter to browse topics and concepts."
+      />
+
+      {isLoading ? (
+        <div className="grid gap-3" aria-busy="true">
+          <Skeleton className="h-16 w-full rounded-2xl" />
+          <Skeleton className="h-16 w-full rounded-2xl" />
+          <Skeleton className="h-16 w-full rounded-2xl" />
+        </div>
+      ) : !chapters?.length ? (
+        <EmptyState icon={Layers} title="No chapters yet" description="Chapters for this subject are not available yet." />
+      ) : (
+        <div className="grid gap-3">
+          {chapters.map((chapter) => (
+            <Link key={chapter.id} href={`/student/chapters/${chapter.id}`} className="block">
+              <SurfaceCard subject={subject?.name} accent="left">
+                <SurfaceCardHeader className="flex-row items-center justify-between space-y-0 pb-4">
+                  <div className="min-w-0">
+                    <SurfaceCardTitle className="text-base">{chapter.name}</SurfaceCardTitle>
+                    <SurfaceCardDescription>Chapter</SurfaceCardDescription>
+                  </div>
+                  {chapter.neet_weightage_percent != null && (
+                    <Badge variant="secondary">{chapter.neet_weightage_percent}% weightage</Badge>
+                  )}
+                </SurfaceCardHeader>
+              </SurfaceCard>
+            </Link>
+          ))}
+        </div>
+      )}
+    </StudentPage>
   );
 }

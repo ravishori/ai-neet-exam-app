@@ -1,0 +1,121 @@
+{
+  "document_type": "phase-d-human-approval-signed",
+  "banner": "SIGNED HUMAN DECISION — NO DATABASE APPLICATION IN THIS STEP",
+  "status": "APPROVED FOR PHASE D.5B CONTROLLED APPLICATION",
+  "reviewer": "Ravi",
+  "review_date": "2026-08-31",
+  "pilot_run_id": "phase-d-30-mcq-authorized-20260825",
+  "authority_manifest": [
+    "docs/architecture/phase-d-human-approval-manifest-20260831.md",
+    "docs/architecture/phase-d-human-approval-manifest-20260831.json"
+  ],
+  "global_constraints": {
+    "keep_21_originals_unchanged": true,
+    "all_30_remain_draft": true,
+    "ecaep_submission_authorized": false,
+    "publication_authorized": false,
+    "scope_rule": "Only exact approved manifest changes (as amended for c7a54ae9) may be applied; no additional content/metadata/taxonomy/provenance/workflow/publication changes"
+  },
+  "taxonomy": {
+    "decision": "APPROVE NEW CONCEPT",
+    "code": "limiting-factors",
+    "name": "Limiting Factors (Blackman's Law)",
+    "parent_topic": "factors-affecting-photosynthesis",
+    "subject": "BOTANY",
+    "chapter": "photosynthesis",
+    "create_in_this_step": false,
+    "remap_after_create": [
+      "e6b9fb1e-f022-4172-88c5-318213bc511b",
+      "8d50e829-6540-44bc-882a-6b140a33da17"
+    ]
+  },
+  "decisions": [
+    {
+      "content_item_id": "85fee888-47f6-408d-ab05-39b131233322",
+      "decision": "APPROVE",
+      "action": "REPLACE",
+      "notes": "Pathway consequences; answer B; as in manifest"
+    },
+    {
+      "content_item_id": "c7a54ae9-5044-44d3-bfa4-8a5bbc6c5ef2",
+      "decision": "APPROVE WITH MODIFICATION",
+      "action": "REPLACE",
+      "notes": "Fixed-R / ratio condition made explicit",
+      "modification": {
+        "supersedes_manifest_stem": true,
+        "stem": "Ohm's law gives R = V/I. Without treating R as a fixed material property that independently forces both changes, if a situation is described in which V becomes 2V and I becomes I/2, the value of the ratio V/I:",
+        "options": {
+          "A": "becomes four times the original value.",
+          "B": "becomes twice the original value.",
+          "C": "remains unchanged.",
+          "D": "becomes one-fourth of the original value."
+        },
+        "correct_option": "A",
+        "difficulty": "easy",
+        "explanation": "From Ohm's law, R = V/I. If V → 2V and I → I/2, then (V/I)' = (2V)/(I/2) = 4(V/I). The question asks how this ratio changes under those stated V and I values; it does not assert that a fixed ohmic resistor simultaneously experiences both changes as independent physical constraints. B undercounts. C would require V/I constant. D inverts the ratio."
+      }
+    },
+    {
+      "content_item_id": "7b80d6db-9c07-4b42-a92d-df74ab8428b3",
+      "decision": "APPROVE",
+      "action": "REVISE",
+      "retain_answer": "A"
+    },
+    {
+      "content_item_id": "ade9900b-1ab2-4a5d-aa29-a5f4a605366e",
+      "decision": "APPROVE",
+      "action": "REVISE",
+      "metadata_remap": {
+        "topic": "ohms-law",
+        "concept": "ohms-law-concept",
+        "concept_id": "9071ef5d-b62f-4159-91b6-90436a7705e6",
+        "operation": "content_item metadata change"
+      }
+    },
+    {
+      "content_item_id": "87f621ab-a1d8-4097-8152-573b6fa46914",
+      "decision": "APPROVE",
+      "action": "REVISE"
+    },
+    {
+      "content_item_id": "863f1289-87a0-4253-b996-c0aff8c47988",
+      "decision": "APPROVE",
+      "action": "REVISE"
+    },
+    {
+      "content_item_id": "a42a3589-8070-40c2-9181-f76642b33a85",
+      "decision": "APPROVE",
+      "action": "REVISE"
+    },
+    {
+      "content_item_id": "e6b9fb1e-f022-4172-88c5-318213bc511b",
+      "decision": "APPROVE",
+      "action": "KEEP",
+      "body": "unchanged as proposed",
+      "taxonomy_remap": "after limiting-factors created"
+    },
+    {
+      "content_item_id": "8d50e829-6540-44bc-882a-6b140a33da17",
+      "decision": "APPROVE",
+      "action": "REVISE",
+      "taxonomy_remap": "after limiting-factors created"
+    }
+  ],
+  "d5b_authorized_when_executed": [
+    "Create limiting-factors concept",
+    "Remap e6b9fb1e and 8d50e829 after create",
+    "update_draft + KU copy for REVISE/REPLACE bodies",
+    "ade9900b concept_id remap",
+    "c7a54ae9 modified stem/explanation",
+    "Keep 21 originals; all remain DRAFT; no ECAEP; no publish"
+  ],
+  "safety_this_step": {
+    "database_writes": 0,
+    "mcq_modifications": 0,
+    "taxonomy_modifications": 0,
+    "ecaep_actions": 0,
+    "publication": 0
+  },
+  "proceed_to_d5b_automatically": false,
+  "awaiting": "Explicit Phase D.5B controlled application instruction"
+}

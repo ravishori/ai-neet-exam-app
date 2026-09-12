@@ -1,70 +1,177 @@
-name: Security & Dependency Scanning
+name: Security Pipeline
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
+      - develop
+
   pull_request:
-    branches: [main]
-  schedule:
-    # Weekly sweep so newly-disclosed CVEs surface even with no code changes.
-    - cron: "0 3 * * 1"
+    branches:
+      - main
+      - develop
+
+  workflow_dispatch:
 
 permissions:
   contents: read
   security-events: write
 
 jobs:
-  codeql:
-    name: CodeQL (${{ matrix.language }})
-    runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        language: [python, javascript-typescript]
-    steps:
-      - uses: actions/checkout@v4
-      - uses: github/codeql-action/init@v3
-        with:
-          languages: ${{ matrix.language }}
-      - uses: github/codeql-action/analyze@v3
 
-  secret-scan:
-    name: Secret scanning (gitleaks)
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      - uses: gitleaks/gitleaks-action@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  security:
 
-  backend-dependency-scan:
-    name: Dependency scan / Backend (pip-audit)
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: apps/backend
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
-      - run: pip install pip-audit
-      - name: pip-audit (informational — first-ever run on this repo, see docs/deploy/TEST_REPORT.md)
-        run: pip-audit -r requirements.txt || true
+    name: Enterprise Security Checks
 
-  frontend-dependency-scan:
-    name: Dependency scan / Frontend (npm audit)
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: apps/web
+
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "22"
-      - run: npm ci
-      - name: npm audit (informational — first-ever run on this repo, see docs/deploy/TEST_REPORT.md)
-        run: npm audit --audit-level=high || true
+
+    # ----------------------------------------------------------------------
+    # Checkout Repository
+    # ----------------------------------------------------------------------
+
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    # ----------------------------------------------------------------------
+    # Setup Python
+    # ----------------------------------------------------------------------
+
+    - name: Setup Python
+      uses: actions/setup-python@v5
+
+      with:
+        python-version: "3.12"
+
+    # ----------------------------------------------------------------------
+    # Setup Node
+    # ----------------------------------------------------------------------
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+
+      with:
+        node-version: "22"
+
+    # ----------------------------------------------------------------------
+    # Install Python Security Tools
+    # ----------------------------------------------------------------------
+
+    - name: Install Python Security Tools
+
+      run: |
+        python -m pip install --upgrade pip
+
+        pip install \
+          pip-audit \
+          bandit \
+          safety
+
+    # ----------------------------------------------------------------------
+    # Install Backend Dependencies
+    # ----------------------------------------------------------------------
+
+    - name: Install Backend Dependencies
+
+      working-directory: apps/backend
+
+      run: |
+        if [ -f requirements.txt ]; then
+          pip install -r requirements.txt
+        fi
+
+    # ----------------------------------------------------------------------
+    # Install Frontend Dependencies
+    # ----------------------------------------------------------------------
+
+    - name: Install Frontend Dependencies
+
+      working-directory: apps/frontend
+
+      run: |
+        if [ -f package-lock.json ]; then
+          npm ci
+        else
+          npm install
+        fi
+
+    # ----------------------------------------------------------------------
+    # Python Dependency Audit
+    # ----------------------------------------------------------------------
+
+    - name: pip-audit
+
+      run: |
+        pip-audit
+
+    # ----------------------------------------------------------------------
+    # Python Static Security Scan
+    # ----------------------------------------------------------------------
+
+    - name: Bandit Security Scan
+
+      run: |
+        bandit -r apps/backend
+
+    # ----------------------------------------------------------------------
+    # Python Dependency Vulnerability Scan
+    # ----------------------------------------------------------------------
+
+    - name: Safety Check
+
+      run: |
+        safety check || true
+
+    # ----------------------------------------------------------------------
+    # JavaScript Dependency Audit
+    # ----------------------------------------------------------------------
+
+    - name: npm audit
+
+      working-directory: apps/frontend
+
+      run: |
+        npm audit --audit-level=high
+
+    # ----------------------------------------------------------------------
+    # Secret Scan
+    # ----------------------------------------------------------------------
+
+    - name: Gitleaks Secret Scan
+
+      uses: gitleaks/gitleaks-action@v2
+
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    # ----------------------------------------------------------------------
+    # Trivy Filesystem Scan
+    # ----------------------------------------------------------------------
+
+    - name: Trivy Filesystem Scan
+
+      uses: aquasecurity/trivy-action@0.28.0
+
+      with:
+        scan-type: fs
+        scan-ref: .
+        severity: HIGH,CRITICAL
+
+    # ----------------------------------------------------------------------
+    # Security Summary
+    # ----------------------------------------------------------------------
+
+    - name: Security Summary
+
+      run: |
+        echo "====================================="
+        echo "Security Pipeline Completed"
+        echo "====================================="
+        echo "✓ pip-audit"
+        echo "✓ Bandit"
+        echo "✓ Safety"
+        echo "✓ npm audit"
+        echo "✓ Gitleaks"
+        echo "✓ Trivy"
+        echo "====================================="

@@ -139,3 +139,99 @@ async def test_browse_flashcards_pagination(client, db_session, register_user):
     )
     seen = {f["id"] for f in page1.json()["data"]} | {f["id"] for f in page2.json()["data"]}
     assert all(i in seen for i in ids)
+
+
+async def _set_certification(db_session, item_id: str, status: str) -> None:
+    from sqlalchemy.orm.attributes import flag_modified
+
+    from app.modules.cms.models import ContentItem, ContentVersion
+
+    item = await db_session.get(ContentItem, uuid.UUID(item_id))
+    assert item is not None and item.current_version_id is not None
+    ver = await db_session.get(ContentVersion, item.current_version_id)
+    assert ver is not None
+    body = dict(ver.body or {})
+    body["certification_status"] = status
+    body["certification_reason"] = f"test:{status}"
+    ver.body = body
+    flag_modified(ver, "body")
+    tags = [t for t in (item.tags or []) if not str(t).startswith("audit:")]
+    tags.append(f"audit:{status}")
+    item.tags = tags
+    flag_modified(item, "tags")
+    if status == "REJECTED":
+        item.status = "ARCHIVED"
+    await db_session.commit()
+
+
+async def test_publication_gate_excludes_rejected_flashcards(client, db_session, register_user):
+    await register_user(client, role_codes=["CONTENT_MANAGER"], db_session=db_session)
+    lineage = await _concept_with_lineage(db_session)
+    tag = uuid.uuid4().hex[:8]
+    ok_id = await _publish_flashcard(client, lineage["concept_id"], front=f"Gate OK {tag}")
+    rejected_id = await _publish_flashcard(client, lineage["concept_id"], front=f"Gate REJECT {tag}")
+    await _set_certification(db_session, rejected_id, "REJECTED")
+
+    resp = await client.get(
+        "/api/v1/cms/flashcards",
+        params={"scope_type": "CONCEPT", "scope_id": lineage["concept_id"], "limit": 100},
+    )
+    assert resp.status_code == 200, resp.text
+    ids = [f["id"] for f in resp.json()["data"]]
+    assert ok_id in ids
+    assert rejected_id not in ids
+    assert resp.json()["meta"]["publication_gate"]["rejects_excluded"] is True
+
+
+async def test_certified_only_returns_verified_cards(client, db_session, register_user):
+    await register_user(client, role_codes=["CONTENT_MANAGER"], db_session=db_session)
+    lineage = await _concept_with_lineage(db_session)
+    tag = uuid.uuid4().hex[:8]
+    verified_id = await _publish_flashcard(client, lineage["concept_id"], front=f"Certified {tag}")
+    review_id = await _publish_flashcard(client, lineage["concept_id"], front=f"Review {tag}")
+    await _set_certification(db_session, verified_id, "VERIFIED")
+    await _set_certification(db_session, review_id, "REVIEW")
+
+    all_resp = await client.get(
+        "/api/v1/cms/flashcards",
+        params={"scope_type": "CONCEPT", "scope_id": lineage["concept_id"], "limit": 100},
+    )
+    all_ids = {f["id"] for f in all_resp.json()["data"]}
+    assert verified_id in all_ids
+    assert review_id in all_ids
+
+    cert_resp = await client.get(
+        "/api/v1/cms/flashcards",
+        params={
+            "scope_type": "CONCEPT",
+            "scope_id": lineage["concept_id"],
+            "certified_only": True,
+            "limit": 100,
+        },
+    )
+    assert cert_resp.status_code == 200, cert_resp.text
+    cert_ids = {f["id"] for f in cert_resp.json()["data"]}
+    assert verified_id in cert_ids
+    assert review_id not in cert_ids
+    card = next(f for f in cert_resp.json()["data"] if f["id"] == verified_id)
+    assert card["certification_status"] == "VERIFIED"
+    review_card = next(f for f in all_resp.json()["data"] if f["id"] == review_id)
+    assert review_card["certification_status"] == "REVIEW"
+    assert review_card["certification_status"] != "VERIFIED"
+
+
+async def test_review_cards_expose_non_certified_status(client, db_session, register_user):
+    """Regression: REVIEW must never be labelled as certified in API payload."""
+    await register_user(client, role_codes=["CONTENT_MANAGER"], db_session=db_session)
+    lineage = await _concept_with_lineage(db_session)
+    tag = uuid.uuid4().hex[:8]
+    review_id = await _publish_flashcard(client, lineage["concept_id"], front=f"Label check {tag}")
+    await _set_certification(db_session, review_id, "REVIEW")
+
+    resp = await client.get(
+        "/api/v1/cms/flashcards",
+        params={"scope_type": "CONCEPT", "scope_id": lineage["concept_id"], "limit": 100},
+    )
+    assert resp.status_code == 200
+    card = next(f for f in resp.json()["data"] if f["id"] == review_id)
+    assert card["certification_status"] == "REVIEW"

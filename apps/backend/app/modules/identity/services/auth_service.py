@@ -230,9 +230,24 @@ class AuthService:
         user.password_hash = hash_password(new_password)
         user.password_reset_token_hash = None
         user.password_reset_expires_at = None
+        user.failed_login_attempts = 0
+        user.locked_until = None
         await self.tokens.revoke_all_for_user(user.id)
         await self.session.commit()
         logger.info("password_reset", user_id=str(user.id))
+
+    async def change_password(self, user: User, current_password: str, new_password: str) -> None:
+        from app.modules.identity.services.password_service import verify_password
+
+        if not verify_password(current_password, user.password_hash):
+            raise AppError("Current password is incorrect", code="INVALID_PASSWORD", status_code=400)
+        validate_password_policy(new_password)
+        user.password_hash = hash_password(new_password)
+        user.failed_login_attempts = 0
+        user.locked_until = None
+        await self.tokens.revoke_all_for_user(user.id)
+        await self.session.commit()
+        logger.info("password_changed", user_id=str(user.id))
 
     async def request_email_verification(self, user: User) -> str:
         plaintext, token_hash, expires_at = generate_verification_token()

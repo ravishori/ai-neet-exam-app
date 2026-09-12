@@ -1,0 +1,72 @@
+{
+  "audit": "Production Seed V2 Practice Isolation Preflight — Phase 0",
+  "date": "2026-09-04",
+  "mode": "READ_ONLY",
+  "verdict": "AMBER",
+  "publication_authorization": "CLOSED_GREEN_UNTOUCHED",
+  "v1_practice": "CLOSED_UNTOUCHED",
+  "implementation_complete": false,
+  "v2_published_cohort": {
+    "expected_sha256": "a3a8242433b69e80b1754807949767318fa19c41699ecea42c4c246b035b3978",
+    "computed_sha256": "a3a8242433b69e80b1754807949767318fa19c41699ecea42c4c246b035b3978",
+    "sha_match": true,
+    "n": 100,
+    "subject_counts": {
+      "Physics": 35,
+      "Chemistry": 35,
+      "Botany": 15,
+      "Zoology": 15
+    },
+    "exact_set_equality_artifact_vs_db": true,
+    "all_published": true,
+    "superseded_in_allowlist": 0,
+    "extra_v2_published_outside_allowlist": 0,
+    "historical_all_draft": true,
+    "v1_overlap": 0,
+    "protected_tags_in_allowlist": {
+      "t6d": 0,
+      "t6f2": 0,
+      "legacy": 0
+    },
+    "v1_published_n": 30
+  },
+  "v1_architecture": {
+    "hero_practice_now": {
+      "file": "apps/web/src/app/student/dashboard/page.tsx",
+      "component": "HeroPracticeCta",
+      "scope_type": "FULL",
+      "must_remain_unchanged": true
+    },
+    "hero_practice_seed_v1": {
+      "file": "apps/web/src/app/student/dashboard/page.tsx",
+      "scope_type": "SEED_V1",
+      "question_count": 30
+    },
+    "starter": "apps/web/src/features/assessment/use-start-practice.ts",
+    "api": "POST /api/v1/assessments/practice",
+    "allowlist_module": "apps/backend/app/modules/assessment/seed_v1_allowlist.py",
+    "allowlist_sha256": "c0cf70846233730ef384188f5b78cced2a7865f76d977a0af6063f803bc8f0c1",
+    "query": "published_question_ids_for_scope SEED_V1 → id IN seed_v1_uuids() AND status=PUBLISHED",
+    "tests": [
+      "apps/backend/tests/test_seed_v1_practice_isolation.py",
+      "apps/web/e2e/practice-now.spec.ts"
+    ]
+  },
+  "seed_v2_exists": false,
+  "required_implementation": [
+    "seed_v2_allowlist.py pinned to publication SHA",
+    "SCOPE_TYPES add SEED_V2",
+    "repository id IN allowlist AND PUBLISHED",
+    "GenerateRequest.question_count le>=100",
+    "dedicated Practice Seed V2 CTA (do not change Practice now)",
+    "TS GenerateInput union SEED_V2",
+    "isolation + E2E tests"
+  ],
+  "risks": [
+    "FULL scope now includes V2 published IDs; Hero Practice now is FULL not SEED_V1",
+    "question_count max 90 cannot deliver exact 100 without schema change",
+    "explanation is attempt-submit gated not per-item"
+  ],
+  "recommendation": "Next gate: V2 Practice Isolation Implementation using cloned SEED_V1 pattern. Do not retarget Practice now. Do not generate.",
+  "phase_stop": "V2_PRACTICE_PREFLIGHT_COMPLETE"
+}

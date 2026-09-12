@@ -1,0 +1,26 @@
+question_id,disposition,stem_ok,option_1_ok,option_2_ok,option_3_ok,option_4_ok,boundary_ok,column_ok,foreign_text_ok,classification_ok,quality,rejection_reason,evidence
+00d8cababe821fcf:p8:q3,FIXED,True,True,True,True,True,True,True,True,True,PARTIAL,FOREIGN_QUESTION_TEXT_IN_OPTION,affected=option_a; aff_contam=False; improved=False
+00d8cababe821fcf:p11:q73,FIXED,True,True,True,True,True,True,True,True,True,PARTIAL,FOREIGN_QUESTION_TEXT_IN_OPTION,affected=option_b; aff_contam=False; improved=False
+10030e374de702ab:p9:q3,FIXED,True,True,True,True,True,True,True,True,True,PARTIAL,,affected=option_b; aff_contam=False; improved=False
+1d7ffd36a442fa95:p2:q3,FIXED,True,True,True,True,True,True,True,True,True,PARTIAL,,affected=option_c; aff_contam=False; improved=True
+34ba281c8f7a45b9:p2:q6,FIXED,True,True,True,True,True,True,True,False,True,PARTIAL,FOREIGN_QUESTION_TEXT_IN_OPTION,affected=option_b; aff_contam=True; improved=False
+7e4dabb5a199588d:p10:q52,FIXED,True,True,True,True,True,True,True,False,True,PARTIAL,FOREIGN_QUESTION_TEXT_IN_OPTION,affected=option_c; aff_contam=True; improved=False
+8633a3811ea07447:p5:q4,FIXED,False,False,False,False,False,False,True,False,False,,,Record absent in R3 — RM4 spurious-marker rejection removes false question block
+8633a3811ea07447:p13:q82,FIXED,True,True,True,True,True,True,True,True,True,PARTIAL,FOREIGN_QUESTION_TEXT_IN_OPTION,affected=option_b; aff_contam=False; improved=False
+8633a3811ea07447:p20:q133,FIXED,True,True,True,True,True,True,True,True,True,PARTIAL,FOREIGN_QUESTION_TEXT_IN_OPTION,affected=option_a; aff_contam=False; improved=False
+87c534cad98b7b4e:p3:q7,FIXED,True,True,True,True,True,True,True,True,True,PARTIAL,FOREIGN_QUESTION_TEXT_IN_OPTION,affected=option_a; aff_contam=False; improved=False
+87c534cad98b7b4e:p13:q65,FIXED,True,True,False,True,False,True,True,True,True,DIAGRAM_DEPENDENT,,affected=option_a; aff_contam=False; improved=False
+9fcfff3f33350907:p8:q57,FIXED,True,True,True,True,True,True,True,False,True,PARTIAL,FOREIGN_QUESTION_TEXT_IN_OPTION,affected=option_b; aff_contam=True; improved=False
+a1c3361678271d6e:p24:q162,FIXED,True,True,True,True,True,True,True,False,True,PARTIAL,FOREIGN_QUESTION_TEXT_IN_OPTION,affected=option_a; aff_contam=True; improved=False
+a1c3361678271d6e:p26:q172,FIXED,True,True,True,True,True,True,True,False,True,PARTIAL,FOREIGN_QUESTION_TEXT_IN_OPTION,affected=option_d; aff_contam=True; improved=False
+a43894b5fbc8cd28:p9:q3,FIXED,True,True,True,True,True,True,True,False,True,PARTIAL,FOREIGN_QUESTION_TEXT_IN_OPTION,affected=option_b; aff_contam=True; improved=False
+b69d582ff457c62e:p14:q55,FIXED,True,True,True,True,True,True,True,True,True,PARTIAL,,affected=option_c; aff_contam=False; improved=False
+b69d582ff457c62e:p20:q81,FIXED,True,True,True,True,True,True,True,True,True,PARTIAL,,affected=option_b; aff_contam=False; improved=True
+d11cf53d4d8ef5b0:p30:q195,FIXED,True,True,True,True,True,True,True,True,True,PARTIAL,FOREIGN_QUESTION_TEXT_IN_OPTION,affected=option_b; aff_contam=False; improved=False
+dbdcfa0a13d13467:p25:q165,FIXED,True,True,True,True,True,True,True,False,True,PARTIAL,FOREIGN_QUESTION_TEXT_IN_OPTION,affected=option_a; aff_contam=True; improved=False
+ee3990aec2dfa279:p8:q52,FIXED,True,True,True,True,True,True,True,True,True,PARTIAL,FOREIGN_QUESTION_TEXT_IN_OPTION,affected=option_c; aff_contam=False; improved=False
+f5378eb6785774c3:p8:q52,FIXED,True,True,True,True,True,True,True,True,True,PARTIAL,,affected=option_c; aff_contam=False; improved=False
+f5378eb6785774c3:p21:q145,FIXED,True,True,True,True,True,True,True,True,True,VALID,,affected=option_c; aff_contam=False; improved=False
+f7a45c960ede2f29:p2:q3,FIXED,True,True,True,True,True,True,True,True,True,PARTIAL,,affected=option_d; aff_contam=False; improved=True
+f7a45c960ede2f29:p13:q64,FIXED,True,True,True,True,True,True,True,True,True,PARTIAL,FOREIGN_QUESTION_TEXT_IN_OPTION,affected=option_d; aff_contam=False; improved=False
+f7a45c960ede2f29:p28:q164,FIXED,True,True,False,False,True,True,True,True,True,DIAGRAM_DEPENDENT,,affected=option_a; aff_contam=False; improved=False

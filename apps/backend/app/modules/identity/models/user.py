@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from sqlalchemy import Boolean, DateTime, Integer, String
+from sqlalchemy import Boolean, DateTime, Integer, String, Text
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.core.database import Base
@@ -36,6 +36,10 @@ class User(Base, AuditedBase):
     email_verification_expires_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
     password_reset_token_hash: Mapped[str | None] = mapped_column(String(64))
     password_reset_expires_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
+
+    totp_secret_encrypted: Mapped[str | None] = mapped_column(Text)
+    totp_enabled: Mapped[bool] = mapped_column(Boolean, default=False, nullable=False)
+    totp_confirmed_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
 
     roles: Mapped[list["UserRole"]] = relationship(back_populates="user", cascade="all, delete-orphan")
     refresh_tokens: Mapped[list["RefreshToken"]] = relationship(

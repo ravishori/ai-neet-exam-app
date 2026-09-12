@@ -5,11 +5,16 @@ starts with the same frozen decisions instead of re-deriving them.
 
 ## What this is
 
-An AI-first learning platform, NEET as the first product. Full brainstorm is
-in `BRD.docx` (23k lines — treat as backlog/vision, not a build spec) and
-`Trinetra AI Learning OS (TALOS).docx` (README-style snapshot). The actual
-build target is the phased plan below, not the BRD's enterprise-scale vision
-(280 tables, 12 AI agents, full knowledge graph — all deferred, see ADRs).
+An AI-first learning platform, NEET as the first product — **under active
+development**. Full brainstorm is in `BRD.docx` (treat as backlog/vision, not a
+build spec) and `Trinetra AI Learning OS (TALOS).docx`. The actual build target
+is the phased product plan in `docs/product/MASTER_ROADMAP.md` and the frozen
+ADRs — not the BRD's enterprise-scale vision (280 tables, 12 AI agents, full
+knowledge graph — deferred, see ADR-0007).
+
+**Feature readiness ≠ production readiness.** SP0–SP9 are substantially
+implemented in code; production deploy, SMTP, MFA UI, E2E, AI eval harness, and
+published content volume are separate gates. See `docs/product/MASTER_FEATURE_AUDIT.md`.
 
 ## Frozen decisions (do not re-litigate — see docs/decisions/ for the "why")
 
@@ -18,16 +23,18 @@ build target is the phased plan below, not the BRD's enterprise-scale vision
 - **Stack**: Next.js 15 + TS + Tailwind + shadcn/ui · FastAPI + SQLAlchemy 2.x
   (async) + Alembic + Pydantic v2 · PostgreSQL 17+ · Redis.
 - **Auth**: custom JWT (access + rotating refresh tokens), Argon2 password
-  hashing, HTTP-only cookies. Not Auth.js.
+  hashing, HTTP-only cookies. Not Auth.js. OTP/TOTP APIs exist (Wave C);
+  product MFA UI is incomplete.
 - **AI**: AI Gateway abstraction from day one, Claude as the only wired
   provider for now. Four agents in v1: Tutor, Question Generator, Study
   Planner, Evaluator. Nothing else (Mentor, Digital Twin, Diagram Agent,
-  12-agent orchestrator) until v1 ships.
+  12-agent orchestrator) until a later explicit decision.
 - **Content**: NCERT-aligned + originally authored content only. No
   ingestion of Aakash/Allen/PW/Unacademy material without explicit
   licensing. Content moves through the ECAEP workflow
   (`docs/architecture/ecaep.md`) — never a CRUD path that skips review.
-- **Commerce**: Razorpay. **Hosting**: Coolify on a Hetzner VPS for MVP.
+- **Commerce**: Razorpay. **Hosting**: Coolify on a Hetzner VPS for MVP
+  (documented; production verification separate).
 - **Multi-tenancy**: not in MVP. Reserve an `organizations` table; don't
   thread `tenant_id` through anything yet.
 - **Naming**: always "Trinetra AI Learning OS (TALOS)", never "AI Learning
@@ -37,8 +44,8 @@ build target is the phased plan below, not the BRD's enterprise-scale vision
 
 - Backend modules live under `apps/backend/app/modules/<name>/` with
   identical internal shape: `api/ services/ repositories/ models/ schemas/
-  tests/`. See `apps/backend/app/modules/identity/` once it exists as the
-  template for every module after it.
+  tests/`. Use `apps/backend/app/modules/identity/` as the template for
+  every module after it.
 - Every table: `id UUID PK`, `created_at/updated_at TIMESTAMPTZ`,
   `created_by/updated_by`, `deleted_at` (soft delete), `version INT`.
 - PostgreSQL schemas, not everything in `public`: `identity`, `academic`,
@@ -50,7 +57,11 @@ build target is the phased plan below, not the BRD's enterprise-scale vision
 
 ## Where to look
 
-- `docs/decisions/` — ADRs, one per frozen decision above.
-- `docs/architecture/roadmap.md` — the sprint-by-sprint build plan (SP0
-  Foundation → SP1 Identity → SP2 Academic → SP3 CMS+Questions → …).
-- `docs/architecture/ecaep.md` — the content editorial workflow spec.
+- `docs/product/` — **authoritative current product status**, gaps, forward
+  roadmap, Cursor waves.
+- `docs/decisions/` — ADRs for frozen decisions above.
+- `docs/architecture/roadmap.md` — historical SP0–SP9 engineering log +
+  StudyMaterial phases.
+- `docs/architecture/ecaep.md` — content editorial workflow spec.
+- `docs/security-audit.md` — security posture (YELLOW until ops verified).
+- Root `README.md` — onboarding summary for humans and agents.

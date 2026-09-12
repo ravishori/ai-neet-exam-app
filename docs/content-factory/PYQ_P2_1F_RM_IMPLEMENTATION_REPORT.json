@@ -1,0 +1,120 @@
+{
+  "phase": "P2.1F-RM",
+  "status": "COMPLETE",
+  "timestamp": "2026-09-01T17:11:13.359898+00:00",
+  "baseline": {
+    "r1_immutable": true,
+    "r2_immutable": true,
+    "production_db_modified": false
+  },
+  "rm1_option_boundary": {
+    "status": "PASS",
+    "tests_passed": 102,
+    "tests_failed": 0,
+    "known_cases_fixed": 1
+  },
+  "rm2_valid_safety": {
+    "status": "PASS",
+    "contaminated_valid_before": 6,
+    "contaminated_valid_after": 0
+  },
+  "rm3_foreign_stem": {
+    "status": "PASS",
+    "cases_checked": 25,
+    "contamination_remaining": 0
+  },
+  "rm4_q4_q5": {
+    "status": "PARTIAL",
+    "q5_status": "PARTIAL"
+  },
+  "r3": {
+    "generated": true,
+    "questions": 4718,
+    "valid": 3098,
+    "partial": 1541,
+    "cross_column_flags": 41,
+    "semantic_contamination_flags": 5,
+    "benign_ocr_artifact_flags": 36,
+    "confirmed_contamination": 0,
+    "class_e": 0,
+    "class_e_false_positive": 17,
+    "idempotent": true
+  },
+  "original_cases": {
+    "cross_column_25": {
+      "fixed": 9,
+      "remaining": 0,
+      "reclassified": 15,
+      "inconclusive": 1
+    },
+    "class_e_34": {
+      "fixed": 0,
+      "remaining": 0,
+      "inconclusive": 0
+    }
+  },
+  "gates": {
+    "structural": "PASS",
+    "parser_regression": "PASS",
+    "cross_column": "PASS",
+    "class_e": "PASS",
+    "fidelity": "INCONCLUSIVE",
+    "known_defects": "PASS"
+  },
+  "final_verdict": "YELLOW",
+  "production_db_write_allowed": false,
+  "p3_allowed": false,
+  "cross_column_audit": {
+    "00d8cababe821fcf:p8:q3": "RECLASSIFIED",
+    "00d8cababe821fcf:p11:q73": "RECLASSIFIED",
+    "10030e374de702ab:p9:q3": "FIXED",
+    "1d7ffd36a442fa95:p2:q3": "FIXED",
+    "34ba281c8f7a45b9:p2:q6": "RECLASSIFIED",
+    "7e4dabb5a199588d:p10:q52": "RECLASSIFIED",
+    "8633a3811ea07447:p5:q4": "INCONCLUSIVE",
+    "8633a3811ea07447:p13:q82": "RECLASSIFIED",
+    "8633a3811ea07447:p20:q133": "RECLASSIFIED",
+    "87c534cad98b7b4e:p3:q7": "RECLASSIFIED",
+    "87c534cad98b7b4e:p13:q65": "FIXED",
+    "9fcfff3f33350907:p8:q57": "RECLASSIFIED",
+    "a1c3361678271d6e:p24:q162": "RECLASSIFIED",
+    "a1c3361678271d6e:p26:q172": "RECLASSIFIED",
+    "a43894b5fbc8cd28:p9:q3": "RECLASSIFIED",
+    "b69d582ff457c62e:p14:q55": "FIXED",
+    "b69d582ff457c62e:p20:q81": "FIXED",
+    "d11cf53d4d8ef5b0:p30:q195": "RECLASSIFIED",
+    "dbdcfa0a13d13467:p25:q165": "RECLASSIFIED",
+    "ee3990aec2dfa279:p8:q52": "RECLASSIFIED",
+    "f5378eb6785774c3:p8:q52": "FIXED",
+    "f5378eb6785774c3:p21:q145": "FIXED",
+    "f7a45c960ede2f29:p2:q3": "FIXED",
+    "f7a45c960ede2f29:p13:q64": "RECLASSIFIED",
+    "f7a45c960ede2f29:p28:q164": "FIXED"
+  },
+  "contaminated_valid_audit": {
+    "8633a3811ea07447:p20:q133": {
+      "status": "RECLASSIFIED",
+      "quality": "PARTIAL"
+    },
+    "a1c3361678271d6e:p24:q162": {
+      "status": "RECLASSIFIED",
+      "quality": "PARTIAL"
+    },
+    "00d8cababe821fcf:p8:q3": {
+      "status": "RECLASSIFIED",
+      "quality": "PARTIAL"
+    },
+    "d11cf53d4d8ef5b0:p30:q195": {
+      "status": "RECLASSIFIED",
+      "quality": "PARTIAL"
+    },
+    "a43894b5fbc8cd28:p9:q3": {
+      "status": "RECLASSIFIED",
+      "quality": "PARTIAL"
+    },
+    "f5378eb6785774c3:p21:q145": {
+      "status": "FIXED",
+      "quality": "VALID"
+    }
+  }
+}

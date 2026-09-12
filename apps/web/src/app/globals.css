@@ -8,9 +8,9 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-sans);
+  --font-sans: var(--font-plus-jakarta);
   --font-mono: var(--font-geist-mono);
-  --font-heading: var(--font-sans);
+  --font-heading: var(--font-plus-jakarta);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -28,6 +28,10 @@
   --color-input: var(--input);
   --color-border: var(--border);
   --color-destructive: var(--destructive);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
   --color-accent-foreground: var(--accent-foreground);
   --color-accent: var(--accent);
   --color-muted-foreground: var(--muted-foreground);
@@ -40,6 +44,20 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
+  /* Subject + AI design tokens */
+  --color-subject-physics: var(--subject-physics);
+  --color-subject-physics-muted: var(--subject-physics-muted);
+  --color-subject-physics-border: var(--subject-physics-border);
+  --color-subject-chemistry: var(--subject-chemistry);
+  --color-subject-chemistry-muted: var(--subject-chemistry-muted);
+  --color-subject-chemistry-border: var(--subject-chemistry-border);
+  --color-subject-biology: var(--subject-biology);
+  --color-subject-biology-muted: var(--subject-biology-muted);
+  --color-subject-biology-border: var(--subject-biology-border);
+  --color-ai-from: var(--ai-from);
+  --color-ai-to: var(--ai-to);
+  --color-glass: var(--glass-bg);
+  --color-glass-border: var(--glass-border);
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
@@ -51,34 +69,39 @@
   --shadow-sm: var(--elevation-sm);
   --shadow-md: var(--elevation-md);
   --shadow-lg: var(--elevation-lg);
+  --shadow-xl: var(--elevation-xl);
   --ease-out-smooth: var(--motion-ease-out);
 }
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
+  --background: oklch(0.985 0.005 250);
+  --foreground: oklch(0.18 0.02 260);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
+  --card-foreground: oklch(0.18 0.02 260);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.18 0.02 260);
   --primary: oklch(0.47 0.19 264);
   --primary-foreground: oklch(0.98 0.01 264);
   --secondary: oklch(0.96 0.01 264);
   --secondary-foreground: oklch(0.32 0.05 264);
   --muted: oklch(0.97 0.005 264);
-  --muted-foreground: oklch(0.556 0 0);
+  --muted-foreground: oklch(0.45 0.02 260);
   --accent: oklch(0.95 0.02 264);
   --accent-foreground: oklch(0.32 0.1 264);
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
+  --success: oklch(0.52 0.14 155);
+  --success-foreground: oklch(0.98 0.02 155);
+  --warning: oklch(0.72 0.14 75);
+  --warning-foreground: oklch(0.28 0.05 75);
+  --border: oklch(0.88 0.01 260);
+  --input: oklch(0.88 0.01 260);
   --ring: oklch(0.55 0.19 264);
   --chart-1: oklch(0.55 0.18 264);
   --chart-2: oklch(0.6 0.12 180);
   --chart-3: oklch(0.7 0.15 70);
   --chart-4: oklch(0.6 0.19 20);
   --chart-5: oklch(0.55 0.05 264);
-  --radius: 0.625rem;
+  --radius: 0.75rem;
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.145 0 0);
   --sidebar-primary: oklch(0.47 0.19 264);
@@ -87,29 +110,68 @@
   --sidebar-accent-foreground: oklch(0.32 0.1 264);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.55 0.19 264);
+
+  /* Physics: indigo → cobalt */
+  --subject-physics: #1d4ed8;
+  --subject-physics-from: #3b82f6;
+  --subject-physics-to: #1d4ed8;
+  --subject-physics-muted: color-mix(in oklab, #3b82f6 12%, white);
+  --subject-physics-border: color-mix(in oklab, #1d4ed8 28%, transparent);
+
+  /* Chemistry: amethyst → violet */
+  --subject-chemistry: #6d28d9;
+  --subject-chemistry-from: #8b5cf6;
+  --subject-chemistry-to: #6d28d9;
+  --subject-chemistry-muted: color-mix(in oklab, #8b5cf6 12%, white);
+  --subject-chemistry-border: color-mix(in oklab, #6d28d9 28%, transparent);
+
+  /* Biology: emerald → forest mint */
+  --subject-biology: #059669;
+  --subject-biology-from: #10b981;
+  --subject-biology-to: #059669;
+  --subject-biology-muted: color-mix(in oklab, #10b981 12%, white);
+  --subject-biology-border: color-mix(in oklab, #059669 28%, transparent);
+
+  /* AI engine accents */
+  --ai-from: #06b6d4;
+  --ai-to: #8b5cf6;
+
+  /* Glass / elevation */
+  --glass-bg: color-mix(in oklab, white 72%, transparent);
+  --glass-border: color-mix(in oklab, oklch(0.5 0.02 260) 14%, transparent);
   --elevation-xs: 0 1px 2px 0 oklch(0.2 0.02 264 / 0.04);
   --elevation-sm: 0 1px 3px 0 oklch(0.2 0.02 264 / 0.07), 0 1px 2px -1px oklch(0.2 0.02 264 / 0.06);
   --elevation-md: 0 4px 6px -1px oklch(0.2 0.02 264 / 0.08), 0 2px 4px -2px oklch(0.2 0.02 264 / 0.06);
   --elevation-lg: 0 10px 15px -3px oklch(0.2 0.02 264 / 0.09), 0 4px 6px -4px oklch(0.2 0.02 264 / 0.06);
+  --elevation-xl: 0 10px 30px -10px rgba(0, 0, 0, 0.15);
   --motion-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --exam-motion: 1;
+  /* Mobile-first layout tokens */
+  --touch-target-min: 2.75rem;
+  --content-max: 72rem;
+  --practice-sticky-offset: 4.5rem;
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
+  --background: oklch(0.16 0.02 260);
+  --foreground: oklch(0.97 0.005 260);
+  --card: oklch(0.21 0.02 260);
+  --card-foreground: oklch(0.97 0.005 260);
+  --popover: oklch(0.21 0.02 260);
+  --popover-foreground: oklch(0.97 0.005 260);
   --primary: oklch(0.72 0.16 264);
   --primary-foreground: oklch(0.16 0.02 264);
   --secondary: oklch(0.27 0.02 264);
   --secondary-foreground: oklch(0.9 0.02 264);
   --muted: oklch(0.269 0.005 264);
-  --muted-foreground: oklch(0.708 0 0);
+  --muted-foreground: oklch(0.72 0.02 260);
   --accent: oklch(0.28 0.03 264);
   --accent-foreground: oklch(0.9 0.03 264);
   --destructive: oklch(0.704 0.191 22.216);
+  --success: oklch(0.72 0.14 155);
+  --success-foreground: oklch(0.18 0.04 155);
+  --warning: oklch(0.8 0.12 75);
+  --warning-foreground: oklch(0.22 0.05 75);
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
   --ring: oklch(0.6 0.18 264);
@@ -126,11 +188,37 @@
   --sidebar-accent-foreground: oklch(0.9 0.03 264);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.6 0.18 264);
+
+  --subject-physics: #60a5fa;
+  --subject-physics-from: #3b82f6;
+  --subject-physics-to: #1d4ed8;
+  --subject-physics-muted: color-mix(in oklab, #3b82f6 18%, oklch(0.2 0.02 260));
+  --subject-physics-border: color-mix(in oklab, #60a5fa 35%, transparent);
+
+  --subject-chemistry: #c4b5fd;
+  --subject-chemistry-from: #8b5cf6;
+  --subject-chemistry-to: #6d28d9;
+  --subject-chemistry-muted: color-mix(in oklab, #8b5cf6 18%, oklch(0.2 0.02 260));
+  --subject-chemistry-border: color-mix(in oklab, #c4b5fd 35%, transparent);
+
+  --subject-biology: #34d399;
+  --subject-biology-from: #10b981;
+  --subject-biology-to: #059669;
+  --subject-biology-muted: color-mix(in oklab, #10b981 18%, oklch(0.2 0.02 260));
+  --subject-biology-border: color-mix(in oklab, #34d399 35%, transparent);
+
+  --ai-from: #22d3ee;
+  --ai-to: #a78bfa;
+
+  --glass-bg: color-mix(in oklab, oklch(0.22 0.02 260) 78%, transparent);
+  --glass-border: rgba(255, 255, 255, 0.08);
   --elevation-xs: 0 1px 2px 0 oklch(0 0 0 / 0.16);
   --elevation-sm: 0 1px 3px 0 oklch(0 0 0 / 0.24), 0 1px 2px -1px oklch(0 0 0 / 0.2);
   --elevation-md: 0 4px 6px -1px oklch(0 0 0 / 0.28), 0 2px 4px -2px oklch(0 0 0 / 0.22);
   --elevation-lg: 0 10px 15px -3px oklch(0 0 0 / 0.32), 0 4px 6px -4px oklch(0 0 0 / 0.24);
+  --elevation-xl: 0 10px 30px -10px rgba(0, 0, 0, 0.45);
   --motion-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --exam-motion: 1;
 }
 
 @layer base {
@@ -142,14 +230,70 @@
   }
   html {
     @apply font-sans;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
   }
 }
 
-/* Reusable page/card entrance motion (respects prefers-reduced-motion via
-   tw-animate-css's own guard). Interactive primitives (Dialog, Popover,
-   Tooltip, Accordion, ...) already animate via their own data-state hooks
-   and tw-animate-css utilities — these two are for plain content reveals. */
+/* Prefer larger tap targets on coarse pointers */
+@media (pointer: coarse) {
+  .touch-manipulation {
+    touch-action: manipulation;
+  }
+}
+
+/* Safe-area padding helpers for notched phones */
+.safe-pb {
+  padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+}
+
+/* Atmosphere wash behind student / admin shells */
+.page-atmosphere {
+  background:
+    radial-gradient(1200px 600px at 10% -10%, color-mix(in oklab, var(--subject-physics-from) 14%, transparent), transparent 55%),
+    radial-gradient(900px 500px at 90% 0%, color-mix(in oklab, var(--ai-to) 10%, transparent), transparent 50%),
+    radial-gradient(800px 400px at 50% 100%, color-mix(in oklab, var(--subject-biology-from) 8%, transparent), transparent 55%),
+    var(--background);
+}
+
+/* Glass surface utility */
+.surface-glass {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: var(--elevation-xl);
+}
+
+/* Subject gradient accents */
+.subject-gradient-physics {
+  background-image: linear-gradient(135deg, var(--subject-physics-from), var(--subject-physics-to));
+}
+.subject-gradient-chemistry {
+  background-image: linear-gradient(135deg, var(--subject-chemistry-from), var(--subject-chemistry-to));
+}
+.subject-gradient-biology {
+  background-image: linear-gradient(135deg, var(--subject-biology-from), var(--subject-biology-to));
+}
+.ai-gradient {
+  background-image: linear-gradient(135deg, var(--ai-from), var(--ai-to));
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Hover lift — disabled under reduced motion / exam mode */
 @media (prefers-reduced-motion: no-preference) {
+  .hover-lift {
+    transition:
+      transform 220ms var(--motion-ease-out),
+      box-shadow 220ms var(--motion-ease-out);
+  }
+  .hover-lift:hover {
+    transform: translateY(calc(-2px * var(--exam-motion, 1)));
+    box-shadow: var(--elevation-xl);
+  }
   .animate-fade-in {
     animation: fade-in 0.35s var(--motion-ease-out) both;
   }
@@ -157,6 +301,26 @@
     animation: fade-slide-up 0.35s var(--motion-ease-out) both;
   }
 }
+
+.exam-mode {
+  --exam-motion: 0;
+}
+.exam-mode .hover-lift:hover {
+  transform: none;
+  box-shadow: var(--elevation-sm);
+}
+.exam-mode .surface-glass {
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: var(--elevation-sm);
+}
+.exam-mode .ai-gradient,
+.exam-mode .subject-gradient-physics,
+.exam-mode .subject-gradient-chemistry,
+.exam-mode .subject-gradient-biology {
+  filter: none;
+}
+
 @keyframes fade-in {
   from {
     opacity: 0;
@@ -169,8 +333,6 @@
   }
 }
 
-/* Thin, rounded, always-visible scrollbar for scoped scroll containers
-   (Firefox via scrollbar-width/color, Chrome/Edge/Safari via ::-webkit-*). */
 .scroll-thin {
   scrollbar-width: thin;
   scrollbar-color: var(--border) transparent;
@@ -193,8 +355,6 @@
   background-clip: padding-box;
 }
 
-/* Syntax-highlighted code blocks (rehype-highlight) — token colors tuned
-   for both themes since highlight.js ships light/dark as separate files. */
 .hljs {
   background: transparent !important;
 }
@@ -229,8 +389,6 @@
   color: oklch(0.65 0.18 45);
 }
 
-/* prose overrides so markdown answers match the app's design tokens instead
-   of Tailwind Typography's own defaults. */
 .prose-tutor {
   --tw-prose-body: var(--foreground);
   --tw-prose-headings: var(--foreground);

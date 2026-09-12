@@ -1,0 +1,1096 @@
+{
+  "document_type": "phase-e1-final-ecaep-readiness",
+  "banner": "POST-APPLICATION READ-ONLY AUDIT — NO DATABASE CHANGES — NO ECAEP ACTION — NO PUBLICATION",
+  "generated_at": "2026-08-31T14:18:07.218987+00:00",
+  "pilot_run_id": "phase-d-30-mcq-authorized-20260825",
+  "database": "trinetra_db",
+  "database_writes": 0,
+  "verdict": "GREEN",
+  "live_database": {
+    "pilot": 30,
+    "draft": 30,
+    "published": 0,
+    "global": {
+      "DRAFT": 78,
+      "PUBLISHED": 11,
+      "IN_REVIEW": 1
+    },
+    "student_published_bank": 11
+  },
+  "content_integrity": {
+    "approved_changes_matched": true,
+    "approved_checks": [
+      {
+        "id": "8d50e829-6540-44bc-882a-6b140a33da17",
+        "classification": "MATCH",
+        "hash_ok": true,
+        "content_ok": true,
+        "answer": "A",
+        "difficulty": "medium"
+      },
+      {
+        "id": "85fee888-47f6-408d-ab05-39b131233322",
+        "classification": "MATCH",
+        "hash_ok": true,
+        "content_ok": true,
+        "answer": "B",
+        "difficulty": "medium"
+      },
+      {
+        "id": "87f621ab-a1d8-4097-8152-573b6fa46914",
+        "classification": "MATCH",
+        "hash_ok": true,
+        "content_ok": true,
+        "answer": "C",
+        "difficulty": "medium"
+      },
+      {
+        "id": "863f1289-87a0-4253-b996-c0aff8c47988",
+        "classification": "MATCH",
+        "hash_ok": true,
+        "content_ok": true,
+        "answer": "B",
+        "difficulty": "hard"
+      },
+      {
+        "id": "ade9900b-1ab2-4a5d-aa29-a5f4a605366e",
+        "classification": "MATCH",
+        "hash_ok": true,
+        "content_ok": true,
+        "answer": "A",
+        "difficulty": "hard"
+      },
+      {
+        "id": "c7a54ae9-5044-44d3-bfa4-8a5bbc6c5ef2",
+        "classification": "MATCH",
+        "hash_ok": true,
+        "content_ok": true,
+        "answer": "A",
+        "difficulty": "easy"
+      },
+      {
+        "id": "7b80d6db-9c07-4b42-a92d-df74ab8428b3",
+        "classification": "MATCH",
+        "hash_ok": true,
+        "content_ok": true,
+        "answer": "A",
+        "difficulty": "hard"
+      },
+      {
+        "id": "a42a3589-8070-40c2-9181-f76642b33a85",
+        "classification": "MATCH",
+        "hash_ok": true,
+        "content_ok": true,
+        "answer": "A",
+        "difficulty": "easy"
+      }
+    ],
+    "historical_versions": "PASS",
+    "versioning_detail": [
+      {
+        "id": "8d50e829-6540-44bc-882a-6b140a33da17",
+        "old_exists": true,
+        "new_exists": true,
+        "old_version_no": 1,
+        "new_version_no": 2,
+        "latest_is_new": true,
+        "current_preserved": true,
+        "version_no_plus_one": true,
+        "old_body_unchanged_hash": true
+      },
+      {
+        "id": "85fee888-47f6-408d-ab05-39b131233322",
+        "old_exists": true,
+        "new_exists": true,
+        "old_version_no": 1,
+        "new_version_no": 2,
+        "latest_is_new": true,
+        "current_preserved": true,
+        "version_no_plus_one": true,
+        "old_body_unchanged_hash": true
+      },
+      {
+        "id": "87f621ab-a1d8-4097-8152-573b6fa46914",
+        "old_exists": true,
+        "new_exists": true,
+        "old_version_no": 1,
+        "new_version_no": 2,
+        "latest_is_new": true,
+        "current_preserved": true,
+        "version_no_plus_one": true,
+        "old_body_unchanged_hash": true
+      },
+      {
+        "id": "863f1289-87a0-4253-b996-c0aff8c47988",
+        "old_exists": true,
+        "new_exists": true,
+        "old_version_no": 1,
+        "new_version_no": 2,
+        "latest_is_new": true,
+        "current_preserved": true,
+        "version_no_plus_one": true,
+        "old_body_unchanged_hash": true
+      },
+      {
+        "id": "ade9900b-1ab2-4a5d-aa29-a5f4a605366e",
+        "old_exists": true,
+        "new_exists": true,
+        "old_version_no": 1,
+        "new_version_no": 2,
+        "latest_is_new": true,
+        "current_preserved": true,
+        "version_no_plus_one": true,
+        "old_body_unchanged_hash": true
+      },
+      {
+        "id": "c7a54ae9-5044-44d3-bfa4-8a5bbc6c5ef2",
+        "old_exists": true,
+        "new_exists": true,
+        "old_version_no": 1,
+        "new_version_no": 2,
+        "latest_is_new": true,
+        "current_preserved": true,
+        "version_no_plus_one": true,
+        "old_body_unchanged_hash": true
+      },
+      {
+        "id": "7b80d6db-9c07-4b42-a92d-df74ab8428b3",
+        "old_exists": true,
+        "new_exists": true,
+        "old_version_no": 1,
+        "new_version_no": 2,
+        "latest_is_new": true,
+        "current_preserved": true,
+        "version_no_plus_one": true,
+        "old_body_unchanged_hash": true
+      },
+      {
+        "id": "a42a3589-8070-40c2-9181-f76642b33a85",
+        "old_exists": true,
+        "new_exists": true,
+        "old_version_no": 1,
+        "new_version_no": 2,
+        "latest_is_new": true,
+        "current_preserved": true,
+        "version_no_plus_one": true,
+        "old_body_unchanged_hash": true
+      }
+    ],
+    "ku_lineage": "30/30 PASS",
+    "pilot_filter": {
+      "count": 30,
+      "ok": true
+    },
+    "ncert_provenance": "PASS",
+    "blackman_taxonomy": {
+      "ok": true,
+      "concept": {
+        "id": "a9ee6fdf-d7e5-4983-b8ba-ec70da704b14",
+        "code": "limiting-factors",
+        "name": "Limiting Factors (Blackman's Law)",
+        "topic": "factors-affecting-photosynthesis",
+        "chapter": "photosynthesis",
+        "subject": "BOTANY"
+      }
+    },
+    "ade9900b": {
+      "ok": true,
+      "topic": "ohms-law",
+      "concept": "ohms-law-concept"
+    },
+    "c7a54ae9": {
+      "ok": true,
+      "has_R_equals_VI": true
+    },
+    "e6b9fb1e_body_unchanged": true,
+    "untouched_hashes": [
+      {
+        "id": "5dc99543",
+        "ok": true
+      },
+      {
+        "id": "8a979c6a",
+        "ok": true
+      },
+      {
+        "id": "2602f9da",
+        "ok": true
+      },
+      {
+        "id": "f81153c3",
+        "ok": true
+      },
+      {
+        "id": "10d4d997",
+        "ok": true
+      },
+      {
+        "id": "fc61e6e7",
+        "ok": true
+      },
+      {
+        "id": "e6b9fb1e",
+        "ok": true,
+        "note": "KEEP+remap"
+      },
+      {
+        "id": "f78dbbf2",
+        "ok": true
+      },
+      {
+        "id": "c91a89ec",
+        "ok": true
+      },
+      {
+        "id": "b33b47de",
+        "ok": true
+      },
+      {
+        "id": "90d13ef4",
+        "ok": true
+      },
+      {
+        "id": "acbbdd83",
+        "ok": true
+      },
+      {
+        "id": "2f165110",
+        "ok": true
+      },
+      {
+        "id": "92dec49f",
+        "ok": true
+      },
+      {
+        "id": "b55bb380",
+        "ok": true
+      },
+      {
+        "id": "8c577dd2",
+        "ok": true
+      },
+      {
+        "id": "23815930",
+        "ok": true
+      },
+      {
+        "id": "62f4b1f1",
+        "ok": true
+      },
+      {
+        "id": "26ed6b35",
+        "ok": true
+      },
+      {
+        "id": "9c80cb11",
+        "ok": true
+      },
+      {
+        "id": "3493be87",
+        "ok": true
+      },
+      {
+        "id": "5d4ca5da",
+        "ok": true
+      }
+    ]
+  },
+  "quality": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 0,
+    "P3": 1,
+    "structural_failures": 0,
+    "answer_failures": 0,
+    "findings": [
+      {
+        "sev": "P3",
+        "item": "answer_skew",
+        "msg": "A-heavy distribution {'A': 22, 'B': 7, 'C': 1}"
+      }
+    ],
+    "answer_audit": [
+      {
+        "id": "c7a54ae9",
+        "result": "PASS",
+        "note": "R=V/I scaling => A"
+      },
+      {
+        "id": "85fee888",
+        "result": "PASS",
+        "note": "pathway consequences B"
+      },
+      {
+        "id": "7b80d6db",
+        "result": "PASS",
+        "note": "P→N => V(N)-V(P)=-ε-Ir"
+      },
+      {
+        "id": "5dc99543",
+        "result": "PASS",
+        "note": "structure+prior validation"
+      },
+      {
+        "id": "8a979c6a",
+        "result": "PASS",
+        "note": "structure+prior validation"
+      },
+      {
+        "id": "2602f9da",
+        "result": "PASS",
+        "note": "structure+prior validation"
+      },
+      {
+        "id": "f81153c3",
+        "result": "PASS",
+        "note": "structure+prior validation"
+      },
+      {
+        "id": "10d4d997",
+        "result": "PASS",
+        "note": "structure+prior validation"
+      },
+      {
+        "id": "fc61e6e7",
+        "result": "PASS",
+        "note": "structure+prior validation"
+      },
+      {
+        "id": "e6b9fb1e",
+        "result": "PASS",
+        "note": "structure+prior validation"
+      },
+      {
+        "id": "8d50e829",
+        "result": "PASS",
+        "note": "structure+prior validation"
+      },
+      {
+        "id": "f78dbbf2",
+        "result": "PASS",
+        "note": "structure+prior validation"
+      },
+      {
+        "id": "c91a89ec",
+        "result": "PASS",
+        "note": "structure+prior validation"
+      },
+      {
+        "id": "b33b47de",
+        "result": "PASS",
+        "note": "structure+prior validation"
+      },
+      {
+        "id": "87f621ab",
+        "result": "PASS",
+        "note": "structure+prior validation"
+      },
+      {
+        "id": "90d13ef4",
+        "result": "PASS",
+        "note": "structure+prior validation"
+      },
+      {
+        "id": "acbbdd83",
+        "result": "PASS",
+        "note": "structure+prior validation"
+      },
+      {
+        "id": "2f165110",
+        "result": "PASS",
+        "note": "structure+prior validation"
+      },
+      {
+        "id": "92dec49f",
+        "result": "PASS",
+        "note": "structure+prior validation"
+      },
+      {
+        "id": "b55bb380",
+        "result": "PASS",
+        "note": "structure+prior validation"
+      },
+      {
+        "id": "8c577dd2",
+        "result": "PASS",
+        "note": "structure+prior validation"
+      },
+      {
+        "id": "863f1289",
+        "result": "PASS",
+        "note": "structure+prior validation"
+      },
+      {
+        "id": "ade9900b",
+        "result": "PASS",
+        "note": "structure+prior validation"
+      },
+      {
+        "id": "23815930",
+        "result": "PASS",
+        "note": "structure+prior validation"
+      },
+      {
+        "id": "62f4b1f1",
+        "result": "PASS",
+        "note": "structure+prior validation"
+      },
+      {
+        "id": "26ed6b35",
+        "result": "PASS",
+        "note": "structure+prior validation"
+      },
+      {
+        "id": "9c80cb11",
+        "result": "PASS",
+        "note": "structure+prior validation"
+      },
+      {
+        "id": "3493be87",
+        "result": "PASS",
+        "note": "structure+prior validation"
+      },
+      {
+        "id": "a42a3589",
+        "result": "PASS",
+        "note": "structure+prior validation"
+      },
+      {
+        "id": "5d4ca5da",
+        "result": "PASS",
+        "note": "structure+prior validation"
+      }
+    ]
+  },
+  "duplicates": {
+    "exact": 0,
+    "near_within_pilot": 0,
+    "near_pairs": [],
+    "cms_near": 0,
+    "cms_near_pairs": []
+  },
+  "distribution": {
+    "subjects": {
+      "BOTANY": 10,
+      "CHEMISTRY": 10,
+      "PHYSICS": 10
+    },
+    "chapters": {
+      "photosynthesis": 10,
+      "chemical-bonding": 10,
+      "current-electricity": 10
+    },
+    "topics": {
+      "light-reaction": 2,
+      "dark-reaction": 3,
+      "factors-affecting-photosynthesis": 5,
+      "ionic-bonding": 2,
+      "covalent-bonding-vsepr": 1,
+      "hybridization": 7,
+      "ohms-law": 6,
+      "resistance-resistivity": 3,
+      "kirchhoffs-laws": 1
+    },
+    "concepts": {
+      "photophosphorylation": 2,
+      "c3-c4-pathway": 3,
+      "photorespiration": 3,
+      "limiting-factors": 2,
+      "lattice-energy": 2,
+      "vsepr-theory": 1,
+      "sp-sp2-sp3": 7,
+      "ohms-law-concept": 5,
+      "factors-affecting-resistance": 3,
+      "kcl-kvl": 1,
+      "drift-velocity": 1
+    },
+    "difficulty": {
+      "easy": 12,
+      "hard": 12,
+      "medium": 6
+    },
+    "answers": {
+      "A": 22,
+      "B": 7,
+      "C": 1
+    },
+    "cognitive": {
+      "Recall": 7,
+      "Multi-step reasoning": 11,
+      "Conceptual": 11,
+      "Application": 1
+    }
+  },
+  "admin_detail": [
+    {
+      "id": "85fee888",
+      "latest_resolves": true,
+      "options": true,
+      "answer": "B",
+      "explanation_present": true,
+      "metadata": "BOTANY/photosynthesis/factors-affecting-photosynthesis/photorespiration",
+      "ku": true,
+      "ok": true
+    },
+    {
+      "id": "c7a54ae9",
+      "latest_resolves": true,
+      "options": true,
+      "answer": "A",
+      "explanation_present": true,
+      "metadata": "PHYSICS/current-electricity/ohms-law/ohms-law-concept",
+      "ku": true,
+      "ok": true
+    },
+    {
+      "id": "7b80d6db",
+      "latest_resolves": true,
+      "options": true,
+      "answer": "A",
+      "explanation_present": true,
+      "metadata": "PHYSICS/current-electricity/kirchhoffs-laws/kcl-kvl",
+      "ku": true,
+      "ok": true
+    },
+    {
+      "id": "ade9900b",
+      "latest_resolves": true,
+      "options": true,
+      "answer": "A",
+      "explanation_present": true,
+      "metadata": "PHYSICS/current-electricity/ohms-law/ohms-law-concept",
+      "ku": true,
+      "ok": true
+    },
+    {
+      "id": "e6b9fb1e",
+      "latest_resolves": true,
+      "options": true,
+      "answer": "A",
+      "explanation_present": true,
+      "metadata": "BOTANY/photosynthesis/factors-affecting-photosynthesis/limiting-factors",
+      "ku": true,
+      "ok": true
+    },
+    {
+      "id": "8d50e829",
+      "latest_resolves": true,
+      "options": true,
+      "answer": "A",
+      "explanation_present": true,
+      "metadata": "BOTANY/photosynthesis/factors-affecting-photosynthesis/limiting-factors",
+      "ku": true,
+      "ok": true
+    }
+  ],
+  "student_visibility": {
+    "pilot_published": 0,
+    "published_bank": 11
+  },
+  "ecaep": {
+    "technically_ready_for_human_review": true,
+    "ecaep_submitted": false,
+    "ecaep_approved": false,
+    "published": false
+  },
+  "unauthorized_changes": 0,
+  "questions_summary": [
+    {
+      "id": "5dc99543-bec7-4dc3-a283-548fdb62ca9c",
+      "subject": "BOTANY",
+      "chapter": "photosynthesis",
+      "topic": "light-reaction",
+      "concept": "photophosphorylation",
+      "diff": "easy",
+      "ans": "A",
+      "ver": 1,
+      "status": "DRAFT",
+      "struct": "PASS",
+      "lineage": true,
+      "body_hash": "e8ee54493b4435fbc4801a5663227cbe1a43af019471bb33a78a7b12746b3d34",
+      "changed": false,
+      "cognitive": "Recall"
+    },
+    {
+      "id": "8a979c6a-d6af-4a0d-8099-05f5992b7f46",
+      "subject": "BOTANY",
+      "chapter": "photosynthesis",
+      "topic": "light-reaction",
+      "concept": "photophosphorylation",
+      "diff": "hard",
+      "ans": "B",
+      "ver": 1,
+      "status": "DRAFT",
+      "struct": "PASS",
+      "lineage": true,
+      "body_hash": "c6819b11be1bb228938a3ab5fe3e2c6cb17bcc2b93b6f3d182c5c5fb54cb9900",
+      "changed": false,
+      "cognitive": "Multi-step reasoning"
+    },
+    {
+      "id": "2602f9da-13cc-42ba-b164-f02f1d7a040c",
+      "subject": "BOTANY",
+      "chapter": "photosynthesis",
+      "topic": "dark-reaction",
+      "concept": "c3-c4-pathway",
+      "diff": "easy",
+      "ans": "A",
+      "ver": 1,
+      "status": "DRAFT",
+      "struct": "PASS",
+      "lineage": true,
+      "body_hash": "d181f0bf20a51ec772bcb93db080719f8dc7b0c5e87054558de94dd9bc9e397c",
+      "changed": false,
+      "cognitive": "Conceptual"
+    },
+    {
+      "id": "f81153c3-b3d6-4a0c-a908-ffb9c032bd8c",
+      "subject": "BOTANY",
+      "chapter": "photosynthesis",
+      "topic": "dark-reaction",
+      "concept": "c3-c4-pathway",
+      "diff": "hard",
+      "ans": "A",
+      "ver": 1,
+      "status": "DRAFT",
+      "struct": "PASS",
+      "lineage": true,
+      "body_hash": "1a544dc462453b32cdb2ce3fd73079ccc1c29233bcd0d1cae371aab1198d7561",
+      "changed": false,
+      "cognitive": "Multi-step reasoning"
+    },
+    {
+      "id": "10d4d997-cb60-4450-99e8-47ed905c9775",
+      "subject": "BOTANY",
+      "chapter": "photosynthesis",
+      "topic": "factors-affecting-photosynthesis",
+      "concept": "photorespiration",
+      "diff": "easy",
+      "ans": "A",
+      "ver": 1,
+      "status": "DRAFT",
+      "struct": "PASS",
+      "lineage": true,
+      "body_hash": "34b978a16cddea4f6f485502b9f3fa7e955ce9a35c49825590f604f87d7183ca",
+      "changed": false,
+      "cognitive": "Conceptual"
+    },
+    {
+      "id": "fc61e6e7-c1fd-4d2e-b009-283506e841ff",
+      "subject": "BOTANY",
+      "chapter": "photosynthesis",
+      "topic": "factors-affecting-photosynthesis",
+      "concept": "photorespiration",
+      "diff": "hard",
+      "ans": "B",
+      "ver": 1,
+      "status": "DRAFT",
+      "struct": "PASS",
+      "lineage": true,
+      "body_hash": "7067e4395ee6eddad33612c12ff6c911cd69bbf2a7f1d78cea306c2666545eaf",
+      "changed": false,
+      "cognitive": "Multi-step reasoning"
+    },
+    {
+      "id": "e6b9fb1e-f022-4172-88c5-318213bc511b",
+      "subject": "BOTANY",
+      "chapter": "photosynthesis",
+      "topic": "factors-affecting-photosynthesis",
+      "concept": "limiting-factors",
+      "diff": "easy",
+      "ans": "A",
+      "ver": 1,
+      "status": "DRAFT",
+      "struct": "PASS",
+      "lineage": true,
+      "body_hash": "c89c6214923614b400acc4313e7b99fc0149b48e42f3940f0f376d65bcb5b5a5",
+      "changed": false,
+      "cognitive": "Conceptual"
+    },
+    {
+      "id": "8d50e829-6540-44bc-882a-6b140a33da17",
+      "subject": "BOTANY",
+      "chapter": "photosynthesis",
+      "topic": "factors-affecting-photosynthesis",
+      "concept": "limiting-factors",
+      "diff": "medium",
+      "ans": "A",
+      "ver": 2,
+      "status": "DRAFT",
+      "struct": "PASS",
+      "lineage": true,
+      "body_hash": "ba8bdd894a2c5903c6f4e7ac94687a1c10a5895cc7dbdf55bdd5de603a8b44fd",
+      "changed": true,
+      "cognitive": "Conceptual"
+    },
+    {
+      "id": "f78dbbf2-1b1e-4fe7-87aa-263699cdd30f",
+      "subject": "BOTANY",
+      "chapter": "photosynthesis",
+      "topic": "dark-reaction",
+      "concept": "c3-c4-pathway",
+      "diff": "medium",
+      "ans": "A",
+      "ver": 1,
+      "status": "DRAFT",
+      "struct": "PASS",
+      "lineage": true,
+      "body_hash": "0d3772353fc5f399bda570abfa6fa7e2d511d8f153a8a125b0876b86f977a6b2",
+      "changed": false,
+      "cognitive": "Recall"
+    },
+    {
+      "id": "85fee888-47f6-408d-ab05-39b131233322",
+      "subject": "BOTANY",
+      "chapter": "photosynthesis",
+      "topic": "factors-affecting-photosynthesis",
+      "concept": "photorespiration",
+      "diff": "medium",
+      "ans": "B",
+      "ver": 2,
+      "status": "DRAFT",
+      "struct": "PASS",
+      "lineage": true,
+      "body_hash": "dd820f0397acd427eaab763914778befa7e4b7cb7ed28c2356bb9c6ace8efeb7",
+      "changed": true,
+      "cognitive": "Conceptual"
+    },
+    {
+      "id": "c91a89ec-e071-495c-a6e1-3f2888e7233a",
+      "subject": "CHEMISTRY",
+      "chapter": "chemical-bonding",
+      "topic": "ionic-bonding",
+      "concept": "lattice-energy",
+      "diff": "easy",
+      "ans": "A",
+      "ver": 1,
+      "status": "DRAFT",
+      "struct": "PASS",
+      "lineage": true,
+      "body_hash": "66393ab03e2027243ec0fb46c94d582962fe1a2681f16d1b8728bd9045e44b04",
+      "changed": false,
+      "cognitive": "Conceptual"
+    },
+    {
+      "id": "b33b47de-e94c-481b-a298-b64c67b5ec8d",
+      "subject": "CHEMISTRY",
+      "chapter": "chemical-bonding",
+      "topic": "ionic-bonding",
+      "concept": "lattice-energy",
+      "diff": "hard",
+      "ans": "B",
+      "ver": 1,
+      "status": "DRAFT",
+      "struct": "PASS",
+      "lineage": true,
+      "body_hash": "ab14ef78f5f377ae75b8106bff7493d3e49f35d1beec7c2547dfd9de88ad44ea",
+      "changed": false,
+      "cognitive": "Multi-step reasoning"
+    },
+    {
+      "id": "87f621ab-a1d8-4097-8152-573b6fa46914",
+      "subject": "CHEMISTRY",
+      "chapter": "chemical-bonding",
+      "topic": "covalent-bonding-vsepr",
+      "concept": "vsepr-theory",
+      "diff": "medium",
+      "ans": "C",
+      "ver": 2,
+      "status": "DRAFT",
+      "struct": "PASS",
+      "lineage": true,
+      "body_hash": "ebb82b9890b92f2d958015e36ee520276a6eff5b197ebcc4836eeb6a164c8e41",
+      "changed": true,
+      "cognitive": "Conceptual"
+    },
+    {
+      "id": "90d13ef4-c0bc-4534-9c7c-2ad725946d2c",
+      "subject": "CHEMISTRY",
+      "chapter": "chemical-bonding",
+      "topic": "hybridization",
+      "concept": "sp-sp2-sp3",
+      "diff": "hard",
+      "ans": "B",
+      "ver": 1,
+      "status": "DRAFT",
+      "struct": "PASS",
+      "lineage": true,
+      "body_hash": "391097abc83c54c90d171e65ecdd74bd2577ecfd060baee1b182a619c4dc06d9",
+      "changed": false,
+      "cognitive": "Multi-step reasoning"
+    },
+    {
+      "id": "acbbdd83-8e13-4b3f-87cc-45cd00985ab4",
+      "subject": "CHEMISTRY",
+      "chapter": "chemical-bonding",
+      "topic": "hybridization",
+      "concept": "sp-sp2-sp3",
+      "diff": "easy",
+      "ans": "A",
+      "ver": 1,
+      "status": "DRAFT",
+      "struct": "PASS",
+      "lineage": true,
+      "body_hash": "48ea01fb52373bbe7286af1634870bc3f074b00e23a5646df9a132a81cbe498f",
+      "changed": false,
+      "cognitive": "Conceptual"
+    },
+    {
+      "id": "2f165110-be0b-402e-aa6c-2b92c6593771",
+      "subject": "CHEMISTRY",
+      "chapter": "chemical-bonding",
+      "topic": "hybridization",
+      "concept": "sp-sp2-sp3",
+      "diff": "hard",
+      "ans": "A",
+      "ver": 1,
+      "status": "DRAFT",
+      "struct": "PASS",
+      "lineage": true,
+      "body_hash": "aaa8cc57d523a099a21619e2ecafbe6b45221d15816c8aeb69db0843d64463a0",
+      "changed": false,
+      "cognitive": "Multi-step reasoning"
+    },
+    {
+      "id": "92dec49f-bb99-48bb-9b79-5f7e2ddb1fd2",
+      "subject": "CHEMISTRY",
+      "chapter": "chemical-bonding",
+      "topic": "hybridization",
+      "concept": "sp-sp2-sp3",
+      "diff": "easy",
+      "ans": "A",
+      "ver": 1,
+      "status": "DRAFT",
+      "struct": "PASS",
+      "lineage": true,
+      "body_hash": "7069f5e3c810fd7cc19ab39ee273f3777a16652ff58bd554cd2a151c0c053c6d",
+      "changed": false,
+      "cognitive": "Conceptual"
+    },
+    {
+      "id": "b55bb380-cc1e-4094-8259-ffbf915134ef",
+      "subject": "CHEMISTRY",
+      "chapter": "chemical-bonding",
+      "topic": "hybridization",
+      "concept": "sp-sp2-sp3",
+      "diff": "hard",
+      "ans": "A",
+      "ver": 1,
+      "status": "DRAFT",
+      "struct": "PASS",
+      "lineage": true,
+      "body_hash": "8454bcb69551fdb57b8c745dff729f225a7bafa5bd1cc593be8a9c1624834b05",
+      "changed": false,
+      "cognitive": "Recall"
+    },
+    {
+      "id": "8c577dd2-4932-4676-8c7e-1f3e3b290485",
+      "subject": "CHEMISTRY",
+      "chapter": "chemical-bonding",
+      "topic": "hybridization",
+      "concept": "sp-sp2-sp3",
+      "diff": "easy",
+      "ans": "A",
+      "ver": 1,
+      "status": "DRAFT",
+      "struct": "PASS",
+      "lineage": true,
+      "body_hash": "9a80998ab8e90ad7b97ca954911adf912ab2cb88d1ae4ca4b995a1ac12d2f297",
+      "changed": false,
+      "cognitive": "Recall"
+    },
+    {
+      "id": "863f1289-87a0-4253-b996-c0aff8c47988",
+      "subject": "CHEMISTRY",
+      "chapter": "chemical-bonding",
+      "topic": "hybridization",
+      "concept": "sp-sp2-sp3",
+      "diff": "hard",
+      "ans": "B",
+      "ver": 2,
+      "status": "DRAFT",
+      "struct": "PASS",
+      "lineage": true,
+      "body_hash": "80284132074e406a57921417ced29359229c03c50bd53d9ca1afe91eebbfdfde",
+      "changed": true,
+      "cognitive": "Multi-step reasoning"
+    },
+    {
+      "id": "ade9900b-1ab2-4a5d-aa29-a5f4a605366e",
+      "subject": "PHYSICS",
+      "chapter": "current-electricity",
+      "topic": "ohms-law",
+      "concept": "ohms-law-concept",
+      "diff": "hard",
+      "ans": "A",
+      "ver": 2,
+      "status": "DRAFT",
+      "struct": "PASS",
+      "lineage": true,
+      "body_hash": "72a9c542164f4eb018e81a4692f386802567f494224f40e07ff6122829b1e619",
+      "changed": true,
+      "cognitive": "Multi-step reasoning"
+    },
+    {
+      "id": "c7a54ae9-5044-44d3-bfa4-8a5bbc6c5ef2",
+      "subject": "PHYSICS",
+      "chapter": "current-electricity",
+      "topic": "ohms-law",
+      "concept": "ohms-law-concept",
+      "diff": "easy",
+      "ans": "A",
+      "ver": 2,
+      "status": "DRAFT",
+      "struct": "PASS",
+      "lineage": true,
+      "body_hash": "39a73a74ccd7e3686314cbcb99a955cfe463ad3146ffe580dea5dc7d5c13716c",
+      "changed": true,
+      "cognitive": "Application"
+    },
+    {
+      "id": "23815930-822d-4740-8e2a-b21689307a37",
+      "subject": "PHYSICS",
+      "chapter": "current-electricity",
+      "topic": "ohms-law",
+      "concept": "ohms-law-concept",
+      "diff": "hard",
+      "ans": "A",
+      "ver": 1,
+      "status": "DRAFT",
+      "struct": "PASS",
+      "lineage": true,
+      "body_hash": "7b1c5b90f95270b3cb7a9fc81212b4ee85ec55731cbe8489a5b4f86b86094f87",
+      "changed": false,
+      "cognitive": "Multi-step reasoning"
+    },
+    {
+      "id": "62f4b1f1-57f6-4e6f-8188-5bfab13a14ad",
+      "subject": "PHYSICS",
+      "chapter": "current-electricity",
+      "topic": "resistance-resistivity",
+      "concept": "factors-affecting-resistance",
+      "diff": "easy",
+      "ans": "A",
+      "ver": 1,
+      "status": "DRAFT",
+      "struct": "PASS",
+      "lineage": true,
+      "body_hash": "de8933a781d6ecbd5557b2a29ab607397468b936bf2b3eae83ea6b32e8940ec1",
+      "changed": false,
+      "cognitive": "Recall"
+    },
+    {
+      "id": "26ed6b35-b181-4b5d-af5e-15cf0dd00245",
+      "subject": "PHYSICS",
+      "chapter": "current-electricity",
+      "topic": "resistance-resistivity",
+      "concept": "factors-affecting-resistance",
+      "diff": "hard",
+      "ans": "B",
+      "ver": 1,
+      "status": "DRAFT",
+      "struct": "PASS",
+      "lineage": true,
+      "body_hash": "b0139b2fa996de42f5d9184de8108f7fb72cb81102593b644e986825dab95c38",
+      "changed": false,
+      "cognitive": "Multi-step reasoning"
+    },
+    {
+      "id": "9c80cb11-376a-4bfb-95a4-f3bbc5842075",
+      "subject": "PHYSICS",
+      "chapter": "current-electricity",
+      "topic": "resistance-resistivity",
+      "concept": "factors-affecting-resistance",
+      "diff": "easy",
+      "ans": "A",
+      "ver": 1,
+      "status": "DRAFT",
+      "struct": "PASS",
+      "lineage": true,
+      "body_hash": "b04b79436a4b838f593276ed2dc441b6bc2e27738a65670efdda1be28f05c734",
+      "changed": false,
+      "cognitive": "Recall"
+    },
+    {
+      "id": "7b80d6db-9c07-4b42-a92d-df74ab8428b3",
+      "subject": "PHYSICS",
+      "chapter": "current-electricity",
+      "topic": "kirchhoffs-laws",
+      "concept": "kcl-kvl",
+      "diff": "hard",
+      "ans": "A",
+      "ver": 2,
+      "status": "DRAFT",
+      "struct": "PASS",
+      "lineage": true,
+      "body_hash": "79323f5f7f3b7f777104b35a0278cfb460b1d4f78a5b175af95cc93459bcc140",
+      "changed": true,
+      "cognitive": "Multi-step reasoning"
+    },
+    {
+      "id": "3493be87-e3a8-4e7b-a399-94cbdb349d6f",
+      "subject": "PHYSICS",
+      "chapter": "current-electricity",
+      "topic": "ohms-law",
+      "concept": "ohms-law-concept",
+      "diff": "medium",
+      "ans": "A",
+      "ver": 1,
+      "status": "DRAFT",
+      "struct": "PASS",
+      "lineage": true,
+      "body_hash": "cc3195ca8370b3c5c048bc4370faeb9b6d57f99891fae73b553f3bb71c9badf9",
+      "changed": false,
+      "cognitive": "Conceptual"
+    },
+    {
+      "id": "a42a3589-8070-40c2-9181-f76642b33a85",
+      "subject": "PHYSICS",
+      "chapter": "current-electricity",
+      "topic": "ohms-law",
+      "concept": "drift-velocity",
+      "diff": "easy",
+      "ans": "A",
+      "ver": 2,
+      "status": "DRAFT",
+      "struct": "PASS",
+      "lineage": true,
+      "body_hash": "0655fd63ac0242de7a090fd391d2a8ef47757c277be63f9e519890a9be73fb0b",
+      "changed": true,
+      "cognitive": "Conceptual"
+    },
+    {
+      "id": "5d4ca5da-6f22-44b4-9c9c-2b93f3eb09ca",
+      "subject": "PHYSICS",
+      "chapter": "current-electricity",
+      "topic": "ohms-law",
+      "concept": "ohms-law-concept",
+      "diff": "medium",
+      "ans": "A",
+      "ver": 1,
+      "status": "DRAFT",
+      "struct": "PASS",
+      "lineage": true,
+      "body_hash": "a0a77f33937f5e54cb66147cd409b888dbed990e697dd0f2b528a07f8a694ab4",
+      "changed": false,
+      "cognitive": "Recall"
+    }
+  ],
+  "regression_tests": {
+    "tests/test_cms_pilot_run_filter.py": {
+      "passed": 9,
+      "failed": 0,
+      "skipped": 0
+    },
+    "app/modules/cms/tests/test_content_bodies.py": {
+      "passed": 5,
+      "failed": 0,
+      "skipped": 0
+    },
+    "combined": {
+      "passed": 14,
+      "failed": 0,
+      "skipped": 0
+    }
+  }
+}

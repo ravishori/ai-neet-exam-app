@@ -1,0 +1,46 @@
+{
+  "audit_date": "2026-09-12",
+  "audit_phase": "0_readonly",
+  "repository": "ai-neet-exam-app",
+  "branch": "phase2-question-bank",
+  "generated_at": "2026-09-12T11:48:37.835836+00:00",
+  "code_modified": false,
+  "database_modified": false,
+  "overall_verdict": "AMBER \u2014 HARDENING REQUIRED",
+  "domain": "caching",
+  "findings": [
+    {
+      "id": "CACHE-REDIS",
+      "title": "Redis presence",
+      "status": "IMPLEMENTED",
+      "uses": [
+        "rate_limit",
+        "alert_dedupe",
+        "readiness"
+      ]
+    },
+    {
+      "id": "CACHE-API",
+      "title": "API response cache",
+      "status": "MISSING"
+    },
+    {
+      "id": "CACHE-POOL",
+      "title": "FULL practice pool ID cache",
+      "status": "MISSING",
+      "note": "Seq Scan / load-all documented in pilot review"
+    },
+    {
+      "id": "CACHE-AI",
+      "title": "AI tutor/explain cache",
+      "status": "MISSING",
+      "isolation_requirement": "Must not leak cross-user private context"
+    },
+    {
+      "id": "CACHE-INVALIDATION",
+      "title": "Publish/supersede invalidation",
+      "status": "MISSING",
+      "note": "N/A until cache exists; pool currently live SQL PUBLISHED filter"
+    }
+  ]
+}

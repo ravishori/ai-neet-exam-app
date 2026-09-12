@@ -19,16 +19,21 @@ def envelope(
     Routed through jsonable_encoder so datetime/UUID/Decimal/etc. in `data`
     never hit plain json.dumps and blow up with a TypeError.
     """
+    payload = {
+        "success": success,
+        "data": data,
+        "meta": meta or {},
+        "errors": errors or [],
+        "traceId": trace_id,
+        "timestamp": datetime.now(UTC).isoformat(),
+    }
+    response_headers = {}
+    if trace_id:
+        response_headers["X-Trace-Id"] = trace_id
+    if meta and meta.get("errorId"):
+        response_headers["X-Error-Id"] = str(meta["errorId"])
     return JSONResponse(
         status_code=status_code,
-        content=jsonable_encoder(
-            {
-                "success": success,
-                "data": data,
-                "meta": meta or {},
-                "errors": errors or [],
-                "traceId": trace_id,
-                "timestamp": datetime.now(UTC).isoformat(),
-            }
-        ),
+        content=jsonable_encoder(payload),
+        headers=response_headers or None,
     )

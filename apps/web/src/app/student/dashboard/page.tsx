@@ -2,18 +2,22 @@
 
 import Link from "next/link";
 import { useQuery } from "@tanstack/react-query";
-import { Loader2, Play } from "lucide-react";
+import { BookOpen, Loader2, Play, Target } from "lucide-react";
 
 import { Alert, AlertDescription } from "@/components/ui/alert";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
+import { EmptyState } from "@/components/ui/empty-state";
 import { MasteryBar } from "@/components/mastery-badge";
 import { ScoreTrendChart } from "@/components/score-trend-chart";
+import { Skeleton } from "@/components/ui/skeleton";
 import {
+  PageHeader,
   QuickLaunchHub,
   ReadinessGauge,
   computeReadinessIndex,
+  StatCard,
   StreakHeatmap,
+  StudentPage,
   SubjectChip,
   SurfaceCard,
   SurfaceCardContent,
@@ -21,13 +25,13 @@ import {
   SurfaceCardHeader,
   SurfaceCardTitle,
 } from "@/components/ds";
-import { Skeleton } from "@/components/ui/skeleton";
 import { useMe } from "@/features/auth/use-auth";
 import { assessmentApi } from "@/features/assessment/api";
 import { computeScoreTrend } from "@/features/assessment/analytics";
 import { isNoQuestionsAvailable } from "@/features/assessment/thin-content";
-import { practiceStartMessage, useStartPractice } from "@/features/assessment/use-start-practice";
+import { practiceStartMessage, useStartPractice, PRACTICE_NOW_HERO_TEST_ID } from "@/features/assessment/use-start-practice";
 import { learningApi, type RecommendationReason } from "@/features/learning/api";
+import { cn } from "@/lib/utils";
 
 const REASON_LABEL: Record<RecommendationReason, string> = {
   due_for_revision: "Due for revision",
@@ -55,7 +59,10 @@ function PracticeNowButton({ conceptId, publishedCount }: { conceptId: string; p
             ? "Practice is not available — no published questions for this concept yet"
             : "Start a practice session for this concept"
         }
-        onClick={() => start.mutate({ scope_type: "CONCEPT", scope_id: conceptId })}
+        onClick={() => {
+          if (start.isPending || unavailable) return;
+          start.mutate({ scope_type: "CONCEPT", scope_id: conceptId });
+        }}
       >
         {start.isPending ? (
           <>
@@ -68,27 +75,20 @@ function PracticeNowButton({ conceptId, publishedCount }: { conceptId: string; p
       </Button>
       {unavailable && (
         <p id={`practice-unavailable-${conceptId}`} className="max-w-xs text-right text-xs text-muted-foreground">
-          Practice is not available for this selection yet. No published questions are currently available.
+          Practice is not available for this selection yet.
         </p>
       )}
       {start.isError && (
         <Alert variant="destructive" className="max-w-xs py-2" role="alert">
           <AlertDescription className="space-y-2 text-xs">
             <p>{practiceStartMessage(start.error)}</p>
-            <div className="flex flex-wrap gap-2">
-              <button
-                type="button"
-                className="underline-offset-2 hover:underline"
-                onClick={() => start.mutate({ scope_type: "CONCEPT", scope_id: conceptId })}
-              >
-                Retry
-              </button>
-              {isNoQuestionsAvailable(start.error) && (
-                <Link href="/student/practice" className="underline-offset-2 hover:underline">
-                  Open practice arena
-                </Link>
-              )}
-            </div>
+            <button
+              type="button"
+              className="underline-offset-2 hover:underline"
+              onClick={() => start.mutate({ scope_type: "CONCEPT", scope_id: conceptId })}
+            >
+              Retry
+            </button>
           </AlertDescription>
         </Alert>
       )}
@@ -98,11 +98,7 @@ function PracticeNowButton({ conceptId, publishedCount }: { conceptId: string; p
 
 function HeroPracticeCta() {
   const start = useStartPractice();
-  const seedStart = useStartPractice();
-  const seedV2Start = useStartPractice();
   const emptyPool = start.isError && isNoQuestionsAvailable(start.error);
-  const seedEmpty = seedStart.isError && isNoQuestionsAvailable(seedStart.error);
-  const seedV2Empty = seedV2Start.isError && isNoQuestionsAvailable(seedV2Start.error);
 
   return (
     <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-center">
@@ -112,8 +108,13 @@ function HeroPracticeCta() {
         className="min-h-12 touch-manipulation gap-2 px-5 text-base"
         disabled={start.isPending}
         aria-busy={start.isPending}
-        aria-label="Practice now with any published question"
-        onClick={() => start.mutate({ scope_type: "FULL", question_count: 30 })}
+        aria-label="Practice now"
+        title="Start an untimed practice session with published questions"
+        data-testid={PRACTICE_NOW_HERO_TEST_ID}
+        onClick={() => {
+          if (start.isPending) return;
+          start.mutate({ scope_type: "FULL", question_count: 30 });
+        }}
       >
         {start.isPending ? (
           <>
@@ -127,56 +128,17 @@ function HeroPracticeCta() {
           </>
         )}
       </Button>
-      <Button
-        type="button"
-        size="lg"
-        variant="outline"
-        className="min-h-12 touch-manipulation gap-2 px-5 text-base"
-        disabled={seedStart.isPending}
-        aria-busy={seedStart.isPending}
-        aria-label="Practice Seed V1 — exact 30 published questions"
-        onClick={() => seedStart.mutate({ scope_type: "SEED_V1", question_count: 30 })}
-      >
-        {seedStart.isPending ? (
-          <>
-            <Loader2 className="size-4 animate-spin" aria-hidden />
-            Preparing Seed V1…
-          </>
-        ) : (
-          "Practice Seed V1"
-        )}
-      </Button>
-      <Button
-        type="button"
-        size="lg"
-        variant="outline"
-        className="min-h-12 touch-manipulation gap-2 px-5 text-base"
-        disabled={seedV2Start.isPending}
-        aria-busy={seedV2Start.isPending}
-        aria-label="Practice Seed V2 — exact 100 published questions"
-        onClick={() => seedV2Start.mutate({ scope_type: "SEED_V2", question_count: 100 })}
-      >
-        {seedV2Start.isPending ? (
-          <>
-            <Loader2 className="size-4 animate-spin" aria-hidden />
-            Preparing Seed V2…
-          </>
-        ) : (
-          "Practice Seed V2"
-        )}
-      </Button>
       <Link
         href="/student/practice"
         className="inline-flex min-h-12 items-center justify-center rounded-lg border border-border bg-background px-5 text-base font-medium outline-none hover:bg-muted focus-visible:ring-2 focus-visible:ring-ring/50"
       >
-        Open practice arena
+        Configure scope
       </Link>
       {emptyPool && (
         <Alert className="sm:basis-full" role="status">
           <AlertDescription className="space-y-2">
             <p className="font-medium">Practice is not available for this selection yet.</p>
             <p>{practiceStartMessage(start.error)}</p>
-            <p className="text-sm text-muted-foreground">No published questions are currently available.</p>
             <Link href="/student/practice" className="text-sm underline-offset-2 hover:underline">
               Configure a different scope
             </Link>
@@ -197,44 +159,8 @@ function HeroPracticeCta() {
           </AlertDescription>
         </Alert>
       )}
-      {seedStart.isError && (
-        <Alert variant="destructive" className="sm:basis-full" role="alert">
-          <AlertDescription className="space-y-2">
-            <p>{practiceStartMessage(seedStart.error)}</p>
-            {!seedEmpty && (
-              <button
-                type="button"
-                className="text-sm underline-offset-2 hover:underline"
-                onClick={() => seedStart.mutate({ scope_type: "SEED_V1", question_count: 30 })}
-              >
-                Retry Seed V1
-              </button>
-            )}
-          </AlertDescription>
-        </Alert>
-      )}
-      {seedV2Start.isError && (
-        <Alert variant="destructive" className="sm:basis-full" role="alert">
-          <AlertDescription className="space-y-2">
-            <p>{practiceStartMessage(seedV2Start.error)}</p>
-            {!seedV2Empty && (
-              <button
-                type="button"
-                className="text-sm underline-offset-2 hover:underline"
-                onClick={() => seedV2Start.mutate({ scope_type: "SEED_V2", question_count: 100 })}
-              >
-                Retry Seed V2
-              </button>
-            )}
-          </AlertDescription>
-        </Alert>
-      )}
       <p className="sr-only" aria-live="polite">
-        {start.isPending || seedStart.isPending || seedV2Start.isPending
-          ? "Preparing your practice session"
-          : start.isError || seedStart.isError || seedV2Start.isError
-            ? "Practice start failed"
-            : ""}
+        {start.isPending ? "Preparing your practice session" : start.isError ? "Practice start failed" : ""}
       </p>
     </div>
   );
@@ -255,28 +181,37 @@ export default function StudentDashboardPage() {
   const scoreTrend = attempts ? computeScoreTrend(attempts) : [];
   const readiness = overview ? computeReadinessIndex(overview) : 0;
 
+  const submitted = attempts?.filter((a) => a.status === "SUBMITTED") ?? [];
+  const totalCorrect = submitted.reduce((n, a) => n + (a.correct_count ?? 0), 0);
+  const totalIncorrect = submitted.reduce((n, a) => n + (a.incorrect_count ?? 0), 0);
+  const accuracyDenom = totalCorrect + totalIncorrect;
+  const accuracyPct = accuracyDenom > 0 ? Math.round((100 * totalCorrect) / accuracyDenom) : null;
+  const attemptedQs = totalCorrect + totalIncorrect;
+  const todayFocus =
+    (revisionDue && revisionDue[0]?.concept_name) ||
+    (recommendations && recommendations[0]?.concept_name) ||
+    null;
+
   return (
-    <main className="mx-auto flex w-full max-w-6xl flex-1 flex-col gap-8 px-4 py-6 pb-24 sm:px-6 sm:py-8 lg:pb-8 animate-fade-slide-up">
+    <StudentPage>
       <section className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center">
         <div className="space-y-4">
-          <p className="text-xs font-medium uppercase tracking-[0.14em] text-muted-foreground">Command dashboard</p>
-          <h1 className="font-heading text-3xl font-bold tracking-tight sm:text-4xl">
-            {isLoading ? "Loading…" : `Welcome back, ${user?.first_name ?? user?.display_name ?? "aspirant"}`}
-          </h1>
-          <p className="max-w-xl text-sm leading-relaxed text-muted-foreground">
-            Start an untimed practice session with published NEET questions, revise due concepts, or browse the bank —
-            without leaving the command center.
-          </p>
+          <PageHeader
+            eyebrow="Today"
+            title={isLoading ? "Loading…" : `Welcome back, ${user?.first_name ?? user?.display_name ?? "aspirant"}`}
+            description={
+              todayFocus
+                ? `Focus next: ${todayFocus}. Start a focused practice session or continue from your queues below.`
+                : "Start an untimed practice session with published NEET questions — calm, focused, and ready when you are."
+            }
+          />
           <HeroPracticeCta />
-          {user && (
-            <div className="flex flex-wrap gap-2 pt-1">
-              {user.roles.map((role) => (
-                <Badge key={role} variant="secondary">
-                  {role}
-                </Badge>
-              ))}
-              {!user.email_verified && <Badge variant="outline">Email not verified</Badge>}
-            </div>
+          {user && !user.email_verified && (
+            <p className="text-xs text-warning-foreground">
+              <span className="rounded-md bg-warning/20 px-2 py-1 font-medium text-warning-foreground">
+                Email not verified
+              </span>
+            </p>
           )}
         </div>
         <SurfaceCard glass lift={false} accent="none" className="justify-self-center p-6 lg:justify-self-end">
@@ -288,6 +223,13 @@ export default function StudentDashboardPage() {
         </SurfaceCard>
       </section>
 
+      <section className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+        <StatCard label="Accuracy" value={accuracyPct != null ? `${accuracyPct}%` : "—"} hint="Submitted attempts" />
+        <StatCard label="Questions" value={attemptedQs} hint="Answered in mocks/practice" />
+        <StatCard label="Sessions" value={submitted.length} hint="Submitted attempts" />
+        <StatCard label="Readiness" value={`${Math.round(readiness)}%`} hint="Across subjects" />
+      </section>
+
       <section className="space-y-3">
         <h2 className="font-heading text-lg font-semibold">Quick launch</h2>
         <QuickLaunchHub />
@@ -296,21 +238,28 @@ export default function StudentDashboardPage() {
       <div className="grid gap-6 lg:grid-cols-2">
         <SurfaceCard accent="top" theme="physics">
           <SurfaceCardHeader>
-            <SurfaceCardTitle>Revision queue</SurfaceCardTitle>
+            <SurfaceCardTitle>Continue learning</SurfaceCardTitle>
             <SurfaceCardDescription>Concepts due for another look.</SurfaceCardDescription>
           </SurfaceCardHeader>
           <SurfaceCardContent className="flex flex-col gap-3">
             {!revisionDue || revisionDue.length === 0 ? (
-              <p className="text-sm text-muted-foreground">
-                Nothing due with published practice content — keep practicing available concepts, or{" "}
-                <Link href="/student/subjects" className="underline-offset-2 hover:underline">
-                  browse subjects
-                </Link>
-                .
-              </p>
+              <EmptyState
+                icon={BookOpen}
+                title="Nothing due right now"
+                description="Keep practicing available concepts, or browse subjects to build your queue."
+                action={
+                  <Link href="/student/subjects" className={cn(buttonVariants({ variant: "outline", size: "sm" }))}>
+                    Browse subjects
+                  </Link>
+                }
+                className="py-8"
+              />
             ) : (
               revisionDue.map((item) => (
-                <div key={item.concept_id} className="flex items-center justify-between gap-3 border-b border-border/60 pb-3 last:border-0 last:pb-0">
+                <div
+                  key={item.concept_id}
+                  className="flex items-center justify-between gap-3 border-b border-border/60 pb-3 last:border-0 last:pb-0"
+                >
                   <div className="min-w-0">
                     <p className="truncate text-sm font-medium">{item.concept_name}</p>
                     <p className="font-mono text-xs tabular-nums text-muted-foreground">
@@ -332,17 +281,17 @@ export default function StudentDashboardPage() {
           </SurfaceCardHeader>
           <SurfaceCardContent className="flex flex-col gap-3">
             {!recommendations || recommendations.length === 0 ? (
-              <p className="text-sm text-muted-foreground">
-                No practice recommendations with published questions yet.{" "}
-                <Link href="/student/practice" className="underline-offset-2 hover:underline">
-                  Open practice arena
-                </Link>{" "}
-                or{" "}
-                <Link href="/student/subjects" className="underline-offset-2 hover:underline">
-                  pick a subject
-                </Link>
-                .
-              </p>
+              <EmptyState
+                icon={Target}
+                title="No recommendations yet"
+                description="Once you practice a few concepts, we’ll surface what to do next."
+                action={
+                  <Link href="/student/practice" className={cn(buttonVariants({ variant: "outline", size: "sm" }))}>
+                    Open practice arena
+                  </Link>
+                }
+                className="py-8"
+              />
             ) : (
               recommendations.map((item) => (
                 <div
@@ -368,16 +317,25 @@ export default function StudentDashboardPage() {
         <SurfaceCard accent="none">
           <SurfaceCardHeader>
             <SurfaceCardTitle>Mastery by subject</SurfaceCardTitle>
-            <SurfaceCardDescription>Based on practice and mock attempts.</SurfaceCardDescription>
+            <SurfaceCardDescription>
+              Based on practice and mock attempts.{" "}
+              <Link href="/student/analytics" className="underline-offset-2 hover:underline">
+                Full analytics
+              </Link>
+            </SurfaceCardDescription>
           </SurfaceCardHeader>
           <SurfaceCardContent className="flex flex-col gap-5">
             {!overview || overview.length === 0 ? (
-              <p className="text-sm text-muted-foreground">
-                <Link href="/student/subjects" className="underline-offset-2 hover:underline">
-                  Browse subjects
-                </Link>{" "}
-                to begin building mastery.
-              </p>
+              <EmptyState
+                title="No mastery data yet"
+                description="Browse subjects and start practicing to build your map."
+                action={
+                  <Link href="/student/subjects" className={cn(buttonVariants({ variant: "outline", size: "sm" }))}>
+                    Browse subjects
+                  </Link>
+                }
+                className="py-8"
+              />
             ) : (
               overview.map((s) => (
                 <div key={s.subject_id} className="flex flex-col gap-2">
@@ -421,6 +379,6 @@ export default function StudentDashboardPage() {
           )}
         </div>
       </div>
-    </main>
+    </StudentPage>
   );
 }

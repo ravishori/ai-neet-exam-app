@@ -254,10 +254,15 @@ class SearchRepository:
         params["limit"] = limit
         params["offset"] = offset
 
-        # SET LOCAL can't take a bind parameter over the wire protocol; safe to
-        # interpolate directly since `threshold` is an internal float default,
-        # never sourced from request input.
-        await self.session.execute(text(f"SET LOCAL pg_trgm.word_similarity_threshold = {float(threshold)}"))
+        # SET LOCAL can't take a bind parameter over the wire protocol. Threshold
+        # is an internal float — never request input. Clamp to a safe range and
+        # format narrowly so no unexpected characters enter the SQL text.
+        threshold_f = float(threshold)
+        if not (0.01 <= threshold_f <= 0.99):
+            raise ValueError("pg_trgm word_similarity_threshold out of allowed range")
+        await self.session.execute(
+            text(f"SET LOCAL pg_trgm.word_similarity_threshold = {threshold_f:.4f}")
+        )
         # Benchmarked at ~5000 rows: Postgres's cost estimator for `<%`
         # underestimates the trigram index's benefit here and picks a seq
         # scan (~345ms) over the GIN(search_text gin_trgm_ops) index

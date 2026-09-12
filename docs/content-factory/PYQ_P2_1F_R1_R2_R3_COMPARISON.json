@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-09-01T17:11:13.359995+00:00",
+  "r1": {
+    "questions": 4755,
+    "valid": 2343,
+    "partial": 2200,
+    "fidelity_ab": 48.5,
+    "cross_column_flags": 0
+  },
+  "r2": {
+    "questions": 4755,
+    "valid": 3384,
+    "partial": 1244,
+    "fidelity_ab": 68.8,
+    "cross_column_flags": 44,
+    "confirmed_contamination": 25,
+    "contaminated_valid": 6
+  },
+  "r3": {
+    "questions": 4718,
+    "valid": 3098,
+    "partial": 1541,
+    "fidelity_ab": 64.1,
+    "cross_column_flags": 41,
+    "semantic_contamination_flags": 5,
+    "benign_ocr_artifact_flags": 36,
+    "confirmed_contamination": 0,
+    "contaminated_valid": 0,
+    "idempotent": true
+  }
+}

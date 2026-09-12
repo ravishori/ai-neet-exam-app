@@ -20,7 +20,7 @@ test.describe("T6-F2 Practice Now CTA + explanation", () => {
     // Pre-submit: explanation panel must not be present on dashboard
     await expect(page.getByRole("heading", { name: /^Explanation$/i })).toHaveCount(0);
 
-    const practiceNow = page.locator("main").getByRole("button", { name: /^Practice now$/i }).first();
+    const practiceNow = page.getByTestId("practice-now-hero");
     await expect(practiceNow).toBeEnabled();
     await practiceNow.scrollIntoViewIfNeeded();
 
@@ -55,6 +55,7 @@ test.describe("T6-F2 Practice Now CTA + explanation", () => {
     }
 
     await page.getByRole("button", { name: /^Submit$/i }).first().click();
+    await page.getByRole("button", { name: /Confirm submit/i }).click();
 
     // Correctness / score state (post-submit only)
     await expect(page.getByText(/Score:/i).first()).toBeVisible({ timeout: 30_000 });

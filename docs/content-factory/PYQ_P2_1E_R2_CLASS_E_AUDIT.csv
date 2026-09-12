@@ -1,0 +1,142 @@
+question_id,classification,severity,root_cause,evidence,release_blocker
+00d8cababe821fcf:p8:q3,TRUE_POSITIVE,HIGH,accepted_record_with_option_contamination,"quality=VALID; flags=['option_contains_foreign_question_marker']; stem=— Methylbutan— 2 —ol
+CH,
+|",True
+10030e374de702ab:p9:q3,TRUE_POSITIVE,MEDIUM,accepted_record_with_option_contamination,"quality=PARTIAL; flags=['option_contains_foreign_question_marker']; stem=— Methylbutan— 2 —ol
+Br 61
+1 |",False
+10030e374de702ab:p13:q80,FALSE_POSITIVE,LOW,heuristic_foreign_marker_ocr_page_numbers,"quality=PARTIAL; flags=['option_contains_foreign_question_marker']; stem=Identify the product in the following reaction:
+Nb fail
+<<
+C) tin Me/aey ether Product
+(iii) HO
+OH",False
+10030e374de702ab:p13:q81,FALSE_POSITIVE,LOW,heuristic_foreign_marker_ocr_page_numbers,"quality=PARTIAL; flags=['option_contains_foreign_question_marker']; stem=Complete the following reaction :
+( roteo( x
+OH
+x CN
+IA] (B]
+cone. HySO, Ic]
+A 84
+[C] is",False
+297fcb0c37dbdddb:p9:q56,FALSE_POSITIVE,LOW,heuristic_foreign_marker_ocr_page_numbers,"quality=PARTIAL; flags=['option_contains_foreign_question_marker']; stem=Complete the following reaction : 60 Which
+correct
+9 HEN OH Law?
+CN
+[A] [B]
+T
+conc. sea [c] P",False
+297fcb0c37dbdddb:p13:q80,FALSE_POSITIVE,LOW,heuristic_foreign_marker_ocr_page_numbers,"quality=PARTIAL; flags=['option_contains_foreign_question_marker']; stem=Identify product (A) in the following
+reaction:
+O
+fe)
+Zn-He
+conc. HCl >(A)+2H,0
+CH",False
+34ba281c8f7a45b9:p2:q6,TRUE_POSITIVE,MEDIUM,accepted_record_with_option_contamination,"quality=PARTIAL; flags=['option_contains_foreign_question_marker']; stem=The net magnetic flux through any closed
+surface is :",False
+38d7f2187e79f7a7:p19:q122,FALSE_POSITIVE,LOW,heuristic_foreign_marker_ocr_page_numbers,"quality=VALID; flags=['option_contains_foreign_question_marker']; stem=Identify the correct statements :
+A. Detrivores perform fragmentation.
+B. The humus is further degra",False
+6c0df3028143ff02:p4:q20,FALSE_POSITIVE,LOW,heuristic_foreign_marker_ocr_page_numbers,"quality=PARTIAL; flags=['option_contains_foreign_question_marker']; stem=Its average speed is:
+498 38",False
+6c0df3028143ff02:p9:q56,FALSE_POSITIVE,LOW,heuristic_foreign_marker_ocr_page_numbers,"quality=PARTIAL; flags=['option_contains_foreign_question_marker']; stem=Identify product (A) in the following
+reaction:
+O
+0)
+2-18 _,(4)+2H,0
+conc. HCl 2
+OH 59
+CH,",False
+7e4dabb5a199588d:p10:q52,TRUE_POSITIVE,MEDIUM,accepted_record_with_option_contamination,"quality=PARTIAL; flags=['option_contains_foreign_question_marker']; stem=The major product of the following reaction
+is:
+0 (i) CH;MgBr
+er en (excess)
+(ii) HzO °
+3
+O",False
+82a7cff8dca5bb40:p9:q57,FALSE_POSITIVE,LOW,heuristic_foreign_marker_ocr_page_numbers,"quality=PARTIAL; flags=['option_contains_foreign_question_marker']; stem=In Lassaigne’s extract of an organic
+compound, both nitrogen and sulphur are
+present, which gives bl",False
+8633a3811ea07447:p5:q4,TRUE_POSITIVE,MEDIUM,accepted_record_with_option_contamination,"quality=PARTIAL; flags=['option_contains_foreign_question_marker']; stem=Nm. Calculate the magnitude of charge
+on the dipole, if the dipole length is 2 cm.",False
+8633a3811ea07447:p7:q43,FALSE_POSITIVE,LOW,heuristic_foreign_marker_ocr_page_numbers,"quality=PARTIAL; flags=['option_contains_foreign_question_marker']; stem=A horizontal bridge is built across a river.
+A student standing on the bridge throws a
+small ball ve",False
+8633a3811ea07447:p10:q63,FALSE_POSITIVE,LOW,heuristic_foreign_marker_ocr_page_numbers,"quality=PARTIAL; flags=['option_contains_foreign_question_marker']; stem=The relation between n,,, (n,, = the number
+of permissible values of magnetic quantum
+number (m)) fo",False
+8633a3811ea07447:p20:q133,TRUE_POSITIVE,HIGH,accepted_record_with_option_contamination,"quality=VALID; flags=['option_contains_foreign_question_marker']; stem=Given below are two statements :
+Statement I : Endarch and exarch are the
+terms often used for descr",True
+9fcfff3f33350907:p8:q57,TRUE_POSITIVE,MEDIUM,accepted_record_with_option_contamination,"quality=PARTIAL; flags=['option_contains_foreign_question_marker']; stem=Complete the following reaction :
+(roto
+OH
+HCN
+IA] [B]
+cone. H»SO4 [c]
+A
+[C] is ____",False
+a1c3361678271d6e:p5:q30,FALSE_POSITIVE,LOW,heuristic_foreign_marker_ocr_page_numbers,"quality=PARTIAL; flags=['option_contains_foreign_question_marker']; stem=The magnetic energy stored in an inductor
+of inductance 4 WH carrying a current of 2A
+is:",False
+a1c3361678271d6e:p24:q162,TRUE_POSITIVE,HIGH,accepted_record_with_option_contamination,"quality=VALID; flags=['option_contains_foreign_question_marker']; stem=Which of the following are NOT considered
+as the part of endomembrane system?
+A. Mitochondria B. End",True
+a1c3361678271d6e:p26:q172,TRUE_POSITIVE,MEDIUM,accepted_record_with_option_contamination,"quality=PARTIAL; flags=['option_contains_foreign_question_marker']; stem=Which of the following functions is carried
+out by cytoskeleton in a cell?",False
+a43894b5fbc8cd28:p9:q3,TRUE_POSITIVE,HIGH,accepted_record_with_option_contamination,quality=VALID; flags=['option_contains_foreign_question_marker']; stem=— Methylbutan— 2 -ol,True
+b69d582ff457c62e:p14:q55,TRUE_POSITIVE,MEDIUM,accepted_record_with_option_contamination,"quality=PARTIAL; flags=['option_contains_foreign_question_marker']; stem=The most stable carbocation among the following
+®
+is:",False
+b69d582ff457c62e:p20:q81,TRUE_POSITIVE,MEDIUM,accepted_record_with_option_contamination,"quality=PARTIAL; flags=['option_contains_foreign_question_marker']; stem=Match List I with List II.
+List I (Reaction) List II (Reagents/
+Condition)
+O
+A OXD2Oro0 1k Oe
+Anhyd.",False
+b69d582ff457c62e:p31:q138,FALSE_POSITIVE,LOW,heuristic_foreign_marker_ocr_page_numbers,"quality=PARTIAL; flags=['option_contains_foreign_question_marker']; stem=Match List I with List II
+List I List II
+(Types of Stamens) (Example)
+A. Monoadelphous I. — Citrus
+B",False
+cd4583ce844d9f5c:p5:q1,FALSE_POSITIVE,LOW,heuristic_foreign_marker_ocr_page_numbers,"quality=PARTIAL; flags=['option_contains_foreign_question_marker']; stem=MSD represents 0.1 mm, the vernier constant
+(in cm) is :",False
+cd4583ce844d9f5c:p11:q68,FALSE_POSITIVE,LOW,heuristic_foreign_marker_ocr_page_numbers,"quality=PARTIAL; flags=['option_contains_foreign_question_marker']; stem=— Intramolecular hydrogen bonding is present in 72
+NO,",False
+cd4583ce844d9f5c:p14:q97,FALSE_POSITIVE,LOW,heuristic_foreign_marker_ocr_page_numbers,"quality=PARTIAL; flags=['option_contains_foreign_question_marker']; stem=For the given reaction:
+.
+Ons cH (major
++= cy KMnO,/H p
+2 » product)
+“P’ is",False
+d11cf53d4d8ef5b0:p30:q195,TRUE_POSITIVE,HIGH,accepted_record_with_option_contamination,"quality=VALID; flags=['option_contains_foreign_question_marker']; stem=Which one of the following is the sequence
+. . :
+on corresponding coding strand, if the
+sequence on ",True
+dbdcfa0a13d13467:p25:q165,TRUE_POSITIVE,MEDIUM,accepted_record_with_option_contamination,"quality=PARTIAL; flags=['option_contains_foreign_question_marker']; stem=Which of the following functions is carried
+out by cytoskeleton in a cell?",False
+df0707ec85be4616:p14:q92,FALSE_POSITIVE,LOW,heuristic_foreign_marker_ocr_page_numbers,"quality=PARTIAL; flags=['option_contains_foreign_question_marker']; stem=Identify the major product obtained in the
+following reaction :
+fe)
++ Al Ag( NHs) ] +
++
+H 3)
+O
+3-0n ",False
+f5378eb6785774c3:p8:q52,TRUE_POSITIVE,MEDIUM,accepted_record_with_option_contamination,"quality=PARTIAL; flags=['option_contains_foreign_question_marker']; stem=Intermolecular forces are forces of attraction
+and repulsion between interacting particles
+that will",False
+f5378eb6785774c3:p14:q86,FALSE_POSITIVE,LOW,heuristic_foreign_marker_ocr_page_numbers,"quality=PARTIAL; flags=['option_contains_foreign_question_marker']; stem=Which amongst the following will be most
+readily dehydrated under acidic conditions ?
+NO, OH",False
+f5378eb6785774c3:p21:q145,TRUE_POSITIVE,HIGH,accepted_record_with_option_contamination,"quality=VALID; flags=['option_contains_foreign_question_marker']; stem=Match List I with List II :
+. «
+List 1 ListIE
+A. Cohesion I. More attraction in
+liquid phase
+. .
+B. ",True
+f7a45c960ede2f29:p2:q3,TRUE_POSITIVE,MEDIUM,accepted_record_with_option_contamination,"quality=PARTIAL; flags=['option_contains_foreign_question_marker']; stem=A ball of mass 0.5 kg is dropped from a height
+of 40 m. The ball hits the ground and rises
+to a heig",False

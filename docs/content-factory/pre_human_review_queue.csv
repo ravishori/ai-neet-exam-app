@@ -1,0 +1,176 @@
+question_id,subject,chapter,question,proposed_answer,validator_verdict,preaudit_priority,preaudit_verdict,main_issue,reason,recommended_action,preaudit_answer_confidence
+p3-mcq-0536-c173c10c,CHEMISTRY,5,"A complex ion [MnBr4]2– has a spin-only magnetic moment of 5.9 BM. Based on the formula μ = √(n(n + 2)) BM, how many unpaired electrons (n) are present in the d-orbitals of the Mn2+ ion?",C,MAJOR_REVISION,HIGH,PREAUDIT_REVIEW,distractor_quality_issue; question_type_mismatch; neet_suitability_concern,distractor_quality_issue; question_type_mismatch; neet_suitability_concern,HUMAN_REVIEW_OPTIONS,0.85
+p3-mcq-0662-5c2d616f,CHEMISTRY,2,"Based on the standard electrode potentials provided in the excerpt for the half-cells:
+1. $Pt(s) \mid H_2(g, 1\text{ bar}) \mid H^+(aq, 1\text{ M}) \parallel Cu^{2+}(aq, 1\text{ M}) \mid Cu$ ($E^\circ",C,READY,HIGH,PREAUDIT_REVIEW,distractor_quality_issue; question_type_mismatch; neet_suitability_concern,distractor_quality_issue; question_type_mismatch; neet_suitability_concern,HUMAN_REVIEW_OPTIONS,0.85
+p3-mcq-0817-c3341d53,PHYSICS,3,Assertion (A): The position vector of a particle in a plane can be expressed in terms of its x and y coordinates. Reason (R): The displacement of the particle is defined as the difference between its ,A,INCONCLUSIVE,HIGH,PREAUDIT_REVIEW,distractor_quality_issue; scientific_content_concern,distractor_quality_issue; scientific_content_concern,HUMAN_VERIFY,0.75
+p3-mcq-0146-d2bd4181,BIOLOGY,2,Assertion (A): Archaebacteria are specialized bacteria that thrive in extreme habitats. Reason (R): Eubacteria are characterized by a rigid cell wall and play a significant role in human affairs.,A,INCONCLUSIVE,HIGH,PREAUDIT_REVIEW,distractor_quality_issue,distractor_quality_issue,HUMAN_REVIEW_OPTIONS,0.6
+p3-mcq-0344-082d226d,CHEMISTRY,9,"Given below are two statements: one is labelled as Assertion A and the other is labelled as Reason R.
+Assertion A: Aniline is a weaker base than ammonia.
+Reason R: Aniline is a resonance hybrid of fiv",A,READY,HIGH,PREAUDIT_REVIEW,distractor_quality_issue,distractor_quality_issue,HUMAN_REVIEW_OPTIONS,0.6
+p3-mcq-0386-fb1ad1ab,CHEMISTRY,3,"Given below are two statements: one is labelled as Assertion A and the other is labelled as Reason R.
+
+Assertion A: The average rate of a reaction cannot be used to predict the rate of a reaction at a",A,REJECT,HIGH,PREAUDIT_REVIEW,distractor_quality_issue,distractor_quality_issue,HUMAN_REVIEW_OPTIONS,0.6
+p3-mcq-0677-2aab90bd,PHYSICS,8,"Given below are two statements: one is labelled as Assertion A and the other is labelled as Reason R.
+
+Assertion A: Even an appreciably rigid steel bar undergoes deformation when a sufficiently large ",A,MAJOR_REVISION,HIGH,PREAUDIT_REVIEW,distractor_quality_issue,distractor_quality_issue,HUMAN_REVIEW_OPTIONS,0.6
+p3-mcq-0712-ef901f3e,PHYSICS,2,Assertion: Potential energy is stored when work is done against conservative forces like gravitational and spring forces. Reason: The energy stored can be transformed into kinetic energy when the exte,A,INCONCLUSIVE,HIGH,PREAUDIT_REVIEW,distractor_quality_issue,distractor_quality_issue,HUMAN_REVIEW_OPTIONS,0.6
+p3-mcq-0740-67a69836,PHYSICS,5,"Given below are two statements: one is labelled as Assertion A and the other is labelled as Reason R.
+
+Assertion A: The Work-Energy theorem is an integral form of Newton's second law.
+Reason R: Newton",A,MAJOR_REVISION,HIGH,PREAUDIT_REVIEW,distractor_quality_issue,distractor_quality_issue,HUMAN_REVIEW_OPTIONS,0.6
+p3-mcq-0051-0e9610d5,BIOLOGY,4,"Based on the text describing allele segregation during gamete formation in a heterozygous tall plant (Tt), what is the probability (expressed as a percentage) that a given gamete produced by this plan",B,READY,HIGH,PREAUDIT_REVIEW,distractor_quality_issue; question_type_mismatch; neet_suitability_concern,distractor_quality_issue; question_type_mismatch; neet_suitability_concern,HUMAN_REVIEW_OPTIONS,0.25
+p3-mcq-0240-3c9e5496,BIOLOGY,12,"Based on the details provided in the text regarding the oxidative decarboxylation of pyruvate, how many molecules of CO2 and NADH + H+ in total are produced when 6 molecules of pyruvic acid undergo th",B,REJECT,HIGH,PREAUDIT_REVIEW,distractor_quality_issue; question_type_mismatch; neet_suitability_concern,distractor_quality_issue; question_type_mismatch; neet_suitability_concern,HUMAN_REVIEW_OPTIONS,0.25
+p3-mcq-0282-be133b05,BIOLOGY,11,"Based on the provided text describing the carbon fixation cycle, how many total carbon atoms are present in the molecules of 3-carbon PGA produced from a single 5-carbon compound RuBP after the additi",C,MAJOR_REVISION,HIGH,PREAUDIT_REVIEW,distractor_quality_issue; question_type_mismatch; neet_suitability_concern,distractor_quality_issue; question_type_mismatch; neet_suitability_concern,HUMAN_REVIEW_OPTIONS,0.25
+p3-mcq-0347-b3c00a5d,CHEMISTRY,9,"According to the provided text on the conformations of alkanes, what is the maximum value of the small energy barrier (in kJ mol⁻¹) that hinders the rotation around a C–C single bond due to torsional ",C,MAJOR_REVISION,HIGH,PREAUDIT_REVIEW,distractor_quality_issue; question_type_mismatch; neet_suitability_concern,distractor_quality_issue; question_type_mismatch; neet_suitability_concern,HUMAN_REVIEW_OPTIONS,0.25
+p3-mcq-0743-ab277aa3,PHYSICS,1,A force of magnitude $6.0 \times 10^{-4}\text{ N}$ acts on a test charge of $2.0 \times 10^{-7}\text{ C}$ placed at a point in an electric field. What is the magnitude of the electric field at that po,A,MAJOR_REVISION,HIGH,PREAUDIT_REVIEW,distractor_quality_issue; question_type_mismatch; neet_suitability_concern,distractor_quality_issue; question_type_mismatch; neet_suitability_concern,HUMAN_REVIEW_OPTIONS,0.25
+p3-mcq-0806-6a54ee55,PHYSICS,1,"For a spherical model of a neutral atom of atomic number Z and radius R (having a positive point nucleus +Ze at its centre surrounded by a uniform negative charge density), the magnitude of the electr",A,REJECT,HIGH,PREAUDIT_REVIEW,distractor_quality_issue; question_type_mismatch; neet_suitability_concern,distractor_quality_issue; question_type_mismatch; neet_suitability_concern,HUMAN_REVIEW_OPTIONS,0.25
+p3-mcq-0883-febc143f,PHYSICS,4,Calculate the magnetic field (B) at the center of a circular current loop of radius R carrying a current I. Use the formula provided in the NCERT excerpt.,B,INCONCLUSIVE,HIGH,PREAUDIT_REVIEW,distractor_quality_issue,distractor_quality_issue,HUMAN_REVIEW_OPTIONS,0.25
+p3-mcq-0953-cfa9ff46,PHYSICS,1,A point charge $q = 2 \times 10^{-6}\text{ C}$ is placed at a position vector $\mathbf{r}$ where the electric field due to a charge $Q$ is $\mathbf{E}(\mathbf{r}) = 3 \times 10^{3}\text{ N/C}\ \hat{\m,B,READY,HIGH,PREAUDIT_REVIEW,distractor_quality_issue; question_type_mismatch; neet_suitability_concern,distractor_quality_issue; question_type_mismatch; neet_suitability_concern,HUMAN_REVIEW_OPTIONS,0.25
+p3-mcq-0967-689e638d,PHYSICS,2,"A parallel-plate capacitor has a separation of plates d. If a slab of dielectric constant K and thickness (3/4)d is inserted between the plates, how does the capacitance change based on the potential ",A,INCONCLUSIVE,HIGH,PREAUDIT_REVIEW,distractor_quality_issue; question_type_mismatch; neet_suitability_concern,distractor_quality_issue; question_type_mismatch; neet_suitability_concern,HUMAN_REVIEW_OPTIONS,0.25
+p3-mcq-0006-46f7f225,BIOLOGY,5,"Given below are two statements: one is labelled as Assertion (A) and the other is labelled as Reason (R).
+Assertion (A): DNA has evolved from RNA with chemical modifications that make it more stable.
+",A,MAJOR_REVISION,HIGH,PREAUDIT_REVIEW,distractor_quality_issue,distractor_quality_issue,HUMAN_REVIEW_OPTIONS,0.0
+p3-mcq-0027-9fef1de0,BIOLOGY,19,"Given below are two statements: one is labelled as Assertion (A) and the other is labelled as Reason (R).
+
+Assertion (A): Adrenaline and noradrenaline are commonly referred to as emergency hormones or",C,REJECT,HIGH,PREAUDIT_REVIEW,distractor_quality_issue,distractor_quality_issue,HUMAN_REVIEW_OPTIONS,0.0
+p3-mcq-0057-90a34bdb,BIOLOGY,19,"Read the following two statements regarding the mechanism of hormone action:
+Statement I: Hormones that interact with membrane-bound receptors normally do not enter the target cell, but generate secon",D,READY,HIGH,PREAUDIT_REVIEW,distractor_quality_issue,distractor_quality_issue,HUMAN_REVIEW_OPTIONS,0.0
+p3-mcq-0084-20c4c995,BIOLOGY,5,"Based on the floral characters described for the family Solanaceae in the text, which of the following combinations of androecium and gynoecium features is correct?",B,REJECT,HIGH,PREAUDIT_REVIEW,distractor_quality_issue,distractor_quality_issue,HUMAN_REVIEW_OPTIONS,0.0
+p3-mcq-0102-c1d910d1,BIOLOGY,5,"Based on the details provided in the NCERT text regarding the scale and data storage requirements of the Human Genome Project (HGP), consider the following statements:
+
+Statement I: If human DNA conta",D,MAJOR_REVISION,HIGH,PREAUDIT_REVIEW,distractor_quality_issue; question_type_mismatch; neet_suitability_concern,distractor_quality_issue; question_type_mismatch; neet_suitability_concern,HUMAN_REVIEW_OPTIONS,0.0
+p3-mcq-0120-193298b9,BIOLOGY,13,"Consider the following statements regarding ecosystem stability and biodiversity based on the experiments of David Tilman:
+
+Statement I: Plots with more species showed less year-to-year variation in t",A,MAJOR_REVISION,HIGH,PREAUDIT_REVIEW,distractor_quality_issue,distractor_quality_issue,HUMAN_REVIEW_OPTIONS,0.0
+p3-mcq-0168-bb43512e,BIOLOGY,11,"Based on the chromatographic separation of leaf pigments described in NCERT, match the following pigments with their corresponding colors observed in the chromatogram:
+
+(p) Chlorophyll a — (i) Yellow ",A,MAJOR_REVISION,HIGH,PREAUDIT_REVIEW,distractor_quality_issue; question_type_mismatch; neet_suitability_concern,distractor_quality_issue; question_type_mismatch; neet_suitability_concern,HUMAN_REVIEW_OPTIONS,0.0
+p3-mcq-0174-b6e91065,BIOLOGY,4,"Given below are two statements: one is labelled as Assertion (A) and the other is labelled as Reason (R).
+
+Assertion (A): Sponges exhibit a cellular level of organisation.
+Reason (R): In sponges, tiss",C,MAJOR_REVISION,HIGH,PREAUDIT_REVIEW,distractor_quality_issue,distractor_quality_issue,HUMAN_REVIEW_OPTIONS,0.0
+p3-mcq-0204-21204b82,BIOLOGY,17,"Consider the following statements regarding muscle tissue and contraction based on the given text:
+
+Statement I: The active sites for myosin on resting actin filaments are masked by troponin.
+Statemen",C,REJECT,HIGH,PREAUDIT_REVIEW,distractor_quality_issue,distractor_quality_issue,HUMAN_REVIEW_OPTIONS,0.0
+p3-mcq-0213-0fc42bf8,BIOLOGY,10,"Match the events occurring during the cell cycle (List I) with their corresponding descriptions or stages (List II) as per the chapter exercises:
+
+List I:
+(a) Pairing between homologous chromosomes
+(b",A,REJECT,HIGH,PREAUDIT_REVIEW,distractor_quality_issue,distractor_quality_issue,HUMAN_REVIEW_OPTIONS,0.0
+p3-mcq-0225-7651dbf0,BIOLOGY,10,"Consider the following statements regarding insulin synthesis and gene therapy based on the provided text:
+
+Statement I: Pro-insulin contains an extra stretch called the C peptide, which is removed du",C,READY,HIGH,PREAUDIT_REVIEW,distractor_quality_issue,distractor_quality_issue,HUMAN_REVIEW_OPTIONS,0.0
+p3-mcq-0353-0ba58540,CHEMISTRY,2,"Based on the quantum number rules and principles presented in the NCERT chapter, consider the following two statements:
+
+Statement I: The set of quantum numbers n = 3, l = 3, ml = –3, ms = +½ represen",D,REJECT,HIGH,PREAUDIT_REVIEW,distractor_quality_issue,distractor_quality_issue,HUMAN_REVIEW_OPTIONS,0.0
+p3-mcq-0451-299ec680,CHEMISTRY,5,"What is the enthalpy change, ∆H, for the dilution of HCl from 25 aq. to 40 aq. according to the NCERT excerpt?",A,INCONCLUSIVE,HIGH,PREAUDIT_REVIEW,distractor_quality_issue; question_type_mismatch; neet_suitability_concern,distractor_quality_issue; question_type_mismatch; neet_suitability_concern,HUMAN_REVIEW_OPTIONS,0.0
+p3-mcq-0467-10861fa7,CHEMISTRY,1,"Match the Laws of Chemical Combination in Column I with the scientists who proposed/gave them in Column II:
+
+Column I
+(a) Law of Definite Proportions
+(b) Law of Multiple Proportions
+(c) Law of Gaseous",A,REJECT,HIGH,PREAUDIT_REVIEW,distractor_quality_issue,distractor_quality_issue,HUMAN_REVIEW_OPTIONS,0.0
+p3-mcq-0547-23858e16,CHEMISTRY,3,"Assertion: The activation energy increases when the temperature decreases. 
+Reason: An increase in temperature leads to a higher rate of chemical reactions according to the Arrhenius equation.",C,INCONCLUSIVE,HIGH,PREAUDIT_REVIEW,distractor_quality_issue,distractor_quality_issue,HUMAN_REVIEW_OPTIONS,0.0
+p3-mcq-0565-623e0257,CHEMISTRY,2,Match the components of a fuel cell with their functions.,A,INCONCLUSIVE,HIGH,PREAUDIT_REVIEW,ncert_support_issue; neet_suitability_concern,ncert_support_issue; neet_suitability_concern,HUMAN_CHECK_NCERT,0.0
+p3-mcq-0577-cce1fd7b,CHEMISTRY,1,What is the molality of the antifreeze solution prepared from 222.6 g of ethylene glycol and 200 g of water?,A,INCONCLUSIVE,HIGH,PREAUDIT_REVIEW,distractor_quality_issue; question_type_mismatch; neet_suitability_concern,distractor_quality_issue; question_type_mismatch; neet_suitability_concern,HUMAN_REVIEW_OPTIONS,0.0
+p3-mcq-0581-0e939d09,CHEMISTRY,3,"For a reaction $2\text{A} + \text{B} \rightarrow \text{A}_2\text{B}$, the rate law is given by $\text{Rate} = k[\text{A}][\text{B}]^2$ with $k = 2.0 \times 10^{-6}\text{ mol}^{-2}\text{ L}^2\text{ s}^",C,MAJOR_REVISION,HIGH,PREAUDIT_REVIEW,distractor_quality_issue; question_type_mismatch; neet_suitability_concern,distractor_quality_issue; question_type_mismatch; neet_suitability_concern,HUMAN_REVIEW_OPTIONS,0.0
+p3-mcq-0584-a341998c,CHEMISTRY,8,"Given below are two statements regarding IUPAC nomenclature rules for alkanes based on the provided NCERT text:
+
+Statement I: If two or more identical substituent groups are present, prefixes such as ",D,REJECT,HIGH,PREAUDIT_REVIEW,distractor_quality_issue,distractor_quality_issue,HUMAN_REVIEW_OPTIONS,0.0
+p3-mcq-0593-8b831d35,CHEMISTRY,3,"Match the Property/Feature given in List-I with its correct Element/Species/Value given in List-II, based on the second-period elements and their anomalous behaviour.
+
+List-I:
+(a) Diagonal relationshi",A,REJECT,HIGH,PREAUDIT_REVIEW,distractor_quality_issue,distractor_quality_issue,HUMAN_REVIEW_OPTIONS,0.0
+p3-mcq-0635-e2d85026,CHEMISTRY,2,"Match the effects associated with the splitting of spectral lines under external fields (Column I) with their corresponding fields (Column II) as described in the limitations of Bohr's model:
+
+Column ",B,MAJOR_REVISION,HIGH,PREAUDIT_REVIEW,distractor_quality_issue,distractor_quality_issue,HUMAN_REVIEW_OPTIONS,0.0
+p3-mcq-0668-3fa01ceb,CHEMISTRY,8,"Consider the following statements regarding chromatography based on the provided text:
+
+Statement I: Chromatography is classified into different categories based on the principle involved, such as ads",C,READY,HIGH,PREAUDIT_REVIEW,distractor_quality_issue,distractor_quality_issue,HUMAN_REVIEW_OPTIONS,0.0
+p3-mcq-0713-52d84a38,PHYSICS,5,"For a perfect diamagnet, such as a superconductor at very low temperatures, which of the following sets of magnetic properties is correct?",A,MAJOR_REVISION,HIGH,PREAUDIT_REVIEW,distractor_quality_issue,distractor_quality_issue,HUMAN_REVIEW_OPTIONS,0.0
+p3-mcq-0725-e5431382,PHYSICS,3,"An electron of mass $m$ and charge $-e$ is placed in an electric field $\vec{E}$. Based on the vector relation for electron acceleration between collisions, what is the acceleration $\vec{a}$ experien",B,READY,HIGH,PREAUDIT_REVIEW,distractor_quality_issue; question_type_mismatch; neet_suitability_concern,distractor_quality_issue; question_type_mismatch; neet_suitability_concern,HUMAN_REVIEW_OPTIONS,0.0
+p3-mcq-0776-f9f82331,PHYSICS,6,"According to the NCERT text, if the origin of the frame of reference is chosen to be the centre of mass of a system of particles, which of the following vector expressions correctly holds true?",B,MAJOR_REVISION,HIGH,PREAUDIT_REVIEW,distractor_quality_issue,distractor_quality_issue,HUMAN_REVIEW_OPTIONS,0.0
+p3-mcq-0791-aa13e190,PHYSICS,5,"Consider the following statements based on the provided text regarding magnetic configurations and bar magnets:
+
+Statement I: Every magnetic configuration must necessarily have both a north pole and a",B,REJECT,HIGH,PREAUDIT_REVIEW,distractor_quality_issue,distractor_quality_issue,HUMAN_REVIEW_OPTIONS,0.0
+p3-mcq-0803-ee7f7d58,PHYSICS,6,"Given below are two statements: one is labelled as Assertion A and the other is labelled as Reason R.
+Assertion A: Relative motion between a bar magnet and a conducting coil is responsible for the ind",C,MAJOR_REVISION,HIGH,PREAUDIT_REVIEW,distractor_quality_issue,distractor_quality_issue,HUMAN_REVIEW_OPTIONS,0.0
+p3-mcq-0809-3c0ec43f,PHYSICS,1,"A thin straight wire of length 2 metres carries a total charge of 8 microcoulombs ($
+8 \times 10^{-6} \text{ C}$) distributed uniformly along its length. What is the linear charge density ($
+\lambda$)",A,MAJOR_REVISION,HIGH,PREAUDIT_REVIEW,distractor_quality_issue; question_type_mismatch; neet_suitability_concern,distractor_quality_issue; question_type_mismatch; neet_suitability_concern,HUMAN_REVIEW_OPTIONS,0.0
+p3-mcq-0815-8fd8395e,PHYSICS,1,"Based on the principles of dimensional analysis outlined in the NCERT text summary, consider the following two statements regarding a physical equation:
+
+Statement I: An equation that is dimensionally",C,READY,HIGH,PREAUDIT_REVIEW,distractor_quality_issue; question_type_mismatch; neet_suitability_concern,distractor_quality_issue; question_type_mismatch; neet_suitability_concern,HUMAN_REVIEW_OPTIONS,0.0
+p3-mcq-0842-33d2fe38,PHYSICS,1,"Match the physical quantities and locations related to an electric dipole given in Column-I with their corresponding directions of electric field given in Column-II based on the provided text:
+
+Column",A,REJECT,HIGH,PREAUDIT_REVIEW,distractor_quality_issue,distractor_quality_issue,HUMAN_REVIEW_OPTIONS,0.0
+p3-mcq-0854-1f08bfa2,PHYSICS,2,"Consider the following statements based on the kinematics of motion in a straight line:
+
+Statement I: If a particle's speed is decreasing, its acceleration must be in the direction opposite to that of",C,MAJOR_REVISION,HIGH,PREAUDIT_REVIEW,distractor_quality_issue,distractor_quality_issue,HUMAN_REVIEW_OPTIONS,0.0
+p3-mcq-0859-dacc49e2,PHYSICS,6,Assertion: The moment of a couple acting on a rigid body is dependent on the point about which the moments are taken. Reason: The moment of the couple equals the difference in position vectors multipl,D,INCONCLUSIVE,HIGH,PREAUDIT_REVIEW,distractor_quality_issue,distractor_quality_issue,HUMAN_REVIEW_OPTIONS,0.0
+p3-mcq-0877-117f7f58,PHYSICS,14,Match the following types of interference with their respective characteristics based on the principle of superposition.,A,INCONCLUSIVE,HIGH,PREAUDIT_REVIEW,distractor_quality_issue,distractor_quality_issue,HUMAN_REVIEW_OPTIONS,0.0
+p3-mcq-0896-a646000d,PHYSICS,1,"Consider the following statements based on Exercise 1.23 regarding two large, thin, parallel metal plates carrying surface charge densities of opposite signs and equal magnitude on their inner faces:
+",A,REJECT,HIGH,PREAUDIT_REVIEW,distractor_quality_issue,distractor_quality_issue,HUMAN_REVIEW_OPTIONS,0.0
+p3-mcq-0917-8cb0f5a3,PHYSICS,9,"Consider the following statements regarding the angle of contact (θ) between a liquid and a solid surface based on the given excerpt:
+
+Statement I: The angle of contact is defined as the angle between",C,MAJOR_REVISION,HIGH,PREAUDIT_REVIEW,distractor_quality_issue,distractor_quality_issue,HUMAN_REVIEW_OPTIONS,0.0
+p3-mcq-0920-167bd999,PHYSICS,5,"Based on the classification of magnetic materials provided in Table 5.2, which of the following set of conditions correctly defines a diamagnetic material?",A,REJECT,HIGH,PREAUDIT_REVIEW,distractor_quality_issue,distractor_quality_issue,HUMAN_REVIEW_OPTIONS,0.0
+p3-mcq-0938-aa010e1b,PHYSICS,3,"Consider the following two statements regarding vectors and scalars based on the provided text:
+
+Statement I: A physical quantity having both magnitude and direction is defined as a vector if it obeys",C,REJECT,HIGH,PREAUDIT_REVIEW,distractor_quality_issue,distractor_quality_issue,HUMAN_REVIEW_OPTIONS,0.0
+p3-mcq-0986-3b1b1620,PHYSICS,4,A rectangular loop of length 'a' and breadth 'b' carrying a current 'I' is placed in a uniform magnetic field 'B' such that the normal to the coil makes an angle 'θ' with the magnetic field. What are ,B,READY,HIGH,PREAUDIT_REVIEW,distractor_quality_issue,distractor_quality_issue,HUMAN_REVIEW_OPTIONS,0.0
+p3-mcq-0911-07643da7,PHYSICS,3,The coordinates of a particle moving in the x-y plane as functions of time $t$ are given by $x(t) = 3t^2$ and $y(t) = 4t^2$. What is the magnitude of the velocity vector $\vec{v}$ of the particle at t,C,INCONCLUSIVE,MEDIUM,PREAUDIT_REVIEW,question_type_mismatch; neet_suitability_concern,question_type_mismatch; neet_suitability_concern,LIKELY_ACCEPT,0.85
+p3-mcq-0974-ccbc6b1a,PHYSICS,14,"A string has a total mass of $5.0 \times 10^{-3}\text{ kg}$ and a length of $0.72\text{ m}$. If the tension in the string is increased to $240\text{ N}$, what will be the speed of transverse waves on ",B,READY,MEDIUM,PREAUDIT_REVIEW,answer_not_fully_verified_automatically,answer_not_fully_verified_automatically,HUMAN_VERIFY,0.2
+p3-mcq-0089-d7ca0a20,BIOLOGY,4,Which of the following options describes a characteristic feature of an individual with Down's Syndrome?,A,INCONCLUSIVE,MEDIUM,PREAUDIT_REVIEW,question_type_mismatch; neet_suitability_concern,question_type_mismatch; neet_suitability_concern,LIKELY_ACCEPT,0.0
+p3-mcq-0152-fdf4d1df,BIOLOGY,8,Which of the following structures is primarily responsible for motility in bacterial cells?,C,INCONCLUSIVE,MEDIUM,PREAUDIT_REVIEW,question_type_mismatch; neet_suitability_concern,question_type_mismatch; neet_suitability_concern,LIKELY_ACCEPT,0.0
+p3-mcq-0197-541b1504,BIOLOGY,5,What is the primary reason that only one strand of DNA is copied during the process of transcription?,A,INCONCLUSIVE,MEDIUM,PREAUDIT_REVIEW,question_type_mismatch; neet_suitability_concern,question_type_mismatch; neet_suitability_concern,LIKELY_ACCEPT,0.0
+p3-mcq-0285-67052d7a,BIOLOGY,1,"If a plant produces cleistogamous flowers in an area completely devoid of any insect or animal pollinators, what will be the outcome regarding its seed production according to the NCERT text?",B,READY,MEDIUM,PREAUDIT_REVIEW,question_type_mismatch; neet_suitability_concern,question_type_mismatch; neet_suitability_concern,LIKELY_ACCEPT,0.0
+p3-mcq-0343-6d2786e1,CHEMISTRY,4,What is the observed color of the Cu2+ ion in aqueous solution as mentioned in the NCERT excerpt?,A,INCONCLUSIVE,MEDIUM,PREAUDIT_REVIEW,question_type_mismatch; neet_suitability_concern,question_type_mismatch; neet_suitability_concern,LIKELY_ACCEPT,0.0
+p3-mcq-0409-c217ed54,CHEMISTRY,4,The bond enthalpy of the H–H bond in molecular hydrogen (H2) is given as 435.8 kJ mol–1. What does this value indicate regarding the strength of the H–H bond?,B,INCONCLUSIVE,MEDIUM,PREAUDIT_REVIEW,question_type_mismatch; neet_suitability_concern,question_type_mismatch; neet_suitability_concern,LIKELY_ACCEPT,0.0
+p3-mcq-0518-b1c65e9f,CHEMISTRY,8,"Based on the concept of stability of anions influenced by substituents, which of the following anions is expected to be more stable and why?",B,READY,MEDIUM,PREAUDIT_REVIEW,question_type_mismatch; neet_suitability_concern,question_type_mismatch; neet_suitability_concern,LIKELY_ACCEPT,0.0
+p3-mcq-0535-66fb3866,CHEMISTRY,9,Which of the following IUPAC names corresponds correctly to the compound C6H5NH2?,A,INCONCLUSIVE,MEDIUM,PREAUDIT_REVIEW,question_type_mismatch; neet_suitability_concern,question_type_mismatch; neet_suitability_concern,LIKELY_ACCEPT,0.0
+p3-mcq-0598-8a46352a,CHEMISTRY,9,Which of the following statements about the structure of benzene is true according to the NCERT excerpt?,A,INCONCLUSIVE,MEDIUM,PREAUDIT_REVIEW,question_type_mismatch; neet_suitability_concern,question_type_mismatch; neet_suitability_concern,LIKELY_ACCEPT,0.0
+p3-mcq-0661-72e1926b,CHEMISTRY,7,Which of the following statements about the acidity of alcohols and phenols is correct?,A,INCONCLUSIVE,MEDIUM,PREAUDIT_REVIEW,question_type_mismatch; neet_suitability_concern,question_type_mismatch; neet_suitability_concern,LIKELY_ACCEPT,0.0
+p3-mcq-0767-57dd6b02,PHYSICS,6,Two stationary coils C1 (connected to a galvanometer G) and C2 (connected to a battery through a tapping key K) are placed near each other. Which of the following setup modifications will lead to a dr,B,READY,MEDIUM,PREAUDIT_REVIEW,question_type_mismatch; neet_suitability_concern,question_type_mismatch; neet_suitability_concern,LIKELY_ACCEPT,0.0
+p3-mcq-0935-671fa3f6,PHYSICS,6,An irregular cardboard is balanced horizontally on the narrow tip of a pencil at point G. Which of the following statements correctly explains why the cardboard remains in mechanical equilibrium at th,B,READY,MEDIUM,PREAUDIT_REVIEW,question_type_mismatch; neet_suitability_concern,question_type_mismatch; neet_suitability_concern,LIKELY_ACCEPT,0.0
+p3-mcq-0998-e727eac2,PHYSICS,2,"An object starts moving at time $t = 0$ with an initial velocity of $5\text{ m/s}$ and experiences a constant acceleration of $2\text{ m/s}^2$. Using the constant acceleration relation $v = v_0 + at$,",B,READY,MEDIUM,PREAUDIT_REVIEW,question_type_mismatch; neet_suitability_concern,question_type_mismatch; neet_suitability_concern,LIKELY_ACCEPT,0.0
+p3-mcq-0017-27420f19,BIOLOGY,9,Match the following inorganic elements to their respective percentage weight in the human body as mentioned in the NCERT excerpt.,A,INCONCLUSIVE,LOW,PREAUDIT_REVIEW,no_obvious_defect_in_automated_screening,no_obvious_defect_in_automated_screening,LIKELY_ACCEPT,0.0
+p3-mcq-0056-53554442,BIOLOGY,8,Which of the following statements about biogas plants is NOT supported by the NCERT excerpt?,A,INCONCLUSIVE,LOW,PREAUDIT_REVIEW,no_obvious_defect_in_automated_screening,no_obvious_defect_in_automated_screening,LIKELY_ACCEPT,0.0
+p3-mcq-0095-61029a79,BIOLOGY,4,"What would be the phenotype of a plant with the genotype Tt, given that T is dominant over t?",A,INCONCLUSIVE,LOW,PREAUDIT_REVIEW,no_obvious_defect_in_automated_screening,no_obvious_defect_in_automated_screening,LIKELY_ACCEPT,0.0
+p3-mcq-0098-6fd6d933,BIOLOGY,3,Which of the following statements about pteridophytes is true?,B,INCONCLUSIVE,LOW,PREAUDIT_REVIEW,no_obvious_defect_in_automated_screening,no_obvious_defect_in_automated_screening,LIKELY_ACCEPT,0.0
+p3-mcq-0165-c587b36e,BIOLOGY,2,"Which simple morphological characters were used by Aristotle to classify plants into trees, shrubs, and herbs?",C,READY,LOW,PREAUDIT_REVIEW,no_obvious_defect_in_automated_screening,no_obvious_defect_in_automated_screening,LIKELY_ACCEPT,0.0
+p3-mcq-0200-44affd4a,BIOLOGY,17,What initiates muscle contraction according to the NCERT biology excerpt?,A,INCONCLUSIVE,LOW,PREAUDIT_REVIEW,no_obvious_defect_in_automated_screening,no_obvious_defect_in_automated_screening,LIKELY_ACCEPT,0.0
+p3-mcq-0207-2c93fb1a,BIOLOGY,13,Which of the following cellular features correctly characterizes the cells present in the meristematic phase of plant growth?,B,READY,LOW,PREAUDIT_REVIEW,no_obvious_defect_in_automated_screening,no_obvious_defect_in_automated_screening,LIKELY_ACCEPT,0.0
+p3-mcq-0224-f2dfe739,BIOLOGY,1,What is the function of the integuments in the ovule of flowering plants?,A,INCONCLUSIVE,LOW,PREAUDIT_REVIEW,no_obvious_defect_in_automated_screening,no_obvious_defect_in_automated_screening,LIKELY_ACCEPT,0.0
+p3-mcq-0242-bc2e3fa3,BIOLOGY,6,What is the primary function of root hairs in the epidermis?,A,INCONCLUSIVE,LOW,PREAUDIT_REVIEW,no_obvious_defect_in_automated_screening,no_obvious_defect_in_automated_screening,LIKELY_ACCEPT,0.0
+p3-mcq-0308-75106d2a,BIOLOGY,19,Which type of hormones are produced by the hypothalamus that stimulate the secretion of pituitary hormones?,A,INCONCLUSIVE,LOW,PREAUDIT_REVIEW,no_obvious_defect_in_automated_screening,no_obvious_defect_in_automated_screening,LIKELY_ACCEPT,0.0
+p3-mcq-0332-3cd34c80,BIOLOGY,1,Match the following components involved in the process of fertilization with their respective roles:,A,INCONCLUSIVE,LOW,PREAUDIT_REVIEW,no_obvious_defect_in_automated_screening,no_obvious_defect_in_automated_screening,LIKELY_ACCEPT,0.0
+p3-mcq-0359-c1ced73c,CHEMISTRY,1,"At a concentration of 35% (v/v), ethylene glycol lowers the freezing point of water to which of the following temperatures?",B,READY,LOW,PREAUDIT_REVIEW,no_obvious_defect_in_automated_screening,no_obvious_defect_in_automated_screening,LIKELY_ACCEPT,0.0
+p3-mcq-0394-55b97a27,CHEMISTRY,9,What is the major product obtained when a large excess of ammonia is used in the ammonolysis of an ammonium salt?,D,INCONCLUSIVE,LOW,PREAUDIT_REVIEW,no_obvious_defect_in_automated_screening,no_obvious_defect_in_automated_screening,LIKELY_ACCEPT,0.0
+p3-mcq-0425-2c0dc4d5,CHEMISTRY,3,"Match the aspect of a chemical reaction listed in Column I with the corresponding branch or concept of chemistry listed in Column II as described in the text:
+
+Column I:
+(p) Feasibility of a reaction ",A,MAJOR_REVISION,LOW,PREAUDIT_REVIEW,no_obvious_defect_in_automated_screening,no_obvious_defect_in_automated_screening,LIKELY_ACCEPT,0.0
+p3-mcq-0446-2c734a34,CHEMISTRY,6,"Match the following aspects of electrophilic aromatic substitution in chlorobenzene (Column I) with their corresponding controlling factors/effects (Column II):
+
+Column I:
+p. Reactivity of chlorobenze",B,MAJOR_REVISION,LOW,PREAUDIT_REVIEW,no_obvious_defect_in_automated_screening,no_obvious_defect_in_automated_screening,LIKELY_ACCEPT,0.0
+p3-mcq-0475-0610a6fe,CHEMISTRY,6,"According to the Lewis definition of acids and bases, which of the following species acts as a Lewis acid?",C,INCONCLUSIVE,LOW,PREAUDIT_REVIEW,no_obvious_defect_in_automated_screening,no_obvious_defect_in_automated_screening,LIKELY_ACCEPT,0.0
+p3-mcq-0545-62818846,CHEMISTRY,4,"Which of the following combinations of atomic orbitals cannot undergo hybridisation due to a significant difference in their energies, according to the provided text?",C,REJECT,LOW,PREAUDIT_REVIEW,no_obvious_defect_in_automated_screening,no_obvious_defect_in_automated_screening,LIKELY_ACCEPT,0.0
+p3-mcq-0586-04753478,CHEMISTRY,1,Match the laws of chemical combination with their descriptions.,A,INCONCLUSIVE,LOW,PREAUDIT_REVIEW,no_obvious_defect_in_automated_screening,no_obvious_defect_in_automated_screening,LIKELY_ACCEPT,0.0
+p3-mcq-0604-b4700eba,CHEMISTRY,7,What is the major product when a tertiary alkyl halide like (CH3)3C–Br reacts with sodium ethoxide?,A,INCONCLUSIVE,LOW,PREAUDIT_REVIEW,no_obvious_defect_in_automated_screening,no_obvious_defect_in_automated_screening,LIKELY_ACCEPT,0.0
+p3-mcq-0622-b6e98375,CHEMISTRY,9,What type of hydrocarbons undergo mainly electrophilic substitution reactions?,C,INCONCLUSIVE,LOW,PREAUDIT_REVIEW,no_obvious_defect_in_automated_screening,no_obvious_defect_in_automated_screening,LIKELY_ACCEPT,0.0
+p3-mcq-0628-9b2d18df,CHEMISTRY,9,Match the following compounds with their corresponding types of amines:,C,INCONCLUSIVE,LOW,PREAUDIT_REVIEW,no_obvious_defect_in_automated_screening,no_obvious_defect_in_automated_screening,LIKELY_ACCEPT,0.0
+p3-mcq-0629-e6b17b9e,CHEMISTRY,5,"According to the NCERT text on thermodynamic processes, which of the following statements correctly describes a reversible process?",B,MAJOR_REVISION,LOW,PREAUDIT_REVIEW,no_obvious_defect_in_automated_screening,no_obvious_defect_in_automated_screening,LIKELY_ACCEPT,0.0
+p3-mcq-0671-a4a590e2,PHYSICS,14,"In a travelling harmonic wave, which of the following aspects of oscillatory motion differs from one point to another?",C,MAJOR_REVISION,LOW,PREAUDIT_REVIEW,no_obvious_defect_in_automated_screening,no_obvious_defect_in_automated_screening,LIKELY_ACCEPT,0.0
+p3-mcq-0709-3e9d231d,PHYSICS,6,Match the following scenarios with the correct outcomes regarding induced current and polarity of the capacitor plates.,A,INCONCLUSIVE,LOW,PREAUDIT_REVIEW,no_obvious_defect_in_automated_screening,no_obvious_defect_in_automated_screening,LIKELY_ACCEPT,0.0
+p3-mcq-0731-1b7eda9c,PHYSICS,11,"According to the principles of thermodynamic state variables discussed in the NCERT text, consider a system in equilibrium divided into two equal parts. Which of the following statements correctly des",B,REJECT,LOW,PREAUDIT_REVIEW,no_obvious_defect_in_automated_screening,no_obvious_defect_in_automated_screening,LIKELY_ACCEPT,0.0
+p3-mcq-0766-208bff6e,PHYSICS,3,"In a Wheatstone bridge, which condition indicates that the bridge is balanced?",A,INCONCLUSIVE,LOW,PREAUDIT_REVIEW,no_obvious_defect_in_automated_screening,no_obvious_defect_in_automated_screening,LIKELY_ACCEPT,0.0
+p3-mcq-0821-cb53c4a2,PHYSICS,5,"Match the physics problems described in List-I with their correct theoretical outcome/concept derived from the NCERT text in List-II:
+
+List-I:
+(P) Bob A of a pendulum released from 30° hits an identic",A,REJECT,LOW,PREAUDIT_REVIEW,no_obvious_defect_in_automated_screening,no_obvious_defect_in_automated_screening,LIKELY_ACCEPT,0.0
+p3-mcq-0860-9d0d3f11,PHYSICS,4,"When applying Ampere's circuital law to a rectangular Amperian loop $abcd$ to derive the magnetic field $B$ inside an ideal long solenoid, why do the transverse sections $bc$ and $ad$ make no contribu",B,READY,LOW,PREAUDIT_REVIEW,no_obvious_defect_in_automated_screening,no_obvious_defect_in_automated_screening,LIKELY_ACCEPT,0.0
+p3-mcq-0940-2d90c03e,PHYSICS,1,Match the following aspects of Gauss's law with their descriptions:,A,INCONCLUSIVE,LOW,PREAUDIT_REVIEW,no_obvious_defect_in_automated_screening,no_obvious_defect_in_automated_screening,LIKELY_ACCEPT,0.0

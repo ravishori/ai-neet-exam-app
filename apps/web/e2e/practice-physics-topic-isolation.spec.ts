@@ -104,6 +104,7 @@ test.describe("Practice Physics TOPIC isolation", () => {
     await expect(optionA).toBeVisible();
     await optionA.click();
     await page.getByRole("button", { name: /^Submit$/i }).first().click();
+    await page.getByRole("button", { name: /Confirm submit/i }).click();
     await expect(page.getByText(/Score:/i).first()).toBeVisible({ timeout: 30_000 });
 
     // Cross-topic leakage: no straight attempt question should claim plane topic id when metadata present

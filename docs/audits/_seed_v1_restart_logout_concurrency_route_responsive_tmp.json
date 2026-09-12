@@ -1,0 +1,42 @@
+{
+  "audit": "Seed V1 student experience: restart/logout/concurrency/route/responsive (tmp)",
+  "date": "2026-09-03",
+  "allow_sha": "c0cf70846233730ef384188f5b78cced2a7865f76d977a0af6063f803bc8f0c1",
+  "expected_sha": "c0cf70846233730ef384188f5b78cced2a7865f76d977a0af6063f803bc8f0c1",
+  "session_restart": {
+    "pass": true,
+    "attempt_id_1": "164607b6-df4d-4b6f-96ff-bb741dcec37d",
+    "attempt_id_2": "92b8e0f8-9e9a-4808-8f44-fc29bb521c4d",
+    "sub1_status": 200
+  },
+  "logout_login": {
+    "cross_status": 404,
+    "cross_denied": true,
+    "pass": false,
+    "email1": "sx-reg-restart-1788443785822-f01e56@example.com",
+    "email2": "sx-reg-second-1788443786500-04e4cb@example.com",
+    "attempt_id": "0de7e497-b6da-44ab-81a0-95f00da57855"
+  },
+  "concurrent_sessions": {
+    "pass": true,
+    "seed_attempt_id": "fa321844-c6dd-4777-89b2-95af7c844a45",
+    "full_attempt_id": "4e7d64d3-feaa-46ad-a4b5-91f3d15f2dd6",
+    "seed_outside_count": 0
+  },
+  "route_security": {
+    "unknown_scope_rejected": true,
+    "bad_scope_status": 400,
+    "seed_scope_ok": true,
+    "pass": true
+  },
+  "responsive": {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "seed_visible": true,
+    "attempted_render": true,
+    "pass": true
+  },
+  "errors": []
+}

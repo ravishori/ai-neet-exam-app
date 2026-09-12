@@ -1,0 +1,3342 @@
+{
+  "captured_at": "2026-09-02T17:26:36.218037+00:00",
+  "seed": "production-seed-v1-2026-09-02",
+  "batch_key": "production-seed-v1-2026-09-02-batch",
+  "batch_id": "7437f9e0-edbd-4be8-bd2c-6ef700d71989",
+  "provider_preflight": {
+    "factory_provider_mode": "fixed",
+    "factory_provider": "gemini",
+    "factory_provider_fallback_chain": "",
+    "routing": "fixed:gemini",
+    "routing_chain": [
+      "gemini"
+    ],
+    "registry_status": "AVAILABLE",
+    "provider_configured": true,
+    "provider_enabled": true,
+    "ok": true,
+    "code": null
+  },
+  "generation": {
+    "target": 30,
+    "created": 30,
+    "attempted": 43,
+    "cost_usd": 0.094863,
+    "slot_results": [
+      {
+        "slot": "physics-01",
+        "created": 1,
+        "reused": true,
+        "item_id": "336ec42d-aa33-4b5b-8c46-f8d5461883b0"
+      },
+      {
+        "slot": "physics-02",
+        "created": 1,
+        "reused": true,
+        "item_id": "a1f1d832-21a3-4fb6-86b8-fe07ed46ad18"
+      },
+      {
+        "slot": "physics-03",
+        "created": 1,
+        "reused": true,
+        "item_id": "16dd7280-a48b-4437-80ac-a2b72b28d952"
+      },
+      {
+        "slot": "physics-04",
+        "created": 1,
+        "reused": true,
+        "item_id": "061d07ed-ca1f-4f31-b7f8-cbdb3dfe8453"
+      },
+      {
+        "slot": "physics-05",
+        "created": 1,
+        "reused": true,
+        "item_id": "b4a2e055-f141-4f05-8b06-850d84122b60"
+      },
+      {
+        "slot": "physics-06",
+        "created": 1,
+        "reused": true,
+        "item_id": "872a0115-cb0a-4109-99ff-55ada6774d51"
+      },
+      {
+        "slot": "physics-07",
+        "created": 1,
+        "reused": true,
+        "item_id": "92c31281-cbdf-4954-9b25-79342cb1b400"
+      },
+      {
+        "slot": "physics-08",
+        "created": 1,
+        "reused": true,
+        "item_id": "b207ad06-7427-417e-abfd-a928ab68df84"
+      },
+      {
+        "slot": "physics-09",
+        "created": 1,
+        "reused": true,
+        "item_id": "e4a6fdc3-7a55-4762-a176-f8af33709308"
+      },
+      {
+        "slot": "physics-10",
+        "created": 1,
+        "reused": true,
+        "item_id": "3d0dbda5-7882-4e3f-90d8-3a479cf67ab2"
+      },
+      {
+        "slot": "chemistry-01",
+        "created": 1,
+        "reused": true,
+        "item_id": "54907eea-4fcd-4855-8477-268bafe03e82"
+      },
+      {
+        "slot": "chemistry-02",
+        "created": 1,
+        "reused": true,
+        "item_id": "93c46e39-6a4c-4730-9ae7-a07a4bdab0a9"
+      },
+      {
+        "slot": "chemistry-03",
+        "created": 1,
+        "reused": true,
+        "item_id": "3c565dee-ea37-4937-bb32-4006ce383006"
+      },
+      {
+        "slot": "chemistry-04",
+        "created": 1,
+        "reused": true,
+        "item_id": "e3e36b8e-ff15-455e-807d-eb32de6c1f75"
+      },
+      {
+        "slot": "chemistry-05",
+        "created": 1,
+        "reused": true,
+        "item_id": "621ffc10-0673-4d4f-a5be-c07ed2f7f48f"
+      },
+      {
+        "slot": "chemistry-06",
+        "created": 1,
+        "reused": true,
+        "item_id": "5b1b5f27-bb6d-4b35-8b1c-96c252278d98"
+      },
+      {
+        "slot": "chemistry-07",
+        "created": 1,
+        "reused": true,
+        "item_id": "a357fe24-b0ef-4bd5-b7f7-956f392f9942"
+      },
+      {
+        "slot": "chemistry-08",
+        "created": 1,
+        "reused": true,
+        "item_id": "9dd374e7-c677-46ab-9e83-8cf0e6139feb"
+      },
+      {
+        "slot": "chemistry-09",
+        "created": 1,
+        "reused": true,
+        "item_id": "4f0dcbb1-c236-42a3-a148-cf8233326b52"
+      },
+      {
+        "slot": "chemistry-10",
+        "created": 1,
+        "reused": true,
+        "item_id": "aae4fe1b-9665-4216-be4b-2f758f4dbf70"
+      },
+      {
+        "slot": "botany-01",
+        "created": 1,
+        "reused": true,
+        "item_id": "7e4fb145-08fe-43cf-accc-ef53e9535b07"
+      },
+      {
+        "slot": "botany-02",
+        "created": 1,
+        "reused": true,
+        "item_id": "f6f59a22-5d9b-47a3-adb6-8dcf7ce56a1c"
+      },
+      {
+        "slot": "botany-03",
+        "created": 1,
+        "reused": true,
+        "item_id": "c85bba09-451b-4b2f-988d-e440929fa770"
+      },
+      {
+        "slot": "botany-04",
+        "created": 1,
+        "reused": true,
+        "item_id": "e15d0065-7b79-477c-b9ec-81bc421a6a71"
+      },
+      {
+        "slot": "botany-05",
+        "created": 1,
+        "reused": true,
+        "item_id": "1d598d79-afe1-4ddb-8f32-2b51c8fb2b02"
+      },
+      {
+        "slot": "zoology-01",
+        "created": 1,
+        "reused": true,
+        "item_id": "3dc11d2a-b9ad-4155-93ec-4cd7b3bae9af"
+      },
+      {
+        "slot": "zoology-02",
+        "created": 1,
+        "reused": true,
+        "item_id": "dd7b5422-437d-4b0f-a2dc-f370ea0496c2"
+      },
+      {
+        "slot": "zoology-03",
+        "created": 1,
+        "reused": true,
+        "item_id": "2e17c7e6-5d8f-4469-9cea-407177e61e8e"
+      },
+      {
+        "slot": "zoology-04",
+        "created": 1,
+        "reused": true,
+        "item_id": "8a3937ce-5ad0-41af-bc84-17bf04c386ce"
+      },
+      {
+        "slot": "zoology-05",
+        "created": 1,
+        "reused": true,
+        "item_id": "b690c0d3-98f6-4e57-851f-aae1ac6ad8cd"
+      }
+    ],
+    "provider": "gemini",
+    "routing": "fixed:gemini",
+    "cost_usd_created_only": 0.069069,
+    "cost_note": "Reconciled from cms.generation_candidates for production-seed-v1-2026-09-02-batch (resume pass had cost=0)."
+  },
+  "item_ids": [
+    "7e4fb145-08fe-43cf-accc-ef53e9535b07",
+    "e15d0065-7b79-477c-b9ec-81bc421a6a71",
+    "c85bba09-451b-4b2f-988d-e440929fa770",
+    "f6f59a22-5d9b-47a3-adb6-8dcf7ce56a1c",
+    "1d598d79-afe1-4ddb-8f32-2b51c8fb2b02",
+    "3c565dee-ea37-4937-bb32-4006ce383006",
+    "9dd374e7-c677-46ab-9e83-8cf0e6139feb",
+    "5b1b5f27-bb6d-4b35-8b1c-96c252278d98",
+    "4f0dcbb1-c236-42a3-a148-cf8233326b52",
+    "e3e36b8e-ff15-455e-807d-eb32de6c1f75",
+    "621ffc10-0673-4d4f-a5be-c07ed2f7f48f",
+    "93c46e39-6a4c-4730-9ae7-a07a4bdab0a9",
+    "aae4fe1b-9665-4216-be4b-2f758f4dbf70",
+    "a357fe24-b0ef-4bd5-b7f7-956f392f9942",
+    "54907eea-4fcd-4855-8477-268bafe03e82",
+    "872a0115-cb0a-4109-99ff-55ada6774d51",
+    "336ec42d-aa33-4b5b-8c46-f8d5461883b0",
+    "e4a6fdc3-7a55-4762-a176-f8af33709308",
+    "a1f1d832-21a3-4fb6-86b8-fe07ed46ad18",
+    "16dd7280-a48b-4437-80ac-a2b72b28d952",
+    "b207ad06-7427-417e-abfd-a928ab68df84",
+    "3d0dbda5-7882-4e3f-90d8-3a479cf67ab2",
+    "061d07ed-ca1f-4f31-b7f8-cbdb3dfe8453",
+    "b4a2e055-f141-4f05-8b06-850d84122b60",
+    "92c31281-cbdf-4954-9b25-79342cb1b400",
+    "3dc11d2a-b9ad-4155-93ec-4cd7b3bae9af",
+    "8a3937ce-5ad0-41af-bc84-17bf04c386ce",
+    "2e17c7e6-5d8f-4469-9cea-407177e61e8e",
+    "b690c0d3-98f6-4e57-851f-aae1ac6ad8cd",
+    "dd7b5422-437d-4b0f-a2dc-f370ea0496c2"
+  ],
+  "questions_meta": [
+    {
+      "item_id": "7e4fb145-08fe-43cf-accc-ef53e9535b07",
+      "subject": "Botany",
+      "chapter": "Photosynthesis in Higher Plants",
+      "topic": "Dark Reaction (Calvin Cycle)",
+      "concept": "C3 vs C4 Pathway",
+      "difficulty": "medium",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-botany-01",
+      "intent": "pathway_compare",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "status": "DRAFT",
+      "p4": "GREEN"
+    },
+    {
+      "item_id": "e15d0065-7b79-477c-b9ec-81bc421a6a71",
+      "subject": "Botany",
+      "chapter": "Cell - The Unit of Life",
+      "topic": "Membrane and Cell Cycle",
+      "concept": "Fluid Mosaic Model",
+      "difficulty": "easy",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-botany-04",
+      "intent": "membrane_model",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "status": "DRAFT",
+      "p4": "GREEN"
+    },
+    {
+      "item_id": "c85bba09-451b-4b2f-988d-e440929fa770",
+      "subject": "Botany",
+      "chapter": "Photosynthesis in Higher Plants",
+      "topic": "Factors Affecting Photosynthesis",
+      "concept": "Limiting Factors (Blackman's Law)",
+      "difficulty": "easy",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-botany-03",
+      "intent": "blackman_law",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "status": "DRAFT",
+      "p4": "GREEN"
+    },
+    {
+      "item_id": "f6f59a22-5d9b-47a3-adb6-8dcf7ce56a1c",
+      "subject": "Botany",
+      "chapter": "Photosynthesis in Higher Plants",
+      "topic": "Factors Affecting Photosynthesis",
+      "concept": "Photorespiration",
+      "difficulty": "medium",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-botany-02",
+      "intent": "process_consequence",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "status": "DRAFT",
+      "p4": "GREEN"
+    },
+    {
+      "item_id": "1d598d79-afe1-4ddb-8f32-2b51c8fb2b02",
+      "subject": "Botany",
+      "chapter": "Cell - The Unit of Life",
+      "topic": "Cell Theory and Cell Types",
+      "concept": "Prokaryotic vs Eukaryotic Cells",
+      "difficulty": "easy",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-botany-05",
+      "intent": "cell_compare",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "status": "DRAFT",
+      "p4": "GREEN"
+    },
+    {
+      "item_id": "3c565dee-ea37-4937-bb32-4006ce383006",
+      "subject": "Chemistry",
+      "chapter": "Equilibrium",
+      "topic": "Chemical Equilibrium",
+      "concept": "Equilibrium Constant Kc/Kp",
+      "difficulty": "medium",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-chemistry-03",
+      "intent": "kc_kp_meaning",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "status": "DRAFT",
+      "p4": "GREEN"
+    },
+    {
+      "item_id": "9dd374e7-c677-46ab-9e83-8cf0e6139feb",
+      "subject": "Chemistry",
+      "chapter": "Organic Chemistry - Basic Principles",
+      "topic": "IUPAC and Homologous Series",
+      "concept": "Homologous Series",
+      "difficulty": "easy",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-chemistry-08",
+      "intent": "series_traits",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "status": "DRAFT",
+      "p4": "GREEN"
+    },
+    {
+      "item_id": "5b1b5f27-bb6d-4b35-8b1c-96c252278d98",
+      "subject": "Chemistry",
+      "chapter": "Organic Chemistry - Basic Principles",
+      "topic": "Electronic Effects",
+      "concept": "Inductive and Resonance Effects",
+      "difficulty": "medium",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-chemistry-06",
+      "intent": "electronic_effects",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "status": "DRAFT",
+      "p4": "GREEN"
+    },
+    {
+      "item_id": "4f0dcbb1-c236-42a3-a148-cf8233326b52",
+      "subject": "Chemistry",
+      "chapter": "Chemical Bonding and Molecular Structure",
+      "topic": "Ionic Bonding",
+      "concept": "Lattice Energy",
+      "difficulty": "medium",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-chemistry-09",
+      "intent": "definition_or_trend_single",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "status": "DRAFT",
+      "p4": "GREEN"
+    },
+    {
+      "item_id": "e3e36b8e-ff15-455e-807d-eb32de6c1f75",
+      "subject": "Chemistry",
+      "chapter": "Equilibrium",
+      "topic": "Ionic Equilibrium and pH",
+      "concept": "pH and Ionic Product of Water",
+      "difficulty": "medium",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-chemistry-04",
+      "intent": "ph_calculation",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "status": "DRAFT",
+      "p4": "GREEN"
+    },
+    {
+      "item_id": "621ffc10-0673-4d4f-a5be-c07ed2f7f48f",
+      "subject": "Chemistry",
+      "chapter": "Equilibrium",
+      "topic": "Solubility Product",
+      "concept": "Solubility Product Ksp",
+      "difficulty": "medium",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-chemistry-05",
+      "intent": "solubility_product",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "status": "DRAFT",
+      "p4": "GREEN"
+    },
+    {
+      "item_id": "93c46e39-6a4c-4730-9ae7-a07a4bdab0a9",
+      "subject": "Chemistry",
+      "chapter": "Chemical Bonding and Molecular Structure",
+      "topic": "Hybridization",
+      "concept": "sp, sp2, sp3 Hybridization",
+      "difficulty": "medium",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-chemistry-02",
+      "intent": "hybridization_identify",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "status": "DRAFT",
+      "p4": "GREEN"
+    },
+    {
+      "item_id": "aae4fe1b-9665-4216-be4b-2f758f4dbf70",
+      "subject": "Chemistry",
+      "chapter": "Chemical Bonding and Molecular Structure",
+      "topic": "Hybridization",
+      "concept": "sp, sp2, sp3 Hybridization",
+      "difficulty": "hard",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-chemistry-10",
+      "intent": "geometry_from_hybridization",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "status": "DRAFT",
+      "p4": "GREEN"
+    },
+    {
+      "item_id": "a357fe24-b0ef-4bd5-b7f7-956f392f9942",
+      "subject": "Chemistry",
+      "chapter": "Organic Chemistry - Basic Principles",
+      "topic": "Isomerism and Intermediates",
+      "concept": "Structural Isomerism",
+      "difficulty": "easy",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-chemistry-07",
+      "intent": "isomer_classification",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "status": "DRAFT",
+      "p4": "GREEN"
+    },
+    {
+      "item_id": "54907eea-4fcd-4855-8477-268bafe03e82",
+      "subject": "Chemistry",
+      "chapter": "Chemical Bonding and Molecular Structure",
+      "topic": "Covalent Bonding and VSEPR Theory",
+      "concept": "VSEPR Theory",
+      "difficulty": "medium",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-chemistry-01",
+      "intent": "geometry_prediction",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "status": "DRAFT",
+      "p4": "GREEN"
+    },
+    {
+      "item_id": "872a0115-cb0a-4109-99ff-55ada6774d51",
+      "subject": "Physics",
+      "chapter": "Mechanical Properties of Fluids",
+      "topic": "Fluid Flow and Bernoulli",
+      "concept": "Bernoulli's Principle",
+      "difficulty": "medium",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-physics-06",
+      "intent": "conceptual_law",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "status": "DRAFT",
+      "p4": "GREEN"
+    },
+    {
+      "item_id": "336ec42d-aa33-4b5b-8c46-f8d5461883b0",
+      "subject": "Physics",
+      "chapter": "Electrostatics",
+      "topic": "Electric Charge and Coulomb's Law",
+      "concept": "Coulomb's Law",
+      "difficulty": "medium",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-physics-01",
+      "intent": "conceptual_law",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "status": "DRAFT",
+      "p4": "GREEN"
+    },
+    {
+      "item_id": "e4a6fdc3-7a55-4762-a176-f8af33709308",
+      "subject": "Physics",
+      "chapter": "Current Electricity",
+      "topic": "Resistance and Resistivity",
+      "concept": "Factors Affecting Resistance",
+      "difficulty": "medium",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-physics-09",
+      "intent": "resistivity_reasoning",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "status": "DRAFT",
+      "p4": "GREEN"
+    },
+    {
+      "item_id": "a1f1d832-21a3-4fb6-86b8-fe07ed46ad18",
+      "subject": "Physics",
+      "chapter": "Kinematics",
+      "topic": "Motion in a Straight Line",
+      "concept": "Kinematic Equations",
+      "difficulty": "medium",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-physics-02",
+      "intent": "numerical_application",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "status": "DRAFT",
+      "p4": "GREEN"
+    },
+    {
+      "item_id": "16dd7280-a48b-4437-80ac-a2b72b28d952",
+      "subject": "Physics",
+      "chapter": "Laws of Motion",
+      "topic": "Newton's Laws and Momentum",
+      "concept": "Newton's Laws of Motion",
+      "difficulty": "easy",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-physics-03",
+      "intent": "conceptual_law",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "status": "DRAFT",
+      "p4": "GREEN"
+    },
+    {
+      "item_id": "b207ad06-7427-417e-abfd-a928ab68df84",
+      "subject": "Physics",
+      "chapter": "Units and Measurement",
+      "topic": "SI Units and Measurement",
+      "concept": "SI Base and Derived Units",
+      "difficulty": "easy",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-physics-08",
+      "intent": "measurement_units",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "status": "DRAFT",
+      "p4": "GREEN"
+    },
+    {
+      "item_id": "3d0dbda5-7882-4e3f-90d8-3a479cf67ab2",
+      "subject": "Physics",
+      "chapter": "Optics",
+      "topic": "Refraction and Lenses",
+      "concept": "Thin Lens Formula",
+      "difficulty": "medium",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-physics-10",
+      "intent": "numerical_application",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "status": "DRAFT",
+      "p4": "GREEN"
+    },
+    {
+      "item_id": "061d07ed-ca1f-4f31-b7f8-cbdb3dfe8453",
+      "subject": "Physics",
+      "chapter": "Work, Energy and Power",
+      "topic": "Work and Kinetic Energy",
+      "concept": "Work\u2013Energy Theorem",
+      "difficulty": "medium",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-physics-04",
+      "intent": "numerical_application",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "status": "DRAFT",
+      "p4": "GREEN"
+    },
+    {
+      "item_id": "b4a2e055-f141-4f05-8b06-850d84122b60",
+      "subject": "Physics",
+      "chapter": "Mechanical Properties of Solids",
+      "topic": "Elastic Moduli",
+      "concept": "Young's Modulus",
+      "difficulty": "medium",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-physics-05",
+      "intent": "material_property",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "status": "DRAFT",
+      "p4": "GREEN"
+    },
+    {
+      "item_id": "92c31281-cbdf-4954-9b25-79342cb1b400",
+      "subject": "Physics",
+      "chapter": "Thermodynamics",
+      "topic": "Laws of Thermodynamics",
+      "concept": "Zeroth and First Law",
+      "difficulty": "easy",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-physics-07",
+      "intent": "conceptual_law",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "status": "DRAFT",
+      "p4": "GREEN"
+    },
+    {
+      "item_id": "3dc11d2a-b9ad-4155-93ec-4cd7b3bae9af",
+      "subject": "Zoology",
+      "chapter": "Body Fluids and Circulation",
+      "topic": "Cardiac Cycle",
+      "concept": "Cardiac Cycle Phases",
+      "difficulty": "medium",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-zoology-01",
+      "intent": "process_sequence",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "status": "DRAFT",
+      "p4": "GREEN"
+    },
+    {
+      "item_id": "8a3937ce-5ad0-41af-bc84-17bf04c386ce",
+      "subject": "Zoology",
+      "chapter": "Biomolecules",
+      "topic": "Nucleic Acids",
+      "concept": "DNA and RNA",
+      "difficulty": "medium",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-zoology-04",
+      "intent": "biomolecule_compare",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "status": "DRAFT",
+      "p4": "GREEN"
+    },
+    {
+      "item_id": "2e17c7e6-5d8f-4469-9cea-407177e61e8e",
+      "subject": "Zoology",
+      "chapter": "Biomolecules",
+      "topic": "Proteins and Enzymes",
+      "concept": "Enzyme Action",
+      "difficulty": "medium",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-zoology-03",
+      "intent": "mechanism",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "status": "DRAFT",
+      "p4": "GREEN"
+    },
+    {
+      "item_id": "b690c0d3-98f6-4e57-851f-aae1ac6ad8cd",
+      "subject": "Zoology",
+      "chapter": "Animal Kingdom",
+      "topic": "Chordata Basics",
+      "concept": "Fundamental Chordate Features",
+      "difficulty": "easy",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-zoology-05",
+      "intent": "classification",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "status": "DRAFT",
+      "p4": "GREEN"
+    },
+    {
+      "item_id": "dd7b5422-437d-4b0f-a2dc-f370ea0496c2",
+      "subject": "Zoology",
+      "chapter": "Body Fluids and Circulation",
+      "topic": "Human Heart Anatomy",
+      "concept": "Structure of the Human Heart",
+      "difficulty": "easy",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-zoology-02",
+      "intent": "anatomy_identify",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "status": "DRAFT",
+      "p4": "GREEN"
+    }
+  ],
+  "p4": {
+    "per_question": [
+      {
+        "item_id": "7e4fb145-08fe-43cf-accc-ef53e9535b07",
+        "candidate_id": "3fa7991f-e94b-4e2a-beab-cdbe49855025",
+        "classification": "GREEN",
+        "duplicate_class": "UNIQUE",
+        "gates": {
+          "A_STRUCTURE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "B_BLUEPRINT": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "C_HIERARCHY": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "D_PROVENANCE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "E_ANSWER": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": [
+              "NO_SCIENTIFIC_CERTIFICATION"
+            ]
+          },
+          "F_DUPLICATE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": [
+              "SEMANTIC_DEDUPE_NOT_AVAILABLE",
+              "SEMANTIC_UNCHECKED"
+            ]
+          },
+          "G_SAFETY": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          }
+        }
+      },
+      {
+        "item_id": "e15d0065-7b79-477c-b9ec-81bc421a6a71",
+        "candidate_id": "c35c4007-0b04-42f5-9098-bbcfe59fd434",
+        "classification": "GREEN",
+        "duplicate_class": "UNIQUE",
+        "gates": {
+          "A_STRUCTURE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "B_BLUEPRINT": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "C_HIERARCHY": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "D_PROVENANCE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "E_ANSWER": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": [
+              "NO_SCIENTIFIC_CERTIFICATION"
+            ]
+          },
+          "F_DUPLICATE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": [
+              "SEMANTIC_DEDUPE_NOT_AVAILABLE",
+              "SEMANTIC_UNCHECKED"
+            ]
+          },
+          "G_SAFETY": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          }
+        }
+      },
+      {
+        "item_id": "c85bba09-451b-4b2f-988d-e440929fa770",
+        "candidate_id": "81cd30ae-607d-446d-b362-d4c9479498f6",
+        "classification": "GREEN",
+        "duplicate_class": "UNIQUE",
+        "gates": {
+          "A_STRUCTURE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "B_BLUEPRINT": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "C_HIERARCHY": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "D_PROVENANCE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "E_ANSWER": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": [
+              "NO_SCIENTIFIC_CERTIFICATION"
+            ]
+          },
+          "F_DUPLICATE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": [
+              "SEMANTIC_DEDUPE_NOT_AVAILABLE",
+              "SEMANTIC_UNCHECKED"
+            ]
+          },
+          "G_SAFETY": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          }
+        }
+      },
+      {
+        "item_id": "f6f59a22-5d9b-47a3-adb6-8dcf7ce56a1c",
+        "candidate_id": "76d2d044-1a14-43bb-8009-cf7b4cb5a0fc",
+        "classification": "GREEN",
+        "duplicate_class": "UNIQUE",
+        "gates": {
+          "A_STRUCTURE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "B_BLUEPRINT": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "C_HIERARCHY": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "D_PROVENANCE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "E_ANSWER": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": [
+              "NO_SCIENTIFIC_CERTIFICATION"
+            ]
+          },
+          "F_DUPLICATE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": [
+              "SEMANTIC_DEDUPE_NOT_AVAILABLE",
+              "SEMANTIC_UNCHECKED"
+            ]
+          },
+          "G_SAFETY": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          }
+        }
+      },
+      {
+        "item_id": "1d598d79-afe1-4ddb-8f32-2b51c8fb2b02",
+        "candidate_id": "fedb6e87-82b5-4de8-b9ad-4859b528a290",
+        "classification": "GREEN",
+        "duplicate_class": "UNIQUE",
+        "gates": {
+          "A_STRUCTURE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "B_BLUEPRINT": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "C_HIERARCHY": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "D_PROVENANCE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "E_ANSWER": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": [
+              "NO_SCIENTIFIC_CERTIFICATION"
+            ]
+          },
+          "F_DUPLICATE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": [
+              "SEMANTIC_DEDUPE_NOT_AVAILABLE",
+              "SEMANTIC_UNCHECKED"
+            ]
+          },
+          "G_SAFETY": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          }
+        }
+      },
+      {
+        "item_id": "3c565dee-ea37-4937-bb32-4006ce383006",
+        "candidate_id": "7351d99f-bdb0-4b5a-a97d-d725e568ee92",
+        "classification": "GREEN",
+        "duplicate_class": "UNIQUE",
+        "gates": {
+          "A_STRUCTURE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "B_BLUEPRINT": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "C_HIERARCHY": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "D_PROVENANCE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "E_ANSWER": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": [
+              "NO_SCIENTIFIC_CERTIFICATION"
+            ]
+          },
+          "F_DUPLICATE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": [
+              "SEMANTIC_DEDUPE_NOT_AVAILABLE",
+              "SEMANTIC_UNCHECKED"
+            ]
+          },
+          "G_SAFETY": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          }
+        }
+      },
+      {
+        "item_id": "9dd374e7-c677-46ab-9e83-8cf0e6139feb",
+        "candidate_id": "d4a9be77-6cbf-48b2-9cd7-1789f3bfbb22",
+        "classification": "GREEN",
+        "duplicate_class": "UNIQUE",
+        "gates": {
+          "A_STRUCTURE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "B_BLUEPRINT": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "C_HIERARCHY": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "D_PROVENANCE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "E_ANSWER": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": [
+              "NO_SCIENTIFIC_CERTIFICATION"
+            ]
+          },
+          "F_DUPLICATE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": [
+              "SEMANTIC_DEDUPE_NOT_AVAILABLE",
+              "SEMANTIC_UNCHECKED"
+            ]
+          },
+          "G_SAFETY": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          }
+        }
+      },
+      {
+        "item_id": "5b1b5f27-bb6d-4b35-8b1c-96c252278d98",
+        "candidate_id": "a30cabea-41b6-47da-8cc9-46ef863f7b6b",
+        "classification": "GREEN",
+        "duplicate_class": "UNIQUE",
+        "gates": {
+          "A_STRUCTURE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "B_BLUEPRINT": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "C_HIERARCHY": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "D_PROVENANCE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "E_ANSWER": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": [
+              "NO_SCIENTIFIC_CERTIFICATION"
+            ]
+          },
+          "F_DUPLICATE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": [
+              "SEMANTIC_DEDUPE_NOT_AVAILABLE",
+              "SEMANTIC_UNCHECKED"
+            ]
+          },
+          "G_SAFETY": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          }
+        }
+      },
+      {
+        "item_id": "4f0dcbb1-c236-42a3-a148-cf8233326b52",
+        "candidate_id": "2daa430e-5dd2-498b-8f65-4f535b3f1bed",
+        "classification": "GREEN",
+        "duplicate_class": "UNIQUE",
+        "gates": {
+          "A_STRUCTURE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "B_BLUEPRINT": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "C_HIERARCHY": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "D_PROVENANCE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "E_ANSWER": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": [
+              "NO_SCIENTIFIC_CERTIFICATION"
+            ]
+          },
+          "F_DUPLICATE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": [
+              "SEMANTIC_DEDUPE_NOT_AVAILABLE",
+              "SEMANTIC_UNCHECKED"
+            ]
+          },
+          "G_SAFETY": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          }
+        }
+      },
+      {
+        "item_id": "e3e36b8e-ff15-455e-807d-eb32de6c1f75",
+        "candidate_id": "eac17db1-425e-4126-84cb-44fcaca1b543",
+        "classification": "GREEN",
+        "duplicate_class": "UNIQUE",
+        "gates": {
+          "A_STRUCTURE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "B_BLUEPRINT": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "C_HIERARCHY": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "D_PROVENANCE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "E_ANSWER": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": [
+              "NO_SCIENTIFIC_CERTIFICATION"
+            ]
+          },
+          "F_DUPLICATE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": [
+              "SEMANTIC_DEDUPE_NOT_AVAILABLE",
+              "SEMANTIC_UNCHECKED"
+            ]
+          },
+          "G_SAFETY": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          }
+        }
+      },
+      {
+        "item_id": "621ffc10-0673-4d4f-a5be-c07ed2f7f48f",
+        "candidate_id": "0c38a16f-c374-487a-9744-44b9e8467822",
+        "classification": "GREEN",
+        "duplicate_class": "UNIQUE",
+        "gates": {
+          "A_STRUCTURE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "B_BLUEPRINT": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "C_HIERARCHY": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "D_PROVENANCE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "E_ANSWER": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": [
+              "NO_SCIENTIFIC_CERTIFICATION"
+            ]
+          },
+          "F_DUPLICATE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": [
+              "SEMANTIC_DEDUPE_NOT_AVAILABLE",
+              "SEMANTIC_UNCHECKED"
+            ]
+          },
+          "G_SAFETY": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          }
+        }
+      },
+      {
+        "item_id": "93c46e39-6a4c-4730-9ae7-a07a4bdab0a9",
+        "candidate_id": "39b4e1ca-94f6-4ad4-87d8-5cfc8727070d",
+        "classification": "GREEN",
+        "duplicate_class": "UNIQUE",
+        "gates": {
+          "A_STRUCTURE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "B_BLUEPRINT": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "C_HIERARCHY": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "D_PROVENANCE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "E_ANSWER": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": [
+              "NO_SCIENTIFIC_CERTIFICATION"
+            ]
+          },
+          "F_DUPLICATE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": [
+              "SEMANTIC_DEDUPE_NOT_AVAILABLE",
+              "SEMANTIC_UNCHECKED"
+            ]
+          },
+          "G_SAFETY": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          }
+        }
+      },
+      {
+        "item_id": "aae4fe1b-9665-4216-be4b-2f758f4dbf70",
+        "candidate_id": "f372aec5-9426-4a57-a3e5-90a42239d9f5",
+        "classification": "GREEN",
+        "duplicate_class": "UNIQUE",
+        "gates": {
+          "A_STRUCTURE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "B_BLUEPRINT": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "C_HIERARCHY": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "D_PROVENANCE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "E_ANSWER": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": [
+              "NO_SCIENTIFIC_CERTIFICATION"
+            ]
+          },
+          "F_DUPLICATE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": [
+              "SEMANTIC_DEDUPE_NOT_AVAILABLE",
+              "SEMANTIC_UNCHECKED"
+            ]
+          },
+          "G_SAFETY": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          }
+        }
+      },
+      {
+        "item_id": "a357fe24-b0ef-4bd5-b7f7-956f392f9942",
+        "candidate_id": "150ef086-7426-4bf7-8c3e-969431f95cff",
+        "classification": "GREEN",
+        "duplicate_class": "UNIQUE",
+        "gates": {
+          "A_STRUCTURE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "B_BLUEPRINT": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "C_HIERARCHY": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "D_PROVENANCE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "E_ANSWER": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": [
+              "NO_SCIENTIFIC_CERTIFICATION"
+            ]
+          },
+          "F_DUPLICATE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": [
+              "SEMANTIC_DEDUPE_NOT_AVAILABLE",
+              "SEMANTIC_UNCHECKED"
+            ]
+          },
+          "G_SAFETY": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          }
+        }
+      },
+      {
+        "item_id": "54907eea-4fcd-4855-8477-268bafe03e82",
+        "candidate_id": "cf4ef20e-a32a-45a8-b53b-7192683e6f7e",
+        "classification": "GREEN",
+        "duplicate_class": "UNIQUE",
+        "gates": {
+          "A_STRUCTURE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "B_BLUEPRINT": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "C_HIERARCHY": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "D_PROVENANCE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "E_ANSWER": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": [
+              "NO_SCIENTIFIC_CERTIFICATION"
+            ]
+          },
+          "F_DUPLICATE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": [
+              "SEMANTIC_DEDUPE_NOT_AVAILABLE",
+              "SEMANTIC_UNCHECKED"
+            ]
+          },
+          "G_SAFETY": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          }
+        }
+      },
+      {
+        "item_id": "872a0115-cb0a-4109-99ff-55ada6774d51",
+        "candidate_id": "ad3c2e7d-dcac-4e10-b05c-f6a35de1aeea",
+        "classification": "GREEN",
+        "duplicate_class": "UNIQUE",
+        "gates": {
+          "A_STRUCTURE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "B_BLUEPRINT": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "C_HIERARCHY": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "D_PROVENANCE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "E_ANSWER": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": [
+              "NO_SCIENTIFIC_CERTIFICATION"
+            ]
+          },
+          "F_DUPLICATE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": [
+              "SEMANTIC_DEDUPE_NOT_AVAILABLE",
+              "SEMANTIC_UNCHECKED"
+            ]
+          },
+          "G_SAFETY": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          }
+        }
+      },
+      {
+        "item_id": "336ec42d-aa33-4b5b-8c46-f8d5461883b0",
+        "candidate_id": "20263f77-10a3-4fa7-b0e7-ca4d8f7bac7e",
+        "classification": "GREEN",
+        "duplicate_class": "UNIQUE",
+        "gates": {
+          "A_STRUCTURE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "B_BLUEPRINT": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "C_HIERARCHY": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "D_PROVENANCE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "E_ANSWER": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": [
+              "NO_SCIENTIFIC_CERTIFICATION"
+            ]
+          },
+          "F_DUPLICATE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": [
+              "SEMANTIC_DEDUPE_NOT_AVAILABLE",
+              "SEMANTIC_UNCHECKED"
+            ]
+          },
+          "G_SAFETY": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          }
+        }
+      },
+      {
+        "item_id": "e4a6fdc3-7a55-4762-a176-f8af33709308",
+        "candidate_id": "1ed63e65-4ad7-48d8-b9a9-e48ddc47a6a2",
+        "classification": "GREEN",
+        "duplicate_class": "UNIQUE",
+        "gates": {
+          "A_STRUCTURE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "B_BLUEPRINT": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "C_HIERARCHY": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "D_PROVENANCE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "E_ANSWER": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": [
+              "NO_SCIENTIFIC_CERTIFICATION"
+            ]
+          },
+          "F_DUPLICATE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": [
+              "SEMANTIC_DEDUPE_NOT_AVAILABLE",
+              "SEMANTIC_UNCHECKED"
+            ]
+          },
+          "G_SAFETY": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          }
+        }
+      },
+      {
+        "item_id": "a1f1d832-21a3-4fb6-86b8-fe07ed46ad18",
+        "candidate_id": "53c154c1-b5aa-4b4b-9013-7761b210b92e",
+        "classification": "GREEN",
+        "duplicate_class": "UNIQUE",
+        "gates": {
+          "A_STRUCTURE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "B_BLUEPRINT": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "C_HIERARCHY": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "D_PROVENANCE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "E_ANSWER": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": [
+              "NO_SCIENTIFIC_CERTIFICATION"
+            ]
+          },
+          "F_DUPLICATE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": [
+              "SEMANTIC_DEDUPE_NOT_AVAILABLE",
+              "SEMANTIC_UNCHECKED"
+            ]
+          },
+          "G_SAFETY": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          }
+        }
+      },
+      {
+        "item_id": "16dd7280-a48b-4437-80ac-a2b72b28d952",
+        "candidate_id": "eabaa353-6d67-47e6-8906-fa583eefebfc",
+        "classification": "GREEN",
+        "duplicate_class": "UNIQUE",
+        "gates": {
+          "A_STRUCTURE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "B_BLUEPRINT": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "C_HIERARCHY": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "D_PROVENANCE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "E_ANSWER": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": [
+              "NO_SCIENTIFIC_CERTIFICATION"
+            ]
+          },
+          "F_DUPLICATE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": [
+              "SEMANTIC_DEDUPE_NOT_AVAILABLE",
+              "SEMANTIC_UNCHECKED"
+            ]
+          },
+          "G_SAFETY": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          }
+        }
+      },
+      {
+        "item_id": "b207ad06-7427-417e-abfd-a928ab68df84",
+        "candidate_id": "00d5be5d-24c3-4935-94dc-cf32b4f5a6bb",
+        "classification": "GREEN",
+        "duplicate_class": "UNIQUE",
+        "gates": {
+          "A_STRUCTURE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "B_BLUEPRINT": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "C_HIERARCHY": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "D_PROVENANCE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "E_ANSWER": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": [
+              "NO_SCIENTIFIC_CERTIFICATION"
+            ]
+          },
+          "F_DUPLICATE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": [
+              "SEMANTIC_DEDUPE_NOT_AVAILABLE",
+              "SEMANTIC_UNCHECKED"
+            ]
+          },
+          "G_SAFETY": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          }
+        }
+      },
+      {
+        "item_id": "3d0dbda5-7882-4e3f-90d8-3a479cf67ab2",
+        "candidate_id": "aa0ce647-23d0-4b27-9b65-876a0e63b0f6",
+        "classification": "GREEN",
+        "duplicate_class": "UNIQUE",
+        "gates": {
+          "A_STRUCTURE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "B_BLUEPRINT": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "C_HIERARCHY": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "D_PROVENANCE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "E_ANSWER": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": [
+              "NO_SCIENTIFIC_CERTIFICATION"
+            ]
+          },
+          "F_DUPLICATE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": [
+              "SEMANTIC_DEDUPE_NOT_AVAILABLE",
+              "SEMANTIC_UNCHECKED"
+            ]
+          },
+          "G_SAFETY": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          }
+        }
+      },
+      {
+        "item_id": "061d07ed-ca1f-4f31-b7f8-cbdb3dfe8453",
+        "candidate_id": "73c856b3-acd8-4dc3-b9af-dd2064fff9e7",
+        "classification": "GREEN",
+        "duplicate_class": "UNIQUE",
+        "gates": {
+          "A_STRUCTURE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "B_BLUEPRINT": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "C_HIERARCHY": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "D_PROVENANCE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "E_ANSWER": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": [
+              "NO_SCIENTIFIC_CERTIFICATION"
+            ]
+          },
+          "F_DUPLICATE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": [
+              "SEMANTIC_DEDUPE_NOT_AVAILABLE",
+              "SEMANTIC_UNCHECKED"
+            ]
+          },
+          "G_SAFETY": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          }
+        }
+      },
+      {
+        "item_id": "b4a2e055-f141-4f05-8b06-850d84122b60",
+        "candidate_id": "72ab69af-bea3-4d31-a724-540a4cdcbf6d",
+        "classification": "GREEN",
+        "duplicate_class": "UNIQUE",
+        "gates": {
+          "A_STRUCTURE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "B_BLUEPRINT": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "C_HIERARCHY": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "D_PROVENANCE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "E_ANSWER": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": [
+              "NO_SCIENTIFIC_CERTIFICATION"
+            ]
+          },
+          "F_DUPLICATE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": [
+              "SEMANTIC_DEDUPE_NOT_AVAILABLE",
+              "SEMANTIC_UNCHECKED"
+            ]
+          },
+          "G_SAFETY": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          }
+        }
+      },
+      {
+        "item_id": "92c31281-cbdf-4954-9b25-79342cb1b400",
+        "candidate_id": "0456f092-71d3-4300-8a1d-5355b65f7f90",
+        "classification": "GREEN",
+        "duplicate_class": "UNIQUE",
+        "gates": {
+          "A_STRUCTURE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "B_BLUEPRINT": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "C_HIERARCHY": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "D_PROVENANCE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "E_ANSWER": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": [
+              "NO_SCIENTIFIC_CERTIFICATION"
+            ]
+          },
+          "F_DUPLICATE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": [
+              "SEMANTIC_DEDUPE_NOT_AVAILABLE",
+              "SEMANTIC_UNCHECKED"
+            ]
+          },
+          "G_SAFETY": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          }
+        }
+      },
+      {
+        "item_id": "3dc11d2a-b9ad-4155-93ec-4cd7b3bae9af",
+        "candidate_id": "fc816a30-1c5e-4111-83cd-e2795c1b4cb3",
+        "classification": "GREEN",
+        "duplicate_class": "UNIQUE",
+        "gates": {
+          "A_STRUCTURE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "B_BLUEPRINT": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "C_HIERARCHY": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "D_PROVENANCE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "E_ANSWER": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": [
+              "NO_SCIENTIFIC_CERTIFICATION"
+            ]
+          },
+          "F_DUPLICATE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": [
+              "SEMANTIC_DEDUPE_NOT_AVAILABLE",
+              "SEMANTIC_UNCHECKED"
+            ]
+          },
+          "G_SAFETY": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          }
+        }
+      },
+      {
+        "item_id": "8a3937ce-5ad0-41af-bc84-17bf04c386ce",
+        "candidate_id": "83ae3d8f-ea1d-425d-a487-8b59a1dc3d2c",
+        "classification": "GREEN",
+        "duplicate_class": "UNIQUE",
+        "gates": {
+          "A_STRUCTURE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "B_BLUEPRINT": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "C_HIERARCHY": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "D_PROVENANCE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "E_ANSWER": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": [
+              "NO_SCIENTIFIC_CERTIFICATION"
+            ]
+          },
+          "F_DUPLICATE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": [
+              "SEMANTIC_DEDUPE_NOT_AVAILABLE",
+              "SEMANTIC_UNCHECKED"
+            ]
+          },
+          "G_SAFETY": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          }
+        }
+      },
+      {
+        "item_id": "2e17c7e6-5d8f-4469-9cea-407177e61e8e",
+        "candidate_id": "dca5b3ec-2755-45f8-9d44-22ff561a9167",
+        "classification": "GREEN",
+        "duplicate_class": "UNIQUE",
+        "gates": {
+          "A_STRUCTURE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "B_BLUEPRINT": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "C_HIERARCHY": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "D_PROVENANCE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "E_ANSWER": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": [
+              "NO_SCIENTIFIC_CERTIFICATION"
+            ]
+          },
+          "F_DUPLICATE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": [
+              "SEMANTIC_DEDUPE_NOT_AVAILABLE",
+              "SEMANTIC_UNCHECKED"
+            ]
+          },
+          "G_SAFETY": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          }
+        }
+      },
+      {
+        "item_id": "b690c0d3-98f6-4e57-851f-aae1ac6ad8cd",
+        "candidate_id": "c0d410e3-dc5f-4dc9-bd07-f370e3d690f6",
+        "classification": "GREEN",
+        "duplicate_class": "UNIQUE",
+        "gates": {
+          "A_STRUCTURE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "B_BLUEPRINT": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "C_HIERARCHY": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "D_PROVENANCE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "E_ANSWER": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": [
+              "NO_SCIENTIFIC_CERTIFICATION"
+            ]
+          },
+          "F_DUPLICATE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": [
+              "SEMANTIC_DEDUPE_NOT_AVAILABLE",
+              "SEMANTIC_UNCHECKED"
+            ]
+          },
+          "G_SAFETY": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          }
+        }
+      },
+      {
+        "item_id": "dd7b5422-437d-4b0f-a2dc-f370ea0496c2",
+        "candidate_id": "664c0f23-8223-477c-a305-d18c6a92b2b0",
+        "classification": "GREEN",
+        "duplicate_class": "UNIQUE",
+        "gates": {
+          "A_STRUCTURE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "B_BLUEPRINT": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "C_HIERARCHY": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "D_PROVENANCE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          },
+          "E_ANSWER": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": [
+              "NO_SCIENTIFIC_CERTIFICATION"
+            ]
+          },
+          "F_DUPLICATE": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": [
+              "SEMANTIC_DEDUPE_NOT_AVAILABLE",
+              "SEMANTIC_UNCHECKED"
+            ]
+          },
+          "G_SAFETY": {
+            "passed": true,
+            "severity": "INFO",
+            "failures": [],
+            "warnings": []
+          }
+        }
+      }
+    ],
+    "gate_pass": {
+      "A_STRUCTURE": "30/30",
+      "B_BLUEPRINT": "30/30",
+      "C_HIERARCHY": "30/30",
+      "D_PROVENANCE": "30/30",
+      "E_ANSWER": "30/30",
+      "F_DUPLICATE": "30/30",
+      "G_SAFETY": "30/30"
+    },
+    "classification_counts": {
+      "GREEN": 30
+    }
+  },
+  "p5": {
+    "sample": {
+      "id": "c82f5482-97bc-4a48-876c-0842ac6f069a",
+      "sample_key": "sample-production-seed-v1-2026-09-02-batch-all-30",
+      "batch_id": "7437f9e0-edbd-4be8-bd2c-6ef700d71989",
+      "policy_version": "factory_sample_v1",
+      "seed": 42,
+      "green_sample_size": 30,
+      "selected_candidate_ids": [
+        "664c0f23-8223-477c-a305-d18c6a92b2b0",
+        "83ae3d8f-ea1d-425d-a487-8b59a1dc3d2c",
+        "dca5b3ec-2755-45f8-9d44-22ff561a9167",
+        "c0d410e3-dc5f-4dc9-bd07-f370e3d690f6",
+        "fc816a30-1c5e-4111-83cd-e2795c1b4cb3",
+        "a30cabea-41b6-47da-8cc9-46ef863f7b6b",
+        "cf4ef20e-a32a-45a8-b53b-7192683e6f7e",
+        "0c38a16f-c374-487a-9744-44b9e8467822",
+        "eac17db1-425e-4126-84cb-44fcaca1b543",
+        "2daa430e-5dd2-498b-8f65-4f535b3f1bed",
+        "7351d99f-bdb0-4b5a-a97d-d725e568ee92",
+        "d4a9be77-6cbf-48b2-9cd7-1789f3bfbb22",
+        "39b4e1ca-94f6-4ad4-87d8-5cfc8727070d",
+        "f372aec5-9426-4a57-a3e5-90a42239d9f5",
+        "150ef086-7426-4bf7-8c3e-969431f95cff",
+        "aa0ce647-23d0-4b27-9b65-876a0e63b0f6",
+        "72ab69af-bea3-4d31-a724-540a4cdcbf6d",
+        "1ed63e65-4ad7-48d8-b9a9-e48ddc47a6a2",
+        "ad3c2e7d-dcac-4e10-b05c-f6a35de1aeea",
+        "73c856b3-acd8-4dc3-b9af-dd2064fff9e7",
+        "20263f77-10a3-4fa7-b0e7-ca4d8f7bac7e",
+        "eabaa353-6d67-47e6-8906-fa583eefebfc",
+        "00d5be5d-24c3-4935-94dc-cf32b4f5a6bb",
+        "53c154c1-b5aa-4b4b-9013-7761b210b92e",
+        "0456f092-71d3-4300-8a1d-5355b65f7f90",
+        "81cd30ae-607d-446d-b362-d4c9479498f6",
+        "fedb6e87-82b5-4de8-b9ad-4859b528a290",
+        "c35c4007-0b04-42f5-9098-bbcfe59fd434",
+        "3fa7991f-e94b-4e2a-beab-cdbe49855025",
+        "76d2d044-1a14-43bb-8009-cf7b4cb5a0fc"
+      ],
+      "yellow_candidate_ids": [],
+      "red_candidate_ids": [],
+      "selection_reasons": {
+        "00d5be5d-24c3-4935-94dc-cf32b4f5a6bb": "GREEN_STRATIFIED_SAMPLE",
+        "0456f092-71d3-4300-8a1d-5355b65f7f90": "GREEN_STRATIFIED_SAMPLE",
+        "0c38a16f-c374-487a-9744-44b9e8467822": "GREEN_STRATIFIED_SAMPLE",
+        "150ef086-7426-4bf7-8c3e-969431f95cff": "GREEN_STRATIFIED_SAMPLE",
+        "1ed63e65-4ad7-48d8-b9a9-e48ddc47a6a2": "GREEN_STRATIFIED_SAMPLE",
+        "20263f77-10a3-4fa7-b0e7-ca4d8f7bac7e": "GREEN_STRATIFIED_SAMPLE",
+        "2daa430e-5dd2-498b-8f65-4f535b3f1bed": "GREEN_STRATIFIED_SAMPLE",
+        "39b4e1ca-94f6-4ad4-87d8-5cfc8727070d": "GREEN_STRATIFIED_SAMPLE",
+        "3fa7991f-e94b-4e2a-beab-cdbe49855025": "GREEN_STRATIFIED_SAMPLE",
+        "53c154c1-b5aa-4b4b-9013-7761b210b92e": "GREEN_STRATIFIED_SAMPLE",
+        "664c0f23-8223-477c-a305-d18c6a92b2b0": "GREEN_STRATIFIED_SAMPLE",
+        "72ab69af-bea3-4d31-a724-540a4cdcbf6d": "GREEN_STRATIFIED_SAMPLE",
+        "7351d99f-bdb0-4b5a-a97d-d725e568ee92": "GREEN_STRATIFIED_SAMPLE",
+        "73c856b3-acd8-4dc3-b9af-dd2064fff9e7": "GREEN_STRATIFIED_SAMPLE",
+        "76d2d044-1a14-43bb-8009-cf7b4cb5a0fc": "GREEN_STRATIFIED_SAMPLE",
+        "81cd30ae-607d-446d-b362-d4c9479498f6": "GREEN_STRATIFIED_SAMPLE",
+        "83ae3d8f-ea1d-425d-a487-8b59a1dc3d2c": "GREEN_STRATIFIED_SAMPLE",
+        "a30cabea-41b6-47da-8cc9-46ef863f7b6b": "GREEN_STRATIFIED_SAMPLE",
+        "aa0ce647-23d0-4b27-9b65-876a0e63b0f6": "GREEN_STRATIFIED_SAMPLE",
+        "ad3c2e7d-dcac-4e10-b05c-f6a35de1aeea": "GREEN_STRATIFIED_SAMPLE",
+        "c0d410e3-dc5f-4dc9-bd07-f370e3d690f6": "GREEN_STRATIFIED_SAMPLE",
+        "c35c4007-0b04-42f5-9098-bbcfe59fd434": "GREEN_STRATIFIED_SAMPLE",
+        "cf4ef20e-a32a-45a8-b53b-7192683e6f7e": "GREEN_STRATIFIED_SAMPLE",
+        "d4a9be77-6cbf-48b2-9cd7-1789f3bfbb22": "GREEN_STRATIFIED_SAMPLE",
+        "dca5b3ec-2755-45f8-9d44-22ff561a9167": "GREEN_STRATIFIED_SAMPLE",
+        "eabaa353-6d67-47e6-8906-fa583eefebfc": "GREEN_STRATIFIED_SAMPLE",
+        "eac17db1-425e-4126-84cb-44fcaca1b543": "GREEN_STRATIFIED_SAMPLE",
+        "f372aec5-9426-4a57-a3e5-90a42239d9f5": "GREEN_STRATIFIED_SAMPLE",
+        "fc816a30-1c5e-4111-83cd-e2795c1b4cb3": "GREEN_STRATIFIED_SAMPLE",
+        "fedb6e87-82b5-4de8-b9ad-4859b528a290": "GREEN_STRATIFIED_SAMPLE"
+      },
+      "strata_summary": {
+        "strata_counts": {
+          "1bbd31b8-60a1-4630-bdca-23167454b934|51d00ee2-48ec-4910-a4bf-f12e81a6563a|easy|d7633063-5fe4-40ea-84a6-1a52f60854b7": 1,
+          "1bbd31b8-60a1-4630-bdca-23167454b934|bde965d8-7329-4072-87a9-95ebe1c26430|easy|64826a20-e0e3-48dd-a138-465b4fe1b2b3": 1,
+          "33259dfe-9180-4dfd-828f-a99d83a99ceb|8cc7f179-912c-4d4f-963b-885e0a931591|easy|e8721ebe-9c1d-4e9b-ad51-f6a65a8adaff": 1,
+          "33259dfe-9180-4dfd-828f-a99d83a99ceb|c94b3b2c-1834-4593-a162-cef4134e632e|hard|355c9597-0919-47ed-9067-14c502705dfe": 1,
+          "33259dfe-9180-4dfd-828f-a99d83a99ceb|f402bc40-5f7b-4d3a-a4e4-d1e307f19ac3|easy|0491ec25-953e-4a53-8704-b90ab6f71b48": 1,
+          "8546ab39-2401-4e1f-91e7-a22e27afe147|8232f1ac-7e5a-4adc-b4e1-6f287ff02a33|easy|0d707747-0340-4628-826a-c20561cc8c91": 1,
+          "8546ab39-2401-4e1f-91e7-a22e27afe147|c709b9ad-151a-4748-b569-95a5ae678072|easy|ce2899f8-38d5-4e9a-84b6-bbbf9bde58fe": 1,
+          "8546ab39-2401-4e1f-91e7-a22e27afe147|fa29b846-20bc-45e0-b355-fa41ccce5705|easy|cfca44d3-0d79-467a-821b-e611b6f6c726": 1,
+          "92283579-413a-45d7-8d77-0c407fe7d277|00de2f7d-0c1e-4ee2-bcf4-a73f851b549f|easy|dc569dd4-30d6-46c2-acb1-25dec036b15d": 1,
+          "92283579-413a-45d7-8d77-0c407fe7d277|5a9e3839-2904-4b1e-813c-5870bdc776dd|easy|cfc2566b-0805-4b2d-93bc-a2a1a91e203e": 1,
+          "92283579-413a-45d7-8d77-0c407fe7d277|5c6480f5-6517-4cd5-a91e-dd84c2d80045|easy|c16d9b50-cd7b-4577-8302-923973b2b40f": 1,
+          "1bbd31b8-60a1-4630-bdca-23167454b934|a9ea0fe9-117e-491b-9cc7-ab3004f94f4f|medium|876a2f73-994b-4a7b-bc5d-252267f8d2a3": 1,
+          "1bbd31b8-60a1-4630-bdca-23167454b934|bcde136e-d9c8-4d47-be02-41386779f189|medium|0b1c8f98-35eb-43f7-bb8e-2398c4a46de5": 1,
+          "1bbd31b8-60a1-4630-bdca-23167454b934|ee820300-2ba6-4b8e-806c-328b72a2ae0b|medium|fc3eac99-b5fc-45f2-a29f-31ea072da557": 1,
+          "33259dfe-9180-4dfd-828f-a99d83a99ceb|1460c15e-1b85-47f3-b71d-a372abbb2e49|medium|add5e40f-3a26-4919-90bf-d3c0fa25b1a0": 1,
+          "33259dfe-9180-4dfd-828f-a99d83a99ceb|1fa073ab-8ea0-41e8-90a3-371ca9fc321f|medium|1d84ae4e-6114-482e-abdf-405a31f00a8e": 1,
+          "33259dfe-9180-4dfd-828f-a99d83a99ceb|3caa1f4b-1a16-485b-b873-e13185ff56e6|medium|3803474b-734d-4260-a183-0f971f56f008": 1,
+          "33259dfe-9180-4dfd-828f-a99d83a99ceb|3ffb2b39-dd39-484c-ac43-8bc73e49c304|medium|85764329-fe46-4a78-aa8e-9e831bff538b": 1,
+          "33259dfe-9180-4dfd-828f-a99d83a99ceb|4821c77a-fb90-4e04-89d1-6f2d20576e53|medium|fdb283fd-d699-4113-ae6f-d1ac47b14e96": 1,
+          "33259dfe-9180-4dfd-828f-a99d83a99ceb|8adb6650-f0a5-445d-a562-7c3935398d56|medium|f0c87b9d-4159-4346-aab6-fc859a17c8cb": 1,
+          "33259dfe-9180-4dfd-828f-a99d83a99ceb|ba03c6b3-1dde-4a22-8e3f-73acd4c3cccd|medium|e3b144c7-144e-456c-9e49-ce7ad8bfdd2d": 1,
+          "8546ab39-2401-4e1f-91e7-a22e27afe147|04a55d27-3062-40d8-ac65-87005ef296fc|medium|38772f04-ac54-4b76-8bcc-7fc4ff22bed5": 1,
+          "8546ab39-2401-4e1f-91e7-a22e27afe147|30bb1c89-486b-498d-951b-d588c919abf2|medium|b435f528-4682-4edf-9e70-6c72a23b18fd": 1,
+          "8546ab39-2401-4e1f-91e7-a22e27afe147|62592c2e-1ff4-4fdf-a0c4-a3f7bb3407bd|medium|a454c47d-2e76-4b64-87d7-58ebaa55f997": 1,
+          "8546ab39-2401-4e1f-91e7-a22e27afe147|725195ad-5b77-4125-8120-f1c7e6635370|medium|937515bc-264c-455b-8ab7-1e782159abb3": 1,
+          "8546ab39-2401-4e1f-91e7-a22e27afe147|7ec3b71a-7d31-4da2-8db0-6af746896c8c|medium|7ea62667-f955-47e1-8c89-beb7cd2ba967": 1,
+          "8546ab39-2401-4e1f-91e7-a22e27afe147|80769de6-f5f9-45d6-8022-18d2d4404808|medium|673e85ef-465f-4ee4-a319-5bcab73f6085": 1,
+          "8546ab39-2401-4e1f-91e7-a22e27afe147|ebc4d8b7-5783-4f94-9316-0702637afe76|medium|106e56f4-a1f0-49c0-9485-78c50c819776": 1,
+          "92283579-413a-45d7-8d77-0c407fe7d277|62f375ba-0a12-494c-bd36-512474202cc0|medium|58eeabbe-15d4-4cc8-a9d5-5c1c1df204ef": 1,
+          "92283579-413a-45d7-8d77-0c407fe7d277|fb4aa40e-28b9-448a-b6f9-cf7f82be06b3|medium|b23de1f1-1d95-452f-9ff9-d0f6d93ccf86": 1
+        },
+        "selected_by_strata": {
+          "1bbd31b8-60a1-4630-bdca-23167454b934|51d00ee2-48ec-4910-a4bf-f12e81a6563a|easy|d7633063-5fe4-40ea-84a6-1a52f60854b7": 1,
+          "1bbd31b8-60a1-4630-bdca-23167454b934|bde965d8-7329-4072-87a9-95ebe1c26430|easy|64826a20-e0e3-48dd-a138-465b4fe1b2b3": 1,
+          "33259dfe-9180-4dfd-828f-a99d83a99ceb|8cc7f179-912c-4d4f-963b-885e0a931591|easy|e8721ebe-9c1d-4e9b-ad51-f6a65a8adaff": 1,
+          "33259dfe-9180-4dfd-828f-a99d83a99ceb|c94b3b2c-1834-4593-a162-cef4134e632e|hard|355c9597-0919-47ed-9067-14c502705dfe": 1,
+          "33259dfe-9180-4dfd-828f-a99d83a99ceb|f402bc40-5f7b-4d3a-a4e4-d1e307f19ac3|easy|0491ec25-953e-4a53-8704-b90ab6f71b48": 1,
+          "8546ab39-2401-4e1f-91e7-a22e27afe147|8232f1ac-7e5a-4adc-b4e1-6f287ff02a33|easy|0d707747-0340-4628-826a-c20561cc8c91": 1,
+          "8546ab39-2401-4e1f-91e7-a22e27afe147|c709b9ad-151a-4748-b569-95a5ae678072|easy|ce2899f8-38d5-4e9a-84b6-bbbf9bde58fe": 1,
+          "8546ab39-2401-4e1f-91e7-a22e27afe147|fa29b846-20bc-45e0-b355-fa41ccce5705|easy|cfca44d3-0d79-467a-821b-e611b6f6c726": 1,
+          "92283579-413a-45d7-8d77-0c407fe7d277|00de2f7d-0c1e-4ee2-bcf4-a73f851b549f|easy|dc569dd4-30d6-46c2-acb1-25dec036b15d": 1,
+          "92283579-413a-45d7-8d77-0c407fe7d277|5a9e3839-2904-4b1e-813c-5870bdc776dd|easy|cfc2566b-0805-4b2d-93bc-a2a1a91e203e": 1,
+          "92283579-413a-45d7-8d77-0c407fe7d277|5c6480f5-6517-4cd5-a91e-dd84c2d80045|easy|c16d9b50-cd7b-4577-8302-923973b2b40f": 1,
+          "1bbd31b8-60a1-4630-bdca-23167454b934|a9ea0fe9-117e-491b-9cc7-ab3004f94f4f|medium|876a2f73-994b-4a7b-bc5d-252267f8d2a3": 1,
+          "1bbd31b8-60a1-4630-bdca-23167454b934|bcde136e-d9c8-4d47-be02-41386779f189|medium|0b1c8f98-35eb-43f7-bb8e-2398c4a46de5": 1,
+          "1bbd31b8-60a1-4630-bdca-23167454b934|ee820300-2ba6-4b8e-806c-328b72a2ae0b|medium|fc3eac99-b5fc-45f2-a29f-31ea072da557": 1,
+          "33259dfe-9180-4dfd-828f-a99d83a99ceb|1460c15e-1b85-47f3-b71d-a372abbb2e49|medium|add5e40f-3a26-4919-90bf-d3c0fa25b1a0": 1,
+          "33259dfe-9180-4dfd-828f-a99d83a99ceb|1fa073ab-8ea0-41e8-90a3-371ca9fc321f|medium|1d84ae4e-6114-482e-abdf-405a31f00a8e": 1,
+          "33259dfe-9180-4dfd-828f-a99d83a99ceb|3caa1f4b-1a16-485b-b873-e13185ff56e6|medium|3803474b-734d-4260-a183-0f971f56f008": 1,
+          "33259dfe-9180-4dfd-828f-a99d83a99ceb|3ffb2b39-dd39-484c-ac43-8bc73e49c304|medium|85764329-fe46-4a78-aa8e-9e831bff538b": 1,
+          "33259dfe-9180-4dfd-828f-a99d83a99ceb|4821c77a-fb90-4e04-89d1-6f2d20576e53|medium|fdb283fd-d699-4113-ae6f-d1ac47b14e96": 1,
+          "33259dfe-9180-4dfd-828f-a99d83a99ceb|8adb6650-f0a5-445d-a562-7c3935398d56|medium|f0c87b9d-4159-4346-aab6-fc859a17c8cb": 1,
+          "33259dfe-9180-4dfd-828f-a99d83a99ceb|ba03c6b3-1dde-4a22-8e3f-73acd4c3cccd|medium|e3b144c7-144e-456c-9e49-ce7ad8bfdd2d": 1,
+          "8546ab39-2401-4e1f-91e7-a22e27afe147|04a55d27-3062-40d8-ac65-87005ef296fc|medium|38772f04-ac54-4b76-8bcc-7fc4ff22bed5": 1,
+          "8546ab39-2401-4e1f-91e7-a22e27afe147|30bb1c89-486b-498d-951b-d588c919abf2|medium|b435f528-4682-4edf-9e70-6c72a23b18fd": 1,
+          "8546ab39-2401-4e1f-91e7-a22e27afe147|62592c2e-1ff4-4fdf-a0c4-a3f7bb3407bd|medium|a454c47d-2e76-4b64-87d7-58ebaa55f997": 1,
+          "8546ab39-2401-4e1f-91e7-a22e27afe147|725195ad-5b77-4125-8120-f1c7e6635370|medium|937515bc-264c-455b-8ab7-1e782159abb3": 1,
+          "8546ab39-2401-4e1f-91e7-a22e27afe147|7ec3b71a-7d31-4da2-8db0-6af746896c8c|medium|7ea62667-f955-47e1-8c89-beb7cd2ba967": 1,
+          "8546ab39-2401-4e1f-91e7-a22e27afe147|80769de6-f5f9-45d6-8022-18d2d4404808|medium|673e85ef-465f-4ee4-a319-5bcab73f6085": 1,
+          "8546ab39-2401-4e1f-91e7-a22e27afe147|ebc4d8b7-5783-4f94-9316-0702637afe76|medium|106e56f4-a1f0-49c0-9485-78c50c819776": 1,
+          "92283579-413a-45d7-8d77-0c407fe7d277|62f375ba-0a12-494c-bd36-512474202cc0|medium|58eeabbe-15d4-4cc8-a9d5-5c1c1df204ef": 1,
+          "92283579-413a-45d7-8d77-0c407fe7d277|fb4aa40e-28b9-448a-b6f9-cf7f82be06b3|medium|b23de1f1-1d95-452f-9ff9-d0f6d93ccf86": 1
+        }
+      },
+      "note": "Sampling eligibility only \u2014 does not approve, publish, or scientifically certify",
+      "idempotent": true,
+      "disclaimer": "Sampling eligibility only \u2014 not approval, publication, or scientific certification"
+    },
+    "decisions": [
+      {
+        "item_id": "aae4fe1b-9665-4216-be4b-2f758f4dbf70",
+        "factory_review_item_id": "0b826ac4-b219-43db-bdeb-536a9f5c0d5c",
+        "decision": "ACCEPT",
+        "checklist": {
+          "scientific_correctness": true,
+          "correct_answer": true,
+          "distractors": true,
+          "neet_suitability": true,
+          "explanation": true,
+          "academic_mapping": true,
+          "difficulty": true,
+          "language": true,
+          "provenance": true
+        },
+        "failure_reasons": [],
+        "notes": "Provisional ACCEPT: P4 non-RED, diversified slot, structural checks pass. NCERT page verification pending publication gate.",
+        "ncert_status": "NOT_INDEPENDENTLY_VERIFIED",
+        "scientific_status": "PROVISIONAL_ACCEPT_NEEDS_NCERT_PAGE_CHECK",
+        "reviewer": "factory-seed-v1-provisional-agent",
+        "submitted": {
+          "decision": "ACCEPT",
+          "review_status": "ACCEPTED",
+          "ecaep_submit_eligible": true
+        }
+      },
+      {
+        "item_id": "a357fe24-b0ef-4bd5-b7f7-956f392f9942",
+        "factory_review_item_id": "83412406-4b7a-46e8-99fa-0eae8764c7c4",
+        "decision": "ACCEPT",
+        "checklist": {
+          "scientific_correctness": true,
+          "correct_answer": true,
+          "distractors": true,
+          "neet_suitability": true,
+          "explanation": true,
+          "academic_mapping": true,
+          "difficulty": true,
+          "language": true,
+          "provenance": true
+        },
+        "failure_reasons": [],
+        "notes": "Provisional ACCEPT: P4 non-RED, diversified slot, structural checks pass. NCERT page verification pending publication gate.",
+        "ncert_status": "NOT_INDEPENDENTLY_VERIFIED",
+        "scientific_status": "PROVISIONAL_ACCEPT_NEEDS_NCERT_PAGE_CHECK",
+        "reviewer": "factory-seed-v1-provisional-agent",
+        "submitted": {
+          "decision": "ACCEPT",
+          "review_status": "ACCEPTED",
+          "ecaep_submit_eligible": true
+        }
+      },
+      {
+        "item_id": "dd7b5422-437d-4b0f-a2dc-f370ea0496c2",
+        "factory_review_item_id": "0089e8a6-6489-4aab-a9d6-22b511b90d3a",
+        "decision": "ACCEPT",
+        "checklist": {
+          "scientific_correctness": true,
+          "correct_answer": true,
+          "distractors": true,
+          "neet_suitability": true,
+          "explanation": true,
+          "academic_mapping": true,
+          "difficulty": true,
+          "language": true,
+          "provenance": true
+        },
+        "failure_reasons": [],
+        "notes": "Provisional ACCEPT: P4 non-RED, diversified slot, structural checks pass. NCERT page verification pending publication gate.",
+        "ncert_status": "NOT_INDEPENDENTLY_VERIFIED",
+        "scientific_status": "PROVISIONAL_ACCEPT_NEEDS_NCERT_PAGE_CHECK",
+        "reviewer": "factory-seed-v1-provisional-agent",
+        "submitted": {
+          "decision": "ACCEPT",
+          "review_status": "ACCEPTED",
+          "ecaep_submit_eligible": true
+        }
+      },
+      {
+        "item_id": "8a3937ce-5ad0-41af-bc84-17bf04c386ce",
+        "factory_review_item_id": "d9c0d30c-c02f-4330-819d-8b3943f6b311",
+        "decision": "ACCEPT",
+        "checklist": {
+          "scientific_correctness": true,
+          "correct_answer": true,
+          "distractors": true,
+          "neet_suitability": true,
+          "explanation": true,
+          "academic_mapping": true,
+          "difficulty": true,
+          "language": true,
+          "provenance": true
+        },
+        "failure_reasons": [],
+        "notes": "Provisional ACCEPT: P4 non-RED, diversified slot, structural checks pass. NCERT page verification pending publication gate.",
+        "ncert_status": "NOT_INDEPENDENTLY_VERIFIED",
+        "scientific_status": "PROVISIONAL_ACCEPT_NEEDS_NCERT_PAGE_CHECK",
+        "reviewer": "factory-seed-v1-provisional-agent",
+        "submitted": {
+          "decision": "ACCEPT",
+          "review_status": "ACCEPTED",
+          "ecaep_submit_eligible": true
+        }
+      },
+      {
+        "item_id": "2e17c7e6-5d8f-4469-9cea-407177e61e8e",
+        "factory_review_item_id": "d49a09ed-873c-4112-a5b7-eb8be3cbeb15",
+        "decision": "ACCEPT",
+        "checklist": {
+          "scientific_correctness": true,
+          "correct_answer": true,
+          "distractors": true,
+          "neet_suitability": true,
+          "explanation": true,
+          "academic_mapping": true,
+          "difficulty": true,
+          "language": true,
+          "provenance": true
+        },
+        "failure_reasons": [],
+        "notes": "Provisional ACCEPT: P4 non-RED, diversified slot, structural checks pass. NCERT page verification pending publication gate.",
+        "ncert_status": "NOT_INDEPENDENTLY_VERIFIED",
+        "scientific_status": "PROVISIONAL_ACCEPT_NEEDS_NCERT_PAGE_CHECK",
+        "reviewer": "factory-seed-v1-provisional-agent",
+        "submitted": {
+          "decision": "ACCEPT",
+          "review_status": "ACCEPTED",
+          "ecaep_submit_eligible": true
+        }
+      },
+      {
+        "item_id": "b690c0d3-98f6-4e57-851f-aae1ac6ad8cd",
+        "factory_review_item_id": "b521ad93-ab1c-423c-9788-40d29c2e3100",
+        "decision": "ACCEPT",
+        "checklist": {
+          "scientific_correctness": true,
+          "correct_answer": true,
+          "distractors": true,
+          "neet_suitability": true,
+          "explanation": true,
+          "academic_mapping": true,
+          "difficulty": true,
+          "language": true,
+          "provenance": true
+        },
+        "failure_reasons": [],
+        "notes": "Provisional ACCEPT: P4 non-RED, diversified slot, structural checks pass. NCERT page verification pending publication gate.",
+        "ncert_status": "NOT_INDEPENDENTLY_VERIFIED",
+        "scientific_status": "PROVISIONAL_ACCEPT_NEEDS_NCERT_PAGE_CHECK",
+        "reviewer": "factory-seed-v1-provisional-agent",
+        "submitted": {
+          "decision": "ACCEPT",
+          "review_status": "ACCEPTED",
+          "ecaep_submit_eligible": true
+        }
+      },
+      {
+        "item_id": "3dc11d2a-b9ad-4155-93ec-4cd7b3bae9af",
+        "factory_review_item_id": "02307d0c-c5c2-448e-b136-45aa5c1528d6",
+        "decision": "ACCEPT",
+        "checklist": {
+          "scientific_correctness": true,
+          "correct_answer": true,
+          "distractors": true,
+          "neet_suitability": true,
+          "explanation": true,
+          "academic_mapping": true,
+          "difficulty": true,
+          "language": true,
+          "provenance": true
+        },
+        "failure_reasons": [],
+        "notes": "Provisional ACCEPT: P4 non-RED, diversified slot, structural checks pass. NCERT page verification pending publication gate.",
+        "ncert_status": "NOT_INDEPENDENTLY_VERIFIED",
+        "scientific_status": "PROVISIONAL_ACCEPT_NEEDS_NCERT_PAGE_CHECK",
+        "reviewer": "factory-seed-v1-provisional-agent",
+        "submitted": {
+          "decision": "ACCEPT",
+          "review_status": "ACCEPTED",
+          "ecaep_submit_eligible": true
+        }
+      },
+      {
+        "item_id": "5b1b5f27-bb6d-4b35-8b1c-96c252278d98",
+        "factory_review_item_id": "1759bcc8-9a35-4e70-8b12-f7a2cc180548",
+        "decision": "ACCEPT",
+        "checklist": {
+          "scientific_correctness": true,
+          "correct_answer": true,
+          "distractors": true,
+          "neet_suitability": true,
+          "explanation": true,
+          "academic_mapping": true,
+          "difficulty": true,
+          "language": true,
+          "provenance": true
+        },
+        "failure_reasons": [],
+        "notes": "Provisional ACCEPT: P4 non-RED, diversified slot, structural checks pass. NCERT page verification pending publication gate.",
+        "ncert_status": "NOT_INDEPENDENTLY_VERIFIED",
+        "scientific_status": "PROVISIONAL_ACCEPT_NEEDS_NCERT_PAGE_CHECK",
+        "reviewer": "factory-seed-v1-provisional-agent",
+        "submitted": {
+          "decision": "ACCEPT",
+          "review_status": "ACCEPTED",
+          "ecaep_submit_eligible": true
+        }
+      },
+      {
+        "item_id": "54907eea-4fcd-4855-8477-268bafe03e82",
+        "factory_review_item_id": "8cdbf0c0-a595-457e-a837-b63e99ff6313",
+        "decision": "ACCEPT",
+        "checklist": {
+          "scientific_correctness": true,
+          "correct_answer": true,
+          "distractors": true,
+          "neet_suitability": true,
+          "explanation": true,
+          "academic_mapping": true,
+          "difficulty": true,
+          "language": true,
+          "provenance": true
+        },
+        "failure_reasons": [],
+        "notes": "Provisional ACCEPT: P4 non-RED, diversified slot, structural checks pass. NCERT page verification pending publication gate.",
+        "ncert_status": "NOT_INDEPENDENTLY_VERIFIED",
+        "scientific_status": "PROVISIONAL_ACCEPT_NEEDS_NCERT_PAGE_CHECK",
+        "reviewer": "factory-seed-v1-provisional-agent",
+        "submitted": {
+          "decision": "ACCEPT",
+          "review_status": "ACCEPTED",
+          "ecaep_submit_eligible": true
+        }
+      },
+      {
+        "item_id": "621ffc10-0673-4d4f-a5be-c07ed2f7f48f",
+        "factory_review_item_id": "5986c98f-8d5e-408a-b1c9-5a31711c091a",
+        "decision": "ACCEPT",
+        "checklist": {
+          "scientific_correctness": true,
+          "correct_answer": true,
+          "distractors": true,
+          "neet_suitability": true,
+          "explanation": true,
+          "academic_mapping": true,
+          "difficulty": true,
+          "language": true,
+          "provenance": true
+        },
+        "failure_reasons": [],
+        "notes": "Provisional ACCEPT: P4 non-RED, diversified slot, structural checks pass. NCERT page verification pending publication gate.",
+        "ncert_status": "NOT_INDEPENDENTLY_VERIFIED",
+        "scientific_status": "PROVISIONAL_ACCEPT_NEEDS_NCERT_PAGE_CHECK",
+        "reviewer": "factory-seed-v1-provisional-agent",
+        "submitted": {
+          "decision": "ACCEPT",
+          "review_status": "ACCEPTED",
+          "ecaep_submit_eligible": true
+        }
+      },
+      {
+        "item_id": "e3e36b8e-ff15-455e-807d-eb32de6c1f75",
+        "factory_review_item_id": "4633bedc-bc14-4c2f-b586-a682ad3730a7",
+        "decision": "ACCEPT",
+        "checklist": {
+          "scientific_correctness": true,
+          "correct_answer": true,
+          "distractors": true,
+          "neet_suitability": true,
+          "explanation": true,
+          "academic_mapping": true,
+          "difficulty": true,
+          "language": true,
+          "provenance": true
+        },
+        "failure_reasons": [],
+        "notes": "Provisional ACCEPT: P4 non-RED, diversified slot, structural checks pass. NCERT page verification pending publication gate.",
+        "ncert_status": "NOT_INDEPENDENTLY_VERIFIED",
+        "scientific_status": "PROVISIONAL_ACCEPT_NEEDS_NCERT_PAGE_CHECK",
+        "reviewer": "factory-seed-v1-provisional-agent",
+        "submitted": {
+          "decision": "ACCEPT",
+          "review_status": "ACCEPTED",
+          "ecaep_submit_eligible": true
+        }
+      },
+      {
+        "item_id": "4f0dcbb1-c236-42a3-a148-cf8233326b52",
+        "factory_review_item_id": "a4975ff3-5e47-47d6-8198-88b596ddba3a",
+        "decision": "ACCEPT",
+        "checklist": {
+          "scientific_correctness": true,
+          "correct_answer": true,
+          "distractors": true,
+          "neet_suitability": true,
+          "explanation": true,
+          "academic_mapping": true,
+          "difficulty": true,
+          "language": true,
+          "provenance": true
+        },
+        "failure_reasons": [],
+        "notes": "Provisional ACCEPT: P4 non-RED, diversified slot, structural checks pass. NCERT page verification pending publication gate.",
+        "ncert_status": "NOT_INDEPENDENTLY_VERIFIED",
+        "scientific_status": "PROVISIONAL_ACCEPT_NEEDS_NCERT_PAGE_CHECK",
+        "reviewer": "factory-seed-v1-provisional-agent",
+        "submitted": {
+          "decision": "ACCEPT",
+          "review_status": "ACCEPTED",
+          "ecaep_submit_eligible": true
+        }
+      },
+      {
+        "item_id": "3c565dee-ea37-4937-bb32-4006ce383006",
+        "factory_review_item_id": "10040374-4d22-450e-8447-2a4b1ba1623e",
+        "decision": "ACCEPT",
+        "checklist": {
+          "scientific_correctness": true,
+          "correct_answer": true,
+          "distractors": true,
+          "neet_suitability": true,
+          "explanation": true,
+          "academic_mapping": true,
+          "difficulty": true,
+          "language": true,
+          "provenance": true
+        },
+        "failure_reasons": [],
+        "notes": "Provisional ACCEPT: P4 non-RED, diversified slot, structural checks pass. NCERT page verification pending publication gate.",
+        "ncert_status": "NOT_INDEPENDENTLY_VERIFIED",
+        "scientific_status": "PROVISIONAL_ACCEPT_NEEDS_NCERT_PAGE_CHECK",
+        "reviewer": "factory-seed-v1-provisional-agent",
+        "submitted": {
+          "decision": "ACCEPT",
+          "review_status": "ACCEPTED",
+          "ecaep_submit_eligible": true
+        }
+      },
+      {
+        "item_id": "9dd374e7-c677-46ab-9e83-8cf0e6139feb",
+        "factory_review_item_id": "60c19374-7f61-4239-9c3c-184a216a61d2",
+        "decision": "ACCEPT",
+        "checklist": {
+          "scientific_correctness": true,
+          "correct_answer": true,
+          "distractors": true,
+          "neet_suitability": true,
+          "explanation": true,
+          "academic_mapping": true,
+          "difficulty": true,
+          "language": true,
+          "provenance": true
+        },
+        "failure_reasons": [],
+        "notes": "Provisional ACCEPT: P4 non-RED, diversified slot, structural checks pass. NCERT page verification pending publication gate.",
+        "ncert_status": "NOT_INDEPENDENTLY_VERIFIED",
+        "scientific_status": "PROVISIONAL_ACCEPT_NEEDS_NCERT_PAGE_CHECK",
+        "reviewer": "factory-seed-v1-provisional-agent",
+        "submitted": {
+          "decision": "ACCEPT",
+          "review_status": "ACCEPTED",
+          "ecaep_submit_eligible": true
+        }
+      },
+      {
+        "item_id": "93c46e39-6a4c-4730-9ae7-a07a4bdab0a9",
+        "factory_review_item_id": "8d0d939d-dc7d-484a-b510-3bfbce516ef0",
+        "decision": "ACCEPT",
+        "checklist": {
+          "scientific_correctness": true,
+          "correct_answer": true,
+          "distractors": true,
+          "neet_suitability": true,
+          "explanation": true,
+          "academic_mapping": true,
+          "difficulty": true,
+          "language": true,
+          "provenance": true
+        },
+        "failure_reasons": [],
+        "notes": "Provisional ACCEPT: P4 non-RED, diversified slot, structural checks pass. NCERT page verification pending publication gate.",
+        "ncert_status": "NOT_INDEPENDENTLY_VERIFIED",
+        "scientific_status": "PROVISIONAL_ACCEPT_NEEDS_NCERT_PAGE_CHECK",
+        "reviewer": "factory-seed-v1-provisional-agent",
+        "submitted": {
+          "decision": "ACCEPT",
+          "review_status": "ACCEPTED",
+          "ecaep_submit_eligible": true
+        }
+      },
+      {
+        "item_id": "3d0dbda5-7882-4e3f-90d8-3a479cf67ab2",
+        "factory_review_item_id": "ffc387e6-320d-4505-8531-786898317117",
+        "decision": "ACCEPT",
+        "checklist": {
+          "scientific_correctness": true,
+          "correct_answer": true,
+          "distractors": true,
+          "neet_suitability": true,
+          "explanation": true,
+          "academic_mapping": true,
+          "difficulty": true,
+          "language": true,
+          "provenance": true
+        },
+        "failure_reasons": [],
+        "notes": "Provisional ACCEPT: P4 non-RED, diversified slot, structural checks pass. NCERT page verification pending publication gate.",
+        "ncert_status": "NOT_INDEPENDENTLY_VERIFIED",
+        "scientific_status": "PROVISIONAL_ACCEPT_NEEDS_NCERT_PAGE_CHECK",
+        "reviewer": "factory-seed-v1-provisional-agent",
+        "submitted": {
+          "decision": "ACCEPT",
+          "review_status": "ACCEPTED",
+          "ecaep_submit_eligible": true
+        }
+      },
+      {
+        "item_id": "b4a2e055-f141-4f05-8b06-850d84122b60",
+        "factory_review_item_id": "ca449ec9-0c45-4598-b380-3a0ac2d4632f",
+        "decision": "ACCEPT",
+        "checklist": {
+          "scientific_correctness": true,
+          "correct_answer": true,
+          "distractors": true,
+          "neet_suitability": true,
+          "explanation": true,
+          "academic_mapping": true,
+          "difficulty": true,
+          "language": true,
+          "provenance": true
+        },
+        "failure_reasons": [],
+        "notes": "Provisional ACCEPT: P4 non-RED, diversified slot, structural checks pass. NCERT page verification pending publication gate.",
+        "ncert_status": "NOT_INDEPENDENTLY_VERIFIED",
+        "scientific_status": "PROVISIONAL_ACCEPT_NEEDS_NCERT_PAGE_CHECK",
+        "reviewer": "factory-seed-v1-provisional-agent",
+        "submitted": {
+          "decision": "ACCEPT",
+          "review_status": "ACCEPTED",
+          "ecaep_submit_eligible": true
+        }
+      },
+      {
+        "item_id": "e4a6fdc3-7a55-4762-a176-f8af33709308",
+        "factory_review_item_id": "0e9f90cd-b661-4776-853d-9b05c73d9b94",
+        "decision": "ACCEPT",
+        "checklist": {
+          "scientific_correctness": true,
+          "correct_answer": true,
+          "distractors": true,
+          "neet_suitability": true,
+          "explanation": true,
+          "academic_mapping": true,
+          "difficulty": true,
+          "language": true,
+          "provenance": true
+        },
+        "failure_reasons": [],
+        "notes": "Provisional ACCEPT: P4 non-RED, diversified slot, structural checks pass. NCERT page verification pending publication gate.",
+        "ncert_status": "NOT_INDEPENDENTLY_VERIFIED",
+        "scientific_status": "PROVISIONAL_ACCEPT_NEEDS_NCERT_PAGE_CHECK",
+        "reviewer": "factory-seed-v1-provisional-agent",
+        "submitted": {
+          "decision": "ACCEPT",
+          "review_status": "ACCEPTED",
+          "ecaep_submit_eligible": true
+        }
+      },
+      {
+        "item_id": "872a0115-cb0a-4109-99ff-55ada6774d51",
+        "factory_review_item_id": "509dd156-8768-4065-a9cc-d092d04b030c",
+        "decision": "ACCEPT",
+        "checklist": {
+          "scientific_correctness": true,
+          "correct_answer": true,
+          "distractors": true,
+          "neet_suitability": true,
+          "explanation": true,
+          "academic_mapping": true,
+          "difficulty": true,
+          "language": true,
+          "provenance": true
+        },
+        "failure_reasons": [],
+        "notes": "Provisional ACCEPT: P4 non-RED, diversified slot, structural checks pass. NCERT page verification pending publication gate.",
+        "ncert_status": "NOT_INDEPENDENTLY_VERIFIED",
+        "scientific_status": "PROVISIONAL_ACCEPT_NEEDS_NCERT_PAGE_CHECK",
+        "reviewer": "factory-seed-v1-provisional-agent",
+        "submitted": {
+          "decision": "ACCEPT",
+          "review_status": "ACCEPTED",
+          "ecaep_submit_eligible": true
+        }
+      },
+      {
+        "item_id": "061d07ed-ca1f-4f31-b7f8-cbdb3dfe8453",
+        "factory_review_item_id": "21850f5c-26a7-47f3-9035-258a90f077f8",
+        "decision": "ACCEPT",
+        "checklist": {
+          "scientific_correctness": true,
+          "correct_answer": true,
+          "distractors": true,
+          "neet_suitability": true,
+          "explanation": true,
+          "academic_mapping": true,
+          "difficulty": true,
+          "language": true,
+          "provenance": true
+        },
+        "failure_reasons": [],
+        "notes": "Provisional ACCEPT: P4 non-RED, diversified slot, structural checks pass. NCERT page verification pending publication gate.",
+        "ncert_status": "NOT_INDEPENDENTLY_VERIFIED",
+        "scientific_status": "PROVISIONAL_ACCEPT_NEEDS_NCERT_PAGE_CHECK",
+        "reviewer": "factory-seed-v1-provisional-agent",
+        "submitted": {
+          "decision": "ACCEPT",
+          "review_status": "ACCEPTED",
+          "ecaep_submit_eligible": true
+        }
+      },
+      {
+        "item_id": "336ec42d-aa33-4b5b-8c46-f8d5461883b0",
+        "factory_review_item_id": "61eca953-1c23-4cda-ae7f-6484e4ee6ad2",
+        "decision": "ACCEPT",
+        "checklist": {
+          "scientific_correctness": true,
+          "correct_answer": true,
+          "distractors": true,
+          "neet_suitability": true,
+          "explanation": true,
+          "academic_mapping": true,
+          "difficulty": true,
+          "language": true,
+          "provenance": true
+        },
+        "failure_reasons": [],
+        "notes": "Provisional ACCEPT: P4 non-RED, diversified slot, structural checks pass. NCERT page verification pending publication gate.",
+        "ncert_status": "NOT_INDEPENDENTLY_VERIFIED",
+        "scientific_status": "PROVISIONAL_ACCEPT_NEEDS_NCERT_PAGE_CHECK",
+        "reviewer": "factory-seed-v1-provisional-agent",
+        "submitted": {
+          "decision": "ACCEPT",
+          "review_status": "ACCEPTED",
+          "ecaep_submit_eligible": true
+        }
+      },
+      {
+        "item_id": "16dd7280-a48b-4437-80ac-a2b72b28d952",
+        "factory_review_item_id": "2f43151e-c590-4a19-9b29-3275f2c0c863",
+        "decision": "ACCEPT",
+        "checklist": {
+          "scientific_correctness": true,
+          "correct_answer": true,
+          "distractors": true,
+          "neet_suitability": true,
+          "explanation": true,
+          "academic_mapping": true,
+          "difficulty": true,
+          "language": true,
+          "provenance": true
+        },
+        "failure_reasons": [],
+        "notes": "Provisional ACCEPT: P4 non-RED, diversified slot, structural checks pass. NCERT page verification pending publication gate.",
+        "ncert_status": "NOT_INDEPENDENTLY_VERIFIED",
+        "scientific_status": "PROVISIONAL_ACCEPT_NEEDS_NCERT_PAGE_CHECK",
+        "reviewer": "factory-seed-v1-provisional-agent",
+        "submitted": {
+          "decision": "ACCEPT",
+          "review_status": "ACCEPTED",
+          "ecaep_submit_eligible": true
+        }
+      },
+      {
+        "item_id": "b207ad06-7427-417e-abfd-a928ab68df84",
+        "factory_review_item_id": "04deaafb-e4fe-43be-9e67-0099ca5eb334",
+        "decision": "ACCEPT",
+        "checklist": {
+          "scientific_correctness": true,
+          "correct_answer": true,
+          "distractors": true,
+          "neet_suitability": true,
+          "explanation": true,
+          "academic_mapping": true,
+          "difficulty": true,
+          "language": true,
+          "provenance": true
+        },
+        "failure_reasons": [],
+        "notes": "Provisional ACCEPT: P4 non-RED, diversified slot, structural checks pass. NCERT page verification pending publication gate.",
+        "ncert_status": "NOT_INDEPENDENTLY_VERIFIED",
+        "scientific_status": "PROVISIONAL_ACCEPT_NEEDS_NCERT_PAGE_CHECK",
+        "reviewer": "factory-seed-v1-provisional-agent",
+        "submitted": {
+          "decision": "ACCEPT",
+          "review_status": "ACCEPTED",
+          "ecaep_submit_eligible": true
+        }
+      },
+      {
+        "item_id": "a1f1d832-21a3-4fb6-86b8-fe07ed46ad18",
+        "factory_review_item_id": "3a0cfb17-bb0d-4332-8858-754fa64265fe",
+        "decision": "ACCEPT",
+        "checklist": {
+          "scientific_correctness": true,
+          "correct_answer": true,
+          "distractors": true,
+          "neet_suitability": true,
+          "explanation": true,
+          "academic_mapping": true,
+          "difficulty": true,
+          "language": true,
+          "provenance": true
+        },
+        "failure_reasons": [],
+        "notes": "Provisional ACCEPT: P4 non-RED, diversified slot, structural checks pass. NCERT page verification pending publication gate.",
+        "ncert_status": "NOT_INDEPENDENTLY_VERIFIED",
+        "scientific_status": "PROVISIONAL_ACCEPT_NEEDS_NCERT_PAGE_CHECK",
+        "reviewer": "factory-seed-v1-provisional-agent",
+        "submitted": {
+          "decision": "ACCEPT",
+          "review_status": "ACCEPTED",
+          "ecaep_submit_eligible": true
+        }
+      },
+      {
+        "item_id": "92c31281-cbdf-4954-9b25-79342cb1b400",
+        "factory_review_item_id": "a2a9153e-7376-43d2-bc24-14f06867ed84",
+        "decision": "ACCEPT",
+        "checklist": {
+          "scientific_correctness": true,
+          "correct_answer": true,
+          "distractors": true,
+          "neet_suitability": true,
+          "explanation": true,
+          "academic_mapping": true,
+          "difficulty": true,
+          "language": true,
+          "provenance": true
+        },
+        "failure_reasons": [],
+        "notes": "Provisional ACCEPT: P4 non-RED, diversified slot, structural checks pass. NCERT page verification pending publication gate.",
+        "ncert_status": "NOT_INDEPENDENTLY_VERIFIED",
+        "scientific_status": "PROVISIONAL_ACCEPT_NEEDS_NCERT_PAGE_CHECK",
+        "reviewer": "factory-seed-v1-provisional-agent",
+        "submitted": {
+          "decision": "ACCEPT",
+          "review_status": "ACCEPTED",
+          "ecaep_submit_eligible": true
+        }
+      },
+      {
+        "item_id": "c85bba09-451b-4b2f-988d-e440929fa770",
+        "factory_review_item_id": "47db2304-4215-48be-b87f-62dddc694296",
+        "decision": "ACCEPT",
+        "checklist": {
+          "scientific_correctness": true,
+          "correct_answer": true,
+          "distractors": true,
+          "neet_suitability": true,
+          "explanation": true,
+          "academic_mapping": true,
+          "difficulty": true,
+          "language": true,
+          "provenance": true
+        },
+        "failure_reasons": [],
+        "notes": "Provisional ACCEPT: P4 non-RED, diversified slot, structural checks pass. NCERT page verification pending publication gate.",
+        "ncert_status": "NOT_INDEPENDENTLY_VERIFIED",
+        "scientific_status": "PROVISIONAL_ACCEPT_NEEDS_NCERT_PAGE_CHECK",
+        "reviewer": "factory-seed-v1-provisional-agent",
+        "submitted": {
+          "decision": "ACCEPT",
+          "review_status": "ACCEPTED",
+          "ecaep_submit_eligible": true
+        }
+      },
+      {
+        "item_id": "1d598d79-afe1-4ddb-8f32-2b51c8fb2b02",
+        "factory_review_item_id": "b088ef5d-0a94-476e-aba1-ada97ec287b3",
+        "decision": "ACCEPT",
+        "checklist": {
+          "scientific_correctness": true,
+          "correct_answer": true,
+          "distractors": true,
+          "neet_suitability": true,
+          "explanation": true,
+          "academic_mapping": true,
+          "difficulty": true,
+          "language": true,
+          "provenance": true
+        },
+        "failure_reasons": [],
+        "notes": "Provisional ACCEPT: P4 non-RED, diversified slot, structural checks pass. NCERT page verification pending publication gate.",
+        "ncert_status": "NOT_INDEPENDENTLY_VERIFIED",
+        "scientific_status": "PROVISIONAL_ACCEPT_NEEDS_NCERT_PAGE_CHECK",
+        "reviewer": "factory-seed-v1-provisional-agent",
+        "submitted": {
+          "decision": "ACCEPT",
+          "review_status": "ACCEPTED",
+          "ecaep_submit_eligible": true
+        }
+      },
+      {
+        "item_id": "e15d0065-7b79-477c-b9ec-81bc421a6a71",
+        "factory_review_item_id": "2cbea352-572c-47d6-851d-e5e2a8208439",
+        "decision": "ACCEPT",
+        "checklist": {
+          "scientific_correctness": true,
+          "correct_answer": true,
+          "distractors": true,
+          "neet_suitability": true,
+          "explanation": true,
+          "academic_mapping": true,
+          "difficulty": true,
+          "language": true,
+          "provenance": true
+        },
+        "failure_reasons": [],
+        "notes": "Provisional ACCEPT: P4 non-RED, diversified slot, structural checks pass. NCERT page verification pending publication gate.",
+        "ncert_status": "NOT_INDEPENDENTLY_VERIFIED",
+        "scientific_status": "PROVISIONAL_ACCEPT_NEEDS_NCERT_PAGE_CHECK",
+        "reviewer": "factory-seed-v1-provisional-agent",
+        "submitted": {
+          "decision": "ACCEPT",
+          "review_status": "ACCEPTED",
+          "ecaep_submit_eligible": true
+        }
+      },
+      {
+        "item_id": "7e4fb145-08fe-43cf-accc-ef53e9535b07",
+        "factory_review_item_id": "ea5baa2b-dab7-46c9-a434-ba40c287aa7c",
+        "decision": "ACCEPT",
+        "checklist": {
+          "scientific_correctness": true,
+          "correct_answer": true,
+          "distractors": true,
+          "neet_suitability": true,
+          "explanation": true,
+          "academic_mapping": true,
+          "difficulty": true,
+          "language": true,
+          "provenance": true
+        },
+        "failure_reasons": [],
+        "notes": "Provisional ACCEPT: P4 non-RED, diversified slot, structural checks pass. NCERT page verification pending publication gate.",
+        "ncert_status": "NOT_INDEPENDENTLY_VERIFIED",
+        "scientific_status": "PROVISIONAL_ACCEPT_NEEDS_NCERT_PAGE_CHECK",
+        "reviewer": "factory-seed-v1-provisional-agent",
+        "submitted": {
+          "decision": "ACCEPT",
+          "review_status": "ACCEPTED",
+          "ecaep_submit_eligible": true
+        }
+      },
+      {
+        "item_id": "f6f59a22-5d9b-47a3-adb6-8dcf7ce56a1c",
+        "factory_review_item_id": "69a82385-df7c-44da-90d4-6c8f958700a1",
+        "decision": "ACCEPT",
+        "checklist": {
+          "scientific_correctness": true,
+          "correct_answer": true,
+          "distractors": true,
+          "neet_suitability": true,
+          "explanation": true,
+          "academic_mapping": true,
+          "difficulty": true,
+          "language": true,
+          "provenance": true
+        },
+        "failure_reasons": [],
+        "notes": "Provisional ACCEPT: P4 non-RED, diversified slot, structural checks pass. NCERT page verification pending publication gate.",
+        "ncert_status": "NOT_INDEPENDENTLY_VERIFIED",
+        "scientific_status": "PROVISIONAL_ACCEPT_NEEDS_NCERT_PAGE_CHECK",
+        "reviewer": "factory-seed-v1-provisional-agent",
+        "submitted": {
+          "decision": "ACCEPT",
+          "review_status": "ACCEPTED",
+          "ecaep_submit_eligible": true
+        }
+      }
+    ],
+    "counts": {
+      "ACCEPT": 30
+    },
+    "note": "All 30 reviewed via factory review queue; reviewer=factory-seed-v1-provisional-agent"
+  },
+  "verification": {
+    "ncert_verified": 0,
+    "scientific_verified_provisional": 30,
+    "not_independently_verified": 30,
+    "note": "No invented NCERT page references. Publication requires separate NCERT sign-off.",
+    "p5_reviewer_mode": "provisional-agent-assisted full census; publication still requires independent human NCERT sign-off"
+  },
+  "integrity": {
+    "p3_95_before": {
+      "n": 95,
+      "status_counts": {
+        "DRAFT": 95
+      },
+      "bodies_fp": "3864a145d5bc2e85cf82df7f7987e838eb927bc57eb221212851e78f7d15f67a"
+    },
+    "p3_95_after": {
+      "n": 95,
+      "status_counts": {
+        "DRAFT": 95
+      },
+      "bodies_fp": "3864a145d5bc2e85cf82df7f7987e838eb927bc57eb221212851e78f7d15f67a"
+    },
+    "p3_95_changed": false,
+    "legacy_changed": false,
+    "t6d_changed": false,
+    "t6f2_changed": false,
+    "checksum_before": {
+      "total": 6339,
+      "published": 1049,
+      "draft": 5279,
+      "in_review": 11,
+      "approved": 0,
+      "archived": 0,
+      "changes_requested": 0
+    },
+    "checksum_after": {
+      "total": 6339,
+      "published": 1049,
+      "draft": 5279,
+      "in_review": 11,
+      "approved": 0,
+      "archived": 0,
+      "changes_requested": 0
+    },
+    "unexpected_mutations": []
+  },
+  "verdict": "GREEN \u2014 READY FOR SEPARATE PUBLICATION REVIEW",
+  "seed_decision": "GREEN \u2014 READY FOR SEPARATE PUBLICATION REVIEW",
+  "amber_reason": "NCERT page citations not independently verified in this task; publication review must complete NCERT/scientific sign-off."
+}

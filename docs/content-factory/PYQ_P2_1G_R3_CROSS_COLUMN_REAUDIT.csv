@@ -1,0 +1,117 @@
+question_id,year,paper_set,question_number,source_page,quality,flags,classification,semantic_contamination,release_blocker,evidence,option_a_preview
+00d8cababe821fcf:p8:q3,2023,Paper-20231108005448,3,8,PARTIAL,option_contains_foreign_question_marker,BENIGN_LAYOUT,False,False,Geometry heuristic; record not VALID — safely downgraded,"CH,-C-CH, Br
+bes 60
+3
+Br
+|"
+00d8cababe821fcf:p11:q73,2023,Paper-20231108005448,73,11,PARTIAL,option_contains_foreign_question_marker,BENIGN_LAYOUT,False,False,Geometry heuristic; record not VALID — safely downgraded,
+10030e374de702ab:p9:q3,2023,Paper-20231108010819,3,9,PARTIAL,option_contains_foreign_question_marker,BENIGN_LAYOUT,False,False,Geometry heuristic; record not VALID — safely downgraded,"CH; aa ~ CH;
+CH,"
+10030e374de702ab:p13:q80,2023,Paper-20231108010819,80,13,PARTIAL,option_contains_foreign_question_marker,BENIGN_LAYOUT,False,False,Geometry heuristic; record not VALID — safely downgraded,
+10030e374de702ab:p13:q81,2023,Paper-20231108010819,81,13,PARTIAL,option_contains_foreign_question_marker,BENIGN_LAYOUT,False,False,Geometry heuristic; record not VALID — safely downgraded,(yon
+297fcb0c37dbdddb:p9:q56,2023,Paper-20231108005008,56,9,PARTIAL,option_contains_foreign_question_marker,BENIGN_LAYOUT,False,False,Geometry heuristic; record not VALID — safely downgraded,"[C] is ___.
+1 COOH (2 OH
+3) (coon ( \-aw
+T
+P
+57"
+297fcb0c37dbdddb:p13:q80,2023,Paper-20231108005008,80,13,PARTIAL,option_contains_foreign_question_marker,BENIGN_LAYOUT,False,False,Geometry heuristic; record not VALID — safely downgraded,"3 cH
+3"
+34ba281c8f7a45b9:p2:q6,2023,Paper-20231108011809,6,2,PARTIAL,option_contains_foreign_question_marker,BENIGN_LAYOUT,False,False,Geometry heuristic; record not VALID — safely downgraded,Zero
+38d7f2187e79f7a7:p19:q122,2023,Paper-20231108010906,122,19,VALID,option_contains_foreign_question_marker,INCONCLUSIVE,False,False,Flag present; manual PDF check recommended,"D,E,Aonly"
+6c0df3028143ff02:p4:q20,2023,Paper-20231108011040,20,4,PARTIAL,option_contains_foreign_question_marker,BENIGN_LAYOUT,False,False,Geometry heuristic; record not VALID — safely downgraded,>
+6c0df3028143ff02:p9:q56,2023,Paper-20231108011040,56,9,PARTIAL,option_contains_foreign_question_marker,BENIGN_LAYOUT,False,False,Geometry heuristic; record not VALID — safely downgraded,"CHLOH
+2
+CH"
+7e4dabb5a199588d:p10:q52,2025,NEET-2025-EN-47,52,10,PARTIAL,option_contains_foreign_question_marker,BENIGN_LAYOUT,False,False,Geometry heuristic; record not VALID — safely downgraded,"oy
+O
+CH; on
+Q) CN
+CH
+3 /OH CH"
+82a7cff8dca5bb40:p9:q57,2023,Paper-20231108005158,57,9,PARTIAL,option_contains_foreign_question_marker,BENIGN_LAYOUT,False,False,Geometry heuristic; record not VALID — safely downgraded,"Fe,[Fe(CN), |, -xH,0"
+8633a3811ea07447:p5:q32,2023,Paper-20231108004734,32,5,PARTIAL,option_contains_foreign_question_marker,BENIGN_LAYOUT,False,False,Geometry heuristic; record not VALID — safely downgraded,8 mc Q) 6 mc
+8633a3811ea07447:p7:q43,2023,Paper-20231108004734,43,7,PARTIAL,option_contains_foreign_question_marker,BENIGN_LAYOUT,False,False,Geometry heuristic; record not VALID — safely downgraded,56m
+8633a3811ea07447:p10:q63,2023,Paper-20231108004734,63,10,PARTIAL,option_contains_foreign_question_marker,BENIGN_LAYOUT,False,False,Geometry heuristic; record not VALID — safely downgraded,j=
+8633a3811ea07447:p13:q82,2023,Paper-20231108004734,82,13,PARTIAL,option_contains_foreign_question_marker,BENIGN_LAYOUT,False,False,Geometry heuristic; record not VALID — safely downgraded,"T
+T
+T;
+v— 84
+Ts
+1 27,
+P"
+8633a3811ea07447:p20:q133,2023,Paper-20231108004734,133,20,PARTIAL,option_contains_foreign_question_marker,BENIGN_LAYOUT,False,False,Geometry heuristic; record not VALID — safely downgraded,"Both Statement I and Statement II
+are true."
+87c534cad98b7b4e:p3:q7,2025,NEET-2025-EN-45,7,3,PARTIAL,option_contains_foreign_question_marker,BENIGN_LAYOUT,False,False,Geometry heuristic; record not VALID — safely downgraded,"(sin 02
+re)
+1 VW
+2) |>a
+2+3sin@
+cos 0 VA"
+87c534cad98b7b4e:p13:q65,2025,NEET-2025-EN-45,65,13,DIAGRAM_DEPENDENT,option_contains_foreign_question_marker,BENIGN_LAYOUT,False,False,Geometry heuristic; record not VALID — safely downgraded,"T 74.8 P
+—> Reaction progress
+Energy P
+(kJ mol!)
+R
+4 T 74.8
+2)
+—> Reaction progr"
+9fcfff3f33350907:p8:q57,2023,Paper-20231108012938,57,8,PARTIAL,option_contains_foreign_question_marker,BENIGN_LAYOUT,False,False,Geometry heuristic; record not VALID — safely downgraded,( \-aw
+a1c3361678271d6e:p5:q30,2023,Paper-20231108004832,30,5,PARTIAL,option_contains_foreign_question_marker,BENIGN_LAYOUT,False,False,Geometry heuristic; record not VALID — safely downgraded,4m)
+a1c3361678271d6e:p24:q162,2023,Paper-20231108004832,162,24,PARTIAL,option_contains_foreign_question_marker,BENIGN_LAYOUT,False,False,Geometry heuristic; record not VALID — safely downgraded,"e Cc nnd E only
+e options given below:"
+a1c3361678271d6e:p26:q172,2023,Paper-20231108004832,172,26,PARTIAL,option_contains_foreign_question_marker,BENIGN_LAYOUT,False,False,Geometry heuristic; record not VALID — safely downgraded,Protein synthesis
+a43894b5fbc8cd28:p9:q3,2023,Paper-20231108011342,3,9,PARTIAL,option_contains_foreign_question_marker,BENIGN_LAYOUT,False,False,Geometry heuristic; record not VALID — safely downgraded,"CH; CH=CH -CH,"
+b69d582ff457c62e:p14:q55,2024,Paper-20250124133115,55,14,PARTIAL,option_contains_foreign_question_marker,BENIGN_LAYOUT,False,False,Geometry heuristic; record not VALID — safely downgraded,"CH,
+CH;
+oc
+°
+CH,"
+b69d582ff457c62e:p31:q138,2024,Paper-20250124133115,138,31,PARTIAL,option_contains_foreign_question_marker,BENIGN_LAYOUT,False,False,Geometry heuristic; record not VALID — safely downgraded,
+cd4583ce844d9f5c:p5:q1,2024,Paper-20250124133206,1,5,PARTIAL,option_contains_foreign_question_marker,BENIGN_LAYOUT,False,False,Geometry heuristic; record not VALID — safely downgraded,OU
+cd4583ce844d9f5c:p11:q68,2024,Paper-20250124133206,68,11,PARTIAL,option_contains_foreign_question_marker,BENIGN_LAYOUT,False,False,Geometry heuristic; record not VALID — safely downgraded,"Sor :
+HO
+NO
+2"
+cd4583ce844d9f5c:p14:q97,2024,Paper-20250124133206,97,14,PARTIAL,option_contains_foreign_question_marker,BENIGN_LAYOUT,False,False,Geometry heuristic; record not VALID — safely downgraded,"()- COOH
+OH OH
+| |"
+d11cf53d4d8ef5b0:p30:q195,2023,Paper-20231108005321,195,30,PARTIAL,option_contains_foreign_question_marker,BENIGN_LAYOUT,False,False,Geometry heuristic; record not VALID — safely downgraded,"3° UAGCUAGCUAGCUAGCUA
+,
+GCUAGCUAGC 5"
+dbdcfa0a13d13467:p12:q75,2023,Paper-20231108011242,75,12,PARTIAL,option_contains_foreign_question_marker,BENIGN_LAYOUT,False,False,Geometry heuristic; record not VALID — safely downgraded,
+dbdcfa0a13d13467:p25:q165,2023,Paper-20231108011242,165,25,PARTIAL,option_contains_foreign_question_marker,BENIGN_LAYOUT,False,False,Geometry heuristic; record not VALID — safely downgraded,"Nuclear division
+3 Moule"
+df0707ec85be4616:p14:q92,2023,Paper-20231108011936,92,14,PARTIAL,option_contains_foreign_question_marker,BENIGN_LAYOUT,False,False,Geometry heuristic; record not VALID — safely downgraded,"OH
+fe)"
+ee3990aec2dfa279:p8:q52,2023,Paper-20231108010507,52,8,PARTIAL,option_contains_foreign_question_marker,BENIGN_LAYOUT,False,False,Geometry heuristic; record not VALID — safely downgraded,
+f46063650ca02ee5:p13:q84,2023,Paper-20231108011127,84,13,PARTIAL,option_contains_foreign_question_marker,BENIGN_LAYOUT,False,False,Geometry heuristic; record not VALID — safely downgraded,
+f5378eb6785774c3:p8:q52,2023,Paper-20231108010032,52,8,PARTIAL,option_contains_foreign_question_marker,BENIGN_LAYOUT,False,False,Geometry heuristic; record not VALID — safely downgraded,"B, C, D, E are correct."
+f5378eb6785774c3:p14:q86,2023,Paper-20231108010032,86,14,PARTIAL,option_contains_foreign_question_marker,BENIGN_LAYOUT,False,False,Geometry heuristic; record not VALID — safely downgraded,"Aan,
+H
+OH OH
+2 AK
+2 uc
+oH
+NP ay"
+f5378eb6785774c3:p21:q145,2023,Paper-20231108010032,145,21,VALID,option_contains_foreign_question_marker,INCONCLUSIVE,False,False,Flag present; manual PDF check recommended,"A-II, B-IV, C-I, D-III"
+f7a45c960ede2f29:p13:q64,2025,NEET-2025-EN-48,64,13,PARTIAL,option_contains_foreign_question_marker,BENIGN_LAYOUT,False,False,Geometry heuristic; record not VALID — safely downgraded,"T P 67
+;
+—> Reaction progress
+(a mot) P
+mo
+t R 74.8
+2)
+—> Reaction progress
+Ener"
+f7a45c960ede2f29:p28:q164,2025,NEET-2025-EN-48,164,28,DIAGRAM_DEPENDENT,option_contains_foreign_question_marker,BENIGN_LAYOUT,False,False,Geometry heuristic; record not VALID — safely downgraded,"ail ikea
+NaCl
+HY NH, “ot
+P D
+Nad HCOy Nal NH,
+Q)
+Ht HO Pit
+aa
+2 2
+P D
+HCOT NaCl "

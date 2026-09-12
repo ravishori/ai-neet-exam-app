@@ -82,7 +82,31 @@ class KnowledgeStructuringService:
         if not grounded:
             status, detail = "FAILED", grounding_detail
         elif duplicate:
-            status, detail = "FAILED", f"duplicate of existing knowledge unit {duplicate.id}"
+            unit = KnowledgeUnit(
+                version=duplicate.version,
+                content_hash=duplicate.content_hash,
+                structured_facts=list(duplicate.structured_facts),
+                summary=duplicate.summary,
+                source_section_id=section.id,
+                concept_id=concept.id,
+                extraction_confidence=duplicate.extraction_confidence,
+                validation_status="PASSED",
+                validation_detail=f"reused from knowledge unit {duplicate.id}",
+            )
+            self.repo.add(unit)
+            await self.repo.flush()
+            page_assets = await self.repo.get_visual_assets_for_page(section.job_id, section.source_page)
+            for asset in page_assets:
+                asset.knowledge_unit_id = unit.id
+            await self.repo.commit()
+            logger.info(
+                "knowledge_unit_reused",
+                unit_id=str(unit.id),
+                source_unit_id=str(duplicate.id),
+                concept=concept.name,
+                section=section.heading,
+            )
+            return unit
         else:
             status, detail = "PASSED", None
 

@@ -1,57 +1,50 @@
 import Link from "next/link";
 
-import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
-
-const modules = [
-  { name: "Identity & Auth", sprint: "SP1", status: "done" },
-  { name: "Academic Engine", sprint: "SP2", status: "next" },
-  { name: "Content (ECAEP) + Question Bank", sprint: "SP3", status: "planned" },
-  { name: "Assessment Engine", sprint: "SP4", status: "planned" },
-  { name: "AI Gateway — Tutor, Planner, Generator, Evaluator", sprint: "SP5", status: "planned" },
-] as const;
 
 export default function LandingPage() {
   return (
-    <main className="flex flex-1 flex-col items-center justify-center gap-10 px-6 py-24">
-      <nav className="absolute top-6 right-6 flex gap-2">
-        <Link href="/login" className={cn(buttonVariants({ variant: "ghost" }))}>
+    <main className="relative flex min-h-[100dvh] flex-1 flex-col overflow-hidden">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_20%_10%,color-mix(in_oklch,var(--subject-physics)_18%,transparent),transparent_50%),radial-gradient(ellipse_at_80%_0%,color-mix(in_oklch,var(--subject-biology)_14%,transparent),transparent_45%),linear-gradient(180deg,var(--background),color-mix(in_oklch,var(--muted)_40%,var(--background)))]"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 opacity-[0.35] [background-image:linear-gradient(to_right,color-mix(in_oklch,var(--foreground)_6%,transparent)_1px,transparent_1px),linear-gradient(to_bottom,color-mix(in_oklch,var(--foreground)_6%,transparent)_1px,transparent_1px)] [background-size:48px_48px] [mask-image:radial-gradient(ellipse_at_center,black_20%,transparent_75%)]"
+      />
+
+      <nav className="relative z-10 flex items-center justify-end gap-2 px-6 py-5">
+        <Link href="/login" className={cn(buttonVariants({ variant: "ghost" }), "min-h-11")}>
           Sign in
         </Link>
-        <Link href="/register" className={cn(buttonVariants())}>
-          Create account
+        <Link href="/register" className={cn(buttonVariants(), "min-h-11")}>
+          Register
         </Link>
       </nav>
 
-      <div className="flex flex-col items-center gap-3 text-center">
-        <Badge variant="secondary">Sprint 1 — Identity &amp; Auth</Badge>
-        <h1 className="max-w-2xl text-4xl font-semibold tracking-tight text-balance">
+      <section className="relative z-10 flex flex-1 flex-col items-center justify-center gap-8 px-6 pb-24 pt-6 text-center">
+        <p className="font-heading text-sm font-semibold tracking-[0.2em] text-muted-foreground uppercase animate-fade-slide-up">
           Trinetra AI Learning OS
-        </h1>
-        <p className="max-w-lg text-muted-foreground">
-          An AI-first NEET preparation platform. Registration, login, sessions,
-          and role-based access are wired end to end — real learning modules
-          land sprint by sprint from here.
         </p>
-      </div>
-
-      <div className="grid w-full max-w-2xl gap-3 sm:grid-cols-2">
-        {modules.map((m) => (
-          <Card key={m.sprint}>
-            <CardHeader>
-              <CardTitle className="text-base">{m.name}</CardTitle>
-              <CardDescription>{m.sprint}</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <Badge variant={m.status === "done" ? "default" : m.status === "next" ? "secondary" : "outline"}>
-                {m.status}
-              </Badge>
-            </CardContent>
-          </Card>
-        ))}
-      </div>
+        <div className="flex max-w-2xl flex-col items-center gap-4 animate-fade-slide-up [animation-delay:80ms]">
+          <h1 className="font-heading text-4xl font-bold tracking-tight text-balance sm:text-5xl md:text-6xl">
+            NEET prep that adapts to you
+          </h1>
+          <p className="max-w-md text-base leading-relaxed text-muted-foreground sm:text-lg">
+            Practice published NCERT-aligned questions, track mastery, and focus where it counts.
+          </p>
+        </div>
+        <div className="flex flex-wrap items-center justify-center gap-3 animate-fade-slide-up [animation-delay:140ms]">
+          <Link href="/register" className={cn(buttonVariants({ size: "lg" }), "min-h-12 px-8")}>
+            Get started
+          </Link>
+          <Link href="/login" className={cn(buttonVariants({ variant: "outline", size: "lg" }), "min-h-12 px-8")}>
+            Sign in
+          </Link>
+        </div>
+      </section>
     </main>
   );
 }

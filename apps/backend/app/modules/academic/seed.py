@@ -16,20 +16,23 @@ from app.modules.academic.models import Chapter, Concept, Exam, Subject, Topic
 
 logger = get_logger("seed")
 
-# (code, name, weightage_percent, topics)
+# (code, name, weightage_percent, class_level, topics)
+# class_level ∈ {"11", "12", None}: NCERT class ownership from RS-003-B-1A.
+# ZOOLOGY 'biomolecules' is intentionally None — curriculum-owner unresolved.
 # topics: list of (code, name, concepts) — only populated for the one
 # "fully fleshed" chapter per subject; every other chapter has topics=[].
 PHYSICS_CHAPTERS = [
-    ("kinematics", "Kinematics", 3.0, []),
-    ("laws-of-motion", "Laws of Motion", 3.0, []),
-    ("work-energy-power", "Work, Energy and Power", 4.0, []),
-    ("gravitation", "Gravitation", 2.0, []),
-    ("thermodynamics-physics", "Thermodynamics", 4.0, []),
-    ("electrostatics", "Electrostatics", 5.0, []),
+    ("kinematics", "Kinematics", 3.0, "11", []),
+    ("laws-of-motion", "Laws of Motion", 3.0, "11", []),
+    ("work-energy-power", "Work, Energy and Power", 4.0, "11", []),
+    ("gravitation", "Gravitation", 2.0, "11", []),
+    ("thermodynamics-physics", "Thermodynamics", 4.0, "11", []),
+    ("electrostatics", "Electrostatics", 5.0, "12", []),
     (
         "current-electricity",
         "Current Electricity",
         4.0,
+        "12",
         [
             (
                 "ohms-law",
@@ -55,16 +58,24 @@ PHYSICS_CHAPTERS = [
             ),
         ],
     ),
-    ("optics", "Optics", 5.0, []),
+    ("optics", "Optics", 5.0, "12", []),
+    # T4 P0 chapter stubs (topic/concept trees applied via PhysicsP0TaxonomyService;
+    # Gravitation fill remains deferred — chapter stub pre-existed above).
+    ("units-and-measurement", "Units and Measurement", 2.0, "11", []),
+    ("systems-of-particles-rotational-motion", "Systems of Particles and Rotational Motion", 4.0, "11", []),
+    ("mechanical-properties-of-solids", "Mechanical Properties of Solids", 2.0, "11", []),
+    ("mechanical-properties-of-fluids", "Mechanical Properties of Fluids", 2.0, "11", []),
+    ("kinetic-theory", "Kinetic Theory", 2.0, "11", []),
 ]
 
 CHEMISTRY_CHAPTERS = [
-    ("basic-concepts-chemistry", "Some Basic Concepts of Chemistry", 3.0, []),
-    ("structure-of-atom", "Structure of Atom", 3.0, []),
+    ("basic-concepts-chemistry", "Some Basic Concepts of Chemistry", 3.0, "11", []),
+    ("structure-of-atom", "Structure of Atom", 3.0, "11", []),
     (
         "chemical-bonding",
         "Chemical Bonding and Molecular Structure",
         5.0,
+        "11",
         [
             (
                 "ionic-bonding",
@@ -89,22 +100,23 @@ CHEMISTRY_CHAPTERS = [
             ),
         ],
     ),
-    ("thermodynamics-chemistry", "Thermodynamics", 4.0, []),
-    ("equilibrium", "Equilibrium", 4.0, []),
-    ("redox-reactions", "Redox Reactions", 2.0, []),
-    ("organic-chemistry-basics", "Organic Chemistry - Basic Principles", 4.0, []),
-    ("electrochemistry", "Electrochemistry", 3.0, []),
+    ("thermodynamics-chemistry", "Thermodynamics", 4.0, "11", []),
+    ("equilibrium", "Equilibrium", 4.0, "11", []),
+    ("redox-reactions", "Redox Reactions", 2.0, "11", []),
+    ("organic-chemistry-basics", "Organic Chemistry - Basic Principles", 4.0, "11", []),
+    ("electrochemistry", "Electrochemistry", 3.0, "12", []),
 ]
 
 BOTANY_CHAPTERS = [
-    ("the-living-world", "The Living World", 2.0, []),
-    ("plant-kingdom", "Plant Kingdom", 3.0, []),
-    ("morphology-flowering-plants", "Morphology of Flowering Plants", 3.0, []),
-    ("cell-unit-of-life", "Cell - The Unit of Life", 4.0, []),
+    ("the-living-world", "The Living World", 2.0, "11", []),
+    ("plant-kingdom", "Plant Kingdom", 3.0, "11", []),
+    ("morphology-flowering-plants", "Morphology of Flowering Plants", 3.0, "11", []),
+    ("cell-unit-of-life", "Cell - The Unit of Life", 4.0, "11", []),
     (
         "photosynthesis",
         "Photosynthesis in Higher Plants",
         4.0,
+        "11",
         [
             (
                 "light-reaction",
@@ -125,24 +137,33 @@ BOTANY_CHAPTERS = [
                 "Factors Affecting Photosynthesis",
                 [
                     ("photorespiration", "Photorespiration", "Wasteful oxygenation pathway competing with carbon fixation in C3 plants."),
+                    (
+                        "limiting-factors",
+                        "Limiting Factors (Blackman's Law)",
+                        "The rate of photosynthesis is controlled by the factor nearest its minimal value (Blackman's Law of Limiting Factors, 1905), including external factors (light, CO2, temperature, water) and internal factors (leaf traits, chlorophyll amount, internal CO2).",
+                    ),
                 ],
             ),
         ],
     ),
-    ("plant-growth-development", "Plant Growth and Development", 3.0, []),
-    ("sexual-reproduction-flowering-plants", "Sexual Reproduction in Flowering Plants", 3.0, []),
+    ("plant-growth-development", "Plant Growth and Development", 3.0, "11", []),
+    ("sexual-reproduction-flowering-plants", "Sexual Reproduction in Flowering Plants", 3.0, "12", []),
 ]
 
 ZOOLOGY_CHAPTERS = [
-    ("animal-kingdom", "Animal Kingdom", 4.0, []),
-    ("structural-organisation-animals", "Structural Organisation in Animals", 2.0, []),
-    ("biomolecules", "Biomolecules", 3.0, []),
-    ("digestion-absorption", "Digestion and Absorption", 2.0, []),
-    ("breathing-exchange-of-gases", "Breathing and Exchange of Gases", 3.0, []),
+    ("animal-kingdom", "Animal Kingdom", 4.0, "11", []),
+    ("structural-organisation-animals", "Structural Organisation in Animals", 2.0, "11", []),
+    # class_level intentionally None — awaiting curriculum-owner decision
+    # (NCERT places Biomolecules in either Class 11 Ch 9 or Class 12 Ch 9;
+    # see RS-003-B-1A §7 / §16).
+    ("biomolecules", "Biomolecules", 3.0, None, []),
+    ("digestion-absorption", "Digestion and Absorption", 2.0, "11", []),
+    ("breathing-exchange-of-gases", "Breathing and Exchange of Gases", 3.0, "11", []),
     (
         "body-fluids-circulation",
         "Body Fluids and Circulation",
         4.0,
+        "11",
         [
             (
                 "blood-and-blood-groups",
@@ -167,7 +188,7 @@ ZOOLOGY_CHAPTERS = [
             ),
         ],
     ),
-    ("human-reproduction", "Human Reproduction", 3.0, []),
+    ("human-reproduction", "Human Reproduction", 3.0, "12", []),
 ]
 
 SUBJECTS = [
@@ -198,7 +219,7 @@ async def seed_academic(session: AsyncSession) -> None:
             await session.flush()
             logger.info("subject_seeded", code=subject_code)
 
-        for chapter_order, (chapter_code, chapter_name, weightage, topics) in enumerate(chapters):
+        for chapter_order, (chapter_code, chapter_name, weightage, class_level, topics) in enumerate(chapters):
             result = await session.execute(
                 select(Chapter).where(Chapter.subject_id == subject.id, Chapter.code == chapter_code)
             )
@@ -210,10 +231,16 @@ async def seed_academic(session: AsyncSession) -> None:
                     name=chapter_name,
                     display_order=chapter_order,
                     neet_weightage_percent=weightage,
+                    class_level=class_level,
                 )
                 session.add(chapter)
                 await session.flush()
                 logger.info("chapter_seeded", code=chapter_code)
+            elif chapter.class_level != class_level:
+                # Reconcile pre-existing chapter rows with the authoritative
+                # class assignment (RS-003-B-1A). The migration performs the
+                # same UPDATE; both must agree — see RS-003-B-1 §17.
+                chapter.class_level = class_level
 
             for topic_order, (topic_code, topic_name, concepts) in enumerate(topics):
                 result = await session.execute(

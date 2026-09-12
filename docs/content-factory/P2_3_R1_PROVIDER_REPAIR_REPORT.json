@@ -1,0 +1,67 @@
+{
+  "phase": "P2.3-R1",
+  "generated_at": "2026-09-01T23:28:33.324107+00:00",
+  "no_new_generation": true,
+  "production_db_writes": 0,
+  "p2_2_protected_unchanged": true,
+  "expected_same_provider_blocked": 298,
+  "revalidated_count": 298,
+  "metrics": {
+    "total_generated": 1000,
+    "qa_pass": 614,
+    "qa_fail": 386,
+    "ncert_supported": 614,
+    "independently_validated": 614,
+    "independent_validation_rate": 1.0,
+    "ready": 270,
+    "minor_revision": 10,
+    "major_revision": 158,
+    "reject": 174,
+    "inconclusive": 2,
+    "ai_ready_rate": 0.4397,
+    "same_provider_blocked_remaining": 0,
+    "provider_failures": 335
+  },
+  "cost": {
+    "usd_inr_rate": 83.0,
+    "r1_validation_cost_usd": 0.587357,
+    "r1_validation_cost_inr": 48.75,
+    "r1_validation_calls": 298,
+    "generation_cost_usd": 0.762779,
+    "original_validation_cost_usd": 0.0,
+    "cumulative_cost_usd": 1.350136,
+    "cumulative_cost_inr": 112.06,
+    "cost_per_independently_validated_usd": 0.002199,
+    "cost_per_ai_ready_usd": 0.005001,
+    "cost_per_ai_ready_inr": 0.42,
+    "pricing_note": "R1 uses estimate_cost when API returns zero cost_usd"
+  },
+  "gold_sample": {
+    "status": "annotated",
+    "count": 100,
+    "path": "D:\\ravishori\\AI Neet Exam App\\data\\staging\\mcq\\p2_3_r1\\human_gold_sample_r1_annotated.csv"
+  },
+  "scale_decision": "GREEN",
+  "scale_reason": "Proceed to human gold review \u2014 independent validation yield restored.",
+  "quality_layers": {
+    "generation_quality": {
+      "qa_pass_rate": 0.614,
+      "provider_failures": 335
+    },
+    "qa_yield": 614,
+    "provider_availability": {
+      "anthropic_generation_disabled": true,
+      "cross_provider_routing": "gemini\u2192openai, openai\u2192gemini"
+    },
+    "independent_validation_yield": 1.0,
+    "ai_ready_yield": 0.4397,
+    "human_verified_yield": null
+  },
+  "budget": {
+    "max_cost_usd": 75.0,
+    "spent_usd": 0.587357,
+    "request_count": 298,
+    "stopped": false,
+    "stop_reason": null
+  }
+}

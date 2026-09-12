@@ -1,88 +1,429 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import Link from "next/link";
 import { useQuery } from "@tanstack/react-query";
-import { ChevronLeft, ChevronRight, Sparkles } from "lucide-react";
+import { ChevronLeft, ChevronRight, ClipboardList } from "lucide-react";
 
+import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { EmptyState } from "@/components/ui/empty-state";
 import { Skeleton } from "@/components/ui/skeleton";
-import { cmsApi } from "@/features/cms/api";
+import { cmsApi, type EditorialCampaign, type WorkflowState } from "@/features/cms/api";
 
 const PAGE_SIZE = 20;
 
-export default function AiReviewQueuePage() {
-  const [page, setPage] = useState(0);
+const STATE_VARIANT: Record<WorkflowState, "default" | "secondary" | "outline" | "destructive"> = {
+  DRAFT: "outline",
+  IN_REVIEW: "secondary",
+  CHANGES_REQUESTED: "destructive",
+  APPROVED: "secondary",
+  PUBLISHED: "default",
+  ARCHIVED: "outline",
+};
 
-  const { data, isLoading } = useQuery({
-    queryKey: ["cms", "ai-review-queue", page],
-    queryFn: () => cmsApi.aiReviewQueue({ limit: PAGE_SIZE, offset: page * PAGE_SIZE }),
+function ProgressBar({ published, target }: { published: number; target: number }) {
+  const pct = Math.min(100, Math.round((published / Math.max(1, target)) * 100));
+  return (
+    <div className="space-y-1">
+      <div className="flex h-2 overflow-hidden rounded-sm bg-muted" role="progressbar" aria-valuenow={published} aria-valuemax={target}>
+        <div className="bg-foreground/70 transition-all" style={{ width: `${pct}%` }} />
+      </div>
+      <p className="text-xs text-muted-foreground">
+        {published} / {target} published (planning target — quality over quantity)
+      </p>
+    </div>
+  );
+}
+
+function CampaignOverview({ data }: { data: EditorialCampaign }) {
+  const notableChapters = useMemo(() => {
+    const high = data.chapter_coverage.filter((c) => c.concentration === "high").slice(0, 6);
+    const gaps = data.chapter_coverage
+      .filter((c) => c.concentration === "low_published" && (c.draft > 0 || c.in_review > 0 || c.review_queue > 0))
+      .slice(0, 8);
+    return { high, gaps };
+  }, [data.chapter_coverage]);
+
+  const tableRows = useMemo(() => {
+    return [...data.chapter_coverage]
+      .filter((c) => c.published > 0 || c.review_queue > 0 || c.draft > 0)
+      .sort((a, b) => b.draft + b.in_review - (a.draft + a.in_review) || a.published - b.published)
+      .slice(0, 24);
+  }, [data.chapter_coverage]);
+
+  return (
+    <div className="flex flex-col gap-4">
+      <Card>
+        <CardHeader className="pb-2">
+          <CardTitle className="text-base">Content campaign (planning targets)</CardTitle>
+          <CardDescription>
+            Human review remains mandatory. Progress bars are planning aids — do not publish low-quality items to
+            inflate counts. Biology = Botany + Zoology.
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="grid gap-4 sm:grid-cols-3">
+          {data.targets.map((t) => (
+            <div key={t.area} className="space-y-2 rounded-md border p-3">
+              <div className="flex items-center justify-between gap-2">
+                <p className="font-medium">{t.area}</p>
+                <Badge variant={t.met_planning_target ? "default" : "outline"}>
+                  {t.remaining === 0 ? "Target met" : `${t.remaining} remaining`}
+                </Badge>
+              </div>
+              <ProgressBar published={t.published} target={t.target} />
+              <p className="text-xs text-muted-foreground">
+                Pipeline: {t.pipeline.draft} draft · {t.pipeline.in_review} in review · {t.pipeline.approved} approved
+              </p>
+              <p className="text-[11px] text-muted-foreground">Includes: {t.subjects_included.join(", ")}</p>
+            </div>
+          ))}
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader className="pb-2">
+          <CardTitle className="text-base">Inventory snapshot</CardTitle>
+        </CardHeader>
+        <CardContent className="flex flex-wrap gap-2 text-sm">
+          <Badge variant="outline">Draft {data.status_counts.draft}</Badge>
+          <Badge variant="secondary">In review {data.status_counts.in_review}</Badge>
+          <Badge variant="secondary">Approved {data.status_counts.approved}</Badge>
+          <Badge variant="default">Published {data.status_counts.published}</Badge>
+          <Badge variant="destructive">Needs changes {data.status_counts.changes_requested}</Badge>
+          <Badge variant="outline">Missing provenance {data.status_counts.missing_provenance}</Badge>
+          <Badge variant="outline">Missing mapping {data.status_counts.missing_mapping}</Badge>
+          <Badge variant="outline">Structurally invalid {data.status_counts.structurally_invalid}</Badge>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader className="pb-2">
+          <CardTitle className="text-base">Quality metrics (structural only)</CardTitle>
+          <CardDescription>{data.quality_metrics.disclaimer}</CardDescription>
+        </CardHeader>
+        <CardContent className="grid gap-2 text-sm sm:grid-cols-2">
+          <p>% with provenance: {data.quality_metrics.pct_with_provenance}</p>
+          <p>% with academic mapping: {data.quality_metrics.pct_with_academic_mapping}</p>
+          <p>% with explanations: {data.quality_metrics.pct_with_explanation}</p>
+          <p>% structurally valid: {data.quality_metrics.pct_structurally_valid}</p>
+          <p>% reviewed or beyond: {data.quality_metrics.pct_reviewed_or_beyond}</p>
+          <p>% approved or published: {data.quality_metrics.pct_approved_or_published}</p>
+          <p>% published: {data.quality_metrics.pct_published}</p>
+          <p className="text-xs text-muted-foreground sm:col-span-2">
+            Scanned {data.quality_metrics.total_questions_scanned} questions. Scientific correctness is never inferred
+            from these figures.
+          </p>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader className="pb-2">
+          <CardTitle className="text-base">Chapter coverage</CardTitle>
+          <CardDescription>
+            Over-concentrated chapters and zero/low published coverage. Prefer diversification when choosing the next
+            review.
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-3">
+          {notableChapters.high.length > 0 && (
+            <div className="space-y-1 text-sm">
+              <p className="font-medium">High draft concentration</p>
+              {notableChapters.high.map((c) => (
+                <p key={c.chapter_id} className="text-muted-foreground">
+                  {c.subject_name} · {c.chapter_name} — {c.draft} draft / {c.in_review} in review / {c.published}{" "}
+                  published
+                </p>
+              ))}
+            </div>
+          )}
+          <div className="overflow-x-auto rounded-md border">
+            <table className="w-full text-sm">
+              <thead className="bg-muted text-left">
+                <tr>
+                  <th className="p-2">Subject</th>
+                  <th className="p-2">Chapter</th>
+                  <th className="p-2 text-right">Published</th>
+                  <th className="p-2 text-right">Review queue</th>
+                  <th className="p-2 text-right">Draft</th>
+                  <th className="p-2">Flag</th>
+                </tr>
+              </thead>
+              <tbody>
+                {tableRows.map((c) => (
+                  <tr key={c.chapter_id} className="border-t">
+                    <td className="p-2">{c.subject_name}</td>
+                    <td className="p-2">{c.chapter_name}</td>
+                    <td className="p-2 text-right">{c.published}</td>
+                    <td className="p-2 text-right">{c.review_queue}</td>
+                    <td className="p-2 text-right">{c.draft}</td>
+                    <td className="p-2">
+                      {c.concentration === "high" && <Badge variant="destructive">Concentrated</Badge>}
+                      {c.concentration === "low_published" && <Badge variant="outline">Low published</Badge>}
+                      {c.concentration === "normal" && <span className="text-muted-foreground">—</span>}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </CardContent>
+      </Card>
+    </div>
+  );
+}
+
+export default function EditorialReviewQueuePage() {
+  const [page, setPage] = useState(0);
+  const [status, setStatus] = useState("DRAFT");
+  const [difficulty, setDifficulty] = useState("");
+  const [provenance, setProvenance] = useState("");
+  const [readiness, setReadiness] = useState("");
+  const [pilotOnly, setPilotOnly] = useState(true);
+  const [batchAOnly, setBatchAOnly] = useState(true);
+
+  const filters = useMemo(
+    () => ({
+      status: status || "any",
+      difficulty: difficulty || undefined,
+      provenance: provenance || undefined,
+      review_readiness: readiness || undefined,
+      batch_tag: batchAOnly ? "acquisition-batch-A-diversify-p0" : undefined,
+      pilot_only: pilotOnly || undefined,
+      limit: PAGE_SIZE,
+      offset: page * PAGE_SIZE,
+    }),
+    [status, difficulty, provenance, readiness, pilotOnly, batchAOnly, page],
+  );
+
+  const { data, isLoading, error } = useQuery({
+    queryKey: ["cms", "editorial-review-queue", filters],
+    queryFn: () => cmsApi.editorialReviewQueue(filters),
+  });
+
+  const { data: campaign, isLoading: campaignLoading } = useQuery({
+    queryKey: ["cms", "editorial-campaign"],
+    queryFn: () => cmsApi.editorialCampaign(),
+  });
+
+  const { data: pilot } = useQuery({
+    queryKey: ["cms", "editorial-batch-a-pilot"],
+    queryFn: () => cmsApi.batchAPilot(),
   });
 
   const items = data?.data ?? [];
   const total = data?.meta.total ?? 0;
   const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
+  const recommended = data?.meta.recommended_next;
 
   return (
     <main className="flex-1 px-4 py-8 sm:px-6">
-      <div className="mx-auto flex max-w-3xl flex-col gap-6">
-        <div>
-          <h1 className="font-heading text-xl font-semibold">AI Review Queue</h1>
-          <p className="text-sm text-muted-foreground">Content submitted for review, alongside what the AI Evaluator agent flagged.</p>
+      <div className="mx-auto flex max-w-5xl flex-col gap-6">
+        <div className="space-y-1">
+          <p className="text-xs font-medium uppercase tracking-[0.14em] text-muted-foreground">ECAEP · Human campaign</p>
+          <h1 className="font-heading flex items-center gap-2 text-xl font-semibold">
+            <ClipboardList className="size-5" aria-hidden="true" />
+            Editorial Review & Campaign
+          </h1>
+          <p className="text-sm text-muted-foreground">
+            Batch A SME pilot: review ~40 questions (10 per subject). Quality over targets — do not mass-approve or
+            mass-publish. AI flags are assistance only.
+          </p>
         </div>
 
+        {pilot && (
+          <Alert>
+            <AlertDescription className="space-y-2 text-sm">
+              <p>
+                <span className="font-medium">Batch A SME pilot</span> ({pilot.pilot_id}): {pilot.selected_count}{" "}
+                selected · {pilot.batch_a_total} Batch A total · {pilot.remaining_batch_a_untouched} held back until
+                pilot evaluation.
+              </p>
+              <p className="text-xs text-muted-foreground">
+                Subjects:{" "}
+                {Object.entries(pilot.distributions.subject)
+                  .map(([k, v]) => `${k} ${v}`)
+                  .join(" · ")}
+                {" · "}Difficulty:{" "}
+                {Object.entries(pilot.distributions.difficulty)
+                  .map(([k, v]) => `${k} ${v}`)
+                  .join(", ")}
+              </p>
+              <p className="text-xs text-muted-foreground">
+                Target is “review and publish only what passes human judgement” — not “publish 40.”
+              </p>
+            </AlertDescription>
+          </Alert>
+        )}
+
+        {campaignLoading ? <Skeleton className="h-48 w-full" /> : campaign ? <CampaignOverview data={campaign} /> : null}
+
+        {recommended && page === 0 && (
+          <Alert>
+            <AlertDescription>
+              <span className="font-medium">Recommended next review: </span>
+              <Link href={`/admin/content/${recommended.id}`} className="underline underline-offset-2">
+                {recommended.title}
+              </Link>
+              <ul className="mt-2 list-inside list-disc text-xs text-muted-foreground">
+                {recommended.priority_reasons.slice(0, 4).map((r) => (
+                  <li key={r}>{r}</li>
+                ))}
+              </ul>
+            </AlertDescription>
+          </Alert>
+        )}
+
+        <div className="flex flex-wrap items-center gap-2">
+          <select
+            className="h-9 rounded-md border bg-background px-2 text-sm"
+            aria-label="Filter by status"
+            value={status}
+            onChange={(e) => {
+              setStatus(e.target.value);
+              setPage(0);
+            }}
+          >
+            <option value="DRAFT">DRAFT</option>
+            <option value="IN_REVIEW">IN_REVIEW</option>
+            <option value="APPROVED">APPROVED</option>
+            <option value="CHANGES_REQUESTED">CHANGES_REQUESTED</option>
+            <option value="any">All actionable</option>
+          </select>
+          <select
+            className="h-9 rounded-md border bg-background px-2 text-sm"
+            aria-label="Filter by difficulty"
+            value={difficulty}
+            onChange={(e) => {
+              setDifficulty(e.target.value);
+              setPage(0);
+            }}
+          >
+            <option value="">Any difficulty</option>
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+          </select>
+          <select
+            className="h-9 rounded-md border bg-background px-2 text-sm"
+            aria-label="Filter by provenance"
+            value={provenance}
+            onChange={(e) => {
+              setProvenance(e.target.value);
+              setPage(0);
+            }}
+          >
+            <option value="">Any provenance</option>
+            <option value="known">Known lineage</option>
+            <option value="missing">Missing lineage</option>
+          </select>
+          <select
+            className="h-9 rounded-md border bg-background px-2 text-sm"
+            aria-label="Filter by review readiness"
+            value={readiness}
+            onChange={(e) => {
+              setReadiness(e.target.value);
+              setPage(0);
+            }}
+          >
+            <option value="">Any readiness</option>
+            <option value="structurally_ready">Structurally ready</option>
+            <option value="needs_work">Needs structural work</option>
+          </select>
+          <label className="flex h-9 items-center gap-2 rounded-md border px-2 text-sm">
+            <input
+              type="checkbox"
+              checked={pilotOnly}
+              onChange={(e) => {
+                setPilotOnly(e.target.checked);
+                setPage(0);
+              }}
+            />
+            Batch A pilot (~40)
+          </label>
+          <label className="flex h-9 items-center gap-2 rounded-md border px-2 text-sm">
+            <input
+              type="checkbox"
+              checked={batchAOnly}
+              onChange={(e) => {
+                setBatchAOnly(e.target.checked);
+                setPage(0);
+              }}
+            />
+            Batch A only
+          </label>
+        </div>
+
+        {data?.meta.prioritization && <p className="text-xs text-muted-foreground">{data.meta.prioritization}</p>}
+        {data?.meta.quality_vs_science && <p className="text-xs text-muted-foreground">{data.meta.quality_vs_science}</p>}
+
+        {error && (
+          <Alert variant="destructive">
+            <AlertDescription>Could not load the review queue. Check that your account has content.review.</AlertDescription>
+          </Alert>
+        )}
+
         {isLoading ? (
-          <div className="flex flex-col gap-2" aria-busy="true" aria-live="polite">
+          <div className="flex flex-col gap-2" aria-busy="true">
             {Array.from({ length: 5 }).map((_, i) => (
               <Skeleton key={i} className="h-24 w-full" />
             ))}
           </div>
         ) : items.length === 0 ? (
-          <EmptyState title="Nothing awaiting review" description="Content submitted for review will show up here with its AI check results." />
+          <EmptyState
+            title="Nothing in this queue filter"
+            description="Submit structurally ready drafts for review, or clear filters. Human approval remains mandatory."
+          />
         ) : (
           <div className="grid gap-3">
-            {items.map((item) => {
-              const report = item.latest_version?.ai_check_report;
-              return (
-                <Link key={item.id} href={`/admin/content/${item.id}`}>
-                  <Card className="transition-colors hover:bg-muted/50">
-                    <CardHeader className="flex-row items-start justify-between gap-3 space-y-0">
-                      <div>
-                        <CardTitle className="text-base">{item.title}</CardTitle>
-                        <p className="text-xs text-muted-foreground">{item.content_type}</p>
-                      </div>
-                      {report && (
-                        <Badge variant={report.status === "completed" ? (report.flags.length > 0 ? "destructive" : "default") : "secondary"}>
-                          {report.status === "completed" ? (report.flags.length > 0 ? `${report.flags.length} flag(s)` : "clean") : report.status}
-                        </Badge>
+            {items.map((item) => (
+              <Link key={item.id} href={`/admin/content/${item.id}`}>
+                <Card className="transition-colors hover:bg-muted/50">
+                  <CardHeader className="flex-row items-start justify-between gap-3 space-y-0">
+                    <div className="space-y-1">
+                      <CardTitle className="text-base">{item.title}</CardTitle>
+                      <p className="text-xs text-muted-foreground">
+                        {[item.academic.subject?.name, item.academic.chapter?.name, item.academic.topic?.name]
+                          .filter(Boolean)
+                          .join(" · ") || "Unmapped"}
+                        {item.difficulty ? ` · ${item.difficulty}` : ""}
+                        {item.campaign_area ? ` · ${item.campaign_area}` : ""}
+                      </p>
+                    </div>
+                    <div className="flex flex-col items-end gap-1">
+                      <Badge variant={STATE_VARIANT[item.status]}>{item.status}</Badge>
+                      {item.batch_a && <Badge variant="outline">Human-authored Batch A</Badge>}
+                      <Badge variant={item.structural.review_ready ? "default" : "outline"}>
+                        {item.structural.review_ready ? "Structurally ready" : "Needs work"}
+                      </Badge>
+                    </div>
+                  </CardHeader>
+                  <CardContent className="flex flex-col gap-2 pt-0 text-xs text-muted-foreground">
+                    <div className="flex flex-wrap gap-2">
+                      <span>Provenance: {item.provenance.label ?? item.provenance.status}</span>
+                      <span>Explanation: {item.explanation_present ? "present" : "missing"}</span>
+                      {item.chapter_inventory && (
+                        <span>
+                          Chapter: {item.chapter_inventory.published} published / {item.chapter_inventory.draft} draft
+                        </span>
                       )}
-                    </CardHeader>
-                    {report && (
-                      <CardContent className="flex flex-col gap-1.5 pt-0 text-sm">
-                        {report.reason && <p className="text-muted-foreground">{report.reason}</p>}
-                        {report.flags.length > 0 && (
-                          <div className="flex flex-wrap gap-1">
-                            {report.flags.map((flag, idx) => (
-                              <Badge key={idx} variant="outline" className="text-xs">
-                                {flag}
-                              </Badge>
-                            ))}
-                          </div>
-                        )}
-                        {report.confidence !== null && (
-                          <span className="flex items-center gap-1 text-xs text-muted-foreground">
-                            <Sparkles className="size-3" aria-hidden="true" /> Confidence {(report.confidence * 100).toFixed(0)}%
-                          </span>
-                        )}
-                      </CardContent>
+                      {item.ai_check_flags.length > 0 && (
+                        <Badge variant="destructive">{item.ai_check_flags.length} AI flag(s) (assist only)</Badge>
+                      )}
+                    </div>
+                    {item.priority_reasons && item.priority_reasons.length > 0 && (
+                      <ul className="list-inside list-disc">
+                        {item.priority_reasons.slice(0, 3).map((r) => (
+                          <li key={r}>{r}</li>
+                        ))}
+                      </ul>
                     )}
-                  </Card>
-                </Link>
-              );
-            })}
+                  </CardContent>
+                </Card>
+              </Link>
+            ))}
           </div>
         )}
 

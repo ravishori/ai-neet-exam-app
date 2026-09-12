@@ -1,0 +1,114 @@
+{
+  "gate": "P2.3_HUMAN_GOLD",
+  "gate_version": "p2_3_human_gold_gate_v1",
+  "generated_at": "2026-09-02T04:14:56.387279+00:00",
+  "sample_size": 100,
+  "human_reviewed": 0,
+  "pending": 100,
+  "partial": 0,
+  "completion_rate": 0.0,
+  "overall_agreement_rate": null,
+  "answer_key_agreement_rate": null,
+  "false_pass_count": null,
+  "false_pass_rate": null,
+  "false_pass_denominator": null,
+  "false_reject_count": null,
+  "false_reject_rate": null,
+  "false_reject_denominator": null,
+  "human_accept_count": 0,
+  "human_minor_count": 0,
+  "human_major_count": 0,
+  "human_reject_count": 0,
+  "human_inconclusive_count": 0,
+  "gate_status": "YELLOW",
+  "gate_reason": "HUMAN_REVIEW_INCOMPLETE",
+  "ten_k_recommendation": "DO_NOT_PROCEED",
+  "production_db_writes": 0,
+  "label_mapping": {
+    "ai_to_gold": {
+      "READY/PASS": "ACCEPT",
+      "MINOR_REVISION": "MINOR",
+      "MAJOR_REVISION": "MAJOR",
+      "REJECT/FAIL": "REJECT",
+      "INCONCLUSIVE": "INCONCLUSIVE"
+    },
+    "human_to_gold": {
+      "ACCEPT/PASS/OK": "ACCEPT",
+      "MINOR*": "MINOR",
+      "MAJOR*": "MAJOR",
+      "REJECT/FAIL": "REJECT",
+      "INCONCLUSIVE/UNCLEAR": "INCONCLUSIVE"
+    },
+    "false_pass_definition": "AI ACCEPT (READY/PASS) AND human MAJOR or REJECT",
+    "false_reject_definition": "AI MAJOR/REJECT AND human ACCEPT"
+  },
+  "reviewed": 0,
+  "sample": 100,
+  "metrics_snapshot": {
+    "sample_size": 100,
+    "human_reviewed": 0,
+    "pending": 100,
+    "partial": 0,
+    "completion_rate": 0.0,
+    "eligible_human_reviewed_questions": 0,
+    "overall_agreement_rate": null,
+    "answer_key_agreement_rate": null,
+    "answer_key_disagreement_count": null,
+    "false_pass_count": null,
+    "false_pass_rate": null,
+    "false_pass_denominator": null,
+    "false_reject_count": null,
+    "false_reject_rate": null,
+    "false_reject_denominator": null,
+    "human_outcomes": {
+      "ACCEPT": 0,
+      "MINOR": 0,
+      "MAJOR": 0,
+      "REJECT": 0,
+      "INCONCLUSIVE": 0
+    },
+    "confusion_matrix": {
+      "ACCEPT": {
+        "ACCEPT": 0,
+        "MINOR": 0,
+        "MAJOR": 0,
+        "REJECT": 0,
+        "INCONCLUSIVE": 0
+      },
+      "MINOR": {
+        "ACCEPT": 0,
+        "MINOR": 0,
+        "MAJOR": 0,
+        "REJECT": 0,
+        "INCONCLUSIVE": 0
+      },
+      "MAJOR": {
+        "ACCEPT": 0,
+        "MINOR": 0,
+        "MAJOR": 0,
+        "REJECT": 0,
+        "INCONCLUSIVE": 0
+      },
+      "REJECT": {
+        "ACCEPT": 0,
+        "MINOR": 0,
+        "MAJOR": 0,
+        "REJECT": 0,
+        "INCONCLUSIVE": 0
+      },
+      "INCONCLUSIVE": {
+        "ACCEPT": 0,
+        "MINOR": 0,
+        "MAJOR": 0,
+        "REJECT": 0,
+        "INCONCLUSIVE": 0
+      }
+    },
+    "subject_breakdown": {},
+    "chapter_breakdown": {},
+    "provider_breakdown": {},
+    "difficulty_analysis": {},
+    "neet_analysis": {},
+    "ncert_analysis": {}
+  }
+}

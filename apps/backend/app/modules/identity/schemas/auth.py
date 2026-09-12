@@ -26,6 +26,35 @@ class VerifyEmailRequest(BaseModel):
     token: str
 
 
+class ChangePasswordRequest(BaseModel):
+    current_password: str
+    new_password: str = Field(min_length=8, max_length=128)
+
+
+class OtpRequest(BaseModel):
+    email: EmailStr
+    purpose: str = Field(min_length=3, max_length=40)
+
+
+class OtpVerifyRequest(BaseModel):
+    email: EmailStr
+    purpose: str = Field(min_length=3, max_length=40)
+    code: str = Field(min_length=6, max_length=6)
+
+
+class MfaVerifyRequest(BaseModel):
+    mfa_token: str
+    code: str = Field(min_length=4, max_length=64)
+
+
+class TotpConfirmRequest(BaseModel):
+    code: str = Field(min_length=6, max_length=8)
+
+
+class TotpDisableRequest(BaseModel):
+    code: str = Field(min_length=4, max_length=64)
+
+
 class MeResponse(BaseModel):
     id: str
     email: str
@@ -34,3 +63,4 @@ class MeResponse(BaseModel):
     display_name: str | None
     email_verified: bool
     roles: list[str]
+    totp_enabled: bool = False

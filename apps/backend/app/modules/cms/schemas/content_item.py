@@ -26,6 +26,13 @@ class ReviewDecisionRequest(BaseModel):
     comment: str | None = None
 
 
+class CertifyNcertRequest(BaseModel):
+    """APPROVED-state NCERT source-text certification (does not publish)."""
+
+    required_batch_id: str | None = None
+    verification_method: str | None = None
+
+
 class ContentReportRequest(BaseModel):
     reason: str  # WRONG_ANSWER | UNCLEAR | TYPO | OFFENSIVE | OTHER
     comment: str | None = Field(default=None, max_length=1000)

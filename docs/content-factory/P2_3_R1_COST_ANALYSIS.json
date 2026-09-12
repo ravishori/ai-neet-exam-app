@@ -1,0 +1,14 @@
+{
+  "usd_inr_rate": 83.0,
+  "r1_validation_cost_usd": 0.587357,
+  "r1_validation_cost_inr": 48.75,
+  "r1_validation_calls": 298,
+  "generation_cost_usd": 0.762779,
+  "original_validation_cost_usd": 0.0,
+  "cumulative_cost_usd": 1.350136,
+  "cumulative_cost_inr": 112.06,
+  "cost_per_independently_validated_usd": 0.002199,
+  "cost_per_ai_ready_usd": 0.005001,
+  "cost_per_ai_ready_inr": 0.42,
+  "pricing_note": "R1 uses estimate_cost when API returns zero cost_usd"
+}

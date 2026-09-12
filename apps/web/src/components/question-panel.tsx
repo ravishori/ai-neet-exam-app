@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { Bookmark, Check, Flag, NotebookPen, Share2, X } from "lucide-react";
+import { Bookmark, Flag, NotebookPen, Share2 } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -16,13 +16,13 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Textarea } from "@/components/ui/textarea";
+import { AnswerOption, type AnswerOptionState } from "@/components/ds/answer-option";
 import { MarkdownRenderer } from "@/components/markdown-renderer";
 import { QuestionExplainCard } from "@/components/question-explain-card";
 import type { AttemptQuestion, Confidence } from "@/features/assessment/api";
 import { assessmentApi } from "@/features/assessment/api";
 import { learningApi } from "@/features/learning/api";
 import { questionsApi, type ReportReason } from "@/features/questions/api";
-import { cn } from "@/lib/utils";
 
 const CONFIDENCE_OPTIONS: { value: Confidence; label: string }[] = [
   { value: "easy", label: "Easy" },
@@ -90,7 +90,7 @@ function PreviousAttempts({ contentItemId }: { contentItemId: string }) {
           <ul className="flex flex-col gap-2 text-sm">
             {query.data.map((entry, idx) => (
               <li key={idx} className="flex items-center justify-between gap-2 rounded-md border border-border px-3 py-2">
-                <span className={entry.is_correct ? "text-green-700 dark:text-green-400" : "text-destructive"}>
+                <span className={entry.is_correct ? "text-success" : "text-destructive"}>
                   {entry.selected_option ? `Selected ${entry.selected_option}` : "Skipped"} — {entry.is_correct ? "Correct" : "Incorrect"}
                 </span>
                 <span className="text-xs text-muted-foreground">{new Date(entry.answered_at).toLocaleDateString()}</span>
@@ -241,55 +241,26 @@ export function QuestionPanel({
           const isSelected = question.selected_option === opt.label;
           const isCorrectOpt = isSubmitted && question.correct_option === opt.label;
           const isWrongSelected = isSubmitted && isSelected && !isCorrectOpt;
+          let state: AnswerOptionState = "default";
+          if (isCorrectOpt) state = "correct";
+          else if (isWrongSelected) state = "incorrect";
+          else if (!isSubmitted && isSelected) state = "selected";
           return (
-            <button
+            <AnswerOption
               key={opt.label}
-              type="button"
+              label={opt.label}
+              letter={optIdx < 4 ? String.fromCharCode(65 + optIdx) : opt.label}
+              text={opt.text}
+              state={state}
               disabled={isSubmitted}
-              aria-pressed={isSelected}
-              aria-label={`Option ${opt.label}: ${opt.text}`}
-              onClick={() => onSelectOption(opt.label)}
-              className={cn(
-                "group/option relative flex min-h-[3.25rem] items-start gap-3 overflow-hidden rounded-xl border p-4 text-left text-sm shadow-xs transition-[border-color,background-color,box-shadow,transform] duration-200 touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50 disabled:cursor-default",
-                isCorrectOpt && "border-green-600 bg-green-50 dark:border-green-500 dark:bg-green-950",
-                isWrongSelected && "border-destructive bg-destructive/10",
-                !isSubmitted &&
-                  isSelected &&
-                  "border-primary bg-primary/10 shadow-md ring-1 ring-primary/25",
-                !isSubmitted &&
-                  !isSelected &&
-                  "border-border bg-card/80 hover:border-primary/40 hover:bg-muted/40 hover:shadow-sm",
-              )}
-            >
-              <span
-                aria-hidden
-                className={cn(
-                  "pointer-events-none absolute inset-0 opacity-0 transition-opacity",
-                  !isSubmitted && !isSelected && "group-hover/option:opacity-100",
-                  "bg-[radial-gradient(circle_at_0%_0%,color-mix(in_oklab,var(--primary)_12%,transparent),transparent_55%)]",
-                )}
-              />
-              <span
-                className={cn(
-                  "relative z-[1] flex size-7 shrink-0 items-center justify-center rounded-lg border text-xs font-semibold tabular-nums",
-                  isSelected || isCorrectOpt
-                    ? "border-current bg-background/80"
-                    : "border-muted-foreground/40 text-muted-foreground",
-                )}
-                aria-hidden="true"
-              >
-                {optIdx < 4 ? String.fromCharCode(65 + optIdx) : opt.label}
-              </span>
-              <span className="relative z-[1] min-w-0 flex-1 break-words pt-0.5 leading-relaxed">{opt.text}</span>
-              {isCorrectOpt && <Check className="relative z-[1] ml-auto size-4 shrink-0 text-green-600 dark:text-green-400" aria-hidden="true" />}
-              {isWrongSelected && <X className="relative z-[1] ml-auto size-4 shrink-0 text-destructive" aria-hidden="true" />}
-            </button>
+              onSelect={() => onSelectOption(opt.label)}
+            />
           );
         })}
       </fieldset>
       <p className="text-xs text-muted-foreground">Keyboard shortcuts: A, B, C, D select an option.</p>
 
-      <div className="flex flex-wrap items-center gap-2">
+      <div className="flex flex-wrap items-center gap-2 border-t border-border/60 pt-3">
         <Button
           type="button"
           variant={question.bookmarked ? "default" : "outline"}
@@ -301,11 +272,25 @@ export function QuestionPanel({
           {question.bookmarked ? "Bookmarked" : "Bookmark"}
         </Button>
 
-        <Dialog open={noteDialogOpen} onOpenChange={(open) => {
-          setNoteDialogOpen(open);
-          if (open) setNoteText(noteQuery.data?.note_text ?? "");
-        }}>
-          <DialogTrigger render={<Button type="button" variant="outline" size="sm" />}>
+        {!isSubmitted && (
+          <Button
+            type="button"
+            variant={question.marked_for_review ? "secondary" : "outline"}
+            size="sm"
+            onClick={onToggleMarkForReview}
+          >
+            {question.marked_for_review ? "Marked for review" : "Mark for review"}
+          </Button>
+        )}
+
+        <Dialog
+          open={noteDialogOpen}
+          onOpenChange={(open) => {
+            setNoteDialogOpen(open);
+            if (open) setNoteText(noteQuery.data?.note_text ?? "");
+          }}
+        >
+          <DialogTrigger render={<Button type="button" variant="ghost" size="sm" />}>
             <NotebookPen className="size-3.5" aria-hidden="true" /> Note
           </DialogTrigger>
           <DialogContent>
@@ -327,20 +312,22 @@ export function QuestionPanel({
           </DialogContent>
         </Dialog>
 
-        <Button type="button" variant="outline" size="sm" onClick={handleShare}>
+        <Button type="button" variant="ghost" size="sm" onClick={handleShare}>
           <Share2 className="size-3.5" aria-hidden="true" /> {shareCopied ? "Link copied" : "Share"}
         </Button>
 
         <PreviousAttempts contentItemId={question.content_item_id} />
 
-        <Dialog onOpenChange={(open) => {
-          if (!open) {
-            setReportSubmitted(false);
-            setReportComment("");
-          }
-        }}>
+        <Dialog
+          onOpenChange={(open) => {
+            if (!open) {
+              setReportSubmitted(false);
+              setReportComment("");
+            }
+          }}
+        >
           <DialogTrigger render={<Button type="button" variant="ghost" size="sm" />}>
-            <Flag className="size-3.5" aria-hidden="true" /> Report issue
+            <Flag className="size-3.5" aria-hidden="true" /> Report
           </DialogTrigger>
           <DialogContent>
             <DialogHeader>
@@ -348,7 +335,7 @@ export function QuestionPanel({
               <DialogDescription>Flag a problem with this question for the content team to review.</DialogDescription>
             </DialogHeader>
             {reportSubmitted ? (
-              <p className="text-sm text-green-700 dark:text-green-400">Thanks — your report has been submitted.</p>
+              <p className="text-sm text-success">Thanks — your report has been submitted.</p>
             ) : (
               <>
                 <div className="flex flex-col gap-1.5">
@@ -382,7 +369,7 @@ export function QuestionPanel({
       </div>
 
       {!isSubmitted && (
-        <div className="flex flex-wrap items-center gap-2 border-t pt-3">
+        <div className="flex flex-wrap items-center gap-2">
           <span className="text-xs font-medium text-muted-foreground">How confident are you?</span>
           {CONFIDENCE_OPTIONS.map((c) => (
             <Button
@@ -395,15 +382,6 @@ export function QuestionPanel({
               {c.label}
             </Button>
           ))}
-          <Button
-            type="button"
-            size="sm"
-            variant={question.marked_for_review ? "default" : "outline"}
-            className="ml-auto"
-            onClick={onToggleMarkForReview}
-          >
-            {question.marked_for_review ? "Marked for review" : "Mark for review"}
-          </Button>
         </div>
       )}
 

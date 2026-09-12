@@ -1,0 +1,56 @@
+{
+  "captured_at": "2026-09-03T13:53:11.502Z",
+  "steps": [
+    {
+      "step": "dashboard",
+      "url": "http://localhost:3000/student/dashboard",
+      "full_visible": true,
+      "full_enabled": true,
+      "seed_visible": true,
+      "seed_enabled": true,
+      "console_errors_on_load": 0,
+      "failed_api_on_load": 0,
+      "pass": true
+    },
+    {
+      "step": "full_practice",
+      "practice_ok": true,
+      "practice_status": 201,
+      "attempt_ok": true,
+      "attempt_status": 201,
+      "scope_type": "FULL",
+      "seed_meta_hash": null,
+      "question_count": 30,
+      "assessment_id": "8f2fbd60-dc43-421e-8ce5-171209c7c64e",
+      "attempt_id": "2c88dccb-b9ca-43e8-bb5e-71be70afd8fc",
+      "expected_scope_ok": true,
+      "pass": true,
+      "observed_non_seed_uuid": "e2ae1697-3d88-4f53-9b73-73308647e872",
+      "outside_seed_count": 29
+    },
+    {
+      "step": "seed_session_core",
+      "practice_ok": true,
+      "practice_status": 201,
+      "attempt_ok": true,
+      "attempt_status": 201,
+      "scope_type": "SEED_V1",
+      "seed_meta_hash": "c0cf70846233730ef384188f5b78cced2a7865f76d977a0af6063f803bc8f0c1",
+      "question_count": 30,
+      "assessment_id": "2b86ef0c-3620-4480-85d5-53440a856915",
+      "attempt_id": "fe5cc299-9aa2-49b0-a5d7-d10a60039cea",
+      "expected_scope_ok": true,
+      "pass": true,
+      "presented_count": 30,
+      "unique_count": 30,
+      "outside_allowlist": 0,
+      "outside_sample": [],
+      "all_in_allowlist": true,
+      "expected_count": 30
+    }
+  ],
+  "console_errors": [],
+  "page_errors": [],
+  "http_errors": [],
+  "pass": false
+}

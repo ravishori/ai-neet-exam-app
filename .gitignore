@@ -39,3 +39,26 @@ Thumbs.db
 # PDFs, ~270MB, not code. Never belongs in git. ---
 /StudyMaterial/
 /StudyMaterial.zip
+/StudyMaterial (2).zip
+
+# --- Local binary corpora / generated assets (not application source) ---
+/NEET_PYQ_OFFICIAL/
+/NEET_PYQ_OFFICIAL.zip
+/PYExamPapers/
+/VisualAssets/
+/AI-NEET-Master-Technical-Blueprint-ZIP1.zip
+/data/staging/
+/_sme_ncert_phys/
+/physics-question-bank/
+
+# --- Heavy local acquisition run dumps (~90MB+ JSON/PNG artifacts; not app source) ---
+/docs/acquisition/
+/playwright-report/
+/test-results/
+/coverage/
+*.log
+
+# --- Local scratch notes (not project docs) ---
+/code to start projec.txt
+/code to start project.txt
+/# Phase-D Review Environment — Startup Guide.txt

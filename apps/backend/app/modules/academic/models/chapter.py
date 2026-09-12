@@ -20,6 +20,9 @@ class Chapter(Base, AuditedBase):
     display_order: Mapped[int] = mapped_column(Integer, default=0, nullable=False)
     # NEET-specific: roughly how much of the exam this chapter accounts for.
     neet_weightage_percent: Mapped[float | None] = mapped_column(Numeric(4, 1))
+    # NCERT class ownership (RS-003-B-1). Nullable while ZOOLOGY 'biomolecules'
+    # remains curriculum-owner-unresolved — see RS-003-B-1A audit.
+    class_level: Mapped[str | None] = mapped_column(String(2))
 
     subject: Mapped["Subject"] = relationship(back_populates="chapters")
     topics: Mapped[list["Topic"]] = relationship(

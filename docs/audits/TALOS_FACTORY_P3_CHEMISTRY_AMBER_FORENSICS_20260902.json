@@ -1,0 +1,1622 @@
+{
+  "captured_at": "2026-09-02T16:40:18.003206+00:00",
+  "scope": "read_only_forensics",
+  "chemistry_slice": {
+    "label": "CHEMISTRY/Chemical Bonding and Molecular Structure/medium",
+    "run_id": "60d1ef7a-902f-42bb-9bd8-965560be7ade",
+    "job_id": "2e0a8447-ae39-46af-a0d9-ccb7ade7ac29",
+    "blueprint_id": "c746c965-0c2c-4fa6-91a5-78464042b054",
+    "requested": 25,
+    "attempted": 50,
+    "created": 20,
+    "stop_reason": "ATTEMPT_LIMIT",
+    "max_attempts_expected": 50,
+    "attempt_limit_correct": true
+  },
+  "status_counts": {
+    "CREATED": 20,
+    "FAILED_PARSE": 10,
+    "REJECTED_DUPLICATE": 17,
+    "REJECTED_VALIDATION": 3
+  },
+  "error_codes": {
+    "MALFORMED_JSON": 10,
+    "DUPLICATE_STEM": 17,
+    "SCHEMA:too_long": 2,
+    "SCHEMA:value_error": 1
+  },
+  "error_summaries": {
+    "finishReason=STOP: Expecting ',' delimiter: line 1 column 816 (char 815)": 1,
+    "": 17,
+    "SCHEMA:too_long": 2,
+    "finishReason=STOP: Invalid \\escape: line 1 column 1201 (char 1200)": 1,
+    "finishReason=STOP: Expecting ',' delimiter: line 1 column 886 (char 885)": 1,
+    "finishReason=STOP: Expecting ',' delimiter: line 1 column 723 (char 722)": 1,
+    "finishReason=STOP: Expecting ',' delimiter: line 1 column 922 (char 921)": 1,
+    "finishReason=STOP: Expecting ',' delimiter: line 1 column 668 (char 667)": 1,
+    "SCHEMA:value_error": 1,
+    "finishReason=STOP: Expecting ',' delimiter: line 1 column 590 (char 589)": 1,
+    "finishReason=STOP: Invalid \\escape: line 1 column 1679 (char 1678)": 1,
+    "finishReason=STOP: Expecting ',' delimiter: line 1 column 622 (char 621)": 1,
+    "finishReason=STOP: Expecting ',' delimiter: line 1 column 713 (char 712)": 1
+  },
+  "attempts": [
+    {
+      "attempt_no": 1,
+      "topic": "Ionic Bonding",
+      "chapter": "Chemical Bonding and Molecular Structure",
+      "concept": "Lattice Energy",
+      "difficulty": "medium",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "result": "CREATED",
+      "rejection_class": null,
+      "rejection_reason": null,
+      "stem_hash": "80a29eb64a8a2eb7da5c08a521155c0df794a8b1ef851d6b9076f15f41608c35",
+      "option_stem_hash": null,
+      "candidate_id": "80b2d0aa-8590-4ce1-af4d-52f5c2b183d7",
+      "content_item_id": "8d424bd3-dc8d-499b-99b8-05c27c2a5a31"
+    },
+    {
+      "attempt_no": 2,
+      "topic": "Ionic Bonding",
+      "chapter": "Chemical Bonding and Molecular Structure",
+      "concept": "Lattice Energy",
+      "difficulty": "medium",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "result": "CREATED",
+      "rejection_class": null,
+      "rejection_reason": null,
+      "stem_hash": "d5a8ee7e11c59c0969ab30c7a006bfe6a5b925c642ae9eb55c760a3830ceebcf",
+      "option_stem_hash": null,
+      "candidate_id": "8bca69b4-07f3-4d55-8dfe-c2cde032139e",
+      "content_item_id": "4de4ceaf-01f7-4508-b92f-f55db2696cac"
+    },
+    {
+      "attempt_no": 3,
+      "topic": "Ionic Bonding",
+      "chapter": "Chemical Bonding and Molecular Structure",
+      "concept": "Lattice Energy",
+      "difficulty": "medium",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "result": "FAILED_PARSE",
+      "rejection_class": "FAILED_PARSE",
+      "rejection_reason": "finishReason=STOP: Expecting ',' delimiter: line 1 column 816 (char 815)",
+      "stem_hash": null,
+      "option_stem_hash": null,
+      "candidate_id": "bf1569c1-89df-4cb0-90d4-ef1a5708929a",
+      "content_item_id": null
+    },
+    {
+      "attempt_no": 4,
+      "topic": "Ionic Bonding",
+      "chapter": "Chemical Bonding and Molecular Structure",
+      "concept": "Lattice Energy",
+      "difficulty": "medium",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "result": "REJECTED_DUPLICATE",
+      "rejection_class": "REJECTED_DUPLICATE",
+      "rejection_reason": "DUPLICATE_STEM",
+      "stem_hash": "80a29eb64a8a2eb7da5c08a521155c0df794a8b1ef851d6b9076f15f41608c35",
+      "option_stem_hash": null,
+      "candidate_id": "33bbf006-e21d-4410-9032-abb22565527b",
+      "content_item_id": null
+    },
+    {
+      "attempt_no": 5,
+      "topic": "Ionic Bonding",
+      "chapter": "Chemical Bonding and Molecular Structure",
+      "concept": "Lattice Energy",
+      "difficulty": "medium",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "result": "CREATED",
+      "rejection_class": null,
+      "rejection_reason": null,
+      "stem_hash": "791c0d3b02d0c3077490aabd314910470f5cfa9305fddf0840f5741b9f25bddd",
+      "option_stem_hash": null,
+      "candidate_id": "b9ecf366-f789-45e1-8836-18a41ada7082",
+      "content_item_id": "a7f6bf5c-018f-42d9-aacb-72f2a004913e"
+    },
+    {
+      "attempt_no": 6,
+      "topic": "Ionic Bonding",
+      "chapter": "Chemical Bonding and Molecular Structure",
+      "concept": "Lattice Energy",
+      "difficulty": "medium",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "result": "CREATED",
+      "rejection_class": null,
+      "rejection_reason": null,
+      "stem_hash": "867ee77f8ef0ab71ff3c187596af23f21f4a73fc2fbbf93c0cab4bd337d1ef51",
+      "option_stem_hash": null,
+      "candidate_id": "55a95388-ad70-4a8e-ab29-46f1b3fbda9f",
+      "content_item_id": "8704a88f-38cd-4be1-93b3-31cced984712"
+    },
+    {
+      "attempt_no": 7,
+      "topic": "Ionic Bonding",
+      "chapter": "Chemical Bonding and Molecular Structure",
+      "concept": "Lattice Energy",
+      "difficulty": "medium",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "result": "CREATED",
+      "rejection_class": null,
+      "rejection_reason": null,
+      "stem_hash": "ec5bc6a9b9f66197e70a880eb6954923ac633abbbe70fae5d7363864df778952",
+      "option_stem_hash": null,
+      "candidate_id": "e38e2daa-cb88-4330-9541-67885aa8faee",
+      "content_item_id": "574bb5d6-9371-42e7-afd4-457278134930"
+    },
+    {
+      "attempt_no": 8,
+      "topic": "Ionic Bonding",
+      "chapter": "Chemical Bonding and Molecular Structure",
+      "concept": "Lattice Energy",
+      "difficulty": "medium",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "result": "CREATED",
+      "rejection_class": null,
+      "rejection_reason": null,
+      "stem_hash": "ac51b7b1ad4c4fcaef5695d83a22782b56730d05764a8b9c88fefb2b6b3d99d7",
+      "option_stem_hash": null,
+      "candidate_id": "8ce8e805-87cc-4631-bf47-080f75228b51",
+      "content_item_id": "e33bce0c-f7c3-4a01-9674-4878953a8e6a"
+    },
+    {
+      "attempt_no": 9,
+      "topic": "Ionic Bonding",
+      "chapter": "Chemical Bonding and Molecular Structure",
+      "concept": "Lattice Energy",
+      "difficulty": "medium",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "result": "CREATED",
+      "rejection_class": null,
+      "rejection_reason": null,
+      "stem_hash": "ebff77e7349d25fbfb9262fcc78fe1fb70b35ac17bf9b3ba76e164618769af8e",
+      "option_stem_hash": null,
+      "candidate_id": "e8a1cb26-3e56-4ea1-823e-dd22ee5710f4",
+      "content_item_id": "dac3ca87-b29a-43a5-b3f7-3bec40a0e04e"
+    },
+    {
+      "attempt_no": 10,
+      "topic": "Ionic Bonding",
+      "chapter": "Chemical Bonding and Molecular Structure",
+      "concept": "Lattice Energy",
+      "difficulty": "medium",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "result": "REJECTED_VALIDATION",
+      "rejection_class": "REJECTED_VALIDATION",
+      "rejection_reason": "SCHEMA:too_long",
+      "stem_hash": null,
+      "option_stem_hash": null,
+      "candidate_id": "8fb2dbd3-a488-4df8-8227-46b958f209ad",
+      "content_item_id": null
+    },
+    {
+      "attempt_no": 11,
+      "topic": "Ionic Bonding",
+      "chapter": "Chemical Bonding and Molecular Structure",
+      "concept": "Lattice Energy",
+      "difficulty": "medium",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "result": "CREATED",
+      "rejection_class": null,
+      "rejection_reason": null,
+      "stem_hash": "9bc9213b9f0d5911dd3061369bc2e0c3b9f0571edea72baf067cddff9e1f5c95",
+      "option_stem_hash": null,
+      "candidate_id": "6ff12d5a-4def-48a3-854a-af13d58a386f",
+      "content_item_id": "27d37116-2613-4fc2-981f-add21f2725f4"
+    },
+    {
+      "attempt_no": 12,
+      "topic": "Ionic Bonding",
+      "chapter": "Chemical Bonding and Molecular Structure",
+      "concept": "Lattice Energy",
+      "difficulty": "medium",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "result": "REJECTED_DUPLICATE",
+      "rejection_class": "REJECTED_DUPLICATE",
+      "rejection_reason": "DUPLICATE_STEM",
+      "stem_hash": "ebff77e7349d25fbfb9262fcc78fe1fb70b35ac17bf9b3ba76e164618769af8e",
+      "option_stem_hash": null,
+      "candidate_id": "180e9cb9-e21d-42e4-9a78-1b4ab6937d40",
+      "content_item_id": null
+    },
+    {
+      "attempt_no": 13,
+      "topic": "Ionic Bonding",
+      "chapter": "Chemical Bonding and Molecular Structure",
+      "concept": "Lattice Energy",
+      "difficulty": "medium",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "result": "CREATED",
+      "rejection_class": null,
+      "rejection_reason": null,
+      "stem_hash": "5824121749c38e93879198537013e0efa6173ebc82cfd9a2dd7a79ee6ef75f52",
+      "option_stem_hash": null,
+      "candidate_id": "1e430658-686e-484f-bcc5-ef89489507a0",
+      "content_item_id": "31959259-6612-4826-b878-85571e2e4952"
+    },
+    {
+      "attempt_no": 14,
+      "topic": "Ionic Bonding",
+      "chapter": "Chemical Bonding and Molecular Structure",
+      "concept": "Lattice Energy",
+      "difficulty": "medium",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "result": "CREATED",
+      "rejection_class": null,
+      "rejection_reason": null,
+      "stem_hash": "7cdae71cc467622fd9d95d70306bc967b5461e251e164abf35b3d2f49be56638",
+      "option_stem_hash": null,
+      "candidate_id": "4d2fbb09-b857-494a-912d-8470caac32bd",
+      "content_item_id": "eb74936c-8b6e-479a-9d03-d90792e3c78f"
+    },
+    {
+      "attempt_no": 15,
+      "topic": "Ionic Bonding",
+      "chapter": "Chemical Bonding and Molecular Structure",
+      "concept": "Lattice Energy",
+      "difficulty": "medium",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "result": "REJECTED_DUPLICATE",
+      "rejection_class": "REJECTED_DUPLICATE",
+      "rejection_reason": "DUPLICATE_STEM",
+      "stem_hash": "80a29eb64a8a2eb7da5c08a521155c0df794a8b1ef851d6b9076f15f41608c35",
+      "option_stem_hash": null,
+      "candidate_id": "5ad17cf8-76c3-4dc5-a472-f9f92dd58a31",
+      "content_item_id": null
+    },
+    {
+      "attempt_no": 16,
+      "topic": "Ionic Bonding",
+      "chapter": "Chemical Bonding and Molecular Structure",
+      "concept": "Lattice Energy",
+      "difficulty": "medium",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "result": "FAILED_PARSE",
+      "rejection_class": "FAILED_PARSE",
+      "rejection_reason": "finishReason=STOP: Invalid \\escape: line 1 column 1201 (char 1200)",
+      "stem_hash": null,
+      "option_stem_hash": null,
+      "candidate_id": "e02fec2b-10e9-4ae8-baf2-b9e826b80154",
+      "content_item_id": null
+    },
+    {
+      "attempt_no": 17,
+      "topic": "Ionic Bonding",
+      "chapter": "Chemical Bonding and Molecular Structure",
+      "concept": "Lattice Energy",
+      "difficulty": "medium",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "result": "REJECTED_DUPLICATE",
+      "rejection_class": "REJECTED_DUPLICATE",
+      "rejection_reason": "DUPLICATE_STEM",
+      "stem_hash": "791c0d3b02d0c3077490aabd314910470f5cfa9305fddf0840f5741b9f25bddd",
+      "option_stem_hash": null,
+      "candidate_id": "23faf2cb-ebe5-4fc4-acba-62766fb6d4ee",
+      "content_item_id": null
+    },
+    {
+      "attempt_no": 18,
+      "topic": "Ionic Bonding",
+      "chapter": "Chemical Bonding and Molecular Structure",
+      "concept": "Lattice Energy",
+      "difficulty": "medium",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "result": "CREATED",
+      "rejection_class": null,
+      "rejection_reason": null,
+      "stem_hash": "c82dfa1499660ab5e1685e8b7fec2efb7ea91891a884678a48aef19736f7f6a0",
+      "option_stem_hash": null,
+      "candidate_id": "64951557-1096-453b-9f54-4dccd32dc364",
+      "content_item_id": "851ad68b-8383-4ced-8fd7-0d8a60cb36f5"
+    },
+    {
+      "attempt_no": 19,
+      "topic": "Ionic Bonding",
+      "chapter": "Chemical Bonding and Molecular Structure",
+      "concept": "Lattice Energy",
+      "difficulty": "medium",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "result": "CREATED",
+      "rejection_class": null,
+      "rejection_reason": null,
+      "stem_hash": "6608b8ac7dbbb20a19dd311ffb47c11525408b64ba6a2d998f82f745f1a91b55",
+      "option_stem_hash": null,
+      "candidate_id": "38ae327f-dba0-4e1a-b6e2-ee3f40332337",
+      "content_item_id": "06f482fd-7a9c-4ab4-af3a-04fd45ed6f7b"
+    },
+    {
+      "attempt_no": 20,
+      "topic": "Ionic Bonding",
+      "chapter": "Chemical Bonding and Molecular Structure",
+      "concept": "Lattice Energy",
+      "difficulty": "medium",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "result": "REJECTED_VALIDATION",
+      "rejection_class": "REJECTED_VALIDATION",
+      "rejection_reason": "SCHEMA:too_long",
+      "stem_hash": null,
+      "option_stem_hash": null,
+      "candidate_id": "22b0acb6-6585-4d6b-ab99-ba1cacf689d7",
+      "content_item_id": null
+    },
+    {
+      "attempt_no": 21,
+      "topic": "Ionic Bonding",
+      "chapter": "Chemical Bonding and Molecular Structure",
+      "concept": "Lattice Energy",
+      "difficulty": "medium",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "result": "REJECTED_DUPLICATE",
+      "rejection_class": "REJECTED_DUPLICATE",
+      "rejection_reason": "DUPLICATE_STEM",
+      "stem_hash": "d5a8ee7e11c59c0969ab30c7a006bfe6a5b925c642ae9eb55c760a3830ceebcf",
+      "option_stem_hash": null,
+      "candidate_id": "336ef743-8c26-4701-9bb2-77cf5076342a",
+      "content_item_id": null
+    },
+    {
+      "attempt_no": 22,
+      "topic": "Ionic Bonding",
+      "chapter": "Chemical Bonding and Molecular Structure",
+      "concept": "Lattice Energy",
+      "difficulty": "medium",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "result": "REJECTED_DUPLICATE",
+      "rejection_class": "REJECTED_DUPLICATE",
+      "rejection_reason": "DUPLICATE_STEM",
+      "stem_hash": "80a29eb64a8a2eb7da5c08a521155c0df794a8b1ef851d6b9076f15f41608c35",
+      "option_stem_hash": null,
+      "candidate_id": "07fcb329-0188-41fa-9aed-53a23827e502",
+      "content_item_id": null
+    },
+    {
+      "attempt_no": 23,
+      "topic": "Ionic Bonding",
+      "chapter": "Chemical Bonding and Molecular Structure",
+      "concept": "Lattice Energy",
+      "difficulty": "medium",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "result": "FAILED_PARSE",
+      "rejection_class": "FAILED_PARSE",
+      "rejection_reason": "finishReason=STOP: Expecting ',' delimiter: line 1 column 886 (char 885)",
+      "stem_hash": null,
+      "option_stem_hash": null,
+      "candidate_id": "11fe3bf0-df1d-4fe6-a2de-a5959d14140f",
+      "content_item_id": null
+    },
+    {
+      "attempt_no": 24,
+      "topic": "Ionic Bonding",
+      "chapter": "Chemical Bonding and Molecular Structure",
+      "concept": "Lattice Energy",
+      "difficulty": "medium",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "result": "REJECTED_DUPLICATE",
+      "rejection_class": "REJECTED_DUPLICATE",
+      "rejection_reason": "DUPLICATE_STEM",
+      "stem_hash": "7cdae71cc467622fd9d95d70306bc967b5461e251e164abf35b3d2f49be56638",
+      "option_stem_hash": null,
+      "candidate_id": "3070e546-d5ed-42b8-90e0-1e07aded9b9c",
+      "content_item_id": null
+    },
+    {
+      "attempt_no": 25,
+      "topic": "Ionic Bonding",
+      "chapter": "Chemical Bonding and Molecular Structure",
+      "concept": "Lattice Energy",
+      "difficulty": "medium",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "result": "REJECTED_DUPLICATE",
+      "rejection_class": "REJECTED_DUPLICATE",
+      "rejection_reason": "DUPLICATE_STEM",
+      "stem_hash": "d5a8ee7e11c59c0969ab30c7a006bfe6a5b925c642ae9eb55c760a3830ceebcf",
+      "option_stem_hash": null,
+      "candidate_id": "72d8f286-f89e-4efc-85c4-1a82a8c1a614",
+      "content_item_id": null
+    },
+    {
+      "attempt_no": 26,
+      "topic": "Ionic Bonding",
+      "chapter": "Chemical Bonding and Molecular Structure",
+      "concept": "Lattice Energy",
+      "difficulty": "medium",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "result": "CREATED",
+      "rejection_class": null,
+      "rejection_reason": null,
+      "stem_hash": "17518822d100400afda6f5ca433715c6a48a9e8dfc14e22c9e323ea3141bf88b",
+      "option_stem_hash": null,
+      "candidate_id": "5f0be0f2-db90-4f00-87a6-50b8c2c1d8f6",
+      "content_item_id": "3458d90f-1a79-4296-9ed4-242e79187ebb"
+    },
+    {
+      "attempt_no": 27,
+      "topic": "Ionic Bonding",
+      "chapter": "Chemical Bonding and Molecular Structure",
+      "concept": "Lattice Energy",
+      "difficulty": "medium",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "result": "REJECTED_DUPLICATE",
+      "rejection_class": "REJECTED_DUPLICATE",
+      "rejection_reason": "DUPLICATE_STEM",
+      "stem_hash": "9bc9213b9f0d5911dd3061369bc2e0c3b9f0571edea72baf067cddff9e1f5c95",
+      "option_stem_hash": null,
+      "candidate_id": "3a705abb-7802-405d-a902-99733f707f01",
+      "content_item_id": null
+    },
+    {
+      "attempt_no": 28,
+      "topic": "Ionic Bonding",
+      "chapter": "Chemical Bonding and Molecular Structure",
+      "concept": "Lattice Energy",
+      "difficulty": "medium",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "result": "REJECTED_DUPLICATE",
+      "rejection_class": "REJECTED_DUPLICATE",
+      "rejection_reason": "DUPLICATE_STEM",
+      "stem_hash": "d5a8ee7e11c59c0969ab30c7a006bfe6a5b925c642ae9eb55c760a3830ceebcf",
+      "option_stem_hash": null,
+      "candidate_id": "3c3413fd-5e45-48a3-b4d1-31cebec29605",
+      "content_item_id": null
+    },
+    {
+      "attempt_no": 29,
+      "topic": "Ionic Bonding",
+      "chapter": "Chemical Bonding and Molecular Structure",
+      "concept": "Lattice Energy",
+      "difficulty": "medium",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "result": "FAILED_PARSE",
+      "rejection_class": "FAILED_PARSE",
+      "rejection_reason": "finishReason=STOP: Expecting ',' delimiter: line 1 column 723 (char 722)",
+      "stem_hash": null,
+      "option_stem_hash": null,
+      "candidate_id": "c6fdbee6-9d2b-46da-be36-498c3b6f5e2f",
+      "content_item_id": null
+    },
+    {
+      "attempt_no": 30,
+      "topic": "Ionic Bonding",
+      "chapter": "Chemical Bonding and Molecular Structure",
+      "concept": "Lattice Energy",
+      "difficulty": "medium",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "result": "FAILED_PARSE",
+      "rejection_class": "FAILED_PARSE",
+      "rejection_reason": "finishReason=STOP: Expecting ',' delimiter: line 1 column 922 (char 921)",
+      "stem_hash": null,
+      "option_stem_hash": null,
+      "candidate_id": "ce7b4a87-2cb2-46c9-8dd4-e492194cae82",
+      "content_item_id": null
+    },
+    {
+      "attempt_no": 31,
+      "topic": "Ionic Bonding",
+      "chapter": "Chemical Bonding and Molecular Structure",
+      "concept": "Lattice Energy",
+      "difficulty": "medium",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "result": "CREATED",
+      "rejection_class": null,
+      "rejection_reason": null,
+      "stem_hash": "304d4d8950ec4fea3c2fb7f837b8312c46fad342b3e67cc8875ff89563154ba2",
+      "option_stem_hash": null,
+      "candidate_id": "9ebcd9bc-d063-4747-ab30-7a1e58816a7c",
+      "content_item_id": "bd3a9ae0-d100-4868-8c96-cb1fffda853b"
+    },
+    {
+      "attempt_no": 32,
+      "topic": "Ionic Bonding",
+      "chapter": "Chemical Bonding and Molecular Structure",
+      "concept": "Lattice Energy",
+      "difficulty": "medium",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "result": "CREATED",
+      "rejection_class": null,
+      "rejection_reason": null,
+      "stem_hash": "059cb323ac7a0af737f3af2f1d0b4e623c898e5e66c72702704f221600651cb2",
+      "option_stem_hash": null,
+      "candidate_id": "ea4431fe-75bd-49af-9fe8-471bfd1f477a",
+      "content_item_id": "cb6a7704-7a33-4620-ae10-71c85579f057"
+    },
+    {
+      "attempt_no": 33,
+      "topic": "Ionic Bonding",
+      "chapter": "Chemical Bonding and Molecular Structure",
+      "concept": "Lattice Energy",
+      "difficulty": "medium",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "result": "CREATED",
+      "rejection_class": null,
+      "rejection_reason": null,
+      "stem_hash": "5653ded48abdddae6979dc05baff1ad8c5372c5a21484fa4bab39a7434b9f21c",
+      "option_stem_hash": null,
+      "candidate_id": "067e10e3-5254-4eca-945c-ba3572ddaacf",
+      "content_item_id": "a91371a7-c1e7-45a8-a4aa-393ee1859925"
+    },
+    {
+      "attempt_no": 34,
+      "topic": "Ionic Bonding",
+      "chapter": "Chemical Bonding and Molecular Structure",
+      "concept": "Lattice Energy",
+      "difficulty": "medium",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "result": "CREATED",
+      "rejection_class": null,
+      "rejection_reason": null,
+      "stem_hash": "3dc3f0f8437701b60a9d9554b173de851a00bcbb4ea0584b1590182dcd9fed42",
+      "option_stem_hash": null,
+      "candidate_id": "9e345a00-3090-4826-81c8-b9956b446cdf",
+      "content_item_id": "d1a53096-3d76-4e3e-9708-1c08941ffb48"
+    },
+    {
+      "attempt_no": 35,
+      "topic": "Ionic Bonding",
+      "chapter": "Chemical Bonding and Molecular Structure",
+      "concept": "Lattice Energy",
+      "difficulty": "medium",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "result": "FAILED_PARSE",
+      "rejection_class": "FAILED_PARSE",
+      "rejection_reason": "finishReason=STOP: Expecting ',' delimiter: line 1 column 668 (char 667)",
+      "stem_hash": null,
+      "option_stem_hash": null,
+      "candidate_id": "9c7e1d4d-1b2d-4fce-818d-1b7091fe073e",
+      "content_item_id": null
+    },
+    {
+      "attempt_no": 36,
+      "topic": "Ionic Bonding",
+      "chapter": "Chemical Bonding and Molecular Structure",
+      "concept": "Lattice Energy",
+      "difficulty": "medium",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "result": "REJECTED_DUPLICATE",
+      "rejection_class": "REJECTED_DUPLICATE",
+      "rejection_reason": "DUPLICATE_STEM",
+      "stem_hash": "ebff77e7349d25fbfb9262fcc78fe1fb70b35ac17bf9b3ba76e164618769af8e",
+      "option_stem_hash": null,
+      "candidate_id": "98f7ab27-9c6f-4508-946d-663ce5cbff63",
+      "content_item_id": null
+    },
+    {
+      "attempt_no": 37,
+      "topic": "Ionic Bonding",
+      "chapter": "Chemical Bonding and Molecular Structure",
+      "concept": "Lattice Energy",
+      "difficulty": "medium",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "result": "CREATED",
+      "rejection_class": null,
+      "rejection_reason": null,
+      "stem_hash": "34340a7c86985f1d9251e05753821d92b031ad728ce7a2726986d2afae8171d1",
+      "option_stem_hash": null,
+      "candidate_id": "98eaa490-2aa2-4285-a28c-b46f4e895bc7",
+      "content_item_id": "41b5452c-1f14-4840-870e-6652824589b3"
+    },
+    {
+      "attempt_no": 38,
+      "topic": "Ionic Bonding",
+      "chapter": "Chemical Bonding and Molecular Structure",
+      "concept": "Lattice Energy",
+      "difficulty": "medium",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "result": "REJECTED_VALIDATION",
+      "rejection_class": "REJECTED_VALIDATION",
+      "rejection_reason": "SCHEMA:value_error",
+      "stem_hash": null,
+      "option_stem_hash": null,
+      "candidate_id": "17341392-a7c0-4a14-8835-bec0450fdaa5",
+      "content_item_id": null
+    },
+    {
+      "attempt_no": 39,
+      "topic": "Ionic Bonding",
+      "chapter": "Chemical Bonding and Molecular Structure",
+      "concept": "Lattice Energy",
+      "difficulty": "medium",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "result": "REJECTED_DUPLICATE",
+      "rejection_class": "REJECTED_DUPLICATE",
+      "rejection_reason": "DUPLICATE_STEM",
+      "stem_hash": "ebff77e7349d25fbfb9262fcc78fe1fb70b35ac17bf9b3ba76e164618769af8e",
+      "option_stem_hash": null,
+      "candidate_id": "2af4de91-aef9-45e0-8739-61d31c3e2473",
+      "content_item_id": null
+    },
+    {
+      "attempt_no": 40,
+      "topic": "Ionic Bonding",
+      "chapter": "Chemical Bonding and Molecular Structure",
+      "concept": "Lattice Energy",
+      "difficulty": "medium",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "result": "FAILED_PARSE",
+      "rejection_class": "FAILED_PARSE",
+      "rejection_reason": "finishReason=STOP: Expecting ',' delimiter: line 1 column 590 (char 589)",
+      "stem_hash": null,
+      "option_stem_hash": null,
+      "candidate_id": "c4ef381f-4db1-411b-addf-21060e0ce248",
+      "content_item_id": null
+    },
+    {
+      "attempt_no": 41,
+      "topic": "Ionic Bonding",
+      "chapter": "Chemical Bonding and Molecular Structure",
+      "concept": "Lattice Energy",
+      "difficulty": "medium",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "result": "REJECTED_DUPLICATE",
+      "rejection_class": "REJECTED_DUPLICATE",
+      "rejection_reason": "DUPLICATE_STEM",
+      "stem_hash": "d5a8ee7e11c59c0969ab30c7a006bfe6a5b925c642ae9eb55c760a3830ceebcf",
+      "option_stem_hash": null,
+      "candidate_id": "c613e6a3-5824-4168-bdc4-843edef4daa2",
+      "content_item_id": null
+    },
+    {
+      "attempt_no": 42,
+      "topic": "Ionic Bonding",
+      "chapter": "Chemical Bonding and Molecular Structure",
+      "concept": "Lattice Energy",
+      "difficulty": "medium",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "result": "REJECTED_DUPLICATE",
+      "rejection_class": "REJECTED_DUPLICATE",
+      "rejection_reason": "DUPLICATE_STEM",
+      "stem_hash": "6608b8ac7dbbb20a19dd311ffb47c11525408b64ba6a2d998f82f745f1a91b55",
+      "option_stem_hash": null,
+      "candidate_id": "28b15ded-0fa7-4439-8178-74f786416818",
+      "content_item_id": null
+    },
+    {
+      "attempt_no": 43,
+      "topic": "Ionic Bonding",
+      "chapter": "Chemical Bonding and Molecular Structure",
+      "concept": "Lattice Energy",
+      "difficulty": "medium",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "result": "REJECTED_DUPLICATE",
+      "rejection_class": "REJECTED_DUPLICATE",
+      "rejection_reason": "DUPLICATE_STEM",
+      "stem_hash": "d5a8ee7e11c59c0969ab30c7a006bfe6a5b925c642ae9eb55c760a3830ceebcf",
+      "option_stem_hash": null,
+      "candidate_id": "e5894523-ef3a-4197-970e-fcbe976cfb18",
+      "content_item_id": null
+    },
+    {
+      "attempt_no": 44,
+      "topic": "Ionic Bonding",
+      "chapter": "Chemical Bonding and Molecular Structure",
+      "concept": "Lattice Energy",
+      "difficulty": "medium",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "result": "REJECTED_DUPLICATE",
+      "rejection_class": "REJECTED_DUPLICATE",
+      "rejection_reason": "DUPLICATE_STEM",
+      "stem_hash": "ebff77e7349d25fbfb9262fcc78fe1fb70b35ac17bf9b3ba76e164618769af8e",
+      "option_stem_hash": null,
+      "candidate_id": "2fe689f8-b360-4c78-b756-bb44b31f5601",
+      "content_item_id": null
+    },
+    {
+      "attempt_no": 45,
+      "topic": "Ionic Bonding",
+      "chapter": "Chemical Bonding and Molecular Structure",
+      "concept": "Lattice Energy",
+      "difficulty": "medium",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "result": "CREATED",
+      "rejection_class": null,
+      "rejection_reason": null,
+      "stem_hash": "3eac8813e4f4529322eeac3b96c4b6ca0a732ca1922bbbcdd4b0e61ee144798f",
+      "option_stem_hash": null,
+      "candidate_id": "566e8682-2fee-4f19-8a27-fc9380c87589",
+      "content_item_id": "4f7c774c-3ca9-49a4-8923-7ad256809781"
+    },
+    {
+      "attempt_no": 46,
+      "topic": "Ionic Bonding",
+      "chapter": "Chemical Bonding and Molecular Structure",
+      "concept": "Lattice Energy",
+      "difficulty": "medium",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "result": "FAILED_PARSE",
+      "rejection_class": "FAILED_PARSE",
+      "rejection_reason": "finishReason=STOP: Invalid \\escape: line 1 column 1679 (char 1678)",
+      "stem_hash": null,
+      "option_stem_hash": null,
+      "candidate_id": "4c43f799-cf75-4618-8d40-666b15d6f096",
+      "content_item_id": null
+    },
+    {
+      "attempt_no": 47,
+      "topic": "Ionic Bonding",
+      "chapter": "Chemical Bonding and Molecular Structure",
+      "concept": "Lattice Energy",
+      "difficulty": "medium",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "result": "REJECTED_DUPLICATE",
+      "rejection_class": "REJECTED_DUPLICATE",
+      "rejection_reason": "DUPLICATE_STEM",
+      "stem_hash": "ec5bc6a9b9f66197e70a880eb6954923ac633abbbe70fae5d7363864df778952",
+      "option_stem_hash": null,
+      "candidate_id": "8cc4d75e-f8b7-40f4-8ac0-ca7bd6f56e88",
+      "content_item_id": null
+    },
+    {
+      "attempt_no": 48,
+      "topic": "Ionic Bonding",
+      "chapter": "Chemical Bonding and Molecular Structure",
+      "concept": "Lattice Energy",
+      "difficulty": "medium",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "result": "FAILED_PARSE",
+      "rejection_class": "FAILED_PARSE",
+      "rejection_reason": "finishReason=STOP: Expecting ',' delimiter: line 1 column 622 (char 621)",
+      "stem_hash": null,
+      "option_stem_hash": null,
+      "candidate_id": "0537c5fe-5ac4-4251-973a-af451aa2da06",
+      "content_item_id": null
+    },
+    {
+      "attempt_no": 49,
+      "topic": "Ionic Bonding",
+      "chapter": "Chemical Bonding and Molecular Structure",
+      "concept": "Lattice Energy",
+      "difficulty": "medium",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "result": "CREATED",
+      "rejection_class": null,
+      "rejection_reason": null,
+      "stem_hash": "8004265dcbb8129b6fe96eb770f67ef69768cefd66c61de834372bb8cbfa5891",
+      "option_stem_hash": null,
+      "candidate_id": "b0252128-6dad-4032-a11b-c025a2a4d546",
+      "content_item_id": "e1b6c7fe-2a3b-4eab-9cdf-b74924ba03e9"
+    },
+    {
+      "attempt_no": 50,
+      "topic": "Ionic Bonding",
+      "chapter": "Chemical Bonding and Molecular Structure",
+      "concept": "Lattice Energy",
+      "difficulty": "medium",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "result": "FAILED_PARSE",
+      "rejection_class": "FAILED_PARSE",
+      "rejection_reason": "finishReason=STOP: Expecting ',' delimiter: line 1 column 713 (char 712)",
+      "stem_hash": null,
+      "option_stem_hash": null,
+      "candidate_id": "528adb79-48bc-4024-8ec4-3d684fb5b257",
+      "content_item_id": null
+    }
+  ],
+  "duplicate_analysis": {
+    "chemistry_duplicate_count": 17,
+    "overall_pilot_duplicate": 24,
+    "unique_rejected_hashes": 8,
+    "clusters": [
+      {
+        "stem_hash": "6608b8ac7dbbb20a19dd311ffb47c11525408b64ba6a2d998f82f745f1a91b55",
+        "chem_run_occurrences": [
+          {
+            "attempt_no": 19,
+            "status": "CREATED",
+            "candidate_id": "38ae327f-dba0-4e1a-b6e2-ee3f40332337",
+            "content_item_id": "06f482fd-7a9c-4ab4-af3a-04fd45ed6f7b"
+          },
+          {
+            "attempt_no": 42,
+            "status": "REJECTED_DUPLICATE",
+            "candidate_id": "28b15ded-0fa7-4439-8178-74f786416818",
+            "content_item_id": null
+          }
+        ],
+        "created_in_chem_run": [
+          {
+            "attempt_no": 19,
+            "status": "CREATED",
+            "candidate_id": "38ae327f-dba0-4e1a-b6e2-ee3f40332337",
+            "content_item_id": "06f482fd-7a9c-4ab4-af3a-04fd45ed6f7b"
+          }
+        ],
+        "other_run_hits": [],
+        "fingerprint_hits": [],
+        "dup_count_in_chem": 1,
+        "classification": "LEGITIMATE DUPLICATE",
+        "mechanism": "intra_run_stem_hash_vs_CREATED"
+      },
+      {
+        "stem_hash": "791c0d3b02d0c3077490aabd314910470f5cfa9305fddf0840f5741b9f25bddd",
+        "chem_run_occurrences": [
+          {
+            "attempt_no": 5,
+            "status": "CREATED",
+            "candidate_id": "b9ecf366-f789-45e1-8836-18a41ada7082",
+            "content_item_id": "a7f6bf5c-018f-42d9-aacb-72f2a004913e"
+          },
+          {
+            "attempt_no": 17,
+            "status": "REJECTED_DUPLICATE",
+            "candidate_id": "23faf2cb-ebe5-4fc4-acba-62766fb6d4ee",
+            "content_item_id": null
+          }
+        ],
+        "created_in_chem_run": [
+          {
+            "attempt_no": 5,
+            "status": "CREATED",
+            "candidate_id": "b9ecf366-f789-45e1-8836-18a41ada7082",
+            "content_item_id": "a7f6bf5c-018f-42d9-aacb-72f2a004913e"
+          }
+        ],
+        "other_run_hits": [],
+        "fingerprint_hits": [],
+        "dup_count_in_chem": 1,
+        "classification": "LEGITIMATE DUPLICATE",
+        "mechanism": "intra_run_stem_hash_vs_CREATED"
+      },
+      {
+        "stem_hash": "7cdae71cc467622fd9d95d70306bc967b5461e251e164abf35b3d2f49be56638",
+        "chem_run_occurrences": [
+          {
+            "attempt_no": 14,
+            "status": "CREATED",
+            "candidate_id": "4d2fbb09-b857-494a-912d-8470caac32bd",
+            "content_item_id": "eb74936c-8b6e-479a-9d03-d90792e3c78f"
+          },
+          {
+            "attempt_no": 24,
+            "status": "REJECTED_DUPLICATE",
+            "candidate_id": "3070e546-d5ed-42b8-90e0-1e07aded9b9c",
+            "content_item_id": null
+          }
+        ],
+        "created_in_chem_run": [
+          {
+            "attempt_no": 14,
+            "status": "CREATED",
+            "candidate_id": "4d2fbb09-b857-494a-912d-8470caac32bd",
+            "content_item_id": "eb74936c-8b6e-479a-9d03-d90792e3c78f"
+          }
+        ],
+        "other_run_hits": [],
+        "fingerprint_hits": [],
+        "dup_count_in_chem": 1,
+        "classification": "LEGITIMATE DUPLICATE",
+        "mechanism": "intra_run_stem_hash_vs_CREATED"
+      },
+      {
+        "stem_hash": "80a29eb64a8a2eb7da5c08a521155c0df794a8b1ef851d6b9076f15f41608c35",
+        "chem_run_occurrences": [
+          {
+            "attempt_no": 1,
+            "status": "CREATED",
+            "candidate_id": "80b2d0aa-8590-4ce1-af4d-52f5c2b183d7",
+            "content_item_id": "8d424bd3-dc8d-499b-99b8-05c27c2a5a31"
+          },
+          {
+            "attempt_no": 4,
+            "status": "REJECTED_DUPLICATE",
+            "candidate_id": "33bbf006-e21d-4410-9032-abb22565527b",
+            "content_item_id": null
+          },
+          {
+            "attempt_no": 15,
+            "status": "REJECTED_DUPLICATE",
+            "candidate_id": "5ad17cf8-76c3-4dc5-a472-f9f92dd58a31",
+            "content_item_id": null
+          },
+          {
+            "attempt_no": 22,
+            "status": "REJECTED_DUPLICATE",
+            "candidate_id": "07fcb329-0188-41fa-9aed-53a23827e502",
+            "content_item_id": null
+          }
+        ],
+        "created_in_chem_run": [
+          {
+            "attempt_no": 1,
+            "status": "CREATED",
+            "candidate_id": "80b2d0aa-8590-4ce1-af4d-52f5c2b183d7",
+            "content_item_id": "8d424bd3-dc8d-499b-99b8-05c27c2a5a31"
+          }
+        ],
+        "other_run_hits": [],
+        "fingerprint_hits": [],
+        "dup_count_in_chem": 3,
+        "classification": "LEGITIMATE DUPLICATE",
+        "mechanism": "intra_run_stem_hash_vs_CREATED"
+      },
+      {
+        "stem_hash": "9bc9213b9f0d5911dd3061369bc2e0c3b9f0571edea72baf067cddff9e1f5c95",
+        "chem_run_occurrences": [
+          {
+            "attempt_no": 11,
+            "status": "CREATED",
+            "candidate_id": "6ff12d5a-4def-48a3-854a-af13d58a386f",
+            "content_item_id": "27d37116-2613-4fc2-981f-add21f2725f4"
+          },
+          {
+            "attempt_no": 27,
+            "status": "REJECTED_DUPLICATE",
+            "candidate_id": "3a705abb-7802-405d-a902-99733f707f01",
+            "content_item_id": null
+          }
+        ],
+        "created_in_chem_run": [
+          {
+            "attempt_no": 11,
+            "status": "CREATED",
+            "candidate_id": "6ff12d5a-4def-48a3-854a-af13d58a386f",
+            "content_item_id": "27d37116-2613-4fc2-981f-add21f2725f4"
+          }
+        ],
+        "other_run_hits": [],
+        "fingerprint_hits": [],
+        "dup_count_in_chem": 1,
+        "classification": "LEGITIMATE DUPLICATE",
+        "mechanism": "intra_run_stem_hash_vs_CREATED"
+      },
+      {
+        "stem_hash": "d5a8ee7e11c59c0969ab30c7a006bfe6a5b925c642ae9eb55c760a3830ceebcf",
+        "chem_run_occurrences": [
+          {
+            "attempt_no": 2,
+            "status": "CREATED",
+            "candidate_id": "8bca69b4-07f3-4d55-8dfe-c2cde032139e",
+            "content_item_id": "4de4ceaf-01f7-4508-b92f-f55db2696cac"
+          },
+          {
+            "attempt_no": 21,
+            "status": "REJECTED_DUPLICATE",
+            "candidate_id": "336ef743-8c26-4701-9bb2-77cf5076342a",
+            "content_item_id": null
+          },
+          {
+            "attempt_no": 25,
+            "status": "REJECTED_DUPLICATE",
+            "candidate_id": "72d8f286-f89e-4efc-85c4-1a82a8c1a614",
+            "content_item_id": null
+          },
+          {
+            "attempt_no": 28,
+            "status": "REJECTED_DUPLICATE",
+            "candidate_id": "3c3413fd-5e45-48a3-b4d1-31cebec29605",
+            "content_item_id": null
+          },
+          {
+            "attempt_no": 41,
+            "status": "REJECTED_DUPLICATE",
+            "candidate_id": "c613e6a3-5824-4168-bdc4-843edef4daa2",
+            "content_item_id": null
+          },
+          {
+            "attempt_no": 43,
+            "status": "REJECTED_DUPLICATE",
+            "candidate_id": "e5894523-ef3a-4197-970e-fcbe976cfb18",
+            "content_item_id": null
+          }
+        ],
+        "created_in_chem_run": [
+          {
+            "attempt_no": 2,
+            "status": "CREATED",
+            "candidate_id": "8bca69b4-07f3-4d55-8dfe-c2cde032139e",
+            "content_item_id": "4de4ceaf-01f7-4508-b92f-f55db2696cac"
+          }
+        ],
+        "other_run_hits": [],
+        "fingerprint_hits": [],
+        "dup_count_in_chem": 5,
+        "classification": "LEGITIMATE DUPLICATE",
+        "mechanism": "intra_run_stem_hash_vs_CREATED"
+      },
+      {
+        "stem_hash": "ebff77e7349d25fbfb9262fcc78fe1fb70b35ac17bf9b3ba76e164618769af8e",
+        "chem_run_occurrences": [
+          {
+            "attempt_no": 9,
+            "status": "CREATED",
+            "candidate_id": "e8a1cb26-3e56-4ea1-823e-dd22ee5710f4",
+            "content_item_id": "dac3ca87-b29a-43a5-b3f7-3bec40a0e04e"
+          },
+          {
+            "attempt_no": 12,
+            "status": "REJECTED_DUPLICATE",
+            "candidate_id": "180e9cb9-e21d-42e4-9a78-1b4ab6937d40",
+            "content_item_id": null
+          },
+          {
+            "attempt_no": 36,
+            "status": "REJECTED_DUPLICATE",
+            "candidate_id": "98f7ab27-9c6f-4508-946d-663ce5cbff63",
+            "content_item_id": null
+          },
+          {
+            "attempt_no": 39,
+            "status": "REJECTED_DUPLICATE",
+            "candidate_id": "2af4de91-aef9-45e0-8739-61d31c3e2473",
+            "content_item_id": null
+          },
+          {
+            "attempt_no": 44,
+            "status": "REJECTED_DUPLICATE",
+            "candidate_id": "2fe689f8-b360-4c78-b756-bb44b31f5601",
+            "content_item_id": null
+          }
+        ],
+        "created_in_chem_run": [
+          {
+            "attempt_no": 9,
+            "status": "CREATED",
+            "candidate_id": "e8a1cb26-3e56-4ea1-823e-dd22ee5710f4",
+            "content_item_id": "dac3ca87-b29a-43a5-b3f7-3bec40a0e04e"
+          }
+        ],
+        "other_run_hits": [],
+        "fingerprint_hits": [],
+        "dup_count_in_chem": 4,
+        "classification": "LEGITIMATE DUPLICATE",
+        "mechanism": "intra_run_stem_hash_vs_CREATED"
+      },
+      {
+        "stem_hash": "ec5bc6a9b9f66197e70a880eb6954923ac633abbbe70fae5d7363864df778952",
+        "chem_run_occurrences": [
+          {
+            "attempt_no": 7,
+            "status": "CREATED",
+            "candidate_id": "e38e2daa-cb88-4330-9541-67885aa8faee",
+            "content_item_id": "574bb5d6-9371-42e7-afd4-457278134930"
+          },
+          {
+            "attempt_no": 47,
+            "status": "REJECTED_DUPLICATE",
+            "candidate_id": "8cc4d75e-f8b7-40f4-8ac0-ca7bd6f56e88",
+            "content_item_id": null
+          }
+        ],
+        "created_in_chem_run": [
+          {
+            "attempt_no": 7,
+            "status": "CREATED",
+            "candidate_id": "e38e2daa-cb88-4330-9541-67885aa8faee",
+            "content_item_id": "574bb5d6-9371-42e7-afd4-457278134930"
+          }
+        ],
+        "other_run_hits": [],
+        "fingerprint_hits": [],
+        "dup_count_in_chem": 1,
+        "classification": "LEGITIMATE DUPLICATE",
+        "mechanism": "intra_run_stem_hash_vs_CREATED"
+      }
+    ],
+    "classification_counts": {
+      "LEGITIMATE DUPLICATE": 8
+    }
+  },
+  "parse_analysis": {
+    "chemistry_parse_count": 10,
+    "overall_pilot_parse": 18,
+    "failures": [
+      {
+        "attempt_no": 3,
+        "candidate_id": "bf1569c1-89df-4cb0-90d4-ef1a5708929a",
+        "error_code": "MALFORMED_JSON",
+        "error_summary": "finishReason=STOP: Expecting ',' delimiter: line 1 column 816 (char 815)",
+        "classification": "MODEL_OUTPUT_DEFECT",
+        "detail": "malformed_json"
+      },
+      {
+        "attempt_no": 16,
+        "candidate_id": "e02fec2b-10e9-4ae8-baf2-b9e826b80154",
+        "error_code": "MALFORMED_JSON",
+        "error_summary": "finishReason=STOP: Invalid \\escape: line 1 column 1201 (char 1200)",
+        "classification": "MODEL_OUTPUT_DEFECT",
+        "detail": "malformed_json"
+      },
+      {
+        "attempt_no": 23,
+        "candidate_id": "11fe3bf0-df1d-4fe6-a2de-a5959d14140f",
+        "error_code": "MALFORMED_JSON",
+        "error_summary": "finishReason=STOP: Expecting ',' delimiter: line 1 column 886 (char 885)",
+        "classification": "MODEL_OUTPUT_DEFECT",
+        "detail": "malformed_json"
+      },
+      {
+        "attempt_no": 29,
+        "candidate_id": "c6fdbee6-9d2b-46da-be36-498c3b6f5e2f",
+        "error_code": "MALFORMED_JSON",
+        "error_summary": "finishReason=STOP: Expecting ',' delimiter: line 1 column 723 (char 722)",
+        "classification": "MODEL_OUTPUT_DEFECT",
+        "detail": "malformed_json"
+      },
+      {
+        "attempt_no": 30,
+        "candidate_id": "ce7b4a87-2cb2-46c9-8dd4-e492194cae82",
+        "error_code": "MALFORMED_JSON",
+        "error_summary": "finishReason=STOP: Expecting ',' delimiter: line 1 column 922 (char 921)",
+        "classification": "MODEL_OUTPUT_DEFECT",
+        "detail": "malformed_json"
+      },
+      {
+        "attempt_no": 35,
+        "candidate_id": "9c7e1d4d-1b2d-4fce-818d-1b7091fe073e",
+        "error_code": "MALFORMED_JSON",
+        "error_summary": "finishReason=STOP: Expecting ',' delimiter: line 1 column 668 (char 667)",
+        "classification": "MODEL_OUTPUT_DEFECT",
+        "detail": "malformed_json"
+      },
+      {
+        "attempt_no": 40,
+        "candidate_id": "c4ef381f-4db1-411b-addf-21060e0ce248",
+        "error_code": "MALFORMED_JSON",
+        "error_summary": "finishReason=STOP: Expecting ',' delimiter: line 1 column 590 (char 589)",
+        "classification": "MODEL_OUTPUT_DEFECT",
+        "detail": "malformed_json"
+      },
+      {
+        "attempt_no": 46,
+        "candidate_id": "4c43f799-cf75-4618-8d40-666b15d6f096",
+        "error_code": "MALFORMED_JSON",
+        "error_summary": "finishReason=STOP: Invalid \\escape: line 1 column 1679 (char 1678)",
+        "classification": "MODEL_OUTPUT_DEFECT",
+        "detail": "malformed_json"
+      },
+      {
+        "attempt_no": 48,
+        "candidate_id": "0537c5fe-5ac4-4251-973a-af451aa2da06",
+        "error_code": "MALFORMED_JSON",
+        "error_summary": "finishReason=STOP: Expecting ',' delimiter: line 1 column 622 (char 621)",
+        "classification": "MODEL_OUTPUT_DEFECT",
+        "detail": "malformed_json"
+      },
+      {
+        "attempt_no": 50,
+        "candidate_id": "528adb79-48bc-4024-8ec4-3d684fb5b257",
+        "error_code": "MALFORMED_JSON",
+        "error_summary": "finishReason=STOP: Expecting ',' delimiter: line 1 column 713 (char 712)",
+        "classification": "MODEL_OUTPUT_DEFECT",
+        "detail": "malformed_json"
+      }
+    ],
+    "classification_counts": {
+      "MODEL_OUTPUT_DEFECT": 10
+    }
+  },
+  "validation_analysis": {
+    "chemistry_validation_count": 3,
+    "overall_pilot_validation": 6,
+    "failures": [
+      {
+        "attempt_no": 10,
+        "candidate_id": "8fb2dbd3-a488-4df8-8227-46b958f209ad",
+        "content_item_id": null,
+        "error_code": "SCHEMA:too_long",
+        "error_summary": "SCHEMA:too_long",
+        "stem_hash": null
+      },
+      {
+        "attempt_no": 20,
+        "candidate_id": "22b0acb6-6585-4d6b-ab99-ba1cacf689d7",
+        "content_item_id": null,
+        "error_code": "SCHEMA:too_long",
+        "error_summary": "SCHEMA:too_long",
+        "stem_hash": null
+      },
+      {
+        "attempt_no": 38,
+        "candidate_id": "17341392-a7c0-4a14-8835-bec0450fdaa5",
+        "content_item_id": null,
+        "error_code": "SCHEMA:value_error",
+        "error_summary": "SCHEMA:value_error",
+        "stem_hash": null
+      }
+    ]
+  },
+  "yield_comparison": [
+    {
+      "label": "PHYSICS/Current Electricity/medium",
+      "run_id": "3d93b123-b90c-4b35-95cd-73bd0444e0ec",
+      "attempts": 28,
+      "created": 25,
+      "duplicate": 3,
+      "failed_parse": 0,
+      "rejected_validation": 0,
+      "other": 0,
+      "success_rate": 0.8929,
+      "rejection_rate": 0.1071
+    },
+    {
+      "label": "BOTANY/Photosynthesis in Higher Plants/easy",
+      "run_id": "d31a151b-ee69-4353-b42b-6cdf54dc25a5",
+      "attempts": 31,
+      "created": 20,
+      "duplicate": 2,
+      "failed_parse": 6,
+      "rejected_validation": 3,
+      "other": 0,
+      "success_rate": 0.6452,
+      "rejection_rate": 0.3548
+    },
+    {
+      "label": "CHEMISTRY/Chemical Bonding and Molecular Structure/medium",
+      "run_id": "60d1ef7a-902f-42bb-9bd8-965560be7ade",
+      "attempts": 50,
+      "created": 20,
+      "duplicate": 17,
+      "failed_parse": 10,
+      "rejected_validation": 3,
+      "other": 0,
+      "success_rate": 0.4,
+      "rejection_rate": 0.6
+    },
+    {
+      "label": "PHYSICS/Current Electricity/easy",
+      "run_id": "84644456-521f-48cc-b5fe-654749d74ccc",
+      "attempts": 17,
+      "created": 15,
+      "duplicate": 2,
+      "failed_parse": 0,
+      "rejected_validation": 0,
+      "other": 0,
+      "success_rate": 0.8824,
+      "rejection_rate": 0.1176
+    },
+    {
+      "label": "ZOOLOGY/Body Fluids and Circulation/medium",
+      "run_id": "1dcaa772-37f7-4c53-b76f-25eff743bfa6",
+      "attempts": 17,
+      "created": 15,
+      "duplicate": 0,
+      "failed_parse": 2,
+      "rejected_validation": 0,
+      "other": 0,
+      "success_rate": 0.8824,
+      "rejection_rate": 0.1176
+    }
+  ],
+  "blueprint": {
+    "blueprint_key": "factory-p3-pilot-2026-09-01-bp-chemistry-conceptual-medium",
+    "blueprint_version": 1,
+    "subject_id": "33259dfe-9180-4dfd-828f-a99d83a99ceb",
+    "chapter_id": "b386916c-d6f3-475a-9ef2-194dd93ad2e7",
+    "topic_id": "906be250-3c4a-4f4a-9faf-20e9f573653f",
+    "concept_id": "008fe3ee-1648-4bfb-93ce-7a0233013e75",
+    "learning_objective_id": "f700da28-3f5f-4bf1-aa33-0ae632c48f38",
+    "question_family_id": "e86fdd63-526d-43ab-9063-0d1d4db66da1",
+    "difficulty": "medium",
+    "target_count": 2,
+    "constraints": {
+      "reasoning": "conceptual",
+      "question_format": "MCQ_4",
+      "correct_option_count": 1,
+      "explanation_required": true,
+      "avoid_paraphrase_duplicates": true
+    },
+    "provenance_tier": "ai",
+    "status": "ACTIVE",
+    "generation_eligible": true,
+    "is_active": true,
+    "last_validation": {
+      "verdict": "GREEN",
+      "findings": [
+        {
+          "code": "HIERARCHY_OK",
+          "message": "Subject\u2192Chapter\u2192Topic\u2192Concept chain is valid",
+          "severity": "GREEN"
+        },
+        {
+          "code": "OBJECTIVE_OK",
+          "message": "Learning objective is valid for concept",
+          "severity": "GREEN"
+        },
+        {
+          "code": "FAMILY_OK",
+          "message": "Family is compatible with subject",
+          "severity": "GREEN"
+        },
+        {
+          "code": "DIFFICULTY_OK",
+          "message": "Difficulty fits family range and project enum",
+          "severity": "GREEN"
+        },
+        {
+          "code": "PROVENANCE_OK",
+          "message": "Provenance tier 'ai' is explicit",
+          "severity": "GREEN"
+        },
+        {
+          "code": "CONSTRAINTS_OK",
+          "message": "Answer/format/explanation constraints defined",
+          "severity": "GREEN"
+        }
+      ],
+      "hierarchy_gap": false,
+      "generation_eligible": true
+    },
+    "id": "c746c965-0c2c-4fa6-91a5-78464042b054",
+    "created_at": "2026-08-31 19:22:59.273755+00:00",
+    "updated_at": "2026-08-31 19:22:59.273755+00:00",
+    "created_by": "88914ce4-92d7-41c3-9187-0c1884f03cd0",
+    "updated_by": "88914ce4-92d7-41c3-9187-0c1884f03cd0",
+    "deleted_at": null,
+    "version": 1,
+    "concept_name": "Lattice Energy",
+    "topic_name": "Ionic Bonding",
+    "chapter_name": "Chemical Bonding and Molecular Structure",
+    "subject_name": "Chemistry"
+  },
+  "created_stem_previews": [
+    {
+      "id": "8d424bd3-dc8d-499b-99b8-05c27c2a5a31",
+      "stem_preview": "Which of the following statements correctly describes the factors influencing the magnitude of lattice energy in an ionic crystal?"
+    },
+    {
+      "id": "4de4ceaf-01f7-4508-b92f-f55db2696cac",
+      "stem_preview": "Which of the following statements correctly describes lattice energy and its dependence on ionic properties?"
+    },
+    {
+      "id": "a7f6bf5c-018f-42d9-aacb-72f2a004913e",
+      "stem_preview": "Which of the following ionic compounds possesses the highest magnitude of lattice energy?"
+    },
+    {
+      "id": "8704a88f-38cd-4be1-93b3-31cced984712",
+      "stem_preview": "Which of the following statements correctly describes the factors influencing lattice energy and their relationship with the stability of an ionic compound?"
+    },
+    {
+      "id": "574bb5d6-9371-42e7-afd4-457278134930",
+      "stem_preview": "Which of the following statements correctly describes the factors influencing the lattice energy of an ionic compound?"
+    },
+    {
+      "id": "e33bce0c-f7c3-4a01-9674-4878953a8e6a",
+      "stem_preview": "Which of the following statements correctly describes lattice energy and its relation to ionic stability?"
+    },
+    {
+      "id": "dac3ca87-b29a-43a5-b3f7-3bec40a0e04e",
+      "stem_preview": "Which of the following statements correctly describes lattice energy and its dependence on ionic parameters?"
+    },
+    {
+      "id": "27d37116-2613-4fc2-981f-add21f2725f4",
+      "stem_preview": "Which of the following comparisons correctly reflects the relative magnitude of lattice energy between the given pairs of ionic compounds, based on electrostati"
+    },
+    {
+      "id": "31959259-6612-4826-b878-85571e2e4952",
+      "stem_preview": "Which of the following ionic compounds exhibits the highest magnitude of lattice energy?"
+    },
+    {
+      "id": "eb74936c-8b6e-479a-9d03-d90792e3c78f",
+      "stem_preview": "Which of the following statements correctly describes lattice energy and its relation to the properties of ionic compounds?"
+    },
+    {
+      "id": "851ad68b-8383-4ced-8fd7-0d8a60cb36f5",
+      "stem_preview": "Which of the following statements correctly describes lattice energy and the factors influencing its magnitude?"
+    },
+    {
+      "id": "06f482fd-7a9c-4ab4-af3a-04fd45ed6f7b",
+      "stem_preview": "Which of the following comparisons regarding the magnitude of lattice energy is correct based on electrostatic principles?"
+    },
+    {
+      "id": "3458d90f-1a79-4296-9ed4-242e79187ebb",
+      "stem_preview": "Which of the following statements regarding lattice energy and the stability of ionic compounds is correct?"
+    },
+    {
+      "id": "bd3a9ae0-d100-4868-8c96-cb1fffda853b",
+      "stem_preview": "Which of the following comparisons correctly reflects the relative magnitude of lattice energy between the given pairs of ionic compounds?"
+    },
+    {
+      "id": "cb6a7704-7a33-4620-ae10-71c85579f057",
+      "stem_preview": "Which of the following ionic compounds releases the highest amount of energy during the formation of one mole of its solid lattice from its constituent gaseous "
+    },
+    {
+      "id": "a91371a7-c1e7-45a8-a4aa-393ee1859925",
+      "stem_preview": "Which of the following comparisons correctly reflects the relative magnitude of lattice energy between the given pairs of ionic compounds, based on ion charges "
+    },
+    {
+      "id": "d1a53096-3d76-4e3e-9708-1c08941ffb48",
+      "stem_preview": "Which of the following statements best describes lattice energy and its dependence on ionic parameters?"
+    },
+    {
+      "id": "41b5452c-1f14-4840-870e-6652824589b3",
+      "stem_preview": "Which of the following comparisons regarding the magnitude of lattice energy is correct based on Born-Land\u00e9 considerations (charge and size of ions)?"
+    },
+    {
+      "id": "4f7c774c-3ca9-49a4-8923-7ad256809781",
+      "stem_preview": "Which of the following statements regarding lattice energy and the formation of ionic solids is correct?"
+    },
+    {
+      "id": "e1b6c7fe-2a3b-4eab-9cdf-b74924ba03e9",
+      "stem_preview": "Which of the following statements correctly describes the factors influencing the lattice energy of an ionic compound, according to Born-Land\u00e9 considerations?"
+    }
+  ],
+  "concepts_used": {
+    "008fe3ee-1648-4bfb-93ce-7a0233013e75": {
+      "id": "008fe3ee-1648-4bfb-93ce-7a0233013e75",
+      "concept": "Lattice Energy",
+      "topic": "Ionic Bonding",
+      "chapter": "Chemical Bonding and Molecular Structure",
+      "subject": "Chemistry"
+    }
+  },
+  "forensic_conclusion": {
+    "verdict": "B. YIELD ISSUE \u2014 controlled remediation required before rerun",
+    "amber_unchanged": true,
+    "questions": {
+      "Q1_why_20_of_25": "Chemistry exhausted max_attempts=50 (target*2.0) with only 20 CREATED. Reject mix: 17 DUPLICATE_STEM (all intra-run repeats of 8 unique normalized stems already CREATED in this run), 10 FAILED_PARSE (MALFORMED_JSON: delimiter/escape defects with finishReason=STOP), 3 REJECTED_VALIDATION (SCHEMA:too_long x2 = >4 options; SCHEMA:value_error x1 = NEET shape/value gate). Blueprint pinned to a single concept Lattice Energy / Ionic Bonding / conceptual / medium; Gemini collapsed into repeated lattice-energy stems. Attempt limit behaved as designed.",
+      "Q2_failure_buckets": {
+        "legitimate_model_failures": 10,
+        "legitimate_duplicate_rejections": 17,
+        "legitimate_validation_rejections": 3,
+        "possible_implementation_defects": 0,
+        "unknown": 0,
+        "notes": "All 8 duplicate hash clusters classified LEGITIMATE DUPLICATE (intra_run vs CREATED). Zero bank/fingerprint collisions. Zero false-positive suspects with evidence."
+      },
+      "Q3_factory_vs_yield": "Expected yield limitation under fixed safety caps + narrow single-concept Chemistry allocation, not a factory safety/code defect. Gates (parse/validate/dedupe/attempt cap) operated correctly.",
+      "Q4_proceed_p4_p5": "YES for P4/P5 on the existing ~95 DRAFT population. Roadmap/DoD use ~100 (approximate) and sequence generate then P4 QA then P5 sample; they do not require exact 100/100 created before QA. Do not invent Chemistry fill. Chemistry coverage shortfall is a separate refill decision after remediation.",
+      "Q5_min_safe_remediation_before_rerun": [
+        "Diversify Chemistry pilot allocation across multiple concepts/topics (pilot currently uses chains[0] only).",
+        "Keep attempt multiplier, duplicate stem_hash, parser, and validation unchanged.",
+        "Optional prompt hygiene for Chemistry: emphasize raw JSON and avoid LaTeX-style backslash escapes (model output defect), without relaxing parse_mcq_json.",
+        "Do not raise caps/budget to force 25/25 on one concept."
+      ]
+    },
+    "recommended_next_gate": "P4 automated QA + sample on existing factory-p3-pilot batch DRAFTs (95 new + prior smoke in batch inventory as applicable)",
+    "recommended_code_changes": "None required to unblock P4/P5. Before any Chemistry refill generation: change pilot allocation script to multi-concept Chemistry slices (operational/script change, not weakening gates).",
+    "recommended_data_blueprint_changes": "Do not mutate existing blueprints in place for closed pilot evidence. For refill: create additional GREEN Chemistry blueprints spanning multiple bonding concepts; avoid 25\u00d7 single Lattice Energy concept.",
+    "another_live_generation_justified": false,
+    "p4_p5_remain_blocked": false,
+    "p4_p5_note": "P4/P5 remain intentionally manual gates (do not auto-run). They are not blocked by the Chemistry shortfall under current ~100 DoD language."
+  },
+  "updated_at": "2026-09-02T16:42:59.152501+00:00"
+}

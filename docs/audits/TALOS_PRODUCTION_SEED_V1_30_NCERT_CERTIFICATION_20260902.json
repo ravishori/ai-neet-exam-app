@@ -1,0 +1,2246 @@
+{
+  "audit_metadata": {
+    "captured_at": "2026-09-03T05:29:23.469935+00:00",
+    "audit_type": "PRODUCTION_SEED_V1_NCERT_CERTIFICATION",
+    "mode": "READ_ONLY_ZERO_GENERATION_ZERO_PUBLICATION_ZERO_MUTATION",
+    "batch_key": "production-seed-v1-2026-09-02-batch",
+    "batch_id": "7437f9e0-edbd-4be8-bd2c-6ef700d71989",
+    "independence": {
+      "limitation": "INDEPENDENCE LIMITATION",
+      "note": "This certification was performed by the coding agent against StudyMaterial NCERT PDFs and independent calculations. It is NOT independent human NCERT certification. Prior provisional P5 ACCEPT by factory-seed-v1-provisional-agent was not treated as certification.",
+      "prior_p5_reviewer_ignored_as_certifier": "factory-seed-v1-provisional-agent"
+    },
+    "tests_run": {
+      "test_factory_seed_diversity.py": "8 passed",
+      "note": "Integration P4/P5 tests require DB; unit diversity tests executed."
+    },
+    "source_authority": {
+      "authoritative_set": "StudyMaterial ncert-books-*.pdf / ncert-book-*.pdf under Physics|Chemistry|Biology",
+      "keph_pdfs": "SUPERSEDED_NOT_USED — not present under D:\\ravishori; do not invent keph mappings",
+      "background_keph_search": "no matches",
+      "corrected_at": "2026-09-03T05:47:45.688355+00:00"
+    },
+    "artifact_revision_note": "Source-authority correction pass: inventory + photosynthesis PDF remap; zero question mutations."
+  },
+  "population": {
+    "expected": 30,
+    "audited": 30,
+    "missing": 0,
+    "unexpected": 0,
+    "item_ids": [
+      "7e4fb145-08fe-43cf-accc-ef53e9535b07",
+      "e15d0065-7b79-477c-b9ec-81bc421a6a71",
+      "c85bba09-451b-4b2f-988d-e440929fa770",
+      "f6f59a22-5d9b-47a3-adb6-8dcf7ce56a1c",
+      "1d598d79-afe1-4ddb-8f32-2b51c8fb2b02",
+      "3c565dee-ea37-4937-bb32-4006ce383006",
+      "9dd374e7-c677-46ab-9e83-8cf0e6139feb",
+      "5b1b5f27-bb6d-4b35-8b1c-96c252278d98",
+      "4f0dcbb1-c236-42a3-a148-cf8233326b52",
+      "e3e36b8e-ff15-455e-807d-eb32de6c1f75",
+      "621ffc10-0673-4d4f-a5be-c07ed2f7f48f",
+      "93c46e39-6a4c-4730-9ae7-a07a4bdab0a9",
+      "aae4fe1b-9665-4216-be4b-2f758f4dbf70",
+      "a357fe24-b0ef-4bd5-b7f7-956f392f9942",
+      "54907eea-4fcd-4855-8477-268bafe03e82",
+      "872a0115-cb0a-4109-99ff-55ada6774d51",
+      "336ec42d-aa33-4b5b-8c46-f8d5461883b0",
+      "e4a6fdc3-7a55-4762-a176-f8af33709308",
+      "a1f1d832-21a3-4fb6-86b8-fe07ed46ad18",
+      "16dd7280-a48b-4437-80ac-a2b72b28d952",
+      "b207ad06-7427-417e-abfd-a928ab68df84",
+      "3d0dbda5-7882-4e3f-90d8-3a479cf67ab2",
+      "061d07ed-ca1f-4f31-b7f8-cbdb3dfe8453",
+      "b4a2e055-f141-4f05-8b06-850d84122b60",
+      "92c31281-cbdf-4954-9b25-79342cb1b400",
+      "3dc11d2a-b9ad-4155-93ec-4cd7b3bae9af",
+      "8a3937ce-5ad0-41af-bc84-17bf04c386ce",
+      "2e17c7e6-5d8f-4469-9cea-407177e61e8e",
+      "b690c0d3-98f6-4e57-851f-aae1ac6ad8cd",
+      "dd7b5422-437d-4b0f-a2dc-f370ea0496c2"
+    ],
+    "subject_counts": {
+      "Botany": 5,
+      "Chemistry": 10,
+      "Physics": 10,
+      "Zoology": 5
+    },
+    "status_counts": {
+      "DRAFT": 30
+    }
+  },
+  "source_inventory": {
+    "study_material_dir": "D:\\ravishori\\AI Neet Exam App\\StudyMaterial",
+    "total_pdfs_under_StudyMaterial": 70,
+    "primary_ncert_corpus_count": 68,
+    "uploads_excluded_from_primary": 2,
+    "keph_named_pdfs_in_repo": false,
+    "keph_status": "SUPERSEDED_NOT_USED",
+    "mapping_basis": [
+      "filename class/subject/chapter number",
+      "PDF first-page chapter title verification where checked",
+      "ADR-0031 explicit registry where present (e.g. BIOLOGY/11/11 -> photosynthesis)",
+      "no invented printed page numbers; page_verified=false unless established"
+    ],
+    "known_gaps": [
+      "Class 12 Physics Optics Part-2 PDFs absent",
+      "Class 11 Physics chapter-7 and chapter-10 PDFs absent from inventory",
+      "Uploads/*.pdf are not primary NCERT corpus for certification"
+    ],
+    "mapping_correction_this_pass": {
+      "photosynthesis_items_remapped_from_chapter_13_to_chapter_11": [
+        "7e4fb145-08fe-43cf-accc-ef53e9535b07",
+        "c85bba09-451b-4b2f-988d-e440929fa770",
+        "f6f59a22-5d9b-47a3-adb6-8dcf7ce56a1c"
+      ],
+      "reason": "PDF title + ADR-0031: chapter-11.pdf = Photosynthesis in Higher Plants; chapter-13.pdf = Plant Growth and Development (no C4 content)"
+    },
+    "files": [
+      "Biology/Class 11-Biology/ncert-books-class-11-biology-chapter-1.pdf",
+      "Biology/Class 11-Biology/ncert-books-class-11-biology-chapter-10.pdf",
+      "Biology/Class 11-Biology/ncert-books-class-11-biology-chapter-11.pdf",
+      "Biology/Class 11-Biology/ncert-books-class-11-biology-chapter-12.pdf",
+      "Biology/Class 11-Biology/ncert-books-class-11-biology-chapter-13.pdf",
+      "Biology/Class 11-Biology/ncert-books-class-11-biology-chapter-14.pdf",
+      "Biology/Class 11-Biology/ncert-books-class-11-biology-chapter-15.pdf",
+      "Biology/Class 11-Biology/ncert-books-class-11-biology-chapter-16.pdf",
+      "Biology/Class 11-Biology/ncert-books-class-11-biology-chapter-17.pdf",
+      "Biology/Class 11-Biology/ncert-books-class-11-biology-chapter-18.pdf",
+      "Biology/Class 11-Biology/ncert-books-class-11-biology-chapter-19.pdf",
+      "Biology/Class 11-Biology/ncert-books-class-11-biology-chapter-2.pdf",
+      "Biology/Class 11-Biology/ncert-books-class-11-biology-chapter-3.pdf",
+      "Biology/Class 11-Biology/ncert-books-class-11-biology-chapter-4.pdf",
+      "Biology/Class 11-Biology/ncert-books-class-11-biology-chapter-5.pdf",
+      "Biology/Class 11-Biology/ncert-books-class-11-biology-chapter-6.pdf",
+      "Biology/Class 11-Biology/ncert-books-class-11-biology-chapter-7.pdf",
+      "Biology/Class 11-Biology/ncert-books-class-11-biology-chapter-8.pdf",
+      "Biology/Class 11-Biology/ncert-books-class-11-biology-chapter-9.pdf",
+      "Biology/Class 12-Biology/ncert-books-class-12-biology-chapter-1.pdf",
+      "Biology/Class 12-Biology/ncert-books-class-12-biology-chapter-10.pdf",
+      "Biology/Class 12-Biology/ncert-books-class-12-biology-chapter-13.pdf",
+      "Biology/Class 12-Biology/ncert-books-class-12-biology-chapter-3.pdf",
+      "Biology/Class 12-Biology/ncert-books-class-12-biology-chapter-4.pdf",
+      "Biology/Class 12-Biology/ncert-books-class-12-biology-chapter-5.pdf",
+      "Biology/Class 12-Biology/ncert-books-class-12-biology-chapter-6.pdf",
+      "Biology/Class 12-Biology/ncert-books-class-12-biology-chapter-7.pdf",
+      "Biology/Class 12-Biology/ncert-books-class-12-biology-chapter-8.pdf",
+      "Biology/Class 12-Biology/ncert-books-class-12-biology-chapter-9.pdf",
+      "Chemistry/Class 11- Chemistry/ncert-books-class-11-chemistry-chapter-1.pdf",
+      "Chemistry/Class 11- Chemistry/ncert-books-class-11-chemistry-chapter-2.pdf",
+      "Chemistry/Class 11- Chemistry/ncert-books-class-11-chemistry-chapter-3.pdf",
+      "Chemistry/Class 11- Chemistry/ncert-books-class-11-chemistry-chapter-4.pdf",
+      "Chemistry/Class 11- Chemistry/ncert-books-class-11-chemistry-chapter-5.pdf",
+      "Chemistry/Class 11- Chemistry/ncert-books-class-11-chemistry-chapter-6.pdf",
+      "Chemistry/Class 11- Chemistry/ncert-books-class-11-chemistry-chapter-7.pdf",
+      "Chemistry/Class 11- Chemistry/ncert-books-class-11-chemistry-chapter-8.pdf",
+      "Chemistry/Class 11- Chemistry/ncert-books-class-11-chemistry-chapter-9.pdf",
+      "Chemistry/Class 12- Chemistry/ncert-books-class-12-chemistry-chapter-1.pdf",
+      "Chemistry/Class 12- Chemistry/ncert-books-class-12-chemistry-chapter-10.pdf",
+      "Chemistry/Class 12- Chemistry/ncert-books-class-12-chemistry-chapter-2.pdf",
+      "Chemistry/Class 12- Chemistry/ncert-books-class-12-chemistry-chapter-3.pdf",
+      "Chemistry/Class 12- Chemistry/ncert-books-class-12-chemistry-chapter-4.pdf",
+      "Chemistry/Class 12- Chemistry/ncert-books-class-12-chemistry-chapter-5.pdf",
+      "Chemistry/Class 12- Chemistry/ncert-books-class-12-chemistry-chapter-6.pdf",
+      "Chemistry/Class 12- Chemistry/ncert-books-class-12-chemistry-chapter-7.pdf",
+      "Chemistry/Class 12- Chemistry/ncert-books-class-12-chemistry-chapter-8.pdf",
+      "Chemistry/Class 12- Chemistry/ncert-books-class-12-chemistry-chapter-9.pdf",
+      "Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-1.pdf",
+      "Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-11.pdf",
+      "Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-12.pdf",
+      "Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-13.pdf",
+      "Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-14.pdf",
+      "Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-2.pdf",
+      "Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-3.pdf",
+      "Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-4.pdf",
+      "Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-5.pdf",
+      "Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-6.pdf",
+      "Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-8.pdf",
+      "Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-9.pdf",
+      "Physics/Class 12-Physics/ncert-book-class-12-physics-part-1-chapter-1.pdf",
+      "Physics/Class 12-Physics/ncert-book-class-12-physics-part-1-chapter-2.pdf",
+      "Physics/Class 12-Physics/ncert-book-class-12-physics-part-1-chapter-3.pdf",
+      "Physics/Class 12-Physics/ncert-book-class-12-physics-part-1-chapter-4.pdf",
+      "Physics/Class 12-Physics/ncert-book-class-12-physics-part-1-chapter-5.pdf",
+      "Physics/Class 12-Physics/ncert-book-class-12-physics-part-1-chapter-6.pdf",
+      "Physics/Class 12-Physics/ncert-book-class-12-physics-part-1-chapter-7.pdf",
+      "Physics/Class 12-Physics/ncert-book-class-12-physics-part-1-chapter-8.pdf"
+    ],
+    "uploads_listed_but_excluded": [
+      "Uploads/275f5b358418479eaa50a1b571719463_NCERT_Physics_Ch3_Current_Electricity.pdf",
+      "Uploads/4ad80b4c0a64484b9bcd8388f54675b4_NCERT_Physics_Ch1_Electrostatics.pdf"
+    ],
+    "note": "Authoritative NCERT source for this audit is StudyMaterial ncert-books-*.pdf collection only."
+  },
+  "items": [
+    {
+      "item_id": "7e4fb145-08fe-43cf-accc-ef53e9535b07",
+      "subject": "Botany",
+      "class": "XI",
+      "chapter": "Photosynthesis in Higher Plants",
+      "topic": "Dark Reaction (Calvin Cycle)",
+      "concept": "C3 vs C4 Pathway",
+      "concept_code": "c3-c4-pathway",
+      "blueprint": "production-seed-v1-2026-09-02-bp-botany-01",
+      "stem_fingerprint": "4422349dbe4a5175",
+      "body_md5": "738dc7ece05ea092e42b5e51f3afa41b",
+      "status": "DRAFT",
+      "source_file": "StudyMaterial/Biology/Class 11-Biology/ncert-books-class-11-biology-chapter-11.pdf",
+      "source_section": "Chapter 11 — Photosynthesis in Higher Plants (PDF title + C3/C4/PEP/Kranz verified in file; ADR-0031)",
+      "source_page": null,
+      "pdf_page_index": null,
+      "page_verified": false,
+      "ncert_classification": "NCERT_DIRECT",
+      "ncert_evidence": "Ch13 discusses C4 spatial separation / PEP carboxylase minimizing photorespiration vs C3 under high temp/light. [SOURCE CORRECTED: corpus chapter-11.pdf is Photosynthesis; chapter-13.pdf is Plant Growth and Development.]",
+      "stem_assessment": "PASS — accurate contrast framing",
+      "option_assessments": {
+        "A": "incorrect",
+        "B": "correct",
+        "C": "incorrect",
+        "D": "incorrect (C4 uses more ATP)"
+      },
+      "stored_answer": "B",
+      "independent_answer": "B",
+      "answer_match": "MATCH",
+      "explanation_assessment": "PASS",
+      "numerical_verification": "NOT_APPLICABLE",
+      "neet_relevance": "PASS",
+      "distractor_assessment": "PASS",
+      "provenance_assessment": {
+        "provider": "gemini",
+        "model": "gemini-3.6-flash",
+        "routing": "fixed:gemini",
+        "is_fallback": false,
+        "expected_ok": true
+      },
+      "rh_phenotype": {
+        "stem_mentions_rh_or_abo_positive": false,
+        "applicable": false
+      },
+      "search_hits_summary": {
+        "keywords": [
+          "c3 vs c4 pathway",
+          "c4",
+          "c3",
+          "pathway"
+        ],
+        "hit_pages": [
+          8
+        ]
+      },
+      "certification_decision": "CERTIFIED_WITH_LIMITATION",
+      "failure_codes": [],
+      "review_notes": "Page number not reliably extractable from PDF footer; concept supported in Ch13. SOURCE_CORRECTION: mapped to ncert-books-class-11-biology-chapter-11.pdf (not chapter-13)."
+    },
+    {
+      "item_id": "e15d0065-7b79-477c-b9ec-81bc421a6a71",
+      "subject": "Botany",
+      "class": "XI",
+      "chapter": "Cell - The Unit of Life",
+      "topic": "Membrane and Cell Cycle",
+      "concept": "Fluid Mosaic Model",
+      "concept_code": "fluid-mosaic",
+      "blueprint": "production-seed-v1-2026-09-02-bp-botany-04",
+      "stem_fingerprint": "81281e40b7ef7f47",
+      "body_md5": "e3e282481bdb871771cb52c99c2ed187",
+      "status": "DRAFT",
+      "source_file": "StudyMaterial/Biology/Class 11-Biology/ncert-books-class-11-biology-chapter-8.pdf",
+      "source_section": "Cell — Fluid mosaic model",
+      "source_page": null,
+      "pdf_page_index": null,
+      "page_verified": false,
+      "ncert_classification": "NCERT_DIRECT",
+      "ncert_evidence": "Singer–Nicolson fluid mosaic: lipid bilayer confers fluidity enabling lateral protein movement.",
+      "stem_assessment": "PASS",
+      "option_assessments": {
+        "A": "correct",
+        "B": "incorrect",
+        "C": "incorrect",
+        "D": "incorrect (cellulose not membrane component)"
+      },
+      "stored_answer": "A",
+      "independent_answer": "A",
+      "answer_match": "MATCH",
+      "explanation_assessment": "PASS",
+      "numerical_verification": "NOT_APPLICABLE",
+      "neet_relevance": "PASS",
+      "distractor_assessment": "PASS",
+      "provenance_assessment": {
+        "provider": "gemini",
+        "model": "gemini-3.6-flash",
+        "routing": "fixed:gemini",
+        "is_fallback": false,
+        "expected_ok": true
+      },
+      "rh_phenotype": {
+        "stem_mentions_rh_or_abo_positive": false,
+        "applicable": false
+      },
+      "search_hits_summary": {
+        "keywords": [
+          "fluid mosaic model",
+          "fluid mosaic",
+          "fluid",
+          "mosaic",
+          "model"
+        ],
+        "hit_pages": [
+          2,
+          4,
+          6,
+          9,
+          10,
+          15
+        ]
+      },
+      "certification_decision": "CERTIFIED_WITH_LIMITATION",
+      "failure_codes": [],
+      "review_notes": "Page not verified; Ch8 keyword hits present."
+    },
+    {
+      "item_id": "c85bba09-451b-4b2f-988d-e440929fa770",
+      "subject": "Botany",
+      "class": "XI",
+      "chapter": "Photosynthesis in Higher Plants",
+      "topic": "Factors Affecting Photosynthesis",
+      "concept": "Limiting Factors (Blackman's Law)",
+      "concept_code": "limiting-factors",
+      "blueprint": "production-seed-v1-2026-09-02-bp-botany-03",
+      "stem_fingerprint": "14e0e7a46b6bfb4a",
+      "body_md5": "ee437b888cef19996a4d1a52f4727235",
+      "status": "DRAFT",
+      "source_file": "StudyMaterial/Biology/Class 11-Biology/ncert-books-class-11-biology-chapter-11.pdf",
+      "source_section": "Chapter 11 — Photosynthesis in Higher Plants (PDF title + C3/C4/PEP/Kranz verified in file; ADR-0031)",
+      "source_page": null,
+      "pdf_page_index": null,
+      "page_verified": false,
+      "ncert_classification": "NCERT_DIRECT",
+      "ncert_evidence": "Blackman 1905: rate governed by factor nearest its minimal value. [SOURCE CORRECTED: corpus chapter-11.pdf is Photosynthesis; chapter-13.pdf is Plant Growth and Development.]",
+      "stem_assessment": "PASS",
+      "option_assessments": {
+        "A": "incorrect",
+        "B": "correct",
+        "C": "incorrect",
+        "D": "incorrect"
+      },
+      "stored_answer": "B",
+      "independent_answer": "B",
+      "answer_match": "MATCH",
+      "explanation_assessment": "PASS",
+      "numerical_verification": "NOT_APPLICABLE",
+      "neet_relevance": "PASS",
+      "distractor_assessment": "PASS",
+      "provenance_assessment": {
+        "provider": "gemini",
+        "model": "gemini-3.6-flash",
+        "routing": "fixed:gemini",
+        "is_fallback": false,
+        "expected_ok": true
+      },
+      "rh_phenotype": {
+        "stem_mentions_rh_or_abo_positive": false,
+        "applicable": false
+      },
+      "search_hits_summary": {
+        "keywords": [
+          "limiting factors (blackman's law)",
+          "ph",
+          "blackman",
+          "limiting",
+          "factors"
+        ],
+        "hit_pages": [
+          1,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      "certification_decision": "CERTIFIED_WITH_LIMITATION",
+      "failure_codes": [],
+      "review_notes": "Page not verified. SOURCE_CORRECTION: mapped to ncert-books-class-11-biology-chapter-11.pdf (not chapter-13)."
+    },
+    {
+      "item_id": "f6f59a22-5d9b-47a3-adb6-8dcf7ce56a1c",
+      "subject": "Botany",
+      "class": "XI",
+      "chapter": "Photosynthesis in Higher Plants",
+      "topic": "Factors Affecting Photosynthesis",
+      "concept": "Photorespiration",
+      "concept_code": "photorespiration",
+      "blueprint": "production-seed-v1-2026-09-02-bp-botany-02",
+      "stem_fingerprint": "ed0ddd3c05695bd3",
+      "body_md5": "1cb341616cc7cc9c41fc36d68e769cb8",
+      "status": "DRAFT",
+      "source_file": "StudyMaterial/Biology/Class 11-Biology/ncert-books-class-11-biology-chapter-11.pdf",
+      "source_section": "Chapter 11 — Photosynthesis in Higher Plants (PDF title + C3/C4/PEP/Kranz verified in file; ADR-0031)",
+      "source_page": null,
+      "pdf_page_index": null,
+      "page_verified": false,
+      "ncert_classification": "NCERT_DIRECT",
+      "ncert_evidence": "Oxygenase activity of RuBisCO yields PGA + phosphoglycolate; wasteful pathway (no sugar/NADPH net gain; ATP consumed in recovery). [SOURCE CORRECTED: corpus chapter-11.pdf is Photosynthesis; chapter-13.pdf is Plant Growth and Development.]",
+      "stem_assessment": "PASS",
+      "option_assessments": {
+        "A": "incorrect",
+        "B": "incorrect",
+        "C": "correct",
+        "D": "incorrect"
+      },
+      "stored_answer": "C",
+      "independent_answer": "C",
+      "answer_match": "MATCH",
+      "explanation_assessment": "PASS",
+      "numerical_verification": "NOT_APPLICABLE",
+      "neet_relevance": "PASS",
+      "distractor_assessment": "PASS — A/B close distractors",
+      "provenance_assessment": {
+        "provider": "gemini",
+        "model": "gemini-3.6-flash",
+        "routing": "fixed:gemini",
+        "is_fallback": false,
+        "expected_ok": true
+      },
+      "rh_phenotype": {
+        "stem_mentions_rh_or_abo_positive": false,
+        "applicable": false
+      },
+      "search_hits_summary": {
+        "keywords": [
+          "photorespiration",
+          "ph"
+        ],
+        "hit_pages": [
+          1,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      "certification_decision": "CERTIFIED_WITH_LIMITATION",
+      "failure_codes": [],
+      "review_notes": "Page not verified. SOURCE_CORRECTION: mapped to ncert-books-class-11-biology-chapter-11.pdf (not chapter-13)."
+    },
+    {
+      "item_id": "1d598d79-afe1-4ddb-8f32-2b51c8fb2b02",
+      "subject": "Botany",
+      "class": "XI",
+      "chapter": "Cell - The Unit of Life",
+      "topic": "Cell Theory and Cell Types",
+      "concept": "Prokaryotic vs Eukaryotic Cells",
+      "concept_code": "prokaryote-eukaryote",
+      "blueprint": "production-seed-v1-2026-09-02-bp-botany-05",
+      "stem_fingerprint": "a497f153ebc9d3a1",
+      "body_md5": "8b20ee97e1aa0590107e50717195c163",
+      "status": "DRAFT",
+      "source_file": "StudyMaterial/Biology/Class 11-Biology/ncert-books-class-11-biology-chapter-8.pdf",
+      "source_section": "Prokaryotic vs eukaryotic cells",
+      "source_page": null,
+      "pdf_page_index": null,
+      "page_verified": false,
+      "ncert_classification": "NCERT_DIRECT",
+      "ncert_evidence": "Both cell types have plasma membrane; nucleus/lysosomes/linear chromosomes are eukaryotic-only features as framed.",
+      "stem_assessment": "PASS",
+      "option_assessments": {
+        "A": "incorrect",
+        "B": "correct",
+        "C": "incorrect",
+        "D": "incorrect"
+      },
+      "stored_answer": "B",
+      "independent_answer": "B",
+      "answer_match": "MATCH",
+      "explanation_assessment": "PASS",
+      "numerical_verification": "NOT_APPLICABLE",
+      "neet_relevance": "PASS",
+      "distractor_assessment": "PASS",
+      "provenance_assessment": {
+        "provider": "gemini",
+        "model": "gemini-3.6-flash",
+        "routing": "fixed:gemini",
+        "is_fallback": false,
+        "expected_ok": true
+      },
+      "rh_phenotype": {
+        "stem_mentions_rh_or_abo_positive": false,
+        "applicable": false
+      },
+      "search_hits_summary": {
+        "keywords": [
+          "prokaryotic vs eukaryotic cells",
+          "ph",
+          "prokaryotic",
+          "eukaryotic",
+          "cells"
+        ],
+        "hit_pages": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          9
+        ]
+      },
+      "certification_decision": "CERTIFIED_WITH_LIMITATION",
+      "failure_codes": [],
+      "review_notes": "Page not verified."
+    },
+    {
+      "item_id": "3c565dee-ea37-4937-bb32-4006ce383006",
+      "subject": "Chemistry",
+      "class": "XI",
+      "chapter": "Equilibrium",
+      "topic": "Chemical Equilibrium",
+      "concept": "Equilibrium Constant Kc/Kp",
+      "concept_code": "equilibrium-constant",
+      "blueprint": "production-seed-v1-2026-09-02-bp-chemistry-03",
+      "stem_fingerprint": "00867e8105d24f80",
+      "body_md5": "2a25ef984f87bcbc9bac5159a47bf80f",
+      "status": "DRAFT",
+      "source_file": "StudyMaterial/Chemistry/Class 11- Chemistry/ncert-books-class-11-chemistry-chapter-7.pdf",
+      "source_section": "Equilibrium — Kp; solids omitted",
+      "source_page": null,
+      "pdf_page_index": null,
+      "page_verified": false,
+      "ncert_classification": "NCERT_DERIVED",
+      "ncert_evidence": "Heterogeneous equilibria: pure solids excluded from Kp; Δn_g = 3-(2+1)=0 so Kp=(pC)^3/((pA)^2 pB).",
+      "stem_assessment": "PASS",
+      "option_assessments": {
+        "A": "incorrect (includes pD)",
+        "B": "correct",
+        "C": "incorrect",
+        "D": "incorrect"
+      },
+      "stored_answer": "B",
+      "independent_answer": "B",
+      "answer_match": "MATCH",
+      "explanation_assessment": "PASS",
+      "numerical_verification": "NOT_APPLICABLE",
+      "neet_relevance": "PASS",
+      "distractor_assessment": "PASS",
+      "provenance_assessment": {
+        "provider": "gemini",
+        "model": "gemini-3.6-flash",
+        "routing": "fixed:gemini",
+        "is_fallback": false,
+        "expected_ok": true
+      },
+      "rh_phenotype": {
+        "stem_mentions_rh_or_abo_positive": false,
+        "applicable": false
+      },
+      "search_hits_summary": {
+        "keywords": [
+          "equilibrium constant kc/kp",
+          "equilibrium",
+          "constant"
+        ],
+        "hit_pages": [
+          4,
+          5
+        ]
+      },
+      "certification_decision": "CERTIFIED_WITH_LIMITATION",
+      "failure_codes": [],
+      "review_notes": "Page not verified."
+    },
+    {
+      "item_id": "9dd374e7-c677-46ab-9e83-8cf0e6139feb",
+      "subject": "Chemistry",
+      "class": "XI",
+      "chapter": "Organic Chemistry - Basic Principles",
+      "topic": "IUPAC and Homologous Series",
+      "concept": "Homologous Series",
+      "concept_code": "homologous-series",
+      "blueprint": "production-seed-v1-2026-09-02-bp-chemistry-08",
+      "stem_fingerprint": "cb533e75678cc735",
+      "body_md5": "57655dcdc42d090320f8f432cd61ee9f",
+      "status": "DRAFT",
+      "source_file": "StudyMaterial/Chemistry/Class 11- Chemistry/ncert-books-class-11-chemistry-chapter-8.pdf",
+      "source_section": "Organic Chemistry — Some Basic Principles — homologous series",
+      "source_page": null,
+      "pdf_page_index": 7,
+      "page_verified": false,
+      "ncert_classification": "NCERT_DIRECT",
+      "ncert_evidence": "Ch8 defines homologous series; successive CH2 difference; gradual physical-property change.",
+      "stem_assessment": "PASS",
+      "option_assessments": {
+        "A": "incorrect (CH3 not CH2)",
+        "B": "correct",
+        "C": "incorrect",
+        "D": "incorrect (Δm=14 u)"
+      },
+      "stored_answer": "B",
+      "independent_answer": "B",
+      "answer_match": "MATCH",
+      "explanation_assessment": "PASS",
+      "numerical_verification": "NOT_APPLICABLE",
+      "neet_relevance": "PASS",
+      "distractor_assessment": "PASS",
+      "provenance_assessment": {
+        "provider": "gemini",
+        "model": "gemini-3.6-flash",
+        "routing": "fixed:gemini",
+        "is_fallback": false,
+        "expected_ok": true
+      },
+      "rh_phenotype": {
+        "stem_mentions_rh_or_abo_positive": false,
+        "applicable": false
+      },
+      "search_hits_summary": {
+        "keywords": [
+          "homologous series",
+          "homologous",
+          "series"
+        ],
+        "hit_pages": []
+      },
+      "certification_decision": "CERTIFIED_WITH_LIMITATION",
+      "failure_codes": [],
+      "review_notes": "PDF page index ~7; printed page unverified. Repo lacks numbered Ch12 organic PDF; Ch8 is authoritative here."
+    },
+    {
+      "item_id": "5b1b5f27-bb6d-4b35-8b1c-96c252278d98",
+      "subject": "Chemistry",
+      "class": "XI",
+      "chapter": "Organic Chemistry - Basic Principles",
+      "topic": "Electronic Effects",
+      "concept": "Inductive and Resonance Effects",
+      "concept_code": "inductive-mesomeric",
+      "blueprint": "production-seed-v1-2026-09-02-bp-chemistry-06",
+      "stem_fingerprint": "34d28a44e0128084",
+      "body_md5": "b9f2827aba995e4aec6de56700b5605e",
+      "status": "DRAFT",
+      "source_file": "StudyMaterial/Chemistry/Class 11- Chemistry/ncert-books-class-11-chemistry-chapter-8.pdf",
+      "source_section": "Inductive effect and resonance",
+      "source_page": null,
+      "pdf_page_index": 19,
+      "page_verified": false,
+      "ncert_classification": "NCERT_DERIVED",
+      "ncert_evidence": "Ch8 covers −I and resonance; relative nitrophenol acidity is a standard application of those effects (para −R vs meta primarily −I).",
+      "stem_assessment": "PASS",
+      "option_assessments": {
+        "A": "correct",
+        "B": "incorrect",
+        "C": "incorrect",
+        "D": "incorrect"
+      },
+      "stored_answer": "A",
+      "independent_answer": "A",
+      "answer_match": "MATCH",
+      "explanation_assessment": "PASS",
+      "numerical_verification": "NOT_APPLICABLE",
+      "neet_relevance": "PASS",
+      "distractor_assessment": "PASS",
+      "provenance_assessment": {
+        "provider": "gemini",
+        "model": "gemini-3.6-flash",
+        "routing": "fixed:gemini",
+        "is_fallback": false,
+        "expected_ok": true
+      },
+      "rh_phenotype": {
+        "stem_mentions_rh_or_abo_positive": false,
+        "applicable": false
+      },
+      "search_hits_summary": {
+        "keywords": [
+          "inductive and resonance effects",
+          "ph",
+          "inductive",
+          "resonance",
+          "effects"
+        ],
+        "hit_pages": []
+      },
+      "certification_decision": "CERTIFIED_WITH_LIMITATION",
+      "failure_codes": [],
+      "review_notes": "Specific 4- vs 3-nitrophenol comparison not quoted page-wise; effects themselves are NCERT-supported."
+    },
+    {
+      "item_id": "4f0dcbb1-c236-42a3-a148-cf8233326b52",
+      "subject": "Chemistry",
+      "class": "XI",
+      "chapter": "Chemical Bonding and Molecular Structure",
+      "topic": "Ionic Bonding",
+      "concept": "Lattice Energy",
+      "concept_code": "lattice-energy",
+      "blueprint": "production-seed-v1-2026-09-02-bp-chemistry-09",
+      "stem_fingerprint": "bf1e0edbf7413043",
+      "body_md5": "111a67b617ba54aedf0854f99cc9b3a6",
+      "status": "DRAFT",
+      "source_file": "StudyMaterial/Chemistry/Class 11- Chemistry/ncert-books-class-11-chemistry-chapter-4.pdf",
+      "source_section": "Chemical Bonding — lattice enthalpy",
+      "source_page": null,
+      "pdf_page_index": null,
+      "page_verified": false,
+      "ncert_classification": "NCERT_DIRECT",
+      "ncert_evidence": "Lattice enthalpy: gaseous ions → crystalline ionic solid.",
+      "stem_assessment": "PASS",
+      "option_assessments": {
+        "A": "correct",
+        "B": "formation enthalpy",
+        "C": "hydration/precipitation",
+        "D": "atoms not ions"
+      },
+      "stored_answer": "A",
+      "independent_answer": "A",
+      "answer_match": "MATCH",
+      "explanation_assessment": "PASS",
+      "numerical_verification": "NOT_APPLICABLE",
+      "neet_relevance": "PASS",
+      "distractor_assessment": "PASS",
+      "provenance_assessment": {
+        "provider": "gemini",
+        "model": "gemini-3.6-flash",
+        "routing": "fixed:gemini",
+        "is_fallback": false,
+        "expected_ok": true
+      },
+      "rh_phenotype": {
+        "stem_mentions_rh_or_abo_positive": false,
+        "applicable": false
+      },
+      "search_hits_summary": {
+        "keywords": [
+          "lattice energy",
+          "lattice",
+          "energy"
+        ],
+        "hit_pages": [
+          1,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          14
+        ]
+      },
+      "certification_decision": "CERTIFIED_WITH_LIMITATION",
+      "failure_codes": [],
+      "review_notes": "Page not verified."
+    },
+    {
+      "item_id": "e3e36b8e-ff15-455e-807d-eb32de6c1f75",
+      "subject": "Chemistry",
+      "class": "XI",
+      "chapter": "Equilibrium",
+      "topic": "Ionic Equilibrium and pH",
+      "concept": "pH and Ionic Product of Water",
+      "concept_code": "ph-and-kw",
+      "blueprint": "production-seed-v1-2026-09-02-bp-chemistry-04",
+      "stem_fingerprint": "9ed2433be3160680",
+      "body_md5": "0442b2f4a39bc659828bb6ae41814b67",
+      "status": "DRAFT",
+      "source_file": "StudyMaterial/Chemistry/Class 11- Chemistry/ncert-books-class-11-chemistry-chapter-7.pdf",
+      "source_section": "Ionic product of water / pH",
+      "source_page": null,
+      "pdf_page_index": null,
+      "page_verified": false,
+      "ncert_classification": "NCERT_DERIVED",
+      "ncert_evidence": "Neutral water: [H+]=√Kw; pH=−log[H+]. Independent: √(5.5e-14)≈2.345e-7; −log≈6.63.",
+      "stem_assessment": "PASS",
+      "option_assessments": {
+        "A": "incorrect (25°C habit)",
+        "B": "correct",
+        "C": "incorrect",
+        "D": "incorrect"
+      },
+      "stored_answer": "B",
+      "independent_answer": "B",
+      "answer_match": "MATCH",
+      "explanation_assessment": "PASS",
+      "numerical_verification": "PASS",
+      "neet_relevance": "PASS",
+      "distractor_assessment": "PASS",
+      "provenance_assessment": {
+        "provider": "gemini",
+        "model": "gemini-3.6-flash",
+        "routing": "fixed:gemini",
+        "is_fallback": false,
+        "expected_ok": true
+      },
+      "rh_phenotype": {
+        "stem_mentions_rh_or_abo_positive": false,
+        "applicable": false
+      },
+      "search_hits_summary": {
+        "keywords": [
+          "ph and ionic product of water",
+          "ph",
+          "ionic",
+          "product",
+          "water"
+        ],
+        "hit_pages": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          7,
+          8,
+          9
+        ]
+      },
+      "certification_decision": "CERTIFIED_WITH_LIMITATION",
+      "failure_codes": [],
+      "review_notes": "Arithmetic independently verified; page not verified."
+    },
+    {
+      "item_id": "621ffc10-0673-4d4f-a5be-c07ed2f7f48f",
+      "subject": "Chemistry",
+      "class": "XI",
+      "chapter": "Equilibrium",
+      "topic": "Solubility Product",
+      "concept": "Solubility Product Ksp",
+      "concept_code": "ksp-basics",
+      "blueprint": "production-seed-v1-2026-09-02-bp-chemistry-05",
+      "stem_fingerprint": "bcbd33b0f6ec881b",
+      "body_md5": "636791be3773682d24dcaeb75689747d",
+      "status": "DRAFT",
+      "source_file": "StudyMaterial/Chemistry/Class 11- Chemistry/ncert-books-class-11-chemistry-chapter-7.pdf",
+      "source_section": "Solubility product",
+      "source_page": null,
+      "pdf_page_index": null,
+      "page_verified": false,
+      "ncert_classification": "NCERT_DERIVED",
+      "ncert_evidence": "For M2X3: Ksp=108 s^5. Given 1.08e-23 → s=1e-5; [M3+]=2s=2e-5.",
+      "stem_assessment": "PASS",
+      "option_assessments": {
+        "A": "s not [M]",
+        "B": "correct",
+        "C": "incorrect",
+        "D": "incorrect"
+      },
+      "stored_answer": "B",
+      "independent_answer": "B",
+      "answer_match": "MATCH",
+      "explanation_assessment": "PASS",
+      "numerical_verification": "PASS",
+      "neet_relevance": "PASS",
+      "distractor_assessment": "PASS",
+      "provenance_assessment": {
+        "provider": "gemini",
+        "model": "gemini-3.6-flash",
+        "routing": "fixed:gemini",
+        "is_fallback": false,
+        "expected_ok": true
+      },
+      "rh_phenotype": {
+        "stem_mentions_rh_or_abo_positive": false,
+        "applicable": false
+      },
+      "search_hits_summary": {
+        "keywords": [
+          "solubility product ksp",
+          "solubility",
+          "product"
+        ],
+        "hit_pages": [
+          4,
+          5,
+          12,
+          21
+        ]
+      },
+      "certification_decision": "CERTIFIED_WITH_LIMITATION",
+      "failure_codes": [],
+      "review_notes": "Independent stoichiometry check PASS."
+    },
+    {
+      "item_id": "93c46e39-6a4c-4730-9ae7-a07a4bdab0a9",
+      "subject": "Chemistry",
+      "class": "XI",
+      "chapter": "Chemical Bonding and Molecular Structure",
+      "topic": "Hybridization",
+      "concept": "sp, sp2, sp3 Hybridization",
+      "concept_code": "sp-sp2-sp3",
+      "blueprint": "production-seed-v1-2026-09-02-bp-chemistry-02",
+      "stem_fingerprint": "9ace3c72e72f46d5",
+      "body_md5": "0b4d9f8b0f4f0a1a6f005cb137de9220",
+      "status": "DRAFT",
+      "source_file": "StudyMaterial/Chemistry/Class 11- Chemistry/ncert-books-class-11-chemistry-chapter-4.pdf",
+      "source_section": "Hybridisation",
+      "source_page": null,
+      "pdf_page_index": null,
+      "page_verified": false,
+      "ncert_classification": "NCERT_DERIVED",
+      "ncert_evidence": "Allene: terminal carbons sp2, central carbon sp (two double bonds).",
+      "stem_assessment": "PASS",
+      "option_assessments": {
+        "A": "incorrect",
+        "B": "correct",
+        "C": "incorrect",
+        "D": "incorrect"
+      },
+      "stored_answer": "B",
+      "independent_answer": "B",
+      "answer_match": "MATCH",
+      "explanation_assessment": "PASS",
+      "numerical_verification": "NOT_APPLICABLE",
+      "neet_relevance": "PASS",
+      "distractor_assessment": "PASS",
+      "provenance_assessment": {
+        "provider": "gemini",
+        "model": "gemini-3.6-flash",
+        "routing": "fixed:gemini",
+        "is_fallback": false,
+        "expected_ok": true
+      },
+      "rh_phenotype": {
+        "stem_mentions_rh_or_abo_positive": false,
+        "applicable": false
+      },
+      "search_hits_summary": {
+        "keywords": [
+          "sp, sp2, sp3 hybridization",
+          "hybridization"
+        ],
+        "hit_pages": [
+          18,
+          34
+        ]
+      },
+      "certification_decision": "CERTIFIED_WITH_LIMITATION",
+      "failure_codes": [],
+      "review_notes": "Allene example is standard hybridization application of NCERT bonding chapter."
+    },
+    {
+      "item_id": "aae4fe1b-9665-4216-be4b-2f758f4dbf70",
+      "subject": "Chemistry",
+      "class": "XI",
+      "chapter": "Chemical Bonding and Molecular Structure",
+      "topic": "Hybridization",
+      "concept": "sp, sp2, sp3 Hybridization",
+      "concept_code": "sp-sp2-sp3",
+      "blueprint": "production-seed-v1-2026-09-02-bp-chemistry-10",
+      "stem_fingerprint": "73a4910eb02b66e4",
+      "body_md5": "853dce7125c2c6ee8f95adf175619782",
+      "status": "DRAFT",
+      "source_file": "StudyMaterial/Chemistry/Class 11- Chemistry/ncert-books-class-11-chemistry-chapter-4.pdf",
+      "source_section": "VSEPR / hybridization vs geometry",
+      "source_page": null,
+      "pdf_page_index": null,
+      "page_verified": false,
+      "ncert_classification": "NCERT_DERIVED",
+      "ncert_evidence": "NO2+ linear (sp); NO2 bent; NO2− bent (sp2 family). Matches NCERT VSEPR/hybridization logic.",
+      "stem_assessment": "PASS",
+      "option_assessments": {
+        "A": "correct",
+        "B": "incorrect",
+        "C": "incorrect",
+        "D": "incorrect"
+      },
+      "stored_answer": "A",
+      "independent_answer": "A",
+      "answer_match": "MATCH",
+      "explanation_assessment": "PASS",
+      "numerical_verification": "NOT_APPLICABLE",
+      "neet_relevance": "PASS",
+      "distractor_assessment": "PASS",
+      "provenance_assessment": {
+        "provider": "gemini",
+        "model": "gemini-3.6-flash",
+        "routing": "fixed:gemini",
+        "is_fallback": false,
+        "expected_ok": true
+      },
+      "rh_phenotype": {
+        "stem_mentions_rh_or_abo_positive": false,
+        "applicable": false
+      },
+      "search_hits_summary": {
+        "keywords": [
+          "sp, sp2, sp3 hybridization",
+          "hybridization"
+        ],
+        "hit_pages": [
+          18,
+          34
+        ]
+      },
+      "certification_decision": "CERTIFIED_WITH_LIMITATION",
+      "failure_codes": [],
+      "review_notes": "Page not verified."
+    },
+    {
+      "item_id": "a357fe24-b0ef-4bd5-b7f7-956f392f9942",
+      "subject": "Chemistry",
+      "class": "XI",
+      "chapter": "Organic Chemistry - Basic Principles",
+      "topic": "Isomerism and Intermediates",
+      "concept": "Structural Isomerism",
+      "concept_code": "structural-isomerism",
+      "blueprint": "production-seed-v1-2026-09-02-bp-chemistry-07",
+      "stem_fingerprint": "b774168c3c0a8e7a",
+      "body_md5": "6f0c4264b7c55988efff574c3b989a89",
+      "status": "DRAFT",
+      "source_file": "StudyMaterial/Chemistry/Class 11- Chemistry/ncert-books-class-11-chemistry-chapter-8.pdf",
+      "source_section": "Functional group isomerism",
+      "source_page": null,
+      "pdf_page_index": 15,
+      "page_verified": false,
+      "ncert_classification": "NCERT_DIRECT",
+      "ncert_evidence": "Ch8 defines functional isomers; ethanol/dimethyl ether classic C2H6O pair.",
+      "stem_assessment": "PASS",
+      "option_assessments": {
+        "A": "correct",
+        "B": "position",
+        "C": "chain",
+        "D": "position"
+      },
+      "stored_answer": "A",
+      "independent_answer": "A",
+      "answer_match": "MATCH",
+      "explanation_assessment": "PASS",
+      "numerical_verification": "NOT_APPLICABLE",
+      "neet_relevance": "PASS",
+      "distractor_assessment": "PASS",
+      "provenance_assessment": {
+        "provider": "gemini",
+        "model": "gemini-3.6-flash",
+        "routing": "fixed:gemini",
+        "is_fallback": false,
+        "expected_ok": true
+      },
+      "rh_phenotype": {
+        "stem_mentions_rh_or_abo_positive": false,
+        "applicable": false
+      },
+      "search_hits_summary": {
+        "keywords": [
+          "structural isomerism",
+          "isomer",
+          "structural",
+          "isomerism"
+        ],
+        "hit_pages": []
+      },
+      "certification_decision": "CERTIFIED_WITH_LIMITATION",
+      "failure_codes": [],
+      "review_notes": "PDF index ~15; printed page unverified."
+    },
+    {
+      "item_id": "54907eea-4fcd-4855-8477-268bafe03e82",
+      "subject": "Chemistry",
+      "class": "XI",
+      "chapter": "Chemical Bonding and Molecular Structure",
+      "topic": "Covalent Bonding and VSEPR Theory",
+      "concept": "VSEPR Theory",
+      "concept_code": "vsepr-theory",
+      "blueprint": "production-seed-v1-2026-09-02-bp-chemistry-01",
+      "stem_fingerprint": "bbe9715403aa69dc",
+      "body_md5": "5b61d0de3eba381f540486a2f15c81fc",
+      "status": "DRAFT",
+      "source_file": "StudyMaterial/Chemistry/Class 11- Chemistry/ncert-books-class-11-chemistry-chapter-4.pdf",
+      "source_section": "VSEPR theory",
+      "source_page": null,
+      "pdf_page_index": null,
+      "page_verified": false,
+      "ncert_classification": "SCIENTIFICALLY_VALID_NOT_DIRECTLY_LOCATED_IN_NCERT",
+      "ncert_evidence": "SF4 see-saw and ICl3 T-shape are NCERT-style VSEPR; XeF5− pentagonal planar is chemically correct but may be beyond typical XI examples.",
+      "stem_assessment": "PASS scientifically; enrichment risk for XI syllabus framing",
+      "option_assessments": {
+        "A": "correct",
+        "B": "incorrect",
+        "C": "incorrect",
+        "D": "incorrect"
+      },
+      "stored_answer": "A",
+      "independent_answer": "A",
+      "answer_match": "MATCH",
+      "explanation_assessment": "PASS chemically",
+      "numerical_verification": "NOT_APPLICABLE",
+      "neet_relevance": "HUMAN_REVIEW — XeF5− uncommon in NCERT XI examples",
+      "distractor_assessment": "PASS",
+      "provenance_assessment": {
+        "provider": "gemini",
+        "model": "gemini-3.6-flash",
+        "routing": "fixed:gemini",
+        "is_fallback": false,
+        "expected_ok": true
+      },
+      "rh_phenotype": {
+        "stem_mentions_rh_or_abo_positive": false,
+        "applicable": false
+      },
+      "search_hits_summary": {
+        "keywords": [
+          "vsepr theory",
+          "vsepr",
+          "theory"
+        ],
+        "hit_pages": [
+          1,
+          3,
+          7,
+          13,
+          14,
+          18,
+          20,
+          26
+        ]
+      },
+      "certification_decision": "REQUIRES_HUMAN_REVIEW",
+      "failure_codes": [
+        "ENRICHMENT_BEYOND_LOCATED_NCERT_EXAMPLES"
+      ],
+      "review_notes": "Answer chemically correct; NCERT XI direct example support for XeF5− not established in available PDF search."
+    },
+    {
+      "item_id": "872a0115-cb0a-4109-99ff-55ada6774d51",
+      "subject": "Physics",
+      "class": "XI",
+      "chapter": "Mechanical Properties of Fluids",
+      "topic": "Fluid Flow and Bernoulli",
+      "concept": "Bernoulli's Principle",
+      "concept_code": "bernoullis-principle",
+      "blueprint": "production-seed-v1-2026-09-02-bp-physics-06",
+      "stem_fingerprint": "c194e848ecc36c0a",
+      "body_md5": "acc73c722d4305c75789c88588f6ea06",
+      "status": "DRAFT",
+      "source_file": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-9.pdf",
+      "source_section": "Bernoulli / continuity",
+      "source_page": null,
+      "pdf_page_index": null,
+      "page_verified": false,
+      "ncert_classification": "NCERT_DERIVED",
+      "ncert_evidence": "Continuity + Bernoulli on horizontal streamline: smaller A → larger v → lower P.",
+      "stem_assessment": "PASS",
+      "option_assessments": {
+        "A": "correct",
+        "B": "incorrect",
+        "C": "incorrect",
+        "D": "incorrect"
+      },
+      "stored_answer": "A",
+      "independent_answer": "A",
+      "answer_match": "MATCH",
+      "explanation_assessment": "PASS",
+      "numerical_verification": "NOT_APPLICABLE",
+      "neet_relevance": "PASS",
+      "distractor_assessment": "PASS",
+      "provenance_assessment": {
+        "provider": "gemini",
+        "model": "gemini-3.6-flash",
+        "routing": "fixed:gemini",
+        "is_fallback": false,
+        "expected_ok": true
+      },
+      "rh_phenotype": {
+        "stem_mentions_rh_or_abo_positive": false,
+        "applicable": false
+      },
+      "search_hits_summary": {
+        "keywords": [
+          "bernoulli's principle",
+          "bernoulli",
+          "fluid mosaic",
+          "principle"
+        ],
+        "hit_pages": [
+          1,
+          2,
+          3,
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
+      },
+      "certification_decision": "CERTIFIED_WITH_LIMITATION",
+      "failure_codes": [],
+      "review_notes": "Page not verified."
+    },
+    {
+      "item_id": "336ec42d-aa33-4b5b-8c46-f8d5461883b0",
+      "subject": "Physics",
+      "class": "XII",
+      "chapter": "Electrostatics",
+      "topic": "Electric Charge and Coulomb's Law",
+      "concept": "Coulomb's Law",
+      "concept_code": "coulomb-force",
+      "blueprint": "production-seed-v1-2026-09-02-bp-physics-01",
+      "stem_fingerprint": "e085a26342486d31",
+      "body_md5": "4b1f956774e10106d17a2bcb596b6249",
+      "status": "DRAFT",
+      "source_file": "StudyMaterial/Physics/Class 12-Physics/ncert-book-class-12-physics-part-1-chapter-1.pdf",
+      "source_section": "Coulomb's law; charge sharing on identical conductors",
+      "source_page": null,
+      "pdf_page_index": null,
+      "page_verified": false,
+      "ncert_classification": "NCERT_DERIVED",
+      "ncert_evidence": "Independent: F1=3kq^2/r^2; after contact charges −q each; F2=kq^2/(4r^2); F1:F2=12:1.",
+      "stem_assessment": "PASS",
+      "option_assessments": {
+        "A": "correct",
+        "B": "incorrect",
+        "C": "incorrect",
+        "D": "incorrect"
+      },
+      "stored_answer": "A",
+      "independent_answer": "A",
+      "answer_match": "MATCH",
+      "explanation_assessment": "PASS",
+      "numerical_verification": "PASS",
+      "neet_relevance": "PASS",
+      "distractor_assessment": "PASS",
+      "provenance_assessment": {
+        "provider": "gemini",
+        "model": "gemini-3.6-flash",
+        "routing": "fixed:gemini",
+        "is_fallback": false,
+        "expected_ok": true
+      },
+      "rh_phenotype": {
+        "stem_mentions_rh_or_abo_positive": false,
+        "applicable": false
+      },
+      "search_hits_summary": {
+        "keywords": [
+          "coulomb's law",
+          "coulomb",
+          "ph"
+        ],
+        "hit_pages": [
+          1,
+          2,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      "certification_decision": "CERTIFIED_WITH_LIMITATION",
+      "failure_codes": [],
+      "review_notes": "Independent Coulomb calculation MATCH."
+    },
+    {
+      "item_id": "e4a6fdc3-7a55-4762-a176-f8af33709308",
+      "subject": "Physics",
+      "class": "XII",
+      "chapter": "Current Electricity",
+      "topic": "Resistance and Resistivity",
+      "concept": "Factors Affecting Resistance",
+      "concept_code": "factors-affecting-resistance",
+      "blueprint": "production-seed-v1-2026-09-02-bp-physics-09",
+      "stem_fingerprint": "86d13c9d497e173f",
+      "body_md5": "70aa1a150337cfbf002089e0fcbe3da5",
+      "status": "DRAFT",
+      "source_file": "StudyMaterial/Physics/Class 12-Physics/ncert-book-class-12-physics-part-1-chapter-3.pdf",
+      "source_section": "Resistance R=ρL/A",
+      "source_page": null,
+      "pdf_page_index": null,
+      "page_verified": false,
+      "ncert_classification": "NCERT_DERIVED",
+      "ncert_evidence": "RX=RY ⇒ 4ρX L/(πd^2)=2ρY L/(πd^2) ⇒ ρX:ρY=1:2.",
+      "stem_assessment": "PASS",
+      "option_assessments": {
+        "A": "correct",
+        "B": "incorrect",
+        "C": "incorrect",
+        "D": "incorrect"
+      },
+      "stored_answer": "A",
+      "independent_answer": "A",
+      "answer_match": "MATCH",
+      "explanation_assessment": "PASS",
+      "numerical_verification": "PASS",
+      "neet_relevance": "PASS",
+      "distractor_assessment": "PASS",
+      "provenance_assessment": {
+        "provider": "gemini",
+        "model": "gemini-3.6-flash",
+        "routing": "fixed:gemini",
+        "is_fallback": false,
+        "expected_ok": true
+      },
+      "rh_phenotype": {
+        "stem_mentions_rh_or_abo_positive": false,
+        "applicable": false
+      },
+      "search_hits_summary": {
+        "keywords": [
+          "factors affecting resistance",
+          "resistivity",
+          "factors",
+          "affecting",
+          "resistance"
+        ],
+        "hit_pages": [
+          3,
+          4,
+          5,
+          9,
+          10,
+          11,
+          12,
+          13
+        ]
+      },
+      "certification_decision": "CERTIFIED_WITH_LIMITATION",
+      "failure_codes": [],
+      "review_notes": "Independent resistivity ratio MATCH."
+    },
+    {
+      "item_id": "a1f1d832-21a3-4fb6-86b8-fe07ed46ad18",
+      "subject": "Physics",
+      "class": "XI",
+      "chapter": "Kinematics",
+      "topic": "Motion in a Straight Line",
+      "concept": "Kinematic Equations",
+      "concept_code": "kinematic-equations",
+      "blueprint": "production-seed-v1-2026-09-02-bp-physics-02",
+      "stem_fingerprint": "1fe04b2ed8fac996",
+      "body_md5": "641a4a93a65100ff90160ff64ae207ee",
+      "status": "DRAFT",
+      "source_file": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-2.pdf",
+      "source_section": "Kinematic equations / motion in a straight line",
+      "source_page": null,
+      "pdf_page_index": null,
+      "page_verified": false,
+      "ncert_classification": "NCERT_DERIVED",
+      "ncert_evidence": "s_n formula + s=ut+½at² are NCERT kinematics tools.",
+      "stem_assessment": "PASS scientifically",
+      "option_assessments": {
+        "A": "incorrect",
+        "B": "stored but WRONG",
+        "C": "incorrect",
+        "D": "independently correct"
+      },
+      "stored_answer": "B",
+      "independent_answer": "D",
+      "answer_match": "MISMATCH",
+      "explanation_assessment": "FAIL — arithmetic error: ut+½at²=8+32=40, not 48",
+      "numerical_verification": "FAIL",
+      "neet_relevance": "PASS topic",
+      "distractor_assessment": "D is the correct option; stored key B is wrong",
+      "provenance_assessment": {
+        "provider": "gemini",
+        "model": "gemini-3.6-flash",
+        "routing": "fixed:gemini",
+        "is_fallback": false,
+        "expected_ok": true
+      },
+      "rh_phenotype": {
+        "stem_mentions_rh_or_abo_positive": false,
+        "applicable": false
+      },
+      "search_hits_summary": {
+        "keywords": [
+          "kinematic equations",
+          "first law",
+          "kinematic",
+          "equations"
+        ],
+        "hit_pages": [
+          1,
+          5,
+          6,
+          7,
+          10,
+          11
+        ]
+      },
+      "certification_decision": "FAIL",
+      "failure_codes": [
+        "ANSWER_MISMATCH",
+        "EXPLANATION_ARITHMETIC_ERROR",
+        "SCIENTIFIC_VERIFICATION_FAIL"
+      ],
+      "review_notes": "Independent: a=4 m/s², u=2 m/s; s(4s)=2*4+0.5*4*16=40 m. Stored answer B=48 and explanation incorrectly state 8+32=48."
+    },
+    {
+      "item_id": "16dd7280-a48b-4437-80ac-a2b72b28d952",
+      "subject": "Physics",
+      "class": "XI",
+      "chapter": "Laws of Motion",
+      "topic": "Newton's Laws and Momentum",
+      "concept": "Newton's Laws of Motion",
+      "concept_code": "newtons-laws",
+      "blueprint": "production-seed-v1-2026-09-02-bp-physics-03",
+      "stem_fingerprint": "16e6ee896b5ad44d",
+      "body_md5": "e31206d82f4e32ac634cbadbdcce1aee",
+      "status": "DRAFT",
+      "source_file": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-4.pdf",
+      "source_section": "Newton's laws / inertial frames",
+      "source_page": null,
+      "pdf_page_index": null,
+      "page_verified": false,
+      "ncert_classification": "NCERT_DERIVED",
+      "ncert_evidence": "No horizontal force on coin after release; constant horizontal velocity + free fall ⇒ parabola relative to ground.",
+      "stem_assessment": "PASS",
+      "option_assessments": {
+        "A": "incorrect",
+        "B": "correct",
+        "C": "train-frame confusion",
+        "D": "incorrect"
+      },
+      "stored_answer": "B",
+      "independent_answer": "B",
+      "answer_match": "MATCH",
+      "explanation_assessment": "PASS",
+      "numerical_verification": "NOT_APPLICABLE",
+      "neet_relevance": "PASS",
+      "distractor_assessment": "PASS",
+      "provenance_assessment": {
+        "provider": "gemini",
+        "model": "gemini-3.6-flash",
+        "routing": "fixed:gemini",
+        "is_fallback": false,
+        "expected_ok": true
+      },
+      "rh_phenotype": {
+        "stem_mentions_rh_or_abo_positive": false,
+        "applicable": false
+      },
+      "search_hits_summary": {
+        "keywords": [
+          "newton's laws of motion",
+          "newton",
+          "laws",
+          "motion"
+        ],
+        "hit_pages": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ]
+      },
+      "certification_decision": "CERTIFIED_WITH_LIMITATION",
+      "failure_codes": [],
+      "review_notes": "Page not verified."
+    },
+    {
+      "item_id": "b207ad06-7427-417e-abfd-a928ab68df84",
+      "subject": "Physics",
+      "class": "XI",
+      "chapter": "Units and Measurement",
+      "topic": "SI Units and Measurement",
+      "concept": "SI Base and Derived Units",
+      "concept_code": "si-base-and-derived-units",
+      "blueprint": "production-seed-v1-2026-09-02-bp-physics-08",
+      "stem_fingerprint": "8134351e2892f852",
+      "body_md5": "0a1082eb3f28e607af4f30e1242fa0d4",
+      "status": "DRAFT",
+      "source_file": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-1.pdf",
+      "source_section": "SI base quantities",
+      "source_page": null,
+      "pdf_page_index": null,
+      "page_verified": false,
+      "ncert_classification": "NCERT_DIRECT",
+      "ncert_evidence": "Luminous intensity (candela) is SI base; charge/potential/frequency are derived.",
+      "stem_assessment": "PASS",
+      "option_assessments": {
+        "A": "derived",
+        "B": "correct base",
+        "C": "derived",
+        "D": "derived"
+      },
+      "stored_answer": "B",
+      "independent_answer": "B",
+      "answer_match": "MATCH",
+      "explanation_assessment": "PASS",
+      "numerical_verification": "NOT_APPLICABLE",
+      "neet_relevance": "PASS",
+      "distractor_assessment": "PASS",
+      "provenance_assessment": {
+        "provider": "gemini",
+        "model": "gemini-3.6-flash",
+        "routing": "fixed:gemini",
+        "is_fallback": false,
+        "expected_ok": true
+      },
+      "rh_phenotype": {
+        "stem_mentions_rh_or_abo_positive": false,
+        "applicable": false
+      },
+      "search_hits_summary": {
+        "keywords": [
+          "si base and derived units",
+          "ph",
+          "base",
+          "derived",
+          "units"
+        ],
+        "hit_pages": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ]
+      },
+      "certification_decision": "CERTIFIED_WITH_LIMITATION",
+      "failure_codes": [],
+      "review_notes": "Page not verified."
+    },
+    {
+      "item_id": "3d0dbda5-7882-4e3f-90d8-3a479cf67ab2",
+      "subject": "Physics",
+      "class": "XII",
+      "chapter": "Optics",
+      "topic": "Refraction and Lenses",
+      "concept": "Thin Lens Formula",
+      "concept_code": "lens-formula",
+      "blueprint": "production-seed-v1-2026-09-02-bp-physics-10",
+      "stem_fingerprint": "bf0db28992ba2529",
+      "body_md5": "2438e1c1c989e282c87bb46d6eb5c560",
+      "status": "DRAFT",
+      "source_file": null,
+      "source_section": "Thin lens formula (NCERT XII Optics — PDF not present in StudyMaterial inventory)",
+      "source_page": null,
+      "pdf_page_index": null,
+      "page_verified": false,
+      "ncert_classification": "SCIENTIFICALLY_VALID_NOT_DIRECTLY_LOCATED_IN_NCERT",
+      "ncert_evidence": "Independent lens-formula algebra yields u=−30 cm (x=30). Repo has no Class 12 Optics PDF (only Part-1 Ch1–8).",
+      "stem_assessment": "PASS",
+      "option_assessments": {
+        "A": "incorrect",
+        "B": "correct",
+        "C": "incorrect",
+        "D": "incorrect"
+      },
+      "stored_answer": "B",
+      "independent_answer": "B",
+      "answer_match": "MATCH",
+      "explanation_assessment": "PASS (algebra checked)",
+      "numerical_verification": "PASS",
+      "neet_relevance": "PASS",
+      "distractor_assessment": "PASS",
+      "provenance_assessment": {
+        "provider": "gemini",
+        "model": "gemini-3.6-flash",
+        "routing": "fixed:gemini",
+        "is_fallback": false,
+        "expected_ok": true
+      },
+      "rh_phenotype": {
+        "stem_mentions_rh_or_abo_positive": false,
+        "applicable": false
+      },
+      "search_hits_summary": {
+        "keywords": [
+          "thin lens formula",
+          "lens formula",
+          "thin",
+          "lens",
+          "formula"
+        ],
+        "hit_pages": [
+          3,
+          9,
+          12,
+          14,
+          17,
+          18,
+          19,
+          22
+        ]
+      },
+      "certification_decision": "CERTIFIED_WITH_LIMITATION",
+      "failure_codes": [
+        "NCERT_PDF_ABSENT_IN_REPO"
+      ],
+      "review_notes": "Scientific verification PASS; NCERT_SUPPORT_STATUS for local PDF = NOT_ESTABLISHED (missing Optics book file)."
+    },
+    {
+      "item_id": "061d07ed-ca1f-4f31-b7f8-cbdb3dfe8453",
+      "subject": "Physics",
+      "class": "XI",
+      "chapter": "Work, Energy and Power",
+      "topic": "Work and Kinetic Energy",
+      "concept": "Work–Energy Theorem",
+      "concept_code": "work-energy-theorem",
+      "blueprint": "production-seed-v1-2026-09-02-bp-physics-04",
+      "stem_fingerprint": "3148365d28440a1b",
+      "body_md5": "2a61766e9b14ef9ad87bd44ddc9f812f",
+      "status": "DRAFT",
+      "source_file": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-5.pdf",
+      "source_section": "Work–energy theorem",
+      "source_page": null,
+      "pdf_page_index": null,
+      "page_verified": false,
+      "ncert_classification": "NCERT_DERIVED",
+      "ncert_evidence": "W=∫(6x²−4x)dx from 1→3 =36 J; Ki=4 J; Kf=40; v=√40.",
+      "stem_assessment": "PASS",
+      "option_assessments": {
+        "A": "incorrect",
+        "B": "incorrect",
+        "C": "correct",
+        "D": "incorrect"
+      },
+      "stored_answer": "C",
+      "independent_answer": "C",
+      "answer_match": "MATCH",
+      "explanation_assessment": "PASS",
+      "numerical_verification": "PASS",
+      "neet_relevance": "PASS",
+      "distractor_assessment": "PASS",
+      "provenance_assessment": {
+        "provider": "gemini",
+        "model": "gemini-3.6-flash",
+        "routing": "fixed:gemini",
+        "is_fallback": false,
+        "expected_ok": true
+      },
+      "rh_phenotype": {
+        "stem_mentions_rh_or_abo_positive": false,
+        "applicable": false
+      },
+      "search_hits_summary": {
+        "keywords": [
+          "work–energy theorem",
+          "work",
+          "energy",
+          "theorem"
+        ],
+        "hit_pages": [
+          1,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      "certification_decision": "CERTIFIED_WITH_LIMITATION",
+      "failure_codes": [],
+      "review_notes": "Independent integral/work-energy MATCH."
+    },
+    {
+      "item_id": "b4a2e055-f141-4f05-8b06-850d84122b60",
+      "subject": "Physics",
+      "class": "XI",
+      "chapter": "Mechanical Properties of Solids",
+      "topic": "Elastic Moduli",
+      "concept": "Young's Modulus",
+      "concept_code": "youngs-modulus",
+      "blueprint": "production-seed-v1-2026-09-02-bp-physics-05",
+      "stem_fingerprint": "9bd6d563ca6fc2b2",
+      "body_md5": "180d9ffdcbacdd15db95f183647d84da",
+      "status": "DRAFT",
+      "source_file": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-8.pdf",
+      "source_section": "Young's modulus",
+      "source_page": null,
+      "pdf_page_index": null,
+      "page_verified": false,
+      "ncert_classification": "NCERT_DERIVED",
+      "ncert_evidence": "Y=FL/(AΔL)=40*2/(1e-6*4e-4)=2e11 N/m².",
+      "stem_assessment": "PASS",
+      "option_assessments": {
+        "A": "incorrect",
+        "B": "correct",
+        "C": "incorrect",
+        "D": "incorrect"
+      },
+      "stored_answer": "B",
+      "independent_answer": "B",
+      "answer_match": "MATCH",
+      "explanation_assessment": "PASS",
+      "numerical_verification": "PASS",
+      "neet_relevance": "PASS",
+      "distractor_assessment": "PASS",
+      "provenance_assessment": {
+        "provider": "gemini",
+        "model": "gemini-3.6-flash",
+        "routing": "fixed:gemini",
+        "is_fallback": false,
+        "expected_ok": true
+      },
+      "rh_phenotype": {
+        "stem_mentions_rh_or_abo_positive": false,
+        "applicable": false
+      },
+      "search_hits_summary": {
+        "keywords": [
+          "young's modulus",
+          "young",
+          "modulus"
+        ],
+        "hit_pages": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
+      },
+      "certification_decision": "CERTIFIED_WITH_LIMITATION",
+      "failure_codes": [],
+      "review_notes": "Independent Y calculation MATCH."
+    },
+    {
+      "item_id": "92c31281-cbdf-4954-9b25-79342cb1b400",
+      "subject": "Physics",
+      "class": "XI",
+      "chapter": "Thermodynamics",
+      "topic": "Laws of Thermodynamics",
+      "concept": "Zeroth and First Law",
+      "concept_code": "zeroth-and-first-law",
+      "blueprint": "production-seed-v1-2026-09-02-bp-physics-07",
+      "stem_fingerprint": "c344a84bf14840ca",
+      "body_md5": "a26fbb79939452ddfa7e11708c3c71f8",
+      "status": "DRAFT",
+      "source_file": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-11.pdf",
+      "source_section": "First law / internal energy as state function",
+      "source_page": null,
+      "pdf_page_index": null,
+      "page_verified": false,
+      "ncert_classification": "NCERT_DIRECT",
+      "ncert_evidence": "ΔU is a state function; Q and W path-dependent.",
+      "stem_assessment": "PASS",
+      "option_assessments": {
+        "A": "incorrect",
+        "B": "incorrect",
+        "C": "correct",
+        "D": "incorrect"
+      },
+      "stored_answer": "C",
+      "independent_answer": "C",
+      "answer_match": "MATCH",
+      "explanation_assessment": "PASS",
+      "numerical_verification": "NOT_APPLICABLE",
+      "neet_relevance": "PASS",
+      "distractor_assessment": "PASS",
+      "provenance_assessment": {
+        "provider": "gemini",
+        "model": "gemini-3.6-flash",
+        "routing": "fixed:gemini",
+        "is_fallback": false,
+        "expected_ok": true
+      },
+      "rh_phenotype": {
+        "stem_mentions_rh_or_abo_positive": false,
+        "applicable": false
+      },
+      "search_hits_summary": {
+        "keywords": [
+          "zeroth and first law",
+          "first law",
+          "thermodynamics",
+          "rna",
+          "zeroth",
+          "first"
+        ],
+        "hit_pages": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ]
+      },
+      "certification_decision": "CERTIFIED_WITH_LIMITATION",
+      "failure_codes": [],
+      "review_notes": "Page not verified. Sign convention as given matches NCERT-style statement used in stem."
+    },
+    {
+      "item_id": "3dc11d2a-b9ad-4155-93ec-4cd7b3bae9af",
+      "subject": "Zoology",
+      "class": "XI",
+      "chapter": "Body Fluids and Circulation",
+      "topic": "Cardiac Cycle",
+      "concept": "Cardiac Cycle Phases",
+      "concept_code": "cardiac-cycle-phases",
+      "blueprint": "production-seed-v1-2026-09-02-bp-zoology-01",
+      "stem_fingerprint": "e0933fa7cc7a5e7e",
+      "body_md5": "1a27755effe026c7988a8c23021524b8",
+      "status": "DRAFT",
+      "source_file": "StudyMaterial/Biology/Class 11-Biology/ncert-books-class-11-biology-chapter-18.pdf",
+      "source_section": "Cardiac cycle",
+      "source_page": null,
+      "pdf_page_index": null,
+      "page_verified": false,
+      "ncert_classification": "NCERT_DERIVED",
+      "ncert_evidence": "After atrial systole: ventricular systole (isovolumetric contraction → ejection) then diastole (isovolumetric relaxation → filling) including joint diastole.",
+      "stem_assessment": "PASS with dense sequencing",
+      "option_assessments": {
+        "A": "incorrect order/labels",
+        "B": "incorrect",
+        "C": "best match",
+        "D": "incorrect"
+      },
+      "stored_answer": "C",
+      "independent_answer": "C",
+      "answer_match": "MATCH",
+      "explanation_assessment": "PASS",
+      "numerical_verification": "NOT_APPLICABLE",
+      "neet_relevance": "PASS",
+      "distractor_assessment": "PASS — wording dense",
+      "provenance_assessment": {
+        "provider": "gemini",
+        "model": "gemini-3.6-flash",
+        "routing": "fixed:gemini",
+        "is_fallback": false,
+        "expected_ok": true
+      },
+      "rh_phenotype": {
+        "stem_mentions_rh_or_abo_positive": false,
+        "applicable": false
+      },
+      "search_hits_summary": {
+        "keywords": [
+          "cardiac cycle phases",
+          "ph",
+          "cardiac",
+          "systole",
+          "cycle",
+          "phases"
+        ],
+        "hit_pages": [
+          1,
+          2,
+          7,
+          8
+        ]
+      },
+      "certification_decision": "CERTIFIED_WITH_LIMITATION",
+      "failure_codes": [],
+      "review_notes": "Joint-diastole phrasing is NCERT-compatible; page not verified."
+    },
+    {
+      "item_id": "8a3937ce-5ad0-41af-bc84-17bf04c386ce",
+      "subject": "Zoology",
+      "class": "XI",
+      "chapter": "Biomolecules",
+      "topic": "Nucleic Acids",
+      "concept": "DNA and RNA",
+      "concept_code": "dna-rna",
+      "blueprint": "production-seed-v1-2026-09-02-bp-zoology-04",
+      "stem_fingerprint": "e9abed05c7120e90",
+      "body_md5": "1d3d9c6bddc7dde79834cdbed405d80f",
+      "status": "DRAFT",
+      "source_file": "StudyMaterial/Biology/Class 11-Biology/ncert-books-class-11-biology-chapter-9.pdf",
+      "source_section": "Biomolecules — nucleic acids",
+      "source_page": null,
+      "pdf_page_index": null,
+      "page_verified": false,
+      "ncert_classification": "NCERT_DIRECT",
+      "ncert_evidence": "DNA 2'-deoxyribose vs RNA ribose (2'-OH); genetic storage vs functional roles.",
+      "stem_assessment": "PASS",
+      "option_assessments": {
+        "A": "incorrect",
+        "B": "incorrect",
+        "C": "correct",
+        "D": "incorrect"
+      },
+      "stored_answer": "C",
+      "independent_answer": "C",
+      "answer_match": "MATCH",
+      "explanation_assessment": "PASS",
+      "numerical_verification": "NOT_APPLICABLE",
+      "neet_relevance": "PASS",
+      "distractor_assessment": "PASS",
+      "provenance_assessment": {
+        "provider": "gemini",
+        "model": "gemini-3.6-flash",
+        "routing": "fixed:gemini",
+        "is_fallback": false,
+        "expected_ok": true
+      },
+      "rh_phenotype": {
+        "stem_mentions_rh_or_abo_positive": false,
+        "applicable": false
+      },
+      "search_hits_summary": {
+        "keywords": [
+          "dna and rna",
+          "dna",
+          "rna"
+        ],
+        "hit_pages": [
+          3,
+          8,
+          9,
+          15,
+          16
+        ]
+      },
+      "certification_decision": "CERTIFIED_WITH_LIMITATION",
+      "failure_codes": [],
+      "review_notes": "Page not verified."
+    },
+    {
+      "item_id": "2e17c7e6-5d8f-4469-9cea-407177e61e8e",
+      "subject": "Zoology",
+      "class": "XI",
+      "chapter": "Biomolecules",
+      "topic": "Proteins and Enzymes",
+      "concept": "Enzyme Action",
+      "concept_code": "enzyme-basics",
+      "blueprint": "production-seed-v1-2026-09-02-bp-zoology-03",
+      "stem_fingerprint": "55f8cccab9af3824",
+      "body_md5": "54e692134279c71b4b7c8b0b7889fd5d",
+      "status": "DRAFT",
+      "source_file": "StudyMaterial/Biology/Class 11-Biology/ncert-books-class-11-biology-chapter-9.pdf",
+      "source_section": "Enzymes",
+      "source_page": null,
+      "pdf_page_index": null,
+      "page_verified": false,
+      "ncert_classification": "NCERT_DIRECT",
+      "ncert_evidence": "Ch9 enzyme action / active site.",
+      "stem_assessment": "PASS",
+      "option_assessments": {
+        "note": "stored key independently consistent with NCERT enzyme concepts"
+      },
+      "stored_answer": "B",
+      "independent_answer": "B",
+      "answer_match": "MATCH",
+      "explanation_assessment": "PASS",
+      "numerical_verification": "NOT_APPLICABLE",
+      "neet_relevance": "PASS",
+      "distractor_assessment": "PASS",
+      "provenance_assessment": {
+        "provider": "gemini",
+        "model": "gemini-3.6-flash",
+        "routing": "fixed:gemini",
+        "is_fallback": false,
+        "expected_ok": true
+      },
+      "rh_phenotype": {
+        "stem_mentions_rh_or_abo_positive": false,
+        "applicable": false
+      },
+      "search_hits_summary": {
+        "keywords": [
+          "enzyme action",
+          "enzyme",
+          "action"
+        ],
+        "hit_pages": [
+          1,
+          2,
+          5,
+          6,
+          8,
+          9,
+          10,
+          11
+        ]
+      },
+      "certification_decision": "CERTIFIED_WITH_LIMITATION",
+      "failure_codes": [],
+      "review_notes": "Page not verified."
+    },
+    {
+      "item_id": "b690c0d3-98f6-4e57-851f-aae1ac6ad8cd",
+      "subject": "Zoology",
+      "class": "XI",
+      "chapter": "Animal Kingdom",
+      "topic": "Chordata Basics",
+      "concept": "Fundamental Chordate Features",
+      "concept_code": "chordate-features",
+      "blueprint": "production-seed-v1-2026-09-02-bp-zoology-05",
+      "stem_fingerprint": "888e6e1d6493759a",
+      "body_md5": "6b4108a9977ce34d8272c91dfde12d0f",
+      "status": "DRAFT",
+      "source_file": "StudyMaterial/Biology/Class 11-Biology/ncert-books-class-11-biology-chapter-4.pdf",
+      "source_section": "Animal Kingdom — Chordata",
+      "source_page": null,
+      "pdf_page_index": null,
+      "page_verified": false,
+      "ncert_classification": "NCERT_DIRECT",
+      "ncert_evidence": "Fundamental chordate features (notochord, dorsal hollow nerve cord, etc.).",
+      "stem_assessment": "PASS",
+      "option_assessments": {
+        "note": "stored key consistent with chordate characters"
+      },
+      "stored_answer": "B",
+      "independent_answer": "B",
+      "answer_match": "MATCH",
+      "explanation_assessment": "PASS",
+      "numerical_verification": "NOT_APPLICABLE",
+      "neet_relevance": "PASS",
+      "distractor_assessment": "PASS",
+      "provenance_assessment": {
+        "provider": "gemini",
+        "model": "gemini-3.6-flash",
+        "routing": "fixed:gemini",
+        "is_fallback": false,
+        "expected_ok": true
+      },
+      "rh_phenotype": {
+        "stem_mentions_rh_or_abo_positive": false,
+        "applicable": false
+      },
+      "search_hits_summary": {
+        "keywords": [
+          "fundamental chordate features",
+          "chordate",
+          "fundamental",
+          "features"
+        ],
+        "hit_pages": [
+          1,
+          2,
+          3,
+          4,
+          9,
+          10,
+          13,
+          15
+        ]
+      },
+      "certification_decision": "CERTIFIED_WITH_LIMITATION",
+      "failure_codes": [],
+      "review_notes": "Page not verified."
+    },
+    {
+      "item_id": "dd7b5422-437d-4b0f-a2dc-f370ea0496c2",
+      "subject": "Zoology",
+      "class": "XI",
+      "chapter": "Body Fluids and Circulation",
+      "topic": "Human Heart Anatomy",
+      "concept": "Structure of the Human Heart",
+      "concept_code": "heart-structure",
+      "blueprint": "production-seed-v1-2026-09-02-bp-zoology-02",
+      "stem_fingerprint": "b6b636a1508ee202",
+      "body_md5": "cf182df1ae1413286a1d811bf4ebdb7a",
+      "status": "DRAFT",
+      "source_file": "StudyMaterial/Biology/Class 11-Biology/ncert-books-class-11-biology-chapter-18.pdf",
+      "source_section": "Human heart structure",
+      "source_page": null,
+      "pdf_page_index": null,
+      "page_verified": false,
+      "ncert_classification": "NCERT_DIRECT",
+      "ncert_evidence": "Ch18 heart chambers/valves/vessels.",
+      "stem_assessment": "PASS (concept-aligned)",
+      "option_assessments": {
+        "note": "evaluated against stored key; see independent_answer"
+      },
+      "stored_answer": "C",
+      "independent_answer": "C",
+      "answer_match": "MATCH",
+      "explanation_assessment": "PASS",
+      "numerical_verification": "NOT_APPLICABLE",
+      "neet_relevance": "PASS",
+      "distractor_assessment": "PASS",
+      "provenance_assessment": {
+        "provider": "gemini",
+        "model": "gemini-3.6-flash",
+        "routing": "fixed:gemini",
+        "is_fallback": false,
+        "expected_ok": true
+      },
+      "rh_phenotype": {
+        "stem_mentions_rh_or_abo_positive": false,
+        "applicable": false
+      },
+      "search_hits_summary": {
+        "keywords": [
+          "structure of the human heart",
+          "diastole",
+          "structure",
+          "human",
+          "heart"
+        ],
+        "hit_pages": [
+          1,
+          2,
+          3,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      "certification_decision": "CERTIFIED_WITH_LIMITATION",
+      "failure_codes": [],
+      "review_notes": "Checked for Rh/phenotype language: none. Page not verified."
+    }
+  ],
+  "aggregate_results": {
+    "ncert_classification": {
+      "NCERT_DIRECT": 14,
+      "NCERT_DERIVED": 14,
+      "SCIENTIFICALLY_VALID_NOT_DIRECTLY_LOCATED_IN_NCERT": 2
+    },
+    "answer_match": {
+      "MATCH": 29,
+      "MISMATCH": 1
+    },
+    "explanation": {
+      "PASS": 29,
+      "FAIL": 1
+    },
+    "numerical": {
+      "NOT_APPLICABLE": 22,
+      "PASS": 7,
+      "FAIL": 1
+    },
+    "certification_decision": {
+      "CERTIFIED_WITH_LIMITATION": 28,
+      "REQUIRES_HUMAN_REVIEW": 1,
+      "FAIL": 1
+    },
+    "subjects": {
+      "Botany": 5,
+      "Chemistry": 10,
+      "Physics": 10,
+      "Zoology": 5
+    }
+  },
+  "rh_phenotype_audit": {
+    "rh_related_questions": 0,
+    "rh_explanation_complete": 0,
+    "rh_explanation_gap": 0,
+    "note": "No Seed V1 item stem matched ABO-positive/Rh/Anti-D phenotype patterns. Prior P3 ABO/Rh explanation-gap pattern did not recur."
+  },
+  "provenance_summary": {
+    "gemini": 30,
+    "fixed_gemini": 30,
+    "fallback_false": 30,
+    "missing_inconsistent": 0
+  },
+  "protected_population_integrity": {
+    "before": {
+      "seed": {
+        "n": 30,
+        "status_counts": {
+          "DRAFT": 30
+        },
+        "bodies_fp": "398070f6305f9725b992f8761df17f6b766d6ddaf29e9b59cf69b51502333825"
+      },
+      "p3_95": {
+        "n": 95,
+        "status_counts": {
+          "DRAFT": 95
+        },
+        "bodies_fp": "3864a145d5bc2e85cf82df7f7987e838eb927bc57eb221212851e78f7d15f67a"
+      },
+      "checksum_counts": {
+        "total": 6339,
+        "published": 1049,
+        "draft": 5279,
+        "in_review": 11,
+        "approved": 0,
+        "archived": 0,
+        "changes_requested": 0
+      },
+      "legacy_fp": "13d51e697382663a28ffc44fd56aedb1",
+      "t6d_fp": "e0758fbcb071180b61a33f2b4581e894",
+      "t6f2_fp": "17a1672c444c8362ed0261dacf0f82c7",
+      "protected_published": 111
+    },
+    "after": {
+      "seed": {
+        "n": 30,
+        "status_counts": {
+          "DRAFT": 30
+        },
+        "bodies_fp": "398070f6305f9725b992f8761df17f6b766d6ddaf29e9b59cf69b51502333825"
+      },
+      "p3_95": {
+        "n": 95,
+        "status_counts": {
+          "DRAFT": 95
+        },
+        "bodies_fp": "3864a145d5bc2e85cf82df7f7987e838eb927bc57eb221212851e78f7d15f67a"
+      },
+      "checksum_counts": {
+        "total": 6339,
+        "published": 1049,
+        "draft": 5279,
+        "in_review": 11,
+        "approved": 0,
+        "archived": 0,
+        "changes_requested": 0
+      },
+      "legacy_fp": "13d51e697382663a28ffc44fd56aedb1",
+      "t6d_fp": "e0758fbcb071180b61a33f2b4581e894",
+      "t6f2_fp": "17a1672c444c8362ed0261dacf0f82c7",
+      "protected_published": 111,
+      "status_group_counts": {
+        "DRAFT": 30
+      }
+    },
+    "seed_changed": false,
+    "p3_95_changed": false,
+    "legacy_changed": false,
+    "t6d_changed": false,
+    "t6f2_changed": false,
+    "unexpected_mutations": [],
+    "post_source_correction_recheck": {
+      "seed_n": 30,
+      "all_draft": true,
+      "changed_vs_pre_audit_export": [],
+      "created_candidates_for_batch": 30,
+      "question_status_counts": {
+        "DRAFT": 5279,
+        "IN_REVIEW": 11,
+        "PUBLISHED": 1049
+      },
+      "seed_content_changed": false
+    }
+  },
+  "publication_firewall": {
+    "approved_transitions": 0,
+    "published_transitions": 0,
+    "ecaep_transitions": 0,
+    "all_remain_draft": true
+  },
+  "limitations": [
+    "INDEPENDENCE LIMITATION — agent PDF/calculation audit, not human NCERT certification",
+    "page_verified=false for all items (no reliable printed-page extraction claimed)",
+    "Class 12 Optics NCERT PDF absent from StudyMaterial",
+    "No repository normative publication numeric threshold found",
+    "keph###.pdf assumption SUPERSEDED; StudyMaterial ncert-books-* is authoritative (confirmed absent under D:\\ravishori)",
+    "SOURCE CORRECTION applied to audit artifacts only (not question content): Photosynthesis evidence remapped to biology chapter-11.pdf",
+    "Interrupted schema-list shell job is not an integrity failure; content_items/content_versions re-check is authoritative"
+  ],
+  "unresolved_items": [
+    {
+      "item_id": "54907eea-4fcd-4855-8477-268bafe03e82",
+      "decision": "REQUIRES_HUMAN_REVIEW",
+      "failure_codes": [
+        "ENRICHMENT_BEYOND_LOCATED_NCERT_EXAMPLES"
+      ],
+      "notes": "Answer chemically correct; NCERT XI direct example support for XeF5− not established in available PDF search."
+    },
+    {
+      "item_id": "a1f1d832-21a3-4fb6-86b8-fe07ed46ad18",
+      "decision": "FAIL",
+      "failure_codes": [
+        "ANSWER_MISMATCH",
+        "EXPLANATION_ARITHMETIC_ERROR",
+        "SCIENTIFIC_VERIFICATION_FAIL"
+      ],
+      "notes": "Independent: a=4 m/s², u=2 m/s; s(4s)=2*4+0.5*4*16=40 m. Stored answer B=48 and explanation incorrectly state 8+32=48."
+    }
+  ],
+  "publication_decision": "HUMAN AUTHORIZATION REQUIRED",
+  "final_verdict": "AMBER — HUMAN REVIEW / REMEDIATION REQUIRED"
+}

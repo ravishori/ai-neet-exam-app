@@ -1,4 +1,7 @@
+from __future__ import annotations
+
 import uuid
+from typing import TYPE_CHECKING
 
 from sqlalchemy import ForeignKey, Index, Integer, String, Text
 from sqlalchemy.dialects.postgresql import UUID
@@ -6,6 +9,10 @@ from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.core.database import Base
 from app.shared.mixins import AuditedBase
+
+if TYPE_CHECKING:
+    from app.modules.ingestion.models.ingestion_section import IngestionSection
+    from app.modules.ingestion.models.source_document import SourceDocument
 
 # PENDING -> EXTRACTING -> MATCHING -> STRUCTURING -> GENERATING -> COMPLETED
 #                                                                 \-> FAILED (any stage)
@@ -24,6 +31,7 @@ class IngestionJob(Base, AuditedBase):
     __table_args__ = (
         Index("ix_ingestion_jobs_checksum", "file_checksum"),
         Index("ix_ingestion_jobs_status", "status"),
+        Index("ix_ingestion_jobs_pilot_run_id", "pilot_run_id"),
         {"schema": "ingestion"},
     )
 
@@ -34,6 +42,14 @@ class IngestionJob(Base, AuditedBase):
     # jobs created via the pre-existing path-based endpoint have none.
     original_filename: Mapped[str | None] = mapped_column(String(500))
     file_checksum: Mapped[str] = mapped_column(String(64), nullable=False)  # sha256 hex
+    # Optional link to the NEET StudyMaterial registry (ADR-0030). Nullable so
+    # existing path-based and upload-based jobs remain valid without a registry
+    # row. When set, provenance is SourceDocument → IngestionJob → …
+    source_document_id: Mapped[uuid.UUID | None] = mapped_column(
+        UUID(as_uuid=True),
+        ForeignKey("ingestion.source_documents.id", ondelete="SET NULL"),
+        nullable=True,
+    )
     subject_id: Mapped[uuid.UUID | None] = mapped_column(
         UUID(as_uuid=True), ForeignKey("academic.subjects.id", ondelete="SET NULL")
     )
@@ -54,7 +70,15 @@ class IngestionJob(Base, AuditedBase):
     generation_skipped_no_knowledge_unit: Mapped[int] = mapped_column(Integer, default=0, nullable=False)
     visual_assets_detected: Mapped[int] = mapped_column(Integer, default=0, nullable=False)
     visual_assets_needing_review: Mapped[int] = mapped_column(Integer, default=0, nullable=False)
+    # Phase D pilot (ADR-0032): when set, generation targets exactly this many MCQs
+    # for the chapter job and records pilot_run_id for idempotent re-runs.
+    target_mcq_count: Mapped[int | None] = mapped_column(Integer, nullable=True)
+    pilot_run_id: Mapped[str | None] = mapped_column(String(80), nullable=True)
 
-    sections: Mapped[list["IngestionSection"]] = relationship(
+    sections: Mapped[list[IngestionSection]] = relationship(
         back_populates="job", order_by="IngestionSection.source_page", cascade="all, delete-orphan"
+    )
+    source_document: Mapped[SourceDocument | None] = relationship(
+        back_populates="jobs",
+        foreign_keys=[source_document_id],
     )

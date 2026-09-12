@@ -1,0 +1,43 @@
+{
+  "checksum_counts": {
+    "total": 6213,
+    "published": 1049,
+    "draft": 5153,
+    "in_review": 11,
+    "approved": 0,
+    "archived": 0,
+    "changes_requested": 0
+  },
+  "item_checksum": "ce74e54854e910093723b7b692a2b3c4",
+  "body_checksum": null,
+  "integrity": {
+    "t6d": {
+      "total": 100,
+      "published": 100,
+      "draft": 0,
+      "content_fp": "e0758fbcb071180b61a33f2b4581e894"
+    },
+    "legacy": {
+      "total": 5000,
+      "published": 0,
+      "draft": 5000,
+      "content_fp": "13d51e697382663a28ffc44fd56aedb1"
+    },
+    "t6f1_published": {
+      "total": 938,
+      "content_fp": "17a1672c444c8362ed0261dacf0f82c7"
+    },
+    "protected_non_f1_cms": {
+      "total": 5275,
+      "published": 111,
+      "content_fp": "7fcac5bb0a0e18080cd5932a6a19b2bb"
+    },
+    "batch_ids": {
+      "t6f1": "physics-t6f1-pilot-20260902",
+      "t6d": "physics-t6d-pilot-20260902",
+      "legacy": "legacy-physics-5000-import-20260902"
+    },
+    "historical_pre_f2_deep_immutability": "NOT RETROACTIVELY VERIFIABLE",
+    "note": "Fingerprints cover id|slug|status|concept_id|body_md5|tags. Timestamps excluded. Pre-T6-F2 historical fingerprints were not captured at publish time."
+  }
+}

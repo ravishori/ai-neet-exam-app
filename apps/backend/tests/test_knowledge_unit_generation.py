@@ -1,3 +1,4 @@
+from helpers_publishable_question import publishable_question_body
 """Integration tests: generation workers read PASSED Knowledge Units, not
 raw section text, and record traceability (ADR-0025).
 
@@ -149,7 +150,7 @@ async def test_run_generation_creates_content_with_traceability_when_passed(db_s
     assert version.knowledge_unit_id == unit.id
     assert version.knowledge_unit_version == unit.version
     assert version.model_used == "test-model"
-    assert version.prompt_version == "v1"
+    assert version.prompt_version == "v2"
     assert version.confidence_score == pytest.approx(0.87)
     assert version.generation_cost_usd == pytest.approx(0.0042)
 

@@ -23,6 +23,7 @@ class ChapterResponse(BaseModel):
     name: str
     display_order: int
     neet_weightage_percent: float | None
+    class_level: str | None = None
 
 
 class TopicResponse(BaseModel):

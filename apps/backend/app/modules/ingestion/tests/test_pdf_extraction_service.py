@@ -58,6 +58,25 @@ def test_normalizes_mangled_apostrophe_in_heading_and_body():
     assert "Ohm's law" in sections[0].text
 
 
-def test_no_headings_yields_no_sections():
-    sections = split_into_sections(["Just some plain prose with no numbered headings at all."])
+def test_splits_chemistry_mixed_case_headings():
+    page = (
+        "4.1.1\t Octet Rule\n"
+        + _padded("Kossel and Lewis developed the octet rule.")
+        + "\n4.1.2\t Covalent Bond\n"
+        + _padded("A covalent bond shares electron pairs.")
+    )
+    sections = split_into_sections([page])
+    assert [s.heading for s in sections] == ["4.1.1 Octet Rule", "4.1.2 Covalent Bond"]
+
+
+def test_drops_exercise_question_lines():
+    page = "4.1 Explain the formation of a chemical bond.\n" + _padded("Real section body follows.")
+    sections = split_into_sections([page])
     assert sections == []
+
+
+def test_joins_heading_number_and_title_split_across_lines():
+    page = "4.8\nBONDING IN SOME HOMONUCLEAR\n" + _padded("Diatomic molecules share electrons.")
+    sections = split_into_sections([page])
+    assert len(sections) == 1
+    assert sections[0].heading == "4.8 BONDING IN SOME HOMONUCLEAR"

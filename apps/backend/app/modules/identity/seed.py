@@ -38,6 +38,11 @@ PERMISSIONS = [
     ("visual_assets.review", "Approve or reject detected visual assets"),
     ("search.admin", "Trigger search reindexing and view the search console"),
     ("audit.view", "View the platform audit log"),
+    # Content Factory orchestration (FACTORY-P1) — does not grant ECAEP approve/publish
+    ("content.factory.view", "View Content Factory batches, jobs, and runs"),
+    ("content.factory.create", "Create Content Factory batches/jobs and advance batch orchestration status"),
+    ("content.factory.execute", "Create/complete GenerationRuns and advance job status (no AI generation in P1)"),
+    ("content.factory.certify", "Certify factory batches (reserved; certification wave later)"),
 ]
 
 ROLE_PERMISSIONS = {
@@ -49,12 +54,14 @@ ROLE_PERMISSIONS = {
         "content.review", "content.approve", "content.publish", "content.archive",
         "content.force_edit_published",
         "knowledge.manage", "visual_assets.review", "search.admin", "audit.view",
+        "content.factory.view", "content.factory.create", "content.factory.execute", "content.factory.certify",
     ],
     "CONTENT_MANAGER": [
         "questions.read", "questions.create", "questions.update",
         "content.create", "content.edit_own_draft", "content.submit_for_review",
         "content.review", "content.approve", "content.publish", "content.archive",
         "knowledge.manage", "visual_assets.review",
+        "content.factory.view", "content.factory.create", "content.factory.execute", "content.factory.certify",
     ],
     "TEACHER": [
         "questions.read", "questions.create", "reports.view",

@@ -3,6 +3,7 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.exceptions import RequestValidationError
 from fastapi.middleware.cors import CORSMiddleware
+from sqlalchemy.exc import SQLAlchemyError
 from starlette.exceptions import HTTPException as StarletteHTTPException
 
 from app.core.config import get_settings
@@ -11,6 +12,7 @@ from app.core.exceptions import (
     AppError,
     app_error_handler,
     http_exception_handler,
+    sqlalchemy_exception_handler,
     unhandled_exception_handler,
     validation_exception_handler,
 )
@@ -22,6 +24,9 @@ from app.modules.ai.api.ai_router import router as ai_router
 from app.modules.analytics.api.analytics_router import router as analytics_router
 from app.modules.assessment.api.assessment_router import router as assessment_router
 from app.modules.cms.api.cms_router import router as cms_router
+from app.modules.cms.api.content_factory_router import router as content_factory_router
+from app.modules.cms.api.human_gold_sandbox_router import router as human_gold_sandbox_router
+from app.modules.cms.api.content_factory_planning_router import router as content_factory_planning_router
 from app.modules.cms.api.search_router import router as search_router
 from app.modules.commerce.api.commerce_router import router as commerce_router
 from app.modules.identity.api.auth_router import router as auth_router
@@ -69,6 +74,7 @@ app.add_middleware(
 app.add_exception_handler(AppError, app_error_handler)
 app.add_exception_handler(StarletteHTTPException, http_exception_handler)
 app.add_exception_handler(RequestValidationError, validation_exception_handler)
+app.add_exception_handler(SQLAlchemyError, sqlalchemy_exception_handler)
 app.add_exception_handler(Exception, unhandled_exception_handler)
 
 app.include_router(auth_router)
@@ -76,6 +82,9 @@ app.include_router(users_router)
 app.include_router(roles_router)
 app.include_router(academic_router)
 app.include_router(cms_router)
+app.include_router(content_factory_router, prefix="/api/v1/cms")
+app.include_router(content_factory_planning_router, prefix="/api/v1/cms")
+app.include_router(human_gold_sandbox_router, prefix="/api/v1/cms")
 app.include_router(search_router)
 app.include_router(assessment_router)
 app.include_router(ai_router)

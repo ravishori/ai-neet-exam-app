@@ -1,0 +1,69 @@
+{
+  "audit": "Seed V1 core: dashboard + FULL regression + SEED core (tmp)",
+  "date": "2026-09-03",
+  "seed_allowlist_hash": "c0cf70846233730ef384188f5b78cced2a7865f76d977a0af6063f803bc8f0c1",
+  "expected_allowlist_hash": "c0cf70846233730ef384188f5b78cced2a7865f76d977a0af6063f803bc8f0c1",
+  "allowlist_hash_match": true,
+  "dashboard": {
+    "full_visible": true,
+    "full_enabled": true,
+    "seed_visible": true,
+    "seed_enabled": true,
+    "seed_aria_label": "Practice Seed V1 — exact 30 published questions",
+    "pass": true
+  },
+  "full_practice_regression": {
+    "practice_ok": true,
+    "practice_status": 201,
+    "attempt_ok": true,
+    "attempt_status": 201,
+    "scope_type": "FULL",
+    "meta_seed_v1_allowlist_sha256": null,
+    "question_count": 30,
+    "assessment_id": "d0f08f25-789e-41eb-b1e4-da50cafd59f2",
+    "attempt_id": "3d593a21-6396-4d5a-b8b1-b92ed97e239f",
+    "expected_scope_ok": true,
+    "url": "http://localhost:3000/student/attempts/3d593a21-6396-4d5a-b8b1-b92ed97e239f",
+    "outside_seed_count": 30,
+    "explanation_after_submit": true,
+    "pass": true
+  },
+  "seed_entry": {
+    "practice_ok": true,
+    "practice_status": 201,
+    "attempt_ok": true,
+    "attempt_status": 201,
+    "scope_type": "SEED_V1",
+    "meta_seed_v1_allowlist_sha256": "c0cf70846233730ef384188f5b78cced2a7865f76d977a0af6063f803bc8f0c1",
+    "question_count": 30,
+    "assessment_id": "ab2923d7-c3a2-478c-a358-c291c70d44f0",
+    "attempt_id": "8be657e4-3316-4aa6-9624-ac7fa4033390",
+    "expected_scope_ok": true,
+    "url": "http://localhost:3000/student/attempts/8be657e4-3316-4aa6-9624-ac7fa4033390",
+    "pass": true
+  },
+  "seed_firewall": {
+    "presented_count": 30,
+    "unique_count": 30,
+    "outside_allowlist": 0,
+    "pass": true
+  },
+  "answer_and_explanation": {
+    "pass": true,
+    "explanation_heading_count": 1,
+    "hasCorrect": true,
+    "hasIncorrect": true
+  },
+  "next_question": {
+    "next_enabled": true,
+    "pass": true
+  },
+  "scoring_completion": {
+    "status": "SUBMITTED",
+    "pass": true,
+    "correct_count": 14,
+    "incorrect_count": 16
+  },
+  "errors": [],
+  "student_email": "sx-reg-core-1788443855732-4b9b09@example.com"
+}

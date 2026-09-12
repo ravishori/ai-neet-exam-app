@@ -1,0 +1,1962 @@
+{
+  "packets": [
+    {
+      "item_id": "365637db-fe02-4817-8408-1a9a357364b5",
+      "slot_id": "botany-08",
+      "status": "DRAFT",
+      "tags": [
+        "seed-v2",
+        "provenance:ai",
+        "provider:gemini",
+        "production-seed-v2-2026-09-03",
+        "model:gemini-3.6-flash",
+        "bp-v:1",
+        "job:f14cea1e-9fef-4fc3-8e67-cbb4b13075a6",
+        "routing:fixed:gemini",
+        "blueprint:db15cc3b-e3ec-4d1b-b91d-9ba4e4b84fc6",
+        "factory-p3",
+        "run:1e8a78f8-4772-4eef-a7f7-a891404a54e6",
+        "slot:botany-08",
+        "family:production-seed-v2-2026-09-03-fam-botany-08",
+        "batch:4509d488-c100-47f0-8357-4b1678abd00d"
+      ],
+      "body_md5": "0a6c0dad238d4ef0b862bbb20696b9c6",
+      "subject": "Botany",
+      "chapter": "Cell - The Unit of Life",
+      "topic": "Membrane and Cell Cycle",
+      "concept": "Fluid Mosaic Model",
+      "concept_code": "fluid-mosaic",
+      "difficulty": "easy",
+      "question_archetype": "direct_ncert_conceptual",
+      "visual_required": false,
+      "visual_type": null,
+      "visual_archetype": null,
+      "graphical": false,
+      "numerical": false,
+      "has_diagram_svg": false,
+      "has_visual_spec": false,
+      "visual_spec": null,
+      "diagram_description": null,
+      "stem": "According to the Fluid Mosaic Model of the cell membrane proposed by Singer and Nicolson, which component forms a continuous fluid bilayer that allows lateral movement of proteins within it?",
+      "options": [
+        {
+          "text": "Phospholipids",
+          "label": "A"
+        },
+        {
+          "text": "Extrinsic glycoproteins",
+          "label": "B"
+        },
+        {
+          "text": "Cholesterols acting as enzymes",
+          "label": "C"
+        },
+        {
+          "text": "Peripheral nucleic acids",
+          "label": "D"
+        }
+      ],
+      "correct_option": "A",
+      "explanation": "According to the Fluid Mosaic Model (Singer and Nicolson), the plasma membrane consists of a continuous fluid lipid bilayer composed mainly of phospholipids. The quasi-fluid nature of these lipids enables the lateral movement of proteins within the overall bilayer. Extrinsic proteins are situated on the surface and do not form the main continuous fluid matrix. Cholesterol provides membrane stability rather than functioning as enzymes. Nucleic acids are not structural components of the cell membrane bilayer.",
+      "validation_ok": true,
+      "validation_errors": [],
+      "validation_warnings": [],
+      "visual_validation": {
+        "required": false,
+        "passed": true,
+        "errors": []
+      },
+      "semantic_status": "STRUCTURALLY_VALID",
+      "semantic_signals": [
+        "NO_DETERMINISTIC_AMBIGUITY_SIGNAL"
+      ],
+      "semantic_hard_fail": false,
+      "is_replacement": false,
+      "original_content_item_id": "365637db-fe02-4817-8408-1a9a357364b5",
+      "replacement_content_item_id": null,
+      "in_stratified_sample": true,
+      "targeted_remat_review": false,
+      "candidate_id": "0217b9f8-b902-47bb-8510-d90750db14e1"
+    },
+    {
+      "item_id": "8ab26257-2b2f-4f69-af55-ea2b220bc771",
+      "slot_id": "chemistry-23",
+      "status": "DRAFT",
+      "tags": [
+        "routing:fixed:gemini",
+        "factory-p3",
+        "batch:4509d488-c100-47f0-8357-4b1678abd00d",
+        "slot:chemistry-23",
+        "run:2217b5ea-fe33-4af2-adc4-eb4aa21b60c8",
+        "seed-v2",
+        "provenance:ai",
+        "family:production-seed-v2-2026-09-03-fam-chemistry-23",
+        "job:a76069eb-24f3-4cc0-b52f-662ba3ef53a1",
+        "provider:gemini",
+        "production-seed-v2-2026-09-03",
+        "model:gemini-3.6-flash",
+        "blueprint:f12f3866-0931-4b12-b04e-c8af3856a232",
+        "bp-v:1"
+      ],
+      "body_md5": "ca735cc39187707b8bc7fff55fb8f20e",
+      "subject": "Chemistry",
+      "chapter": "Equilibrium",
+      "topic": "Acids, Bases and Buffers",
+      "concept": "Bronsted–Lowry conjugate pairs",
+      "concept_code": "sv2c-chemistry-23",
+      "difficulty": "easy",
+      "question_archetype": "direct_ncert_conceptual",
+      "visual_required": false,
+      "visual_type": null,
+      "visual_archetype": null,
+      "graphical": false,
+      "numerical": false,
+      "has_diagram_svg": false,
+      "has_visual_spec": false,
+      "visual_spec": null,
+      "diagram_description": null,
+      "stem": "According to the Brønsted–Lowry concept, a conjugate acid-base pair differs by a single proton ($\text{H}^+$). Which of the following correctly identifies the conjugate base of $\text{HCO}_3^-$ and the conjugate acid of $\text{H}_2\text{O}$, respectively?",
+      "options": [
+        {
+          "text": "$\text{H}_2\text{CO}_3$ and $\text{OH}^-$",
+          "label": "A"
+        },
+        {
+          "text": "$\text{CO}_3^{2-}$ and $\text{H}_3\text{O}^+$",
+          "label": "B"
+        },
+        {
+          "text": "$\text{CO}_3^{2-}$ and $\text{OH}^-$",
+          "label": "C"
+        },
+        {
+          "text": "$\text{H}_2\text{CO}_3$ and $\text{H}_3\text{O}^+$",
+          "label": "D"
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "According to the Brønsted–Lowry theory:\n1. A conjugate base is formed when a species donates a proton ($\text{H}^+$). Removing a proton from $\text{HCO}_3^-$ yields its conjugate base, $\text{CO}_3^{2-}$.\n2. A conjugate acid is formed when a species accepts a proton ($\text{H}^+$). Adding a proton to $\text{H}_2\text{O}$ yields its conjugate acid, $\text{H}_3\text{O}^+$.\n\nTherefore, the correct pair is $\text{CO}_3^{2-}$ and $\text{H}_3\text{O}^+$. \n- Option A incorrectly gives the conjugate acid of $\text{HCO}_3^-$ and conjugate base of $\text{H}_2\text{O}$.\n- Option C gives the conjugate base for both species.\n- Option D gives the conjugate acid for both species.",
+      "validation_ok": true,
+      "validation_errors": [],
+      "validation_warnings": [
+        "SEMANTIC_REVIEW_REQUIRED",
+        "REQUIRES_REVIEW"
+      ],
+      "visual_validation": {
+        "required": false,
+        "passed": true,
+        "errors": []
+      },
+      "semantic_status": "SEMANTIC_REVIEW_REQUIRED",
+      "semantic_signals": [
+        "EXPLANATION_REFERENCES_MULTIPLE_OPTIONS"
+      ],
+      "semantic_hard_fail": false,
+      "is_replacement": false,
+      "original_content_item_id": "8ab26257-2b2f-4f69-af55-ea2b220bc771",
+      "replacement_content_item_id": null,
+      "in_stratified_sample": true,
+      "targeted_remat_review": false,
+      "candidate_id": "83756af5-608d-45b5-8b59-a79f9403642b"
+    },
+    {
+      "item_id": "5e9f39a2-6562-4856-b7c7-96377b37058b",
+      "slot_id": "physics-08",
+      "status": "DRAFT",
+      "tags": [
+        "batch:4509d488-c100-47f0-8357-4b1678abd00d",
+        "seed-v2",
+        "provenance:ai",
+        "provider:gemini",
+        "production-seed-v2-2026-09-03",
+        "blueprint:0477bec3-642e-437a-a8fa-9c9723c3b4ee",
+        "model:gemini-3.6-flash",
+        "run:e83bd9a9-985c-4af2-9765-a1eea16c5248",
+        "bp-v:1",
+        "slot:physics-08",
+        "job:0f535563-04c1-4841-8dca-6268ba4ed100",
+        "routing:fixed:gemini",
+        "family:production-seed-v2-2026-09-03-fam-physics-08",
+        "factory-p3"
+      ],
+      "body_md5": "6b706590629960ed0137c8f61126d2ac",
+      "subject": "Physics",
+      "chapter": "Laws of Motion",
+      "topic": "Newton's Laws and Momentum",
+      "concept": "Newton's Laws of Motion",
+      "concept_code": "newtons-laws",
+      "difficulty": "medium",
+      "question_archetype": "application",
+      "visual_required": false,
+      "visual_type": null,
+      "visual_archetype": null,
+      "graphical": false,
+      "numerical": false,
+      "has_diagram_svg": false,
+      "has_visual_spec": false,
+      "visual_spec": null,
+      "diagram_description": null,
+      "stem": "A block of mass $m_1 = 3\\text{ kg}$ rests on a smooth horizontal table and is connected by a light, inextensible string passing over a frictionless pulley to a hanging block of mass $m_2 = 2\\text{ kg}$. A horizontal force $F = 10\\text{ N}$ is applied to block $m_1$ directing away from the pulley, attempting to pull the system to the left. Taking $g = 10\\text{ m/s}^2$, what is the magnitude of the tension in the string connecting the two blocks?",
+      "options": [
+        {
+          "text": "12 N",
+          "label": "A"
+        },
+        {
+          "text": "14 N",
+          "label": "B"
+        },
+        {
+          "text": "16 N",
+          "label": "C"
+        },
+        {
+          "text": "20 N",
+          "label": "D"
+        }
+      ],
+      "correct_option": "C",
+      "explanation": "To analyze the motion of the system, we determine the net unbalance of forces along the direction of the string.\nBlock $m_2$ experiences a downward gravitational force $m_2 g = 2\\text{ kg} \\times 10\\text{ m/s}^2 = 20\\text{ N}$.\nBlock $m_1$ experiences a horizontal pulling force $F = 10\\text{ N}$ directed away from the pulley.\nSince $m_2 g = 20\\text{ N} > F = 10\\text{ N}$, the hanging mass moves downwards and block $m_1$ moves towards the pulley (to the right).\n\nLet $a$ be the magnitude of acceleration of the system, and $T$ be the tension in the string.\nWriting the equation of motion for block $m_2$ (moving downwards):\n$m_2 g - T = m_2 a \\implies 20 - T = 2a \\quad \\text{--- (1)}$\n\nWriting the equation of motion for block $m_1$ (moving towards the pulley against force $F$):\n$T - F = m_1 a \\implies T - 10 = 3a \\quad \\text{--- (2)}$\n\nAdding equations (1) and (2):\n$(20 - T) + (T - 10) = (2 + 3)a$\n$10 = 5a \\implies a = 2\\text{ m/s}^2$\n\nSubstituting $a = 2\\text{ m/s}^2$ back into equation (2):\n$T - 10 = 3(2) \\implies T = 16\\text{ N}$.\n\nTherefore, option C is the correct answer. Options A, B, and D result from incorrect signs or neglecting the applied horizontal force.",
+      "validation_ok": true,
+      "validation_errors": [],
+      "validation_warnings": [
+        "SEMANTIC_REVIEW_REQUIRED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "REQUIRES_REVIEW"
+      ],
+      "visual_validation": {
+        "required": false,
+        "passed": true,
+        "errors": []
+      },
+      "semantic_status": "SEMANTIC_REVIEW_REQUIRED",
+      "semantic_signals": [
+        "HIGH_OPTION_OVERLAP:A/B:1.00",
+        "HIGH_OPTION_OVERLAP:A/C:1.00",
+        "HIGH_OPTION_OVERLAP:A/D:1.00",
+        "HIGH_OPTION_OVERLAP:B/C:1.00",
+        "HIGH_OPTION_OVERLAP:B/D:1.00",
+        "HIGH_OPTION_OVERLAP:C/D:1.00"
+      ],
+      "semantic_hard_fail": false,
+      "is_replacement": false,
+      "original_content_item_id": "5e9f39a2-6562-4856-b7c7-96377b37058b",
+      "replacement_content_item_id": null,
+      "in_stratified_sample": true,
+      "targeted_remat_review": false,
+      "candidate_id": "e1738d18-ba12-456b-8bef-388d6961b956"
+    },
+    {
+      "item_id": "7d07b1fe-62af-44de-9115-755ac8f28007",
+      "slot_id": "zoology-10",
+      "status": "DRAFT",
+      "tags": [
+        "seed-v2",
+        "provenance:ai",
+        "provider:gemini",
+        "family:production-seed-v2-2026-09-03-fam-zoology-10",
+        "production-seed-v2-2026-09-03",
+        "model:gemini-3.6-flash",
+        "bp-v:1",
+        "blueprint:93373d3d-800d-4005-b790-310e5dc4f49f",
+        "routing:fixed:gemini",
+        "factory-p3",
+        "run:5abd4104-fec8-4fed-9384-d7a7fbf17e73",
+        "slot:zoology-10",
+        "job:d854304f-b478-48ea-9f14-0579ec73e21f",
+        "batch:4509d488-c100-47f0-8357-4b1678abd00d"
+      ],
+      "body_md5": "41c7f5adbca5b731ca5269349e1e8688",
+      "subject": "Zoology",
+      "chapter": "Body Fluids and Circulation",
+      "topic": "Human Heart Anatomy",
+      "concept": "Structure of the Human Heart",
+      "concept_code": "heart-structure",
+      "difficulty": "easy",
+      "question_archetype": "direct_ncert_conceptual",
+      "visual_required": false,
+      "visual_type": null,
+      "visual_archetype": null,
+      "graphical": false,
+      "numerical": false,
+      "has_diagram_svg": false,
+      "has_visual_spec": false,
+      "visual_spec": null,
+      "diagram_description": null,
+      "stem": "Which of the following heart valves prevents the backflow of deoxygenated blood from the right ventricle into the right atrium during ventricular contraction?",
+      "options": [
+        {
+          "text": "Bicuspid valve",
+          "label": "A"
+        },
+        {
+          "text": "Tricuspid valve",
+          "label": "B"
+        },
+        {
+          "text": "Aortic semilunar valve",
+          "label": "C"
+        },
+        {
+          "text": "Pulmonary semilunar valve",
+          "label": "D"
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "The tricuspid valve is situated between the right atrium and the right ventricle. It possesses three muscular cusps or flaps that close during ventricular contraction to prevent the backflow of deoxygenated blood from the right ventricle into the right atrium. The bicuspid (mitral) valve guards the opening between the left atrium and left ventricle. The semilunar valves (pulmonary and aortic) prevent the backflow of blood from the pulmonary artery and aorta back into the respective ventricles.",
+      "validation_ok": true,
+      "validation_errors": [],
+      "validation_warnings": [],
+      "visual_validation": {
+        "required": false,
+        "passed": true,
+        "errors": []
+      },
+      "semantic_status": "STRUCTURALLY_VALID",
+      "semantic_signals": [
+        "NO_DETERMINISTIC_AMBIGUITY_SIGNAL"
+      ],
+      "semantic_hard_fail": false,
+      "is_replacement": false,
+      "original_content_item_id": "7d07b1fe-62af-44de-9115-755ac8f28007",
+      "replacement_content_item_id": null,
+      "in_stratified_sample": true,
+      "targeted_remat_review": false,
+      "candidate_id": "33dd0963-fcc0-4560-8980-bebfcb8bc02a"
+    },
+    {
+      "item_id": "9c51f8a1-bf72-4ca0-bcfd-e0aa5cb8ee53",
+      "slot_id": "physics-05",
+      "status": "DRAFT",
+      "tags": [
+        "provenance:ai",
+        "seed-v2",
+        "run:127b685a-cf46-4cad-9ef6-6eb51de4ff70",
+        "production-seed-v2-2026-09-03",
+        "seed-v2-rematerialization-20260903",
+        "routing:fixed:gemini",
+        "batch:4509d488-c100-47f0-8357-4b1678abd00d",
+        "provider:gemini",
+        "model:gemini-3.6-flash",
+        "job:3b28f7d6-b172-4306-b17a-d4d19dc8c573",
+        "bp-v:1",
+        "slot:physics-05",
+        "factory-p3",
+        "family:production-seed-v2-2026-09-03-fam-physics-05",
+        "replaces:2a22a821-d0bd-4c87-be2c-c35ef9664118",
+        "blueprint:8a4d716a-b779-4283-b21e-ff876821251e",
+        "seed-v2-rematerialized-active"
+      ],
+      "body_md5": "3e8987d7a3afa40305f238a66de4264d",
+      "subject": "Physics",
+      "chapter": "Kinematics",
+      "topic": "Motion in a Straight Line",
+      "concept": "Instantaneous Velocity and Acceleration",
+      "concept_code": "instantaneous-velocity-acceleration",
+      "difficulty": "medium",
+      "question_archetype": "diagram_data_interpretation",
+      "visual_required": true,
+      "visual_type": "line_graph",
+      "visual_archetype": "xt_slope_graph",
+      "graphical": true,
+      "numerical": false,
+      "has_diagram_svg": true,
+      "has_visual_spec": true,
+      "visual_spec": {
+        "axes": {
+          "x": "time t",
+          "y": "position x"
+        },
+        "type": "line_graph",
+        "labels": [
+          "t",
+          "x",
+          "x(t)",
+          "time",
+          "position"
+        ],
+        "features": [
+          "positive_slope_curve"
+        ],
+        "archetype": "xt_slope_graph",
+        "generator": "factory_v2_deterministic_svg",
+        "ncert_evidence": false
+      },
+      "diagram_description": "Schematic x–t graph: time on horizontal axis, position on vertical axis, smooth curve with positive slope (instantaneous velocity related to slope).",
+      "stem": "The position-time ($x-t$) graph shown in the accompanying figure illustrates the one-dimensional motion of a particle along the x-axis. Based on the slope of the graph, which of the following statements correctly describes the velocity of the particle in the intervals $OA$, $AB$, and $BC$?",
+      "options": [
+        {
+          "text": "Velocity is positive and constant in $OA$, zero in $AB$, and negative and constant in $BC$.",
+          "label": "A"
+        },
+        {
+          "text": "Velocity is zero in $OA$, positive and constant in $AB$, and negative and constant in $BC$.",
+          "label": "B"
+        },
+        {
+          "text": "Velocity is increasing continuously in $OA$, zero in $AB$, and positive and constant in $BC$.",
+          "label": "C"
+        },
+        {
+          "text": "Velocity is negative and constant in $OA$, positive and constant in $AB$, and zero in $BC$.",
+          "label": "D"
+        }
+      ],
+      "correct_option": "A",
+      "explanation": "The instantaneous velocity of a particle in a position-time ($x-t$) graph is given by the slope of the curve ($v = \\frac{dx}{dt}$).\n1. In interval $OA$, the graph is a straight line sloping upwards with a positive gradient, which means the velocity is positive and constant.\n2. In interval $AB$, the line is horizontal (parallel to the time axis), so the slope is zero, meaning the position does not change and the velocity is zero.\n3. In interval $BC$, the graph is a straight line sloping downwards with a negative gradient, which means the velocity is negative and constant.\nTherefore, Option A correctly describes the motion across all three intervals.",
+      "validation_ok": true,
+      "validation_errors": [],
+      "validation_warnings": [
+        "SEMANTIC_REVIEW_REQUIRED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "REQUIRES_REVIEW"
+      ],
+      "visual_validation": {
+        "required": true,
+        "passed": true,
+        "errors": []
+      },
+      "semantic_status": "SEMANTIC_REVIEW_REQUIRED",
+      "semantic_signals": [
+        "HIGH_OPTION_OVERLAP:A/B:1.00",
+        "HIGH_OPTION_OVERLAP:A/D:1.00",
+        "HIGH_OPTION_OVERLAP:B/D:1.00"
+      ],
+      "semantic_hard_fail": false,
+      "is_replacement": true,
+      "original_content_item_id": "2a22a821-d0bd-4c87-be2c-c35ef9664118",
+      "replacement_content_item_id": "9c51f8a1-bf72-4ca0-bcfd-e0aa5cb8ee53",
+      "in_stratified_sample": true,
+      "targeted_remat_review": true,
+      "candidate_id": "4aa98a83-77fa-49d4-8795-99faa5727ab1"
+    },
+    {
+      "item_id": "90797037-3127-4c07-87cb-b3e00307d412",
+      "slot_id": "physics-35",
+      "status": "DRAFT",
+      "tags": [
+        "batch:4509d488-c100-47f0-8357-4b1678abd00d",
+        "job:f7827d19-bc9f-4384-b617-9f76913919a4",
+        "seed-v2",
+        "provenance:ai",
+        "provider:gemini",
+        "production-seed-v2-2026-09-03",
+        "blueprint:b0b1bc1c-7595-415b-92c5-ded418156fb3",
+        "model:gemini-3.6-flash",
+        "family:production-seed-v2-2026-09-03-fam-physics-35",
+        "bp-v:1",
+        "run:18fc6afa-24ef-4e9c-a148-dc1882b9ef1c",
+        "slot:physics-35",
+        "routing:fixed:gemini",
+        "factory-p3"
+      ],
+      "body_md5": "85afb740bbd1fcbf7044800cd85391aa",
+      "subject": "Physics",
+      "chapter": "Optics",
+      "topic": "Wave Optics Basics",
+      "concept": "Young's Double Slit",
+      "concept_code": "interference-young",
+      "difficulty": "hard",
+      "question_archetype": "numerical_calculation",
+      "visual_required": false,
+      "visual_type": null,
+      "visual_archetype": null,
+      "graphical": false,
+      "numerical": true,
+      "has_diagram_svg": false,
+      "has_visual_spec": false,
+      "visual_spec": null,
+      "diagram_description": null,
+      "stem": "In a Young's double-slit experiment using a monochromatic light source of wavelength $\\lambda = 600\\text{ nm}$, the fringe width observed on a screen placed at a distance $D$ from the double slit is $\\beta_0 = 1.2\\text{ mm}$. The entire experimental setup is then immersed in a liquid of refractive index $\\mu = 1.5$. Furthermore, the distance between the screen and the slits is reduced by $20\\%$, while the slit separation is doubled. What is the new fringe width $\\beta'$ under these modified conditions?",
+      "options": [
+        {
+          "text": "0.16 mm",
+          "label": "A"
+        },
+        {
+          "text": "0.32 mm",
+          "label": "B"
+        },
+        {
+          "text": "0.48 mm",
+          "label": "C"
+        },
+        {
+          "text": "0.64 mm",
+          "label": "D"
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "The original fringe width in air is given by $\\beta_0 = \\frac{\\lambda D}{d} = 1.2\\text{ mm}$.\nWhen the apparatus is immersed in a liquid of refractive index $\\mu = 1.5$, the wavelength of light changes to $\\lambda' = \\frac{\\lambda}{\\mu} = \\frac{\\lambda}{1.5}$.\n\nThe new screen distance is $D' = D - 0.20 D = 0.8 D$.\nThe new slit separation is $d' = 2d$.\n\nThus, the new fringe width $\\beta'$ is:\n$$\\beta' = \\frac{\\lambda' D'}{d'} = \\frac{(\\lambda / 1.5) \\times (0.8 D)}{2 d} = \\frac{0.8}{1.5 \\times 2} \\left(\\frac{\\lambda D}{d}\\right) = \\frac{0.8}{3} \\beta_0$$\n\nSubstituting $\\beta_0 = 1.2\\text{ mm}$:\n$$\\beta' = \\frac{0.8}{3} \\times 1.2\\text{ mm} = 0.8 \\times 0.4\\text{ mm} = 0.32\\text{ mm}$$\n\nHence, option B is correct.",
+      "validation_ok": true,
+      "validation_errors": [],
+      "validation_warnings": [],
+      "visual_validation": {
+        "required": false,
+        "passed": true,
+        "errors": []
+      },
+      "semantic_status": "STRUCTURALLY_VALID",
+      "semantic_signals": [
+        "NO_DETERMINISTIC_AMBIGUITY_SIGNAL"
+      ],
+      "semantic_hard_fail": false,
+      "is_replacement": false,
+      "original_content_item_id": "90797037-3127-4c07-87cb-b3e00307d412",
+      "replacement_content_item_id": null,
+      "in_stratified_sample": true,
+      "targeted_remat_review": false,
+      "candidate_id": "c6631190-32cb-445c-8148-34bdacc87ccd"
+    },
+    {
+      "item_id": "b51ed114-3e26-46d0-8ce2-ae737698c0b0",
+      "slot_id": "botany-05",
+      "status": "DRAFT",
+      "tags": [
+        "routing:fixed:gemini",
+        "factory-p3",
+        "run:eb4f5c8d-0bde-4824-a53a-e5c9ebc62e11",
+        "blueprint:3bbc4e78-ba2f-47be-bd2a-4b4c8f11d69a",
+        "batch:4509d488-c100-47f0-8357-4b1678abd00d",
+        "seed-v2",
+        "slot:botany-05",
+        "provenance:ai",
+        "provider:gemini",
+        "production-seed-v2-2026-09-03",
+        "model:gemini-3.6-flash",
+        "family:production-seed-v2-2026-09-03-fam-botany-05",
+        "bp-v:1",
+        "job:fafc7823-deb9-41fc-bb79-70ca77f5d082"
+      ],
+      "body_md5": "ce46e2e7a525d38cad80270d52537a3b",
+      "subject": "Botany",
+      "chapter": "Morphology of Flowering Plants",
+      "topic": "Root, Stem and Leaf",
+      "concept": "Modifications of root/stem/leaf",
+      "concept_code": "sv2c-botany-05",
+      "difficulty": "easy",
+      "question_archetype": "application",
+      "visual_required": false,
+      "visual_type": null,
+      "visual_archetype": null,
+      "graphical": false,
+      "numerical": false,
+      "has_diagram_svg": false,
+      "has_visual_spec": false,
+      "visual_spec": null,
+      "diagram_description": null,
+      "stem": "A plant specimen shows flattened, green, leaf-like stem structures that perform photosynthesis, while its true leaves are modified into sharp spines to reduce water loss. Which morphological modification is represented by this flattened photosynthetic stem?",
+      "options": [
+        {
+          "text": "Phyllode",
+          "label": "A"
+        },
+        {
+          "text": "Phylloclade",
+          "label": "B"
+        },
+        {
+          "text": "Cladode",
+          "label": "C"
+        },
+        {
+          "text": "Stem tendril",
+          "label": "D"
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "A phylloclade is a stem modification where the stem becomes green, flattened (or fleshy cylindrical), and takes over the function of photosynthesis, while the true leaves are modified into spines or scales to minimize transpiration, as seen in Opuntia. In contrast, a phyllode (Option A) is a modified, expanded petiole performing photosynthesis (e.g., Australian Acacia). A cladode (Option C) is a phylloclade with limited growth, usually consisting of only one or two internodes (e.g., Asparagus). Stem tendrils (Option D) are slender, spirally coiled modifications that help plants climb.",
+      "validation_ok": true,
+      "validation_errors": [],
+      "validation_warnings": [
+        "SEMANTIC_REVIEW_REQUIRED",
+        "REQUIRES_REVIEW"
+      ],
+      "visual_validation": {
+        "required": false,
+        "passed": true,
+        "errors": []
+      },
+      "semantic_status": "SEMANTIC_REVIEW_REQUIRED",
+      "semantic_signals": [
+        "EXPLANATION_REFERENCES_MULTIPLE_OPTIONS"
+      ],
+      "semantic_hard_fail": false,
+      "is_replacement": false,
+      "original_content_item_id": "b51ed114-3e26-46d0-8ce2-ae737698c0b0",
+      "replacement_content_item_id": null,
+      "in_stratified_sample": true,
+      "targeted_remat_review": false,
+      "candidate_id": "325362ca-4dbd-482f-bcb8-16ddbe6895f7"
+    },
+    {
+      "item_id": "98a017d6-2445-4b92-ba49-e785a9a60b59",
+      "slot_id": "botany-07",
+      "status": "DRAFT",
+      "tags": [
+        "batch:4509d488-c100-47f0-8357-4b1678abd00d",
+        "slot:botany-07",
+        "run:129b0ba3-37e3-4831-94cb-2925a3df6c67",
+        "seed-v2",
+        "provenance:ai",
+        "provider:gemini",
+        "production-seed-v2-2026-09-03",
+        "model:gemini-3.6-flash",
+        "bp-v:1",
+        "job:614749c1-3737-4e95-bc56-4df7d3ce8219",
+        "family:production-seed-v2-2026-09-03-fam-botany-07",
+        "blueprint:28992b60-ab11-4771-b497-53c870d05d3d",
+        "routing:fixed:gemini",
+        "factory-p3"
+      ],
+      "body_md5": "9e2c4c0f6a6c5c40def14fd752659bdd",
+      "subject": "Botany",
+      "chapter": "Cell - The Unit of Life",
+      "topic": "Cell Theory and Cell Types",
+      "concept": "Prokaryotic vs Eukaryotic Cells",
+      "concept_code": "prokaryote-eukaryote",
+      "difficulty": "easy",
+      "question_archetype": "comparison",
+      "visual_required": false,
+      "visual_type": null,
+      "visual_archetype": null,
+      "graphical": false,
+      "numerical": false,
+      "has_diagram_svg": false,
+      "has_visual_spec": false,
+      "visual_spec": null,
+      "diagram_description": null,
+      "stem": "Which of the following structural characteristics correctly distinguishes a typical prokaryotic cell from a typical eukaryotic cell?",
+      "options": [
+        {
+          "text": "Prokaryotic cells contain a membrane-bound nucleus housing genetic material, whereas eukaryotic cells lack a nuclear membrane.",
+          "label": "A"
+        },
+        {
+          "text": "Prokaryotic cells possess 80S ribosomes in their cytoplasm, whereas eukaryotic cells contain only 70S ribosomes in their cytoplasm.",
+          "label": "B"
+        },
+        {
+          "text": "Prokaryotic cells lack membrane-bound organelles such as mitochondria, whereas eukaryotic cells contain membrane-bound organelles.",
+          "label": "C"
+        },
+        {
+          "text": "Prokaryotic cells possess a well-defined cytoskeleton made of microtubules, whereas eukaryotic cells lack cytoskeletal elements.",
+          "label": "D"
+        }
+      ],
+      "correct_option": "C",
+      "explanation": "Option C is correct because prokaryotic cells are characterized by the absence of membrane-bound organelles (such as mitochondria, endoplasmic reticulum, Golgi apparatus, and lysosomes), whereas eukaryotic cells have these distinct compartmentalized organellar structures. Option A is incorrect because prokaryotes lack a membrane-bound nucleus (their genetic material is naked and lies in the cytoplasm as a nucleoid), while eukaryotes possess a true membrane-bound nucleus. Option B is incorrect because prokaryotes contain 70S ribosomes in their cytoplasm, whereas the cytoplasm of eukaryotic cells contains 80S ribosomes. Option D is incorrect because a distinct, well-developed cytoskeleton consisting of microtubules, microfilaments, and intermediate filaments is a characteristic feature of eukaryotic cells, not prokaryotic cells.",
+      "validation_ok": true,
+      "validation_errors": [],
+      "validation_warnings": [
+        "SEMANTIC_REVIEW_REQUIRED",
+        "REQUIRES_REVIEW"
+      ],
+      "visual_validation": {
+        "required": false,
+        "passed": true,
+        "errors": []
+      },
+      "semantic_status": "SEMANTIC_REVIEW_REQUIRED",
+      "semantic_signals": [
+        "EXPLANATION_REFERENCES_MULTIPLE_OPTIONS"
+      ],
+      "semantic_hard_fail": false,
+      "is_replacement": false,
+      "original_content_item_id": "98a017d6-2445-4b92-ba49-e785a9a60b59",
+      "replacement_content_item_id": null,
+      "in_stratified_sample": true,
+      "targeted_remat_review": false,
+      "candidate_id": "d4fce836-1e83-427a-8c6d-85a424408faa"
+    },
+    {
+      "item_id": "65ba5806-5fb7-42db-b677-fe3f41d122a5",
+      "slot_id": "botany-02",
+      "status": "DRAFT",
+      "tags": [
+        "batch:4509d488-c100-47f0-8357-4b1678abd00d",
+        "seed-v2",
+        "provenance:ai",
+        "family:production-seed-v2-2026-09-03-fam-botany-02",
+        "provider:gemini",
+        "production-seed-v2-2026-09-03",
+        "model:gemini-3.6-flash",
+        "bp-v:1",
+        "job:c09d46d3-a944-4730-8832-6caf4c7f5af1",
+        "slot:botany-02",
+        "routing:fixed:gemini",
+        "blueprint:d451309c-e767-413f-9b5a-164b0b986f9b",
+        "run:45e341f9-ea0e-430c-a0ab-6de8f07b55b0",
+        "factory-p3"
+      ],
+      "body_md5": "3d371c18bb537b88a8a59c40517c51aa",
+      "subject": "Botany",
+      "chapter": "The Living World",
+      "topic": "Taxonomic Aids",
+      "concept": "Herbarium / botanical gardens / keys (qualitative)",
+      "concept_code": "sv2c-botany-02",
+      "difficulty": "easy",
+      "question_archetype": "direct_ncert_conceptual",
+      "visual_required": false,
+      "visual_type": null,
+      "visual_archetype": null,
+      "graphical": false,
+      "numerical": false,
+      "has_diagram_svg": false,
+      "has_visual_spec": false,
+      "visual_spec": null,
+      "diagram_description": null,
+      "stem": "Which taxonomic aid serves as a repository of dried, pressed, and preserved plant specimens mounted on sheets, providing a quick referral system in taxonomical studies?",
+      "options": [
+        {
+          "text": "Botanical Garden",
+          "label": "A"
+        },
+        {
+          "text": "Herbarium",
+          "label": "B"
+        },
+        {
+          "text": "Museum",
+          "label": "C"
+        },
+        {
+          "text": "Flora",
+          "label": "D"
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "A herbarium is a store house of collected plant specimens that are dried, pressed, and preserved on sheets. These sheets are arranged according to a universally accepted system of classification and serve as a quick referral system in taxonomical studies. Botanical gardens have collections of living plants for reference. Museums have collections of preserved plant and animal specimens primarily for study and reference (often in containers or jars with preservative solutions). Flora contains the actual account of habitat and distribution of plants of a given area.",
+      "validation_ok": true,
+      "validation_errors": [],
+      "validation_warnings": [],
+      "visual_validation": {
+        "required": false,
+        "passed": true,
+        "errors": []
+      },
+      "semantic_status": "STRUCTURALLY_VALID",
+      "semantic_signals": [
+        "NO_DETERMINISTIC_AMBIGUITY_SIGNAL"
+      ],
+      "semantic_hard_fail": false,
+      "is_replacement": false,
+      "original_content_item_id": "65ba5806-5fb7-42db-b677-fe3f41d122a5",
+      "replacement_content_item_id": null,
+      "in_stratified_sample": true,
+      "targeted_remat_review": false,
+      "candidate_id": "62ed3f59-db06-40d7-8df4-59f29d24e05d"
+    },
+    {
+      "item_id": "17eb6ea3-ba95-45e6-86e6-676c2c139c14",
+      "slot_id": "botany-14",
+      "status": "DRAFT",
+      "tags": [
+        "family:production-seed-v2-2026-09-03-fam-botany-14",
+        "batch:4509d488-c100-47f0-8357-4b1678abd00d",
+        "seed-v2",
+        "provenance:ai",
+        "provider:gemini",
+        "production-seed-v2-2026-09-03",
+        "model:gemini-3.6-flash",
+        "bp-v:1",
+        "job:8d9032e3-d69d-42a6-80a0-c827559f54ae",
+        "slot:botany-14",
+        "blueprint:69251c7f-99a1-4188-a03f-ca8bf050aee0",
+        "run:cf8207a6-98d1-4355-a954-e992225055be",
+        "routing:fixed:gemini",
+        "factory-p3"
+      ],
+      "body_md5": "fc6034ea80c9e8f769c39c1224ccac54",
+      "subject": "Botany",
+      "chapter": "Plant Growth and Development",
+      "topic": "Photoperiodism and Vernalisation",
+      "concept": "SDP/LDP qualitative",
+      "concept_code": "sv2c-botany-14",
+      "difficulty": "hard",
+      "question_archetype": "direct_ncert_conceptual",
+      "visual_required": false,
+      "visual_type": null,
+      "visual_archetype": null,
+      "graphical": false,
+      "numerical": false,
+      "has_diagram_svg": false,
+      "has_visual_spec": false,
+      "visual_spec": null,
+      "diagram_description": null,
+      "stem": "Two species of plants, Plant X and Plant Y, were grown under controlled light-dark cycles to study their flowering behavior. Plant X flowered when exposed to daily light cycles of 9 hours light and 15 hours uninterrupted darkness, but failed to flower when exposed to 14 hours light and 10 hours darkness. Plant Y flowered under 14 hours light and 10 hours darkness, but failed to flower under 9 hours light and 15 hours darkness. If a brief flash of red light is given in the middle of the dark period during the 9-hour light / 15-hour dark regime, how will flowering be affected in Plant X and Plant Y?",
+      "options": [
+        {
+          "text": "Plant X will flower, whereas Plant Y will be inhibited from flowering.",
+          "label": "A"
+        },
+        {
+          "text": "Plant X will be inhibited from flowering, whereas Plant Y will be induced to flower.",
+          "label": "B"
+        },
+        {
+          "text": "Both Plant X and Plant Y will be induced to flower.",
+          "label": "C"
+        },
+        {
+          "text": "Both Plant X and Plant Y will be inhibited from flowering.",
+          "label": "D"
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "Plant X flowers under short light/long dark conditions (9h light/15h dark) and fails under long light conditions, identifying it as a Short-Day Plant (SDP), which requires a dark period longer than a critical duration. Plant Y flowers under long light/short dark conditions (14h light/10h dark) and fails under short light conditions, identifying it as a Long-Day Plant (LDP), which requires a dark period shorter than a critical duration (or photoperiod longer than critical day length). For flowering in SDPs, the long dark period must be continuous; interrupting the 15-hour dark period with a brief flash of light destroys the perception of a long night, thereby inhibiting flowering in Plant X (SDP). Conversely, for LDPs, night interruption effectively breaks a long night into shorter dark intervals, which acts similarly to a long-day signal, thereby inducing flowering in Plant Y (LDP). Therefore, Plant X will be inhibited from flowering and Plant Y will be induced to flower.",
+      "validation_ok": true,
+      "validation_errors": [],
+      "validation_warnings": [
+        "SEMANTIC_REVIEW_REQUIRED",
+        "REQUIRES_REVIEW"
+      ],
+      "visual_validation": {
+        "required": false,
+        "passed": true,
+        "errors": []
+      },
+      "semantic_status": "SEMANTIC_REVIEW_REQUIRED",
+      "semantic_signals": [
+        "HIGH_OPTION_OVERLAP:A/B:0.88"
+      ],
+      "semantic_hard_fail": false,
+      "is_replacement": false,
+      "original_content_item_id": "17eb6ea3-ba95-45e6-86e6-676c2c139c14",
+      "replacement_content_item_id": null,
+      "in_stratified_sample": true,
+      "targeted_remat_review": false,
+      "candidate_id": "b1dcee65-806b-4a87-9b17-de8b032a3091"
+    },
+    {
+      "item_id": "fd4ab8f9-fd76-41e4-a549-39110dbe24a5",
+      "slot_id": "botany-13",
+      "status": "DRAFT",
+      "tags": [
+        "routing:fixed:gemini",
+        "factory-p3",
+        "run:d4e2dd9f-a971-46eb-9ad1-eff64e239e2e",
+        "batch:4509d488-c100-47f0-8357-4b1678abd00d",
+        "blueprint:82f6e686-563f-4fec-b4ef-e1a5b05bae78",
+        "seed-v2",
+        "provenance:ai",
+        "provider:gemini",
+        "production-seed-v2-2026-09-03",
+        "model:gemini-3.6-flash",
+        "family:production-seed-v2-2026-09-03-fam-botany-13",
+        "bp-v:1",
+        "job:233eb1c0-9dca-416c-bbbe-e8a20b5a99fc",
+        "slot:botany-13"
+      ],
+      "body_md5": "1eb710d3f4e00abfd733bfc2e6092c59",
+      "subject": "Botany",
+      "chapter": "Plant Growth and Development",
+      "topic": "Plant Growth Regulators",
+      "concept": "Auxin / gibberellin / cytokinin / ethylene / ABA roles",
+      "concept_code": "sv2c-botany-13",
+      "difficulty": "medium",
+      "question_archetype": "application",
+      "visual_required": false,
+      "visual_type": null,
+      "visual_archetype": null,
+      "graphical": false,
+      "numerical": false,
+      "has_diagram_svg": false,
+      "has_visual_spec": false,
+      "visual_spec": null,
+      "diagram_description": null,
+      "stem": "A agricultural scientist wants to achieve the following three results in a crop field:\n(i) Delay leaf senescence to keep the foliage green longer.\n(ii) Promote rapid petiole elongation in submerged rice plants to keep leaves above water.\n(iii) Induce closure of stomata under acute soil water deficit.\n\nWhich set of Plant Growth Regulators (PGRs) should be applied to achieve results (i), (ii), and (iii) respectively?",
+      "options": [
+        {
+          "text": "(i) Auxin, (ii) Gibberellin, (iii) Abscisic acid",
+          "label": "A"
+        },
+        {
+          "text": "(i) Cytokinin, (ii) Ethylene, (iii) Abscisic acid",
+          "label": "B"
+        },
+        {
+          "text": "(i) Cytokinin, (ii) Auxin, (iii) Ethylene",
+          "label": "C"
+        },
+        {
+          "text": "(i) Gibberellin, (ii) Ethylene, (iii) Auxin",
+          "label": "D"
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "Cytokinins help delay leaf senescence (Richmond-Lang effect) by promoting nutrient mobilization and maintaining chlorophyll content. Ethylene promotes rapid internode and petiole elongation in deep-water rice plants, helping the upper parts of the shoot to remain above water. Abscisic acid (ABA) acts as a stress hormone and stimulates the closure of stomata during severe water stress. Therefore, the correct combination is Cytokinin for (i), Ethylene for (ii), and Abscisic acid for (iii).",
+      "validation_ok": true,
+      "validation_errors": [],
+      "validation_warnings": [],
+      "visual_validation": {
+        "required": false,
+        "passed": true,
+        "errors": []
+      },
+      "semantic_status": "STRUCTURALLY_VALID",
+      "semantic_signals": [
+        "NO_DETERMINISTIC_AMBIGUITY_SIGNAL"
+      ],
+      "semantic_hard_fail": false,
+      "is_replacement": false,
+      "original_content_item_id": "fd4ab8f9-fd76-41e4-a549-39110dbe24a5",
+      "replacement_content_item_id": null,
+      "in_stratified_sample": true,
+      "targeted_remat_review": false,
+      "candidate_id": "6ee90787-51b0-48e0-962c-0f602a02eefa"
+    },
+    {
+      "item_id": "75f38af6-ef72-4273-828b-828b11f0b7b8",
+      "slot_id": "botany-10",
+      "status": "DRAFT",
+      "tags": [
+        "seed-v2",
+        "provenance:ai",
+        "provider:gemini",
+        "production-seed-v2-2026-09-03",
+        "model:gemini-3.6-flash",
+        "bp-v:1",
+        "slot:botany-10",
+        "job:a6891bdc-dc92-4419-8648-c1a72f638fed",
+        "routing:fixed:gemini",
+        "factory-p3",
+        "run:4d3fa5a1-c17f-436b-99e2-ccff364c2381",
+        "family:production-seed-v2-2026-09-03-fam-botany-10",
+        "batch:4509d488-c100-47f0-8357-4b1678abd00d",
+        "blueprint:56399c2d-55d8-491f-bbfd-919319ada7d0"
+      ],
+      "body_md5": "87bc34603ac99afd179b203c444bc8ff",
+      "subject": "Botany",
+      "chapter": "Photosynthesis in Higher Plants",
+      "topic": "Dark Reaction (Calvin Cycle)",
+      "concept": "C3 vs C4 Pathway",
+      "concept_code": "c3-c4-pathway",
+      "difficulty": "medium",
+      "question_archetype": "comparison",
+      "visual_required": false,
+      "visual_type": null,
+      "visual_archetype": null,
+      "graphical": false,
+      "numerical": false,
+      "has_diagram_svg": false,
+      "has_visual_spec": false,
+      "visual_spec": null,
+      "diagram_description": null,
+      "stem": "Which of the following statements correctly compares the primary carbon fixation step and initial enzyme involved in C3 and C4 pathways?",
+      "options": [
+        {
+          "text": "In C3 plants, atmospheric CO2 is fixed by PEP carboxylase in bundle sheath cells, while in C4 plants, it is fixed by RuBisCO in mesophyll cells.",
+          "label": "A"
+        },
+        {
+          "text": "In C3 plants, atmospheric CO2 is fixed by RuBisCO in mesophyll cells, whereas in C4 plants, initial carbon fixation is catalyzed by PEP carboxylase in mesophyll cells.",
+          "label": "B"
+        },
+        {
+          "text": "In C3 plants, the first stable product is a 4-carbon compound formed in mesophyll cells, while in C4 plants, it is a 3-carbon compound formed in bundle sheath cells.",
+          "label": "C"
+        },
+        {
+          "text": "In both C3 and C4 plants, the initial enzyme that fixes atmospheric CO2 is RuBisCO located in mesophyll cells.",
+          "label": "D"
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "In C3 plants, atmospheric CO2 is directly fixed by RuBisCO in the mesophyll cells to form a 3-carbon compound (3-PGA). In C4 plants, Kranz anatomy separates initial fixation and the Calvin cycle: atmospheric CO2 is initially fixed in mesophyll cells by PEP carboxylase (PEPcase) to form a 4-carbon compound (oxaloacetic acid), which is then transported to bundle sheath cells where RuBisCO operates the Calvin cycle. Option A reverses the enzymes and cell types for both pathways. Option C incorrectly reverses the carbon number of the first stable products (C3 yields 3-PGA; C4 yields OAA). Option D is incorrect because C4 plants use PEP carboxylase for primary CO2 fixation in mesophyll cells, not RuBisCO.",
+      "validation_ok": true,
+      "validation_errors": [],
+      "validation_warnings": [
+        "SEMANTIC_REVIEW_REQUIRED",
+        "REQUIRES_REVIEW"
+      ],
+      "visual_validation": {
+        "required": false,
+        "passed": true,
+        "errors": []
+      },
+      "semantic_status": "SEMANTIC_REVIEW_REQUIRED",
+      "semantic_signals": [
+        "EXPLANATION_REFERENCES_MULTIPLE_OPTIONS"
+      ],
+      "semantic_hard_fail": false,
+      "is_replacement": false,
+      "original_content_item_id": "75f38af6-ef72-4273-828b-828b11f0b7b8",
+      "replacement_content_item_id": null,
+      "in_stratified_sample": true,
+      "targeted_remat_review": false,
+      "candidate_id": "1ab73bac-fbf6-4f18-b0b4-0ec34fba61bc"
+    },
+    {
+      "item_id": "50e30aa3-44dc-424a-9d49-3f641e3faa98",
+      "slot_id": "botany-12",
+      "status": "DRAFT",
+      "tags": [
+        "routing:fixed:gemini",
+        "factory-p3",
+        "blueprint:dd1192ca-a2e6-4653-9d5f-fd4763f794e0",
+        "run:6dd25f7a-2b4b-4542-b86d-62e866691002",
+        "batch:4509d488-c100-47f0-8357-4b1678abd00d",
+        "seed-v2",
+        "provenance:ai",
+        "job:14105995-1a23-41f0-8820-980d21990fb2",
+        "provider:gemini",
+        "production-seed-v2-2026-09-03",
+        "model:gemini-3.6-flash",
+        "family:production-seed-v2-2026-09-03-fam-botany-12",
+        "bp-v:1",
+        "slot:botany-12"
+      ],
+      "body_md5": "060efba80eed3306ab35ee2b9b60df7c",
+      "subject": "Botany",
+      "chapter": "Photosynthesis in Higher Plants",
+      "topic": "Light Reaction",
+      "concept": "Photophosphorylation",
+      "concept_code": "photophosphorylation",
+      "difficulty": "medium",
+      "question_archetype": "direct_ncert_conceptual",
+      "visual_required": false,
+      "visual_type": null,
+      "visual_archetype": null,
+      "graphical": false,
+      "numerical": false,
+      "has_diagram_svg": false,
+      "has_visual_spec": false,
+      "visual_spec": null,
+      "diagram_description": null,
+      "stem": "During photosynthetic light reactions, chloroplasts may perform cyclic photophosphorylation under specific physiological conditions. Which of the following correctly identifies the net primary assimilate product(s) yielded directly by cyclic photophosphorylation per cycle of electron flow?",
+      "options": [
+        {
+          "text": "ATP only",
+          "label": "A"
+        },
+        {
+          "text": "ATP and NADPH",
+          "label": "B"
+        },
+        {
+          "text": "ATP, NADPH, and O2",
+          "label": "C"
+        },
+        {
+          "text": "NADPH and O2 only",
+          "label": "D"
+        }
+      ],
+      "correct_option": "A",
+      "explanation": "In cyclic photophosphorylation, only Photosystem I (PS I) is functional. The excited electron is extruded from P700 and travels through an electron transport chain back to P700 rather than being passed on to NADP+. As the electron moves through the electron carriers, a proton gradient is established across the thylakoid membrane, driving the synthesis of ATP via chemiosmosis. Because PS II is not involved, water splitting does not occur (no oxygen evolved), and because NADP+ reductase is not utilized in this pathway, NADPH is not formed. Thus, the process results only in the synthesis of ATP.",
+      "validation_ok": true,
+      "validation_errors": [],
+      "validation_warnings": [
+        "SEMANTIC_REVIEW_REQUIRED",
+        "REQUIRES_REVIEW"
+      ],
+      "visual_validation": {
+        "required": false,
+        "passed": true,
+        "errors": []
+      },
+      "semantic_status": "SEMANTIC_REVIEW_REQUIRED",
+      "semantic_signals": [
+        "HIGH_OPTION_OVERLAP:B/C:1.00"
+      ],
+      "semantic_hard_fail": false,
+      "is_replacement": false,
+      "original_content_item_id": "50e30aa3-44dc-424a-9d49-3f641e3faa98",
+      "replacement_content_item_id": null,
+      "in_stratified_sample": true,
+      "targeted_remat_review": false,
+      "candidate_id": "59ecd8a0-933e-4271-811a-ad530e50d423"
+    },
+    {
+      "item_id": "db6b02e0-2f81-4187-8636-18305bddcc15",
+      "slot_id": "botany-15",
+      "status": "DRAFT",
+      "tags": [
+        "family:production-seed-v2-2026-09-03-fam-botany-15",
+        "routing:fixed:gemini",
+        "factory-p3",
+        "batch:4509d488-c100-47f0-8357-4b1678abd00d",
+        "blueprint:20a8d337-2601-40e3-bf3f-8a79248a4b4b",
+        "run:8db87491-9cfe-4096-9231-83d8010461cc",
+        "seed-v2",
+        "slot:botany-15",
+        "provenance:ai",
+        "provider:gemini",
+        "job:15fe38c2-3564-44cb-b9ae-a9306b3db648",
+        "production-seed-v2-2026-09-03",
+        "model:gemini-3.6-flash",
+        "bp-v:1"
+      ],
+      "body_md5": "301addc55a4d28af5cb57f5068dd9370",
+      "subject": "Botany",
+      "chapter": "Sexual Reproduction in Flowering Plants",
+      "topic": "Double Fertilisation",
+      "concept": "Syngamy and triple fusion",
+      "concept_code": "sv2c-botany-15",
+      "difficulty": "medium",
+      "question_archetype": "sequence_order",
+      "visual_required": false,
+      "visual_type": null,
+      "visual_archetype": null,
+      "graphical": false,
+      "numerical": false,
+      "has_diagram_svg": false,
+      "has_visual_spec": false,
+      "visual_spec": null,
+      "diagram_description": null,
+      "stem": "Arrange the following developmental events in the embryo sac of a typical angiosperm in the correct chronological order starting from the entry of the pollen tube:\n\n(i) Release of two male gametes into the cytoplasm of a synergid\n(ii) Formation of the primary endosperm nucleus (PEN) via triple fusion\n(iii) Degeneration of one of the synergids prior to entry\n(iv) Fusion of one male gamete with the egg cell nucleus (Syngamy)",
+      "options": [
+        {
+          "text": "(iii) → (i) → (iv) → (ii)",
+          "label": "A"
+        },
+        {
+          "text": "(i) → (iii) → (ii) → (iv)",
+          "label": "B"
+        },
+        {
+          "text": "(iii) → (i) → (ii) → (iv)",
+          "label": "C"
+        },
+        {
+          "text": "(i) → (iv) → (iii) → (ii)",
+          "label": "D"
+        }
+      ],
+      "correct_option": "A",
+      "explanation": "The correct chronological sequence of events during fertilization in an angiosperm embryo sac is:\n1. (iii) Degeneration of one synergid allows the entry of the pollen tube into it via the filiform apparatus.\n2. (i) The pollen tube discharges its contents, including two male gametes, into the cytoplasm of the degenerating synergid.\n3. (iv) One male gamete moves towards the egg cell and fuses with its nucleus (syngamy) to form a diploid zygote.\n4. (ii) The second male gamete moves towards the central cell and fuses with the two polar nuclei (triple fusion) to form the triploid Primary Endosperm Nucleus (PEN).\n\nTherefore, the correct sequence is (iii) → (i) → (iv) → (ii), making option A correct.",
+      "validation_ok": true,
+      "validation_errors": [],
+      "validation_warnings": [
+        "SEMANTIC_REVIEW_REQUIRED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "REQUIRES_REVIEW"
+      ],
+      "visual_validation": {
+        "required": false,
+        "passed": true,
+        "errors": []
+      },
+      "semantic_status": "SEMANTIC_REVIEW_REQUIRED",
+      "semantic_signals": [
+        "HIGH_OPTION_OVERLAP:A/B:1.00",
+        "HIGH_OPTION_OVERLAP:A/C:1.00",
+        "HIGH_OPTION_OVERLAP:A/D:1.00",
+        "HIGH_OPTION_OVERLAP:B/C:1.00",
+        "HIGH_OPTION_OVERLAP:B/D:1.00",
+        "HIGH_OPTION_OVERLAP:C/D:1.00"
+      ],
+      "semantic_hard_fail": false,
+      "is_replacement": false,
+      "original_content_item_id": "db6b02e0-2f81-4187-8636-18305bddcc15",
+      "replacement_content_item_id": null,
+      "in_stratified_sample": true,
+      "targeted_remat_review": false,
+      "candidate_id": "cd47b41b-a49d-4229-b946-e696f8ef1606"
+    },
+    {
+      "item_id": "56d515a9-fb76-4c80-b9e7-88f7ef50b5d8",
+      "slot_id": "chemistry-14",
+      "status": "DRAFT",
+      "tags": [
+        "run:2e97b4ff-11dc-42bc-b142-96c0b9c1971a",
+        "routing:fixed:gemini",
+        "factory-p3",
+        "blueprint:da3d6607-01eb-4cd8-96f8-d18b7fb3c284",
+        "batch:4509d488-c100-47f0-8357-4b1678abd00d",
+        "seed-v2",
+        "slot:chemistry-14",
+        "provenance:ai",
+        "provider:gemini",
+        "production-seed-v2-2026-09-03",
+        "family:production-seed-v2-2026-09-03-fam-chemistry-14",
+        "model:gemini-3.6-flash",
+        "bp-v:1",
+        "job:662b4839-5e58-447c-ba8c-4c0f2157adad"
+      ],
+      "body_md5": "08a6b70f78bce84eb669bd39cb37a5fe",
+      "subject": "Chemistry",
+      "chapter": "Chemical Bonding and Molecular Structure",
+      "topic": "Ionic vs Covalent Bonding",
+      "concept": "Electronegativity and bond type",
+      "concept_code": "sv2c-chemistry-14",
+      "difficulty": "easy",
+      "question_archetype": "comparison",
+      "visual_required": false,
+      "visual_type": null,
+      "visual_archetype": null,
+      "graphical": false,
+      "numerical": false,
+      "has_diagram_svg": false,
+      "has_visual_spec": false,
+      "visual_spec": null,
+      "diagram_description": null,
+      "stem": "Based on Pauling's electronegativity scale, which of the following pairs of bonded atoms is expected to form a bond with the highest degree of ionic character?",
+      "options": [
+        {
+          "text": "C–H",
+          "label": "A"
+        },
+        {
+          "text": "N–H",
+          "label": "B"
+        },
+        {
+          "text": "O–H",
+          "label": "C"
+        },
+        {
+          "text": "F–H",
+          "label": "D"
+        }
+      ],
+      "correct_option": "D",
+      "explanation": "The degree of ionic character in a chemical bond depends directly on the electronegativity difference (ΔEN) between the two bonded atoms. According to Pauling's scale, the electronegativity values are approximately: H = 2.1, C = 2.5, N = 3.0, O = 3.5, and F = 4.0. Calculating the differences:\n- C–H: 2.5 - 2.1 = 0.4\n- N–H: 3.0 - 2.1 = 0.9\n- O–H: 3.5 - 2.1 = 1.4\n- F–H: 4.0 - 2.1 = 1.9\nSince the electronegativity difference is greatest in the F–H bond, it exhibits the highest percentage of ionic character among the given pairs.",
+      "validation_ok": true,
+      "validation_errors": [],
+      "validation_warnings": [
+        "SEMANTIC_REVIEW_REQUIRED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "REQUIRES_REVIEW"
+      ],
+      "visual_validation": {
+        "required": false,
+        "passed": true,
+        "errors": []
+      },
+      "semantic_status": "SEMANTIC_REVIEW_REQUIRED",
+      "semantic_signals": [
+        "HIGH_OPTION_OVERLAP:A/B:1.00",
+        "HIGH_OPTION_OVERLAP:A/C:1.00",
+        "HIGH_OPTION_OVERLAP:A/D:1.00",
+        "HIGH_OPTION_OVERLAP:B/C:1.00",
+        "HIGH_OPTION_OVERLAP:B/D:1.00",
+        "HIGH_OPTION_OVERLAP:C/D:1.00"
+      ],
+      "semantic_hard_fail": false,
+      "is_replacement": false,
+      "original_content_item_id": "56d515a9-fb76-4c80-b9e7-88f7ef50b5d8",
+      "replacement_content_item_id": null,
+      "in_stratified_sample": true,
+      "targeted_remat_review": false,
+      "candidate_id": "95ea8b22-bc6c-4412-9322-fccebde8afbc"
+    },
+    {
+      "item_id": "0f824701-461c-4635-babc-0a6420ed5e34",
+      "slot_id": "chemistry-10",
+      "status": "DRAFT",
+      "tags": [
+        "batch:4509d488-c100-47f0-8357-4b1678abd00d",
+        "run:32537a62-2fe8-4a8b-bc3b-e40e3cbd11bf",
+        "seed-v2",
+        "provenance:ai",
+        "family:production-seed-v2-2026-09-03-fam-chemistry-10",
+        "provider:gemini",
+        "production-seed-v2-2026-09-03",
+        "model:gemini-3.6-flash",
+        "bp-v:1",
+        "job:fa56539a-9778-4d2b-81d9-1df24b847d3a",
+        "slot:chemistry-10",
+        "routing:fixed:gemini",
+        "blueprint:37a89f9f-3cd7-4499-9691-365274909eac",
+        "factory-p3"
+      ],
+      "body_md5": "3ab531e19dde3cdc5ebd1ef320976803",
+      "subject": "Chemistry",
+      "chapter": "Structure of Atom",
+      "topic": "Orbitals",
+      "concept": "s, p, d orbital shapes/nodes (qualitative)",
+      "concept_code": "sv2c-chemistry-10",
+      "difficulty": "easy",
+      "question_archetype": "direct_ncert_conceptual",
+      "visual_required": false,
+      "visual_type": null,
+      "visual_archetype": null,
+      "graphical": false,
+      "numerical": false,
+      "has_diagram_svg": false,
+      "has_visual_spec": false,
+      "visual_spec": null,
+      "diagram_description": null,
+      "stem": "Which of the following statements correctly describes the shape and nodal properties of a $3p_z$ orbital?",
+      "options": [
+        {
+          "text": "It is spherical in shape with two radial nodes and no angular node.",
+          "label": "A"
+        },
+        {
+          "text": "It is dumbbell-shaped with one radial node and one angular node.",
+          "label": "B"
+        },
+        {
+          "text": "It is double dumbbell-shaped with two angular nodes and no radial node.",
+          "label": "C"
+        },
+        {
+          "text": "It is spherical in shape with one radial node and one angular node.",
+          "label": "D"
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "For any atomic orbital, the number of angular nodes is given by $l$ and the number of radial nodes is given by $n - l - 1$. For a $3p_z$ orbital, $n = 3$ and $l = 1$ (since it is a $p$ orbital). Therefore, it has $l = 1$ angular node (a nodal plane, which for $p_z$ is the $xy$-plane) and $3 - 1 - 1 = 1$ radial node. All $p$ orbitals possess a dumbbell shape. Option A describes an $s$ orbital ($3s$). Option C describes a $d$ orbital without radial nodes (such as $3d$). Option D incorrectly attributes a spherical shape to a $p$ orbital.",
+      "validation_ok": true,
+      "validation_errors": [],
+      "validation_warnings": [
+        "SEMANTIC_REVIEW_REQUIRED",
+        "REQUIRES_REVIEW"
+      ],
+      "visual_validation": {
+        "required": false,
+        "passed": true,
+        "errors": []
+      },
+      "semantic_status": "SEMANTIC_REVIEW_REQUIRED",
+      "semantic_signals": [
+        "EXPLANATION_REFERENCES_MULTIPLE_OPTIONS"
+      ],
+      "semantic_hard_fail": false,
+      "is_replacement": false,
+      "original_content_item_id": "0f824701-461c-4635-babc-0a6420ed5e34",
+      "replacement_content_item_id": null,
+      "in_stratified_sample": true,
+      "targeted_remat_review": false,
+      "candidate_id": "1dcb5155-84d7-4417-a6e9-6c7de1ff4d3f"
+    },
+    {
+      "item_id": "327cabf6-1ce2-4d5b-8fad-fe8ba01c647f",
+      "slot_id": "chemistry-05",
+      "status": "DRAFT",
+      "tags": [
+        "batch:4509d488-c100-47f0-8357-4b1678abd00d",
+        "seed-v2",
+        "provenance:ai",
+        "provider:gemini",
+        "job:3ca1299a-06da-4f8d-86d4-676b80bfcda2",
+        "production-seed-v2-2026-09-03",
+        "model:gemini-3.6-flash",
+        "bp-v:1",
+        "family:production-seed-v2-2026-09-03-fam-chemistry-05",
+        "blueprint:5f2210eb-ea75-446b-a2c3-46c4c1ba05d4",
+        "slot:chemistry-05",
+        "routing:fixed:gemini",
+        "run:f08e9b0a-b350-443d-ab37-433a235a86a3",
+        "factory-p3"
+      ],
+      "body_md5": "34432ed84b8fe8a5801e3dada736609c",
+      "subject": "Chemistry",
+      "chapter": "Some Basic Concepts of Chemistry",
+      "topic": "Stoichiometry of Reactions",
+      "concept": "Limiting reagent concept",
+      "concept_code": "sv2c-chemistry-05",
+      "difficulty": "hard",
+      "question_archetype": "application",
+      "visual_required": false,
+      "visual_type": null,
+      "visual_archetype": null,
+      "graphical": false,
+      "numerical": false,
+      "has_diagram_svg": false,
+      "has_visual_spec": false,
+      "visual_spec": null,
+      "diagram_description": null,
+      "stem": "Gaseous nitrogen ($\text{N}_2$) and hydrogen ($\text{H}_2$) react under specific conditions to form ammonia ($\text{NH}_3$) according to the balanced equation:\n$$\text{N}_2(g) + 3\text{H}_2(g) \rightarrow 2\text{NH}_3(g)$$\nIn a closed reaction vessel, equal masses of $\text{N}_2$ and $\text{H}_2$ are mixed and allowed to react until the limiting reagent is completely consumed. Which of the following qualitative statements correctly describes the contents of the vessel at the end of the reaction?",
+      "options": [
+        {
+          "text": "$\text{N}_2$ is the limiting reagent, and the final mixture contains $\text{NH}_3$ and unreacted $\text{H}_2$.",
+          "label": "A"
+        },
+        {
+          "text": "$\text{H}_2$ is the limiting reagent, and the final mixture contains $\text{NH}_3$ and unreacted $\text{N}_2$.",
+          "label": "B"
+        },
+        {
+          "text": "Both $\text{N}_2$ and $\text{H}_2$ are completely consumed because their initial masses are equal, leaving only $\text{NH}_3$.",
+          "label": "C"
+        },
+        {
+          "text": "$\text{N}_2$ is the limiting reagent, and the final mixture contains only $\text{NH}_3$ because excess $\text{H}_2$ escapes.",
+          "label": "D"
+        }
+      ],
+      "correct_option": "A",
+      "explanation": "Let the initial mass of $\text{N}_2$ and $\text{H}_2$ be $m$ grams each.\n1. Moles of $\text{N}_2$ available = $\\frac{m}{28\\text{ g/mol}}$.\n2. Moles of $\text{H}_2$ available = $\\frac{m}{2\\text{ g/mol}} = 0.5m\\text{ mol}$.\nFrom the stoichiometry of the balanced equation, $1\\text{ mole of N}_2$ requires $3\\text{ moles of H}_2$.\nThus, the moles of $\text{H}_2$ required to react completely with all the available $\text{N}_2$ is $3 \\times \\left(\\frac{m}{28}\\right) = \\frac{3m}{28}\\text{ mol} \\approx 0.107m\\text{ mol}$.\nSince the available moles of $\text{H}_2$ ($0.500m\\text{ mol}$) are far greater than the required moles of $\text{H}_2$ ($0.107m\\text{ mol}$), $\text{H}_2$ is in excess and $\text{N}_2$ is the limiting reagent.\nTherefore, $\text{N}_2$ is consumed completely, leaving a mixture of product $\text{NH}_3$ and unreacted excess $\text{H}_2$.\n\nOption B is incorrect because $\text{H}_2$ is not the limiting reagent. Option C wrongly assumes mass equality implies mole equality. Option D incorrectly assumes excess reactant leaves the closed vessel.",
+      "validation_ok": true,
+      "validation_errors": [],
+      "validation_warnings": [
+        "SEMANTIC_REVIEW_REQUIRED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "REQUIRES_REVIEW"
+      ],
+      "visual_validation": {
+        "required": false,
+        "passed": true,
+        "errors": []
+      },
+      "semantic_status": "SEMANTIC_REVIEW_REQUIRED",
+      "semantic_signals": [
+        "EXPLANATION_REFERENCES_MULTIPLE_OPTIONS",
+        "HIGH_OPTION_OVERLAP:A/B:1.00"
+      ],
+      "semantic_hard_fail": false,
+      "is_replacement": false,
+      "original_content_item_id": "327cabf6-1ce2-4d5b-8fad-fe8ba01c647f",
+      "replacement_content_item_id": null,
+      "in_stratified_sample": true,
+      "targeted_remat_review": false,
+      "candidate_id": "ddf908cc-0d4c-46fa-8b36-d3a57a0e6fa1"
+    },
+    {
+      "item_id": "87bc87a5-95ee-4589-b886-c7bcd30f6b3f",
+      "slot_id": "chemistry-13",
+      "status": "DRAFT",
+      "tags": [
+        "routing:fixed:gemini",
+        "factory-p3",
+        "family:production-seed-v2-2026-09-03-fam-chemistry-13",
+        "job:37fe4bf3-be87-4ba1-9991-0f4aa77c6509",
+        "batch:4509d488-c100-47f0-8357-4b1678abd00d",
+        "slot:chemistry-13",
+        "blueprint:5ac8126c-4a20-4f9c-9012-8a1ba689715a",
+        "run:863b900a-b1ae-41a1-b600-f0dd1cc75022",
+        "seed-v2",
+        "provenance:ai",
+        "provider:gemini",
+        "production-seed-v2-2026-09-03",
+        "model:gemini-3.6-flash",
+        "bp-v:1"
+      ],
+      "body_md5": "33cb641b11c303728157614bc9ab5565",
+      "subject": "Chemistry",
+      "chapter": "Chemical Bonding and Molecular Structure",
+      "topic": "Hybridization",
+      "concept": "sp, sp2, sp3 Hybridization",
+      "concept_code": "sp-sp2-sp3",
+      "difficulty": "hard",
+      "question_archetype": "comparison",
+      "visual_required": false,
+      "visual_type": null,
+      "visual_archetype": null,
+      "graphical": false,
+      "numerical": false,
+      "has_diagram_svg": false,
+      "has_visual_spec": false,
+      "visual_spec": null,
+      "diagram_description": null,
+      "stem": "Consider the central boron atom in boron trifluoride ($BF_3$) and the central nitrogen atom in nitrogen trifluoride ($NF_3$). Which of the following statements correctly compares the hybridization state of the central atom and the resulting geometry of these two molecules?",
+      "options": [
+        {
+          "text": "Both $BF_3$ and $NF_3$ feature $sp^2$ hybridized central atoms, resulting in trigonal planar geometry for both.",
+          "label": "A"
+        },
+        {
+          "text": "In $BF_3$, boron is $sp^2$ hybridized leading to a trigonal planar geometry, whereas in $NF_3$, nitrogen is $sp^3$ hybridized leading to a trigonal pyramidal geometry.",
+          "label": "B"
+        },
+        {
+          "text": "In $BF_3$, boron is $sp^3$ hybridized leading to a tetrahedral geometry, whereas in $NF_3$, nitrogen is $sp^2$ hybridized leading to a trigonal planar geometry.",
+          "label": "C"
+        },
+        {
+          "text": "Both $BF_3$ and $NF_3$ feature $sp^3$ hybridized central atoms, but $BF_3$ is trigonal planar while $NF_3$ is tetrahedral.",
+          "label": "D"
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "In $BF_3$, the central boron atom has 3 valence electrons and forms 3 single bonds with fluorine atoms with zero lone pairs. Its steric number is 3, corresponding to $sp^2$ hybridization and a symmetric trigonal planar molecular geometry with bond angles of $120^\\circ$.\n\nIn $NF_3$, the central nitrogen atom has 5 valence electrons, forms 3 single bonds with fluorine atoms, and retains 1 lone pair. Its steric number is 4 (3 bond pairs + 1 lone pair), which corresponds to $sp^3$ hybridization. The electron pair geometry is tetrahedral, but due to the presence of the lone pair, the molecular geometry is trigonal pyramidal.\n\nOption A is incorrect because $NF_3$ is $sp^3$ hybridized and non-planar. Option C reverses the hybridization and geometries. Option D is incorrect because $BF_3$ is $sp^2$ hybridized, not $sp^3$.",
+      "validation_ok": true,
+      "validation_errors": [],
+      "validation_warnings": [
+        "SEMANTIC_REVIEW_REQUIRED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "REQUIRES_REVIEW"
+      ],
+      "visual_validation": {
+        "required": false,
+        "passed": true,
+        "errors": []
+      },
+      "semantic_status": "SEMANTIC_REVIEW_REQUIRED",
+      "semantic_signals": [
+        "EXPLANATION_REFERENCES_MULTIPLE_OPTIONS",
+        "HIGH_OPTION_OVERLAP:B/C:0.86"
+      ],
+      "semantic_hard_fail": false,
+      "is_replacement": false,
+      "original_content_item_id": "87bc87a5-95ee-4589-b886-c7bcd30f6b3f",
+      "replacement_content_item_id": null,
+      "in_stratified_sample": true,
+      "targeted_remat_review": false,
+      "candidate_id": "9489e3cf-35c1-4046-ae99-7ecbf3339630"
+    },
+    {
+      "item_id": "2bb14e59-7865-4719-ab06-2b41c8f4e279",
+      "slot_id": "chemistry-24",
+      "status": "DRAFT",
+      "tags": [
+        "batch:4509d488-c100-47f0-8357-4b1678abd00d",
+        "seed-v2",
+        "provenance:ai",
+        "provider:gemini",
+        "production-seed-v2-2026-09-03",
+        "model:gemini-3.6-flash",
+        "family:production-seed-v2-2026-09-03-fam-chemistry-24",
+        "bp-v:1",
+        "slot:chemistry-24",
+        "blueprint:799c7806-edd7-41d3-b319-cd968e395899",
+        "job:26436055-3158-49b9-9341-63fda8ec9bc6",
+        "routing:fixed:gemini",
+        "run:06edf514-a7db-4368-8959-2fde4c539c16",
+        "factory-p3"
+      ],
+      "body_md5": "b77d06916d169b968e0813698a600b8e",
+      "subject": "Chemistry",
+      "chapter": "Equilibrium",
+      "topic": "Solubility Product",
+      "concept": "Solubility Product Ksp",
+      "concept_code": "ksp-basics",
+      "difficulty": "hard",
+      "question_archetype": "direct_ncert_conceptual",
+      "visual_required": false,
+      "visual_type": null,
+      "visual_archetype": null,
+      "graphical": false,
+      "numerical": false,
+      "has_diagram_svg": false,
+      "has_visual_spec": false,
+      "visual_spec": null,
+      "diagram_description": null,
+      "stem": "Consider a saturated aqueous solution of a sparingly soluble salt $M_aX_b$ in dynamic equilibrium with its undissolved solid at a given constant temperature. If $S$ represents the molar solubility of $M_aX_b$ in pure water, which of the following statements correctly describes the solubility product constant ($K_{sp}$) and the ionic product ($Q_{sp}$) for this system?",
+      "options": [
+        {
+          "text": "The numerical value of $K_{sp}$ is given by $a^a b^b S^{a+b}$, and if $Q_{sp} < K_{sp}$, precipitation occurs until equilibrium is reached.",
+          "label": "A"
+        },
+        {
+          "text": "The numerical value of $K_{sp}$ is given by $a^b b^a S^{a+b}$, and $K_{sp}$ increases when a common ion is added to the solution at constant temperature.",
+          "label": "B"
+        },
+        {
+          "text": "The numerical value of $K_{sp}$ is given by $a^a b^b S^{a+b}$, and $Q_{sp} = K_{sp}$ holds true strictly for a saturated solution in equilibrium with solid $M_aX_b$.",
+          "label": "C"
+        },
+        {
+          "text": "The numerical value of $K_{sp}$ is independent of temperature, whereas $Q_{sp}$ depends on both temperature and the initial concentration of ions.",
+          "label": "D"
+        }
+      ],
+      "correct_option": "C",
+      "explanation": "For the dissolution equilibrium of a sparingly soluble salt $M_aX_b(s) \n\nightleftharpoons a M^{b+}(aq) + b X^{a-}(aq)$, the molar concentrations of ions in a saturated solution are $[M^{b+}] = aS$ and $[X^{a-}] = bS$. The solubility product constant is $K_{sp} = [M^{b+}]^a [X^{a-}]^b = (aS)^a (bS)^b = a^a b^b S^{a+b}$. At dynamic equilibrium in a saturated solution, the reaction quotient or ionic product ($Q_{sp}$) is equal to $K_{sp}$. \n\n- Option A is incorrect because $Q_{sp} < K_{sp}$ indicates an unsaturated solution, so no precipitation occurs; solid dissolves instead.\n- Option B is incorrect because the exponent formula is wrong ($a^a b^b S^{a+b}$ is correct) and $K_{sp}$ is an equilibrium constant that depends only on temperature, not on the common ion effect.\n- Option D is incorrect because $K_{sp}$, like any equilibrium constant, is temperature-dependent.",
+      "validation_ok": true,
+      "validation_errors": [],
+      "validation_warnings": [
+        "SEMANTIC_REVIEW_REQUIRED",
+        "REQUIRES_REVIEW"
+      ],
+      "visual_validation": {
+        "required": false,
+        "passed": true,
+        "errors": []
+      },
+      "semantic_status": "SEMANTIC_REVIEW_REQUIRED",
+      "semantic_signals": [
+        "EXPLANATION_REFERENCES_MULTIPLE_OPTIONS"
+      ],
+      "semantic_hard_fail": false,
+      "is_replacement": false,
+      "original_content_item_id": "2bb14e59-7865-4719-ab06-2b41c8f4e279",
+      "replacement_content_item_id": null,
+      "in_stratified_sample": true,
+      "targeted_remat_review": false,
+      "candidate_id": "54d4a7bd-6723-42f5-b78c-54e9cf18de65"
+    },
+    {
+      "item_id": "49488a4a-918f-46f1-b314-df6f86d0ef79",
+      "slot_id": "chemistry-18",
+      "status": "DRAFT",
+      "tags": [
+        "seed-v2",
+        "provenance:ai",
+        "provider:gemini",
+        "production-seed-v2-2026-09-03",
+        "model:gemini-3.6-flash",
+        "job:f27f6070-defd-4674-92df-307c306382f1",
+        "bp-v:1",
+        "blueprint:bfa6e48b-2cfd-41f3-9b18-081c9912ffc9",
+        "slot:chemistry-18",
+        "routing:fixed:gemini",
+        "factory-p3",
+        "family:production-seed-v2-2026-09-03-fam-chemistry-18",
+        "run:b0e28e38-6f09-4fc9-8628-763cc12bd2df",
+        "batch:4509d488-c100-47f0-8357-4b1678abd00d"
+      ],
+      "body_md5": "659348a080a2b7f2c480f5d37fd44131",
+      "subject": "Chemistry",
+      "chapter": "Thermodynamics",
+      "topic": "Hess's Law",
+      "concept": "Hess's law of constant heat summation",
+      "concept_code": "sv2c-chemistry-18",
+      "difficulty": "hard",
+      "question_archetype": "numerical_calculation",
+      "visual_required": false,
+      "visual_type": null,
+      "visual_archetype": null,
+      "graphical": false,
+      "numerical": true,
+      "has_diagram_svg": false,
+      "has_visual_spec": false,
+      "visual_spec": null,
+      "diagram_description": null,
+      "stem": "Consider the following thermochemical reactions at $298\\text{ K}$:\n1. $\\text{C}_2\\text{H}_4(g) + 3\\text{O}_2(g) \\rightarrow 2\\text{CO}_2(g) + 2\\text{H}_2\\text{O}(l) \\quad \\Delta_r H_1^\\circ = -1411.0\\text{ kJ mol}^{-1}$\n2. $\\text{C}_2\\text{H}_6(g) + \\frac{7}{2}\\text{O}_2(g) \\rightarrow 2\\text{CO}_2(g) + 3\\text{H}_2\\text{O}(l) \\quad \\Delta_r H_2^\\circ = -1560.0\\text{ kJ mol}^{-1}$\n3. $\\text{H}_2(g) + \\frac{1}{2}\\text{O}_2(g) \\rightarrow \\text{H}_2\\text{O}(l) \\quad \\Delta_r H_3^\\circ = -285.8\\text{ kJ mol}^{-1}$\n\nUsing Hess's law of constant heat summation, calculate the standard enthalpy change for the hydrogenation of ethene to ethane:\n$$\\text{C}_2\\text{H}_4(g) + \\text{H}_2(g) \\rightarrow \\text{C}_2\\text{H}_6(g)$$",
+      "options": [
+        {
+          "text": "$-136.8\\text{ kJ mol}^{-1}$",
+          "label": "A"
+        },
+        {
+          "text": "$+136.8\\text{ kJ mol}^{-1}$",
+          "label": "B"
+        },
+        {
+          "text": "$-434.8\\text{ kJ mol}^{-1}$",
+          "label": "C"
+        },
+        {
+          "text": "$-137.0\\text{ kJ mol}^{-1}$",
+          "label": "D"
+        }
+      ],
+      "correct_option": "A",
+      "explanation": "To find the standard enthalpy change for the target reaction:\n$$\\text{C}_2\\text{H}_4(g) + \\text{H}_2(g) \\rightarrow \\text{C}_2\\text{H}_6(g)$$\nwe construct a thermochemical Hess cycle by manipulating the given combustion equations:\n- Reaction 1 (keep as is): $\\text{C}_2\\text{H}_4(g) + 3\\text{O}_2(g) \\rightarrow 2\\text{CO}_2(g) + 2\\text{H}_2\\text{O}(l) \\quad \\Delta H_1 = -1411.0\\text{ kJ mol}^{-1}$\n- Reaction 3 (keep as is): $\\text{H}_2(g) + \\frac{1}{2}\\text{O}_2(g) \\rightarrow \\text{H}_2\\text{O}(l) \\quad \\Delta H_3 = -285.8\\text{ kJ mol}^{-1}$\n- Reaction 2 (reverse): $2\\text{CO}_2(g) + 3\\text{H}_2\\text{O}(l) \\rightarrow \\text{C}_2\\text{H}_6(g) + \\frac{7}{2}\\text{O}_2(g) \\quad -\\Delta H_2 = +1560.0\\text{ kJ mol}^{-1}$\n\nAdding these three equations cancels $2\\text{CO}_2(g)$, $3\\text{H}_2\\text{O}(l)$, and $\\frac{7}{2}\\text{O}_2(g)$, yielding the target reaction.\nAccording to Hess's law:\n$$\\Delta_r H^\\circ = \\Delta_r H_1^\\circ + \\Delta_r H_3^\\circ - \\Delta_r H_2^\\circ$$\n$$\\Delta_r H^\\circ = (-1411.0) + (-285.8) - (-1560.0)$$\n$$\\Delta_r H^\\circ = -1696.8 + 1560.0 = -136.8\\text{ kJ mol}^{-1}$$\n\n- Option A is correct.\n- Option B gives the wrong sign (reversal of hydrogenation enthalpy).\n- Option C results from incorrectly adding all three enthalpy values without reversing reaction 2: $-1411.0 - 285.8 - 1560.0 = -3256.8\\text{ kJ mol}^{-1}$ or miscalculating terms.\n- Option D is a arithmetic trap resulting from rounding errors.",
+      "validation_ok": true,
+      "validation_errors": [],
+      "validation_warnings": [
+        "SEMANTIC_REVIEW_REQUIRED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "REQUIRES_REVIEW"
+      ],
+      "visual_validation": {
+        "required": false,
+        "passed": true,
+        "errors": []
+      },
+      "semantic_status": "SEMANTIC_REVIEW_REQUIRED",
+      "semantic_signals": [
+        "EXPLANATION_REFERENCES_MULTIPLE_OPTIONS",
+        "HIGH_OPTION_OVERLAP:A/B:1.00"
+      ],
+      "semantic_hard_fail": false,
+      "is_replacement": false,
+      "original_content_item_id": "49488a4a-918f-46f1-b314-df6f86d0ef79",
+      "replacement_content_item_id": null,
+      "in_stratified_sample": true,
+      "targeted_remat_review": false,
+      "candidate_id": "81502f34-f718-472f-8131-c80145193984"
+    },
+    {
+      "item_id": "1633f068-f0df-4ff5-ac0c-57be4417f29e",
+      "slot_id": "physics-21",
+      "status": "DRAFT",
+      "tags": [
+        "seed-v2",
+        "provenance:ai",
+        "production-seed-v2-2026-09-03",
+        "seed-v2-rematerialization-20260903",
+        "run:f039da9f-df13-4bf1-b7d4-b10fb4a3f3e8",
+        "routing:fixed:gemini",
+        "batch:4509d488-c100-47f0-8357-4b1678abd00d",
+        "slot:physics-21",
+        "provider:gemini",
+        "family:production-seed-v2-2026-09-03-fam-physics-21",
+        "model:gemini-3.6-flash",
+        "bp-v:1",
+        "factory-p3",
+        "blueprint:178457c5-b92d-4d81-9ed4-23c196dcf9f5",
+        "job:45cb6d1c-d965-48e0-be96-45113ea2c945",
+        "seed-v2-rematerialized-active",
+        "replaces:0de3dfa3-bc5a-4791-aa5d-8346dd08f0c2"
+      ],
+      "body_md5": "554677aa6717812dbad0efe99dbc69e4",
+      "subject": "Physics",
+      "chapter": "Mechanical Properties of Solids",
+      "topic": "Stress and Strain",
+      "concept": "Stress–Strain Curve",
+      "concept_code": "stress-strain-curve",
+      "difficulty": "medium",
+      "question_archetype": "diagram_data_interpretation",
+      "visual_required": true,
+      "visual_type": "curve_graph",
+      "visual_archetype": "stress_strain_curve",
+      "graphical": true,
+      "numerical": false,
+      "has_diagram_svg": true,
+      "has_visual_spec": true,
+      "visual_spec": {
+        "axes": {
+          "x": "strain",
+          "y": "stress"
+        },
+        "type": "curve_graph",
+        "labels": [
+          "strain",
+          "stress",
+          "proportional",
+          "elastic",
+          "plastic"
+        ],
+        "features": [
+          "proportional_region",
+          "elastic_region",
+          "plastic_region"
+        ],
+        "archetype": "stress_strain_curve",
+        "generator": "factory_v2_deterministic_svg",
+        "ncert_evidence": false
+      },
+      "diagram_description": "Schematic stress–strain curve with labeled proportional, elastic, and plastic regions.",
+      "stem": "The accompanying figure depicts the typical stress-strain curve for a stretched metallic wire, where specific points along the curve are labeled as O, A, B, C, D, and E.\n\nBased on the standard interpretation of this curve, which of the following options correctly identifies the regions associated with elastic behavior and permanent plastic deformation?",
+      "options": [
+        {
+          "text": "Region OA represents elastic behavior where Hooke's law is strictly obeyed, and deformation beyond point B leads to permanent plastic deformation.",
+          "label": "A"
+        },
+        {
+          "text": "Region OB represents plastic deformation, while the region beyond point D represents purely elastic behavior.",
+          "label": "B"
+        },
+        {
+          "text": "Point B is the ultimate tensile strength, and deformation in region OA is permanent.",
+          "label": "C"
+        },
+        {
+          "text": "Region CD represents complete elastic recovery, whereas region OA represents fracture.",
+          "label": "D"
+        }
+      ],
+      "correct_option": "A",
+      "explanation": "In a standard stress-strain curve for a metallic wire:\n1. From O to A, stress is proportional to strain (Hooke's law holds), and the material exhibits elastic behavior.\n2. Point B is the yield point (elastic limit). Up to B, the material returns to its original dimensions when the load is removed.\n3. Beyond point B (into region BCDE), the material exhibits plastic behavior, meaning even if the load is removed, it retains a permanent strain (plastic deformation).\n4. Point D represents the ultimate tensile strength, and point E is the fracture point.\nThus, Option A correctly characterizes region OA as elastic following Hooke's law, and states that exceeding the yield point B leads to permanent plastic deformation.",
+      "validation_ok": true,
+      "validation_errors": [],
+      "validation_warnings": [],
+      "visual_validation": {
+        "required": true,
+        "passed": true,
+        "errors": []
+      },
+      "semantic_status": "STRUCTURALLY_VALID",
+      "semantic_signals": [
+        "NO_DETERMINISTIC_AMBIGUITY_SIGNAL"
+      ],
+      "semantic_hard_fail": false,
+      "is_replacement": true,
+      "original_content_item_id": "0de3dfa3-bc5a-4791-aa5d-8346dd08f0c2",
+      "replacement_content_item_id": "1633f068-f0df-4ff5-ac0c-57be4417f29e",
+      "in_stratified_sample": false,
+      "targeted_remat_review": true,
+      "candidate_id": "bfd2ac09-3137-43cc-a56a-5903ca88387e"
+    },
+    {
+      "item_id": "ca0e7a05-38bb-4e12-a52d-4fd4c7a26b07",
+      "slot_id": "zoology-12",
+      "status": "DRAFT",
+      "tags": [
+        "seed-v2",
+        "provenance:ai",
+        "production-seed-v2-2026-09-03",
+        "slot:zoology-12",
+        "seed-v2-rematerialization-20260903",
+        "routing:fixed:gemini",
+        "replaces:7580a952-0869-4f38-ae62-8c18a49bfb6f",
+        "run:c83dbd15-1ab5-4b57-b062-77c533fd0eb6",
+        "batch:4509d488-c100-47f0-8357-4b1678abd00d",
+        "blueprint:a71712a9-155b-4013-9751-606d4e20c051",
+        "job:82a36b96-f89e-44f2-a2c6-18bbc2f5f252",
+        "provider:gemini",
+        "model:gemini-3.6-flash",
+        "bp-v:1",
+        "family:production-seed-v2-2026-09-03-fam-zoology-12",
+        "factory-p3",
+        "seed-v2-rematerialized-active"
+      ],
+      "body_md5": "5cf917770115d883698b5073b9732a5b",
+      "subject": "Zoology",
+      "chapter": "Body Fluids and Circulation",
+      "topic": "ECG",
+      "concept": "P, QRS, T waves",
+      "concept_code": "sv2c-zoology-12",
+      "difficulty": "medium",
+      "question_archetype": "diagram_data_interpretation",
+      "visual_required": true,
+      "visual_type": "schematic",
+      "visual_archetype": "ecg_wave_schematic",
+      "graphical": true,
+      "numerical": false,
+      "has_diagram_svg": true,
+      "has_visual_spec": true,
+      "visual_spec": {
+        "axes": {
+          "x": "time",
+          "y": "voltage"
+        },
+        "type": "schematic",
+        "labels": [
+          "P",
+          "QRS",
+          "T",
+          "baseline"
+        ],
+        "features": [
+          "P_wave",
+          "QRS_complex",
+          "T_wave",
+          "baseline"
+        ],
+        "archetype": "ecg_wave_schematic",
+        "generator": "factory_v2_deterministic_svg",
+        "ncert_evidence": false
+      },
+      "diagram_description": "Schematic ECG trace on a baseline showing P wave, QRS complex, and T wave in sequence.",
+      "stem": "The accompanying figure schematically shows a standard single electrocardiogram (ECG) trace with five major points labeled P, Q, R, S, and T. Based on this visual trace, which electrical event of the cardiac cycle corresponds correctly to the complex formed by Q, R, and S?",
+      "options": [
+        {
+          "text": "Repolarisation of the ventricles",
+          "label": "A"
+        },
+        {
+          "text": "Depolarisation of the atria",
+          "label": "B"
+        },
+        {
+          "text": "Depolarisation of the ventricles",
+          "label": "C"
+        },
+        {
+          "text": "Repolarisation of the atria",
+          "label": "D"
+        }
+      ],
+      "correct_option": "C",
+      "explanation": "In a standard ECG trace as depicted in the figure, the P-wave represents the electrical excitation (depolarisation) of the atria. The QRS complex represents the depolarisation of the ventricles, which initiates ventricular contraction. The T-wave represents the return of the ventricles from excited to normal state (repolarisation). Repolarisation of the atria occurs during the QRS complex and is masked by it.",
+      "validation_ok": true,
+      "validation_errors": [],
+      "validation_warnings": [
+        "SEMANTIC_REVIEW_REQUIRED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "REQUIRES_REVIEW"
+      ],
+      "visual_validation": {
+        "required": true,
+        "passed": true,
+        "errors": []
+      },
+      "semantic_status": "SEMANTIC_REVIEW_REQUIRED",
+      "semantic_signals": [
+        "EXPLANATION_ECHOES_NONCORRECT:B",
+        "EXPLANATION_ECHOES_NONCORRECT:D"
+      ],
+      "semantic_hard_fail": false,
+      "is_replacement": true,
+      "original_content_item_id": "7580a952-0869-4f38-ae62-8c18a49bfb6f",
+      "replacement_content_item_id": "ca0e7a05-38bb-4e12-a52d-4fd4c7a26b07",
+      "in_stratified_sample": false,
+      "targeted_remat_review": true,
+      "candidate_id": "95857d1d-0ee4-4f02-8d58-0dc14cf37087"
+    },
+    {
+      "item_id": "03d1274b-35fa-446a-8742-164e9a28e8d3",
+      "slot_id": "zoology-15",
+      "status": "DRAFT",
+      "tags": [
+        "seed-v2-rematerialized-active",
+        "seed-v2",
+        "provenance:ai",
+        "blueprint:5dd75e36-faf2-49a1-bb8d-8027c8c1fbde",
+        "routing:n/a",
+        "production-seed-v2-2026-09-03",
+        "model:none",
+        "seed-v2-rematerialization-20260903",
+        "provider:deterministic_distractor_rewrite",
+        "slot:zoology-15",
+        "batch:4509d488-c100-47f0-8357-4b1678abd00d",
+        "rematerialization_method:deterministic_distractor_rewrite",
+        "replaces:ef480cb5-8ede-451b-9444-940c7094e764",
+        "factory-p3"
+      ],
+      "body_md5": "b200e43e2503cfada2fd507e77f63383",
+      "subject": "Zoology",
+      "chapter": "Body Fluids and Circulation",
+      "topic": "Lymph and Double Circulation",
+      "concept": "Pulmonary vs systemic circuit",
+      "concept_code": "sv2c-zoology-15",
+      "difficulty": "hard",
+      "question_archetype": "comparison",
+      "visual_required": false,
+      "visual_type": null,
+      "visual_archetype": null,
+      "graphical": false,
+      "numerical": false,
+      "has_diagram_svg": false,
+      "has_visual_spec": false,
+      "visual_spec": null,
+      "diagram_description": null,
+      "stem": "Among the following comparative statements, which one correctly contrasts human pulmonary versus systemic circuit physiology without anatomical reversal?",
+      "options": [
+        {
+          "text": "The pulmonary circuit operates at a lower vascular resistance and pressure, receiving deoxygenated blood from the right ventricle, whereas the systemic circuit operates under higher pressure to pump oxygenated blood from the left ventricle to body tissues.",
+          "label": "A"
+        },
+        {
+          "text": "The pulmonary circuit receives deoxygenated blood from the left atrium and routes it through the pulmonary veins to the lungs, whereas the systemic circuit receives oxygenated blood from the right atrium and routes it through the aorta.",
+          "label": "B"
+        },
+        {
+          "text": "The pulmonary circuit operates under higher vascular resistance than the systemic circuit, ensuring rapid blood flow through capillaries, while the systemic circuit operates at low resistance to protect delicate organ beds.",
+          "label": "C"
+        },
+        {
+          "text": "The pulmonary circuit begins in the left ventricle and returns oxygenated blood to the right atrium, whereas the systemic circuit begins in the right atrium and empties into the aorta.",
+          "label": "D"
+        }
+      ],
+      "correct_option": "A",
+      "explanation": "Option A is correct: pulmonary circulation operates at lower pressure/resistance from the right ventricle, while systemic circulation operates at higher pressure from the left ventricle. Option D is incorrect because it reverses ventricular origins and oxygenation pathways. Options B and C also reverse anatomy or pressure relationships.",
+      "validation_ok": true,
+      "validation_errors": [],
+      "validation_warnings": [
+        "SEMANTIC_REVIEW_REQUIRED",
+        "REQUIRES_REVIEW"
+      ],
+      "visual_validation": {
+        "required": false,
+        "passed": true,
+        "errors": []
+      },
+      "semantic_status": "SEMANTIC_REVIEW_REQUIRED",
+      "semantic_signals": [
+        "EXPLANATION_REFERENCES_MULTIPLE_OPTIONS"
+      ],
+      "semantic_hard_fail": false,
+      "is_replacement": true,
+      "original_content_item_id": "ef480cb5-8ede-451b-9444-940c7094e764",
+      "replacement_content_item_id": "03d1274b-35fa-446a-8742-164e9a28e8d3",
+      "in_stratified_sample": false,
+      "targeted_remat_review": true,
+      "candidate_id": "fe752aa8-3a4a-4c5f-bc16-9c0398b7ee66"
+    }
+  ],
+  "captured_at": "2026-09-03T18:06:09.554408+00:00"
+}

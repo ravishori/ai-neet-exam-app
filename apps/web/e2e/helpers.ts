@@ -55,7 +55,7 @@ export async function bootstrapStudent(page: Page) {
   });
   expect(chunkOk, `Next static chunks unavailable on ${WEB}`).toBeTruthy();
 
-  await expect(page.getByRole("button", { name: /^Practice now$/i }).first()).toBeVisible();
+  await expect(page.getByTestId("practice-now-hero")).toBeVisible();
   await expect(page.getByRole("heading", { level: 1 })).not.toHaveText(/Loading/i, { timeout: 30_000 });
 }
 

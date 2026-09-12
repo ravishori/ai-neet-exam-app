@@ -90,9 +90,28 @@ class QuestionBody(BaseModel):
 
 
 class FlashcardBody(BaseModel):
+    """Student revision card. Optional provenance/difficulty enrichments are
+    additive and backward-compatible with legacy {front, back} bodies."""
+
     front: str = Field(min_length=1)
     back: str = Field(min_length=1)
     image_url: str | None = None
+    explanation: str | None = None
+    difficulty: Literal["easy", "medium", "hard"] | None = None
+    source: str | None = None
+    source_reference: str | None = None
+    class_level: Literal["11", "12"] | None = None
+    # Certification audit overlays (SEED-V1 audit) — not set by structural import alone.
+    certification_status: Literal["VERIFIED", "REVIEW", "REJECTED"] | None = None
+    certification_reason: str | None = None
+    certification_provenance: str | None = None
+    certification_flags: list[str] | None = None
+    certified_at: str | None = None
+    certification_batch: str | None = None
+    certification_evidence_class: str | None = None
+    certification_claim: str | None = None
+    certification_evidence: str | None = None
+    certification_prev_status: str | None = None
 
 
 class DiagramBody(BaseModel):

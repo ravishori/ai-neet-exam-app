@@ -1,0 +1,145 @@
+{
+  "captured_at": "2026-09-02T16:20:41.038854+00:00",
+  "database": "trinetra_db",
+  "environment": "local_trinetra_db",
+  "provider_settings": {
+    "provider_mode": "fixed",
+    "provider": "gemini",
+    "fallback_chain": [],
+    "routing": "fixed:gemini",
+    "routing_chain": [
+      "gemini"
+    ]
+  },
+  "provider_preflight_ok": true,
+  "caps": {
+    "factory_max_pilot_generation_count": 100,
+    "factory_max_pilot_attempt_multiplier": 2.0,
+    "max_attempts_for_100": 200,
+    "factory_max_pilot_cost_usd": 30.0
+  },
+  "checksum": {
+    "counts": {
+      "total": 6214,
+      "published": 1049,
+      "draft": 5154,
+      "in_review": 11,
+      "approved": 0,
+      "archived": 0,
+      "changes_requested": 0
+    },
+    "item_checksum": "18a983d36ace7bea25c727ff34b35df5",
+    "body_checksum": "a2e8fd0e6e996658f649b10f7115e2d2",
+    "raw_keys": [
+      "counts",
+      "item_checksum",
+      "versions",
+      "review_count"
+    ],
+    "versions": {
+      "versions": 6232,
+      "body_checksum": "a2e8fd0e6e996658f649b10f7115e2d2"
+    }
+  },
+  "integrity": {
+    "t6d": {
+      "total": 100,
+      "published": 100,
+      "draft": 0,
+      "content_fp": "e0758fbcb071180b61a33f2b4581e894"
+    },
+    "legacy": {
+      "total": 5000,
+      "published": 0,
+      "draft": 5000,
+      "content_fp": "13d51e697382663a28ffc44fd56aedb1"
+    },
+    "t6f1_published": {
+      "total": 938,
+      "content_fp": "17a1672c444c8362ed0261dacf0f82c7"
+    },
+    "protected_non_f1_cms": {
+      "total": 5276,
+      "published": 111,
+      "content_fp": "cfe2d34a602c7fa92e24d0e0d44e902c"
+    },
+    "batch_ids": {
+      "t6f1": "physics-t6f1-pilot-20260902",
+      "t6d": "physics-t6d-pilot-20260902",
+      "legacy": "legacy-physics-5000-import-20260902"
+    },
+    "historical_pre_f2_deep_immutability": "NOT RETROACTIVELY VERIFIABLE",
+    "note": "Fingerprints cover id|slug|status|concept_id|body_md5|tags. Timestamps excluded. Pre-T6-F2 historical fingerprints were not captured at publish time."
+  },
+  "t6f2_batch_counts": {
+    "published": 938,
+    "total": 938
+  },
+  "factory_draft_count": 12,
+  "factory_batches": [
+    {
+      "batch_key": "factory-p3-pilot-2026-09-01-batch",
+      "status": "SAMPLING",
+      "target_count": 5,
+      "created_count": 5,
+      "id": "22c5684b-cf86-4137-82bf-be237be1e2ee"
+    },
+    {
+      "batch_key": "factory-p3-debug-2c74b2a8",
+      "status": "GENERATING",
+      "target_count": 1,
+      "created_count": 0,
+      "id": "9c416763-5c94-41db-8b0d-f2e83291814f"
+    },
+    {
+      "batch_key": "factory-p3-debug-6bbe344f",
+      "status": "GENERATING",
+      "target_count": 1,
+      "created_count": 0,
+      "id": "5a73a325-90cd-44b2-aa2a-0bff18b1043e"
+    },
+    {
+      "batch_key": "factory-p3.1-openai-smoke-2026-09-01-batch",
+      "status": "GENERATING",
+      "target_count": 1,
+      "created_count": 0,
+      "id": "23ecf895-83ba-43e2-ae5f-3e7f0b316301"
+    },
+    {
+      "batch_key": "factory-p3.1-gemini-smoke-2026-09-01-batch",
+      "status": "GENERATING",
+      "target_count": 1,
+      "created_count": 0,
+      "id": "00eb2bce-9e42-477d-bd8c-ab9730fb356e"
+    },
+    {
+      "batch_key": "factory-p3.1-gemini-3.6-smoke-2026-09-01-batch",
+      "status": "GENERATING",
+      "target_count": 1,
+      "created_count": 0,
+      "id": "e5a7654a-19ac-4d28-a53e-194c0ddad368"
+    },
+    {
+      "batch_key": "factory-p3.1-gemini-3.6-smoke-hardened-2026-09-01-batch",
+      "status": "GENERATING",
+      "target_count": 1,
+      "created_count": 0,
+      "id": "243a962e-1ac3-4770-a2fc-a2388b62dd3f"
+    },
+    {
+      "batch_key": "factory-p3.1-gemini-3.6-thinking-minimal-smoke-2026-09-01-batch",
+      "status": "GENERATING",
+      "target_count": 1,
+      "created_count": 2,
+      "id": "33d1b4fa-be13-49be-8727-3163674ac0ae"
+    },
+    {
+      "batch_key": "factory-p3.1-gemini-3.6-5q-pilot-2026-09-01-batch",
+      "status": "GENERATING",
+      "target_count": 5,
+      "created_count": 5,
+      "id": "33a1108a-3760-4bda-a335-d199b385bd61"
+    }
+  ],
+  "note": "Read-only baseline. No mutations by this script."
+}

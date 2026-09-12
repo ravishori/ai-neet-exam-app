@@ -9,6 +9,8 @@ import os
 
 os.environ["DATABASE_URL"] = "postgresql+asyncpg://trinetra_app:trinetra_dev_pw@localhost:5432/trinetra_test_db"
 os.environ["DATABASE_URL_SYNC"] = "postgresql+psycopg://trinetra_app:trinetra_dev_pw@localhost:5432/trinetra_test_db"
+# Stable Fernet key for TOTP encryption tests (dev/test only — not production).
+os.environ.setdefault("ENCRYPTION_KEY", "uLCw_rsupBRTzp7bhuN_iuxiMiXgpxc6DujbFR_sXkM=")
 
 import uuid
 from collections.abc import AsyncGenerator

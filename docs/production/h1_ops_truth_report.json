@@ -1,0 +1,93 @@
+{
+  "audit_wave": "H1_OPS_TRUTH",
+  "date": "2026-09-12",
+  "branch": "phase2-question-bank",
+  "overall_verdict": "AMBER \u2014 H1 REMEDIATION PARTIALLY VERIFIED",
+  "phase0_artifacts_preserved": true,
+  "code_runtime_security_changed": false,
+  "h2_h6_executed": false,
+  "controls": {
+    "H1_1_TLS": {
+      "status": "UNVERIFIED_PRODUCTION",
+      "notes": "No Coolify/domain access"
+    },
+    "H1_2_SMTP_ALERTS": {
+      "status": "PARTIALLY_IMPLEMENTED",
+      "code": "IMPLEMENTED",
+      "local_config": "MISSING",
+      "mailbox_e2e": "UNVERIFIED"
+    },
+    "H1_3_SECRETS": {
+      "status": "PARTIALLY_IMPLEMENTED",
+      "git_exposure": "MISSING",
+      "local_env_gitignored": true,
+      "rotation": "UNVERIFIED"
+    },
+    "H1_4_ENCRYPTION_KEY": {
+      "status": "PARTIALLY_IMPLEMENTED",
+      "required_for_mfa": true,
+      "local_settings": "MISSING",
+      "production": "UNVERIFIED_PRODUCTION",
+      "rotated_in_h1": false
+    },
+    "H1_5_PAYMENTS_GONOGO": {
+      "status": "VERIFIED",
+      "live_payments_enabled": false,
+      "fail_closed_without_keys": true
+    },
+    "H1_6_PG_DUMP": {
+      "status": "VERIFIED",
+      "artifact": "database/backups/local_trinetra_db_20260912_115341Z.dump",
+      "sha256": "e4857c55385832010b32700881af4346a679d6abe750d7612f8d360b856ff82d",
+      "bytes": 5049104
+    },
+    "H1_7_RESTORE_PROCEDURE": {
+      "status": "IMPLEMENTED",
+      "docs": "docs/deploy/BACKUP_RESTORE.md",
+      "script": "scripts/ops/pg_restore_drill.ps1"
+    },
+    "H1_8_RESTORE_DRILL": {
+      "status": "PARTIALLY_IMPLEMENTED",
+      "toc_verified": true,
+      "toc_lines": 417,
+      "clean_db_restore": "BLOCKED",
+      "block_reason": "NO_CREATEDB_PRIVILEGE",
+      "exit_code": 2
+    }
+  },
+  "source_counts_at_backup": {
+    "identity.users": 136,
+    "cms.content_items": 6829,
+    "cms.content_versions": 6907,
+    "academic.subjects": 4,
+    "academic.chapters": 36,
+    "academic.topics": 113,
+    "academic.concepts": 163
+  },
+  "artifacts_created": [
+    "docs/deploy/BACKUP_RESTORE.md",
+    "scripts/ops/pg_backup.ps1",
+    "scripts/ops/pg_restore_drill.ps1",
+    "docs/production/h1_ops_truth_report.md",
+    "docs/production/h1_ops_truth_report.json"
+  ],
+  "artifacts_updated": [
+    "docs/deploy/RUNBOOK.md",
+    "infrastructure/docker/.env.production.example"
+  ],
+  "tests": {
+    "security_wave_a_c": {
+      "passed": 12,
+      "failed": 0
+    }
+  },
+  "unresolved_production_dependencies": [
+    "coolify_tls",
+    "smtp_mailbox_e2e",
+    "prod_encryption_key_if_mfa",
+    "createdb_or_superuser_for_full_restore_drill",
+    "offhost_backup_retention"
+  ],
+  "mandatory_stop": "H2 not started",
+  "generated_at": "2026-09-12T11:58:04.098953+00:00"
+}

@@ -44,6 +44,14 @@ export default function RegisterPage() {
                   {registerMutation.error instanceof ApiError
                     ? registerMutation.error.message
                     : "Something went wrong"}
+                  {registerMutation.error instanceof ApiError && registerMutation.error.code === "EMAIL_TAKEN" && (
+                    <>
+                      {" "}
+                      <Link href="/login" className="underline underline-offset-2">
+                        Sign in instead
+                      </Link>
+                    </>
+                  )}
                 </AlertDescription>
               </Alert>
             )}

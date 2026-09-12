@@ -1,0 +1,104 @@
+{
+  "document_type": "phase-d-taxonomy-resolution",
+  "banner": "READ-ONLY ANALYSIS — NO DATABASE CHANGES — NO ECAEP ACTION — NO PUBLICATION",
+  "generated_at": "2026-08-31T12:15:00+00:00",
+  "database": "trinetra_db",
+  "pilot_run_id": "phase-d-30-mcq-authorized-20260825",
+  "database_writes": 0,
+  "taxonomy_verdict": "NEW TAXONOMY CONCEPT REQUIRED",
+  "classification": "PROPOSE NEW CONCEPT",
+  "options_evaluated": {
+    "OPTION_A_ACCEPT_EXISTING": {
+      "result": "REJECTED",
+      "reason": "Existing concept photorespiration is defined as 'Wasteful oxygenation pathway competing with carbon fixation in C3 plants.' Blackman/limiting-factor items test §11.10 rate-limiting factors, not oxygenation chemistry."
+    },
+    "OPTION_C_REMAP_EXISTING": {
+      "result": "REJECTED",
+      "reason": "Topic factors-affecting-photosynthesis has exactly one concept (photorespiration). No alternative concept exists under photosynthesis for Blackman/limiting factors. Broad DB search found no blackman/limiting concept elsewhere."
+    },
+    "OPTION_B_TAXONOMY_GAP": {
+      "result": "CONFIRMED",
+      "reason": "Semantically incorrect mapping; no remappable target; parent topic already correct."
+    }
+  },
+  "hierarchy_discovered": {
+    "subject": {"code": "BOTANY", "name": "Botany"},
+    "chapter": {
+      "id": "c030eb7b-bcd9-4c9b-9a8e-dc0dc54fa32c",
+      "code": "photosynthesis",
+      "name": "Photosynthesis in Higher Plants"
+    },
+    "topic": {
+      "id": "4039d404-67cb-4e88-b924-ea873c5c91e7",
+      "code": "factors-affecting-photosynthesis",
+      "name": "Factors Affecting Photosynthesis"
+    },
+    "existing_concepts_under_topic": [
+      {
+        "id": "b48f10f4-e5e1-4740-a62f-c1bcaf3865fb",
+        "code": "photorespiration",
+        "name": "Photorespiration",
+        "summary": "Wasteful oxygenation pathway competing with carbon fixation in C3 plants."
+      }
+    ]
+  },
+  "affected_questions": [
+    {
+      "content_item_id": "e6b9fb1e-f022-4172-88c5-318213bc511b",
+      "live_concept": "photorespiration",
+      "content_focus": "Blackman's Law definition of limiting factor",
+      "source_section": "11.10 FACTORS AFFECTING PHOTOSYNTHESIS",
+      "source_page": 19,
+      "phase_d2_action": "KEEP body; taxonomy remap pending"
+    },
+    {
+      "content_item_id": "8d50e829-6540-44bc-882a-6b140a33da17",
+      "live_concept": "photorespiration",
+      "content_focus": "Blackman application + internal chlorophyll factor",
+      "source_section": "11.10 FACTORS AFFECTING PHOTOSYNTHESIS",
+      "source_page": 19,
+      "phase_d2_action": "REVISE body; taxonomy remap pending"
+    }
+  ],
+  "proposed_concept": {
+    "applied": false,
+    "code": "limiting-factors",
+    "name": "Limiting Factors (Blackman's Law)",
+    "parent_topic_code": "factors-affecting-photosynthesis",
+    "parent_topic_id": "4039d404-67cb-4e88-b924-ea873c5c91e7",
+    "parent_chapter_code": "photosynthesis",
+    "subject_code": "BOTANY",
+    "summary": "The rate of photosynthesis is controlled by the factor nearest its minimal value (Blackman's Law of Limiting Factors, 1905), including external factors (light, CO2, temperature, water) and internal factors (leaf traits, chlorophyll amount, internal CO2).",
+    "ncert_reference": "NCERT Class 11 Biology, Chapter 11 Photosynthesis in Higher Plants, §11.10 Factors Affecting Photosynthesis",
+    "difficulty": "medium",
+    "display_order": 1,
+    "naming_convention": "kebab-case code matching seed.py peers (photorespiration, c3-c4-pathway, photophosphorylation)",
+    "why_existing_insufficient": "photorespiration concept summary and NCERT §11.9 scope do not cover Blackman/limiting-factor theory in §11.10.",
+    "overlap_check": "No overlap with photorespiration (oxygenation pathway), photophosphorylation (light reaction ATP), or c3-c4-pathway (carbon fixation routes).",
+    "fragmentation_risk": "LOW — sibling under existing topic; does not invent a new chapter/topic.",
+    "future_applicability": "HIGH — reusable for NEET items on Blackman law, light/CO2/temperature curves, chlorophyll as internal limiter, and sub-optimal factor reasoning.",
+    "seed_change_required": "Add tuple under factors-affecting-photosynthesis in app/modules/academic/seed.py; Alembic data migration or re-seed for deployed DBs.",
+    "do_not_bundle_with_mcq_apply": true
+  },
+  "impact_analysis": {
+    "affected_questions": 2,
+    "affected_ku_mappings": "None required for taxonomy seed; KU→section provenance unchanged",
+    "affected_content_versions": "None for seed alone; concept_id lives on cms.content_items",
+    "affected_apis": [
+      "Admin/student filters by concept_id",
+      "GET related questions by concept",
+      "Academic tree browse",
+      "Ingestion concept matching for future jobs"
+    ],
+    "affected_analytics": "Concept-level mastery/aggregates would split photorespiration vs limiting-factors after remap",
+    "affected_future_ingestion": "New concept available for mapping §11.10 sections; reduces false photorespiration tagging"
+  },
+  "pilot_verified": {
+    "questions": 30,
+    "draft": 30,
+    "published": 0,
+    "latest_populated": 30,
+    "current_populated": 30,
+    "global": {"DRAFT": 78, "IN_REVIEW": 1, "PUBLISHED": 11}
+  }
+}

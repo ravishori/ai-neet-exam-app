@@ -1,0 +1,209 @@
+{
+  "captured_at": "2026-09-02T16:35:13.825160+00:00",
+  "database": "trinetra_db",
+  "pre_baseline_path": "D:\\ravishori\\AI Neet Exam App\\docs\\audits\\TALOS_FACTORY_P3_100_PRE_PILOT_BASELINE_20260902.json",
+  "results_path": "D:\\ravishori\\AI Neet Exam App\\docs\\product\\CONTENT_FACTORY_P3_PILOT_RESULTS.json",
+  "checksum_after": {
+    "counts": {
+      "total": 6309,
+      "published": 1049,
+      "draft": 5249,
+      "in_review": 11,
+      "approved": 0,
+      "archived": 0,
+      "changes_requested": 0
+    },
+    "item_checksum": "b6fa65743e295c414a750b4da111449e",
+    "body_checksum": "82008a3e779a53d5d54c739ff35e57b9",
+    "versions": 6327,
+    "review_count": 1049
+  },
+  "integrity_after": {
+    "t6d": {
+      "total": 100,
+      "published": 100,
+      "draft": 0,
+      "content_fp": "e0758fbcb071180b61a33f2b4581e894"
+    },
+    "legacy": {
+      "total": 5000,
+      "published": 0,
+      "draft": 5000,
+      "content_fp": "13d51e697382663a28ffc44fd56aedb1"
+    },
+    "t6f1_published": {
+      "total": 938,
+      "content_fp": "17a1672c444c8362ed0261dacf0f82c7"
+    },
+    "protected_non_f1_cms": {
+      "total": 5371,
+      "published": 111,
+      "content_fp": "3e2e16e787a56c4f624216e0d579ebb0"
+    },
+    "batch_ids": {
+      "t6f1": "physics-t6f1-pilot-20260902",
+      "t6d": "physics-t6d-pilot-20260902",
+      "legacy": "legacy-physics-5000-import-20260902"
+    },
+    "historical_pre_f2_deep_immutability": "NOT RETROACTIVELY VERIFIABLE",
+    "note": "Fingerprints cover id|slug|status|concept_id|body_md5|tags. Timestamps excluded. Pre-T6-F2 historical fingerprints were not captured at publish time."
+  },
+  "comparisons": {
+    "legacy_before": "13d51e697382663a28ffc44fd56aedb1",
+    "legacy_after": "13d51e697382663a28ffc44fd56aedb1",
+    "legacy_changed": false,
+    "t6d_before": "e0758fbcb071180b61a33f2b4581e894",
+    "t6d_after": "e0758fbcb071180b61a33f2b4581e894",
+    "t6d_changed": false,
+    "t6f2_before": "17a1672c444c8362ed0261dacf0f82c7",
+    "t6f2_after": "17a1672c444c8362ed0261dacf0f82c7",
+    "t6f2_changed": false,
+    "protected_published_before": 111,
+    "protected_published_after": 111,
+    "protected_fp_before": "cfe2d34a602c7fa92e24d0e0d44e902c",
+    "protected_fp_after": "3e2e16e787a56c4f624216e0d579ebb0",
+    "protected_fp_changed_expected_due_to_new_drafts": true,
+    "delta_total": 95,
+    "delta_draft": 95,
+    "unexpected_mutations": []
+  },
+  "factory_output": {
+    "pilot_tag": "factory-p3-pilot-2026-09-01",
+    "reported_ids": 95,
+    "found_ids": 95,
+    "missing_ids": [],
+    "status_counts": {
+      "DRAFT": 95
+    },
+    "non_draft_ids": [],
+    "provider_counts": {
+      "gemini": 95
+    },
+    "routing_counts": {
+      "fixed:gemini": 95
+    },
+    "fallback_true_count": 0,
+    "non_gemini_ids": [],
+    "non_routing_ids": [],
+    "missing_candidate_ids": [],
+    "tag_provenance_issues": 0,
+    "tag_issue_sample": [],
+    "status_by_pilot_tag": {},
+    "smoke_item": {
+      "id": "21113c7a-e27a-46f0-b530-5a97ed8e2761",
+      "status": "DRAFT"
+    },
+    "factory_draft_by_pilot_tag": 0,
+    "batch_inventory": [
+      {
+        "id": "22c5684b-cf86-4137-82bf-be237be1e2ee",
+        "batch_key": "factory-p3-pilot-2026-09-01-batch",
+        "status": "SAMPLING",
+        "target_count": 5,
+        "created_count": 100
+      },
+      {
+        "id": "9c416763-5c94-41db-8b0d-f2e83291814f",
+        "batch_key": "factory-p3-debug-2c74b2a8",
+        "status": "GENERATING",
+        "target_count": 1,
+        "created_count": 0
+      },
+      {
+        "id": "5a73a325-90cd-44b2-aa2a-0bff18b1043e",
+        "batch_key": "factory-p3-debug-6bbe344f",
+        "status": "GENERATING",
+        "target_count": 1,
+        "created_count": 0
+      },
+      {
+        "id": "23ecf895-83ba-43e2-ae5f-3e7f0b316301",
+        "batch_key": "factory-p3.1-openai-smoke-2026-09-01-batch",
+        "status": "GENERATING",
+        "target_count": 1,
+        "created_count": 0
+      },
+      {
+        "id": "00eb2bce-9e42-477d-bd8c-ab9730fb356e",
+        "batch_key": "factory-p3.1-gemini-smoke-2026-09-01-batch",
+        "status": "GENERATING",
+        "target_count": 1,
+        "created_count": 0
+      },
+      {
+        "id": "e5a7654a-19ac-4d28-a53e-194c0ddad368",
+        "batch_key": "factory-p3.1-gemini-3.6-smoke-2026-09-01-batch",
+        "status": "GENERATING",
+        "target_count": 1,
+        "created_count": 0
+      },
+      {
+        "id": "243a962e-1ac3-4770-a2fc-a2388b62dd3f",
+        "batch_key": "factory-p3.1-gemini-3.6-smoke-hardened-2026-09-01-batch",
+        "status": "GENERATING",
+        "target_count": 1,
+        "created_count": 0
+      },
+      {
+        "id": "33d1b4fa-be13-49be-8727-3163674ac0ae",
+        "batch_key": "factory-p3.1-gemini-3.6-thinking-minimal-smoke-2026-09-01-batch",
+        "status": "GENERATING",
+        "target_count": 1,
+        "created_count": 2
+      },
+      {
+        "id": "33a1108a-3760-4bda-a335-d199b385bd61",
+        "batch_key": "factory-p3.1-gemini-3.6-5q-pilot-2026-09-01-batch",
+        "status": "GENERATING",
+        "target_count": 5,
+        "created_count": 5
+      }
+    ],
+    "allocation": {
+      "PHYSICS/Current Electricity/medium": {
+        "requested": 25,
+        "created": 25,
+        "stop": "TARGET_MET"
+      },
+      "PHYSICS/Current Electricity/easy": {
+        "requested": 15,
+        "created": 15,
+        "stop": "TARGET_MET"
+      },
+      "CHEMISTRY/Chemical Bonding and Molecular Structure/medium": {
+        "requested": 25,
+        "created": 20,
+        "stop": "ATTEMPT_LIMIT"
+      },
+      "BOTANY/Photosynthesis in Higher Plants/easy": {
+        "requested": 20,
+        "created": 20,
+        "stop": "TARGET_MET"
+      },
+      "ZOOLOGY/Body Fluids and Circulation/medium": {
+        "requested": 15,
+        "created": 15,
+        "stop": "TARGET_MET"
+      }
+    },
+    "totals": {
+      "requested": 100,
+      "attempted": 143,
+      "created": 95,
+      "rejected_validation": 6,
+      "duplicate": 24,
+      "failed_provider": 0,
+      "failed_parse": 18,
+      "cost_usd": 0.23057700000000003
+    },
+    "stop_reasons": {
+      "PHYSICS/Current Electricity/medium": "TARGET_MET",
+      "PHYSICS/Current Electricity/easy": "TARGET_MET",
+      "CHEMISTRY/Chemical Bonding and Molecular Structure/medium": "ATTEMPT_LIMIT",
+      "BOTANY/Photosynthesis in Higher Plants/easy": "TARGET_MET",
+      "ZOOLOGY/Body Fluids and Circulation/medium": "TARGET_MET"
+    }
+  },
+  "safety_ok": true,
+  "verdict": "AMBER \u2014 PILOT COMPLETED WITH INVESTIGATION REQUIRED"
+}

@@ -52,35 +52,38 @@ async function loginFreshStudent(page: import("@playwright/test").Page) {
 test.describe("Practice Seed V2 critical path", () => {
   test.use({ storageState: { cookies: [], origins: [] } });
 
-  test("CTA + exact 100 allowlist + sample submit + V1 CTAs remain", async ({ page }) => {
+  test("dashboard hides Seed CTAs; SEED_V2 API allowlist + sample submit", async ({ page }) => {
     const allow = loadAllow(AUTH, "exact_allowlist");
     const v1 = loadAllow(V1_AUTH, "exact_uuid_allowlist");
     await loginFreshStudent(page);
 
     const practiceNow = page.locator("main").getByRole("button", { name: /^Practice now$/i }).first();
-    const seedV1 = page.locator("main").getByRole("button", { name: /Practice Seed V1/i }).first();
-    const seedV2 = page.locator("main").getByRole("button", { name: /Practice Seed V2/i }).first();
+    const seedV1 = page.locator("main").getByRole("button", { name: /Practice Seed V1/i });
+    const seedV2 = page.locator("main").getByRole("button", { name: /Practice Seed V2/i });
     await expect(practiceNow).toBeVisible();
-    await expect(seedV1).toBeVisible();
-    await expect(seedV2).toBeEnabled();
+    // Wave 1: Seed CTAs removed from student dashboard hero (APIs remain).
+    await expect(seedV1).toHaveCount(0);
+    await expect(seedV2).toHaveCount(0);
 
-    const practiceResponsePromise = page.waitForResponse(
-      (r) => r.url().includes("/api/v1/assessments/practice") && r.request().method() === "POST",
-      { timeout: 45_000 },
-    );
-    await seedV2.click();
-    const practiceResponse = await practiceResponsePromise;
+    const csrf = (await page.context().cookies()).find((c) => c.name === "csrf_token")?.value ?? "";
+    const practiceResponse = await page.request.post(`${API}/api/v1/assessments/practice`, {
+      data: { scope_type: "SEED_V2", question_count: 100 },
+      headers: csrf ? { "X-CSRF-Token": decodeURIComponent(csrf) } : {},
+    });
     expect(practiceResponse.ok(), await practiceResponse.text()).toBeTruthy();
     const practiceJson = await practiceResponse.json();
-    const req = practiceResponse.request().postDataJSON() as { scope_type?: string; question_count?: number };
-    expect(req.scope_type).toBe("SEED_V2");
-    expect(req.question_count).toBe(100);
     expect(practiceJson.data.scope_type).toBe("SEED_V2");
     expect(practiceJson.data.question_count).toBe(100);
     expect(practiceJson.meta.seed_v2_allowlist_sha256).toBe(EXPECTED_SHA);
 
-    await page.waitForURL(/\/student\/attempts\/[0-9a-f-]+/i, { timeout: 60_000 });
-    const attemptId = page.url().split("/").pop() as string;
+    const assessmentId = practiceJson.data.id as string;
+    const startResp = await page.request.post(`${API}/api/v1/assessments/${assessmentId}/attempts`, {
+      headers: csrf ? { "X-CSRF-Token": decodeURIComponent(csrf) } : {},
+    });
+    expect(startResp.ok(), await startResp.text()).toBeTruthy();
+    const startJson = await startResp.json();
+    const attemptId = startJson.data.id as string;
+    await page.goto(`${WEB.includes("127.0.0.1") ? WEB.replace("127.0.0.1", "localhost") : WEB}/student/attempts/${attemptId}`);
     const detail = await page.request.get(`${API}/api/v1/attempts/${attemptId}`);
     expect(detail.ok()).toBeTruthy();
     const body = await detail.json();
@@ -114,6 +117,7 @@ test.describe("Practice Seed V2 critical path", () => {
       { timeout: 180_000 },
     );
     await submitVisible.click({ force: true, timeout: 60_000 });
+    await page.getByRole("button", { name: /Confirm submit/i }).click();
     const submitResp = await submitRespPromise;
     expect(submitResp.ok(), await submitResp.text()).toBeTruthy();
     await expect(page.getByText(/Score:/i).first()).toBeVisible({ timeout: 60_000 });

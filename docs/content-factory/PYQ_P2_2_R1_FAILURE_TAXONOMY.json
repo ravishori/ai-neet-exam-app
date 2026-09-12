@@ -1,0 +1,10 @@
+{
+  "counts": {
+    "WRONG_ANSWER": 71,
+    "AMBIGUOUS": 1
+  },
+  "percentages": {
+    "WRONG_ANSWER": 21.78,
+    "AMBIGUOUS": 0.31
+  }
+}

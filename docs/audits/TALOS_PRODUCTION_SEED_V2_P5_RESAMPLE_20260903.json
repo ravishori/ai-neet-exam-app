@@ -1,0 +1,1045 @@
+{
+  "audit": "Production Seed V2 P5 Re-sample after Controlled Rematerialization",
+  "date": "2026-09-03",
+  "captured_at": "2026-09-03T18:06:09.735089+00:00",
+  "verdict": "GREEN",
+  "active_population": {
+    "n": 100,
+    "subject_counts": {
+      "Physics": 35,
+      "Chemistry": 35,
+      "Botany": 15,
+      "Zoology": 15
+    },
+    "definition": "P3/P4 slots with rematerialized replacements for physics-05, physics-21, zoology-12, zoology-15",
+    "active_ids": [
+      "455d9f51-46cf-4135-9634-ee4bbe41e9d0",
+      "3f9436e0-0eed-48c1-a068-af3a803667c3",
+      "cef32375-732a-4db8-984b-837ce7168b61",
+      "026357fc-f79f-4a16-b355-3d30a283de95",
+      "9c51f8a1-bf72-4ca0-bcfd-e0aa5cb8ee53",
+      "8b1f2415-9d33-465a-99e4-acc2e8491500",
+      "243220f6-451c-4119-bcd6-2fae725b8b31",
+      "5e9f39a2-6562-4856-b7c7-96377b37058b",
+      "dccc294c-0e9a-4a0b-abde-12701846dc0c",
+      "4304a3ef-26c7-4494-bd87-7af1a40759f8",
+      "223c5cdf-6759-43ed-acd6-7a47b0f52d33",
+      "83d24a21-ab6d-4202-bf75-771fff1cd506",
+      "d233736a-e115-4d61-90de-b4998181ea61",
+      "62c96899-7c2b-44c9-ab32-376ba70650e2",
+      "2d18944a-bdf7-4b3b-9c3a-9edf8b9a3347",
+      "aa84f293-0e59-4062-9318-9cf978b9a4ab",
+      "64c9715e-9ef0-4dd6-abed-bb2229a99104",
+      "13a5b48f-eed5-47db-989e-ba6e295d8c5d",
+      "91f731fa-a93b-49b1-9ad0-065e64c28242",
+      "03f040b6-3623-4126-8503-e61be9b0dabd",
+      "1633f068-f0df-4ff5-ac0c-57be4417f29e",
+      "dcce1f39-4b95-4daf-9d8d-e48f5f44680f",
+      "a45f2865-ce45-4b28-8b92-55899db89b0f",
+      "a3349338-419c-4fb0-b67d-136e07d32e79",
+      "a6aff10c-1a68-4149-aa4c-bac9a911aa34",
+      "51d180a3-54eb-4934-99cd-3a5ffaf7f3d5",
+      "58e7eca3-58d5-43b4-8f40-08097daab9ff",
+      "1bb4e0d1-be56-41b0-aae5-0c4cf0763b66",
+      "2f76035c-b214-41ac-b110-9fd8935eefa2",
+      "001ce3c7-0610-47c4-bfb9-a1ff9be3fe9d",
+      "243250fb-1e7e-4267-99ce-1d2eea59fd1d",
+      "6f292988-e616-4aeb-b4be-efc207807315",
+      "9d9ed9f9-0046-49bc-a359-2add3a40625a",
+      "690202d2-83dd-4645-8034-cfb19f54833a",
+      "90797037-3127-4c07-87cb-b3e00307d412",
+      "805f642a-89f0-4353-8916-c049b49b2a17",
+      "5495447f-a0d9-4495-9d26-2519c500edd9",
+      "d6d56711-a420-46c3-b932-682165000e1c",
+      "399ed33b-61c8-4897-aeba-0eefc786c661",
+      "327cabf6-1ce2-4d5b-8fad-fe8ba01c647f",
+      "724e2942-926c-4f6e-a848-aa1d8ea96bb8",
+      "1690557a-8372-4a45-b424-7d511c2c4299",
+      "c678b585-9ceb-46cb-bb5d-12283c6bfef7",
+      "01376a3b-15aa-4cd9-863b-269fac72c962",
+      "0f824701-461c-4635-babc-0a6420ed5e34",
+      "12b7d2ab-d676-453c-8b8d-79fd045c921f",
+      "218a528a-9866-4f5f-bf72-b8ffcda2c632",
+      "87bc87a5-95ee-4589-b886-c7bcd30f6b3f",
+      "2f05524a-6062-43e2-b2b7-c8db7d30464a",
+      "0ca20864-3662-4ea3-b461-103bdeb8ebb4",
+      "91e24169-866a-4861-957e-b5235ad0cc2c",
+      "49488a4a-918f-46f1-b314-df6f86d0ef79",
+      "2333d9b0-e872-4f51-b810-51f01b51466e",
+      "018a8df7-f948-49c7-b678-e3404881827b",
+      "5c4229c8-ba1e-4550-a59a-f234f7b3b11d",
+      "1b8ca0cd-e48b-4b74-9b34-1b5cece39056",
+      "8ab26257-2b2f-4f69-af55-ea2b220bc771",
+      "2bb14e59-7865-4719-ab06-2b41c8f4e279",
+      "5bc7b52f-02d3-45d3-901b-a2da435ec0dd",
+      "c95a88d4-b703-4974-aecd-eb7ed29316bb",
+      "a9367de4-9a3f-4197-aea3-bffcc4185038",
+      "d384a577-af56-4859-ad7c-f5be95f955b0",
+      "2ea2a262-4366-4f7a-968a-e21d8af0aa1a",
+      "0c22c7b2-5f3d-40fd-8c4b-fbf6026420a2",
+      "416e1b9a-f599-457c-823b-a7dc956b84b8",
+      "92e50ad1-fb46-4422-be9c-b21c2f190f60",
+      "6a340561-bc61-4438-8e98-d519a756c7b6",
+      "07534837-e642-4c88-a28c-bbac512864c7",
+      "e2105825-50b6-472f-8fb7-9736e3bdcf9f",
+      "65ba5806-5fb7-42db-b677-fe3f41d122a5",
+      "bb924974-f142-4aa0-bad3-acf403d553ab",
+      "209c82ad-5f16-44b2-be6d-520acc9eed19",
+      "b51ed114-3e26-46d0-8ce2-ae737698c0b0",
+      "cc3d0fad-83f2-4822-9800-c4f659cc6c43",
+      "98a017d6-2445-4b92-ba49-e785a9a60b59",
+      "ca882ca8-5f6a-4960-a38a-4ad6292f531c",
+      "75f38af6-ef72-4273-828b-828b11f0b7b8",
+      "09c44e57-2b1b-40e5-8af9-56b65ba7eb5b",
+      "fd4ab8f9-fd76-41e4-a549-39110dbe24a5",
+      "17eb6ea3-ba95-45e6-86e6-676c2c139c14",
+      "db6b02e0-2f81-4187-8636-18305bddcc15",
+      "87c6dc0a-182d-4e22-928e-a6a17095b243",
+      "bd45b01c-0556-4f13-99b1-46d8b4f7f179",
+      "63771831-5b56-4707-9036-fc3c80c05fb8",
+      "ebd4098b-ecb8-4ba6-bc6f-7c931fba5713",
+      "2094c380-2abd-480b-a76a-a8b789e6d5c4",
+      "ebda7901-e9cb-4bca-9b33-fbb194b20249",
+      "96ed1997-30e1-4700-8c46-9264172e15db",
+      "0ad44242-2e5b-41fa-9ddf-0489b4177296",
+      "7d07b1fe-62af-44de-9115-755ac8f28007",
+      "9e4239a3-a54d-4928-85b9-d3b22c96bc3a",
+      "ca0e7a05-38bb-4e12-a52d-4fd4c7a26b07",
+      "5b397eb5-41ac-4108-87e3-81878da1a644",
+      "e4a25829-5d09-4629-8e0c-45729e944f3f",
+      "03d1274b-35fa-446a-8742-164e9a28e8d3",
+      "56d515a9-fb76-4c80-b9e7-88f7ef50b5d8",
+      "7f545252-9ddc-4780-854e-4f045dac8005",
+      "365637db-fe02-4817-8408-1a9a357364b5",
+      "50e30aa3-44dc-424a-9d49-3f641e3faa98",
+      "10bc35c3-30d2-4cbc-b998-ba5bdf530ab6"
+    ],
+    "visual_required_slots": [
+      "physics-05",
+      "physics-21",
+      "zoology-12"
+    ],
+    "population_facts": {
+      "active_n": 100,
+      "graphical_active_count": 3,
+      "graphical_slot_ids": [
+        "physics-05",
+        "physics-21",
+        "zoology-12"
+      ],
+      "note": "Only 3 visual-required slots in active 100; do not claim population is graphical."
+    }
+  },
+  "historical_superseded": {
+    "n": 4,
+    "ids": [
+      "2a22a821-d0bd-4c87-be2c-c35ef9664118",
+      "0de3dfa3-bc5a-4791-aa5d-8346dd08f0c2",
+      "7580a952-0869-4f38-ae62-8c18a49bfb6f",
+      "ef480cb5-8ede-451b-9444-940c7094e764"
+    ],
+    "slot_map": {
+      "physics-05": "2a22a821-d0bd-4c87-be2c-c35ef9664118",
+      "physics-21": "0de3dfa3-bc5a-4791-aa5d-8346dd08f0c2",
+      "zoology-12": "7580a952-0869-4f38-ae62-8c18a49bfb6f",
+      "zoology-15": "ef480cb5-8ede-451b-9444-940c7094e764"
+    },
+    "note": "Historical audit records only — not active production count"
+  },
+  "sampler": {
+    "policy": "factory_sample_v2",
+    "seed": 42,
+    "requested_sample_size": 20,
+    "actual_sample_size": 20,
+    "sampled_ids": [
+      "365637db-fe02-4817-8408-1a9a357364b5",
+      "8ab26257-2b2f-4f69-af55-ea2b220bc771",
+      "5e9f39a2-6562-4856-b7c7-96377b37058b",
+      "7d07b1fe-62af-44de-9115-755ac8f28007",
+      "9c51f8a1-bf72-4ca0-bcfd-e0aa5cb8ee53",
+      "90797037-3127-4c07-87cb-b3e00307d412",
+      "b51ed114-3e26-46d0-8ce2-ae737698c0b0",
+      "98a017d6-2445-4b92-ba49-e785a9a60b59",
+      "65ba5806-5fb7-42db-b677-fe3f41d122a5",
+      "17eb6ea3-ba95-45e6-86e6-676c2c139c14",
+      "fd4ab8f9-fd76-41e4-a549-39110dbe24a5",
+      "75f38af6-ef72-4273-828b-828b11f0b7b8",
+      "50e30aa3-44dc-424a-9d49-3f641e3faa98",
+      "db6b02e0-2f81-4187-8636-18305bddcc15",
+      "56d515a9-fb76-4c80-b9e7-88f7ef50b5d8",
+      "0f824701-461c-4635-babc-0a6420ed5e34",
+      "327cabf6-1ce2-4d5b-8fad-fe8ba01c647f",
+      "87bc87a5-95ee-4589-b886-c7bcd30f6b3f",
+      "2bb14e59-7865-4719-ab06-2b41c8f4e279",
+      "49488a4a-918f-46f1-b314-df6f86d0ef79"
+    ],
+    "subject_distribution": {
+      "Botany": 9,
+      "Chemistry": 7,
+      "Physics": 3,
+      "Zoology": 1
+    },
+    "difficulty_distribution": {
+      "easy": 8,
+      "medium": 6,
+      "hard": 6
+    },
+    "archetype_distribution": {
+      "direct_ncert_conceptual": 8,
+      "application": 4,
+      "diagram_data_interpretation": 1,
+      "numerical_calculation": 2,
+      "comparison": 4,
+      "sequence_order": 1
+    },
+    "visual_distribution": {
+      "visual_required": 1,
+      "non_visual": 19
+    },
+    "numerical_distribution": {
+      "numerical": 2,
+      "non_numerical": 18
+    },
+    "notes": [
+      "subject_floor_applied",
+      "visual_representation_applied",
+      "numerical_representation_applied"
+    ],
+    "reproducible_same_seed": true,
+    "sample_key": "sample-production-seed-v2-2026-09-03-batch-p5-resample-42",
+    "operates_on_active_100_only": true,
+    "superseded_excluded": true
+  },
+  "decision_counts": {
+    "stratified_sample": {
+      "ACCEPT": 20
+    },
+    "including_targeted_remat": {
+      "ACCEPT": 23,
+      "CORRECTION_REQUIRED": 0,
+      "REJECT": 0
+    }
+  },
+  "decisions_sample": [
+    {
+      "factory_review_item_id": "9da5d4a2-94f4-434b-a305-7aab4cfb3463",
+      "item_id": "365637db-fe02-4817-8408-1a9a357364b5",
+      "slot_id": "botany-08",
+      "decision": "ACCEPT",
+      "failure_reasons": [],
+      "notes": "Sampled botany-08 (Botany/Cell - The Unit of Life): stem/options/key/explanation coherent; archetype=direct_ncert_conceptual; semantic=STRUCTURALLY_VALID; NCERT page certification not claimed.",
+      "criteria": {
+        "exactly_one_defensible_answer": "PASS",
+        "option_quality": "PASS",
+        "explanation_consistency": "PASS",
+        "scientific_plausibility": "PASS",
+        "neet_suitability": "PASS",
+        "difficulty_plausibility": "PASS",
+        "chapter_topic_concept_alignment": "PASS",
+        "obvious_ambiguity": "ABSENT",
+        "template_repetition": "NOT_OBVIOUS",
+        "ncert_certification": "NOT_CLAIMED",
+        "unsupported_claims": "NONE_MATERIAL"
+      },
+      "content_fingerprint_unchanged": true,
+      "post_review_status": "DRAFT",
+      "service_result_decision": "ACCEPT",
+      "in_stratified_sample": true
+    },
+    {
+      "factory_review_item_id": "0eaa70d3-cd7b-498e-8765-5d9543a4cb02",
+      "item_id": "75f38af6-ef72-4273-828b-828b11f0b7b8",
+      "slot_id": "botany-10",
+      "decision": "ACCEPT",
+      "failure_reasons": [],
+      "notes": "Sampled botany-10 (Botany/Photosynthesis in Higher Plants): stem/options/key/explanation coherent; archetype=comparison; semantic=SEMANTIC_REVIEW_REQUIRED; NCERT page certification not claimed. Soft SEMANTIC_REVIEW_REQUIRED noted; no hard ambiguity pattern.",
+      "criteria": {
+        "exactly_one_defensible_answer": "PASS",
+        "option_quality": "PASS",
+        "explanation_consistency": "PASS",
+        "scientific_plausibility": "PASS",
+        "neet_suitability": "PASS",
+        "difficulty_plausibility": "PASS",
+        "chapter_topic_concept_alignment": "PASS",
+        "obvious_ambiguity": "ABSENT",
+        "template_repetition": "NOT_OBVIOUS",
+        "ncert_certification": "NOT_CLAIMED",
+        "unsupported_claims": "NONE_MATERIAL",
+        "semantic_status": "SEMANTIC_REVIEW_REQUIRED"
+      },
+      "content_fingerprint_unchanged": true,
+      "post_review_status": "DRAFT",
+      "service_result_decision": "ACCEPT",
+      "in_stratified_sample": true
+    },
+    {
+      "factory_review_item_id": "6d7e8eb0-f7fc-4220-be69-d2a2e8abeb25",
+      "item_id": "0f824701-461c-4635-babc-0a6420ed5e34",
+      "slot_id": "chemistry-10",
+      "decision": "ACCEPT",
+      "failure_reasons": [],
+      "notes": "Sampled chemistry-10 (Chemistry/Structure of Atom): stem/options/key/explanation coherent; archetype=direct_ncert_conceptual; semantic=SEMANTIC_REVIEW_REQUIRED; NCERT page certification not claimed. Soft SEMANTIC_REVIEW_REQUIRED noted; no hard ambiguity pattern.",
+      "criteria": {
+        "exactly_one_defensible_answer": "PASS",
+        "option_quality": "PASS",
+        "explanation_consistency": "PASS",
+        "scientific_plausibility": "PASS",
+        "neet_suitability": "PASS",
+        "difficulty_plausibility": "PASS",
+        "chapter_topic_concept_alignment": "PASS",
+        "obvious_ambiguity": "ABSENT",
+        "template_repetition": "NOT_OBVIOUS",
+        "ncert_certification": "NOT_CLAIMED",
+        "unsupported_claims": "NONE_MATERIAL",
+        "semantic_status": "SEMANTIC_REVIEW_REQUIRED"
+      },
+      "content_fingerprint_unchanged": true,
+      "post_review_status": "DRAFT",
+      "service_result_decision": "ACCEPT",
+      "in_stratified_sample": true
+    },
+    {
+      "factory_review_item_id": "fa7984fb-90cf-40ef-89e4-cc6f8bbb20d0",
+      "item_id": "b51ed114-3e26-46d0-8ce2-ae737698c0b0",
+      "slot_id": "botany-05",
+      "decision": "ACCEPT",
+      "failure_reasons": [],
+      "notes": "Sampled botany-05 (Botany/Morphology of Flowering Plants): stem/options/key/explanation coherent; archetype=application; semantic=SEMANTIC_REVIEW_REQUIRED; NCERT page certification not claimed. Soft SEMANTIC_REVIEW_REQUIRED noted; no hard ambiguity pattern.",
+      "criteria": {
+        "exactly_one_defensible_answer": "PASS",
+        "option_quality": "PASS",
+        "explanation_consistency": "PASS",
+        "scientific_plausibility": "PASS",
+        "neet_suitability": "PASS",
+        "difficulty_plausibility": "PASS",
+        "chapter_topic_concept_alignment": "PASS",
+        "obvious_ambiguity": "ABSENT",
+        "template_repetition": "NOT_OBVIOUS",
+        "ncert_certification": "NOT_CLAIMED",
+        "unsupported_claims": "NONE_MATERIAL",
+        "semantic_status": "SEMANTIC_REVIEW_REQUIRED"
+      },
+      "content_fingerprint_unchanged": true,
+      "post_review_status": "DRAFT",
+      "service_result_decision": "ACCEPT",
+      "in_stratified_sample": true
+    },
+    {
+      "factory_review_item_id": "d124f947-b94c-4c4b-aa0c-8d2685b3d384",
+      "item_id": "7d07b1fe-62af-44de-9115-755ac8f28007",
+      "slot_id": "zoology-10",
+      "decision": "ACCEPT",
+      "failure_reasons": [],
+      "notes": "Sampled zoology-10 (Zoology/Body Fluids and Circulation): stem/options/key/explanation coherent; archetype=direct_ncert_conceptual; semantic=STRUCTURALLY_VALID; NCERT page certification not claimed.",
+      "criteria": {
+        "exactly_one_defensible_answer": "PASS",
+        "option_quality": "PASS",
+        "explanation_consistency": "PASS",
+        "scientific_plausibility": "PASS",
+        "neet_suitability": "PASS",
+        "difficulty_plausibility": "PASS",
+        "chapter_topic_concept_alignment": "PASS",
+        "obvious_ambiguity": "ABSENT",
+        "template_repetition": "NOT_OBVIOUS",
+        "ncert_certification": "NOT_CLAIMED",
+        "unsupported_claims": "NONE_MATERIAL"
+      },
+      "content_fingerprint_unchanged": true,
+      "post_review_status": "DRAFT",
+      "service_result_decision": "ACCEPT",
+      "in_stratified_sample": true
+    },
+    {
+      "factory_review_item_id": "e133da19-db87-4b1d-aadf-25c08d46e1b2",
+      "item_id": "9c51f8a1-bf72-4ca0-bcfd-e0aa5cb8ee53",
+      "slot_id": "physics-05",
+      "decision": "ACCEPT",
+      "failure_reasons": [],
+      "notes": "Rematerialized visual slot physics-05: SVG+visual_spec present, type/archetype match, stem references visual, validation PASS, ncert_evidence=false. Soft semantic status=SEMANTIC_REVIEW_REQUIRED (not hard-fail; not full uniqueness certification).",
+      "criteria": {
+        "exactly_one_defensible_answer": "PASS",
+        "option_quality": "PASS",
+        "explanation_consistency": "PASS",
+        "scientific_plausibility": "PASS",
+        "neet_suitability": "PASS",
+        "difficulty_plausibility": "PASS",
+        "chapter_topic_concept_alignment": "PASS",
+        "obvious_ambiguity": "ABSENT",
+        "template_repetition": "NOT_OBVIOUS",
+        "ncert_certification": "NOT_CLAIMED",
+        "unsupported_claims": "NONE_MATERIAL",
+        "graph_diagram_correctness": "PASS",
+        "stem_visual_consistency": "PASS",
+        "visual_required_enforced": "PASS",
+        "semantic_status": "SEMANTIC_REVIEW_REQUIRED"
+      },
+      "content_fingerprint_unchanged": true,
+      "post_review_status": "DRAFT",
+      "service_result_decision": "ACCEPT",
+      "in_stratified_sample": true
+    },
+    {
+      "factory_review_item_id": "753270ad-7836-4cca-8995-63407aa2e882",
+      "item_id": "2bb14e59-7865-4719-ab06-2b41c8f4e279",
+      "slot_id": "chemistry-24",
+      "decision": "ACCEPT",
+      "failure_reasons": [],
+      "notes": "Sampled chemistry-24 (Chemistry/Equilibrium): stem/options/key/explanation coherent; archetype=direct_ncert_conceptual; semantic=SEMANTIC_REVIEW_REQUIRED; NCERT page certification not claimed. Soft SEMANTIC_REVIEW_REQUIRED noted; no hard ambiguity pattern.",
+      "criteria": {
+        "exactly_one_defensible_answer": "PASS",
+        "option_quality": "PASS",
+        "explanation_consistency": "PASS",
+        "scientific_plausibility": "PASS",
+        "neet_suitability": "PASS",
+        "difficulty_plausibility": "PASS",
+        "chapter_topic_concept_alignment": "PASS",
+        "obvious_ambiguity": "ABSENT",
+        "template_repetition": "NOT_OBVIOUS",
+        "ncert_certification": "NOT_CLAIMED",
+        "unsupported_claims": "NONE_MATERIAL",
+        "semantic_status": "SEMANTIC_REVIEW_REQUIRED"
+      },
+      "content_fingerprint_unchanged": true,
+      "post_review_status": "DRAFT",
+      "service_result_decision": "ACCEPT",
+      "in_stratified_sample": true
+    },
+    {
+      "factory_review_item_id": "b80dc95c-36f0-4d5f-9836-32d57b7e6157",
+      "item_id": "50e30aa3-44dc-424a-9d49-3f641e3faa98",
+      "slot_id": "botany-12",
+      "decision": "ACCEPT",
+      "failure_reasons": [],
+      "notes": "Sampled botany-12 (Botany/Photosynthesis in Higher Plants): stem/options/key/explanation coherent; archetype=direct_ncert_conceptual; semantic=SEMANTIC_REVIEW_REQUIRED; NCERT page certification not claimed. Soft SEMANTIC_REVIEW_REQUIRED noted; no hard ambiguity pattern.",
+      "criteria": {
+        "exactly_one_defensible_answer": "PASS",
+        "option_quality": "PASS",
+        "explanation_consistency": "PASS",
+        "scientific_plausibility": "PASS",
+        "neet_suitability": "PASS",
+        "difficulty_plausibility": "PASS",
+        "chapter_topic_concept_alignment": "PASS",
+        "obvious_ambiguity": "ABSENT",
+        "template_repetition": "NOT_OBVIOUS",
+        "ncert_certification": "NOT_CLAIMED",
+        "unsupported_claims": "NONE_MATERIAL",
+        "semantic_status": "SEMANTIC_REVIEW_REQUIRED"
+      },
+      "content_fingerprint_unchanged": true,
+      "post_review_status": "DRAFT",
+      "service_result_decision": "ACCEPT",
+      "in_stratified_sample": true
+    },
+    {
+      "factory_review_item_id": "7809304c-1dff-407a-8dc7-5af7fcc1de8b",
+      "item_id": "65ba5806-5fb7-42db-b677-fe3f41d122a5",
+      "slot_id": "botany-02",
+      "decision": "ACCEPT",
+      "failure_reasons": [],
+      "notes": "Sampled botany-02 (Botany/The Living World): stem/options/key/explanation coherent; archetype=direct_ncert_conceptual; semantic=STRUCTURALLY_VALID; NCERT page certification not claimed.",
+      "criteria": {
+        "exactly_one_defensible_answer": "PASS",
+        "option_quality": "PASS",
+        "explanation_consistency": "PASS",
+        "scientific_plausibility": "PASS",
+        "neet_suitability": "PASS",
+        "difficulty_plausibility": "PASS",
+        "chapter_topic_concept_alignment": "PASS",
+        "obvious_ambiguity": "ABSENT",
+        "template_repetition": "NOT_OBVIOUS",
+        "ncert_certification": "NOT_CLAIMED",
+        "unsupported_claims": "NONE_MATERIAL"
+      },
+      "content_fingerprint_unchanged": true,
+      "post_review_status": "DRAFT",
+      "service_result_decision": "ACCEPT",
+      "in_stratified_sample": true
+    },
+    {
+      "factory_review_item_id": "be5d3093-9dbe-45dd-9bd3-e04912602721",
+      "item_id": "fd4ab8f9-fd76-41e4-a549-39110dbe24a5",
+      "slot_id": "botany-13",
+      "decision": "ACCEPT",
+      "failure_reasons": [],
+      "notes": "Sampled botany-13 (Botany/Plant Growth and Development): stem/options/key/explanation coherent; archetype=application; semantic=STRUCTURALLY_VALID; NCERT page certification not claimed.",
+      "criteria": {
+        "exactly_one_defensible_answer": "PASS",
+        "option_quality": "PASS",
+        "explanation_consistency": "PASS",
+        "scientific_plausibility": "PASS",
+        "neet_suitability": "PASS",
+        "difficulty_plausibility": "PASS",
+        "chapter_topic_concept_alignment": "PASS",
+        "obvious_ambiguity": "ABSENT",
+        "template_repetition": "NOT_OBVIOUS",
+        "ncert_certification": "NOT_CLAIMED",
+        "unsupported_claims": "NONE_MATERIAL"
+      },
+      "content_fingerprint_unchanged": true,
+      "post_review_status": "DRAFT",
+      "service_result_decision": "ACCEPT",
+      "in_stratified_sample": true
+    },
+    {
+      "factory_review_item_id": "1d9c6e56-9140-4683-a409-66cc03b12a67",
+      "item_id": "49488a4a-918f-46f1-b314-df6f86d0ef79",
+      "slot_id": "chemistry-18",
+      "decision": "ACCEPT",
+      "failure_reasons": [],
+      "notes": "Sampled chemistry-18 (Chemistry/Thermodynamics): stem/options/key/explanation coherent; archetype=numerical_calculation; semantic=SEMANTIC_REVIEW_REQUIRED; NCERT page certification not claimed. Soft SEMANTIC_REVIEW_REQUIRED noted; no hard ambiguity pattern.",
+      "criteria": {
+        "exactly_one_defensible_answer": "PASS",
+        "option_quality": "PASS",
+        "explanation_consistency": "PASS",
+        "scientific_plausibility": "PASS",
+        "neet_suitability": "PASS",
+        "difficulty_plausibility": "PASS",
+        "chapter_topic_concept_alignment": "PASS",
+        "obvious_ambiguity": "ABSENT",
+        "template_repetition": "NOT_OBVIOUS",
+        "ncert_certification": "NOT_CLAIMED",
+        "unsupported_claims": "NONE_MATERIAL",
+        "numerical_consistency": "PASS_STRUCTURAL_REVIEW_NOT_FULL_RECALC",
+        "semantic_status": "SEMANTIC_REVIEW_REQUIRED"
+      },
+      "content_fingerprint_unchanged": true,
+      "post_review_status": "DRAFT",
+      "service_result_decision": "ACCEPT",
+      "in_stratified_sample": true
+    },
+    {
+      "factory_review_item_id": "26c99280-a673-4ebe-8d51-ff33d380211d",
+      "item_id": "8ab26257-2b2f-4f69-af55-ea2b220bc771",
+      "slot_id": "chemistry-23",
+      "decision": "ACCEPT",
+      "failure_reasons": [],
+      "notes": "Sampled chemistry-23 (Chemistry/Equilibrium): stem/options/key/explanation coherent; archetype=direct_ncert_conceptual; semantic=SEMANTIC_REVIEW_REQUIRED; NCERT page certification not claimed. Soft SEMANTIC_REVIEW_REQUIRED noted; no hard ambiguity pattern.",
+      "criteria": {
+        "exactly_one_defensible_answer": "PASS",
+        "option_quality": "PASS",
+        "explanation_consistency": "PASS",
+        "scientific_plausibility": "PASS",
+        "neet_suitability": "PASS",
+        "difficulty_plausibility": "PASS",
+        "chapter_topic_concept_alignment": "PASS",
+        "obvious_ambiguity": "ABSENT",
+        "template_repetition": "NOT_OBVIOUS",
+        "ncert_certification": "NOT_CLAIMED",
+        "unsupported_claims": "NONE_MATERIAL",
+        "semantic_status": "SEMANTIC_REVIEW_REQUIRED"
+      },
+      "content_fingerprint_unchanged": true,
+      "post_review_status": "DRAFT",
+      "service_result_decision": "ACCEPT",
+      "in_stratified_sample": true
+    },
+    {
+      "factory_review_item_id": "95ba5961-ecbf-492b-9b85-21106b5c67fc",
+      "item_id": "87bc87a5-95ee-4589-b886-c7bcd30f6b3f",
+      "slot_id": "chemistry-13",
+      "decision": "ACCEPT",
+      "failure_reasons": [],
+      "notes": "Sampled chemistry-13 (Chemistry/Chemical Bonding and Molecular Structure): stem/options/key/explanation coherent; archetype=comparison; semantic=SEMANTIC_REVIEW_REQUIRED; NCERT page certification not claimed. Soft SEMANTIC_REVIEW_REQUIRED noted; no hard ambiguity pattern.",
+      "criteria": {
+        "exactly_one_defensible_answer": "PASS",
+        "option_quality": "PASS",
+        "explanation_consistency": "PASS",
+        "scientific_plausibility": "PASS",
+        "neet_suitability": "PASS",
+        "difficulty_plausibility": "PASS",
+        "chapter_topic_concept_alignment": "PASS",
+        "obvious_ambiguity": "ABSENT",
+        "template_repetition": "NOT_OBVIOUS",
+        "ncert_certification": "NOT_CLAIMED",
+        "unsupported_claims": "NONE_MATERIAL",
+        "semantic_status": "SEMANTIC_REVIEW_REQUIRED"
+      },
+      "content_fingerprint_unchanged": true,
+      "post_review_status": "DRAFT",
+      "service_result_decision": "ACCEPT",
+      "in_stratified_sample": true
+    },
+    {
+      "factory_review_item_id": "60cd53cc-7c23-4208-9923-48ff643f5af1",
+      "item_id": "56d515a9-fb76-4c80-b9e7-88f7ef50b5d8",
+      "slot_id": "chemistry-14",
+      "decision": "ACCEPT",
+      "failure_reasons": [],
+      "notes": "Sampled chemistry-14 (Chemistry/Chemical Bonding and Molecular Structure): stem/options/key/explanation coherent; archetype=comparison; semantic=SEMANTIC_REVIEW_REQUIRED; NCERT page certification not claimed. Soft SEMANTIC_REVIEW_REQUIRED noted; no hard ambiguity pattern.",
+      "criteria": {
+        "exactly_one_defensible_answer": "PASS",
+        "option_quality": "PASS",
+        "explanation_consistency": "PASS",
+        "scientific_plausibility": "PASS",
+        "neet_suitability": "PASS",
+        "difficulty_plausibility": "PASS",
+        "chapter_topic_concept_alignment": "PASS",
+        "obvious_ambiguity": "ABSENT",
+        "template_repetition": "NOT_OBVIOUS",
+        "ncert_certification": "NOT_CLAIMED",
+        "unsupported_claims": "NONE_MATERIAL",
+        "semantic_status": "SEMANTIC_REVIEW_REQUIRED"
+      },
+      "content_fingerprint_unchanged": true,
+      "post_review_status": "DRAFT",
+      "service_result_decision": "ACCEPT",
+      "in_stratified_sample": true
+    },
+    {
+      "factory_review_item_id": "69470eae-d8c7-49d4-8904-3e25627cb608",
+      "item_id": "17eb6ea3-ba95-45e6-86e6-676c2c139c14",
+      "slot_id": "botany-14",
+      "decision": "ACCEPT",
+      "failure_reasons": [],
+      "notes": "Sampled botany-14 (Botany/Plant Growth and Development): stem/options/key/explanation coherent; archetype=direct_ncert_conceptual; semantic=SEMANTIC_REVIEW_REQUIRED; NCERT page certification not claimed. Soft SEMANTIC_REVIEW_REQUIRED noted; no hard ambiguity pattern.",
+      "criteria": {
+        "exactly_one_defensible_answer": "PASS",
+        "option_quality": "PASS",
+        "explanation_consistency": "PASS",
+        "scientific_plausibility": "PASS",
+        "neet_suitability": "PASS",
+        "difficulty_plausibility": "PASS",
+        "chapter_topic_concept_alignment": "PASS",
+        "obvious_ambiguity": "ABSENT",
+        "template_repetition": "NOT_OBVIOUS",
+        "ncert_certification": "NOT_CLAIMED",
+        "unsupported_claims": "NONE_MATERIAL",
+        "semantic_status": "SEMANTIC_REVIEW_REQUIRED"
+      },
+      "content_fingerprint_unchanged": true,
+      "post_review_status": "DRAFT",
+      "service_result_decision": "ACCEPT",
+      "in_stratified_sample": true
+    },
+    {
+      "factory_review_item_id": "8416f647-bb74-4321-be77-253adf9f431c",
+      "item_id": "90797037-3127-4c07-87cb-b3e00307d412",
+      "slot_id": "physics-35",
+      "decision": "ACCEPT",
+      "failure_reasons": [],
+      "notes": "Sampled physics-35 (Physics/Optics): stem/options/key/explanation coherent; archetype=numerical_calculation; semantic=STRUCTURALLY_VALID; NCERT page certification not claimed.",
+      "criteria": {
+        "exactly_one_defensible_answer": "PASS",
+        "option_quality": "PASS",
+        "explanation_consistency": "PASS",
+        "scientific_plausibility": "PASS",
+        "neet_suitability": "PASS",
+        "difficulty_plausibility": "PASS",
+        "chapter_topic_concept_alignment": "PASS",
+        "obvious_ambiguity": "ABSENT",
+        "template_repetition": "NOT_OBVIOUS",
+        "ncert_certification": "NOT_CLAIMED",
+        "unsupported_claims": "NONE_MATERIAL",
+        "numerical_consistency": "PASS_STRUCTURAL_REVIEW_NOT_FULL_RECALC"
+      },
+      "content_fingerprint_unchanged": true,
+      "post_review_status": "DRAFT",
+      "service_result_decision": "ACCEPT",
+      "in_stratified_sample": true
+    },
+    {
+      "factory_review_item_id": "be5a5e91-c03b-417c-8417-1a14c9a09084",
+      "item_id": "db6b02e0-2f81-4187-8636-18305bddcc15",
+      "slot_id": "botany-15",
+      "decision": "ACCEPT",
+      "failure_reasons": [],
+      "notes": "Sampled botany-15 (Botany/Sexual Reproduction in Flowering Plants): stem/options/key/explanation coherent; archetype=sequence_order; semantic=SEMANTIC_REVIEW_REQUIRED; NCERT page certification not claimed. Soft SEMANTIC_REVIEW_REQUIRED noted; no hard ambiguity pattern.",
+      "criteria": {
+        "exactly_one_defensible_answer": "PASS",
+        "option_quality": "PASS",
+        "explanation_consistency": "PASS",
+        "scientific_plausibility": "PASS",
+        "neet_suitability": "PASS",
+        "difficulty_plausibility": "PASS",
+        "chapter_topic_concept_alignment": "PASS",
+        "obvious_ambiguity": "ABSENT",
+        "template_repetition": "NOT_OBVIOUS",
+        "ncert_certification": "NOT_CLAIMED",
+        "unsupported_claims": "NONE_MATERIAL",
+        "semantic_status": "SEMANTIC_REVIEW_REQUIRED"
+      },
+      "content_fingerprint_unchanged": true,
+      "post_review_status": "DRAFT",
+      "service_result_decision": "ACCEPT",
+      "in_stratified_sample": true
+    },
+    {
+      "factory_review_item_id": "38443fb5-4361-4823-8f8e-8931e1df3578",
+      "item_id": "98a017d6-2445-4b92-ba49-e785a9a60b59",
+      "slot_id": "botany-07",
+      "decision": "ACCEPT",
+      "failure_reasons": [],
+      "notes": "Sampled botany-07 (Botany/Cell - The Unit of Life): stem/options/key/explanation coherent; archetype=comparison; semantic=SEMANTIC_REVIEW_REQUIRED; NCERT page certification not claimed. Soft SEMANTIC_REVIEW_REQUIRED noted; no hard ambiguity pattern.",
+      "criteria": {
+        "exactly_one_defensible_answer": "PASS",
+        "option_quality": "PASS",
+        "explanation_consistency": "PASS",
+        "scientific_plausibility": "PASS",
+        "neet_suitability": "PASS",
+        "difficulty_plausibility": "PASS",
+        "chapter_topic_concept_alignment": "PASS",
+        "obvious_ambiguity": "ABSENT",
+        "template_repetition": "NOT_OBVIOUS",
+        "ncert_certification": "NOT_CLAIMED",
+        "unsupported_claims": "NONE_MATERIAL",
+        "semantic_status": "SEMANTIC_REVIEW_REQUIRED"
+      },
+      "content_fingerprint_unchanged": true,
+      "post_review_status": "DRAFT",
+      "service_result_decision": "ACCEPT",
+      "in_stratified_sample": true
+    },
+    {
+      "factory_review_item_id": "a82d3232-8b28-41bb-9d25-0e3ae9e51493",
+      "item_id": "327cabf6-1ce2-4d5b-8fad-fe8ba01c647f",
+      "slot_id": "chemistry-05",
+      "decision": "ACCEPT",
+      "failure_reasons": [],
+      "notes": "Sampled chemistry-05 (Chemistry/Some Basic Concepts of Chemistry): stem/options/key/explanation coherent; archetype=application; semantic=SEMANTIC_REVIEW_REQUIRED; NCERT page certification not claimed. Soft SEMANTIC_REVIEW_REQUIRED noted; no hard ambiguity pattern.",
+      "criteria": {
+        "exactly_one_defensible_answer": "PASS",
+        "option_quality": "PASS",
+        "explanation_consistency": "PASS",
+        "scientific_plausibility": "PASS",
+        "neet_suitability": "PASS",
+        "difficulty_plausibility": "PASS",
+        "chapter_topic_concept_alignment": "PASS",
+        "obvious_ambiguity": "ABSENT",
+        "template_repetition": "NOT_OBVIOUS",
+        "ncert_certification": "NOT_CLAIMED",
+        "unsupported_claims": "NONE_MATERIAL",
+        "semantic_status": "SEMANTIC_REVIEW_REQUIRED"
+      },
+      "content_fingerprint_unchanged": true,
+      "post_review_status": "DRAFT",
+      "service_result_decision": "ACCEPT",
+      "in_stratified_sample": true
+    },
+    {
+      "factory_review_item_id": "ef5abda2-1cff-47bd-8446-c0a2671efd1c",
+      "item_id": "5e9f39a2-6562-4856-b7c7-96377b37058b",
+      "slot_id": "physics-08",
+      "decision": "ACCEPT",
+      "failure_reasons": [],
+      "notes": "Sampled physics-08 (Physics/Laws of Motion): stem/options/key/explanation coherent; archetype=application; semantic=SEMANTIC_REVIEW_REQUIRED; NCERT page certification not claimed. Soft SEMANTIC_REVIEW_REQUIRED noted; no hard ambiguity pattern.",
+      "criteria": {
+        "exactly_one_defensible_answer": "PASS",
+        "option_quality": "PASS",
+        "explanation_consistency": "PASS",
+        "scientific_plausibility": "PASS",
+        "neet_suitability": "PASS",
+        "difficulty_plausibility": "PASS",
+        "chapter_topic_concept_alignment": "PASS",
+        "obvious_ambiguity": "ABSENT",
+        "template_repetition": "NOT_OBVIOUS",
+        "ncert_certification": "NOT_CLAIMED",
+        "unsupported_claims": "NONE_MATERIAL",
+        "semantic_status": "SEMANTIC_REVIEW_REQUIRED"
+      },
+      "content_fingerprint_unchanged": true,
+      "post_review_status": "DRAFT",
+      "service_result_decision": "ACCEPT",
+      "in_stratified_sample": true
+    }
+  ],
+  "decisions_targeted_remat_overlay": [
+    {
+      "item_id": "1633f068-f0df-4ff5-ac0c-57be4417f29e",
+      "slot_id": "physics-21",
+      "decision": "ACCEPT",
+      "failure_reasons": [],
+      "notes": "Rematerialized visual slot physics-21: SVG+visual_spec present, type/archetype match, stem references visual, validation PASS, ncert_evidence=false. Soft semantic status=STRUCTURALLY_VALID (not hard-fail; not full uniqueness certification).",
+      "criteria": {
+        "exactly_one_defensible_answer": "PASS",
+        "option_quality": "PASS",
+        "explanation_consistency": "PASS",
+        "scientific_plausibility": "PASS",
+        "neet_suitability": "PASS",
+        "difficulty_plausibility": "PASS",
+        "chapter_topic_concept_alignment": "PASS",
+        "obvious_ambiguity": "ABSENT",
+        "template_repetition": "NOT_OBVIOUS",
+        "ncert_certification": "NOT_CLAIMED",
+        "unsupported_claims": "NONE_MATERIAL",
+        "graph_diagram_correctness": "PASS",
+        "stem_visual_consistency": "PASS",
+        "visual_required_enforced": "PASS",
+        "semantic_status": "STRUCTURALLY_VALID"
+      },
+      "in_stratified_sample": false,
+      "targeted_remat_review": true,
+      "content_fingerprint_unchanged": true,
+      "post_review_status": "DRAFT"
+    },
+    {
+      "item_id": "ca0e7a05-38bb-4e12-a52d-4fd4c7a26b07",
+      "slot_id": "zoology-12",
+      "decision": "ACCEPT",
+      "failure_reasons": [],
+      "notes": "Rematerialized visual slot zoology-12: SVG+visual_spec present, type/archetype match, stem references visual, validation PASS, ncert_evidence=false. Soft semantic status=SEMANTIC_REVIEW_REQUIRED (not hard-fail; not full uniqueness certification).",
+      "criteria": {
+        "exactly_one_defensible_answer": "PASS",
+        "option_quality": "PASS",
+        "explanation_consistency": "PASS",
+        "scientific_plausibility": "PASS",
+        "neet_suitability": "PASS",
+        "difficulty_plausibility": "PASS",
+        "chapter_topic_concept_alignment": "PASS",
+        "obvious_ambiguity": "ABSENT",
+        "template_repetition": "NOT_OBVIOUS",
+        "ncert_certification": "NOT_CLAIMED",
+        "unsupported_claims": "NONE_MATERIAL",
+        "graph_diagram_correctness": "PASS",
+        "stem_visual_consistency": "PASS",
+        "visual_required_enforced": "PASS",
+        "semantic_status": "SEMANTIC_REVIEW_REQUIRED"
+      },
+      "in_stratified_sample": false,
+      "targeted_remat_review": true,
+      "content_fingerprint_unchanged": true,
+      "post_review_status": "DRAFT"
+    },
+    {
+      "item_id": "03d1274b-35fa-446a-8742-164e9a28e8d3",
+      "slot_id": "zoology-15",
+      "decision": "ACCEPT",
+      "failure_reasons": [],
+      "notes": "Zoology-15 rematerialization: dual-circuit A/D pattern absent; correct_option=A retained; semantic_status=SEMANTIC_REVIEW_REQUIRED (absence of known ambiguity pattern only — not a claim of full semantic uniqueness certification).",
+      "criteria": {
+        "exactly_one_defensible_answer": "PASS_KNOWN_PATTERN_CLEARED",
+        "option_quality": "PASS",
+        "explanation_consistency": "PASS",
+        "scientific_plausibility": "PASS",
+        "neet_suitability": "PASS",
+        "difficulty_plausibility": "PASS",
+        "chapter_topic_concept_alignment": "PASS",
+        "obvious_ambiguity": "ABSENT",
+        "template_repetition": "NOT_OBVIOUS",
+        "ncert_certification": "NOT_CLAIMED",
+        "unsupported_claims": "NONE_MATERIAL",
+        "semantic_status": "SEMANTIC_REVIEW_REQUIRED",
+        "dual_circuit_pattern": "ABSENT"
+      },
+      "in_stratified_sample": false,
+      "targeted_remat_review": true,
+      "content_fingerprint_unchanged": true,
+      "post_review_status": "DRAFT"
+    }
+  ],
+  "four_replacement_reviews": {
+    "physics-05": {
+      "slot_id": "physics-05",
+      "original_id": "2a22a821-d0bd-4c87-be2c-c35ef9664118",
+      "replacement_id": "9c51f8a1-bf72-4ca0-bcfd-e0aa5cb8ee53",
+      "in_sample": true,
+      "visual_required": true,
+      "visual_type": "line_graph",
+      "visual_archetype": "xt_slope_graph",
+      "has_svg": true,
+      "has_visual_spec": true,
+      "visual_validation_passed": true,
+      "semantic_status": "SEMANTIC_REVIEW_REQUIRED",
+      "decision": "ACCEPT",
+      "notes": "Rematerialized visual slot physics-05: SVG+visual_spec present, type/archetype match, stem references visual, validation PASS, ncert_evidence=false. Soft semantic status=SEMANTIC_REVIEW_REQUIRED (not hard-fail; not full uniqueness certification)."
+    },
+    "physics-21": {
+      "slot_id": "physics-21",
+      "original_id": "0de3dfa3-bc5a-4791-aa5d-8346dd08f0c2",
+      "replacement_id": "1633f068-f0df-4ff5-ac0c-57be4417f29e",
+      "in_sample": false,
+      "visual_required": true,
+      "visual_type": "curve_graph",
+      "visual_archetype": "stress_strain_curve",
+      "has_svg": true,
+      "has_visual_spec": true,
+      "visual_validation_passed": true,
+      "semantic_status": "STRUCTURALLY_VALID",
+      "decision": "ACCEPT",
+      "notes": "Rematerialized visual slot physics-21: SVG+visual_spec present, type/archetype match, stem references visual, validation PASS, ncert_evidence=false. Soft semantic status=STRUCTURALLY_VALID (not hard-fail; not full uniqueness certification)."
+    },
+    "zoology-12": {
+      "slot_id": "zoology-12",
+      "original_id": "7580a952-0869-4f38-ae62-8c18a49bfb6f",
+      "replacement_id": "ca0e7a05-38bb-4e12-a52d-4fd4c7a26b07",
+      "in_sample": false,
+      "visual_required": true,
+      "visual_type": "schematic",
+      "visual_archetype": "ecg_wave_schematic",
+      "has_svg": true,
+      "has_visual_spec": true,
+      "visual_validation_passed": true,
+      "semantic_status": "SEMANTIC_REVIEW_REQUIRED",
+      "decision": "ACCEPT",
+      "notes": "Rematerialized visual slot zoology-12: SVG+visual_spec present, type/archetype match, stem references visual, validation PASS, ncert_evidence=false. Soft semantic status=SEMANTIC_REVIEW_REQUIRED (not hard-fail; not full uniqueness certification)."
+    },
+    "zoology-15": {
+      "slot_id": "zoology-15",
+      "original_id": "ef480cb5-8ede-451b-9444-940c7094e764",
+      "replacement_id": "03d1274b-35fa-446a-8742-164e9a28e8d3",
+      "in_sample": false,
+      "correct_option": "A",
+      "options": [
+        {
+          "text": "The pulmonary circuit operates at a lower vascular resistance and pressure, receiving deoxygenated blood from the right ventricle, whereas the systemic circuit operates under higher pressure to pump oxygenated blood from the left ventricle to body tissues.",
+          "label": "A"
+        },
+        {
+          "text": "The pulmonary circuit receives deoxygenated blood from the left atrium and routes it through the pulmonary veins to the lungs, whereas the systemic circuit receives oxygenated blood from the right atrium and routes it through the aorta.",
+          "label": "B"
+        },
+        {
+          "text": "The pulmonary circuit operates under higher vascular resistance than the systemic circuit, ensuring rapid blood flow through capillaries, while the systemic circuit operates at low resistance to protect delicate organ beds.",
+          "label": "C"
+        },
+        {
+          "text": "The pulmonary circuit begins in the left ventricle and returns oxygenated blood to the right atrium, whereas the systemic circuit begins in the right atrium and empties into the aorta.",
+          "label": "D"
+        }
+      ],
+      "semantic_status": "SEMANTIC_REVIEW_REQUIRED",
+      "semantic_signals": [
+        "EXPLANATION_REFERENCES_MULTIPLE_OPTIONS"
+      ],
+      "dual_circuit_hits": [
+        "A"
+      ],
+      "dual_pattern_cleared": true,
+      "decision": "ACCEPT",
+      "notes": "Zoology-15 rematerialization: dual-circuit A/D pattern absent; correct_option=A retained; semantic_status=SEMANTIC_REVIEW_REQUIRED (absence of known ambiguity pattern only — not a claim of full semantic uniqueness certification).",
+      "false_exactly_one_certification": false
+    }
+  },
+  "graphical_findings": {
+    "population_visual_required_slots": 3,
+    "population_visual_slot_ids": [
+      "physics-05",
+      "physics-21",
+      "zoology-12"
+    ],
+    "sample_graphical_count": 1,
+    "sample_non_graphical_count": 19,
+    "do_not_extrapolate": "Sample graphical count ≠ population graphical claim."
+  },
+  "numerical_findings": {
+    "sample_numerical_count": 2,
+    "sample_non_numerical_count": 18,
+    "note": "Numerical items reviewed structurally; full independent recalculation not claimed bank-wide."
+  },
+  "diversity_observations": {
+    "sample_unique_slots": 20,
+    "sample_subjects": {
+      "Botany": 9,
+      "Chemistry": 7,
+      "Physics": 3,
+      "Zoology": 1
+    },
+    "note": "Sample diversity observation only — not Diversity Forensics certification.",
+    "stem_prefixes": [
+      [
+        "botany-08",
+        "According to the Fluid Mosaic Model of the cell membrane proposed by Singer and "
+      ],
+      [
+        "chemistry-23",
+        "According to the Brønsted–Lowry concept, a conjugate acid-base pair differs by a"
+      ],
+      [
+        "physics-08",
+        "A block of mass $m_1 = 3\\text{ kg}$ rests on a smooth horizontal table and is co"
+      ],
+      [
+        "zoology-10",
+        "Which of the following heart valves prevents the backflow of deoxygenated blood "
+      ],
+      [
+        "physics-05",
+        "The position-time ($x-t$) graph shown in the accompanying figure illustrates the"
+      ],
+      [
+        "physics-35",
+        "In a Young's double-slit experiment using a monochromatic light source of wavele"
+      ],
+      [
+        "botany-05",
+        "A plant specimen shows flattened, green, leaf-like stem structures that perform "
+      ],
+      [
+        "botany-07",
+        "Which of the following structural characteristics correctly distinguishes a typi"
+      ]
+    ]
+  },
+  "integrity_before": {
+    "active_fp": "6448372c8691b8e9840beb758aaf87a3aef88d16bd69e281e24137a524e48f9b",
+    "active_n": 100,
+    "active_status": {
+      "DRAFT": 100
+    },
+    "historical_fp": "b4a8c2316b6d02f0a22cc1a145f6c61450196629b9320d0d72d463b465cd7fae",
+    "v1_fp": "1be739413439ae0e93a87f11bd1823ad88f1cd19fad0022aeea163af3d6101a2",
+    "t6d_fp": "e0758fbcb071180b61a33f2b4581e894",
+    "t6f2_fp": "17a1672c444c8362ed0261dacf0f82c7",
+    "legacy_fp": "13d51e697382663a28ffc44fd56aedb1",
+    "cms_counts": {
+      "total": 6445,
+      "published": 1079,
+      "draft": 5355,
+      "approved": 0,
+      "in_review": 11
+    }
+  },
+  "integrity_after": {
+    "active_fp": "6448372c8691b8e9840beb758aaf87a3aef88d16bd69e281e24137a524e48f9b",
+    "active_n": 100,
+    "active_status": {
+      "DRAFT": 100
+    },
+    "historical_fp": "b4a8c2316b6d02f0a22cc1a145f6c61450196629b9320d0d72d463b465cd7fae",
+    "v1_fp": "1be739413439ae0e93a87f11bd1823ad88f1cd19fad0022aeea163af3d6101a2",
+    "t6d_fp": "e0758fbcb071180b61a33f2b4581e894",
+    "t6f2_fp": "17a1672c444c8362ed0261dacf0f82c7",
+    "legacy_fp": "13d51e697382663a28ffc44fd56aedb1",
+    "cms_counts": {
+      "total": 6445,
+      "published": 1079,
+      "draft": 5355,
+      "approved": 0,
+      "in_review": 11
+    }
+  },
+  "integrity_checks": {
+    "active_unchanged": true,
+    "historical_unchanged": true,
+    "protected_unchanged": true,
+    "approvals": 0,
+    "publications": 0,
+    "ecaep": 0,
+    "generation": 0
+  },
+  "counts": {
+    "gemini_calls": 0,
+    "new_generation_candidates": 0,
+    "new_approvals": 0,
+    "new_publications": 0,
+    "new_ecaep": 0
+  },
+  "limitations": [
+    "P5 re-sample ≠ certification of all 100 items.",
+    "NCERT page/quotation certification not performed.",
+    "Soft SEMANTIC_REVIEW_REQUIRED is not a hard fail and is not full semantic uniqueness certification.",
+    "Diversity Forensics not run.",
+    "ACCEPT marks review acceptance only; ContentItem remains DRAFT; not approve/publish/ECAEP.",
+    "Rematerialized slots not in stratified sample were reviewed via targeted overlay: ['1633f068-f0df-4ff5-ac0c-57be4417f29e', 'ca0e7a05-38bb-4e12-a52d-4fd4c7a26b07', '03d1274b-35fa-446a-8742-164e9a28e8d3'].",
+    "15 sampled items carry soft SEMANTIC_REVIEW_REQUIRED (bounded; not hard-fail)."
+  ],
+  "diversity_forensics_authorized": false,
+  "next_gate_recommendation": "Diversity Forensics may be authorized as a SEPARATE next gate after this P5 re-sample GREEN/AMBER close-out; not executed here.",
+  "phase_stop": "P5_RESAMPLE_COMPLETE",
+  "tests": {
+    "command": "pytest tests/test_seed_v2_p5_remediation.py tests/test_content_factory_p5.py tests/test_content_factory_p3.py tests/test_content_factory_p4.py -q",
+    "passed": 43,
+    "failed": 0,
+    "note": "Includes factory_sample_v2 coverage via test_seed_v2_p5_remediation.py"
+  },
+  "diversity_forensics_next_gate": "AUTHORIZED_AS_SEPARATE_REQUEST_ONLY"
+}

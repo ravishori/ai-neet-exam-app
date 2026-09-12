@@ -13,7 +13,9 @@ const ADMIN_LINKS = [
   { href: "/admin/knowledge-units", label: "Knowledge Units" },
   { href: "/admin/ingestion", label: "PDFs" },
   { href: "/admin/visual-assets", label: "Visual Assets" },
-  { href: "/admin/ai-review", label: "AI Review" },
+  { href: "/admin/ai-review", label: "Editorial Review" },
+  { href: "/admin/factory-review", label: "Factory Review" },
+  { href: "/admin/p2-3/human-gold", label: "Human Gold Sandbox" },
   { href: "/admin/search", label: "Search Console" },
   { href: "/admin/audit-logs", label: "Audit Logs" },
   { href: "/admin/users", label: "Users" },
@@ -21,10 +23,6 @@ const ADMIN_LINKS = [
   { href: "/admin/analytics", label: "Analytics" },
 ];
 
-// Roles allowed into the admin portal at all — CONTENT_MANAGER already owns
-// the content workflow (submit/review/publish), so it belongs here too. This
-// is a UX gate only; every endpoint still enforces its own require_permission
-// server-side (see PR11 audit — no route previously checked roles client-side).
 const ADMIN_ROLES = new Set(["SUPER_ADMIN", "ADMIN", "CONTENT_MANAGER"]);
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
@@ -32,8 +30,8 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
   if (isLoading) {
     return (
-      <div className="flex flex-1 flex-col">
-        <div className="border-b px-4 py-3 sm:px-6">
+      <div className="page-atmosphere flex flex-1 flex-col">
+        <div className="border-b border-glass-border bg-glass/80 px-4 py-3 backdrop-blur-xl sm:px-6">
           <Skeleton className="h-6 w-32" />
         </div>
         <div className="flex-1 px-4 py-8 sm:px-6">
@@ -45,7 +43,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
   if (!user || !user.roles.some((role) => ADMIN_ROLES.has(role))) {
     return (
-      <div className="flex flex-1 flex-col">
+      <div className="page-atmosphere flex flex-1 flex-col">
         <AppHeader links={[]} />
         <main className="flex flex-1 items-center justify-center px-6 py-12">
           <EmptyState
@@ -59,7 +57,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   }
 
   return (
-    <div className="flex flex-1 flex-col">
+    <div className="page-atmosphere flex flex-1 flex-col">
       <AppHeader links={ADMIN_LINKS} />
       {children}
     </div>

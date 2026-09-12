@@ -1,4 +1,4 @@
-const API_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
+const API_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://127.0.0.1:8000";
 
 export class ApiError extends Error {
   code: string;
@@ -39,12 +39,21 @@ async function request<T>(path: string, options: RequestInit = {}, _retried = fa
     if (csrf) headers.set("X-CSRF-Token", csrf);
   }
 
-  const response = await fetch(`${API_URL}${path}`, {
-    ...options,
-    method,
-    headers,
-    credentials: "include",
-  });
+  let response: Response;
+  try {
+    response = await fetch(`${API_URL}${path}`, {
+      ...options,
+      method,
+      headers,
+      credentials: "include",
+    });
+  } catch {
+    throw new ApiError(
+      `Cannot reach the API at ${API_URL}. Check that the backend is running and NEXT_PUBLIC_API_URL is correct.`,
+      "NETWORK_ERROR",
+      0,
+    );
+  }
 
   // Access token expired mid-session — refresh once, then retry the call.
   if (response.status === 401 && !_retried && path !== "/api/v1/auth/refresh" && path !== "/api/v1/auth/login") {
@@ -54,7 +63,16 @@ async function request<T>(path: string, options: RequestInit = {}, _retried = fa
     }
   }
 
-  const body: Envelope<T> = await response.json();
+  let body: Envelope<T>;
+  try {
+    body = await response.json();
+  } catch {
+    throw new ApiError(
+      `API returned a non-JSON response (${response.status}). Check NEXT_PUBLIC_API_URL (${API_URL}).`,
+      "INVALID_RESPONSE",
+      response.status,
+    );
+  }
   if (!body.success) {
     const first = body.errors[0];
     const fieldErrors = Object.fromEntries(

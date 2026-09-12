@@ -87,16 +87,17 @@ const components: Components = {
   h2: ({ children }) => {
     const Icon = iconForHeading(textContent(children));
     return (
-      <h2 className="mt-8 mb-3 flex items-center gap-2 text-lg font-semibold first:mt-0">
-        <Icon className="size-4.5 shrink-0 text-primary" aria-hidden="true" />
-        {children}
+      <h2 className="mt-8 mb-3 flex items-start gap-2 text-lg font-semibold first:mt-0">
+        <Icon className="mt-1 size-4.5 shrink-0 text-primary" aria-hidden="true" />
+        {/* Wrap children so bold/math/inline nodes stay one flex item (not a broken multi-column stem). */}
+        <span className="min-w-0 flex-1 text-pretty">{children}</span>
       </h2>
     );
   },
   h3: ({ children }) => (
-    <h3 className="mt-6 mb-2 flex items-center gap-2 text-base font-semibold">
-      <HelpCircle className="size-4 shrink-0 text-muted-foreground" aria-hidden="true" />
-      {children}
+    <h3 className="mt-6 mb-2 flex items-start gap-2 text-base font-semibold">
+      <HelpCircle className="mt-1 size-4 shrink-0 text-muted-foreground" aria-hidden="true" />
+      <span className="min-w-0 flex-1 text-pretty">{children}</span>
     </h3>
   ),
   hr: () => <hr className="my-6 border-border" />,

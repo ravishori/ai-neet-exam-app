@@ -76,7 +76,10 @@ export default function FlashcardsPage() {
     <main className="flex flex-1 flex-col gap-6 px-4 py-8 sm:px-6 sm:py-10">
       <div>
         <h1 className="text-2xl font-semibold tracking-tight">Flashcards</h1>
-        <p className="text-sm text-muted-foreground">Tap a card to flip it. Quick revision by subject, chapter, topic, or concept.</p>
+        <p className="text-sm text-muted-foreground">
+          Tap a card to flip it. Quick revision by subject, chapter, topic, or concept. Cards marked
+          &quot;Needs review&quot; are available for practice but are not scientifically certified.
+        </p>
       </div>
 
       <Card>
@@ -175,15 +178,26 @@ export default function FlashcardsPage() {
         />
       ) : (
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {flashcardsQuery.data.data.map((card) => (
-            <FlipCard
-              key={card.id}
-              front={card.front ?? ""}
-              back={card.back ?? ""}
-              imageUrl={card.image_url}
-              tags={[card.subject, card.chapter, card.concept].filter((t): t is { id: string; name: string } => !!t).map((t) => ({ label: t.name }))}
-            />
-          ))}
+          {flashcardsQuery.data.data.map((card) => {
+            const cert = card.certification_status;
+            const tagLabels = [card.subject, card.chapter, card.concept]
+              .filter((t): t is { id: string; name: string } => !!t)
+              .map((t) => ({ label: t.name }));
+            if (cert === "VERIFIED") {
+              tagLabels.push({ label: "Certified" });
+            } else if (cert === "REVIEW") {
+              tagLabels.push({ label: "Needs review" });
+            }
+            return (
+              <FlipCard
+                key={card.id}
+                front={card.front ?? ""}
+                back={card.back ?? ""}
+                imageUrl={card.image_url}
+                tags={tagLabels}
+              />
+            );
+          })}
         </div>
       )}
 

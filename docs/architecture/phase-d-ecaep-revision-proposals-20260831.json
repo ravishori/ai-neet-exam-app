@@ -1,0 +1,1287 @@
+{
+  "document_type": "phase-d-ecaep-revision-proposals",
+  "banner": "PROPOSALS ONLY — NOT APPLIED TO DATABASE",
+  "generated_at": "2026-08-31T11:58:07.240980+00:00",
+  "audit_date": "2026-08-31",
+  "pilot_run_id": "phase-d-30-mcq-authorized-20260825",
+  "database": "trinetra_db",
+  "database_writes": 0,
+  "publication_actions": 0,
+  "ecaep_actions": 0,
+  "pilot_verified": {
+    "n": 30,
+    "draft": 30,
+    "pub": 0
+  },
+  "global_question_status": {
+    "DRAFT": 78,
+    "IN_REVIEW": 1,
+    "PUBLISHED": 11
+  },
+  "approved_out_of_scope_count": 21,
+  "new_findings_on_approved": [],
+  "flagged_nine_table": [
+    {
+      "num": 1,
+      "content_item_id": "e6b9fb1e-f022-4172-88c5-318213bc511b",
+      "subject": "BOTANY",
+      "severity": "P2",
+      "original_finding": "concept_code=photorespiration but stem tests Blackman's Law",
+      "previous_recommendation": "REVISE"
+    },
+    {
+      "num": 2,
+      "content_item_id": "8d50e829-6540-44bc-882a-6b140a33da17",
+      "subject": "BOTANY",
+      "severity": "P2",
+      "original_finding": "compound Blackman stem; concept tagged photorespiration; difficulty mismatch",
+      "previous_recommendation": "REVISE"
+    },
+    {
+      "num": 3,
+      "content_item_id": "85fee888-47f6-408d-ab05-39b131233322",
+      "subject": "BOTANY",
+      "severity": "P1",
+      "original_finding": "Near-duplicate of 10d4d997 (photorespiration products)",
+      "previous_recommendation": "REVISE"
+    },
+    {
+      "num": 4,
+      "content_item_id": "87f621ab-a1d8-4097-8152-573b6fa46914",
+      "subject": "CHEMISTRY",
+      "severity": "P2",
+      "original_finding": "Overlong VSEPR vs VB comparative stem",
+      "previous_recommendation": "REVISE"
+    },
+    {
+      "num": 5,
+      "content_item_id": "863f1289-87a0-4253-b996-c0aff8c47988",
+      "subject": "CHEMISTRY",
+      "severity": "P2",
+      "original_finding": "Heavy 3p/3d/4s hybridisation energy wording",
+      "previous_recommendation": "REVISE"
+    },
+    {
+      "num": 6,
+      "content_item_id": "ade9900b-1ab2-4a5d-aa29-a5f4a605366e",
+      "subject": "PHYSICS",
+      "severity": "P2",
+      "original_finding": "Tagged kirchhoffs-laws/kcl-kvl but section is 3.2 Electric Current",
+      "previous_recommendation": "REVISE"
+    },
+    {
+      "num": 7,
+      "content_item_id": "c7a54ae9-5044-44d3-bfa4-8a5bbc6c5ef2",
+      "subject": "PHYSICS",
+      "severity": "P2",
+      "original_finding": "Trivial SI-unit recall; low assessment value",
+      "previous_recommendation": "REVISE"
+    },
+    {
+      "num": 8,
+      "content_item_id": "7b80d6db-9c07-4b42-a92d-df74ab8428b3",
+      "subject": "PHYSICS",
+      "severity": "P1",
+      "original_finding": "Kirchhoff charging-cell sign convention needs human verification / dense wording",
+      "previous_recommendation": "REVISE"
+    },
+    {
+      "num": 9,
+      "content_item_id": "a42a3589-8070-40c2-9181-f76642b33a85",
+      "subject": "PHYSICS",
+      "severity": "P2",
+      "original_finding": "Verbatim NCERT 10^-5 drift/thermal recall; low discrimination",
+      "previous_recommendation": "REVISE"
+    }
+  ],
+  "taxonomy_note": {
+    "photosynthesis_factors_concepts_available": [
+      "photorespiration"
+    ],
+    "implication": "Blackman items cannot receive a true concept retag without seeding new academic concepts."
+  },
+  "actions_summary": {
+    "KEEP": 1,
+    "REVISE": 6,
+    "REPLACE": 2,
+    "RETIRE": 0
+  },
+  "severity_before": {
+    "P0": 0,
+    "P1": 3,
+    "P2": 8,
+    "P3": 2
+  },
+  "severity_after_proposals": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 2,
+    "P3": 0,
+    "note": "Remaining P2 = taxonomy gaps on e6b9fb1e and 8d50e829 only."
+  },
+  "answer_distribution_among_9_after": {
+    "A": 6,
+    "B": 2,
+    "C": 1
+  },
+  "overall_verdict": "AMBER",
+  "verdict_reason": "Proposed MCQ texts are GREEN on re-audit, but proposals are not DB-applied; two taxonomy gaps remain; human ECAEP approval still required.",
+  "kirchhoff_verdict": {
+    "question_id": "7b80d6db-9c07-4b42-a92d-df74ab8428b3",
+    "original_key": "A",
+    "key_correct": true,
+    "issue": "Wording ambiguity, not wrong science",
+    "proposed_status": "GREEN"
+  },
+  "near_duplicate_verdict": {
+    "pair": [
+      "10d4d997-cb60-4450-99e8-47ed905c9775",
+      "85fee888-47f6-408d-ab05-39b131233322"
+    ],
+    "classification": "NEAR-DUPLICATES",
+    "retain": "10d4d997-cb60-4450-99e8-47ed905c9775",
+    "replace_slot": "85fee888-47f6-408d-ab05-39b131233322"
+  },
+  "conceptual_final_set_matrix": [
+    {
+      "content_item_id": "5dc99543-bec7-4dc3-a283-548fdb62ca9c",
+      "version": "ORIGINAL",
+      "subject": "BOTANY",
+      "concept": "photophosphorylation",
+      "difficulty": "easy",
+      "recommendation": "APPROVE"
+    },
+    {
+      "content_item_id": "8a979c6a-d6af-4a0d-8099-05f5992b7f46",
+      "version": "ORIGINAL",
+      "subject": "BOTANY",
+      "concept": "photophosphorylation",
+      "difficulty": "hard",
+      "recommendation": "APPROVE"
+    },
+    {
+      "content_item_id": "2602f9da-13cc-42ba-b164-f02f1d7a040c",
+      "version": "ORIGINAL",
+      "subject": "BOTANY",
+      "concept": "c3-c4-pathway",
+      "difficulty": "easy",
+      "recommendation": "APPROVE"
+    },
+    {
+      "content_item_id": "f81153c3-b3d6-4a0c-a908-ffb9c032bd8c",
+      "version": "ORIGINAL",
+      "subject": "BOTANY",
+      "concept": "c3-c4-pathway",
+      "difficulty": "hard",
+      "recommendation": "APPROVE"
+    },
+    {
+      "content_item_id": "10d4d997-cb60-4450-99e8-47ed905c9775",
+      "version": "ORIGINAL",
+      "subject": "BOTANY",
+      "concept": "photorespiration",
+      "difficulty": "easy",
+      "recommendation": "APPROVE"
+    },
+    {
+      "content_item_id": "fc61e6e7-c1fd-4d2e-b009-283506e841ff",
+      "version": "ORIGINAL",
+      "subject": "BOTANY",
+      "concept": "photorespiration",
+      "difficulty": "hard",
+      "recommendation": "APPROVE"
+    },
+    {
+      "content_item_id": "e6b9fb1e-f022-4172-88c5-318213bc511b",
+      "version": "ORIGINAL",
+      "subject": "BOTANY",
+      "concept": "photorespiration",
+      "difficulty": "easy",
+      "recommendation": "KEEP"
+    },
+    {
+      "content_item_id": "8d50e829-6540-44bc-882a-6b140a33da17",
+      "version": "PROPOSED",
+      "subject": "BOTANY",
+      "concept": "limiting-factors (NOT IN DB — requires future concept seed)",
+      "difficulty": "medium",
+      "recommendation": "REVISE"
+    },
+    {
+      "content_item_id": "f78dbbf2-1b1e-4fe7-87aa-263699cdd30f",
+      "version": "ORIGINAL",
+      "subject": "BOTANY",
+      "concept": "c3-c4-pathway",
+      "difficulty": "medium",
+      "recommendation": "APPROVE"
+    },
+    {
+      "content_item_id": "85fee888-47f6-408d-ab05-39b131233322",
+      "version": "PROPOSED",
+      "subject": "BOTANY",
+      "concept": "photorespiration",
+      "difficulty": "medium",
+      "recommendation": "REPLACE"
+    },
+    {
+      "content_item_id": "c91a89ec-e071-495c-a6e1-3f2888e7233a",
+      "version": "ORIGINAL",
+      "subject": "CHEMISTRY",
+      "concept": "lattice-energy",
+      "difficulty": "easy",
+      "recommendation": "APPROVE"
+    },
+    {
+      "content_item_id": "b33b47de-e94c-481b-a298-b64c67b5ec8d",
+      "version": "ORIGINAL",
+      "subject": "CHEMISTRY",
+      "concept": "lattice-energy",
+      "difficulty": "hard",
+      "recommendation": "APPROVE"
+    },
+    {
+      "content_item_id": "87f621ab-a1d8-4097-8152-573b6fa46914",
+      "version": "PROPOSED",
+      "subject": "CHEMISTRY",
+      "concept": "vsepr-theory",
+      "difficulty": "medium",
+      "recommendation": "REVISE"
+    },
+    {
+      "content_item_id": "90d13ef4-c0bc-4534-9c7c-2ad725946d2c",
+      "version": "ORIGINAL",
+      "subject": "CHEMISTRY",
+      "concept": "sp-sp2-sp3",
+      "difficulty": "hard",
+      "recommendation": "APPROVE"
+    },
+    {
+      "content_item_id": "acbbdd83-8e13-4b3f-87cc-45cd00985ab4",
+      "version": "ORIGINAL",
+      "subject": "CHEMISTRY",
+      "concept": "sp-sp2-sp3",
+      "difficulty": "easy",
+      "recommendation": "APPROVE"
+    },
+    {
+      "content_item_id": "2f165110-be0b-402e-aa6c-2b92c6593771",
+      "version": "ORIGINAL",
+      "subject": "CHEMISTRY",
+      "concept": "sp-sp2-sp3",
+      "difficulty": "hard",
+      "recommendation": "APPROVE"
+    },
+    {
+      "content_item_id": "92dec49f-bb99-48bb-9b79-5f7e2ddb1fd2",
+      "version": "ORIGINAL",
+      "subject": "CHEMISTRY",
+      "concept": "sp-sp2-sp3",
+      "difficulty": "easy",
+      "recommendation": "APPROVE"
+    },
+    {
+      "content_item_id": "b55bb380-cc1e-4094-8259-ffbf915134ef",
+      "version": "ORIGINAL",
+      "subject": "CHEMISTRY",
+      "concept": "sp-sp2-sp3",
+      "difficulty": "hard",
+      "recommendation": "APPROVE"
+    },
+    {
+      "content_item_id": "8c577dd2-4932-4676-8c7e-1f3e3b290485",
+      "version": "ORIGINAL",
+      "subject": "CHEMISTRY",
+      "concept": "sp-sp2-sp3",
+      "difficulty": "easy",
+      "recommendation": "APPROVE"
+    },
+    {
+      "content_item_id": "863f1289-87a0-4253-b996-c0aff8c47988",
+      "version": "PROPOSED",
+      "subject": "CHEMISTRY",
+      "concept": "sp-sp2-sp3",
+      "difficulty": "hard",
+      "recommendation": "REVISE"
+    },
+    {
+      "content_item_id": "ade9900b-1ab2-4a5d-aa29-a5f4a605366e",
+      "version": "PROPOSED",
+      "subject": "PHYSICS",
+      "concept": "ohms-law-concept",
+      "difficulty": "hard",
+      "recommendation": "REVISE"
+    },
+    {
+      "content_item_id": "c7a54ae9-5044-44d3-bfa4-8a5bbc6c5ef2",
+      "version": "PROPOSED",
+      "subject": "PHYSICS",
+      "concept": "ohms-law-concept",
+      "difficulty": "easy",
+      "recommendation": "REPLACE"
+    },
+    {
+      "content_item_id": "23815930-822d-4740-8e2a-b21689307a37",
+      "version": "ORIGINAL",
+      "subject": "PHYSICS",
+      "concept": "ohms-law-concept",
+      "difficulty": "hard",
+      "recommendation": "APPROVE"
+    },
+    {
+      "content_item_id": "62f4b1f1-57f6-4e6f-8188-5bfab13a14ad",
+      "version": "ORIGINAL",
+      "subject": "PHYSICS",
+      "concept": "factors-affecting-resistance",
+      "difficulty": "easy",
+      "recommendation": "APPROVE"
+    },
+    {
+      "content_item_id": "26ed6b35-b181-4b5d-af5e-15cf0dd00245",
+      "version": "ORIGINAL",
+      "subject": "PHYSICS",
+      "concept": "factors-affecting-resistance",
+      "difficulty": "hard",
+      "recommendation": "APPROVE"
+    },
+    {
+      "content_item_id": "9c80cb11-376a-4bfb-95a4-f3bbc5842075",
+      "version": "ORIGINAL",
+      "subject": "PHYSICS",
+      "concept": "factors-affecting-resistance",
+      "difficulty": "easy",
+      "recommendation": "APPROVE"
+    },
+    {
+      "content_item_id": "7b80d6db-9c07-4b42-a92d-df74ab8428b3",
+      "version": "PROPOSED",
+      "subject": "PHYSICS",
+      "concept": "kcl-kvl",
+      "difficulty": "hard",
+      "recommendation": "REVISE"
+    },
+    {
+      "content_item_id": "3493be87-e3a8-4e7b-a399-94cbdb349d6f",
+      "version": "ORIGINAL",
+      "subject": "PHYSICS",
+      "concept": "ohms-law-concept",
+      "difficulty": "medium",
+      "recommendation": "APPROVE"
+    },
+    {
+      "content_item_id": "a42a3589-8070-40c2-9181-f76642b33a85",
+      "version": "PROPOSED",
+      "subject": "PHYSICS",
+      "concept": "drift-velocity",
+      "difficulty": "easy",
+      "recommendation": "REVISE"
+    },
+    {
+      "content_item_id": "5d4ca5da-6f22-44b4-9c9c-2b93f3eb09ca",
+      "version": "ORIGINAL",
+      "subject": "PHYSICS",
+      "concept": "ohms-law-concept",
+      "difficulty": "medium",
+      "recommendation": "APPROVE"
+    }
+  ],
+  "revisions": [
+    {
+      "content_item_id": "e6b9fb1e-f022-4172-88c5-318213bc511b",
+      "subject": "BOTANY",
+      "action": "KEEP",
+      "finding_status": "PARTIALLY CONFIRMED",
+      "reason_for_revision": "Stem correctly tests Blackman's limiting-factor definition from §11.10. Tag photorespiration is misleading, but academic taxonomy under topic factors-affecting-photosynthesis currently contains ONLY concept photorespiration — TAXONOMY GAP, not an MCQ body defect.",
+      "original": {
+        "stem": "According to Blackman's Law of Limiting Factors (1905), which of the following correctly defines the 'limiting factor' in a chemical process affected by multiple factors?",
+        "options": {
+          "A": "The factor that is nearest to its minimal value and directly controls the rate of the process",
+          "B": "The factor present in the highest concentration that accelerates the process",
+          "C": "The factor that remains constant while all other factors vary",
+          "D": "The factor that is at its optimal level and sustains the maximum rate of the process"
+        },
+        "correct_option": "A",
+        "explanation": "Blackman's Law of Limiting Factors (1905) states that if a chemical process is affected by more than one factor, its rate will be determined by the factor nearest to its minimal value. This is the limiting factor — the one that directly affects the process if its quantity is changed.",
+        "difficulty": "easy",
+        "metadata": {
+          "subject": "BOTANY",
+          "chapter": "photosynthesis",
+          "topic": "factors-affecting-photosynthesis",
+          "concept": "photorespiration",
+          "concept_id": "b48f10f4-e5e1-4740-a62f-c1bcaf3865fb",
+          "topic_id": "4039d404-67cb-4e88-b924-ea873c5c91e7",
+          "chapter_id": "c030eb7b-bcd9-4c9b-9a8e-dc0dc54fa32c"
+        },
+        "source_path": "Biology/Class 11-Biology/ncert-books-class-11-biology-chapter-11.pdf",
+        "source_page": 19,
+        "section_heading": "11.10 FACTORS AFFECTING PHOTOSYNTHESIS",
+        "knowledge_unit_id": "6f938534-fbdb-4ce0-9ca0-140d717b3876",
+        "knowledge_unit_status": "PASSED",
+        "content_version_id": "f89eded3-f96a-4f98-ae81-bb4022353c48",
+        "workflow_state": "DRAFT",
+        "publication_status": "DRAFT",
+        "pilot_run_id": "phase-d-30-mcq-authorized-20260825"
+      },
+      "proposed_revision": null,
+      "metadata_proposal": {
+        "current": {
+          "topic": "factors-affecting-photosynthesis",
+          "concept": "photorespiration"
+        },
+        "recommended": {
+          "topic": "factors-affecting-photosynthesis",
+          "concept": "limiting-factors (NOT IN DB — requires future concept seed)"
+        },
+        "evidence": "Section heading 11.10 FACTORS AFFECTING PHOTOSYNTHESIS; KU facts cite Blackman/sub-optimal factor language.",
+        "applied": false
+      },
+      "what_changed": "None (body). Metadata recommendation only.",
+      "why_better": "Avoids inventing a concept code that does not exist.",
+      "independent_derivation": null,
+      "independent_calculation": null,
+      "duplicate_classification": null,
+      "retain_instead": null,
+      "original_difficulty": "easy",
+      "proposed_difficulty": "easy",
+      "difficulty_reason": "Direct definition recall.",
+      "explanation_score": 4,
+      "ncert_verified": true,
+      "answer_verified": "PASS",
+      "duplicate_check": "PASS",
+      "duplicate_hits_ge_0_45": [],
+      "reaudit": {
+        "structural": "PASS",
+        "answer_correctness": "PASS",
+        "ncert_alignment": "PASS",
+        "concept_alignment": "WARNING",
+        "duplicate_risk": "PASS",
+        "note": "Original retained"
+      },
+      "ecaep_readiness": "GREEN",
+      "final_status": "GREEN — content keep; metadata taxonomy gap documented",
+      "banner": "PROPOSALS ONLY — NOT APPLIED TO DATABASE"
+    },
+    {
+      "content_item_id": "8d50e829-6540-44bc-882a-6b140a33da17",
+      "subject": "BOTANY",
+      "action": "REVISE",
+      "finding_status": "CONFIRMED",
+      "reason_for_revision": "Compound stem was hard to parse; difficulty hard was overstated; concept tag photorespiration mismatches content (taxonomy gap same as e6b9fb1e).",
+      "original": {
+        "stem": "A plant is provided with optimal light intensity and an abundant supply of CO2, yet its rate of photosynthesis remains very low. Which of the following best explains this observation, and which internal factor could additionally limit photosynthesis even if external conditions were made optimal?",
+        "options": {
+          "A": "Very low temperature is the external limiting factor as per Blackman's Law; internally, reduced amount of chlorophyll could further limit photosynthesis",
+          "B": "High CO2 concentration is the limiting factor; internally, a large number of leaves would reduce the rate of photosynthesis",
+          "C": "Excess light is inhibiting photosynthesis; internally, increased mesophyll cell number is the limiting internal factor",
+          "D": "Water availability is always the primary limiting factor regardless of other conditions; internal CO2 concentration has no role"
+        },
+        "correct_option": "A",
+        "explanation": "Blackman's Law of Limiting Factors explains that despite optimal light and CO2, a very low temperature can limit photosynthesis because temperature is the factor nearest to its minimal value. Additionally, internal factors such as the amount of chlorophyll are listed as internal determinants of photosynthesis; reduced chlorophyll would limit photosynthesis even if all external factors were made optimal.",
+        "difficulty": "hard",
+        "metadata": {
+          "subject": "BOTANY",
+          "chapter": "photosynthesis",
+          "topic": "factors-affecting-photosynthesis",
+          "concept": "photorespiration",
+          "concept_id": "b48f10f4-e5e1-4740-a62f-c1bcaf3865fb",
+          "topic_id": "4039d404-67cb-4e88-b924-ea873c5c91e7",
+          "chapter_id": "c030eb7b-bcd9-4c9b-9a8e-dc0dc54fa32c"
+        },
+        "source_path": "Biology/Class 11-Biology/ncert-books-class-11-biology-chapter-11.pdf",
+        "source_page": 19,
+        "section_heading": "11.10 FACTORS AFFECTING PHOTOSYNTHESIS",
+        "knowledge_unit_id": "6f938534-fbdb-4ce0-9ca0-140d717b3876",
+        "knowledge_unit_status": "PASSED",
+        "content_version_id": "a614bc69-58be-4486-8468-01e40ced2548",
+        "workflow_state": "DRAFT",
+        "publication_status": "DRAFT",
+        "pilot_run_id": "phase-d-30-mcq-authorized-20260825"
+      },
+      "proposed_revision": {
+        "stem": "A crop plant is given optimal light and abundant CO2, yet its photosynthetic rate remains very low. Using Blackman's Law of Limiting Factors, which statement is correct?",
+        "options": {
+          "A": "Temperature nearest its minimal value is limiting the rate; reduced chlorophyll can also limit the rate as an internal factor.",
+          "B": "Abundant CO2 itself is the limiting factor; more leaves would further lower the rate.",
+          "C": "Optimal light is inhibiting photosynthesis; more mesophyll cells would lower the rate.",
+          "D": "Water is always the sole limiting factor, so internal CO2 and chlorophyll cannot affect the rate."
+        },
+        "correct_option": "A",
+        "explanation": "Blackman's Law states that when several factors affect a process, the rate is set by the factor nearest its minimal value. With light and CO2 already optimal, a very low temperature can still limit photosynthesis. Separately, NCERT lists amount of chlorophyll among internal factors that can limit photosynthesis even when external factors are favourable. Option B misidentifies abundant CO2 as limiting. Option C contradicts optimal light. Option D wrongly makes water exclusive.",
+        "difficulty": "medium"
+      },
+      "metadata_proposal": {
+        "current": {
+          "topic": "factors-affecting-photosynthesis",
+          "concept": "photorespiration"
+        },
+        "recommended": {
+          "topic": "factors-affecting-photosynthesis",
+          "concept": "limiting-factors (NOT IN DB — requires future concept seed)"
+        },
+        "evidence": "§11.10 FACTORS AFFECTING PHOTOSYNTHESIS; external/internal factor lists in KU facts.",
+        "applied": false
+      },
+      "what_changed": {
+        "Stem": "Simplified to one clear Blackman scenario question.",
+        "Options": "Compressed distractors; same scientific targets.",
+        "Correct answer": "Still A.",
+        "Explanation": "Rewritten to map each distractor.",
+        "Difficulty": "hard → medium."
+      },
+      "why_better": "Single assessment objective, clearer wording, defensible difficulty.",
+      "independent_derivation": null,
+      "independent_calculation": null,
+      "duplicate_classification": null,
+      "retain_instead": null,
+      "original_difficulty": "hard",
+      "proposed_difficulty": "medium",
+      "difficulty_reason": "Application of Blackman + one internal factor — moderate, not multi-step subtle.",
+      "explanation_score": 5,
+      "ncert_verified": true,
+      "answer_verified": "PASS",
+      "duplicate_check": "PASS",
+      "duplicate_hits_ge_0_45": [],
+      "reaudit": {
+        "structural": "PASS",
+        "answer_uniqueness": "PASS",
+        "answer_correctness": "PASS",
+        "explanation": "PASS",
+        "ncert_alignment": "PASS",
+        "subject_alignment": "PASS",
+        "chapter_alignment": "PASS",
+        "topic_alignment": "PASS",
+        "concept_alignment": "WARNING",
+        "difficulty": "PASS",
+        "distractors": "PASS",
+        "ambiguity": "PASS",
+        "neet_suitability": "PASS",
+        "duplicate_risk": "PASS"
+      },
+      "ecaep_readiness": "GREEN",
+      "final_status": "GREEN — clearer stem; taxonomy gap remains for concept seed",
+      "banner": "PROPOSALS ONLY — NOT APPLIED TO DATABASE"
+    },
+    {
+      "content_item_id": "85fee888-47f6-408d-ab05-39b131233322",
+      "subject": "BOTANY",
+      "action": "REPLACE",
+      "finding_status": "CONFIRMED",
+      "reason_for_revision": "TRUE NEAR-DUPLICATE of 10d4d997: same oxygenation products objective, identical correct-option text for PGA+phosphoglycolate, stem Jaccard≈0.50. Retain stronger/clearer products item 10d4d997; replace this slot with pathway-consequence objective from same §11.9.",
+      "original": {
+        "stem": "In the photorespiratory pathway of C3 plants, RuBP reacts with O2 at the active site of RuBisCO to produce which of the following products?",
+        "options": {
+          "A": "One molecule of phosphoglycerate and one molecule of phosphoglycolate",
+          "B": "Two molecules of phosphoglycerate",
+          "C": "One molecule of phosphoglycerate and one molecule of ATP",
+          "D": "Two molecules of phosphoglycolate and one molecule of NADPH"
+        },
+        "correct_option": "A",
+        "explanation": "When O2 binds to RuBisCO in C3 plants, RuBP combines with O2 instead of CO2, producing one molecule of phosphoglycerate and one molecule of phosphoglycolate (a 2-carbon compound). This pathway neither produces sugars, ATP, nor NADPH, but instead consumes ATP and releases CO2.",
+        "difficulty": "medium",
+        "metadata": {
+          "subject": "BOTANY",
+          "chapter": "photosynthesis",
+          "topic": "factors-affecting-photosynthesis",
+          "concept": "photorespiration",
+          "concept_id": "b48f10f4-e5e1-4740-a62f-c1bcaf3865fb",
+          "topic_id": "4039d404-67cb-4e88-b924-ea873c5c91e7",
+          "chapter_id": "c030eb7b-bcd9-4c9b-9a8e-dc0dc54fa32c"
+        },
+        "source_path": "Biology/Class 11-Biology/ncert-books-class-11-biology-chapter-11.pdf",
+        "source_page": 17,
+        "section_heading": "11.9 PHOTORESPIRATION",
+        "knowledge_unit_id": "f01e615a-6cba-4611-b0ec-2a0a23a482d8",
+        "knowledge_unit_status": "PASSED",
+        "content_version_id": "d4c89a95-b134-4c1b-bfc8-645679d14c74",
+        "workflow_state": "DRAFT",
+        "publication_status": "DRAFT",
+        "pilot_run_id": "phase-d-30-mcq-authorized-20260825"
+      },
+      "proposed_revision": {
+        "stem": "Which statement correctly describes the photorespiratory pathway in C3 plants?",
+        "options": {
+          "A": "It synthesises sugars and NADPH but no ATP.",
+          "B": "It releases CO2 and utilises ATP, with no synthesis of sugars, ATP or NADPH.",
+          "C": "It produces ATP and NADPH while fixing extra CO2.",
+          "D": "It occurs in C4 plants to concentrate CO2 at RuBisCO."
+        },
+        "correct_option": "B",
+        "explanation": "NCERT states that in the photorespiratory pathway there is neither synthesis of sugars nor of ATP or NADPH; instead CO2 is released with utilisation of ATP. Option A invents sugar/NADPH synthesis. Option C reverses the energetics. Option D is false: photorespiration does not occur in C4 plants in the NCERT account. This tests pathway consequences, not the oxygenation product pair (covered by 10d4d997).",
+        "difficulty": "medium"
+      },
+      "metadata_proposal": {
+        "current": {
+          "topic": "factors-affecting-photosynthesis",
+          "concept": "photorespiration"
+        },
+        "recommended": {
+          "topic": "factors-affecting-photosynthesis",
+          "concept": "photorespiration"
+        },
+        "evidence": "Same §11.9 PHOTORESPIRATION; concept now matches.",
+        "applied": false
+      },
+      "what_changed": {
+        "Stem": "From products of RuBP+O2 to pathway consequences.",
+        "Options": "Fully redesigned.",
+        "Correct answer": "A → B.",
+        "Explanation": "New, keyed to no sugar/ATP/NADPH + ATP use + CO2 release.",
+        "Difficulty": "medium (unchanged band)."
+      },
+      "why_better": "Removes redundancy while staying on cited photorespiration page.",
+      "independent_derivation": null,
+      "independent_calculation": null,
+      "duplicate_classification": "NEAR-DUPLICATES",
+      "retain_instead": "10d4d997-cb60-4450-99e8-47ed905c9775",
+      "original_difficulty": "medium",
+      "proposed_difficulty": "medium",
+      "difficulty_reason": "Requires knowing pathway outcomes, not only product pair.",
+      "explanation_score": 5,
+      "ncert_verified": true,
+      "answer_verified": "PASS",
+      "duplicate_check": "PASS",
+      "duplicate_hits_ge_0_45": [
+        {
+          "id": "10d4d997-cb60-4450-99e8-47ed905c9775",
+          "sim": 0.208,
+          "note": "products twin"
+        }
+      ],
+      "reaudit": {
+        "structural": "PASS",
+        "answer_uniqueness": "PASS",
+        "answer_correctness": "PASS",
+        "explanation": "PASS",
+        "ncert_alignment": "PASS",
+        "subject_alignment": "PASS",
+        "chapter_alignment": "PASS",
+        "topic_alignment": "PASS",
+        "concept_alignment": "PASS",
+        "difficulty": "PASS",
+        "distractors": "PASS",
+        "ambiguity": "PASS",
+        "neet_suitability": "PASS",
+        "duplicate_risk": "PASS"
+      },
+      "ecaep_readiness": "GREEN",
+      "final_status": "GREEN — distinct LO from twin",
+      "banner": "PROPOSALS ONLY — NOT APPLIED TO DATABASE"
+    },
+    {
+      "content_item_id": "87f621ab-a1d8-4097-8152-573b6fa46914",
+      "subject": "CHEMISTRY",
+      "action": "REVISE",
+      "finding_status": "CONFIRMED",
+      "reason_for_revision": "Original stem was a long student-argument scenario; cognitively heavy for one MCQ though scientifically sound.",
+      "original": {
+        "stem": "A student argues that VSEPR theory is sufficient for all purposes of studying molecular bonding because it successfully predicts molecular geometry. Which of the following statements BEST refutes this argument using the context of Valence Bond theory?",
+        "options": {
+          "A": "VSEPR theory incorrectly predicts the geometry of H2, whereas VB theory predicts a bond length of 74 pm and bond enthalpy of 435.8 kJ mol⁻¹",
+          "B": "VSEPR theory has unlimited applications but VB theory is more mathematically elegant",
+          "C": "VSEPR theory only predicts geometry without theoretical explanation and has limited applications, whereas VB theory explains bond formation in terms of a balance between attractive and repulsive forces leading to minimum potential energy",
+          "D": "VSEPR theory correctly explains why repulsive forces between nuclei and electrons outweigh attractive forces in H2 formation"
+        },
+        "correct_option": "C",
+        "explanation": "VSEPR theory is limited because it predicts geometry of simple molecules but does not theoretically explain bond formation and has limited applications. VB theory, introduced by Heitler and London in 1927, provides a theoretical basis by showing that bond formation in H2 results from attractive forces (NA–eB, NB–eA) outweighing repulsive forces, leading to minimum energy at a bond length of 74 pm with a bond enthalpy of 435.8 kJ mol⁻¹. Option A is incorrect as VSEPR does not incorrectly predict H2 geometry; option D is factually inverted; option B is unsupported by the given facts.",
+        "difficulty": "hard",
+        "metadata": {
+          "subject": "CHEMISTRY",
+          "chapter": "chemical-bonding",
+          "topic": "covalent-bonding-vsepr",
+          "concept": "vsepr-theory",
+          "concept_id": "8b3a68e9-73e9-43ee-a917-2957af4b7c97",
+          "topic_id": "0f56d8b0-acf7-4145-be41-b1a339080391",
+          "chapter_id": "b386916c-d6f3-475a-9ef2-194dd93ad2e7"
+        },
+        "source_path": "Chemistry/Class 11- Chemistry/ncert-books-class-11-chemistry-chapter-4.pdf",
+        "source_page": 18,
+        "section_heading": "4.5 Valence Bond Theory",
+        "knowledge_unit_id": "e86cfd41-ae62-48f8-8011-6ee21650fa89",
+        "knowledge_unit_status": "PASSED",
+        "content_version_id": "012ca4ee-911e-4e0a-aaa3-7fb112685f55",
+        "workflow_state": "DRAFT",
+        "publication_status": "DRAFT",
+        "pilot_run_id": "phase-d-30-mcq-authorized-20260825"
+      },
+      "proposed_revision": {
+        "stem": "NCERT notes a limitation of VSEPR theory when introducing Valence Bond theory. Which statement is correct?",
+        "options": {
+          "A": "VSEPR wrongly predicts the geometry of H2, while VB cannot give bond length or bond enthalpy.",
+          "B": "VSEPR has unlimited applications, so VB theory is unnecessary.",
+          "C": "VSEPR predicts geometry of simple molecules but does not theoretically explain bonding and has limited applications; VB theory explains bond formation via attractive and repulsive forces leading to a minimum-energy state.",
+          "D": "In H2 formation, repulsive forces outweigh attractive forces according to VB theory."
+        },
+        "correct_option": "C",
+        "explanation": "NCERT states that VSEPR gives geometry of simple molecules but does not theoretically explain them and has limited applications; VB theory (Heitler–London) explains bond formation as attractive forces outweighing repulsive forces, giving a stable molecule at minimum potential energy (e.g. H2 bond length 74 pm). A is false (VSEPR is not said to mis-predict H2). B contradicts 'limited applications'. D inverts the VB force balance.",
+        "difficulty": "medium"
+      },
+      "metadata_proposal": {
+        "current": {
+          "topic": "covalent-bonding-vsepr",
+          "concept": "vsepr-theory"
+        },
+        "recommended": {
+          "topic": "covalent-bonding-vsepr",
+          "concept": "vsepr-theory"
+        },
+        "evidence": "Section 4.5 Valence Bond Theory opens by contrasting VSEPR limits; concept remains appropriate for the contrast item.",
+        "note": "Optional future split concept valence-bond-theory if taxonomy expands.",
+        "applied": false
+      },
+      "what_changed": {
+        "Stem": "Shortened; removed nested argument framing.",
+        "Options": "Tightened; correct remains C.",
+        "Correct answer": "Still C.",
+        "Explanation": "Rewritten; distractor elimination explicit.",
+        "Difficulty": "hard → medium."
+      },
+      "why_better": "Same LO, NEET-appropriate length.",
+      "independent_derivation": null,
+      "independent_calculation": null,
+      "duplicate_classification": null,
+      "retain_instead": null,
+      "original_difficulty": "hard",
+      "proposed_difficulty": "medium",
+      "difficulty_reason": "Direct NCERT contrast once wording is simplified.",
+      "explanation_score": 5,
+      "ncert_verified": true,
+      "answer_verified": "PASS",
+      "duplicate_check": "PASS",
+      "duplicate_hits_ge_0_45": [],
+      "reaudit": {
+        "structural": "PASS",
+        "answer_uniqueness": "PASS",
+        "answer_correctness": "PASS",
+        "explanation": "PASS",
+        "ncert_alignment": "PASS",
+        "subject_alignment": "PASS",
+        "chapter_alignment": "PASS",
+        "topic_alignment": "PASS",
+        "concept_alignment": "PASS",
+        "difficulty": "PASS",
+        "distractors": "PASS",
+        "ambiguity": "PASS",
+        "neet_suitability": "PASS",
+        "duplicate_risk": "PASS"
+      },
+      "ecaep_readiness": "GREEN",
+      "final_status": "GREEN",
+      "banner": "PROPOSALS ONLY — NOT APPLIED TO DATABASE"
+    },
+    {
+      "content_item_id": "863f1289-87a0-4253-b996-c0aff8c47988",
+      "subject": "CHEMISTRY",
+      "action": "REVISE",
+      "finding_status": "CONFIRMED",
+      "reason_for_revision": "Science correct; original student-argument stem was unnecessarily dense.",
+      "original": {
+        "stem": "A student argues that hybridisation involving 3p, 3d, and 4s orbitals should be feasible because 3d orbitals have comparable energy to 4s and 4p orbitals. Why is this argument incorrect according to NCERT?",
+        "options": {
+          "A": "Because 3d orbitals can only hybridise with 3s and 3p orbitals, not with any 4th-shell orbitals",
+          "B": "Because the energy difference between 3p and 4s orbitals is significant, ruling out their co-hybridisation, even though 3d is comparable in energy to both 3s/3p and 4s/4p",
+          "C": "Because 4s orbitals are always lower in energy than 3d orbitals, so mixing 3p with 4s would produce unstable hybrids",
+          "D": "Because hybridisation across different principal quantum number shells is never permitted in any element"
+        },
+        "correct_option": "B",
+        "explanation": "The NCERT text explicitly states that while 3d orbitals have comparable energy to both 3s/3p and 4s/4p orbitals (enabling sp3d or sp3d2 with 3s/3p/3d, and similar with 4s/4p/3d), hybridisation involving 3p, 3d, and 4s together is not possible because the energy difference between 3p and 4s is significant. The student's error is assuming that transitivity of comparable energies applies — just because 3d ≈ 3p and 3d ≈ 4s does not mean 3p ≈ 4s.",
+        "difficulty": "hard",
+        "metadata": {
+          "subject": "CHEMISTRY",
+          "chapter": "chemical-bonding",
+          "topic": "hybridization",
+          "concept": "sp-sp2-sp3",
+          "concept_id": "8abc776c-8f7b-4cef-844b-46afa4fe9f66",
+          "topic_id": "6ad46f21-a87f-425c-b15c-c625a5b49e7c",
+          "chapter_id": "b386916c-d6f3-475a-9ef2-194dd93ad2e7"
+        },
+        "source_path": "Chemistry/Class 11- Chemistry/ncert-books-class-11-chemistry-chapter-4.pdf",
+        "source_page": 25,
+        "section_heading": "4.6.3 Hybridisation of Elements",
+        "knowledge_unit_id": "fe335b26-62bf-4aee-948c-ff913eb3efaa",
+        "knowledge_unit_status": "PASSED",
+        "content_version_id": "e8c46c44-9cb3-48c8-96db-21ec8bcc527a",
+        "workflow_state": "DRAFT",
+        "publication_status": "DRAFT",
+        "pilot_run_id": "phase-d-30-mcq-authorized-20260825"
+      },
+      "proposed_revision": {
+        "stem": "Why does NCERT say hybridisation involving 3p, 3d and 4s orbitals together is not possible, even though 3d energy is comparable to both 3s/3p and 4s/4p?",
+        "options": {
+          "A": "3d orbitals can never mix with any n=4 orbitals.",
+          "B": "The energy difference between 3p and 4s is significant, so those orbitals cannot co-hybridise with 3d.",
+          "C": "4s is always lower than 3d, so any hybrid with 3d is impossible.",
+          "D": "Hybridisation across different principal shells is forbidden for all elements."
+        },
+        "correct_option": "B",
+        "explanation": "NCERT states 3d is comparable in energy to 3s/3p and also to 4s/4p, allowing sets such as 3s+3p+3d or 3d+4s+4p, but hybridisation involving 3p, 3d and 4s together is not possible because the 3p–4s energy gap is significant. A is too absolute (3d+4s+4p is allowed). C overstates a universal 4s<3d rule as the NCERT reason. D is false (cross-shell mixes appear in the allowed sets).",
+        "difficulty": "hard"
+      },
+      "metadata_proposal": {
+        "current": {
+          "topic": "hybridization",
+          "concept": "sp-sp2-sp3"
+        },
+        "recommended": {
+          "topic": "hybridization",
+          "concept": "sp-sp2-sp3"
+        },
+        "evidence": "§4.6.3 Hybridisation of Elements — 3p/3d/4s paragraph in section text.",
+        "applied": false
+      },
+      "what_changed": {
+        "Stem": "Direct why-question.",
+        "Options": "Same misconceptions, shorter.",
+        "Correct answer": "Still B.",
+        "Explanation": "Clarified allowed vs disallowed orbital sets.",
+        "Difficulty": "Unchanged hard."
+      },
+      "why_better": "Same LO with less parse load.",
+      "independent_derivation": null,
+      "independent_calculation": null,
+      "duplicate_classification": null,
+      "retain_instead": null,
+      "original_difficulty": "hard",
+      "proposed_difficulty": "hard",
+      "difficulty_reason": "Still subtle orbital-energy discrimination — appropriately hard.",
+      "explanation_score": 5,
+      "ncert_verified": true,
+      "answer_verified": "PASS",
+      "duplicate_check": "PASS",
+      "duplicate_hits_ge_0_45": [],
+      "reaudit": {
+        "structural": "PASS",
+        "answer_uniqueness": "PASS",
+        "answer_correctness": "PASS",
+        "explanation": "PASS",
+        "ncert_alignment": "PASS",
+        "subject_alignment": "PASS",
+        "chapter_alignment": "PASS",
+        "topic_alignment": "PASS",
+        "concept_alignment": "PASS",
+        "difficulty": "PASS",
+        "distractors": "PASS",
+        "ambiguity": "PASS",
+        "neet_suitability": "PASS",
+        "duplicate_risk": "PASS"
+      },
+      "ecaep_readiness": "GREEN",
+      "final_status": "GREEN",
+      "banner": "PROPOSALS ONLY — NOT APPLIED TO DATABASE"
+    },
+    {
+      "content_item_id": "ade9900b-1ab2-4a5d-aa29-a5f4a605366e",
+      "subject": "PHYSICS",
+      "action": "REVISE",
+      "finding_status": "CONFIRMED",
+      "reason_for_revision": "Calculation correct; academic tags kirchhoffs-laws/kcl-kvl contradict §3.2 ELECTRIC CURRENT provenance.",
+      "original": {
+        "stem": "A conductor carries a non-steady current. In a small interval Δt around time t, a net charge ΔQ flows across a cross-section. As Δt → 0, ΔQ → 0 but ΔQ/Δt → 2 A. Simultaneously, in a separate steady scenario, a net negative charge of 6 C flows in the forward direction and a net positive charge of 2 C flows in the forward direction over 2 s. Which of the following correctly compares the two currents and their directions?",
+        "options": {
+          "A": "The non-steady current is 2 A in the forward direction; the steady current is –2 A, implying it flows in the backward direction",
+          "B": "The non-steady current is 0 A because ΔQ → 0; the steady current is –2 A in the forward direction",
+          "C": "The non-steady current is 2 A in the forward direction; the steady current is 2 A also in the forward direction",
+          "D": "The non-steady current is undefined since the current is non-steady; the steady current is –4 A in the backward direction"
+        },
+        "correct_option": "A",
+        "explanation": "For the non-steady current, I(t) = lim(Δt→0) ΔQ/Δt = 2 A (positive, so forward direction). For the steady case, q = q+ – q– = 2 – 6 = –4 C, and I = q/t = –4/2 = –2 A. A negative value implies the current flows in the backward direction. Hence the non-steady current is 2 A forward and the steady current is –2 A (backward direction).",
+        "difficulty": "hard",
+        "metadata": {
+          "subject": "PHYSICS",
+          "chapter": "current-electricity",
+          "topic": "kirchhoffs-laws",
+          "concept": "kcl-kvl",
+          "concept_id": "1237625c-0742-436b-b970-de5279fbca74",
+          "topic_id": "db865c3f-5956-4289-a337-0b2b841f2f99",
+          "chapter_id": "44e651c0-5346-4439-a60d-6424e0768a9f"
+        },
+        "source_path": "Physics/Class 12-Physics/ncert-book-class-12-physics-part-1-chapter-3.pdf",
+        "source_page": 1,
+        "section_heading": "3.2 ELECTRIC CURRENT",
+        "knowledge_unit_id": "11d6fb7f-13e3-425b-ae37-a0e2aa781f94",
+        "knowledge_unit_status": "PASSED",
+        "content_version_id": "32b58f53-daf9-4d68-9cc9-8bc4f766156b",
+        "workflow_state": "DRAFT",
+        "publication_status": "DRAFT",
+        "pilot_run_id": "phase-d-30-mcq-authorized-20260825"
+      },
+      "proposed_revision": {
+        "stem": "For a non-steady current, lim(Δt→0) ΔQ/Δt = 2 A. In a separate steady case over 2 s, a net positive charge of 2 C and a net negative charge of 6 C both flow in the forward direction. Using q = q+ − q− and I = q/t, which comparison is correct?",
+        "options": {
+          "A": "Non-steady current = 2 A forward; steady current = −2 A (backward).",
+          "B": "Non-steady current = 0 A because ΔQ → 0; steady current = −2 A forward.",
+          "C": "Non-steady current = 2 A forward; steady current = 2 A forward.",
+          "D": "Non-steady current is undefined; steady current = −4 A backward."
+        },
+        "correct_option": "A",
+        "explanation": "Non-steady: I(t)=lim ΔQ/Δt=2 A (forward). Steady: q=q+−q−=2−6=−4 C; I=q/t=−4/2=−2 A; negative means backward. B confuses ΔQ→0 with I→0. C uses wrong q. D invents −4 A as current instead of charge.",
+        "difficulty": "hard"
+      },
+      "metadata_proposal": {
+        "current": {
+          "topic": "kirchhoffs-laws",
+          "concept": "kcl-kvl"
+        },
+        "recommended": {
+          "topic": "ohms-law",
+          "concept": "ohms-law-concept"
+        },
+        "evidence": "Section heading 3.2 ELECTRIC CURRENT; KU facts define I=q/t and lim ΔQ/Δt. Closest existing concept under current-electricity without a dedicated 'electric-current' concept is ohms-law-concept under ohms-law (taxonomy still imperfect but far better than Kirchhoff).",
+        "applied": false
+      },
+      "what_changed": {
+        "Stem": "Made definitions explicit in stem.",
+        "Options": "Shortened.",
+        "Correct answer": "Still A.",
+        "Explanation": "Stepwise arithmetic.",
+        "Difficulty": "Unchanged."
+      },
+      "why_better": "Fixes metadata mismatch risk and reduces wording noise.",
+      "independent_derivation": null,
+      "independent_calculation": {
+        "q": "2 - 6 = -4 C",
+        "I": "-4/2 = -2 A",
+        "I_nonsteady": "2 A"
+      },
+      "duplicate_classification": null,
+      "retain_instead": null,
+      "original_difficulty": "hard",
+      "proposed_difficulty": "hard",
+      "difficulty_reason": "Still dual definition + signed current.",
+      "explanation_score": 5,
+      "ncert_verified": true,
+      "answer_verified": "PASS",
+      "duplicate_check": "PASS",
+      "duplicate_hits_ge_0_45": [],
+      "reaudit": {
+        "structural": "PASS",
+        "answer_uniqueness": "PASS",
+        "answer_correctness": "PASS",
+        "explanation": "PASS",
+        "ncert_alignment": "PASS",
+        "subject_alignment": "PASS",
+        "chapter_alignment": "PASS",
+        "topic_alignment": "PASS",
+        "concept_alignment": "PASS",
+        "difficulty": "PASS",
+        "distractors": "PASS",
+        "ambiguity": "PASS",
+        "neet_suitability": "PASS",
+        "duplicate_risk": "PASS"
+      },
+      "ecaep_readiness": "GREEN",
+      "final_status": "GREEN — retag required when applying",
+      "banner": "PROPOSALS ONLY — NOT APPLIED TO DATABASE"
+    },
+    {
+      "content_item_id": "c7a54ae9-5044-44d3-bfa4-8a5bbc6c5ef2",
+      "subject": "PHYSICS",
+      "action": "REPLACE",
+      "finding_status": "CONFIRMED",
+      "reason_for_revision": "Original SI-unit recall has negligible discrimination for a pilot bank.",
+      "original": {
+        "stem": "According to Ohm's law, the SI unit of resistance is:",
+        "options": {
+          "A": "Ohm (Ω)",
+          "B": "Siemens (S)",
+          "C": "Ampere (A)",
+          "D": "Volt per ampere squared (V/A²)"
+        },
+        "correct_option": "A",
+        "explanation": "The SI unit of resistance is the ohm, denoted by the symbol Ω. This is a direct fact stated in the textbook section on Ohm's law (V = RI, where R is the resistance measured in ohms).",
+        "difficulty": "easy",
+        "metadata": {
+          "subject": "PHYSICS",
+          "chapter": "current-electricity",
+          "topic": "ohms-law",
+          "concept": "ohms-law-concept",
+          "concept_id": "9071ef5d-b62f-4159-91b6-90436a7705e6",
+          "topic_id": "9c5ee8f8-4234-4618-a24e-e0251711bebc",
+          "chapter_id": "44e651c0-5346-4439-a60d-6424e0768a9f"
+        },
+        "source_path": "Physics/Class 12-Physics/ncert-book-class-12-physics-part-1-chapter-3.pdf",
+        "source_page": 3,
+        "section_heading": "3.4 OHM’S LAW",
+        "knowledge_unit_id": "fcff25f5-f369-4dde-b700-1a3a44b961eb",
+        "knowledge_unit_status": "PASSED",
+        "content_version_id": "4117b472-cea2-469b-9f76-0c3be97c4760",
+        "workflow_state": "DRAFT",
+        "publication_status": "DRAFT",
+        "pilot_run_id": "phase-d-30-mcq-authorized-20260825"
+      },
+      "proposed_revision": {
+        "stem": "Ohm's law is written as V = RI. If the potential difference across a conductor is doubled while the current through it is halved, the resistance R of the conductor:",
+        "options": {
+          "A": "becomes four times the original value.",
+          "B": "becomes twice the original value.",
+          "C": "remains unchanged.",
+          "D": "becomes one-fourth of the original value."
+        },
+        "correct_option": "A",
+        "explanation": "From V=RI, R=V/I. If V→2V and I→I/2, then R'=(2V)/(I/2)=4(V/I)=4R. Resistance is a property depending on material and dimensions (R=ρl/A), but for this ohmic relation under the stated V and I changes, the ratio V/I increases fourfold. B undercounts. C would require V/I constant. D inverts the ratio.",
+        "difficulty": "easy"
+      },
+      "metadata_proposal": {
+        "current": {
+          "topic": "ohms-law",
+          "concept": "ohms-law-concept"
+        },
+        "recommended": {
+          "topic": "ohms-law",
+          "concept": "ohms-law-concept"
+        },
+        "evidence": "§3.4 OHM’S LAW; V=RI and R=ρl/A in KU facts.",
+        "applied": false
+      },
+      "what_changed": {
+        "Stem": "From unit recall to V=RI application.",
+        "Options": "New quantitative distractors.",
+        "Correct answer": "Still A (new item).",
+        "Explanation": "Algebraic proof.",
+        "Difficulty": "easy (unchanged band)."
+      },
+      "why_better": "Tests Ohm's law use, still NEET-easy, same section.",
+      "independent_derivation": null,
+      "independent_calculation": null,
+      "duplicate_classification": null,
+      "retain_instead": null,
+      "original_difficulty": "easy",
+      "proposed_difficulty": "easy",
+      "difficulty_reason": "One-step application of V=RI.",
+      "explanation_score": 5,
+      "ncert_verified": true,
+      "answer_verified": "PASS",
+      "duplicate_check": "PASS",
+      "duplicate_hits_ge_0_45": [
+        {
+          "id": "a95d15d3-55cc-4179-9868-307e58031e6d",
+          "sim": 0.459
+        }
+      ],
+      "reaudit": {
+        "structural": "PASS",
+        "answer_uniqueness": "PASS",
+        "answer_correctness": "PASS",
+        "explanation": "PASS",
+        "ncert_alignment": "PASS",
+        "subject_alignment": "PASS",
+        "chapter_alignment": "PASS",
+        "topic_alignment": "PASS",
+        "concept_alignment": "PASS",
+        "difficulty": "PASS",
+        "distractors": "PASS",
+        "ambiguity": "PASS",
+        "neet_suitability": "PASS",
+        "duplicate_risk": "PASS"
+      },
+      "ecaep_readiness": "GREEN",
+      "final_status": "GREEN",
+      "banner": "PROPOSALS ONLY — NOT APPLIED TO DATABASE"
+    },
+    {
+      "content_item_id": "7b80d6db-9c07-4b42-a92d-df74ab8428b3",
+      "subject": "PHYSICS",
+      "action": "REVISE",
+      "finding_status": "PARTIALLY CONFIRMED",
+      "reason_for_revision": "Answer A is scientifically correct under NCERT labelling; the P1 issue is ambiguity/density of the original stem, not a wrong key. Independent derivation confirms A.",
+      "original": {
+        "stem": "In a circuit loop, a cell of EMF ε and internal resistance r has a current I flowing from its positive terminal P to its negative terminal N (i.e., opposite to the conventional internal current direction). Using Kirchhoff's Loop Rule and the correct expression for terminal potential difference in this scenario, which equation correctly represents the potential change across this cell as current moves from P to N, and what does this imply physically?",
+        "options": {
+          "A": "V(N) – V(P) = –ε – Ir, implying the cell is being charged (acts as a load) and potential drops by more than ε",
+          "B": "V(N) – V(P) = ε – Ir, implying the cell is discharging and gains potential in the direction of current",
+          "C": "V(N) – V(P) = –ε + Ir, implying the cell is discharging and the terminal voltage is reduced by internal resistance",
+          "D": "V(N) – V(P) = ε + Ir, implying the cell always gains potential regardless of current direction"
+        },
+        "correct_option": "A",
+        "explanation": "When current I flows from P (positive terminal) to N (negative terminal) through the cell, the potential difference is given by V(P) – V(N) = ε + Ir. Therefore, V(N) – V(P) = –ε – Ir. This scenario (current entering the positive terminal) corresponds to the cell being charged — it acts as a load rather than a source. The potential falls by (ε + Ir) in going from P to N, which is consistent with the Loop Rule requiring the algebraic sum of all potential changes around the loop to equal zero.",
+        "difficulty": "hard",
+        "metadata": {
+          "subject": "PHYSICS",
+          "chapter": "current-electricity",
+          "topic": "kirchhoffs-laws",
+          "concept": "kcl-kvl",
+          "concept_id": "1237625c-0742-436b-b970-de5279fbca74",
+          "topic_id": "db865c3f-5956-4289-a337-0b2b841f2f99",
+          "chapter_id": "44e651c0-5346-4439-a60d-6424e0768a9f"
+        },
+        "source_path": "Physics/Class 12-Physics/ncert-book-class-12-physics-part-1-chapter-3.pdf",
+        "source_page": 17,
+        "section_heading": "3.12 KIRCHHOFF’S RULES",
+        "knowledge_unit_id": "e5f8f04d-d353-4d6b-aa3c-c9baa12b488c",
+        "knowledge_unit_status": "PASSED",
+        "content_version_id": "fef85035-402e-4c8d-9db4-024745bca160",
+        "workflow_state": "DRAFT",
+        "publication_status": "DRAFT",
+        "pilot_run_id": "phase-d-30-mcq-authorized-20260825"
+      },
+      "proposed_revision": {
+        "stem": "In Kirchhoff labelling, a cell of emf ε and internal resistance r has current I marked from the positive terminal P toward the negative terminal N. NCERT gives V(P) − V(N) = ε + Ir for this labelling. Which statement is correct?",
+        "options": {
+          "A": "V(N) − V(P) = −ε − Ir; current enters the positive terminal (cell being charged / acting as a load).",
+          "B": "V(N) − V(P) = ε − Ir; the cell is discharging with terminal voltage ε − Ir.",
+          "C": "V(N) − V(P) = −ε + Ir; the Ir term always opposes ε when going from N to P.",
+          "D": "V(N) − V(P) = ε + Ir; potential always rises from P to N."
+        },
+        "correct_option": "A",
+        "explanation": "KU/NCERT: if I is labelled P→N, V(P)−V(N)=ε+Ir. Therefore V(N)−V(P)=−(ε+Ir)=−ε−Ir. Current into the positive terminal means the cell is being charged (acts as a load), so the potential fall from P to N exceeds ε by Ir. B matches the opposite labelling (N→P), where V(P)−V(N)=ε−Ir. C and D rearrange signs incorrectly.",
+        "difficulty": "hard"
+      },
+      "metadata_proposal": {
+        "current": {
+          "topic": "kirchhoffs-laws",
+          "concept": "kcl-kvl"
+        },
+        "recommended": {
+          "topic": "kirchhoffs-laws",
+          "concept": "kcl-kvl"
+        },
+        "evidence": "§3.12 KIRCHHOFF’S RULES; KU facts include both cell labelling formulae.",
+        "applied": false
+      },
+      "what_changed": {
+        "Stem": "States NCERT formula and terminal labels explicitly.",
+        "Options": "Aligned to derivation; same correct physics as A.",
+        "Correct answer": "Still A.",
+        "Explanation": "Derivation-first.",
+        "Difficulty": "Unchanged hard."
+      },
+      "why_better": "Single defensible answer; removes prior NEEDS REVIEW ambiguity.",
+      "independent_derivation": {
+        "convention": "NCERT: I from N→P ⇒ V(P)−V(N)=ε−Ir; I from P→N ⇒ V(P)−V(N)=ε+Ir (KU facts 4–5).",
+        "stem_direction": "I: P → N",
+        "therefore": "V(P)−V(N)=ε+Ir ⇒ V(N)−V(P)=−ε−Ir",
+        "physical_meaning": "Current into positive terminal ⇒ charging/load",
+        "other_options_defensible": false,
+        "residual_risk_if_unrevised": "Students may confuse which terminal traversal gives ±Ir without explicit labelling."
+      },
+      "independent_calculation": null,
+      "duplicate_classification": null,
+      "retain_instead": null,
+      "original_difficulty": "hard",
+      "proposed_difficulty": "hard",
+      "difficulty_reason": "Sign conventions remain appropriately hard.",
+      "explanation_score": 5,
+      "ncert_verified": true,
+      "answer_verified": "PASS",
+      "duplicate_check": "PASS",
+      "duplicate_hits_ge_0_45": [],
+      "reaudit": {
+        "structural": "PASS",
+        "answer_uniqueness": "PASS",
+        "answer_correctness": "PASS",
+        "explanation": "PASS",
+        "ncert_alignment": "PASS",
+        "subject_alignment": "PASS",
+        "chapter_alignment": "PASS",
+        "topic_alignment": "PASS",
+        "concept_alignment": "PASS",
+        "difficulty": "PASS",
+        "distractors": "PASS",
+        "ambiguity": "PASS",
+        "neet_suitability": "PASS",
+        "duplicate_risk": "PASS"
+      },
+      "ecaep_readiness": "GREEN",
+      "final_status": "GREEN — answer confirmed; wording clarified",
+      "banner": "PROPOSALS ONLY — NOT APPLIED TO DATABASE"
+    },
+    {
+      "content_item_id": "a42a3589-8070-40c2-9181-f76642b33a85",
+      "subject": "PHYSICS",
+      "action": "REVISE",
+      "finding_status": "CONFIRMED",
+      "reason_for_revision": "Original asked only for the memorised factor; low discrimination.",
+      "original": {
+        "stem": "In a copper wire of cross-sectional area 1.0 × 10⁻⁷ m² carrying a current of 1.5 A, the drift speed of conduction electrons is approximately 1.1 × 10⁻³ m s⁻¹. This drift speed is approximately how many times smaller than the typical thermal speed of copper atoms at ordinary temperatures?",
+        "options": {
+          "A": "10⁻⁵ times",
+          "B": "10⁻³ times",
+          "C": "10⁻⁷ times",
+          "D": "10⁻¹ times"
+        },
+        "correct_option": "A",
+        "explanation": "According to the textbook, the drift speed of conduction electrons in a copper wire carrying 1.5 A through a cross-sectional area of 1.0 × 10⁻⁷ m² is approximately 1.1 × 10⁻³ m s⁻¹, which is about 10⁻⁵ times the typical thermal speed of copper atoms at ordinary temperatures. This illustrates that drift speeds in typical conductors are extremely small compared to thermal speeds.",
+        "difficulty": "medium",
+        "metadata": {
+          "subject": "PHYSICS",
+          "chapter": "current-electricity",
+          "topic": "ohms-law",
+          "concept": "drift-velocity",
+          "concept_id": "e8ad87ae-b886-4314-b8cb-aa6024104895",
+          "topic_id": "9c5ee8f8-4234-4618-a24e-e0251711bebc",
+          "chapter_id": "44e651c0-5346-4439-a60d-6424e0768a9f"
+        },
+        "source_path": "Physics/Class 12-Physics/ncert-book-class-12-physics-part-1-chapter-3.pdf",
+        "source_page": 5,
+        "section_heading": "3.5 DRIFT OF ELECTRONS AND THE ORIGIN",
+        "knowledge_unit_id": "4f40e57b-77ee-460b-a3e1-2719621c2c07",
+        "knowledge_unit_status": "PASSED",
+        "content_version_id": "8d39848a-8a60-47c8-8997-09a827fa3e6e",
+        "workflow_state": "DRAFT",
+        "publication_status": "DRAFT",
+        "pilot_run_id": "phase-d-30-mcq-authorized-20260825"
+      },
+      "proposed_revision": {
+        "stem": "Example values in NCERT give electron drift speed vd ≈ 1.1 × 10⁻³ m s⁻¹ in a copper wire (A = 1.0 × 10⁻⁷ m², I = 1.5 A). Which conclusion is correct?",
+        "options": {
+          "A": "vd is about 10⁻⁵ times a typical thermal speed of copper atoms at ordinary temperatures, so drift is extremely slow compared with thermal motion.",
+          "B": "vd is comparable to thermal speeds, so drift dominates transport time across a laboratory wire.",
+          "C": "vd equals the thermal speed divided by 10 only, so the two speeds differ by one order of magnitude.",
+          "D": "vd is larger than thermal speed; current is carried mainly by thermal motion."
+        },
+        "correct_option": "A",
+        "explanation": "NCERT Example 3.1 compares the estimated drift speed with thermal speeds and notes drift speeds are much smaller (about 10⁻⁵ times thermal). B and D contradict that comparison. C understates the ratio (10⁻¹ vs ~10⁻⁵).",
+        "difficulty": "easy"
+      },
+      "metadata_proposal": {
+        "current": {
+          "topic": "ohms-law",
+          "concept": "drift-velocity"
+        },
+        "recommended": {
+          "topic": "ohms-law",
+          "concept": "drift-velocity"
+        },
+        "evidence": "§3.5 DRIFT OF ELECTRONS; Example 3.1 comparison in section text.",
+        "applied": false
+      },
+      "what_changed": {
+        "Stem": "Provides example numbers; asks for correct conclusion.",
+        "Options": "Conceptual, not bare powers of ten alone.",
+        "Correct answer": "Still A.",
+        "Explanation": "Focus on drift ≪ thermal.",
+        "Difficulty": "medium → easy."
+      },
+      "why_better": "Assesses understanding of the comparison, not rote exponent.",
+      "independent_derivation": null,
+      "independent_calculation": null,
+      "duplicate_classification": null,
+      "retain_instead": null,
+      "original_difficulty": "medium",
+      "proposed_difficulty": "easy",
+      "difficulty_reason": "Conceptual comparison still easy once numbers are given in stem.",
+      "explanation_score": 4,
+      "ncert_verified": true,
+      "answer_verified": "PASS",
+      "duplicate_check": "PASS",
+      "duplicate_hits_ge_0_45": [],
+      "reaudit": {
+        "structural": "PASS",
+        "answer_uniqueness": "PASS",
+        "answer_correctness": "PASS",
+        "explanation": "PASS",
+        "ncert_alignment": "PASS",
+        "subject_alignment": "PASS",
+        "chapter_alignment": "PASS",
+        "topic_alignment": "PASS",
+        "concept_alignment": "PASS",
+        "difficulty": "PASS",
+        "distractors": "PASS",
+        "ambiguity": "PASS",
+        "neet_suitability": "PASS",
+        "duplicate_risk": "PASS"
+      },
+      "ecaep_readiness": "GREEN",
+      "final_status": "GREEN",
+      "banner": "PROPOSALS ONLY — NOT APPLIED TO DATABASE"
+    }
+  ]
+}

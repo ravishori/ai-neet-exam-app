@@ -1,0 +1,235 @@
+{
+  "document_type": "phase-d-independent-review",
+  "banner": "INDEPENDENT REVIEW — NO DATABASE CHANGES — NO ECAEP ACTION — NO PUBLICATION",
+  "generated_at": "2026-08-31T12:25:00+00:00",
+  "pilot_run_id": "phase-d-30-mcq-authorized-20260825",
+  "database": "trinetra_db",
+  "database_writes": 0,
+  "publication_actions": 0,
+  "ecaep_actions": 0,
+  "mcqs_modified": false,
+  "taxonomy_modified": false,
+  "independent_verdict": "AMBER",
+  "taxonomy_verdict": "NEW CONCEPT REQUIRED",
+  "revision_plan_verdict": "APPROVED FOR HUMAN DECISION",
+  "live_pilot": {
+    "questions": 30,
+    "draft": 30,
+    "published": 0,
+    "subjects": { "BOTANY": 10, "CHEMISTRY": 10, "PHYSICS": 10 }
+  },
+  "flagged_nine": [
+    {
+      "content_item_id": "e6b9fb1e-f022-4172-88c5-318213bc511b",
+      "previous_action": "KEEP",
+      "independent_finding": "AGREE — independently verified",
+      "scientific_status": "PASS",
+      "ncert_status": "PASS",
+      "recommendation": "KEEP",
+      "notes": "Body OK; photorespiration concept tag incorrect"
+    },
+    {
+      "content_item_id": "8d50e829-6540-44bc-882a-6b140a33da17",
+      "previous_action": "REVISE",
+      "independent_finding": "AGREE — independently verified",
+      "scientific_status": "PASS",
+      "ncert_status": "PASS",
+      "recommendation": "REVISE",
+      "notes": "Clearer stem; answer A; taxonomy gap remains"
+    },
+    {
+      "content_item_id": "85fee888-47f6-408d-ab05-39b131233322",
+      "previous_action": "REPLACE",
+      "independent_finding": "AGREE — independently verified",
+      "scientific_status": "PASS",
+      "ncert_status": "PASS",
+      "recommendation": "REPLACE",
+      "notes": "Distinct LO from 10d4d997; answer B defensible"
+    },
+    {
+      "content_item_id": "87f621ab-a1d8-4097-8152-573b6fa46914",
+      "previous_action": "REVISE",
+      "independent_finding": "AGREE — independently verified",
+      "scientific_status": "PASS",
+      "ncert_status": "PASS",
+      "recommendation": "REVISE"
+    },
+    {
+      "content_item_id": "863f1289-87a0-4253-b996-c0aff8c47988",
+      "previous_action": "REVISE",
+      "independent_finding": "AGREE — independently verified",
+      "scientific_status": "PASS",
+      "ncert_status": "PASS",
+      "recommendation": "REVISE"
+    },
+    {
+      "content_item_id": "ade9900b-1ab2-4a5d-aa29-a5f4a605366e",
+      "previous_action": "REVISE",
+      "independent_finding": "AGREE on science and Kirchhoff mis-tag; PARTIAL on ohms-law-concept precision",
+      "scientific_status": "PASS",
+      "ncert_status": "PASS",
+      "recommendation": "REVISE",
+      "metadata_recommendation": {
+        "topic": "ohms-law",
+        "concept": "ohms-law-concept",
+        "note": "Best available under seed; concept summary is V=IR while item is I=dq/dt"
+      }
+    },
+    {
+      "content_item_id": "c7a54ae9-5044-44d3-bfa4-8a5bbc6c5ef2",
+      "previous_action": "REPLACE",
+      "independent_finding": "AGREE replace unit trivia; PARTIAL on stem fixed-R tension",
+      "scientific_status": "PASS",
+      "ncert_status": "PASS",
+      "recommendation": "REPLACE",
+      "math": { "V": "x2", "I": "÷2", "R": "x4", "correct_option": "A" },
+      "optional_human_polish": "Ask about ratio V/I to avoid implying fixed ohmic R with incompatible V and I"
+    },
+    {
+      "content_item_id": "7b80d6db-9c07-4b42-a92d-df74ab8428b3",
+      "previous_action": "REVISE",
+      "independent_finding": "AGREE — independently derived",
+      "scientific_status": "PASS",
+      "ncert_status": "PASS",
+      "recommendation": "REVISE",
+      "independent_derivation": {
+        "current_direction": "P → N",
+        "polarity": "P positive, N negative",
+        "potential_traversal": "V(P)−V(N)=ε+Ir (NCERT labelling)",
+        "internal_resistance": "+Ir when I enters positive terminal (charging/load)",
+        "equation": "V(N)−V(P)=−ε−Ir",
+        "answer": "A",
+        "other_options_defensible": false,
+        "further_revise_beyond_proposal": false
+      }
+    },
+    {
+      "content_item_id": "a42a3589-8070-40c2-9181-f76642b33a85",
+      "previous_action": "REVISE",
+      "independent_finding": "AGREE — independently verified",
+      "scientific_status": "PASS",
+      "ncert_status": "PASS",
+      "recommendation": "REVISE"
+    }
+  ],
+  "near_duplicate_review": {
+    "pair": ["10d4d997-cb60-4450-99e8-47ed905c9775", "85fee888-47f6-408d-ab05-39b131233322"],
+    "live_redundant": true,
+    "retain": "10d4d997-cb60-4450-99e8-47ed905c9775",
+    "proposed_replacement_distinct_lo": true,
+    "proposed_lo": "photorespiration pathway consequences",
+    "proposed_answer": "B",
+    "proposed_answer_defensible": true
+  },
+  "taxonomy": {
+    "decision": "NEW CONCEPT REQUIRED",
+    "accept_existing": false,
+    "remap_to_existing": false,
+    "proposed": {
+      "name": "Limiting Factors (Blackman's Law)",
+      "code": "limiting-factors",
+      "parent_topic": "factors-affecting-photosynthesis",
+      "parent_chapter": "photosynthesis",
+      "subject": "BOTANY",
+      "definition": "Rate of a multi-factor process is set by the factor nearest its minimal value (Blackman, 1905); external and internal photosynthetic limiters per NCERT §11.10.",
+      "ncert_basis": "Class 11 Biology Chapter 11 §11.10 Factors Affecting Photosynthesis",
+      "why_existing_insufficient": "Only concept under topic is photorespiration (oxygenation pathway §11.9), not Blackman/limiting factors.",
+      "future_use_cases": [
+        "Blackman definition items",
+        "limiting-factor application scenarios",
+        "light/CO2/temperature response",
+        "chlorophyll as internal limiter"
+      ],
+      "create_now": false
+    },
+    "affected_questions": [
+      "e6b9fb1e-f022-4172-88c5-318213bc511b",
+      "8d50e829-6540-44bc-882a-6b140a33da17"
+    ]
+  },
+  "versioning_strategy_review": {
+    "matches_application_semantics": true,
+    "prefer_service": "ContentWorkflowService.update_draft",
+    "latest_version_id": "editorial tip — advances on update_draft",
+    "current_version_id": "published tip — set only on publish; leave unchanged for DRAFT revision",
+    "status_remains_draft": true,
+    "ku_copy_required": true,
+    "ku_copy_evidence": "CmsRepository._pilot_run_item_ids_subquery joins ContentItem.latest_version_id → content_version_knowledge_units → KU → section → job.pilot_run_id; missing copy drops items from pilot filters",
+    "also_copy_singular_ku_columns": true,
+    "hidden_risks": [
+      "KU omission silently removes pilot membership",
+      "current_version_id may lag latest on DRAFT after edit (correct; admin must use latest)",
+      "concept_id is item-level and not versioned",
+      "no public concept_id-only PATCH today"
+    ]
+  },
+  "final_30_set": {
+    "subject_balance": "PASS",
+    "exact_duplicates": "PASS",
+    "near_duplicates_after_replace": "PASS",
+    "difficulty": { "easy": 12, "medium": 6, "hard": 12, "result": "ACCEPTABLE" },
+    "cognitive": {
+      "Recall": 7,
+      "Conceptual": 8,
+      "Application": 3,
+      "Multi-step": 12,
+      "result": "ACCEPTABLE"
+    },
+    "answer_distribution": {
+      "A": 22,
+      "B": 7,
+      "C": 1,
+      "D": 0,
+      "result": "WARNING",
+      "rebalance": false
+    },
+    "educational_coherence": true
+  },
+  "disagreement_register": [
+    {
+      "issue": "c7a54ae9 proposed stem fixed-R tension",
+      "cursor_finding": "Fully clean Ohm application",
+      "claude_finding": "Algebra correct; soft literal inconsistency for fixed ohmic R",
+      "agreement": "PARTIAL",
+      "resolution_needed": "Human accept NEET-ratio style or polish stem to V/I"
+    },
+    {
+      "issue": "ade9900b ohms-law-concept precision",
+      "cursor_finding": "Fully accurate remap",
+      "claude_finding": "Correct topic; concept coarse vs I=dq/dt",
+      "agreement": "PARTIAL",
+      "resolution_needed": "Accept under current seed; optional future current-definition concept"
+    }
+  ],
+  "human_approval_checklist": [
+    "Approve/reject taxonomy concept limiting-factors",
+    "Approve/reject 85fee888 replacement",
+    "Approve/reject c7a54ae9 replacement (and optional stem polish)",
+    "Approve/reject 7b80d6db wording revision",
+    "Approve/reject remaining revisions",
+    "Approve/reject metadata changes",
+    "Approve versioning/application strategy including mandatory KU copy"
+  ],
+  "safety": {
+    "database_modified": false,
+    "mcqs_modified": false,
+    "taxonomy_modified": false,
+    "ecaep_submitted": false,
+    "questions_published": false
+  },
+  "sources_reviewed": [
+    "docs/architecture/phase-d-ecaep-prescreen-20260831.md",
+    "docs/architecture/phase-d-ecaep-prescreen-20260831.json",
+    "docs/architecture/phase-d-ecaep-revision-proposals-20260831.md",
+    "docs/architecture/phase-d-ecaep-revision-proposals-20260831.json",
+    "docs/architecture/phase-d-final-30-mcq-candidate-audit-20260831.md",
+    "docs/architecture/phase-d-final-30-mcq-candidate-audit-20260831.json",
+    "docs/architecture/phase-d-taxonomy-resolution-20260831.md",
+    "docs/architecture/phase-d-taxonomy-resolution-20260831.json",
+    "docs/architecture/phase-d-revision-application-plan-20260831.md",
+    "docs/architecture/phase-d-revision-application-plan-20260831.json",
+    "apps/backend/app/modules/cms/services/content_workflow_service.py",
+    "apps/backend/app/modules/cms/repositories/cms_repository.py",
+    "apps/backend/app/modules/academic/seed.py"
+  ]
+}

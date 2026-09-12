@@ -1,0 +1,18 @@
+{
+  "audit": "Seed V1 accessibility smoke (tmp)",
+  "date": "2026-09-03",
+  "allow_sha": "c0cf70846233730ef384188f5b78cced2a7865f76d977a0af6063f803bc8f0c1",
+  "pass": true,
+  "errors": [],
+  "student_email": "sx-reg-a11y-a11y-1788443909711-899957@example.com",
+  "accessibility_smoke": {
+    "seed_aria_label": "Practice Seed V1 — exact 30 published questions",
+    "active_after_tab": {
+      "tag": "BUTTON",
+      "aria": "Practice Seed V1 — exact 30 published questions",
+      "text": "Practice Seed V1"
+    },
+    "pass": true
+  },
+  "console_errors_on_dashboard": []
+}

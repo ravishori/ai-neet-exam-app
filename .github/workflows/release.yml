@@ -1,0 +1,142 @@
+name: Release Pipeline
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  packages: write
+  security-events: read
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+
+jobs:
+
+  release:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      # ----------------------------------------------------------------------
+      # Checkout Repository
+      # ----------------------------------------------------------------------
+
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      # ----------------------------------------------------------------------
+      # Setup Docker Buildx
+      # ----------------------------------------------------------------------
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      # ----------------------------------------------------------------------
+      # Login to GitHub Container Registry
+      # ----------------------------------------------------------------------
+
+      - name: Login to GHCR
+        uses: docker/login-action@v3
+
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      # ----------------------------------------------------------------------
+      # Build Backend Image
+      # ----------------------------------------------------------------------
+
+      - name: Build Backend Docker Image
+        uses: docker/build-push-action@v6
+
+        with:
+          context: ./apps/backend
+          file: ./apps/backend/Dockerfile
+          push: true
+          tags: |
+            ghcr.io/${{ github.repository }}/backend:latest
+            ghcr.io/${{ github.repository }}/backend:${{ github.ref_name }}
+
+      # ----------------------------------------------------------------------
+      # Build Frontend Image
+      # ----------------------------------------------------------------------
+
+      - name: Build Frontend Docker Image
+        uses: docker/build-push-action@v6
+
+        with:
+          context: ./apps/frontend
+          file: ./apps/frontend/Dockerfile
+          push: true
+          tags: |
+            ghcr.io/${{ github.repository }}/frontend:latest
+            ghcr.io/${{ github.repository }}/frontend:${{ github.ref_name }}
+
+      # ----------------------------------------------------------------------
+      # Create Release Archive
+      # ----------------------------------------------------------------------
+
+      - name: Create Source Archive
+        run: |
+          zip -r ai-neet-exam-app-${{ github.ref_name }}.zip . \
+            -x ".git/*" \
+            -x "node_modules/*" \
+            -x ".next/*" \
+            -x "__pycache__/*" \
+            -x "*.pyc"
+
+      # ----------------------------------------------------------------------
+      # Generate Release Notes
+      # ----------------------------------------------------------------------
+
+      - name: Generate Release Notes
+        id: release_notes
+
+        uses: github/release-action@v1
+
+        with:
+          allowUpdates: true
+          generateReleaseNotes: true
+
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # ----------------------------------------------------------------------
+      # Create GitHub Release
+      # ----------------------------------------------------------------------
+
+      - name: Publish GitHub Release
+
+        uses: softprops/action-gh-release@v2
+
+        with:
+          generate_release_notes: true
+
+          files: |
+            ai-neet-exam-app-${{ github.ref_name }}.zip
+
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # ----------------------------------------------------------------------
+      # Display Summary
+      # ----------------------------------------------------------------------
+
+      - name: Release Summary
+
+        run: |
+          echo "======================================"
+          echo "Release Completed"
+          echo "Version : ${{ github.ref_name }}"
+          echo "Repository : ${{ github.repository }}"
+          echo "Docker Images Published"
+          echo "GitHub Release Created"
+          echo "======================================"

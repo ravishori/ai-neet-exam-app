@@ -1,0 +1,103 @@
+{
+  "audit_date": "2026-09-12",
+  "audit_phase": "0_readonly",
+  "repository": "ai-neet-exam-app",
+  "branch": "phase2-question-bank",
+  "generated_at": "2026-09-12T11:48:37.835836+00:00",
+  "code_modified": false,
+  "database_modified": false,
+  "overall_verdict": "AMBER \u2014 HARDENING REQUIRED",
+  "domain": "security",
+  "findings": [
+    {
+      "id": "SEC-SQL",
+      "title": "SQL injection",
+      "status": "IMPLEMENTED",
+      "detail": "App-path text() uses bind params; ORM dominant. Scripts offline only."
+    },
+    {
+      "id": "SEC-XSS",
+      "title": "XSS",
+      "status": "PARTIALLY_IMPLEMENTED",
+      "detail": "ReactMarkdown without rehype-raw; diagram SVG via data URI; no web CSP."
+    },
+    {
+      "id": "SEC-CSRF",
+      "title": "CSRF",
+      "status": "PARTIALLY_IMPLEMENTED",
+      "detail": "Double-submit cookie+header; logout lacks verify_csrf."
+    },
+    {
+      "id": "SEC-CORS",
+      "title": "CORS",
+      "status": "PARTIALLY_IMPLEMENTED",
+      "detail": "Configured origins with credentials; methods/headers wildcard."
+    },
+    {
+      "id": "SEC-AUTHN",
+      "title": "Authentication",
+      "status": "IMPLEMENTED",
+      "detail": "Argon2, cookies, refresh rotation, lockout, MFA API."
+    },
+    {
+      "id": "SEC-AUTHZ",
+      "title": "Authorization",
+      "status": "PARTIALLY_IMPLEMENTED",
+      "detail": "RBAC permissions; attempt ownership; some CMS paths permission-only."
+    },
+    {
+      "id": "SEC-UPLOAD",
+      "title": "File uploads",
+      "status": "IMPLEMENTED",
+      "detail": "PDF magic+size+path jail; CSV sandbox validators."
+    },
+    {
+      "id": "SEC-SSRF",
+      "title": "SSRF",
+      "status": "IMPLEMENTED",
+      "detail": "httpx to fixed provider URLs; no user-URL fetch found."
+    },
+    {
+      "id": "SEC-CMDI",
+      "title": "Command injection",
+      "status": "IMPLEMENTED",
+      "detail": "No shell=True in app/; OCR subprocess list-form."
+    },
+    {
+      "id": "SEC-SECRETS",
+      "title": "Secrets",
+      "status": "PARTIALLY_IMPLEMENTED",
+      "detail": ".env gitignored; examples placeholders; prod vault UNVERIFIED."
+    },
+    {
+      "id": "SEC-HEADERS",
+      "title": "Security headers",
+      "status": "PARTIALLY_IMPLEMENTED",
+      "detail": "API middleware strong; Next.js MISSING."
+    },
+    {
+      "id": "SEC-RL",
+      "title": "Rate limiting",
+      "status": "PARTIALLY_IMPLEMENTED",
+      "detail": "Redis fixed window; auth fail-open vs recovery fail-closed."
+    },
+    {
+      "id": "SEC-AI",
+      "title": "AI security",
+      "status": "PARTIALLY_IMPLEMENTED",
+      "detail": "Factory safety gates; tutor relies on prompts+rate limits."
+    },
+    {
+      "id": "SEC-CONTENT",
+      "title": "Content trust",
+      "status": "IMPLEMENTED",
+      "detail": "ECAEP prevents auto-publish of AI output."
+    },
+    {
+      "id": "SEC-RLS",
+      "title": "DB RLS",
+      "status": "PARTIALLY_IMPLEMENTED",
+      "detail": "Documented; runtime typically owner role."
+    }
+  ]
+}

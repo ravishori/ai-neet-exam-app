@@ -9,6 +9,7 @@ from app.modules.cms.models import ContentItem, ContentReport, ContentVersion
 from app.modules.cms.repositories.cms_repository import CmsRepository
 from app.modules.cms.schemas.content_item import (
     BulkContentActionRequest,
+    CertifyNcertRequest,
     ContentItemCreateRequest,
     ContentItemUpdateRequest,
     ContentReportRequest,
@@ -186,6 +187,13 @@ def _flashcard_summary(item: ContentItem, names: dict) -> dict:
         "front": body.get("front"),
         "back": body.get("back"),
         "image_url": body.get("image_url"),
+        "explanation": body.get("explanation"),
+        "difficulty": body.get("difficulty"),
+        "source": body.get("source"),
+        "source_reference": body.get("source_reference"),
+        "class_level": body.get("class_level") or _class_from_tags(item.tags),
+        "certification_status": body.get("certification_status"),
+        "certification_provenance": body.get("certification_provenance"),
         "tags": item.tags,
         "language": item.language,
         "concept": concept_names.get("concept"),
@@ -393,7 +401,14 @@ async def update_content_item(
         raise PermissionDeniedError("You can only edit your own drafts")
 
     service = ContentWorkflowService(db)
-    item = await service.update_draft(item_id, body=payload.body, change_summary=payload.change_summary, author_id=user.id)
+    item = await service.update_draft(
+        item_id,
+        body=payload.body,
+        change_summary=payload.change_summary,
+        author_id=user.id,
+        title=payload.title,
+        tags=payload.tags,
+    )
     return envelope(success=True, data=_item(item))
 
 
@@ -414,6 +429,28 @@ async def review_content_item(
     service = ContentWorkflowService(db)
     item = await service.review(item_id, reviewer_id=user.id, decision=payload.decision, comment=payload.comment)
     return envelope(success=True, data=_item(item))
+
+
+@router.post(
+    "/content-items/{item_id}/certify-ncert",
+    dependencies=[Depends(require_permission("content.review")), Depends(verify_csrf)],
+)
+async def certify_ncert_content_item(
+    item_id: uuid.UUID,
+    payload: CertifyNcertRequest,
+    user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db),
+):
+    """Certify NCERT SOURCE_TEXT_VERIFIED on an APPROVED question. Does not publish."""
+    service = ContentWorkflowService(db)
+    result = await service.certify_ncert_evidence(
+        item_id,
+        actor_user_id=user.id,
+        verification_method=payload.verification_method,
+        required_batch_id=payload.required_batch_id,
+        commit=True,
+    )
+    return envelope(success=True, data=result)
 
 
 @router.post("/content-items/{item_id}/publish", dependencies=[Depends(require_permission("content.publish")), Depends(verify_csrf)])
@@ -537,23 +574,56 @@ async def report_question(
 async def browse_flashcards(
     scope_type: str | None = None,  # SUBJECT | CHAPTER | TOPIC | CONCEPT
     scope_id: uuid.UUID | None = None,
+    certified_only: bool = Query(
+        default=False,
+        description="If true, return only certification_status=VERIFIED flashcards",
+    ),
     limit: int = Query(default=20, ge=1, le=100),
     offset: int = Query(default=0, ge=0),
     db: AsyncSession = Depends(get_db),
 ):
     """Student-facing flashcard browser (PR 10) — published flashcards only.
-    Gated the same as /concepts/{id}/published: every authenticated user can
-    read published educational content, no editorial permission needed —
-    flashcards carry no answer to protect the way questions.read protects
-    correct_option, so questions.read's stricter gate doesn't apply here."""
+
+    Publication safety gate:
+    - REJECTED cards are never returned (archived or filtered).
+    - REVIEW cards may appear for study but are not certified.
+    - certified_only=true returns VERIFIED cards only.
+    """
     repo = CmsRepository(db)
-    items, total = await repo.list_flashcards(scope_type=scope_type, scope_id=scope_id, limit=limit, offset=offset)
-    concept_ids = [i.concept_id for i in items if i.concept_id]
+    # Over-fetch then filter certification in-process (body JSON). Corpus is
+    # currently hundreds of cards; raise if volume grows past this window.
+    items, _total_raw = await repo.list_flashcards(
+        scope_type=scope_type, scope_id=scope_id, limit=500, offset=0
+    )
+    filtered: list = []
+    for item in items:
+        version = _question_version(item)
+        body = version.body if version else {}
+        status = (body.get("certification_status") or "").upper()
+        if status == "REJECTED":
+            continue
+        if "audit:REJECTED" in (item.tags or []):
+            continue
+        if certified_only and status != "VERIFIED":
+            continue
+        filtered.append(item)
+    total = len(filtered)
+    page = filtered[offset : offset + limit]
+    concept_ids = [i.concept_id for i in page if i.concept_id]
     names = await repo.academic_names_for_concepts(concept_ids)
     return envelope(
         success=True,
-        data=[_flashcard_summary(i, names) for i in items],
-        meta={"total": total, "limit": limit, "offset": offset},
+        data=[_flashcard_summary(i, names) for i in page],
+        meta={
+            "total": total,
+            "limit": limit,
+            "offset": offset,
+            "certified_only": certified_only,
+            "publication_gate": {
+                "rejects_excluded": True,
+                "review_allowed_unless_certified_only": True,
+            },
+        },
     )
 
 

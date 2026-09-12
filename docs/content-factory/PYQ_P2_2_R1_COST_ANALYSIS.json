@@ -1,0 +1,11 @@
+{
+  "generation_cost_usd": 0.634725,
+  "validation_cost_usd": 0.0,
+  "total_cost_usd": 0.634725,
+  "cost_per_generated_question_usd": 0.000635,
+  "cost_per_structurally_valid_usd": 0.001947,
+  "cost_per_independently_validated_usd": 0.002499,
+  "cost_per_human_accepted_usd": null,
+  "cost_per_human_accepted_inr": null,
+  "inr_note": "INR conversion omitted \u2014 no recorded exchange-rate basis in P2.2 artifacts"
+}
