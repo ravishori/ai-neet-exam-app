@@ -30,6 +30,7 @@ def envelope(
     response_headers = {}
     if trace_id:
         response_headers["X-Trace-Id"] = trace_id
+        response_headers["X-Request-Id"] = trace_id
     if meta and meta.get("errorId"):
         response_headers["X-Error-Id"] = str(meta["errorId"])
     return JSONResponse(

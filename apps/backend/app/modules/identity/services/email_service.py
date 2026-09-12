@@ -33,7 +33,7 @@ def _send(*, to: str, subject: str, body: str, kind: str) -> None:
             msg["From"] = settings.smtp_from
             msg["To"] = to
             msg.set_content(body)
-            with smtplib.SMTP(settings.smtp_host, settings.smtp_port, timeout=15) as smtp:
+            with smtplib.SMTP(settings.smtp_host, settings.smtp_port, timeout=8) as smtp:
                 if settings.smtp_use_tls:
                     smtp.starttls()
                 if settings.smtp_username:
@@ -74,9 +74,9 @@ def send_password_reset_email(*, to: str, token: str) -> None:
 
 
 def send_security_alert_email(*, subject: str, body: str) -> None:
-    """Ops alert — destination from settings.alert_email; never includes secrets."""
+    """Ops alert — destination from settings.ops_alert_email; never includes secrets."""
     settings = get_settings()
-    to = settings.alert_email
+    to = settings.ops_alert_email
     if not to:
         logger.warning("alert_email_not_configured", subject=subject)
         return

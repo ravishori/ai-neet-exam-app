@@ -32,7 +32,7 @@ class Settings(BaseSettings):
     jwt_access_token_minutes: int = 15
     jwt_refresh_token_days: int = 30
 
-    cors_origins: str = "http://localhost:3000"
+    cors_origins: str = "http://localhost:3000,http://127.0.0.1:3000,http://localhost:3001,http://127.0.0.1:3001"
 
     # Language processing (ADR-0027) — adding a third language is a config
     # change here plus whatever new detection/normalization rules it needs
@@ -96,8 +96,12 @@ class Settings(BaseSettings):
     smtp_from: str = ""
     smtp_use_tls: bool = True
 
-    # Ops alert destination (Wave C critical alerts)
+    # Ops alert destination (Wave C critical alerts / unexpected errors)
+    # Prefer ALERT_EMAIL; ERROR_REPORT_EMAIL is accepted as an alias via env.
     alert_email: str = ""
+    error_report_email: str = ""
+    # When false, skip outbound incident emails (logs still written).
+    error_reporting_enabled: bool = True
 
     # Fernet key for encrypting TOTP secrets at rest (url-safe base64 32-byte key)
     encryption_key: str = ""
@@ -124,6 +128,11 @@ class Settings(BaseSettings):
     @property
     def is_production(self) -> bool:
         return self.environment == "production"
+
+    @property
+    def ops_alert_email(self) -> str:
+        """Resolved ops inbox — ALERT_EMAIL takes precedence over ERROR_REPORT_EMAIL."""
+        return (self.alert_email or self.error_report_email or "").strip()
 
 
 # Known dev-only placeholders — never valid in production. Catching these at

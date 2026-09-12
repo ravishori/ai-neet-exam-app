@@ -176,6 +176,7 @@ async def test_totp_enroll_and_mfa_login(client, db_session, monkeypatch):
 
 async def test_alert_dedupe_skips_second_send(monkeypatch):
     from app.core import alerts as alerts_mod
+    from app.core.config import get_settings
 
     sent: list[str] = []
 
@@ -185,6 +186,9 @@ async def test_alert_dedupe_skips_second_send(monkeypatch):
     redis = MagicMock()
     redis.set = AsyncMock(side_effect=[True, False])
 
+    settings = get_settings()
+    monkeypatch.setattr(settings, "error_reporting_enabled", True)
+    monkeypatch.setattr(settings, "alert_email", "ravishori@gmail.com")
     monkeypatch.setattr(alerts_mod, "get_redis", lambda: redis)
     monkeypatch.setattr(alerts_mod, "send_security_alert_email", fake_send)
 

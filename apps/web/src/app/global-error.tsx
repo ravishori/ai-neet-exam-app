@@ -11,14 +11,36 @@ export default function GlobalError({
 
   return (
     <html lang="en">
-      <body style={{ fontFamily: "system-ui, sans-serif", padding: "3rem 1.5rem", textAlign: "center" }}>
-        <h1 style={{ fontSize: "1.5rem" }}>Something went wrong</h1>
-        <p style={{ color: "#555", maxWidth: 420, margin: "1rem auto" }}>
-          We couldn&apos;t complete this request right now.
+      <body
+        style={{
+          fontFamily: "system-ui, sans-serif",
+          padding: "3rem 1.5rem",
+          textAlign: "center",
+          background: "#fafafa",
+          color: "#111",
+        }}
+      >
+        <h1 style={{ fontSize: "1.5rem", fontWeight: 600 }}>Something went wrong</h1>
+        <p style={{ color: "#555", maxWidth: 440, margin: "1rem auto", lineHeight: 1.5 }}>
+          We couldn&apos;t load this page right now. Your progress is safe.
           <br />
-          Reference ID: <code>{reference}</code>
+          Our system has recorded the issue automatically.
+          <br />
+          Reference: <code>{reference}</code>
         </p>
-        <button type="button" onClick={() => reset()} style={{ padding: "0.5rem 1rem" }}>
+        <button
+          type="button"
+          onClick={() => reset()}
+          style={{
+            padding: "0.65rem 1.25rem",
+            borderRadius: 8,
+            border: "none",
+            background: "#111",
+            color: "#fff",
+            cursor: "pointer",
+            minHeight: 44,
+          }}
+        >
           Try again
         </button>
       </body>

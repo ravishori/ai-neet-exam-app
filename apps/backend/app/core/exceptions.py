@@ -8,6 +8,11 @@ from app.shared.responses import envelope
 
 logger = get_logger("exceptions")
 
+STUDENT_INTERNAL_MESSAGE = "Something went wrong. Please try again."
+STUDENT_DB_MESSAGE = (
+    "We're temporarily unable to access your preparation data. Please try again in a moment."
+)
+
 
 class AppError(Exception):
     """Base for business errors. Every module-specific error inherits this."""
@@ -69,9 +74,16 @@ async def http_exception_handler(request: Request, exc: StarletteHTTPException):
     error_id = _new_error_id()
     # Never forward raw server detail that might include internals — keep short.
     message = str(exc.detail) if isinstance(exc.detail, str) else "Request failed"
+    code = "NOT_FOUND" if exc.status_code == 404 else "HTTP_ERROR"
+    if exc.status_code == 401:
+        code = "AUTHENTICATION_FAILED"
+    elif exc.status_code == 403:
+        code = "AUTHORIZATION_FAILED"
+    elif exc.status_code == 429:
+        code = "RATE_LIMITED"
     return envelope(
         success=False,
-        errors=[_error_payload(code="HTTP_ERROR", message=message, error_id=error_id)],
+        errors=[_error_payload(code=code, message=message, error_id=error_id)],
         trace_id=trace_id,
         status_code=exc.status_code,
         meta={"errorId": error_id},
@@ -140,33 +152,46 @@ async def sqlalchemy_exception_handler(request: Request, exc: SQLAlchemyError):
             errors=[_error_payload(code=mapped.code, message=mapped.message, error_id=error_id)],
             trace_id=trace_id,
             status_code=mapped.status_code,
-            meta={"errorId": error_id},
+            meta={"errorId": error_id, "requestId": trace_id},
         )
 
-    severity = "error"
-    if isinstance(exc, OperationalError):
-        severity = "fatal"
-    getattr(logger, severity if severity != "fatal" else "error")(
+    is_operational = isinstance(exc, OperationalError)
+    status_code = 503 if is_operational else 500
+    code = "SERVICE_UNAVAILABLE" if is_operational else "INTERNAL_SERVER_ERROR"
+    student_message = f"{STUDENT_DB_MESSAGE} Reference: {trace_id or error_id}."
+
+    logger.error(
         "db_error",
         method=request.method,
         path=request.url.path,
         trace_id=trace_id,
         error_id=error_id,
-        severity=severity,
+        severity="fatal" if is_operational else "error",
         exc_info=exc,
     )
+
+    try:
+        from app.core.alerts import schedule_unexpected_incident
+
+        schedule_unexpected_incident(
+            method=request.method,
+            route=request.url.path,
+            status_code=status_code,
+            exc=exc,
+            request_id=trace_id,
+            error_id=error_id,
+            safe_message=STUDENT_DB_MESSAGE,
+            context={"exception_category": "database", "operational": is_operational},
+        )
+    except Exception:
+        logger.warning("critical_alert_failed", error_id=error_id, exc_info=True)
+
     return envelope(
         success=False,
-        errors=[
-            _error_payload(
-                code="SERVICE_UNAVAILABLE" if isinstance(exc, OperationalError) else "INTERNAL_ERROR",
-                message="Something went wrong. Try again shortly.",
-                error_id=error_id,
-            )
-        ],
+        errors=[_error_payload(code=code, message=student_message, error_id=error_id)],
         trace_id=trace_id,
-        status_code=503 if isinstance(exc, OperationalError) else 500,
-        meta={"errorId": error_id},
+        status_code=status_code,
+        meta={"errorId": error_id, "requestId": trace_id},
     )
 
 
@@ -183,19 +208,17 @@ async def unhandled_exception_handler(request: Request, exc: Exception):
         exc_info=exc,
     )
     try:
-        from app.core.alerts import maybe_send_critical_alert
+        from app.core.alerts import schedule_unexpected_incident
 
-        await maybe_send_critical_alert(
-            subject=f"[AI NEET] CRITICAL APPLICATION ERROR — Error ID {error_id}",
-            body=(
-                f"Application: AI NEET Preparation (TALOS)\n"
-                f"Severity: CRITICAL\n"
-                f"Route: {request.method} {request.url.path}\n"
-                f"Correlation ID: {trace_id}\n"
-                f"Error ID: {error_id}\n"
-                f"Safe message: Unhandled server exception (details redacted).\n"
-            ),
-            dedupe_key=f"unhandled:{request.url.path}:{type(exc).__name__}",
+        schedule_unexpected_incident(
+            method=request.method,
+            route=request.url.path,
+            status_code=500,
+            exc=exc,
+            request_id=trace_id,
+            error_id=error_id,
+            safe_message=STUDENT_INTERNAL_MESSAGE,
+            context={"exception_category": "unhandled"},
         )
     except Exception:
         logger.warning("critical_alert_failed", error_id=error_id, exc_info=True)
@@ -204,12 +227,12 @@ async def unhandled_exception_handler(request: Request, exc: Exception):
         success=False,
         errors=[
             _error_payload(
-                code="INTERNAL_ERROR",
-                message="Something went wrong. Try again shortly.",
+                code="INTERNAL_SERVER_ERROR",
+                message=f"{STUDENT_INTERNAL_MESSAGE} Reference: {trace_id or error_id}.",
                 error_id=error_id,
             )
         ],
         trace_id=trace_id,
         status_code=500,
-        meta={"errorId": error_id},
+        meta={"errorId": error_id, "requestId": trace_id},
     )
