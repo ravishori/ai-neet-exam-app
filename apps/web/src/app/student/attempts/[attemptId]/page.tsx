@@ -9,7 +9,6 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Badge } from "@/components/ui/badge";
 import { Button, buttonVariants } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Dialog,
   DialogContent,
@@ -19,11 +18,24 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { Skeleton } from "@/components/ui/skeleton";
+import {
+  SurfaceCard,
+  SurfaceCardContent,
+  SurfaceCardDescription,
+  SurfaceCardHeader,
+  SurfaceCardTitle,
+} from "@/components/ds";
 import { QuestionPalette, type PaletteQuestionStatus } from "@/components/question-palette";
 import { QuestionPanel } from "@/components/question-panel";
 import { TopicPerformanceBreakdown } from "@/components/topic-performance-breakdown";
 import { assessmentApi, type Confidence, type SaveAnswerInput } from "@/features/assessment/api";
+import { ApiError } from "@/lib/api-client";
 import { cn } from "@/lib/utils";
+
+function studentSafeMessage(error: unknown, fallback: string) {
+  if (error instanceof ApiError && error.message) return error.message;
+  return fallback;
+}
 
 function useCountdown(startedAt: string, durationMinutes: number | null, onExpire: () => void) {
   const [remainingSec, setRemainingSec] = useState<number | null>(null);
@@ -194,16 +206,21 @@ export default function AttemptRunnerPage() {
 
   if (isError) {
     return (
-      <main className="mx-auto flex w-full max-w-lg flex-1 flex-col gap-4 px-4 py-12">
+      <main className="mx-auto flex w-full max-w-lg flex-1 flex-col gap-4 px-4 py-12 pb-24 sm:px-6">
         <Alert variant="destructive" role="alert">
           <AlertTitle>Unable to load practice</AlertTitle>
           <AlertDescription className="space-y-3">
-            <p>{error instanceof Error ? error.message : "Something went wrong loading this attempt."}</p>
+            <p>
+              {studentSafeMessage(
+                error,
+                "We couldn’t load this practice session right now. Try again, or return to the dashboard.",
+              )}
+            </p>
             <div className="flex flex-wrap gap-2">
-              <Button type="button" size="sm" onClick={() => refetch()}>
+              <Button type="button" size="touch" onClick={() => refetch()}>
                 Retry
               </Button>
-              <Button type="button" size="sm" variant="outline" onClick={() => router.push("/student/dashboard")}>
+              <Button type="button" size="touch" variant="outline" onClick={() => router.push("/student/dashboard")}>
                 Dashboard
               </Button>
             </div>
@@ -260,17 +277,26 @@ export default function AttemptRunnerPage() {
     <main className={`flex flex-1 justify-center px-4 py-4 sm:px-6 sm:py-8 ${isTimedExam ? "exam-mode" : ""}`}>
       <div className="grid w-full max-w-5xl grid-cols-1 gap-4 pb-28 lg:grid-cols-[240px_1fr] lg:pb-4">
         <div className="flex flex-col gap-4 lg:order-2">
-          <Card className={isTimedExam ? "border-foreground/20 shadow-sm" : "surface-glass border-0"}>
-            <CardHeader className="space-y-4">
+          <SurfaceCard
+            accent="none"
+            glass={!isTimedExam}
+            lift={false}
+            className={isTimedExam ? "border border-foreground/20 shadow-sm" : undefined}
+          >
+            <SurfaceCardHeader className="space-y-4">
               <div className="flex flex-wrap items-center justify-between gap-2">
                 <div>
-                  <p className="text-[10px] font-medium uppercase tracking-[0.14em] text-muted-foreground">
-                    {isTimedExam ? "Exam simulator" : attempt.assessment.assessment_type === "MOCK" ? "Mock review" : "NEET practice"}
+                  <p className="text-meta">
+                    {isTimedExam
+                      ? "Exam simulator"
+                      : attempt.assessment.assessment_type === "MOCK"
+                        ? "Mock review"
+                        : "NEET practice"}
                   </p>
-                  <CardTitle className="text-xl sm:text-2xl">{attempt.assessment.title}</CardTitle>
+                  <SurfaceCardTitle className="text-xl sm:text-2xl">{attempt.assessment.title}</SurfaceCardTitle>
                 </div>
                 {isSubmitted ? (
-                  <Badge className="font-mono tabular-nums">Score: {attempt.score}</Badge>
+                  <Badge className="font-mono tabular-nums text-base">Score: {attempt.score}</Badge>
                 ) : (
                   remainingSec !== null && (
                     <Badge variant="secondary" className="font-mono text-base tabular-nums tracking-tight">
@@ -280,57 +306,79 @@ export default function AttemptRunnerPage() {
                 )}
               </div>
               <ProgressBar current={currentIndex + 1} total={questions.length} answered={answeredCount} />
-              <CardDescription>
+              <SurfaceCardDescription>
                 {attempt.assessment.question_count} questions · +{attempt.assessment.marks_per_question} / −
                 {attempt.assessment.negative_marks_per_question}
-              </CardDescription>
-            </CardHeader>
+              </SurfaceCardDescription>
+            </SurfaceCardHeader>
             {isSubmitted && (
-              <CardContent className="flex flex-col gap-4">
-                <div className="flex flex-wrap gap-4 text-sm">
-                  <span className="text-success">{attempt.correct_count} correct</span>
-                  <span className="text-destructive">{attempt.incorrect_count} incorrect</span>
-                  <span className="text-muted-foreground">{attempt.skipped_count} skipped</span>
+              <SurfaceCardContent className="flex flex-col gap-5">
+                <div>
+                  <h2 className="text-h2">How did you perform?</h2>
+                  <p className="text-small text-muted-foreground">
+                    Review the score, then pick a clear next step.
+                  </p>
                 </div>
-                <div className="flex flex-wrap gap-2">
-                  <Button
-                    type="button"
-                    variant="default"
-                    className="min-h-11"
-                    onClick={() => {
-                      const firstMistake = questions.findIndex((q) => q.is_correct === false);
-                      goTo(firstMistake >= 0 ? firstMistake : 0);
-                    }}
-                  >
-                    Review mistakes
-                  </Button>
-                  <Link
-                    href="/student/practice"
-                    className={cn(buttonVariants({ variant: "outline" }), "min-h-11")}
-                  >
-                    Practice weak topics
-                  </Link>
-                  <Link
-                    href="/student/dashboard"
-                    className={cn(buttonVariants({ variant: "ghost" }), "min-h-11")}
-                  >
-                    Back to dashboard
-                  </Link>
+                <div className="grid grid-cols-3 gap-3 text-center sm:max-w-md">
+                  <div className="rounded-xl border border-success/30 bg-success/10 px-3 py-3">
+                    <p className="font-mono text-lg font-semibold tabular-nums text-success">{attempt.correct_count}</p>
+                    <p className="text-caption">Correct</p>
+                  </div>
+                  <div className="rounded-xl border border-destructive/30 bg-destructive/10 px-3 py-3">
+                    <p className="font-mono text-lg font-semibold tabular-nums text-destructive">
+                      {attempt.incorrect_count}
+                    </p>
+                    <p className="text-caption">Incorrect</p>
+                  </div>
+                  <div className="rounded-xl border border-border bg-muted/40 px-3 py-3">
+                    <p className="font-mono text-lg font-semibold tabular-nums text-muted-foreground">
+                      {attempt.skipped_count}
+                    </p>
+                    <p className="text-caption">Skipped</p>
+                  </div>
                 </div>
-              </CardContent>
+                <div>
+                  <h3 className="text-h3 mb-2">What should you do next?</h3>
+                  <div className="flex flex-wrap gap-2">
+                    <Button
+                      type="button"
+                      variant="default"
+                      size="touch"
+                      onClick={() => {
+                        const firstMistake = questions.findIndex((q) => q.is_correct === false);
+                        goTo(firstMistake >= 0 ? firstMistake : 0);
+                      }}
+                    >
+                      Review mistakes
+                    </Button>
+                    <Link
+                      href="/student/practice"
+                      className={cn(buttonVariants({ variant: "outline", size: "touch" }))}
+                    >
+                      Practice weak topics
+                    </Link>
+                    <Link
+                      href="/student/dashboard"
+                      className={cn(buttonVariants({ variant: "ghost", size: "touch" }))}
+                    >
+                      Back to dashboard
+                    </Link>
+                  </div>
+                </div>
+              </SurfaceCardContent>
             )}
-          </Card>
+          </SurfaceCard>
 
           {isSubmitted && (
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-base">Performance by topic</CardTitle>
-                <CardDescription>How you did on each topic covered in this attempt.</CardDescription>
-              </CardHeader>
-              <CardContent>
+            <SurfaceCard accent="none" lift={false}>
+              <SurfaceCardHeader>
+                <SurfaceCardTitle className="text-base">Performance by topic</SurfaceCardTitle>
+                <SurfaceCardDescription>Where you were strong — and where to drill next.</SurfaceCardDescription>
+              </SurfaceCardHeader>
+              <SurfaceCardContent>
                 <TopicPerformanceBreakdown questions={questions} />
-              </CardContent>
-            </Card>
+              </SurfaceCardContent>
+            </SurfaceCard>
           )}
 
           <div className="overflow-x-auto lg:hidden">
@@ -342,8 +390,8 @@ export default function AttemptRunnerPage() {
             />
           </div>
 
-          <Card className={isTimedExam ? "shadow-sm" : "surface-glass border-0"}>
-            <CardContent className="pt-6">
+          <SurfaceCard accent="none" glass={!isTimedExam} lift={false}>
+            <SurfaceCardContent className="pt-6">
               <QuestionPanel
                 question={displayedQuestion}
                 index={currentIndex}
@@ -353,25 +401,25 @@ export default function AttemptRunnerPage() {
                 onSetConfidence={(confidence) => commitAnswer({ confidence })}
                 onToggleMarkForReview={() => commitAnswer({ marked_for_review: !displayedQuestion.marked_for_review })}
               />
-            </CardContent>
-          </Card>
+            </SurfaceCardContent>
+          </SurfaceCard>
 
           {/* Desktop / tablet inline controls */}
           <div className="hidden flex-wrap items-center justify-between gap-2 sm:flex">
-            <Button type="button" variant="outline" className="min-h-11" onClick={() => goTo(currentIndex - 1)} disabled={currentIndex === 0}>
+            <Button type="button" variant="outline" size="touch" onClick={() => goTo(currentIndex - 1)} disabled={currentIndex === 0}>
               <ChevronLeft className="size-4" aria-hidden="true" /> Previous
             </Button>
 
             {!isSubmitted ? (
               <div className="flex flex-wrap items-center gap-2">
                 {currentIndex < questions.length - 1 && (
-                  <Button type="button" variant="outline" className="min-h-11" onClick={() => goTo(currentIndex + 1)}>
+                  <Button type="button" variant="outline" size="touch" onClick={() => goTo(currentIndex + 1)}>
                     Save &amp; Next <ChevronRight className="size-4" aria-hidden="true" />
                   </Button>
                 )}
                 <Button
                   type="button"
-                  className="min-h-11"
+                  size="touch"
                   onClick={() => setSubmitConfirmOpen(true)}
                   disabled={submit.isPending}
                 >
@@ -379,11 +427,11 @@ export default function AttemptRunnerPage() {
                 </Button>
               </div>
             ) : currentIndex < questions.length - 1 ? (
-              <Button type="button" variant="outline" className="min-h-11" onClick={() => goTo(currentIndex + 1)}>
+              <Button type="button" variant="outline" size="touch" onClick={() => goTo(currentIndex + 1)}>
                 Next <ChevronRight className="size-4" aria-hidden="true" />
               </Button>
             ) : (
-              <Button type="button" variant="outline" className="min-h-11" onClick={() => router.push("/student/attempts")}>
+              <Button type="button" variant="outline" size="touch" onClick={() => router.push("/student/attempts")}>
                 Back to history
               </Button>
             )}
@@ -391,34 +439,40 @@ export default function AttemptRunnerPage() {
         </div>
 
         <div className="hidden lg:order-1 lg:block">
-          <Card className={`sticky top-4 ${isTimedExam ? "shadow-sm" : "surface-glass border-0"}`}>
-            <CardHeader>
-              <CardTitle className="text-sm">Question grid</CardTitle>
-              <CardDescription className="text-xs">Answered · Visited · Unvisited · Review</CardDescription>
-            </CardHeader>
-            <CardContent>
+          <SurfaceCard
+            accent="none"
+            glass={!isTimedExam}
+            lift={false}
+            className={`sticky top-4 ${isTimedExam ? "border border-border shadow-sm" : ""}`}
+          >
+            <SurfaceCardHeader>
+              <SurfaceCardTitle className="text-sm">Question grid</SurfaceCardTitle>
+              <SurfaceCardDescription className="text-xs">Answered · Visited · Unvisited · Review</SurfaceCardDescription>
+            </SurfaceCardHeader>
+            <SurfaceCardContent>
               <QuestionPalette statuses={statuses} currentIndex={currentIndex} onJump={goTo} />
-            </CardContent>
-          </Card>
+            </SurfaceCardContent>
+          </SurfaceCard>
         </div>
       </div>
 
       {/* Mobile sticky practice controls */}
       <div className="fixed inset-x-0 bottom-0 z-30 border-t border-glass-border bg-glass/95 px-3 py-2 pb-[max(0.5rem,env(safe-area-inset-bottom))] backdrop-blur-xl sm:hidden">
         <div className="mx-auto flex max-w-lg items-center justify-between gap-2">
-          <Button type="button" variant="outline" className="min-h-11 flex-1" onClick={() => goTo(currentIndex - 1)} disabled={currentIndex === 0}>
+          <Button type="button" variant="outline" size="touch" className="flex-1" onClick={() => goTo(currentIndex - 1)} disabled={currentIndex === 0}>
             Prev
           </Button>
           {!isSubmitted ? (
             <>
               {currentIndex < questions.length - 1 ? (
-                <Button type="button" variant="outline" className="min-h-11 flex-1" onClick={() => goTo(currentIndex + 1)}>
+                <Button type="button" variant="outline" size="touch" className="flex-1" onClick={() => goTo(currentIndex + 1)}>
                   Next
                 </Button>
               ) : null}
               <Button
                 type="button"
-                className="min-h-11 flex-1"
+                size="touch"
+                className="flex-1"
                 onClick={() => setSubmitConfirmOpen(true)}
                 disabled={submit.isPending}
               >
@@ -429,7 +483,8 @@ export default function AttemptRunnerPage() {
             <Button
               type="button"
               variant="outline"
-              className="min-h-11 flex-1"
+              size="touch"
+              className="flex-1"
               onClick={() => (currentIndex < questions.length - 1 ? goTo(currentIndex + 1) : router.push("/student/attempts"))}
             >
               {currentIndex < questions.length - 1 ? "Next" : "Done"}
@@ -448,11 +503,12 @@ export default function AttemptRunnerPage() {
             </DialogDescription>
           </DialogHeader>
           <DialogFooter className="gap-2 sm:gap-0">
-            <Button type="button" variant="outline" onClick={() => setSubmitConfirmOpen(false)}>
+            <Button type="button" variant="outline" size="touch" onClick={() => setSubmitConfirmOpen(false)}>
               Keep practicing
             </Button>
             <Button
               type="button"
+              size="touch"
               onClick={() => {
                 setSubmitConfirmOpen(false);
                 submit.mutate();

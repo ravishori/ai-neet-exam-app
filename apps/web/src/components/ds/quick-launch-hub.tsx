@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BookOpen, Brain, ClipboardList, Layers, Target, WandSparkles } from "lucide-react";
+import { BookOpen, Brain, ClipboardList, Layers, Library, Target, WandSparkles } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
@@ -19,11 +19,18 @@ const LAUNCH_ITEMS = [
     tone: "chemistry" as const,
   },
   {
+    href: "/student/subjects",
+    label: "Subjects",
+    description: "Physics · Chemistry · Biology",
+    icon: Library,
+    tone: "biology" as const,
+  },
+  {
     href: "/student/questions",
     label: "Question bank",
     description: "Browse & filter PYQs",
     icon: BookOpen,
-    tone: "biology" as const,
+    tone: "neutral" as const,
   },
   {
     href: "/student/study-plan",
@@ -41,7 +48,7 @@ const LAUNCH_ITEMS = [
   },
   {
     href: "/student/analytics",
-    label: "Analytics",
+    label: "Progress",
     description: "Score & weakness",
     icon: Brain,
     tone: "ai" as const,

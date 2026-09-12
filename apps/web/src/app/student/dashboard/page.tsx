@@ -15,6 +15,7 @@ import {
   QuickLaunchHub,
   ReadinessGauge,
   computeReadinessIndex,
+  SectionHeader,
   StatCard,
   StreakHeatmap,
   StudentPage,
@@ -197,11 +198,11 @@ export default function StudentDashboardPage() {
       <section className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center">
         <div className="space-y-4">
           <PageHeader
-            eyebrow="Today"
+            eyebrow="Today’s focus"
             title={isLoading ? "Loading…" : `Welcome back, ${user?.first_name ?? user?.display_name ?? "aspirant"}`}
             description={
               todayFocus
-                ? `Focus next: ${todayFocus}. Start a focused practice session or continue from your queues below.`
+                ? `Next up: ${todayFocus}. Practice now, or continue from your queues below.`
                 : "Start an untimed practice session with published NEET questions — calm, focused, and ready when you are."
             }
           />
@@ -223,95 +224,105 @@ export default function StudentDashboardPage() {
         </SurfaceCard>
       </section>
 
-      <section className="grid grid-cols-2 gap-3 sm:grid-cols-4">
-        <StatCard label="Accuracy" value={accuracyPct != null ? `${accuracyPct}%` : "—"} hint="Submitted attempts" />
-        <StatCard label="Questions" value={attemptedQs} hint="Answered in mocks/practice" />
-        <StatCard label="Sessions" value={submitted.length} hint="Submitted attempts" />
-        <StatCard label="Readiness" value={`${Math.round(readiness)}%`} hint="Across subjects" />
+      <section className="space-y-3">
+        <SectionHeader
+          title="Continue preparation"
+          description="Revision due and high-yield recommendations — practice the next concept."
+        />
+        <div className="grid gap-6 lg:grid-cols-2">
+          <SurfaceCard accent="top" theme="physics">
+            <SurfaceCardHeader>
+              <SurfaceCardTitle>Continue learning</SurfaceCardTitle>
+              <SurfaceCardDescription>Concepts due for another look.</SurfaceCardDescription>
+            </SurfaceCardHeader>
+            <SurfaceCardContent className="flex flex-col gap-3">
+              {!revisionDue || revisionDue.length === 0 ? (
+                <EmptyState
+                  icon={BookOpen}
+                  title="Nothing due right now"
+                  description="Keep practicing available concepts, or browse subjects to build your queue."
+                  action={
+                    <Link href="/student/subjects" className={cn(buttonVariants({ variant: "outline", size: "touch" }))}>
+                      Browse subjects
+                    </Link>
+                  }
+                  className="py-8"
+                />
+              ) : (
+                revisionDue.map((item) => (
+                  <div
+                    key={item.concept_id}
+                    className="flex items-center justify-between gap-3 border-b border-border/60 pb-3 last:border-0 last:pb-0"
+                  >
+                    <div className="min-w-0">
+                      <p className="truncate text-sm font-medium">{item.concept_name}</p>
+                      <p className="font-mono text-xs tabular-nums text-muted-foreground">
+                        Score {item.mastery_score}
+                        {item.published_question_count != null ? ` · ${item.published_question_count} Q` : ""}
+                      </p>
+                    </div>
+                    <PracticeNowButton conceptId={item.concept_id} publishedCount={item.published_question_count} />
+                  </div>
+                ))
+              )}
+            </SurfaceCardContent>
+          </SurfaceCard>
+
+          <SurfaceCard accent="top" theme="chemistry">
+            <SurfaceCardHeader>
+              <SurfaceCardTitle>Recommended practice</SurfaceCardTitle>
+              <SurfaceCardDescription>High-yield targets for today.</SurfaceCardDescription>
+            </SurfaceCardHeader>
+            <SurfaceCardContent className="flex flex-col gap-3">
+              {!recommendations || recommendations.length === 0 ? (
+                <EmptyState
+                  icon={Target}
+                  title="No recommendations yet"
+                  description="Once you practice a few concepts, we’ll surface what to do next."
+                  action={
+                    <Link href="/student/practice" className={cn(buttonVariants({ variant: "outline", size: "touch" }))}>
+                      Open practice arena
+                    </Link>
+                  }
+                  className="py-8"
+                />
+              ) : (
+                recommendations.map((item) => (
+                  <div
+                    key={item.concept_id}
+                    className="flex items-center justify-between gap-3 border-b border-border/60 pb-3 last:border-0 last:pb-0"
+                  >
+                    <div className="min-w-0">
+                      <p className="truncate text-sm font-medium">{item.concept_name}</p>
+                      <p className="text-xs text-muted-foreground">
+                        {REASON_LABEL[item.reason]}
+                        {item.published_question_count != null ? ` · ${item.published_question_count} published` : ""}
+                      </p>
+                    </div>
+                    <PracticeNowButton conceptId={item.concept_id} publishedCount={item.published_question_count} />
+                  </div>
+                ))
+              )}
+            </SurfaceCardContent>
+          </SurfaceCard>
+        </div>
       </section>
 
       <section className="space-y-3">
-        <h2 className="font-heading text-lg font-semibold">Quick launch</h2>
-        <QuickLaunchHub />
+        <SectionHeader
+          title="Your progress"
+          description="Accuracy and volume from submitted attempts — why it matters for NEET readiness."
+        />
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+          <StatCard
+            label="Accuracy"
+            value={accuracyPct != null ? `${accuracyPct}%` : "—"}
+            hint="Share of answers you got right"
+          />
+          <StatCard label="Questions" value={attemptedQs} hint="Answered across practice & mocks" />
+          <StatCard label="Sessions" value={submitted.length} hint="Submitted attempts so far" />
+        </div>
       </section>
-
-      <div className="grid gap-6 lg:grid-cols-2">
-        <SurfaceCard accent="top" theme="physics">
-          <SurfaceCardHeader>
-            <SurfaceCardTitle>Continue learning</SurfaceCardTitle>
-            <SurfaceCardDescription>Concepts due for another look.</SurfaceCardDescription>
-          </SurfaceCardHeader>
-          <SurfaceCardContent className="flex flex-col gap-3">
-            {!revisionDue || revisionDue.length === 0 ? (
-              <EmptyState
-                icon={BookOpen}
-                title="Nothing due right now"
-                description="Keep practicing available concepts, or browse subjects to build your queue."
-                action={
-                  <Link href="/student/subjects" className={cn(buttonVariants({ variant: "outline", size: "sm" }))}>
-                    Browse subjects
-                  </Link>
-                }
-                className="py-8"
-              />
-            ) : (
-              revisionDue.map((item) => (
-                <div
-                  key={item.concept_id}
-                  className="flex items-center justify-between gap-3 border-b border-border/60 pb-3 last:border-0 last:pb-0"
-                >
-                  <div className="min-w-0">
-                    <p className="truncate text-sm font-medium">{item.concept_name}</p>
-                    <p className="font-mono text-xs tabular-nums text-muted-foreground">
-                      Score {item.mastery_score}
-                      {item.published_question_count != null ? ` · ${item.published_question_count} Q` : ""}
-                    </p>
-                  </div>
-                  <PracticeNowButton conceptId={item.concept_id} publishedCount={item.published_question_count} />
-                </div>
-              ))
-            )}
-          </SurfaceCardContent>
-        </SurfaceCard>
-
-        <SurfaceCard accent="top" theme="chemistry">
-          <SurfaceCardHeader>
-            <SurfaceCardTitle>Recommended practice</SurfaceCardTitle>
-            <SurfaceCardDescription>High-yield targets for today.</SurfaceCardDescription>
-          </SurfaceCardHeader>
-          <SurfaceCardContent className="flex flex-col gap-3">
-            {!recommendations || recommendations.length === 0 ? (
-              <EmptyState
-                icon={Target}
-                title="No recommendations yet"
-                description="Once you practice a few concepts, we’ll surface what to do next."
-                action={
-                  <Link href="/student/practice" className={cn(buttonVariants({ variant: "outline", size: "sm" }))}>
-                    Open practice arena
-                  </Link>
-                }
-                className="py-8"
-              />
-            ) : (
-              recommendations.map((item) => (
-                <div
-                  key={item.concept_id}
-                  className="flex items-center justify-between gap-3 border-b border-border/60 pb-3 last:border-0 last:pb-0"
-                >
-                  <div className="min-w-0">
-                    <p className="truncate text-sm font-medium">{item.concept_name}</p>
-                    <p className="text-xs text-muted-foreground">
-                      {REASON_LABEL[item.reason]}
-                      {item.published_question_count != null ? ` · ${item.published_question_count} published` : ""}
-                    </p>
-                  </div>
-                  <PracticeNowButton conceptId={item.concept_id} publishedCount={item.published_question_count} />
-                </div>
-              ))
-            )}
-          </SurfaceCardContent>
-        </SurfaceCard>
-      </div>
 
       <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
         <SurfaceCard accent="none">
@@ -320,7 +331,7 @@ export default function StudentDashboardPage() {
             <SurfaceCardDescription>
               Based on practice and mock attempts.{" "}
               <Link href="/student/analytics" className="underline-offset-2 hover:underline">
-                Full analytics
+                Full progress
               </Link>
             </SurfaceCardDescription>
           </SurfaceCardHeader>
@@ -330,7 +341,7 @@ export default function StudentDashboardPage() {
                 title="No mastery data yet"
                 description="Browse subjects and start practicing to build your map."
                 action={
-                  <Link href="/student/subjects" className={cn(buttonVariants({ variant: "outline", size: "sm" }))}>
+                  <Link href="/student/subjects" className={cn(buttonVariants({ variant: "outline", size: "touch" }))}>
                     Browse subjects
                   </Link>
                 }
@@ -379,6 +390,11 @@ export default function StudentDashboardPage() {
           )}
         </div>
       </div>
+
+      <section className="space-y-3">
+        <SectionHeader title="More ways to prepare" description="Subjects, mocks, flashcards, and the question bank." />
+        <QuickLaunchHub />
+      </section>
     </StudentPage>
   );
 }

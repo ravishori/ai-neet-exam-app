@@ -35,7 +35,7 @@ export default function SubjectChaptersPage() {
       <PageHeader
         eyebrow={subject?.name ?? "Subject"}
         title="Chapters"
-        description="Open a chapter to browse topics and concepts."
+        description="Pick a chapter to open topics — then practice the concepts inside."
       />
 
       {isLoading ? (
@@ -54,7 +54,7 @@ export default function SubjectChaptersPage() {
                 <SurfaceCardHeader className="flex-row items-center justify-between space-y-0 pb-4">
                   <div className="min-w-0">
                     <SurfaceCardTitle className="text-base">{chapter.name}</SurfaceCardTitle>
-                    <SurfaceCardDescription>Chapter</SurfaceCardDescription>
+                    <SurfaceCardDescription>Open topics → next practice</SurfaceCardDescription>
                   </div>
                   {chapter.neet_weightage_percent != null && (
                     <Badge variant="secondary">{chapter.neet_weightage_percent}% weightage</Badge>

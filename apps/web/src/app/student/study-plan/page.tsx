@@ -10,6 +10,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import {
+  PageHeader,
+  StudentPage,
   SurfaceCard,
   SurfaceCardContent,
   SurfaceCardDescription,
@@ -46,16 +48,12 @@ export default function StudyPlanPage() {
   const plan = generate.data ?? existingPlan;
 
   return (
-    <main className="mx-auto flex w-full max-w-xl flex-1 flex-col gap-6 px-4 py-10 sm:px-6 animate-fade-slide-up">
-      <div className="space-y-2">
-        <p className="text-xs font-medium uppercase tracking-[0.14em]" style={{ color: "var(--ai-from)" }}>
-          AI Study Coach
-        </p>
-        <h1 className="font-heading text-3xl font-bold tracking-tight">Study plan</h1>
-        <p className="text-sm text-muted-foreground">
-          Generates a plan from your target score, current score, and weak concepts.
-        </p>
-      </div>
+    <StudentPage width="sm">
+      <PageHeader
+        eyebrow="AI Study Coach"
+        title="Study plan"
+        description="Generates a plan from your target score, current score, and weak concepts."
+      />
 
       <SurfaceCard accent="none" className="overflow-hidden">
         <div className="h-1 w-full ai-gradient" aria-hidden />
@@ -66,7 +64,7 @@ export default function StudyPlanPage() {
             </span>
             <div>
               <SurfaceCardTitle>Planner inputs</SurfaceCardTitle>
-              <SurfaceCardDescription>Same study-plan API — restyled coach surface.</SurfaceCardDescription>
+              <SurfaceCardDescription>Tell the coach where you are and where you want to be.</SurfaceCardDescription>
             </div>
           </div>
         </SurfaceCardHeader>
@@ -74,7 +72,9 @@ export default function StudyPlanPage() {
           {generate.isError && (
             <Alert variant="destructive">
               <AlertDescription>
-                {generate.error instanceof ApiError ? generate.error.message : "Something went wrong"}
+                {generate.error instanceof ApiError
+                  ? generate.error.message
+                  : "We couldn’t generate a plan right now. Try again."}
               </AlertDescription>
             </Alert>
           )}
@@ -111,7 +111,12 @@ export default function StudyPlanPage() {
               />
             </div>
           </div>
-          <Button onClick={() => generate.mutate()} disabled={!examDate || generate.isPending} className="w-fit">
+          <Button
+            size="touch"
+            onClick={() => generate.mutate()}
+            disabled={!examDate || generate.isPending}
+            className="w-fit"
+          >
             {generate.isPending ? "Generating…" : "Generate plan"}
           </Button>
         </SurfaceCardContent>
@@ -147,6 +152,6 @@ export default function StudyPlanPage() {
           </SurfaceCardContent>
         </SurfaceCard>
       )}
-    </main>
+    </StudentPage>
   );
 }

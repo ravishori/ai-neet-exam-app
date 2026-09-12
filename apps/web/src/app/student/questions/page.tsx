@@ -12,6 +12,7 @@ import { EmptyState } from "@/components/ui/empty-state";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Skeleton } from "@/components/ui/skeleton";
+import { PageHeader, StudentPage } from "@/components/ds";
 import { academicApi } from "@/features/academic/api";
 import { questionsApi, type ClassLevel, type QuestionSummary, type ScopeType } from "@/features/questions/api";
 import { searchApi, type SearchResultItem } from "@/features/search/api";
@@ -218,11 +219,12 @@ export default function QuestionBrowserPage() {
   const showingTo = Math.min(offset + PAGE_SIZE, total);
 
   return (
-    <main className="flex flex-1 flex-col gap-6 px-6 py-10">
-      <div>
-        <h1 className="text-2xl font-semibold tracking-tight">Questions</h1>
-        <p className="text-sm text-muted-foreground">Search or browse the published question bank.</p>
-      </div>
+    <StudentPage>
+      <PageHeader
+        eyebrow="Question bank"
+        title="Questions"
+        description="Search or browse published NEET questions by subject, chapter, and concept."
+      />
 
       <Card>
         <CardContent className="flex flex-col gap-4 pt-6">
@@ -459,15 +461,15 @@ export default function QuestionBrowserPage() {
             Showing {showingFrom}-{showingTo} of {total}
           </p>
           <div className="flex gap-2">
-            <Button variant="outline" disabled={offset === 0} onClick={() => setOffset(Math.max(0, offset - PAGE_SIZE))}>
+            <Button variant="outline" size="touch" disabled={offset === 0} onClick={() => setOffset(Math.max(0, offset - PAGE_SIZE))}>
               Previous
             </Button>
-            <Button variant="outline" disabled={showingTo >= total} onClick={() => setOffset(offset + PAGE_SIZE)}>
+            <Button variant="outline" size="touch" disabled={showingTo >= total} onClick={() => setOffset(offset + PAGE_SIZE)}>
               Next
             </Button>
           </div>
         </div>
       )}
-    </main>
+    </StudentPage>
   );
 }

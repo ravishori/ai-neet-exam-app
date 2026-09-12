@@ -150,6 +150,8 @@
   --touch-target-min: 2.75rem;
   --content-max: 72rem;
   --practice-sticky-offset: 4.5rem;
+  /* Readable measure for long stems / body copy */
+  --prose-measure: 42rem;
 }
 
 .dark {
@@ -233,6 +235,67 @@
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
   }
+}
+
+/* Student typography scale — prefer these over ad-hoc sizes */
+@utility text-display {
+  font-family: var(--font-heading);
+  font-size: clamp(1.875rem, 1.5rem + 1.2vw, 2.75rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+  text-wrap: balance;
+}
+@utility text-h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 1.25rem + 0.8vw, 2.25rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  text-wrap: balance;
+}
+@utility text-h2 {
+  font-family: var(--font-heading);
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.35;
+}
+@utility text-h3 {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+@utility text-body {
+  font-size: 0.875rem;
+  line-height: 1.625;
+}
+@utility text-small {
+  font-size: 0.8125rem;
+  line-height: 1.5;
+}
+@utility text-caption {
+  font-size: 0.75rem;
+  line-height: 1.4;
+  color: var(--muted-foreground);
+}
+@utility text-meta {
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+}
+@utility text-question {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  max-width: var(--prose-measure);
+  overflow-wrap: break-word;
+}
+@utility touch-target {
+  min-height: var(--touch-target-min);
+  min-width: var(--touch-target-min);
 }
 
 /* Prefer larger tap targets on coarse pointers */

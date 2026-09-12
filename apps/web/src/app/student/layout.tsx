@@ -2,15 +2,16 @@ import { AppHeader } from "@/components/app-header";
 import { AiStudyCoachShell } from "@/components/ds/ai-study-coach-shell";
 import { StudentBottomNav } from "@/components/ds/student-bottom-nav";
 
+/** Desktop primary — learning path (aligned with mobile bottom where possible). */
 const PRIMARY_LINKS = [
   { href: "/student/dashboard", label: "Dashboard" },
   { href: "/student/practice", label: "Practice" },
-  { href: "/student/questions", label: "Questions" },
-  { href: "/student/analytics", label: "Analytics" },
+  { href: "/student/subjects", label: "Subjects" },
+  { href: "/student/analytics", label: "Progress" },
 ];
 
 const MORE_LINKS = [
-  { href: "/student/subjects", label: "Subjects" },
+  { href: "/student/questions", label: "Questions" },
   { href: "/student/flashcards", label: "Flashcards" },
   { href: "/student/mock-tests", label: "Mock Tests" },
   { href: "/student/attempts", label: "Attempts" },

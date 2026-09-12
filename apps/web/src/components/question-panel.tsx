@@ -209,7 +209,7 @@ export function QuestionPanel({
         {question.concept && <Badge variant="outline">{question.concept.name}</Badge>}
       </div>
 
-      <div className="text-lg leading-relaxed font-medium text-foreground">
+      <div className="text-question font-medium text-foreground">
         <MarkdownRenderer content={question.stem} />
       </div>
 

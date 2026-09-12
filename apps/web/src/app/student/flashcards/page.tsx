@@ -4,11 +4,16 @@ import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import { EmptyState } from "@/components/ui/empty-state";
 import { FlipCard } from "@/components/flip-card";
 import { Label } from "@/components/ui/label";
 import { Skeleton } from "@/components/ui/skeleton";
+import {
+  PageHeader,
+  StudentPage,
+  SurfaceCard,
+  SurfaceCardContent,
+} from "@/components/ds";
 import { academicApi } from "@/features/academic/api";
 import { flashcardsApi } from "@/features/flashcards/api";
 import type { ScopeType } from "@/features/questions/api";
@@ -73,21 +78,19 @@ export default function FlashcardsPage() {
   const showingTo = Math.min(offset + PAGE_SIZE, total);
 
   return (
-    <main className="flex flex-1 flex-col gap-6 px-4 py-8 sm:px-6 sm:py-10">
-      <div>
-        <h1 className="text-2xl font-semibold tracking-tight">Flashcards</h1>
-        <p className="text-sm text-muted-foreground">
-          Tap a card to flip it. Quick revision by subject, chapter, topic, or concept. Cards marked
-          &quot;Needs review&quot; are available for practice but are not scientifically certified.
-        </p>
-      </div>
+    <StudentPage>
+      <PageHeader
+        eyebrow="Revision"
+        title="Flashcards"
+        description='Tap a card to flip it. Filter by subject, chapter, topic, or concept. Cards marked "Needs review" are available for practice but are not scientifically certified.'
+      />
 
-      <Card>
-        <CardContent className="grid grid-cols-2 gap-4 pt-6 sm:grid-cols-4">
+      <SurfaceCard accent="none" glass={false}>
+        <SurfaceCardContent className="grid grid-cols-2 gap-4 pt-2 sm:grid-cols-4">
           <div className="flex flex-col gap-1.5">
             <Label>Subject</Label>
             <select
-              className="h-9 rounded-md border bg-background px-2 text-sm"
+              className="h-11 rounded-lg border bg-background px-2 text-sm"
               value={subjectId ?? ""}
               onChange={(e) => {
                 setSubjectId(e.target.value || null);
@@ -106,7 +109,7 @@ export default function FlashcardsPage() {
           <div className="flex flex-col gap-1.5">
             <Label>Chapter</Label>
             <select
-              className="h-9 rounded-md border bg-background px-2 text-sm disabled:opacity-50"
+              className="h-11 rounded-lg border bg-background px-2 text-sm disabled:opacity-50"
               value={chapterId ?? ""}
               disabled={!subjectId}
               onChange={(e) => {
@@ -126,7 +129,7 @@ export default function FlashcardsPage() {
           <div className="flex flex-col gap-1.5">
             <Label>Topic</Label>
             <select
-              className="h-9 rounded-md border bg-background px-2 text-sm disabled:opacity-50"
+              className="h-11 rounded-lg border bg-background px-2 text-sm disabled:opacity-50"
               value={topicId ?? ""}
               disabled={!chapterId}
               onChange={(e) => {
@@ -146,7 +149,7 @@ export default function FlashcardsPage() {
           <div className="flex flex-col gap-1.5">
             <Label>Concept</Label>
             <select
-              className="h-9 rounded-md border bg-background px-2 text-sm disabled:opacity-50"
+              className="h-11 rounded-lg border bg-background px-2 text-sm disabled:opacity-50"
               value={conceptId ?? ""}
               disabled={!topicId}
               onChange={(e) => {
@@ -162,11 +165,11 @@ export default function FlashcardsPage() {
               ))}
             </select>
           </div>
-        </CardContent>
-      </Card>
+        </SurfaceCardContent>
+      </SurfaceCard>
 
       {flashcardsQuery.isLoading ? (
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3" aria-busy="true">
           {[0, 1, 2].map((i) => (
             <Skeleton key={i} className="h-48 w-full" />
           ))}
@@ -207,15 +210,15 @@ export default function FlashcardsPage() {
             Showing {showingFrom}-{showingTo} of {total}
           </p>
           <div className="flex gap-2">
-            <Button variant="outline" disabled={offset === 0} onClick={() => setOffset(Math.max(0, offset - PAGE_SIZE))}>
+            <Button variant="outline" size="touch" disabled={offset === 0} onClick={() => setOffset(Math.max(0, offset - PAGE_SIZE))}>
               Previous
             </Button>
-            <Button variant="outline" disabled={showingTo >= total} onClick={() => setOffset(offset + PAGE_SIZE)}>
+            <Button variant="outline" size="touch" disabled={showingTo >= total} onClick={() => setOffset(offset + PAGE_SIZE)}>
               Next
             </Button>
           </div>
         </div>
       )}
-    </main>
+    </StudentPage>
   );
 }

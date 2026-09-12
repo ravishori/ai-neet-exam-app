@@ -25,7 +25,7 @@ export default function SubjectsPage() {
       <PageHeader
         eyebrow="Curriculum"
         title="Subjects"
-        description="Browse NEET subjects, then drill into chapters and topics."
+        description="Physics, Chemistry, and Biology — open a subject, then pick a chapter to practice."
       />
 
       {isLoading ? (
@@ -46,7 +46,7 @@ export default function SubjectsPage() {
                     <SurfaceCardTitle>{subject.name}</SurfaceCardTitle>
                     <SubjectChip subject={subject.name} />
                   </div>
-                  <SurfaceCardDescription>NEET</SurfaceCardDescription>
+                  <SurfaceCardDescription>Browse chapters → practice concepts</SurfaceCardDescription>
                 </SurfaceCardHeader>
               </SurfaceCard>
             </Link>

@@ -9,5 +9,6 @@ export { AiStudyCoachShell } from "./ai-study-coach-shell";
 export { StudentBottomNav } from "./student-bottom-nav";
 export { StudentPage } from "./student-page";
 export { PageHeader } from "./page-header";
+export { SectionHeader } from "./section-header";
 export { StatCard } from "./stat-card";
 export { AnswerOption, answerOptionVariants, type AnswerOptionState } from "./answer-option";

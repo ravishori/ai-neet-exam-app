@@ -18,7 +18,8 @@ Reuse Tailwind defaults:
 
 - Heading / UI: Plus Jakarta (`font-heading` / `font-sans`)
 - Mono metrics: Geist Mono
-- Practice stems: readable `text-lg` with relaxed leading; long science terms wrap (`break-words`)
+- Practice stems: `.text-question` utility (readable measure + wrap)
+- Scale utilities: `.text-display` · `.text-h1` · `.text-h2` · `.text-h3` · `.text-body` · `.text-small` · `.text-caption` · `.text-meta`
 
 ## Color tokens
 
@@ -29,25 +30,36 @@ Defined in `apps/web/src/app/globals.css` as CSS variables:
 - AI accent: `--ai-from` / `--ai-to`
 - Glass / elevation: `--glass-bg`, `--elevation-*`
 
-Shared shells: `StudentPage`, `PageHeader`, `StatCard` in `components/ds/`.
+Shared shells: `StudentPage`, `PageHeader`, `SectionHeader`, `StatCard` in `components/ds/`.
 
 ## Spacing & targets
 
-- Minimum interactive height on practice CTAs/options: ~44px (`min-h-11` / `min-h-[3.25rem]`)
-- Token: `--touch-target-min: 2.75rem`
+- Minimum interactive height on practice CTAs/options: `--touch-target-min` (2.75rem)
+- Button size `touch` on student CTAs
+- Utility: `.touch-target`
 - Safe area: `env(safe-area-inset-bottom)` on sticky chrome
+
+## Navigation IA (Wave 2)
+
+| Surface | Destinations |
+|---------|----------------|
+| Desktop primary | Dashboard, Practice, Subjects, Progress |
+| Desktop More | Questions, Flashcards, Mocks, Attempts, Study Plan, Profile, Settings |
+| Mobile bottom | Home, Practice, Subjects, Questions, Progress |
+
+Landmarks: `Student desktop` / `Student mobile` (not duplicate “Primary”).
 
 ## Components (reuse first)
 
 | Need | Existing |
 |------|----------|
 | Surfaces | `SurfaceCard` |
-| Page shell / header / stats | `StudentPage`, `PageHeader`, `StatCard` |
+| Page shell / header / section / stats | `StudentPage`, `PageHeader`, `SectionHeader`, `StatCard` |
 | Launch grid | `QuickLaunchHub` |
 | Mobile primary nav | `StudentBottomNav` |
-| Practice options | `AnswerOption` + `QuestionPanel` |
+| Practice options | `AnswerOption` + `QuestionPanel` (+ concept practice) |
 | Palette | `QuestionPalette` |
-| Buttons | `Button` (shadcn / Base UI) |
+| Buttons | `Button` (shadcn / Base UI) — prefer `size="touch"` on student CTAs |
 
 ## Interaction states
 

@@ -34,7 +34,7 @@ export default function ChapterTopicsPage() {
       <PageHeader
         eyebrow={chapter?.name ?? "Chapter"}
         title="Topics"
-        description="Drill into a topic to see concepts and practice."
+        description="Choose a topic to see concepts and start targeted practice."
       />
 
       {isLoading ? (
@@ -55,7 +55,7 @@ export default function ChapterTopicsPage() {
               <SurfaceCard accent="left">
                 <SurfaceCardHeader>
                   <SurfaceCardTitle className="text-base">{topic.name}</SurfaceCardTitle>
-                  <SurfaceCardDescription>Topic</SurfaceCardDescription>
+                  <SurfaceCardDescription>View concepts → practice</SurfaceCardDescription>
                 </SurfaceCardHeader>
               </SurfaceCard>
             </Link>

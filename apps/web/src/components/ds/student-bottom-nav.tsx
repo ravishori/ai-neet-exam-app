@@ -2,19 +2,19 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { BarChart3, BookOpen, ClipboardList, Home, Target } from "lucide-react";
+import { BarChart3, BookOpen, Home, Layers, Target } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
 const BOTTOM_LINKS = [
   { href: "/student/dashboard", label: "Home", icon: Home },
   { href: "/student/practice", label: "Practice", icon: Target },
-  { href: "/student/mock-tests", label: "Mocks", icon: ClipboardList },
-  { href: "/student/attempts", label: "Attempts", icon: BookOpen },
-  { href: "/student/analytics", label: "Stats", icon: BarChart3 },
+  { href: "/student/subjects", label: "Subjects", icon: Layers },
+  { href: "/student/questions", label: "Questions", icon: BookOpen },
+  { href: "/student/analytics", label: "Progress", icon: BarChart3 },
 ] as const;
 
-/** Compact primary navigation for phones — desktop keeps the header links. */
+/** Compact primary navigation for phones — mirrors desktop learning path. */
 export function StudentBottomNav({ className }: { className?: string }) {
   const pathname = usePathname();
 
@@ -25,7 +25,7 @@ export function StudentBottomNav({ className }: { className?: string }) {
 
   return (
     <nav
-      aria-label="Primary"
+      aria-label="Student mobile"
       className={cn(
         "fixed inset-x-0 bottom-0 z-30 border-t border-glass-border bg-glass/95 pb-[env(safe-area-inset-bottom)] backdrop-blur-xl lg:hidden",
         className,
@@ -43,6 +43,7 @@ export function StudentBottomNav({ className }: { className?: string }) {
                   "flex min-h-12 flex-col items-center justify-center gap-0.5 rounded-lg px-1 text-[10px] font-medium outline-none focus-visible:ring-2 focus-visible:ring-ring/50",
                   active ? "text-primary" : "text-muted-foreground",
                 )}
+                aria-current={active ? "page" : undefined}
               >
                 <Icon className="size-5" aria-hidden />
                 <span>{link.label}</span>

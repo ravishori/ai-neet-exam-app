@@ -45,7 +45,7 @@ export function AppHeader({
   return (
     <header className="sticky top-0 z-20 border-b border-glass-border bg-glass/80 backdrop-blur-xl">
       <div className="flex items-center justify-between gap-2 px-4 py-3 sm:px-6">
-        <nav className="flex min-w-0 items-center gap-3 text-sm" aria-label="Primary">
+        <nav className="flex min-w-0 items-center gap-3 text-sm" aria-label="Student desktop">
           <Link href="/student/dashboard" className="font-heading text-base font-bold tracking-tight text-primary">
             Trinetra
           </Link>

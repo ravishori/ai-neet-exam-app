@@ -28,9 +28,11 @@ describe("AnswerOption", () => {
       <AnswerOption label="1" letter="A" text="Right" state="correct" onSelect={() => {}} />,
     );
     expect(screen.getByRole("button")).toHaveAttribute("data-state", "correct");
+    expect(screen.getByRole("button")).toHaveAttribute("aria-pressed", "false");
     rerender(<AnswerOption label="1" letter="A" text="Wrong" state="incorrect" onSelect={() => {}} />);
     expect(screen.getByRole("button")).toHaveAttribute("data-state", "incorrect");
-    expect(screen.getByRole("button")).toHaveAttribute("aria-pressed", "true");
+    expect(screen.getByRole("button")).toHaveAttribute("aria-pressed", "false");
+    expect(screen.getByRole("button")).toHaveAttribute("aria-invalid", "true");
   });
 
   it("does not fire when disabled", async () => {
