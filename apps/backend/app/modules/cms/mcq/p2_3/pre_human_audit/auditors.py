@@ -200,11 +200,21 @@ def load_ncert_excerpt(source_file: str, source_page: int, study_root: Path) -> 
 def _load_ncert_excerpt_cached(source_file: str, source_page: int, study_root_str: str) -> tuple[str, bool]:
     if not source_file:
         return "", False
-    study_root = Path(study_root_str)
-    pdf = study_root / source_file.replace("\\", "/")
-    if not pdf.exists():
+    from app.modules.ingestion.services.ncert_canonical_source import (
+        NcertSourceError,
+        assert_ncert_generation_root,
+        validate_ncert_generation_source,
+    )
+
+    try:
+        study_root = assert_ncert_generation_root(Path(study_root_str))
+        validated = validate_ncert_generation_source(
+            study_root / source_file.replace("\\", "/"),
+            root=study_root,
+        )
+    except NcertSourceError:
         return "", False
-    doc = fitz.open(pdf)
+    doc = fitz.open(validated.resolved_path)
     try:
         idx = max(0, int(source_page) - 1)
         if idx >= doc.page_count:

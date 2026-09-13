@@ -109,7 +109,15 @@ class Settings(BaseSettings):
     # Ingestion pipeline (ADR-0022) — files must resolve inside this directory;
     # rejected otherwise. Defaults to <repo root>/StudyMaterial in a local
     # checkout, /data/studymaterial in the Docker image — see _default_data_dir.
+    # Legacy discovery/ingestion root only — NOT the canonical NCERT MCQ source
+    # root (see ncert_source_root / CF-SOURCE-001).
     study_material_dir: str = _default_data_dir("StudyMaterial")
+
+    # CF-SOURCE-001 — canonical NCERT PDF root for all future NCERT-derived MCQ
+    # generation. Env: NCERT_SOURCE_ROOT. Defaults to <repo root>/NCERT Books
+    # locally, /data/ncert books in flattened Docker layouts. Override in CI
+    # with an explicit fixture directory. StudyMaterial/ is never an alias.
+    ncert_source_root: str = _default_data_dir("NCERT Books")
 
     # Visual asset crops (ADR-0026) — local filesystem for now, not object
     # storage (no S3/Blob/GCS is provisioned for this project). Migrating to

@@ -28,7 +28,7 @@ def _strip_internal_fields(row: dict[str, Any]) -> dict[str, Any]:
 def run_pre_human_audit(*, root: Path) -> dict[str, Any]:
     paths = staging_paths(root)
     settings = get_settings()
-    study_root = Path(settings.study_material_dir)
+    study_root = Path(settings.ncert_source_root)
 
     gold_path = paths["gold_sample"]
     original_rows = load_gold_sample_csv(gold_path)

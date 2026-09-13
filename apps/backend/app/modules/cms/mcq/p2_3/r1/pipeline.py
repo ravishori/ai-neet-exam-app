@@ -236,7 +236,7 @@ def scale_decision(metrics: dict[str, Any], *, validation_blocked: int) -> tuple
 
 async def run_r1_revalidation_async(*, root: Path, resume: bool = False) -> dict[str, Any]:
     settings = get_settings()
-    study_dir = Path(settings.study_material_dir)
+    study_dir = Path(settings.ncert_source_root)
     usd_inr = settings.p2_3_usd_inr
     p3 = p2_3_paths(root)
     r1 = r1_staging_paths(root)

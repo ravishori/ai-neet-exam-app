@@ -41,6 +41,9 @@ Thumbs.db
 /StudyMaterial.zip
 /StudyMaterial (2).zip
 
+# --- CF-SOURCE-001 canonical NCERT PDF root (copyrighted textbooks; never commit) ---
+/NCERT Books/
+
 # --- Local binary corpora / generated assets (not application source) ---
 /NEET_PYQ_OFFICIAL/
 /NEET_PYQ_OFFICIAL.zip

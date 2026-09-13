@@ -37,9 +37,18 @@ DEFAULT_USD_INR = 83.0
 
 
 def _load_ncert_excerpt(study_root: Path, relative_path: str, page: int) -> str:
-    pdf = study_root / relative_path.replace("\\", "/")
-    if not pdf.exists():
+    from app.modules.ingestion.services.ncert_canonical_source import (
+        NcertSourceError,
+        assert_ncert_generation_root,
+        validate_ncert_generation_source,
+    )
+
+    root = assert_ncert_generation_root(study_root)
+    try:
+        validated = validate_ncert_generation_source(root / relative_path.replace("\\", "/"), root=root)
+    except NcertSourceError:
         return ""
+    pdf = validated.resolved_path
     doc = fitz.open(pdf)
     try:
         idx = max(0, int(page) - 1)
@@ -154,7 +163,7 @@ def load_or_create_manifest(path: Path, *, run_id: str | None = None) -> dict[st
 
 def dry_run_preflight(root: Path) -> dict[str, Any]:
     settings = get_settings()
-    study_dir = Path(settings.study_material_dir)
+    study_dir = Path(settings.ncert_source_root)
     paths = staging_paths(root)
     p2_2_path = p2_2_mcq_path(root)
     p2_2_info = verify_p2_2_population(p2_2_path)
@@ -179,7 +188,7 @@ async def run_generation_async(
     resume: bool = False,
 ) -> dict[str, Any]:
     settings = get_settings()
-    study_dir = Path(settings.study_material_dir)
+    study_dir = Path(settings.ncert_source_root)
     paths = staging_paths(root, dry_run=dry_run)
     p2_2_path = p2_2_mcq_path(root)
     protected_ids = load_p2_2_protected_ids(p2_2_path)
@@ -255,7 +264,7 @@ async def run_generation_async(
 
 async def run_validation_async(*, root: Path, resume: bool = False, dry_run: bool = False) -> dict[str, Any]:
     settings = get_settings()
-    study_dir = Path(settings.study_material_dir)
+    study_dir = Path(settings.ncert_source_root)
     paths = staging_paths(root, dry_run=dry_run)
     p2_2_path = p2_2_mcq_path(root)
     protected_stems = load_p2_2_protected_stems(p2_2_path)

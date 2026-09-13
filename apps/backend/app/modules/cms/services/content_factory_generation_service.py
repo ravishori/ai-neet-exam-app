@@ -24,6 +24,9 @@ from app.core.config import get_settings
 from app.core.exceptions import AppError, NotFoundError
 from app.core.logging import get_logger
 from app.modules.academic.models import Chapter, Concept, Topic
+from app.modules.ingestion.services.ncert_canonical_source import (
+    assert_blueprint_ncert_source,
+)
 from app.modules.ai.gateway.ai_gateway import AIGateway
 from app.modules.ai.gateway.base import (
     PROVIDER_AUTH_FAILED,
@@ -180,6 +183,9 @@ class ContentFactoryGenerationService:
                 code="BLUEPRINT_NOT_ELIGIBLE",
                 status_code=409,
             )
+        # CF-SOURCE-001: NCERT-derived blueprints must bind a PDF under NCERT_SOURCE_ROOT.
+        # Fail closed — no StudyMaterial / model-memory / web fallback.
+        assert_blueprint_ncert_source(bp.constraints, provenance_tier=bp.provenance_tier)
         # Hierarchy must still resolve
         await self._load_context(bp)
         return bp

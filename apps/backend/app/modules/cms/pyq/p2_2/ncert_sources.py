@@ -1,20 +1,33 @@
-"""NCERT source discovery and page-level text extraction for P2.2 Track B."""
+"""NCERT source discovery and page-level text extraction for P2.2 Track B.
+
+CF-SOURCE-001: generation/discovery pools must resolve under ``NCERT_SOURCE_ROOT``.
+Legacy StudyMaterial layouts are rejected for NCERT MCQ generation.
+"""
 
 from __future__ import annotations
 
 import hashlib
 import random
+import re
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
 import fitz
 
-from app.modules.ingestion.services.study_material_ncert_parser import extract_ncert_chapter_number
-from app.modules.ingestion.services.study_material_path_parser import (
-    NEET_SUBJECT_ROOTS,
-    StudyMaterialPathError,
-    parse_study_material_path,
+from app.modules.ingestion.services.ncert_books_inventory import scan_ncert_books
+from app.modules.ingestion.services.ncert_canonical_source import (
+    assert_ncert_generation_root,
+    validate_ncert_generation_source,
+)
+from app.modules.ingestion.services.study_material_path_parser import StudyMaterialPathError
+
+_CLASS_DIR_RE = re.compile(r"^class\s*(11|12)$", re.IGNORECASE)
+_SUBJECT_DIR_RE = re.compile(r"^(physics|chemistry|biology)(?:\s*[12])?$", re.IGNORECASE)
+_SUBJECT_CODES = {"physics": "PHYSICS", "chemistry": "CHEMISTRY", "biology": "BIOLOGY"}
+_NCERT_CHAPTER_FILE_RE = re.compile(
+    r"^[a-z]{4}\d(\d{2})\.pdf$",
+    re.IGNORECASE,
 )
 
 
@@ -46,30 +59,71 @@ def _text_hash(text: str) -> str:
     return hashlib.sha256(text.encode("utf-8")).hexdigest()
 
 
+def _chapter_from_ncert_filename(file_name: str) -> int | None:
+    m = _NCERT_CHAPTER_FILE_RE.match(file_name)
+    if not m:
+        return None
+    return int(m.group(1))
+
+
+def _parse_ncert_books_rel(rel: str) -> tuple[str, str, int | None] | None:
+    """Parse ``Class 11/Physics/.../kebo101.pdf`` relative paths."""
+    parts = tuple(p for p in Path(rel.replace("\\", "/")).parts if p not in (".", ""))
+    if len(parts) < 3:
+        return None
+    class_m = _CLASS_DIR_RE.match(parts[0].strip())
+    subject_m = _SUBJECT_DIR_RE.match(parts[1].strip())
+    if not class_m or not subject_m:
+        return None
+    subject = _SUBJECT_CODES[subject_m.group(1).lower()]
+    class_level = class_m.group(1)
+    chapter = _chapter_from_ncert_filename(parts[-1])
+    return subject, class_level, chapter
+
+
 def discover_ncert_pdfs(study_material_dir: Path) -> list[Path]:
-    root = study_material_dir.resolve()
+    """Discover chapter PDFs for NCERT generation under the canonical root only.
+
+    CF-SOURCE-001: ``study_material_dir`` must resolve inside ``NCERT_SOURCE_ROOT``.
+    Legacy StudyMaterial subject-root layouts are not accepted for generation.
+    """
+    root = assert_ncert_generation_root(study_material_dir)
+    report = scan_ncert_books(root=root, compute_hashes=False)
+    chapter_pdfs = [
+        Path(e.resolved_path)
+        for e in report.entries
+        if e.kind == "chapter" and e.readable and e.status in {"ok", "ambiguous", "duplicate_chapter"}
+    ]
+    if chapter_pdfs:
+        return sorted(set(chapter_pdfs), key=lambda p: p.as_posix().lower())
+
     pdfs: list[Path] = []
-    for subject_dir in sorted(root.iterdir()):
-        if not subject_dir.is_dir():
+    for pdf in sorted(root.rglob("*.pdf"), key=lambda p: p.as_posix().lower()):
+        try:
+            validate_ncert_generation_source(pdf, root=root)
+        except Exception:
             continue
-        if subject_dir.name.lower() not in NEET_SUBJECT_ROOTS:
+        rel = pdf.relative_to(root).as_posix()
+        if _parse_ncert_books_rel(rel) is None:
             continue
-        for pdf in sorted(subject_dir.rglob("*.pdf")):
-            try:
-                rel = pdf.relative_to(root).as_posix()
-                parse_study_material_path(rel)
-                pdfs.append(pdf)
-            except (StudyMaterialPathError, ValueError):
-                continue
+        if _chapter_from_ncert_filename(pdf.name) is None:
+            continue
+        pdfs.append(pdf)
     return pdfs
 
 
 def extract_page_sources(pdf_path: Path, *, study_root: Path) -> list[NcertPageSource]:
-    rel = pdf_path.relative_to(study_root).as_posix()
-    parsed = parse_study_material_path(rel)
-    chapter = extract_ncert_chapter_number(parsed.file_name)
+    root = assert_ncert_generation_root(study_root)
+    validated = validate_ncert_generation_source(pdf_path, root=root)
+    rel = validated.relative_posix
+    parsed_books = _parse_ncert_books_rel(rel)
+    if parsed_books is None:
+        raise StudyMaterialPathError(
+            "NCERT PDF is not under expected Class/Subject structure inside NCERT_SOURCE_ROOT"
+        )
+    subject, class_level, chapter = parsed_books
     sources: list[NcertPageSource] = []
-    doc = fitz.open(pdf_path)
+    doc = fitz.open(validated.resolved_path)
     try:
         for page_idx in range(doc.page_count):
             text = (doc.load_page(page_idx).get_text("text") or "").strip()
@@ -80,8 +134,8 @@ def extract_page_sources(pdf_path: Path, *, study_root: Path) -> list[NcertPageS
                 NcertPageSource(
                     source_id=sid,
                     relative_path=rel,
-                    subject=parsed.subject_code,
-                    class_level=parsed.class_level,
+                    subject=subject,
+                    class_level=class_level,
                     chapter=chapter,
                     page=page_idx + 1,
                     text=text[:6000],
@@ -94,7 +148,7 @@ def extract_page_sources(pdf_path: Path, *, study_root: Path) -> list[NcertPageS
 
 
 def build_ncert_source_pool(study_material_dir: Path) -> list[NcertPageSource]:
-    root = study_material_dir.resolve()
+    root = assert_ncert_generation_root(study_material_dir)
     pool: list[NcertPageSource] = []
     for pdf in discover_ncert_pdfs(root):
         pool.extend(extract_page_sources(pdf, study_root=root))
