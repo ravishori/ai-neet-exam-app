@@ -19,7 +19,7 @@
 | Security readiness | **62%** | Waves A–C implemented in backend; MFA/OTP **API without UI**; SMTP/ENCRYPTION_KEY/ALERT_EMAIL unverified in deploy; RLS not enforced → YELLOW |
 | Production readiness | **30%** | Compose/CI/Coolify docs exist; production deploy **not verified in-repo**; secrets/SMTP/content insufficient |
 | QA confidence | **58%** | Strong pytest integration suite; thin Vitest; **no Playwright/E2E**; no load/perf suite |
-| Content readiness | **12%** | Live DB: **11 PUBLISHED** questions (need ~180 for full NEET mock alone); 2 published flashcards; 69 KUs mostly unpublished pipeline |
+| Content readiness | **~25%** | Inventory is **DB-derived** (revalidate via `scripts/content_readiness_inventory.py`). Phase 3.1/3.2: ~1.4k+ PUBLISHED questions exist, but Chemistry/Zoology published pools and NCERT verification remain insufficient for claiming full NEET mock readiness. Do **not** cite the historical “11 PUBLISHED / 2 flashcards” snapshot as current. Flashcards published count is also DB-derived (hundreds in recent audits — revalidate). Large **unmapped DRAFT** backlog must not be mass-published. |
 | AI maturity | **48%** | Real Claude gateway + 4 agents + fallback; lexical grounding (not vector RAG); no eval harness / hallucination suite |
 
 **Overall product verdict:** Engineering scaffold for a NEET learning OS is **substantially built** (SP0–SP9 code). The product is **not pilot-ready for serious aspirants** primarily due to **published content scarcity**, **unverified production ops**, and **engagement/AI depth gaps**.
@@ -122,7 +122,7 @@ Published questions by subject: Physics 6, Zoology 3, Botany 1, Chemistry 1.
 |---|---|---|
 | Browse / flip / filter | 🟠 BASIC→COMPLETE browse | `/student/flashcards` + CMS list |
 | Decks / SRS / grading / schedule | ⚪ NOT | no SRS APIs |
-| Published inventory | 🔴 BLOCKED (product) | **2** published flashcards |
+| Published inventory | 🟡 PARTIAL | Count is **DB-derived** — revalidate with inventory script; historical “2 published” snapshot is stale |
 
 ---
 

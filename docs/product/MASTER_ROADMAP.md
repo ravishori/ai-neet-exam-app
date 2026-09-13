@@ -8,7 +8,8 @@
 ## Current baseline
 
 - **Engineering:** SP0–SP9 implemented in code (see `docs/architecture/roadmap.md`).
-- **Product blocker:** **11 published questions** locally; full NEET mock and daily practice not content-viable.
+- **Product blocker (inventory):** Published question counts are **DB-derived and must be revalidated** — do not treat historical “~11 published” snapshots as current truth. As of Phase 3.1/3.2 audits, local inventory is on the order of **thousands of questions with ~1.4k+ PUBLISHED**, but **Chemistry / Zoology published pools remain thin** relative to a full NEET-pattern mock. Re-run: `cd apps/backend && python scripts/content_readiness_inventory.py`.
+- **Full 180-question NEET mock:** **Blocked** until subject allocation (especially Zoology ≥45 published under the exam engine’s Biology split) is supported by **PUBLISHED** inventory after ECAEP — never by mass-publishing drafts.
 - **Security:** Waves A–C backend shipped; posture **YELLOW**.
 - **Production:** Documented Coolify path; **UNVERIFIED**.
 

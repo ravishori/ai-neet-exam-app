@@ -17,6 +17,7 @@ from app.modules.cms.schemas.content_item import (
     ReviewDecisionRequest,
 )
 from app.modules.cms.services.content_workflow_service import ContentWorkflowService
+from app.modules.cms.services.editorial_review_service import EditorialReviewService
 from app.modules.identity.dependencies import get_current_user, require_permission, verify_csrf
 from app.modules.identity.models.user import User
 from app.modules.system.services.audit_service import AuditService, request_context
@@ -266,6 +267,72 @@ async def list_ai_review_queue(
     repo = CmsRepository(db)
     items, total = await repo.list_items_paginated(status=status, limit=limit, offset=offset)
     return envelope(success=True, data=[_item(i) for i in items], meta={"total": total, "limit": limit, "offset": offset})
+
+
+@router.get("/editorial-review-queue", dependencies=[Depends(require_permission("content.review"))])
+async def list_editorial_review_queue(
+    status: str | None = Query(default="IN_REVIEW"),
+    subject_id: uuid.UUID | None = None,
+    chapter_id: uuid.UUID | None = None,
+    topic_id: uuid.UUID | None = None,
+    difficulty: str | None = None,
+    provenance: str | None = Query(default=None, description="any | known | missing"),
+    review_readiness: str | None = Query(default=None, description="any | structurally_ready | needs_work"),
+    batch_tag: str | None = None,
+    pilot_only: bool = False,
+    content_type: str = "QUESTION",
+    limit: int = Query(default=20, ge=1, le=100),
+    offset: int = Query(default=0, ge=0),
+    db: AsyncSession = Depends(get_db),
+):
+    """ECAEP editorial queue — prioritization + readiness signals. Never publishes."""
+    status_filter = None if status in (None, "", "any", "ALL") else status
+    service = EditorialReviewService(db)
+    rows, total, meta = await service.list_queue(
+        status=status_filter,
+        subject_id=subject_id,
+        chapter_id=chapter_id,
+        topic_id=topic_id,
+        difficulty=difficulty,
+        provenance=provenance,
+        review_readiness=review_readiness,
+        batch_tag=batch_tag,
+        pilot_only=pilot_only,
+        content_type=content_type,
+        limit=limit,
+        offset=offset,
+    )
+    return envelope(success=True, data=rows, meta=meta)
+
+
+@router.get(
+    "/content-items/{item_id}/review-packet",
+    dependencies=[Depends(require_permission("content.review"))],
+)
+async def get_review_packet(item_id: uuid.UUID, db: AsyncSession = Depends(get_db)):
+    """Full editorial packet for one item. Does not approve or publish."""
+    service = EditorialReviewService(db)
+    return envelope(success=True, data=await service.review_packet(item_id))
+
+
+@router.get("/editorial-coverage", dependencies=[Depends(require_permission("content.review"))])
+async def get_editorial_coverage(db: AsyncSession = Depends(get_db)):
+    service = EditorialReviewService(db)
+    return envelope(success=True, data=await service.coverage_imbalance())
+
+
+@router.get("/editorial-campaign", dependencies=[Depends(require_permission("content.review"))])
+async def get_editorial_campaign(db: AsyncSession = Depends(get_db)):
+    """Campaign planning dashboard — targets only; never auto-publishes."""
+    service = EditorialReviewService(db)
+    return envelope(success=True, data=await service.campaign_dashboard())
+
+
+@router.get("/content-readiness", dependencies=[Depends(require_permission("content.review"))])
+async def get_content_readiness(db: AsyncSession = Depends(get_db)):
+    """Phase 3.2 inventory/readiness snapshot — read-only operational view."""
+    service = EditorialReviewService(db)
+    return envelope(success=True, data=await service.content_readiness())
 
 
 BULK_ACTIONS = {"publish", "archive"}

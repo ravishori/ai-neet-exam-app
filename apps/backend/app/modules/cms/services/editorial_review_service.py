@@ -910,3 +910,126 @@ class EditorialReviewService:
                 "Do not publish drafts solely to balance counts."
             ),
         }
+
+    async def content_readiness(self) -> dict:
+        """Phase 3.2 operational readiness — read-only; never publishes or mutates content.
+
+        Answers: what can safely move toward publication, what is blocked, and why.
+        Student-facing practice continues to require status=PUBLISHED only.
+        """
+        from app.modules.academic.models import Chapter, Concept, Subject, Topic
+
+        by_status_rows = await self.session.execute(
+            select(ContentItem.status, func.count())
+            .where(ContentItem.content_type == "QUESTION", ContentItem.deleted_at.is_(None))
+            .group_by(ContentItem.status)
+        )
+        status_counts = {str(row[0]): int(row[1]) for row in by_status_rows.all()}
+
+        unmapped = await self.session.execute(
+            select(func.count())
+            .select_from(ContentItem)
+            .where(
+                ContentItem.content_type == "QUESTION",
+                ContentItem.deleted_at.is_(None),
+                ContentItem.concept_id.is_(None),
+            )
+        )
+        unmapped_concept = int(unmapped.scalar() or 0)
+
+        subject_status_rows = await self.session.execute(
+            select(Subject.name, ContentItem.status, func.count(ContentItem.id))
+            .select_from(ContentItem)
+            .join(Concept, Concept.id == ContentItem.concept_id)
+            .join(Topic, Topic.id == Concept.topic_id)
+            .join(Chapter, Chapter.id == Topic.chapter_id)
+            .join(Subject, Subject.id == Chapter.subject_id)
+            .where(ContentItem.content_type == "QUESTION", ContentItem.deleted_at.is_(None))
+            .group_by(Subject.name, ContentItem.status)
+        )
+        by_subject_status = [
+            {"subject": name, "status": status, "count": int(count)}
+            for name, status, count in subject_status_rows.all()
+        ]
+        # Surface unmapped drafts as an explicit subject bucket for operators.
+        if unmapped_concept:
+            unmapped_by_status = await self.session.execute(
+                select(ContentItem.status, func.count())
+                .where(
+                    ContentItem.content_type == "QUESTION",
+                    ContentItem.deleted_at.is_(None),
+                    ContentItem.concept_id.is_(None),
+                )
+                .group_by(ContentItem.status)
+            )
+            for status, count in unmapped_by_status.all():
+                by_subject_status.append(
+                    {"subject": "UNMAPPED", "status": str(status), "count": int(count)}
+                )
+
+        coverage = await self.coverage_imbalance()
+
+        return {
+            "content_type": "QUESTION",
+            "status_counts": status_counts,
+            "published": int(status_counts.get("PUBLISHED", 0)),
+            "draft": int(status_counts.get("DRAFT", 0)),
+            "in_review": int(status_counts.get("IN_REVIEW", 0)),
+            "approved_awaiting_publish": int(status_counts.get("APPROVED", 0)),
+            "unmapped_concept": unmapped_concept,
+            "by_subject_status": sorted(
+                by_subject_status, key=lambda r: (r["subject"], r["status"])
+            ),
+            "chapter_imbalance": {
+                "high_draft_concentration": [
+                    {
+                        "chapter_name": c["chapter_name"],
+                        "subject_name": c["subject_name"],
+                        "draft": c["draft"],
+                        "published": c["published"],
+                    }
+                    for c in coverage["high_draft_concentration"]
+                ],
+                "mapped_but_unpublished_chapters": [
+                    {
+                        "chapter_name": c["chapter_name"],
+                        "subject_name": c["subject_name"],
+                        "draft": c["draft"],
+                        "published": c["published"],
+                    }
+                    for c in coverage["mapped_but_unpublished_chapters"]
+                ],
+                "guidance": coverage["guidance"],
+            },
+            "quality_gates": {
+                "publish_requires": [
+                    "status=APPROVED",
+                    "content.publish permission",
+                    "explicit publish action (single or bulk)",
+                    "QUESTION publication gates (structure, mapping, evidence policy)",
+                ],
+                "never_mass_publish_drafts": True,
+                "student_visible_status": "PUBLISHED",
+                "approval_is_not_publication": True,
+                "ncert_certify_does_not_publish": True,
+            },
+            "campaign_notes": {
+                "first_target_suggestion": (
+                    "Prioritize Chemistry and Zoology IN_REVIEW / APPROVED items with "
+                    "concept mapping — never publish to hit a numerical quota."
+                ),
+                "full_neet_mock_not_ready_below": 180,
+                "do_not_claim_content_ready": True,
+                "inventory_is_db_derived": True,
+                "ncert_note": (
+                    "Provenance/source fields are not NCERT certification. "
+                    "Only explicit ncert evidence / certify-ncert workflow counts. "
+                    "Re-run scripts/content_readiness_inventory.py for live NCERT tag counts."
+                ),
+            },
+            "ecaep_rules": {
+                "no_auto_publish": True,
+                "no_auto_approve": True,
+                "human_review_mandatory": True,
+            },
+        }

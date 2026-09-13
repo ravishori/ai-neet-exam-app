@@ -6,7 +6,7 @@ Priority: **P0** before meaningful pilot · **P1** core MVP product · **P2** im
 
 | ID | Domain | Capability | Current Status | Evidence | Missing | Priority | Dependencies |
 | -- | ------ | ---------- | -------------- | -------- | ------- | -------- | ------------ |
-| G-001 | Content | Published question inventory | 🟡 PARTIAL | 2026-09-01: **164** Q total; **11 PUBLISHED**; Batch A 74; PHY pilot 10 IN_REVIEW | SME review + selective publish; factory for scale | P0 | CMS + SMEs |
+| G-001 | Content | Published question inventory | 🟡 PARTIAL | Inventory **DB-derived** — revalidate (`scripts/content_readiness_inventory.py`). Historical “11 PUBLISHED” is stale. Full 180 mock still blocked on subject allocation (esp. Zoology). | SME review + selective publish; never mass-publish unmapped drafts | P0 | CMS + SMEs |
 | G-031 | Content | NEET Content Factory (batch/jobs/QA/sampling) | 🟡 PARTIAL | P1–P5 code DONE; live ~100 gen→QA→human review BLOCKED (Anthropic credits); next ops pilot then P6 certify | FACTORY-P6…P8 | P1 | ECAEP preserved; factory review ≠ approve/publish |
 | G-002 | Content | Full NEET mock readiness | 🔴 BLOCKED | Engine needs ~180 published; have 11 | Physics/Chem/Bio depth | P0 | G-001 |
 | G-003 | Content | Published flashcards / notes | 🟠 BASIC | 2 FC / 6 notes published | Editorial publish | P0 | CMS |

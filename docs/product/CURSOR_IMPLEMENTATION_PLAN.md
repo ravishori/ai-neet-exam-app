@@ -94,6 +94,7 @@
 | **Acceptance** | Product-agreed published counts per subject; explanations present |
 | **Regression** | Do not publish low-quality AI drafts blindly |
 | **Note** | Primarily editorial; Cursor assists tooling only |
+| **Phase 3.2 (2026-09-13)** | Inventory truth + ECAEP queue APIs + readiness reporting restored/hardened. **No mass-publish.** Revalidate via `scripts/content_readiness_inventory.py`. Full 180 mock still blocked on subject allocation. |
 
 ---
 
