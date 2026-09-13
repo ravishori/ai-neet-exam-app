@@ -9,6 +9,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { EmptyState } from "@/components/ui/empty-state";
+import { FieldSelect } from "@/components/ui/field-select";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -256,8 +257,7 @@ export default function QuestionBrowserPage() {
           <div className="grid grid-cols-2 gap-4 sm:grid-cols-6">
             <div className="flex flex-col gap-1.5">
               <Label>Subject</Label>
-              <select
-                className="h-9 rounded-md border bg-background px-2 text-sm"
+              <FieldSelect
                 value={subjectId ?? ""}
                 onChange={(e) => {
                   setSubjectId(e.target.value || null);
@@ -270,13 +270,12 @@ export default function QuestionBrowserPage() {
                     {s.name}
                   </option>
                 ))}
-              </select>
+              </FieldSelect>
             </div>
 
             <div className="flex flex-col gap-1.5">
               <Label>Class</Label>
-              <select
-                className="h-9 rounded-md border bg-background px-2 text-sm"
+              <FieldSelect
                 value={classLevel ?? ""}
                 onChange={(e) => {
                   const v = e.target.value;
@@ -288,13 +287,12 @@ export default function QuestionBrowserPage() {
                 <option value="">All classes</option>
                 <option value="11">Class 11</option>
                 <option value="12">Class 12</option>
-              </select>
+              </FieldSelect>
             </div>
 
             <div className="flex flex-col gap-1.5">
               <Label>Chapter</Label>
-              <select
-                className="h-9 rounded-md border bg-background px-2 text-sm disabled:opacity-50"
+              <FieldSelect
                 value={chapterId ?? ""}
                 disabled={!subjectId}
                 onChange={(e) => {
@@ -308,13 +306,12 @@ export default function QuestionBrowserPage() {
                     {c.name}
                   </option>
                 ))}
-              </select>
+              </FieldSelect>
             </div>
 
             <div className="flex flex-col gap-1.5">
               <Label>Topic</Label>
-              <select
-                className="h-9 rounded-md border bg-background px-2 text-sm disabled:opacity-50"
+              <FieldSelect
                 value={topicId ?? ""}
                 disabled={!chapterId}
                 onChange={(e) => {
@@ -328,13 +325,12 @@ export default function QuestionBrowserPage() {
                     {t.name}
                   </option>
                 ))}
-              </select>
+              </FieldSelect>
             </div>
 
             <div className="flex flex-col gap-1.5">
               <Label>Concept</Label>
-              <select
-                className="h-9 rounded-md border bg-background px-2 text-sm disabled:opacity-50"
+              <FieldSelect
                 value={conceptId ?? ""}
                 disabled={!topicId}
                 onChange={(e) => {
@@ -348,13 +344,12 @@ export default function QuestionBrowserPage() {
                     {c.name}
                   </option>
                 ))}
-              </select>
+              </FieldSelect>
             </div>
 
             <div className="flex flex-col gap-1.5">
               <Label>Difficulty {!isSearching && <span className="text-muted-foreground">(search only)</span>}</Label>
-              <select
-                className="h-9 rounded-md border bg-background px-2 text-sm disabled:opacity-50"
+              <FieldSelect
                 value={difficulty}
                 disabled={!isSearching}
                 onChange={(e) => {
@@ -366,7 +361,7 @@ export default function QuestionBrowserPage() {
                 <option value="easy">Easy</option>
                 <option value="medium">Medium</option>
                 <option value="hard">Hard</option>
-              </select>
+              </FieldSelect>
             </div>
 
             <div className="flex flex-col gap-1.5">
