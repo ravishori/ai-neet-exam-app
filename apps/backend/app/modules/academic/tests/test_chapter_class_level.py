@@ -216,25 +216,41 @@ async def test_biomolecules_class_level_is_null(db_session: AsyncSession):
     )
 
 
-async def test_exactly_34_populated_and_35_total(db_session: AsyncSession):
+async def test_rs003b1_baseline_34_populated_plus_biomolecules_null(db_session: AsyncSession):
+    """RS-003-B-1A / CF-B baseline: the 34 audited chapters must remain
+    class_level-populated and ZOOLOGY / biomolecules must remain the
+    sole NULL. Post CF-C1, additional NCERT chapters may be present
+    (e.g. Chem 12 Solutions), which is why this test asserts the
+    baseline as a subset rather than an exact equality."""
     total = (
-        await db_session.execute(text("SELECT COUNT(*) FROM academic.chapters"))
+        await db_session.execute(text("SELECT COUNT(*) FROM academic.chapters WHERE deleted_at IS NULL"))
     ).scalar_one()
-    assert total == 35, f"expected 35 chapters, got {total}"
+    assert total >= 35, f"expected at least 35 chapters, got {total}"
 
     populated = (
         await db_session.execute(
-            text("SELECT COUNT(*) FROM academic.chapters WHERE class_level IS NOT NULL")
+            text("SELECT COUNT(*) FROM academic.chapters WHERE class_level IS NOT NULL AND deleted_at IS NULL")
         )
     ).scalar_one()
-    assert populated == 34, f"expected exactly 34 populated class_level rows, got {populated}"
+    assert populated >= 34, f"RS-003-B-1A baseline of 34 populated class_level rows regressed to {populated}"
 
-    nulls = (
+    biomol_null = (
         await db_session.execute(
-            text("SELECT COUNT(*) FROM academic.chapters WHERE class_level IS NULL")
+            text(
+                """
+                SELECT ch.class_level
+                FROM academic.chapters ch
+                JOIN academic.subjects s ON s.id = ch.subject_id
+                WHERE s.code = 'ZOOLOGY' AND ch.code = 'biomolecules'
+                  AND ch.deleted_at IS NULL
+                """
+            )
         )
     ).scalar_one()
-    assert nulls == 1
+    assert biomol_null is None, (
+        "ZOOLOGY / biomolecules must remain class_level NULL until the "
+        "curriculum-owner decision — see RS-003-B-1A §7."
+    )
 
 
 async def test_seed_and_migration_agree_on_all_34_mappings():
@@ -264,8 +280,11 @@ async def test_seed_and_migration_agree_on_all_34_mappings():
 
     expected_11 = {(s, c) for s, cs in EXPECTED_CLASS_11.items() for c in cs}
     expected_12 = {(s, c) for s, cs in EXPECTED_CLASS_12.items() for c in cs}
-    assert seen_11 == expected_11, f"class-11 mismatch: extra={seen_11 - expected_11}, missing={expected_11 - seen_11}"
-    assert seen_12 == expected_12, f"class-12 mismatch: extra={seen_12 - expected_12}, missing={expected_12 - seen_12}"
+    # RS-003-B-1A / CF-B baseline is asserted as a subset — CF-C1 and later
+    # authorised additions may add further Class-12 chapters (e.g. Chem 12
+    # Solutions). No baseline row may be dropped or reclassified.
+    assert expected_11 <= seen_11, f"class-11 baseline regressed: missing={expected_11 - seen_11}"
+    assert expected_12 <= seen_12, f"class-12 baseline regressed: missing={expected_12 - seen_12}"
     assert biomol_cls is None
 
 
