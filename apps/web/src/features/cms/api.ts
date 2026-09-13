@@ -246,6 +246,7 @@ export type EditorialCampaign = {
     remaining: number;
     progress_ratio: number;
     pipeline: { draft: number; in_review: number; approved: number; changes_requested: number };
+    pipeline_complete?: boolean;
     met_planning_target: boolean;
   }[];
   status_counts: {
@@ -259,6 +260,8 @@ export type EditorialCampaign = {
     missing_mapping: number;
     structurally_invalid: number;
   };
+  /** Phase 3.3-R1: documents which fields are COMPLETE aggregates vs SAMPLE scans. */
+  count_semantics?: Record<string, string>;
   by_academic_subject: {
     subject: string;
     draft: number;
@@ -283,6 +286,9 @@ export type EditorialCampaign = {
   }[];
   quality_metrics: {
     total_questions_scanned: number;
+    sample_limit?: number;
+    sample_only?: boolean;
+    inventory_total_questions?: number;
     pct_with_provenance: number;
     pct_with_academic_mapping: number;
     pct_with_explanation: number;
@@ -300,6 +306,7 @@ export type EditorialCampaign = {
     no_mass_publish_drafts: boolean;
     planning_target_only: boolean;
     biology_includes: string[];
+    inventory_counts_complete?: boolean;
   };
 };
 
@@ -379,6 +386,7 @@ export const cmsApi = {
     params: {
       status?: string;
       subject_id?: string;
+      subject_name?: string;
       chapter_id?: string;
       topic_id?: string;
       difficulty?: string;
@@ -394,6 +402,7 @@ export const cmsApi = {
     const query = new URLSearchParams();
     if (params.status) query.set("status", params.status);
     if (params.subject_id) query.set("subject_id", params.subject_id);
+    if (params.subject_name) query.set("subject_name", params.subject_name);
     if (params.chapter_id) query.set("chapter_id", params.chapter_id);
     if (params.topic_id) query.set("topic_id", params.topic_id);
     if (params.difficulty) query.set("difficulty", params.difficulty);
@@ -410,6 +419,20 @@ export const cmsApi = {
   reviewPacket: (id: string) => apiClient.get<ReviewPacket>(`/api/v1/cms/content-items/${id}/review-packet`),
   editorialCoverage: () => apiClient.get<EditorialCoverage>("/api/v1/cms/editorial-coverage"),
   editorialCampaign: () => apiClient.get<EditorialCampaign>("/api/v1/cms/editorial-campaign"),
+  contentIntake: (params: { subject_name: string; status?: string; limit?: number; offset?: number }) => {
+    const query = new URLSearchParams();
+    query.set("subject_name", params.subject_name);
+    if (params.status) query.set("status", params.status);
+    query.set("limit", String(params.limit ?? 50));
+    query.set("offset", String(params.offset ?? 0));
+    return apiClient.get<{
+      subject: string;
+      total: number;
+      intake_counts: Record<string, number>;
+      items: unknown[];
+      rules: Record<string, unknown>;
+    }>(`/api/v1/cms/content-intake?${query.toString()}`);
+  },
   batchAPilot: () => apiClient.get<BatchAPilotReport>("/api/v1/cms/editorial-batch-a-pilot"),
   get: (id: string) => apiClient.get<ContentItem>(`/api/v1/cms/content-items/${id}`),
   versions: (id: string) => apiClient.get<ContentVersion[]>(`/api/v1/cms/content-items/${id}/versions`),

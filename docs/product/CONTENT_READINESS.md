@@ -1,6 +1,6 @@
 ﻿# Content readiness & ECAEP publishing campaign
 
-**Rule:** Quality + coverage + provenance + review + usable volume â€” **not** raw publish count.
+**Rule:** Quality + coverage + provenance + review + usable volume — **not** raw publish count.
 **Inventory truth:** Counts below in the original WAVE-P0-4 baseline are **historical**. Current inventory is **DB-derived and must be revalidated**.
 
 ```bash
@@ -8,15 +8,37 @@ cd apps/backend
 python scripts/content_readiness_inventory.py
 # Admin (authorized): GET /api/v1/cms/content-readiness
 # Editorial queue: GET /api/v1/cms/editorial-review-queue
+# Subject intake: GET /api/v1/cms/content-intake?subject_name=Chemistry&status=DRAFT
+# Zoology queue: GET /api/v1/cms/editorial-review-queue?subject_name=Zoology&status=IN_REVIEW
 ```
 
 Do **not** hard-code published counts into product claims. Do **not** mass-publish the unmapped DRAFT backlog. Provenance/source fields are **not** NCERT certification.
 
 **Full 180-question NEET-pattern mock:** remains **blocked** until subject published allocation supports the exam engine (notably Zoology). Do not publish solely to hit a numerical quota.
 
+### Phase 3.3 operational additions
+
+- Zoology IN_REVIEW filter via `subject_name=Zoology` (queue rows include `ncert` + `blocking_reasons`)
+- Review packet exposes first-class `ncert` and `publication_eligibility` (approval is not publication)
+- Controlled Chemistry/Zoology intake via `GET /content-intake` (read-only; excludes unmapped backlog)
+- Unmapped ~5,024 DRAFTs remain **frozen**
+
+### Phase 3.3-R1 Admin queue UX + complete campaign counts
+
+Admin UI: `/admin/ai-review`
+
+- **Subject filter** (academic subjects from API; maps to `subject_name`)
+- **Status filter** (persisted workflow states + All)
+- URL state example: `?subject_name=Zoology&status=IN_REVIEW`
+- Defaults: `IN_REVIEW`, Batch A / pilot gates **off** (so Zoology IN_REVIEW is directly selectable)
+- Queue pagination already uses `limit`/`offset` + `meta.total` (total = complete matching population; page shows a slice)
+- Campaign dashboard inventory / subject / Biology pipeline counts are **COMPLETE DB aggregates**
+- Structural quality percentages remain an explicit **SAMPLE** (not labelled as full-inventory totals)
+- Still admin/editorial-only (`content.review`); never auto-approves or auto-publishes
+
 ---
 
-## Historical baseline (WAVE-P0-4, 2026-08-31) â€” NOT current truth
+## Historical baseline (WAVE-P0-4, 2026-08-31) — NOT current truth
 
 The following table is retained for audit trail only. It described a local DB snapshot at wave start (**90** questions / **11** PUBLISHED). Later audits (Phase 3.1+) found a much larger bank; **always re-run the inventory script**.
 
@@ -110,3 +132,4 @@ Practice/mock already return `NO_QUESTIONS_AVAILABLE` (422) with a clear message
 - Did not invent NCERT verification
 - Did not redesign student UI / add RAG / SRS / multi-tenancy
 - Did not modify production data via automation
+

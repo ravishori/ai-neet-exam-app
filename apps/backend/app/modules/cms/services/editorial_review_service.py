@@ -19,6 +19,11 @@ from app.core.exceptions import NotFoundError
 from app.modules.cms.models import ContentItem, ContentReview, ContentVersion
 from app.modules.cms.repositories.cms_repository import CmsRepository
 from app.modules.cms.schemas.content_bodies import validate_body
+from app.modules.cms.services.draft_disposition import (
+    intake_code_for_draft,
+    ncert_state_from_evidence,
+    readiness_label_for_question,
+)
 
 # Human checklist — assist only; never auto-certifies publish readiness.
 REVIEW_CHECKLIST: list[dict[str, str]] = [
@@ -311,6 +316,7 @@ class EditorialReviewService:
         *,
         status: str | None = "IN_REVIEW",
         subject_id: uuid.UUID | None = None,
+        subject_name: str | None = None,
         chapter_id: uuid.UUID | None = None,
         topic_id: uuid.UUID | None = None,
         difficulty: str | None = None,
@@ -324,6 +330,9 @@ class EditorialReviewService:
     ) -> tuple[list[dict], int, dict]:
         from app.modules.academic.models import Chapter, Concept, Subject, Topic
         from app.modules.cms.acquisition.batch_a_catalog import BATCH_ID, MODEL_USED
+
+        if subject_name and not subject_id:
+            subject_id = await self._resolve_subject_id(subject_name)
 
         pilot_ids: set[str] | None = None
         if pilot_only:
@@ -385,18 +394,19 @@ class EditorialReviewService:
             body = latest.body if latest else {}
             structural = _structural_assessment(item.content_type, body, item.concept_id)
             provenance_info = _provenance_from_version(latest)
+            ncert = ncert_state_from_evidence(tags=tags, body=body if isinstance(body, dict) else None)
             academic = names.get(item.concept_id) if item.concept_id else None
             chapter_meta = None
             chapter_published = 0
             chapter_name = None
-            subject_name = None
+            subject_name_resolved = None
             if academic and academic.get("chapter"):
                 ch_id = uuid.UUID(academic["chapter"]["id"])
                 chapter_meta = chapter_counts.get(ch_id)
                 chapter_published = int(chapter_meta["published"]) if chapter_meta else 0
                 chapter_name = academic["chapter"].get("name")
             if academic and academic.get("subject"):
-                subject_name = academic["subject"].get("name")
+                subject_name_resolved = academic["subject"].get("name")
 
             if difficulty and (body or {}).get("difficulty", "").lower() != difficulty.lower():
                 continue
@@ -409,7 +419,7 @@ class EditorialReviewService:
             if review_readiness == "needs_work" and structural["review_ready"]:
                 continue
 
-            area = campaign_area_for_subject(subject_name)
+            area = campaign_area_for_subject(subject_name_resolved)
             published_in_area = area_published.get(area, 0) if area else 0
             remaining = max(0, CAMPAIGN_TARGET_PER_AREA - published_in_area) if area else 0
             reasons = _priority_reasons(
@@ -430,6 +440,14 @@ class EditorialReviewService:
                     "Not official NTA/NCERT content",
                     *reasons,
                 ]
+
+            blocking = []
+            if not structural["valid"]:
+                blocking.extend(structural["issues"])
+            if not item.concept_id:
+                blocking.append("Missing academic concept mapping")
+            if not ncert["is_verified"]:
+                blocking.append("NCERT verification not established (provenance ≠ NCERT certification)")
 
             row = {
                 "id": str(item.id),
@@ -453,6 +471,12 @@ class EditorialReviewService:
                     "model_used": latest.model_used if latest else None,
                     "label": "Human-authored Batch A" if is_batch_a else None,
                 },
+                "ncert": {
+                    "verification_level": ncert["verification_level"],
+                    "is_verified": ncert["is_verified"],
+                    "disclaimer": ncert["disclaimer"],
+                },
+                "blocking_reasons": blocking,
                 "ai_check_flags": (latest.ai_check_report or {}).get("flags", []) if latest else [],
                 "ai_check_status": (latest.ai_check_report or {}).get("status") if latest else None,
                 "chapter_inventory": chapter_meta,
@@ -479,6 +503,8 @@ class EditorialReviewService:
             "total": total,
             "limit": limit,
             "offset": offset,
+            "subject_id": str(subject_id) if subject_id else None,
+            "subject_name": subject_name,
             "prioritization": PRIORITIZATION_EXPLAINED,
             "ai_disclaimer": "AI check flags are assistance only — not scientific certification or publish authority.",
             "recommended_next": (
@@ -494,10 +520,20 @@ class EditorialReviewService:
                 "STRUCTURAL VALIDITY is automated field/shape checking only. "
                 "SCIENTIFIC VALIDITY requires human SME judgement and is never auto-certified."
             ),
+            "no_auto_approve": True,
+            "no_auto_publish": True,
             "pilot_only": pilot_only,
             "batch_tag": batch_tag,
         }
         return page, total, meta
+
+    async def _resolve_subject_id(self, subject_name: str) -> uuid.UUID | None:
+        from app.modules.academic.models import Subject
+
+        result = await self.session.execute(
+            select(Subject.id).where(func.lower(Subject.name) == subject_name.strip().lower()).limit(1)
+        )
+        return result.scalar_one_or_none()
 
     async def _campaign_area_published_counts(self) -> dict[str, int]:
         """PUBLISHED QUESTION counts rolled up into Physics / Chemistry / Biology."""
@@ -523,60 +559,36 @@ class EditorialReviewService:
         }
 
     async def campaign_dashboard(self) -> dict:
-        """WAVE-P0-7 campaign control — planning targets only; never auto-publishes."""
+        """WAVE-P0-7 campaign control — planning targets only; never auto-publishes.
+
+        Phase 3.3-R1: pipeline / subject / status inventory counts are COMPLETE
+        DB aggregates. Structural quality percentages remain an explicit SAMPLE
+        and must not be labelled as full-inventory totals.
+        """
         from app.modules.academic.models import Chapter, Concept, Subject, Topic
 
-        # Status totals (QUESTIONs)
+        # COMPLETE status totals (QUESTIONs)
         by_status = await self.session.execute(
             select(ContentItem.status, func.count())
             .where(ContentItem.content_type == "QUESTION", ContentItem.deleted_at.is_(None))
             .group_by(ContentItem.status)
         )
         status_counts = {row[0]: int(row[1]) for row in by_status.all()}
+        total_questions = max(1, sum(status_counts.values()))
 
-        # Per academic subject status + quality scan (bounded inventory)
-        result = await self.session.execute(
-            select(ContentItem)
-            .options(selectinload(ContentItem.versions))
+        # COMPLETE per-subject status via SQL (no first-N truncation)
+        subject_status_rows = await self.session.execute(
+            select(Subject.name, ContentItem.status, func.count(ContentItem.id))
+            .select_from(ContentItem)
+            .join(Concept, Concept.id == ContentItem.concept_id)
+            .join(Topic, Topic.id == Concept.topic_id)
+            .join(Chapter, Chapter.id == Topic.chapter_id)
+            .join(Subject, Subject.id == Chapter.subject_id)
             .where(ContentItem.content_type == "QUESTION", ContentItem.deleted_at.is_(None))
-            .limit(2000)
+            .group_by(Subject.name, ContentItem.status)
         )
-        items = list(result.scalars().unique().all())
-
-        missing_provenance = 0
-        missing_mapping = 0
-        structurally_invalid = 0
-        with_explanation = 0
-        with_provenance = 0
-        with_mapping = 0
-        structurally_valid = 0
-
         subject_status: dict[str, dict[str, int]] = {}
-        for item in items:
-            by_id = {v.id: v for v in item.versions}
-            latest = by_id.get(item.latest_version_id)
-            body = latest.body if latest else {}
-            structural = _structural_assessment(item.content_type, body, item.concept_id)
-            provenance = _provenance_from_version(latest)
-            if not item.concept_id:
-                missing_mapping += 1
-            else:
-                with_mapping += 1
-            if provenance["has_lineage"]:
-                with_provenance += 1
-            else:
-                missing_provenance += 1
-            if structural["valid"]:
-                structurally_valid += 1
-            else:
-                structurally_invalid += 1
-            if (body or {}).get("explanation"):
-                with_explanation += 1
-
-        names_map = await self.repo.academic_names_for_concepts([i.concept_id for i in items if i.concept_id])
-        for item in items:
-            academic = names_map.get(item.concept_id) if item.concept_id else None
-            subject_name = academic["subject"]["name"] if academic and academic.get("subject") else "UNMAPPED"
+        for subject_name, status, count in subject_status_rows.all():
             bucket = subject_status.setdefault(
                 subject_name,
                 {"draft": 0, "in_review": 0, "approved": 0, "published": 0, "changes_requested": 0, "archived": 0},
@@ -588,16 +600,109 @@ class EditorialReviewService:
                 "PUBLISHED": "published",
                 "CHANGES_REQUESTED": "changes_requested",
                 "ARCHIVED": "archived",
-            }.get(item.status)
+            }.get(status)
             if key:
-                bucket[key] += 1
+                bucket[key] += int(count)
+
+        unmapped_rows = await self.session.execute(
+            select(ContentItem.status, func.count())
+            .where(
+                ContentItem.content_type == "QUESTION",
+                ContentItem.deleted_at.is_(None),
+                ContentItem.concept_id.is_(None),
+            )
+            .group_by(ContentItem.status)
+        )
+        unmapped_bucket = {
+            "draft": 0,
+            "in_review": 0,
+            "approved": 0,
+            "published": 0,
+            "changes_requested": 0,
+            "archived": 0,
+        }
+        for status, count in unmapped_rows.all():
+            key = {
+                "DRAFT": "draft",
+                "IN_REVIEW": "in_review",
+                "APPROVED": "approved",
+                "PUBLISHED": "published",
+                "CHANGES_REQUESTED": "changes_requested",
+                "ARCHIVED": "archived",
+            }.get(status)
+            if key:
+                unmapped_bucket[key] += int(count)
+        if sum(unmapped_bucket.values()) > 0:
+            subject_status["UNMAPPED"] = unmapped_bucket
+
+        missing_mapping = int(
+            (
+                await self.session.execute(
+                    select(func.count())
+                    .select_from(ContentItem)
+                    .where(
+                        ContentItem.content_type == "QUESTION",
+                        ContentItem.deleted_at.is_(None),
+                        ContentItem.concept_id.is_(None),
+                    )
+                )
+            ).scalar()
+            or 0
+        )
+        missing_provenance = int(
+            (
+                await self.session.execute(
+                    select(func.count())
+                    .select_from(ContentItem)
+                    .join(ContentVersion, ContentVersion.id == ContentItem.latest_version_id)
+                    .where(
+                        ContentItem.content_type == "QUESTION",
+                        ContentItem.deleted_at.is_(None),
+                        ContentVersion.model_used.is_(None),
+                        ContentVersion.knowledge_unit_id.is_(None),
+                    )
+                )
+            ).scalar()
+            or 0
+        )
+
+        # SAMPLE-only structural scan (explicitly not full inventory)
+        quality_sample_limit = 500
+        sample_result = await self.session.execute(
+            select(ContentItem)
+            .options(selectinload(ContentItem.versions))
+            .where(ContentItem.content_type == "QUESTION", ContentItem.deleted_at.is_(None))
+            .order_by(ContentItem.created_at.desc())
+            .limit(quality_sample_limit)
+        )
+        sample_items = list(sample_result.scalars().unique().all())
+        structurally_invalid = 0
+        with_explanation = 0
+        with_provenance = 0
+        with_mapping = 0
+        structurally_valid = 0
+        for item in sample_items:
+            by_id = {v.id: v for v in item.versions}
+            latest = by_id.get(item.latest_version_id)
+            body = latest.body if latest else {}
+            structural = _structural_assessment(item.content_type, body, item.concept_id)
+            provenance = _provenance_from_version(latest)
+            if item.concept_id:
+                with_mapping += 1
+            if provenance["has_lineage"]:
+                with_provenance += 1
+            if structural["valid"]:
+                structurally_valid += 1
+            else:
+                structurally_invalid += 1
+            if (body or {}).get("explanation"):
+                with_explanation += 1
 
         area_published = await self._campaign_area_published_counts()
         targets = []
         for area, subjects in CAMPAIGN_AREAS.items():
             published = area_published.get(area, 0)
             remaining = max(0, CAMPAIGN_TARGET_PER_AREA - published)
-            # Roll up pipeline counts for the area
             pipeline = {"draft": 0, "in_review": 0, "approved": 0, "changes_requested": 0}
             for subj in subjects:
                 for k in pipeline:
@@ -611,12 +716,12 @@ class EditorialReviewService:
                     "remaining": remaining,
                     "progress_ratio": round(min(1.0, published / CAMPAIGN_TARGET_PER_AREA), 4),
                     "pipeline": pipeline,
+                    "pipeline_complete": True,
                     "met_planning_target": remaining == 0,
                 }
             )
 
         chapter_counts = await self.chapter_question_counts()
-        # Include chapters with zero inventory so gaps are visible
         all_chapters = await self.session.execute(
             select(Chapter.id, Chapter.name, Subject.name.label("subject_name"))
             .join(Subject, Subject.id == Chapter.subject_id)
@@ -634,7 +739,11 @@ class EditorialReviewService:
             review_queue = int(meta["in_review"]) + int(meta.get("approved", 0))
             draft_pool = int(meta["draft"]) + int(meta.get("changes_requested", 0))
             published = int(meta["published"])
-            concentration = "high" if (draft_pool + int(meta["in_review"])) >= 5 else ("low_published" if published == 0 else "normal")
+            concentration = (
+                "high"
+                if (draft_pool + int(meta["in_review"])) >= 5
+                else ("low_published" if published == 0 else "normal")
+            )
             chapter_rows.append(
                 {
                     "chapter_id": str(chapter_id),
@@ -651,7 +760,7 @@ class EditorialReviewService:
                 }
             )
 
-        total = max(1, len(items))
+        sample_n = max(1, len(sample_items))
         return {
             "targets": targets,
             "status_counts": {
@@ -661,20 +770,37 @@ class EditorialReviewService:
                 "published": int(status_counts.get("PUBLISHED", 0)),
                 "changes_requested": int(status_counts.get("CHANGES_REQUESTED", 0)),
                 "archived": int(status_counts.get("ARCHIVED", 0)),
+                # Complete inventory aggregates (not first-N scan)
                 "missing_provenance": missing_provenance,
                 "missing_mapping": missing_mapping,
+                # Structural invalid remains sample-derived — see quality_metrics.sample_*
                 "structurally_invalid": structurally_invalid,
+            },
+            "count_semantics": {
+                "status_counts": "COMPLETE — all non-deleted QUESTION rows",
+                "by_academic_subject": "COMPLETE — SQL GROUP BY subject × status",
+                "targets.pipeline": "COMPLETE — rolled up from full subject aggregates",
+                "targets.published": "COMPLETE — PUBLISHED QUESTION counts by campaign area",
+                "chapter_coverage": "COMPLETE — all chapters with status aggregates",
+                "quality_metrics_percentages": (
+                    f"SAMPLE — structural body checks on up to {quality_sample_limit} recent questions; "
+                    "not a full-inventory total"
+                ),
+                "structurally_invalid": "SAMPLE — from quality sample only",
             },
             "by_academic_subject": [
                 {"subject": name, **counts} for name, counts in sorted(subject_status.items())
             ],
             "chapter_coverage": chapter_rows,
             "quality_metrics": {
-                "total_questions_scanned": len(items),
-                "pct_with_provenance": round(100 * with_provenance / total, 1),
-                "pct_with_academic_mapping": round(100 * with_mapping / total, 1),
-                "pct_with_explanation": round(100 * with_explanation / total, 1),
-                "pct_structurally_valid": round(100 * structurally_valid / total, 1),
+                "total_questions_scanned": len(sample_items),
+                "sample_limit": quality_sample_limit,
+                "sample_only": True,
+                "inventory_total_questions": sum(status_counts.values()),
+                "pct_with_provenance": round(100 * with_provenance / sample_n, 1),
+                "pct_with_academic_mapping": round(100 * with_mapping / sample_n, 1),
+                "pct_with_explanation": round(100 * with_explanation / sample_n, 1),
+                "pct_structurally_valid": round(100 * structurally_valid / sample_n, 1),
                 "pct_reviewed_or_beyond": round(
                     100
                     * (
@@ -684,16 +810,17 @@ class EditorialReviewService:
                         + status_counts.get("CHANGES_REQUESTED", 0)
                         + status_counts.get("ARCHIVED", 0)
                     )
-                    / total,
+                    / total_questions,
                     1,
                 ),
                 "pct_approved_or_published": round(
-                    100 * (status_counts.get("APPROVED", 0) + status_counts.get("PUBLISHED", 0)) / total, 1
+                    100 * (status_counts.get("APPROVED", 0) + status_counts.get("PUBLISHED", 0)) / total_questions, 1
                 ),
-                "pct_published": round(100 * status_counts.get("PUBLISHED", 0) / total, 1),
+                "pct_published": round(100 * status_counts.get("PUBLISHED", 0) / total_questions, 1),
                 "disclaimer": (
-                    "STRUCTURAL VALIDITY = automated body/shape/mapping checks only. "
-                    "SCIENTIFIC VALIDITY is never inferred from these percentages — human SME review is mandatory. "
+                    "STRUCTURAL VALIDITY percentages are SAMPLE-ONLY (recent questions). "
+                    "Pipeline / subject / status inventory counts are COMPLETE DB aggregates. "
+                    "SCIENTIFIC VALIDITY is never inferred — human SME review is mandatory. "
                     "Do not publish to inflate progress bars."
                 ),
             },
@@ -705,6 +832,7 @@ class EditorialReviewService:
                 "no_mass_publish_drafts": True,
                 "planning_target_only": True,
                 "biology_includes": ["Botany", "Zoology"],
+                "inventory_counts_complete": True,
             },
         }
 
@@ -802,6 +930,24 @@ class EditorialReviewService:
             "structural": {
                 **structural,
                 "note": "Structural validity ≠ scientific validity. Human SME verification is mandatory.",
+            },
+            "ncert": ncert_state_from_evidence(tags=tags, body=body if isinstance(body, dict) else None),
+            "publication_eligibility": {
+                "eligible_now": False,
+                "requires_status": "APPROVED",
+                "current_status": item.status,
+                "approval_is_not_publication": True,
+                "ncert_certify_does_not_publish": True,
+                "blocking_reasons": (
+                    (structural["issues"] if not structural["valid"] else [])
+                    + ([] if item.concept_id else ["Missing academic concept mapping"])
+                    + (
+                        []
+                        if item.status == "APPROVED"
+                        else [f"Cannot publish from status {item.status} — explicit APPROVED + publish required"]
+                    )
+                ),
+                "note": "Publish requires content.publish permission, APPROVED status, and publication gates. Never auto.",
             },
             "suspected_duplicates": duplicates,
             "reviews": reviews,
@@ -909,6 +1055,132 @@ class EditorialReviewService:
                 "Prefer diversifying chapters when selecting the next batch to submit/review. "
                 "Do not publish drafts solely to balance counts."
             ),
+        }
+
+    async def subject_intake(
+        self,
+        *,
+        subject_name: str,
+        status: str | None = "DRAFT",
+        limit: int = 50,
+        offset: int = 0,
+    ) -> dict:
+        """Phase 3.3 controlled Chemistry/Zoology intake — read-only classification.
+
+        Never mutates, never publishes, never loads the unmapped 5k backlog.
+        """
+        from app.modules.academic.models import Chapter, Concept, Subject, Topic
+        from collections import Counter
+
+        allowed = {"Chemistry", "Zoology", "Physics", "Botany"}
+        if subject_name not in allowed:
+            raise NotFoundError(f"Unknown subject for intake: {subject_name}")
+
+        subject_id = await self._resolve_subject_id(subject_name)
+        if not subject_id:
+            raise NotFoundError(f"Subject not found: {subject_name}")
+
+        status_filter = None if status in (None, "", "any", "ALL") else status
+        query = (
+            select(ContentItem)
+            .options(selectinload(ContentItem.versions))
+            .join(Concept, Concept.id == ContentItem.concept_id)
+            .join(Topic, Topic.id == Concept.topic_id)
+            .join(Chapter, Chapter.id == Topic.chapter_id)
+            .join(Subject, Subject.id == Chapter.subject_id)
+            .where(
+                ContentItem.content_type == "QUESTION",
+                ContentItem.deleted_at.is_(None),
+                Subject.id == subject_id,
+            )
+        )
+        if status_filter:
+            query = query.where(ContentItem.status == status_filter)
+
+        # Cap scan for operational queues — never pull unmapped global backlog.
+        result = await self.session.execute(query.order_by(ContentItem.created_at.asc()).limit(400))
+        items = list(result.scalars().unique().all())
+        names = await self.repo.academic_names_for_concepts([i.concept_id for i in items if i.concept_id])
+
+        stem_map: dict[str, list[str]] = {}
+        for item in items:
+            by_id = {v.id: v for v in item.versions}
+            latest = by_id.get(item.latest_version_id)
+            body = latest.body if latest else {}
+            stem = (body.get("stem") or "").strip().lower() if isinstance(body, dict) else ""
+            if stem:
+                stem_map.setdefault(stem, []).append(str(item.id))
+        dup_stems = {s for s, ids in stem_map.items() if len(ids) > 1}
+
+        intake_counts: Counter[str] = Counter()
+        rows: list[dict] = []
+        for item in items:
+            by_id = {v.id: v for v in item.versions}
+            latest = by_id.get(item.latest_version_id)
+            body = latest.body if latest else {}
+            structural = _structural_assessment(item.content_type, body, item.concept_id)
+            provenance = _provenance_from_version(latest)
+            ncert = ncert_state_from_evidence(tags=item.tags, body=body if isinstance(body, dict) else None)
+            stem = (body.get("stem") or "").strip().lower() if isinstance(body, dict) else ""
+            academic = names.get(item.concept_id) if item.concept_id else None
+            code = intake_code_for_draft(
+                status=item.status,
+                concept_id=item.concept_id,
+                structural_valid=structural["valid"],
+                has_provenance_lineage=provenance["has_lineage"],
+                suspected_duplicate=stem in dup_stems,
+                has_stem=bool(stem),
+            )
+            readiness = readiness_label_for_question(
+                status=item.status,
+                concept_id=item.concept_id,
+                structural_valid=structural["valid"],
+                has_provenance_lineage=provenance["has_lineage"],
+                ncert_verified=ncert["is_verified"],
+                suspected_duplicate=stem in dup_stems,
+            )
+            intake_counts[code] += 1
+            rows.append(
+                {
+                    "id": str(item.id),
+                    "title": item.title,
+                    "status": item.status,
+                    "intake_code": code,
+                    "readiness_label": readiness,
+                    "difficulty": (body or {}).get("difficulty") if isinstance(body, dict) else None,
+                    "academic": academic,
+                    "structural": structural,
+                    "provenance": {"has_lineage": provenance["has_lineage"], "status": provenance["status"]},
+                    "ncert": {
+                        "verification_level": ncert["verification_level"],
+                        "is_verified": ncert["is_verified"],
+                    },
+                    "suspected_duplicate": stem in dup_stems,
+                    "blocking_reasons": structural["issues"]
+                    + ([] if provenance["has_lineage"] else ["Missing provenance lineage"])
+                    + ([] if ncert["is_verified"] else ["NCERT verification not established"]),
+                }
+            )
+
+        total = len(rows)
+        page = rows[offset : offset + limit]
+        return {
+            "subject": subject_name,
+            "status_filter": status_filter or "any",
+            "total": total,
+            "limit": limit,
+            "offset": offset,
+            "intake_counts": dict(intake_counts),
+            "items": page,
+            "rules": {
+                "read_only": True,
+                "no_auto_submit": True,
+                "no_auto_approve": True,
+                "no_auto_publish": True,
+                "unmapped_backlog_excluded": True,
+                "classification_is_heuristic": True,
+                "does_not_certify_science_or_ncert": True,
+            },
         }
 
     async def content_readiness(self) -> dict:

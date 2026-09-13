@@ -273,6 +273,10 @@ async def list_ai_review_queue(
 async def list_editorial_review_queue(
     status: str | None = Query(default="IN_REVIEW"),
     subject_id: uuid.UUID | None = None,
+    subject_name: str | None = Query(
+        default=None,
+        description="Optional subject name filter (e.g. Zoology, Chemistry). Resolved to subject_id.",
+    ),
     chapter_id: uuid.UUID | None = None,
     topic_id: uuid.UUID | None = None,
     difficulty: str | None = None,
@@ -291,6 +295,7 @@ async def list_editorial_review_queue(
     rows, total, meta = await service.list_queue(
         status=status_filter,
         subject_id=subject_id,
+        subject_name=subject_name,
         chapter_id=chapter_id,
         topic_id=topic_id,
         difficulty=difficulty,
@@ -333,6 +338,30 @@ async def get_content_readiness(db: AsyncSession = Depends(get_db)):
     """Phase 3.2 inventory/readiness snapshot — read-only operational view."""
     service = EditorialReviewService(db)
     return envelope(success=True, data=await service.content_readiness())
+
+
+@router.get("/content-intake", dependencies=[Depends(require_permission("content.review"))])
+async def get_content_intake(
+    subject_name: str = Query(..., description="Chemistry | Zoology | Physics | Botany"),
+    status: str | None = Query(default="DRAFT"),
+    limit: int = Query(default=50, ge=1, le=100),
+    offset: int = Query(default=0, ge=0),
+    db: AsyncSession = Depends(get_db),
+):
+    """Phase 3.3 controlled subject intake classification — read-only; never publishes.
+
+    Excludes the global unmapped DRAFT backlog (concept_id IS NULL).
+    """
+    service = EditorialReviewService(db)
+    return envelope(
+        success=True,
+        data=await service.subject_intake(
+            subject_name=subject_name,
+            status=status,
+            limit=limit,
+            offset=offset,
+        ),
+    )
 
 
 BULK_ACTIONS = {"publish", "archive"}
