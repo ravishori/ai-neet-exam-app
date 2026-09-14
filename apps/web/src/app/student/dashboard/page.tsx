@@ -196,6 +196,12 @@ function HeroPracticeCta() {
       >
         Configure scope
       </Link>
+      <p
+        className="w-full text-xs text-muted-foreground sm:w-auto"
+        data-testid="dashboard-hero-session-shape"
+      >
+        30 published questions · untimed · full syllabus
+      </p>
       {emptyPool && (
         <Alert className="sm:basis-full" role="status">
           <AlertDescription className="space-y-2">
@@ -387,7 +393,7 @@ export default function StudentDashboardPage() {
               title={isLoading ? "Loading…" : `Welcome back, ${greetingName}`}
               description={
                 todayFocus
-                  ? `Next focus: ${todayFocus}. Continue practice when you’re ready — published questions only.`
+                  ? `Your next concept to revise is ${todayFocus} — open it below under Revision due, or start a general practice session.`
                   : "Calm, focused preparation. Start published NEET practice when you’re ready."
               }
             />
