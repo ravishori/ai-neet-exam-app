@@ -1,0 +1,51 @@
+{
+  "task": "FRONTEND-PREMIUM-004",
+  "title": "Practice Launch Experience",
+  "verdict": "GREEN",
+  "date": "2026-09-14",
+  "files": [
+    "apps/web/src/app/student/practice/page.tsx",
+    "apps/web/src/app/student/practice/practice-page.test.tsx",
+    "apps/web/src/features/assessment/use-start-practice.ts",
+    "apps/web/scripts/premium004-practice-live.mjs",
+    "docs/audits/frontend_premium_004_20260914.md",
+    "docs/audits/frontend_premium_004_20260914.json"
+  ],
+  "apis_hooks": [
+    "useStartPractice",
+    "assessmentApi.generatePractice",
+    "assessmentApi.startAttempt",
+    "assessmentApi.listAttempts",
+    "learningApi.recommendations",
+    "ScopePicker / academicApi"
+  ],
+  "tests": {
+    "practice_page": "7/7",
+    "practice_start_message": "5/5",
+    "a12": "19/19",
+    "eslint": 0,
+    "tsc": 0,
+    "build": "GREEN"
+  },
+  "live": {
+    "frontend": "http://127.0.0.1:3001",
+    "backend": "http://127.0.0.1:8000",
+    "viewports": ["390", "768", "1280", "1440"],
+    "overflow": 0,
+    "cta_min_height_px": 48,
+    "practice_now_count": 0,
+    "start_practice_count": 1,
+    "hydration": false,
+    "themes": ["light", "dark"]
+  },
+  "untouched": [
+    "published-only selection",
+    "scoring",
+    "attempt creation semantics",
+    "Mock/ECAEP/AuthZ/DB/API contracts",
+    "taxonomy/NCERT/syllabus",
+    "frozen DRAFTs",
+    "A6-A12"
+  ],
+  "commit": "not created"
+}
