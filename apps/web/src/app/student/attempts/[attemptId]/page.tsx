@@ -68,12 +68,25 @@ function ProgressBar({ current, total, answered }: { current: number; total: num
   const pct = total > 0 ? Math.round((answered / total) * 100) : 0;
   const label = `Progress: question ${current} of ${total}, ${answered} answered`;
   return (
-    <div className="space-y-1.5">
-      <div className="flex items-center justify-between gap-2 text-xs text-muted-foreground">
-        <span className="font-medium text-foreground">
-          Q {current} / {total}
-        </span>
-        <span className="font-mono tabular-nums">{pct}% answered</span>
+    <div className="space-y-2" data-testid="practice-runner-progress">
+      <div className="flex items-end justify-between gap-3">
+        <div>
+          <p className="text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-muted-foreground">Session</p>
+          <p className="font-mono text-lg font-semibold tabular-nums tracking-tight text-foreground">
+            {current}
+            <span className="mx-1 text-muted-foreground/70" aria-hidden>
+              /
+            </span>
+            {total}
+          </p>
+        </div>
+        <p className="pb-0.5 text-right text-xs text-muted-foreground">
+          <span className="font-mono tabular-nums text-foreground">{answered}</span> answered
+          <span className="mx-1.5 text-border" aria-hidden>
+            ·
+          </span>
+          <span className="font-mono tabular-nums">{pct}%</span>
+        </p>
       </div>
       <div
         className="h-2 overflow-hidden rounded-full bg-muted"
@@ -83,7 +96,10 @@ function ProgressBar({ current, total, answered }: { current: number; total: num
         aria-valuemin={0}
         aria-valuemax={100}
       >
-        <div className="h-full rounded-full bg-primary transition-[width] duration-300 ease-out motion-reduce:transition-none" style={{ width: `${pct}%` }} />
+        <div
+          className="h-full rounded-full bg-primary transition-[width] duration-300 ease-out motion-reduce:transition-none"
+          style={{ width: `${pct}%` }}
+        />
       </div>
     </div>
   );
@@ -154,14 +170,54 @@ export default function AttemptRunnerPage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentIndex]);
 
+  // Autosave coalescing (P0-runner): rapid toggling of option / confidence /
+  // mark-for-review must not fire one POST per keystroke. Buffer patches in a
+  // ref and flush a single mutation after a short quiet window (or on
+  // navigation / unmount via the effect above).
+  const pendingSaveRef = useRef<{
+    itemId: string;
+    state: AnswerState;
+    entry: number;
+  } | null>(null);
+  const saveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  function flushSave() {
+    if (saveTimerRef.current) {
+      clearTimeout(saveTimerRef.current);
+      saveTimerRef.current = null;
+    }
+    const pending = pendingSaveRef.current;
+    if (!pending) return;
+    pendingSaveRef.current = null;
+    const elapsed = Math.max(1, Math.round((Date.now() - pending.entry) / 1000));
+    saveAnswer.mutate({ content_item_id: pending.itemId, ...pending.state, time_spent_seconds: elapsed });
+  }
+
+  useEffect(() => {
+    return () => {
+      if (saveTimerRef.current) clearTimeout(saveTimerRef.current);
+    };
+  }, []);
+
   function commitAnswer(patch: Partial<AnswerState>) {
     if (!question) return;
     const next: AnswerState = { ...(localAnswer ?? { selected_option: null, confidence: null, marked_for_review: false }), ...patch };
     setLocalAnswer(next);
-    saveAnswer.mutate({ content_item_id: question.content_item_id, ...next });
+    if (attemptStatusRef.current !== "IN_PROGRESS") return;
+    const prev = pendingSaveRef.current;
+    pendingSaveRef.current = {
+      itemId: question.content_item_id,
+      state: next,
+      entry: prev && prev.itemId === question.content_item_id ? prev.entry : Date.now(),
+    };
+    if (saveTimerRef.current) clearTimeout(saveTimerRef.current);
+    saveTimerRef.current = setTimeout(flushSave, 400);
   }
 
   function goTo(index: number) {
+    // Flush any debounced answer save before navigating so the next-question
+    // fetch does not race with an in-flight autosave.
+    flushSave();
     const next = Math.max(0, Math.min(questions.length - 1, index));
     setVisited((prev) => {
       if (prev.has(next)) return prev;
@@ -194,11 +250,11 @@ export default function AttemptRunnerPage() {
 
   if (isLoading) {
     return (
-      <main className="flex-1 px-4 py-10 sm:px-6 sm:py-12">
-        <div className="mx-auto flex max-w-4xl flex-col gap-3" aria-busy="true" aria-live="polite">
+      <main className="flex-1 px-4 py-8 sm:px-6 sm:py-10">
+        <div className="mx-auto flex max-w-4xl flex-col gap-4" aria-busy="true" aria-live="polite">
           <p className="text-sm text-muted-foreground">Loading your practice session…</p>
-          <Skeleton className="h-8 w-1/3" />
-          <Skeleton className="h-64 w-full" />
+          <Skeleton className="h-16 w-full rounded-2xl" />
+          <Skeleton className="h-72 w-full rounded-2xl" />
         </div>
       </main>
     );
@@ -274,18 +330,21 @@ export default function AttemptRunnerPage() {
   }));
 
   return (
-    <main className={`flex flex-1 justify-center px-4 py-4 sm:px-6 sm:py-8 ${isTimedExam ? "exam-mode" : ""}`}>
-      <div className="grid w-full max-w-5xl grid-cols-1 gap-4 pb-28 lg:grid-cols-[240px_1fr] lg:pb-4">
-        <div className="flex flex-col gap-4 lg:order-2">
+    <main
+      className={`flex flex-1 justify-center px-3 py-3 sm:px-6 sm:py-6 ${isTimedExam ? "exam-mode" : ""}`}
+      data-testid="practice-runner"
+    >
+      <div className="grid w-full max-w-5xl grid-cols-1 gap-3 pb-28 sm:gap-4 lg:grid-cols-[220px_1fr] lg:pb-4">
+        <div className="flex flex-col gap-3 sm:gap-4 lg:order-2">
           <SurfaceCard
             accent="none"
             glass={!isTimedExam}
             lift={false}
             className={isTimedExam ? "border border-foreground/20 shadow-sm" : undefined}
           >
-            <SurfaceCardHeader className="space-y-4">
-              <div className="flex flex-wrap items-center justify-between gap-2">
-                <div>
+            <SurfaceCardHeader className="space-y-3.5 pb-4">
+              <div className="flex flex-wrap items-start justify-between gap-3">
+                <div className="min-w-0">
                   <p className="text-meta">
                     {isTimedExam
                       ? "Exam simulator"
@@ -293,23 +352,36 @@ export default function AttemptRunnerPage() {
                         ? "Mock review"
                         : "NEET practice"}
                   </p>
-                  <SurfaceCardTitle className="text-xl sm:text-2xl">{attempt.assessment.title}</SurfaceCardTitle>
+                  <SurfaceCardTitle className="truncate text-lg sm:text-xl">
+                    {attempt.assessment.title}
+                  </SurfaceCardTitle>
+                  <SurfaceCardDescription className="mt-1">
+                    {attempt.assessment.question_count} questions · +{attempt.assessment.marks_per_question} / −
+                    {attempt.assessment.negative_marks_per_question}
+                  </SurfaceCardDescription>
                 </div>
                 {isSubmitted ? (
-                  <Badge className="font-mono tabular-nums text-base">Score: {attempt.score}</Badge>
-                ) : (
-                  remainingSec !== null && (
-                    <Badge variant="secondary" className="font-mono text-base tabular-nums tracking-tight">
+                  <Badge className="font-mono tabular-nums text-base" data-testid="practice-runner-score">
+                    Score: {attempt.score}
+                  </Badge>
+                ) : remainingSec !== null ? (
+                  <div
+                    className="rounded-xl border border-border/70 bg-background/80 px-3 py-2 text-right shadow-xs"
+                    data-testid="practice-runner-timer"
+                    role="timer"
+                    aria-live="polite"
+                    aria-label={`Time remaining ${Math.floor(remainingSec / 60)} minutes ${remainingSec % 60} seconds`}
+                  >
+                    <p className="text-[0.65rem] font-semibold uppercase tracking-[0.12em] text-muted-foreground">
+                      Remaining
+                    </p>
+                    <p className="font-mono text-xl font-semibold tabular-nums tracking-tight text-foreground">
                       {Math.floor(remainingSec / 60)}:{String(remainingSec % 60).padStart(2, "0")}
-                    </Badge>
-                  )
-                )}
+                    </p>
+                  </div>
+                ) : null}
               </div>
               <ProgressBar current={currentIndex + 1} total={questions.length} answered={answeredCount} />
-              <SurfaceCardDescription>
-                {attempt.assessment.question_count} questions · +{attempt.assessment.marks_per_question} / −
-                {attempt.assessment.negative_marks_per_question}
-              </SurfaceCardDescription>
             </SurfaceCardHeader>
             {isSubmitted && (
               <SurfaceCardContent className="flex flex-col gap-5">
@@ -390,8 +462,8 @@ export default function AttemptRunnerPage() {
             />
           </div>
 
-          <SurfaceCard accent="none" glass={!isTimedExam} lift={false}>
-            <SurfaceCardContent className="pt-6">
+          <SurfaceCard accent="none" glass={!isTimedExam} lift={false} className="border-border/60">
+            <SurfaceCardContent className="pt-5 sm:pt-6">
               <QuestionPanel
                 question={displayedQuestion}
                 index={currentIndex}
@@ -404,34 +476,78 @@ export default function AttemptRunnerPage() {
             </SurfaceCardContent>
           </SurfaceCard>
 
-          {/* Desktop / tablet inline controls */}
+          {/* Desktop / tablet inline controls — Next is primary forward action */}
           <div className="hidden flex-wrap items-center justify-between gap-2 sm:flex">
-            <Button type="button" variant="outline" size="touch" onClick={() => goTo(currentIndex - 1)} disabled={currentIndex === 0}>
+            <Button
+              type="button"
+              variant="outline"
+              size="touch"
+              className="min-h-12"
+              onClick={() => goTo(currentIndex - 1)}
+              disabled={currentIndex === 0}
+            >
               <ChevronLeft className="size-4" aria-hidden="true" /> Previous
             </Button>
 
+            {!isSubmitted && (
+              <p
+                aria-live="polite"
+                className="text-xs text-muted-foreground"
+                data-testid="practice-runner-save-status"
+              >
+                {saveAnswer.isPending ? "Saving…" : saveAnswer.isSuccess ? "Saved" : ""}
+              </p>
+            )}
+
             {!isSubmitted ? (
               <div className="flex flex-wrap items-center gap-2">
-                {currentIndex < questions.length - 1 && (
-                  <Button type="button" variant="outline" size="touch" onClick={() => goTo(currentIndex + 1)}>
-                    Save &amp; Next <ChevronRight className="size-4" aria-hidden="true" />
+                {currentIndex < questions.length - 1 ? (
+                  <>
+                    <Button
+                      type="button"
+                      variant="ghost"
+                      size="touch"
+                      className="min-h-12 text-muted-foreground"
+                      onClick={() => setSubmitConfirmOpen(true)}
+                      disabled={submit.isPending}
+                    >
+                      {submit.isPending ? "Submitting…" : "Submit"}
+                    </Button>
+                    <Button
+                      type="button"
+                      size="touch"
+                      className="min-h-12 px-5 font-semibold"
+                      data-testid="practice-runner-next"
+                      onClick={() => goTo(currentIndex + 1)}
+                    >
+                      Save &amp; Next <ChevronRight className="size-4" aria-hidden="true" />
+                    </Button>
+                  </>
+                ) : (
+                  <Button
+                    type="button"
+                    size="touch"
+                    className="min-h-12 px-5 font-semibold"
+                    data-testid="practice-runner-submit"
+                    onClick={() => setSubmitConfirmOpen(true)}
+                    disabled={submit.isPending}
+                  >
+                    {submit.isPending ? "Submitting…" : "Submit attempt"}
                   </Button>
                 )}
-                <Button
-                  type="button"
-                  size="touch"
-                  onClick={() => setSubmitConfirmOpen(true)}
-                  disabled={submit.isPending}
-                >
-                  {submit.isPending ? "Submitting…" : "Submit"}
-                </Button>
               </div>
             ) : currentIndex < questions.length - 1 ? (
-              <Button type="button" variant="outline" size="touch" onClick={() => goTo(currentIndex + 1)}>
+              <Button
+                type="button"
+                size="touch"
+                className="min-h-12"
+                data-testid="practice-runner-next"
+                onClick={() => goTo(currentIndex + 1)}
+              >
                 Next <ChevronRight className="size-4" aria-hidden="true" />
               </Button>
             ) : (
-              <Button type="button" variant="outline" size="touch" onClick={() => router.push("/student/attempts")}>
+              <Button type="button" variant="outline" size="touch" className="min-h-12" onClick={() => router.push("/student/attempts")}>
                 Back to history
               </Button>
             )}
@@ -445,9 +561,9 @@ export default function AttemptRunnerPage() {
             lift={false}
             className={`sticky top-4 ${isTimedExam ? "border border-border shadow-sm" : ""}`}
           >
-            <SurfaceCardHeader>
-              <SurfaceCardTitle className="text-sm">Question grid</SurfaceCardTitle>
-              <SurfaceCardDescription className="text-xs">Answered · Visited · Unvisited · Review</SurfaceCardDescription>
+            <SurfaceCardHeader className="pb-3">
+              <SurfaceCardTitle className="text-sm">Question map</SurfaceCardTitle>
+              <SurfaceCardDescription className="text-xs">Jump by number · answered · review</SurfaceCardDescription>
             </SurfaceCardHeader>
             <SurfaceCardContent>
               <QuestionPalette statuses={statuses} currentIndex={currentIndex} onJump={goTo} />
@@ -456,35 +572,59 @@ export default function AttemptRunnerPage() {
         </div>
       </div>
 
-      {/* Mobile sticky practice controls */}
-      <div className="fixed inset-x-0 bottom-0 z-30 border-t border-glass-border bg-glass/95 px-3 py-2 pb-[max(0.5rem,env(safe-area-inset-bottom))] backdrop-blur-xl sm:hidden">
-        <div className="mx-auto flex max-w-lg items-center justify-between gap-2">
-          <Button type="button" variant="outline" size="touch" className="flex-1" onClick={() => goTo(currentIndex - 1)} disabled={currentIndex === 0}>
+      {/* Mobile sticky practice controls — Next/Submit primary */}
+      <div className="fixed inset-x-0 bottom-0 z-30 border-t border-glass-border bg-glass/95 px-3 py-2.5 pb-[max(0.5rem,env(safe-area-inset-bottom))] backdrop-blur-xl sm:hidden">
+        <div className="mx-auto flex max-w-lg items-center gap-2">
+          <Button
+            type="button"
+            variant="outline"
+            size="touch"
+            className="min-h-12 flex-1"
+            onClick={() => goTo(currentIndex - 1)}
+            disabled={currentIndex === 0}
+          >
             Prev
           </Button>
           {!isSubmitted ? (
-            <>
-              {currentIndex < questions.length - 1 ? (
-                <Button type="button" variant="outline" size="touch" className="flex-1" onClick={() => goTo(currentIndex + 1)}>
+            currentIndex < questions.length - 1 ? (
+              <>
+                <Button
+                  type="button"
+                  variant="ghost"
+                  size="touch"
+                  className="min-h-12 flex-1 text-muted-foreground"
+                  onClick={() => setSubmitConfirmOpen(true)}
+                  disabled={submit.isPending}
+                >
+                  {submit.isPending ? "…" : "Submit"}
+                </Button>
+                <Button
+                  type="button"
+                  size="touch"
+                  className="min-h-12 flex-[1.35] font-semibold"
+                  data-testid="practice-runner-next-mobile"
+                  onClick={() => goTo(currentIndex + 1)}
+                >
                   Next
                 </Button>
-              ) : null}
+              </>
+            ) : (
               <Button
                 type="button"
                 size="touch"
-                className="flex-1"
+                className="min-h-12 flex-[2] font-semibold"
+                data-testid="practice-runner-submit-mobile"
                 onClick={() => setSubmitConfirmOpen(true)}
                 disabled={submit.isPending}
               >
                 {submit.isPending ? "…" : "Submit"}
               </Button>
-            </>
+            )
           ) : (
             <Button
               type="button"
-              variant="outline"
               size="touch"
-              className="flex-1"
+              className="min-h-12 flex-[2]"
               onClick={() => (currentIndex < questions.length - 1 ? goTo(currentIndex + 1) : router.push("/student/attempts"))}
             >
               {currentIndex < questions.length - 1 ? "Next" : "Done"}
@@ -511,6 +651,7 @@ export default function AttemptRunnerPage() {
               size="touch"
               onClick={() => {
                 setSubmitConfirmOpen(false);
+                flushSave();
                 submit.mutate();
               }}
               disabled={submit.isPending}
