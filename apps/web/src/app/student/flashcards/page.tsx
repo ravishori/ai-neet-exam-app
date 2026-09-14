@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { FieldSelect } from "@/components/ui/field-select";
 import { Button } from "@/components/ui/button";
 import { EmptyState } from "@/components/ui/empty-state";
 import { FlipCard } from "@/components/flip-card";
@@ -89,8 +91,8 @@ export default function FlashcardsPage() {
         <SurfaceCardContent className="grid grid-cols-2 gap-4 pt-2 sm:grid-cols-4">
           <div className="flex flex-col gap-1.5">
             <Label>Subject</Label>
-            <select
-              className="h-11 rounded-lg border bg-background px-2 text-sm"
+            <FieldSelect
+              className="h-11"
               value={subjectId ?? ""}
               onChange={(e) => {
                 setSubjectId(e.target.value || null);
@@ -103,13 +105,13 @@ export default function FlashcardsPage() {
                   {s.name}
                 </option>
               ))}
-            </select>
+            </FieldSelect>
           </div>
 
           <div className="flex flex-col gap-1.5">
             <Label>Chapter</Label>
-            <select
-              className="h-11 rounded-lg border bg-background px-2 text-sm disabled:opacity-50"
+            <FieldSelect
+              className="h-11"
               value={chapterId ?? ""}
               disabled={!subjectId}
               onChange={(e) => {
@@ -123,13 +125,13 @@ export default function FlashcardsPage() {
                   {c.name}
                 </option>
               ))}
-            </select>
+            </FieldSelect>
           </div>
 
           <div className="flex flex-col gap-1.5">
             <Label>Topic</Label>
-            <select
-              className="h-11 rounded-lg border bg-background px-2 text-sm disabled:opacity-50"
+            <FieldSelect
+              className="h-11"
               value={topicId ?? ""}
               disabled={!chapterId}
               onChange={(e) => {
@@ -143,13 +145,13 @@ export default function FlashcardsPage() {
                   {t.name}
                 </option>
               ))}
-            </select>
+            </FieldSelect>
           </div>
 
           <div className="flex flex-col gap-1.5">
             <Label>Concept</Label>
-            <select
-              className="h-11 rounded-lg border bg-background px-2 text-sm disabled:opacity-50"
+            <FieldSelect
+              className="h-11"
               value={conceptId ?? ""}
               disabled={!topicId}
               onChange={(e) => {
@@ -163,12 +165,21 @@ export default function FlashcardsPage() {
                   {c.name}
                 </option>
               ))}
-            </select>
+            </FieldSelect>
           </div>
         </SurfaceCardContent>
       </SurfaceCard>
 
-      {flashcardsQuery.isLoading ? (
+      {flashcardsQuery.isError ? (
+        <Alert variant="destructive" role="alert" data-testid="flashcards-error">
+          <AlertTitle>Could not load flashcards</AlertTitle>
+          <AlertDescription>
+            {flashcardsQuery.error instanceof Error
+              ? flashcardsQuery.error.message
+              : "Check that you are signed in and the API is reachable, then refresh the page."}
+          </AlertDescription>
+        </Alert>
+      ) : flashcardsQuery.isLoading ? (
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3" aria-busy="true">
           {[0, 1, 2].map((i) => (
             <Skeleton key={i} className="h-48 w-full" />
