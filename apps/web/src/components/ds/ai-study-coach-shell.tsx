@@ -23,11 +23,40 @@ export function AiStudyCoachShell({ className }: { className?: string }) {
   const [open, setOpen] = useState(false);
   const [conceptId, setConceptId] = useState<string | null>(null);
   const triggerRef = useRef<HTMLButtonElement>(null);
+  const dialogRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!open) return;
+    const root = dialogRef.current;
+    const getTabbable = () =>
+      Array.from(
+        root?.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]):not([type="hidden"]), select:not([disabled]), [tabindex]:not([tabindex="-1"])',
+        ) ?? [],
+      ).filter((el) => !el.hasAttribute("aria-hidden"));
+
+    // Move initial focus into the dialog so keyboard users don't Tab from the launcher.
+    getTabbable()[0]?.focus();
+
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setOpen(false);
+      if (e.key === "Escape") {
+        setOpen(false);
+        return;
+      }
+      if (e.key !== "Tab") return;
+      const items = getTabbable();
+      if (items.length === 0) return;
+      const first = items[0];
+      const last = items[items.length - 1];
+      const active = document.activeElement as HTMLElement | null;
+      // Wrap focus at the edges and pull escaped focus back inside.
+      if (e.shiftKey && (active === first || !root?.contains(active))) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && (active === last || !root?.contains(active))) {
+        e.preventDefault();
+        first.focus();
+      }
     };
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
@@ -61,7 +90,7 @@ export function AiStudyCoachShell({ className }: { className?: string }) {
       </button>
 
       {open && (
-        <div className="fixed inset-0 z-50 flex justify-end bg-black/30 p-3 backdrop-blur-sm sm:p-4">
+        <div className="fixed inset-0 z-50 flex justify-end bg-black/30 p-3 backdrop-blur-sm sm:p-4" ref={dialogRef}>
           <SurfaceCard
             glass
             lift={false}
