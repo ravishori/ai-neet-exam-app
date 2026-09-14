@@ -17,6 +17,7 @@ import {
 } from "@/components/ds";
 import { MasteryBar } from "@/components/mastery-badge";
 import { ScoreTrendChart } from "@/components/score-trend-chart";
+import { Alert, AlertDescription } from "@/components/ui/alert";
 import { EmptyState } from "@/components/ui/empty-state";
 import { Skeleton } from "@/components/ui/skeleton";
 import { assessmentApi } from "@/features/assessment/api";
@@ -30,15 +31,49 @@ function subjectWeaknessBars(overview: { subject_name: string; average_score: nu
   return [...overview].sort((a, b) => a.average_score - b.average_score);
 }
 
+/** Inline fetch-error alert for the two analytics queries. Without this,
+ * a failed request collapses into the "no data yet" empty state and the
+ * student is told to practice more when the real issue is a broken fetch. */
+function FetchErrorAlert({
+  message,
+  onRetry,
+  testId,
+  isRetrying,
+}: {
+  message: string;
+  onRetry: () => void;
+  testId: string;
+  isRetrying: boolean;
+}) {
+  return (
+    <Alert variant="destructive" role="alert" data-testid={testId} className="py-3">
+      <AlertDescription className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs">
+        <span>{message}</span>
+        <button
+          type="button"
+          className="font-medium underline-offset-2 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50 disabled:opacity-60"
+          onClick={onRetry}
+          disabled={isRetrying}
+          aria-busy={isRetrying}
+        >
+          {isRetrying ? "Retrying…" : "Retry"}
+        </button>
+      </AlertDescription>
+    </Alert>
+  );
+}
+
 export default function StudentAnalyticsPage() {
-  const { data: overview, isLoading: overviewLoading } = useQuery({
+  const overviewQuery = useQuery({
     queryKey: ["learning", "overview"],
     queryFn: learningApi.overview,
   });
-  const { data: attempts, isLoading: attemptsLoading } = useQuery({
+  const attemptsQuery = useQuery({
     queryKey: ["assessment", "attempts"],
     queryFn: assessmentApi.listAttempts,
   });
+  const { data: overview, isLoading: overviewLoading } = overviewQuery;
+  const { data: attempts, isLoading: attemptsLoading } = attemptsQuery;
 
   const readiness = overview ? computeReadinessIndex(overview) : 0;
   const trend = attempts ? computeScoreTrend(attempts) : [];
@@ -91,8 +126,15 @@ export default function StudentAnalyticsPage() {
             <SurfaceCardDescription>Lowest mastery first — focus remedy practice here.</SurfaceCardDescription>
           </SurfaceCardHeader>
           <SurfaceCardContent className="flex flex-col gap-4">
-            {overviewLoading ? (
-              <Skeleton className="h-32 w-full" />
+            {overviewQuery.isError ? (
+              <FetchErrorAlert
+                testId="analytics-overview-error"
+                message="Could not load subject data. Check that you are signed in and the API is reachable."
+                onRetry={() => overviewQuery.refetch()}
+                isRetrying={overviewQuery.isFetching}
+              />
+            ) : overviewLoading ? (
+              <Skeleton className="h-32 w-full" aria-busy="true" />
             ) : weakSubjects.length === 0 ? (
               <EmptyState
                 icon={BarChart3}
@@ -129,9 +171,16 @@ export default function StudentAnalyticsPage() {
               </Link>
             </SurfaceCardDescription>
           </SurfaceCardHeader>
-          <SurfaceCardContent>
-            {attemptsLoading ? (
-              <Skeleton className="h-40 w-full" />
+          <SurfaceCardContent className="flex flex-col gap-2">
+            {attemptsQuery.isError ? (
+              <FetchErrorAlert
+                testId="analytics-attempts-error"
+                message="Could not load attempt history. Check that you are signed in and the API is reachable."
+                onRetry={() => attemptsQuery.refetch()}
+                isRetrying={attemptsQuery.isFetching}
+              />
+            ) : attemptsLoading ? (
+              <Skeleton className="h-40 w-full" aria-busy="true" />
             ) : trend.length === 0 ? (
               <EmptyState
                 icon={BarChart3}
@@ -139,7 +188,14 @@ export default function StudentAnalyticsPage() {
                 description="Submit at least one attempt to see your accuracy trail."
               />
             ) : (
-              <ScoreTrendChart points={trend} />
+              <>
+                <ScoreTrendChart points={trend} />
+                {trend.length >= 2 && trend.length < 4 ? (
+                  <p className="text-xs text-muted-foreground" data-testid="analytics-trend-sparse-note">
+                    Based on {trend.length} submitted attempts. Submit a few more before reading this as a trend.
+                  </p>
+                ) : null}
+              </>
             )}
           </SurfaceCardContent>
         </SurfaceCard>
