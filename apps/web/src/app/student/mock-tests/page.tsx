@@ -20,6 +20,7 @@ import {
 } from "@/components/ds";
 import { assessmentApi } from "@/features/assessment/api";
 import { isNoQuestionsAvailable, thinContentMessage } from "@/features/assessment/thin-content";
+import { MOCK_TEST_START_TEST_ID } from "@/features/assessment/use-start-practice";
 
 export default function MockTestsPage() {
   const router = useRouter();
@@ -37,10 +38,17 @@ export default function MockTestsPage() {
   });
 
   const onGenerate = async () => {
-    const assessment = await generate.mutateAsync();
-    start.mutate(assessment.id);
+    try {
+      const assessment = await generate.mutateAsync();
+      start.mutate(assessment.id);
+    } catch {
+      // Error surfaces through `generate.error` in the Alert below; the
+      // rejection is swallowed here so it does not become an unhandled
+      // promise rejection in the browser console.
+    }
   };
 
+  const pending = generate.isPending || start.isPending;
   const error = generate.error || start.error;
 
   return (
@@ -67,7 +75,7 @@ export default function MockTestsPage() {
         </SurfaceCardHeader>
         <SurfaceCardContent className="flex flex-col gap-4">
           {error && (
-            <Alert variant="destructive">
+            <Alert variant="destructive" role="alert">
               <AlertDescription className="space-y-2">
                 <p>{thinContentMessage(error)}</p>
                 {isNoQuestionsAvailable(error) && (
@@ -93,11 +101,16 @@ export default function MockTestsPage() {
           <Button
             size="touch"
             onClick={onGenerate}
-            disabled={generate.isPending || start.isPending}
+            disabled={pending}
+            aria-busy={pending}
+            data-testid={MOCK_TEST_START_TEST_ID}
             className="w-fit"
           >
-            {generate.isPending || start.isPending ? "Starting…" : "Start mock test"}
+            {pending ? "Starting…" : "Start mock test"}
           </Button>
+          <p className="sr-only" aria-live="polite">
+            {pending ? "Preparing your mock test" : error ? "Mock test start failed" : ""}
+          </p>
         </SurfaceCardContent>
       </SurfaceCard>
     </StudentPage>

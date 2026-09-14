@@ -36,6 +36,9 @@ export const PRACTICE_NOW_HERO_TEST_ID = "practice-now-hero";
 /** Stable test id for the practice arena primary start CTA. */
 export const PRACTICE_ARENA_START_TEST_ID = "practice-arena-start";
 
+/** Stable test id for the Mock Test primary start CTA. */
+export const MOCK_TEST_START_TEST_ID = "mock-test-start";
+
 export function practiceStartMessage(error: unknown): string {
   if (error instanceof ApiError) {
     if (error.code === "NETWORK_ERROR") {
