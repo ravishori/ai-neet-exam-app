@@ -70,7 +70,7 @@ export default function StudyPlanPage() {
         </SurfaceCardHeader>
         <SurfaceCardContent className="flex flex-col gap-4">
           {generate.isError && (
-            <Alert variant="destructive">
+            <Alert variant="destructive" role="alert" data-testid="study-plan-generate-error">
               <AlertDescription>
                 {generate.error instanceof ApiError
                   ? generate.error.message
@@ -126,6 +126,9 @@ export default function StudyPlanPage() {
         <SurfaceCard accent="none">
           <SurfaceCardHeader>
             <SurfaceCardTitle>Your plan</SurfaceCardTitle>
+            <SurfaceCardDescription>
+              AI-generated from the inputs above — not a certified NEET prep plan. Verify weekly focus against your NCERT syllabus before you commit to it.
+            </SurfaceCardDescription>
           </SurfaceCardHeader>
           <SurfaceCardContent className="flex flex-col gap-3">
             <p className="text-sm">{plan.plan.summary}</p>

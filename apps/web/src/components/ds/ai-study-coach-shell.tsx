@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { MessageCircle, Sparkles, X } from "lucide-react";
@@ -22,6 +22,22 @@ export function AiStudyCoachShell({ className }: { className?: string }) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [conceptId, setConceptId] = useState<string | null>(null);
+  const triggerRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [open]);
+
+  const wasOpen = useRef(false);
+  useEffect(() => {
+    if (wasOpen.current && !open) triggerRef.current?.focus();
+    wasOpen.current = open;
+  }, [open]);
 
   // Suppress coach chrome on live attempt runners (exam-hall focus).
   if (pathname?.startsWith("/student/attempts/") && pathname !== "/student/attempts") {
@@ -31,10 +47,11 @@ export function AiStudyCoachShell({ className }: { className?: string }) {
   return (
     <>
       <button
+        ref={triggerRef}
         type="button"
         onClick={() => setOpen(true)}
         className={cn(
-          "fixed bottom-20 right-4 z-40 flex min-h-11 items-center gap-2 rounded-full ai-gradient px-4 py-2.5 text-sm font-medium text-white shadow-xl outline-none focus-visible:ring-2 focus-visible:ring-ring/50 sm:bottom-5 sm:right-5 lg:bottom-5",
+          "fixed bottom-20 right-4 z-40 flex min-h-11 items-center gap-2 rounded-full ai-gradient px-4 py-2.5 text-sm font-medium text-white shadow-lg outline-none focus-visible:ring-2 focus-visible:ring-ring/50 sm:bottom-6 sm:right-5 lg:bottom-6",
           className,
         )}
         aria-label="Open AI Study Coach"
@@ -51,7 +68,9 @@ export function AiStudyCoachShell({ className }: { className?: string }) {
             accent="none"
             className="flex h-full w-full max-w-md flex-col overflow-hidden"
             role="dialog"
+            aria-modal="true"
             aria-label="AI Study Coach"
+            data-testid="study-coach-dialog"
           >
             <div className="flex items-center justify-between border-b border-glass-border px-4 py-3">
               <div className="flex items-center gap-2">
