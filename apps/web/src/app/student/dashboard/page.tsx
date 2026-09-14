@@ -44,6 +44,38 @@ const REASON_LABEL: Record<RecommendationReason, string> = {
   new_concept: "Not started yet",
 };
 
+/** Inline fetch-error alert used by the four dashboard section queries.
+ * Without this, a failed fetch collapses into the "empty" branch and the
+ * student sees "Nothing here yet" copy that does not describe reality. */
+function FetchErrorAlert({
+  message,
+  onRetry,
+  testId,
+  isRetrying,
+}: {
+  message: string;
+  onRetry: () => void;
+  testId: string;
+  isRetrying: boolean;
+}) {
+  return (
+    <Alert variant="destructive" role="alert" data-testid={testId} className="py-3">
+      <AlertDescription className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs">
+        <span>{message}</span>
+        <button
+          type="button"
+          className="font-medium underline-offset-2 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50 disabled:opacity-60"
+          onClick={onRetry}
+          disabled={isRetrying}
+          aria-busy={isRetrying}
+        >
+          {isRetrying ? "Retrying…" : "Retry"}
+        </button>
+      </AlertDescription>
+    </Alert>
+  );
+}
+
 /** Quiet concept action — preserves CONCEPT practice start without competing with the hero CTA. */
 function ConceptPracticeLink({
   conceptId,
@@ -322,22 +354,26 @@ function SubjectMasteryRow({
 
 export default function StudentDashboardPage() {
   const { data: user, isLoading } = useMe();
-  const { data: overview, isLoading: overviewLoading } = useQuery({
+  const overviewQuery = useQuery({
     queryKey: ["learning", "overview"],
     queryFn: learningApi.overview,
   });
-  const { data: revisionDue, isLoading: revisionLoading } = useQuery({
+  const { data: overview, isLoading: overviewLoading } = overviewQuery;
+  const revisionQuery = useQuery({
     queryKey: ["learning", "revision-due"],
     queryFn: learningApi.revisionDue,
   });
-  const { data: recommendations, isLoading: recommendationsLoading } = useQuery({
+  const { data: revisionDue, isLoading: revisionLoading } = revisionQuery;
+  const recommendationsQuery = useQuery({
     queryKey: ["learning", "recommendations"],
     queryFn: learningApi.recommendations,
   });
-  const { data: attempts, isLoading: attemptsLoading } = useQuery({
+  const { data: recommendations, isLoading: recommendationsLoading } = recommendationsQuery;
+  const attemptsQuery = useQuery({
     queryKey: ["assessment", "attempts"],
     queryFn: assessmentApi.listAttempts,
   });
+  const { data: attempts, isLoading: attemptsLoading } = attemptsQuery;
   const scoreTrend = attempts ? computeScoreTrend(attempts) : [];
   const readiness = overview ? computeReadinessIndex(overview) : 0;
 
@@ -461,6 +497,13 @@ export default function StudentDashboardPage() {
                   <Skeleton className="h-12 w-full rounded-xl" />
                   <Skeleton className="h-12 w-full rounded-xl" />
                 </div>
+              ) : revisionQuery.isError && !revisionDue ? (
+                <FetchErrorAlert
+                  testId="dashboard-revision-error"
+                  message="Couldn’t load your revision queue."
+                  onRetry={() => revisionQuery.refetch()}
+                  isRetrying={revisionQuery.isFetching}
+                />
               ) : !revisionDue || revisionDue.length === 0 ? (
                 <EmptyState
                   icon={BookOpen}
@@ -521,6 +564,13 @@ export default function StudentDashboardPage() {
                   <Skeleton className="h-12 w-full rounded-xl" />
                   <Skeleton className="h-12 w-full rounded-xl" />
                 </div>
+              ) : recommendationsQuery.isError && !recommendations ? (
+                <FetchErrorAlert
+                  testId="dashboard-recommendations-error"
+                  message="Couldn’t load recommendations."
+                  onRetry={() => recommendationsQuery.refetch()}
+                  isRetrying={recommendationsQuery.isFetching}
+                />
               ) : !recommendations || recommendations.length === 0 ? (
                 <EmptyState
                   icon={Target}
@@ -587,6 +637,13 @@ export default function StudentDashboardPage() {
                 <Skeleton className="h-20 w-full rounded-2xl" />
                 <Skeleton className="h-20 w-full rounded-2xl" />
               </div>
+            ) : overviewQuery.isError && !overview ? (
+              <FetchErrorAlert
+                testId="dashboard-overview-error"
+                message="Couldn’t load subject performance."
+                onRetry={() => overviewQuery.refetch()}
+                isRetrying={overviewQuery.isFetching}
+              />
             ) : !overview || overview.length === 0 ? (
               <EmptyState
                 title="No mastery data yet"
@@ -632,6 +689,13 @@ export default function StudentDashboardPage() {
             <SurfaceCardContent>
               {attemptsLoading ? (
                 <Skeleton className="h-28 w-full rounded-xl" />
+              ) : attemptsQuery.isError && !attempts ? (
+                <FetchErrorAlert
+                  testId="dashboard-attempts-error"
+                  message="Couldn’t load recent activity."
+                  onRetry={() => attemptsQuery.refetch()}
+                  isRetrying={attemptsQuery.isFetching}
+                />
               ) : (
                 <StreakHeatmap attempts={attempts} />
               )}
