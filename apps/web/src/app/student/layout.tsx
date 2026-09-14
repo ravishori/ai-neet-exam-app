@@ -1,8 +1,9 @@
-import { AppHeader } from "@/components/app-header";
+import { AppHeader, type NavSection } from "@/components/app-header";
 import { AiStudyCoachShell } from "@/components/ds/ai-study-coach-shell";
+import { SkipToMain } from "@/components/ds/skip-to-main";
 import { StudentBottomNav } from "@/components/ds/student-bottom-nav";
 
-/** Desktop primary — learning path (aligned with mobile bottom where possible). */
+/** Desktop primary — learning path (aligned with mobile bottom). */
 const PRIMARY_LINKS = [
   { href: "/student/dashboard", label: "Dashboard" },
   { href: "/student/practice", label: "Practice" },
@@ -10,20 +11,37 @@ const PRIMARY_LINKS = [
   { href: "/student/analytics", label: "Progress" },
 ];
 
-const MORE_LINKS = [
-  { href: "/student/questions", label: "Questions" },
-  { href: "/student/flashcards", label: "Flashcards" },
-  { href: "/student/mock-tests", label: "Mock Tests" },
-  { href: "/student/attempts", label: "Attempts" },
-  { href: "/student/study-plan", label: "Study Plan" },
-  { href: "/student/profile", label: "Profile" },
-  { href: "/student/settings", label: "Settings" },
+/** Secondary More — study tools first; account links preserved (Phase A6 / A8). */
+const MORE_SECTIONS: NavSection[] = [
+  {
+    label: "Study tools",
+    links: [
+      { href: "/student/flashcards", label: "Flashcards" },
+      { href: "/student/mock-tests", label: "Mock Tests" },
+      { href: "/student/questions", label: "Questions" },
+      { href: "/student/attempts", label: "Attempts" },
+      { href: "/student/study-plan", label: "Study Plan" },
+    ],
+  },
+  {
+    label: "Account",
+    links: [
+      { href: "/student/profile", label: "Profile" },
+      { href: "/student/settings", label: "Settings" },
+    ],
+  },
 ];
 
 export default function StudentLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="page-atmosphere flex min-h-dvh flex-1 flex-col">
-      <AppHeader primaryLinks={PRIMARY_LINKS} moreLinks={MORE_LINKS} />
+      <SkipToMain />
+      <AppHeader
+        brandHref="/student/dashboard"
+        navLabel="Student desktop"
+        primaryLinks={PRIMARY_LINKS}
+        moreSections={MORE_SECTIONS}
+      />
       <div className="flex flex-1 flex-col">{children}</div>
       <StudentBottomNav />
       <AiStudyCoachShell />
