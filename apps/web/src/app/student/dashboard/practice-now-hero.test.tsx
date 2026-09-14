@@ -17,15 +17,33 @@ vi.mock("@/features/assessment/api", () => ({
   },
 }));
 
+const meState = {
+  data: {
+    first_name: "Test",
+    roles: ["STUDENT"],
+    email_verified: true,
+  } as {
+    first_name: string;
+    roles: string[];
+    email_verified: boolean;
+  },
+  isLoading: false,
+};
+
 vi.mock("@/features/auth/use-auth", () => ({
-  useMe: () => ({ data: { first_name: "Test", roles: ["STUDENT"], email_verified: true }, isLoading: false }),
+  useMe: () => meState,
 }));
+
+const queryDataByKey: Record<string, unknown> = {};
 
 vi.mock("@tanstack/react-query", async () => {
   const actual = await vi.importActual<typeof import("@tanstack/react-query")>("@tanstack/react-query");
   return {
     ...actual,
-    useQuery: () => ({ data: undefined, isLoading: false }),
+    useQuery: ({ queryKey }: { queryKey: unknown[] }) => {
+      const key = Array.isArray(queryKey) ? queryKey.join(":") : String(queryKey);
+      return { data: queryDataByKey[key], isLoading: false };
+    },
   };
 });
 
@@ -49,12 +67,14 @@ describe("dashboard Practice Now hero CTA", () => {
     push.mockReset();
     generatePractice.mockReset();
     startAttempt.mockReset();
+    meState.data.email_verified = true;
+    for (const key of Object.keys(queryDataByKey)) delete queryDataByKey[key];
   });
 
-  it("renders the hero Practice Now button", () => {
+  it("renders the hero Continue practice button", () => {
     renderDashboard();
     expect(screen.getByTestId(PRACTICE_NOW_HERO_TEST_ID)).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: /^Practice now$/i })).toBeEnabled();
+    expect(screen.getByRole("button", { name: /continue practice/i })).toBeEnabled();
   });
 
   it("click sends one practice generate then startAttempt and navigates", async () => {
@@ -108,5 +128,32 @@ describe("dashboard Practice Now hero CTA", () => {
 
     expect(await screen.findByRole("status")).toHaveTextContent(/None left/i);
     expect(push).not.toHaveBeenCalled();
+  });
+
+  it("demotes recommendation actions — no competing Practice now buttons", () => {
+    queryDataByKey["learning:recommendations"] = [
+      {
+        concept_id: "c1",
+        concept_name: "Kinematic Equations",
+        reason: "new_concept",
+        mastery_score: null,
+        published_question_count: 10,
+      },
+    ];
+    renderDashboard();
+    expect(screen.queryByRole("button", { name: /^practice now$/i })).not.toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /continue practice/i })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /^practice$/i })).toBeInTheDocument();
+  });
+
+  it("places email verification outside the hero as a status strip", () => {
+    meState.data.email_verified = false;
+    renderDashboard();
+    expect(screen.getByText(/email not verified/i)).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /verify your email/i })).toHaveAttribute(
+      "href",
+      "/verify-email",
+    );
+    expect(screen.queryByRole("button", { name: /continue practice/i })).toBeInTheDocument();
   });
 });

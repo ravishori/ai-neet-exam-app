@@ -2,12 +2,11 @@
 
 import Link from "next/link";
 import { useQuery } from "@tanstack/react-query";
-import { BookOpen, Loader2, Play, Target } from "lucide-react";
+import { ArrowRight, BookOpen, Loader2, Play, Target } from "lucide-react";
 
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { EmptyState } from "@/components/ui/empty-state";
-import { MasteryBar } from "@/components/mastery-badge";
 import { ScoreTrendChart } from "@/components/score-trend-chart";
 import { Skeleton } from "@/components/ui/skeleton";
 import {
@@ -16,7 +15,6 @@ import {
   ReadinessGauge,
   computeReadinessIndex,
   SectionHeader,
-  StatCard,
   StreakHeatmap,
   StudentPage,
   SubjectChip,
@@ -25,12 +23,18 @@ import {
   SurfaceCardDescription,
   SurfaceCardHeader,
   SurfaceCardTitle,
+  resolveSubjectTheme,
+  SUBJECT_THEME_CLASSES,
 } from "@/components/ds";
 import { useMe } from "@/features/auth/use-auth";
 import { assessmentApi } from "@/features/assessment/api";
 import { computeScoreTrend } from "@/features/assessment/analytics";
 import { isNoQuestionsAvailable } from "@/features/assessment/thin-content";
-import { practiceStartMessage, useStartPractice, PRACTICE_NOW_HERO_TEST_ID } from "@/features/assessment/use-start-practice";
+import {
+  practiceStartMessage,
+  useStartPractice,
+  PRACTICE_NOW_HERO_TEST_ID,
+} from "@/features/assessment/use-start-practice";
 import { learningApi, type RecommendationReason } from "@/features/learning/api";
 import { cn } from "@/lib/utils";
 
@@ -40,17 +44,29 @@ const REASON_LABEL: Record<RecommendationReason, string> = {
   new_concept: "Not started yet",
 };
 
-function PracticeNowButton({ conceptId, publishedCount }: { conceptId: string; publishedCount?: number }) {
+/** Quiet concept action — preserves CONCEPT practice start without competing with the hero CTA. */
+function ConceptPracticeLink({
+  conceptId,
+  publishedCount,
+  label = "Practice",
+}: {
+  conceptId: string;
+  publishedCount?: number;
+  label?: string;
+}) {
   const start = useStartPractice();
   const unavailable = publishedCount === 0;
 
   return (
-    <div className="flex flex-col items-stretch gap-1 sm:items-end">
-      <Button
+    <div className="flex shrink-0 flex-col items-end gap-1">
+      <button
         type="button"
-        size="default"
-        variant="outline"
-        className="min-h-11 min-w-[8.5rem] touch-manipulation"
+        className={cn(
+          "inline-flex min-h-11 items-center gap-1 touch-manipulation px-1.5 text-sm font-medium",
+          "text-muted-foreground outline-none transition-colors",
+          "hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring/50",
+          "disabled:pointer-events-none disabled:opacity-50",
+        )}
         disabled={start.isPending || unavailable}
         aria-busy={start.isPending}
         aria-disabled={unavailable}
@@ -58,7 +74,7 @@ function PracticeNowButton({ conceptId, publishedCount }: { conceptId: string; p
         title={
           unavailable
             ? "Practice is not available — no published questions for this concept yet"
-            : "Start a practice session for this concept"
+            : `Start a practice session for ${label.toLowerCase() === "review" ? "revision" : "this concept"}`
         }
         onClick={() => {
           if (start.isPending || unavailable) return;
@@ -67,16 +83,22 @@ function PracticeNowButton({ conceptId, publishedCount }: { conceptId: string; p
       >
         {start.isPending ? (
           <>
-            <Loader2 className="size-4 animate-spin" aria-hidden />
+            <Loader2 className="size-3.5 animate-spin" aria-hidden />
             Starting…
           </>
         ) : (
-          "Practice now"
+          <>
+            {label}
+            <ArrowRight className="size-3.5 opacity-70" aria-hidden />
+          </>
         )}
-      </Button>
+      </button>
       {unavailable && (
-        <p id={`practice-unavailable-${conceptId}`} className="max-w-xs text-right text-xs text-muted-foreground">
-          Practice is not available for this selection yet.
+        <p
+          id={`practice-unavailable-${conceptId}`}
+          className="max-w-[9rem] text-right text-[0.7rem] leading-snug text-muted-foreground"
+        >
+          Not available yet
         </p>
       )}
       {start.isError && (
@@ -102,14 +124,14 @@ function HeroPracticeCta() {
   const emptyPool = start.isError && isNoQuestionsAvailable(start.error);
 
   return (
-    <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-center">
+    <div className="flex flex-col gap-2.5 sm:flex-row sm:flex-wrap sm:items-center sm:gap-3">
       <Button
         type="button"
         size="lg"
-        className="min-h-12 touch-manipulation gap-2 px-5 text-base"
+        className="min-h-12 touch-manipulation gap-2 px-6 text-base font-semibold shadow-sm"
         disabled={start.isPending}
         aria-busy={start.isPending}
-        aria-label="Practice now"
+        aria-label="Continue practice"
         title="Start an untimed practice session with published questions"
         data-testid={PRACTICE_NOW_HERO_TEST_ID}
         onClick={() => {
@@ -125,13 +147,19 @@ function HeroPracticeCta() {
         ) : (
           <>
             <Play className="size-4" aria-hidden />
-            Practice now
+            Continue practice
           </>
         )}
       </Button>
       <Link
         href="/student/practice"
-        className="inline-flex min-h-12 items-center justify-center rounded-lg border border-border bg-background px-5 text-base font-medium outline-none hover:bg-muted focus-visible:ring-2 focus-visible:ring-ring/50"
+        className={cn(
+          buttonVariants({ variant: "ghost", size: "lg" }),
+          // Soft secondary: muted text; avoid loud filled/outline competition in dark mode
+          "min-h-12 touch-manipulation px-4 text-base font-medium text-muted-foreground",
+          "hover:bg-muted/60 hover:text-foreground",
+          "dark:bg-transparent dark:text-muted-foreground dark:hover:bg-muted/40 dark:hover:text-foreground",
+        )}
       >
         Configure scope
       </Link>
@@ -161,8 +189,133 @@ function HeroPracticeCta() {
         </Alert>
       )}
       <p className="sr-only" aria-live="polite">
-        {start.isPending ? "Preparing your practice session" : start.isError ? "Practice start failed" : ""}
+        {start.isPending
+          ? "Preparing your practice session"
+          : start.isError
+            ? "Practice start failed"
+            : ""}
       </p>
+    </div>
+  );
+}
+
+function MetricPill({
+  label,
+  value,
+}: {
+  label: string;
+  value: string;
+}) {
+  return (
+    <div className="flex min-w-0 flex-col gap-0.5 rounded-xl border border-border/50 bg-background/60 px-3 py-2 backdrop-blur-sm sm:px-3.5 sm:py-2.5">
+      <span className="text-[0.65rem] font-medium uppercase tracking-[0.12em] text-muted-foreground">
+        {label}
+      </span>
+      <span className="font-mono text-base font-semibold tabular-nums tracking-tight text-foreground sm:text-lg">
+        {value}
+      </span>
+    </div>
+  );
+}
+
+function SubjectMasteryRow({
+  subjectId,
+  subjectName,
+  conceptsAttempted,
+  conceptsTotal,
+  averageScore,
+}: {
+  subjectId: string;
+  subjectName: string;
+  conceptsAttempted: number;
+  conceptsTotal: number;
+  averageScore: number;
+}) {
+  const theme = resolveSubjectTheme(subjectName);
+  const tones = SUBJECT_THEME_CLASSES[theme];
+  const coverage =
+    conceptsTotal > 0 ? Math.round((conceptsAttempted / conceptsTotal) * 100) : 0;
+  const notStarted = conceptsAttempted === 0 && averageScore === 0;
+  const masteryPct = Math.max(0, Math.min(100, averageScore));
+
+  return (
+    <div
+      className={cn(
+        "flex flex-col gap-2.5 rounded-2xl border px-3 py-3 sm:px-3.5 sm:py-3.5",
+        tones.border,
+        tones.muted,
+      )}
+    >
+      <div className="flex items-start justify-between gap-3">
+        <div className="flex min-w-0 items-center gap-2.5">
+          <span
+            className={cn("size-3 shrink-0 rounded-md", tones.accentBar)}
+            aria-hidden
+          />
+          <div className="min-w-0">
+            <div className="flex flex-wrap items-center gap-2">
+              <SubjectChip subject={subjectName} />
+              <span className={cn("truncate text-sm font-semibold", tones.text)}>
+                {subjectName}
+              </span>
+            </div>
+            <p className="mt-0.5 text-[0.7rem] text-muted-foreground">
+              {notStarted
+                ? "Not started yet"
+                : `Coverage ${coverage}% of concepts attempted`}
+            </p>
+          </div>
+        </div>
+        <div className="flex shrink-0 flex-col items-end gap-1">
+          <p className="font-mono text-xs tabular-nums text-muted-foreground">
+            <span className="sr-only">Average mastery </span>
+            {notStarted ? "—" : `${averageScore}%`}
+            <span className="mx-1 text-border" aria-hidden>
+              ·
+            </span>
+            <span className="sr-only">Coverage </span>
+            {conceptsAttempted}/{conceptsTotal}
+          </p>
+          {notStarted ? (
+            <Link
+              href={`/student/subjects/${subjectId}`}
+              className={cn(
+                "inline-flex min-h-11 items-center gap-1 touch-manipulation text-sm font-medium",
+                tones.text,
+                "outline-none hover:underline focus-visible:ring-2 focus-visible:ring-ring/50",
+              )}
+            >
+              Open
+              <ArrowRight className="size-3.5 opacity-70" aria-hidden />
+            </Link>
+          ) : null}
+        </div>
+      </div>
+      <div
+        className={cn("h-2.5 w-full overflow-hidden rounded-full", tones.muted)}
+        role="progressbar"
+        aria-label={
+          notStarted
+            ? `${subjectName} not started yet`
+            : `${subjectName} mastery ${averageScore} percent`
+        }
+        aria-valuemin={0}
+        aria-valuemax={100}
+        aria-valuenow={Math.round(masteryPct)}
+      >
+        {/* At 0%, a soft subject-tinted track + inset mark keeps identity without faking progress */}
+        {notStarted ? (
+          <div
+            className={cn("h-full w-2 rounded-full opacity-80", tones.accentBar)}
+            aria-hidden
+          />
+        ) : (
+          <div
+            className={cn("h-full rounded-full transition-all", tones.accentBar)}
+            style={{ width: `${masteryPct}%` }}
+          />
+        )}
+      </div>
     </div>
   );
 }
@@ -173,12 +326,18 @@ export default function StudentDashboardPage() {
     queryKey: ["learning", "overview"],
     queryFn: learningApi.overview,
   });
-  const { data: revisionDue } = useQuery({ queryKey: ["learning", "revision-due"], queryFn: learningApi.revisionDue });
-  const { data: recommendations } = useQuery({
+  const { data: revisionDue, isLoading: revisionLoading } = useQuery({
+    queryKey: ["learning", "revision-due"],
+    queryFn: learningApi.revisionDue,
+  });
+  const { data: recommendations, isLoading: recommendationsLoading } = useQuery({
     queryKey: ["learning", "recommendations"],
     queryFn: learningApi.recommendations,
   });
-  const { data: attempts } = useQuery({ queryKey: ["assessment", "attempts"], queryFn: assessmentApi.listAttempts });
+  const { data: attempts, isLoading: attemptsLoading } = useQuery({
+    queryKey: ["assessment", "attempts"],
+    queryFn: assessmentApi.listAttempts,
+  });
   const scoreTrend = attempts ? computeScoreTrend(attempts) : [];
   const readiness = overview ? computeReadinessIndex(overview) : 0;
 
@@ -186,101 +345,192 @@ export default function StudentDashboardPage() {
   const totalCorrect = submitted.reduce((n, a) => n + (a.correct_count ?? 0), 0);
   const totalIncorrect = submitted.reduce((n, a) => n + (a.incorrect_count ?? 0), 0);
   const accuracyDenom = totalCorrect + totalIncorrect;
-  const accuracyPct = accuracyDenom > 0 ? Math.round((100 * totalCorrect) / accuracyDenom) : null;
+  const accuracyPct =
+    accuracyDenom > 0 ? Math.round((100 * totalCorrect) / accuracyDenom) : null;
   const attemptedQs = totalCorrect + totalIncorrect;
   const todayFocus =
     (revisionDue && revisionDue[0]?.concept_name) ||
     (recommendations && recommendations[0]?.concept_name) ||
     null;
+  const greetingName = user?.first_name ?? user?.display_name ?? "aspirant";
+  const hasSubmitted = submitted.length > 0;
+  const queuesLoading = revisionLoading || recommendationsLoading;
+  const emailUnverified = Boolean(user && !user.email_verified);
 
   return (
-    <StudentPage>
-      <section className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center">
-        <div className="space-y-4">
-          <PageHeader
-            eyebrow="Today’s focus"
-            title={isLoading ? "Loading…" : `Welcome back, ${user?.first_name ?? user?.display_name ?? "aspirant"}`}
-            description={
-              todayFocus
-                ? `Next up: ${todayFocus}. Practice now, or continue from your queues below.`
-                : "Start an untimed practice session with published NEET questions — calm, focused, and ready when you are."
-            }
-          />
-          <HeroPracticeCta />
-          {user && !user.email_verified && (
-            <p className="text-xs text-warning-foreground">
-              <span className="rounded-md bg-warning/20 px-2 py-1 font-medium text-warning-foreground">
-                Email not verified
-              </span>
-            </p>
-          )}
+    <StudentPage className="gap-7 lg:gap-10">
+      {/* 1–2. Hero: context + primary CTA + readiness */}
+      <section className="page-atmosphere relative overflow-hidden rounded-3xl border border-border/50 px-4 py-5 sm:px-8 sm:py-8">
+        <div className="relative grid gap-5 sm:gap-6 lg:grid-cols-[minmax(0,1.35fr)_auto] lg:items-center lg:gap-10">
+          <div className="min-w-0 space-y-3.5 sm:space-y-5">
+            <PageHeader
+              className="gap-1.5 sm:items-start sm:gap-2"
+              eyebrow="NEET command center"
+              title={isLoading ? "Loading…" : `Welcome back, ${greetingName}`}
+              description={
+                todayFocus
+                  ? `Next focus: ${todayFocus}. Continue practice when you’re ready — published questions only.`
+                  : "Calm, focused preparation. Start published NEET practice when you’re ready."
+              }
+            />
+            <HeroPracticeCta />
+          </div>
+
+          <div className="flex flex-row items-center gap-4 justify-self-stretch sm:flex-col sm:items-center sm:gap-3 lg:justify-self-end">
+            <SurfaceCard
+              glass
+              lift={false}
+              accent="none"
+              level="l2"
+              className="shrink-0 p-3 sm:p-5 lg:p-6"
+            >
+              {overviewLoading ? (
+                <Skeleton className="size-[112px] rounded-full sm:size-[140px]" />
+              ) : (
+                <div className="origin-center scale-90 sm:scale-100">
+                  <ReadinessGauge value={readiness} label="NEET readiness" size={140} />
+                </div>
+              )}
+            </SurfaceCard>
+            {/* Metrics sit beside the gauge on mobile to shorten the first viewport */}
+            <div className="grid min-w-0 flex-1 grid-cols-1 gap-2 sm:hidden">
+              <MetricPill
+                label="Accuracy"
+                value={accuracyPct != null ? `${accuracyPct}%` : "—"}
+              />
+              <MetricPill label="Questions" value={String(attemptedQs)} />
+              <MetricPill label="Sessions" value={String(submitted.length)} />
+            </div>
+            {!overviewLoading && overview && overview.length > 0 && (
+              <p className="hidden max-w-[12rem] text-center text-xs text-muted-foreground sm:block">
+                Blend of subject mastery and concept coverage from your attempts.
+              </p>
+            )}
+          </div>
         </div>
-        <SurfaceCard glass lift={false} accent="none" className="justify-self-center p-6 lg:justify-self-end">
-          {overviewLoading ? (
-            <Skeleton className="size-[140px] rounded-full" />
-          ) : (
-            <ReadinessGauge value={readiness} label="NEET readiness" />
-          )}
-        </SurfaceCard>
+
+        {/* Desktop/tablet metric strip — readiness lives in the gauge only */}
+        <div className="relative mt-5 hidden grid-cols-3 gap-3 sm:mt-6 sm:grid">
+          <MetricPill
+            label="Accuracy"
+            value={accuracyPct != null ? `${accuracyPct}%` : "—"}
+          />
+          <MetricPill label="Questions" value={String(attemptedQs)} />
+          <MetricPill label="Sessions" value={String(submitted.length)} />
+        </div>
       </section>
 
-      <section className="space-y-3">
+      {emailUnverified ? (
+        <p
+          className="flex flex-wrap items-center gap-x-2 gap-y-1 px-0.5 text-xs text-muted-foreground"
+          role="status"
+        >
+          <span className="rounded-md border border-warning/30 bg-warning/10 px-2 py-0.5 font-medium text-warning-foreground">
+            Email not verified
+          </span>
+          <span>
+            You can keep practicing —{" "}
+            <Link
+              href="/verify-email"
+              className="font-medium text-foreground underline-offset-2 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50"
+            >
+              verify your email
+            </Link>{" "}
+            or use your account menu.
+          </span>
+        </p>
+      ) : null}
+
+      {/* Priorities */}
+      <section className="space-y-4">
         <SectionHeader
-          title="Continue preparation"
-          description="Revision due and high-yield recommendations — practice the next concept."
+          title="Today’s priorities"
+          description="Revision due first, then high-yield recommendations — open the next concept when ready."
         />
-        <div className="grid gap-6 lg:grid-cols-2">
-          <SurfaceCard accent="top" theme="physics">
+        <div className="grid gap-5 lg:grid-cols-2">
+          <SurfaceCard accent="top" theme="physics" glass={false} lift={false} level="l1">
             <SurfaceCardHeader>
-              <SurfaceCardTitle>Continue learning</SurfaceCardTitle>
-              <SurfaceCardDescription>Concepts due for another look.</SurfaceCardDescription>
+              <SurfaceCardTitle>Revision due</SurfaceCardTitle>
+              <SurfaceCardDescription>
+                Concepts ready for another pass.
+              </SurfaceCardDescription>
             </SurfaceCardHeader>
             <SurfaceCardContent className="flex flex-col gap-3">
-              {!revisionDue || revisionDue.length === 0 ? (
+              {queuesLoading && !revisionDue ? (
+                <div className="space-y-3 py-2">
+                  <Skeleton className="h-12 w-full rounded-xl" />
+                  <Skeleton className="h-12 w-full rounded-xl" />
+                </div>
+              ) : !revisionDue || revisionDue.length === 0 ? (
                 <EmptyState
                   icon={BookOpen}
                   title="Nothing due right now"
                   description="Keep practicing available concepts, or browse subjects to build your queue."
                   action={
-                    <Link href="/student/subjects" className={cn(buttonVariants({ variant: "outline", size: "touch" }))}>
+                    <Link
+                      href="/student/subjects"
+                      className={cn(buttonVariants({ variant: "outline", size: "touch" }))}
+                    >
                       Browse subjects
                     </Link>
                   }
                   className="py-8"
                 />
               ) : (
-                revisionDue.map((item) => (
+                revisionDue.map((item, index) => (
                   <div
                     key={item.concept_id}
-                    className="flex items-center justify-between gap-3 border-b border-border/60 pb-3 last:border-0 last:pb-0"
+                    className={cn(
+                      "flex items-center justify-between gap-3 rounded-xl border border-transparent px-2 py-2.5",
+                      index === 0 && "border-subject-physics-border bg-subject-physics-muted/40",
+                    )}
                   >
                     <div className="min-w-0">
+                      {index === 0 ? (
+                        <p className="mb-0.5 text-[0.65rem] font-medium uppercase tracking-[0.12em] text-subject-physics">
+                          Next up
+                        </p>
+                      ) : null}
                       <p className="truncate text-sm font-medium">{item.concept_name}</p>
                       <p className="font-mono text-xs tabular-nums text-muted-foreground">
                         Score {item.mastery_score}
-                        {item.published_question_count != null ? ` · ${item.published_question_count} Q` : ""}
+                        {item.published_question_count != null
+                          ? ` · ${item.published_question_count} Q`
+                          : ""}
                       </p>
                     </div>
-                    <PracticeNowButton conceptId={item.concept_id} publishedCount={item.published_question_count} />
+                    <ConceptPracticeLink
+                      conceptId={item.concept_id}
+                      publishedCount={item.published_question_count}
+                      label="Review"
+                    />
                   </div>
                 ))
               )}
             </SurfaceCardContent>
           </SurfaceCard>
 
-          <SurfaceCard accent="top" theme="chemistry">
+          <SurfaceCard accent="top" theme="chemistry" glass={false} lift={false} level="l1">
             <SurfaceCardHeader>
               <SurfaceCardTitle>Recommended practice</SurfaceCardTitle>
               <SurfaceCardDescription>High-yield targets for today.</SurfaceCardDescription>
             </SurfaceCardHeader>
             <SurfaceCardContent className="flex flex-col gap-3">
-              {!recommendations || recommendations.length === 0 ? (
+              {queuesLoading && !recommendations ? (
+                <div className="space-y-3 py-2">
+                  <Skeleton className="h-12 w-full rounded-xl" />
+                  <Skeleton className="h-12 w-full rounded-xl" />
+                </div>
+              ) : !recommendations || recommendations.length === 0 ? (
                 <EmptyState
                   icon={Target}
                   title="No recommendations yet"
                   description="Once you practice a few concepts, we’ll surface what to do next."
                   action={
-                    <Link href="/student/practice" className={cn(buttonVariants({ variant: "outline", size: "touch" }))}>
+                    <Link
+                      href="/student/practice"
+                      className={cn(buttonVariants({ variant: "outline", size: "touch" }))}
+                    >
                       Open practice arena
                     </Link>
                   }
@@ -290,16 +540,22 @@ export default function StudentDashboardPage() {
                 recommendations.map((item) => (
                   <div
                     key={item.concept_id}
-                    className="flex items-center justify-between gap-3 border-b border-border/60 pb-3 last:border-0 last:pb-0"
+                    className="flex items-center justify-between gap-3 border-b border-border/50 pb-3 last:border-0 last:pb-0"
                   >
                     <div className="min-w-0">
                       <p className="truncate text-sm font-medium">{item.concept_name}</p>
                       <p className="text-xs text-muted-foreground">
                         {REASON_LABEL[item.reason]}
-                        {item.published_question_count != null ? ` · ${item.published_question_count} published` : ""}
+                        {item.published_question_count != null
+                          ? ` · ${item.published_question_count} published`
+                          : ""}
                       </p>
                     </div>
-                    <PracticeNowButton conceptId={item.concept_id} publishedCount={item.published_question_count} />
+                    <ConceptPracticeLink
+                      conceptId={item.concept_id}
+                      publishedCount={item.published_question_count}
+                      label="Practice"
+                    />
                   </div>
                 ))
               )}
@@ -308,40 +564,38 @@ export default function StudentDashboardPage() {
         </div>
       </section>
 
-      <section className="space-y-3">
+      {/* Subject performance */}
+      <section className="space-y-4">
         <SectionHeader
-          title="Your progress"
-          description="Accuracy and volume from submitted attempts — why it matters for NEET readiness."
+          title="Subject performance"
+          description="Physics, Chemistry, Botany, and Zoology — compare mastery at a glance."
+          actions={
+            <Link
+              href="/student/analytics"
+              className="inline-flex min-h-11 items-center gap-1.5 text-sm font-medium text-primary outline-none hover:underline focus-visible:ring-2 focus-visible:ring-ring/50"
+            >
+              Full progress
+              <ArrowRight className="size-3.5" aria-hidden />
+            </Link>
+          }
         />
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-          <StatCard
-            label="Accuracy"
-            value={accuracyPct != null ? `${accuracyPct}%` : "—"}
-            hint="Share of answers you got right"
-          />
-          <StatCard label="Questions" value={attemptedQs} hint="Answered across practice & mocks" />
-          <StatCard label="Sessions" value={submitted.length} hint="Submitted attempts so far" />
-        </div>
-      </section>
-
-      <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
-        <SurfaceCard accent="none">
-          <SurfaceCardHeader>
-            <SurfaceCardTitle>Mastery by subject</SurfaceCardTitle>
-            <SurfaceCardDescription>
-              Based on practice and mock attempts.{" "}
-              <Link href="/student/analytics" className="underline-offset-2 hover:underline">
-                Full progress
-              </Link>
-            </SurfaceCardDescription>
-          </SurfaceCardHeader>
-          <SurfaceCardContent className="flex flex-col gap-5">
-            {!overview || overview.length === 0 ? (
+        <SurfaceCard accent="none" glass={false} lift={false} level="l1">
+          <SurfaceCardContent className="flex flex-col gap-3 py-4 sm:gap-4 sm:py-5">
+            {overviewLoading ? (
+              <div className="space-y-3">
+                <Skeleton className="h-20 w-full rounded-2xl" />
+                <Skeleton className="h-20 w-full rounded-2xl" />
+                <Skeleton className="h-20 w-full rounded-2xl" />
+              </div>
+            ) : !overview || overview.length === 0 ? (
               <EmptyState
                 title="No mastery data yet"
                 description="Browse subjects and start practicing to build your map."
                 action={
-                  <Link href="/student/subjects" className={cn(buttonVariants({ variant: "outline", size: "touch" }))}>
+                  <Link
+                    href="/student/subjects"
+                    className={cn(buttonVariants({ variant: "outline", size: "touch" }))}
+                  >
                     Browse subjects
                   </Link>
                 }
@@ -349,32 +603,43 @@ export default function StudentDashboardPage() {
               />
             ) : (
               overview.map((s) => (
-                <div key={s.subject_id} className="flex flex-col gap-2">
-                  <div className="flex items-center justify-between gap-2 text-sm">
-                    <div className="flex items-center gap-2">
-                      <SubjectChip subject={s.subject_name} />
-                      <span className="font-medium">{s.subject_name}</span>
-                    </div>
-                    <span className="font-mono text-xs tabular-nums text-muted-foreground">
-                      {s.concepts_attempted}/{s.concepts_total} · {s.average_score}%
-                    </span>
-                  </div>
-                  <MasteryBar score={s.average_score} />
-                </div>
+                <SubjectMasteryRow
+                  key={s.subject_id}
+                  subjectId={s.subject_id}
+                  subjectName={s.subject_name}
+                  conceptsAttempted={s.concepts_attempted}
+                  conceptsTotal={s.concepts_total}
+                  averageScore={s.average_score}
+                />
               ))
             )}
           </SurfaceCardContent>
         </SurfaceCard>
+      </section>
 
-        <div className="flex flex-col gap-6">
-          <SurfaceCard accent="none">
+      {/* Recent activity */}
+      <section className="space-y-4">
+        <SectionHeader
+          title="Recent activity"
+          description="Your practice trail and accuracy over submitted sessions."
+        />
+        <div className="grid gap-5 lg:grid-cols-[1fr_1.1fr]">
+          <SurfaceCard accent="none" glass={false} lift={false} level="l1">
+            <SurfaceCardHeader>
+              <SurfaceCardTitle>Activity</SurfaceCardTitle>
+              <SurfaceCardDescription>Last 28 days from real attempts.</SurfaceCardDescription>
+            </SurfaceCardHeader>
             <SurfaceCardContent>
-              <StreakHeatmap attempts={attempts} />
+              {attemptsLoading ? (
+                <Skeleton className="h-28 w-full rounded-xl" />
+              ) : (
+                <StreakHeatmap attempts={attempts} />
+              )}
             </SurfaceCardContent>
           </SurfaceCard>
 
-          {attempts && attempts.some((a) => a.status === "SUBMITTED") && (
-            <SurfaceCard accent="none">
+          {hasSubmitted ? (
+            <SurfaceCard accent="none" glass={false} lift={false} level="l1">
               <SurfaceCardHeader>
                 <SurfaceCardTitle>Accuracy trend</SurfaceCardTitle>
                 <SurfaceCardDescription>
@@ -387,12 +652,34 @@ export default function StudentDashboardPage() {
                 <ScoreTrendChart points={scoreTrend} />
               </SurfaceCardContent>
             </SurfaceCard>
+          ) : (
+            <SurfaceCard accent="none" glass={false} lift={false} level="l1">
+              <SurfaceCardContent className="flex h-full min-h-[10rem] flex-col justify-center py-8">
+                <EmptyState
+                  title="No submitted sessions yet"
+                  description="Complete a practice or mock to unlock your accuracy trend."
+                  action={
+                    <Link
+                      href="/student/practice"
+                      className={cn(buttonVariants({ variant: "outline", size: "touch" }))}
+                    >
+                      Start practicing
+                    </Link>
+                  }
+                  className="border-0 py-2"
+                />
+              </SurfaceCardContent>
+            </SurfaceCard>
           )}
         </div>
-      </div>
+      </section>
 
-      <section className="space-y-3">
-        <SectionHeader title="More ways to prepare" description="Subjects, mocks, flashcards, and the question bank." />
+      {/* Secondary actions */}
+      <section className="space-y-4">
+        <SectionHeader
+          title="More ways to prepare"
+          description="Subjects, mocks, flashcards, and the question bank."
+        />
         <QuickLaunchHub />
       </section>
     </StudentPage>
