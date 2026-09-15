@@ -116,6 +116,12 @@ async def _seed(client, db_session, suffix: str):
                 "question_format": "MCQ_4",
                 "correct_option_count": 1,
                 "explanation_required": True,
+                "neet_ug_2026": {
+                    "subject": "PHYSICS",
+                    "unit_number": 12,
+                    "unit_name": "CURRENT ELECTRICITY",
+                    "topic_id": "PHYSICS:U12:T01",
+                },
             },
         },
         headers=csrf_headers(client),

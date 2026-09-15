@@ -5,6 +5,55 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/*
+ * =============================================================================
+ * PHASE A1–A4 — Design system foundation (normalize in place; do not fork)
+ * =============================================================================
+ *
+ * SEMANTIC COLOR ROLES (OKLCH — preserve names)
+ *   background / foreground     page canvas + default text
+ *   card / popover              opaque panels + overlays
+ *   primary / secondary         brand action + quiet secondary action
+ *   muted / muted-foreground    insets, helper text
+ *   accent                      subtle highlight wash
+ *   destructive / success / warning   state — never replace with subject hues
+ *   border / input / ring       chrome, fields, focus
+ *   chart-1…5                   data viz only
+ *
+ * SUBJECT vs SEMANTIC
+ *   Subject tokens (physics/chemistry/biology) = identity accents only.
+ *   Botany + Zoology resolve to the biology family in subject-theme.ts.
+ *   Correctness / workflow status MUST use success | warning | destructive.
+ *   AI gradient (--ai-from/--ai-to) = AI surfaces only (coach, readiness stroke).
+ *
+ * SURFACE LEVELS
+ *   L0  .page-atmosphere / .surface-l0   page wash behind shells
+ *   L1  .surface-l1                      primary work surface (solid card)
+ *   L2  .surface-glass / .surface-l2     elevated chrome (header, drawers)
+ *   L3  .surface-l3                      nested inset wells
+ *
+ * ELEVATION
+ *   Prefer shadow-xs…md for content; shadow-lg/xl only for floating chrome.
+ *   Dense admin tables: ring/border over heavy shadow.
+ *
+ * RADIUS
+ *   Controls → radius-md/lg · Cards → radius-xl/2xl · Pills/FAB → full
+ *
+ * SPACING GUIDANCE
+ *   Page padding px-4 sm:px-6 · section gaps gap-6/8 · --content-max page width
+ *   --touch-target-min for interactive hit areas · --prose-measure for stems
+ *
+ * TYPOGRAPHY ROLES → utilities below (text-display … text-question)
+ *   Page title: PageHeader / text-h1 · Section: text-h2 · Card: text-h3
+ *   Body: text-body · Meta: text-meta · Caption: text-caption
+ *   Assessment stems: text-question (do not weaken --prose-measure)
+ *
+ * MOTION
+ *   --motion-fast 120ms · --motion-normal 200ms · --motion-slow 320ms
+ *   Easing: --motion-ease-out · Exam quiet: --exam-motion: 0
+ *   Respect prefers-reduced-motion (hover-lift / fade utilities gated)
+ */
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -145,12 +194,15 @@
   --elevation-lg: 0 10px 15px -3px oklch(0.2 0.02 264 / 0.09), 0 4px 6px -4px oklch(0.2 0.02 264 / 0.06);
   --elevation-xl: 0 10px 30px -10px rgba(0, 0, 0, 0.15);
   --motion-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --motion-fast: 120ms;
+  --motion-normal: 200ms;
+  --motion-slow: 320ms;
   --exam-motion: 1;
-  /* Mobile-first layout tokens */
+  /* Mobile-first layout tokens — preserve for a11y / layout */
   --touch-target-min: 2.75rem;
   --content-max: 72rem;
   --practice-sticky-offset: 4.5rem;
-  /* Readable measure for long stems / body copy */
+  /* Readable measure for long stems / body copy — DO NOT weaken */
   --prose-measure: 42rem;
 }
 
@@ -220,6 +272,9 @@
   --elevation-lg: 0 10px 15px -3px oklch(0 0 0 / 0.32), 0 4px 6px -4px oklch(0 0 0 / 0.24);
   --elevation-xl: 0 10px 30px -10px rgba(0, 0, 0, 0.45);
   --motion-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --motion-fast: 120ms;
+  --motion-normal: 200ms;
+  --motion-slow: 320ms;
   --exam-motion: 1;
 }
 
@@ -237,7 +292,8 @@
   }
 }
 
-/* Student typography scale — prefer these over ad-hoc sizes */
+/* Canonical typography scale — prefer these over ad-hoc text-* sizes */
+/* text-display: marketing / landing hero only */
 @utility text-display {
   font-family: var(--font-heading);
   font-size: clamp(1.875rem, 1.5rem + 1.2vw, 2.75rem);
@@ -246,6 +302,7 @@
   line-height: 1.15;
   text-wrap: balance;
 }
+/* text-h1: page titles via PageHeader */
 @utility text-h1 {
   font-family: var(--font-heading);
   font-size: clamp(1.5rem, 1.25rem + 0.8vw, 2.25rem);
@@ -254,6 +311,7 @@
   line-height: 1.2;
   text-wrap: balance;
 }
+/* text-h2: in-page section titles via SectionHeader */
 @utility text-h2 {
   font-family: var(--font-heading);
   font-size: 1.125rem;
@@ -261,25 +319,30 @@
   letter-spacing: -0.01em;
   line-height: 1.35;
 }
+/* text-h3: card / panel titles */
 @utility text-h3 {
   font-family: var(--font-heading);
   font-size: 1rem;
   font-weight: 600;
   line-height: 1.4;
 }
+/* text-body: descriptions and primary copy */
 @utility text-body {
   font-size: 0.875rem;
   line-height: 1.625;
 }
+/* text-small: compact secondary copy (filters, dense UI) */
 @utility text-small {
   font-size: 0.8125rem;
   line-height: 1.5;
 }
+/* text-caption: helper / footnote */
 @utility text-caption {
   font-size: 0.75rem;
   line-height: 1.4;
   color: var(--muted-foreground);
 }
+/* text-meta: uppercase eyebrows / labels */
 @utility text-meta {
   font-size: 0.6875rem;
   font-weight: 500;
@@ -287,6 +350,7 @@
   text-transform: uppercase;
   color: var(--muted-foreground);
 }
+/* text-question: assessment stems — preserve --prose-measure */
 @utility text-question {
   font-size: 1.125rem;
   line-height: 1.7;
@@ -310,8 +374,15 @@
   padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
 }
 
-/* Atmosphere wash behind student / admin shells */
-.page-atmosphere {
+/* ---------------------------------------------------------------------------
+ * Surface hierarchy (Phase A4)
+ * L0 page wash · L1 work · L2 elevated/floating · L3 nested inset
+ * Prefer restrained elevation; avoid glass + lift on dense tables.
+ * --------------------------------------------------------------------------- */
+
+/* L0 — page atmosphere behind student / admin shells */
+.page-atmosphere,
+.surface-l0 {
   background:
     radial-gradient(1200px 600px at 10% -10%, color-mix(in oklab, var(--subject-physics-from) 14%, transparent), transparent 55%),
     radial-gradient(900px 500px at 90% 0%, color-mix(in oklab, var(--ai-to) 10%, transparent), transparent 50%),
@@ -319,16 +390,33 @@
     var(--background);
 }
 
-/* Glass surface utility */
-.surface-glass {
+/* L1 — primary work surface (solid; default for content panels) */
+.surface-l1 {
+  background: var(--card);
+  color: var(--card-foreground);
+  border: 1px solid color-mix(in oklab, var(--foreground) 6%, transparent);
+  box-shadow: var(--elevation-sm);
+}
+
+/* L2 — elevated / floating chrome (header, drawers, sticky bars) */
+.surface-glass,
+.surface-l2 {
   background: var(--glass-bg);
   border: 1px solid var(--glass-border);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  box-shadow: var(--elevation-xl);
+  /* Restraint: md elevation for floating chrome (was xl — too heavy) */
+  box-shadow: var(--elevation-md);
 }
 
-/* Subject gradient accents */
+/* L3 — nested inset wells (empty regions, filter strips inside cards) */
+.surface-l3 {
+  background: color-mix(in oklab, var(--muted) 80%, transparent);
+  border: 1px dashed color-mix(in oklab, var(--border) 90%, transparent);
+  box-shadow: none;
+}
+
+/* Subject gradient accents — identity only; not for success/error */
 .subject-gradient-physics {
   background-image: linear-gradient(135deg, var(--subject-physics-from), var(--subject-physics-to));
 }
@@ -338,6 +426,7 @@
 .subject-gradient-biology {
   background-image: linear-gradient(135deg, var(--subject-biology-from), var(--subject-biology-to));
 }
+/* AI gradient — coach / AI chrome only */
 .ai-gradient {
   background-image: linear-gradient(135deg, var(--ai-from), var(--ai-to));
 }
@@ -346,22 +435,22 @@
   font-variant-numeric: tabular-nums;
 }
 
-/* Hover lift — disabled under reduced motion / exam mode */
+/* Hover lift — gated by reduced-motion; quiet under exam-mode */
 @media (prefers-reduced-motion: no-preference) {
   .hover-lift {
     transition:
-      transform 220ms var(--motion-ease-out),
-      box-shadow 220ms var(--motion-ease-out);
+      transform var(--motion-normal) var(--motion-ease-out),
+      box-shadow var(--motion-normal) var(--motion-ease-out);
   }
   .hover-lift:hover {
     transform: translateY(calc(-2px * var(--exam-motion, 1)));
-    box-shadow: var(--elevation-xl);
+    box-shadow: var(--elevation-md);
   }
   .animate-fade-in {
-    animation: fade-in 0.35s var(--motion-ease-out) both;
+    animation: fade-in var(--motion-slow) var(--motion-ease-out) both;
   }
   .animate-fade-slide-up {
-    animation: fade-slide-up 0.35s var(--motion-ease-out) both;
+    animation: fade-slide-up var(--motion-slow) var(--motion-ease-out) both;
   }
 }
 
@@ -372,7 +461,8 @@
   transform: none;
   box-shadow: var(--elevation-sm);
 }
-.exam-mode .surface-glass {
+.exam-mode .surface-glass,
+.exam-mode .surface-l2 {
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
   box-shadow: var(--elevation-sm);

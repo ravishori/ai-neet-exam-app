@@ -5,9 +5,9 @@ rs003b1_chapter_cls + Chapter model + academic.seed_academic:
 
   · column exists, is VARCHAR(2), and remains NULLABLE
   · CHECK constraint accepts '11', '12', NULL and rejects other values
-  · the 34 authorized chapter codes have the expected class assignment
-  · ZOOLOGY / biomolecules stays NULL
-  · migration + seed agree exactly on the 34 mappings
+  · the authorized chapter codes have the expected class assignment
+  · Biology XI Biomolecules is BOTANY / class 11 (CF-C4b owner decision)
+  · migration + seed agree on the baseline mappings
   · published QUESTION rows can derive class via the chapter chain
     (READ-ONLY probe — nothing is modified)
 """
@@ -58,6 +58,7 @@ EXPECTED_CLASS_11 = {
         "cell-unit-of-life",
         "photosynthesis",
         "plant-growth-development",
+        "biomolecules",
     },
     "ZOOLOGY": {
         "animal-kingdom",
@@ -197,31 +198,39 @@ async def test_all_expected_class_12_rows_are_12(db_session: AsyncSession):
             assert cls == "12", f"{subject}/{code} expected class 12, got {cls!r}"
 
 
-async def test_biomolecules_class_level_is_null(db_session: AsyncSession):
-    cls = (
+async def test_biomolecules_is_botany_class_11(db_session: AsyncSession):
+    """CF-C4b owner decision: Biology XI Biomolecules → BOTANY / 11."""
+    row = (
         await db_session.execute(
             text(
                 """
-                SELECT ch.class_level
+                SELECT s.code, ch.class_level
                 FROM academic.chapters ch
                 JOIN academic.subjects s ON s.id = ch.subject_id
-                WHERE s.code = 'ZOOLOGY' AND ch.code = 'biomolecules'
+                WHERE ch.code = 'biomolecules' AND ch.deleted_at IS NULL
+                """
+            )
+        )
+    ).one()
+    assert row[0] == "BOTANY", f"biomolecules subject expected BOTANY, got {row[0]!r}"
+    assert row[1] == "11", f"biomolecules class_level expected '11', got {row[1]!r}"
+
+    zoo = (
+        await db_session.execute(
+            text(
+                """
+                SELECT COUNT(*) FROM academic.chapters ch
+                JOIN academic.subjects s ON s.id = ch.subject_id
+                WHERE s.code = 'ZOOLOGY' AND ch.code = 'biomolecules' AND ch.deleted_at IS NULL
                 """
             )
         )
     ).scalar_one()
-    assert cls is None, (
-        "ZOOLOGY/biomolecules MUST remain NULL until curriculum-owner decision "
-        "(see RS-003-B-1A §7 / §16)"
-    )
+    assert zoo == 0, "ZOOLOGY must not retain a biomolecules chapter after CF-C4b"
 
 
-async def test_rs003b1_baseline_34_populated_plus_biomolecules_null(db_session: AsyncSession):
-    """RS-003-B-1A / CF-B baseline: the 34 audited chapters must remain
-    class_level-populated and ZOOLOGY / biomolecules must remain the
-    sole NULL. Post CF-C1, additional NCERT chapters may be present
-    (e.g. Chem 12 Solutions), which is why this test asserts the
-    baseline as a subset rather than an exact equality."""
+async def test_rs003b1_baseline_populated_and_biomolecules_resolved(db_session: AsyncSession):
+    """RS-003-B-1A baseline remains populated; Biomolecules is resolved (CF-C4b)."""
     total = (
         await db_session.execute(text("SELECT COUNT(*) FROM academic.chapters WHERE deleted_at IS NULL"))
     ).scalar_one()
@@ -232,25 +241,21 @@ async def test_rs003b1_baseline_34_populated_plus_biomolecules_null(db_session: 
             text("SELECT COUNT(*) FROM academic.chapters WHERE class_level IS NOT NULL AND deleted_at IS NULL")
         )
     ).scalar_one()
-    assert populated >= 34, f"RS-003-B-1A baseline of 34 populated class_level rows regressed to {populated}"
+    assert populated >= 35, f"expected all resolved chapters populated; got {populated}"
 
-    biomol_null = (
+    nulls = (
         await db_session.execute(
             text(
                 """
-                SELECT ch.class_level
-                FROM academic.chapters ch
+                SELECT s.code, ch.code FROM academic.chapters ch
                 JOIN academic.subjects s ON s.id = ch.subject_id
-                WHERE s.code = 'ZOOLOGY' AND ch.code = 'biomolecules'
-                  AND ch.deleted_at IS NULL
+                WHERE ch.class_level IS NULL AND ch.deleted_at IS NULL
+                ORDER BY s.code, ch.code
                 """
             )
         )
-    ).scalar_one()
-    assert biomol_null is None, (
-        "ZOOLOGY / biomolecules must remain class_level NULL until the "
-        "curriculum-owner decision — see RS-003-B-1A §7."
-    )
+    ).all()
+    assert nulls == [], f"unexpected NULL class_level chapters after CF-C4b: {nulls}"
 
 
 async def test_seed_and_migration_agree_on_all_34_mappings():
@@ -264,13 +269,13 @@ async def test_seed_and_migration_agree_on_all_34_mappings():
     }
     seen_11: set[tuple[str, str]] = set()
     seen_12: set[tuple[str, str]] = set()
-    biomol_cls: object = "MISSING"
+    biomol: tuple[str, object] | None = None
     for subj, chs in all_tuples.items():
         for tup in chs:
             assert len(tup) == 5, f"{subj} chapter tuple must be 5-length; got {tup!r}"
             code, _name, _weight, cls, _topics = tup
             if code == "biomolecules":
-                biomol_cls = cls
+                biomol = (subj, cls)
             if cls == "11":
                 seen_11.add((subj, code))
             elif cls == "12":
@@ -285,7 +290,8 @@ async def test_seed_and_migration_agree_on_all_34_mappings():
     # Solutions). No baseline row may be dropped or reclassified.
     assert expected_11 <= seen_11, f"class-11 baseline regressed: missing={expected_11 - seen_11}"
     assert expected_12 <= seen_12, f"class-12 baseline regressed: missing={expected_12 - seen_12}"
-    assert biomol_cls is None
+    assert biomol == ("BOTANY", "11"), f"biomolecules seed ownership expected BOTANY/11, got {biomol!r}"
+    assert not any(ch[0] == "biomolecules" for ch in ZOOLOGY_CHAPTERS)
 
 
 async def test_published_questions_can_derive_class_read_only(db_session: AsyncSession):
@@ -315,14 +321,7 @@ async def test_published_questions_can_derive_class_read_only(db_session: AsyncS
             )
         )
     ).one()
-    # The current published pool must be derivable through the chain
-    # for every row whose chapter is NOT the intentionally-NULL
-    # biomolecules row. Zero published questions currently map to
-    # 'biomolecules', so derivable == total_published — this holds
-    # true whether or not the test DB contains a populated pool.
     assert derivable == total_pub, (
         f"{total_pub - derivable} published questions cannot derive class "
-        "through chapter.class_level — likely because their chapter is "
-        "the intentionally-NULL 'biomolecules' row; investigate before "
-        "widening the gate."
+        "through chapter.class_level — investigate before widening the gate."
     )

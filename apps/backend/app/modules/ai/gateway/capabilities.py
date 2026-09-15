@@ -37,6 +37,17 @@ _reg(
         max_output=8192,
     )
 )
+# GPT-5.6 Luna — added for the 100-MCQ pilot per operator-confirmed OpenAI
+# documentation. Chat Completions + Structured outputs supported. Rates in
+# pricing.py: input $0.20 / MTok, output $1.20 / MTok, cached input $0.02 / MTok.
+_reg(
+    ProviderModelCapability(
+        "openai",
+        "gpt-5.6-luna",
+        supports_structured_output=True,
+        max_output=8192,
+    )
+)
 _reg(ProviderModelCapability("gemini", "gemini-2.0-flash", supports_structured_output=True, max_output=8192))
 _reg(ProviderModelCapability("gemini", "gemini-1.5-flash", supports_structured_output=True))
 _reg(
@@ -68,6 +79,24 @@ _reg(
         supports_structured_output=True,
         max_context=262_144,
         max_output=8192,
+    )
+)
+_reg(
+    ProviderModelCapability(
+        "sarvam",
+        "sarvam-105b",
+        supports_structured_output=True,
+        max_context=128_000,
+        max_output=16_384,
+    )
+)
+_reg(
+    ProviderModelCapability(
+        "sarvam",
+        "sarvam-105b-conversations",
+        supports_structured_output=True,
+        max_context=32_000,
+        max_output=16_384,
     )
 )
 _reg(

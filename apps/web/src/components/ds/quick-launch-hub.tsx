@@ -63,15 +63,25 @@ const TONE_ICON: Record<(typeof LAUNCH_ITEMS)[number]["tone"], string> = {
   neutral: "bg-muted text-foreground",
 };
 
+/**
+ * Static quick-launch destinations for the student dashboard.
+ * Deterministic SSR/client markup (no theme hooks, browser APIs, or generated ids).
+ * Historical dashboard hydration overlays that named this file were shell Base UI
+ * menu id mismatches (see AppHeader / ThemeToggle / StudentBottomNav + useMounted).
+ */
 export function QuickLaunchHub({ className }: { className?: string }) {
   return (
-    <div className={cn("grid gap-3 sm:grid-cols-2 lg:grid-cols-3", className)}>
+    <div
+      data-quick-launch-hub
+      className={cn("grid gap-3 sm:grid-cols-2 lg:grid-cols-3", className)}
+    >
       {LAUNCH_ITEMS.map((item) => {
         const Icon = item.icon;
         return (
           <Link
             key={item.href}
             href={item.href}
+            data-quick-launch-item={item.href}
             className="hover-lift surface-glass group flex items-start gap-3 rounded-2xl p-4 outline-none focus-visible:ring-2 focus-visible:ring-ring/50"
           >
             <span
@@ -80,7 +90,7 @@ export function QuickLaunchHub({ className }: { className?: string }) {
                 TONE_ICON[item.tone],
               )}
             >
-              <Icon className="size-5" aria-hidden />
+              <Icon className="size-5" aria-hidden="true" />
             </span>
             <span className="min-w-0">
               <span className="block font-heading text-sm font-semibold group-hover:text-primary">{item.label}</span>

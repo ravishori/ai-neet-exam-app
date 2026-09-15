@@ -119,10 +119,26 @@ async def register_user():
 
     async def _register(ac: AsyncClient, *, role_codes: list[str] | None = None, db_session: AsyncSession | None = None):
         email = f"test-{uuid.uuid4().hex[:12]}@example.com"
-        password = "TestPassword!234"
+        # Registration no longer accepts a client-supplied password — the
+        # server issues INITIAL_DEFAULT_PASSWORD ("Password123") and sets
+        # must_change_password=true; the fixture reports that literal so
+        # downstream tests can log in with it.
+        password = "Password123"
+        # Unique 10-digit Indian mobile per fixture invocation. First digit
+        # 6-9 required by the normalizer.
+        import random
+
+        mobile10 = str(random.choice("6789")) + "".join(str(random.randint(0, 9)) for _ in range(9))
         resp = await ac.post(
             "/api/v1/auth/register",
-            json={"email": email, "password": password, "first_name": "Test"},
+            json={
+                "email": email,
+                "first_name": "Test",
+                "last_name": "User",
+                "mobile": mobile10,
+                "state_code": "KARNATAKA",
+                "city": "Bangalore",
+            },
         )
         assert resp.status_code == 201, resp.text
         user_id = resp.json()["data"]["id"]

@@ -1,0 +1,1589 @@
+{
+  "generated_at": "2026-09-13T11:18:24.157617+00:00",
+  "final_status": "GREEN — COMPLETE/VERIFIED",
+  "before": {
+    "status": {
+      "DRAFT": 5298,
+      "PUBLISHED": 1479,
+      "SUPERSEDED": 6,
+      "IN_REVIEW": 111
+    },
+    "unmapped_draft": 5024,
+    "chapters": 45,
+    "topics": 159,
+    "concepts": 254,
+    "knowledge_units": 73,
+    "question_blueprints": 137,
+    "content_batches": 11,
+    "generation_jobs": 204,
+    "generation_runs": 204,
+    "generation_candidates": 392,
+    "biology_xii": [
+      {
+        "subject": "BOTANY",
+        "code": "sexual-reproduction-flowering-plants",
+        "name": "Sexual Reproduction in Flowering Plants",
+        "class_level": "12",
+        "topics": 1,
+        "concepts": 1
+      },
+      {
+        "subject": "ZOOLOGY",
+        "code": "human-reproduction",
+        "name": "Human Reproduction",
+        "class_level": "12",
+        "topics": 3,
+        "concepts": 3
+      }
+    ]
+  },
+  "after": {
+    "status": {
+      "DRAFT": 5298,
+      "PUBLISHED": 1479,
+      "SUPERSEDED": 6,
+      "IN_REVIEW": 111
+    },
+    "unmapped_draft": 5024,
+    "chapters": 56,
+    "topics": 187,
+    "concepts": 309,
+    "knowledge_units": 73,
+    "question_blueprints": 137,
+    "content_batches": 11,
+    "generation_jobs": 204,
+    "generation_runs": 204,
+    "generation_candidates": 392,
+    "biology_xii": [
+      {
+        "subject": "BOTANY",
+        "code": "biodiversity-and-conservation",
+        "name": "Biodiversity and Conservation",
+        "class_level": "12",
+        "topics": 2,
+        "concepts": 3
+      },
+      {
+        "subject": "BOTANY",
+        "code": "biotechnology-and-its-applications",
+        "name": "Biotechnology and its Applications",
+        "class_level": "12",
+        "topics": 3,
+        "concepts": 5
+      },
+      {
+        "subject": "BOTANY",
+        "code": "biotechnology-principles-and-processes",
+        "name": "Biotechnology: Principles and Processes",
+        "class_level": "12",
+        "topics": 2,
+        "concepts": 4
+      },
+      {
+        "subject": "BOTANY",
+        "code": "ecosystem",
+        "name": "Ecosystem",
+        "class_level": "12",
+        "topics": 2,
+        "concepts": 3
+      },
+      {
+        "subject": "BOTANY",
+        "code": "microbes-in-human-welfare",
+        "name": "Microbes in Human Welfare",
+        "class_level": "12",
+        "topics": 2,
+        "concepts": 4
+      },
+      {
+        "subject": "BOTANY",
+        "code": "molecular-basis-of-inheritance",
+        "name": "Molecular Basis of Inheritance",
+        "class_level": "12",
+        "topics": 3,
+        "concepts": 7
+      },
+      {
+        "subject": "BOTANY",
+        "code": "organisms-and-populations",
+        "name": "Organisms and Populations",
+        "class_level": "12",
+        "topics": 2,
+        "concepts": 3
+      },
+      {
+        "subject": "BOTANY",
+        "code": "principles-of-inheritance-and-variation",
+        "name": "Principles of Inheritance and Variation",
+        "class_level": "12",
+        "topics": 3,
+        "concepts": 7
+      },
+      {
+        "subject": "BOTANY",
+        "code": "sexual-reproduction-flowering-plants",
+        "name": "Sexual Reproduction in Flowering Plants",
+        "class_level": "12",
+        "topics": 4,
+        "concepts": 7
+      },
+      {
+        "subject": "ZOOLOGY",
+        "code": "evolution",
+        "name": "Evolution",
+        "class_level": "12",
+        "topics": 2,
+        "concepts": 4
+      },
+      {
+        "subject": "ZOOLOGY",
+        "code": "human-health-and-disease",
+        "name": "Human Health and Disease",
+        "class_level": "12",
+        "topics": 2,
+        "concepts": 5
+      },
+      {
+        "subject": "ZOOLOGY",
+        "code": "human-reproduction",
+        "name": "Human Reproduction",
+        "class_level": "12",
+        "topics": 3,
+        "concepts": 3
+      },
+      {
+        "subject": "ZOOLOGY",
+        "code": "reproductive-health",
+        "name": "Reproductive Health",
+        "class_level": "12",
+        "topics": 2,
+        "concepts": 4
+      }
+    ]
+  },
+  "content_safety_unchanged": true,
+  "freeze_ok": true,
+  "pdf_verification": [
+    {
+      "code": "sexual-reproduction-flowering-plants",
+      "expected_name": "Sexual Reproduction in Flowering Plants",
+      "pdf_rel": "Class 12/Biology/lebo1dd/lebo101.pdf",
+      "expected_ncert_ch": 1,
+      "exists": true,
+      "validated": true,
+      "pdf_chapter_hint": {
+        "filename": 1,
+        "text_header_caps": [
+          1
+        ],
+        "section_prefix": 1,
+        "resolved_text_ch": 1,
+        "prose_chapter_refs": [
+          1,
+          2,
+          3
+        ]
+      },
+      "discrepancy": null,
+      "note": "Prose mentions Chapter [2, 3] (cross-reference); PDF identity remains chapter 1 via filename/CHAPTER 1",
+      "error": null
+    },
+    {
+      "code": "principles-of-inheritance-and-variation",
+      "expected_name": "Principles of Inheritance and Variation",
+      "pdf_rel": "Class 12/Biology/lebo1dd/lebo104.pdf",
+      "expected_ncert_ch": 4,
+      "exists": true,
+      "validated": true,
+      "pdf_chapter_hint": {
+        "filename": 4,
+        "text_header_caps": [
+          4
+        ],
+        "section_prefix": 4,
+        "resolved_text_ch": 4,
+        "prose_chapter_refs": [
+          4,
+          5,
+          6
+        ]
+      },
+      "discrepancy": null,
+      "note": "Prose mentions Chapter [5, 6] (cross-reference); PDF identity remains chapter 4 via filename/CHAPTER 4",
+      "error": null
+    },
+    {
+      "code": "molecular-basis-of-inheritance",
+      "expected_name": "Molecular Basis of Inheritance",
+      "pdf_rel": "Class 12/Biology/lebo1dd/lebo105.pdf",
+      "expected_ncert_ch": 5,
+      "exists": true,
+      "validated": true,
+      "pdf_chapter_hint": {
+        "filename": 5,
+        "text_header_caps": [
+          5
+        ],
+        "section_prefix": 5,
+        "resolved_text_ch": 5,
+        "prose_chapter_refs": []
+      },
+      "discrepancy": null,
+      "note": null,
+      "error": null
+    },
+    {
+      "code": "microbes-in-human-welfare",
+      "expected_name": "Microbes in Human Welfare",
+      "pdf_rel": "Class 12/Biology/lebo1dd/lebo108.pdf",
+      "expected_ncert_ch": 8,
+      "exists": true,
+      "validated": true,
+      "pdf_chapter_hint": {
+        "filename": 8,
+        "text_header_caps": [
+          8
+        ],
+        "section_prefix": 8,
+        "resolved_text_ch": 8,
+        "prose_chapter_refs": []
+      },
+      "discrepancy": null,
+      "note": null,
+      "error": null
+    },
+    {
+      "code": "biotechnology-principles-and-processes",
+      "expected_name": "Biotechnology: Principles and Processes",
+      "pdf_rel": "Class 12/Biology/lebo1dd/lebo109.pdf",
+      "expected_ncert_ch": 9,
+      "exists": true,
+      "validated": true,
+      "pdf_chapter_hint": {
+        "filename": 9,
+        "text_header_caps": [
+          9
+        ],
+        "section_prefix": 9,
+        "resolved_text_ch": 9,
+        "prose_chapter_refs": [
+          9,
+          10
+        ]
+      },
+      "discrepancy": null,
+      "note": "Prose mentions Chapter [10] (cross-reference); PDF identity remains chapter 9 via filename/CHAPTER 9",
+      "error": null
+    },
+    {
+      "code": "biotechnology-and-its-applications",
+      "expected_name": "Biotechnology and its Applications",
+      "pdf_rel": "Class 12/Biology/lebo1dd/lebo110.pdf",
+      "expected_ncert_ch": 10,
+      "exists": true,
+      "validated": true,
+      "pdf_chapter_hint": {
+        "filename": 10,
+        "text_header_caps": [
+          10
+        ],
+        "section_prefix": 10,
+        "resolved_text_ch": 10,
+        "prose_chapter_refs": []
+      },
+      "discrepancy": null,
+      "note": null,
+      "error": null
+    },
+    {
+      "code": "organisms-and-populations",
+      "expected_name": "Organisms and Populations",
+      "pdf_rel": "Class 12/Biology/lebo1dd/lebo111.pdf",
+      "expected_ncert_ch": 11,
+      "exists": true,
+      "validated": true,
+      "pdf_chapter_hint": {
+        "filename": 11,
+        "text_header_caps": [
+          11
+        ],
+        "section_prefix": 11,
+        "resolved_text_ch": 11,
+        "prose_chapter_refs": [
+          11,
+          12,
+          13
+        ]
+      },
+      "discrepancy": null,
+      "note": "Prose mentions Chapter [12, 13] (cross-reference); PDF identity remains chapter 11 via filename/CHAPTER 11",
+      "error": null
+    },
+    {
+      "code": "ecosystem",
+      "expected_name": "Ecosystem",
+      "pdf_rel": "Class 12/Biology/lebo1dd/lebo112.pdf",
+      "expected_ncert_ch": 12,
+      "exists": true,
+      "validated": true,
+      "pdf_chapter_hint": {
+        "filename": 12,
+        "text_header_caps": [
+          12
+        ],
+        "section_prefix": 12,
+        "resolved_text_ch": 12,
+        "prose_chapter_refs": []
+      },
+      "discrepancy": null,
+      "note": null,
+      "error": null
+    },
+    {
+      "code": "biodiversity-and-conservation",
+      "expected_name": "Biodiversity and Conservation",
+      "pdf_rel": "Class 12/Biology/lebo1dd/lebo113.pdf",
+      "expected_ncert_ch": 13,
+      "exists": true,
+      "validated": true,
+      "pdf_chapter_hint": {
+        "filename": 13,
+        "text_header_caps": [
+          13
+        ],
+        "section_prefix": 13,
+        "resolved_text_ch": 13,
+        "prose_chapter_refs": []
+      },
+      "discrepancy": null,
+      "note": null,
+      "error": null
+    },
+    {
+      "code": "human-reproduction",
+      "expected_name": "Human Reproduction",
+      "pdf_rel": "Class 12/Biology/lebo1dd/lebo102.pdf",
+      "expected_ncert_ch": 2,
+      "exists": true,
+      "validated": true,
+      "pdf_chapter_hint": {
+        "filename": 2,
+        "text_header_caps": [
+          2
+        ],
+        "section_prefix": 2,
+        "resolved_text_ch": 2,
+        "prose_chapter_refs": []
+      },
+      "discrepancy": null,
+      "note": null,
+      "error": null
+    },
+    {
+      "code": "reproductive-health",
+      "expected_name": "Reproductive Health",
+      "pdf_rel": "Class 12/Biology/lebo1dd/lebo103.pdf",
+      "expected_ncert_ch": 3,
+      "exists": true,
+      "validated": true,
+      "pdf_chapter_hint": {
+        "filename": 3,
+        "text_header_caps": [
+          3
+        ],
+        "section_prefix": 3,
+        "resolved_text_ch": 3,
+        "prose_chapter_refs": [
+          2
+        ]
+      },
+      "discrepancy": null,
+      "note": "Prose mentions Chapter [2] (cross-reference); PDF identity remains chapter 3 via filename/CHAPTER 3",
+      "error": null
+    },
+    {
+      "code": "evolution",
+      "expected_name": "Evolution",
+      "pdf_rel": "Class 12/Biology/lebo1dd/lebo106.pdf",
+      "expected_ncert_ch": 6,
+      "exists": true,
+      "validated": true,
+      "pdf_chapter_hint": {
+        "filename": 6,
+        "text_header_caps": [
+          6
+        ],
+        "section_prefix": 6,
+        "resolved_text_ch": 6,
+        "prose_chapter_refs": []
+      },
+      "discrepancy": null,
+      "note": null,
+      "error": null
+    },
+    {
+      "code": "human-health-and-disease",
+      "expected_name": "Human Health and Disease",
+      "pdf_rel": "Class 12/Biology/lebo1dd/lebo107.pdf",
+      "expected_ncert_ch": 7,
+      "exists": true,
+      "validated": true,
+      "pdf_chapter_hint": {
+        "filename": 7,
+        "text_header_caps": [
+          7
+        ],
+        "section_prefix": 7,
+        "resolved_text_ch": 7,
+        "prose_chapter_refs": [
+          7,
+          8
+        ]
+      },
+      "discrepancy": null,
+      "note": "Prose mentions Chapter [8] (cross-reference); PDF identity remains chapter 7 via filename/CHAPTER 7",
+      "error": null
+    }
+  ],
+  "apply": {
+    "chapters_added": [
+      {
+        "subject": "BOTANY",
+        "code": "principles-of-inheritance-and-variation",
+        "name": "Principles of Inheritance and Variation",
+        "pdf": "Class 12/Biology/lebo1dd/lebo104.pdf"
+      },
+      {
+        "subject": "BOTANY",
+        "code": "molecular-basis-of-inheritance",
+        "name": "Molecular Basis of Inheritance",
+        "pdf": "Class 12/Biology/lebo1dd/lebo105.pdf"
+      },
+      {
+        "subject": "BOTANY",
+        "code": "microbes-in-human-welfare",
+        "name": "Microbes in Human Welfare",
+        "pdf": "Class 12/Biology/lebo1dd/lebo108.pdf"
+      },
+      {
+        "subject": "BOTANY",
+        "code": "biotechnology-principles-and-processes",
+        "name": "Biotechnology: Principles and Processes",
+        "pdf": "Class 12/Biology/lebo1dd/lebo109.pdf"
+      },
+      {
+        "subject": "BOTANY",
+        "code": "biotechnology-and-its-applications",
+        "name": "Biotechnology and its Applications",
+        "pdf": "Class 12/Biology/lebo1dd/lebo110.pdf"
+      },
+      {
+        "subject": "BOTANY",
+        "code": "organisms-and-populations",
+        "name": "Organisms and Populations",
+        "pdf": "Class 12/Biology/lebo1dd/lebo111.pdf"
+      },
+      {
+        "subject": "BOTANY",
+        "code": "ecosystem",
+        "name": "Ecosystem",
+        "pdf": "Class 12/Biology/lebo1dd/lebo112.pdf"
+      },
+      {
+        "subject": "BOTANY",
+        "code": "biodiversity-and-conservation",
+        "name": "Biodiversity and Conservation",
+        "pdf": "Class 12/Biology/lebo1dd/lebo113.pdf"
+      },
+      {
+        "subject": "ZOOLOGY",
+        "code": "reproductive-health",
+        "name": "Reproductive Health",
+        "pdf": "Class 12/Biology/lebo1dd/lebo103.pdf"
+      },
+      {
+        "subject": "ZOOLOGY",
+        "code": "evolution",
+        "name": "Evolution",
+        "pdf": "Class 12/Biology/lebo1dd/lebo106.pdf"
+      },
+      {
+        "subject": "ZOOLOGY",
+        "code": "human-health-and-disease",
+        "name": "Human Health and Disease",
+        "pdf": "Class 12/Biology/lebo1dd/lebo107.pdf"
+      }
+    ],
+    "topics_added": [
+      {
+        "chapter": "sexual-reproduction-flowering-plants",
+        "code": "flower-and-pre-fertilisation",
+        "name": "Flower and Pre-Fertilisation Structures and Events"
+      },
+      {
+        "chapter": "sexual-reproduction-flowering-plants",
+        "code": "double-fertilisation",
+        "name": "Double Fertilisation"
+      },
+      {
+        "chapter": "sexual-reproduction-flowering-plants",
+        "code": "post-fertilisation-events",
+        "name": "Post-Fertilisation: Structures and Events"
+      },
+      {
+        "chapter": "principles-of-inheritance-and-variation",
+        "code": "mendels-laws",
+        "name": "Mendel’s Laws of Inheritance"
+      },
+      {
+        "chapter": "principles-of-inheritance-and-variation",
+        "code": "inheritance-of-two-genes",
+        "name": "Inheritance of Two Genes"
+      },
+      {
+        "chapter": "principles-of-inheritance-and-variation",
+        "code": "extensions-and-sex-determination",
+        "name": "Polygenic Inheritance, Pleiotropy and Sex Determination"
+      },
+      {
+        "chapter": "molecular-basis-of-inheritance",
+        "code": "the-dna",
+        "name": "The DNA"
+      },
+      {
+        "chapter": "molecular-basis-of-inheritance",
+        "code": "genetic-material-and-replication",
+        "name": "Search for Genetic Material and Replication"
+      },
+      {
+        "chapter": "molecular-basis-of-inheritance",
+        "code": "transcription-translation-regulation",
+        "name": "Transcription, Translation and Regulation"
+      },
+      {
+        "chapter": "microbes-in-human-welfare",
+        "code": "microbes-in-household-and-industry",
+        "name": "Microbes in Household Products and Industrial Products"
+      },
+      {
+        "chapter": "microbes-in-human-welfare",
+        "code": "microbes-in-environment",
+        "name": "Microbes in Sewage Treatment, Biogas, Biocontrol and Biofertilisers"
+      },
+      {
+        "chapter": "biotechnology-principles-and-processes",
+        "code": "principles-of-biotechnology",
+        "name": "Principles of Biotechnology"
+      },
+      {
+        "chapter": "biotechnology-principles-and-processes",
+        "code": "recombinant-dna-processes",
+        "name": "Processes of Recombinant DNA Technology"
+      },
+      {
+        "chapter": "biotechnology-and-its-applications",
+        "code": "applications-in-agriculture",
+        "name": "Biotechnological Applications in Agriculture"
+      },
+      {
+        "chapter": "biotechnology-and-its-applications",
+        "code": "applications-in-medicine",
+        "name": "Biotechnological Applications in Medicine"
+      },
+      {
+        "chapter": "biotechnology-and-its-applications",
+        "code": "transgenic-animals-ethics",
+        "name": "Transgenic Animals and Ethical Issues"
+      },
+      {
+        "chapter": "organisms-and-populations",
+        "code": "population-attributes-and-growth",
+        "name": "Population Attributes and Growth"
+      },
+      {
+        "chapter": "organisms-and-populations",
+        "code": "population-interactions",
+        "name": "Population Interactions"
+      },
+      {
+        "chapter": "ecosystem",
+        "code": "ecosystem-structure-function",
+        "name": "Ecosystem – Structure and Function"
+      },
+      {
+        "chapter": "ecosystem",
+        "code": "decomposition-energy-pyramids",
+        "name": "Decomposition, Energy Flow and Ecological Pyramids"
+      },
+      {
+        "chapter": "biodiversity-and-conservation",
+        "code": "biodiversity-patterns-and-loss",
+        "name": "Biodiversity: Patterns and Loss"
+      },
+      {
+        "chapter": "biodiversity-and-conservation",
+        "code": "biodiversity-conservation",
+        "name": "Biodiversity Conservation"
+      },
+      {
+        "chapter": "reproductive-health",
+        "code": "reproductive-health-problems",
+        "name": "Reproductive Health – Problems and Strategies"
+      },
+      {
+        "chapter": "reproductive-health",
+        "code": "mtp-sti-infertility",
+        "name": "MTP, STIs and Infertility"
+      },
+      {
+        "chapter": "evolution",
+        "code": "origin-and-evidences",
+        "name": "Origin of Life and Evidences for Evolution"
+      },
+      {
+        "chapter": "evolution",
+        "code": "mechanism-and-human-evolution",
+        "name": "Mechanism of Evolution and Human Evolution"
+      },
+      {
+        "chapter": "human-health-and-disease",
+        "code": "common-diseases-and-immunity",
+        "name": "Common Diseases and Immunity"
+      },
+      {
+        "chapter": "human-health-and-disease",
+        "code": "aids-cancer-substance-abuse",
+        "name": "AIDS, Cancer and Drugs/Alcohol Abuse"
+      }
+    ],
+    "concepts_added": [
+      {
+        "chapter": "sexual-reproduction-flowering-plants",
+        "topic": "flower-and-pre-fertilisation",
+        "code": "stamen-microsporangium-pollen",
+        "name": "Stamen, Microsporangium and Pollen Grain"
+      },
+      {
+        "chapter": "sexual-reproduction-flowering-plants",
+        "topic": "flower-and-pre-fertilisation",
+        "code": "pistil-ovule-embryo-sac",
+        "name": "Pistil, Megasporangium (Ovule) and Embryo Sac"
+      },
+      {
+        "chapter": "sexual-reproduction-flowering-plants",
+        "topic": "flower-and-pre-fertilisation",
+        "code": "pollination-types",
+        "name": "Pollination"
+      },
+      {
+        "chapter": "sexual-reproduction-flowering-plants",
+        "topic": "double-fertilisation",
+        "code": "syngamy-and-triple-fusion",
+        "name": "Syngamy and Triple Fusion"
+      },
+      {
+        "chapter": "sexual-reproduction-flowering-plants",
+        "topic": "post-fertilisation-events",
+        "code": "endosperm-embryo-seed",
+        "name": "Endosperm, Embryo and Seed"
+      },
+      {
+        "chapter": "sexual-reproduction-flowering-plants",
+        "topic": "post-fertilisation-events",
+        "code": "apomixis-polyembryony",
+        "name": "Apomixis and Polyembryony"
+      },
+      {
+        "chapter": "principles-of-inheritance-and-variation",
+        "topic": "mendels-laws",
+        "code": "law-of-dominance",
+        "name": "Law of Dominance"
+      },
+      {
+        "chapter": "principles-of-inheritance-and-variation",
+        "topic": "mendels-laws",
+        "code": "law-of-segregation",
+        "name": "Law of Segregation"
+      },
+      {
+        "chapter": "principles-of-inheritance-and-variation",
+        "topic": "inheritance-of-two-genes",
+        "code": "independent-assortment",
+        "name": "Law of Independent Assortment"
+      },
+      {
+        "chapter": "principles-of-inheritance-and-variation",
+        "topic": "inheritance-of-two-genes",
+        "code": "linkage-and-recombination",
+        "name": "Linkage and Recombination"
+      },
+      {
+        "chapter": "principles-of-inheritance-and-variation",
+        "topic": "extensions-and-sex-determination",
+        "code": "polygenic-inheritance",
+        "name": "Polygenic Inheritance"
+      },
+      {
+        "chapter": "principles-of-inheritance-and-variation",
+        "topic": "extensions-and-sex-determination",
+        "code": "pleiotropy",
+        "name": "Pleiotropy"
+      },
+      {
+        "chapter": "principles-of-inheritance-and-variation",
+        "topic": "extensions-and-sex-determination",
+        "code": "sex-determination",
+        "name": "Sex Determination"
+      },
+      {
+        "chapter": "molecular-basis-of-inheritance",
+        "topic": "the-dna",
+        "code": "polynucleotide-structure",
+        "name": "Structure of Polynucleotide Chain"
+      },
+      {
+        "chapter": "molecular-basis-of-inheritance",
+        "topic": "the-dna",
+        "code": "packaging-of-dna-helix",
+        "name": "Packaging of DNA Helix"
+      },
+      {
+        "chapter": "molecular-basis-of-inheritance",
+        "topic": "genetic-material-and-replication",
+        "code": "dna-as-genetic-material",
+        "name": "The Genetic Material is DNA"
+      },
+      {
+        "chapter": "molecular-basis-of-inheritance",
+        "topic": "genetic-material-and-replication",
+        "code": "dna-replication",
+        "name": "DNA Replication"
+      },
+      {
+        "chapter": "molecular-basis-of-inheritance",
+        "topic": "transcription-translation-regulation",
+        "code": "transcription",
+        "name": "Transcription"
+      },
+      {
+        "chapter": "molecular-basis-of-inheritance",
+        "topic": "transcription-translation-regulation",
+        "code": "genetic-code-and-translation",
+        "name": "Genetic Code and Translation"
+      },
+      {
+        "chapter": "molecular-basis-of-inheritance",
+        "topic": "transcription-translation-regulation",
+        "code": "dna-fingerprinting",
+        "name": "DNA Fingerprinting"
+      },
+      {
+        "chapter": "microbes-in-human-welfare",
+        "topic": "microbes-in-household-and-industry",
+        "code": "household-products",
+        "name": "Microbes in Household Products"
+      },
+      {
+        "chapter": "microbes-in-human-welfare",
+        "topic": "microbes-in-household-and-industry",
+        "code": "fermented-beverages-antibiotics",
+        "name": "Fermented Beverages and Antibiotics"
+      },
+      {
+        "chapter": "microbes-in-human-welfare",
+        "topic": "microbes-in-environment",
+        "code": "sewage-treatment-biogas",
+        "name": "Sewage Treatment and Biogas"
+      },
+      {
+        "chapter": "microbes-in-human-welfare",
+        "topic": "microbes-in-environment",
+        "code": "biocontrol-biofertilisers",
+        "name": "Biocontrol Agents and Biofertilisers"
+      },
+      {
+        "chapter": "biotechnology-principles-and-processes",
+        "topic": "principles-of-biotechnology",
+        "code": "restriction-enzymes",
+        "name": "Restriction Enzymes"
+      },
+      {
+        "chapter": "biotechnology-principles-and-processes",
+        "topic": "principles-of-biotechnology",
+        "code": "cloning-vectors",
+        "name": "Cloning Vectors"
+      },
+      {
+        "chapter": "biotechnology-principles-and-processes",
+        "topic": "recombinant-dna-processes",
+        "code": "isolation-and-cutting-dna",
+        "name": "Isolation and Cutting of DNA"
+      },
+      {
+        "chapter": "biotechnology-principles-and-processes",
+        "topic": "recombinant-dna-processes",
+        "code": "pcr-and-downstream-processing",
+        "name": "PCR Amplification and Downstream Processing"
+      },
+      {
+        "chapter": "biotechnology-and-its-applications",
+        "topic": "applications-in-agriculture",
+        "code": "bt-crops-and-pest-resistance",
+        "name": "Bt Crops and Pest Resistance"
+      },
+      {
+        "chapter": "biotechnology-and-its-applications",
+        "topic": "applications-in-medicine",
+        "code": "ge-insulin-gene-therapy",
+        "name": "Genetically Engineered Insulin and Gene Therapy"
+      },
+      {
+        "chapter": "biotechnology-and-its-applications",
+        "topic": "applications-in-medicine",
+        "code": "molecular-diagnosis",
+        "name": "Molecular Diagnosis"
+      },
+      {
+        "chapter": "biotechnology-and-its-applications",
+        "topic": "transgenic-animals-ethics",
+        "code": "transgenic-animals",
+        "name": "Transgenic Animals"
+      },
+      {
+        "chapter": "biotechnology-and-its-applications",
+        "topic": "transgenic-animals-ethics",
+        "code": "ethical-issues-biotech",
+        "name": "Ethical Issues"
+      },
+      {
+        "chapter": "organisms-and-populations",
+        "topic": "population-attributes-and-growth",
+        "code": "population-attributes",
+        "name": "Population Attributes"
+      },
+      {
+        "chapter": "organisms-and-populations",
+        "topic": "population-attributes-and-growth",
+        "code": "population-growth",
+        "name": "Population Growth"
+      },
+      {
+        "chapter": "organisms-and-populations",
+        "topic": "population-interactions",
+        "code": "life-history-and-interactions",
+        "name": "Life History Variation and Population Interactions"
+      },
+      {
+        "chapter": "ecosystem",
+        "topic": "ecosystem-structure-function",
+        "code": "structure-and-productivity",
+        "name": "Structure, Function and Productivity"
+      },
+      {
+        "chapter": "ecosystem",
+        "topic": "decomposition-energy-pyramids",
+        "code": "decomposition",
+        "name": "Decomposition"
+      },
+      {
+        "chapter": "ecosystem",
+        "topic": "decomposition-energy-pyramids",
+        "code": "energy-flow-and-pyramids",
+        "name": "Energy Flow and Ecological Pyramids"
+      },
+      {
+        "chapter": "biodiversity-and-conservation",
+        "topic": "biodiversity-patterns-and-loss",
+        "code": "patterns-of-biodiversity",
+        "name": "Patterns of Biodiversity"
+      },
+      {
+        "chapter": "biodiversity-and-conservation",
+        "topic": "biodiversity-patterns-and-loss",
+        "code": "loss-of-biodiversity",
+        "name": "Loss of Biodiversity"
+      },
+      {
+        "chapter": "biodiversity-and-conservation",
+        "topic": "biodiversity-conservation",
+        "code": "why-and-how-conserve",
+        "name": "Why and How We Conserve Biodiversity"
+      },
+      {
+        "chapter": "reproductive-health",
+        "topic": "reproductive-health-problems",
+        "code": "population-stabilisation-birth-control",
+        "name": "Population Stabilisation and Birth Control"
+      },
+      {
+        "chapter": "reproductive-health",
+        "topic": "mtp-sti-infertility",
+        "code": "medical-termination-of-pregnancy",
+        "name": "Medical Termination of Pregnancy (MTP)"
+      },
+      {
+        "chapter": "reproductive-health",
+        "topic": "mtp-sti-infertility",
+        "code": "sexually-transmitted-infections",
+        "name": "Sexually Transmitted Infections (STIs)"
+      },
+      {
+        "chapter": "reproductive-health",
+        "topic": "mtp-sti-infertility",
+        "code": "infertility-assisted-reproduction",
+        "name": "Infertility"
+      },
+      {
+        "chapter": "evolution",
+        "topic": "origin-and-evidences",
+        "code": "origin-of-life",
+        "name": "Origin of Life"
+      },
+      {
+        "chapter": "evolution",
+        "topic": "origin-and-evidences",
+        "code": "evidences-for-evolution",
+        "name": "Evidences for Evolution"
+      },
+      {
+        "chapter": "evolution",
+        "topic": "mechanism-and-human-evolution",
+        "code": "adaptive-radiation-hardy-weinberg",
+        "name": "Adaptive Radiation and Hardy–Weinberg Principle"
+      },
+      {
+        "chapter": "evolution",
+        "topic": "mechanism-and-human-evolution",
+        "code": "origin-and-evolution-of-man",
+        "name": "Origin and Evolution of Man"
+      },
+      {
+        "chapter": "human-health-and-disease",
+        "topic": "common-diseases-and-immunity",
+        "code": "common-diseases-in-humans",
+        "name": "Common Diseases in Humans"
+      },
+      {
+        "chapter": "human-health-and-disease",
+        "topic": "common-diseases-and-immunity",
+        "code": "innate-and-acquired-immunity",
+        "name": "Innate and Acquired Immunity"
+      },
+      {
+        "chapter": "human-health-and-disease",
+        "topic": "aids-cancer-substance-abuse",
+        "code": "aids",
+        "name": "AIDS"
+      },
+      {
+        "chapter": "human-health-and-disease",
+        "topic": "aids-cancer-substance-abuse",
+        "code": "cancer",
+        "name": "Cancer"
+      },
+      {
+        "chapter": "human-health-and-disease",
+        "topic": "aids-cancer-substance-abuse",
+        "code": "drugs-and-alcohol-abuse",
+        "name": "Drugs and Alcohol Abuse"
+      }
+    ],
+    "existing_preserved": [
+      {
+        "subject": "BOTANY",
+        "code": "sexual-reproduction-flowering-plants",
+        "name": "Sexual Reproduction in Flowering Plants",
+        "class_level": "12",
+        "note": "preserved; name/ownership not silently rewritten"
+      },
+      {
+        "subject": "ZOOLOGY",
+        "code": "human-reproduction",
+        "name": "Human Reproduction",
+        "class_level": "12",
+        "note": "preserved; name/ownership not silently rewritten"
+      }
+    ],
+    "ownership_applied": [
+      {
+        "subject": "BOTANY",
+        "code": "sexual-reproduction-flowering-plants",
+        "name": "Sexual Reproduction in Flowering Plants",
+        "pdf": "Class 12/Biology/lebo1dd/lebo101.pdf"
+      },
+      {
+        "subject": "BOTANY",
+        "code": "principles-of-inheritance-and-variation",
+        "name": "Principles of Inheritance and Variation",
+        "pdf": "Class 12/Biology/lebo1dd/lebo104.pdf"
+      },
+      {
+        "subject": "BOTANY",
+        "code": "molecular-basis-of-inheritance",
+        "name": "Molecular Basis of Inheritance",
+        "pdf": "Class 12/Biology/lebo1dd/lebo105.pdf"
+      },
+      {
+        "subject": "BOTANY",
+        "code": "microbes-in-human-welfare",
+        "name": "Microbes in Human Welfare",
+        "pdf": "Class 12/Biology/lebo1dd/lebo108.pdf"
+      },
+      {
+        "subject": "BOTANY",
+        "code": "biotechnology-principles-and-processes",
+        "name": "Biotechnology: Principles and Processes",
+        "pdf": "Class 12/Biology/lebo1dd/lebo109.pdf"
+      },
+      {
+        "subject": "BOTANY",
+        "code": "biotechnology-and-its-applications",
+        "name": "Biotechnology and its Applications",
+        "pdf": "Class 12/Biology/lebo1dd/lebo110.pdf"
+      },
+      {
+        "subject": "BOTANY",
+        "code": "organisms-and-populations",
+        "name": "Organisms and Populations",
+        "pdf": "Class 12/Biology/lebo1dd/lebo111.pdf"
+      },
+      {
+        "subject": "BOTANY",
+        "code": "ecosystem",
+        "name": "Ecosystem",
+        "pdf": "Class 12/Biology/lebo1dd/lebo112.pdf"
+      },
+      {
+        "subject": "BOTANY",
+        "code": "biodiversity-and-conservation",
+        "name": "Biodiversity and Conservation",
+        "pdf": "Class 12/Biology/lebo1dd/lebo113.pdf"
+      },
+      {
+        "subject": "ZOOLOGY",
+        "code": "human-reproduction",
+        "name": "Human Reproduction",
+        "pdf": "Class 12/Biology/lebo1dd/lebo102.pdf"
+      },
+      {
+        "subject": "ZOOLOGY",
+        "code": "reproductive-health",
+        "name": "Reproductive Health",
+        "pdf": "Class 12/Biology/lebo1dd/lebo103.pdf"
+      },
+      {
+        "subject": "ZOOLOGY",
+        "code": "evolution",
+        "name": "Evolution",
+        "pdf": "Class 12/Biology/lebo1dd/lebo106.pdf"
+      },
+      {
+        "subject": "ZOOLOGY",
+        "code": "human-health-and-disease",
+        "name": "Human Health and Disease",
+        "pdf": "Class 12/Biology/lebo1dd/lebo107.pdf"
+      }
+    ],
+    "skipped": [
+      {
+        "type": "topic_exists",
+        "chapter": "sexual-reproduction-flowering-plants",
+        "code": "flower-and-pre-fertilisation"
+      },
+      {
+        "type": "concept_exists",
+        "chapter": "sexual-reproduction-flowering-plants",
+        "topic": "flower-and-pre-fertilisation",
+        "code": "stamen-microsporangium-pollen"
+      },
+      {
+        "type": "concept_exists",
+        "chapter": "sexual-reproduction-flowering-plants",
+        "topic": "flower-and-pre-fertilisation",
+        "code": "pistil-ovule-embryo-sac"
+      },
+      {
+        "type": "concept_exists",
+        "chapter": "sexual-reproduction-flowering-plants",
+        "topic": "flower-and-pre-fertilisation",
+        "code": "pollination-types"
+      },
+      {
+        "type": "topic_exists",
+        "chapter": "sexual-reproduction-flowering-plants",
+        "code": "double-fertilisation"
+      },
+      {
+        "type": "concept_exists",
+        "chapter": "sexual-reproduction-flowering-plants",
+        "topic": "double-fertilisation",
+        "code": "syngamy-and-triple-fusion"
+      },
+      {
+        "type": "topic_exists",
+        "chapter": "sexual-reproduction-flowering-plants",
+        "code": "post-fertilisation-events"
+      },
+      {
+        "type": "concept_exists",
+        "chapter": "sexual-reproduction-flowering-plants",
+        "topic": "post-fertilisation-events",
+        "code": "endosperm-embryo-seed"
+      },
+      {
+        "type": "concept_exists",
+        "chapter": "sexual-reproduction-flowering-plants",
+        "topic": "post-fertilisation-events",
+        "code": "apomixis-polyembryony"
+      },
+      {
+        "type": "topic_exists",
+        "chapter": "principles-of-inheritance-and-variation",
+        "code": "mendels-laws"
+      },
+      {
+        "type": "concept_exists",
+        "chapter": "principles-of-inheritance-and-variation",
+        "topic": "mendels-laws",
+        "code": "law-of-dominance"
+      },
+      {
+        "type": "concept_exists",
+        "chapter": "principles-of-inheritance-and-variation",
+        "topic": "mendels-laws",
+        "code": "law-of-segregation"
+      },
+      {
+        "type": "topic_exists",
+        "chapter": "principles-of-inheritance-and-variation",
+        "code": "inheritance-of-two-genes"
+      },
+      {
+        "type": "concept_exists",
+        "chapter": "principles-of-inheritance-and-variation",
+        "topic": "inheritance-of-two-genes",
+        "code": "independent-assortment"
+      },
+      {
+        "type": "concept_exists",
+        "chapter": "principles-of-inheritance-and-variation",
+        "topic": "inheritance-of-two-genes",
+        "code": "linkage-and-recombination"
+      },
+      {
+        "type": "topic_exists",
+        "chapter": "principles-of-inheritance-and-variation",
+        "code": "extensions-and-sex-determination"
+      },
+      {
+        "type": "concept_exists",
+        "chapter": "principles-of-inheritance-and-variation",
+        "topic": "extensions-and-sex-determination",
+        "code": "polygenic-inheritance"
+      },
+      {
+        "type": "concept_exists",
+        "chapter": "principles-of-inheritance-and-variation",
+        "topic": "extensions-and-sex-determination",
+        "code": "pleiotropy"
+      },
+      {
+        "type": "concept_exists",
+        "chapter": "principles-of-inheritance-and-variation",
+        "topic": "extensions-and-sex-determination",
+        "code": "sex-determination"
+      },
+      {
+        "type": "topic_exists",
+        "chapter": "molecular-basis-of-inheritance",
+        "code": "the-dna"
+      },
+      {
+        "type": "concept_exists",
+        "chapter": "molecular-basis-of-inheritance",
+        "topic": "the-dna",
+        "code": "polynucleotide-structure"
+      },
+      {
+        "type": "concept_exists",
+        "chapter": "molecular-basis-of-inheritance",
+        "topic": "the-dna",
+        "code": "packaging-of-dna-helix"
+      },
+      {
+        "type": "topic_exists",
+        "chapter": "molecular-basis-of-inheritance",
+        "code": "genetic-material-and-replication"
+      },
+      {
+        "type": "concept_exists",
+        "chapter": "molecular-basis-of-inheritance",
+        "topic": "genetic-material-and-replication",
+        "code": "dna-as-genetic-material"
+      },
+      {
+        "type": "concept_exists",
+        "chapter": "molecular-basis-of-inheritance",
+        "topic": "genetic-material-and-replication",
+        "code": "dna-replication"
+      },
+      {
+        "type": "topic_exists",
+        "chapter": "molecular-basis-of-inheritance",
+        "code": "transcription-translation-regulation"
+      },
+      {
+        "type": "concept_exists",
+        "chapter": "molecular-basis-of-inheritance",
+        "topic": "transcription-translation-regulation",
+        "code": "transcription"
+      },
+      {
+        "type": "concept_exists",
+        "chapter": "molecular-basis-of-inheritance",
+        "topic": "transcription-translation-regulation",
+        "code": "genetic-code-and-translation"
+      },
+      {
+        "type": "concept_exists",
+        "chapter": "molecular-basis-of-inheritance",
+        "topic": "transcription-translation-regulation",
+        "code": "dna-fingerprinting"
+      },
+      {
+        "type": "topic_exists",
+        "chapter": "microbes-in-human-welfare",
+        "code": "microbes-in-household-and-industry"
+      },
+      {
+        "type": "concept_exists",
+        "chapter": "microbes-in-human-welfare",
+        "topic": "microbes-in-household-and-industry",
+        "code": "household-products"
+      },
+      {
+        "type": "concept_exists",
+        "chapter": "microbes-in-human-welfare",
+        "topic": "microbes-in-household-and-industry",
+        "code": "fermented-beverages-antibiotics"
+      },
+      {
+        "type": "topic_exists",
+        "chapter": "microbes-in-human-welfare",
+        "code": "microbes-in-environment"
+      },
+      {
+        "type": "concept_exists",
+        "chapter": "microbes-in-human-welfare",
+        "topic": "microbes-in-environment",
+        "code": "sewage-treatment-biogas"
+      },
+      {
+        "type": "concept_exists",
+        "chapter": "microbes-in-human-welfare",
+        "topic": "microbes-in-environment",
+        "code": "biocontrol-biofertilisers"
+      },
+      {
+        "type": "topic_exists",
+        "chapter": "biotechnology-principles-and-processes",
+        "code": "principles-of-biotechnology"
+      },
+      {
+        "type": "concept_exists",
+        "chapter": "biotechnology-principles-and-processes",
+        "topic": "principles-of-biotechnology",
+        "code": "restriction-enzymes"
+      },
+      {
+        "type": "concept_exists",
+        "chapter": "biotechnology-principles-and-processes",
+        "topic": "principles-of-biotechnology",
+        "code": "cloning-vectors"
+      },
+      {
+        "type": "topic_exists",
+        "chapter": "biotechnology-principles-and-processes",
+        "code": "recombinant-dna-processes"
+      },
+      {
+        "type": "concept_exists",
+        "chapter": "biotechnology-principles-and-processes",
+        "topic": "recombinant-dna-processes",
+        "code": "isolation-and-cutting-dna"
+      },
+      {
+        "type": "concept_exists",
+        "chapter": "biotechnology-principles-and-processes",
+        "topic": "recombinant-dna-processes",
+        "code": "pcr-and-downstream-processing"
+      },
+      {
+        "type": "topic_exists",
+        "chapter": "biotechnology-and-its-applications",
+        "code": "applications-in-agriculture"
+      },
+      {
+        "type": "concept_exists",
+        "chapter": "biotechnology-and-its-applications",
+        "topic": "applications-in-agriculture",
+        "code": "bt-crops-and-pest-resistance"
+      },
+      {
+        "type": "topic_exists",
+        "chapter": "biotechnology-and-its-applications",
+        "code": "applications-in-medicine"
+      },
+      {
+        "type": "concept_exists",
+        "chapter": "biotechnology-and-its-applications",
+        "topic": "applications-in-medicine",
+        "code": "ge-insulin-gene-therapy"
+      },
+      {
+        "type": "concept_exists",
+        "chapter": "biotechnology-and-its-applications",
+        "topic": "applications-in-medicine",
+        "code": "molecular-diagnosis"
+      },
+      {
+        "type": "topic_exists",
+        "chapter": "biotechnology-and-its-applications",
+        "code": "transgenic-animals-ethics"
+      },
+      {
+        "type": "concept_exists",
+        "chapter": "biotechnology-and-its-applications",
+        "topic": "transgenic-animals-ethics",
+        "code": "transgenic-animals"
+      },
+      {
+        "type": "concept_exists",
+        "chapter": "biotechnology-and-its-applications",
+        "topic": "transgenic-animals-ethics",
+        "code": "ethical-issues-biotech"
+      },
+      {
+        "type": "topic_exists",
+        "chapter": "organisms-and-populations",
+        "code": "population-attributes-and-growth"
+      },
+      {
+        "type": "concept_exists",
+        "chapter": "organisms-and-populations",
+        "topic": "population-attributes-and-growth",
+        "code": "population-attributes"
+      },
+      {
+        "type": "concept_exists",
+        "chapter": "organisms-and-populations",
+        "topic": "population-attributes-and-growth",
+        "code": "population-growth"
+      },
+      {
+        "type": "topic_exists",
+        "chapter": "organisms-and-populations",
+        "code": "population-interactions"
+      },
+      {
+        "type": "concept_exists",
+        "chapter": "organisms-and-populations",
+        "topic": "population-interactions",
+        "code": "life-history-and-interactions"
+      },
+      {
+        "type": "topic_exists",
+        "chapter": "ecosystem",
+        "code": "ecosystem-structure-function"
+      },
+      {
+        "type": "concept_exists",
+        "chapter": "ecosystem",
+        "topic": "ecosystem-structure-function",
+        "code": "structure-and-productivity"
+      },
+      {
+        "type": "topic_exists",
+        "chapter": "ecosystem",
+        "code": "decomposition-energy-pyramids"
+      },
+      {
+        "type": "concept_exists",
+        "chapter": "ecosystem",
+        "topic": "decomposition-energy-pyramids",
+        "code": "decomposition"
+      },
+      {
+        "type": "concept_exists",
+        "chapter": "ecosystem",
+        "topic": "decomposition-energy-pyramids",
+        "code": "energy-flow-and-pyramids"
+      },
+      {
+        "type": "topic_exists",
+        "chapter": "biodiversity-and-conservation",
+        "code": "biodiversity-patterns-and-loss"
+      },
+      {
+        "type": "concept_exists",
+        "chapter": "biodiversity-and-conservation",
+        "topic": "biodiversity-patterns-and-loss",
+        "code": "patterns-of-biodiversity"
+      },
+      {
+        "type": "concept_exists",
+        "chapter": "biodiversity-and-conservation",
+        "topic": "biodiversity-patterns-and-loss",
+        "code": "loss-of-biodiversity"
+      },
+      {
+        "type": "topic_exists",
+        "chapter": "biodiversity-and-conservation",
+        "code": "biodiversity-conservation"
+      },
+      {
+        "type": "concept_exists",
+        "chapter": "biodiversity-and-conservation",
+        "topic": "biodiversity-conservation",
+        "code": "why-and-how-conserve"
+      },
+      {
+        "type": "preserve_existing_no_topic_injection",
+        "code": "human-reproduction"
+      },
+      {
+        "type": "topic_exists",
+        "chapter": "reproductive-health",
+        "code": "reproductive-health-problems"
+      },
+      {
+        "type": "concept_exists",
+        "chapter": "reproductive-health",
+        "topic": "reproductive-health-problems",
+        "code": "population-stabilisation-birth-control"
+      },
+      {
+        "type": "topic_exists",
+        "chapter": "reproductive-health",
+        "code": "mtp-sti-infertility"
+      },
+      {
+        "type": "concept_exists",
+        "chapter": "reproductive-health",
+        "topic": "mtp-sti-infertility",
+        "code": "medical-termination-of-pregnancy"
+      },
+      {
+        "type": "concept_exists",
+        "chapter": "reproductive-health",
+        "topic": "mtp-sti-infertility",
+        "code": "sexually-transmitted-infections"
+      },
+      {
+        "type": "concept_exists",
+        "chapter": "reproductive-health",
+        "topic": "mtp-sti-infertility",
+        "code": "infertility-assisted-reproduction"
+      },
+      {
+        "type": "topic_exists",
+        "chapter": "evolution",
+        "code": "origin-and-evidences"
+      },
+      {
+        "type": "concept_exists",
+        "chapter": "evolution",
+        "topic": "origin-and-evidences",
+        "code": "origin-of-life"
+      },
+      {
+        "type": "concept_exists",
+        "chapter": "evolution",
+        "topic": "origin-and-evidences",
+        "code": "evidences-for-evolution"
+      },
+      {
+        "type": "topic_exists",
+        "chapter": "evolution",
+        "code": "mechanism-and-human-evolution"
+      },
+      {
+        "type": "concept_exists",
+        "chapter": "evolution",
+        "topic": "mechanism-and-human-evolution",
+        "code": "adaptive-radiation-hardy-weinberg"
+      },
+      {
+        "type": "concept_exists",
+        "chapter": "evolution",
+        "topic": "mechanism-and-human-evolution",
+        "code": "origin-and-evolution-of-man"
+      },
+      {
+        "type": "topic_exists",
+        "chapter": "human-health-and-disease",
+        "code": "common-diseases-and-immunity"
+      },
+      {
+        "type": "concept_exists",
+        "chapter": "human-health-and-disease",
+        "topic": "common-diseases-and-immunity",
+        "code": "common-diseases-in-humans"
+      },
+      {
+        "type": "concept_exists",
+        "chapter": "human-health-and-disease",
+        "topic": "common-diseases-and-immunity",
+        "code": "innate-and-acquired-immunity"
+      },
+      {
+        "type": "topic_exists",
+        "chapter": "human-health-and-disease",
+        "code": "aids-cancer-substance-abuse"
+      },
+      {
+        "type": "concept_exists",
+        "chapter": "human-health-and-disease",
+        "topic": "aids-cancer-substance-abuse",
+        "code": "aids"
+      },
+      {
+        "type": "concept_exists",
+        "chapter": "human-health-and-disease",
+        "topic": "aids-cancer-substance-abuse",
+        "code": "cancer"
+      },
+      {
+        "type": "concept_exists",
+        "chapter": "human-health-and-disease",
+        "topic": "aids-cancer-substance-abuse",
+        "code": "drugs-and-alcohol-abuse"
+      }
+    ],
+    "errors": [],
+    "idempotent_rerun": true
+  },
+  "integrity": {
+    "duplicate_chapters": [],
+    "orphan_topics": 0,
+    "orphan_concepts": 0,
+    "wrong_class_level_count": 0,
+    "ok": true
+  },
+  "unresolved": [],
+  "tests": {
+    "passed": 65,
+    "failed": 0,
+    "exit_code": 0,
+    "command": "D:\\ravishori\\AI Neet Exam App\\apps\\backend\\.venv\\Scripts\\python.exe -m pytest app/modules/ingestion/tests/test_ncert_canonical_source.py app/modules/academic/tests/test_cf_c1_chemistry_class_12.py app/modules/academic/tests/test_chapter_class_level.py tests/test_cms_workflow.py tests/test_cms_publish_quality.py tests/test_phase32_content_readiness_safety.py tests/test_phase33_ecaep_publication_safety.py -q --tb=line",
+    "tail": "    def test_no_duplicate_chapter_slugs_across_all_chemistry():\n\napp/modules/academic/tests/test_cf_c1_chemistry_class_12.py::test_topic_slugs_are_unique_within_chemistry\n  app\\modules\\academic\\tests\\test_cf_c1_chemistry_class_12.py:102: PytestWarning: The test <Function test_topic_slugs_are_unique_within_chemistry> is marked with '@pytest.mark.asyncio' but it is not an async function. Please remove the asyncio mark. If the test is not marked explicitly, check for global marks applied via 'pytestmark'.\n    def test_topic_slugs_are_unique_within_chemistry():\n\napp/modules/academic/tests/test_cf_c1_chemistry_class_12.py::test_concept_slugs_are_unique_within_chemistry\n  app\\modules\\academic\\tests\\test_cf_c1_chemistry_class_12.py:109: PytestWarning: The test <Function test_concept_slugs_are_unique_within_chemistry> is marked with '@pytest.mark.asyncio' but it is not an async function. Please remove the asyncio mark. If the test is not marked explicitly, check for global marks applied via 'pytestmark'.\n    def test_concept_slugs_are_unique_within_chemistry():\n\napp/modules/academic/tests/test_cf_c1_chemistry_class_12.py::test_every_new_chapter_has_source_grounded_topics_and_concepts\n  app\\modules\\academic\\tests\\test_cf_c1_chemistry_class_12.py:116: PytestWarning: The test <Function test_every_new_chapter_has_source_grounded_topics_and_concepts> is marked with '@pytest.mark.asyncio' but it is not an async function. Please remove the asyncio mark. If the test is not marked explicitly, check for global marks applied via 'pytestmark'.\n    def test_every_new_chapter_has_source_grounded_topics_and_concepts():\n\napp/modules/academic/tests/test_cf_c1_chemistry_class_12.py::test_physics_seed_is_unchanged_by_cf_c1\n  app\\modules\\academic\\tests\\test_cf_c1_chemistry_class_12.py:134: PytestWarning: The test <Function test_physics_seed_is_unchanged_by_cf_c1> is marked with '@pytest.mark.asyncio' but it is not an async function. Please remove the asyncio mark. If the test is not marked explicitly, check for global marks applied via 'pytestmark'.\n    def test_physics_seed_is_unchanged_by_cf_c1():\n\napp/modules/academic/tests/test_cf_c1_chemistry_class_12.py::test_botany_seed_is_unchanged_by_cf_c1\n  app\\modules\\academic\\tests\\test_cf_c1_chemistry_class_12.py:149: PytestWarning: The test <Function test_botany_seed_is_unchanged_by_cf_c1> is marked with '@pytest.mark.asyncio' but it is not an async function. Please remove the asyncio mark. If the test is not marked explicitly, check for global marks applied via 'pytestmark'.\n    def test_botany_seed_is_unchanged_by_cf_c1():\n\napp/modules/academic/tests/test_cf_c1_chemistry_class_12.py::test_zoology_seed_is_unchanged_by_cf_c1\n  app\\modules\\academic\\tests\\test_cf_c1_chemistry_class_12.py:159: PytestWarning: The test <Function test_zoology_seed_is_unchanged_by_cf_c1> is marked with '@pytest.mark.asyncio' but it is not an async function. Please remove the asyncio mark. If the test is not marked explicitly, check for global marks applied via 'pytestmark'.\n    def test_zoology_seed_is_unchanged_by_cf_c1():\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n65 passed, 15 warnings in 131.90s (0:02:11)\n\nsys:1: DeprecationWarning: builtin type swigvarlink has no __module__ attribute"
+  },
+  "notes": [
+    "Prose mentions Chapter [2, 3] (cross-reference); PDF identity remains chapter 1 via filename/CHAPTER 1",
+    "Prose mentions Chapter [5, 6] (cross-reference); PDF identity remains chapter 4 via filename/CHAPTER 4",
+    "Prose mentions Chapter [10] (cross-reference); PDF identity remains chapter 9 via filename/CHAPTER 9",
+    "Prose mentions Chapter [12, 13] (cross-reference); PDF identity remains chapter 11 via filename/CHAPTER 11",
+    "Prose mentions Chapter [2] (cross-reference); PDF identity remains chapter 3 via filename/CHAPTER 3",
+    "Prose mentions Chapter [8] (cross-reference); PDF identity remains chapter 7 via filename/CHAPTER 7"
+  ]
+}

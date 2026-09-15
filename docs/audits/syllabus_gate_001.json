@@ -1,0 +1,161 @@
+{
+  "task": "SYLLABUS-GATE-001",
+  "generated_at": "2026-09-14T04:47:41.470904+00:00",
+  "syllabus_source_path": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt",
+  "syllabus_sha256": "82a616e31ba75d6e5d6422537c8ef5a4ceafb7a7e3449109696b12839b100ceb",
+  "unit_counts": {
+    "PHYSICS": 20,
+    "CHEMISTRY": 20,
+    "BIOLOGY": 10
+  },
+  "topic_count": 145,
+  "parser": "app.modules.cms.syllabus.neet_2026_parser",
+  "registry": "app.modules.cms.syllabus.neet_2026_registry",
+  "blueprint_gate": "app.modules.cms.syllabus.neet_2026_scope.assert_blueprint_neet_syllabus_scope",
+  "pre_llm_enforcement": "content_factory_generation_service._execute_run: syllabus gate \u2192 NCERT evidence gate \u2192 provider",
+  "existing_blueprint_scope_scan": {
+    "in_syllabus": 0,
+    "out_of_scope": 0,
+    "mapping_review_required": 445,
+    "missing_explicit_neet_ug_2026_binding": 445,
+    "note": "Existing blueprints were not rewritten; missing bindings block generation until explicit scope is added."
+  },
+  "coverage_gaps_from_capacity_matrix": [
+    {
+      "subject": "PHYSICS",
+      "unit_number": 10,
+      "unit_title": "OSCILLATIONS AND WAVES",
+      "target_usable_assigned": 536,
+      "reason": "no_GENERATION_READY_blueprint_mapped_to_unit"
+    },
+    {
+      "subject": "PHYSICS",
+      "unit_number": 13,
+      "unit_title": "MAGNETIC EFFECTS OF CURRENT AND MAGNETISM",
+      "target_usable_assigned": 536,
+      "reason": "no_GENERATION_READY_blueprint_mapped_to_unit"
+    },
+    {
+      "subject": "PHYSICS",
+      "unit_number": 14,
+      "unit_title": "ELECTROMAGNETIC INDUCTION AND ALTERNATING CURRENTS",
+      "target_usable_assigned": 179,
+      "reason": "no_GENERATION_READY_blueprint_mapped_to_unit"
+    },
+    {
+      "subject": "PHYSICS",
+      "unit_number": 15,
+      "unit_title": "ELECTROMAGNETIC WAVES",
+      "target_usable_assigned": 179,
+      "reason": "no_GENERATION_READY_blueprint_mapped_to_unit"
+    },
+    {
+      "subject": "PHYSICS",
+      "unit_number": 17,
+      "unit_title": "DUAL NATURE OF MATTER AND RADIATION",
+      "target_usable_assigned": 179,
+      "reason": "no_GENERATION_READY_blueprint_mapped_to_unit"
+    },
+    {
+      "subject": "PHYSICS",
+      "unit_number": 18,
+      "unit_title": "ATOMS AND NUCLEI",
+      "target_usable_assigned": 179,
+      "reason": "no_GENERATION_READY_blueprint_mapped_to_unit"
+    },
+    {
+      "subject": "PHYSICS",
+      "unit_number": 19,
+      "unit_title": "ELECTRONIC DEVICES",
+      "target_usable_assigned": 179,
+      "reason": "no_GENERATION_READY_blueprint_mapped_to_unit"
+    },
+    {
+      "subject": "PHYSICS",
+      "unit_number": 20,
+      "unit_title": "EXPERIMENTAL SKILLS",
+      "target_usable_assigned": 3387,
+      "reason": "no_GENERATION_READY_blueprint_mapped_to_unit"
+    },
+    {
+      "subject": "CHEMISTRY",
+      "unit_number": 9,
+      "unit_title": "CLASSIFICATION OF ELEMENTS AND PERIODICITY IN PROPERTIES",
+      "target_usable_assigned": 165,
+      "reason": "no_GENERATION_READY_blueprint_mapped_to_unit"
+    },
+    {
+      "subject": "CHEMISTRY",
+      "unit_number": 10,
+      "unit_title": "P-BLOCK ELEMENTS",
+      "target_usable_assigned": 165,
+      "reason": "no_GENERATION_READY_blueprint_mapped_to_unit"
+    },
+    {
+      "subject": "CHEMISTRY",
+      "unit_number": 13,
+      "unit_title": "PURIFICATION AND CHARACTERISATION OF ORGANIC COMPOUNDS",
+      "target_usable_assigned": 492,
+      "reason": "no_GENERATION_READY_blueprint_mapped_to_unit"
+    },
+    {
+      "subject": "CHEMISTRY",
+      "unit_number": 16,
+      "unit_title": "ORGANIC COMPOUNDS CONTAINING HALOGENS",
+      "target_usable_assigned": 165,
+      "reason": "no_GENERATION_READY_blueprint_mapped_to_unit"
+    },
+    {
+      "subject": "CHEMISTRY",
+      "unit_number": 20,
+      "unit_title": "PRINCIPLES RELATED TO PRACTICAL CHEMISTRY",
+      "target_usable_assigned": 1801,
+      "reason": "no_GENERATION_READY_blueprint_mapped_to_unit"
+    }
+  ],
+  "database_before": {
+    "status": {
+      "DRAFT": 5444,
+      "PUBLISHED": 1479,
+      "SUPERSEDED": 6,
+      "IN_REVIEW": 111
+    },
+    "unmapped_draft": 5034,
+    "kus": 381,
+    "blueprints": 445,
+    "candidates": 995,
+    "jobs": 751,
+    "runs": 751
+  },
+  "database_after": {
+    "status": {
+      "DRAFT": 5444,
+      "PUBLISHED": 1479,
+      "SUPERSEDED": 6,
+      "IN_REVIEW": 111
+    },
+    "unmapped_draft": 5034,
+    "kus": 381,
+    "blueprints": 445,
+    "candidates": 995,
+    "jobs": 751,
+    "runs": 751
+  },
+  "database_unchanged": true,
+  "safety": {
+    "questions_mutated": false,
+    "publication": false,
+    "certification": false,
+    "ecaep_mutated": false,
+    "frozen_drafts_mutated": false
+  },
+  "authorization_rule": "Exact match only via constraints.neet_ug_2026 (subject + unit_number + topic_id|topic). Fuzzy match never authorizes.",
+  "tests": {
+    "test_syllabus_gate_001": "21 passed",
+    "test_mcq_ncert_grounding_001": "16 passed",
+    "test_content_factory_p3": "7 passed",
+    "provider_blocking_proof": true
+  },
+  "verdict": "YELLOW",
+  "verdict_reason": "Gate + zero-provider proofs green; 445 existing blueprints lack explicit neet_ug_2026 bindings"
+}

@@ -1,0 +1,110 @@
+{
+  "task": "CURSOR-PROMPT-COMPRESSION-001",
+  "generated_at": "2026-09-14T06:40:00+00:00",
+  "mode": "DOCUMENTATION_RULES_ONLY",
+  "verdict": "YELLOW",
+  "database_mutated": false,
+  "provider_call_count": 0,
+  "mcqs_generated": 0,
+  "files_inspected": [
+    ".cursor/rules/neet-2026-syllabus-boundary.mdc",
+    ".cursor/rules/studymaterial-archive.mdc",
+    ".cursorrules",
+    ".cursor/CURSOR_RULES.md",
+    ".cursor/README.md",
+    "docs/architecture/ncert_canonical_source.md",
+    "docs/architecture/ecaep.md",
+    "docs/audits/"
+  ],
+  "files_created": [
+    ".cursor/rules/project-core.mdc",
+    ".cursor/rules/ncert-source-boundary.mdc",
+    ".cursor/rules/content-safety.mdc",
+    ".cursor/rules/content-factory.mdc",
+    ".cursor/rules/mcq-quality.mdc",
+    ".cursor/rules/database-safety.mdc",
+    ".cursor/rules/audit-protocol.mdc",
+    ".cursor/rules/README.md",
+    "docs/architecture/cursor_task_protocol.md",
+    "docs/audits/cursor_prompt_compression_001.md",
+    "docs/audits/cursor_prompt_compression_001.json"
+  ],
+  "files_modified": [],
+  "files_preserved_unchanged": [
+    ".cursor/rules/neet-2026-syllabus-boundary.mdc",
+    ".cursor/rules/studymaterial-archive.mdc"
+  ],
+  "rules_consolidated": [
+    "project priorities / verification posture",
+    "NCERT Books factual root + exclusions",
+    "content safety defaults (no generate/publish/provider)",
+    "content factory pipeline order",
+    "MCQ quality bar",
+    "database surgical/idempotent writes",
+    "audit measure-mutate-verify-artifact cadence",
+    "compact task protocol template"
+  ],
+  "duplicate_rules_identified": [
+    {
+      "items": [
+        "neet-2026-syllabus-boundary.mdc (brief NCERT mention)",
+        "ncert-source-boundary.mdc"
+      ],
+      "assessment": "complementary_depth"
+    },
+    {
+      "items": [
+        "studymaterial-archive.mdc",
+        "ncert-source-boundary.mdc"
+      ],
+      "assessment": "complementary_scopes_archive_vs_evidence"
+    },
+    {
+      "items": [
+        ".cursorrules Physics-5000 framing",
+        "TALOS project-core / CLAUDE.md"
+      ],
+      "assessment": "legacy_scope_drift_future_cleanup"
+    },
+    {
+      "items": [
+        ".cursor/CURSOR_RULES.md enterprise tree",
+        ".cursor/rules/*.mdc compact hierarchy"
+      ],
+      "assessment": "compatibility_duplication_retained"
+    }
+  ],
+  "conflicts_identified": [],
+  "safety_boundaries_preserved": {
+    "neet_2026_syllabus_boundary": true,
+    "ncert_books_factual_root": true,
+    "no_fuzzy_syllabus_authorization": true,
+    "no_studymaterial_as_ncert_evidence": true,
+    "no_weakening_detected": true
+  },
+  "estimated_prompt_token_reduction": {
+    "measured": false,
+    "example_task": "NCERT-EVIDENCE-WRITE-002",
+    "verbose_prompt_approx_tokens": "3000-6000+",
+    "compressed_protocol_approx_tokens": "200-400",
+    "rough_reduction": "often >50% for remediation-style tasks",
+    "note": "estimate only; not instrumented"
+  },
+  "tests": {
+    "suites": [
+      {
+        "name": "test_syllabus_gate_001 + test_mcq_ncert_grounding_001",
+        "passed": 37,
+        "failed": 0,
+        "result": "PASS"
+      }
+    ],
+    "all_green": true
+  },
+  "failures": [],
+  "limitations": [
+    "Legacy .cursorrules and large .cursor/ enterprise docs retained for compatibility",
+    "Token reduction estimated from one recent task class only",
+    "No commit/push"
+  ]
+}

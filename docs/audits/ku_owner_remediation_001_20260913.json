@@ -1,0 +1,554 @@
+{
+  "generated_at": "2026-09-13T18:31:08.967545+00:00",
+  "mode": "mutating_accept_ku_only",
+  "final_status": "GREEN — OWNER-ACCEPTED KUs CREATED",
+  "ncert_root": "D:\\ravishori\\AI Neet Exam App\\NCERT Books",
+  "source_owner_review": "D:\\ravishori\\AI Neet Exam App\\docs\\audits\\ku_owner_review_001_20260913.json",
+  "accept_codes": [
+    "factors-affecting-resistance",
+    "cardiac-cycle-phases",
+    "heart-structure",
+    "gonads-ducts",
+    "menstrual-phases",
+    "biomolecule-classes",
+    "pcr-and-downstream-processing",
+    "pk-plantae-boundaries-and-cyanobacteria",
+    "sp-sp2-sp3",
+    "primary-and-secondary-valency",
+    "concentration-expressions"
+  ],
+  "accept_ku_count": 11,
+  "targets_meta": {
+    "biomolecule-classes": {
+      "concept_name": "Major Biomolecule Classes",
+      "subject": "BOTANY",
+      "class_level": "11",
+      "chapter_code": "biomolecules",
+      "topic_code": "carbs-lipids"
+    },
+    "pcr-and-downstream-processing": {
+      "concept_name": "PCR Amplification and Downstream Processing",
+      "subject": "BOTANY",
+      "class_level": "12",
+      "chapter_code": "biotechnology-principles-and-processes",
+      "topic_code": "recombinant-dna-processes"
+    },
+    "pk-plantae-boundaries-and-cyanobacteria": {
+      "concept_name": "Plantae Boundaries and Status of Cyanobacteria",
+      "subject": "BOTANY",
+      "class_level": "11",
+      "chapter_code": "plant-kingdom",
+      "topic_code": "pk-t-plant-classification-systems"
+    },
+    "sp-sp2-sp3": {
+      "concept_name": "sp, sp2, sp3 Hybridization",
+      "subject": "CHEMISTRY",
+      "class_level": "11",
+      "chapter_code": "chemical-bonding",
+      "topic_code": "hybridization"
+    },
+    "primary-and-secondary-valency": {
+      "concept_name": "Primary and Secondary Valencies",
+      "subject": "CHEMISTRY",
+      "class_level": "12",
+      "chapter_code": "coordination-compounds",
+      "topic_code": "werners-theory-and-terminology"
+    },
+    "concentration-expressions": {
+      "concept_name": "Concentration Expressions",
+      "subject": "CHEMISTRY",
+      "class_level": "12",
+      "chapter_code": "solutions",
+      "topic_code": "types-and-concentration-of-solutions"
+    },
+    "factors-affecting-resistance": {
+      "concept_name": "Factors Affecting Resistance",
+      "subject": "PHYSICS",
+      "class_level": "12",
+      "chapter_code": "current-electricity",
+      "topic_code": "resistance-resistivity"
+    },
+    "cardiac-cycle-phases": {
+      "concept_name": "Cardiac Cycle Phases",
+      "subject": "ZOOLOGY",
+      "class_level": "11",
+      "chapter_code": "body-fluids-circulation",
+      "topic_code": "cardiac-cycle"
+    },
+    "heart-structure": {
+      "concept_name": "Structure of the Human Heart",
+      "subject": "ZOOLOGY",
+      "class_level": "11",
+      "chapter_code": "body-fluids-circulation",
+      "topic_code": "human-heart-anatomy"
+    },
+    "gonads-ducts": {
+      "concept_name": "Gonads and Ducts",
+      "subject": "ZOOLOGY",
+      "class_level": "12",
+      "chapter_code": "human-reproduction",
+      "topic_code": "reproductive-systems"
+    },
+    "menstrual-phases": {
+      "concept_name": "Menstrual Cycle Phases",
+      "subject": "ZOOLOGY",
+      "class_level": "12",
+      "chapter_code": "human-reproduction",
+      "topic_code": "cycle-fertilization"
+    }
+  },
+  "created": [
+    {
+      "status": "CREATED",
+      "ku_id": "19593794-692e-44f2-bb99-f04e2783fd97",
+      "concept_id": "74858845-0941-4608-9e0d-127c3512909d",
+      "concept_code": "biomolecule-classes",
+      "concept_name": "Major Biomolecule Classes",
+      "subject": "BOTANY",
+      "class_level": "11",
+      "chapter": "biomolecules",
+      "topic": "carbs-lipids",
+      "pdf": "Class 11/Biology/kebo1dd/kebo109.pdf",
+      "evidence": "owner_needle_window:score=5|hits=['biomolecules', 'carbohydrates', 'proteins', 'lipids', 'nucleic acids']|prior=insufficient_token_hits:2/3|pdf=Class 11/Biology/kebo1dd/kebo109.pdf",
+      "facts": 8,
+      "summary": "026-27\n\nBIOMOLECULES\n107\nCholesterol\nPhospholipid (Lecithin)\nFats and oils (lipids)\n(CH )\n2 14\nCH3\nCOOH\nFatty acid\n(Palmitic acid)\nGlycerol\nTriglyceride (R1, R2\nand R3 are fatty acids)\nNitrogen bases\nOH\nOH\nAdenine\nO\nOCH2\nP\nHO\nOH\nO\nAdenylic ",
+      "window_preview": "026-27 BIOMOLECULES 107 Cholesterol Phospholipid (Lecithin) Fats and oils (lipids) (CH ) 2 14 CH3 COOH Fatty acid (Palmitic acid) Glycerol Triglyceride (R1, R2 and R3 are fatty acids) Nitrogen bases OH OH Adenine O OCH2 P HO OH O Adenylic acid Nucleotide OH OH HOCH2 Adenine O OH "
+    },
+    {
+      "status": "CREATED",
+      "ku_id": "a6911c85-0327-4249-a8ca-dca20a91b332",
+      "concept_id": "0ce2a22e-622a-40e3-9182-bee1f2eeba03",
+      "concept_code": "pcr-and-downstream-processing",
+      "concept_name": "PCR Amplification and Downstream Processing",
+      "subject": "BOTANY",
+      "class_level": "12",
+      "chapter": "biotechnology-principles-and-processes",
+      "topic": "recombinant-dna-processes",
+      "pdf": "Class 12/Biology/lebo1dd/lebo109.pdf",
+      "evidence": "owner_needle_window:score=3|hits=['polymerase chain reaction', 'PCR', 'amplification']|prior=insufficient_token_hits:2/3|pdf=Class 12/Biology/lebo1dd/lebo109.pdf",
+      "facts": 8,
+      "summary": "gmentation of DNA by\nrestriction endonucleases, isolation of a desired DNA fragment,\nligation of the DNA fragment into a vector, transferring the\nrecombinant DNA into the host, culturing the host cells in a\nmedium at large scale and extract",
+      "window_preview": "gmentation of DNA by restriction endonucleases, isolation of a desired DNA fragment, ligation of the DNA fragment into a vector, transferring the recombinant DNA into the host, culturing the host cells in a medium at large scale and extraction of the desired product. Let us exami"
+    },
+    {
+      "status": "CREATED",
+      "ku_id": "928f70d3-d427-41c2-8c88-04de67b5c4a9",
+      "concept_id": "79017193-9b36-5127-9b9f-09c13fccee06",
+      "concept_code": "pk-plantae-boundaries-and-cyanobacteria",
+      "concept_name": "Plantae Boundaries and Status of Cyanobacteria",
+      "subject": "BOTANY",
+      "class_level": "11",
+      "chapter": "plant-kingdom",
+      "topic": "pk-t-plant-classification-systems",
+      "pdf": "Class 11/Biology/kebo1dd/kebo103.pdf",
+      "evidence": "owner_needle_window:score=4|hits=['cyanobacteria', 'excluded from Plantae', 'Plantae', 'Whittaker']|prior=insufficient_token_hits:2/3|pdf=Class 11/Biology/kebo1dd/kebo103.pdf",
+      "facts": 8,
+      "summary": "PLANT KINGDOM\n23\nIn the previous chapter, we looked at the broad classification of living\norganisms under the system proposed by Whittaker (1969) wherein he\nsuggested the Five Kingdom classification viz. Monera, Protista, Fungi,\nAnimalia an",
+      "window_preview": "PLANT KINGDOM 23 In the previous chapter, we looked at the broad classification of living organisms under the system proposed by Whittaker (1969) wherein he suggested the Five Kingdom classification viz. Monera, Protista, Fungi, Animalia and Plantae. In this chapter, we will deal"
+    },
+    {
+      "status": "CREATED",
+      "ku_id": "680f6c9a-08d5-41dd-b691-9c30fe29329f",
+      "concept_id": "8abc776c-8f7b-4cef-844b-46afa4fe9f66",
+      "concept_code": "sp-sp2-sp3",
+      "concept_name": "sp, sp2, sp3 Hybridization",
+      "subject": "CHEMISTRY",
+      "class_level": "11",
+      "chapter": "chemical-bonding",
+      "topic": "hybridization",
+      "pdf": "Class 11/Chemistry/kech1dd/kech1dd/kech104.pdf",
+      "evidence": "owner_needle_window:score=4|hits=['hybridisation', 'sp hybrid', 'sp2', 'sp3']|prior=insufficient_token_hits:0/1|pdf=Class 11/Chemistry/kech1dd/kech1dd/kech104.pdf",
+      "facts": 4,
+      "summary": "es more effeFtiYe oYerlaSSing\nresulting in the formation of stronger bonds. Example\nof\nmolecule\nhaving\nsp\nhybridisation\nBeCl 2:\n7he ground state eleFtroniF\nFonfiguration of %e is \u0014s22s2\u0011 In the e[ited\nstate one of the 2s\u0010eleFtrons is Sromot",
+      "window_preview": "es more effeFtiYe oYerlaSSing resulting in the formation of stronger bonds. Example of molecule having sp hybridisation BeCl 2: 7he ground state eleFtroniF Fonfiguration of %e is \u0014s22s2\u0011 In the e[ited state one of the 2s\u0010eleFtrons is Sromoted to YaFant \u0015p orbital to aFFount for i"
+    },
+    {
+      "status": "CREATED",
+      "ku_id": "37171f22-2e57-4aeb-9719-d276816cddc6",
+      "concept_id": "a5ddc0f3-60b1-4066-820e-745190fa7fc6",
+      "concept_code": "primary-and-secondary-valency",
+      "concept_name": "Primary and Secondary Valencies",
+      "subject": "CHEMISTRY",
+      "class_level": "12",
+      "chapter": "coordination-compounds",
+      "topic": "werners-theory-and-terminology",
+      "pdf": "Class 12/Chemistry 1/lech1dd/lech105.pdf",
+      "evidence": "owner_needle_window:score=4|hits=['primary valence', 'secondary valence', 'Werner', 'coordination compounds']|prior=insufficient_token_hits:2/3|pdf=Class 12/Chemistry 1/lech1dd/lech105.pdf",
+      "facts": 8,
+      "summary": "118\nChemistry\nIn the previous Unit we learnt that the transition metals\nform a large number of complex compounds in which\nthe metal atoms are bound to a number of anions or\nneutral molecules by sharing of electrons. In modern\nterminology su",
+      "window_preview": "118 Chemistry In the previous Unit we learnt that the transition metals form a large number of complex compounds in which the metal atoms are bound to a number of anions or neutral molecules by sharing of electrons. In modern terminology such compounds are called coordination com"
+    },
+    {
+      "status": "CREATED",
+      "ku_id": "d0ddb971-6efa-4cc0-9408-223eef617984",
+      "concept_id": "2432e7e9-3fba-4957-991f-b9323b76b020",
+      "concept_code": "concentration-expressions",
+      "concept_name": "Concentration Expressions",
+      "subject": "CHEMISTRY",
+      "class_level": "12",
+      "chapter": "solutions",
+      "topic": "types-and-concentration-of-solutions",
+      "pdf": "Class 12/Chemistry 1/lech1dd/lech101.pdf",
+      "evidence": "owner_needle_window:score=4|hits=['molality', 'molarity', 'mole fraction', 'mass percentage']|prior=insufficient_token_hits:1/2|pdf=Class 12/Chemistry 1/lech1dd/lech101.pdf",
+      "facts": 8,
+      "summary": ", 0.25 mol L-1 (or 0.25 M) solution of NaOH means that\n0.25 mol of NaOH has been dissolved in one litre (or one cubic decimetre). Example 1.2\nExample 1.2\nExample 1.2\nExample 1.2\nExample 1.2\nCalculate the molarity of a solution containing 5 ",
+      "window_preview": ", 0.25 mol L–1 (or 0.25 M) solution of NaOH means that 0.25 mol of NaOH has been dissolved in one litre (or one cubic decimetre). Example 1.2 Example 1.2 Example 1.2 Example 1.2 Example 1.2 Calculate the molarity of a solution containing 5 g of NaOH in 450 mL solution. Moles of N"
+    },
+    {
+      "status": "CREATED",
+      "ku_id": "d4a42b6a-80c5-4a83-823a-e86565a2f8f1",
+      "concept_id": "61e7ae09-2ca1-4b26-ba8c-fbc9d56b0f53",
+      "concept_code": "factors-affecting-resistance",
+      "concept_name": "Factors Affecting Resistance",
+      "subject": "PHYSICS",
+      "class_level": "12",
+      "chapter": "current-electricity",
+      "topic": "resistance-resistivity",
+      "pdf": "Class 12/Physics/leph1dd/leph103.pdf",
+      "evidence": "owner_needle_window:score=2|hits=['resistivity', 'depends on the material']|prior=insufficient_token_hits:1/3|pdf=Class 12/Physics/leph1dd/leph103.pdf",
+      "facts": 8,
+      "summary": "Imagine placing two such\nidentical slabs side by side [Fig. 3.2(b)], so that the length of the\ncombination is 2l.",
+      "window_preview": "rea A [Fig. 3.2(a)]. Imagine placing two such identical slabs side by side [Fig. 3.2(b)], so that the length of the combination is 2l. The current flowing through the combination is the same as that flowing through either of the slabs. If V is the potential difference across the "
+    },
+    {
+      "status": "CREATED",
+      "ku_id": "0c70cdbf-f83c-4095-9195-a057da198f6d",
+      "concept_id": "323c3c8a-ce3c-428f-9edb-20edf42574e9",
+      "concept_code": "cardiac-cycle-phases",
+      "concept_name": "Cardiac Cycle Phases",
+      "subject": "ZOOLOGY",
+      "class_level": "11",
+      "chapter": "body-fluids-circulation",
+      "topic": "cardiac-cycle",
+      "pdf": "Class 11/Biology/kebo1dd/kebo115.pdf",
+      "evidence": "owner_needle_window:score=4|hits=['cardiac cycle', 'systole', 'diastole', 'joint diastole']|prior=insufficient_token_hits:2/3|pdf=Class 11/Biology/kebo1dd/kebo115.pdf",
+      "facts": 8,
+      "summary": "AN can generate the maximum number of action\npotentials, i.e., 70-75 min-1, and is responsible for initiating and\nmaintaining the rhythmic contractile activity of the heart. Our heart normally beats 70-75 times in a minute\n(average 72 beats",
+      "window_preview": "AN can generate the maximum number of action potentials, i.e., 70-75 min–1, and is responsible for initiating and maintaining the rhythmic contractile activity of the heart. Therefore, it is called the pacemaker. Our heart normally beats 70-75 times in a minute (average 72 beats "
+    },
+    {
+      "status": "CREATED",
+      "ku_id": "ad676892-1ac6-4808-9197-02802e7ba26a",
+      "concept_id": "ee354ed6-913e-4041-b67b-25297520f7b2",
+      "concept_code": "heart-structure",
+      "concept_name": "Structure of the Human Heart",
+      "subject": "ZOOLOGY",
+      "class_level": "11",
+      "chapter": "body-fluids-circulation",
+      "topic": "human-heart-anatomy",
+      "pdf": "Class 11/Biology/kebo1dd/kebo115.pdf",
+      "evidence": "owner_needle_window:score=4|hits=['human heart', 'pericardium', 'atria', 'ventricles']|prior=insufficient_token_hits:2/3|pdf=Class 11/Biology/kebo1dd/kebo115.pdf",
+      "facts": 8,
+      "summary": "cle, whereas crocodiles, birds and mammals possess a\n4-chambered heart with two atria and two ventricles. In fishes the heart\npumps out deoxygenated blood which is oxygenated by the gills and\nsupplied to the body parts from where deoxygenat",
+      "window_preview": "cle, whereas crocodiles, birds and mammals possess a 4-chambered heart with two atria and two ventricles. In fishes the heart pumps out deoxygenated blood which is oxygenated by the gills and supplied to the body parts from where deoxygenated blood is returned to the heart (singl"
+    },
+    {
+      "status": "CREATED",
+      "ku_id": "344937d3-d671-4db3-a9aa-125d1a24c3ab",
+      "concept_id": "715018f3-afe3-4554-a542-41a72cc0dac2",
+      "concept_code": "gonads-ducts",
+      "concept_name": "Gonads and Ducts",
+      "subject": "ZOOLOGY",
+      "class_level": "12",
+      "chapter": "human-reproduction",
+      "topic": "reproductive-systems",
+      "pdf": "Class 12/Biology/lebo1dd/lebo102.pdf",
+      "evidence": "owner_needle_window:score=5|hits=['male reproductive system', 'female reproductive system', 'fallopian', 'vas deferens', 'ovaries']|prior=insufficient_token_hits:1/2|pdf=Class 12/Biology/lebo1dd/lebo102.pdf",
+      "facts": 8,
+      "summary": "didymis leads to vas deferens that ascends to the\nabdomen and loops over the urinary bladder. It receives a duct from seminal\nvesicle and opens into urethra as the ejaculatory duct (Figure 2.1a).",
+      "window_preview": "didymis leads to vas deferens that ascends to the abdomen and loops over the urinary bladder. It receives a duct from seminal vesicle and opens into urethra as the ejaculatory duct (Figure 2.1a). These ducts store and transport the sperms from the testis to the outside through ur"
+    },
+    {
+      "status": "CREATED",
+      "ku_id": "6d428f44-1166-4821-b401-7210a8a3da16",
+      "concept_id": "e19845d7-7a12-46b1-8e05-565ad85f62b4",
+      "concept_code": "menstrual-phases",
+      "concept_name": "Menstrual Cycle Phases",
+      "subject": "ZOOLOGY",
+      "class_level": "12",
+      "chapter": "human-reproduction",
+      "topic": "cycle-fertilization",
+      "pdf": "Class 12/Biology/lebo1dd/lebo102.pdf",
+      "evidence": "owner_needle_window:score=4|hits=['menstrual cycle', 'menstrual phase', 'follicular phase', 'luteal phase']|prior=insufficient_token_hits:2/3|pdf=Class 12/Biology/lebo1dd/lebo102.pdf",
+      "facts": 8,
+      "summary": "Can you\nidentify major differences between\nspermatogenesis and oogenesis? A diagrammatic representation of\nspermatogenesis and oogenesis is given below (Figure 2.8).",
+      "window_preview": "ovulation. Can you identify major differences between spermatogenesis and oogenesis? A diagrammatic representation of spermatogenesis and oogenesis is given below (Figure 2.8). Figure 2.7 Diagrammatic Section view of ovary Figure 2.8 Schematic representation of (a) Spermatogenesi"
+    }
+  ],
+  "skipped": [],
+  "failed": [],
+  "subject_additions": {
+    "BOTANY": 3,
+    "CHEMISTRY": 3,
+    "PHYSICS": 1,
+    "ZOOLOGY": 4
+  },
+  "jobs_created": 9,
+  "pdfs_used": [
+    "Class 11/Biology/kebo1dd/kebo103.pdf",
+    "Class 11/Biology/kebo1dd/kebo109.pdf",
+    "Class 11/Biology/kebo1dd/kebo115.pdf",
+    "Class 11/Chemistry/kech1dd/kech1dd/kech104.pdf",
+    "Class 12/Biology/lebo1dd/lebo102.pdf",
+    "Class 12/Biology/lebo1dd/lebo109.pdf",
+    "Class 12/Chemistry 1/lech1dd/lech101.pdf",
+    "Class 12/Chemistry 1/lech1dd/lech105.pdf",
+    "Class 12/Physics/leph1dd/leph103.pdf"
+  ],
+  "before": {
+    "status": {
+      "DRAFT": 5298,
+      "PUBLISHED": 1479,
+      "SUPERSEDED": 6,
+      "IN_REVIEW": 111
+    },
+    "unmapped_draft": 5024,
+    "chapters": 56,
+    "topics": 192,
+    "concepts": 318,
+    "knowledge_units": 370,
+    "question_blueprints": 266,
+    "content_batches": 11,
+    "generation_jobs": 204,
+    "generation_runs": 204,
+    "generation_candidates": 392,
+    "studymaterial_path_kus": 73,
+    "digestion_kus": 0,
+    "ncert_books_passed_kus": 297,
+    "concepts_with_ncert_ku": 297
+  },
+  "after": {
+    "status": {
+      "DRAFT": 5298,
+      "PUBLISHED": 1479,
+      "SUPERSEDED": 6,
+      "IN_REVIEW": 111
+    },
+    "unmapped_draft": 5024,
+    "chapters": 56,
+    "topics": 192,
+    "concepts": 318,
+    "knowledge_units": 381,
+    "question_blueprints": 266,
+    "content_batches": 11,
+    "generation_jobs": 204,
+    "generation_runs": 204,
+    "generation_candidates": 392,
+    "studymaterial_path_kus": 73,
+    "digestion_kus": 0,
+    "ncert_books_passed_kus": 308,
+    "concepts_with_ncert_ku": 308
+  },
+  "freeze_ok_before": true,
+  "freeze_ok_after": true,
+  "ku_delta_matches_created": true,
+  "factory_orchestration_unchanged": true,
+  "taxonomy_review_unchanged": true,
+  "sv2c_botany_15_unchanged": true,
+  "syngamy_unchanged": true,
+  "taxonomy_fingerprints": {
+    "before": {
+      "sv2c-chemistry-04": {
+        "code": "sv2c-chemistry-04",
+        "concept_id": "4e0b026a-f99e-47da-a07c-528bbdde75e4",
+        "name": "Molarity definition",
+        "updated_at": "2026-09-03 22:15:48.931501+05:30",
+        "ku_count": 0
+      },
+      "sv2c-chemistry-14": {
+        "code": "sv2c-chemistry-14",
+        "concept_id": "8190e64d-10eb-4304-b3d4-11446bbb63eb",
+        "name": "Electronegativity and bond type",
+        "updated_at": "2026-09-03 22:15:49.101572+05:30",
+        "ku_count": 0
+      },
+      "sv2c-chemistry-19": {
+        "code": "sv2c-chemistry-19",
+        "concept_id": "bc58f717-ffd3-42e9-af40-0ed0d98bf798",
+        "name": "Second law / Gibbs energy qualitative",
+        "updated_at": "2026-09-03 22:15:49.192677+05:30",
+        "ku_count": 0
+      },
+      "sv2c-chemistry-34": {
+        "code": "sv2c-chemistry-34",
+        "concept_id": "bc5883a0-1825-4ff6-9b2e-9d6a7253623a",
+        "name": "Concentration dependence of EMF (qualitative)",
+        "updated_at": "2026-09-03 22:15:49.439465+05:30",
+        "ku_count": 0
+      },
+      "sv2c-botany-02": {
+        "code": "sv2c-botany-02",
+        "concept_id": "8d237982-1a14-4339-96d5-7b6e002b725b",
+        "name": "Herbarium / botanical gardens / keys (qualitative)",
+        "updated_at": "2026-09-03 22:15:49.552606+05:30",
+        "ku_count": 0
+      },
+      "sv2c-botany-14": {
+        "code": "sv2c-botany-14",
+        "concept_id": "9692fbef-270a-4b93-a4c1-c8783c43455c",
+        "name": "SDP/LDP qualitative",
+        "updated_at": "2026-09-03 22:15:50.781652+05:30",
+        "ku_count": 0
+      },
+      "sv2c-zoology-05": {
+        "code": "sv2c-zoology-05",
+        "concept_id": "f051f535-f332-40a1-b911-015c1a803887",
+        "name": "Selected morphology of cockroach or frog",
+        "updated_at": "2026-09-03 22:15:51.396485+05:30",
+        "ku_count": 0
+      },
+      "sv2c-zoology-08": {
+        "code": "sv2c-zoology-08",
+        "concept_id": "91744e39-155b-4ef8-b8b0-6e961505f6e2",
+        "name": "Pathway of air / alveoli",
+        "updated_at": "2026-09-03 22:15:51.742181+05:30",
+        "ku_count": 0
+      },
+      "sv2c-zoology-12": {
+        "code": "sv2c-zoology-12",
+        "concept_id": "6e0ec671-708a-452f-8900-6072839a5eb2",
+        "name": "P, QRS, T waves",
+        "updated_at": "2026-09-03 22:15:52.152786+05:30",
+        "ku_count": 0
+      },
+      "sv2c-zoology-15": {
+        "code": "sv2c-zoology-15",
+        "concept_id": "f0a5b9d4-fe0b-4733-92fe-7d6d1525fe31",
+        "name": "Pulmonary vs systemic circuit",
+        "updated_at": "2026-09-03 22:15:52.446877+05:30",
+        "ku_count": 0
+      }
+    },
+    "after": {
+      "sv2c-chemistry-04": {
+        "code": "sv2c-chemistry-04",
+        "concept_id": "4e0b026a-f99e-47da-a07c-528bbdde75e4",
+        "name": "Molarity definition",
+        "updated_at": "2026-09-03 22:15:48.931501+05:30",
+        "ku_count": 0
+      },
+      "sv2c-chemistry-14": {
+        "code": "sv2c-chemistry-14",
+        "concept_id": "8190e64d-10eb-4304-b3d4-11446bbb63eb",
+        "name": "Electronegativity and bond type",
+        "updated_at": "2026-09-03 22:15:49.101572+05:30",
+        "ku_count": 0
+      },
+      "sv2c-chemistry-19": {
+        "code": "sv2c-chemistry-19",
+        "concept_id": "bc58f717-ffd3-42e9-af40-0ed0d98bf798",
+        "name": "Second law / Gibbs energy qualitative",
+        "updated_at": "2026-09-03 22:15:49.192677+05:30",
+        "ku_count": 0
+      },
+      "sv2c-chemistry-34": {
+        "code": "sv2c-chemistry-34",
+        "concept_id": "bc5883a0-1825-4ff6-9b2e-9d6a7253623a",
+        "name": "Concentration dependence of EMF (qualitative)",
+        "updated_at": "2026-09-03 22:15:49.439465+05:30",
+        "ku_count": 0
+      },
+      "sv2c-botany-02": {
+        "code": "sv2c-botany-02",
+        "concept_id": "8d237982-1a14-4339-96d5-7b6e002b725b",
+        "name": "Herbarium / botanical gardens / keys (qualitative)",
+        "updated_at": "2026-09-03 22:15:49.552606+05:30",
+        "ku_count": 0
+      },
+      "sv2c-botany-14": {
+        "code": "sv2c-botany-14",
+        "concept_id": "9692fbef-270a-4b93-a4c1-c8783c43455c",
+        "name": "SDP/LDP qualitative",
+        "updated_at": "2026-09-03 22:15:50.781652+05:30",
+        "ku_count": 0
+      },
+      "sv2c-zoology-05": {
+        "code": "sv2c-zoology-05",
+        "concept_id": "f051f535-f332-40a1-b911-015c1a803887",
+        "name": "Selected morphology of cockroach or frog",
+        "updated_at": "2026-09-03 22:15:51.396485+05:30",
+        "ku_count": 0
+      },
+      "sv2c-zoology-08": {
+        "code": "sv2c-zoology-08",
+        "concept_id": "91744e39-155b-4ef8-b8b0-6e961505f6e2",
+        "name": "Pathway of air / alveoli",
+        "updated_at": "2026-09-03 22:15:51.742181+05:30",
+        "ku_count": 0
+      },
+      "sv2c-zoology-12": {
+        "code": "sv2c-zoology-12",
+        "concept_id": "6e0ec671-708a-452f-8900-6072839a5eb2",
+        "name": "P, QRS, T waves",
+        "updated_at": "2026-09-03 22:15:52.152786+05:30",
+        "ku_count": 0
+      },
+      "sv2c-zoology-15": {
+        "code": "sv2c-zoology-15",
+        "concept_id": "f0a5b9d4-fe0b-4733-92fe-7d6d1525fe31",
+        "name": "Pulmonary vs systemic circuit",
+        "updated_at": "2026-09-03 22:15:52.446877+05:30",
+        "ku_count": 0
+      }
+    }
+  },
+  "botany_fingerprints": {
+    "before": {
+      "sv2c-botany-15": {
+        "code": "sv2c-botany-15",
+        "concept_id": "2beef8b8-b80a-49cc-ab5b-60a56c8d08da",
+        "name": "Syngamy and triple fusion",
+        "updated_at": "2026-09-03 22:15:50.875925+05:30",
+        "ku_count": 1
+      },
+      "syngamy-and-triple-fusion": {
+        "code": "syngamy-and-triple-fusion",
+        "concept_id": "0904c2ef-7a1a-484e-9a12-1db45e0a5347",
+        "name": "Syngamy and Triple Fusion",
+        "updated_at": "2026-09-13 16:42:45.000791+05:30",
+        "ku_count": 1
+      }
+    },
+    "after": {
+      "sv2c-botany-15": {
+        "code": "sv2c-botany-15",
+        "concept_id": "2beef8b8-b80a-49cc-ab5b-60a56c8d08da",
+        "name": "Syngamy and triple fusion",
+        "updated_at": "2026-09-03 22:15:50.875925+05:30",
+        "ku_count": 1
+      },
+      "syngamy-and-triple-fusion": {
+        "code": "syngamy-and-triple-fusion",
+        "concept_id": "0904c2ef-7a1a-484e-9a12-1db45e0a5347",
+        "name": "Syngamy and Triple Fusion",
+        "updated_at": "2026-09-13 16:42:45.000791+05:30",
+        "ku_count": 1
+      }
+    }
+  },
+  "tests": {
+    "passed": 63,
+    "failed": 0,
+    "exit_code": 0,
+    "command": "D:\\ravishori\\AI Neet Exam App\\apps\\backend\\.venv\\Scripts\\python.exe -m pytest app/modules/ingestion/tests/test_ncert_canonical_source.py app/modules/knowledge/tests/test_grounding_check.py app/modules/academic/tests/test_cf_c1_chemistry_class_12.py app/modules/academic/tests/test_chapter_class_level.py tests/test_phase32_content_readiness_safety.py tests/test_phase33_ecaep_publication_safety.py -q --tb=line",
+    "tail": "\napp/modules/academic/tests/test_cf_c1_chemistry_class_12.py::test_all_nine_new_chem12_chapters_present_in_seed\n  app\\modules\\academic\\tests\\test_cf_c1_chemistry_class_12.py:76: PytestWarning: The test <Function test_all_nine_new_chem12_chapters_present_in_seed> is marked with '@pytest.mark.asyncio' but it is not an async function. Please remove the asyncio mark. If the test is not marked explicitly, check for global marks applied via 'pytestmark'.\n    def test_all_nine_new_chem12_chapters_present_in_seed():\n\napp/modules/academic/tests/test_cf_c1_chemistry_class_12.py::test_electrochemistry_seed_row_is_unchanged\n  app\\modules\\academic\\tests\\test_cf_c1_chemistry_class_12.py:84: PytestWarning: The test <Function test_electrochemistry_seed_row_is_unchanged> is marked with '@pytest.mark.asyncio' but it is not an async function. Please remove the asyncio mark. If the test is not marked explicitly, check for global marks applied via 'pytestmark'.\n    def test_electrochemistry_seed_row_is_unchanged():\n\napp/modules/academic/tests/test_cf_c1_chemistry_class_12.py::test_no_duplicate_chapter_slugs_across_all_chemistry\n  app\\modules\\academic\\tests\\test_cf_c1_chemistry_class_12.py:97: PytestWarning: The test <Function test_no_duplicate_chapter_slugs_across_all_chemistry> is marked with '@pytest.mark.asyncio' but it is not an async function. Please remove the asyncio mark. If the test is not marked explicitly, check for global marks applied via 'pytestmark'.\n    def test_no_duplicate_chapter_slugs_across_all_chemistry():\n\napp/modules/academic/tests/test_cf_c1_chemistry_class_12.py::test_topic_slugs_are_unique_within_chemistry\n  app\\modules\\academic\\tests\\test_cf_c1_chemistry_class_12.py:102: PytestWarning: The test <Function test_topic_slugs_are_unique_within_chemistry> is marked with '@pytest.mark.asyncio' but it is not an async function. Please remove the asyncio mark. If the test is not marked explicitly, check for global marks applied via 'pytestmark'.\n    def test_topic_slugs_are_unique_within_chemistry():\n\napp/modules/academic/tests/test_cf_c1_chemistry_class_12.py::test_concept_slugs_are_unique_within_chemistry\n  app\\modules\\academic\\tests\\test_cf_c1_chemistry_class_12.py:109: PytestWarning: The test <Function test_concept_slugs_are_unique_within_chemistry> is marked with '@pytest.mark.asyncio' but it is not an async function. Please remove the asyncio mark. If the test is not marked explicitly, check for global marks applied via 'pytestmark'.\n    def test_concept_slugs_are_unique_within_chemistry():\n\napp/modules/academic/tests/test_cf_c1_chemistry_class_12.py::test_every_new_chapter_has_source_grounded_topics_and_concepts\n  app\\modules\\academic\\tests\\test_cf_c1_chemistry_class_12.py:116: PytestWarning: The test <Function test_every_new_chapter_has_source_grounded_topics_and_concepts> is marked with '@pytest.mark.asyncio' but it is not an async function. Please remove the asyncio mark. If the test is not marked explicitly, check for global marks applied via 'pytestmark'.\n    def test_every_new_chapter_has_source_grounded_topics_and_concepts():\n\napp/modules/academic/tests/test_cf_c1_chemistry_class_12.py::test_physics_seed_is_unchanged_by_cf_c1\n  app\\modules\\academic\\tests\\test_cf_c1_chemistry_class_12.py:134: PytestWarning: The test <Function test_physics_seed_is_unchanged_by_cf_c1> is marked with '@pytest.mark.asyncio' but it is not an async function. Please remove the asyncio mark. If the test is not marked explicitly, check for global marks applied via 'pytestmark'.\n    def test_physics_seed_is_unchanged_by_cf_c1():\n\napp/modules/academic/tests/test_cf_c1_chemistry_class_12.py::test_botany_seed_is_unchanged_by_cf_c1\n  app\\modules\\academic\\tests\\test_cf_c1_chemistry_class_12.py:149: PytestWarning: The test <Function test_botany_seed_is_unchanged_by_cf_c1> is marked with '@pytest.mark.asyncio' but it is not an async function. Please remove the asyncio mark. If the test is not marked explicitly, check for global marks applied via 'pytestmark'.\n    def test_botany_seed_is_unchanged_by_cf_c1():\n\napp/modules/academic/tests/test_cf_c1_chemistry_class_12.py::test_zoology_seed_is_unchanged_by_cf_c1\n  app\\modules\\academic\\tests\\test_cf_c1_chemistry_class_12.py:160: PytestWarning: The test <Function test_zoology_seed_is_unchanged_by_cf_c1> is marked with '@pytest.mark.asyncio' but it is not an async function. Please remove the asyncio mark. If the test is not marked explicitly, check for global marks applied via 'pytestmark'.\n    def test_zoology_seed_is_unchanged_by_cf_c1():\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n63 passed, 15 warnings in 57.58s\nsys:1: DeprecationWarning: builtin type swigvarlink has no __module__ attribute"
+  },
+  "files_changed": [
+    "docs/audits/ku_owner_remediation_001_20260913.md",
+    "docs/audits/ku_owner_remediation_001_20260913.json",
+    "apps/backend/scripts/ku_owner_remediation_001_accepted_kus.py"
+  ],
+  "confirmation": {
+    "only_accept_ku_processed": true,
+    "taxonomy_review_untouched": true,
+    "sv2c_botany_15_untouched": true,
+    "syngamy_and_triple_fusion_untouched": true,
+    "blueprints_created": false,
+    "mcqs_generated": false,
+    "concepts_modified": false,
+    "topics_modified": false,
+    "chapters_modified": false,
+    "committed": false,
+    "pushed": false
+  }
+}

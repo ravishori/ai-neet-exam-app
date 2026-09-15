@@ -70,3 +70,8 @@ class FakeGeminiProvider(_ScriptedFake):
 class FakeMistralProvider(_ScriptedFake):
     def __init__(self, *, behavior: str = "success", model: str = "mistral-small-latest"):
         super().__init__("mistral", model, behavior=behavior)
+
+
+class FakeSarvamProvider(_ScriptedFake):
+    def __init__(self, *, behavior: str = "success", model: str = "sarvam-105b"):
+        super().__init__("sarvam", model, behavior=behavior)

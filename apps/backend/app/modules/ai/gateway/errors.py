@@ -20,10 +20,16 @@ def classify_http_error(provider: str, status: int | None, body: str = "", exc: 
     text = (body or str(exc or "")).lower()
     if status in {401, 403} or "invalid api key" in text or "authentication" in text or "unauthorized" in text:
         return ProviderError(PROVIDER_AUTH_FAILED, "Provider authentication failed", provider=provider, retryable=False)
-    if status == 429 or "rate limit" in text or "quota" in text:
-        return ProviderError(PROVIDER_RATE_LIMITED, "Provider rate limited", provider=provider, retryable=True)
-    if "credit" in text and ("balance" in text or "billing" in text or "too low" in text):
+    # Billing / credits must NEVER be treated as retryable 429.
+    if (
+        ("credit" in text and ("balance" in text or "billing" in text or "too low" in text or "insufficient" in text))
+        or ("billing" in text and ("hard limit" in text or "exceeded" in text or "disabled" in text))
+        or ("payment" in text and ("required" in text or "failed" in text))
+        or ("quota" in text and ("billing" in text or "purchase" in text or "plan" in text))
+    ):
         return ProviderError(PROVIDER_BLOCKED, "Provider billing/credits blocked", provider=provider, retryable=False)
+    if status == 429 or "rate limit" in text or ("quota" in text and "exceed" in text):
+        return ProviderError(PROVIDER_RATE_LIMITED, "Provider rate limited", provider=provider, retryable=True)
     if isinstance(exc, (httpx.TimeoutException, TimeoutError)) or "timeout" in text:
         return ProviderError(PROVIDER_TIMEOUT, "Provider request timed out", provider=provider, retryable=True)
     if status == 400 or "invalid" in text:

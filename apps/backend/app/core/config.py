@@ -55,10 +55,25 @@ class Settings(BaseSettings):
     mistral_api_key: str = ""
     mistral_enabled: bool = False
     mistral_model: str = "mistral-small-latest"
+    sarvam_api_key: str = ""
+    sarvam_enabled: bool = False
+    sarvam_model: str = "sarvam-105b"
     # Routing: fixed | fixed_model | fallback_chain — never silent cross-provider
     factory_provider_mode: str = "fixed"
     factory_provider: str = "anthropic"
     factory_provider_fallback_chain: str = ""  # e.g. openai,gemini,mistral
+
+    # MCQ-PROVIDER-ABSTRACTION-001 — explicit MCQ provider (aliases FACTORY_PROVIDER).
+    # Env: MCQ_PROVIDER=anthropic|google|gemini|openai|local|mistral|sarvam
+    # Empty → factory_provider. local requires openai_base_url (OpenAI-compatible).
+    mcq_provider: str = ""
+    mcq_allow_fallback_chain: bool = False  # opt-in only; silent switch forbidden
+    # Optional OpenAI-compatible base URL (cloud default when empty).
+    openai_base_url: str = ""
+    # Bounded backoff when PROVIDER_RATE_LIMITED during factory generation.
+    factory_rate_limit_backoff_base_s: float = 2.0
+    factory_rate_limit_backoff_max_s: float = 60.0
+    factory_rate_limit_max_retries_per_attempt: int = 3
 
     # FACTORY-P3 controlled AI pilot — hard caps (not production-scale).
     factory_max_pilot_generation_count: int = 100
@@ -106,6 +121,13 @@ class Settings(BaseSettings):
     # Fernet key for encrypting TOTP secrets at rest (url-safe base64 32-byte key)
     encryption_key: str = ""
 
+    # Twilio Verify (mobile OTP login). Never commit real values.
+    # Verify Service SID is provisioned in Twilio Console → Verify → Services
+    # and is separate from Account SID / Auth Token. Unset → mobile OTP fails closed.
+    twilio_account_sid: str = ""
+    twilio_auth_token: str = ""
+    twilio_verify_service_sid: str = ""
+
     # Ingestion pipeline (ADR-0022) — files must resolve inside this directory;
     # rejected otherwise. Defaults to <repo root>/StudyMaterial in a local
     # checkout, /data/studymaterial in the Docker image — see _default_data_dir.
@@ -124,6 +146,11 @@ class Settings(BaseSettings):
     # object storage is a distinct, separately-justified decision, not
     # something to default toward speculatively.
     visual_assets_dir: str = _default_data_dir("VisualAssets")
+
+    @property
+    def resolved_mcq_provider(self) -> str:
+        """Explicit MCQ provider name (MCQ_PROVIDER else FACTORY_PROVIDER)."""
+        return (self.mcq_provider or self.factory_provider or self.ai_provider_default or "anthropic").strip()
 
     @property
     def cors_origin_list(self) -> list[str]:

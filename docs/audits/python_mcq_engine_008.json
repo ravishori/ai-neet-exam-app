@@ -1,0 +1,99 @@
+{
+  "task_id": "PYTHON-MCQ-ENGINE-008",
+  "timestamp": "2026-09-14T16:10:56+0530",
+  "verdict": "GREEN",
+  "fact_id": "ncert-fact-v1-bbe13bb91d3757573671d3531c1912cd7c7c92e825153cf6400470f1f625fa99",
+  "failure_reason": "NCERT_GROUNDING_FAILED",
+  "grounding_detail_code": "NCERT_AMBIGUOUS",
+  "disposition": "RETIRED_REJECTED",
+  "engine_logic_modified": false,
+  "engine_006_fixture_modified": false,
+  "engine_006_fixture_sha256": "9c7c39d1a9ea676a1a8690e6762416fa78954216e6f7c9b618ad93ffe28441bf",
+  "engine_006_pack_input_sha256": "9c7c39d1a9ea676a1a8690e6762416fa78954216e6f7c9b618ad93ffe28441bf",
+  "remediation_fixture": "D:\\ravishori\\AI Neet Exam App\\apps\\backend\\tests\\fixtures\\python_mcq_engine_008_kinetics_rate_law_retired.json",
+  "canonical_ncert": {
+    "source_relative_path": "Class 12/Chemistry 1/lech1dd/lech103.pdf",
+    "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 1\\lech1dd\\lech103.pdf",
+    "evidence_text": "The equation like (3.4), which relates the rate of a reaction to concentration of reactants is called rate law or rate expression",
+    "also_present_parallel_definition": "The representation of rate of reaction in terms of concentration of the reactants is known as rate law",
+    "evidence_location_note": "Class 12 Chemistry Part I, Chemical Kinetics (lech103.pdf), rate law / rate expression definitional paragraphs near eqn (3.4)."
+  },
+  "syllabus_mapping": {
+    "subject": "CHEMISTRY",
+    "unit_number": 8,
+    "unit_name": "CHEMICAL KINETICS",
+    "topic_id": "CHEMISTRY:U08:T01",
+    "topic": "Rate of a chemical reaction, factors affecting the rate of reactions: concentration, temperature, pressure, and catalyst; elementary and complex reactions, order and molecularity of reactions, rate law, rate constant and its units, differential and integral forms of zero and first-order reactions, their characteristics and half-lives, the effect of temperature on the rate of reactions, Arrhenius theory, activation energy and its calculation, collision theory of bimolecular gaseous reactions (no derivation).",
+    "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt",
+    "syllabus_sha256": "82a616e31ba75d6e5d6422537c8ef5a4ceafb7a7e3449109696b12839b100ceb"
+  },
+  "taxonomy_mapping": {
+    "subject": "CHEMISTRY",
+    "class_level": "12",
+    "chapter": "Chemical Kinetics",
+    "topic": "Rate Law and Order of Reaction",
+    "concept": "Integrated Rate Equations",
+    "concept_binding_assessment": "MISALIGNED",
+    "concept_binding_detail": "Rate-law definition fact was bound to concept 'Integrated Rate Equations'; topic 'Rate Law and Order of Reaction' is appropriate, concept is not."
+  },
+  "root_cause": {
+    "category": "incorrect_fact_construction_and_taxonomy",
+    "summary": "Not an engine defect. Generation correctly fail-closed. Keyed option 'rate law or rate expression' and distractor 'rate law' are both independently NCERT-defensible, so claim grounding returns NCERT_AMBIGUOUS → NCERT_GROUNDING_FAILED. Secondary defect: concept misbinding to Integrated Rate Equations.",
+    "not_causes": [
+      "insufficient NCERT evidence extraction (quotes are present in PDF)",
+      "syllabus out-of-scope (Unit 8 includes rate law)",
+      "engine grounding false negative"
+    ]
+  },
+  "decision": {
+    "action": "RETIRE",
+    "review_status": "REJECTED",
+    "scope_review_outcome": "UNSUPPORTED",
+    "rationale": "Preserve fail-closed grounding. Do not manufacture a replacement MCQ. Do not weaken NCERT_AMBIGUOUS. Keep ENGINE-006 fixture immutable; record retirement in a separate remediation fixture."
+  },
+  "engine_007_invariants": {
+    "candidates_created": 99,
+    "independent_PASS": 99,
+    "verified_yield": 1.0,
+    "NCERT_GROUNDING_FAILED_skips": 1,
+    "reproducible_record_preserved": true
+  },
+  "database_before": {
+    "question_statuses": {
+      "DRAFT": 5552,
+      "PUBLISHED": 1479,
+      "SUPERSEDED": 6,
+      "IN_REVIEW": 111
+    },
+    "question_state_fingerprint": "741ce41e97dc4869c66b7bba5db5b3aa",
+    "unmapped_draft": 5034,
+    "blueprints": 445,
+    "knowledge_units": 381,
+    "content_reviews": 1824,
+    "engine_003_batches": 0
+  },
+  "database_after": {
+    "question_statuses": {
+      "DRAFT": 5552,
+      "PUBLISHED": 1479,
+      "SUPERSEDED": 6,
+      "IN_REVIEW": 111
+    },
+    "question_state_fingerprint": "741ce41e97dc4869c66b7bba5db5b3aa",
+    "unmapped_draft": 5034,
+    "blueprints": 445,
+    "knowledge_units": 381,
+    "content_reviews": 1824,
+    "engine_003_batches": 0
+  },
+  "production_safety_unchanged": true,
+  "provider_api_calls": 0,
+  "api_cost_inr": 0,
+  "production_db_mutations": 0,
+  "tests": {
+    "focused": "5 passed",
+    "regression": "29 passed (008+007+engine+gate; --noconftest)",
+    "ruff": "passed"
+  },
+  "recommended_next_task": "Do not auto-start ENGINE-009. When ready, optionally rebuild a reviewed eligible pack that excludes this rejected fact ID, then re-measure read-only yield if desired."
+}

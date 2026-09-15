@@ -8,7 +8,7 @@ prove the pipeline; the rest exist as chapters only, ready for Sprint 3's
 ECAEP content authoring to fill in.
 """
 
-from sqlalchemy import select
+from sqlalchemy import select, text
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.logging import get_logger
@@ -18,7 +18,8 @@ logger = get_logger("seed")
 
 # (code, name, weightage_percent, class_level, topics)
 # class_level ∈ {"11", "12", None}: NCERT class ownership from RS-003-B-1A.
-# ZOOLOGY 'biomolecules' is intentionally None — curriculum-owner unresolved.
+# Biology XI Biomolecules is project-owned by BOTANY (class 11) — owner decision
+# CF-C4b (canonical kebo109.pdf Ch 9). Not an NCERT Botany/Zoology claim.
 # topics: list of (code, name, concepts) — only populated for the one
 # "fully fleshed" chapter per subject; every other chapter has topics=[].
 PHYSICS_CHAPTERS = [
@@ -494,16 +495,14 @@ BOTANY_CHAPTERS = [
         ],
     ),
     ("plant-growth-development", "Plant Growth and Development", 3.0, "11", []),
+    # Project ownership BOTANY / class 11 — CF-C4b owner decision; source kebo109.pdf Ch 9.
+    ("biomolecules", "Biomolecules", 3.0, "11", []),
     ("sexual-reproduction-flowering-plants", "Sexual Reproduction in Flowering Plants", 3.0, "12", []),
 ]
 
 ZOOLOGY_CHAPTERS = [
     ("animal-kingdom", "Animal Kingdom", 4.0, "11", []),
     ("structural-organisation-animals", "Structural Organisation in Animals", 2.0, "11", []),
-    # class_level intentionally None — awaiting curriculum-owner decision
-    # (NCERT places Biomolecules in either Class 11 Ch 9 or Class 12 Ch 9;
-    # see RS-003-B-1A §7 / §16).
-    ("biomolecules", "Biomolecules", 3.0, None, []),
     ("digestion-absorption", "Digestion and Absorption", 2.0, "11", []),
     ("breathing-exchange-of-gases", "Breathing and Exchange of Gases", 3.0, "11", []),
     (
@@ -555,6 +554,90 @@ async def seed_academic(session: AsyncSession) -> None:
         await session.flush()
         logger.info("exam_seeded", code="NEET")
 
+    # CF-C4b: Biology XI Biomolecules project ownership is BOTANY / class 11.
+    # Reassign any leftover ZOOLOGY/biomolecules row (preserve chapter id + FKs)
+    # before the subject loop can create a duplicate under BOTANY.
+    botany_subj = (
+        await session.execute(select(Subject).where(Subject.code == "BOTANY", Subject.deleted_at.is_(None)))
+    ).scalar_one_or_none()
+    zoology_subj = (
+        await session.execute(select(Subject).where(Subject.code == "ZOOLOGY", Subject.deleted_at.is_(None)))
+    ).scalar_one_or_none()
+    if botany_subj and zoology_subj:
+        zoo_bio = (
+            await session.execute(
+                select(Chapter).where(
+                    Chapter.subject_id == zoology_subj.id,
+                    Chapter.code == "biomolecules",
+                    Chapter.deleted_at.is_(None),
+                )
+            )
+        ).scalar_one_or_none()
+        bot_bio = (
+            await session.execute(
+                select(Chapter).where(
+                    Chapter.subject_id == botany_subj.id,
+                    Chapter.code == "biomolecules",
+                    Chapter.deleted_at.is_(None),
+                )
+            )
+        ).scalar_one_or_none()
+        if zoo_bio and not bot_bio:
+            zoo_bio.subject_id = botany_subj.id
+            zoo_bio.class_level = "11"
+            await session.flush()
+            logger.info("biomolecules_ownership_reconciled", from_subject="ZOOLOGY", to_subject="BOTANY")
+        elif zoo_bio and bot_bio and zoo_bio.id != bot_bio.id:
+            # Prefer the row that already has content; soft-delete the empty stub.
+            from datetime import datetime, timezone
+
+            zoo_q = (
+                await session.execute(
+                    text(
+                        """
+                        SELECT COUNT(*) FROM cms.content_items ci
+                        JOIN academic.concepts c ON c.id = ci.concept_id
+                        JOIN academic.topics t ON t.id = c.topic_id
+                        WHERE t.chapter_id = :cid AND ci.deleted_at IS NULL
+                        """
+                    ),
+                    {"cid": zoo_bio.id},
+                )
+            ).scalar_one()
+            bot_q = (
+                await session.execute(
+                    text(
+                        """
+                        SELECT COUNT(*) FROM cms.content_items ci
+                        JOIN academic.concepts c ON c.id = ci.concept_id
+                        JOIN academic.topics t ON t.id = c.topic_id
+                        WHERE t.chapter_id = :cid AND ci.deleted_at IS NULL
+                        """
+                    ),
+                    {"cid": bot_bio.id},
+                )
+            ).scalar_one()
+            now = datetime.now(timezone.utc)
+            if zoo_q == 0 and bot_q >= 0:
+                zoo_bio.deleted_at = now
+                bot_bio.class_level = "11"
+                logger.info("biomolecules_zoology_empty_stub_soft_deleted", chapter_id=str(zoo_bio.id))
+            elif bot_q == 0 and zoo_q > 0:
+                bot_bio.deleted_at = now
+                zoo_bio.subject_id = botany_subj.id
+                zoo_bio.class_level = "11"
+                logger.info("biomolecules_botany_empty_stub_soft_deleted_moved_zoology")
+            else:
+                # Both have content — do not auto-delete; leave for operator.
+                logger.warning(
+                    "biomolecules_duplicate_chapters_manual_review",
+                    zoology_id=str(zoo_bio.id),
+                    botany_id=str(bot_bio.id),
+                    zoo_q=zoo_q,
+                    bot_q=bot_q,
+                )
+            await session.flush()
+
     for subject_order, (subject_code, subject_name, chapters) in enumerate(SUBJECTS):
         result = await session.execute(
             select(Subject).where(Subject.exam_id == exam.id, Subject.code == subject_code)
@@ -568,7 +651,11 @@ async def seed_academic(session: AsyncSession) -> None:
 
         for chapter_order, (chapter_code, chapter_name, weightage, class_level, topics) in enumerate(chapters):
             result = await session.execute(
-                select(Chapter).where(Chapter.subject_id == subject.id, Chapter.code == chapter_code)
+                select(Chapter).where(
+                    Chapter.subject_id == subject.id,
+                    Chapter.code == chapter_code,
+                    Chapter.deleted_at.is_(None),
+                )
             )
             chapter = result.scalar_one_or_none()
             if not chapter:

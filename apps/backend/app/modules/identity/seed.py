@@ -114,4 +114,19 @@ async def seed_identity(session: AsyncSession) -> None:
                 session.add(RolePermission(role_id=role.id, permission_id=permission.id))
 
     await session.commit()
+
+    # Geo master data (states / cities) — idempotent, sourced from
+    # apps/backend/app/modules/identity/data/india_cities_source.json which is
+    # exported from Cities-List.xlsx by scripts/geo/import_cities_xlsx.py.
+    from app.modules.identity.geo_seed import seed_geo_master
+
+    result = await seed_geo_master(session)
+    logger.info(
+        "identity_geo_seeded",
+        source_states=result.source_states,
+        source_cities=result.source_cities,
+        states_inserted=result.states_inserted,
+        cities_inserted=result.cities_inserted,
+    )
+
     logger.info("identity_seed_complete")

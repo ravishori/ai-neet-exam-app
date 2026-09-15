@@ -1,0 +1,536 @@
+{
+  "schema_version": "ncert_fact_pack_v1",
+  "pack_id": "python-mcq-engine-004-biomolecules-reviewed-v1",
+  "facts": [
+    {
+      "schema_version": "ncert_fact_pack_v1",
+      "fact_id": "ncert-fact-v1-8cf231c8f2366c1202c3726f2f6d5d7a3923e58bd8418c6b1ab390e6acf0687b",
+      "subject": "CHEMISTRY",
+      "class_level": "12",
+      "chapter_id": "933a0d17-537f-4995-b0ae-6ce23a32a449",
+      "chapter": "Biomolecules",
+      "topic_id": "8927ce2d-26d4-4e3a-aa11-3a3f27279a5a",
+      "topic": "Carbohydrates",
+      "concept_id": "9384555f-5e4e-4273-943e-caa935827bba",
+      "concept_name": "Classification of Carbohydrates",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 2\\lech2dd\\lech205.pdf",
+      "source_relative_path": "Class 12/Chemistry 2/lech2dd/lech205.pdf",
+      "ncert_reference": {
+        "reference_level": "SOURCE_TEXT_ONLY"
+      },
+      "evidence_text": "is called a monosaccharide",
+      "fact_type": "DEFINITION",
+      "canonical_fact": "is called a monosaccharide",
+      "allowed_transformations": [
+        "DEFINITION_IDENTIFICATION",
+        "OPTION_PERMUTATION"
+      ],
+      "allowed_distractors": [
+        {
+          "value": "Oligosaccharide",
+          "source": "SAME_EVIDENCE",
+          "evidence_text": "yield two to ten monosaccharide units"
+        },
+        {
+          "value": "Disaccharide",
+          "source": "SAME_EVIDENCE",
+          "evidence_text": "The two monosaccharide units obtained on hydrolysis of a disaccharide"
+        },
+        {
+          "value": "Polysaccharide",
+          "source": "SAME_EVIDENCE",
+          "evidence_text": "yield a large number of monosaccharide units"
+        }
+      ],
+      "syllabus_binding": {
+        "subject": "CHEMISTRY",
+        "unit_number": 19,
+        "unit_name": "BIOMOLECULES",
+        "topic_id": "CHEMISTRY:U19:T02",
+        "topic": "Carbohydrates: Classification; aldoses and ketoses: monosaccharides (glucose and fructose) and constituent monosaccharides of oligosaccharides (sucrose, lactose, and maltose).",
+        "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+      },
+      "review_status": "REVIEWED",
+      "provenance": {
+        "origin": "canonical_ncert",
+        "extraction_method": "manual_extraction",
+        "extracted_by": "PYTHON-MCQ-ENGINE-001",
+        "source_audit": "docs/audits/python_mcq_engine_003.json"
+      },
+      "review_record": {
+        "reviewed_by": "PYTHON-MCQ-ENGINE-003",
+        "reviewed_at": "2026-09-14T14:13:00+05:30",
+        "review_method": "fact-quality gate plus ENGINE-002 independent review"
+      },
+      "scope_review": {
+        "outcome": "SUPPORTED",
+        "reviewed_by": "PYTHON-MCQ-ENGINE-003",
+        "reviewed_at": "2026-09-14T14:13:00+05:30",
+        "review_method": "syllabus taxonomy and option-defensibility review",
+        "syllabus_rationale": "Carbohydrate classification explicitly includes monosaccharides.",
+        "taxonomy_rationale": "The definition directly matches Classification of Carbohydrates.",
+        "source_audit": "docs/audits/python_mcq_engine_003.json"
+      },
+      "question_template": {
+        "question_type": "DEFINITION_IDENTIFICATION",
+        "transformation": "DEFINITION_IDENTIFICATION",
+        "stem": "What is a carbohydrate that cannot be hydrolysed further to a simpler polyhydroxy aldehyde or ketone called?",
+        "stem_evidence_quote": "A carbohydrate that cannot be hydrolysed further",
+        "options": [
+          {
+            "key": "mono",
+            "text": "Monosaccharide",
+            "evidence_quote": "is called a monosaccharide",
+            "relation_to_stem": "ANSWERS_STEM"
+          },
+          {
+            "key": "oligo",
+            "text": "Oligosaccharide",
+            "evidence_quote": "yield two to ten monosaccharide units",
+            "relation_to_stem": "DOES_NOT_ANSWER_STEM"
+          },
+          {
+            "key": "disaccharide",
+            "text": "Disaccharide",
+            "evidence_quote": "The two monosaccharide units obtained on hydrolysis of a disaccharide",
+            "relation_to_stem": "DOES_NOT_ANSWER_STEM"
+          },
+          {
+            "key": "poly",
+            "text": "Polysaccharide",
+            "evidence_quote": "yield a large number of monosaccharide units",
+            "relation_to_stem": "DOES_NOT_ANSWER_STEM"
+          }
+        ],
+        "correct_key": "mono",
+        "explanation": "NCERT defines such a carbohydrate as a monosaccharide.",
+        "explanation_evidence_quote": "is called a monosaccharide",
+        "difficulty": "easy"
+      }
+    },
+    {
+      "schema_version": "ncert_fact_pack_v1",
+      "fact_id": "ncert-fact-v1-47bdde71f10baac862b408936f8b7c1cd95be6ca798c77701be5da8bf9f48a2c",
+      "subject": "CHEMISTRY",
+      "class_level": "12",
+      "chapter_id": "933a0d17-537f-4995-b0ae-6ce23a32a449",
+      "chapter": "Biomolecules",
+      "topic_id": "8927ce2d-26d4-4e3a-aa11-3a3f27279a5a",
+      "topic": "Carbohydrates",
+      "concept_id": "9384555f-5e4e-4273-943e-caa935827bba",
+      "concept_name": "Classification of Carbohydrates",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 2\\lech2dd\\lech205.pdf",
+      "source_relative_path": "Class 12/Chemistry 2/lech2dd/lech205.pdf",
+      "ncert_reference": {
+        "reference_level": "SOURCE_TEXT_ONLY"
+      },
+      "evidence_text": "are called polysaccharides",
+      "fact_type": "DEFINITION",
+      "canonical_fact": "are called polysaccharides",
+      "allowed_transformations": [
+        "DEFINITION_IDENTIFICATION",
+        "OPTION_PERMUTATION"
+      ],
+      "allowed_distractors": [
+        {
+          "value": "Oligosaccharide",
+          "source": "SAME_EVIDENCE",
+          "evidence_text": "yield two to ten monosaccharide units"
+        },
+        {
+          "value": "Monosaccharide",
+          "source": "SAME_EVIDENCE",
+          "evidence_text": "is called a monosaccharide"
+        },
+        {
+          "value": "Disaccharide",
+          "source": "SAME_EVIDENCE",
+          "evidence_text": "The two monosaccharide units obtained on hydrolysis of a disaccharide"
+        }
+      ],
+      "syllabus_binding": {
+        "subject": "CHEMISTRY",
+        "unit_number": 19,
+        "unit_name": "BIOMOLECULES",
+        "topic_id": "CHEMISTRY:U19:T02",
+        "topic": "Carbohydrates: Classification; aldoses and ketoses: monosaccharides (glucose and fructose) and constituent monosaccharides of oligosaccharides (sucrose, lactose, and maltose).",
+        "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+      },
+      "review_status": "REVIEWED",
+      "provenance": {
+        "origin": "canonical_ncert",
+        "extraction_method": "manual_extraction",
+        "extracted_by": "PYTHON-MCQ-ENGINE-001",
+        "source_audit": "docs/audits/python_mcq_engine_003.json"
+      },
+      "review_record": {
+        "reviewed_by": "PYTHON-MCQ-ENGINE-003",
+        "reviewed_at": "2026-09-14T14:13:00+05:30",
+        "review_method": "fact-quality gate plus ENGINE-002 independent review"
+      },
+      "scope_review": {
+        "outcome": "SUPPORTED",
+        "reviewed_by": "PYTHON-MCQ-ENGINE-003",
+        "reviewed_at": "2026-09-14T14:13:00+05:30",
+        "review_method": "syllabus taxonomy and option-defensibility review",
+        "syllabus_rationale": "Carbohydrate classification explicitly includes polysaccharides.",
+        "taxonomy_rationale": "The definition directly matches Classification of Carbohydrates.",
+        "source_audit": "docs/audits/python_mcq_engine_003.json"
+      },
+      "question_template": {
+        "question_type": "DEFINITION_IDENTIFICATION",
+        "transformation": "DEFINITION_IDENTIFICATION",
+        "stem": "Which carbohydrate class yields a large number of monosaccharide units on hydrolysis?",
+        "stem_evidence_quote": "yield a large number of monosaccharide units",
+        "options": [
+          {
+            "key": "poly",
+            "text": "Polysaccharide",
+            "evidence_quote": "are called polysaccharides",
+            "relation_to_stem": "ANSWERS_STEM"
+          },
+          {
+            "key": "oligo",
+            "text": "Oligosaccharide",
+            "evidence_quote": "yield two to ten monosaccharide units",
+            "relation_to_stem": "DOES_NOT_ANSWER_STEM"
+          },
+          {
+            "key": "mono",
+            "text": "Monosaccharide",
+            "evidence_quote": "is called a monosaccharide",
+            "relation_to_stem": "DOES_NOT_ANSWER_STEM"
+          },
+          {
+            "key": "disaccharide",
+            "text": "Disaccharide",
+            "evidence_quote": "The two monosaccharide units obtained on hydrolysis of a disaccharide",
+            "relation_to_stem": "DOES_NOT_ANSWER_STEM"
+          }
+        ],
+        "correct_key": "poly",
+        "explanation": "NCERT defines this class as polysaccharides.",
+        "explanation_evidence_quote": "are called polysaccharides",
+        "difficulty": "easy"
+      }
+    },
+    {
+      "schema_version": "ncert_fact_pack_v1",
+      "fact_id": "ncert-fact-v1-e9f4efa1e27da151c87b32027bdb669634d0d77230844e23240b775883bc00a4",
+      "subject": "CHEMISTRY",
+      "class_level": "12",
+      "chapter_id": "933a0d17-537f-4995-b0ae-6ce23a32a449",
+      "chapter": "Biomolecules",
+      "topic_id": "8927ce2d-26d4-4e3a-aa11-3a3f27279a5a",
+      "topic": "Carbohydrates",
+      "concept_id": "9384555f-5e4e-4273-943e-caa935827bba",
+      "concept_name": "Classification of Carbohydrates",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 2\\lech2dd\\lech205.pdf",
+      "source_relative_path": "Class 12/Chemistry 2/lech2dd/lech205.pdf",
+      "ncert_reference": {
+        "reference_level": "SOURCE_TEXT_ONLY"
+      },
+      "evidence_text": "sucrose is a non reducing sugar",
+      "fact_type": "DIRECT_FACT",
+      "canonical_fact": "sucrose is a non reducing sugar",
+      "allowed_transformations": [
+        "DIRECT_RECALL",
+        "OPTION_PERMUTATION"
+      ],
+      "allowed_distractors": [
+        {
+          "value": "Glucose",
+          "source": "SAME_EVIDENCE",
+          "evidence_text": "Some common examples are glucose, fructose, ribose"
+        },
+        {
+          "value": "Fructose",
+          "source": "SAME_EVIDENCE",
+          "evidence_text": "Some common examples are glucose, fructose, ribose"
+        },
+        {
+          "value": "Ribose",
+          "source": "SAME_EVIDENCE",
+          "evidence_text": "Some common examples are glucose, fructose, ribose"
+        }
+      ],
+      "syllabus_binding": {
+        "subject": "CHEMISTRY",
+        "unit_number": 19,
+        "unit_name": "BIOMOLECULES",
+        "topic_id": "CHEMISTRY:U19:T02",
+        "topic": "Carbohydrates: Classification; aldoses and ketoses: monosaccharides (glucose and fructose) and constituent monosaccharides of oligosaccharides (sucrose, lactose, and maltose).",
+        "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+      },
+      "review_status": "REVIEWED",
+      "provenance": {
+        "origin": "canonical_ncert",
+        "extraction_method": "manual_extraction",
+        "extracted_by": "PYTHON-MCQ-ENGINE-001",
+        "source_audit": "docs/audits/python_mcq_engine_003.json"
+      },
+      "review_record": {
+        "reviewed_by": "PYTHON-MCQ-ENGINE-003",
+        "reviewed_at": "2026-09-14T14:13:00+05:30",
+        "review_method": "fact-quality gate plus ENGINE-002 independent review"
+      },
+      "scope_review": {
+        "outcome": "SUPPORTED",
+        "reviewed_by": "PYTHON-MCQ-ENGINE-003",
+        "reviewed_at": "2026-09-14T14:13:00+05:30",
+        "review_method": "syllabus taxonomy and option-defensibility review",
+        "syllabus_rationale": "Reducing and non-reducing classification is in the selected concept scope.",
+        "taxonomy_rationale": "The concept summary explicitly includes reducing versus non-reducing.",
+        "source_audit": "docs/audits/python_mcq_engine_003.json"
+      },
+      "question_template": {
+        "question_type": "DIRECT_FACT",
+        "transformation": "DIRECT_RECALL",
+        "stem": "Which carbohydrate is explicitly identified by NCERT as a non-reducing sugar?",
+        "stem_evidence_quote": "sucrose is a non reducing sugar",
+        "options": [
+          {
+            "key": "sucrose",
+            "text": "Sucrose",
+            "evidence_quote": "sucrose is a non reducing sugar",
+            "relation_to_stem": "ANSWERS_STEM"
+          },
+          {
+            "key": "glucose",
+            "text": "Glucose",
+            "evidence_quote": "Some common examples are glucose, fructose, ribose",
+            "relation_to_stem": "DOES_NOT_ANSWER_STEM"
+          },
+          {
+            "key": "fructose",
+            "text": "Fructose",
+            "evidence_quote": "Some common examples are glucose, fructose, ribose",
+            "relation_to_stem": "DOES_NOT_ANSWER_STEM"
+          },
+          {
+            "key": "ribose",
+            "text": "Ribose",
+            "evidence_quote": "Some common examples are glucose, fructose, ribose",
+            "relation_to_stem": "DOES_NOT_ANSWER_STEM"
+          }
+        ],
+        "correct_key": "sucrose",
+        "explanation": "NCERT states that sucrose is non-reducing because its reducing groups form the glycosidic bond.",
+        "explanation_evidence_quote": "sucrose is a non reducing sugar",
+        "difficulty": "easy"
+      }
+    },
+    {
+      "schema_version": "ncert_fact_pack_v1",
+      "fact_id": "ncert-fact-v1-00ea51a8e0a760679af83958b31a77995f2d0b385032a982c0832475d8aca930",
+      "subject": "CHEMISTRY",
+      "class_level": "12",
+      "chapter_id": "933a0d17-537f-4995-b0ae-6ce23a32a449",
+      "chapter": "Biomolecules",
+      "topic_id": "8927ce2d-26d4-4e3a-aa11-3a3f27279a5a",
+      "topic": "Carbohydrates",
+      "concept_id": "9384555f-5e4e-4273-943e-caa935827bba",
+      "concept_name": "Classification of Carbohydrates",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 2\\lech2dd\\lech205.pdf",
+      "source_relative_path": "Class 12/Chemistry 2/lech2dd/lech205.pdf",
+      "ncert_reference": {
+        "reference_level": "SOURCE_TEXT_ONLY"
+      },
+      "evidence_text": "sucrose on hydrolysis gives one molecule of glucose and one molecule of fructose",
+      "fact_type": "ASSOCIATION",
+      "canonical_fact": "sucrose on hydrolysis gives one molecule of glucose and one molecule of fructose",
+      "allowed_transformations": [
+        "ASSOCIATION_SELECTION",
+        "OPTION_PERMUTATION"
+      ],
+      "allowed_distractors": [
+        {
+          "value": "Maltose — two glucose units",
+          "source": "SAME_EVIDENCE",
+          "evidence_text": "maltose gives two molecules of only glucose"
+        },
+        {
+          "value": "Lactose — galactose and glucose",
+          "source": "SAME_EVIDENCE",
+          "evidence_text": "It is composed of b-D-galactose and b-D-glucose"
+        },
+        {
+          "value": "Starch — polymer of alpha-glucose",
+          "source": "SAME_EVIDENCE",
+          "evidence_text": "It is a polymer of a-glucose"
+        }
+      ],
+      "syllabus_binding": {
+        "subject": "CHEMISTRY",
+        "unit_number": 19,
+        "unit_name": "BIOMOLECULES",
+        "topic_id": "CHEMISTRY:U19:T02",
+        "topic": "Carbohydrates: Classification; aldoses and ketoses: monosaccharides (glucose and fructose) and constituent monosaccharides of oligosaccharides (sucrose, lactose, and maltose).",
+        "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+      },
+      "review_status": "REVIEWED",
+      "provenance": {
+        "origin": "canonical_ncert",
+        "extraction_method": "manual_extraction",
+        "extracted_by": "PYTHON-MCQ-ENGINE-001",
+        "source_audit": "docs/audits/python_mcq_engine_003.json"
+      },
+      "review_record": {
+        "reviewed_by": "PYTHON-MCQ-ENGINE-003",
+        "reviewed_at": "2026-09-14T14:13:00+05:30",
+        "review_method": "fact-quality gate plus ENGINE-002 independent review"
+      },
+      "scope_review": {
+        "outcome": "SUPPORTED",
+        "reviewed_by": "PYTHON-MCQ-ENGINE-003",
+        "reviewed_at": "2026-09-14T14:13:00+05:30",
+        "review_method": "syllabus taxonomy and option-defensibility review",
+        "syllabus_rationale": "Constituent monosaccharides of sucrose are explicitly in scope.",
+        "taxonomy_rationale": "Sucrose classification and composition are represented by the selected concept.",
+        "source_audit": "docs/audits/python_mcq_engine_003.json"
+      },
+      "question_template": {
+        "question_type": "CONTROLLED_ASSOCIATION",
+        "transformation": "ASSOCIATION_SELECTION",
+        "stem": "Which association gives the NCERT-stated hydrolysis products of sucrose?",
+        "stem_evidence_quote": "sucrose on hydrolysis gives one molecule of glucose and one molecule of fructose",
+        "options": [
+          {
+            "key": "sucrose_products",
+            "text": "Sucrose — glucose and fructose",
+            "evidence_quote": "sucrose on hydrolysis gives one molecule of glucose and one molecule of fructose",
+            "relation_to_stem": "ANSWERS_STEM"
+          },
+          {
+            "key": "maltose_products",
+            "text": "Maltose — two glucose units",
+            "evidence_quote": "maltose gives two molecules of only glucose",
+            "relation_to_stem": "DOES_NOT_ANSWER_STEM"
+          },
+          {
+            "key": "lactose_units",
+            "text": "Lactose — galactose and glucose",
+            "evidence_quote": "It is composed of b-D-galactose and b-D-glucose",
+            "relation_to_stem": "DOES_NOT_ANSWER_STEM"
+          },
+          {
+            "key": "starch_polymer",
+            "text": "Starch — polymer of alpha-glucose",
+            "evidence_quote": "It is a polymer of a-glucose",
+            "relation_to_stem": "DOES_NOT_ANSWER_STEM"
+          }
+        ],
+        "correct_key": "sucrose_products",
+        "explanation": "NCERT states that sucrose hydrolysis gives glucose and fructose.",
+        "explanation_evidence_quote": "sucrose on hydrolysis gives one molecule of glucose and one molecule of fructose",
+        "difficulty": "easy"
+      }
+    },
+    {
+      "schema_version": "ncert_fact_pack_v1",
+      "fact_id": "ncert-fact-v1-9aa63db58e1163085efe1bbe7b8835e28967596978f178893b3cbc813b4b5c1c",
+      "subject": "CHEMISTRY",
+      "class_level": "12",
+      "chapter_id": "933a0d17-537f-4995-b0ae-6ce23a32a449",
+      "chapter": "Biomolecules",
+      "topic_id": "8927ce2d-26d4-4e3a-aa11-3a3f27279a5a",
+      "topic": "Carbohydrates",
+      "concept_id": "9384555f-5e4e-4273-943e-caa935827bba",
+      "concept_name": "Classification of Carbohydrates",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 2\\lech2dd\\lech205.pdf",
+      "source_relative_path": "Class 12/Chemistry 2/lech2dd/lech205.pdf",
+      "ncert_reference": {
+        "reference_level": "SOURCE_TEXT_ONLY"
+      },
+      "evidence_text": "maltose gives two molecules of only glucose",
+      "fact_type": "ASSOCIATION",
+      "canonical_fact": "maltose gives two molecules of only glucose",
+      "allowed_transformations": [
+        "ASSOCIATION_SELECTION",
+        "OPTION_PERMUTATION"
+      ],
+      "allowed_distractors": [
+        {
+          "value": "Sucrose — glucose and fructose",
+          "source": "SAME_EVIDENCE",
+          "evidence_text": "sucrose on hydrolysis gives one molecule of glucose and one molecule of fructose"
+        },
+        {
+          "value": "Lactose — galactose and glucose",
+          "source": "SAME_EVIDENCE",
+          "evidence_text": "It is composed of b-D-galactose and b-D-glucose"
+        },
+        {
+          "value": "Starch — polymer of alpha-glucose",
+          "source": "SAME_EVIDENCE",
+          "evidence_text": "It is a polymer of a-glucose"
+        }
+      ],
+      "syllabus_binding": {
+        "subject": "CHEMISTRY",
+        "unit_number": 19,
+        "unit_name": "BIOMOLECULES",
+        "topic_id": "CHEMISTRY:U19:T02",
+        "topic": "Carbohydrates: Classification; aldoses and ketoses: monosaccharides (glucose and fructose) and constituent monosaccharides of oligosaccharides (sucrose, lactose, and maltose).",
+        "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+      },
+      "review_status": "REVIEWED",
+      "provenance": {
+        "origin": "canonical_ncert",
+        "extraction_method": "manual_extraction",
+        "extracted_by": "PYTHON-MCQ-ENGINE-001",
+        "source_audit": "docs/audits/python_mcq_engine_003.json"
+      },
+      "review_record": {
+        "reviewed_by": "PYTHON-MCQ-ENGINE-003",
+        "reviewed_at": "2026-09-14T14:13:00+05:30",
+        "review_method": "fact-quality gate plus ENGINE-002 independent review"
+      },
+      "scope_review": {
+        "outcome": "SUPPORTED",
+        "reviewed_by": "PYTHON-MCQ-ENGINE-003",
+        "reviewed_at": "2026-09-14T14:13:00+05:30",
+        "review_method": "syllabus taxonomy and option-defensibility review",
+        "syllabus_rationale": "Constituent monosaccharides of maltose are explicitly in scope.",
+        "taxonomy_rationale": "Maltose classification and composition are represented by the selected concept.",
+        "source_audit": "docs/audits/python_mcq_engine_003.json"
+      },
+      "question_template": {
+        "question_type": "CONTROLLED_ASSOCIATION",
+        "transformation": "ASSOCIATION_SELECTION",
+        "stem": "Which association gives the NCERT-stated hydrolysis products of maltose?",
+        "stem_evidence_quote": "maltose gives two molecules of only glucose",
+        "options": [
+          {
+            "key": "maltose_products",
+            "text": "Maltose — two glucose units",
+            "evidence_quote": "maltose gives two molecules of only glucose",
+            "relation_to_stem": "ANSWERS_STEM"
+          },
+          {
+            "key": "sucrose_products",
+            "text": "Sucrose — glucose and fructose",
+            "evidence_quote": "sucrose on hydrolysis gives one molecule of glucose and one molecule of fructose",
+            "relation_to_stem": "DOES_NOT_ANSWER_STEM"
+          },
+          {
+            "key": "lactose_units",
+            "text": "Lactose — galactose and glucose",
+            "evidence_quote": "It is composed of b-D-galactose and b-D-glucose",
+            "relation_to_stem": "DOES_NOT_ANSWER_STEM"
+          },
+          {
+            "key": "starch_polymer",
+            "text": "Starch — polymer of alpha-glucose",
+            "evidence_quote": "It is a polymer of a-glucose",
+            "relation_to_stem": "DOES_NOT_ANSWER_STEM"
+          }
+        ],
+        "correct_key": "maltose_products",
+        "explanation": "NCERT states that maltose gives two molecules of glucose on hydrolysis.",
+        "explanation_evidence_quote": "maltose gives two molecules of only glucose",
+        "difficulty": "easy"
+      }
+    }
+  ]
+}

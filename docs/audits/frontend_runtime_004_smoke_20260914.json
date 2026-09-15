@@ -1,0 +1,1411 @@
+{
+  "task": "FRONTEND-RUNTIME-004",
+  "verdict": "YELLOW",
+  "verdict_reason": "Frontend CSS/JS/hydration/shell GREEN on :3001; backend :8000 unavailable (API/data blocker only).",
+  "base": "http://127.0.0.1:3001",
+  "auth": {
+    "cookies": [
+      {
+        "name": "access_token",
+        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJmZTZlMzRkOS05YzIzLTRlNzEtYTlmMS1iMWQwNGQ5MTY3MDAiLCJyb2xlcyI6WyJTVFVERU5UIl0sImlhdCI6MTc4OTI0NTg2OCwiZXhwIjoxNzg5MjQ2NzY4LCJ0eXBlIjoiYWNjZXNzIn0.XyCz_jGVJULnaIYjQCmtitJYOW-ffaJGcQeBEKsbf6k",
+        "url": "http://127.0.0.1:3001/",
+        "httpOnly": true,
+        "secure": false,
+        "sameSite": "Lax"
+      },
+      {
+        "name": "access_token",
+        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJmZTZlMzRkOS05YzIzLTRlNzEtYTlmMS1iMWQwNGQ5MTY3MDAiLCJyb2xlcyI6WyJTVFVERU5UIl0sImlhdCI6MTc4OTI0NTg2OCwiZXhwIjoxNzg5MjQ2NzY4LCJ0eXBlIjoiYWNjZXNzIn0.XyCz_jGVJULnaIYjQCmtitJYOW-ffaJGcQeBEKsbf6k",
+        "url": "http://127.0.0.1:3001/",
+        "httpOnly": true,
+        "secure": false,
+        "sameSite": "Lax"
+      },
+      {
+        "name": "refresh_token",
+        "value": "qLuHauhWNCgQ0m89K9kZvodeCyIAFQlBBYao4j5nn_ypy4cuqmxA4fcDvj0BWRkY",
+        "url": "http://127.0.0.1:3001/",
+        "httpOnly": true,
+        "secure": false,
+        "sameSite": "Lax"
+      },
+      {
+        "name": "refresh_token",
+        "value": "qLuHauhWNCgQ0m89K9kZvodeCyIAFQlBBYao4j5nn_ypy4cuqmxA4fcDvj0BWRkY",
+        "url": "http://127.0.0.1:3001/",
+        "httpOnly": true,
+        "secure": false,
+        "sameSite": "Lax"
+      },
+      {
+        "name": "csrf_token",
+        "value": "p7ow3cad6fHv2Yq6l_ZLowbg7oknhErl6ilItIfLD5w",
+        "url": "http://127.0.0.1:3001/",
+        "httpOnly": false,
+        "secure": false,
+        "sameSite": "Lax"
+      },
+      {
+        "name": "csrf_token",
+        "value": "p7ow3cad6fHv2Yq6l_ZLowbg7oknhErl6ilItIfLD5w",
+        "url": "http://127.0.0.1:3001/",
+        "httpOnly": false,
+        "secure": false,
+        "sameSite": "Lax"
+      }
+    ],
+    "source": "e2e/.auth/student.json",
+    "ok": true
+  },
+  "matrix": [
+    {
+      "route": "/register",
+      "viewport": "1280x800",
+      "colorScheme": "light",
+      "httpStatus": 200,
+      "finalUrl": "http://127.0.0.1:3001/register",
+      "redirectedToLogin": false,
+      "blockedAuth": false,
+      "css": [
+        {
+          "href": "/_next/static/css/df040096fa0b04cd.css",
+          "status": 200,
+          "isDevLayoutPath": false
+        },
+        {
+          "href": "/_next/static/css/bd5b56afac8c4fc3.css",
+          "status": 200,
+          "isDevLayoutPath": false
+        }
+      ],
+      "jsSample": [
+        {
+          "src": "/_next/static/chunks/4bd1b696-100b9d70ed4e49c1.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/1255-cf02c4775860a5ab.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/main-app-a4aafc5af398a274.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/643-cec78e9682660432.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/7302-6baa8dc09d5ca9f1.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/app/layout-4f034c25fbb118fc.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/4909-1f5c586e3e84e0a5.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/873-6f468507a55d8d89.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/polyfills-42372ed130431b0a.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/webpack-db902b82daa18f39.js",
+          "status": 200
+        }
+      ],
+      "cssAll200": true,
+      "jsAll200": true,
+      "hasDevCssPath": false,
+      "metrics": {
+        "title": "Trinetra AI Learning OS",
+        "bodyFont": "\"Plus Jakarta Sans\", \"Plus Jakarta Sans Fallback\"",
+        "htmlClass": "__variable_646807 __variable_c29908 h-full antialiased light",
+        "hasHydrationCopy": false,
+        "btnRadius": "12px",
+        "shellBrand": false,
+        "themeBtn": false,
+        "accountBtn": false,
+        "mobileNav": false,
+        "desktopNav": false
+      },
+      "hydrationLogs": [],
+      "consoleErrors": [],
+      "staticNetworkFails": [],
+      "apiNetworkFails": [],
+      "apiFailCount": 0
+    },
+    {
+      "route": "/login",
+      "viewport": "1280x800",
+      "colorScheme": "light",
+      "httpStatus": 200,
+      "finalUrl": "http://127.0.0.1:3001/login",
+      "redirectedToLogin": false,
+      "blockedAuth": false,
+      "css": [
+        {
+          "href": "/_next/static/css/df040096fa0b04cd.css",
+          "status": 200,
+          "isDevLayoutPath": false
+        },
+        {
+          "href": "/_next/static/css/bd5b56afac8c4fc3.css",
+          "status": 200,
+          "isDevLayoutPath": false
+        }
+      ],
+      "jsSample": [
+        {
+          "src": "/_next/static/chunks/4bd1b696-100b9d70ed4e49c1.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/1255-cf02c4775860a5ab.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/main-app-a4aafc5af398a274.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/643-cec78e9682660432.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/7302-6baa8dc09d5ca9f1.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/app/layout-4f034c25fbb118fc.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/4909-1f5c586e3e84e0a5.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/873-6f468507a55d8d89.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/9574-2e77d9f72c510c38.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/2619-04bc32f026a0d946.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/app/error-02a236af181911d5.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/2454-f06ae5a8a41a6046.js",
+          "status": 200
+        }
+      ],
+      "cssAll200": true,
+      "jsAll200": true,
+      "hasDevCssPath": false,
+      "metrics": {
+        "title": "Trinetra AI Learning OS",
+        "bodyFont": "\"Plus Jakarta Sans\", \"Plus Jakarta Sans Fallback\"",
+        "htmlClass": "__variable_646807 __variable_c29908 h-full antialiased light",
+        "hasHydrationCopy": false,
+        "btnRadius": "12px",
+        "shellBrand": false,
+        "themeBtn": false,
+        "accountBtn": false,
+        "mobileNav": false,
+        "desktopNav": false
+      },
+      "hydrationLogs": [],
+      "consoleErrors": [],
+      "staticNetworkFails": [],
+      "apiNetworkFails": [],
+      "apiFailCount": 0
+    },
+    {
+      "route": "/student/dashboard",
+      "viewport": "1280x800",
+      "colorScheme": "light",
+      "httpStatus": 200,
+      "finalUrl": "http://127.0.0.1:3001/student/dashboard",
+      "redirectedToLogin": false,
+      "blockedAuth": false,
+      "css": [
+        {
+          "href": "/_next/static/css/df040096fa0b04cd.css",
+          "status": 200,
+          "isDevLayoutPath": false
+        },
+        {
+          "href": "/_next/static/css/bd5b56afac8c4fc3.css",
+          "status": 200,
+          "isDevLayoutPath": false
+        },
+        {
+          "href": "/_next/static/css/7cce990b3daa7e6d.css",
+          "status": 200,
+          "isDevLayoutPath": false
+        }
+      ],
+      "jsSample": [
+        {
+          "src": "/_next/static/chunks/4bd1b696-100b9d70ed4e49c1.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/1255-cf02c4775860a5ab.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/main-app-a4aafc5af398a274.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/643-cec78e9682660432.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/7302-6baa8dc09d5ca9f1.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/app/layout-4f034c25fbb118fc.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/873-6f468507a55d8d89.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/polyfills-42372ed130431b0a.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/webpack-db902b82daa18f39.js",
+          "status": 200
+        }
+      ],
+      "cssAll200": true,
+      "jsAll200": true,
+      "hasDevCssPath": false,
+      "metrics": {
+        "title": "Trinetra AI Learning OS",
+        "bodyFont": "\"Plus Jakarta Sans\", \"Plus Jakarta Sans Fallback\"",
+        "htmlClass": "__variable_646807 __variable_c29908 h-full antialiased light",
+        "hasHydrationCopy": false,
+        "btnRadius": "9.6px",
+        "shellBrand": true,
+        "themeBtn": true,
+        "accountBtn": true,
+        "mobileNav": true,
+        "desktopNav": true
+      },
+      "hydrationLogs": [],
+      "consoleErrors": [],
+      "staticNetworkFails": [],
+      "apiNetworkFails": [],
+      "apiFailCount": 0
+    },
+    {
+      "route": "/student/practice",
+      "viewport": "1280x800",
+      "colorScheme": "light",
+      "httpStatus": 200,
+      "finalUrl": "http://127.0.0.1:3001/student/practice",
+      "redirectedToLogin": false,
+      "blockedAuth": false,
+      "css": [
+        {
+          "href": "/_next/static/css/df040096fa0b04cd.css",
+          "status": 200,
+          "isDevLayoutPath": false
+        },
+        {
+          "href": "/_next/static/css/bd5b56afac8c4fc3.css",
+          "status": 200,
+          "isDevLayoutPath": false
+        },
+        {
+          "href": "/_next/static/css/7cce990b3daa7e6d.css",
+          "status": 200,
+          "isDevLayoutPath": false
+        }
+      ],
+      "jsSample": [
+        {
+          "src": "/_next/static/chunks/4bd1b696-100b9d70ed4e49c1.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/1255-cf02c4775860a5ab.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/main-app-a4aafc5af398a274.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/643-cec78e9682660432.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/7302-6baa8dc09d5ca9f1.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/app/layout-4f034c25fbb118fc.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/4909-1f5c586e3e84e0a5.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/873-6f468507a55d8d89.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/9574-2e77d9f72c510c38.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/2619-04bc32f026a0d946.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/app/error-02a236af181911d5.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/628fdacb-05fc2098ad22141d.js",
+          "status": 200
+        }
+      ],
+      "cssAll200": true,
+      "jsAll200": true,
+      "hasDevCssPath": false,
+      "metrics": {
+        "title": "Trinetra AI Learning OS",
+        "bodyFont": "\"Plus Jakarta Sans\", \"Plus Jakarta Sans Fallback\"",
+        "htmlClass": "__variable_646807 __variable_c29908 h-full antialiased light",
+        "hasHydrationCopy": false,
+        "btnRadius": "9.6px",
+        "shellBrand": true,
+        "themeBtn": true,
+        "accountBtn": true,
+        "mobileNav": true,
+        "desktopNav": true
+      },
+      "hydrationLogs": [],
+      "consoleErrors": [],
+      "staticNetworkFails": [],
+      "apiNetworkFails": [],
+      "apiFailCount": 0
+    },
+    {
+      "route": "/student/subjects",
+      "viewport": "1280x800",
+      "colorScheme": "light",
+      "httpStatus": 200,
+      "finalUrl": "http://127.0.0.1:3001/student/subjects",
+      "redirectedToLogin": false,
+      "blockedAuth": false,
+      "css": [
+        {
+          "href": "/_next/static/css/df040096fa0b04cd.css",
+          "status": 200,
+          "isDevLayoutPath": false
+        },
+        {
+          "href": "/_next/static/css/bd5b56afac8c4fc3.css",
+          "status": 200,
+          "isDevLayoutPath": false
+        },
+        {
+          "href": "/_next/static/css/7cce990b3daa7e6d.css",
+          "status": 200,
+          "isDevLayoutPath": false
+        }
+      ],
+      "jsSample": [
+        {
+          "src": "/_next/static/chunks/4bd1b696-100b9d70ed4e49c1.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/1255-cf02c4775860a5ab.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/main-app-a4aafc5af398a274.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/643-cec78e9682660432.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/7302-6baa8dc09d5ca9f1.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/app/layout-4f034c25fbb118fc.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/4909-1f5c586e3e84e0a5.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/873-6f468507a55d8d89.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/9574-2e77d9f72c510c38.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/2619-04bc32f026a0d946.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/app/error-02a236af181911d5.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/2454-f06ae5a8a41a6046.js",
+          "status": 200
+        }
+      ],
+      "cssAll200": true,
+      "jsAll200": true,
+      "hasDevCssPath": false,
+      "metrics": {
+        "title": "Trinetra AI Learning OS",
+        "bodyFont": "\"Plus Jakarta Sans\", \"Plus Jakarta Sans Fallback\"",
+        "htmlClass": "__variable_646807 __variable_c29908 h-full antialiased light",
+        "hasHydrationCopy": false,
+        "btnRadius": "9.6px",
+        "shellBrand": true,
+        "themeBtn": true,
+        "accountBtn": true,
+        "mobileNav": true,
+        "desktopNav": true
+      },
+      "hydrationLogs": [],
+      "consoleErrors": [],
+      "staticNetworkFails": [],
+      "apiNetworkFails": [],
+      "apiFailCount": 0
+    },
+    {
+      "route": "/student/analytics",
+      "viewport": "1280x800",
+      "colorScheme": "light",
+      "httpStatus": 200,
+      "finalUrl": "http://127.0.0.1:3001/student/analytics",
+      "redirectedToLogin": false,
+      "blockedAuth": false,
+      "css": [
+        {
+          "href": "/_next/static/css/df040096fa0b04cd.css",
+          "status": 200,
+          "isDevLayoutPath": false
+        },
+        {
+          "href": "/_next/static/css/bd5b56afac8c4fc3.css",
+          "status": 200,
+          "isDevLayoutPath": false
+        },
+        {
+          "href": "/_next/static/css/7cce990b3daa7e6d.css",
+          "status": 200,
+          "isDevLayoutPath": false
+        }
+      ],
+      "jsSample": [
+        {
+          "src": "/_next/static/chunks/4bd1b696-100b9d70ed4e49c1.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/1255-cf02c4775860a5ab.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/main-app-a4aafc5af398a274.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/643-cec78e9682660432.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/7302-6baa8dc09d5ca9f1.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/app/layout-4f034c25fbb118fc.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/4909-1f5c586e3e84e0a5.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/873-6f468507a55d8d89.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/9574-2e77d9f72c510c38.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/2619-04bc32f026a0d946.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/app/error-02a236af181911d5.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/polyfills-42372ed130431b0a.js",
+          "status": 200
+        }
+      ],
+      "cssAll200": true,
+      "jsAll200": true,
+      "hasDevCssPath": false,
+      "metrics": {
+        "title": "Trinetra AI Learning OS",
+        "bodyFont": "\"Plus Jakarta Sans\", \"Plus Jakarta Sans Fallback\"",
+        "htmlClass": "__variable_646807 __variable_c29908 h-full antialiased light",
+        "hasHydrationCopy": false,
+        "btnRadius": "9.6px",
+        "shellBrand": true,
+        "themeBtn": true,
+        "accountBtn": true,
+        "mobileNav": true,
+        "desktopNav": true
+      },
+      "hydrationLogs": [],
+      "consoleErrors": [],
+      "staticNetworkFails": [],
+      "apiNetworkFails": [],
+      "apiFailCount": 0
+    },
+    {
+      "route": "/student/questions",
+      "viewport": "1280x800",
+      "colorScheme": "light",
+      "httpStatus": 200,
+      "finalUrl": "http://127.0.0.1:3001/student/questions",
+      "redirectedToLogin": false,
+      "blockedAuth": false,
+      "css": [
+        {
+          "href": "/_next/static/css/df040096fa0b04cd.css",
+          "status": 200,
+          "isDevLayoutPath": false
+        },
+        {
+          "href": "/_next/static/css/bd5b56afac8c4fc3.css",
+          "status": 200,
+          "isDevLayoutPath": false
+        },
+        {
+          "href": "/_next/static/css/7cce990b3daa7e6d.css",
+          "status": 200,
+          "isDevLayoutPath": false
+        }
+      ],
+      "jsSample": [
+        {
+          "src": "/_next/static/chunks/4bd1b696-100b9d70ed4e49c1.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/1255-cf02c4775860a5ab.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/main-app-a4aafc5af398a274.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/643-cec78e9682660432.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/polyfills-42372ed130431b0a.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/webpack-db902b82daa18f39.js",
+          "status": 200
+        }
+      ],
+      "cssAll200": true,
+      "jsAll200": true,
+      "hasDevCssPath": false,
+      "metrics": {
+        "title": "Trinetra AI Learning OS",
+        "bodyFont": "\"Plus Jakarta Sans\", \"Plus Jakarta Sans Fallback\"",
+        "htmlClass": "__variable_646807 __variable_c29908 h-full antialiased light",
+        "hasHydrationCopy": false,
+        "btnRadius": "9.6px",
+        "shellBrand": true,
+        "themeBtn": true,
+        "accountBtn": true,
+        "mobileNav": true,
+        "desktopNav": true
+      },
+      "hydrationLogs": [],
+      "consoleErrors": [],
+      "staticNetworkFails": [],
+      "apiNetworkFails": [],
+      "apiFailCount": 0
+    },
+    {
+      "route": "/student/flashcards",
+      "viewport": "1280x800",
+      "colorScheme": "light",
+      "httpStatus": 200,
+      "finalUrl": "http://127.0.0.1:3001/student/flashcards",
+      "redirectedToLogin": false,
+      "blockedAuth": false,
+      "css": [
+        {
+          "href": "/_next/static/css/df040096fa0b04cd.css",
+          "status": 200,
+          "isDevLayoutPath": false
+        },
+        {
+          "href": "/_next/static/css/bd5b56afac8c4fc3.css",
+          "status": 200,
+          "isDevLayoutPath": false
+        },
+        {
+          "href": "/_next/static/css/7cce990b3daa7e6d.css",
+          "status": 200,
+          "isDevLayoutPath": false
+        }
+      ],
+      "jsSample": [
+        {
+          "src": "/_next/static/chunks/4bd1b696-100b9d70ed4e49c1.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/1255-cf02c4775860a5ab.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/main-app-a4aafc5af398a274.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/643-cec78e9682660432.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/app/layout-4f034c25fbb118fc.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/polyfills-42372ed130431b0a.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/webpack-db902b82daa18f39.js",
+          "status": 200
+        }
+      ],
+      "cssAll200": true,
+      "jsAll200": true,
+      "hasDevCssPath": false,
+      "metrics": {
+        "title": "Trinetra AI Learning OS",
+        "bodyFont": "\"Plus Jakarta Sans\", \"Plus Jakarta Sans Fallback\"",
+        "htmlClass": "__variable_646807 __variable_c29908 h-full antialiased light",
+        "hasHydrationCopy": false,
+        "btnRadius": "9.6px",
+        "shellBrand": true,
+        "themeBtn": true,
+        "accountBtn": true,
+        "mobileNav": true,
+        "desktopNav": true
+      },
+      "hydrationLogs": [],
+      "consoleErrors": [],
+      "staticNetworkFails": [],
+      "apiNetworkFails": [],
+      "apiFailCount": 0
+    },
+    {
+      "route": "/student/mock-tests",
+      "viewport": "1280x800",
+      "colorScheme": "light",
+      "httpStatus": 200,
+      "finalUrl": "http://127.0.0.1:3001/student/mock-tests",
+      "redirectedToLogin": false,
+      "blockedAuth": false,
+      "css": [
+        {
+          "href": "/_next/static/css/df040096fa0b04cd.css",
+          "status": 200,
+          "isDevLayoutPath": false
+        },
+        {
+          "href": "/_next/static/css/bd5b56afac8c4fc3.css",
+          "status": 200,
+          "isDevLayoutPath": false
+        },
+        {
+          "href": "/_next/static/css/7cce990b3daa7e6d.css",
+          "status": 200,
+          "isDevLayoutPath": false
+        }
+      ],
+      "jsSample": [
+        {
+          "src": "/_next/static/chunks/4bd1b696-100b9d70ed4e49c1.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/1255-cf02c4775860a5ab.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/main-app-a4aafc5af398a274.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/643-cec78e9682660432.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/7302-6baa8dc09d5ca9f1.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/app/layout-4f034c25fbb118fc.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/4909-1f5c586e3e84e0a5.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/873-6f468507a55d8d89.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/polyfills-42372ed130431b0a.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/webpack-db902b82daa18f39.js",
+          "status": 200
+        }
+      ],
+      "cssAll200": true,
+      "jsAll200": true,
+      "hasDevCssPath": false,
+      "metrics": {
+        "title": "Trinetra AI Learning OS",
+        "bodyFont": "\"Plus Jakarta Sans\", \"Plus Jakarta Sans Fallback\"",
+        "htmlClass": "__variable_646807 __variable_c29908 h-full antialiased light",
+        "hasHydrationCopy": false,
+        "btnRadius": "9.6px",
+        "shellBrand": true,
+        "themeBtn": true,
+        "accountBtn": true,
+        "mobileNav": true,
+        "desktopNav": true
+      },
+      "hydrationLogs": [],
+      "consoleErrors": [],
+      "staticNetworkFails": [],
+      "apiNetworkFails": [],
+      "apiFailCount": 0
+    },
+    {
+      "route": "/student/attempts",
+      "viewport": "1280x800",
+      "colorScheme": "light",
+      "httpStatus": 200,
+      "finalUrl": "http://127.0.0.1:3001/student/attempts",
+      "redirectedToLogin": false,
+      "blockedAuth": false,
+      "css": [
+        {
+          "href": "/_next/static/css/df040096fa0b04cd.css",
+          "status": 200,
+          "isDevLayoutPath": false
+        },
+        {
+          "href": "/_next/static/css/bd5b56afac8c4fc3.css",
+          "status": 200,
+          "isDevLayoutPath": false
+        },
+        {
+          "href": "/_next/static/css/7cce990b3daa7e6d.css",
+          "status": 200,
+          "isDevLayoutPath": false
+        }
+      ],
+      "jsSample": [
+        {
+          "src": "/_next/static/chunks/4bd1b696-100b9d70ed4e49c1.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/1255-cf02c4775860a5ab.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/main-app-a4aafc5af398a274.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/643-cec78e9682660432.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/7302-6baa8dc09d5ca9f1.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/app/layout-4f034c25fbb118fc.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/4909-1f5c586e3e84e0a5.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/873-6f468507a55d8d89.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/9574-2e77d9f72c510c38.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/2619-04bc32f026a0d946.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/app/error-02a236af181911d5.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/628fdacb-05fc2098ad22141d.js",
+          "status": 200
+        }
+      ],
+      "cssAll200": true,
+      "jsAll200": true,
+      "hasDevCssPath": false,
+      "metrics": {
+        "title": "Trinetra AI Learning OS",
+        "bodyFont": "\"Plus Jakarta Sans\", \"Plus Jakarta Sans Fallback\"",
+        "htmlClass": "__variable_646807 __variable_c29908 h-full antialiased light",
+        "hasHydrationCopy": false,
+        "btnRadius": "9.6px",
+        "shellBrand": true,
+        "themeBtn": true,
+        "accountBtn": true,
+        "mobileNav": true,
+        "desktopNav": true
+      },
+      "hydrationLogs": [],
+      "consoleErrors": [],
+      "staticNetworkFails": [],
+      "apiNetworkFails": [],
+      "apiFailCount": 0
+    }
+  ],
+  "responsive": [
+    {
+      "route": "/student/dashboard",
+      "viewport": "390x844",
+      "colorScheme": "light",
+      "httpStatus": 200,
+      "finalUrl": "http://127.0.0.1:3001/student/dashboard",
+      "redirectedToLogin": false,
+      "blockedAuth": false,
+      "css": [
+        {
+          "href": "/_next/static/css/df040096fa0b04cd.css",
+          "status": 200,
+          "isDevLayoutPath": false
+        },
+        {
+          "href": "/_next/static/css/bd5b56afac8c4fc3.css",
+          "status": 200,
+          "isDevLayoutPath": false
+        },
+        {
+          "href": "/_next/static/css/7cce990b3daa7e6d.css",
+          "status": 200,
+          "isDevLayoutPath": false
+        }
+      ],
+      "jsSample": [
+        {
+          "src": "/_next/static/chunks/4bd1b696-100b9d70ed4e49c1.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/1255-cf02c4775860a5ab.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/main-app-a4aafc5af398a274.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/643-cec78e9682660432.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/7302-6baa8dc09d5ca9f1.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/app/layout-4f034c25fbb118fc.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/4909-1f5c586e3e84e0a5.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/polyfills-42372ed130431b0a.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/webpack-db902b82daa18f39.js",
+          "status": 200
+        }
+      ],
+      "cssAll200": true,
+      "jsAll200": true,
+      "hasDevCssPath": false,
+      "metrics": {
+        "title": "Trinetra AI Learning OS",
+        "bodyFont": "\"Plus Jakarta Sans\", \"Plus Jakarta Sans Fallback\"",
+        "htmlClass": "__variable_646807 __variable_c29908 h-full antialiased light",
+        "hasHydrationCopy": false,
+        "btnRadius": "9.6px",
+        "shellBrand": true,
+        "themeBtn": true,
+        "accountBtn": true,
+        "mobileNav": true,
+        "desktopNav": true
+      },
+      "hydrationLogs": [],
+      "consoleErrors": [],
+      "staticNetworkFails": [],
+      "apiNetworkFails": [],
+      "apiFailCount": 0
+    },
+    {
+      "route": "/student/dashboard",
+      "viewport": "768x1024",
+      "colorScheme": "light",
+      "httpStatus": 200,
+      "finalUrl": "http://127.0.0.1:3001/student/dashboard",
+      "redirectedToLogin": false,
+      "blockedAuth": false,
+      "css": [
+        {
+          "href": "/_next/static/css/df040096fa0b04cd.css",
+          "status": 200,
+          "isDevLayoutPath": false
+        },
+        {
+          "href": "/_next/static/css/bd5b56afac8c4fc3.css",
+          "status": 200,
+          "isDevLayoutPath": false
+        },
+        {
+          "href": "/_next/static/css/7cce990b3daa7e6d.css",
+          "status": 200,
+          "isDevLayoutPath": false
+        }
+      ],
+      "jsSample": [
+        {
+          "src": "/_next/static/chunks/4bd1b696-100b9d70ed4e49c1.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/1255-cf02c4775860a5ab.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/main-app-a4aafc5af398a274.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/643-cec78e9682660432.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/7302-6baa8dc09d5ca9f1.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/app/layout-4f034c25fbb118fc.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/4909-1f5c586e3e84e0a5.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/873-6f468507a55d8d89.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/9574-2e77d9f72c510c38.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/2619-04bc32f026a0d946.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/app/error-02a236af181911d5.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/2454-f06ae5a8a41a6046.js",
+          "status": 200
+        }
+      ],
+      "cssAll200": true,
+      "jsAll200": true,
+      "hasDevCssPath": false,
+      "metrics": {
+        "title": "Trinetra AI Learning OS",
+        "bodyFont": "\"Plus Jakarta Sans\", \"Plus Jakarta Sans Fallback\"",
+        "htmlClass": "__variable_646807 __variable_c29908 h-full antialiased light",
+        "hasHydrationCopy": false,
+        "btnRadius": "9.6px",
+        "shellBrand": true,
+        "themeBtn": true,
+        "accountBtn": true,
+        "mobileNav": true,
+        "desktopNav": true
+      },
+      "hydrationLogs": [],
+      "consoleErrors": [],
+      "staticNetworkFails": [],
+      "apiNetworkFails": [],
+      "apiFailCount": 0
+    },
+    {
+      "route": "/student/dashboard",
+      "viewport": "1280x800",
+      "colorScheme": "light",
+      "httpStatus": 200,
+      "finalUrl": "http://127.0.0.1:3001/student/dashboard",
+      "redirectedToLogin": false,
+      "blockedAuth": false,
+      "css": [
+        {
+          "href": "/_next/static/css/df040096fa0b04cd.css",
+          "status": 200,
+          "isDevLayoutPath": false
+        },
+        {
+          "href": "/_next/static/css/bd5b56afac8c4fc3.css",
+          "status": 200,
+          "isDevLayoutPath": false
+        },
+        {
+          "href": "/_next/static/css/7cce990b3daa7e6d.css",
+          "status": 200,
+          "isDevLayoutPath": false
+        }
+      ],
+      "jsSample": [
+        {
+          "src": "/_next/static/chunks/4bd1b696-100b9d70ed4e49c1.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/1255-cf02c4775860a5ab.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/main-app-a4aafc5af398a274.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/643-cec78e9682660432.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/7302-6baa8dc09d5ca9f1.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/app/layout-4f034c25fbb118fc.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/4909-1f5c586e3e84e0a5.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/873-6f468507a55d8d89.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/polyfills-42372ed130431b0a.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/webpack-db902b82daa18f39.js",
+          "status": 200
+        }
+      ],
+      "cssAll200": true,
+      "jsAll200": true,
+      "hasDevCssPath": false,
+      "metrics": {
+        "title": "Trinetra AI Learning OS",
+        "bodyFont": "\"Plus Jakarta Sans\", \"Plus Jakarta Sans Fallback\"",
+        "htmlClass": "__variable_646807 __variable_c29908 h-full antialiased light",
+        "hasHydrationCopy": false,
+        "btnRadius": "9.6px",
+        "shellBrand": true,
+        "themeBtn": true,
+        "accountBtn": true,
+        "mobileNav": true,
+        "desktopNav": true
+      },
+      "hydrationLogs": [],
+      "consoleErrors": [],
+      "staticNetworkFails": [],
+      "apiNetworkFails": [],
+      "apiFailCount": 0
+    },
+    {
+      "route": "/student/dashboard",
+      "viewport": "1440x900",
+      "colorScheme": "light",
+      "httpStatus": 200,
+      "finalUrl": "http://127.0.0.1:3001/student/dashboard",
+      "redirectedToLogin": false,
+      "blockedAuth": false,
+      "css": [
+        {
+          "href": "/_next/static/css/df040096fa0b04cd.css",
+          "status": 200,
+          "isDevLayoutPath": false
+        },
+        {
+          "href": "/_next/static/css/bd5b56afac8c4fc3.css",
+          "status": 200,
+          "isDevLayoutPath": false
+        },
+        {
+          "href": "/_next/static/css/7cce990b3daa7e6d.css",
+          "status": 200,
+          "isDevLayoutPath": false
+        }
+      ],
+      "jsSample": [
+        {
+          "src": "/_next/static/chunks/4bd1b696-100b9d70ed4e49c1.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/1255-cf02c4775860a5ab.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/main-app-a4aafc5af398a274.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/643-cec78e9682660432.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/7302-6baa8dc09d5ca9f1.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/app/layout-4f034c25fbb118fc.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/4909-1f5c586e3e84e0a5.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/873-6f468507a55d8d89.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/9574-2e77d9f72c510c38.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/2619-04bc32f026a0d946.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/app/error-02a236af181911d5.js",
+          "status": 200
+        },
+        {
+          "src": "/_next/static/chunks/2454-f06ae5a8a41a6046.js",
+          "status": 200
+        }
+      ],
+      "cssAll200": true,
+      "jsAll200": true,
+      "hasDevCssPath": false,
+      "metrics": {
+        "title": "Trinetra AI Learning OS",
+        "bodyFont": "\"Plus Jakarta Sans\", \"Plus Jakarta Sans Fallback\"",
+        "htmlClass": "__variable_646807 __variable_c29908 h-full antialiased light",
+        "hasHydrationCopy": false,
+        "btnRadius": "9.6px",
+        "shellBrand": true,
+        "themeBtn": true,
+        "accountBtn": true,
+        "mobileNav": true,
+        "desktopNav": true
+      },
+      "hydrationLogs": [],
+      "consoleErrors": [],
+      "staticNetworkFails": [],
+      "apiNetworkFails": [],
+      "apiFailCount": 0
+    }
+  ],
+  "dark": {
+    "route": "/student/dashboard",
+    "viewport": "1280x800",
+    "colorScheme": "dark",
+    "httpStatus": 200,
+    "finalUrl": "http://127.0.0.1:3001/student/dashboard",
+    "redirectedToLogin": false,
+    "blockedAuth": false,
+    "css": [
+      {
+        "href": "/_next/static/css/df040096fa0b04cd.css",
+        "status": 200,
+        "isDevLayoutPath": false
+      },
+      {
+        "href": "/_next/static/css/bd5b56afac8c4fc3.css",
+        "status": 200,
+        "isDevLayoutPath": false
+      },
+      {
+        "href": "/_next/static/css/7cce990b3daa7e6d.css",
+        "status": 200,
+        "isDevLayoutPath": false
+      }
+    ],
+    "jsSample": [
+      {
+        "src": "/_next/static/chunks/4bd1b696-100b9d70ed4e49c1.js",
+        "status": 200
+      },
+      {
+        "src": "/_next/static/chunks/1255-cf02c4775860a5ab.js",
+        "status": 200
+      },
+      {
+        "src": "/_next/static/chunks/main-app-a4aafc5af398a274.js",
+        "status": 200
+      },
+      {
+        "src": "/_next/static/chunks/643-cec78e9682660432.js",
+        "status": 200
+      },
+      {
+        "src": "/_next/static/chunks/7302-6baa8dc09d5ca9f1.js",
+        "status": 200
+      },
+      {
+        "src": "/_next/static/chunks/app/layout-4f034c25fbb118fc.js",
+        "status": 200
+      },
+      {
+        "src": "/_next/static/chunks/4909-1f5c586e3e84e0a5.js",
+        "status": 200
+      },
+      {
+        "src": "/_next/static/chunks/873-6f468507a55d8d89.js",
+        "status": 200
+      },
+      {
+        "src": "/_next/static/chunks/9574-2e77d9f72c510c38.js",
+        "status": 200
+      },
+      {
+        "src": "/_next/static/chunks/2619-04bc32f026a0d946.js",
+        "status": 200
+      },
+      {
+        "src": "/_next/static/chunks/app/error-02a236af181911d5.js",
+        "status": 200
+      },
+      {
+        "src": "/_next/static/chunks/628fdacb-05fc2098ad22141d.js",
+        "status": 200
+      }
+    ],
+    "cssAll200": true,
+    "jsAll200": true,
+    "hasDevCssPath": false,
+    "metrics": {
+      "title": "Trinetra AI Learning OS",
+      "bodyFont": "\"Plus Jakarta Sans\", \"Plus Jakarta Sans Fallback\"",
+      "htmlClass": "__variable_646807 __variable_c29908 h-full antialiased dark",
+      "hasHydrationCopy": false,
+      "btnRadius": "9.6px",
+      "shellBrand": true,
+      "themeBtn": true,
+      "accountBtn": true,
+      "mobileNav": true,
+      "desktopNav": true
+    },
+    "hydrationLogs": [],
+    "consoleErrors": [],
+    "staticNetworkFails": [],
+    "apiNetworkFails": [],
+    "apiFailCount": 0
+  },
+  "navRegisterToLogin": true,
+  "summary": {
+    "publicRoutesOk": true,
+    "studentAuthBlocked": false,
+    "studentAccessible": true,
+    "anyDevCssPath": false,
+    "anyStatic404": false,
+    "anyHydration": false
+  }
+}

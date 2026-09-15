@@ -1,0 +1,35 @@
+{
+  "reviewed_fact_count": 5,
+  "extracted_fact_count": 95,
+  "chapter_stats": {
+    "PHYSICS": {
+      "Kinematics": 5,
+      "Current Electricity": 5,
+      "Optics": 5,
+      "Work, Energy and Power": 5,
+      "Gravitation": 5
+    },
+    "CHEMISTRY": {
+      "Biomolecules": 5,
+      "Coordination Compounds": 5,
+      "Chemical Kinetics": 5,
+      "Equilibrium": 5,
+      "Solutions": 5
+    },
+    "BOTANY": {
+      "Plant Kingdom": 5,
+      "Photosynthesis in Higher Plants": 5,
+      "Sexual Reproduction in Flowering Plants": 5,
+      "Molecular Basis of Inheritance": 5,
+      "Biomolecules": 5
+    },
+    "ZOOLOGY": {
+      "Body Fluids and Circulation": 5,
+      "Reproductive Health": 5,
+      "Human Reproduction": 5,
+      "Breathing and Exchange of Gases": 5,
+      "Structural Organisation in Animals": 5
+    }
+  },
+  "honesty": "Only ENGINE-004 facts are REVIEWED. Remaining facts are EXTRACTED and must fail closed at the fact-quality gate until independently reviewed."
+}

@@ -22,13 +22,27 @@ def _email() -> str:
     return f"wave-c-{uuid.uuid4().hex[:12]}@example.com"
 
 
-PASSWORD = "WaveCTest!2345"
+# Registration issues INITIAL_DEFAULT_PASSWORD ("Password123") — that becomes
+# the "current password" for the first change-password call in this suite.
+PASSWORD = "Password123"
 
 
 async def _register(client, email: str):
+    # Unique 10-digit Indian mobile per registration to avoid the partial
+    # unique index on identity.users(lower(mobile_e164)).
+    import random
+
+    mobile10 = str(random.choice("6789")) + "".join(str(random.randint(0, 9)) for _ in range(9))
     resp = await client.post(
         "/api/v1/auth/register",
-        json={"email": email, "password": PASSWORD, "first_name": "WaveC"},
+        json={
+            "email": email,
+            "first_name": "WaveC",
+            "last_name": "Test",
+            "mobile": mobile10,
+            "state_code": "KARNATAKA",
+            "city": "Bangalore",
+        },
     )
     assert resp.status_code == 201, resp.text
     return resp.json()["data"]

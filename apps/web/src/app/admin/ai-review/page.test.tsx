@@ -41,7 +41,7 @@ vi.mock("@/features/academic/api", () => ({
   },
 }));
 
-import { EditorialReviewQueueInner } from "@/app/admin/ai-review/page";
+import EditorialReviewQueuePage from "@/app/admin/ai-review/page";
 
 function renderPage() {
   const client = new QueryClient({
@@ -49,7 +49,7 @@ function renderPage() {
   });
   return render(
     <QueryClientProvider client={client}>
-      <EditorialReviewQueueInner />
+      <EditorialReviewQueuePage />
     </QueryClientProvider>,
   );
 }

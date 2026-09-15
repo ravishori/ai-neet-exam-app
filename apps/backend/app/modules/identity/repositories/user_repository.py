@@ -29,6 +29,22 @@ class UserRepository:
         )
         return result.scalar_one_or_none()
 
+    async def get_by_mobile_e164(self, mobile_e164: str) -> User | None:
+        """Lookup by canonical E.164 mobile (case-insensitive on the stored value
+        even though we always write "+91XXXXXXXXXX" — matches the partial
+        unique index expression ``lower(mobile_e164) WHERE deleted_at IS NULL``)."""
+        if not mobile_e164:
+            return None
+        result = await self.session.execute(
+            select(User)
+            .options(selectinload(User.roles).selectinload(UserRole.role))
+            .where(
+                func.lower(User.mobile_e164) == mobile_e164.lower(),
+                User.deleted_at.is_(None),
+            )
+        )
+        return result.scalar_one_or_none()
+
     async def list(self, *, limit: int = 50, offset: int = 0) -> list[User]:
         result = await self.session.execute(
             select(User)

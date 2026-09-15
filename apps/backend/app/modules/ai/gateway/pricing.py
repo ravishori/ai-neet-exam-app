@@ -24,6 +24,13 @@ _RATES: dict[tuple[str, str], PriceRate] = {
     ("openai", "gpt-4o"): PriceRate(2.50, 10.0),
     # OpenAI API pricing — GPT-5 mini (text); observability only, not billing-grade.
     ("openai", "gpt-5-mini"): PriceRate(0.25, 2.0),
+    # OpenAI API pricing — GPT-5.6 Luna (operator-confirmed from
+    # https://developers.openai.com/api/docs/models/gpt-5.6-luna).
+    # Cached input at $0.02 / MTok is not modeled here — factory cost is
+    # computed from prompt_tokens / completion_tokens only; a future rate
+    # extension can add a cached_input_per_million field if OpenAI starts
+    # returning cached_input_tokens in the response body.
+    ("openai", "gpt-5.6-luna"): PriceRate(0.20, 1.20),
     ("gemini", "gemini-2.0-flash"): PriceRate(0.10, 0.40),
     ("gemini", "gemini-1.5-flash"): PriceRate(0.075, 0.30),
     # Google Gemini API pricing — gemini-2.5-flash text/image/video tier (ai.google.dev).
@@ -34,6 +41,10 @@ _RATES: dict[tuple[str, str], PriceRate] = {
     ("mistral", "mistral-large-latest"): PriceRate(2.0, 6.0),
     # Mistral docs — Mistral Small 4 API id mistral-small-2603.
     ("mistral", "mistral-small-2603"): PriceRate(0.15, 0.60),
+    # Sarvam public INR rates converted at the project's ₹83/USD
+    # observability rate. Cached-input pricing is not represented here.
+    ("sarvam", "sarvam-105b"): PriceRate(29.28 / 83.0, 73.20 / 83.0),
+    ("sarvam", "sarvam-105b-conversations"): PriceRate(29.28 / 83.0, 73.20 / 83.0),
 }
 
 

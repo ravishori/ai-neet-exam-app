@@ -1,0 +1,132 @@
+{
+  "task_id": "PYTHON-MCQ-ENGINE-009",
+  "timestamp": "2026-09-14T16:22:24+0530",
+  "verdict": "YELLOW",
+  "stop_condition": {
+    "triggered": true,
+    "reason": "Available independently reviewed MCQ-eligible facts are below the requested 1,000. Scale evaluation was not started. No facts were fabricated, upgraded, or auto-promoted."
+  },
+  "requested_facts": 1000,
+  "available_eligible_facts": 99,
+  "evaluated_facts": 0,
+  "generated_candidates": 0,
+  "skipped_facts": 0,
+  "skip_reasons": {},
+  "independent_verification": {
+    "PASS": 0,
+    "FAIL": 0,
+    "AMBIGUOUS": 0,
+    "not_run": true
+  },
+  "verified_yield": null,
+  "verified_yield_label": "READ-ONLY EVALUATION VERIFIED YIELD",
+  "verified_yield_note": "Not computed — scale evaluation stopped before generation.",
+  "breakdown": {
+    "by_subject": {},
+    "by_chapter": {},
+    "by_question_type": {}
+  },
+  "duplicates": {
+    "within_evaluation_duplicate_rate": null,
+    "production_stem_hash_overlap": null,
+    "not_run": true
+  },
+  "ambiguity_rate": null,
+  "reproducibility": {
+    "ran": false,
+    "seed": null,
+    "first_run_count": 0,
+    "second_run_count": 0,
+    "exact_equality": null
+  },
+  "runtime_seconds": 107.46,
+  "peak_memory_bytes": null,
+  "inventory": [
+    {
+      "path": "D:\\ravishori\\AI Neet Exam App\\apps\\backend\\tests\\fixtures\\python_mcq_engine_004_biomolecules.json",
+      "pack_id": "python-mcq-engine-004-biomolecules-reviewed-v1",
+      "input_sha256": "a55ba1ee9290ad1af6eb2c759bd503d0e93535efc26a49bd6d051506b8d1bd27",
+      "loaded_facts": 5,
+      "by_review_status": {
+        "REVIEWED": 5
+      },
+      "mcq_eligible_after_exclusions": 5,
+      "retired_excluded": 0
+    },
+    {
+      "path": "D:\\ravishori\\AI Neet Exam App\\apps\\backend\\tests\\fixtures\\python_mcq_engine_006_reviewed_100.json",
+      "pack_id": "python-mcq-engine-006-reviewed-multisubject-v1",
+      "input_sha256": "9c7c39d1a9ea676a1a8690e6762416fa78954216e6f7c9b618ad93ffe28441bf",
+      "loaded_facts": 100,
+      "by_review_status": {
+        "REVIEWED": 100
+      },
+      "mcq_eligible_after_exclusions": 99,
+      "retired_excluded": 1
+    },
+    {
+      "path": "D:\\ravishori\\AI Neet Exam App\\apps\\backend\\tests\\fixtures\\python_mcq_engine_008_kinetics_rate_law_retired.json",
+      "pack_id": "python-mcq-engine-008-kinetics-rate-law-retired-v1",
+      "input_sha256": "f1393341678112366047aad18b55e8cba275bc1893d9d5672276a5aeb61ac8f1",
+      "loaded_facts": 1,
+      "by_review_status": {
+        "REJECTED": 1
+      },
+      "mcq_eligible_after_exclusions": 0,
+      "retired_excluded": 0
+    }
+  ],
+  "engine_006_fixture_sha256": "9c7c39d1a9ea676a1a8690e6762416fa78954216e6f7c9b618ad93ffe28441bf",
+  "engine_006_fixture_modified": false,
+  "engine_008_retired_fact": {
+    "fact_id": "ncert-fact-v1-bbe13bb91d3757573671d3531c1912cd7c7c92e825153cf6400470f1f625fa99",
+    "review_status": "REJECTED",
+    "remains_retired": true,
+    "excluded_from_eligible_corpus": true,
+    "not_regenerated": true
+  },
+  "database_before": {
+    "question_statuses": {
+      "DRAFT": 5552,
+      "PUBLISHED": 1479,
+      "SUPERSEDED": 6,
+      "IN_REVIEW": 111
+    },
+    "question_state_fingerprint": "741ce41e97dc4869c66b7bba5db5b3aa",
+    "unmapped_draft": 5034,
+    "blueprints": 445,
+    "knowledge_units": 381,
+    "content_reviews": 1824,
+    "engine_003_batches": 0
+  },
+  "database_after": {
+    "question_statuses": {
+      "DRAFT": 5552,
+      "PUBLISHED": 1479,
+      "SUPERSEDED": 6,
+      "IN_REVIEW": 111
+    },
+    "question_state_fingerprint": "741ce41e97dc4869c66b7bba5db5b3aa",
+    "unmapped_draft": 5034,
+    "blueprints": 445,
+    "knowledge_units": 381,
+    "content_reviews": 1824,
+    "engine_003_batches": 0
+  },
+  "production_safety_unchanged": true,
+  "provider_api_calls": 0,
+  "api_cost_inr": 0,
+  "production_db_mutations": 0,
+  "tests": {
+    "focused": "3 passed",
+    "regression": "8 passed (009+008; --noconftest)",
+    "ruff": "passed"
+  },
+  "readiness_recommendation": "NOT READY for 1,000-fact scale evaluation. Available eligible reviewed facts = 99 (requested 1000; shortfall 901). Next authorized work should expand the independently reviewed MCQ-eligible fact corpus across subjects/chapters without promoting EXTRACTED/REVIEW_REQUIRED facts and without regenerating the ENGINE-008 retired Chemical Kinetics rate-law fact. Do not start production generation.",
+  "limitations": [
+    "Scale generation/verification was intentionally not executed.",
+    "Eligible count excludes the ENGINE-008 RETIRED_REJECTED fact ID.",
+    "ENGINE-004 facts are a subset of ENGINE-006; unique IDs are counted once.",
+    "No provider calls and no production persistence occurred."
+  ]
+}

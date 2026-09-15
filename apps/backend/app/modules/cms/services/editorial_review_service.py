@@ -461,6 +461,7 @@ class EditorialReviewService:
                     "chapter": academic.get("chapter") if academic else None,
                     "topic": academic.get("topic") if academic else None,
                     "concept": academic.get("concept") if academic else None,
+                    "class_level": academic.get("class_level") if academic else None,
                 },
                 "campaign_area": area,
                 "batch_a": is_batch_a,

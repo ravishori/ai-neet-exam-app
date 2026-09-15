@@ -244,7 +244,8 @@ function CampaignOverview({ data }: { data: EditorialCampaign }) {
   );
 }
 
-export function EditorialReviewQueueInner() {
+/** Page-local only — App Router forbids named exports from page.tsx (FRONTEND-BUILD-001). */
+function EditorialReviewQueueInner() {
   const searchParams = useSearchParams();
 
   const applied = useMemo(() => parseEcaepFilters(searchParams), [searchParams]);

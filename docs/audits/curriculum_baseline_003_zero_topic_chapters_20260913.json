@@ -1,0 +1,327 @@
+{
+  "generated_at": "2026-09-13T16:55:06.839981+00:00",
+  "final_status": "YELLOW \u2014 PARTIALLY VERIFIED",
+  "before": {
+    "status": {
+      "DRAFT": 5298,
+      "PUBLISHED": 1479,
+      "SUPERSEDED": 6,
+      "IN_REVIEW": 111
+    },
+    "unmapped_draft": 5024,
+    "chapters": 56,
+    "topics": 187,
+    "concepts": 309,
+    "knowledge_units": 73,
+    "question_blueprints": 137,
+    "content_batches": 11,
+    "generation_jobs": 204,
+    "generation_runs": 204,
+    "generation_candidates": 392,
+    "targets": [
+      {
+        "subject": "PHYSICS",
+        "code": "gravitation",
+        "name": "Gravitation",
+        "class_level": "11",
+        "topics": 0,
+        "concepts": 0
+      },
+      {
+        "subject": "ZOOLOGY",
+        "code": "digestion-absorption",
+        "name": "Digestion and Absorption",
+        "class_level": "11",
+        "topics": 0,
+        "concepts": 0
+      }
+    ]
+  },
+  "after": {
+    "status": {
+      "DRAFT": 5298,
+      "PUBLISHED": 1479,
+      "SUPERSEDED": 6,
+      "IN_REVIEW": 111
+    },
+    "unmapped_draft": 5024,
+    "chapters": 56,
+    "topics": 192,
+    "concepts": 318,
+    "knowledge_units": 73,
+    "question_blueprints": 137,
+    "content_batches": 11,
+    "generation_jobs": 204,
+    "generation_runs": 204,
+    "generation_candidates": 392,
+    "targets": [
+      {
+        "subject": "PHYSICS",
+        "code": "gravitation",
+        "name": "Gravitation",
+        "class_level": "11",
+        "topics": 5,
+        "concepts": 9
+      },
+      {
+        "subject": "ZOOLOGY",
+        "code": "digestion-absorption",
+        "name": "Digestion and Absorption",
+        "class_level": "11",
+        "topics": 0,
+        "concepts": 0
+      }
+    ]
+  },
+  "content_safety_unchanged": true,
+  "freeze_ok": true,
+  "pdf_verification": [
+    {
+      "code": "gravitation",
+      "expected_name": "Gravitation",
+      "pdf_rel": "Class 11/Physics/keph1dd/keph1dd/keph107.pdf",
+      "expected_ncert_ch": 7,
+      "exists": true,
+      "validated": true,
+      "identity_ok": true,
+      "decoded_title_hits": [
+        "GRAVITATION"
+      ],
+      "section_headers": [
+        "7.1 INTRODUCTION",
+        "7.2 KEPLER\u2019S LAWS",
+        "7.3 UNIVERSAL LAW OF GRAVITATION",
+        "7.4 THE GRAVITATIONAL CONSTANT",
+        "7.5 ACCELERATION DUE TO GRAVITY OF\nTHE EARTH",
+        "7.6 ACCELERATION DUE TO GRAVITY BELOW\nAND ABOVE THE SURFACE OF EARTH",
+        "7.7 GRAVITATIONAL POTENTIAL ENERGY"
+      ],
+      "discrepancy": null,
+      "error": null,
+      "note": null,
+      "pdf_chapter_hint": {
+        "filename": 7,
+        "chapter_seven_markers": 1
+      }
+    },
+    {
+      "code": "digestion-absorption",
+      "expected_name": "Digestion and Absorption",
+      "pdf_rel": null,
+      "expected_ncert_ch": null,
+      "exists": false,
+      "validated": false,
+      "identity_ok": false,
+      "decoded_title_hits": [],
+      "section_headers": [],
+      "discrepancy": null,
+      "error": "No canonical PDF mapped",
+      "note": "No canonical Class XI Biology PDF titled Digestion and Absorption exists under NCERT Books (kebo1dd). Human Physiology unit (kebo114 opener) lists Breathing, circulation, locomotion/movement and coordination \u2014 Digestion and Absorption was removed in the rationalised corpus. Refusing to invent topics/concepts without PDF."
+    }
+  ],
+  "digestion_pdf_search": {
+    "hits": [],
+    "human_physiology_opener_excerpt": "UNIT 5 The reductionist  approach to study of life forms resulted in increasing use of physico-chemical concepts and techniques. Majority of these studies employed either surviving tissue model or straightaway cell- free systems. An explosion of knowledge resulted in molecular biology. Molecular physiology became almost synonymous with biochemistry and biophysics. However, it is now being increasingly realised that neither a purely organismic approach nor a purely reductionistic molecular approa",
+    "scan_roots": [
+      "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology"
+    ]
+  },
+  "apply": {
+    "topics_created": [
+      {
+        "chapter": "gravitation",
+        "code": "keplers-laws",
+        "name": "Kepler's Laws",
+        "pdf": "Class 11/Physics/keph1dd/keph1dd/keph107.pdf"
+      },
+      {
+        "chapter": "gravitation",
+        "code": "newtonian-gravitation",
+        "name": "Universal Law of Gravitation",
+        "pdf": "Class 11/Physics/keph1dd/keph1dd/keph107.pdf"
+      },
+      {
+        "chapter": "gravitation",
+        "code": "acceleration-due-to-gravity-earth",
+        "name": "Acceleration due to Gravity of the Earth",
+        "pdf": "Class 11/Physics/keph1dd/keph1dd/keph107.pdf"
+      },
+      {
+        "chapter": "gravitation",
+        "code": "gravitational-potential-escape",
+        "name": "Gravitational Potential Energy and Escape Speed",
+        "pdf": "Class 11/Physics/keph1dd/keph1dd/keph107.pdf"
+      },
+      {
+        "chapter": "gravitation",
+        "code": "earth-satellites-orbital-energy",
+        "name": "Earth Satellites and Orbital Energy",
+        "pdf": "Class 11/Physics/keph1dd/keph1dd/keph107.pdf"
+      }
+    ],
+    "concepts_created": [
+      {
+        "chapter": "gravitation",
+        "topic": "keplers-laws",
+        "code": "keplers-three-laws",
+        "name": "Kepler's Three Laws",
+        "ncert_reference": "NCERT Class XI Physics Ch 7 Gravitation \u00a77.2",
+        "pdf": "Class 11/Physics/keph1dd/keph1dd/keph107.pdf"
+      },
+      {
+        "chapter": "gravitation",
+        "topic": "newtonian-gravitation",
+        "code": "newton-universal-gravitation",
+        "name": "Newton's Universal Law of Gravitation",
+        "ncert_reference": "NCERT Class XI Physics Ch 7 Gravitation \u00a77.3",
+        "pdf": "Class 11/Physics/keph1dd/keph1dd/keph107.pdf"
+      },
+      {
+        "chapter": "gravitation",
+        "topic": "newtonian-gravitation",
+        "code": "gravitational-constant",
+        "name": "The Gravitational Constant",
+        "ncert_reference": "NCERT Class XI Physics Ch 7 Gravitation \u00a77.4",
+        "pdf": "Class 11/Physics/keph1dd/keph1dd/keph107.pdf"
+      },
+      {
+        "chapter": "gravitation",
+        "topic": "acceleration-due-to-gravity-earth",
+        "code": "g-on-earth-surface",
+        "name": "Acceleration due to Gravity of the Earth",
+        "ncert_reference": "NCERT Class XI Physics Ch 7 Gravitation \u00a77.5",
+        "pdf": "Class 11/Physics/keph1dd/keph1dd/keph107.pdf"
+      },
+      {
+        "chapter": "gravitation",
+        "topic": "acceleration-due-to-gravity-earth",
+        "code": "variation-of-g-with-height-depth",
+        "name": "Acceleration due to Gravity Below and Above the Surface of Earth",
+        "ncert_reference": "NCERT Class XI Physics Ch 7 Gravitation \u00a77.6",
+        "pdf": "Class 11/Physics/keph1dd/keph1dd/keph107.pdf"
+      },
+      {
+        "chapter": "gravitation",
+        "topic": "gravitational-potential-escape",
+        "code": "gravitational-potential-energy",
+        "name": "Gravitational Potential Energy",
+        "ncert_reference": "NCERT Class XI Physics Ch 7 Gravitation \u00a77.7",
+        "pdf": "Class 11/Physics/keph1dd/keph1dd/keph107.pdf"
+      },
+      {
+        "chapter": "gravitation",
+        "topic": "gravitational-potential-escape",
+        "code": "escape-speed",
+        "name": "Escape Speed",
+        "ncert_reference": "NCERT Class XI Physics Ch 7 Gravitation \u00a77.8",
+        "pdf": "Class 11/Physics/keph1dd/keph1dd/keph107.pdf"
+      },
+      {
+        "chapter": "gravitation",
+        "topic": "earth-satellites-orbital-energy",
+        "code": "earth-satellites",
+        "name": "Earth Satellites",
+        "ncert_reference": "NCERT Class XI Physics Ch 7 Gravitation \u00a77.9",
+        "pdf": "Class 11/Physics/keph1dd/keph1dd/keph107.pdf"
+      },
+      {
+        "chapter": "gravitation",
+        "topic": "earth-satellites-orbital-energy",
+        "code": "energy-of-orbiting-satellite",
+        "name": "Energy of an Orbiting Satellite",
+        "ncert_reference": "NCERT Class XI Physics Ch 7 Gravitation \u00a77.10",
+        "pdf": "Class 11/Physics/keph1dd/keph1dd/keph107.pdf"
+      }
+    ],
+    "existing_records": [
+      {
+        "type": "chapter",
+        "subject": "PHYSICS",
+        "code": "gravitation",
+        "name": "Gravitation",
+        "class_level": "11"
+      },
+      {
+        "type": "chapter",
+        "subject": "ZOOLOGY",
+        "code": "digestion-absorption",
+        "name": "Digestion and Absorption",
+        "class_level": "11"
+      }
+    ],
+    "skipped": [
+      {
+        "type": "no_canonical_pdf",
+        "code": "digestion-absorption"
+      }
+    ],
+    "unresolved": [
+      {
+        "code": "digestion-absorption",
+        "reason": "No canonical Class XI Biology PDF titled Digestion and Absorption exists under NCERT Books (kebo1dd). Human Physiology unit (kebo114 opener) lists Breathing, circulation, locomotion/movement and coordination \u2014 Digestion and Absorption was removed in the rationalised corpus. Refusing to invent topics/concepts without PDF."
+      }
+    ],
+    "errors": [],
+    "chapters_touched": [
+      "gravitation",
+      "digestion-absorption"
+    ]
+  },
+  "integrity": {
+    "duplicate_chapters": [],
+    "duplicate_topics": [],
+    "duplicate_concepts": [],
+    "orphan_topics": 0,
+    "orphan_concepts": 0,
+    "class_level_ok": true,
+    "class_level_details": [
+      {
+        "code": "gravitation",
+        "class_level": "11"
+      },
+      {
+        "code": "digestion-absorption",
+        "class_level": "11"
+      }
+    ],
+    "p0_excluded_code_hits": [],
+    "biology_xii_chapter_count": 13,
+    "biology_xii_thin": [],
+    "ok": true
+  },
+  "unrelated_delta": {
+    "expected_topic_delta": 5,
+    "actual_topic_delta": 5,
+    "expected_concept_delta": 9,
+    "actual_concept_delta": 9,
+    "chapter_count_unchanged": true,
+    "ku_unchanged": true,
+    "blueprint_unchanged": true,
+    "batch_unchanged": true,
+    "jobs_unchanged": true,
+    "runs_unchanged": true,
+    "candidates_unchanged": true,
+    "ok": true
+  },
+  "tests": {
+    "passed": 70,
+    "failed": 0,
+    "exit_code": 0,
+    "command": "D:\\ravishori\\AI Neet Exam App\\apps\\backend\\.venv\\Scripts\\python.exe -m pytest app/modules/ingestion/tests/test_ncert_canonical_source.py app/modules/academic/tests/test_cf_c1_chemistry_class_12.py app/modules/academic/tests/test_chapter_class_level.py app/modules/academic/tests/test_physics_p0_taxonomy.py tests/test_cms_workflow.py tests/test_cms_publish_quality.py tests/test_phase32_content_readiness_safety.py tests/test_phase33_ecaep_publication_safety.py -q --tb=line",
+    "tail": "app/modules/academic/tests/test_cf_c1_chemistry_class_12.py::test_all_nine_new_chem12_chapters_present_in_seed\n  app\\modules\\academic\\tests\\test_cf_c1_chemistry_class_12.py:76: PytestWarning: The test <Function test_all_nine_new_chem12_chapters_present_in_seed> is marked with '@pytest.mark.asyncio' but it is not an async function. Please remove the asyncio mark. If the test is not marked explicitly, check for global marks applied via 'pytestmark'.\n    def test_all_nine_new_chem12_chapters_present_in_seed():\n\napp/modules/academic/tests/test_cf_c1_chemistry_class_12.py::test_electrochemistry_seed_row_is_unchanged\n  app\\modules\\academic\\tests\\test_cf_c1_chemistry_class_12.py:84: PytestWarning: The test <Function test_electrochemistry_seed_row_is_unchanged> is marked with '@pytest.mark.asyncio' but it is not an async function. Please remove the asyncio mark. If the test is not marked explicitly, check for global marks applied via 'pytestmark'.\n    def test_electrochemistry_seed_row_is_unchanged():\n\napp/modules/academic/tests/test_cf_c1_chemistry_class_12.py::test_no_duplicate_chapter_slugs_across_all_chemistry\n  app\\modules\\academic\\tests\\test_cf_c1_chemistry_class_12.py:97: PytestWarning: The test <Function test_no_duplicate_chapter_slugs_across_all_chemistry> is marked with '@pytest.mark.asyncio' but it is not an async function. Please remove the asyncio mark. If the test is not marked explicitly, check for global marks applied via 'pytestmark'.\n    def test_no_duplicate_chapter_slugs_across_all_chemistry():\n\napp/modules/academic/tests/test_cf_c1_chemistry_class_12.py::test_topic_slugs_are_unique_within_chemistry\n  app\\modules\\academic\\tests\\test_cf_c1_chemistry_class_12.py:102: PytestWarning: The test <Function test_topic_slugs_are_unique_within_chemistry> is marked with '@pytest.mark.asyncio' but it is not an async function. Please remove the asyncio mark. If the test is not marked explicitly, check for global marks applied via 'pytestmark'.\n    def test_topic_slugs_are_unique_within_chemistry():\n\napp/modules/academic/tests/test_cf_c1_chemistry_class_12.py::test_concept_slugs_are_unique_within_chemistry\n  app\\modules\\academic\\tests\\test_cf_c1_chemistry_class_12.py:109: PytestWarning: The test <Function test_concept_slugs_are_unique_within_chemistry> is marked with '@pytest.mark.asyncio' but it is not an async function. Please remove the asyncio mark. If the test is not marked explicitly, check for global marks applied via 'pytestmark'.\n    def test_concept_slugs_are_unique_within_chemistry():\n\napp/modules/academic/tests/test_cf_c1_chemistry_class_12.py::test_every_new_chapter_has_source_grounded_topics_and_concepts\n  app\\modules\\academic\\tests\\test_cf_c1_chemistry_class_12.py:116: PytestWarning: The test <Function test_every_new_chapter_has_source_grounded_topics_and_concepts> is marked with '@pytest.mark.asyncio' but it is not an async function. Please remove the asyncio mark. If the test is not marked explicitly, check for global marks applied via 'pytestmark'.\n    def test_every_new_chapter_has_source_grounded_topics_and_concepts():\n\napp/modules/academic/tests/test_cf_c1_chemistry_class_12.py::test_physics_seed_is_unchanged_by_cf_c1\n  app\\modules\\academic\\tests\\test_cf_c1_chemistry_class_12.py:134: PytestWarning: The test <Function test_physics_seed_is_unchanged_by_cf_c1> is marked with '@pytest.mark.asyncio' but it is not an async function. Please remove the asyncio mark. If the test is not marked explicitly, check for global marks applied via 'pytestmark'.\n    def test_physics_seed_is_unchanged_by_cf_c1():\n\napp/modules/academic/tests/test_cf_c1_chemistry_class_12.py::test_botany_seed_is_unchanged_by_cf_c1\n  app\\modules\\academic\\tests\\test_cf_c1_chemistry_class_12.py:149: PytestWarning: The test <Function test_botany_seed_is_unchanged_by_cf_c1> is marked with '@pytest.mark.asyncio' but it is not an async function. Please remove the asyncio mark. If the test is not marked explicitly, check for global marks applied via 'pytestmark'.\n    def test_botany_seed_is_unchanged_by_cf_c1():\n\napp/modules/academic/tests/test_cf_c1_chemistry_class_12.py::test_zoology_seed_is_unchanged_by_cf_c1\n  app\\modules\\academic\\tests\\test_cf_c1_chemistry_class_12.py:159: PytestWarning: The test <Function test_zoology_seed_is_unchanged_by_cf_c1> is marked with '@pytest.mark.asyncio' but it is not an async function. Please remove the asyncio mark. If the test is not marked explicitly, check for global marks applied via 'pytestmark'.\n    def test_zoology_seed_is_unchanged_by_cf_c1():\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n70 passed, 15 warnings in 145.88s (0:02:25)\n\nsys:1: DeprecationWarning: builtin type swigvarlink has no __module__ attribute"
+  },
+  "files_changed": [
+    "apps/backend/scripts/curriculum_baseline_003_zero_topic_chapters.py",
+    "docs/audits/curriculum_baseline_003_zero_topic_chapters_20260913.md",
+    "docs/audits/curriculum_baseline_003_zero_topic_chapters_20260913.json",
+    "academic.topics / academic.concepts (DB rows for gravitation only)"
+  ],
+  "confirmation": {
+    "mcqs_generated": false,
+    "ai_provider_called": false,
+    "content_factory_invoked": false,
+    "blueprints_created": false,
+    "knowledge_units_created": false,
+    "questions_mutated": false
+  }
+}

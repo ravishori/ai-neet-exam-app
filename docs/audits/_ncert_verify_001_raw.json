@@ -1,0 +1,362 @@
+[
+  {
+    "candidate_id": "519e6ab2-ad02-4726-9342-49e8598a1852",
+    "status": "CREATED",
+    "provider": "openai",
+    "model_used": "gpt-5-mini",
+    "blueprint_id": "7d36871a-de25-492d-bc88-1ec04849d1e8",
+    "concept_id": "22226438-aa4f-4d43-b50c-86128df4ffae",
+    "content_item_id": "af3ea40d-cf86-478a-8d83-dbd2f0e10c5e",
+    "blueprint_key": "bp-create-002-20260913-bp-physics-kinetic-interpretation-temperature-mcq",
+    "provenance_tier": "authoritative",
+    "constraints": {
+      "ku_id": "d837eb9b-a4f2-47f4-81bc-114f80a75b29",
+      "campaign": "bp-create-002-20260913",
+      "reasoning": "ncert_conceptual",
+      "ncert_derived": true,
+      "classification": "conceptual",
+      "question_format": "MCQ_4",
+      "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph2dd\\keph2dd\\keph205.pdf",
+      "correct_option_count": 1,
+      "explanation_required": true,
+      "ncert_section_heading": "KU-COVERAGE-002 / Kinetic Interpretation of Temperature",
+      "ncert_source_relative": "Class 11/Physics/keph2dd/keph2dd/keph205.pdf",
+      "avoid_paraphrase_duplicates": true
+    },
+    "body": {
+      "stem": "Two ideal gases are in separate containers at the same temperature T. Gas X is monatomic (e.g., helium) and gas Y is diatomic (e.g., nitrogen). Which of the following statements is correct?",
+      "options": [
+        {
+          "text": "The average translational kinetic energy per molecule is the same for X and Y.",
+          "label": "A"
+        },
+        {
+          "text": "The average total internal energy per molecule (including translational and rotational motion) is the same for X and Y.",
+          "label": "B"
+        },
+        {
+          "text": "At the same temperature, molecules of the diatomic gas Y always have a larger root-mean-square speed than molecules of the monatomic gas X.",
+          "label": "C"
+        },
+        {
+          "text": "Temperature measures the average total kinetic energy of all molecular motions (translational, rotational and vibrational) of a gas.",
+          "label": "D"
+        }
+      ],
+      "pyq_year": null,
+      "difficulty": "medium",
+      "provenance": null,
+      "bloom_level": null,
+      "diagram_svg": null,
+      "explanation": "Correct answer (A): For an ideal gas, the kinetic interpretation of temperature states that the average translational kinetic energy per molecule = (3/2)kT (k = Boltzmann constant). This depends only on temperature, not on molecular structure, so monatomic and diatomic gases at the same T have the same average translational kinetic energy per molecule. Why the others are wrong: (B) is false because the average total internal energy per molecule differs: a monatomic ideal gas has only translational degrees of freedom (total per molecule = 3/2 kT), whereas a diatomic gas at ordinary temperatures has translational plus rotational contributions (typically total ≈ 5/2 kT), so their total energies per molecule are not equal. (C) is false because root-mean-square speed v_rms = sqrt(3kT/m); v_rms depends on molecular mass m, not directly on whether the molecule is mono- or diatomic. A heavier diatomic molecule typically has a smaller v_rms at the same T. (D) is false as stated: temperature in the kinetic theory of gases is directly related to the average translational kinetic energy per molecule. Rotational and vibrational motions contribute to the internal energy of a gas (and to heat capacity) according to equipartition, but temperature is defined via translational kinetic energy in the ideal-gas kinetic interpretation.",
+      "visual_spec": null,
+      "correct_option": "A",
+      "ncert_evidence": null,
+      "calculation_check": null,
+      "numerical_evidence": null,
+      "diagram_description": null
+    },
+    "item_status": "DRAFT",
+    "subject": "PHYSICS",
+    "class_level": "11",
+    "chapter": "Kinetic Theory",
+    "topic": "Kinetic Theory of an Ideal Gas",
+    "concept": "Kinetic Interpretation of Temperature",
+    "concept_code": "kinetic-interpretation-temperature",
+    "kus": [
+      {
+        "id": "d837eb9b-a4f2-47f4-81bc-114f80a75b29",
+        "summary": "Speculation that matter may not be continuous, existed in\nmany places and cultures. Kanada in India and Democritus\n12.1\nIntroduction\n12.2\nMolecular nature of matter\n12.3\nBehaviour of gases\n12.4\nKineti"
+      }
+    ],
+    "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph2dd\\keph2dd\\keph205.pdf"
+  },
+  {
+    "candidate_id": "8d727dc4-49dc-40a7-815f-a2679d9d78bc",
+    "status": "CREATED",
+    "provider": "openai",
+    "model_used": "gpt-5-mini",
+    "blueprint_id": "9f564c4a-903b-4e7e-9596-f9da5d07cc41",
+    "concept_id": "23ec568a-0ce9-4504-a778-393598da02f8",
+    "content_item_id": "00e132b1-f36f-4dbb-a0a0-5d4a699f1c99",
+    "blueprint_key": "bp-create-001-20260913-bp-chemistry-protein-structure-levels-mcq",
+    "provenance_tier": "authoritative",
+    "constraints": {
+      "ku_id": "fc3d722b-641e-402a-a3cd-6e25cab4fc5f",
+      "campaign": "bp-create-001-20260913",
+      "reasoning": "ncert_conceptual",
+      "ncert_derived": true,
+      "classification": "conceptual",
+      "question_format": "MCQ_4",
+      "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 2\\lech2dd\\lech205.pdf",
+      "correct_option_count": 1,
+      "explanation_required": true,
+      "ncert_section_heading": "CF-C5 / Primary, Secondary, Tertiary and Quaternary Structure of Proteins",
+      "ncert_source_relative": "Class 12/Chemistry 2/lech2dd/lech205.pdf",
+      "avoid_paraphrase_duplicates": true
+    },
+    "body": {
+      "stem": "A globular protein with intact disulfide bonds has a well-defined primary sequence and folded structure containing α-helices and β-sheets. The protein is treated with 8 M urea and β-mercaptoethanol, then the reagents are removed by dialysis and the solution is allowed to oxidize. Which description best matches the structural states during treatment and after dialysis/oxidation?",
+      "options": [
+        {
+          "text": "During treatment: hydrogen bonds stabilizing α-helices and β-sheets are disrupted by urea (secondary structure lost) and disulfide (S–S) bonds are reduced by β-mercaptoethanol (tertiary/quaternary disrupted); peptide (amide) bonds (primary structure) remain intact. After dialysis/oxidation: hydrogen bonds and disulfide bonds can reform and the protein can regain its native secondary and tertiary structure because the primary sequence encodes the folding.",
+          "label": "A"
+        },
+        {
+          "text": "During treatment: peptide (amide) bonds in the backbone are hydrolysed, destroying the primary structure; after dialysis the peptide bonds cannot be reformed so the native structure cannot be recovered.",
+          "label": "B"
+        },
+        {
+          "text": "During treatment: disulfide bonds are reduced but the secondary structure (α-helices and β-sheets) remains intact because urea does not affect hydrogen bonds; after dialysis secondary structure persists but tertiary structure cannot reassemble.",
+          "label": "C"
+        },
+        {
+          "text": "During treatment: the protein becomes permanently unfolded and even after removal of reagents and oxidation the backbone cannot refold because disulfide bonds must remain intact throughout to permit any refolding.",
+          "label": "D"
+        }
+      ],
+      "pyq_year": null,
+      "difficulty": "medium",
+      "provenance": null,
+      "bloom_level": null,
+      "diagram_svg": null,
+      "explanation": "Correct (A): Urea is a chaotropic agent that disrupts noncovalent interactions, especially the hydrogen bonds that stabilise α-helices (i to i+4 H‑bonds) and β‑sheets, so secondary structure is lost. β‑Mercaptoethanol is a reducing agent that breaks disulfide (S–S) bonds, so tertiary/quaternary stabilised by covalent S–S links are disrupted. The peptide (amide) bonds of the primary sequence are strong covalent bonds and are not cleaved by these reagents, so primary structure remains. On removal of denaturant and under oxidising conditions many proteins refold and disulfide bonds re-form because the amino‑acid sequence contains the information for folding (Anfinsen’s principle), so native secondary and tertiary structures can be regained. Why the others are wrong: (B) is incorrect because neither 8 M urea nor β‑mercaptoethanol hydrolyses peptide bonds under these conditions; primary sequence is preserved. (C) is incorrect because urea does disrupt backbone hydrogen bonds and thus destroys secondary structure; it is not true that secondary structure remains intact in 8 M urea. (D) is incorrect because unfolding caused by these reagents is not necessarily permanent — many proteins can refold after removal of denaturant and reformation of disulfide bonds; disulfide bonds do not have to remain intact during the entire treatment for refolding to occur (they can be reduced and later re‑oxidised to give native pairing in suitable proteins).",
+      "visual_spec": null,
+      "correct_option": "A",
+      "ncert_evidence": null,
+      "calculation_check": null,
+      "numerical_evidence": null,
+      "diagram_description": null
+    },
+    "item_status": "DRAFT",
+    "subject": "CHEMISTRY",
+    "class_level": "12",
+    "chapter": "Biomolecules",
+    "topic": "Amino Acids and Proteins",
+    "concept": "Primary, Secondary, Tertiary and Quaternary Structure of Proteins",
+    "concept_code": "protein-structure-levels",
+    "kus": [
+      {
+        "id": "fc3d722b-641e-402a-a3cd-6e25cab4fc5f",
+        "summary": "ds, proceeds through\nthe combination of the amino group of one molecule\nwith the carboxyl group of the other. This results in\nthe elimination of a water molecule and formation of\na peptide bond -CO-NH"
+      }
+    ],
+    "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 2\\lech2dd\\lech205.pdf"
+  },
+  {
+    "candidate_id": "bb4a0741-efab-43ff-8317-859bf6e91737",
+    "status": "CREATED",
+    "provider": "openai",
+    "model_used": "gpt-5-mini",
+    "blueprint_id": "ea65866b-ecf3-4ea1-b560-b2533d5f38ac",
+    "concept_id": "68ab5c7b-cc6f-4f1e-9ee4-a27294f253f1",
+    "content_item_id": "76bd3921-dbfd-4c9f-bd2d-a65eef56b287",
+    "blueprint_key": "bp-create-001-20260913-bp-botany-fermented-beverages-antibiotics-mcq",
+    "provenance_tier": "authoritative",
+    "constraints": {
+      "ku_id": "af1f49c5-51cf-4608-8c63-57b3ed4eefcc",
+      "campaign": "bp-create-001-20260913",
+      "reasoning": "ncert_conceptual",
+      "ncert_derived": true,
+      "classification": "conceptual",
+      "question_format": "MCQ_4",
+      "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo108.pdf",
+      "correct_option_count": 1,
+      "explanation_required": true,
+      "ncert_section_heading": "CF-C5 / Fermented Beverages and Antibiotics",
+      "ncert_source_relative": "Class 12/Biology/lebo1dd/lebo108.pdf",
+      "avoid_paraphrase_duplicates": true
+    },
+    "body": {
+      "stem": "Which one of the following statements correctly describes an industrial process for producing a fermented beverage and an antibiotic, respectively?",
+      "options": [
+        {
+          "text": "Ethanol for alcoholic beverages is produced by Saccharomyces cerevisiae under anaerobic fermentation of sugars; antibiotics such as streptomycin are produced as secondary metabolites by Streptomyces species during the stationary phase in submerged fermentation.",
+          "label": "A"
+        },
+        {
+          "text": "Antibiotics are primary metabolites produced during the exponential growth phase and therefore are typically obtained most efficiently from continuous fermentation, while beverage ethanol is produced during the stationary phase of yeast growth.",
+          "label": "B"
+        },
+        {
+          "text": "Yeasts used in producing alcoholic beverages oxidize ethanol to acetic acid during fermentation to improve shelf life, so Acetobacter species are routinely added to fermenting wort to generate acetic acid.",
+          "label": "C"
+        },
+        {
+          "text": "Lactic acid bacteria are the preferred organisms for producing distilled spirits because they tolerate high ethanol concentrations and convert sugars into lactic acid, which enhances the alcohol content during distillation.",
+          "label": "D"
+        }
+      ],
+      "pyq_year": null,
+      "difficulty": "medium",
+      "provenance": null,
+      "bloom_level": null,
+      "diagram_svg": null,
+      "explanation": "Option A is correct: Saccharomyces cerevisiae performs anaerobic glycolysis (fermentation) of sugars to produce ethanol and CO2 and is the principal organism used for alcoholic beverages. Many clinically and industrially important antibiotics (for example streptomycin) are produced by Streptomyces species; these antibiotics are secondary metabolites typically synthesized when growth has slowed (stationary phase) and are often manufactured in large stirred-tank (submerged) fermenters under controlled conditions. Option B is incorrect because antibiotics are generally secondary, not primary, metabolites and are usually produced when cells enter stationary phase; primary metabolites (like ethanol in yeast) are associated with active growth or exponential metabolism. Option C is incorrect because yeasts do not intentionally oxidize ethanol to acetic acid to improve beverages; acetic acid production from ethanol is carried out by Acetobacter (an undesirable spoilage reaction for most alcoholic beverages) and is not a standard step in beverage fermentation. Option D is incorrect because lactic acid bacteria produce lactic acid (used in yogurt, pickles, some sour beers) but they are not used to produce distilled spirits; they do not increase ethanol content, are generally less tolerant of high ethanol levels than yeasts, and would not enhance alcohol during distillation.",
+      "visual_spec": null,
+      "correct_option": "A",
+      "ncert_evidence": null,
+      "calculation_check": null,
+      "numerical_evidence": null,
+      "diagram_description": null
+    },
+    "item_status": "DRAFT",
+    "subject": "BOTANY",
+    "class_level": "12",
+    "chapter": "Microbes in Human Welfare",
+    "topic": "Microbes in Household Products and Industrial Products",
+    "concept": "Fermented Beverages and Antibiotics",
+    "concept_code": "fermented-beverages-antibiotics",
+    "kus": [
+      {
+        "id": "af1f49c5-51cf-4608-8c63-57b3ed4eefcc",
+        "summary": "id bacteria (LAB) grow in milk and convert it\nto curd. During growth, the LAB produce acids that coagulate and\npartially digest the milk proteins."
+      }
+    ],
+    "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo108.pdf"
+  },
+  {
+    "candidate_id": "a85445fa-db5f-4525-8002-ae8f8c928003",
+    "status": "CREATED",
+    "provider": "openai",
+    "model_used": "gpt-5-mini",
+    "blueprint_id": "159b2b00-9491-45d0-bd41-51eab481dd06",
+    "concept_id": "f5112095-56f7-54d4-b8eb-0a16f50e00e0",
+    "content_item_id": "6b23128f-9f20-4c25-879e-21ff8f835ca2",
+    "blueprint_key": "bp-create-002-20260913-bp-zoology-ak-levels-of-organisation-mcq",
+    "provenance_tier": "authoritative",
+    "constraints": {
+      "ku_id": "bb63139e-acd9-4ab7-92fc-50bebb7b7093",
+      "campaign": "bp-create-002-20260913",
+      "reasoning": "ncert_conceptual",
+      "ncert_derived": true,
+      "classification": "conceptual",
+      "question_format": "MCQ_4",
+      "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo104.pdf",
+      "correct_option_count": 1,
+      "explanation_required": true,
+      "ncert_section_heading": "KU-COVERAGE-002 / Levels of Organisation",
+      "ncert_source_relative": "Class 11/Biology/kebo1dd/kebo104.pdf",
+      "avoid_paraphrase_duplicates": true
+    },
+    "body": {
+      "stem": "Which one of the following pairs correctly matches an animal with the highest level of structural organisation it exhibits?",
+      "options": [
+        {
+          "text": "Sycon (a sponge) — Cellular level of organisation",
+          "label": "A"
+        },
+        {
+          "text": "Hydra — Organ-system level of organisation",
+          "label": "B"
+        },
+        {
+          "text": "Planaria (a flatworm) — Tissue level of organisation",
+          "label": "C"
+        },
+        {
+          "text": "Earthworm — Cellular level of organisation",
+          "label": "D"
+        }
+      ],
+      "pyq_year": null,
+      "difficulty": "medium",
+      "provenance": null,
+      "bloom_level": null,
+      "diagram_svg": null,
+      "explanation": "Correct answer (A): Sponges such as Sycon lack true tissues and organs; their body functions are performed by loosely associated, specialized cells (e.g., choanocytes, pinacocytes). This is the cellular grade of organisation.\nWhy B is wrong: Hydra (a cnidarian) is diploblastic and has cells organised into definite tissues (e.g., epidermis and gastrodermis) and simple tissue-level coordination (nerve net, muscle-like cells). It does not have distinct organs combined into organ-systems, so it is at the tissue grade, not organ-system.\nWhy C is wrong: Planaria (Platyhelminthes) show an organ level of organisation — they possess distinct organs (e.g., a branched gut, excretory protonephridia, reproductive organs) formed from three germ layers. Calling them only tissue-level ignores these true organs.\nWhy D is wrong: Earthworms (annelids) possess multiple integrated organs arranged into functional systems (digestive, circulatory, excretory, nervous), so they exhibit organ-system level organisation, not merely cellular level.",
+      "visual_spec": null,
+      "correct_option": "A",
+      "ncert_evidence": null,
+      "calculation_check": null,
+      "numerical_evidence": null,
+      "diagram_description": null
+    },
+    "item_status": "DRAFT",
+    "subject": "ZOOLOGY",
+    "class_level": "11",
+    "chapter": "Animal Kingdom",
+    "topic": "Basis of Classification",
+    "concept": "Levels of Organisation",
+    "concept_code": "ak-levels-of-organisation",
+    "kus": [
+      {
+        "id": "bb63139e-acd9-4ab7-92fc-50bebb7b7093",
+        "summary": "ecies of animals have been\ndescribed till now, the need for classification becomes all the more\nimportant. The classification also helps in assigning a systematic position\nto newly described species."
+      }
+    ],
+    "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo104.pdf"
+  },
+  {
+    "candidate_id": "4926220c-aab9-4322-b2e1-4ddb1d970707",
+    "status": "CREATED",
+    "provider": "openai",
+    "model_used": "gpt-5-mini",
+    "blueprint_id": "321cdf46-7a25-4935-b7aa-d3f83e0bea01",
+    "concept_id": "43654d12-df1b-4215-9b72-d32bbe0d7429",
+    "content_item_id": "468f949b-32c6-4d89-bca9-4967aa3d815c",
+    "blueprint_key": "bp-create-002-20260913-bp-physics-work-energy-theorem-mcq",
+    "provenance_tier": "authoritative",
+    "constraints": {
+      "ku_id": "7d9598ac-4b33-4d39-b552-7ebc1aa3e31e",
+      "campaign": "bp-create-002-20260913",
+      "reasoning": "ncert_conceptual",
+      "ncert_derived": true,
+      "classification": "conceptual",
+      "question_format": "MCQ_4",
+      "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph1dd\\keph1dd\\keph105.pdf",
+      "correct_option_count": 1,
+      "explanation_required": true,
+      "ncert_section_heading": "KU-COVERAGE-002 / Work–Energy Theorem",
+      "ncert_source_relative": "Class 11/Physics/keph1dd/keph1dd/keph105.pdf",
+      "avoid_paraphrase_duplicates": true
+    },
+    "body": {
+      "stem": "A block of mass 2.0 kg is pulled along a horizontal surface by a constant horizontal force of 10.0 N for a displacement of 5.0 m. The coefficient of kinetic friction between block and surface is 0.20. The block starts from rest. According to the work–energy theorem, which one of the following equals the change in kinetic energy of the block after the 5.0 m displacement?",
+      "options": [
+        {
+          "text": "Work done by the pulling force = 50.0 J",
+          "label": "A"
+        },
+        {
+          "text": "Work done by friction = −19.6 J",
+          "label": "B"
+        },
+        {
+          "text": "Net work done by all forces = 30.4 J (this equals the change in kinetic energy)",
+          "label": "C"
+        },
+        {
+          "text": "Work done by the normal force = +19.6 J",
+          "label": "D"
+        }
+      ],
+      "pyq_year": null,
+      "difficulty": "medium",
+      "provenance": null,
+      "bloom_level": null,
+      "diagram_svg": null,
+      "explanation": "Work–energy theorem: net work done by all forces on the body equals the change in its kinetic energy. Calculate magnitudes: pulling force does W_pull = F·d = 10.0×5.0 = 50.0 J. Frictional force magnitude = μk mg = 0.20×2.0×9.8 = 3.92 N, so work by friction = −3.92×5.0 = −19.6 J. Weight and normal force act vertically while displacement is horizontal, so their works are zero. Net work = 50.0 + (−19.6) + 0 + 0 = 30.4 J, so ΔK = 30.4 J. Why the other options are wrong: A is the work done by the applied force only (50.0 J) but part of that is dissipated by friction so it is not the change in kinetic energy. B is the (negative) work done by friction alone (−19.6 J); it represents energy lost to heat, not the net change in kinetic energy. D is incorrect because the normal force does no work for horizontal displacement (its work is zero), so +19.6 J is not correct. Thus only the net work (30.4 J) equals the change in kinetic energy.",
+      "visual_spec": null,
+      "correct_option": "C",
+      "ncert_evidence": null,
+      "calculation_check": null,
+      "numerical_evidence": null,
+      "diagram_description": null
+    },
+    "item_status": "DRAFT",
+    "subject": "PHYSICS",
+    "class_level": "11",
+    "chapter": "Work, Energy and Power",
+    "topic": "Work and Kinetic Energy",
+    "concept": "Work–Energy Theorem",
+    "concept_code": "work-energy-theorem",
+    "kus": [
+      {
+        "id": "7d9598ac-4b33-4d39-b552-7ebc1aa3e31e",
+        "summary": "roduct of any two vectors A and B, denoted as A.B (read\n5.1\nIntroduction\n5.2\nNotions of work and kinetic\nenergy : The work-energy\ntheorem\n5.3\nWork\n5.4\nKinetic energy\n5.5\nWork done by a variable force\n"
+      }
+    ],
+    "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph1dd\\keph1dd\\keph105.pdf"
+  }
+]

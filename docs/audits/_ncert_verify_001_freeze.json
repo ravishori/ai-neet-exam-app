@@ -1,0 +1,75 @@
+{
+  "protected_expected": {
+    "PUBLISHED": 1479,
+    "IN_REVIEW": 111,
+    "SUPERSEDED": 6,
+    "chapters": 56,
+    "topics": 192,
+    "concepts": 318,
+    "knowledge_units": 381,
+    "blueprints": 445
+  },
+  "protected_observed": {
+    "PUBLISHED": 1479,
+    "IN_REVIEW": 111,
+    "SUPERSEDED": 6,
+    "chapters": 56,
+    "topics": 192,
+    "concepts": 318,
+    "knowledge_units": 381,
+    "blueprints": 445
+  },
+  "protected_hard_ok": true,
+  "unmapped_draft_null_concept": 5024,
+  "unmapped_note": "concept_id IS NULL definition; baseline 5024 may soft-drift independently",
+  "status_counts": {
+    "DRAFT": 5434,
+    "PUBLISHED": 1479,
+    "SUPERSEDED": 6,
+    "IN_REVIEW": 111
+  },
+  "pilot_created": 129,
+  "pilot_ok": true,
+  "smoke_status": "CREATED",
+  "smoke_ok": true,
+  "benchmark_candidates_unchanged_created": true,
+  "benchmark_candidates": [
+    {
+      "id": "519e6ab2-ad02-4726-9342-49e8598a1852",
+      "status": "CREATED",
+      "provider": "openai",
+      "model": "gpt-5-mini",
+      "version": 1
+    },
+    {
+      "id": "8d727dc4-49dc-40a7-815f-a2679d9d78bc",
+      "status": "CREATED",
+      "provider": "openai",
+      "model": "gpt-5-mini",
+      "version": 1
+    },
+    {
+      "id": "bb4a0741-efab-43ff-8317-859bf6e91737",
+      "status": "CREATED",
+      "provider": "openai",
+      "model": "gpt-5-mini",
+      "version": 1
+    },
+    {
+      "id": "a85445fa-db5f-4525-8002-ae8f8c928003",
+      "status": "CREATED",
+      "provider": "openai",
+      "model": "gpt-5-mini",
+      "version": 1
+    },
+    {
+      "id": "4926220c-aab9-4322-b2e1-4ddb1d970707",
+      "status": "CREATED",
+      "provider": "openai",
+      "model": "gpt-5-mini",
+      "version": 1
+    }
+  ],
+  "verification_mutated_db": false,
+  "checksum": "96207a0823fbb032225f1be45fed7083"
+}

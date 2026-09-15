@@ -13,6 +13,8 @@ from app.modules.identity.schemas.auth import (
     LoginRequest,
     MeResponse,
     MfaVerifyRequest,
+    MobileOtpSendRequest,
+    MobileOtpVerifyRequest,
     OtpRequest,
     OtpVerifyRequest,
     RegisterRequest,
@@ -24,8 +26,13 @@ from app.modules.identity.schemas.auth import (
 from app.modules.identity.services.auth_service import AuthService
 from app.modules.identity.services.email_service import send_password_reset_email, send_verification_email
 from app.modules.identity.services.otp_service import OtpService
+from app.modules.identity.services.profile_validation import normalize_indian_mobile
 from app.modules.identity.services.token_service import create_mfa_pending_token, decode_mfa_pending_token
 from app.modules.identity.services.totp_service import TotpService
+from app.modules.identity.services.twilio_verify_service import (
+    TwilioVerifyError,
+    TwilioVerifyService,
+)
 from app.shared.responses import envelope
 
 router = APIRouter(prefix="/api/v1/auth", tags=["auth"])
@@ -49,7 +56,18 @@ def _user_to_me(user: User) -> dict:
         email_verified=user.email_verified,
         roles=user.role_codes,
         totp_enabled=bool(user.totp_enabled),
+        must_change_password=bool(getattr(user, "must_change_password", False)),
+        mobile_e164=getattr(user, "mobile_e164", None),
+        state_code=getattr(user, "state_code", None),
+        city_name=getattr(user, "city_name", None),
     ).model_dump()
+
+
+# Twilio Verify service is stateless (holds only a settings ref); the client
+# can be constructed per request. Tests inject a stub via
+# ``app.dependency_overrides``.
+def get_twilio_verify() -> TwilioVerifyService:
+    return TwilioVerifyService()
 
 
 @router.post("/register", dependencies=[Depends(rate_limit("register", limit=5, window_seconds=60))])
@@ -57,9 +75,11 @@ async def register(payload: RegisterRequest, request: Request, db: AsyncSession 
     service = AuthService(db)
     user = await service.register(
         email=payload.email,
-        password=payload.password,
         first_name=payload.first_name,
         last_name=payload.last_name,
+        mobile=payload.mobile,
+        state_code=payload.state_code,
+        city=payload.city,
     )
     verification_token = await service.request_email_verification(user)
     send_verification_email(to=user.email, token=verification_token)
@@ -277,6 +297,103 @@ async def totp_disable(
 ):
     await TotpService(db).disable(user, payload.code)
     return envelope(success=True, data={"enabled": False})
+
+
+@router.post(
+    "/mobile/otp/send",
+    dependencies=[Depends(rate_limit("mobile_otp_send", limit=5, window_seconds=300, fail_closed=True))],
+)
+async def mobile_otp_send(
+    payload: MobileOtpSendRequest,
+    db: AsyncSession = Depends(get_db),
+    twilio: TwilioVerifyService = Depends(get_twilio_verify),
+):
+    """Send OTP to a mobile via Twilio Verify. Non-enumerating: the response
+    body is identical whether the mobile is registered or not, so an attacker
+    cannot probe for existing accounts. Actual Twilio API is only called for
+    known accounts — but the wall-clock timing difference is small (a single
+    DB lookup) and acceptable within the existing rate-limit window."""
+    # Uniform response — computed BEFORE the DB check so it cannot leak
+    # through error paths.
+    UNIFORM = {
+        "message": "If that mobile number is registered, an OTP has been sent.",
+        "channel": "sms",
+    }
+    try:
+        mobile_e164 = normalize_indian_mobile(payload.mobile)
+    except AppError:
+        # Invalid input format still gets the same generic answer to keep
+        # non-enumeration guarantees; the request is otherwise ignored.
+        return envelope(success=True, data=UNIFORM)
+
+    service = AuthService(db)
+    user = await service.users.get_by_mobile_e164(mobile_e164)
+    if user is None or user.status != "active":
+        return envelope(success=True, data=UNIFORM)
+
+    try:
+        await twilio.send(mobile_e164, channel="sms")
+    except TwilioVerifyError:
+        # Fail-closed but still non-enumerating — the operator sees the real
+        # code in logs, the client only sees the generic message.
+        return envelope(success=True, data=UNIFORM)
+    return envelope(success=True, data=UNIFORM)
+
+
+@router.post(
+    "/mobile/otp/verify",
+    dependencies=[Depends(rate_limit("mobile_otp_verify", limit=10, window_seconds=300, fail_closed=True))],
+)
+async def mobile_otp_verify(
+    payload: MobileOtpVerifyRequest,
+    request: Request,
+    db: AsyncSession = Depends(get_db),
+    twilio: TwilioVerifyService = Depends(get_twilio_verify),
+):
+    """Verify OTP via Twilio Verify and authenticate the corresponding user.
+
+    Non-enumerating: any failure — bad input, unknown mobile, wrong code,
+    expired code, or Twilio outage — returns the same generic 401. We never
+    tell the client which of these it was.
+    """
+    generic_error = AppError(
+        "Invalid or expired code",
+        code="MOBILE_OTP_INVALID",
+        status_code=401,
+    )
+    try:
+        mobile_e164 = normalize_indian_mobile(payload.mobile)
+    except AppError as exc:
+        raise generic_error from exc
+
+    try:
+        result = await twilio.check(mobile_e164, code=payload.code)
+    except TwilioVerifyError as exc:
+        # Configuration missing → surface a distinct 503 (operator-facing);
+        # transport / API failure → collapse into the generic 401 so the
+        # client cannot distinguish it from "wrong code".
+        if exc.code == "TWILIO_VERIFY_NOT_CONFIGURED":
+            raise
+        raise generic_error from exc
+
+    if not result.valid:
+        raise generic_error
+
+    ip, user_agent = _client_meta(request)
+    service = AuthService(db)
+    user = await service.authenticate_by_mobile_e164(
+        mobile_e164=mobile_e164, ip_address=ip, user_agent=user_agent
+    )
+    if user is None:
+        raise generic_error
+
+    # Mobile-OTP is a strong factor: skip the TOTP step-up requirement here
+    # (mirrors the mfa/verify branch — user proved possession of the device).
+    access_token, csrf_token = service.issue_tokens(user)
+    refresh_token = await service.issue_refresh_token(user, ip_address=ip, user_agent=user_agent)
+    result_env = envelope(success=True, data=_user_to_me(user))
+    set_auth_cookies(result_env, access_token=access_token, refresh_token=refresh_token, csrf_token=csrf_token)
+    return result_env
 
 
 @router.get("/me")

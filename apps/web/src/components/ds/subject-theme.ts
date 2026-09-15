@@ -1,3 +1,8 @@
+/**
+ * Subject identity themes (Phase A subject rules).
+ * Botany + Zoology → biology family. No per-chapter colors.
+ * Never use these hues for success / warning / destructive / correctness.
+ */
 export type SubjectThemeKey = "physics" | "chemistry" | "biology" | "neutral";
 
 const PHYSICS_ALIASES = new Set(["physics", "phy"]);

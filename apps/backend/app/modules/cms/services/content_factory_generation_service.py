@@ -7,7 +7,9 @@ Never submit / approve / publish. Never mutate existing questions.
 
 from __future__ import annotations
 
+import asyncio
 import json
+import random
 import re
 import time
 import uuid
@@ -27,11 +29,11 @@ from app.modules.academic.models import Chapter, Concept, Topic
 from app.modules.ingestion.services.ncert_canonical_source import (
     assert_blueprint_ncert_source,
 )
-from app.modules.ai.gateway.ai_gateway import AIGateway
 from app.modules.ai.gateway.base import (
     PROVIDER_AUTH_FAILED,
     PROVIDER_BLOCKED,
     PROVIDER_COST_UNKNOWN,
+    PROVIDER_RATE_LIMITED,
     AIProvider,
     AIResponse,
     ProviderError,
@@ -67,6 +69,21 @@ from app.modules.cms.services.factory_seed_diversity import (
     classify_against_prior,
     format_prior_stems_for_prompt,
 )
+from app.modules.cms.services.mcq_llm_provider import (
+    assert_provider_metadata_consistent,
+    build_mcq_llm_provider,
+    is_retryable_provider_error,
+    must_stop_run,
+    report_error_alias,
+)
+from app.modules.cms.services.ncert_claim_grounding import validate_ncert_claim_grounding
+from app.modules.cms.services.ncert_generation_evidence import (
+    NcertEvidencePack,
+    parse_ku_id,
+    resolve_ncert_evidence_pack,
+)
+from app.modules.cms.syllabus import assert_blueprint_neet_syllabus_scope
+from app.modules.knowledge.models.knowledge_unit import KnowledgeUnit
 from app.modules.system.models.audit_log import AuditLog
 from app.modules.system.repositories.audit_repository import AuditRepository
 
@@ -102,8 +119,58 @@ class ContentFactoryGenerationService:
         self.planning_repo = ContentFactoryPlanningRepository(session)
         self.factory_repo = ContentFactoryRepository(session)
         self.workflow = ContentWorkflowService(session)
-        self.gateway = AIGateway(session, provider=provider)
+        # MCQ-PROVIDER-ABSTRACTION-001: factory never calls vendor SDKs directly.
+        self.mcq_provider = build_mcq_llm_provider(session, provider=provider)
         self.audit = AuditRepository(session)
+
+    async def _generate_with_backoff(
+        self,
+        *,
+        system_prompt: str,
+        user_prompt: str,
+        actor_id: uuid.UUID,
+        run_id: uuid.UUID,
+        bp_id: uuid.UUID,
+        bp_version: int,
+        correlation_id: str,
+    ) -> AIResponse:
+        """Call McqLlmProvider; retry RATE_LIMIT with bounded backoff; stop on BLOCKED."""
+        max_retries = max(0, int(settings.factory_rate_limit_max_retries_per_attempt))
+        base_s = float(settings.factory_rate_limit_backoff_base_s)
+        max_s = float(settings.factory_rate_limit_backoff_max_s)
+        last_exc: ProviderError | None = None
+        for retry_i in range(max_retries + 1):
+            try:
+                return await self.mcq_provider.generate_mcq(
+                    system_prompt=system_prompt,
+                    user_prompt=user_prompt,
+                    max_tokens=1200,
+                    user_id=actor_id,
+                    generation_run_id=str(run_id),
+                    blueprint_id=str(bp_id),
+                    blueprint_version=bp_version,
+                    prompt_version=PROMPT_VERSION,
+                    agent_type=AGENT_TYPE,
+                    correlation_id=correlation_id,
+                )
+            except ProviderError as exc:
+                last_exc = exc
+                if must_stop_run(exc) or exc.code != PROVIDER_RATE_LIMITED:
+                    raise
+                if retry_i >= max_retries:
+                    raise
+                delay = min(max_s, base_s * (2**retry_i))
+                delay *= 0.5 + random.random()  # jitter
+                logger.warning(
+                    "mcq_rate_limit_backoff",
+                    provider=self.mcq_provider.provider_name,
+                    retry=retry_i + 1,
+                    delay_s=round(delay, 2),
+                    error_alias=report_error_alias(exc.code),
+                )
+                await asyncio.sleep(delay)
+        assert last_exc is not None
+        raise last_exc
 
     def _audit(self, *, actor_id, action, entity_type, entity_id, metadata, **ctx) -> None:
         self.audit.add(
@@ -190,6 +257,37 @@ class ContentFactoryGenerationService:
         await self._load_context(bp)
         return bp
 
+    async def _load_ku_payload(self, constraints: dict[str, Any] | None) -> tuple[str | None, str | None, list[str]]:
+        """Load KU summary/facts when blueprint constraints reference ku_id (read-only)."""
+        ku_uuid = parse_ku_id(constraints)
+        if not ku_uuid:
+            return None, None, []
+        ku = await self.session.get(KnowledgeUnit, ku_uuid)
+        if ku is None or getattr(ku, "deleted_at", None) is not None:
+            return str(ku_uuid), None, []
+        facts_raw = ku.structured_facts or []
+        facts = [str(f) for f in facts_raw if f]
+        return str(ku.id), (ku.summary or None), facts
+
+    async def _resolve_generation_evidence(
+        self,
+        bp: QuestionBlueprint,
+        ctx_data: dict[str, Any],
+    ) -> NcertEvidencePack:
+        """MCQ-NCERT-GROUNDING-001: resolve evidence before any provider call."""
+        constraints = dict(bp.constraints or {})
+        ku_id, ku_summary, ku_facts = await self._load_ku_payload(constraints)
+        return resolve_ncert_evidence_pack(
+            constraints,
+            provenance_tier=bp.provenance_tier,
+            concept_name=ctx_data.get("concept_name"),
+            chapter_name=ctx_data.get("chapter_name"),
+            topic_name=ctx_data.get("topic_name"),
+            ku_id=ku_id,
+            ku_summary=ku_summary,
+            ku_facts=ku_facts,
+        )
+
     async def _load_context(self, bp: QuestionBlueprint) -> dict[str, Any]:
         result = await self.session.execute(
             select(Concept)
@@ -214,6 +312,7 @@ class ContentFactoryGenerationService:
             "topic_name": topic.name,
             "chapter_name": chapter.name,
             "subject_name": subject.name,
+            "subject_code": subject.code,
             "objective_title": objective.title,
             "objective_description": objective.description,
             "family_name": family.name,
@@ -288,9 +387,13 @@ class ContentFactoryGenerationService:
                     "generator_version": GENERATOR_VERSION,
                     "target_count": target_count,
                     "blueprint_version": bp.blueprint_version,
-                    "routing_policy": self.gateway.routing_policy.describe(),
+                    "routing_policy": self.mcq_provider.selection.routing_policy,
                     "factory_provider_mode": settings.factory_provider_mode,
                     "factory_provider": settings.factory_provider,
+                    "mcq_provider": self.mcq_provider.selection.requested,
+                    "mcq_registry_provider": self.mcq_provider.provider_name,
+                    "mcq_model": self.mcq_provider.model_name,
+                    "mcq_allow_fallback_chain": self.mcq_provider.selection.allow_fallback_chain,
                 },
             ),
             actor_id=actor_id,
@@ -401,7 +504,7 @@ class ContentFactoryGenerationService:
         **ctx,
     ) -> GenerationStats:
         stats = GenerationStats(requested=target_count)
-        stats.routing_policy = self.gateway.routing_policy.describe()
+        stats.routing_policy = self.mcq_provider.selection.routing_policy
         max_attempts = max(target_count, int(target_count * settings.factory_max_pilot_attempt_multiplier))
         max_cost = settings.factory_max_pilot_cost_usd
         ctx_data = await self._load_context(blueprint)
@@ -417,6 +520,34 @@ class ContentFactoryGenerationService:
         batch_id = batch.id
         job_id = job.id
         run_id = run.id
+
+        # SYLLABUS-GATE-001: NEET-UG-2026 scope BEFORE NCERT evidence and BEFORE provider.
+        syllabus_scope = assert_blueprint_neet_syllabus_scope(
+            bp_constraints,
+            academic_subject_code=ctx_data.get("subject_code"),
+        )
+        if syllabus_scope.blocks_provider:
+            stats.stop_reason = syllabus_scope.status
+            logger.warning(
+                "syllabus_gate_blocked",
+                blueprint_id=str(bp_id),
+                status=syllabus_scope.status,
+                detail=syllabus_scope.detail,
+                reasons=syllabus_scope.reasons,
+            )
+            return stats
+
+        # MCQ-NCERT-GROUNDING-001: evidence sufficiency gate (no LLM if insufficient).
+        evidence_pack = await self._resolve_generation_evidence(blueprint, ctx_data)
+        if evidence_pack.requires_ncert and not evidence_pack.is_ready:
+            stats.stop_reason = "NCERT_EVIDENCE_INSUFFICIENT"
+            logger.warning(
+                "ncert_evidence_insufficient",
+                blueprint_id=str(bp_id),
+                detail=evidence_pack.detail,
+                pdf=evidence_pack.relative_posix,
+            )
+            return stats
 
         # Mark run/job running
         now = datetime.now(UTC)
@@ -470,29 +601,31 @@ class ContentFactoryGenerationService:
                 constraints=bp_constraints,
                 provenance_note="ai",
                 prior_stems=format_prior_stems_for_prompt(prior_stems),
+                ncert_evidence_text=evidence_pack.evidence_text if evidence_pack.is_ready else None,
+                ncert_pdf_relative=evidence_pack.relative_posix,
+                ncert_section_heading=evidence_pack.section_heading,
+                ncert_pages=list(evidence_pack.page_numbers),
+                ku_id=evidence_pack.ku_id,
             )
 
             try:
-                response: AIResponse = await self.gateway.generate(
-                    agent_type=AGENT_TYPE,
+                response: AIResponse = await self._generate_with_backoff(
                     system_prompt=SYSTEM_PROMPT,
                     user_prompt=user_prompt,
-                    user_id=actor_id,
-                    max_tokens=1200,
-                    generation_run_id=str(run_id),
-                    blueprint_id=str(bp_id),
-                    blueprint_version=bp_version,
-                    prompt_version=PROMPT_VERSION,
-                    require_json=True,
+                    actor_id=actor_id,
+                    run_id=run_id,
+                    bp_id=bp_id,
+                    bp_version=bp_version,
                     correlation_id=str(candidate.id),
                 )
             except ProviderError as exc:
                 attempts = getattr(exc, "attempts", None) or [
                     {
                         "attempt_no": 1,
-                        "provider": exc.provider,
+                        "provider": exc.provider or self.mcq_provider.provider_name,
                         "status": exc.code,
                         "error_code": exc.code,
+                        "error_alias": report_error_alias(exc.code),
                         "error_message": str(exc)[:300],
                     }
                 ]
@@ -500,38 +633,50 @@ class ContentFactoryGenerationService:
                 candidate.status = "FAILED_PROVIDER"
                 candidate.error_code = exc.code
                 candidate.error_summary = str(exc)[:500]
-                candidate.provider = exc.provider
+                candidate.provider = exc.provider or self.mcq_provider.provider_name
+                candidate.model_used = self.mcq_provider.model_name
                 candidate.routing_policy = getattr(exc, "routing_policy", None) or stats.routing_policy
                 stats.failed_provider += 1
                 await self.session.commit()
-                if exc.code in {PROVIDER_BLOCKED, PROVIDER_AUTH_FAILED} or not exc.retryable:
+                if must_stop_run(exc) or not is_retryable_provider_error(exc):
                     stats.stop_reason = exc.code
                     break
                 continue
             except Exception as exc:  # noqa: BLE001
+                mapped = self.mcq_provider.classify_error(exc)
                 candidate.status = "FAILED_PROVIDER"
-                candidate.error_code = "PROVIDER_ERROR"
+                candidate.error_code = mapped.code
                 candidate.error_summary = str(exc)[:500]
+                candidate.provider = mapped.provider or self.mcq_provider.provider_name
+                candidate.model_used = self.mcq_provider.model_name
                 stats.failed_provider += 1
                 await self.session.commit()
-                msg = str(exc).lower()
-                if any(
-                    token in msg
-                    for token in (
-                        "credit balance is too low",
-                        "invalid api key",
-                        "authentication",
-                        "permission",
-                        "401",
-                        "403",
-                    )
-                ):
-                    stats.stop_reason = PROVIDER_BLOCKED
+                # Only hard-stop on blocked/auth from unclassified exceptions.
+                # Other unexpected errors continue (historical factory behavior).
+                if mapped.code in {PROVIDER_BLOCKED, PROVIDER_AUTH_FAILED}:
+                    stats.stop_reason = mapped.code
                     break
                 continue
 
             for att in (response.safe_metadata or {}).get("provider_attempts") or []:
                 stats.provider_attempts.append(att)
+
+            # Immutable attribution: response provider must match selection (no silent switch).
+            try:
+                assert_provider_metadata_consistent(
+                    candidate_provider=response.provider,
+                    expected_provider=self.mcq_provider.provider_name,
+                )
+            except AppError as meta_exc:
+                candidate.status = "FAILED_PROVIDER"
+                candidate.error_code = meta_exc.code
+                candidate.error_summary = str(meta_exc)[:500]
+                candidate.provider = response.provider
+                candidate.model_used = response.model
+                stats.failed_provider += 1
+                await self.session.commit()
+                stats.stop_reason = meta_exc.code
+                break
 
             # Fail closed: unknown cost cannot safely enforce budget
             if (response.cost_status or "").upper() == "UNAVAILABLE" and not response.is_fallback:
@@ -618,6 +763,20 @@ class ContentFactoryGenerationService:
                 stats.rejected_validation += 1
                 await self.session.commit()
                 continue
+
+            # MCQ-NCERT-GROUNDING-001: claim-level grounding (provider-neutral; above adapters).
+            if evidence_pack.requires_ncert:
+                grounding = validate_ncert_claim_grounding(validated, evidence_pack)
+                if not grounding.ok:
+                    candidate.status = "REJECTED_VALIDATION"
+                    candidate.error_code = ",".join(grounding.error_codes)[:120]
+                    preview = "; ".join(
+                        f"{i.field}:{','.join(i.unsupported_tokens[:3]) or i.detail}" for i in grounding.issues[:4]
+                    )
+                    candidate.error_summary = f"NCERT_GROUNDING:{preview}"[:500]
+                    stats.rejected_validation += 1
+                    await self.session.commit()
+                    continue
 
             h = stem_hash(validated["stem"])
             candidate.stem_hash = h

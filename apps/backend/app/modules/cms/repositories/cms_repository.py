@@ -233,6 +233,7 @@ class CmsRepository:
                 Topic.name.label("topic_name"),
                 Chapter.id.label("chapter_id"),
                 Chapter.name.label("chapter_name"),
+                Chapter.class_level.label("class_level"),
                 Subject.id.label("subject_id"),
                 Subject.name.label("subject_name"),
             )
@@ -246,7 +247,13 @@ class CmsRepository:
                 "concept": {"id": str(row.id), "name": row.concept_name},
                 "ncert_reference": row.ncert_reference,
                 "topic": {"id": str(row.topic_id), "name": row.topic_name},
-                "chapter": {"id": str(row.chapter_id), "name": row.chapter_name},
+                "chapter": {
+                    "id": str(row.chapter_id),
+                    "name": row.chapter_name,
+                    "class_level": row.class_level,
+                },
+                # Explicit Class field for SME review packets (null ⇒ unavailable).
+                "class_level": row.class_level,
                 "subject": {"id": str(row.subject_id), "name": row.subject_name},
             }
             for row in result.all()

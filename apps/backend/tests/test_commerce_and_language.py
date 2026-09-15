@@ -18,7 +18,17 @@ async def _any_concept_id(db_session) -> str:
 async def test_order_creation_without_razorpay_keys_never_fakes_success(client):
     """The one place this codebase deliberately never simulates success —
     see ADR-0018. No ANTHROPIC_API_KEY-style fallback for payments."""
-    resp = await client.post("/api/v1/auth/register", json={"email": "commerce-test@example.com", "password": "Commerce!234"})
+    resp = await client.post(
+        "/api/v1/auth/register",
+        json={
+            "email": "commerce-test@example.com",
+            "first_name": "Commerce",
+            "last_name": "Test",
+            "mobile": "9876500011",
+            "state_code": "KARNATAKA",
+            "city": "Bangalore",
+        },
+    )
     assert resp.status_code == 201
 
     order = await client.post("/api/v1/commerce/orders", headers=csrf_headers(client))
@@ -28,7 +38,17 @@ async def test_order_creation_without_razorpay_keys_never_fakes_success(client):
 
 
 async def test_commerce_status_defaults_to_not_premium(client):
-    await client.post("/api/v1/auth/register", json={"email": "commerce-status@example.com", "password": "Commerce!234"})
+    await client.post(
+        "/api/v1/auth/register",
+        json={
+            "email": "commerce-status@example.com",
+            "first_name": "Commerce",
+            "last_name": "Status",
+            "mobile": "9876500012",
+            "state_code": "KARNATAKA",
+            "city": "Bangalore",
+        },
+    )
 
     resp = await client.get("/api/v1/commerce/status")
     assert resp.status_code == 200

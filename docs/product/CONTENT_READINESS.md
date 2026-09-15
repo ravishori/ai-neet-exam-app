@@ -36,6 +36,14 @@ Admin UI: `/admin/ai-review`
 - Structural quality percentages remain an explicit **SAMPLE** (not labelled as full-inventory totals)
 - Still admin/editorial-only (`content.review`); never auto-approves or auto-publishes
 
+### Phase 3.3 Zoology IN_REVIEW campaign preparation (read-only)
+
+- Operator guide: `docs/product/ECAEP_ZOOLOGY_IN_REVIEW_CAMPAIGN.md`
+- SELECT-only prep script: `apps/backend/scripts/zoology_in_review_campaign_prep.py`
+- Admin entry: `/admin/ai-review?subject_name=Zoology&status=IN_REVIEW`
+- Review packets surface `academic.class_level` when `chapters.class_level` is set
+- Preparation does **not** approve, publish, certify, or mutate inventory
+
 ---
 
 ## Historical baseline (WAVE-P0-4, 2026-08-31) — NOT current truth

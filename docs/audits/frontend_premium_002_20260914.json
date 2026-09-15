@@ -1,0 +1,55 @@
+{
+  "task": "FRONTEND-PREMIUM-002",
+  "title": "Student Dashboard Visual Acceptance Audit",
+  "verdict": "YELLOW",
+  "visual_score": 7.5,
+  "date": "2026-09-14",
+  "code_changes": false,
+  "probe_script": "apps/web/scripts/premium002-visual-audit.mjs",
+  "urls": {
+    "frontend": "http://127.0.0.1:3001/student/dashboard",
+    "backend": "http://127.0.0.1:8000"
+  },
+  "first_impression": "Strong NEET command-center read; Continue practice obvious in first fold",
+  "hero_cta": "Primary CTA clear; diluted by five Practice now buttons below",
+  "progress": "Honest zeros; readiness duplicated; zero bar fills hide subject accents",
+  "subjects": "Theme tokens used; Botany/Zoology share biology green; labels prevent color-only",
+  "empty_states": "Intentional revision/activity empties; real recommendations; no fake metrics",
+  "responsive": {
+    "390": { "overflow": 0, "cta_min_height_px": 48, "cta_first_fold": true },
+    "768": { "overflow": 0, "cta_min_height_px": 48 },
+    "1280": { "overflow": 0, "cta_min_height_px": 48, "hero_height_px": 457 },
+    "1440": { "overflow": 0, "cta_min_height_px": 48 }
+  },
+  "themes": {
+    "light": "polished",
+    "dark": "polished with loud secondary outline CTA"
+  },
+  "accessibility": "heading hierarchy + progressbars + touch targets OK; focus-visible via Button DS",
+  "runtime": {
+    "hydration": false,
+    "page_errors": [],
+    "failed_next_assets": [],
+    "console_errors_matrix": []
+  },
+  "defects": [
+    "Practice now CTA competition",
+    "Mobile hero density",
+    "Zero-state subject bar accents invisible",
+    "Dark Configure scope luminance",
+    "Email unverified badge in hero"
+  ],
+  "highest_value_improvements": [
+    "Demote recommendation Practice now actions",
+    "Tighten mobile hero / metric placement",
+    "Zero-state subject visual storytelling",
+    "Soften dark secondary CTA; relocate email badge"
+  ],
+  "untouched": [
+    "Practice/Mock/ECAEP/AuthZ/DB/API/taxonomy/NCERT/syllabus",
+    "A6-A12 shell",
+    "frozen DRAFTs",
+    "dashboard product code (audit-only)"
+  ],
+  "commit": "not created"
+}

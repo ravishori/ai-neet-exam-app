@@ -30,6 +30,12 @@ MAX_FAILED_ATTEMPTS = 5
 LOCKOUT_MINUTES = 15
 DEFAULT_ROLE_CODE = "STUDENT"
 
+# Initial credential issued at registration. Never displayed in the UI; the
+# ``must_change_password`` gate forces a change on first login. This literal
+# bypasses ``validate_password_policy`` deliberately — it is a system-issued
+# transient credential, not a user-chosen one — see ``AuthService.register``.
+INITIAL_DEFAULT_PASSWORD = "Password123"  # noqa: S105 — non-secret placeholder
+
 
 class AuthError(AppError):
     def __init__(self, message: str, *, code: str = "AUTH_ERROR"):
@@ -44,14 +50,33 @@ class AuthService:
         self.tokens = RefreshTokenRepository(session)
 
     async def register(
-        self, *, email: str, password: str, first_name: str | None, last_name: str | None
+        self,
+        *,
+        email: str,
+        first_name: str,
+        last_name: str,
+        mobile: str,
+        state_code: str,
+        city: str,
     ) -> User:
-        email = email.lower().strip()
-        validate_password_policy(password)
+        """Public registration. No password field: every new account is
+        issued ``INITIAL_DEFAULT_PASSWORD`` (hashed) with must_change_password
+        forced true, so the first login is redirected to /change-password
+        before any CSRF-guarded action succeeds.
+        """
+        from app.modules.identity.services.profile_validation import (
+            normalize_indian_mobile,
+            resolve_state_and_city,
+        )
 
-        existing = await self.users.get_by_email(email)
-        if existing:
+        email = email.lower().strip()
+        mobile_e164 = normalize_indian_mobile(mobile)
+        location = await resolve_state_and_city(self.session, state_code, city)
+
+        if await self.users.get_by_email(email):
             raise AppError("An account with this email already exists", code="EMAIL_TAKEN", status_code=409)
+        if await self.users.get_by_mobile_e164(mobile_e164):
+            raise AppError("An account with this mobile number already exists", code="MOBILE_TAKEN", status_code=409)
 
         student_role = await self.roles.get_by_code(DEFAULT_ROLE_CODE)
         if not student_role:
@@ -59,10 +84,17 @@ class AuthService:
 
         user = User(
             email=email,
-            password_hash=hash_password(password),
+            password_hash=hash_password(INITIAL_DEFAULT_PASSWORD),
             first_name=first_name,
             last_name=last_name,
             display_name=first_name or email.split("@")[0],
+            mobile_e164=mobile_e164,
+            state_id=location.state.id,
+            city_id=location.city.id,
+            # Denormalized cache for cheap read paths — always sourced from master.
+            state_code=location.state.code,
+            city_name=location.city.name,
+            must_change_password=True,
         )
         self.users.add(user)
         await self.users.flush()
@@ -70,11 +102,15 @@ class AuthService:
         self.roles.assign_role(user.id, student_role.id)
         await self.session.commit()
 
-        logger.info("user_registered", user_id=str(user.id), email=email)
-        # Re-fetch with roles eager-loaded — `user` above has an unloaded
-        # `.roles` collection, and lazy-loading it later (e.g. during
-        # response serialization) raises MissingGreenlet outside an
-        # explicit await.
+        # Do NOT log any credential (initial or user-chosen). Mobile logged in
+        # E.164 form is acceptable and matches the login-history pattern.
+        logger.info(
+            "user_registered",
+            user_id=str(user.id),
+            email=email,
+            mobile_e164=mobile_e164,
+            state_code=location.state.code,
+        )
         return await self.users.get_by_id(user.id)
 
     async def authenticate(
@@ -245,9 +281,54 @@ class AuthService:
         user.password_hash = hash_password(new_password)
         user.failed_login_attempts = 0
         user.locked_until = None
+        # Clearing the must_change_password flag is the whole point of this
+        # endpoint post-INITIAL_DEFAULT_PASSWORD registration; without it a
+        # user could pick a strong password and still be looped back here.
+        user.must_change_password = False
         await self.tokens.revoke_all_for_user(user.id)
         await self.session.commit()
         logger.info("password_changed", user_id=str(user.id))
+
+    async def authenticate_by_mobile_e164(
+        self,
+        *,
+        mobile_e164: str,
+        ip_address: str | None,
+        user_agent: str | None,
+    ) -> User | None:
+        """OTP-verified login by mobile. Returns the matching active user, or
+        None if no account is bound to this number. Callers (auth_router.
+        mobile_otp_verify) must ensure the OTP was already approved by Twilio
+        Verify BEFORE calling this method — no password is checked here.
+
+        Non-enumerating: never raises when the mobile is unknown; the caller
+        translates ``None`` into the same generic "invalid or expired code"
+        response the wrong-OTP branch returns.
+        """
+        user = await self.users.get_by_mobile_e164(mobile_e164)
+        if user is None:
+            await self._record_login_attempt(
+                None, mobile_e164, False, "mobile_not_registered", ip_address, user_agent
+            )
+            return None
+        if user.locked_until and user.locked_until > datetime.now(UTC):
+            await self._record_login_attempt(
+                user.id, mobile_e164, False, "account_locked", ip_address, user_agent
+            )
+            raise AuthError("Account temporarily locked due to repeated failed attempts", code="ACCOUNT_LOCKED")
+        if user.status != "active":
+            await self._record_login_attempt(
+                user.id, mobile_e164, False, "account_suspended", ip_address, user_agent
+            )
+            raise AuthError("This account has been suspended", code="ACCOUNT_SUSPENDED")
+
+        user.failed_login_attempts = 0
+        user.locked_until = None
+        user.last_login_at = datetime.now(UTC)
+        await self.session.commit()
+        await self._record_login_attempt(user.id, mobile_e164, True, "mobile_otp", ip_address, user_agent)
+        logger.info("user_logged_in_mobile_otp", user_id=str(user.id))
+        return user
 
     async def request_email_verification(self, user: User) -> str:
         plaintext, token_hash, expires_at = generate_verification_token()

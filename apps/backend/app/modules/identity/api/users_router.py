@@ -32,6 +32,10 @@ def _to_response(user: User) -> dict:
         preferred_language=user.preferred_language,
         last_login_at=user.last_login_at,
         created_at=user.created_at,
+        mobile_e164=getattr(user, "mobile_e164", None),
+        state_code=getattr(user, "state_code", None),
+        city_name=getattr(user, "city_name", None),
+        must_change_password=bool(getattr(user, "must_change_password", False)),
     ).model_dump()
 
 
@@ -46,7 +50,57 @@ async def update_me(
     user: User = Depends(get_current_user),
     db: AsyncSession = Depends(get_db),
 ):
-    for field, value in payload.model_dump(exclude_unset=True).items():
+    """Self-service profile update. Mobile / state / city go through the
+    same validators that registration uses; other fields (name, language,
+    timezone) pass straight through. Duplicate mobile numbers are blocked
+    at the DB-index level AND the service layer (defense-in-depth).
+    """
+    from app.core.exceptions import AppError
+    from app.modules.identity.repositories.user_repository import UserRepository
+    from app.modules.identity.services.profile_validation import (
+        normalize_indian_mobile,
+        resolve_state_and_city,
+    )
+
+    data = payload.model_dump(exclude_unset=True)
+
+    new_mobile = data.pop("mobile", None)
+    new_state = data.pop("state_code", None)
+    new_city = data.pop("city", None)
+
+    # State / City coupling: if either is being changed, both must resolve
+    # together so a stale state+city pair cannot be smuggled in one field at
+    # a time. Fall back to the currently-stored values for the unchanged half.
+    if new_state is not None or new_city is not None:
+        effective_state = new_state if new_state is not None else user.state_code
+        effective_city = new_city if new_city is not None else user.city_name
+        if not effective_state or not effective_city:
+            raise AppError(
+                "State and City must both be provided",
+                code="STATE_CITY_REQUIRED",
+                status_code=422,
+            )
+        location = await resolve_state_and_city(db, effective_state, effective_city)
+        user.state_id = location.state.id
+        user.city_id = location.city.id
+        user.state_code = location.state.code
+        user.city_name = location.city.name
+
+    if new_mobile is not None:
+        mobile_e164 = normalize_indian_mobile(new_mobile)
+        if mobile_e164 != user.mobile_e164:
+            other = await UserRepository(db).get_by_mobile_e164(mobile_e164)
+            if other is not None and other.id != user.id:
+                raise AppError(
+                    "This mobile number is already in use",
+                    code="MOBILE_TAKEN",
+                    status_code=409,
+                )
+            user.mobile_e164 = mobile_e164
+
+    # Remaining fields (first_name, last_name, display_name, phone, language,
+    # timezone) — legacy passthrough behavior preserved.
+    for field, value in data.items():
         setattr(user, field, value)
     await db.commit()
     return envelope(success=True, data=_to_response(user))

@@ -6,13 +6,15 @@ import { Check, Flag, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const answerOptionVariants = cva(
-  "group/option relative flex touch-target min-h-[3.25rem] w-full items-start gap-3 overflow-hidden rounded-xl border p-4 text-left text-sm shadow-xs transition-[border-color,background-color,box-shadow] duration-200 touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50 disabled:cursor-default disabled:opacity-60 motion-reduce:transition-none",
+  // Premium runner options: ≥48px hit area, clear selected vs idle, restrained motion
+  "group/option relative flex touch-target min-h-12 w-full items-start gap-3.5 overflow-hidden rounded-2xl border px-4 py-3.5 text-left text-sm shadow-xs transition-[border-color,background-color,box-shadow] duration-200 touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50 disabled:cursor-default disabled:opacity-60 motion-reduce:transition-none",
   {
     variants: {
       state: {
         default:
-          "border-border bg-card/80 hover:border-primary/40 hover:bg-muted/40 hover:shadow-sm",
-        selected: "border-primary bg-primary/10 shadow-md ring-1 ring-primary/25",
+          "border-border/80 bg-card/90 hover:border-primary/45 hover:bg-muted/35 hover:shadow-sm",
+        selected:
+          "border-primary bg-primary/12 font-medium shadow-sm ring-2 ring-primary/30",
         correct: "border-success bg-success/10 text-foreground",
         incorrect: "border-destructive bg-destructive/10",
         reviewed: "border-warning bg-warning/10 text-foreground",
@@ -48,14 +50,20 @@ export function AnswerOption({ label, letter, text, state, disabled, onSelect }:
     >
       <span
         className={cn(
-          "relative z-[1] flex size-7 shrink-0 items-center justify-center rounded-lg border text-xs font-semibold tabular-nums",
-          emphasized ? "border-current bg-background/80" : "border-muted-foreground/40 text-muted-foreground",
+          "relative z-[1] flex size-8 shrink-0 items-center justify-center rounded-lg border text-xs font-semibold tabular-nums",
+          emphasized
+            ? "border-primary/40 bg-primary text-primary-foreground"
+            : "border-muted-foreground/35 bg-muted/40 text-muted-foreground",
+          state === "correct" && "border-success/60 bg-success/20 text-success",
+          state === "incorrect" && "border-destructive/60 bg-destructive/20 text-destructive",
         )}
         aria-hidden="true"
       >
         {letter}
       </span>
-      <span className="relative z-[1] min-w-0 flex-1 break-words pt-0.5 leading-relaxed">{text}</span>
+      <span className="relative z-[1] min-w-0 flex-1 break-words pt-0.5 text-[0.9375rem] leading-relaxed sm:text-base">
+        {text}
+      </span>
       {state === "correct" && (
         <Check className="relative z-[1] ml-auto size-4 shrink-0 text-success" aria-hidden="true" />
       )}

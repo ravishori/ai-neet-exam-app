@@ -6,13 +6,14 @@ from dataclasses import dataclass
 from typing import Any
 
 from app.core.config import Settings
-from app.modules.ai.gateway.base import AIProvider, PROVIDER_BLOCKED
+from app.modules.ai.gateway.base import PROVIDER_BLOCKED, AIProvider
 from app.modules.ai.gateway.claude_provider import ClaudeProvider
 from app.modules.ai.gateway.fallback_provider import FallbackProvider
 from app.modules.ai.gateway.gemini_provider import GeminiProvider
 from app.modules.ai.gateway.mistral_provider import MistralProvider
 from app.modules.ai.gateway.openai_provider import OpenAIProvider
 from app.modules.ai.gateway.pricing import PriceRate, register_rate
+from app.modules.ai.gateway.sarvam_provider import SarvamProvider
 
 # Health states (config-only; no live model calls)
 DISABLED = "DISABLED"
@@ -21,7 +22,7 @@ CONFIGURED = "CONFIGURED"
 AVAILABLE = "AVAILABLE"
 BLOCKED = "BLOCKED"
 
-KNOWN_PROVIDERS = ("anthropic", "openai", "gemini", "mistral")
+KNOWN_PROVIDERS = ("anthropic", "openai", "gemini", "mistral", "sarvam")
 
 
 @dataclass
@@ -159,15 +160,29 @@ def build_registry_from_settings(settings: Settings) -> ProviderRegistry:
             MistralProvider,
             PriceRate(0.10, 0.30),
         ),
+        (
+            "sarvam",
+            settings.sarvam_enabled,
+            settings.sarvam_api_key,
+            settings.sarvam_model,
+            SarvamProvider,
+            # Sarvam public INR rates converted with the project's ₹83/USD
+            # observability rate; estimates are not billing-grade.
+            PriceRate(29.28 / 83.0, 73.20 / 83.0),
+        ),
     ]
 
     for name, enabled, key, model, cls, default_rate in specs:
-        configured = bool(key and str(key).strip())
+        base_url = (getattr(settings, "openai_base_url", None) or "").strip() if name == "openai" else ""
+        configured = bool(key and str(key).strip()) or bool(base_url)
         status, detail = _status(enabled=enabled, configured=configured)
         instance: AIProvider | None = None
         if status == AVAILABLE:
             _ensure_rate(name, model, default_rate)
-            instance = cls(api_key=key, model=model)
+            if name == "openai" and base_url:
+                instance = cls(api_key=(key or "local"), model=model, base_url=base_url)
+            else:
+                instance = cls(api_key=key, model=model)
         registry.register(
             RegisteredProvider(
                 name=name,

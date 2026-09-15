@@ -1,0 +1,479 @@
+{
+  "task_id": "PYTHON-MCQ-ENGINE-003",
+  "verdict": "GREEN",
+  "engine_version": "python_mcq_engine_v1",
+  "fact_schema_version": "ncert_fact_pack_v1",
+  "gate_design": {
+    "required_conjunction": [
+      "canonical_ncert_source",
+      "readable_explicit_evidence",
+      "neet_ug_2026_scope",
+      "project_taxonomy_ownership",
+      "explicit_semantic_scope_review",
+      "safe_fact_type_and_transformation",
+      "exactly_one_supported_answer",
+      "safe_evidence_bound_distractors"
+    ],
+    "statuses": [
+      "FACT_APPROVED",
+      "FACT_REVIEW_REQUIRED",
+      "FACT_REJECTED"
+    ],
+    "workflow_stages": [
+      "EXTRACTED",
+      "REVIEW_REQUIRED",
+      "FACT_APPROVED",
+      "MCQ_ELIGIBLE",
+      "REJECTED"
+    ],
+    "reason_codes_observed": [
+      "CONCEPT_MISBOUND",
+      "DISTRACTOR_UNSAFE",
+      "FACT_AMBIGUOUS"
+    ],
+    "reason_codes_supported": [
+      "NCERT_SOURCE_NOT_ALLOWED",
+      "NCERT_SOURCE_MISSING",
+      "NCERT_SOURCE_UNREADABLE",
+      "NCERT_SOURCE_IDENTITY_MISMATCH",
+      "EVIDENCE_MISSING",
+      "EVIDENCE_NOT_IN_NCERT_SOURCE",
+      "CANONICAL_FACT_NOT_IN_EVIDENCE",
+      "SYLLABUS_SOURCE_MISMATCH",
+      "SYLLABUS_SOURCE_INVALID",
+      "SYLLABUS_OUT_OF_SCOPE",
+      "SYLLABUS_MAPPING_REVIEW_REQUIRED",
+      "TAXONOMY_MISMATCH",
+      "CONCEPT_BINDING_REVIEW_REQUIRED",
+      "CONCEPT_MISBOUND",
+      "PROVENANCE_INVALID",
+      "FACT_REVIEW_REQUIRED",
+      "FACT_REJECTED",
+      "TRANSFORMATION_UNSAFE",
+      "INVALID_EXPLICIT_OPTIONS",
+      "NO_SUPPORTED_ANSWER",
+      "FACT_AMBIGUOUS",
+      "ANSWER_KEY_MISMATCH",
+      "DISTRACTOR_UNSAFE"
+    ]
+  },
+  "candidate_results": [
+    {
+      "fact_id": "home-sugar",
+      "independent_engine_002_classification": "FAIL",
+      "status": "FACT_REJECTED",
+      "workflow_stage": "REJECTED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_MISBOUND"
+      ],
+      "reasons": [
+        {
+          "code": "CONCEPT_MISBOUND",
+          "detail": "NCERT supports the fact and keyed answer, but domestic use of sucrose is introductory trivia and is not validly bound to the cited Classification of Carbohydrates syllabus topic. Failed checks: taxonomy_mapping_valid, syllabus_binding_valid. NCERT supports the fact and keyed answer, but domestic use of sucrose is introductory trivia and is not validly bound to the cited Classification of Carbohydrates syllabus topic. Failed checks: taxonomy_mapping_valid, syllabus_binding_valid.",
+          "severity": "REJECT"
+        }
+      ],
+      "supported_answer_keys": [
+        "sucrose"
+      ],
+      "checks": {
+        "canonical_source": true,
+        "source_readable": true,
+        "evidence_present": true,
+        "evidence_in_source": true,
+        "canonical_fact_supported": true,
+        "authoritative_syllabus_source": true,
+        "syllabus_in_scope": true,
+        "taxonomy_consistent": true,
+        "semantic_scope_reviewed": false,
+        "provenance_valid": true,
+        "fact_reviewed": true,
+        "transformations_safe": true,
+        "configured_distractors_safe": true,
+        "question_has_four_options": true,
+        "requested_transformation_safe": true,
+        "exactly_one_supported_answer": true,
+        "question_distractors_safe": true
+      }
+    },
+    {
+      "fact_id": "monosaccharide-definition",
+      "independent_engine_002_classification": "PASS",
+      "status": "FACT_APPROVED",
+      "workflow_stage": "MCQ_ELIGIBLE",
+      "mcq_eligible": true,
+      "reason_codes": [],
+      "reasons": [],
+      "supported_answer_keys": [
+        "mono"
+      ],
+      "checks": {
+        "canonical_source": true,
+        "source_readable": true,
+        "evidence_present": true,
+        "evidence_in_source": true,
+        "canonical_fact_supported": true,
+        "authoritative_syllabus_source": true,
+        "syllabus_in_scope": true,
+        "taxonomy_consistent": true,
+        "semantic_scope_reviewed": true,
+        "provenance_valid": true,
+        "fact_reviewed": true,
+        "transformations_safe": true,
+        "configured_distractors_safe": true,
+        "question_has_four_options": true,
+        "requested_transformation_safe": true,
+        "exactly_one_supported_answer": true,
+        "question_distractors_safe": true
+      }
+    },
+    {
+      "fact_id": "oligosaccharide-definition",
+      "independent_engine_002_classification": "FAIL",
+      "status": "FACT_REJECTED",
+      "workflow_stage": "REJECTED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "FACT_AMBIGUOUS",
+        "DISTRACTOR_UNSAFE"
+      ],
+      "reasons": [
+        {
+          "code": "FACT_AMBIGUOUS",
+          "detail": "multiple options are supported as answering the stem: oligo, disaccharide",
+          "severity": "REJECT"
+        },
+        {
+          "code": "DISTRACTOR_UNSAFE",
+          "detail": "distractors are correct, unknown, or unsupported: disaccharide",
+          "severity": "REJECT"
+        }
+      ],
+      "supported_answer_keys": [
+        "oligo",
+        "disaccharide"
+      ],
+      "checks": {
+        "canonical_source": true,
+        "source_readable": true,
+        "evidence_present": true,
+        "evidence_in_source": true,
+        "canonical_fact_supported": true,
+        "authoritative_syllabus_source": true,
+        "syllabus_in_scope": true,
+        "taxonomy_consistent": true,
+        "semantic_scope_reviewed": true,
+        "provenance_valid": true,
+        "fact_reviewed": true,
+        "transformations_safe": true,
+        "configured_distractors_safe": true,
+        "question_has_four_options": true,
+        "requested_transformation_safe": true,
+        "exactly_one_supported_answer": false,
+        "question_distractors_safe": false
+      }
+    },
+    {
+      "fact_id": "polysaccharide-definition",
+      "independent_engine_002_classification": "PASS",
+      "status": "FACT_APPROVED",
+      "workflow_stage": "MCQ_ELIGIBLE",
+      "mcq_eligible": true,
+      "reason_codes": [],
+      "reasons": [],
+      "supported_answer_keys": [
+        "poly"
+      ],
+      "checks": {
+        "canonical_source": true,
+        "source_readable": true,
+        "evidence_present": true,
+        "evidence_in_source": true,
+        "canonical_fact_supported": true,
+        "authoritative_syllabus_source": true,
+        "syllabus_in_scope": true,
+        "taxonomy_consistent": true,
+        "semantic_scope_reviewed": true,
+        "provenance_valid": true,
+        "fact_reviewed": true,
+        "transformations_safe": true,
+        "configured_distractors_safe": true,
+        "question_has_four_options": true,
+        "requested_transformation_safe": true,
+        "exactly_one_supported_answer": true,
+        "question_distractors_safe": true
+      }
+    },
+    {
+      "fact_id": "non-reducing-sugar",
+      "independent_engine_002_classification": "PASS",
+      "status": "FACT_APPROVED",
+      "workflow_stage": "MCQ_ELIGIBLE",
+      "mcq_eligible": true,
+      "reason_codes": [],
+      "reasons": [],
+      "supported_answer_keys": [
+        "sucrose"
+      ],
+      "checks": {
+        "canonical_source": true,
+        "source_readable": true,
+        "evidence_present": true,
+        "evidence_in_source": true,
+        "canonical_fact_supported": true,
+        "authoritative_syllabus_source": true,
+        "syllabus_in_scope": true,
+        "taxonomy_consistent": true,
+        "semantic_scope_reviewed": true,
+        "provenance_valid": true,
+        "fact_reviewed": true,
+        "transformations_safe": true,
+        "configured_distractors_safe": true,
+        "question_has_four_options": true,
+        "requested_transformation_safe": true,
+        "exactly_one_supported_answer": true,
+        "question_distractors_safe": true
+      }
+    },
+    {
+      "fact_id": "sucrose-hydrolysis",
+      "independent_engine_002_classification": "PASS",
+      "status": "FACT_APPROVED",
+      "workflow_stage": "MCQ_ELIGIBLE",
+      "mcq_eligible": true,
+      "reason_codes": [],
+      "reasons": [],
+      "supported_answer_keys": [
+        "sucrose_products"
+      ],
+      "checks": {
+        "canonical_source": true,
+        "source_readable": true,
+        "evidence_present": true,
+        "evidence_in_source": true,
+        "canonical_fact_supported": true,
+        "authoritative_syllabus_source": true,
+        "syllabus_in_scope": true,
+        "taxonomy_consistent": true,
+        "semantic_scope_reviewed": true,
+        "provenance_valid": true,
+        "fact_reviewed": true,
+        "transformations_safe": true,
+        "configured_distractors_safe": true,
+        "question_has_four_options": true,
+        "requested_transformation_safe": true,
+        "exactly_one_supported_answer": true,
+        "question_distractors_safe": true
+      }
+    },
+    {
+      "fact_id": "maltose-hydrolysis",
+      "independent_engine_002_classification": "PASS",
+      "status": "FACT_APPROVED",
+      "workflow_stage": "MCQ_ELIGIBLE",
+      "mcq_eligible": true,
+      "reason_codes": [],
+      "reasons": [],
+      "supported_answer_keys": [
+        "maltose_products"
+      ],
+      "checks": {
+        "canonical_source": true,
+        "source_readable": true,
+        "evidence_present": true,
+        "evidence_in_source": true,
+        "canonical_fact_supported": true,
+        "authoritative_syllabus_source": true,
+        "syllabus_in_scope": true,
+        "taxonomy_consistent": true,
+        "semantic_scope_reviewed": true,
+        "provenance_valid": true,
+        "fact_reviewed": true,
+        "transformations_safe": true,
+        "configured_distractors_safe": true,
+        "question_has_four_options": true,
+        "requested_transformation_safe": true,
+        "exactly_one_supported_answer": true,
+        "question_distractors_safe": true
+      }
+    },
+    {
+      "fact_id": "maltose-linkage",
+      "independent_engine_002_classification": "FAIL",
+      "status": "FACT_REJECTED",
+      "workflow_stage": "REJECTED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_MISBOUND"
+      ],
+      "reasons": [
+        {
+          "code": "CONCEPT_MISBOUND",
+          "detail": "NCERT supports the C1-to-C4 linkage, but exact glycosidic linkage positions are not authorized by the cited syllabus wording and are misbound to the Classification of Carbohydrates concept. Failed checks: taxonomy_mapping_valid, syllabus_binding_valid. NCERT supports the C1-to-C4 linkage, but exact glycosidic linkage positions are not authorized by the cited syllabus wording and are misbound to the Classification of Carbohydrates concept. Failed checks: taxonomy_mapping_valid, syllabus_binding_valid.",
+          "severity": "REJECT"
+        }
+      ],
+      "supported_answer_keys": [
+        "maltose_link"
+      ],
+      "checks": {
+        "canonical_source": true,
+        "source_readable": true,
+        "evidence_present": true,
+        "evidence_in_source": true,
+        "canonical_fact_supported": true,
+        "authoritative_syllabus_source": true,
+        "syllabus_in_scope": true,
+        "taxonomy_consistent": true,
+        "semantic_scope_reviewed": false,
+        "provenance_valid": true,
+        "fact_reviewed": true,
+        "transformations_safe": true,
+        "configured_distractors_safe": true,
+        "question_has_four_options": true,
+        "requested_transformation_safe": true,
+        "exactly_one_supported_answer": true,
+        "question_distractors_safe": true
+      }
+    },
+    {
+      "fact_id": "glycosidic-linkage-definition",
+      "independent_engine_002_classification": "FAIL",
+      "status": "FACT_REJECTED",
+      "workflow_stage": "REJECTED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_MISBOUND"
+      ],
+      "reasons": [
+        {
+          "code": "CONCEPT_MISBOUND",
+          "detail": "NCERT supports the definition, but glycosidic-linkage terminology is outside the cited classification/constituent-monosaccharide syllabus wording and is misbound to the selected concept. Failed checks: taxonomy_mapping_valid, syllabus_binding_valid. NCERT supports the definition, but glycosidic-linkage terminology is outside the cited classification/constituent-monosaccharide syllabus wording and is misbound to the selected concept. Failed checks: taxonomy_mapping_valid, syllabus_binding_valid.",
+          "severity": "REJECT"
+        }
+      ],
+      "supported_answer_keys": [
+        "glycosidic"
+      ],
+      "checks": {
+        "canonical_source": true,
+        "source_readable": true,
+        "evidence_present": true,
+        "evidence_in_source": true,
+        "canonical_fact_supported": true,
+        "authoritative_syllabus_source": true,
+        "syllabus_in_scope": true,
+        "taxonomy_consistent": true,
+        "semantic_scope_reviewed": false,
+        "provenance_valid": true,
+        "fact_reviewed": true,
+        "transformations_safe": true,
+        "configured_distractors_safe": true,
+        "question_has_four_options": true,
+        "requested_transformation_safe": true,
+        "exactly_one_supported_answer": true,
+        "question_distractors_safe": true
+      }
+    }
+  ],
+  "known_failure_classifications": {
+    "home-sugar": [
+      "CONCEPT_MISBOUND"
+    ],
+    "oligosaccharide-definition": [
+      "FACT_AMBIGUOUS",
+      "DISTRACTOR_UNSAFE"
+    ],
+    "maltose-linkage": [
+      "CONCEPT_MISBOUND"
+    ],
+    "glycosidic-linkage-definition": [
+      "CONCEPT_MISBOUND"
+    ]
+  },
+  "pilot_re_evaluation": {
+    "original_inputs": 10,
+    "original_created_candidates_evaluated": 9,
+    "quality_status_counts": {
+      "FACT_APPROVED": 5,
+      "FACT_REVIEW_REQUIRED": 0,
+      "FACT_REJECTED": 4
+    },
+    "mcq_eligible": 5,
+    "quality_rejected": 4,
+    "eligible_fact_ids": [
+      "maltose-hydrolysis",
+      "monosaccharide-definition",
+      "non-reducing-sugar",
+      "polysaccharide-definition",
+      "sucrose-hydrolysis"
+    ],
+    "in_memory_reconstructed": 5,
+    "new_input_candidates_generated": 0,
+    "persisted_candidates": 0,
+    "deterministic_reproducibility": true
+  },
+  "independent_verification": {
+    "PASS": 5,
+    "FAIL": 4,
+    "AMBIGUOUS": 0
+  },
+  "validation_boundary": {
+    "engine_validation": "FACT_APPROVED / MCQ_ELIGIBLE",
+    "independent_ncert_verification": "ENGINE-002 PASS/FAIL/AMBIGUOUS",
+    "equivalent": false,
+    "publication_or_certification": false
+  },
+  "tests": {
+    "focused": "33 passed",
+    "regression": "108 passed",
+    "ruff": "passed"
+  },
+  "provider_api_calls": 0,
+  "production_db_mutations": 0,
+  "database_before": {
+    "question_statuses": {
+      "DRAFT": 5552,
+      "PUBLISHED": 1479,
+      "SUPERSEDED": 6,
+      "IN_REVIEW": 111
+    },
+    "question_state_fingerprint": "741ce41e97dc4869c66b7bba5db5b3aa",
+    "unmapped_draft": 5034,
+    "blueprints": 445,
+    "knowledge_units": 381,
+    "content_reviews": 1824,
+    "engine_003_batches": 0
+  },
+  "database_after": {
+    "question_statuses": {
+      "DRAFT": 5552,
+      "PUBLISHED": 1479,
+      "SUPERSEDED": 6,
+      "IN_REVIEW": 111
+    },
+    "question_state_fingerprint": "741ce41e97dc4869c66b7bba5db5b3aa",
+    "unmapped_draft": 5034,
+    "blueprints": 445,
+    "knowledge_units": 381,
+    "content_reviews": 1824,
+    "engine_003_batches": 0
+  },
+  "production_safety_unchanged": true,
+  "worker_continuity": {
+    "status": "NOT_RUNNING_AT_TASK_START; no process was stopped or restarted",
+    "before_process_ids": [],
+    "after_process_ids": [],
+    "unchanged": true,
+    "alive": false
+  },
+  "limitations": [
+    "Semantic syllabus/concept fit cannot be safely inferred from IDs or keyword overlap; the gate therefore requires an explicit reviewed scope record.",
+    "Option defensibility relationships are curated deterministic inputs and must be independently reviewed before use.",
+    "The original pilot had only nine created candidates; its previously skipped milk-sugar input was not regenerated.",
+    "Production semantic embedding dedupe remains unavailable; existing normalized hash dedupe is unchanged.",
+    "The OpenAI worker was already absent at task start, so alive continuity could not be established."
+  ],
+  "recommended_next_task": "PYTHON-MCQ-ENGINE-004: define and review one non-production Biomolecules fact-pack containing only the five ENGINE-003-approved facts, add a typed fact-pack-to-question adapter, and run a maximum five-candidate in-memory round trip with independent verification; do not persist."
+}

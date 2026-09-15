@@ -1,0 +1,313 @@
+{
+  "campaign": "MCQ-NCERT-VERIFY-001",
+  "generated_at": "2026-09-14T00:45:00+05:30",
+  "source_benchmark": "MCQ-PROVIDER-BENCHMARK-002",
+  "benchmark_report": "docs/audits/mcq_provider_benchmark_002_20260914.json",
+  "provider": "openai",
+  "model": "gpt-5-mini",
+  "ncert_root": "D:\\ravishori\\AI Neet Exam App\\NCERT Books",
+  "verification_mode": "READ_ONLY",
+  "database_mutations": false,
+  "certification_performed": false,
+  "candidate_scope": {
+    "included_candidate_ids": [
+      "519e6ab2-ad02-4726-9342-49e8598a1852",
+      "8d727dc4-49dc-40a7-815f-a2679d9d78bc",
+      "bb4a0741-efab-43ff-8317-859bf6e91737",
+      "a85445fa-db5f-4525-8002-ae8f8c928003",
+      "4926220c-aab9-4322-b2e1-4ddb1d970707"
+    ],
+    "excluded": [
+      "original_129_pilot_candidates",
+      "openai_smoke_aa41982d-8b25-4dfd-81ce-87c3297d9d49",
+      "benchmark_parse_retry_non_created_runs"
+    ]
+  },
+  "aggregate": {
+    "candidates_reviewed": 5,
+    "NCERT_STRONG": 3,
+    "NCERT_ACCEPTABLE": 0,
+    "NCERT_PARTIAL": 0,
+    "NCERT_UNSUPPORTED": 2,
+    "NCERT_CONTRADICTED": 0,
+    "NEET_SUITABLE": 3,
+    "NEET_REVIEW": 0,
+    "NEET_UNSUITABLE": 2,
+    "ambiguous": 0,
+    "numerical": 1,
+    "verification_failures": 2,
+    "pass_ncert_verification": 3,
+    "pass_with_editorial_review": 0,
+    "fail_ncert_verification": 2
+  },
+  "overall_decision": "RED — PROVIDER CONTENT GATE FAILED",
+  "overall_rationale": "Three of five candidates are strongly NCERT-grounded (Physics kinetic temperature, Zoology levels of organisation, Physics work–energy numerical). Two candidates (Chemistry protein denaturation Anfinsen-style protocol; Botany streptomycin/Streptomyces/secondary-metabolite claims) contain substantial material claims that are NCERT_EVIDENCE_NOT_LOCATED in the exact canonical PDFs. No incorrect keyed answer was found among the three PASS candidates, and no scientific contradiction was found in those three; the gate fails because not all five pass and unsupported content in the 'correct' options of Chem/Botany is substantial.",
+  "provider_recommendation": "Do not treat OpenAI gpt-5-mini as cleared for unsupervised NCERT-pilot generation of the remaining 271. Retain for generation with mandatory independent NCERT verification and prompt/constraint hardening to forbid non-NCERT experimental protocols and unnamed antibiotic enrichment. Physics/Zoology fidelity in this sample is strong.",
+  "candidates": [
+    {
+      "candidate_id": "519e6ab2-ad02-4726-9342-49e8598a1852",
+      "provider": "openai",
+      "model": "gpt-5-mini",
+      "subject": "PHYSICS",
+      "class": "11",
+      "chapter": "Kinetic Theory",
+      "topic": "Kinetic Theory of an Ideal Gas",
+      "concept": "Kinetic Interpretation of Temperature",
+      "blueprint_id": "7d36871a-de25-492d-bc88-1ec04849d1e8",
+      "concept_id": "22226438-aa4f-4d43-b50c-86128df4ffae",
+      "ku_id": "d837eb9b-a4f2-47f4-81bc-114f80a75b29",
+      "ncert_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph2dd\\keph2dd\\keph205.pdf",
+      "ncert_section_page": "§12.4.2 Kinetic Interpretation of Temperature (PDF p.7); Example 12.5 (PDF p.7–8); §12.5 Law of Equipartition of Energy (PDF p.9)",
+      "stem_verdict": "directly_supported",
+      "option_A_verdict": "NCERT-supported",
+      "option_B_verdict": "contradicted_by_NCERT",
+      "option_C_verdict": "contradicted_by_NCERT",
+      "option_D_verdict": "contradicted_by_NCERT",
+      "correct_answer_verdict": "supported_unique_A",
+      "explanation_verdict": "NCERT-supported_with_minor_paraphrase",
+      "ncert_classification": "NCERT_STRONG",
+      "neet_classification": "NEET_SUITABLE",
+      "ambiguity_result": {
+        "ambiguous": false,
+        "competing_option": null,
+        "notes": "Example 12.5 and equipartition uniquely defend A; B/C/D conflict with NCERT."
+      },
+      "numerical": false,
+      "issues": [],
+      "evidence_quotes": [
+        "average kinetic energy (per molecule) of any (ideal) gas (be it monatomic like argon, diatomic like chlorine or polyatomic) is always equal to (3/2) kBT",
+        "The quantity in the bracket is the average translational kinetic energy of the molecules in the gas.",
+        "Molecules of a monatomic gas like argon have only translational degrees of freedom. But what about a diatomic gas such as O2 or N2?"
+      ],
+      "final_recommendation": "PASS_NCERT_VERIFICATION"
+    },
+    {
+      "candidate_id": "8d727dc4-49dc-40a7-815f-a2679d9d78bc",
+      "provider": "openai",
+      "model": "gpt-5-mini",
+      "subject": "CHEMISTRY",
+      "class": "12",
+      "chapter": "Biomolecules",
+      "topic": "Amino Acids and Proteins",
+      "concept": "Primary, Secondary, Tertiary and Quaternary Structure of Proteins",
+      "blueprint_id": "9f564c4a-903b-4e7e-9596-f9da5d07cc41",
+      "concept_id": "23ec568a-0ce9-4504-a778-393598da02f8",
+      "ku_id": "fc3d722b-641e-402a-a3cd-6e25cab4fc5f",
+      "ncert_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 2\\lech2dd\\lech205.pdf",
+      "ncert_section_page": "§10.2.3 Structure of Proteins (PDF p.13–14); §10.2.4 Denaturation of Proteins (PDF p.14–15 / printed p.295)",
+      "stem_verdict": "unsupported_protocol_partially_related",
+      "option_A_verdict": "partially_NCERT_supported_with_unsupported_enrichment",
+      "option_B_verdict": "contradicted_by_NCERT",
+      "option_C_verdict": "contradicted_by_NCERT",
+      "option_D_verdict": "not_addressed_by_NCERT_and_conflicts_denaturation_examples",
+      "correct_answer_verdict": "keyed_A_aligns_with_denaturation_core_but_stem_agents_NCERT_UNSUPPORTED",
+      "explanation_verdict": "unsupported_enrichment_Anfinsen_urea_BME",
+      "ncert_classification": "NCERT_UNSUPPORTED",
+      "neet_classification": "NEET_UNSUITABLE",
+      "ambiguity_result": {
+        "ambiguous": false,
+        "competing_option": null,
+        "notes": "B/C conflict NCERT denaturation (primary intact; secondary destroyed). Ambiguity not the failure mode; unsupported experimental protocol is."
+      },
+      "numerical": false,
+      "issues": [
+        "8 M urea: NCERT_EVIDENCE_NOT_LOCATED",
+        "β-mercaptoethanol / disulfide reduction protocol: NCERT_EVIDENCE_NOT_LOCATED",
+        "dialysis/oxidation refolding (Anfinsen): NCERT_EVIDENCE_NOT_LOCATED",
+        "Explanation invokes Anfinsen’s principle and chaotropic mechanism beyond NCERT text",
+        "NCERT does support: primary/secondary/tertiary levels; denaturation destroys secondary and tertiary while primary remains intact"
+      ],
+      "evidence_quotes": [
+        "During denaturation secondary and tertiary structures are destroyed but primary structure remains intact.",
+        "Secondary structure ... α-helix and β-pleated sheet ... hydrogen bonding",
+        "urea / mercaptoethanol / Anfinsen: NCERT_EVIDENCE_NOT_LOCATED in lech205.pdf"
+      ],
+      "final_recommendation": "FAIL_NCERT_VERIFICATION"
+    },
+    {
+      "candidate_id": "bb4a0741-efab-43ff-8317-859bf6e91737",
+      "provider": "openai",
+      "model": "gpt-5-mini",
+      "subject": "BOTANY",
+      "class": "12",
+      "chapter": "Microbes in Human Welfare",
+      "topic": "Microbes in Household Products and Industrial Products",
+      "concept": "Fermented Beverages and Antibiotics",
+      "blueprint_id": "ea65866b-ecf3-4ea1-b560-b2533d5f38ac",
+      "concept_id": "68ab5c7b-cc6f-4f1e-9ee4-a27294f253f1",
+      "ku_id": "af1f49c5-51cf-4608-8c63-57b3ed4eefcc",
+      "ncert_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo108.pdf",
+      "ncert_section_page": "§8.2.1 Fermented Beverages; §8.2.2 Antibiotics (PDF p.3–5 / printed ~152–153)",
+      "stem_verdict": "partially_supported",
+      "option_A_verdict": "partially_supported_substantial_unsupported_claims",
+      "option_B_verdict": "not_addressed_by_NCERT_factually_problematic",
+      "option_C_verdict": "contradicted_by_NCERT_context",
+      "option_D_verdict": "contradicted_by_NCERT",
+      "correct_answer_verdict": "keyed_A_ethanol_supported_antibiotic_half_NCERT_UNSUPPORTED",
+      "explanation_verdict": "unsupported_enrichment_secondary_metabolites_stationary_phase",
+      "ncert_classification": "NCERT_UNSUPPORTED",
+      "neet_classification": "NEET_UNSUITABLE",
+      "ambiguity_result": {
+        "ambiguous": false,
+        "competing_option": null,
+        "notes": "No second option is NCERT-defensible as correct. Failure is unsupported content inside keyed option A."
+      },
+      "numerical": false,
+      "issues": [
+        "streptomycin: NCERT_EVIDENCE_NOT_LOCATED",
+        "Streptomyces: NCERT_EVIDENCE_NOT_LOCATED",
+        "secondary metabolites: NCERT_EVIDENCE_NOT_LOCATED",
+        "stationary phase production: NCERT_EVIDENCE_NOT_LOCATED",
+        "NCERT names Penicillin / Penicillium notatum; asks open-ended 'name some other antibiotics' without naming streptomycin",
+        "Ethanol via Saccharomyces cerevisiae and fermentors ARE NCERT-supported"
+      ],
+      "evidence_quotes": [
+        "Saccharomyces cerevisiae ... fermenting malted cereals and fruit juices, to produce ethanol",
+        "You are familiar with the commonly used antibiotic Penicillin ... mould Penicillium notatum",
+        "After Penicillin, other antibiotics were also purified from other microbes. Can you name some other antibiotics and find out their sources?",
+        "Acetobacter aceti (a bacterium) of acetic acid"
+      ],
+      "final_recommendation": "FAIL_NCERT_VERIFICATION"
+    },
+    {
+      "candidate_id": "a85445fa-db5f-4525-8002-ae8f8c928003",
+      "provider": "openai",
+      "model": "gpt-5-mini",
+      "subject": "ZOOLOGY",
+      "class": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Basis of Classification",
+      "concept": "Levels of Organisation",
+      "blueprint_id": "159b2b00-9491-45d0-bd41-51eab481dd06",
+      "concept_id": "f5112095-56f7-54d4-b8eb-0a16f50e00e0",
+      "ku_id": "bb63139e-acd9-4ab7-92fc-50bebb7b7093",
+      "ncert_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo104.pdf",
+      "ncert_section_page": "§4.1 Levels of organisation (PDF p.1–2); Porifera/Sycon (PDF p.4–5); Coelenterata/Hydra (PDF p.5); Platyhelminthes/Planaria (PDF p.1,6); Annelida/Earthworm (PDF p.7)",
+      "stem_verdict": "directly_supported",
+      "option_A_verdict": "NCERT-supported",
+      "option_B_verdict": "contradicted_by_NCERT",
+      "option_C_verdict": "contradicted_by_NCERT",
+      "option_D_verdict": "contradicted_by_NCERT",
+      "correct_answer_verdict": "supported_unique_A",
+      "explanation_verdict": "NCERT-supported",
+      "ncert_classification": "NCERT_STRONG",
+      "neet_classification": "NEET_SUITABLE",
+      "ambiguity_result": {
+        "ambiguous": false,
+        "competing_option": null,
+        "notes": "NCERT maps Sponges→cellular, Cnidaria→tissue, Platyhelminthes→organ, Annelida→organ-system uniquely selecting A."
+      },
+      "numerical": false,
+      "issues": [],
+      "evidence_quotes": [
+        "Porifera includes multicellular animals which exhibit cellular level of organisation",
+        "Examples: Sycon (Scypha)...",
+        "In coelenterates ... tissue level of organisation",
+        "organ level is exhibited by members of Platyhelminthes",
+        "Annelids ... exhibit organ-system level of body organisation ... Pheretima (Earthworm)"
+      ],
+      "final_recommendation": "PASS_NCERT_VERIFICATION"
+    },
+    {
+      "candidate_id": "4926220c-aab9-4322-b2e1-4ddb1d970707",
+      "provider": "openai",
+      "model": "gpt-5-mini",
+      "subject": "PHYSICS",
+      "class": "11",
+      "chapter": "Work, Energy and Power",
+      "topic": "Work and Kinetic Energy",
+      "concept": "Work–Energy Theorem",
+      "blueprint_id": "321cdf46-7a25-4935-b7aa-d3f83e0bea01",
+      "concept_id": "43654d12-df1b-4215-9b72-d32bbe0d7429",
+      "ku_id": "7d9598ac-4b33-4d39-b552-7ebc1aa3e31e",
+      "ncert_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph1dd\\keph1dd\\keph105.pdf",
+      "ncert_section_page": "§5.2 / Summary work–energy theorem (PDF p.16); friction+WE example Fig. 5.9 (PDF p.12)",
+      "stem_verdict": "reasonably_derived",
+      "option_A_verdict": "numerically_true_but_not_ΔK",
+      "option_B_verdict": "numerically_true_but_not_ΔK",
+      "option_C_verdict": "NCERT-supported_unique_correct",
+      "option_D_verdict": "contradicted_by_work_definition",
+      "correct_answer_verdict": "supported_unique_C",
+      "explanation_verdict": "calculation_independently_verified",
+      "ncert_classification": "NCERT_STRONG",
+      "neet_classification": "NEET_SUITABLE",
+      "ambiguity_result": {
+        "ambiguous": false,
+        "competing_option": null,
+        "notes": "A and B are true partial works but stem asks what equals ΔK per WE theorem; only C. Not AMBIGUOUS if stem is read carefully."
+      },
+      "numerical": true,
+      "independent_calculation": {
+        "W_pull_J": 50.0,
+        "f_k_N": 3.92,
+        "W_friction_J": -19.6,
+        "W_normal_J": 0.0,
+        "W_net_J": 30.4,
+        "delta_K_J": 30.4,
+        "g_assumed": 9.8,
+        "formula_source": "Kf - Ki = Wnet (NCERT Summary); μmg friction magnitude as in NCERT friction examples"
+      },
+      "issues": [
+        "Minor editorial: stem does not state 'take g = 9.8 m/s²' (NCERT sometimes uses 10); does not change uniqueness of C for g=9.8 or g=10 (with g=10: W_f=-20 J, net=30 J still uniquely C)."
+      ],
+      "evidence_quotes": [
+        "The work-energy theorem states that the change in kinetic energy of a body is the work done by the net force on the body. Kf - Ki = Wnet"
+      ],
+      "final_recommendation": "PASS_NCERT_VERIFICATION"
+    }
+  ],
+  "database_freeze": {
+    "verified_at": "2026-09-14T00:45:00+05:30",
+    "protected_hard_ok": true,
+    "protected_expected": {
+      "PUBLISHED": 1479,
+      "IN_REVIEW": 111,
+      "SUPERSEDED": 6,
+      "chapters": 56,
+      "topics": 192,
+      "concepts": 318,
+      "knowledge_units": 381,
+      "blueprints": 445
+    },
+    "protected_observed": {
+      "PUBLISHED": 1479,
+      "IN_REVIEW": 111,
+      "SUPERSEDED": 6,
+      "chapters": 56,
+      "topics": 192,
+      "concepts": 318,
+      "knowledge_units": 381,
+      "blueprints": 445
+    },
+    "status_counts": {
+      "DRAFT": 5434,
+      "PUBLISHED": 1479,
+      "SUPERSEDED": 6,
+      "IN_REVIEW": 111
+    },
+    "unmapped_draft_null_concept": 5024,
+    "pilot_created": 129,
+    "pilot_ok": true,
+    "smoke_candidate_id": "aa41982d-8b25-4dfd-81ce-87c3297d9d49",
+    "smoke_status": "CREATED",
+    "benchmark_candidates_status": "CREATED",
+    "benchmark_candidates_unchanged": true,
+    "verification_mutated_db": false,
+    "ecaep_mutated": false,
+    "jobs_runs_candidates_mutated": false,
+    "checksum": "96207a0823fbb032225f1be45fed7083"
+  },
+  "tests": {
+    "scope_ids_match_benchmark_002_candidate_ids": true,
+    "ncert_root_only_used": true,
+    "no_studymaterial_used": true,
+    "no_web_sources_used": true,
+    "read_only_freeze_query_executed": true,
+    "candidates_not_certified": true,
+    "candidates_not_published": true,
+    "reports_written": [
+      "docs/audits/mcq_ncert_verify_001_20260914.md",
+      "docs/audits/mcq_ncert_verify_001_20260914.json"
+    ]
+  }
+}

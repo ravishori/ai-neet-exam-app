@@ -30,6 +30,7 @@ from app.modules.cms.api.content_factory_planning_router import router as conten
 from app.modules.cms.api.search_router import router as search_router
 from app.modules.commerce.api.commerce_router import router as commerce_router
 from app.modules.identity.api.auth_router import router as auth_router
+from app.modules.identity.api.locations_router import router as locations_router
 from app.modules.identity.api.roles_router import router as roles_router
 from app.modules.identity.api.users_router import router as users_router
 from app.modules.ingestion.api.ingestion_router import router as ingestion_router
@@ -78,6 +79,7 @@ app.add_exception_handler(SQLAlchemyError, sqlalchemy_exception_handler)
 app.add_exception_handler(Exception, unhandled_exception_handler)
 
 app.include_router(auth_router)
+app.include_router(locations_router)
 app.include_router(users_router)
 app.include_router(roles_router)
 app.include_router(academic_router)

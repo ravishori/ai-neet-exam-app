@@ -116,6 +116,12 @@ async def _seed_eligible_blueprint(client, db_session, suffix: str):
                 "correct_option_count": 1,
                 "explanation_required": True,
                 "reasoning": "V=IR",
+                "neet_ug_2026": {
+                    "subject": "PHYSICS",
+                    "unit_number": 12,
+                    "unit_name": "CURRENT ELECTRICITY",
+                    "topic_id": "PHYSICS:U12:T01",
+                },
             },
         },
         headers=csrf_headers(client),
@@ -221,7 +227,7 @@ async def test_generate_valid_malformed_duplicate_budget(client, register_user, 
             )
         ).one()
         assert model_used[0] == "mock-claude"
-        assert model_used[1] == "neet_mcq_factory_v1"
+        assert model_used[1] == "neet_mcq_factory_v2"
 
     # Existing PUBLISHED count unchanged in this transaction scope — spot-check no non-DRAFT factory tags
     non_draft = (

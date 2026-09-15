@@ -2,6 +2,11 @@ import * as React from "react"
 
 import { cn } from "@/lib/utils"
 
+/**
+ * shadcn Card primitive — retained for compatibility (auth, admin, tutor).
+ * Soft-deprecated for NEW student product UI: prefer SurfaceCard (ds/).
+ * Do not remove; migrate call sites gradually in later phases.
+ */
 function Card({
   className,
   size = "default",
@@ -38,7 +43,7 @@ function CardTitle({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="card-title"
       className={cn(
-        "font-heading text-base leading-snug font-medium group-data-[size=sm]/card:text-sm",
+        "text-h3 font-medium group-data-[size=sm]/card:text-sm",
         className
       )}
       {...props}

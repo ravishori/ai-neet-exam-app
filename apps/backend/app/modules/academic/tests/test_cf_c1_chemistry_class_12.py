@@ -148,22 +148,29 @@ def test_physics_seed_is_unchanged_by_cf_c1():
 
 def test_botany_seed_is_unchanged_by_cf_c1():
     botany_codes = {ch[0] for ch in BOTANY_CHAPTERS}
-    assert len(BOTANY_CHAPTERS) == 7
+    # CF-C4b added biomolecules under BOTANY; CF-C1 must not remove prior Botany codes.
     assert {
         "the-living-world", "plant-kingdom", "morphology-flowering-plants",
         "cell-unit-of-life", "photosynthesis", "plant-growth-development",
         "sexual-reproduction-flowering-plants",
-    } == botany_codes
+    } <= botany_codes
+    assert "biomolecules" in botany_codes
 
 
 def test_zoology_seed_is_unchanged_by_cf_c1():
     zoology_codes = {ch[0] for ch in ZOOLOGY_CHAPTERS}
-    assert len(ZOOLOGY_CHAPTERS) == 7
-    # ZOOLOGY / biomolecules retains its intentional NULL class_level per
-    # RS-003-B-1A. CF-C1's biomolecules-chem must not have collided with it.
-    biomol = [ch for ch in ZOOLOGY_CHAPTERS if ch[0] == "biomolecules"]
-    assert len(biomol) == 1
-    assert biomol[0][3] is None
+    # CF-C4b moved biomolecules out of Zoology; remaining Zoology codes intact.
+    assert "biomolecules" not in zoology_codes
+    assert {
+        "animal-kingdom",
+        "structural-organisation-animals",
+        "digestion-absorption",
+        "breathing-exchange-of-gases",
+        "body-fluids-circulation",
+        "human-reproduction",
+    } <= zoology_codes
+    # Chemistry biomolecules-chem remains a distinct Chemistry chapter.
+    assert any(ch[0] == "biomolecules-chem" for ch in CHEMISTRY_CHAPTERS)
 
 
 async def test_seed_applies_new_chem12_taxonomy_and_is_idempotent(db_session: AsyncSession):

@@ -2,10 +2,20 @@ from pydantic import BaseModel, EmailStr, Field
 
 
 class RegisterRequest(BaseModel):
+    """Public registration payload.
+
+    Password is deliberately NOT part of the client input: registration
+    always issues the auto-generated initial credential (see AuthService.
+    register) and sets must_change_password=true. First login redirects the
+    user to /change-password before any other CSRF-guarded action.
+    """
+
     email: EmailStr
-    password: str = Field(min_length=8, max_length=128)
-    first_name: str | None = Field(default=None, max_length=100)
-    last_name: str | None = Field(default=None, max_length=100)
+    first_name: str = Field(min_length=1, max_length=100)
+    last_name: str = Field(min_length=1, max_length=100)
+    mobile: str = Field(min_length=10, max_length=20)
+    state_code: str = Field(min_length=2, max_length=64)
+    city: str = Field(min_length=1, max_length=120)
 
 
 class LoginRequest(BaseModel):
@@ -64,3 +74,27 @@ class MeResponse(BaseModel):
     email_verified: bool
     roles: list[str]
     totp_enabled: bool = False
+    must_change_password: bool = False
+    mobile_e164: str | None = None
+    state_code: str | None = None
+    city_name: str | None = None
+
+
+class MobileOtpSendRequest(BaseModel):
+    mobile: str = Field(min_length=10, max_length=20)
+
+
+class MobileOtpVerifyRequest(BaseModel):
+    mobile: str = Field(min_length=10, max_length=20)
+    code: str = Field(min_length=4, max_length=10)
+
+
+class ProfileUpdateRequest(BaseModel):
+    """PATCH /users/me payload for mobile/state/city + profile fields."""
+
+    first_name: str | None = Field(default=None, max_length=100)
+    last_name: str | None = Field(default=None, max_length=100)
+    display_name: str | None = Field(default=None, max_length=150)
+    mobile: str | None = Field(default=None, min_length=10, max_length=20)
+    state_code: str | None = Field(default=None, min_length=2, max_length=64)
+    city: str | None = Field(default=None, min_length=1, max_length=120)

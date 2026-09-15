@@ -8,13 +8,23 @@ from conftest import csrf_headers
 pytestmark = pytest.mark.asyncio(loop_scope="session")
 
 EMAIL = "auth-test@example.com"
-PASSWORD = "AuthTest!2345"
+# Registration issues INITIAL_DEFAULT_PASSWORD ("Password123") and sets
+# must_change_password=true; login still succeeds with it — the redirect to
+# /change-password is a frontend behavior driven by must_change_password.
+PASSWORD = "Password123"
 
 
 async def _register(client):
     resp = await client.post(
         "/api/v1/auth/register",
-        json={"email": EMAIL, "password": PASSWORD, "first_name": "Auth"},
+        json={
+            "email": EMAIL,
+            "first_name": "Auth",
+            "last_name": "Test",
+            "mobile": "9876500001",
+            "state_code": "KARNATAKA",
+            "city": "Bangalore",
+        },
     )
     assert resp.status_code == 201, resp.text
     return resp.json()["data"]

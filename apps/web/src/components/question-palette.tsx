@@ -21,7 +21,7 @@ export function QuestionPalette({
 }) {
   return (
     <div className={cn("flex flex-col gap-3", className)}>
-      <div className="grid grid-cols-6 gap-1.5 sm:grid-cols-5" role="navigation" aria-label="Question palette">
+      <div className="grid grid-cols-5 gap-2 sm:grid-cols-5" role="navigation" aria-label="Question palette">
         {statuses.map((status, idx) => {
           const isCurrent = idx === currentIndex;
           const unvisited = !status.answered && !status.visited && !isCurrent;
@@ -33,8 +33,8 @@ export function QuestionPalette({
               aria-current={isCurrent ? "true" : undefined}
               aria-label={`Question ${idx + 1}${status.answered ? ", answered" : ", not answered"}${status.markedForReview ? ", marked for review" : ""}${unvisited ? ", unvisited" : ""}`}
               className={cn(
-                "relative flex size-9 items-center justify-center rounded-md border text-xs font-medium tabular-nums transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50",
-                isCurrent && "border-primary bg-primary/10 ring-2 ring-primary/40",
+                "relative flex size-11 min-h-11 min-w-11 items-center justify-center rounded-lg border text-xs font-semibold tabular-nums transition-colors touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50",
+                isCurrent && "border-primary bg-primary text-primary-foreground shadow-sm ring-2 ring-primary/35",
                 !isCurrent &&
                   status.answered &&
                   "border-success/50 bg-success/10 text-foreground",

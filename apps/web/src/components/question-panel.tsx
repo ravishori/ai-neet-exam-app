@@ -17,12 +17,14 @@ import {
 } from "@/components/ui/dialog";
 import { Textarea } from "@/components/ui/textarea";
 import { AnswerOption, type AnswerOptionState } from "@/components/ds/answer-option";
+import { SubjectChip } from "@/components/ds";
 import { MarkdownRenderer } from "@/components/markdown-renderer";
 import { QuestionExplainCard } from "@/components/question-explain-card";
 import type { AttemptQuestion, Confidence } from "@/features/assessment/api";
 import { assessmentApi } from "@/features/assessment/api";
 import { learningApi } from "@/features/learning/api";
 import { questionsApi, type ReportReason } from "@/features/questions/api";
+import { cn } from "@/lib/utils";
 
 const CONFIDENCE_OPTIONS: { value: Confidence; label: string }[] = [
   { value: "easy", label: "Easy" },
@@ -190,26 +192,43 @@ export function QuestionPanel({
   }
 
   return (
-    <div className="flex flex-col gap-4">
-      <div className="flex flex-wrap items-center justify-between gap-2">
-        <span className="text-sm font-medium text-muted-foreground">
-          Question {index + 1} of {total}
-        </span>
-        <div className="flex flex-wrap items-center gap-1.5">
-          <DifficultyBadge difficulty={question.difficulty} />
-          <Badge variant="outline">{question.question_type}</Badge>
-          {question.pyq_year && <Badge variant="ghost">PYQ {question.pyq_year}</Badge>}
+    <div className="flex flex-col gap-5">
+      <header className="flex flex-col gap-2.5">
+        <div className="flex flex-wrap items-center justify-between gap-2">
+          <p className="text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+            Question {index + 1}
+            <span className="font-normal text-border" aria-hidden>
+              {" "}
+              /{" "}
+            </span>
+            <span className="font-medium tabular-nums text-foreground/70">{total}</span>
+          </p>
+          <div className="flex flex-wrap items-center gap-1.5">
+            <DifficultyBadge difficulty={question.difficulty} />
+            {question.pyq_year ? <Badge variant="ghost">PYQ {question.pyq_year}</Badge> : null}
+          </div>
         </div>
-      </div>
 
-      <div className="flex flex-wrap items-center gap-1.5" aria-label="Question metadata">
-        {question.subject && <Badge variant="outline">{question.subject.name}</Badge>}
-        {question.chapter && <Badge variant="outline">{question.chapter.name}</Badge>}
-        {question.topic && <Badge variant="outline">{question.topic.name}</Badge>}
-        {question.concept && <Badge variant="outline">{question.concept.name}</Badge>}
-      </div>
+        <div className="flex flex-wrap items-center gap-1.5" aria-label="Question metadata">
+          {question.subject ? <SubjectChip subject={question.subject.name} /> : null}
+          {question.chapter ? (
+            <span className="truncate text-xs text-muted-foreground">{question.chapter.name}</span>
+          ) : null}
+          {question.topic ? (
+            <span className="truncate text-xs text-muted-foreground">
+              <span className="text-border" aria-hidden>
+                ·{" "}
+              </span>
+              {question.topic.name}
+            </span>
+          ) : null}
+        </div>
+      </header>
 
-      <div className="text-question font-medium text-foreground">
+      <div
+        className="text-question text-base font-medium leading-relaxed text-foreground sm:text-lg"
+        data-testid="practice-runner-stem"
+      >
         <MarkdownRenderer content={question.stem} />
       </div>
 
@@ -235,7 +254,7 @@ export function QuestionPanel({
         </div>
       )}
 
-      <fieldset className="flex flex-col gap-2" disabled={isSubmitted}>
+      <fieldset className="flex flex-col gap-2.5" disabled={isSubmitted}>
         <legend className="sr-only">Answer options</legend>
         {question.options.map((opt, optIdx) => {
           const isSelected = question.selected_option === opt.label;
@@ -258,13 +277,14 @@ export function QuestionPanel({
           );
         })}
       </fieldset>
-      <p className="text-xs text-muted-foreground">Keyboard shortcuts: A, B, C, D select an option.</p>
+      <p className="text-xs text-muted-foreground">Keyboard: A–D select · ← → navigate</p>
 
-      <div className="flex flex-wrap items-center gap-2 border-t border-border/60 pt-3">
+      <div className="flex flex-wrap items-center gap-1.5 border-t border-border/50 pt-3">
         <Button
           type="button"
-          variant={question.bookmarked ? "default" : "outline"}
+          variant={question.bookmarked ? "secondary" : "ghost"}
           size="sm"
+          className="min-h-11 touch-manipulation"
           onClick={() => bookmarkToggle.mutate()}
           disabled={bookmarkToggle.isPending}
         >
@@ -275,8 +295,9 @@ export function QuestionPanel({
         {!isSubmitted && (
           <Button
             type="button"
-            variant={question.marked_for_review ? "secondary" : "outline"}
+            variant={question.marked_for_review ? "secondary" : "ghost"}
             size="sm"
+            className="min-h-11 touch-manipulation"
             onClick={onToggleMarkForReview}
           >
             {question.marked_for_review ? "Marked for review" : "Mark for review"}
@@ -290,7 +311,7 @@ export function QuestionPanel({
             if (open) setNoteText(noteQuery.data?.note_text ?? "");
           }}
         >
-          <DialogTrigger render={<Button type="button" variant="ghost" size="sm" />}>
+          <DialogTrigger render={<Button type="button" variant="ghost" size="sm" className="min-h-11 touch-manipulation" />}>
             <NotebookPen className="size-3.5" aria-hidden="true" /> Note
           </DialogTrigger>
           <DialogContent>
@@ -312,7 +333,7 @@ export function QuestionPanel({
           </DialogContent>
         </Dialog>
 
-        <Button type="button" variant="ghost" size="sm" onClick={handleShare}>
+        <Button type="button" variant="ghost" size="sm" className="min-h-11 touch-manipulation" onClick={handleShare}>
           <Share2 className="size-3.5" aria-hidden="true" /> {shareCopied ? "Link copied" : "Share"}
         </Button>
 
@@ -326,7 +347,7 @@ export function QuestionPanel({
             }
           }}
         >
-          <DialogTrigger render={<Button type="button" variant="ghost" size="sm" />}>
+          <DialogTrigger render={<Button type="button" variant="ghost" size="sm" className="min-h-11 touch-manipulation" />}>
             <Flag className="size-3.5" aria-hidden="true" /> Report
           </DialogTrigger>
           <DialogContent>
@@ -370,13 +391,14 @@ export function QuestionPanel({
 
       {!isSubmitted && (
         <div className="flex flex-wrap items-center gap-2">
-          <span className="text-xs font-medium text-muted-foreground">How confident are you?</span>
+          <span className="text-xs font-medium text-muted-foreground">Confidence</span>
           {CONFIDENCE_OPTIONS.map((c) => (
             <Button
               key={c.value}
               type="button"
               size="sm"
-              variant={question.confidence === c.value ? "default" : "outline"}
+              className={cn("min-h-11 touch-manipulation", question.confidence === c.value ? "" : "text-muted-foreground")}
+              variant={question.confidence === c.value ? "secondary" : "ghost"}
               onClick={() => onSetConfidence(c.value)}
             >
               {c.label}
@@ -386,7 +408,7 @@ export function QuestionPanel({
       )}
 
       {isSubmitted && (
-        <div className="flex flex-col gap-4 border-t pt-4">
+        <div className="flex flex-col gap-4 border-t border-border/50 pt-4">
           <div className="flex flex-wrap items-center gap-3 text-sm">
             <Badge variant={question.is_correct ? "secondary" : "destructive"}>
               {question.is_correct === null ? "Skipped" : question.is_correct ? "Correct" : "Incorrect"}

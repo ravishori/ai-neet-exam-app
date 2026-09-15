@@ -1,6 +1,8 @@
+import uuid
 from datetime import datetime
 
-from sqlalchemy import Boolean, DateTime, Integer, String, Text
+from sqlalchemy import Boolean, DateTime, ForeignKey, Integer, String, Text
+from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.core.database import Base
@@ -19,6 +21,30 @@ class User(Base, AuditedBase):
     display_name: Mapped[str | None] = mapped_column(String(150))
     phone: Mapped[str | None] = mapped_column(String(20))
     avatar_url: Mapped[str | None] = mapped_column(String(500))
+
+    # Mobile-OTP login + address (added by identity_profile_mobile_state_city migration).
+    # `mobile_e164` is the canonical E.164 representation ("+91XXXXXXXXXX"); the
+    # legacy `phone` column above is not repurposed. Nullable so existing rows
+    # migrate safely; new registrations enforce non-null at the service layer.
+    mobile_e164: Mapped[str | None] = mapped_column(String(20))
+    # `state_code` / `city_name` are DENORMALIZED views of state_id / city_id
+    # — populated automatically by the profile validator from the master
+    # tables. Kept for API compatibility and cheap read paths.
+    state_code: Mapped[str | None] = mapped_column(String(64))
+    city_name: Mapped[str | None] = mapped_column(String(120))
+    # Master-data FKs — added by identity_geo_master_tables migration.
+    state_id: Mapped[uuid.UUID | None] = mapped_column(
+        UUID(as_uuid=True),
+        ForeignKey("identity.states.id", ondelete="RESTRICT"),
+        nullable=True,
+    )
+    city_id: Mapped[uuid.UUID | None] = mapped_column(
+        UUID(as_uuid=True),
+        ForeignKey("identity.cities.id", ondelete="RESTRICT"),
+        nullable=True,
+    )
+    # True until the user has changed the auto-issued initial credential.
+    must_change_password: Mapped[bool] = mapped_column(Boolean, default=False, nullable=False)
 
     status: Mapped[str] = mapped_column(String(20), default="active", nullable=False)
     email_verified: Mapped[bool] = mapped_column(Boolean, default=False, nullable=False)

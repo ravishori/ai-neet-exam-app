@@ -12,12 +12,13 @@ from app.modules.ai.gateway.base import (
     GenerateRequest,
     ProviderError,
 )
-from app.modules.ai.gateway.capabilities import get_capability, register_capability, ProviderModelCapability
+from app.modules.ai.gateway.capabilities import ProviderModelCapability, get_capability, register_capability
 from app.modules.ai.gateway.fakes import (
     FakeAnthropicProvider,
     FakeGeminiProvider,
     FakeMistralProvider,
     FakeOpenAIProvider,
+    FakeSarvamProvider,
 )
 from app.modules.ai.gateway.pricing import PriceRate, estimate_cost, register_rate
 from app.modules.ai.gateway.registry import (
@@ -57,6 +58,7 @@ async def _contract_success(provider_cls, name: str, model: str):
         (FakeOpenAIProvider, "openai", "gpt-4o-mini"),
         (FakeGeminiProvider, "gemini", "gemini-2.0-flash"),
         (FakeMistralProvider, "mistral", "mistral-small-latest"),
+        (FakeSarvamProvider, "sarvam", "sarvam-105b"),
     ],
 )
 async def test_provider_contract_success(cls, name, model):
@@ -100,6 +102,7 @@ async def test_capability_registry():
         ("gemini", "gemini-2.5-flash"),
         ("gemini", "gemini-3.6-flash"),
         ("mistral", "mistral-small-2603"),
+        ("sarvam", "sarvam-105b"),
     ],
 )
 async def test_pilot_comparison_models_capability_and_pricing(provider, model):
@@ -117,7 +120,7 @@ async def test_pilot_comparison_models_capability_and_pricing(provider, model):
 @pytest.mark.asyncio(loop_scope="session")
 async def test_gemini_3_6_flash_capability_and_pricing():
     """FACTORY-P3.1 — gemini-3.6-flash capability/pricing from verified preflight (no API calls)."""
-    from app.modules.ai.gateway.pricing import PriceRate, _RATES
+    from app.modules.ai.gateway.pricing import _RATES, PriceRate
 
     cap = get_capability("gemini", "gemini-3.6-flash")
     assert cap is not None
@@ -162,12 +165,16 @@ async def test_registry_enablement():
         mistral_enabled = True
         mistral_api_key = "sk-mis"
         mistral_model = "mistral-small-latest"
+        sarvam_enabled = True
+        sarvam_api_key = "sk-sarvam"
+        sarvam_model = "sarvam-105b"
 
     reg = build_registry_from_settings(S())  # type: ignore[arg-type]
     assert reg.get("anthropic").status == AVAILABLE
     assert reg.get("openai").status == DISABLED
     assert reg.get("gemini").status == BLOCKED  # enabled but missing key
     assert reg.get("mistral").status == AVAILABLE
+    assert reg.get("sarvam").status == AVAILABLE
     assert "openai" not in [p.name for p in reg.list_available()]
 
 

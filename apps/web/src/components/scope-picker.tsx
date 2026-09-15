@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 
 import { Label } from "@/components/ui/label";
+import { FieldSelect } from "@/components/ui/field-select";
 import { academicApi } from "@/features/academic/api";
 
 /** Practice/mock scope — TOPIC required for Kinematics Ch2 vs Ch3 separation (T6-C). */
@@ -58,9 +59,8 @@ export function ScopePicker({ onChange }: { onChange: (scope: Scope | null) => v
     <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
       <div className="flex flex-col gap-1.5">
         <Label htmlFor="practice-scope-subject">Subject</Label>
-        <select
+        <FieldSelect
           id="practice-scope-subject"
-          className="h-9 rounded-md border bg-background px-2 text-sm"
           value={subjectId}
           onChange={(e) => {
             setSubjectId(e.target.value);
@@ -76,13 +76,12 @@ export function ScopePicker({ onChange }: { onChange: (scope: Scope | null) => v
               {s.name}
             </option>
           ))}
-        </select>
+        </FieldSelect>
       </div>
       <div className="flex flex-col gap-1.5">
         <Label htmlFor="practice-scope-chapter">Chapter</Label>
-        <select
+        <FieldSelect
           id="practice-scope-chapter"
-          className="h-9 rounded-md border bg-background px-2 text-sm"
           value={chapterId}
           disabled={!subjectId}
           onChange={(e) => {
@@ -98,13 +97,12 @@ export function ScopePicker({ onChange }: { onChange: (scope: Scope | null) => v
               {c.name}
             </option>
           ))}
-        </select>
+        </FieldSelect>
       </div>
       <div className="flex flex-col gap-1.5">
         <Label htmlFor="practice-scope-topic">Topic</Label>
-        <select
+        <FieldSelect
           id="practice-scope-topic"
-          className="h-9 rounded-md border bg-background px-2 text-sm"
           value={topicId}
           disabled={!chapterId}
           aria-describedby={!chapterId ? undefined : "practice-scope-topic-hint"}
@@ -120,7 +118,7 @@ export function ScopePicker({ onChange }: { onChange: (scope: Scope | null) => v
               {t.name}
             </option>
           ))}
-        </select>
+        </FieldSelect>
         {chapterId && (
           <p id="practice-scope-topic-hint" className="text-xs text-muted-foreground">
             For Kinematics, choose a topic to separate Motion in a Straight Line from Motion in a Plane.
@@ -129,9 +127,8 @@ export function ScopePicker({ onChange }: { onChange: (scope: Scope | null) => v
       </div>
       <div className="flex flex-col gap-1.5">
         <Label htmlFor="practice-scope-concept">Concept</Label>
-        <select
+        <FieldSelect
           id="practice-scope-concept"
-          className="h-9 rounded-md border bg-background px-2 text-sm"
           value={conceptId}
           disabled={!topicId}
           onChange={(e) => {
@@ -145,7 +142,7 @@ export function ScopePicker({ onChange }: { onChange: (scope: Scope | null) => v
               {c.name}
             </option>
           ))}
-        </select>
+        </FieldSelect>
       </div>
     </div>
   );

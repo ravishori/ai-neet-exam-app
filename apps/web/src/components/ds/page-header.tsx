@@ -2,6 +2,10 @@ import type { ReactNode } from "react";
 
 import { cn } from "@/lib/utils";
 
+/**
+ * Canonical page title block (Phase A2).
+ * eyebrow → text-meta · title → text-h1 · description → text-body
+ */
 type PageHeaderProps = {
   eyebrow?: string;
   title: string;
