@@ -1,7 +1,52 @@
 from functools import lru_cache
 from pathlib import Path
 
+from pydantic import model_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
+
+# --- DATABASE_URL normalization ------------------------------------------------
+# Railway (and Heroku) hand out ``postgresql://`` or the legacy ``postgres://``
+# scheme in a single DATABASE_URL env var. The app's async SQLAlchemy engine
+# needs the ``postgresql+asyncpg://`` driver-tagged form, and Alembic uses the
+# ``postgresql+psycopg://`` sync form. Normalize once here so operators only
+# have to set DATABASE_URL; DATABASE_URL_SYNC becomes optional (still honored
+# when supplied so local .env layouts keep working).
+
+_ASYNC_SCHEME = "postgresql+asyncpg://"
+_SYNC_SCHEME = "postgresql+psycopg://"
+
+
+def _to_async_pg_url(raw: str) -> str:
+    """Return the postgresql+asyncpg:// form of ``raw``.
+
+    Accepts ``postgres://``, ``postgresql://``, or an already-driver-tagged
+    ``postgresql+*://`` URL. Any other scheme is returned unchanged so tests /
+    non-Postgres backends are not silently rewritten.
+    """
+    s = (raw or "").strip()
+    if s.startswith("postgres://"):
+        return _ASYNC_SCHEME + s[len("postgres://") :]
+    if s.startswith("postgresql://"):
+        return _ASYNC_SCHEME + s[len("postgresql://") :]
+    if s.startswith("postgresql+"):
+        # Already a driver-tagged form (e.g. postgresql+asyncpg / postgresql+psycopg).
+        # Coerce anything that isn't asyncpg back to asyncpg for the async engine.
+        after = s.split("://", 1)[1] if "://" in s else s
+        return _ASYNC_SCHEME + after
+    return s
+
+
+def _to_sync_pg_url(raw: str) -> str:
+    """Return the postgresql+psycopg:// form of ``raw`` (used by Alembic)."""
+    s = (raw or "").strip()
+    if s.startswith("postgres://"):
+        return _SYNC_SCHEME + s[len("postgres://") :]
+    if s.startswith("postgresql://"):
+        return _SYNC_SCHEME + s[len("postgresql://") :]
+    if s.startswith("postgresql+"):
+        after = s.split("://", 1)[1] if "://" in s else s
+        return _SYNC_SCHEME + after
+    return s
 
 
 def _default_data_dir(name: str) -> str:
@@ -23,8 +68,17 @@ class Settings(BaseSettings):
 
     environment: str = "development"
 
+    # Async engine URL. Accepts any of:
+    #   postgresql+asyncpg://…      (explicit, unchanged)
+    #   postgresql://…              (Railway / stdlib form — auto-normalized)
+    #   postgres://…                (legacy Heroku form — auto-normalized)
+    # Non-Postgres URLs are passed through untouched.
     database_url: str
-    database_url_sync: str
+    # Optional. When unset, derived from ``database_url`` at load time as
+    # ``postgresql+psycopg://…`` (same host/credentials/database). An operator
+    # who supplies an explicit value wins — the derivation only fires when the
+    # field is empty. Never log any of these — credentials live in the URL.
+    database_url_sync: str = ""
 
     redis_url: str = "redis://localhost:6379/0"
 
@@ -146,6 +200,18 @@ class Settings(BaseSettings):
     # object storage is a distinct, separately-justified decision, not
     # something to default toward speculatively.
     visual_assets_dir: str = _default_data_dir("VisualAssets")
+
+    @model_validator(mode="after")
+    def _normalize_database_urls(self) -> "Settings":
+        """Coerce ``database_url`` to the async-driver form and, if
+        ``database_url_sync`` is empty, derive the sync-driver form from the
+        same credentials/host/database. Never logs or prints the URL —
+        assignment happens in-place and only string prefixes are inspected.
+        """
+        self.database_url = _to_async_pg_url(self.database_url)
+        if not (self.database_url_sync or "").strip():
+            self.database_url_sync = _to_sync_pg_url(self.database_url)
+        return self
 
     @property
     def resolved_mcq_provider(self) -> str:
