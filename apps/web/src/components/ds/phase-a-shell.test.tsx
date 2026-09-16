@@ -27,6 +27,7 @@ describe("Phase A8 mobile More IA (shell contract)", () => {
     expect(hrefs).toEqual([
       "/student/flashcards",
       "/student/mock-tests",
+      "/student/weekly-assessments",
       "/student/questions",
       "/student/attempts",
       "/student/study-plan",
