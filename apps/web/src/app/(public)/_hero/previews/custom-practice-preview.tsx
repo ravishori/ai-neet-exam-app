@@ -1,8 +1,9 @@
 import { PreviewShell } from "./preview-shell";
+import type { HeroPreviewProps } from "./types";
 
-export function CustomPracticePreview() {
+export function CustomPracticePreview({ image }: HeroPreviewProps = {}) {
   return (
-    <PreviewShell theme="physics" eyebrow="Custom practice">
+    <PreviewShell theme="physics" eyebrow="Custom practice" image={image}>
       <div className="grid grid-cols-3 gap-2">
         {[
           { label: "Physics", chip: "bg-subject-physics-muted text-subject-physics" },

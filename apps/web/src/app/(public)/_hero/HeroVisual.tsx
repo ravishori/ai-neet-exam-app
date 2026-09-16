@@ -2,16 +2,18 @@
 
 import type { HeroCapability } from "./data";
 
-/** Thin wrapper that swaps to the current capability's preview component.
- * Kept as its own file so the Carousel only handles state/interaction and
- * this file handles presentation. */
+/** Thin wrapper that swaps to the current capability's preview and
+ * forwards the capability's image + priority flag. Only the first
+ * capability's image should preload; the others lazy-load. */
 
 export function HeroVisual({
   capability,
   isActive,
+  priority = false,
 }: {
   capability: HeroCapability;
   isActive: boolean;
+  priority?: boolean;
 }) {
   const Preview = capability.Preview;
   return (
@@ -22,7 +24,13 @@ export function HeroVisual({
       hidden={!isActive}
       className="motion-safe:transition-opacity motion-safe:duration-200"
     >
-      <Preview />
+      <Preview
+        image={{
+          src: capability.imageSrc,
+          alt: capability.imageAlt,
+          priority,
+        }}
+      />
     </div>
   );
 }

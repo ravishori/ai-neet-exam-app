@@ -1,6 +1,7 @@
 import { PreviewShell } from "./preview-shell";
+import type { HeroPreviewProps } from "./types";
 
-export function WeakTopicFocusPreview() {
+export function WeakTopicFocusPreview({ image }: HeroPreviewProps = {}) {
   const bars = [
     { label: "Kinematics", pct: 32, theme: "bg-subject-physics" },
     { label: "Mole Concept", pct: 48, theme: "bg-subject-chemistry" },
@@ -8,7 +9,16 @@ export function WeakTopicFocusPreview() {
     { label: "Optics", pct: 22, theme: "bg-subject-physics" },
   ];
   return (
-    <PreviewShell theme="chemistry" eyebrow="Where you stand">
+    <PreviewShell theme="chemistry" eyebrow="Where you stand" image={image}>
+      <div className="flex items-center justify-end">
+        <span
+          className="rounded-full border border-border/60 bg-background/70 px-2 py-0.5 text-[0.65rem] uppercase tracking-[0.14em] text-muted-foreground"
+          aria-label="Example data — not your live analytics"
+          data-testid="hero-example-chip"
+        >
+          Example
+        </span>
+      </div>
       <div className="flex flex-col gap-2">
         {bars.map((b) => (
           <div key={b.label} className="flex flex-col gap-1">

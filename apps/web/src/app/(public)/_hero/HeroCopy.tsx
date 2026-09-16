@@ -1,10 +1,12 @@
-/** Server-rendered copy block. Static markup — one H1 for the whole page. */
+/** Static copy block above the dynamic capability content.
+ *
+ * Renders (in order): H1 · supporting description · NCERT trust line.
+ * The per-capability headline, feature bullets and CTAs are rendered by
+ * HeroCarousel below this block. Single H1 for the whole page.
+ */
 export function HeroCopy() {
   return (
     <div className="flex flex-col items-start gap-4 text-left">
-      <p className="font-heading text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-        Trinetra AI Learning OS
-      </p>
       <h1 className="font-heading text-3xl font-bold leading-[1.1] tracking-tight text-balance sm:text-4xl md:text-5xl">
         Your NEET preparation. Built around you.
       </h1>

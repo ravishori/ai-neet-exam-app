@@ -1,8 +1,18 @@
 import { PreviewShell } from "./preview-shell";
+import type { HeroPreviewProps } from "./types";
 
-export function RevisionPreview() {
+export function RevisionPreview({ image }: HeroPreviewProps = {}) {
   return (
-    <PreviewShell theme="neutral" eyebrow="Keep in rotation">
+    <PreviewShell theme="neutral" eyebrow="Keep in rotation" image={image}>
+      <div className="flex items-center justify-end">
+        <span
+          className="rounded-full border border-border/60 bg-background/70 px-2 py-0.5 text-[0.65rem] uppercase tracking-[0.14em] text-muted-foreground"
+          aria-label="Example data — not your live rotation"
+          data-testid="hero-example-chip"
+        >
+          Example
+        </span>
+      </div>
       <div className="flex flex-col gap-2">
         {[
           { subject: "Physics", topic: "Rotational Motion", chip: "bg-subject-physics-muted text-subject-physics" },

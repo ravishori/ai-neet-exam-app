@@ -1,8 +1,9 @@
 import { PreviewShell } from "./preview-shell";
+import type { HeroPreviewProps } from "./types";
 
-export function WeeklyAssessmentPreview() {
+export function WeeklyAssessmentPreview({ image }: HeroPreviewProps = {}) {
   return (
-    <PreviewShell theme="biology" eyebrow="Weekly assessment">
+    <PreviewShell theme="biology" eyebrow="Weekly assessment" image={image}>
       <div className="rounded-xl border border-border/60 bg-background/60 p-3">
         <div className="flex items-center justify-between">
           <p className="text-h3">Week 38</p>

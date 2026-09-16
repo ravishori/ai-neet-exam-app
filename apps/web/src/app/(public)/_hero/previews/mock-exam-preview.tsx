@@ -1,8 +1,9 @@
 import { PreviewShell } from "./preview-shell";
+import type { HeroPreviewProps } from "./types";
 
-export function MockExamPreview() {
+export function MockExamPreview({ image }: HeroPreviewProps = {}) {
   return (
-    <PreviewShell theme="physics" eyebrow="NEET mock">
+    <PreviewShell theme="physics" eyebrow="NEET mock" image={image}>
       <div className="flex items-center justify-between rounded-xl border border-border/60 bg-background/60 px-3 py-2">
         <div>
           <p className="text-h3">Full mock · 180Q</p>

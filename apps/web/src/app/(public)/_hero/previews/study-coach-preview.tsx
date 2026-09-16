@@ -1,8 +1,9 @@
 import { PreviewShell } from "./preview-shell";
+import type { HeroPreviewProps } from "./types";
 
-export function StudyCoachPreview() {
+export function StudyCoachPreview({ image }: HeroPreviewProps = {}) {
   return (
-    <PreviewShell theme="neutral" eyebrow="Study Coach">
+    <PreviewShell theme="neutral" eyebrow="Study Coach" image={image}>
       <div className="rounded-2xl border border-border/60 bg-background/60 p-3">
         <p className="text-caption text-muted-foreground">You</p>
         <p className="mt-1 text-body">Explain why entropy increases when ice melts.</p>

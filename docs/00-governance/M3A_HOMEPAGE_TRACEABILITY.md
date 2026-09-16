@@ -54,24 +54,24 @@ No new external dependencies. No new animation library. Motion utilities used ar
 
 ---
 
-## 3. Missing assets and placeholder strategy
+## 3. Asset integration
 
-Expected future asset paths (see §6 for content policy):
+Real WebP art is on disk under `apps/web/public/images/neet/hero/`:
 
-- `public/images/neet/hero/neet-hero-custom-practice.webp`
-- `public/images/neet/hero/neet-hero-weekly-assessment.webp`
-- `public/images/neet/hero/neet-hero-weak-topic-focus.webp`
-- `public/images/neet/hero/neet-hero-revision-queue.webp`
-- `public/images/neet/hero/neet-hero-mock-exam.webp`
-- `public/images/neet/hero/neet-hero-study-coach.webp`
+| Capability | File | Approx. size |
+| --- | --- | --- |
+| Custom Practice | `neet-hero-custom-practice.webp` | 76 KB |
+| Weekly Assessment | `neet-hero-weekly-assessment.webp` | 75 KB |
+| Weak Topic Focus | `neet-hero-weak-topic-focus.webp` | 81 KB |
+| Revision | `neet-hero-revision-queue.webp` | 86 KB |
+| NEET Mock | `neet-hero-mock-exam.webp` | 84,460 bytes (1672×941; re-encoded WebP q=82 method=6) |
+| Study Coach | `neet-hero-study-coach.webp` | 235 KB |
 
-**None of these files exist today.** The hero renders CSS + SVG UI previews only — no `<img>` tags, no `next/image`, no stock/copyrighted imagery downloaded from anywhere. Every preview container carries `data-preview-placeholder="true"` so a future swap-in can be verified programmatically.
+Each capability's path is recorded in `apps/web/src/app/(public)/_hero/data.ts` on `HeroCapability.imageSrc` alongside a descriptive `imageAlt` (scene description, never the slogan).
 
-Preview shells use:
-- `aspect-[4/3]` on a shared container so eventual `next/image` art can drop into the same box with **zero layout shift**.
-- Subject-theme tokens (`--subject-physics/-chemistry/-biology`, `.ai-gradient`) so the placeholder chrome will visually harmonise with the final photography.
+`PreviewShell` renders `next/image` with `fill`, `object-cover`, `sizes="(min-width: 1024px) 520px, (min-width: 640px) 60vw, 100vw"`, and `opacity-30` behind the existing HTML/React product preview. Only the first capability's image passes `priority`; the remaining five carry `loading="lazy"`. The 4:3 shell dimensions are preserved to keep CLS at zero. `data-preview-placeholder="true"` remains only on the two capabilities whose UI card renders **example** data (Weak Topic Focus, Revision) — clearly labelled with an accessible "Example" chip.
 
-The `futureAssetPath` field on each `HeroCapability` records the intended file so the swap-in PR only needs to add the WebP files and flip a single import.
+Two placeholder-data previews (Weak Topic Focus, Revision) carry an accessible `Example` chip inside the card (`data-testid="hero-example-chip"`, `aria-label="Example data — not your live analytics"`).
 
 ---
 
@@ -167,3 +167,8 @@ Hydration warnings / console errors are **not** produced by this component tree 
 | Date       | Change                                                                                 |
 | ---------- | -------------------------------------------------------------------------------------- |
 | 2026-09-16 | Initial M3A hero. Placeholder previews, six routes wired, no assets, no analytics.     |
+| 2026-09-16 | Added sr-only live-region announcement on tab change (P1-A).                           |
+| 2026-09-16 | Added `_trust/HowItFitsTogether` section below the hero (P1-B).                        |
+| 2026-09-16 | Wired six real WebP assets via `next/image`; added Example chips, brand mark, footer.  |
+| 2026-09-16 | Removed the "Trinetra AI Learning OS" eyebrow; added 5 approved feature bullets per capability (dynamic under the active headline); Title-Cased CTA labels; added "Designed & Developed by Trinetra Digital Lab" attribution to the footer (plain text — no official Trinetra Digital Lab URL in repo). |
+| 2026-09-17 | Homepage Hero v2.2 — refined three feature-benefit claims, promoted active capability headline to h3, added subtle reduced-motion-safe bullet transition, and reordered mobile hero content so the product visual precedes the benefit list. |
