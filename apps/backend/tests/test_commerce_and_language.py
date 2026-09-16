@@ -27,6 +27,7 @@ async def test_order_creation_without_razorpay_keys_never_fakes_success(client):
             "mobile": "9876500011",
             "state_code": "KARNATAKA",
             "city": "Bangalore",
+            "password": "CommercePass!42",
         },
     )
     assert resp.status_code == 201
@@ -47,6 +48,7 @@ async def test_commerce_status_defaults_to_not_premium(client):
             "mobile": "9876500012",
             "state_code": "KARNATAKA",
             "city": "Bangalore",
+            "password": "CommerceStatusPass!42",
         },
     )
 

@@ -26,6 +26,7 @@ from app.modules.identity.schemas.auth import (
 from app.modules.identity.services.auth_service import AuthService
 from app.modules.identity.services.email_service import send_password_reset_email, send_verification_email
 from app.modules.identity.services.otp_service import OtpService
+from app.modules.identity.services.password_service import PASSWORD_MAX_AGE_DAYS
 from app.modules.identity.services.profile_validation import normalize_indian_mobile
 from app.modules.identity.services.token_service import create_mfa_pending_token, decode_mfa_pending_token
 from app.modules.identity.services.totp_service import TotpService
@@ -47,6 +48,17 @@ def _client_meta(request: Request) -> tuple[str, str]:
 
 
 def _user_to_me(user: User) -> dict:
+    from datetime import UTC, datetime
+
+    pca = getattr(user, "password_changed_at", None)
+    age_days: int | None = None
+    reminder_due = False
+    if pca is not None:
+        # datetime aware — column is TIMESTAMPTZ. Guard against naive rows.
+        pca_aware = pca if pca.tzinfo is not None else pca.replace(tzinfo=UTC)
+        delta = datetime.now(UTC) - pca_aware
+        age_days = max(0, delta.days)
+        reminder_due = age_days >= PASSWORD_MAX_AGE_DAYS
     return MeResponse(
         id=str(user.id),
         email=user.email,
@@ -60,6 +72,8 @@ def _user_to_me(user: User) -> dict:
         mobile_e164=getattr(user, "mobile_e164", None),
         state_code=getattr(user, "state_code", None),
         city_name=getattr(user, "city_name", None),
+        password_age_days=age_days,
+        password_reminder_due=reminder_due,
     ).model_dump()
 
 
@@ -80,6 +94,7 @@ async def register(payload: RegisterRequest, request: Request, db: AsyncSession 
         mobile=payload.mobile,
         state_code=payload.state_code,
         city=payload.city,
+        password=payload.password,
     )
     verification_token = await service.request_email_verification(user)
     send_verification_email(to=user.email, token=verification_token)

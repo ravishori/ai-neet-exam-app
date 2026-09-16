@@ -32,6 +32,7 @@ def _payload(email: str, mobile: str = "9876500101") -> dict:
         "mobile": mobile,
         "state_code": "KARNATAKA",
         "city": "Bangalore",
+        "password": "MobileOtpPass!42",
     }
 
 

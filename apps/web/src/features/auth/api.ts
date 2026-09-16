@@ -8,13 +8,36 @@ export type MeResponse = {
   display_name: string | null;
   email_verified: boolean;
   roles: string[];
+  totp_enabled?: boolean;
+  must_change_password?: boolean;
+  mobile_e164?: string | null;
+  state_code?: string | null;
+  city_name?: string | null;
+  // Non-blocking password-age reminder — see backend PASSWORD_MAX_AGE_DAYS.
+  // `password_age_days` is null for legacy accounts with unknown password
+  // history; clients must NOT nag in that case.
+  password_age_days?: number | null;
+  password_reminder_due?: boolean;
 };
+
+export type RegisterPayload = {
+  email: string;
+  password: string;
+  first_name: string;
+  last_name: string;
+  mobile: string;
+  state_code: string;
+  city: string;
+};
+
+export type StateOption = { id: string; code: string; name: string };
+export type CityOption = { id: string; name: string };
 
 export const authApi = {
   me: () => apiClient.get<MeResponse>("/api/v1/auth/me"),
   login: (data: { email: string; password: string }) =>
     apiClient.post<MeResponse>("/api/v1/auth/login", data),
-  register: (data: { email: string; password: string; first_name?: string; last_name?: string }) =>
+  register: (data: RegisterPayload) =>
     apiClient.post<MeResponse>("/api/v1/auth/register", data),
   logout: () => apiClient.post<{ loggedOut: boolean }>("/api/v1/auth/logout"),
   forgotPassword: (data: { email: string }) =>
@@ -23,4 +46,10 @@ export const authApi = {
     apiClient.post<{ message: string }>("/api/v1/auth/reset-password", data),
   verifyEmail: (data: { token: string }) =>
     apiClient.post<MeResponse>("/api/v1/auth/verify-email", data),
+};
+
+export const locationsApi = {
+  listStates: () => apiClient.get<StateOption[]>("/api/v1/locations/states"),
+  listCitiesForState: (stateId: string) =>
+    apiClient.get<CityOption[]>(`/api/v1/locations/states/${stateId}/cities`),
 };

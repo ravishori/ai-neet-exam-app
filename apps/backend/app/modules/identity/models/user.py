@@ -43,8 +43,16 @@ class User(Base, AuditedBase):
         ForeignKey("identity.cities.id", ondelete="RESTRICT"),
         nullable=True,
     )
-    # True until the user has changed the auto-issued initial credential.
+    # Retained for backward compatibility with existing rows that were
+    # created under the auto-issued-initial-credential policy. Public
+    # registration since a1b2c3d4e5f7 uses the user's own password and
+    # sets this to false.
     must_change_password: Mapped[bool] = mapped_column(Boolean, default=False, nullable=False)
+    # Last time this user's password_hash was set. NULL for pre-existing
+    # rows (unknown history); populated at register() and every
+    # change_password / reset_password. Drives the 90-day non-blocking
+    # reminder — NULL is treated as "no reminder".
+    password_changed_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
 
     status: Mapped[str] = mapped_column(String(20), default="active", nullable=False)
     email_verified: Mapped[bool] = mapped_column(Boolean, default=False, nullable=False)

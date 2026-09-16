@@ -4,10 +4,10 @@ from pydantic import BaseModel, EmailStr, Field
 class RegisterRequest(BaseModel):
     """Public registration payload.
 
-    Password is deliberately NOT part of the client input: registration
-    always issues the auto-generated initial credential (see AuthService.
-    register) and sets must_change_password=true. First login redirects the
-    user to /change-password before any other CSRF-guarded action.
+    The user chooses their password at registration; ``validate_password_
+    policy`` enforces the full 12-char / upper / lower / digit / special
+    rule in the service layer. must_change_password is set to false and
+    password_changed_at is stamped with the account creation time.
     """
 
     email: EmailStr
@@ -16,6 +16,7 @@ class RegisterRequest(BaseModel):
     mobile: str = Field(min_length=10, max_length=20)
     state_code: str = Field(min_length=2, max_length=64)
     city: str = Field(min_length=1, max_length=120)
+    password: str = Field(min_length=8, max_length=128)
 
 
 class LoginRequest(BaseModel):
@@ -78,6 +79,12 @@ class MeResponse(BaseModel):
     mobile_e164: str | None = None
     state_code: str | None = None
     city_name: str | None = None
+    # Non-blocking 90-day password-age recommendation. `password_age_days`
+    # is None when password_changed_at is unknown (legacy rows) — clients
+    # must NOT nag in that case. `password_reminder_due` is derived
+    # server-side so the client does not have to know the policy value.
+    password_age_days: int | None = None
+    password_reminder_due: bool = False
 
 
 class MobileOtpSendRequest(BaseModel):

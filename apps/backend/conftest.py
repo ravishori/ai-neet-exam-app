@@ -119,11 +119,10 @@ async def register_user():
 
     async def _register(ac: AsyncClient, *, role_codes: list[str] | None = None, db_session: AsyncSession | None = None):
         email = f"test-{uuid.uuid4().hex[:12]}@example.com"
-        # Registration no longer accepts a client-supplied password — the
-        # server issues INITIAL_DEFAULT_PASSWORD ("Password123") and sets
-        # must_change_password=true; the fixture reports that literal so
-        # downstream tests can log in with it.
-        password = "Password123"
+        # Registration now accepts the caller's chosen password. This
+        # literal satisfies validate_password_policy (12+ chars, upper,
+        # lower, digit, special) and is what downstream tests log in with.
+        password = "TestStrongPass!1"
         # Unique 10-digit Indian mobile per fixture invocation. First digit
         # 6-9 required by the normalizer.
         import random
@@ -138,6 +137,7 @@ async def register_user():
                 "mobile": mobile10,
                 "state_code": "KARNATAKA",
                 "city": "Bangalore",
+                "password": password,
             },
         )
         assert resp.status_code == 201, resp.text

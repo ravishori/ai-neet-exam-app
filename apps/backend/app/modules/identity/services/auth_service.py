@@ -30,10 +30,11 @@ MAX_FAILED_ATTEMPTS = 5
 LOCKOUT_MINUTES = 15
 DEFAULT_ROLE_CODE = "STUDENT"
 
-# Initial credential issued at registration. Never displayed in the UI; the
-# ``must_change_password`` gate forces a change on first login. This literal
-# bypasses ``validate_password_policy`` deliberately — it is a system-issued
-# transient credential, not a user-chosen one — see ``AuthService.register``.
+# Legacy transitional constant. Public registration since migration
+# a1b2c3d4e5f7 uses the caller's own password (validated by
+# ``validate_password_policy``) and sets must_change_password=false.
+# Retained so tests / seeds that still reference it keep importing without
+# breakage — DO NOT use it for new registrations.
 INITIAL_DEFAULT_PASSWORD = "Password123"  # noqa: S105 — non-secret placeholder
 
 
@@ -58,16 +59,21 @@ class AuthService:
         mobile: str,
         state_code: str,
         city: str,
+        password: str,
     ) -> User:
-        """Public registration. No password field: every new account is
-        issued ``INITIAL_DEFAULT_PASSWORD`` (hashed) with must_change_password
-        forced true, so the first login is redirected to /change-password
-        before any CSRF-guarded action succeeds.
+        """Public registration. The caller-supplied ``password`` is validated
+        by ``validate_password_policy`` and hashed via argon2. New accounts
+        get ``must_change_password=False`` and a ``password_changed_at``
+        stamp — no forced first-login change.
         """
         from app.modules.identity.services.profile_validation import (
             normalize_indian_mobile,
             resolve_state_and_city,
         )
+
+        # Fail fast on weak passwords BEFORE any DB reads. Never log the
+        # password itself, and never surface it in error messages.
+        validate_password_policy(password)
 
         email = email.lower().strip()
         mobile_e164 = normalize_indian_mobile(mobile)
@@ -82,9 +88,10 @@ class AuthService:
         if not student_role:
             raise AppError("Default role not seeded — run the identity seed script", code="ROLE_NOT_FOUND", status_code=500)
 
+        now = datetime.now(UTC)
         user = User(
             email=email,
-            password_hash=hash_password(INITIAL_DEFAULT_PASSWORD),
+            password_hash=hash_password(password),
             first_name=first_name,
             last_name=last_name,
             display_name=first_name or email.split("@")[0],
@@ -94,7 +101,8 @@ class AuthService:
             # Denormalized cache for cheap read paths — always sourced from master.
             state_code=location.state.code,
             city_name=location.city.name,
-            must_change_password=True,
+            must_change_password=False,
+            password_changed_at=now,
         )
         self.users.add(user)
         await self.users.flush()
@@ -268,6 +276,7 @@ class AuthService:
         user.password_reset_expires_at = None
         user.failed_login_attempts = 0
         user.locked_until = None
+        user.password_changed_at = datetime.now(UTC)
         await self.tokens.revoke_all_for_user(user.id)
         await self.session.commit()
         logger.info("password_reset", user_id=str(user.id))
@@ -281,9 +290,9 @@ class AuthService:
         user.password_hash = hash_password(new_password)
         user.failed_login_attempts = 0
         user.locked_until = None
-        # Clearing the must_change_password flag is the whole point of this
-        # endpoint post-INITIAL_DEFAULT_PASSWORD registration; without it a
-        # user could pick a strong password and still be looped back here.
+        user.password_changed_at = datetime.now(UTC)
+        # Clearing the must_change_password flag remains meaningful for any
+        # legacy row that still carries it (registrations pre-a1b2c3d4e5f7).
         user.must_change_password = False
         await self.tokens.revoke_all_for_user(user.id)
         await self.session.commit()

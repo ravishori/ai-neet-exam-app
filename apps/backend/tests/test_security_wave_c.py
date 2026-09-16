@@ -22,9 +22,10 @@ def _email() -> str:
     return f"wave-c-{uuid.uuid4().hex[:12]}@example.com"
 
 
-# Registration issues INITIAL_DEFAULT_PASSWORD ("Password123") — that becomes
-# the "current password" for the first change-password call in this suite.
-PASSWORD = "Password123"
+# User-chosen password submitted at registration and validated against
+# validate_password_policy. Becomes the "current password" for the first
+# change-password call in this suite.
+PASSWORD = "WaveCTestPass!7"
 
 
 async def _register(client, email: str):
@@ -42,6 +43,7 @@ async def _register(client, email: str):
             "mobile": mobile10,
             "state_code": "KARNATAKA",
             "city": "Bangalore",
+            "password": PASSWORD,
         },
     )
     assert resp.status_code == 201, resp.text
