@@ -98,6 +98,20 @@ export function HeroCarousel() {
         activeIndex={activeIndex}
         onSelect={select}
       />
+
+      {/* Live region — announces tab changes to screen readers. Kept
+       * outside every interactive element so focus is never stolen.
+       * The visible tab-change is already conveyed by aria-selected on
+       * the tab and aria-controls on the panel; this narrates the swap
+       * for AT users who are not sitting on the tablist. */}
+      <p
+        role="status"
+        aria-live="polite"
+        className="sr-only"
+        data-testid="hero-live-announcement"
+      >
+        {`Now viewing: ${active.title}, tile ${activeIndex + 1} of ${HERO_CAPABILITIES.length}`}
+      </p>
     </section>
   );
 }

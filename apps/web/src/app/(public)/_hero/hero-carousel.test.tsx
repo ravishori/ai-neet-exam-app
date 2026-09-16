@@ -76,6 +76,20 @@ describe("Homepage hero (M3A)", () => {
     }
   });
 
+  it("announces the active tile via a polite live region and updates on ArrowRight", () => {
+    render(<HeroCarousel />);
+    const live = screen.getByTestId("hero-live-announcement");
+    expect(live).toHaveAttribute("aria-live", "polite");
+    expect(live).toHaveAttribute("role", "status");
+    expect(live).toHaveClass("sr-only");
+    expect(live).toHaveTextContent(/Now viewing:\s*Custom Practice, tile 1 of 6/i);
+
+    const tablist = screen.getByRole("tablist");
+    screen.getByRole("tab", { name: /Custom Practice/i }).focus();
+    fireEvent.keyDown(tablist, { key: "ArrowRight" });
+    expect(live).toHaveTextContent(/Now viewing:\s*Weekly Assessment, tile 2 of 6/i);
+  });
+
   it("uses placeholder previews (no <img> loaded) and marks them as such", () => {
     render(<HeroCarousel />);
     expect(document.querySelector('[data-preview-placeholder="true"]')).not.toBeNull();
