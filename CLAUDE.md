@@ -55,6 +55,34 @@ published content volume are separate gates. See `docs/product/MASTER_FEATURE_AU
 - API responses follow one envelope: `{ success, data, meta, errors,
   traceId, timestamp }`.
 
+## Frontend dev-server invariant (agent rule)
+
+Before running `npm run build` (or `npx next build`) inside `apps/web/`,
+verify no `npm run dev` / `next dev` is already running against the same
+working tree. Both write into `apps/web/.next/` — running them
+concurrently corrupts the dev server's on-disk CSS/JS chunks while it
+keeps serving HTML that references them, producing an entirely unstyled
+app locally.
+
+Cheap check before any build:
+
+```bash
+netstat -ano | grep ':3000.*LISTENING'
+```
+
+If a process is listening on 3000, ask the operator to stop the dev
+server first. Do **not** kill it yourself — dev-server node processes
+launched from another shell/session may be un-killable from your shell,
+and even if killable, arbitrary `taskkill //IM node.exe` will nuke
+editor/tsserver nodes too. Wait for a clean tree.
+
+Recovery when a local dev already shows unstyled pages: stop the dev
+server, `rm -rf apps/web/.next`, `npm run dev`. No source change needed.
+
+The invariant is also documented for humans in `apps/web/README.md`
+under "Dev-server invariant"; the static guard is
+`apps/web/src/app/layout.stylesheet.test.ts`.
+
 ## Where to look
 
 - `docs/product/` — **authoritative current product status**, gaps, forward

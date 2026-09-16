@@ -48,6 +48,36 @@ npm test
 Vitest covers a small set of components/helpers. **No Playwright E2E suite**
 yet (product gap G-024).
 
+## Dev-server invariant (do NOT skip)
+
+**Never run `npm run build` while `npm run dev` is running in the same
+`apps/web` working tree.** Both write into `apps/web/.next/` and collide —
+the build wipes the dev server's on-disk CSS/JS chunks while the dev
+server keeps serving HTML that references them, producing an entirely
+unstyled app with 404s on `/_next/static/css/app/layout.css`.
+
+Correct order for a full validation pass:
+
+```bash
+# 1. Stop the running dev server first
+#    (Ctrl+C in the terminal running `npm run dev`)
+
+# 2. Production build
+npm run build
+
+# 3. Restart dev for browser work
+npm run dev
+```
+
+If you hit an unstyled app locally, the recovery is: stop the dev server,
+`rm -rf .next`, then `npm run dev` again. Source code needs no change —
+the failure is always a stale `.next/` cache.
+
+The static guard `src/app/layout.stylesheet.test.ts` catches the
+source-level failure modes that would also produce an unstyled app
+(missing `import "./globals.css"`, removed design tokens, empty
+`.next/static/css/` after build).
+
 ## Adding shadcn/ui components
 
 ```bash
