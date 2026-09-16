@@ -262,4 +262,9 @@ async def get_question_history(
 async def submit_attempt(attempt_id: uuid.UUID, user: User = Depends(get_current_user), db: AsyncSession = Depends(get_db)):
     service = AssessmentService(db)
     attempt = await service.submit_attempt(attempt_id, user.id)
+    # Flip this week's WeeklyRevisionRecommendation to COMPLETED if the
+    # submitted attempt was materialised for it. Non-weekly attempts no-op.
+    from app.modules.assessment.services.weekly_revision_service import WeeklyRevisionService
+
+    await WeeklyRevisionService(db).sync_completed_state(user_id=user.id)
     return envelope(success=True, data=_attempt_summary(attempt))

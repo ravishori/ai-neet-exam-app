@@ -23,6 +23,8 @@ from app.modules.academic.api.academic_router import router as academic_router
 from app.modules.ai.api.ai_router import router as ai_router
 from app.modules.analytics.api.analytics_router import router as analytics_router
 from app.modules.assessment.api.assessment_router import router as assessment_router
+from app.modules.assessment.api.weekly_assessment_router import router as weekly_assessment_router
+from app.modules.assessment.api.weekly_revision_router import router as weekly_revision_router
 from app.modules.cms.api.cms_router import router as cms_router
 from app.modules.cms.api.content_factory_router import router as content_factory_router
 from app.modules.cms.api.human_gold_sandbox_router import router as human_gold_sandbox_router
@@ -89,6 +91,8 @@ app.include_router(content_factory_planning_router, prefix="/api/v1/cms")
 app.include_router(human_gold_sandbox_router, prefix="/api/v1/cms")
 app.include_router(search_router)
 app.include_router(assessment_router)
+app.include_router(weekly_assessment_router)
+app.include_router(weekly_revision_router)
 app.include_router(ai_router)
 app.include_router(mastery_router)
 app.include_router(question_interaction_router)

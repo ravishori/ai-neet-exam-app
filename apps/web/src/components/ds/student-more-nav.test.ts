@@ -23,6 +23,7 @@ describe("Student More nav (shared source of truth)", () => {
     expect(STUDENT_MORE_LINKS.map((l) => l.href)).toEqual([
       "/student/flashcards",
       "/student/mock-tests",
+      "/student/weekly-assessments",
       "/student/questions",
       "/student/attempts",
       "/student/study-plan",

@@ -13,6 +13,7 @@ export const STUDENT_MORE_SECTIONS: NavSection[] = [
     links: [
       { href: "/student/flashcards", label: "Flashcards" },
       { href: "/student/mock-tests", label: "Mock Tests" },
+      { href: "/student/weekly-assessments", label: "Weekly Assessments" },
       { href: "/student/questions", label: "Questions" },
       { href: "/student/attempts", label: "Attempts" },
       { href: "/student/study-plan", label: "Study Plan" },

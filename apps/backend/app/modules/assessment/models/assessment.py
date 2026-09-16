@@ -1,6 +1,6 @@
 import uuid
 
-from sqlalchemy import Integer, Numeric, String
+from sqlalchemy import ForeignKey, Integer, Numeric, String
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
@@ -23,6 +23,20 @@ class Assessment(Base, AuditedBase):
     marks_per_question: Mapped[float] = mapped_column(Numeric(5, 2), default=4, nullable=False)
     negative_marks_per_question: Mapped[float] = mapped_column(Numeric(5, 2), default=1, nullable=False)
     question_count: Mapped[int] = mapped_column(Integer, nullable=False)
+    # Back-link when this assessment was materialised for a WeeklyAssessment.
+    # Null for plain PRACTICE / MOCK generation.
+    weekly_assessment_id: Mapped[uuid.UUID | None] = mapped_column(
+        UUID(as_uuid=True),
+        ForeignKey("assessment.weekly_assessments.id", ondelete="SET NULL"),
+        nullable=True,
+    )
+    # Back-link when this assessment was materialised for a student-driven
+    # WeeklyRevisionRecommendation. Mutually exclusive with the field above.
+    weekly_revision_id: Mapped[uuid.UUID | None] = mapped_column(
+        UUID(as_uuid=True),
+        ForeignKey("assessment.weekly_revision_recommendations.id", ondelete="SET NULL"),
+        nullable=True,
+    )
 
     questions: Mapped[list["AssessmentQuestion"]] = relationship(
         back_populates="assessment", order_by="AssessmentQuestion.order_no", cascade="all, delete-orphan"
