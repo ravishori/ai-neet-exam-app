@@ -37,7 +37,7 @@ export function HeroCapabilityNav({
       role="tablist"
       aria-label="NEET preparation capabilities"
       onKeyDown={onKey}
-      className="scroll-thin -mx-2 flex snap-x snap-mandatory overflow-x-auto gap-2 px-2 pb-1"
+      className="scroll-thin -mx-2 hidden snap-x snap-mandatory gap-2 overflow-x-auto px-2 pb-1 sm:flex"
     >
       {capabilities.map((c, i) => {
         const active = i === activeIndex;

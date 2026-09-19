@@ -8,6 +8,7 @@ import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 import { HERO_CAPABILITIES } from "./data";
+import { HeroCapabilityCarouselMobile } from "./HeroCapabilityCarouselMobile";
 import { HeroCapabilityNav } from "./HeroCapabilityNav";
 import { HeroCopy } from "./HeroCopy";
 import { HeroVisual } from "./HeroVisual";
@@ -59,8 +60,25 @@ export function HeroCarousel() {
        * spans all rows in column 2, centered. Same DOM, ordering by
        * class only. */}
       <div className="flex flex-col gap-6 md:grid md:grid-cols-[minmax(0,1fr)_minmax(0,520px)] md:grid-rows-[auto_auto_auto_auto] md:items-start md:gap-x-10 md:gap-y-6">
-        <div className="order-1 md:col-start-1 md:row-start-1">
+        <div className="order-1 flex flex-col gap-4 md:col-start-1 md:row-start-1">
           <HeroCopy />
+          {/* Feature navigation — moved directly below the NCERT trust
+           * line. Desktop/tablet keeps the horizontal pill tablist
+           * (hidden below `sm`); mobile portrait swaps to a one-item-
+           * at-a-time carousel (hidden at `sm` and up). Both drive the
+           * same `select` callback, so the active headline/visual/
+           * bullets/CTA below never diverge from whichever nav is
+           * visible at the current breakpoint. */}
+          <HeroCapabilityNav
+            capabilities={HERO_CAPABILITIES}
+            activeIndex={activeIndex}
+            onSelect={select}
+          />
+          <HeroCapabilityCarouselMobile
+            capabilities={HERO_CAPABILITIES}
+            activeIndex={activeIndex}
+            onSelect={select}
+          />
         </div>
 
         <h3
@@ -132,12 +150,6 @@ export function HeroCarousel() {
           </Link>
         </div>
       </div>
-
-      <HeroCapabilityNav
-        capabilities={HERO_CAPABILITIES}
-        activeIndex={activeIndex}
-        onSelect={select}
-      />
 
       {/* Live region — announces tab changes to screen readers. Kept
        * outside every interactive element so focus is never stolen.
