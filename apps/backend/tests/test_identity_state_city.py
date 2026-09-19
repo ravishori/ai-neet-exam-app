@@ -27,13 +27,18 @@ def test_source_json_shape():
         assert isinstance(row["cities"], list)
 
 
-def test_source_contains_both_odisha_and_orissa():
-    """Both names appear in Cities-List.xlsx; the loader must preserve them
-    without silently merging."""
+def test_source_contains_odisha_not_the_obsolete_orissa_name():
+    """Cities-List.xlsx lists Sambalpur (and all other Odisha cities) under
+    the current name "Odisha" only. An earlier version of the source
+    listed a subset of Odisha cities under the pre-2011 name "Orissa" as a
+    separate, unmerged state entry; the authoritative workbook was
+    corrected upstream and no longer contains that entry. The loader must
+    reflect the workbook as-is, not preserve a name the source no longer
+    has."""
     src = load_source()
     names = {row["name"] for row in src["states"]}
     assert "Odisha" in names
-    assert "Orissa" in names
+    assert "Orissa" not in names
 
 
 def test_source_contains_aurangabad_under_two_states():
@@ -101,18 +106,17 @@ async def test_repository_cities_scoped_and_sorted(db_session):
     assert "Bangalore" in names
 
 
-async def test_orissa_and_odisha_are_distinct_state_rows(db_session):
+async def test_odisha_resolves_and_obsolete_orissa_code_does_not(db_session):
+    """The authoritative workbook lists Sambalpur (and every other Odisha
+    city) under "Odisha" only — the pre-2011 name "Orissa" is not a
+    separate state in the current source and must not resolve."""
     repo = GeoRepository(db_session)
     odisha = await repo.get_state_by_code("ODISHA")
     orissa = await repo.get_state_by_code("ORISSA")
     assert odisha is not None
-    assert orissa is not None
-    assert odisha.id != orissa.id
-    # Sambalpur exists under both states in the source.
-    a = await repo.find_city(state_id=odisha.id, name="Sambalpur")
-    b = await repo.find_city(state_id=orissa.id, name="Sambalpur")
-    assert a is not None and b is not None
-    assert a.id != b.id
+    assert orissa is None
+    sambalpur = await repo.find_city(state_id=odisha.id, name="Sambalpur")
+    assert sambalpur is not None
 
 
 # --------------------------------------------------------------------------- validator

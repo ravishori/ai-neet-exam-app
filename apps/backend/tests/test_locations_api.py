@@ -11,11 +11,14 @@ async def test_list_states_alphabetical(client):
     body = resp.json()
     names = [row["name"] for row in body["data"]]
     assert names == sorted(names)
-    # 28 distinct State values from the source XLSX (both "Odisha" and "Orissa" preserved).
-    assert body["meta"]["total"] == len(names) == 28
+    # 27 distinct State values from the current source XLSX. The workbook
+    # was corrected upstream to list all Odisha cities under "Odisha" only
+    # — the pre-2011 name "Orissa" is no longer a separate source row.
+    assert body["meta"]["total"] == len(names) == 27
     codes = {row["code"] for row in body["data"]}
     # A few known slugs.
-    assert {"KARNATAKA", "TAMIL_NADU", "ODISHA", "ORISSA"}.issubset(codes)
+    assert {"KARNATAKA", "TAMIL_NADU", "ODISHA"}.issubset(codes)
+    assert "ORISSA" not in codes
 
 
 async def test_list_cities_for_karnataka_alphabetical(client):

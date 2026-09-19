@@ -129,9 +129,9 @@ async def seed_geo_master(session: AsyncSession) -> GeoSeedResult:
 
 
 async def _cli() -> None:  # pragma: no cover
-    from app.core.database import async_session_factory
+    from app.core.database import AsyncSessionLocal
 
-    async with async_session_factory() as session:
+    async with AsyncSessionLocal() as session:
         result = await seed_geo_master(session)
         print(result)
 

@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "source": "Cities-List.xlsx",
-  "notes": "Direct export of the authoritative Cities-List.xlsx (sheet \"Cities\"). Values preserved verbatim from the source; only exact duplicate rows are removed (see exact_dups_removed in the header). Two states (\"Odisha\", \"Orissa\") are BOTH present in the source and are preserved as distinct rows; the shared city \"Sambalpur\" therefore exists under both. \"Aurangabad\" appears under both Bihar and Maharashtra — that reflects two real cities, not a data error.",
-  "exact_dups_removed": 1,
+  "exact_dups_removed": 0,
+  "notes": "Regenerated from the authoritative Cities-List.xlsx. Values preserved verbatim from the source; only exact duplicate rows are removed. Do not hand-edit — regenerate via python -m scripts.geo.import_cities_xlsx --xlsx <path>.",
   "states": [
     {
       "name": "Andhra Pradesh",
@@ -275,12 +275,6 @@
         "Cuttack",
         "Raurkela Industrial Township",
         "Rourkela",
-        "Sambalpur"
-      ]
-    },
-    {
-      "name": "Orissa",
-      "cities": [
         "Sambalpur"
       ]
     },
