@@ -71,6 +71,22 @@ def _question_meta(item, names: dict, visual_assets_by_ku: dict, bookmarked_ids:
     }
 
 
+def _diagram_svg_from_body(body: dict) -> str | None:
+    """Surface stored body.diagram_svg for student presentation (not KU assets).
+
+    Factory V2 visual questions keep SVG on the content version body; they are
+    not always linked via knowledge_unit visual_assets. Presentation only —
+    does not mutate content.
+    """
+    raw = body.get("diagram_svg")
+    if not isinstance(raw, str):
+        return None
+    svg = raw.strip()
+    if not svg or "<svg" not in svg.lower():
+        return None
+    return svg
+
+
 def _public_question(item, answer, names: dict, visual_assets_by_ku: dict, bookmarked_ids: set) -> dict:
     """In-progress view — never leaks correct_option/explanation."""
     body = get_content_body(item)
@@ -83,6 +99,7 @@ def _public_question(item, answer, names: dict, visual_assets_by_ku: dict, bookm
         "selected_option": answer.selected_option if answer else None,
         "confidence": answer.confidence if answer else None,
         "marked_for_review": answer.marked_for_review if answer else False,
+        "diagram_svg": _diagram_svg_from_body(body),
         **_question_meta(item, names, visual_assets_by_ku, bookmarked_ids),
     }
 
@@ -102,6 +119,7 @@ def _result_question(item, answer, names: dict, visual_assets_by_ku: dict, bookm
         "confidence": answer.confidence if answer else None,
         "marked_for_review": answer.marked_for_review if answer else False,
         "time_spent_seconds": answer.time_spent_seconds if answer else None,
+        "diagram_svg": _diagram_svg_from_body(body),
         **_question_meta(item, names, visual_assets_by_ku, bookmarked_ids),
     }
 
@@ -113,7 +131,8 @@ async def generate_practice(payload: GenerateRequest, user: User = Depends(get_c
     assessment = await service.generate_practice(
         scope_type=payload.scope_type, scope_id=scope_id, question_count=payload.question_count, user_id=user.id
     )
-    return envelope(success=True, data=_assessment(assessment), status_code=201)
+    meta = getattr(assessment, "_availability_meta", None)
+    return envelope(success=True, data=_assessment(assessment), meta=meta, status_code=201)
 
 
 @router.post("/assessments/mock", dependencies=[Depends(verify_csrf)])
@@ -123,7 +142,8 @@ async def generate_mock(payload: GenerateRequest, user: User = Depends(get_curre
     assessment = await service.generate_mock(
         scope_type=payload.scope_type, scope_id=scope_id, question_count=payload.question_count, user_id=user.id
     )
-    return envelope(success=True, data=_assessment(assessment), status_code=201)
+    meta = getattr(assessment, "_availability_meta", None)
+    return envelope(success=True, data=_assessment(assessment), meta=meta, status_code=201)
 
 
 @router.post("/assessments/full-mock", dependencies=[Depends(verify_csrf)])
@@ -242,4 +262,9 @@ async def get_question_history(
 async def submit_attempt(attempt_id: uuid.UUID, user: User = Depends(get_current_user), db: AsyncSession = Depends(get_db)):
     service = AssessmentService(db)
     attempt = await service.submit_attempt(attempt_id, user.id)
+    # Flip this week's WeeklyRevisionRecommendation to COMPLETED if the
+    # submitted attempt was materialised for it. Non-weekly attempts no-op.
+    from app.modules.assessment.services.weekly_revision_service import WeeklyRevisionService
+
+    await WeeklyRevisionService(db).sync_completed_state(user_id=user.id)
     return envelope(success=True, data=_attempt_summary(attempt))

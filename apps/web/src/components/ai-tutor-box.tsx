@@ -96,7 +96,7 @@ export function AiTutorBox({ conceptId }: { conceptId: string }) {
 
         {ask.isError && (
           <div className="px-(--card-spacing) pt-3">
-            <Alert variant="destructive">
+            <Alert variant="destructive" role="alert" data-testid="ai-tutor-error">
               <AlertDescription>{ask.error instanceof ApiError ? ask.error.message : "Something went wrong"}</AlertDescription>
             </Alert>
           </div>
@@ -118,6 +118,9 @@ export function AiTutorBox({ conceptId }: { conceptId: string }) {
             {ask.data.ncert_reference && (
               <p className="border-t pt-3 text-xs text-muted-foreground">NCERT reference: {ask.data.ncert_reference}</p>
             )}
+            <p className="text-xs text-muted-foreground" data-testid="ai-tutor-caveat">
+              AI-generated explanation. Cross-check against NCERT before you memorise it.
+            </p>
           </div>
         )}
       </CardContent>

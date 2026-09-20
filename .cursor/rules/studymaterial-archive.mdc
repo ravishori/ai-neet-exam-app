@@ -1,0 +1,21 @@
+---
+description: Authoritative StudyMaterial archive path for NCERT/source work
+alwaysApply: true
+---
+
+# StudyMaterial source archive
+
+When discovering, extracting, or verifying NCERT / StudyMaterial PDFs, always use:
+
+```text
+D:\ravishori\AI Neet Exam App\StudyMaterial (2).zip
+```
+
+Do **not** treat `StudyMaterial.zip` as the complete corpus. That older zip is incomplete (notably missing Class 12 Physics Part-II / Optics).
+
+Prefer:
+
+1. Files already under `StudyMaterial/` on disk if present and complete for the task.
+2. Otherwise extract or inspect from `StudyMaterial (2).zip`.
+
+Keep the existing on-disk folder layout (`StudyMaterial/Physics|Chemistry|Biology/...`). Do not invent alternate roots.

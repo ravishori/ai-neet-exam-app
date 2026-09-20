@@ -1,0 +1,153 @@
+{
+  "captured_at": "2026-09-03T13:13:22.316Z",
+  "web": "http://localhost:3000",
+  "api": "http://localhost:8000",
+  "steps": [
+    {
+      "step": "register",
+      "status": 201,
+      "ok": true
+    },
+    {
+      "step": "dashboard_loaded",
+      "url": "http://localhost:3000/student/dashboard"
+    },
+    {
+      "step": "auth_me_from_browser",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "step": "seed_v1_cta_visibility",
+      "visible": true,
+      "enabled": true,
+      "aria_label": "Practice Seed V1 — exact 30 published questions",
+      "text": "Practice Seed V1"
+    },
+    {
+      "step": "full_cta_still_present",
+      "visible": true
+    },
+    {
+      "step": "clicked_practice_seed_v1"
+    },
+    {
+      "step": "practice_api_response",
+      "status": 201,
+      "ok": true,
+      "assessment_id": "2396ccac-eb7f-452f-9dc4-e9f6b2dbca35",
+      "question_count": 30,
+      "scope_type": "SEED_V1",
+      "title": "Production Seed V1 practice",
+      "meta": {
+        "available_count": 30,
+        "requested_count": 30,
+        "delivered_count": 30,
+        "shrunk": false,
+        "seed_v1_allowlist_sha256": "c0cf70846233730ef384188f5b78cced2a7865f76d977a0af6063f803bc8f0c1",
+        "seed_v1_allowlist_count": 30
+      },
+      "errors": []
+    },
+    {
+      "step": "attempt_api_response",
+      "status": 201,
+      "ok": true,
+      "attempt_id": "b81ba5e8-9146-43c6-9440-a5cb4f60d946"
+    },
+    {
+      "step": "post_click_state",
+      "url": "http://localhost:3000/student/dashboard",
+      "button_busy": "false"
+    },
+    {
+      "step": "navigated_to_attempt",
+      "url": "http://localhost:3000/student/attempts/b81ba5e8-9146-43c6-9440-a5cb4f60d946"
+    },
+    {
+      "step": "seed_firewall",
+      "presented_count": 30,
+      "outside_count": 0,
+      "outside_sample": [],
+      "all_in_allowlist": true,
+      "unique_count": 30
+    },
+    {
+      "step": "first_question_rendered",
+      "question_label": "Question 1 of 30",
+      "explanation_heading_count_before_submit": 0
+    },
+    {
+      "step": "selected_option_a",
+      "aria_pressed": "true"
+    },
+    {
+      "step": "submitted",
+      "scoreText": "Score: 1",
+      "correctText": "1 correct",
+      "incorrectText": "0 incorrect",
+      "explanation_heading_count_after_submit": 1
+    }
+  ],
+  "console_errors": [],
+  "page_errors": [],
+  "network": [
+    {
+      "url": "http://localhost:8000/api/v1/attempts",
+      "method": "GET",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "url": "http://localhost:8000/api/v1/assessments/practice",
+      "method": "POST",
+      "status": 201,
+      "ok": true
+    },
+    {
+      "url": "http://localhost:8000/api/v1/assessments/2396ccac-eb7f-452f-9dc4-e9f6b2dbca35/attempts",
+      "method": "POST",
+      "status": 201,
+      "ok": true
+    },
+    {
+      "url": "http://localhost:8000/api/v1/attempts/b81ba5e8-9146-43c6-9440-a5cb4f60d946",
+      "method": "GET",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "url": "http://localhost:8000/api/v1/attempts/b81ba5e8-9146-43c6-9440-a5cb4f60d946",
+      "method": "GET",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "url": "http://localhost:8000/api/v1/attempts/b81ba5e8-9146-43c6-9440-a5cb4f60d946/answers",
+      "method": "POST",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "url": "http://localhost:8000/api/v1/attempts/b81ba5e8-9146-43c6-9440-a5cb4f60d946",
+      "method": "GET",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "url": "http://localhost:8000/api/v1/attempts/b81ba5e8-9146-43c6-9440-a5cb4f60d946/submit",
+      "method": "POST",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "url": "http://localhost:8000/api/v1/attempts/b81ba5e8-9146-43c6-9440-a5cb4f60d946",
+      "method": "GET",
+      "status": 200,
+      "ok": true
+    }
+  ],
+  "pass": true,
+  "student_email": "seed-v1-browser-1788441202316@example.com",
+  "cta_click_emitted_practice_request": true
+}

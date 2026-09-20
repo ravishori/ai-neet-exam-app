@@ -1,0 +1,132 @@
+{
+  "captured_at": "2026-09-02T15:49:01.723253+00:00",
+  "database": "trinetra_db",
+  "historical_pre_f2_note": "Deep T6-D / protected-CMS content fingerprints were NOT captured immediately before the original T6-F2 publication. That historical window is NOT RETROACTIVELY VERIFIABLE. This artifact proves post-publication stability across an idempotent rerun.",
+  "before": {
+    "t6d": {
+      "total": 100,
+      "published": 100,
+      "draft": 0,
+      "content_fp": "e0758fbcb071180b61a33f2b4581e894"
+    },
+    "legacy": {
+      "total": 5000,
+      "published": 0,
+      "draft": 5000,
+      "content_fp": "13d51e697382663a28ffc44fd56aedb1"
+    },
+    "t6f1_published": {
+      "total": 938,
+      "content_fp": "17a1672c444c8362ed0261dacf0f82c7"
+    },
+    "protected_non_f1_cms": {
+      "total": 5275,
+      "published": 111,
+      "content_fp": "7fcac5bb0a0e18080cd5932a6a19b2bb"
+    },
+    "batch_ids": {
+      "t6f1": "physics-t6f1-pilot-20260902",
+      "t6d": "physics-t6d-pilot-20260902",
+      "legacy": "legacy-physics-5000-import-20260902"
+    },
+    "historical_pre_f2_deep_immutability": "NOT RETROACTIVELY VERIFIABLE",
+    "note": "Fingerprints cover id|slug|status|concept_id|body_md5|tags. Timestamps excluded. Pre-T6-F2 historical fingerprints were not captured at publish time."
+  },
+  "idempotent_run": {
+    "first_run_context": "batch already published (938); this is SECOND-RUN evidence",
+    "first_run_from_manifest": {
+      "source": "docs/audits/TALOS_T6F2_PUBLICATION_MANIFEST_20260902.json",
+      "eligible_population": 938,
+      "already_published_before_first_run": 0,
+      "staged_count": 938,
+      "blocked_count": 0,
+      "consistency_errors": [],
+      "rejected_never_persisted": true,
+      "note": "First-run publication counts are taken from the stored F2 manifest (not re-executed). Deep content fingerprints were not captured before that first run."
+    },
+    "eligible_population": 0,
+    "published_new": 0,
+    "already_published": 938,
+    "staged": 0,
+    "errors": [],
+    "idempotent_rerun": true,
+    "t6f1_content_fp_before": "17a1672c444c8362ed0261dacf0f82c7",
+    "t6f1_content_fp_after": "17a1672c444c8362ed0261dacf0f82c7",
+    "t6f1_content_unchanged": true
+  },
+  "after": {
+    "t6d": {
+      "total": 100,
+      "published": 100,
+      "draft": 0,
+      "content_fp": "e0758fbcb071180b61a33f2b4581e894"
+    },
+    "legacy": {
+      "total": 5000,
+      "published": 0,
+      "draft": 5000,
+      "content_fp": "13d51e697382663a28ffc44fd56aedb1"
+    },
+    "t6f1_published": {
+      "total": 938,
+      "content_fp": "17a1672c444c8362ed0261dacf0f82c7"
+    },
+    "protected_non_f1_cms": {
+      "total": 5275,
+      "published": 111,
+      "content_fp": "7fcac5bb0a0e18080cd5932a6a19b2bb"
+    },
+    "batch_ids": {
+      "t6f1": "physics-t6f1-pilot-20260902",
+      "t6d": "physics-t6d-pilot-20260902",
+      "legacy": "legacy-physics-5000-import-20260902"
+    },
+    "historical_pre_f2_deep_immutability": "NOT RETROACTIVELY VERIFIABLE",
+    "note": "Fingerprints cover id|slug|status|concept_id|body_md5|tags. Timestamps excluded. Pre-T6-F2 historical fingerprints were not captured at publish time."
+  },
+  "t6d_integrity": {
+    "population": "physics-t6d-pilot-20260902",
+    "before_count": 100,
+    "before_fingerprint": "e0758fbcb071180b61a33f2b4581e894",
+    "after_count": 100,
+    "after_fingerprint": "e0758fbcb071180b61a33f2b4581e894",
+    "changed_rows": 0,
+    "added_rows": 0,
+    "deleted_rows": 0,
+    "unexpected_updates": 0,
+    "unexpected_inserts": 0,
+    "unexpected_deletes": 0,
+    "unexpected_status_or_content_changes": 0,
+    "historical_pre_f2": "NOT RETROACTIVELY VERIFIABLE"
+  },
+  "protected_cms_mutations": {
+    "population": "all CMS QUESTION except T6-F1 batch (intentional F2 publish excluded)",
+    "protected_population_before": 5275,
+    "protected_population_after": 5275,
+    "before_fingerprint": "7fcac5bb0a0e18080cd5932a6a19b2bb",
+    "after_fingerprint": "7fcac5bb0a0e18080cd5932a6a19b2bb",
+    "unexpected_updates": 0,
+    "unexpected_inserts": 0,
+    "unexpected_deletes": 0,
+    "unexpected_status_changes": 0,
+    "unexpected_content_changes": 0,
+    "historical_pre_f2": "NOT RETROACTIVELY VERIFIABLE"
+  },
+  "comparisons": {
+    "t6d_count_stable": true,
+    "t6d_fp_stable": true,
+    "t6d_changed_rows": 0,
+    "t6d_added_rows": 0,
+    "t6d_deleted_rows": 0,
+    "legacy_count_stable": true,
+    "legacy_fp_stable": true,
+    "protected_cms_fp_stable": true,
+    "protected_unexpected_updates": 0,
+    "protected_unexpected_inserts": 0,
+    "protected_unexpected_deletes": 0,
+    "t6f1_published_fp_stable": true,
+    "t6f1_published_count": 938,
+    "new_publications_on_rerun": 0,
+    "all_required_stable": true
+  }
+}

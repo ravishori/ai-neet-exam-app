@@ -1,0 +1,170 @@
+{
+  "keph205": [
+    {
+      "term": "average kinetic energy",
+      "found": true,
+      "page": 7,
+      "snippet": " temperature. Combining Eq. (12.17) with the\nideal gas Eq. (12.3), we get\nE = (3/2)  kB  NT                                             (12.18)\nor  E/ N = ½  m \n2\nv\n   =   (3/2) kBT\n(12.19)\ni.e., the average kinetic energy of a molecule is\nproportional to the absolute temperature of the\ngas; it is independent of pressure, volume or\nthe nature of the ideal gas. This is a fundamental\nresult relating temperature, a macroscopic\nmeasurable \nparameter \nof \na \ngas\n(a thermodynamic variable as it is called) to a\nmolecular quantity, namely the average kinetic\nenergy of a molecule. The two domains are\nconnected by the Boltzmann constant. We note\nin passing that Eq. (12.18) tells us that internal\nenerg"
+    },
+    {
+      "term": "translational",
+      "found": true,
+      "page": 7,
+      "snippet": "ion (13.14) can be written as\nPV   =  (1/3) nV m \n2\nv\n(12.15a)\nPV   =   (2/3) N x ½ m \n2\nv\n(12.15b)\nwhere N (= nV) is the number of molecules in\nthe sample.\nThe quantity in the bracket is the average\ntranslational kinetic energy of the molecules in\nthe gas. Since the internal energy E of an ideal\ngas is purely kinetic*,\nE = N × (1/2) m \n2\nv\n(12.16)\nEquation (12.15) then gives :\nPV = (2/3) E\n(12.17)\nWe are now ready for a kinetic interpretation\nof temperature. Combining Eq. (12.17) with the\nideal gas Eq. (12.3), we get\nE = (3/2)  kB  NT                                             (12.18)\nor  E/ N = ½  m \n2\nv\n   =   (3/2) kBT\n(12.19)\ni.e., the average kinetic energy of a molecule is\nproportion"
+    },
+    {
+      "term": "temperature is a measure",
+      "found": false
+    },
+    {
+      "term": "root mean square",
+      "found": true,
+      "page": 7,
+      "snippet": "s\nspeed.\nExample 12.5 A flask contains argon and\nchlorine in the ratio of 2:1 by mass.  The\ntemperature of the mixture is 27 °C. Obtain\nthe ratio of  (i) average kinetic energy per\nmolecule, and (ii) root mean square speed\nvrms of the molecules of the two gases.\nAtomic mass of argon = 39.9 u; Molecular\nmass of chlorine = 70.9 u.\nAnswer The important point to remember is that\nthe average kinetic energy (per molecule) of any\n(ideal) gas (be it monatomic like argon, diatomic\nlike chlorine or polyatomic) is always equal to\n(3/2) kBT. It depends only on temperature, and\nis independent of the nature of the gas.\n(i)\nSince argon and chlorine both have the same\ntemperature in the flask, the ratio of "
+    },
+    {
+      "term": "degrees of freedom",
+      "found": true,
+      "page": 9,
+      "snippet": "e, two\nfor motion in a plane and three for motion in\nspace. Motion of a body as a whole from one\npoint to another is called translation. Thus, a\nmolecule free to move in space has three\ntranslational degrees of freedom. Each\ntranslational degree of freedom contributes a\nterm that contains square of some variable of\nmotion, e.g., ½ mvx\n2  and similar terms in\nvy and vz. In, Eq. (12.24) we see that in thermal\nequilibrium, the average of each such term is\n½ kBT .\nMolecules of a monatomic gas like argon have\nonly translational degrees of freedom. But what\nabout a diatomic gas such as O2 or N2? A\nmolecule of O2 has three translational degrees\nof freedom. But in addition it can also rotate\nabout i"
+    }
+  ],
+  "lech205": [
+    {
+      "term": "urea",
+      "found": false
+    },
+    {
+      "term": "2-mercaptoethanol",
+      "found": false
+    },
+    {
+      "term": "mercaptoethanol",
+      "found": false
+    },
+    {
+      "term": "disulphide",
+      "found": true,
+      "page": 12,
+      "snippet": "ns 51 amino acids.\nProteins can be classified into two types on the basis of their\nmolecular shape.\n(a) Fibrous proteins\nWhen the polypeptide chains run parallel and are held together by\nhydrogen and disulphide bonds, then fibre– like structure is formed. Such\nproteins are generally insoluble in water. Some common examples are\nkeratin (present in hair, wool, silk) and myosin (present in muscles), etc.\n10.2.3 Structure\nof Proteins\nReprint 2026-27\n\n---PAGE 13---\n293\nBiomolecules\nFig. 10.1: a-Helix\nstructure of proteins\nFig. 10.2: b-Pleated sheet structure of\nproteins\n(b) Globular proteins\nThis structure results when the chains of polypeptides coil around\nto give a spherical shape. These are us"
+    },
+    {
+      "term": "secondary structure",
+      "found": true,
+      "page": 13,
+      "snippet": "d it is this sequence of amino acids\nthat is said to be the primary structure of that protein.\nAny change in this primary structure i.e., the sequence\nof amino acids creates a different protein.\n(ii) Secondary structure of proteins: The secondary\nstructure of protein refers to the shape in which a long\npolypeptide chain can exist. They are found to exist in\ntwo different types of structures viz. a-helix and\nb-pleated sheet structure. These structures arise due\nto the regular folding of the backbone of the polypeptide\nchain due to hydrogen bonding between \n and\n–NH– groups of the peptide bond.\na-Helix is one of the most common ways in which\na polypeptide chain forms all possible hydrogen bond"
+    },
+    {
+      "term": "primary structure",
+      "found": true,
+      "page": 13,
+      "snippet": "globular proteins.\nStructure and shape of proteins can be studied at four different\nlevels, i.e., primary, secondary, tertiary and quaternary, each level\nbeing more complex than the previous one.\n(i) Primary structure of proteins: Proteins may have\none or more polypeptide chains. Each polypeptide in a\nprotein has amino acids linked with each other in a\nspecific sequence and it is this sequence of amino acids\nthat is said to be the primary structure of that protein.\nAny change in this primary structure i.e., the sequence\nof amino acids creates a different protein.\n(ii) Secondary structure of proteins: The secondary\nstructure of protein refers to the shape in which a long\npolypeptide chain can"
+    },
+    {
+      "term": "native conformation",
+      "found": false
+    }
+  ],
+  "lebo108": [
+    {
+      "term": "Saccharomyces",
+      "found": true,
+      "page": 3,
+      "snippet": "ing place resulting in the formation of CO2? Where do you think the\nbacteria for these fermentations come from?  Similarly the dough, which\nis used for making bread, is fermented using baker’s yeast\n(Saccharomyces cerevisiae). A number of traditional drinks and foods\nare also made by fermentation by the microbes. ‘Toddy’, a traditional\ndrink of some parts of southern India is made by fermenting sap from\npalms. Microbes are also used to ferment fish, soyabean and bamboo-\nshoots to make foods. Cheese, is one of the oldest food items in which\nmicrobes were used. Different varieties of cheese are known by their\ncharacteristic texture, flavour and taste, the specificity coming from the\nmicrobes u"
+    },
+    {
+      "term": "antibiotics",
+      "found": true,
+      "page": 3,
+      "snippet": "ungi on them, which gives them a particular flavour.\n8.2\nMICROBES IN INDUSTRIAL PRODUCTS\nEven in industry, microbes are used to synthesise a number of products\nvaluable to human beings. Beverages and antibiotics are some examples.\nProduction on an industrial scale, requires growing microbes in very large\nvessels called fermentors (Figure 8.4).\nReprint 2026-27\n\n---PAGE 4---\n152\nBIOLOGY\n8.2.1 Fermented Beverages\nMicrobes especially yeasts have been used from\ntime immemorial for the production of beverages\nlike wine, beer, whisky, brandy or rum. For this\npurpose the same yeast Saccharomyces\ncerevisiae used for bread-making and\ncommonly called brewer’s yeast, is used for\nfermenting malted cereal"
+    },
+    {
+      "term": "streptomycin",
+      "found": false
+    },
+    {
+      "term": "Streptomyces",
+      "found": false
+    },
+    {
+      "term": "fermented beverages",
+      "found": true,
+      "page": 4,
+      "snippet": "s and antibiotics are some examples.\nProduction on an industrial scale, requires growing microbes in very large\nvessels called fermentors (Figure 8.4).\nReprint 2026-27\n\n---PAGE 4---\n152\nBIOLOGY\n8.2.1 Fermented Beverages\nMicrobes especially yeasts have been used from\ntime immemorial for the production of beverages\nlike wine, beer, whisky, brandy or rum. For this\npurpose the same yeast Saccharomyces\ncerevisiae used for bread-making and\ncommonly called brewer’s yeast, is used for\nfermenting malted cereals and fruit juices, to\nproduce ethanol. Do you recollect the metabolic\nreactions, which result in the production of\nethanol by yeast? Depending on the type of the\nraw material used for fermentat"
+    },
+    {
+      "term": "secondary metabolites",
+      "found": false
+    },
+    {
+      "term": "stationary",
+      "found": false
+    }
+  ],
+  "kebo104": [
+    {
+      "term": "cellular level",
+      "found": true,
+      "page": 16,
+      "snippet": "ify the animal kingdom. Besides the fundamental features,\nthere are many other distinctive characters which are specific for each\nphyla or class.\nPorifera includes multicellular animals which exhibit cellular level of\norganisation and have characteristic flagellated choanocytes. The\ncoelenterates have tentacles and bear cnidoblasts. They are mostly aquatic,\nsessile or free-floating. The ctenophores are marine animals with comb\nplates. The platyhelminths have flat body and exhibit bilateral symmetry.\nThe parasitic forms show distinct suckers and hooks. Aschelminthes are\npseudocoelomates and  include parasitic as well as non-parasitic\nroundworms.\nAnnelids are metamerically segmented animals wi"
+    },
+    {
+      "term": "tissue level",
+      "found": true,
+      "page": 1,
+      "snippet": "vision of labour (activities) occur among\nthe cells. In coelenterates, the arrangement of cells is more complex. Here\nthe cells performing the same function are arranged into tissues, hence is\ncalled tissue level of organisation. A still higher level of organisation, i.e.,\norgan level is exhibited by members of Platyhelminthes and other higher\nphyla where tissues are grouped together to form organs, each specialised\nfor a particular function. In animals like Annelids, Arthropods, Molluscs,\nANIMAL KINGDOM\nCHAPTER  4\n4.1 Basis of\nClassification\n4.2 Classification of\nAnimals\nReprint 2026-27\n\n---PAGE 2---\n38\nBIOLOGY\nEchinoderms and Chordates, organs have\nassociated to form functional systems, ea"
+    },
+    {
+      "term": "organ system",
+      "found": true,
+      "page": 2,
+      "snippet": "int 2026-27\n\n---PAGE 2---\n38\nBIOLOGY\nEchinoderms and Chordates, organs have\nassociated to form functional systems, each\nsystem concerned with a specific physiological\nfunction. This pattern is called organ system\nlevel of organisation. Organ systems in different\ngroups of animals exhibit various patterns of\ncomplexities. For example, the digestive system\nin Platyhelminthes has only a single opening\nto the outside of the body that serves as both\nmouth and anus, and is hence called\nincomplete. A complete digestive system has\ntwo openings, mouth and anus. Similarly, the\ncirculatory system may be of two types:\n(i) open type in which the blood is pumped\nout of the heart and the cells and tissues "
+    },
+    {
+      "term": "Sycon",
+      "found": true,
+      "page": 4,
+      "snippet": "hibits radial or bilateral symmetry depending on the stage.\nFigure 4.4  Broad classification of Kingdom Animalia based on common fundamental features\n(a)\n(b)\n(c)\nFigure 4.5\nExamples of Porifera : (a) Sycon\n(b) Euspongia  (c) Spongilla\nReprint 2026-27\n\n---PAGE 5---\nANIMAL KINGDOM\n41\n41\ncnidoblasts or cnidocytes (which contain the stinging capsules or\nnematocysts) present on the tentacles and the body. Cnidoblasts are used\nfor anchorage, defense and for the capture of prey (Figure 4.7). Cnidarians\nexhibit tissue level of organisation and are diploblastic. They have a central\ngastro-vascular cavity with a single opening, mouth on hypostome.\nDigestion is extracellular and intracellular. Some of "
+    },
+    {
+      "term": "Hydra",
+      "found": true,
+      "page": 5,
+      "snippet": "cnidarians, e.g.,\ncorals have a skeleton composed of calcium carbonate. Cnidarians exhibit\ntwo basic body forms called polyp and medusa (Figure 4.6). The former\nis a sessile and cylindrical form like Hydra, Adamsia, etc. whereas, the\nlatter is umbrella-shaped and free-swimming like Aurelia or jelly fish.\nThose cnidarians which exist in both forms exhibit alternation of\ngenerations (Metagenesis), i.e., polyps produce medusae asexually and\nmedusae form the polyps sexually (e.g., Obelia).\nExamples: Physalia (Portuguese man-of-war), Adamsia (Sea anemone),\nPennatula (Sea-pen), Gorgonia (Sea-fan) and Meandrina (Brain coral).\nFigure 4.7\nDiagrammatic view of\nCnidoblast\nFigure 4.6\nExamples of  Coelen"
+    },
+    {
+      "term": "Platyhelminthes",
+      "found": true,
+      "page": 1,
+      "snippet": "Here\nthe cells performing the same function are arranged into tissues, hence is\ncalled tissue level of organisation. A still higher level of organisation, i.e.,\norgan level is exhibited by members of Platyhelminthes and other higher\nphyla where tissues are grouped together to form organs, each specialised\nfor a particular function. In animals like Annelids, Arthropods, Molluscs,\nANIMAL KINGDOM\nCHAPTER  4\n4.1 Basis of\nClassification\n4.2 Classification of\nAnimals\nReprint 2026-27\n\n---PAGE 2---\n38\nBIOLOGY\nEchinoderms and Chordates, organs have\nassociated to form functional systems, each\nsystem concerned with a specific physiological\nfunction. This pattern is called organ system\nlevel of organisa"
+    },
+    {
+      "term": "Annelida",
+      "found": true,
+      "page": 7,
+      "snippet": "tilisation\nis internal and development may be direct (the\nyoung ones resemble the adult) or indirect.\nExamples : Ascaris (Roundworm), Wuchereria\n(Filaria worm), Ancylostoma (Hookworm).\n4.2.6\nPhylum – Annelida\nThey may be aquatic (marine and fresh water) or\nterrestrial; free-living, and sometimes parasitic.\nThey exhibit organ-system level of body\norganisation and bilateral symmetry. They are\ntriploblastic, metamerically segmented and\ncoelomate animals. Their body surface is\ndistinctly marked out into segments or\nmetameres and, hence, the phylum name\nAnnelida (Latin, annulus : little ring) (Figure 4.11).\nThey possess longitudinal and circular muscles\nwhich help in locomotion. Aquatic annelids "
+    }
+  ],
+  "keph105": [
+    {
+      "term": "work-energy theorem",
+      "found": true,
+      "page": 1,
+      "snippet": "f any two vectors A and B, denoted as A.B (read\n5.1\nIntroduction\n5.2\nNotions of work and kinetic\nenergy : The work-energy\ntheorem\n5.3\nWork\n5.4\nKinetic energy\n5.5\nWork done by a variable force\n5.6\nThe work-energy theorem for\na variable force\n5.7\nThe concept of potential\nenergy\n5.8\nThe conservation of\nmechanical energy\n5.9\nThe potential energy of a\nspring\n5.10 Power\n5.11 Collisions\nSummary\nPoints to ponder\nExercises\nReprint 2026-27\n\n---PAGE 2---\nPHYSICS\n72\nA dot B) is defined as\nA.B = A B cos θ\n(5.1a)\nwhere θ  is the angle between the two vectors as\nshown in Fig. 5.1(a). Since A, B and cos θ are\nscalars, the dot product of A and B is a scalar\nquantity. Each vector, A and B, has a direction\nbut"
+    },
+    {
+      "term": "Work-energy theorem",
+      "found": true,
+      "page": 1,
+      "snippet": "f any two vectors A and B, denoted as A.B (read\n5.1\nIntroduction\n5.2\nNotions of work and kinetic\nenergy : The work-energy\ntheorem\n5.3\nWork\n5.4\nKinetic energy\n5.5\nWork done by a variable force\n5.6\nThe work-energy theorem for\na variable force\n5.7\nThe concept of potential\nenergy\n5.8\nThe conservation of\nmechanical energy\n5.9\nThe potential energy of a\nspring\n5.10 Power\n5.11 Collisions\nSummary\nPoints to ponder\nExercises\nReprint 2026-27\n\n---PAGE 2---\nPHYSICS\n72\nA dot B) is defined as\nA.B = A B cos θ\n(5.1a)\nwhere θ  is the angle between the two vectors as\nshown in Fig. 5.1(a). Since A, B and cos θ are\nscalars, the dot product of A and B is a scalar\nquantity. Each vector, A and B, has a direction\nbut"
+    },
+    {
+      "term": "K_f - K_i",
+      "found": false
+    },
+    {
+      "term": "net work",
+      "found": false
+    }
+  ]
+}

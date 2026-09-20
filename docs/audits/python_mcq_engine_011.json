@@ -1,0 +1,673 @@
+{
+  "task_id": "PYTHON-MCQ-ENGINE-011",
+  "timestamp": "2026-09-14T18:50:49+0530",
+  "verdict": "GREEN",
+  "baseline": {
+    "pack": "D:\\ravishori\\AI Neet Exam App\\apps\\backend\\tests\\fixtures\\python_mcq_engine_010_reviewed_corpus.json",
+    "mcq_eligible_total": 414,
+    "subject_counts": {
+      "PHYSICS": 86,
+      "CHEMISTRY": 169,
+      "BOTANY": 107,
+      "ZOOLOGY": 52
+    },
+    "fact_type_counts": {
+      "DEFINITION": 411,
+      "ASSOCIATION": 2,
+      "DIRECT_FACT": 1
+    }
+  },
+  "fact_type_expansion_opportunities": {
+    "DIRECT_FACT": {
+      "schema_fact_type": "DIRECT_FACT",
+      "schema_ready": true,
+      "discovered": 914,
+      "sufficient_ncert_evidence": 913,
+      "syllabus_valid": 913,
+      "taxonomy_valid": 913,
+      "potentially_reviewable": 913,
+      "duplicate": 1
+    },
+    "CONTROLLED_ASSOCIATION": {
+      "schema_fact_type": "ASSOCIATION",
+      "schema_ready": true,
+      "discovered": 427,
+      "sufficient_ncert_evidence": 427,
+      "syllabus_valid": 427,
+      "taxonomy_valid": 427,
+      "potentially_reviewable": 422,
+      "ambiguous": 5,
+      "rejected": 5,
+      "reject:AMBIGUOUS_MULTI_CUE": 5
+    },
+    "SI_UNIT_DIMENSION": {
+      "schema_fact_type": "SI_UNIT_TERMINOLOGY",
+      "schema_ready": true,
+      "discovered": 81,
+      "sufficient_ncert_evidence": 81,
+      "syllabus_valid": 81,
+      "taxonomy_valid": 81,
+      "potentially_reviewable": 72,
+      "ambiguous": 9,
+      "rejected": 9,
+      "reject:AMBIGUOUS_MULTI_CUE": 9
+    },
+    "RELATIONSHIP_FORMULA": {
+      "schema_fact_type": "FORMULA",
+      "schema_ready": true,
+      "discovered": 587,
+      "sufficient_ncert_evidence": 587,
+      "syllabus_valid": 587,
+      "taxonomy_valid": 587,
+      "potentially_reviewable": 543,
+      "ambiguous": 44,
+      "rejected": 44,
+      "reject:AMBIGUOUS_MULTI_CUE": 44
+    },
+    "CONTROLLED_NUMERICAL": {
+      "schema_fact_type": "FORMULA",
+      "schema_ready": true,
+      "discovered": 183,
+      "sufficient_ncert_evidence": 183,
+      "syllabus_valid": 183,
+      "taxonomy_valid": 183,
+      "potentially_reviewable": 180,
+      "ambiguous": 3,
+      "rejected": 3,
+      "reject:AMBIGUOUS_MULTI_CUE": 3
+    },
+    "SEQUENCE_ORDER": {
+      "schema_fact_type": null,
+      "schema_ready": false,
+      "discovered": 687,
+      "sufficient_ncert_evidence": 687,
+      "syllabus_valid": 687,
+      "taxonomy_valid": 687,
+      "rejected": 687,
+      "reject:SCHEMA_GAP": 687,
+      "ambiguous": 1,
+      "reject:AMBIGUOUS_MULTI_CUE": 1
+    },
+    "PROCESS_MECHANISM": {
+      "schema_fact_type": null,
+      "schema_ready": false,
+      "discovered": 276,
+      "sufficient_ncert_evidence": 276,
+      "syllabus_valid": 276,
+      "taxonomy_valid": 276,
+      "rejected": 276,
+      "reject:SCHEMA_GAP": 276
+    },
+    "CAUSE_EFFECT": {
+      "schema_fact_type": null,
+      "schema_ready": false,
+      "discovered": 691,
+      "sufficient_ncert_evidence": 691,
+      "syllabus_valid": 691,
+      "taxonomy_valid": 691,
+      "rejected": 691,
+      "reject:SCHEMA_GAP": 691,
+      "ambiguous": 11,
+      "reject:AMBIGUOUS_MULTI_CUE": 11
+    },
+    "COMPARISON": {
+      "schema_fact_type": null,
+      "schema_ready": false,
+      "discovered": 277,
+      "sufficient_ncert_evidence": 277,
+      "syllabus_valid": 277,
+      "taxonomy_valid": 277,
+      "rejected": 277,
+      "reject:SCHEMA_GAP": 277,
+      "ambiguous": 4,
+      "reject:AMBIGUOUS_MULTI_CUE": 4
+    },
+    "EXCEPTION_NEGATION": {
+      "schema_fact_type": null,
+      "schema_ready": false,
+      "discovered": 344,
+      "sufficient_ncert_evidence": 343,
+      "syllabus_valid": 343,
+      "taxonomy_valid": 343,
+      "rejected": 343,
+      "reject:SCHEMA_GAP": 343,
+      "ambiguous": 4,
+      "reject:AMBIGUOUS_MULTI_CUE": 4,
+      "duplicate": 1
+    }
+  },
+  "subject_wise_opportunities": {
+    "BOTANY": {
+      "CONTROLLED_ASSOCIATION": 114,
+      "DIRECT_FACT": 201,
+      "CONTROLLED_NUMERICAL": 25,
+      "RELATIONSHIP_FORMULA": 8,
+      "SI_UNIT_DIMENSION": 11
+    },
+    "CHEMISTRY": {
+      "DIRECT_FACT": 267,
+      "CONTROLLED_ASSOCIATION": 196,
+      "RELATIONSHIP_FORMULA": 179,
+      "CONTROLLED_NUMERICAL": 60,
+      "SI_UNIT_DIMENSION": 23
+    },
+    "PHYSICS": {
+      "RELATIONSHIP_FORMULA": 356,
+      "SI_UNIT_DIMENSION": 37,
+      "DIRECT_FACT": 374,
+      "CONTROLLED_NUMERICAL": 68,
+      "CONTROLLED_ASSOCIATION": 63
+    },
+    "ZOOLOGY": {
+      "DIRECT_FACT": 71,
+      "CONTROLLED_ASSOCIATION": 49,
+      "CONTROLLED_NUMERICAL": 27,
+      "SI_UNIT_DIMENSION": 1
+    }
+  },
+  "chapter_wise_opportunities": {
+    "CHEMISTRY:Structure of Atom": {
+      "DIRECT_FACT": 46,
+      "CONTROLLED_ASSOCIATION": 44,
+      "SI_UNIT_DIMENSION": 5,
+      "CONTROLLED_NUMERICAL": 10,
+      "RELATIONSHIP_FORMULA": 58
+    },
+    "PHYSICS:Systems of Particles and Rotational Motion": {
+      "DIRECT_FACT": 53,
+      "CONTROLLED_NUMERICAL": 10,
+      "RELATIONSHIP_FORMULA": 56,
+      "SI_UNIT_DIMENSION": 1,
+      "CONTROLLED_ASSOCIATION": 9
+    },
+    "PHYSICS:Electrostatics": {
+      "CONTROLLED_ASSOCIATION": 10,
+      "DIRECT_FACT": 51,
+      "SI_UNIT_DIMENSION": 9,
+      "RELATIONSHIP_FORMULA": 43,
+      "CONTROLLED_NUMERICAL": 7
+    },
+    "CHEMISTRY:Thermodynamics": {
+      "DIRECT_FACT": 37,
+      "RELATIONSHIP_FORMULA": 44,
+      "CONTROLLED_NUMERICAL": 5,
+      "CONTROLLED_ASSOCIATION": 5,
+      "SI_UNIT_DIMENSION": 2
+    },
+    "CHEMISTRY:Some Basic Concepts of Chemistry": {
+      "CONTROLLED_ASSOCIATION": 33,
+      "DIRECT_FACT": 29,
+      "CONTROLLED_NUMERICAL": 11,
+      "SI_UNIT_DIMENSION": 13,
+      "RELATIONSHIP_FORMULA": 6
+    },
+    "PHYSICS:Optics": {
+      "RELATIONSHIP_FORMULA": 38,
+      "DIRECT_FACT": 38,
+      "SI_UNIT_DIMENSION": 4,
+      "CONTROLLED_ASSOCIATION": 11,
+      "CONTROLLED_NUMERICAL": 1
+    },
+    "PHYSICS:Laws of Motion": {
+      "RELATIONSHIP_FORMULA": 29,
+      "CONTROLLED_ASSOCIATION": 2,
+      "DIRECT_FACT": 42,
+      "CONTROLLED_NUMERICAL": 9,
+      "SI_UNIT_DIMENSION": 2
+    },
+    "PHYSICS:Work, Energy and Power": {
+      "DIRECT_FACT": 28,
+      "CONTROLLED_NUMERICAL": 3,
+      "CONTROLLED_ASSOCIATION": 1,
+      "RELATIONSHIP_FORMULA": 48,
+      "SI_UNIT_DIMENSION": 4
+    },
+    "PHYSICS:Mechanical Properties of Fluids": {
+      "DIRECT_FACT": 40,
+      "CONTROLLED_ASSOCIATION": 6,
+      "RELATIONSHIP_FORMULA": 29,
+      "SI_UNIT_DIMENSION": 2,
+      "CONTROLLED_NUMERICAL": 3
+    },
+    "CHEMISTRY:Equilibrium": {
+      "CONTROLLED_ASSOCIATION": 17,
+      "DIRECT_FACT": 35,
+      "RELATIONSHIP_FORMULA": 19,
+      "CONTROLLED_NUMERICAL": 3
+    },
+    "PHYSICS:Kinetic Theory": {
+      "CONTROLLED_ASSOCIATION": 10,
+      "CONTROLLED_NUMERICAL": 10,
+      "DIRECT_FACT": 28,
+      "RELATIONSHIP_FORMULA": 24
+    },
+    "BOTANY:Cell - The Unit of Life": {
+      "DIRECT_FACT": 31,
+      "CONTROLLED_ASSOCIATION": 27,
+      "SI_UNIT_DIMENSION": 3,
+      "CONTROLLED_NUMERICAL": 3
+    },
+    "CHEMISTRY:Biomolecules": {
+      "CONTROLLED_ASSOCIATION": 32,
+      "DIRECT_FACT": 25,
+      "CONTROLLED_NUMERICAL": 3,
+      "RELATIONSHIP_FORMULA": 3
+    },
+    "PHYSICS:Current Electricity": {
+      "RELATIONSHIP_FORMULA": 21,
+      "SI_UNIT_DIMENSION": 2,
+      "DIRECT_FACT": 30,
+      "CONTROLLED_NUMERICAL": 6,
+      "CONTROLLED_ASSOCIATION": 2
+    },
+    "BOTANY:Molecular Basis of Inheritance": {
+      "CONTROLLED_ASSOCIATION": 16,
+      "DIRECT_FACT": 23,
+      "CONTROLLED_NUMERICAL": 6,
+      "SI_UNIT_DIMENSION": 3
+    },
+    "PHYSICS:Kinematics": {
+      "RELATIONSHIP_FORMULA": 26,
+      "DIRECT_FACT": 14,
+      "CONTROLLED_ASSOCIATION": 3,
+      "SI_UNIT_DIMENSION": 1,
+      "CONTROLLED_NUMERICAL": 4
+    },
+    "CHEMISTRY:Electrochemistry": {
+      "RELATIONSHIP_FORMULA": 16,
+      "CONTROLLED_ASSOCIATION": 12,
+      "DIRECT_FACT": 12,
+      "SI_UNIT_DIMENSION": 1,
+      "CONTROLLED_NUMERICAL": 5
+    },
+    "PHYSICS:Gravitation": {
+      "DIRECT_FACT": 23,
+      "CONTROLLED_NUMERICAL": 4,
+      "CONTROLLED_ASSOCIATION": 2,
+      "RELATIONSHIP_FORMULA": 17
+    },
+    "BOTANY:Sexual Reproduction in Flowering Plants": {
+      "DIRECT_FACT": 26,
+      "CONTROLLED_ASSOCIATION": 14,
+      "CONTROLLED_NUMERICAL": 5
+    },
+    "CHEMISTRY:The d- and f-Block Elements": {
+      "DIRECT_FACT": 20,
+      "CONTROLLED_ASSOCIATION": 12,
+      "RELATIONSHIP_FORMULA": 6,
+      "SI_UNIT_DIMENSION": 1,
+      "CONTROLLED_NUMERICAL": 3
+    },
+    "PHYSICS:Mechanical Properties of Solids": {
+      "DIRECT_FACT": 14,
+      "SI_UNIT_DIMENSION": 3,
+      "RELATIONSHIP_FORMULA": 15,
+      "CONTROLLED_NUMERICAL": 6,
+      "CONTROLLED_ASSOCIATION": 4
+    },
+    "CHEMISTRY:Chemical Kinetics": {
+      "CONTROLLED_ASSOCIATION": 7,
+      "RELATIONSHIP_FORMULA": 18,
+      "CONTROLLED_NUMERICAL": 5,
+      "DIRECT_FACT": 10,
+      "SI_UNIT_DIMENSION": 1
+    },
+    "PHYSICS:Units and Measurement": {
+      "RELATIONSHIP_FORMULA": 10,
+      "DIRECT_FACT": 13,
+      "SI_UNIT_DIMENSION": 9,
+      "CONTROLLED_NUMERICAL": 5,
+      "CONTROLLED_ASSOCIATION": 3
+    },
+    "CHEMISTRY:Solutions": {
+      "DIRECT_FACT": 15,
+      "CONTROLLED_NUMERICAL": 7,
+      "RELATIONSHIP_FORMULA": 8,
+      "CONTROLLED_ASSOCIATION": 7
+    },
+    "BOTANY:Biomolecules": {
+      "DIRECT_FACT": 13,
+      "CONTROLLED_ASSOCIATION": 13,
+      "RELATIONSHIP_FORMULA": 2,
+      "CONTROLLED_NUMERICAL": 2
+    },
+    "BOTANY:Photosynthesis in Higher Plants": {
+      "DIRECT_FACT": 24,
+      "CONTROLLED_ASSOCIATION": 4,
+      "CONTROLLED_NUMERICAL": 1
+    },
+    "ZOOLOGY:Human Health and Disease": {
+      "DIRECT_FACT": 18,
+      "CONTROLLED_NUMERICAL": 2,
+      "CONTROLLED_ASSOCIATION": 9
+    },
+    "ZOOLOGY:Body Fluids and Circulation": {
+      "DIRECT_FACT": 14,
+      "CONTROLLED_ASSOCIATION": 12,
+      "CONTROLLED_NUMERICAL": 1
+    },
+    "BOTANY:Principles of Inheritance and Variation": {
+      "DIRECT_FACT": 15,
+      "CONTROLLED_ASSOCIATION": 9,
+      "CONTROLLED_NUMERICAL": 1
+    },
+    "CHEMISTRY:Redox Reactions": {
+      "CONTROLLED_ASSOCIATION": 8,
+      "DIRECT_FACT": 12,
+      "CONTROLLED_NUMERICAL": 3
+    },
+    "ZOOLOGY:Human Reproduction": {
+      "CONTROLLED_NUMERICAL": 7,
+      "DIRECT_FACT": 10,
+      "CONTROLLED_ASSOCIATION": 6
+    },
+    "BOTANY:Ecosystem": {
+      "SI_UNIT_DIMENSION": 1,
+      "CONTROLLED_ASSOCIATION": 2,
+      "DIRECT_FACT": 15,
+      "RELATIONSHIP_FORMULA": 1,
+      "CONTROLLED_NUMERICAL": 2
+    },
+    "CHEMISTRY:Coordination Compounds": {
+      "CONTROLLED_NUMERICAL": 2,
+      "DIRECT_FACT": 12,
+      "CONTROLLED_ASSOCIATION": 7
+    },
+    "ZOOLOGY:Breathing and Exchange of Gases": {
+      "DIRECT_FACT": 11,
+      "CONTROLLED_ASSOCIATION": 5,
+      "CONTROLLED_NUMERICAL": 5
+    },
+    "BOTANY:Organisms and Populations": {
+      "CONTROLLED_ASSOCIATION": 4,
+      "DIRECT_FACT": 13,
+      "SI_UNIT_DIMENSION": 2,
+      "CONTROLLED_NUMERICAL": 1
+    },
+    "BOTANY:Plant Kingdom": {
+      "RELATIONSHIP_FORMULA": 2,
+      "DIRECT_FACT": 8,
+      "CONTROLLED_ASSOCIATION": 9,
+      "CONTROLLED_NUMERICAL": 1
+    },
+    "ZOOLOGY:Evolution": {
+      "DIRECT_FACT": 7,
+      "SI_UNIT_DIMENSION": 1,
+      "CONTROLLED_NUMERICAL": 9,
+      "CONTROLLED_ASSOCIATION": 2
+    },
+    "CHEMISTRY:Amines": {
+      "DIRECT_FACT": 9,
+      "CONTROLLED_ASSOCIATION": 6,
+      "RELATIONSHIP_FORMULA": 1
+    },
+    "BOTANY:Biodiversity and Conservation": {
+      "CONTROLLED_ASSOCIATION": 4,
+      "DIRECT_FACT": 9,
+      "CONTROLLED_NUMERICAL": 2
+    },
+    "BOTANY:Microbes in Human Welfare": {
+      "DIRECT_FACT": 7,
+      "CONTROLLED_ASSOCIATION": 8
+    }
+  },
+  "quality_risks": [
+    "Most ENGINE-010 facts are DEFINITION; non-definitional types need distractor packs before eligibility.",
+    "SEQUENCE/PROCESS/CAUSE_EFFECT/COMPARISON/EXCEPTION lack schema FactType support today.",
+    "Token-overlap taxonomy binding can misbind concepts (ENGINE-008 lesson).",
+    "Multi-cue sentences risk ambiguity and must stay fail-closed.",
+    "CONTROLLED_NUMERICAL needs calculation_check contracts, not sentence mining alone."
+  ],
+  "recommended_fact_types_for_next_curation_wave": [
+    "DIRECT_FACT",
+    "RELATIONSHIP_FORMULA",
+    "CONTROLLED_ASSOCIATION",
+    "CONTROLLED_NUMERICAL",
+    "SI_UNIT_DIMENSION"
+  ],
+  "genuinely_reviewable_candidates": 2130,
+  "safely_mcq_eligible_now": 0,
+  "sample_independent_verification": [
+    {
+      "fact_id": "ncert-fact-v1-06c82839b7d8391941cdf448be951cee056b49d00cc0201c6994c412b072acfd",
+      "analysis_category": "CONTROLLED_ASSOCIATION",
+      "subject": "ZOOLOGY",
+      "chapter": "Body Fluids and Circulation",
+      "evidence_excerpt": "Glucose, amino acids, lipids, etc., are also present in the plasma as they are always in transit in the body",
+      "ncert_support": "PASS",
+      "syllabus_scope": "PASS",
+      "taxonomy": "PASS",
+      "answer_defensibility": "PENDING_REVIEW",
+      "distractor_safety": "PENDING_REVIEW",
+      "overall": "VIABLE_FOR_REVIEW"
+    },
+    {
+      "fact_id": "ncert-fact-v1-5245b3fe700ee1635e2dcc799307d82b0e62fd0d520a81ca9b1a0d23d6976745",
+      "analysis_category": "CONTROLLED_ASSOCIATION",
+      "subject": "PHYSICS",
+      "chapter": "Current Electricity",
+      "evidence_excerpt": "(3.16) over the N-electrons at any given time t gives us for the average velocity vd ( ) ( ) ( ) ≡ = − E v V v d i i i average average average e t m 0 – τ τ = = − E E e e m m (3.17",
+      "ncert_support": "PASS",
+      "syllabus_scope": "PASS",
+      "taxonomy": "PASS",
+      "answer_defensibility": "PENDING_REVIEW",
+      "distractor_safety": "PENDING_REVIEW",
+      "overall": "VIABLE_FOR_REVIEW"
+    },
+    {
+      "fact_id": "ncert-fact-v1-c16b0ea5bf4d88f10177f37c52303a72d31059c64000a54602b946c70f5c08b0",
+      "analysis_category": "CONTROLLED_ASSOCIATION",
+      "subject": "BOTANY",
+      "chapter": "Biodiversity and Conservation",
+      "evidence_excerpt": "The genetic variation shown by the medicinal plant Rauwolfia vomitoria growing in different Himalayan ranges might be in terms of the potency and concentration of the active chemic",
+      "ncert_support": "PASS",
+      "syllabus_scope": "PASS",
+      "taxonomy": "PASS",
+      "answer_defensibility": "PENDING_REVIEW",
+      "distractor_safety": "PENDING_REVIEW",
+      "overall": "VIABLE_FOR_REVIEW"
+    },
+    {
+      "fact_id": "ncert-fact-v1-9f4f92714c44f20b2dd7be59100d6f4c589edf5e3ea72b8805676942cd11798d",
+      "analysis_category": "CONTROLLED_NUMERICAL",
+      "subject": "ZOOLOGY",
+      "chapter": "Body Fluids and Circulation",
+      "evidence_excerpt": "This increases the flow of blood into the ventricles by about 30 per cent",
+      "ncert_support": "PASS",
+      "syllabus_scope": "PASS",
+      "taxonomy": "PASS",
+      "answer_defensibility": "PENDING_REVIEW",
+      "distractor_safety": "PENDING_REVIEW",
+      "overall": "VIABLE_FOR_REVIEW"
+    },
+    {
+      "fact_id": "ncert-fact-v1-0501b6eb3d2a615e96d0ef8ab3796ee905c6698c68502dafad9d88c4de710331",
+      "analysis_category": "CONTROLLED_NUMERICAL",
+      "subject": "PHYSICS",
+      "chapter": "Current Electricity",
+      "evidence_excerpt": "The potential difference across the ends of the combination is clearly sum of the potential difference across the two individual slabs and hence equals 2V",
+      "ncert_support": "PASS",
+      "syllabus_scope": "PASS",
+      "taxonomy": "PASS",
+      "answer_defensibility": "PENDING_REVIEW",
+      "distractor_safety": "PENDING_REVIEW",
+      "overall": "VIABLE_FOR_REVIEW"
+    },
+    {
+      "fact_id": "ncert-fact-v1-b2e641032d7e928065e0839608bc6b5c912424c67257b97943f50ca3a0dd2547",
+      "analysis_category": "CONTROLLED_NUMERICAL",
+      "subject": "BOTANY",
+      "chapter": "Biodiversity and Conservation",
+      "evidence_excerpt": "Some extreme estimates range from 20 to 50 million, but a more conservative and scientifically sound estimate made by Robert May places the global species diversity at about 7 mill",
+      "ncert_support": "PASS",
+      "syllabus_scope": "PASS",
+      "taxonomy": "PASS",
+      "answer_defensibility": "PENDING_REVIEW",
+      "distractor_safety": "PENDING_REVIEW",
+      "overall": "VIABLE_FOR_REVIEW"
+    },
+    {
+      "fact_id": "ncert-fact-v1-6c16aaf6c5214104e617fc49ff24f08e179e24f3a2ed4eaa0be062fc26480754",
+      "analysis_category": "DIRECT_FACT",
+      "subject": "ZOOLOGY",
+      "chapter": "Body Fluids and Circulation",
+      "evidence_excerpt": "Blood is the most commonly used body fluid by most of the higher organisms, including humans, for this purpose",
+      "ncert_support": "PASS",
+      "syllabus_scope": "PASS",
+      "taxonomy": "PASS",
+      "answer_defensibility": "PENDING_REVIEW",
+      "distractor_safety": "PENDING_REVIEW",
+      "overall": "VIABLE_FOR_REVIEW"
+    },
+    {
+      "fact_id": "ncert-fact-v1-2bf8d13e032fcbc760c0c7b42b9703be1ccf8b7492c25afe56cda27720907de4",
+      "analysis_category": "DIRECT_FACT",
+      "subject": "PHYSICS",
+      "chapter": "Current Electricity",
+      "evidence_excerpt": "The current flowing through the combination is the same as that flowing through either of the slabs",
+      "ncert_support": "PASS",
+      "syllabus_scope": "PASS",
+      "taxonomy": "PASS",
+      "answer_defensibility": "PENDING_REVIEW",
+      "distractor_safety": "PENDING_REVIEW",
+      "overall": "VIABLE_FOR_REVIEW"
+    },
+    {
+      "fact_id": "ncert-fact-v1-2baa32bd55b6820bbe9fb46a921410e2172c634c96f5306959ce41b74137acb6",
+      "analysis_category": "DIRECT_FACT",
+      "subject": "BOTANY",
+      "chapter": "Biodiversity and Conservation",
+      "evidence_excerpt": "(ii) Species diversity: The diversity at the species level, for example, the Western Ghats have a greater amphibian species diversity than the Eastern Ghats",
+      "ncert_support": "PASS",
+      "syllabus_scope": "PASS",
+      "taxonomy": "PASS",
+      "answer_defensibility": "PENDING_REVIEW",
+      "distractor_safety": "PENDING_REVIEW",
+      "overall": "VIABLE_FOR_REVIEW"
+    },
+    {
+      "fact_id": "ncert-fact-v1-9b324e45ae3c82fb91c5f290e011130909fe0470a7c4c72a72c3cfaf0f343a15",
+      "analysis_category": "RELATIONSHIP_FORMULA",
+      "subject": "PHYSICS",
+      "chapter": "Current Electricity",
+      "evidence_excerpt": "The net amount of charge flowing across the area in the forward direction in the time interval t, then, is q = q+– q–",
+      "ncert_support": "PASS",
+      "syllabus_scope": "PASS",
+      "taxonomy": "PASS",
+      "answer_defensibility": "PENDING_REVIEW",
+      "distractor_safety": "PENDING_REVIEW",
+      "overall": "VIABLE_FOR_REVIEW"
+    },
+    {
+      "fact_id": "ncert-fact-v1-b060650999ba3fa28d4f84d461d4407297bf32bb6ace6c5d63295c4384fee9e4",
+      "analysis_category": "RELATIONSHIP_FORMULA",
+      "subject": "BOTANY",
+      "chapter": "Biomolecules",
+      "evidence_excerpt": "Fatty acids could be saturated (without double bond) or unsaturated (with one or more C=C double bonds)",
+      "ncert_support": "PASS",
+      "syllabus_scope": "PASS",
+      "taxonomy": "PASS",
+      "answer_defensibility": "PENDING_REVIEW",
+      "distractor_safety": "PENDING_REVIEW",
+      "overall": "VIABLE_FOR_REVIEW"
+    },
+    {
+      "fact_id": "ncert-fact-v1-8cceef675ab07265a3b107325497f4c814597fa067d2523888a0c07ee86a6df7",
+      "analysis_category": "RELATIONSHIP_FORMULA",
+      "subject": "CHEMISTRY",
+      "chapter": "Amines",
+      "evidence_excerpt": "Reactions involving retention of diazo group coupling reactions The azo products obtained have an extended conjugate system having both the aromatic rings joined through the –N=N– ",
+      "ncert_support": "PASS",
+      "syllabus_scope": "PASS",
+      "taxonomy": "PASS",
+      "answer_defensibility": "PENDING_REVIEW",
+      "distractor_safety": "PENDING_REVIEW",
+      "overall": "VIABLE_FOR_REVIEW"
+    },
+    {
+      "fact_id": "ncert-fact-v1-08c943da10ae194b878c58f067e0c859e4db14a0039cdb4ffd911c2e44d2e4c5",
+      "analysis_category": "SI_UNIT_DIMENSION",
+      "subject": "ZOOLOGY",
+      "chapter": "Evolution",
+      "evidence_excerpt": "Stellar distances are measured in light years",
+      "ncert_support": "PASS",
+      "syllabus_scope": "PASS",
+      "taxonomy": "PASS",
+      "answer_defensibility": "PENDING_REVIEW",
+      "distractor_safety": "PENDING_REVIEW",
+      "overall": "VIABLE_FOR_REVIEW"
+    },
+    {
+      "fact_id": "ncert-fact-v1-1d6986f290829a51d6996d111ab9d194301b96f36813cbba0081b685a41f25e1",
+      "analysis_category": "SI_UNIT_DIMENSION",
+      "subject": "PHYSICS",
+      "chapter": "Current Electricity",
+      "evidence_excerpt": "Then, the current at time t across the cross-section of the conductor is defined as the value of the ratio of DQ to Dt in the limit of Dt tending to zero, ( ) 0 lim t Q I t t ∆→ ∆ ",
+      "ncert_support": "PASS",
+      "syllabus_scope": "PASS",
+      "taxonomy": "PASS",
+      "answer_defensibility": "PENDING_REVIEW",
+      "distractor_safety": "PENDING_REVIEW",
+      "overall": "VIABLE_FOR_REVIEW"
+    },
+    {
+      "fact_id": "ncert-fact-v1-7127445ac24806a90bd8b9c54c7fc89df18bbe6a36ed0217421633f50430df1a",
+      "analysis_category": "SI_UNIT_DIMENSION",
+      "subject": "BOTANY",
+      "chapter": "Cell - The Unit of Life",
+      "evidence_excerpt": "The answer to this is the presence of the basic unit of life – the cell in all living organisms",
+      "ncert_support": "PASS",
+      "syllabus_scope": "PASS",
+      "taxonomy": "PASS",
+      "answer_defensibility": "PENDING_REVIEW",
+      "distractor_safety": "PENDING_REVIEW",
+      "overall": "VIABLE_FOR_REVIEW"
+    }
+  ],
+  "candidate_fixture": "D:\\ravishori\\AI Neet Exam App\\apps\\backend\\tests\\fixtures\\python_mcq_engine_011_fact_type_candidates.json",
+  "fixture_mutations": {
+    "engine_006_modified": false,
+    "engine_010_modified": false,
+    "new_isolated_candidate_fixture_created": true
+  },
+  "engine_008_retired_excluded": true,
+  "database_before": {
+    "question_statuses": {
+      "DRAFT": 5552,
+      "PUBLISHED": 1479,
+      "SUPERSEDED": 6,
+      "IN_REVIEW": 111
+    },
+    "question_state_fingerprint": "741ce41e97dc4869c66b7bba5db5b3aa",
+    "unmapped_draft": 5034,
+    "blueprints": 445,
+    "knowledge_units": 381,
+    "content_reviews": 1824,
+    "engine_003_batches": 0
+  },
+  "database_after": {
+    "question_statuses": {
+      "DRAFT": 5552,
+      "PUBLISHED": 1479,
+      "SUPERSEDED": 6,
+      "IN_REVIEW": 111
+    },
+    "question_state_fingerprint": "741ce41e97dc4869c66b7bba5db5b3aa",
+    "unmapped_draft": 5034,
+    "blueprints": 445,
+    "knowledge_units": 381,
+    "content_reviews": 1824,
+    "engine_003_batches": 0
+  },
+  "production_safety_unchanged": true,
+  "provider_api_calls": 0,
+  "api_cost_inr": 0,
+  "production_db_mutations": 0,
+  "runtime_seconds": 25.575,
+  "tests": {
+    "focused": "4 passed",
+    "regression": "4 passed",
+    "ruff": "passed"
+  },
+  "readiness_recommendation": "Next authorized curation wave should prioritize schema-ready types ['DIRECT_FACT', 'RELATIONSHIP_FORMULA', 'CONTROLLED_ASSOCIATION', 'CONTROLLED_NUMERICAL'] with full scope_review + distractor templates, especially for Zoology/Physics chapters showing reviewable association/direct-fact density. Do not auto-start another engine task."
+}

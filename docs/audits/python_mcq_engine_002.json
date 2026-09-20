@@ -1,0 +1,479 @@
+{
+  "task_id": "PYTHON-MCQ-ENGINE-002",
+  "verdict": "YELLOW",
+  "source_root": "D:\\ravishori\\AI Neet Exam App\\NCERT Books",
+  "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt",
+  "candidates_independently_verified": 9,
+  "verification_counts": {
+    "PASS": 5,
+    "FAIL": 4,
+    "AMBIGUOUS": 0
+  },
+  "candidate_verifications": [
+    {
+      "fact_id": "home-sugar",
+      "classification": "FAIL",
+      "reason": "NCERT supports the fact and keyed answer, but domestic use of sucrose is introductory trivia and is not validly bound to the cited Classification of Carbohydrates syllabus topic. Failed checks: taxonomy_mapping_valid, syllabus_binding_valid.",
+      "source_relative_path": "Class 12/Chemistry 2/lech2dd/lech205.pdf",
+      "evidence_pages": [
+        1,
+        2
+      ],
+      "evidence_quote": "The most common sugar, used in our homes is named as sucrose",
+      "option_support": "Sucrose is explicitly keyed on PDF page 1; glucose, fructose, and ribose are explicit carbohydrate examples on PDF page 2.",
+      "checks": {
+        "cited_pdf_exists": true,
+        "inside_canonical_root": true,
+        "stem_supported": true,
+        "correct_answer_supported": true,
+        "all_options_supported_or_safely_derived": true,
+        "exactly_one_defensible": true,
+        "taxonomy_mapping_valid": false,
+        "syllabus_binding_valid": false,
+        "provenance_preserved": true,
+        "no_unsupported_enrichment": true,
+        "no_duplicate": true
+      },
+      "database_duplicate_checks": {
+        "fingerprint_stem_matches": 0,
+        "candidate_stem_matches": 0,
+        "fingerprint_option_stem_matches": 0
+      },
+      "syllabus_reference": {
+        "status": "IN_SYLLABUS",
+        "subject": "CHEMISTRY",
+        "unit_number": 19,
+        "unit_name": "BIOMOLECULES",
+        "topic": "Carbohydrates: Classification; aldoses and ketoses: monosaccharides (glucose and fructose) and constituent monosaccharides of oligosaccharides (sucrose, lactose, and maltose).",
+        "topic_id": "CHEMISTRY:U19:T02",
+        "unit_id": "CHEMISTRY:U19",
+        "source_line": 479,
+        "detail": "exact topic_id match",
+        "reasons": []
+      }
+    },
+    {
+      "fact_id": "monosaccharide-definition",
+      "classification": "PASS",
+      "reason": "Independent PDF review supports the stem/key and all options. Monosaccharide, oligosaccharide, polysaccharide, and disaccharide are all explicitly introduced in the classification passage on PDF page 2. Exact/normalized duplicate checks found no match.",
+      "source_relative_path": "Class 12/Chemistry 2/lech2dd/lech205.pdf",
+      "evidence_pages": [
+        2
+      ],
+      "evidence_quote": "A carbohydrate that cannot be hydrolysed further to give simpler unit of polyhydroxy aldehyde or ketone is called a monosaccharide.",
+      "option_support": "Monosaccharide, oligosaccharide, polysaccharide, and disaccharide are all explicitly introduced in the classification passage on PDF page 2.",
+      "checks": {
+        "cited_pdf_exists": true,
+        "inside_canonical_root": true,
+        "stem_supported": true,
+        "correct_answer_supported": true,
+        "all_options_supported_or_safely_derived": true,
+        "exactly_one_defensible": true,
+        "taxonomy_mapping_valid": true,
+        "syllabus_binding_valid": true,
+        "provenance_preserved": true,
+        "no_unsupported_enrichment": true,
+        "no_duplicate": true
+      },
+      "database_duplicate_checks": {
+        "fingerprint_stem_matches": 0,
+        "candidate_stem_matches": 0,
+        "fingerprint_option_stem_matches": 0
+      },
+      "syllabus_reference": {
+        "status": "IN_SYLLABUS",
+        "subject": "CHEMISTRY",
+        "unit_number": 19,
+        "unit_name": "BIOMOLECULES",
+        "topic": "Carbohydrates: Classification; aldoses and ketoses: monosaccharides (glucose and fructose) and constituent monosaccharides of oligosaccharides (sucrose, lactose, and maltose).",
+        "topic_id": "CHEMISTRY:U19:T02",
+        "unit_id": "CHEMISTRY:U19",
+        "source_line": 479,
+        "detail": "exact topic_id match",
+        "reasons": []
+      }
+    },
+    {
+      "fact_id": "oligosaccharide-definition",
+      "classification": "FAIL",
+      "reason": "The intended answer is oligosaccharide, but disaccharide is also defensible: NCERT states that disaccharides yield two monosaccharide units, which is inside the stem's two-to-ten range. Failed checks: exactly_one_defensible.",
+      "source_relative_path": "Class 12/Chemistry 2/lech2dd/lech205.pdf",
+      "evidence_pages": [
+        2
+      ],
+      "evidence_quote": "Carbohydrates that yield two to ten monosaccharide units, on hydrolysis, are called oligosaccharides.",
+      "option_support": "All four class names are explicit in the same PDF-page-2 classification passage; only oligosaccharide matches two to ten units.",
+      "checks": {
+        "cited_pdf_exists": true,
+        "inside_canonical_root": true,
+        "stem_supported": true,
+        "correct_answer_supported": true,
+        "all_options_supported_or_safely_derived": true,
+        "exactly_one_defensible": false,
+        "taxonomy_mapping_valid": true,
+        "syllabus_binding_valid": true,
+        "provenance_preserved": true,
+        "no_unsupported_enrichment": true,
+        "no_duplicate": true
+      },
+      "database_duplicate_checks": {
+        "fingerprint_stem_matches": 0,
+        "candidate_stem_matches": 0,
+        "fingerprint_option_stem_matches": 0
+      },
+      "syllabus_reference": {
+        "status": "IN_SYLLABUS",
+        "subject": "CHEMISTRY",
+        "unit_number": 19,
+        "unit_name": "BIOMOLECULES",
+        "topic": "Carbohydrates: Classification; aldoses and ketoses: monosaccharides (glucose and fructose) and constituent monosaccharides of oligosaccharides (sucrose, lactose, and maltose).",
+        "topic_id": "CHEMISTRY:U19:T02",
+        "unit_id": "CHEMISTRY:U19",
+        "source_line": 479,
+        "detail": "exact topic_id match",
+        "reasons": []
+      }
+    },
+    {
+      "fact_id": "polysaccharide-definition",
+      "classification": "PASS",
+      "reason": "Independent PDF review supports the stem/key and all options. All four class names are explicit in the PDF-page-2 classification passage; only polysaccharide matches a large number of units. Exact/normalized duplicate checks found no match.",
+      "source_relative_path": "Class 12/Chemistry 2/lech2dd/lech205.pdf",
+      "evidence_pages": [
+        2
+      ],
+      "evidence_quote": "Carbohydrates which yield a large number of monosaccharide units on hydrolysis are called polysaccharides.",
+      "option_support": "All four class names are explicit in the PDF-page-2 classification passage; only polysaccharide matches a large number of units.",
+      "checks": {
+        "cited_pdf_exists": true,
+        "inside_canonical_root": true,
+        "stem_supported": true,
+        "correct_answer_supported": true,
+        "all_options_supported_or_safely_derived": true,
+        "exactly_one_defensible": true,
+        "taxonomy_mapping_valid": true,
+        "syllabus_binding_valid": true,
+        "provenance_preserved": true,
+        "no_unsupported_enrichment": true,
+        "no_duplicate": true
+      },
+      "database_duplicate_checks": {
+        "fingerprint_stem_matches": 0,
+        "candidate_stem_matches": 0,
+        "fingerprint_option_stem_matches": 0
+      },
+      "syllabus_reference": {
+        "status": "IN_SYLLABUS",
+        "subject": "CHEMISTRY",
+        "unit_number": 19,
+        "unit_name": "BIOMOLECULES",
+        "topic": "Carbohydrates: Classification; aldoses and ketoses: monosaccharides (glucose and fructose) and constituent monosaccharides of oligosaccharides (sucrose, lactose, and maltose).",
+        "topic_id": "CHEMISTRY:U19:T02",
+        "unit_id": "CHEMISTRY:U19",
+        "source_line": 479,
+        "detail": "exact topic_id match",
+        "reasons": []
+      }
+    },
+    {
+      "fact_id": "non-reducing-sugar",
+      "classification": "PASS",
+      "reason": "Independent PDF review supports the stem/key and all options. PDF page 7 explicitly keys sucrose; PDF page 2 identifies glucose, fructose, and ribose as monosaccharides and states all monosaccharides are reducing sugars. Exact/normalized duplicate checks found no match.",
+      "source_relative_path": "Class 12/Chemistry 2/lech2dd/lech205.pdf",
+      "evidence_pages": [
+        2,
+        7
+      ],
+      "evidence_quote": "Since the reducing groups of glucose and fructose are involved in glycosidic bond formation, sucrose is a non reducing sugar.",
+      "option_support": "PDF page 7 explicitly keys sucrose; PDF page 2 identifies glucose, fructose, and ribose as monosaccharides and states all monosaccharides are reducing sugars.",
+      "checks": {
+        "cited_pdf_exists": true,
+        "inside_canonical_root": true,
+        "stem_supported": true,
+        "correct_answer_supported": true,
+        "all_options_supported_or_safely_derived": true,
+        "exactly_one_defensible": true,
+        "taxonomy_mapping_valid": true,
+        "syllabus_binding_valid": true,
+        "provenance_preserved": true,
+        "no_unsupported_enrichment": true,
+        "no_duplicate": true
+      },
+      "database_duplicate_checks": {
+        "fingerprint_stem_matches": 0,
+        "candidate_stem_matches": 0,
+        "fingerprint_option_stem_matches": 0
+      },
+      "syllabus_reference": {
+        "status": "IN_SYLLABUS",
+        "subject": "CHEMISTRY",
+        "unit_number": 19,
+        "unit_name": "BIOMOLECULES",
+        "topic": "Carbohydrates: Classification; aldoses and ketoses: monosaccharides (glucose and fructose) and constituent monosaccharides of oligosaccharides (sucrose, lactose, and maltose).",
+        "topic_id": "CHEMISTRY:U19:T02",
+        "unit_id": "CHEMISTRY:U19",
+        "source_line": 479,
+        "detail": "exact topic_id match",
+        "reasons": []
+      }
+    },
+    {
+      "fact_id": "sucrose-hydrolysis",
+      "classification": "PASS",
+      "reason": "Independent PDF review supports the stem/key and all options. Every association is explicit: sucrose and maltose on PDF page 2, sucrose/maltose on page 7, and lactose/starch on page 8. Exact/normalized duplicate checks found no match.",
+      "source_relative_path": "Class 12/Chemistry 2/lech2dd/lech205.pdf",
+      "evidence_pages": [
+        2,
+        7,
+        8
+      ],
+      "evidence_quote": "One molecule of sucrose on hydrolysis gives one molecule of glucose and one molecule of fructose",
+      "option_support": "Every association is explicit: sucrose and maltose on PDF page 2, sucrose/maltose on page 7, and lactose/starch on page 8.",
+      "checks": {
+        "cited_pdf_exists": true,
+        "inside_canonical_root": true,
+        "stem_supported": true,
+        "correct_answer_supported": true,
+        "all_options_supported_or_safely_derived": true,
+        "exactly_one_defensible": true,
+        "taxonomy_mapping_valid": true,
+        "syllabus_binding_valid": true,
+        "provenance_preserved": true,
+        "no_unsupported_enrichment": true,
+        "no_duplicate": true
+      },
+      "database_duplicate_checks": {
+        "fingerprint_stem_matches": 0,
+        "candidate_stem_matches": 0,
+        "fingerprint_option_stem_matches": 0
+      },
+      "syllabus_reference": {
+        "status": "IN_SYLLABUS",
+        "subject": "CHEMISTRY",
+        "unit_number": 19,
+        "unit_name": "BIOMOLECULES",
+        "topic": "Carbohydrates: Classification; aldoses and ketoses: monosaccharides (glucose and fructose) and constituent monosaccharides of oligosaccharides (sucrose, lactose, and maltose).",
+        "topic_id": "CHEMISTRY:U19:T02",
+        "unit_id": "CHEMISTRY:U19",
+        "source_line": 479,
+        "detail": "exact topic_id match",
+        "reasons": []
+      }
+    },
+    {
+      "fact_id": "maltose-hydrolysis",
+      "classification": "PASS",
+      "reason": "Independent PDF review supports the stem/key and all options. Every association is explicit in the cited chapter; only the maltose association answers the target named in the stem. Exact/normalized duplicate checks found no match.",
+      "source_relative_path": "Class 12/Chemistry 2/lech2dd/lech205.pdf",
+      "evidence_pages": [
+        2,
+        7,
+        8
+      ],
+      "evidence_quote": "maltose gives two molecules of only glucose",
+      "option_support": "Every association is explicit in the cited chapter; only the maltose association answers the target named in the stem.",
+      "checks": {
+        "cited_pdf_exists": true,
+        "inside_canonical_root": true,
+        "stem_supported": true,
+        "correct_answer_supported": true,
+        "all_options_supported_or_safely_derived": true,
+        "exactly_one_defensible": true,
+        "taxonomy_mapping_valid": true,
+        "syllabus_binding_valid": true,
+        "provenance_preserved": true,
+        "no_unsupported_enrichment": true,
+        "no_duplicate": true
+      },
+      "database_duplicate_checks": {
+        "fingerprint_stem_matches": 0,
+        "candidate_stem_matches": 0,
+        "fingerprint_option_stem_matches": 0
+      },
+      "syllabus_reference": {
+        "status": "IN_SYLLABUS",
+        "subject": "CHEMISTRY",
+        "unit_number": 19,
+        "unit_name": "BIOMOLECULES",
+        "topic": "Carbohydrates: Classification; aldoses and ketoses: monosaccharides (glucose and fructose) and constituent monosaccharides of oligosaccharides (sucrose, lactose, and maltose).",
+        "topic_id": "CHEMISTRY:U19:T02",
+        "unit_id": "CHEMISTRY:U19",
+        "source_line": 479,
+        "detail": "exact topic_id match",
+        "reasons": []
+      }
+    },
+    {
+      "fact_id": "maltose-linkage",
+      "classification": "FAIL",
+      "reason": "NCERT supports the C1-to-C4 linkage, but exact glycosidic linkage positions are not authorized by the cited syllabus wording and are misbound to the Classification of Carbohydrates concept. Failed checks: taxonomy_mapping_valid, syllabus_binding_valid.",
+      "source_relative_path": "Class 12/Chemistry 2/lech2dd/lech205.pdf",
+      "evidence_pages": [
+        7,
+        8
+      ],
+      "evidence_quote": "C1 of one glucose (I) is linked to C4 of another glucose unit (II).",
+      "option_support": "Maltose and sucrose linkages are explicit on PDF page 7; lactose and amylopectin linkages are explicit on page 8.",
+      "checks": {
+        "cited_pdf_exists": true,
+        "inside_canonical_root": true,
+        "stem_supported": true,
+        "correct_answer_supported": true,
+        "all_options_supported_or_safely_derived": true,
+        "exactly_one_defensible": true,
+        "taxonomy_mapping_valid": false,
+        "syllabus_binding_valid": false,
+        "provenance_preserved": true,
+        "no_unsupported_enrichment": true,
+        "no_duplicate": true
+      },
+      "database_duplicate_checks": {
+        "fingerprint_stem_matches": 0,
+        "candidate_stem_matches": 0,
+        "fingerprint_option_stem_matches": 0
+      },
+      "syllabus_reference": {
+        "status": "IN_SYLLABUS",
+        "subject": "CHEMISTRY",
+        "unit_number": 19,
+        "unit_name": "BIOMOLECULES",
+        "topic": "Carbohydrates: Classification; aldoses and ketoses: monosaccharides (glucose and fructose) and constituent monosaccharides of oligosaccharides (sucrose, lactose, and maltose).",
+        "topic_id": "CHEMISTRY:U19:T02",
+        "unit_id": "CHEMISTRY:U19",
+        "source_line": 479,
+        "detail": "exact topic_id match",
+        "reasons": []
+      }
+    },
+    {
+      "fact_id": "glycosidic-linkage-definition",
+      "classification": "FAIL",
+      "reason": "NCERT supports the definition, but glycosidic-linkage terminology is outside the cited classification/constituent-monosaccharide syllabus wording and is misbound to the selected concept. Failed checks: taxonomy_mapping_valid, syllabus_binding_valid.",
+      "source_relative_path": "Class 12/Chemistry 2/lech2dd/lech205.pdf",
+      "evidence_pages": [
+        7
+      ],
+      "evidence_quote": "Such a linkage between two monosaccharide units through oxygen atom is called glycosidic linkage.",
+      "option_support": "Glycosidic linkage, reducing sugar, non-reducing sugar, and invert sugar are all explicitly defined or named on PDF page 7.",
+      "checks": {
+        "cited_pdf_exists": true,
+        "inside_canonical_root": true,
+        "stem_supported": true,
+        "correct_answer_supported": true,
+        "all_options_supported_or_safely_derived": true,
+        "exactly_one_defensible": true,
+        "taxonomy_mapping_valid": false,
+        "syllabus_binding_valid": false,
+        "provenance_preserved": true,
+        "no_unsupported_enrichment": true,
+        "no_duplicate": true
+      },
+      "database_duplicate_checks": {
+        "fingerprint_stem_matches": 0,
+        "candidate_stem_matches": 0,
+        "fingerprint_option_stem_matches": 0
+      },
+      "syllabus_reference": {
+        "status": "IN_SYLLABUS",
+        "subject": "CHEMISTRY",
+        "unit_number": 19,
+        "unit_name": "BIOMOLECULES",
+        "topic": "Carbohydrates: Classification; aldoses and ketoses: monosaccharides (glucose and fructose) and constituent monosaccharides of oligosaccharides (sucrose, lactose, and maltose).",
+        "topic_id": "CHEMISTRY:U19:T02",
+        "unit_id": "CHEMISTRY:U19",
+        "source_line": 479,
+        "detail": "exact topic_id match",
+        "reasons": []
+      }
+    }
+  ],
+  "schema": {
+    "version": "ncert_fact_pack_v1",
+    "review_states": {
+      "EXTRACTED": "Source material captured; no human review claim.",
+      "REVIEWED": "Review record required; no independent verification claim.",
+      "VERIFIED": "Review and independent source/syllabus verification records required."
+    },
+    "stable_id": "Full SHA-256 over normalized source/fact/syllabus identity."
+  },
+  "loader": {
+    "read_only": true,
+    "deterministic_order": "fact_id ascending",
+    "fail_closed": true,
+    "canonical_source_validation": true,
+    "syllabus_validation": true,
+    "schema_validation": true,
+    "stable_id_validation": true,
+    "duplicate_detection": true,
+    "evidence_presence_validation": true,
+    "minimum_default_review_status": "REVIEWED",
+    "web_api_llm_calls": 0,
+    "production_persistence": false
+  },
+  "tests": {
+    "focused": "19 passed (12 loader + 7 engine)",
+    "regression": "108 passed",
+    "ruff": "passed"
+  },
+  "provider_api_calls": 0,
+  "production_db_mutations": 0,
+  "database_before_observation": {
+    "question_statuses": {
+      "DRAFT": 5552,
+      "PUBLISHED": 1479,
+      "SUPERSEDED": 6,
+      "IN_REVIEW": 111
+    },
+    "unmapped_draft": 5034,
+    "blueprints": 445,
+    "knowledge_units": 381,
+    "engine_002_batches": 0
+  },
+  "database_after_observation": {
+    "question_statuses": {
+      "DRAFT": 5552,
+      "PUBLISHED": 1479,
+      "SUPERSEDED": 6,
+      "IN_REVIEW": 111
+    },
+    "unmapped_draft": 5034,
+    "blueprints": 445,
+    "knowledge_units": 381,
+    "engine_002_batches": 0
+  },
+  "observed_global_deltas": {
+    "question_statuses": {
+      "SUPERSEDED": 0,
+      "DRAFT": 0,
+      "PUBLISHED": 0,
+      "IN_REVIEW": 0
+    },
+    "unmapped_draft": 0,
+    "blueprints": 0,
+    "knowledge_units": 0,
+    "engine_002_batches": 0
+  },
+  "database_note": "All database transactions issued SET TRANSACTION READ ONLY. Global DRAFT counts may independently change while the isolated OpenAI worker runs.",
+  "openai_worker_continuity": {
+    "status": "NOT_ALIVE_AT_FINAL_CHECK: original PIDs were absent; this task did not signal, stop, restart, or modify the worker",
+    "before_process_ids": [
+      20460,
+      6964
+    ],
+    "after_process_ids": [],
+    "unchanged": false,
+    "observed_generation_audit_state": {
+      "created": 88,
+      "exact_remaining_quantity": 12
+    }
+  },
+  "limitations": [
+    "The nine pilot candidates cite page sets rather than a single persisted page number; this audit records the independently located PDF pages.",
+    "Duplicate verification covers normalized stem and option-stem hashes supported by current indexed infrastructure; semantic embedding dedupe is unavailable.",
+    "The loader consumes reviewed JSON facts but intentionally does not adapt them into question templates or persist them.",
+    "VERIFIED denotes independent source-text and syllabus verification only; it is not ECAEP approval, NCERT certification, or publication.",
+    "The separately running OpenAI worker exited during this task; its existing audit reports 88 created and 12 remaining. This task did not restart or alter it.",
+    "Four pilot candidates failed independent review: three for semantic syllabus/concept misbinding and one for a non-unique answer."
+  ],
+  "recommended_next_task": "PYTHON-MCQ-ENGINE-003: create one reviewed, non-production JSON fact-pack fixture for Biomolecules, load it read-only, and add an explicit adapter from loaded facts to existing deterministic question specs; generate no more than 10 in-memory DRAFT candidates and independently verify them."
+}

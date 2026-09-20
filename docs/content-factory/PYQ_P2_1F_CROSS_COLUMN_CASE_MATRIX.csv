@@ -1,0 +1,26 @@
+question_id,year,paper_set,page,question_number,affected_field,foreign_question_number,source_column,primary_root_cause,secondary_root_cause,first_failure_stage,quality_status,class_e,cross_column_flag,audit_classification
+00d8cababe821fcf:p8:q3,2023,Paper-20231108005448,8,3,option_a,3,LEFT,C,D,OPTION SEGMENTATION,VALID,True,['option_contains_foreign_question_marker'],REAL_EXTRACTION_ERROR
+00d8cababe821fcf:p11:q73,2023,Paper-20231108005448,11,73,option_b,35,LEFT,I,G,OCR SOURCE,DIAGRAM_DEPENDENT,False,['option_contains_foreign_question_marker'],REAL_EXTRACTION_ERROR
+10030e374de702ab:p9:q3,2023,Paper-20231108010819,9,3,option_b,3,LEFT,C,D,OPTION SEGMENTATION,PARTIAL,True,['option_contains_foreign_question_marker'],REAL_EXTRACTION_ERROR
+1d7ffd36a442fa95:p2:q3,2023,Paper-20231108005054,2,3,option_c,4,LEFT,F,C,QUESTION MARKER DETECTION,DIAGRAM_DEPENDENT,False,['option_contains_foreign_question_marker'],REAL_EXTRACTION_ERROR
+34ba281c8f7a45b9:p2:q6,2023,Paper-20231108011809,2,6,option_b,10,RIGHT,C,B,OPTION SEGMENTATION,PARTIAL,True,['option_contains_foreign_question_marker'],REAL_EXTRACTION_ERROR
+7e4dabb5a199588d:p10:q52,2025,NEET-2025-EN-47,10,52,option_c,3,RIGHT,C,B,OPTION SEGMENTATION,PARTIAL,True,['option_contains_foreign_question_marker'],REAL_EXTRACTION_ERROR
+8633a3811ea07447:p5:q4,2023,Paper-20231108004734,5,4,option_d,290,RIGHT,B,F,QUESTION SEGMENTATION,PARTIAL,True,['option_contains_foreign_question_marker'],REAL_EXTRACTION_ERROR
+8633a3811ea07447:p13:q82,2023,Paper-20231108004734,13,82,option_b,37,LEFT,I,G,OCR SOURCE,DIAGRAM_DEPENDENT,False,['option_contains_foreign_question_marker'],REAL_EXTRACTION_ERROR
+8633a3811ea07447:p20:q133,2023,Paper-20231108004734,20,133,option_a,4,LEFT,C,D,OPTION SEGMENTATION,VALID,True,['option_contains_foreign_question_marker'],REAL_EXTRACTION_ERROR
+87c534cad98b7b4e:p3:q7,2025,NEET-2025-EN-45,3,7,option_a,1,LEFT,C,D,OPTION SEGMENTATION,DIAGRAM_DEPENDENT,False,['option_contains_foreign_question_marker'],REAL_EXTRACTION_ERROR
+87c534cad98b7b4e:p13:q65,2025,NEET-2025-EN-45,13,65,option_a,4,RIGHT,C,D,OPTION SEGMENTATION,DIAGRAM_DEPENDENT,False,['option_contains_foreign_question_marker'],REAL_EXTRACTION_ERROR
+9fcfff3f33350907:p8:q57,2023,Paper-20231108012938,8,57,option_b,3,RIGHT,C,B,OPTION SEGMENTATION,PARTIAL,True,['option_contains_foreign_question_marker'],REAL_EXTRACTION_ERROR
+a1c3361678271d6e:p24:q162,2023,Paper-20231108004832,24,162,option_a,4,RIGHT,C,B,OPTION SEGMENTATION,VALID,True,['option_contains_foreign_question_marker'],REAL_EXTRACTION_ERROR
+a1c3361678271d6e:p26:q172,2023,Paper-20231108004832,26,172,option_d,173,LEFT,C,B,OPTION SEGMENTATION,PARTIAL,True,['option_contains_foreign_question_marker'],REAL_EXTRACTION_ERROR
+a43894b5fbc8cd28:p9:q3,2023,Paper-20231108011342,9,3,option_b,3,RIGHT,C,D,OPTION SEGMENTATION,VALID,True,['option_contains_foreign_question_marker'],REAL_EXTRACTION_ERROR
+b69d582ff457c62e:p14:q55,2024,Paper-20250124133115,14,55,option_c,4,LEFT,C,D,OPTION SEGMENTATION,PARTIAL,True,['option_contains_foreign_question_marker'],REAL_EXTRACTION_ERROR
+b69d582ff457c62e:p20:q81,2024,Paper-20250124133115,20,81,option_b,3,LEFT,C,D,OPTION SEGMENTATION,PARTIAL,True,['option_contains_foreign_question_marker'],REAL_EXTRACTION_ERROR
+d11cf53d4d8ef5b0:p30:q195,2023,Paper-20231108005321,30,195,option_b,5,LEFT,C,D,OPTION SEGMENTATION,VALID,True,['option_contains_foreign_question_marker'],REAL_EXTRACTION_ERROR
+dbdcfa0a13d13467:p25:q165,2023,Paper-20231108011242,25,165,option_a,3,LEFT,C,B,OPTION SEGMENTATION,PARTIAL,True,['option_contains_foreign_question_marker'],REAL_EXTRACTION_ERROR
+ee3990aec2dfa279:p8:q52,2023,Paper-20231108010507,8,52,option_c,7,LEFT,C,D,OPTION SEGMENTATION,DIAGRAM_DEPENDENT,False,['option_contains_foreign_question_marker'],REAL_EXTRACTION_ERROR
+f5378eb6785774c3:p8:q52,2023,Paper-20231108010032,8,52,option_c,53,LEFT,C,D,OPTION SEGMENTATION,PARTIAL,True,['option_contains_foreign_question_marker'],REAL_EXTRACTION_ERROR
+f5378eb6785774c3:p21:q145,2023,Paper-20231108010032,21,145,option_c,7,RIGHT,C,D,OPTION SEGMENTATION,VALID,True,['option_contains_foreign_question_marker'],REAL_EXTRACTION_ERROR
+f7a45c960ede2f29:p2:q3,2025,NEET-2025-EN-48,2,3,option_d,4,LEFT,C,B,OPTION SEGMENTATION,PARTIAL,True,['option_contains_foreign_question_marker'],REAL_EXTRACTION_ERROR
+f7a45c960ede2f29:p13:q64,2025,NEET-2025-EN-48,13,64,option_d,65,LEFT,I,G,OCR SOURCE,PARTIAL,False,['option_contains_foreign_question_marker'],REAL_EXTRACTION_ERROR
+f7a45c960ede2f29:p28:q164,2025,NEET-2025-EN-48,28,164,option_a,3,LEFT,C,D,OPTION SEGMENTATION,DIAGRAM_DEPENDENT,False,['option_contains_foreign_question_marker'],REAL_EXTRACTION_ERROR

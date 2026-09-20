@@ -26,6 +26,13 @@ class ReviewDecisionRequest(BaseModel):
     comment: str | None = None
 
 
+class CertifyNcertRequest(BaseModel):
+    """APPROVED-state NCERT source-text certification (does not publish)."""
+
+    required_batch_id: str | None = None
+    verification_method: str | None = None
+
+
 class ContentReportRequest(BaseModel):
     reason: str  # WRONG_ANSWER | UNCLEAR | TYPO | OFFENSIVE | OTHER
     comment: str | None = Field(default=None, max_length=1000)
@@ -34,6 +41,17 @@ class ContentReportRequest(BaseModel):
 class BulkContentActionRequest(BaseModel):
     item_ids: list[str] = Field(min_length=1, max_length=200)
     action: str  # publish | archive
+
+
+class TrustedFactorySubmitRequest(BaseModel):
+    """Explicit item selection only — never "all DRAFTs" or a bare batch_key.
+    batch_id is required so the caller states which generation batch they
+    believe these items came from; each item's real batch is still
+    independently re-verified server-side (trusted_factory_submission.py),
+    not trusted from this field alone."""
+
+    item_ids: list[str] = Field(min_length=1, max_length=200)
+    batch_id: str
 
 
 class ResolveReportRequest(BaseModel):

@@ -1,0 +1,20 @@
+---
+description: Content/ECAEP safety — audits and remediations do not generate or publish by default
+alwaysApply: true
+---
+
+# Content safety
+
+## Default for infrastructure / audit / remediation tasks
+- Do **not** generate MCQs unless the task explicitly authorizes generation.
+- Do **not** publish, certify, or advance ECAEP to publication.
+- Do **not** call LLM providers unless the task explicitly authorizes provider use.
+- Do **not** resume backlogs (e.g. 271), pilots, or bulk waves unless named.
+
+## Provenance & taxonomy
+- Do not silently upgrade `provenance_tier` or invent NCERT derivation flags.
+- Do not alter academic taxonomy IDs (`subject_id` / `chapter_id` / `topic_id` / `concept_id`) unless the task is specifically a taxonomy remediation.
+
+## Gates remain fail-closed
+- `SYLLABUS_MAPPING_REVIEW_REQUIRED` and insufficient NCERT evidence must continue to block providers.
+- Fuzzy similarity never authorizes syllabus scope or generation readiness.

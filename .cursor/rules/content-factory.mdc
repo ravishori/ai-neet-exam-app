@@ -1,0 +1,20 @@
+---
+description: Content Factory pipeline order and dual-gate preflight (CMS generation)
+globs: apps/backend/app/modules/cms/**/*
+alwaysApply: false
+---
+
+# Content Factory
+
+## Pipeline order (do not reorder)
+Syllabus scope → NCERT evidence → Blueprint → LLM → Validation → NCERT claim grounding → Dedupe → Editorial → Publish
+
+## Preflight
+- Syllabus gate (`assert_blueprint_neet_syllabus_scope`) before NCERT evidence.
+- NCERT evidence pack (`resolve_ncert_evidence_pack`) before any provider call when the blueprint declares NCERT.
+- Generation ≠ validation ≠ publication.
+
+## Blueprints
+- Prefer existing constraint fields (`neet_ug_2026`, `ncert_source_path`, `ku_id`) over new tables.
+- Surgical constraint merges must preserve unrelated keys.
+- Idempotent remediation: second run → zero additional writes.

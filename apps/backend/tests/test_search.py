@@ -7,6 +7,7 @@ import pytest
 from sqlalchemy import select
 
 from conftest import csrf_headers
+from helpers_publishable_question import publishable_question_body
 
 pytestmark = pytest.mark.asyncio(loop_scope="session")
 
@@ -44,19 +45,19 @@ async def _publish_question(
     pyq_year: int | None = None,
     correct_option: str = "B",
 ) -> str:
-    body = {
-        "stem": stem,
-        "options": options
+    body = publishable_question_body(
+        stem=stem,
+        options=options
         or [
             {"label": "A", "text": "Wrong 1"},
             {"label": "B", "text": "Correct answer"},
             {"label": "C", "text": "Wrong 2"},
             {"label": "D", "text": "Wrong 3"},
         ],
-        "correct_option": correct_option,
-        "explanation": explanation,
-        "difficulty": difficulty,
-    }
+        correct_option=correct_option,
+        explanation=explanation,
+        difficulty=difficulty,
+    )
     if pyq_year:
         body["pyq_year"] = pyq_year
 
@@ -79,7 +80,8 @@ async def _publish_question(
     await client.post(
         f"/api/v1/cms/content-items/{item_id}/review", json={"decision": "approve"}, headers=csrf_headers(client)
     )
-    await client.post(f"/api/v1/cms/content-items/{item_id}/publish", headers=csrf_headers(client))
+    pub = await client.post(f"/api/v1/cms/content-items/{item_id}/publish", headers=csrf_headers(client))
+    assert pub.status_code == 200, pub.text
     return item_id
 
 
@@ -92,12 +94,12 @@ async def _create_draft_question(client, concept_id: str, *, stem: str) -> str:
             "title": stem[:50],
             "slug": f"search-test-draft-{uuid.uuid4().hex[:10]}",
             "language": "en",
-            "body": {
-                "stem": stem,
-                "options": [{"label": "A", "text": "x"}, {"label": "B", "text": "y"}],
-                "correct_option": "A",
-                "explanation": "n/a",
-            },
+            "body": publishable_question_body(stem=stem, correct_option="A", explanation="Test explanation for NEET MCQ gates.", options=[
+                    {"label": "A", "text": "x"},
+                    {"label": "B", "text": "y"},
+                    {"label": "C", "text": "z"},
+                    {"label": "D", "text": "w"},
+                ],),
         },
         headers=csrf_headers(client),
     )
@@ -189,8 +191,8 @@ async def test_search_filters_by_difficulty_and_pyq_year(client, db_session, reg
     await register_user(client, role_codes=["CONTENT_MANAGER"], db_session=db_session)
     lineage = await _concept_with_lineage(db_session)
     tag = uuid.uuid4().hex[:6]
-    hard_id = await _publish_question(client, lineage["concept_id"], stem=f"Difficulty probe {tag}", difficulty="hard", pyq_year=2022)
-    easy_id = await _publish_question(client, lineage["concept_id"], stem=f"Difficulty probe {tag}", difficulty="easy")
+    hard_id = await _publish_question(client, lineage["concept_id"], stem=f"Difficulty probe {tag} hard", difficulty="hard", pyq_year=2022)
+    easy_id = await _publish_question(client, lineage["concept_id"], stem=f"Difficulty probe {tag} easy", difficulty="easy")
 
     hard_resp = await client.get("/api/v1/cms/search", params={"q": tag, "difficulty": "hard"})
     hard_ids = [r["id"] for r in hard_resp.json()["data"]]

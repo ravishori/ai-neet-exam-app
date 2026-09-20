@@ -1,0 +1,1943 @@
+{
+  "generated_at": "2026-09-13T18:24:54.731315+00:00",
+  "final_status": "YELLOW — OWNER REVIEW READY",
+  "mode": "READ-ONLY",
+  "ncert_root": "D:\\ravishori\\AI Neet Exam App\\NCERT Books",
+  "source_ku002": "docs\\audits\\ku_coverage_002_20260913.json",
+  "before": {
+    "status": {
+      "DRAFT": 5298,
+      "PUBLISHED": 1479,
+      "SUPERSEDED": 6,
+      "IN_REVIEW": 111
+    },
+    "unmapped_draft": 5024,
+    "chapters": 56,
+    "topics": 192,
+    "concepts": 318,
+    "knowledge_units": 370,
+    "question_blueprints": 266,
+    "content_batches": 11,
+    "generation_jobs": 204,
+    "generation_runs": 204,
+    "generation_candidates": 392,
+    "studymaterial_path_kus": 73,
+    "digestion_kus": 0
+  },
+  "after": {
+    "status": {
+      "DRAFT": 5298,
+      "PUBLISHED": 1479,
+      "SUPERSEDED": 6,
+      "IN_REVIEW": 111
+    },
+    "unmapped_draft": 5024,
+    "chapters": 56,
+    "topics": 192,
+    "concepts": 318,
+    "knowledge_units": 370,
+    "question_blueprints": 266,
+    "content_batches": 11,
+    "generation_jobs": 204,
+    "generation_runs": 204,
+    "generation_candidates": 392,
+    "studymaterial_path_kus": 73,
+    "digestion_kus": 0
+  },
+  "snapshot_identical": true,
+  "freeze_ok": true,
+  "unresolved_reviews": [
+    {
+      "ku002_record": {
+        "concept_code": "factors-affecting-resistance",
+        "subject": "PHYSICS",
+        "chapter": "current-electricity",
+        "reason": "insufficient_token_hits:1/3",
+        "pdfs_tried": [
+          "Class 12/Physics/leph1dd/leph103.pdf"
+        ]
+      },
+      "concept": {
+        "concept_id": "61e7ae09-2ca1-4b26-ba8c-fbc9d56b0f53",
+        "concept_code": "factors-affecting-resistance",
+        "concept_name": "Factors Affecting Resistance",
+        "summary": "Dependence of resistance on length, area, material, and temperature.",
+        "ncert_reference": "",
+        "created_at": "2026-08-01 15:39:26.73108+05:30",
+        "updated_at": "2026-08-01 15:39:26.73108+05:30",
+        "subject": "PHYSICS",
+        "class_level": "12",
+        "chapter_code": "current-electricity",
+        "chapter_name": "Current Electricity",
+        "topic_code": "resistance-resistivity",
+        "topic_name": "Resistance and Resistivity",
+        "ku_count": 10,
+        "ncert_ku_count": 0,
+        "blueprint_count": 1,
+        "question_count": 12
+      },
+      "canonical_pdfs": [
+        {
+          "relative_path": "Class 12/Physics/leph1dd/leph103.pdf",
+          "absolute_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Physics\\leph1dd\\leph103.pdf",
+          "exists": true,
+          "readable_pdf": true,
+          "page_count": 26,
+          "error": null
+        }
+      ],
+      "extraction_reinspection": {
+        "window_found": false,
+        "evidence_note": null,
+        "pdf_used": null,
+        "window_char_len": 0,
+        "window_preview": null
+      },
+      "ncert_term_hits": [
+        {
+          "needle": "Resistance",
+          "char_offset": 6247,
+          "nearby_section_header": null,
+          "snippet": "onductor. Then Ohm’s law states that V µ I or, V = R I (3.3) where the constant of proportionality R is called the resistance of the conductor. The SI units of resistance is ohm, and is denoted by the symbol W. The resistance R not only dep",
+          "pdf": "Class 12/Physics/leph1dd/leph103.pdf"
+        },
+        {
+          "needle": "Dependence",
+          "char_offset": 6459,
+          "nearby_section_header": null,
+          "snippet": "W. The resistance R not only depends on the material of the conductor but also on the dimensions of the conductor. The dependence of R on the dimensions of the conductor can easily be determined as follows. Consider a conductor satisfying E",
+          "pdf": "Class 12/Physics/leph1dd/leph103.pdf"
+        },
+        {
+          "needle": "resistance",
+          "char_offset": 6247,
+          "nearby_section_header": null,
+          "snippet": "onductor. Then Ohm’s law states that V µ I or, V = R I (3.3) where the constant of proportionality R is called the resistance of the conductor. The SI units of resistance is ohm, and is denoted by the symbol W. The resistance R not only dep",
+          "pdf": "Class 12/Physics/leph1dd/leph103.pdf"
+        },
+        {
+          "needle": "length",
+          "char_offset": 6620,
+          "nearby_section_header": null,
+          "snippet": "conductor can easily be determined as follows. Consider a conductor satisfying Eq. (3.3) to be in the form of a slab of length l and cross sectional area A [Fig. 3.2(a)]. Imagine placing two such identical slabs side by side [Fig. 3.2(b)], ",
+          "pdf": "Class 12/Physics/leph1dd/leph103.pdf"
+        },
+        {
+          "needle": "material",
+          "char_offset": 2993,
+          "nearby_section_header": null,
+          "snippet": "olecules. These molecules are so closely packed that the electrons are no longer attached to individual nuclei. In some materials, the electrons will still be bound, i.e., they will not accelerate even if an electric field is applied. In ot",
+          "pdf": "Class 12/Physics/leph1dd/leph103.pdf"
+        }
+      ],
+      "evidence_appears_sufficient": true,
+      "recommended_owner_decision": "ACCEPT_KU",
+      "rationale": "Canonical PDF contains relevant NCERT language; KU-COVERAGE-002 token threshold failed, but evidence looks sufficient for a carefully windowed KU."
+    },
+    {
+      "ku002_record": {
+        "concept_code": "cardiac-cycle-phases",
+        "subject": "ZOOLOGY",
+        "chapter": "body-fluids-circulation",
+        "reason": "insufficient_token_hits:2/3",
+        "pdfs_tried": [
+          "Class 11/Biology/kebo1dd/kebo115.pdf"
+        ]
+      },
+      "concept": {
+        "concept_id": "323c3c8a-ce3c-428f-9edb-20edf42574e9",
+        "concept_code": "cardiac-cycle-phases",
+        "concept_name": "Cardiac Cycle Phases",
+        "summary": "Systole and diastole phases governing one heartbeat.",
+        "ncert_reference": "",
+        "created_at": "2026-08-01 15:39:26.73108+05:30",
+        "updated_at": "2026-08-01 15:39:26.73108+05:30",
+        "subject": "ZOOLOGY",
+        "class_level": "11",
+        "chapter_code": "body-fluids-circulation",
+        "chapter_name": "Body Fluids and Circulation",
+        "topic_code": "cardiac-cycle",
+        "topic_name": "Cardiac Cycle",
+        "ku_count": 0,
+        "ncert_ku_count": 0,
+        "blueprint_count": 2,
+        "question_count": 3
+      },
+      "canonical_pdfs": [
+        {
+          "relative_path": "Class 11/Biology/kebo1dd/kebo115.pdf",
+          "absolute_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo115.pdf",
+          "exists": true,
+          "readable_pdf": true,
+          "page_count": 12,
+          "error": null
+        }
+      ],
+      "extraction_reinspection": {
+        "window_found": false,
+        "evidence_note": null,
+        "pdf_used": null,
+        "window_char_len": 0,
+        "window_preview": null
+      },
+      "ncert_term_hits": [
+        {
+          "needle": "Cardiac",
+          "char_offset": 1576,
+          "nearby_section_header": "15.1 Blood",
+          "snippet": "N CHAPTER 15 15.1 Blood 15.2 Lymph (Tissue Fluid) 15.3 Circulatory Pathways 15.4 Double Circulation 15.5 Regulation of Cardiac Activity 15.6 Disorders of Circulatory System Reprint 2026-27 194 BIOLOGY Fibrinogens are needed for clotting or ",
+          "pdf": "Class 11/Biology/kebo1dd/kebo115.pdf"
+        },
+        {
+          "needle": "Cycle",
+          "char_offset": 15003,
+          "nearby_section_header": null,
+          "snippet": ", it is called the pacemaker. Our heart normally beats 70-75 times in a minute (average 72 beats min–1). 15.3.2 Cardiac Cycle How does the heart function? Let us take a look. To begin with, all the four chambers of heart are in a relaxed st",
+          "pdf": "Class 11/Biology/kebo1dd/kebo115.pdf"
+        },
+        {
+          "needle": "Systole",
+          "char_offset": 15518,
+          "nearby_section_header": null,
+          "snippet": "AN now generates an action potential which stimulates both the atria to undergo a simultaneous contraction – the atrial systole. This increases the flow of blood into the ventricles by about 30 per cent. The action potential is conducted to",
+          "pdf": "Class 11/Biology/kebo1dd/kebo115.pdf"
+        },
+        {
+          "needle": "diastole",
+          "char_offset": 15153,
+          "nearby_section_header": null,
+          "snippet": "ion? Let us take a look. To begin with, all the four chambers of heart are in a relaxed state, i.e., they are in joint diastole. As the tricuspid and bicuspid valves are open, blood from the pulmonary veins and vena cava flows into the left",
+          "pdf": "Class 11/Biology/kebo1dd/kebo115.pdf"
+        },
+        {
+          "needle": "cardiac cycle",
+          "char_offset": 14995,
+          "nearby_section_header": null,
+          "snippet": "herefore, it is called the pacemaker. Our heart normally beats 70-75 times in a minute (average 72 beats min–1). 15.3.2 Cardiac Cycle How does the heart function? Let us take a look. To begin with, all the four chambers of heart are in a re",
+          "pdf": "Class 11/Biology/kebo1dd/kebo115.pdf"
+        }
+      ],
+      "evidence_appears_sufficient": true,
+      "recommended_owner_decision": "ACCEPT_KU",
+      "rationale": "Canonical PDF contains relevant NCERT language; KU-COVERAGE-002 token threshold failed, but evidence looks sufficient for a carefully windowed KU."
+    },
+    {
+      "ku002_record": {
+        "concept_code": "heart-structure",
+        "subject": "ZOOLOGY",
+        "chapter": "body-fluids-circulation",
+        "reason": "insufficient_token_hits:2/3",
+        "pdfs_tried": [
+          "Class 11/Biology/kebo1dd/kebo115.pdf"
+        ]
+      },
+      "concept": {
+        "concept_id": "ee354ed6-913e-4041-b67b-25297520f7b2",
+        "concept_code": "heart-structure",
+        "concept_name": "Structure of the Human Heart",
+        "summary": "Four chambers, valves, and major vessels of the heart.",
+        "ncert_reference": "",
+        "created_at": "2026-08-01 15:39:26.73108+05:30",
+        "updated_at": "2026-08-01 15:39:26.73108+05:30",
+        "subject": "ZOOLOGY",
+        "class_level": "11",
+        "chapter_code": "body-fluids-circulation",
+        "chapter_name": "Body Fluids and Circulation",
+        "topic_code": "human-heart-anatomy",
+        "topic_name": "Human Heart Anatomy",
+        "ku_count": 1,
+        "ncert_ku_count": 0,
+        "blueprint_count": 2,
+        "question_count": 3
+      },
+      "canonical_pdfs": [
+        {
+          "relative_path": "Class 11/Biology/kebo1dd/kebo115.pdf",
+          "absolute_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo115.pdf",
+          "exists": true,
+          "readable_pdf": true,
+          "page_count": 12,
+          "error": null
+        }
+      ],
+      "extraction_reinspection": {
+        "window_found": false,
+        "evidence_note": null,
+        "pdf_used": null,
+        "window_char_len": 0,
+        "window_preview": null
+      },
+      "ncert_term_hits": [
+        {
+          "needle": "Human",
+          "char_offset": 809,
+          "nearby_section_header": null,
+          "snippet": "dies to transport such materials. Blood is the most commonly used body fluid by most of the higher organisms, including humans, for this purpose. Another body fluid, lymph, also helps in the transport of certain substances. In this chapter,",
+          "pdf": "Class 11/Biology/kebo1dd/kebo115.pdf"
+        },
+        {
+          "needle": "Heart",
+          "char_offset": 10277,
+          "nearby_section_header": "15.3 CIRCULATORY PATHWAYS",
+          "snippet": "two types – open or closed. Open circulatory system is present in arthropods and molluscs in which blood pumped by the heart passes through large vessels into open spaces or body cavities called sinuses. Annelids and chordates have a closed",
+          "pdf": "Class 11/Biology/kebo1dd/kebo115.pdf"
+        },
+        {
+          "needle": "chambers",
+          "char_offset": 12323,
+          "nearby_section_header": null,
+          "snippet": "st. It is protected by a double walled membranous bag, pericardium, enclosing the pericardial fluid. Our heart has four chambers, two relatively small upper chambers called atria and two larger lower chambers called ventricles. A thin, musc",
+          "pdf": "Class 11/Biology/kebo1dd/kebo115.pdf"
+        },
+        {
+          "needle": "valves",
+          "char_offset": 13358,
+          "nearby_section_header": null,
+          "snippet": "nt 2026-27 BODY FLUIDS AND CIRCULATION 199 pulmonary artery and the aorta respectively are provided with the semilunar valves. The valves in the heart allows the flow of blood only in one direction, i.e., from the atria to the ventricles an",
+          "pdf": "Class 11/Biology/kebo1dd/kebo115.pdf"
+        },
+        {
+          "needle": "major",
+          "char_offset": 1414,
+          "nearby_section_header": "15.1 BLOOD",
+          "snippet": "0-92 per cent of plasma is water and proteins contribute 6-8 per cent of it. Fibrinogen, globulins and albumins are the major proteins. BODY FLUIDS AND CIRCULATION CHAPTER 15 15.1 Blood 15.2 Lymph (Tissue Fluid) 15.3 Circulatory Pathways 15",
+          "pdf": "Class 11/Biology/kebo1dd/kebo115.pdf"
+        }
+      ],
+      "evidence_appears_sufficient": true,
+      "recommended_owner_decision": "ACCEPT_KU",
+      "rationale": "Canonical PDF contains relevant NCERT language; KU-COVERAGE-002 token threshold failed, but evidence looks sufficient for a carefully windowed KU."
+    },
+    {
+      "ku002_record": {
+        "concept_code": "sv2c-zoology-12",
+        "subject": "ZOOLOGY",
+        "chapter": "body-fluids-circulation",
+        "reason": "insufficient_token_hits:0/1",
+        "pdfs_tried": [
+          "Class 11/Biology/kebo1dd/kebo115.pdf"
+        ]
+      },
+      "concept": {
+        "concept_id": "6e0ec671-708a-452f-8900-6072839a5eb2",
+        "concept_code": "sv2c-zoology-12",
+        "concept_name": "P, QRS, T waves",
+        "summary": "ECG, not ABO. Avoid blood-group agglutination cluster.",
+        "ncert_reference": "ncert-books-class-11-biology-chapter-15.pdf",
+        "created_at": "2026-09-03 22:15:52.152786+05:30",
+        "updated_at": "2026-09-03 22:15:52.152786+05:30",
+        "subject": "ZOOLOGY",
+        "class_level": "11",
+        "chapter_code": "body-fluids-circulation",
+        "chapter_name": "Body Fluids and Circulation",
+        "topic_code": "sv2t-zoology-12",
+        "topic_name": "ECG",
+        "ku_count": 0,
+        "ncert_ku_count": 0,
+        "blueprint_count": 1,
+        "question_count": 2
+      },
+      "canonical_pdfs": [
+        {
+          "relative_path": "Class 11/Biology/kebo1dd/kebo115.pdf",
+          "absolute_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo115.pdf",
+          "exists": true,
+          "readable_pdf": true,
+          "page_count": 12,
+          "error": null
+        }
+      ],
+      "extraction_reinspection": {
+        "window_found": false,
+        "evidence_note": null,
+        "pdf_used": null,
+        "window_char_len": 0,
+        "window_preview": null
+      },
+      "ncert_term_hits": [
+        {
+          "needle": "Avoid",
+          "char_offset": 5584,
+          "nearby_section_header": null,
+          "snippet": "be used; the blood of a donor has to be carefully matched with the blood of a recipient before any blood transfusion to avoid severe problems of clumping (destruction of RBC). The donor’s compatibility is also shown in the Table 15.1. Blood",
+          "pdf": "Class 11/Biology/kebo1dd/kebo115.pdf"
+        },
+        {
+          "needle": "blood",
+          "char_offset": 723,
+          "nearby_section_header": null,
+          "snippet": "o exchange these substances. More complex organisms use special fluids within their bodies to transport such materials. Blood is the most commonly used body fluid by most of the higher organisms, including humans, for this purpose. Another ",
+          "pdf": "Class 11/Biology/kebo1dd/kebo115.pdf"
+        },
+        {
+          "needle": "group",
+          "char_offset": 393,
+          "nearby_section_header": null,
+          "snippet": "essential to have efficient mechanisms for the movement of these substances to the cells and from the cells. Different groups of animals have evolved different methods for this transport. Simple organisms like sponges and coelenterates circ",
+          "pdf": "Class 11/Biology/kebo1dd/kebo115.pdf"
+        }
+      ],
+      "evidence_appears_sufficient": false,
+      "recommended_owner_decision": "TAXONOMY_REVIEW",
+      "rationale": "Seed-style concept code with weak token match against NCERT text; rename/remap to NCERT terminology before KU creation."
+    },
+    {
+      "ku002_record": {
+        "concept_code": "sv2c-zoology-15",
+        "subject": "ZOOLOGY",
+        "chapter": "body-fluids-circulation",
+        "reason": "insufficient_token_hits:2/3",
+        "pdfs_tried": [
+          "Class 11/Biology/kebo1dd/kebo115.pdf"
+        ]
+      },
+      "concept": {
+        "concept_id": "f0a5b9d4-fe0b-4733-92fe-7d6d1525fe31",
+        "concept_code": "sv2c-zoology-15",
+        "concept_name": "Pulmonary vs systemic circuit",
+        "summary": "Circulation topology, not ABO grouping.",
+        "ncert_reference": "ncert-books-class-11-biology-chapter-15.pdf",
+        "created_at": "2026-09-03 22:15:52.446877+05:30",
+        "updated_at": "2026-09-03 22:15:52.446877+05:30",
+        "subject": "ZOOLOGY",
+        "class_level": "11",
+        "chapter_code": "body-fluids-circulation",
+        "chapter_name": "Body Fluids and Circulation",
+        "topic_code": "sv2t-zoology-15",
+        "topic_name": "Lymph and Double Circulation",
+        "ku_count": 0,
+        "ncert_ku_count": 0,
+        "blueprint_count": 1,
+        "question_count": 2
+      },
+      "canonical_pdfs": [
+        {
+          "relative_path": "Class 11/Biology/kebo1dd/kebo115.pdf",
+          "absolute_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo115.pdf",
+          "exists": true,
+          "readable_pdf": true,
+          "page_count": 12,
+          "error": null
+        }
+      ],
+      "extraction_reinspection": {
+        "window_found": false,
+        "evidence_note": null,
+        "pdf_used": null,
+        "window_char_len": 0,
+        "window_preview": null
+      },
+      "ncert_term_hits": [
+        {
+          "needle": "Pulmonary",
+          "char_offset": 13282,
+          "nearby_section_header": null,
+          "snippet": "and the left ventricles into the Figure 15.2 Section of a human heart Reprint 2026-27 BODY FLUIDS AND CIRCULATION 199 pulmonary artery and the aorta respectively are provided with the semilunar valves. The valves in the heart allows the flo",
+          "pdf": "Class 11/Biology/kebo1dd/kebo115.pdf"
+        },
+        {
+          "needle": "systemic",
+          "char_offset": 21283,
+          "nearby_section_header": null,
+          "snippet": "xygenated blood is collected by a system of venules, veins and vena cava and emptied into the right atrium. This is the systemic circulation (Figure 15.4). The systemic circulation provides nutrients, O2 and other essential substances to th",
+          "pdf": "Class 11/Biology/kebo1dd/kebo115.pdf"
+        },
+        {
+          "needle": "Circulation",
+          "char_offset": 16,
+          "nearby_section_header": null,
+          "snippet": "BODY FLUIDS AND CIRCULATION 193 You have learnt that all living cells have to be provided with nutrients, O2 and other essential substances. Also, the waste or harmful substances produced, have to be removed continuously for healthy functio",
+          "pdf": "Class 11/Biology/kebo1dd/kebo115.pdf"
+        },
+        {
+          "needle": "grouping",
+          "char_offset": 4800,
+          "nearby_section_header": null,
+          "snippet": "d Groups As you know, blood of human beings differ in certain aspects though it appears to be similar. Various types of grouping of blood has been done. Two such groupings – the ABO and Rh – are widely used all over the world. 15.1.3.1 ABO ",
+          "pdf": "Class 11/Biology/kebo1dd/kebo115.pdf"
+        }
+      ],
+      "evidence_appears_sufficient": false,
+      "recommended_owner_decision": "TAXONOMY_REVIEW",
+      "rationale": "Seed-style concept code with weak token match against NCERT text; rename/remap to NCERT terminology before KU creation."
+    },
+    {
+      "ku002_record": {
+        "concept_code": "sv2c-zoology-08",
+        "subject": "ZOOLOGY",
+        "chapter": "breathing-exchange-of-gases",
+        "reason": "insufficient_token_hits:1/2",
+        "pdfs_tried": [
+          "Class 11/Biology/kebo1dd/kebo114.pdf"
+        ]
+      },
+      "concept": {
+        "concept_id": "91744e39-155b-4ef8-b8b0-6e961505f6e2",
+        "concept_code": "sv2c-zoology-08",
+        "concept_name": "Pathway of air / alveoli",
+        "summary": "Breathing anatomy.",
+        "ncert_reference": "ncert-books-class-11-biology-chapter-14.pdf",
+        "created_at": "2026-09-03 22:15:51.742181+05:30",
+        "updated_at": "2026-09-03 22:15:51.742181+05:30",
+        "subject": "ZOOLOGY",
+        "class_level": "11",
+        "chapter_code": "breathing-exchange-of-gases",
+        "chapter_name": "Breathing and Exchange of Gases",
+        "topic_code": "sv2t-zoology-08",
+        "topic_name": "Human Respiratory System",
+        "ku_count": 0,
+        "ncert_ku_count": 0,
+        "blueprint_count": 1,
+        "question_count": 1
+      },
+      "canonical_pdfs": [
+        {
+          "relative_path": "Class 11/Biology/kebo1dd/kebo114.pdf",
+          "absolute_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo114.pdf",
+          "exists": true,
+          "readable_pdf": true,
+          "page_count": 12,
+          "error": null
+        }
+      ],
+      "extraction_reinspection": {
+        "window_found": false,
+        "evidence_note": null,
+        "pdf_used": null,
+        "window_char_len": 0,
+        "window_preview": null
+      },
+      "ncert_term_hits": [
+        {
+          "needle": "alveoli",
+          "char_offset": 4992,
+          "nearby_section_header": null,
+          "snippet": "h terminal bronchiole gives rise to a number of very thin, irregular-walled and vascularised bag-like structures called alveoli. The branching network of bronchi, bronchioles and alveoli comprise the lungs (Figure 14.1). We have two lungs w",
+          "pdf": "Class 11/Biology/kebo1dd/kebo114.pdf"
+        },
+        {
+          "needle": "Breathing",
+          "char_offset": 1196,
+          "nearby_section_header": null,
+          "snippet": "o chapters point to the coordination and regulation of body events at the organismic level. HUMAN PHYSIOLOGY Chapter 14 Breathing and Exchange of Gases Chapter 15 Body Fluids and Circulation Chapter 16 Excretory Products and their Eliminati",
+          "pdf": "Class 11/Biology/kebo1dd/kebo114.pdf"
+        }
+      ],
+      "evidence_appears_sufficient": false,
+      "recommended_owner_decision": "TAXONOMY_REVIEW",
+      "rationale": "Seed-style concept code with weak token match against NCERT text; rename/remap to NCERT terminology before KU creation."
+    },
+    {
+      "ku002_record": {
+        "concept_code": "gonads-ducts",
+        "subject": "ZOOLOGY",
+        "chapter": "human-reproduction",
+        "reason": "insufficient_token_hits:1/2",
+        "pdfs_tried": [
+          "Class 12/Biology/lebo1dd/lebo102.pdf"
+        ]
+      },
+      "concept": {
+        "concept_id": "715018f3-afe3-4554-a542-41a72cc0dac2",
+        "concept_code": "gonads-ducts",
+        "concept_name": "Gonads and Ducts",
+        "summary": "Primary sex organs produce gametes; ducts transport and support reproductive function.",
+        "ncert_reference": "",
+        "created_at": "2026-08-31 22:54:06.648993+05:30",
+        "updated_at": "2026-08-31 22:54:06.648993+05:30",
+        "subject": "ZOOLOGY",
+        "class_level": "12",
+        "chapter_code": "human-reproduction",
+        "chapter_name": "Human Reproduction",
+        "topic_code": "reproductive-systems",
+        "topic_name": "Male and Female Reproductive Systems",
+        "ku_count": 0,
+        "ncert_ku_count": 0,
+        "blueprint_count": 0,
+        "question_count": 3
+      },
+      "canonical_pdfs": [
+        {
+          "relative_path": "Class 12/Biology/lebo1dd/lebo102.pdf",
+          "absolute_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo102.pdf",
+          "exists": true,
+          "readable_pdf": true,
+          "page_count": 15,
+          "error": null
+        }
+      ],
+      "extraction_reinspection": {
+        "window_found": false,
+        "evidence_note": null,
+        "pdf_used": null,
+        "window_char_len": 0,
+        "window_preview": null
+      },
+      "ncert_term_hits": [
+        {
+          "needle": "Ducts",
+          "char_offset": 1041,
+          "nearby_section_header": "2.1 THE MALE REPRODUCTIVE SYSTEM",
+          "snippet": "ale reproductive system is located in the pelvis region (Figure 2.1a). It includes a pair of testes alongwith accessory ducts, glands and the external genitalia. CHAPTER 2 HUMAN REPRODUCTION 2.1 The Male Reproductive System 2.2 The Female R",
+          "pdf": "Class 12/Biology/lebo1dd/lebo102.pdf"
+        },
+        {
+          "needle": "Primary",
+          "char_offset": 4456,
+          "nearby_section_header": null,
+          "snippet": "and functionally to support the processes of ovulation, fertilisation, pregnancy, birth and child care. Ovaries are the primary female sex organs that produce the female gamete (ovum) and several steroid hormones (ovarian hormones). The ova",
+          "pdf": "Class 12/Biology/lebo1dd/lebo102.pdf"
+        },
+        {
+          "needle": "organs",
+          "char_offset": 4475,
+          "nearby_section_header": null,
+          "snippet": "support the processes of ovulation, fertilisation, pregnancy, birth and child care. Ovaries are the primary female sex organs that produce the female gamete (ovum) and several steroid hormones (ovarian hormones). The ovaries are located one",
+          "pdf": "Class 12/Biology/lebo1dd/lebo102.pdf"
+        },
+        {
+          "needle": "produce",
+          "char_offset": 1901,
+          "nearby_section_header": null,
+          "snippet": "icular lobules (Figure 2.1b). Each lobule contains one to three highly coiled seminiferous tubules in which sperms are produced. Each seminiferous tubule is lined on its inside by two types of cells called male germ cells (spermatogonia) an",
+          "pdf": "Class 12/Biology/lebo1dd/lebo102.pdf"
+        },
+        {
+          "needle": "gametes",
+          "char_offset": 121,
+          "nearby_section_header": null,
+          "snippet": "s you are aware, humans are sexually reproducing and viviparous. The reproductive events in humans include formation of gametes (gametogenesis), i.e., sperms in males and ovum in females, transfer of sperms into the female genital tract (in",
+          "pdf": "Class 12/Biology/lebo1dd/lebo102.pdf"
+        }
+      ],
+      "evidence_appears_sufficient": true,
+      "recommended_owner_decision": "ACCEPT_KU",
+      "rationale": "Canonical PDF contains relevant NCERT language; KU-COVERAGE-002 token threshold failed, but evidence looks sufficient for a carefully windowed KU."
+    },
+    {
+      "ku002_record": {
+        "concept_code": "menstrual-phases",
+        "subject": "ZOOLOGY",
+        "chapter": "human-reproduction",
+        "reason": "insufficient_token_hits:2/3",
+        "pdfs_tried": [
+          "Class 12/Biology/lebo1dd/lebo102.pdf"
+        ]
+      },
+      "concept": {
+        "concept_id": "e19845d7-7a12-46b1-8e05-565ad85f62b4",
+        "concept_code": "menstrual-phases",
+        "concept_name": "Menstrual Cycle Phases",
+        "summary": "Follicular, ovulatory, and luteal phases regulated by FSH, LH, estrogen, progesterone.",
+        "ncert_reference": "",
+        "created_at": "2026-08-31 22:54:06.648993+05:30",
+        "updated_at": "2026-08-31 22:54:06.648993+05:30",
+        "subject": "ZOOLOGY",
+        "class_level": "12",
+        "chapter_code": "human-reproduction",
+        "chapter_name": "Human Reproduction",
+        "topic_code": "cycle-fertilization",
+        "topic_name": "Menstrual Cycle and Fertilization",
+        "ku_count": 0,
+        "ncert_ku_count": 0,
+        "blueprint_count": 0,
+        "question_count": 3
+      },
+      "canonical_pdfs": [
+        {
+          "relative_path": "Class 12/Biology/lebo1dd/lebo102.pdf",
+          "absolute_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo102.pdf",
+          "exists": true,
+          "readable_pdf": true,
+          "page_count": 15,
+          "error": null
+        }
+      ],
+      "extraction_reinspection": {
+        "window_found": false,
+        "evidence_note": null,
+        "pdf_used": null,
+        "window_char_len": 0,
+        "window_preview": null
+      },
+      "ncert_term_hits": [
+        {
+          "needle": "Menstrual",
+          "char_offset": 1202,
+          "nearby_section_header": "2.1 THE MALE REPRODUCTIVE SYSTEM",
+          "snippet": "CHAPTER 2 HUMAN REPRODUCTION 2.1 The Male Reproductive System 2.2 The Female Reproductive System 2.3 Gametogenesis 2.4 Menstrual Cycle 2.5 Fertilisation and Implantation 2.6 Pregnancy and Embryonic Development 2.7 Parturition and Lactation ",
+          "pdf": "Class 12/Biology/lebo1dd/lebo102.pdf"
+        },
+        {
+          "needle": "Cycle",
+          "char_offset": 1212,
+          "nearby_section_header": "2.1 THE MALE REPRODUCTIVE SYSTEM",
+          "snippet": "HUMAN REPRODUCTION 2.1 The Male Reproductive System 2.2 The Female Reproductive System 2.3 Gametogenesis 2.4 Menstrual Cycle 2.5 Fertilisation and Implantation 2.6 Pregnancy and Embryonic Development 2.7 Parturition and Lactation Reprint 20",
+          "pdf": "Class 12/Biology/lebo1dd/lebo102.pdf"
+        },
+        {
+          "needle": "Follicular",
+          "char_offset": 14764,
+          "nearby_section_header": null,
+          "snippet": "also be caused due to some other underlying causes like stress, poor health etc. The menstrual phase is followed by the follicular phase. During this phase, the primary follicles in the ovary grow to become a fully mature Graafian follicle ",
+          "pdf": "Class 12/Biology/lebo1dd/lebo102.pdf"
+        },
+        {
+          "needle": "ovulatory",
+          "char_offset": 15583,
+          "nearby_section_header": null,
+          "snippet": "-cycle called LH surge induces rupture of Graafian follicle and thereby the release of ovum (ovulation). The ovulation (ovulatory phase) is followed by the luteal phase during which the remaining parts of the Graafian follicle transform as ",
+          "pdf": "Class 12/Biology/lebo1dd/lebo102.pdf"
+        },
+        {
+          "needle": "luteal",
+          "char_offset": 15619,
+          "nearby_section_header": null,
+          "snippet": "re of Graafian follicle and thereby the release of ovum (ovulation). The ovulation (ovulatory phase) is followed by the luteal phase during which the remaining parts of the Graafian follicle transform as the corpus luteum (Figure 2.9). The ",
+          "pdf": "Class 12/Biology/lebo1dd/lebo102.pdf"
+        }
+      ],
+      "evidence_appears_sufficient": true,
+      "recommended_owner_decision": "ACCEPT_KU",
+      "rationale": "Canonical PDF contains relevant NCERT language; KU-COVERAGE-002 token threshold failed, but evidence looks sufficient for a carefully windowed KU."
+    },
+    {
+      "ku002_record": {
+        "concept_code": "sv2c-zoology-05",
+        "subject": "ZOOLOGY",
+        "chapter": "structural-organisation-animals",
+        "reason": "insufficient_token_hits:2/3",
+        "pdfs_tried": [
+          "Class 11/Biology/kebo1dd/kebo107.pdf"
+        ]
+      },
+      "concept": {
+        "concept_id": "f051f535-f332-40a1-b911-015c1a803887",
+        "concept_code": "sv2c-zoology-05",
+        "concept_name": "Selected morphology of cockroach or frog",
+        "summary": "Organismal anatomy, not tissue classification.",
+        "ncert_reference": "ncert-books-class-11-biology-chapter-7.pdf",
+        "created_at": "2026-09-03 22:15:51.396485+05:30",
+        "updated_at": "2026-09-03 22:15:51.396485+05:30",
+        "subject": "ZOOLOGY",
+        "class_level": "11",
+        "chapter_code": "structural-organisation-animals",
+        "chapter_name": "Structural Organisation in Animals",
+        "topic_code": "sv2t-zoology-05",
+        "topic_name": "Cockroach / Frog (as in NCERT)",
+        "ku_count": 0,
+        "ncert_ku_count": 0,
+        "blueprint_count": 1,
+        "question_count": 1
+      },
+      "canonical_pdfs": [
+        {
+          "relative_path": "Class 11/Biology/kebo1dd/kebo107.pdf",
+          "absolute_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo107.pdf",
+          "exists": true,
+          "readable_pdf": true,
+          "page_count": 6,
+          "error": null
+        }
+      ],
+      "extraction_reinspection": {
+        "window_found": false,
+        "evidence_note": null,
+        "pdf_used": null,
+        "window_char_len": 0,
+        "window_preview": null
+      },
+      "ncert_term_hits": [
+        {
+          "needle": "morphology",
+          "char_offset": 2321,
+          "nearby_section_header": null,
+          "snippet": "nd is called evolutionary trend (You will study the details in class XII). In this chapter, you are being introduced to morphology and anatomy of frog. Morphology refers to study of form or externally visible features. In the case of plants",
+          "pdf": "Class 11/Biology/kebo1dd/kebo107.pdf"
+        },
+        {
+          "needle": "frog",
+          "char_offset": 1848,
+          "nearby_section_header": "7.1 Organ and Organ",
+          "snippet": "ns of cells constituting an organism. Each STRUCTURAL ORGANISATION IN ANIMALS CHAPTER 7 7.1 Organ and Organ System 7.2 Frogs Reprint 2026-27 80 BIOLOGY organ in our body is made of one or more type of tissues. For example, our heart consist",
+          "pdf": "Class 11/Biology/kebo1dd/kebo107.pdf"
+        },
+        {
+          "needle": "anatomy",
+          "char_offset": 2336,
+          "nearby_section_header": null,
+          "snippet": "olutionary trend (You will study the details in class XII). In this chapter, you are being introduced to morphology and anatomy of frog. Morphology refers to study of form or externally visible features. In the case of plants or microbes, t",
+          "pdf": "Class 11/Biology/kebo1dd/kebo107.pdf"
+        },
+        {
+          "needle": "tissue",
+          "char_offset": 886,
+          "nearby_section_header": null,
+          "snippet": "a group of similar cells alongwith intercellular substances perform a specific function. Such an organisation is called tissue. You may be surprised to know that all complex animals consist of only four basic types of tissues. These tissues",
+          "pdf": "Class 11/Biology/kebo1dd/kebo107.pdf"
+        }
+      ],
+      "evidence_appears_sufficient": false,
+      "recommended_owner_decision": "TAXONOMY_REVIEW",
+      "rationale": "Seed-style concept code with weak token match against NCERT text; rename/remap to NCERT terminology before KU creation."
+    },
+    {
+      "ku002_record": {
+        "concept_code": "biomolecule-classes",
+        "subject": "BOTANY",
+        "chapter": "biomolecules",
+        "reason": "insufficient_token_hits:2/3",
+        "pdfs_tried": [
+          "Class 11/Biology/kebo1dd/kebo109.pdf"
+        ]
+      },
+      "concept": {
+        "concept_id": "74858845-0941-4608-9e0d-127c3512909d",
+        "concept_code": "biomolecule-classes",
+        "concept_name": "Major Biomolecule Classes",
+        "summary": "Carbohydrates, proteins, lipids, and nucleic acids as primary biomolecules.",
+        "ncert_reference": "",
+        "created_at": "2026-08-31 22:54:06.648993+05:30",
+        "updated_at": "2026-08-31 22:54:06.648993+05:30",
+        "subject": "BOTANY",
+        "class_level": "11",
+        "chapter_code": "biomolecules",
+        "chapter_name": "Biomolecules",
+        "topic_code": "carbs-lipids",
+        "topic_name": "Carbohydrates and Lipids",
+        "ku_count": 0,
+        "ncert_ku_count": 0,
+        "blueprint_count": 1,
+        "question_count": 3
+      },
+      "canonical_pdfs": [
+        {
+          "relative_path": "Class 11/Biology/kebo1dd/kebo109.pdf",
+          "absolute_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo109.pdf",
+          "exists": true,
+          "readable_pdf": true,
+          "page_count": 16,
+          "error": null
+        }
+      ],
+      "extraction_reinspection": {
+        "window_found": false,
+        "evidence_note": null,
+        "pdf_used": null,
+        "window_char_len": 0,
+        "window_preview": null
+      },
+      "ncert_term_hits": [
+        {
+          "needle": "Major",
+          "char_offset": 19229,
+          "nearby_section_header": null,
+          "snippet": "active site, catalyse reactions at a high rate. Enzyme catalysts differ from inorganic catalysts in many ways, but one major difference needs mention. Inorganic catalysts work efficiently at high temperatures and high pressures, while enzym",
+          "pdf": "Class 11/Biology/kebo1dd/kebo109.pdf"
+        },
+        {
+          "needle": "Biomolecule",
+          "char_offset": 1732,
+          "nearby_section_header": "9.1 How to Analyse",
+          "snippet": "etentate or the acid-insoluble fraction. Scientists have found thousands of organic compounds in the acid-soluble pool. BIOMOLECULES CHAPTER 9 9.1 How to Analyse Chemical Composition? 9.2 Primary and Secondary Metabolites 9.3 Biomacromolecu",
+          "pdf": "Class 11/Biology/kebo1dd/kebo109.pdf"
+        },
+        {
+          "needle": "Classes",
+          "char_offset": 1990,
+          "nearby_section_header": "9.1 How to Analyse",
+          "snippet": "9.5 Polysaccharides 9.6 Nucleic Acids 9.7 Structure of Proteins 9.8 Enzymes Reprint 2026-27 BIOMOLECULES 105 In higher classes you will learn about how to analyse a living tissue sample and identify a particular organic compound. It will su",
+          "pdf": "Class 11/Biology/kebo1dd/kebo109.pdf"
+        },
+        {
+          "needle": "Carbohydrates",
+          "char_offset": 7761,
+          "nearby_section_header": null,
+          "snippet": "racil O Adenosine Uridine Nucleosides OH OH OH HOCH2 O OH OH HO OH CH OH 2 O C6H12O6 (Glucose) C5H10O5 (Ribose) Sugars (Carbohydrates) Serine Glycine Amino acids Alanine Figure 9.1 Diagrammatic representation of small molecular weight organ",
+          "pdf": "Class 11/Biology/kebo1dd/kebo109.pdf"
+        },
+        {
+          "needle": "proteins",
+          "char_offset": 1861,
+          "nearby_section_header": "9.1 How to Analyse",
+          "snippet": "LES CHAPTER 9 9.1 How to Analyse Chemical Composition? 9.2 Primary and Secondary Metabolites 9.3 Biomacromolecules 9.4 Proteins 9.5 Polysaccharides 9.6 Nucleic Acids 9.7 Structure of Proteins 9.8 Enzymes Reprint 2026-27 BIOMOLECULES 105 In ",
+          "pdf": "Class 11/Biology/kebo1dd/kebo109.pdf"
+        }
+      ],
+      "evidence_appears_sufficient": true,
+      "recommended_owner_decision": "ACCEPT_KU",
+      "rationale": "Canonical PDF contains relevant NCERT language; KU-COVERAGE-002 token threshold failed, but evidence looks sufficient for a carefully windowed KU."
+    },
+    {
+      "ku002_record": {
+        "concept_code": "pcr-and-downstream-processing",
+        "subject": "BOTANY",
+        "chapter": "biotechnology-principles-and-processes",
+        "reason": "insufficient_token_hits:2/3",
+        "pdfs_tried": [
+          "Class 12/Biology/lebo1dd/lebo109.pdf"
+        ]
+      },
+      "concept": {
+        "concept_id": "0ce2a22e-622a-40e3-9182-bee1f2eeba03",
+        "concept_code": "pcr-and-downstream-processing",
+        "concept_name": "PCR Amplification and Downstream Processing",
+        "summary": "NCERT XII Biology Ch 9 §9.3.3–9.3.6 — amplifying insert and recovering product.",
+        "ncert_reference": "",
+        "created_at": "2026-09-13 16:42:45.000791+05:30",
+        "updated_at": "2026-09-13 16:42:45.000791+05:30",
+        "subject": "BOTANY",
+        "class_level": "12",
+        "chapter_code": "biotechnology-principles-and-processes",
+        "chapter_name": "Biotechnology: Principles and Processes",
+        "topic_code": "recombinant-dna-processes",
+        "topic_name": "Processes of Recombinant DNA Technology",
+        "ku_count": 0,
+        "ncert_ku_count": 0,
+        "blueprint_count": 0,
+        "question_count": 0
+      },
+      "canonical_pdfs": [
+        {
+          "relative_path": "Class 12/Biology/lebo1dd/lebo109.pdf",
+          "absolute_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo109.pdf",
+          "exists": true,
+          "readable_pdf": true,
+          "page_count": 16,
+          "error": null
+        }
+      ],
+      "extraction_reinspection": {
+        "window_found": false,
+        "evidence_note": null,
+        "pdf_used": null,
+        "window_char_len": 0,
+        "window_preview": null
+      },
+      "ncert_term_hits": [
+        {
+          "needle": "Amplification",
+          "char_offset": 23268,
+          "nearby_section_header": null,
+          "snippet": "and the cut vector with space are mixed and ligase is added. This results in the preparation of recombinant DNA. 9.3.3 Amplification of Gene of Interest using PCR PCR stands for Polymerase Chain Reaction. In this reaction, multiple copies o",
+          "pdf": "Class 12/Biology/lebo1dd/lebo109.pdf"
+        },
+        {
+          "needle": "Downstream",
+          "char_offset": 27035,
+          "nearby_section_header": null,
+          "snippet": "system, pH control system and sampling ports so that small volumes of the culture can be withdrawn periodically. 9.3.6 Downstream Processing After completion of the biosynthetic stage, the product has to be subjected through a series of pro",
+          "pdf": "Class 12/Biology/lebo1dd/lebo109.pdf"
+        },
+        {
+          "needle": "Processing",
+          "char_offset": 27046,
+          "nearby_section_header": null,
+          "snippet": "control system and sampling ports so that small volumes of the culture can be withdrawn periodically. 9.3.6 Downstream Processing After completion of the biosynthetic stage, the product has to be subjected through a series of processes befo",
+          "pdf": "Class 12/Biology/lebo1dd/lebo109.pdf"
+        },
+        {
+          "needle": "Biology",
+          "char_offset": 606,
+          "nearby_section_header": null,
+          "snippet": "major utility of the biological world is as a source of food. Biotechnology, the twentieth century off-shoot of modern biology, changed our daily life as its products brought qualitative improvement in health and food production. The basic ",
+          "pdf": "Class 12/Biology/lebo1dd/lebo109.pdf"
+        },
+        {
+          "needle": "insert",
+          "char_offset": 2094,
+          "nearby_section_header": null,
+          "snippet": "ndently from the coding strand of DNA. Cohen had developed a method of removing these plasmids from the cell and then reinserting them in other cells. Combining this process with that of DNA splicing enabled Boyer and Cohen to recombine seg",
+          "pdf": "Class 12/Biology/lebo1dd/lebo109.pdf"
+        }
+      ],
+      "evidence_appears_sufficient": true,
+      "recommended_owner_decision": "ACCEPT_KU",
+      "rationale": "Canonical PDF contains relevant NCERT language; KU-COVERAGE-002 token threshold failed, but evidence looks sufficient for a carefully windowed KU."
+    },
+    {
+      "ku002_record": {
+        "concept_code": "sv2c-botany-14",
+        "subject": "BOTANY",
+        "chapter": "plant-growth-development",
+        "reason": "insufficient_token_hits:0/1",
+        "pdfs_tried": [
+          "Class 11/Biology/kebo1dd/kebo113.pdf"
+        ]
+      },
+      "concept": {
+        "concept_id": "9692fbef-270a-4b93-a4c1-c8783c43455c",
+        "concept_code": "sv2c-botany-14",
+        "concept_name": "SDP/LDP qualitative",
+        "summary": "Photoperiod, not PGR identity.",
+        "ncert_reference": "ncert-books-class-11-biology-chapter-13.pdf",
+        "created_at": "2026-09-03 22:15:50.781652+05:30",
+        "updated_at": "2026-09-03 22:15:50.781652+05:30",
+        "subject": "BOTANY",
+        "class_level": "11",
+        "chapter_code": "plant-growth-development",
+        "chapter_name": "Plant Growth and Development",
+        "topic_code": "sv2t-botany-14",
+        "topic_name": "Photoperiodism and Vernalisation",
+        "ku_count": 0,
+        "ncert_ku_count": 0,
+        "blueprint_count": 1,
+        "question_count": 1
+      },
+      "canonical_pdfs": [
+        {
+          "relative_path": "Class 11/Biology/kebo1dd/kebo113.pdf",
+          "absolute_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo113.pdf",
+          "exists": true,
+          "readable_pdf": true,
+          "page_count": 15,
+          "error": null
+        }
+      ],
+      "extraction_reinspection": {
+        "window_found": false,
+        "evidence_note": null,
+        "pdf_used": null,
+        "window_char_len": 0,
+        "window_preview": null
+      },
+      "ncert_term_hits": [
+        {
+          "needle": "Photoperiod",
+          "char_offset": 28814,
+          "nearby_section_header": null,
+          "snippet": "buds (e) ‘bolt’ a rosette plant (f) induce immediate stomatal closure in leaves. 9. Would a defoliated plant respond to photoperiodic cycle? Why? Reprint 2026-27 180 BIOLOGY 10. What would be expected to happen if: (a) GA3 is applied to ric",
+          "pdf": "Class 11/Biology/kebo1dd/kebo113.pdf"
+        }
+      ],
+      "evidence_appears_sufficient": false,
+      "recommended_owner_decision": "TAXONOMY_REVIEW",
+      "rationale": "Seed-style concept code with weak token match against NCERT text; rename/remap to NCERT terminology before KU creation."
+    },
+    {
+      "ku002_record": {
+        "concept_code": "pk-plantae-boundaries-and-cyanobacteria",
+        "subject": "BOTANY",
+        "chapter": "plant-kingdom",
+        "reason": "insufficient_token_hits:2/3",
+        "pdfs_tried": [
+          "Class 11/Biology/kebo1dd/kebo103.pdf"
+        ]
+      },
+      "concept": {
+        "concept_id": "79017193-9b36-5127-9b9f-09c13fccee06",
+        "concept_code": "pk-plantae-boundaries-and-cyanobacteria",
+        "concept_name": "Plantae Boundaries and Status of Cyanobacteria",
+        "summary": "Modern exclusion of fungi and wall-bearing Monera/Protista from Plantae; cyanobacteria are not algae.",
+        "ncert_reference": "ncert-books-class-11-biology-chapter-3.pdf — Introduction",
+        "created_at": "2026-09-12 12:14:04.933929+05:30",
+        "updated_at": "2026-09-12 12:14:04.933929+05:30",
+        "subject": "BOTANY",
+        "class_level": "11",
+        "chapter_code": "plant-kingdom",
+        "chapter_name": "Plant Kingdom",
+        "topic_code": "pk-t-plant-classification-systems",
+        "topic_name": "Plant Classification Systems",
+        "ku_count": 0,
+        "ncert_ku_count": 0,
+        "blueprint_count": 0,
+        "question_count": 2
+      },
+      "canonical_pdfs": [
+        {
+          "relative_path": "Class 11/Biology/kebo1dd/kebo103.pdf",
+          "absolute_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo103.pdf",
+          "exists": true,
+          "readable_pdf": true,
+          "page_count": 14,
+          "error": null
+        }
+      ],
+      "extraction_reinspection": {
+        "window_found": false,
+        "evidence_note": null,
+        "pdf_used": null,
+        "window_char_len": 0,
+        "window_preview": null
+      },
+      "ncert_term_hits": [
+        {
+          "needle": "Plantae",
+          "char_offset": 242,
+          "nearby_section_header": null,
+          "snippet": "sed by Whittaker (1969) wherein he suggested the Five Kingdom classification viz. Monera, Protista, Fungi, Animalia and Plantae. In this chapter, we will deal in detail with further classification within Kingdom Plantae popularly known as t",
+          "pdf": "Class 11/Biology/kebo1dd/kebo103.pdf"
+        },
+        {
+          "needle": "Cyanobacteria",
+          "char_offset": 643,
+          "nearby_section_header": null,
+          "snippet": "cell walls have now been excluded from Plantae though earlier classifications placed them in the same kingdom. So, the cyanobacteria that are also referred to as blue green algae are not ‘algae’ any more. In this chapter, we will describe A",
+          "pdf": "Class 11/Biology/kebo1dd/kebo103.pdf"
+        },
+        {
+          "needle": "fungi",
+          "char_offset": 222,
+          "nearby_section_header": null,
+          "snippet": "der the system proposed by Whittaker (1969) wherein he suggested the Five Kingdom classification viz. Monera, Protista, Fungi, Animalia and Plantae. In this chapter, we will deal in detail with further classification within Kingdom Plantae ",
+          "pdf": "Class 11/Biology/kebo1dd/kebo103.pdf"
+        },
+        {
+          "needle": "bearing",
+          "char_offset": 2998,
+          "nearby_section_header": "3.1 ALGAE",
+          "snippet": "nstituents of the plant to resolve confusions, are also used by taxonomists these days. 3.1 ALGAE Algae are chlorophyll-bearing, simple, thalloid, autotrophic and largely aquatic (both fresh water and marine) organisms. They occur in a vari",
+          "pdf": "Class 11/Biology/kebo1dd/kebo103.pdf"
+        },
+        {
+          "needle": "Monera",
+          "char_offset": 204,
+          "nearby_section_header": null,
+          "snippet": "iving organisms under the system proposed by Whittaker (1969) wherein he suggested the Five Kingdom classification viz. Monera, Protista, Fungi, Animalia and Plantae. In this chapter, we will deal in detail with further classification withi",
+          "pdf": "Class 11/Biology/kebo1dd/kebo103.pdf"
+        }
+      ],
+      "evidence_appears_sufficient": true,
+      "recommended_owner_decision": "ACCEPT_KU",
+      "rationale": "Canonical PDF contains relevant NCERT language; KU-COVERAGE-002 token threshold failed, but evidence looks sufficient for a carefully windowed KU."
+    },
+    {
+      "ku002_record": {
+        "concept_code": "sv2c-botany-02",
+        "subject": "BOTANY",
+        "chapter": "the-living-world",
+        "reason": "insufficient_token_hits:1/3",
+        "pdfs_tried": [
+          "Class 11/Biology/kebo1dd/kebo101.pdf"
+        ]
+      },
+      "concept": {
+        "concept_id": "8d237982-1a14-4339-96d5-7b6e002b725b",
+        "concept_code": "sv2c-botany-02",
+        "concept_name": "Herbarium / botanical gardens / keys (qualitative)",
+        "summary": "Aids, not binomial rules.",
+        "ncert_reference": "ncert-books-class-11-biology-chapter-1.pdf",
+        "created_at": "2026-09-03 22:15:49.552606+05:30",
+        "updated_at": "2026-09-03 22:15:49.552606+05:30",
+        "subject": "BOTANY",
+        "class_level": "11",
+        "chapter_code": "the-living-world",
+        "chapter_name": "The Living World",
+        "topic_code": "sv2t-botany-02",
+        "topic_name": "Taxonomic Aids",
+        "ku_count": 0,
+        "ncert_ku_count": 0,
+        "blueprint_count": 1,
+        "question_count": 1
+      },
+      "canonical_pdfs": [
+        {
+          "relative_path": "Class 11/Biology/kebo1dd/kebo101.pdf",
+          "absolute_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo101.pdf",
+          "exists": true,
+          "readable_pdf": true,
+          "page_count": 9,
+          "error": null
+        }
+      ],
+      "extraction_reinspection": {
+        "window_found": false,
+        "evidence_note": null,
+        "pdf_used": null,
+        "window_char_len": 0,
+        "window_preview": null
+      },
+      "ncert_term_hits": [
+        {
+          "needle": "botanical",
+          "char_offset": 5489,
+          "nearby_section_header": null,
+          "snippet": "For plants, scientific names are based on agreed principles and criteria, which are provided in International Code for Botanical Nomenclature (ICBN). You may ask, how are animals named? Animal taxonomists have evolved International Code of ",
+          "pdf": "Class 11/Biology/kebo1dd/kebo101.pdf"
+        },
+        {
+          "needle": "binomial",
+          "char_offset": 6134,
+          "nearby_section_header": null,
+          "snippet": "o components – the Generic name and the specific epithet. This system of providing a name with two components is called Binomial nomenclature. This naming system given by Carolus Linnaeus is being practised by biologists all over the world.",
+          "pdf": "Class 11/Biology/kebo1dd/kebo101.pdf"
+        },
+        {
+          "needle": "rules",
+          "char_offset": 6635,
+          "nearby_section_header": null,
+          "snippet": "this name Mangifera represents the genus while indica, is a particular species, or a specific epithet. Other universal rules of nomenclature are as follows: 1. Biological names are generally in Latin and written in italics. They are Latinis",
+          "pdf": "Class 11/Biology/kebo1dd/kebo101.pdf"
+        }
+      ],
+      "evidence_appears_sufficient": false,
+      "recommended_owner_decision": "TAXONOMY_REVIEW",
+      "rationale": "Seed-style concept code with weak token match against NCERT text; rename/remap to NCERT terminology before KU creation."
+    },
+    {
+      "ku002_record": {
+        "concept_code": "sv2c-chemistry-04",
+        "subject": "CHEMISTRY",
+        "chapter": "basic-concepts-chemistry",
+        "reason": "insufficient_token_hits:1/2",
+        "pdfs_tried": [
+          "Class 11/Chemistry/kech1dd/kech1dd/kech101.pdf"
+        ]
+      },
+      "concept": {
+        "concept_id": "4e0b026a-f99e-47da-a07c-528bbdde75e4",
+        "concept_code": "sv2c-chemistry-04",
+        "concept_name": "Molarity definition",
+        "summary": "Concentration unit, not empirical formula.",
+        "ncert_reference": "ncert-books-class-11-chemistry-chapter-1.pdf",
+        "created_at": "2026-09-03 22:15:48.931501+05:30",
+        "updated_at": "2026-09-03 22:15:48.931501+05:30",
+        "subject": "CHEMISTRY",
+        "class_level": "11",
+        "chapter_code": "basic-concepts-chemistry",
+        "chapter_name": "Some Basic Concepts of Chemistry",
+        "topic_code": "sv2t-chemistry-04",
+        "topic_name": "Molarity and Concentration",
+        "ku_count": 0,
+        "ncert_ku_count": 0,
+        "blueprint_count": 1,
+        "question_count": 1
+      },
+      "canonical_pdfs": [
+        {
+          "relative_path": "Class 11/Chemistry/kech1dd/kech1dd/kech101.pdf",
+          "absolute_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Chemistry\\kech1dd\\kech1dd\\kech101.pdf",
+          "exists": true,
+          "readable_pdf": true,
+          "page_count": 28,
+          "error": null
+        }
+      ],
+      "extraction_reinspection": {
+        "window_found": false,
+        "evidence_note": null,
+        "pdf_used": null,
+        "window_char_len": 0,
+        "window_preview": null
+      },
+      "ncert_term_hits": [
+        {
+          "needle": "Molarity",
+          "char_offset": 62841,
+          "nearby_section_header": null,
+          "snippet": "lume can be expressed in any of the following ways. 1. Mass per cent or weight per cent (w/w %) 2. Mole fraction 3. Molarity 4. Molality Let us now study each one of them in detail. Balancing a chemical equation According to the law of cons",
+          "pdf": "Class 11/Chemistry/kech1dd/kech1dd/kech101.pdf"
+        },
+        {
+          "needle": "definition",
+          "char_offset": 22977,
+          "nearby_section_header": null,
+          "snippet": "erived from these quantities. Maintaining the National Standards of Measurement The system of units, including unit definitions, keeps on changing with time. Whenever the accuracy of measurement of a particular unit was enhanced substantial",
+          "pdf": "Class 11/Chemistry/kech1dd/kech1dd/kech101.pdf"
+        },
+        {
+          "needle": "Concentration",
+          "char_offset": 62641,
+          "nearby_section_header": null,
+          "snippet": "e, it is important to understand as how the amount of substance is expressed when it is present in the solution. The concentration of a solution or the amount of substance present in its given volume can be expressed in any of the following",
+          "pdf": "Class 11/Chemistry/kech1dd/kech1dd/kech101.pdf"
+        },
+        {
+          "needle": "empirical",
+          "char_offset": 2348,
+          "nearby_section_header": null,
+          "snippet": "ms – mole and molar mass; • calculate the mass per cent of component elements constituting a compound; • determine empirical formula and molecular formula for a compound from the given experimental data; and • perform the stoichiometric cal",
+          "pdf": "Class 11/Chemistry/kech1dd/kech1dd/kech101.pdf"
+        },
+        {
+          "needle": "formula",
+          "char_offset": 2195,
+          "nearby_section_header": null,
+          "snippet": "ous laws of chemical combination; • appreciate significance of atomic mass, average atomic mass, molecular mass and formula mass; • describe the terms – mole and molar mass; • calculate the mass per cent of component elements constituting a",
+          "pdf": "Class 11/Chemistry/kech1dd/kech1dd/kech101.pdf"
+        }
+      ],
+      "evidence_appears_sufficient": false,
+      "recommended_owner_decision": "TAXONOMY_REVIEW",
+      "rationale": "Seed-style concept code with weak token match against NCERT text; rename/remap to NCERT terminology before KU creation."
+    },
+    {
+      "ku002_record": {
+        "concept_code": "sp-sp2-sp3",
+        "subject": "CHEMISTRY",
+        "chapter": "chemical-bonding",
+        "reason": "insufficient_token_hits:0/1",
+        "pdfs_tried": [
+          "Class 11/Chemistry/kech1dd/kech1dd/kech104.pdf"
+        ]
+      },
+      "concept": {
+        "concept_id": "8abc776c-8f7b-4cef-844b-46afa4fe9f66",
+        "concept_code": "sp-sp2-sp3",
+        "concept_name": "sp, sp2, sp3 Hybridization",
+        "summary": "Mixing of atomic orbitals to form new hybrid orbitals of equal energy.",
+        "ncert_reference": "",
+        "created_at": "2026-08-01 15:39:26.73108+05:30",
+        "updated_at": "2026-08-01 15:39:26.73108+05:30",
+        "subject": "CHEMISTRY",
+        "class_level": "11",
+        "chapter_code": "chemical-bonding",
+        "chapter_name": "Chemical Bonding and Molecular Structure",
+        "topic_code": "hybridization",
+        "topic_name": "Hybridization",
+        "ku_count": 18,
+        "ncert_ku_count": 0,
+        "blueprint_count": 4,
+        "question_count": 23
+      },
+      "canonical_pdfs": [
+        {
+          "relative_path": "Class 11/Chemistry/kech1dd/kech1dd/kech104.pdf",
+          "absolute_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Chemistry\\kech1dd\\kech1dd\\kech104.pdf",
+          "exists": true,
+          "readable_pdf": true,
+          "page_count": 36,
+          "error": null
+        }
+      ],
+      "extraction_reinspection": {
+        "window_found": false,
+        "evidence_note": null,
+        "pdf_used": null,
+        "window_char_len": 0,
+        "window_preview": null
+      },
+      "ncert_term_hits": [
+        {
+          "needle": "atomic",
+          "char_offset": 879,
+          "nearby_section_header": null,
+          "snippet": "p and d orbitals and draw shapes of simSle FoYalent moleFules  desFribe the moleFular orbital theory of homonuclear diatomic molecules;  e[Slain the FonFeSt of hydrogen bond. CHEMICAL BONDING AND MOLECULAR STRUCTURE Matter is made up of o",
+          "pdf": "Class 11/Chemistry/kech1dd/kech1dd/kech104.pdf"
+        },
+        {
+          "needle": "orbitals",
+          "char_offset": 767,
+          "nearby_section_header": null,
+          "snippet": "ediFt the direFtional SroSerties of FoYalent bonds  e[Slain the different tySes of hybridisation inYolYing s, p and d orbitals and draw shapes of simSle FoYalent moleFules  desFribe the moleFular orbital theory of homonuclear diatomic mol",
+          "pdf": "Class 11/Chemistry/kech1dd/kech1dd/kech104.pdf"
+        },
+        {
+          "needle": "hybrid",
+          "char_offset": 732,
+          "nearby_section_header": null,
+          "snippet": "e formation of FoYalent bonds  SrediFt the direFtional SroSerties of FoYalent bonds  e[Slain the different tySes of hybridisation inYolYing s, p and d orbitals and draw shapes of simSle FoYalent moleFules  desFribe the moleFular orbital ",
+          "pdf": "Class 11/Chemistry/kech1dd/kech1dd/kech104.pdf"
+        },
+        {
+          "needle": "equal",
+          "char_offset": 4638,
+          "nearby_section_header": null,
+          "snippet": "s helSs to FalFulate the common or group valence of the element. 7he grouS YalenFe of the elements is generally either equal to the number of dots in /ewis symbols or 8 minus the number of dots or YalenFe eleFtrons\u0011 Kössel, in relation to c",
+          "pdf": "Class 11/Chemistry/kech1dd/kech1dd/kech104.pdf"
+        },
+        {
+          "needle": "energy",
+          "char_offset": 2430,
+          "nearby_section_header": null,
+          "snippet": "on of elements and the SeriodiF table\u0011 (Yery system tends to be more stable and bonding is nature’s way of lowering the energy of the system to attain stability. Reprint 2026-27 101 CHEMICAL BONDING AND MOLECULAR STRUCTURE 4.1 KÖSSEL-LEWIS ",
+          "pdf": "Class 11/Chemistry/kech1dd/kech1dd/kech104.pdf"
+        }
+      ],
+      "evidence_appears_sufficient": true,
+      "recommended_owner_decision": "ACCEPT_KU",
+      "rationale": "Canonical PDF contains relevant NCERT language; KU-COVERAGE-002 token threshold failed, but evidence looks sufficient for a carefully windowed KU."
+    },
+    {
+      "ku002_record": {
+        "concept_code": "sv2c-chemistry-14",
+        "subject": "CHEMISTRY",
+        "chapter": "chemical-bonding",
+        "reason": "insufficient_token_hits:2/3",
+        "pdfs_tried": [
+          "Class 11/Chemistry/kech1dd/kech1dd/kech104.pdf"
+        ]
+      },
+      "concept": {
+        "concept_id": "8190e64d-10eb-4304-b3d4-11446bbb63eb",
+        "concept_code": "sv2c-chemistry-14",
+        "concept_name": "Electronegativity and bond type",
+        "summary": "Bond type, not lattice magnitudes.",
+        "ncert_reference": "ncert-books-class-11-chemistry-chapter-4.pdf",
+        "created_at": "2026-09-03 22:15:49.101572+05:30",
+        "updated_at": "2026-09-03 22:15:49.101572+05:30",
+        "subject": "CHEMISTRY",
+        "class_level": "11",
+        "chapter_code": "chemical-bonding",
+        "chapter_name": "Chemical Bonding and Molecular Structure",
+        "topic_code": "sv2t-chemistry-14",
+        "topic_name": "Ionic vs Covalent Bonding",
+        "ku_count": 0,
+        "ncert_ku_count": 0,
+        "blueprint_count": 1,
+        "question_count": 1
+      },
+      "canonical_pdfs": [
+        {
+          "relative_path": "Class 11/Chemistry/kech1dd/kech1dd/kech104.pdf",
+          "absolute_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Chemistry\\kech1dd\\kech1dd\\kech104.pdf",
+          "exists": true,
+          "readable_pdf": true,
+          "page_count": 36,
+          "error": null
+        }
+      ],
+      "extraction_reinspection": {
+        "window_found": false,
+        "evidence_note": null,
+        "pdf_used": null,
+        "window_char_len": 0,
+        "window_preview": null
+      },
+      "ncert_term_hits": [
+        {
+          "needle": "bond",
+          "char_offset": 345,
+          "nearby_section_header": null,
+          "snippet": "observed facts. UNIT 4 After studying this Unit, you will be able to  understand .|ssel\u0010/ewis approach to chemical bonding;  e[Slain the oFtet rule and its limitations\u000f draw /ewis struFtures of simple molecules;  e[Slain the formation of",
+          "pdf": "Class 11/Chemistry/kech1dd/kech1dd/kech104.pdf"
+        },
+        {
+          "needle": "type",
+          "char_offset": 480,
+          "nearby_section_header": null,
+          "snippet": "ain the oFtet rule and its limitations\u000f draw /ewis struFtures of simple molecules;  e[Slain the formation of different types of bonds;  desFribe the 96(35 theory and predict the geometry of simple molecules;  e[Slain the YalenFe bond app",
+          "pdf": "Class 11/Chemistry/kech1dd/kech1dd/kech104.pdf"
+        },
+        {
+          "needle": "lattice",
+          "char_offset": 17419,
+          "nearby_section_header": "4.2 IONIC OR ELECTROVALENT BOND",
+          "snippet": "ons from the resSeFtiYe neutral atoms; • 7he arrangement of the SositiYe and negatiYe ions in the solid\u000f that is\u000f the lattice of the crystalline compound. 7he formation of a SositiYe ion inYolYes ioni]ation\u000f i\u0011e\u0011\u000f remoYal of eleFtron s from",
+          "pdf": "Class 11/Chemistry/kech1dd/kech1dd/kech104.pdf"
+        }
+      ],
+      "evidence_appears_sufficient": false,
+      "recommended_owner_decision": "TAXONOMY_REVIEW",
+      "rationale": "Seed-style concept code with weak token match against NCERT text; rename/remap to NCERT terminology before KU creation."
+    },
+    {
+      "ku002_record": {
+        "concept_code": "primary-and-secondary-valency",
+        "subject": "CHEMISTRY",
+        "chapter": "coordination-compounds",
+        "reason": "insufficient_token_hits:2/3",
+        "pdfs_tried": [
+          "Class 12/Chemistry 1/lech1dd/lech105.pdf"
+        ]
+      },
+      "concept": {
+        "concept_id": "a5ddc0f3-60b1-4066-820e-745190fa7fc6",
+        "concept_code": "primary-and-secondary-valency",
+        "concept_name": "Primary and Secondary Valencies",
+        "summary": "NCERT XII Ch 5 §5.1 — Werner's postulates; coordination number and coordination sphere.",
+        "ncert_reference": "",
+        "created_at": "2026-09-13 16:34:41.166402+05:30",
+        "updated_at": "2026-09-13 16:34:41.166402+05:30",
+        "subject": "CHEMISTRY",
+        "class_level": "12",
+        "chapter_code": "coordination-compounds",
+        "chapter_name": "Coordination Compounds",
+        "topic_code": "werners-theory-and-terminology",
+        "topic_name": "Werner's Theory and Basic Terminology",
+        "ku_count": 0,
+        "ncert_ku_count": 0,
+        "blueprint_count": 0,
+        "question_count": 0
+      },
+      "canonical_pdfs": [
+        {
+          "relative_path": "Class 12/Chemistry 1/lech1dd/lech105.pdf",
+          "absolute_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 1\\lech1dd\\lech105.pdf",
+          "exists": true,
+          "readable_pdf": true,
+          "page_count": 23,
+          "error": null
+        }
+      ],
+      "extraction_reinspection": {
+        "window_found": false,
+        "evidence_note": null,
+        "pdf_used": null,
+        "window_char_len": 0,
+        "window_preview": null
+      },
+      "ncert_term_hits": [
+        {
+          "needle": "Primary",
+          "char_offset": 2126,
+          "nearby_section_header": null,
+          "snippet": "s and studied their physical and chemical behaviour by simple experimental techniques. Werner proposed the concept of a primary valence and a secondary valence for a metal ion. Binary compounds such as CrCl3, CoCl2 or PdCl2 have primary val",
+          "pdf": "Class 12/Chemistry 1/lech1dd/lech105.pdf"
+        },
+        {
+          "needle": "Secondary",
+          "char_offset": 2148,
+          "nearby_section_header": null,
+          "snippet": "ysical and chemical behaviour by simple experimental techniques. Werner proposed the concept of a primary valence and a secondary valence for a metal ion. Binary compounds such as CrCl3, CoCl2 or PdCl2 have primary valence of 3, 2 and 2 res",
+          "pdf": "Class 12/Chemistry 1/lech1dd/lech105.pdf"
+        },
+        {
+          "needle": "Werner",
+          "char_offset": 1013,
+          "nearby_section_header": null,
+          "snippet": "cinal chemistry. Coordination Compounds After studying this Unit, you will be able to • appreciate the postulates of Werner’s theory of coordination compounds; • know the meaning of the terms: coordination entity, central atom/ ion, ligand,",
+          "pdf": "Class 12/Chemistry 1/lech1dd/lech105.pdf"
+        },
+        {
+          "needle": "postulates",
+          "char_offset": 998,
+          "nearby_section_header": null,
+          "snippet": "dyeing and medicinal chemistry. Coordination Compounds After studying this Unit, you will be able to • appreciate the postulates of Werner’s theory of coordination compounds; • know the meaning of the terms: coordination entity, central ato",
+          "pdf": "Class 12/Chemistry 1/lech1dd/lech105.pdf"
+        },
+        {
+          "needle": "coordination",
+          "char_offset": 264,
+          "nearby_section_header": null,
+          "snippet": "und to a number of anions or neutral molecules by sharing of electrons. In modern terminology such compounds are called coordination compounds. The chemistry of coordination compounds is an important and challenging area of modern inorganic",
+          "pdf": "Class 12/Chemistry 1/lech1dd/lech105.pdf"
+        }
+      ],
+      "evidence_appears_sufficient": true,
+      "recommended_owner_decision": "ACCEPT_KU",
+      "rationale": "Canonical PDF contains relevant NCERT language; KU-COVERAGE-002 token threshold failed, but evidence looks sufficient for a carefully windowed KU."
+    },
+    {
+      "ku002_record": {
+        "concept_code": "sv2c-chemistry-34",
+        "subject": "CHEMISTRY",
+        "chapter": "electrochemistry",
+        "reason": "insufficient_token_hits:2/3",
+        "pdfs_tried": [
+          "Class 12/Chemistry 1/lech1dd/lech102.pdf"
+        ]
+      },
+      "concept": {
+        "concept_id": "bc5883a0-1825-4ff6-9b2e-9d6a7253623a",
+        "concept_code": "sv2c-chemistry-34",
+        "concept_name": "Concentration dependence of EMF (qualitative)",
+        "summary": "Nernst, not conductance.",
+        "ncert_reference": "ncert-books-class-12-chemistry-chapter-2.pdf",
+        "created_at": "2026-09-03 22:15:49.439465+05:30",
+        "updated_at": "2026-09-03 22:15:49.439465+05:30",
+        "subject": "CHEMISTRY",
+        "class_level": "12",
+        "chapter_code": "electrochemistry",
+        "chapter_name": "Electrochemistry",
+        "topic_code": "sv2t-chemistry-34",
+        "topic_name": "Nernst Equation",
+        "ku_count": 0,
+        "ncert_ku_count": 0,
+        "blueprint_count": 1,
+        "question_count": 1
+      },
+      "canonical_pdfs": [
+        {
+          "relative_path": "Class 12/Chemistry 1/lech1dd/lech102.pdf",
+          "absolute_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 1\\lech1dd\\lech102.pdf",
+          "exists": true,
+          "readable_pdf": true,
+          "page_count": 30,
+          "error": null
+        }
+      ],
+      "extraction_reinspection": {
+        "window_found": false,
+        "evidence_note": null,
+        "pdf_used": null,
+        "window_char_len": 0,
+        "window_preview": null
+      },
+      "ncert_term_hits": [
+        {
+          "needle": "Concentration",
+          "char_offset": 1821,
+          "nearby_section_header": null,
+          "snippet": "lar conductivity; · justify the variation of conductivity and molar conductivity of solutions with change in their concentration and define °m L (molar conductivity at zero concentration or infinite dilution); · enunciate Kohlrausch law and",
+          "pdf": "Class 12/Chemistry 1/lech1dd/lech102.pdf"
+        },
+        {
+          "needle": "dependence",
+          "char_offset": 63607,
+          "nearby_section_header": null,
+          "snippet": "–nF ( ) o cell E ) and equilibrium constant (DrGo = – RT ln K) of the reaction taking place in the cell. Concentration dependence of the potentials of the electrodes and the cells are given by Nernst equation. The conductivity, k, of an ele",
+          "pdf": "Class 12/Chemistry 1/lech1dd/lech102.pdf"
+        },
+        {
+          "needle": "Nernst",
+          "char_offset": 1197,
+          "nearby_section_header": null,
+          "snippet": "will be able to · describe an electrochemical cell and differentiate between galvanic and electrolytic cells; · apply Nernst equation for calculating the emf of galvanic cell and define standard potential of the cell; · derive relation betw",
+          "pdf": "Class 12/Chemistry 1/lech1dd/lech102.pdf"
+        },
+        {
+          "needle": "conductance",
+          "char_offset": 22382,
+          "nearby_section_header": null,
+          "snippet": "n Solution Reprint 2026-27 41 Electrochemistry It is necessary to define a few terms before we consider the subject of conductance of electricity through electrolytic solutions. The electrical resistance is represented by the symbol ‘R’ and",
+          "pdf": "Class 12/Chemistry 1/lech1dd/lech102.pdf"
+        }
+      ],
+      "evidence_appears_sufficient": false,
+      "recommended_owner_decision": "TAXONOMY_REVIEW",
+      "rationale": "Seed-style concept code with weak token match against NCERT text; rename/remap to NCERT terminology before KU creation."
+    },
+    {
+      "ku002_record": {
+        "concept_code": "concentration-expressions",
+        "subject": "CHEMISTRY",
+        "chapter": "solutions",
+        "reason": "insufficient_token_hits:1/2",
+        "pdfs_tried": [
+          "Class 12/Chemistry 1/lech1dd/lech101.pdf"
+        ]
+      },
+      "concept": {
+        "concept_id": "2432e7e9-3fba-4957-991f-b9323b76b020",
+        "concept_code": "concentration-expressions",
+        "concept_name": "Concentration Expressions",
+        "summary": "NCERT XII Ch 1 §1.2 — mass %, volume %, ppm, mole fraction, molarity and molality.",
+        "ncert_reference": "",
+        "created_at": "2026-09-13 16:34:41.166402+05:30",
+        "updated_at": "2026-09-13 16:34:41.166402+05:30",
+        "subject": "CHEMISTRY",
+        "class_level": "12",
+        "chapter_code": "solutions",
+        "chapter_name": "Solutions",
+        "topic_code": "types-and-concentration-of-solutions",
+        "topic_name": "Types and Concentration of Solutions",
+        "ku_count": 0,
+        "ncert_ku_count": 0,
+        "blueprint_count": 0,
+        "question_count": 0
+      },
+      "canonical_pdfs": [
+        {
+          "relative_path": "Class 12/Chemistry 1/lech1dd/lech101.pdf",
+          "absolute_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 1\\lech1dd\\lech101.pdf",
+          "exists": true,
+          "readable_pdf": true,
+          "page_count": 30,
+          "error": null
+        }
+      ],
+      "extraction_reinspection": {
+        "window_found": false,
+        "evidence_note": null,
+        "pdf_used": null,
+        "window_char_len": 0,
+        "window_preview": null
+      },
+      "ncert_term_hits": [
+        {
+          "needle": "Concentration",
+          "char_offset": 114,
+          "nearby_section_header": null,
+          "snippet": "After studying this Unit, you will be able to · describe the formation of different types of solutions; · express concentration of solution in different units; · state and explain Henry’s law and Raoult’s law; · distinguish between ideal an",
+          "pdf": "Class 12/Chemistry 1/lech1dd/lech101.pdf"
+        },
+        {
+          "needle": "volume",
+          "char_offset": 4105,
+          "nearby_section_header": null,
+          "snippet": "cations. For example, commercial bleaching solution contains 3.62 mass percentage of sodium hypochlorite in water. (ii) Volume percentage (V/V): The volume percentage is defined as: Volume % of a component = ´ Volume of the component 100 To",
+          "pdf": "Class 12/Chemistry 1/lech1dd/lech101.pdf"
+        },
+        {
+          "needle": "fraction",
+          "char_offset": 5822,
+          "nearby_section_header": null,
+          "snippet": "water. The concentration of pollutants in water or atmosphere is often expressed in terms of mg mL –1 or ppm. (v) Mole fraction: Commonly used symbol for mole fraction is x and subscript used on the right hand side of x denotes the componen",
+          "pdf": "Class 12/Chemistry 1/lech1dd/lech101.pdf"
+        },
+        {
+          "needle": "molarity",
+          "char_offset": 7504,
+          "nearby_section_header": null,
+          "snippet": "of water can also be calculated as: 1 – 0.068 = 0.932 Example 1.1 Example 1.1 Example 1.1 Example 1.1 Example 1.1 (vi) Molarity: Molarity (M) is defined as number of moles of solute dissolved in one litre (or one cubic decimetre) of solutio",
+          "pdf": "Class 12/Chemistry 1/lech1dd/lech101.pdf"
+        },
+        {
+          "needle": "molality",
+          "char_offset": 8412,
+          "nearby_section_header": null,
+          "snippet": "olutions Example 1.3 Example 1.3 Example 1.3 Example 1.3 Example 1.3 Solution Solution Solution Solution Solution (vii) Molality: Molality (m) is defined as the number of moles of the solute per kilogram (kg) of the solvent and is expressed",
+          "pdf": "Class 12/Chemistry 1/lech1dd/lech101.pdf"
+        }
+      ],
+      "evidence_appears_sufficient": true,
+      "recommended_owner_decision": "ACCEPT_KU",
+      "rationale": "Canonical PDF contains relevant NCERT language; KU-COVERAGE-002 token threshold failed, but evidence looks sufficient for a carefully windowed KU."
+    },
+    {
+      "ku002_record": {
+        "concept_code": "sv2c-chemistry-19",
+        "subject": "CHEMISTRY",
+        "chapter": "thermodynamics-chemistry",
+        "reason": "insufficient_token_hits:2/3",
+        "pdfs_tried": [
+          "Class 11/Chemistry/kech1dd/kech1dd/kech105.pdf"
+        ]
+      },
+      "concept": {
+        "concept_id": "bc58f717-ffd3-42e9-af40-0ed0d98bf798",
+        "concept_code": "sv2c-chemistry-19",
+        "concept_name": "Second law / Gibbs energy qualitative",
+        "summary": "Spontaneity, not Hess arithmetic.",
+        "ncert_reference": "ncert-books-class-11-chemistry-chapter-5.pdf",
+        "created_at": "2026-09-03 22:15:49.192677+05:30",
+        "updated_at": "2026-09-03 22:15:49.192677+05:30",
+        "subject": "CHEMISTRY",
+        "class_level": "11",
+        "chapter_code": "thermodynamics-chemistry",
+        "chapter_name": "Thermodynamics",
+        "topic_code": "sv2t-chemistry-19",
+        "topic_name": "Entropy and Spontaneity",
+        "ku_count": 0,
+        "ncert_ku_count": 0,
+        "blueprint_count": 1,
+        "question_count": 1
+      },
+      "canonical_pdfs": [
+        {
+          "relative_path": "Class 11/Chemistry/kech1dd/kech1dd/kech105.pdf",
+          "absolute_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Chemistry\\kech1dd\\kech1dd\\kech105.pdf",
+          "exists": true,
+          "readable_pdf": true,
+          "page_count": 32,
+          "error": null
+        }
+      ],
+      "extraction_reinspection": {
+        "window_found": false,
+        "evidence_note": null,
+        "pdf_used": null,
+        "window_char_len": 0,
+        "window_preview": null
+      },
+      "ncert_term_hits": [
+        {
+          "needle": "Second",
+          "char_offset": 9255,
+          "nearby_section_header": null,
+          "snippet": "re, ∆T = TB–TA. Let the internal energy of the system in state B be UB and the change in internal energy, ∆U =UB– UA. Second way: We now do an equal amount (i.e., 1kJ) electrical work with the help of an immersion rod and note down the temp",
+          "pdf": "Class 11/Chemistry/kech1dd/kech1dd/kech105.pdf"
+        },
+        {
+          "needle": "Gibbs",
+          "char_offset": 2495,
+          "nearby_section_header": null,
+          "snippet": "cesses; • e x p l a i n e n t r o p y a s a thermodynamic state function and apply it for spontaneity; • explain Gibbs energy change (∆G); and • establish relationship between ∆G and spontaneity, ∆G and equilibrium constant. Reprint 2026-27",
+          "pdf": "Class 11/Chemistry/kech1dd/kech1dd/kech105.pdf"
+        },
+        {
+          "needle": "energy",
+          "char_offset": 226,
+          "nearby_section_header": null,
+          "snippet": "within the framework of the applicability of its basic concepts, it will never be overthrown. Albert Einstein Chemical energy stored by molecules can be released as heat during chemical reactions when a fuel like methane, cooking gas or coa",
+          "pdf": "Class 11/Chemistry/kech1dd/kech1dd/kech105.pdf"
+        },
+        {
+          "needle": "qualitative",
+          "char_offset": 64626,
+          "nearby_section_header": null,
+          "snippet": "ere will be a resultant increase in entropy. The change in entropy accompanying a chemical reaction may be estimated qualitatively by a consideration of the structures of the species taking part in the reaction. Decrease of regularity in st",
+          "pdf": "Class 11/Chemistry/kech1dd/kech1dd/kech105.pdf"
+        },
+        {
+          "needle": "Spontaneity",
+          "char_offset": 2471,
+          "nearby_section_header": null,
+          "snippet": "and non- spontaneous processes; • e x p l a i n e n t r o p y a s a thermodynamic state function and apply it for spontaneity; • explain Gibbs energy change (∆G); and • establish relationship between ∆G and spontaneity, ∆G and equilibrium c",
+          "pdf": "Class 11/Chemistry/kech1dd/kech1dd/kech105.pdf"
+        }
+      ],
+      "evidence_appears_sufficient": false,
+      "recommended_owner_decision": "TAXONOMY_REVIEW",
+      "rationale": "Seed-style concept code with weak token match against NCERT text; rename/remap to NCERT terminology before KU creation."
+    }
+  ],
+  "decision_counts": {
+    "ACCEPT_KU": 11,
+    "TAXONOMY_REVIEW": 10
+  },
+  "botany_duplicate": {
+    "pair": {
+      "sv2c-botany-15": {
+        "concept": {
+          "concept_id": "2beef8b8-b80a-49cc-ab5b-60a56c8d08da",
+          "concept_code": "sv2c-botany-15",
+          "concept_name": "Syngamy and triple fusion",
+          "summary": "Class XII flowering-plant reproduction.",
+          "ncert_reference": "ncert-books-class-12-biology-chapter-1.pdf",
+          "created_at": "2026-09-03 22:15:50.875925+05:30",
+          "updated_at": "2026-09-03 22:15:50.875925+05:30",
+          "subject": "BOTANY",
+          "class_level": "12",
+          "chapter_code": "sexual-reproduction-flowering-plants",
+          "chapter_name": "Sexual Reproduction in Flowering Plants",
+          "topic_code": "sv2t-botany-15",
+          "topic_name": "Double Fertilisation",
+          "ku_count": 1,
+          "ncert_ku_count": 1,
+          "blueprint_count": 2,
+          "question_count": 1
+        },
+        "knowledge_units": [
+          {
+            "ku_id": "c11eb234-096a-4e1a-870a-985466297a5c",
+            "validation_status": "PASSED",
+            "summary": "This step is referred to as emasculation. Emasculated flowers\nhave to be covered with a bag of suitable size, generally made up of butter\npaper, to prevent contamination of its stigma with unwanted pollen.",
+            "source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo101.pdf",
+            "section_heading": "CF-C5 / Syngamy and triple fusion"
+          }
+        ],
+        "blueprints": [
+          {
+            "blueprint_id": "c635a02e-2c2e-4812-a082-6af44c067efc",
+            "blueprint_key": "bp-create-001-20260913-bp-botany-sv2c-botany-15-mcq",
+            "provenance_tier": "authoritative",
+            "target_count": 2
+          },
+          {
+            "blueprint_id": "20a8d337-2601-40e3-bf3f-8a79248a4b4b",
+            "blueprint_key": "production-seed-v2-2026-09-03-bp-botany-15",
+            "provenance_tier": "ai",
+            "target_count": 1
+          }
+        ],
+        "ncert_pdf": "Class 12/Biology/lebo1dd/lebo101.pdf",
+        "extraction": {
+          "window_found": true,
+          "evidence_note": "token_window:score=3",
+          "window_preview": "ary. This step is referred to as emasculation. Emasculated flowers have to be covered with a bag of suitable size, generally made up of butter paper, to prevent contamination of its stigma with unwanted pollen. This process is called bagging. When the stigma of bagged flower attains receptivity, mature pollen grains co",
+          "term_hits": [
+            {
+              "needle": "syngamy",
+              "char_offset": 33034,
+              "nearby_section_header": "1.3 DOUBLE FERTILISATION",
+              "snippet": "lasm of the synergid. One of the male gametes moves towards the egg cell and fuses with its nucleus thus completing the syngamy. This results in the formation of a diploid cell, the zygote. The other male gamete moves towards the two polar "
+            },
+            {
+              "needle": "triple fusion",
+              "char_offset": 33346,
+              "nearby_section_header": null,
+              "snippet": "ploid primary endosperm nucleus (PEN) (Figure 1.13a). As this involves the fusion of three haploid nuclei it is termed triple fusion. Since two types of fusions, syngamy and triple fusion take place in an embryo sac the phenomenon is termed"
+            },
+            {
+              "needle": "double fertilisation",
+              "char_offset": 3570,
+              "nearby_section_header": "1.1 Flower – A Fascinating",
+              "snippet": "ommonly cultivated at 1.1 Flower – A Fascinating Organ of Angiosperms 1.2 Pre-fertilisation : Structures and Events 1.3 Double Fertilisation 1.4 Post-fertilisation: Structures and Events 1.5 Apomixis and Polyembryony CHAPTER 1 SEXUAL REPROD"
+            }
+          ]
+        }
+      },
+      "syngamy-and-triple-fusion": {
+        "concept": {
+          "concept_id": "0904c2ef-7a1a-484e-9a12-1db45e0a5347",
+          "concept_code": "syngamy-and-triple-fusion",
+          "concept_name": "Syngamy and Triple Fusion",
+          "summary": "NCERT XII Biology Ch 1 §1.3 — fusion events characteristic of angiosperms.",
+          "ncert_reference": "",
+          "created_at": "2026-09-13 16:42:45.000791+05:30",
+          "updated_at": "2026-09-13 16:42:45.000791+05:30",
+          "subject": "BOTANY",
+          "class_level": "12",
+          "chapter_code": "sexual-reproduction-flowering-plants",
+          "chapter_name": "Sexual Reproduction in Flowering Plants",
+          "topic_code": "double-fertilisation",
+          "topic_name": "Double Fertilisation",
+          "ku_count": 1,
+          "ncert_ku_count": 1,
+          "blueprint_count": 1,
+          "question_count": 0
+        },
+        "knowledge_units": [
+          {
+            "ku_id": "30836ff5-06ba-4482-9a80-3dd2db712512",
+            "validation_status": "PASSED",
+            "summary": "This step is referred to as emasculation. Emasculated flowers\nhave to be covered with a bag of suitable size, generally made up of butter\npaper, to prevent contamination of its stigma with unwanted pollen.",
+            "source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo101.pdf",
+            "section_heading": "CF-C5 / Syngamy and Triple Fusion"
+          }
+        ],
+        "blueprints": [
+          {
+            "blueprint_id": "38068c21-fdc3-4b4b-a57d-fb0694f8e0a6",
+            "blueprint_key": "bp-create-001-20260913-bp-botany-syngamy-and-triple-fusion-mcq",
+            "provenance_tier": "authoritative",
+            "target_count": 2
+          }
+        ],
+        "ncert_pdf": "Class 12/Biology/lebo1dd/lebo101.pdf",
+        "extraction": {
+          "window_found": true,
+          "evidence_note": "token_window:score=3",
+          "window_preview": "ary. This step is referred to as emasculation. Emasculated flowers have to be covered with a bag of suitable size, generally made up of butter paper, to prevent contamination of its stigma with unwanted pollen. This process is called bagging. When the stigma of bagged flower attains receptivity, mature pollen grains co",
+          "term_hits": [
+            {
+              "needle": "syngamy",
+              "char_offset": 33034,
+              "nearby_section_header": "1.3 DOUBLE FERTILISATION",
+              "snippet": "lasm of the synergid. One of the male gametes moves towards the egg cell and fuses with its nucleus thus completing the syngamy. This results in the formation of a diploid cell, the zygote. The other male gamete moves towards the two polar "
+            },
+            {
+              "needle": "triple fusion",
+              "char_offset": 33346,
+              "nearby_section_header": null,
+              "snippet": "ploid primary endosperm nucleus (PEN) (Figure 1.13a). As this involves the fusion of three haploid nuclei it is termed triple fusion. Since two types of fusions, syngamy and triple fusion take place in an embryo sac the phenomenon is termed"
+            },
+            {
+              "needle": "double fertilisation",
+              "char_offset": 3570,
+              "nearby_section_header": "1.1 Flower – A Fascinating",
+              "snippet": "ommonly cultivated at 1.1 Flower – A Fascinating Organ of Angiosperms 1.2 Pre-fertilisation : Structures and Events 1.3 Double Fertilisation 1.4 Post-fertilisation: Structures and Events 1.5 Apomixis and Polyembryony CHAPTER 1 SEXUAL REPROD"
+            }
+          ]
+        }
+      }
+    },
+    "same_chapter_subject": true,
+    "identical_names": true,
+    "appear_same_concept": true,
+    "recommended_owner_decision": "MERGE_REVIEW",
+    "rationale": "Both concepts share subject/chapter and essentially identical titles for syngamy/triple fusion; both have NCERT Books evidence under lebo101.pdf. Seed-style code sv2c-botany-15 is likely a legacy duplicate of syngamy-and-triple-fusion. Owner should decide merge/retire mapping without silent auto-merge (questions/blueprints may attach to either).",
+    "action_taken": "none (read-only)"
+  },
+  "tests": {
+    "passed": 63,
+    "failed": 0,
+    "exit_code": 0,
+    "command": "D:\\ravishori\\AI Neet Exam App\\apps\\backend\\.venv\\Scripts\\python.exe -m pytest app/modules/ingestion/tests/test_ncert_canonical_source.py app/modules/knowledge/tests/test_grounding_check.py app/modules/academic/tests/test_cf_c1_chemistry_class_12.py app/modules/academic/tests/test_chapter_class_level.py tests/test_phase32_content_readiness_safety.py tests/test_phase33_ecaep_publication_safety.py -q --tb=line",
+    "tail": "    def test_no_duplicate_chapter_slugs_across_all_chemistry():\n\napp/modules/academic/tests/test_cf_c1_chemistry_class_12.py::test_topic_slugs_are_unique_within_chemistry\n  app\\modules\\academic\\tests\\test_cf_c1_chemistry_class_12.py:102: PytestWarning: The test <Function test_topic_slugs_are_unique_within_chemistry> is marked with '@pytest.mark.asyncio' but it is not an async function. Please remove the asyncio mark. If the test is not marked explicitly, check for global marks applied via 'pytestmark'.\n    def test_topic_slugs_are_unique_within_chemistry():\n\napp/modules/academic/tests/test_cf_c1_chemistry_class_12.py::test_concept_slugs_are_unique_within_chemistry\n  app\\modules\\academic\\tests\\test_cf_c1_chemistry_class_12.py:109: PytestWarning: The test <Function test_concept_slugs_are_unique_within_chemistry> is marked with '@pytest.mark.asyncio' but it is not an async function. Please remove the asyncio mark. If the test is not marked explicitly, check for global marks applied via 'pytestmark'.\n    def test_concept_slugs_are_unique_within_chemistry():\n\napp/modules/academic/tests/test_cf_c1_chemistry_class_12.py::test_every_new_chapter_has_source_grounded_topics_and_concepts\n  app\\modules\\academic\\tests\\test_cf_c1_chemistry_class_12.py:116: PytestWarning: The test <Function test_every_new_chapter_has_source_grounded_topics_and_concepts> is marked with '@pytest.mark.asyncio' but it is not an async function. Please remove the asyncio mark. If the test is not marked explicitly, check for global marks applied via 'pytestmark'.\n    def test_every_new_chapter_has_source_grounded_topics_and_concepts():\n\napp/modules/academic/tests/test_cf_c1_chemistry_class_12.py::test_physics_seed_is_unchanged_by_cf_c1\n  app\\modules\\academic\\tests\\test_cf_c1_chemistry_class_12.py:134: PytestWarning: The test <Function test_physics_seed_is_unchanged_by_cf_c1> is marked with '@pytest.mark.asyncio' but it is not an async function. Please remove the asyncio mark. If the test is not marked explicitly, check for global marks applied via 'pytestmark'.\n    def test_physics_seed_is_unchanged_by_cf_c1():\n\napp/modules/academic/tests/test_cf_c1_chemistry_class_12.py::test_botany_seed_is_unchanged_by_cf_c1\n  app\\modules\\academic\\tests\\test_cf_c1_chemistry_class_12.py:149: PytestWarning: The test <Function test_botany_seed_is_unchanged_by_cf_c1> is marked with '@pytest.mark.asyncio' but it is not an async function. Please remove the asyncio mark. If the test is not marked explicitly, check for global marks applied via 'pytestmark'.\n    def test_botany_seed_is_unchanged_by_cf_c1():\n\napp/modules/academic/tests/test_cf_c1_chemistry_class_12.py::test_zoology_seed_is_unchanged_by_cf_c1\n  app\\modules\\academic\\tests\\test_cf_c1_chemistry_class_12.py:160: PytestWarning: The test <Function test_zoology_seed_is_unchanged_by_cf_c1> is marked with '@pytest.mark.asyncio' but it is not an async function. Please remove the asyncio mark. If the test is not marked explicitly, check for global marks applied via 'pytestmark'.\n    def test_zoology_seed_is_unchanged_by_cf_c1():\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n63 passed, 15 warnings in 70.19s (0:01:10)\n\nsys:1: DeprecationWarning: builtin type swigvarlink has no __module__ attribute"
+  },
+  "files_changed": [
+    "docs/audits/ku_owner_review_001_20260913.md",
+    "docs/audits/ku_owner_review_001_20260913.json",
+    "apps/backend/scripts/ku_owner_review_001_readonly.py"
+  ],
+  "files_inspected": [
+    "docs\\audits\\ku_coverage_002_20260913.json",
+    "academic.concepts/topics/chapters",
+    "knowledge.knowledge_units (read)",
+    "cms.question_blueprints (read)",
+    "NCERT Books PDFs referenced by unresolved concepts",
+    "apps/backend/scripts/ku_coverage_002_ncert_ku_gaps.py (CHAPTER_PDF_MAP)"
+  ],
+  "confirmation": {
+    "db_mutated": false,
+    "kus_created": false,
+    "concepts_modified": false,
+    "blueprints_modified": false,
+    "mcqs_generated": false,
+    "committed": false,
+    "pushed": false
+  }
+}

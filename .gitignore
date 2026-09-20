@@ -39,3 +39,45 @@ Thumbs.db
 # PDFs, ~270MB, not code. Never belongs in git. ---
 /StudyMaterial/
 /StudyMaterial.zip
+/StudyMaterial (2).zip
+
+# --- CF-SOURCE-001 canonical NCERT PDF root (copyrighted textbooks; never commit) ---
+/NCERT Books/
+
+# --- Local binary corpora / generated assets (not application source) ---
+/NEET_PYQ_OFFICIAL/
+/NEET_PYQ_OFFICIAL.zip
+/PYExamPapers/
+/VisualAssets/
+/AI-NEET-Master-Technical-Blueprint-ZIP1.zip
+/data/staging/
+/_sme_ncert_phys/
+/physics-question-bank/
+
+# --- Heavy local acquisition run dumps (~90MB+ JSON/PNG artifacts; not app source) ---
+/docs/acquisition/
+/playwright-report/
+/test-results/
+/coverage/
+*.log
+
+# --- Local scratch notes (not project docs) ---
+/code to start projec.txt
+/code to start project.txt
+/# Phase-D Review Environment — Startup Guide.txt
+
+# --- Local database backups / imported datasets / generated reports ---
+/Backups/
+/data/ncert/
+/apps/data/ncert/
+/apps/reports/
+/reports/
+
+# --- Local source/import spreadsheets and archives ---
+/Missing Answers.csv.xlsx
+/Missing Answers.xls.xlsx
+/Missing data-1789841351879
+/MisssingAnsv2.xlsx
+/NCERT Books.zip
+/Questions without ansers.xls
+/data-1789841456683.xlsx

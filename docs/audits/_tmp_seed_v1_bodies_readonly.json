@@ -1,0 +1,1817 @@
+{
+  "batch_key": "production-seed-v1-2026-09-02-batch",
+  "batch_id": "7437f9e0-edbd-4be8-bd2c-6ef700d71989",
+  "study_material_dir": "D:\\ravishori\\AI Neet Exam App\\StudyMaterial",
+  "item_ids": [
+    "7e4fb145-08fe-43cf-accc-ef53e9535b07",
+    "e15d0065-7b79-477c-b9ec-81bc421a6a71",
+    "c85bba09-451b-4b2f-988d-e440929fa770",
+    "f6f59a22-5d9b-47a3-adb6-8dcf7ce56a1c",
+    "1d598d79-afe1-4ddb-8f32-2b51c8fb2b02",
+    "3c565dee-ea37-4937-bb32-4006ce383006",
+    "9dd374e7-c677-46ab-9e83-8cf0e6139feb",
+    "5b1b5f27-bb6d-4b35-8b1c-96c252278d98",
+    "4f0dcbb1-c236-42a3-a148-cf8233326b52",
+    "e3e36b8e-ff15-455e-807d-eb32de6c1f75",
+    "621ffc10-0673-4d4f-a5be-c07ed2f7f48f",
+    "93c46e39-6a4c-4730-9ae7-a07a4bdab0a9",
+    "aae4fe1b-9665-4216-be4b-2f758f4dbf70",
+    "a357fe24-b0ef-4bd5-b7f7-956f392f9942",
+    "54907eea-4fcd-4855-8477-268bafe03e82",
+    "872a0115-cb0a-4109-99ff-55ada6774d51",
+    "336ec42d-aa33-4b5b-8c46-f8d5461883b0",
+    "e4a6fdc3-7a55-4762-a176-f8af33709308",
+    "a1f1d832-21a3-4fb6-86b8-fe07ed46ad18",
+    "16dd7280-a48b-4437-80ac-a2b72b28d952",
+    "b207ad06-7427-417e-abfd-a928ab68df84",
+    "3d0dbda5-7882-4e3f-90d8-3a479cf67ab2",
+    "061d07ed-ca1f-4f31-b7f8-cbdb3dfe8453",
+    "b4a2e055-f141-4f05-8b06-850d84122b60",
+    "92c31281-cbdf-4954-9b25-79342cb1b400",
+    "3dc11d2a-b9ad-4155-93ec-4cd7b3bae9af",
+    "8a3937ce-5ad0-41af-bc84-17bf04c386ce",
+    "2e17c7e6-5d8f-4469-9cea-407177e61e8e",
+    "b690c0d3-98f6-4e57-851f-aae1ac6ad8cd",
+    "dd7b5422-437d-4b0f-a2dc-f370ea0496c2"
+  ],
+  "questions": [
+    {
+      "id": "7e4fb145-08fe-43cf-accc-ef53e9535b07",
+      "status": "DRAFT",
+      "subject": "Botany",
+      "chapter": "Photosynthesis in Higher Plants",
+      "topic": "Dark Reaction (Calvin Cycle)",
+      "concept": "C3 vs C4 Pathway",
+      "concept_code": "c3-c4-pathway",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-botany-01",
+      "difficulty": "medium",
+      "stem": "Which of the following statements correctly contrasts the carbon fixation strategies of $C_3$ and $C_4$ plants under high temperature and high light intensity conditions?",
+      "options": [
+        {
+          "text": "$C_3$ plants show higher photosynthetic efficiency because RuBisCO has a higher affinity for $\\text{CO}_2$ than PEPcase under high temperature.",
+          "label": "A"
+        },
+        {
+          "text": "$C_4$ plants minimize photorespiration by initial $\\text{CO}_2$ fixation in mesophyll cells via PEPcase and delivering $\\text{CO}_2$ to RuBisCO in bundle sheath cells.",
+          "label": "B"
+        },
+        {
+          "text": "$C_3$ plants undergo $C_4$ dicarboxylic acid cycle in bundle sheath cells to prevent oxygenation of RuBisCO.",
+          "label": "C"
+        },
+        {
+          "text": "$C_4$ plants consume fewer ATP molecules per fixed $\\text{CO}_2$ molecule than $C_3$ plants under all environmental conditions.",
+          "label": "D"
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "Option B is correct: $C_4$ plants feature Kranz anatomy, spatial separation of initial carbon fixation (mesophyll cells using PEP carboxylase, which lacks oxygenase activity) and the Calvin cycle (bundle sheath cells housing RuBisCO). This elevates local $\\text{CO}_2$ concentrations around RuBisCO, effectively suppressing photorespiration under high heat and light stress. Option A is incorrect because PEPcase has a much higher affinity for its substrate ($\\text{HCO}_3^-$) than RuBisCO, and high temperatures increase RuBisCO's oxygenase activity relative to carboxylase activity in $C_3$ plants. Option C is incorrect as $C_3$ plants lack Kranz anatomy and the $C_4$ pathway entirely. Option D is incorrect because $C_4$ plants require additional ATP (5 ATP per $\\text{CO}_2$ fixed vs 3 ATP in $C_3$ plants under non-photorespiratory conditions) to regenerate PEP, making them energetically more costly per fixed $\\text{CO}_2$ in cool, low-stress environments, though far more efficient under high-temperature stress where $C_3$ photorespiratory losses are substantial.",
+      "stem_fp": "4422349dbe4a5175",
+      "body_md5": "738dc7ece05ea092e42b5e51f3afa41b",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "constraints": {
+        "reasoning": "pathway_compare",
+        "seed_slot_id": "botany-01",
+        "question_format": "MCQ_4",
+        "cognitive_operation": "C3 vs C4 carbon fixation contrast",
+        "forbidden_templates": [
+          "PHYS_STRETCH_20PCT_CURRENT",
+          "PHYS_STRETCH_2X_LENGTH_RATIO",
+          "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+          "CHEM_LATTICE_COMPARISON",
+          "CHEM_LATTICE_FACTORS",
+          "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+          "ZOO_ABO_SEQUENCE",
+          "ZOO_ABO_ANTIGEN_IDENTIFY"
+        ],
+        "correct_option_count": 1,
+        "explanation_required": true,
+        "avoid_paraphrase_duplicates": true,
+        "enforce_prior_stem_diversity": true
+      }
+    },
+    {
+      "id": "e15d0065-7b79-477c-b9ec-81bc421a6a71",
+      "status": "DRAFT",
+      "subject": "Botany",
+      "chapter": "Cell - The Unit of Life",
+      "topic": "Membrane and Cell Cycle",
+      "concept": "Fluid Mosaic Model",
+      "concept_code": "fluid-mosaic",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-botany-04",
+      "difficulty": "easy",
+      "stem": "According to the Fluid Mosaic Model proposed by Singer and Nicolson, which component of the plasma membrane provides its quasi-fluid nature and enables the lateral movement of proteins within the bilayer?",
+      "options": [
+        {
+          "text": "Phospholipids",
+          "label": "A"
+        },
+        {
+          "text": "Extrinsic proteins",
+          "label": "B"
+        },
+        {
+          "text": "Glycoproteins",
+          "label": "C"
+        },
+        {
+          "text": "Cellulose fibers",
+          "label": "D"
+        }
+      ],
+      "correct_option": "A",
+      "explanation": "According to the Fluid Mosaic Model, the continuous phospholipid bilayer possesses a fluid/quasi-fluid nature due to the unsaturated fatty acid tails of the lipids. This fluid nature of lipids enables the lateral movement of proteins within the overall membrane structure. Extrinsic (peripheral) and intrinsic proteins are embedded or associated with this fluid lipid matrix. Carbohydrates like glycoproteins are involved in cell recognition, and cellulose is a cell wall component, not a constituent of the cell membrane bilayer.",
+      "stem_fp": "81281e40b7ef7f47",
+      "body_md5": "e3e282481bdb871771cb52c99c2ed187",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "constraints": {
+        "reasoning": "membrane_model",
+        "seed_slot_id": "botany-04",
+        "question_format": "MCQ_4",
+        "cognitive_operation": "Fluid mosaic membrane model",
+        "forbidden_templates": [
+          "PHYS_STRETCH_20PCT_CURRENT",
+          "PHYS_STRETCH_2X_LENGTH_RATIO",
+          "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+          "CHEM_LATTICE_COMPARISON",
+          "CHEM_LATTICE_FACTORS",
+          "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+          "ZOO_ABO_SEQUENCE",
+          "ZOO_ABO_ANTIGEN_IDENTIFY"
+        ],
+        "correct_option_count": 1,
+        "explanation_required": true,
+        "avoid_paraphrase_duplicates": true,
+        "enforce_prior_stem_diversity": true
+      }
+    },
+    {
+      "id": "c85bba09-451b-4b2f-988d-e440929fa770",
+      "status": "DRAFT",
+      "subject": "Botany",
+      "chapter": "Photosynthesis in Higher Plants",
+      "topic": "Factors Affecting Photosynthesis",
+      "concept": "Limiting Factors (Blackman's Law)",
+      "concept_code": "limiting-factors",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-botany-03",
+      "difficulty": "easy",
+      "stem": "According to Blackman's Law of Limiting Factors (1905), if a physiological process like photosynthesis is affected by more than one factor, its rate is determined by the factor that is:",
+      "options": [
+        {
+          "text": "present in the highest concentration in the surrounding environment.",
+          "label": "A"
+        },
+        {
+          "text": "closest to its minimal value and directly limits the process.",
+          "label": "B"
+        },
+        {
+          "text": "at its optimal value regardless of other environmental conditions.",
+          "label": "C"
+        },
+        {
+          "text": "acting as a catalyst to increase the rate of chemical reactions.",
+          "label": "D"
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "F.F. Blackman formulated the Law of Limiting Factors in 1905. It states that if a chemical process is affected by more than one factor, its rate is dictated by the factor that is nearest to its minimal value. Increasing the concentration or intensity of this limiting factor directly increases the rate of the process. Option A is incorrect because the factor present in the highest concentration is not limiting. Option C is incorrect because an optimal factor is not restricting the rate. Option D is incorrect because limiting factors are reactants or environmental conditions (e.g., light intensity, CO2 concentration, temperature), not catalytic entities.",
+      "stem_fp": "14e0e7a46b6bfb4a",
+      "body_md5": "ee437b888cef19996a4d1a52f4727235",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "constraints": {
+        "reasoning": "blackman_law",
+        "seed_slot_id": "botany-03",
+        "question_format": "MCQ_4",
+        "cognitive_operation": "Blackman's law of limiting factors",
+        "forbidden_templates": [
+          "PHYS_STRETCH_20PCT_CURRENT",
+          "PHYS_STRETCH_2X_LENGTH_RATIO",
+          "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+          "CHEM_LATTICE_COMPARISON",
+          "CHEM_LATTICE_FACTORS",
+          "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+          "ZOO_ABO_SEQUENCE",
+          "ZOO_ABO_ANTIGEN_IDENTIFY"
+        ],
+        "correct_option_count": 1,
+        "explanation_required": true,
+        "avoid_paraphrase_duplicates": true,
+        "enforce_prior_stem_diversity": true
+      }
+    },
+    {
+      "id": "f6f59a22-5d9b-47a3-adb6-8dcf7ce56a1c",
+      "status": "DRAFT",
+      "subject": "Botany",
+      "chapter": "Photosynthesis in Higher Plants",
+      "topic": "Factors Affecting Photosynthesis",
+      "concept": "Photorespiration",
+      "concept_code": "photorespiration",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-botany-02",
+      "difficulty": "medium",
+      "stem": "In $C_3$ plants, when the ratio of $\\text{O}_2$ to $\\text{CO}_2$ increases at the site of RuBisCO, photorespiration is initiated. Which of the following sequence of events correctly describes the physiological consequences of this pathway?",
+      "options": [
+        {
+          "text": "RuBisCO binds $\\text{O}_2$ to form one molecule each of PGA and phosphoglycolate, releasing ATP and producing NADPH.",
+          "label": "A"
+        },
+        {
+          "text": "RuBisCO binds $\\text{O}_2$ to form two molecules of phosphoglycolate, consuming ATP and releasing $\\text{CO}_2$ without synthesizing sugars or NADPH.",
+          "label": "B"
+        },
+        {
+          "text": "RuBisCO binds $\\text{O}_2$ to form one molecule each of PGA and phosphoglycolate, consuming ATP and releasing $\\text{CO}_2$ without synthesizing sugars or NADPH.",
+          "label": "C"
+        },
+        {
+          "text": "RuBisCO binds $\\text{CO}_2$ to form two molecules of phosphoglycolate, which consumes NADPH to regenerate RuBP while releasing oxygen.",
+          "label": "D"
+        }
+      ],
+      "correct_option": "C",
+      "explanation": "Photorespiration occurs when RuBisCO functions as an oxygenase under high $\\text{O}_2$ and low $\\text{CO}_2$ conditions. RuBP combines with one molecule of $\\text{O}_2$ to form one 3-carbon molecule of 3-phosphoglycerate (PGA) and one 2-carbon molecule of 2-phosphoglycolate. The subsequent processing of phosphoglycolate across chloroplasts, peroxisomes, and mitochondria leads to the release of $\\text{CO}_2$ and the consumption of ATP, but yields neither ATP nor NADPH, nor does it synthesize sugar. Thus, it is a wasteful process competing directly with photosynthetic carbon fixation. Option A is incorrect because ATP is consumed, not released. Option B is incorrect because one PGA and one phosphoglycolate are formed, not two phosphoglycolates. Option D incorrectly states that RuBP binds $\\text{CO}_2$ to form phosphoglycolate.",
+      "stem_fp": "ed0ddd3c05695bd3",
+      "body_md5": "1cb341616cc7cc9c41fc36d68e769cb8",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "constraints": {
+        "reasoning": "process_consequence",
+        "seed_slot_id": "botany-02",
+        "question_format": "MCQ_4",
+        "cognitive_operation": "Photorespiration wastefulness in C3",
+        "forbidden_templates": [
+          "PHYS_STRETCH_20PCT_CURRENT",
+          "PHYS_STRETCH_2X_LENGTH_RATIO",
+          "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+          "CHEM_LATTICE_COMPARISON",
+          "CHEM_LATTICE_FACTORS",
+          "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+          "ZOO_ABO_SEQUENCE",
+          "ZOO_ABO_ANTIGEN_IDENTIFY"
+        ],
+        "correct_option_count": 1,
+        "explanation_required": true,
+        "avoid_paraphrase_duplicates": true,
+        "enforce_prior_stem_diversity": true
+      }
+    },
+    {
+      "id": "1d598d79-afe1-4ddb-8f32-2b51c8fb2b02",
+      "status": "DRAFT",
+      "subject": "Botany",
+      "chapter": "Cell - The Unit of Life",
+      "topic": "Cell Theory and Cell Types",
+      "concept": "Prokaryotic vs Eukaryotic Cells",
+      "concept_code": "prokaryote-eukaryote",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-botany-05",
+      "difficulty": "easy",
+      "stem": "Which of the following cellular structures is present in both a prokaryotic cell (such as *Escherichia coli*) and a eukaryotic cell (such as a plant mesophyll cell)?",
+      "options": [
+        {
+          "text": "70S ribosomes bound to the outer nuclear membrane",
+          "label": "A"
+        },
+        {
+          "text": "Plasma membrane composed of a lipid bilayer",
+          "label": "B"
+        },
+        {
+          "text": "Membrane-bound lysosomes containing hydrolytic enzymes",
+          "label": "C"
+        },
+        {
+          "text": "Linear chromosomes enclosed within a double-membrane envelope",
+          "label": "D"
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "Both prokaryotic and eukaryotic cells possess a plasma membrane composed of a lipid bilayer that acts as a selectively permeable barrier separating the cytoplasm from the external environment. Option A is incorrect because prokaryotes lack a nuclear membrane (and eukaryotic cytoplasm contains 80S ribosomes). Option C is incorrect because prokaryotes lack membrane-bound organelles such as lysosomes. Option D is incorrect because prokaryotes contain a circular genomic DNA molecule located in the nucleoid region, without a surrounding nuclear envelope.",
+      "stem_fp": "a497f153ebc9d3a1",
+      "body_md5": "8b20ee97e1aa0590107e50717195c163",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "constraints": {
+        "reasoning": "cell_compare",
+        "seed_slot_id": "botany-05",
+        "question_format": "MCQ_4",
+        "cognitive_operation": "Prokaryotic vs eukaryotic traits",
+        "forbidden_templates": [
+          "PHYS_STRETCH_20PCT_CURRENT",
+          "PHYS_STRETCH_2X_LENGTH_RATIO",
+          "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+          "CHEM_LATTICE_COMPARISON",
+          "CHEM_LATTICE_FACTORS",
+          "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+          "ZOO_ABO_SEQUENCE",
+          "ZOO_ABO_ANTIGEN_IDENTIFY"
+        ],
+        "correct_option_count": 1,
+        "explanation_required": true,
+        "avoid_paraphrase_duplicates": true,
+        "enforce_prior_stem_diversity": true
+      }
+    },
+    {
+      "id": "3c565dee-ea37-4937-bb32-4006ce383006",
+      "status": "DRAFT",
+      "subject": "Chemistry",
+      "chapter": "Equilibrium",
+      "topic": "Chemical Equilibrium",
+      "concept": "Equilibrium Constant Kc/Kp",
+      "concept_code": "equilibrium-constant",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-chemistry-03",
+      "difficulty": "medium",
+      "stem": "For the reversible gaseous reaction:\n$$2\text{A}(g) + \text{B}(g) \rightleftharpoons 3\text{C}(g) + \text{D}(s)$$\nat a constant temperature $T$, equilibrium is established in a closed container. Which of the following expressions correctly represents the equilibrium constant $K_p$ in terms of partial pressures at equilibrium?",
+      "options": [
+        {
+          "text": "$$K_p = \\frac{(p_C)^3 \\cdot p_D}{(p_A)^2 \\cdot p_B}$$",
+          "label": "A"
+        },
+        {
+          "text": "$$K_p = \\frac{(p_C)^3}{(p_A)^2 \\cdot p_B}$$",
+          "label": "B"
+        },
+        {
+          "text": "$$K_p = \\frac{(p_A)^2 \\cdot p_B}{(p_C)^3}$$",
+          "label": "C"
+        },
+        {
+          "text": "$$K_p = \\frac{3 \\cdot p_C}{2 \\cdot p_A + p_B}$$",
+          "label": "D"
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "By definition, the equilibrium constant $K_p$ for a heterogeneous equilibrium involving gases and pure solids is expressed using the partial pressures of the gaseous species raised to the power corresponding to their stoichiometric coefficients in the balanced chemical equation. Pure solids (like $\\text{D}(s)$) have a constant activity/effective concentration, so their activity is taken as 1 and they do not appear explicitly in the $K_p$ expression. \n\nTherefore, for $2\\text{A}(g) + \\text{B}(g) \\rightleftharpoons 3\\text{C}(g) + \\text{D}(s)$:\n$$K_p = \\frac{(p_C)^3}{(p_A)^2 \\cdot p_B}$$\n\n- Option A incorrectly includes the pure solid species $\\text{D}$.\n- Option C represents the reciprocal of $K_p$.\n- Option D incorrectly uses stoichiometric coefficients as multipliers instead of exponents.",
+      "stem_fp": "00867e8105d24f80",
+      "body_md5": "2a25ef984f87bcbc9bac5159a47bf80f",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "constraints": {
+        "reasoning": "kc_kp_meaning",
+        "seed_slot_id": "chemistry-03",
+        "question_format": "MCQ_4",
+        "cognitive_operation": "Meaning of Kc/Kp",
+        "forbidden_templates": [
+          "PHYS_STRETCH_20PCT_CURRENT",
+          "PHYS_STRETCH_2X_LENGTH_RATIO",
+          "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+          "CHEM_LATTICE_COMPARISON",
+          "CHEM_LATTICE_FACTORS",
+          "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+          "ZOO_ABO_SEQUENCE",
+          "ZOO_ABO_ANTIGEN_IDENTIFY"
+        ],
+        "correct_option_count": 1,
+        "explanation_required": true,
+        "avoid_paraphrase_duplicates": true,
+        "enforce_prior_stem_diversity": true
+      }
+    },
+    {
+      "id": "9dd374e7-c677-46ab-9e83-8cf0e6139feb",
+      "status": "DRAFT",
+      "subject": "Chemistry",
+      "chapter": "Organic Chemistry - Basic Principles",
+      "topic": "IUPAC and Homologous Series",
+      "concept": "Homologous Series",
+      "concept_code": "homologous-series",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-chemistry-08",
+      "difficulty": "easy",
+      "stem": "Which of the following statements correctly describes the characteristics of a homologous series of organic compounds?",
+      "options": [
+        {
+          "text": "Successive members differ in their molecular formula by a $-\\text{CH}_3-$ group.",
+          "label": "A"
+        },
+        {
+          "text": "Members show a gradual change in physical properties such as boiling point with increasing molar mass.",
+          "label": "B"
+        },
+        {
+          "text": "All members have identical physical properties regardless of their chain length.",
+          "label": "C"
+        },
+        {
+          "text": "Adjacent members differ in molecular mass by $12\\text{ u}$.",
+          "label": "D"
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "A homologous series consists of structurally similar organic compounds that share the same general formula and functional group. Successive members differ by a methylene group ($-\\text{CH}_2-$), which corresponds to a difference of $14\\text{ u}$ in molecular mass (not $12\\text{ u}$ or a $-\\text{CH}_3-$ group). Because they have the same functional group, members exhibit similar chemical properties. However, as the carbon chain length increases, physical properties (like boiling point, melting point, and density) show a regular gradation due to the increase in molecular mass and van der Waals forces. Therefore, option B is correct.",
+      "stem_fp": "cb533e75678cc735",
+      "body_md5": "57655dcdc42d090320f8f432cd61ee9f",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "constraints": {
+        "reasoning": "series_traits",
+        "seed_slot_id": "chemistry-08",
+        "question_format": "MCQ_4",
+        "cognitive_operation": "Homologous series general formula/traits",
+        "forbidden_templates": [
+          "PHYS_STRETCH_20PCT_CURRENT",
+          "PHYS_STRETCH_2X_LENGTH_RATIO",
+          "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+          "CHEM_LATTICE_COMPARISON",
+          "CHEM_LATTICE_FACTORS",
+          "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+          "ZOO_ABO_SEQUENCE",
+          "ZOO_ABO_ANTIGEN_IDENTIFY"
+        ],
+        "correct_option_count": 1,
+        "explanation_required": true,
+        "avoid_paraphrase_duplicates": true,
+        "enforce_prior_stem_diversity": true
+      }
+    },
+    {
+      "id": "5b1b5f27-bb6d-4b35-8b1c-96c252278d98",
+      "status": "DRAFT",
+      "subject": "Chemistry",
+      "chapter": "Organic Chemistry - Basic Principles",
+      "topic": "Electronic Effects",
+      "concept": "Inductive and Resonance Effects",
+      "concept_code": "inductive-mesomeric",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-chemistry-06",
+      "difficulty": "medium",
+      "stem": "Consider the following statement regarding electron displacement effects in organic molecules: 'Resonance effects operate through $\\pi$-bonds and are delocalized, whereas inductive effects operate through $\\sigma$-bonds and diminish rapidly with distance.' Based on this fundamental difference, which of the following correctly explains the relative acidity of 4-nitrophenol, 3-nitrophenol, and phenol?",
+      "options": [
+        {
+          "text": "4-Nitrophenol is more acidic than 3-nitrophenol because the $-NO_2$ group exerts both strong $-I$ and $-R$ effects from the para-position, whereas from the meta-position, it exerts predominantly a $-I$ effect.",
+          "label": "A"
+        },
+        {
+          "text": "3-Nitrophenol is more acidic than 4-nitrophenol because the inductive effect ($-I$) is stronger at the meta-position than at the para-position, while resonance ($-R$) operates equally at both positions.",
+          "label": "B"
+        },
+        {
+          "text": "Phenol is more acidic than 3-nitrophenol because the $-NO_2$ group at the meta-position acts as an electron-donating group through resonance.",
+          "label": "C"
+        },
+        {
+          "text": "4-Nitrophenol and 3-nitrophenol have identical acidities because the $-NO_2$ group exerts only an inductive effect ($-I$) regardless of its position on the benzene ring.",
+          "label": "D"
+        }
+      ],
+      "correct_option": "A",
+      "explanation": "Acidity depends on the stabilization of the conjugate base (phenoxide ion). In 4-nitrophenol (para-nitrophenol), the strong electron-withdrawing nitro group ($-NO_2$) exerts both a strong negative inductive effect ($-I$) and a strong negative resonance effect ($-R$), directly delocalizing the negative charge on the oxygen atom onto the nitro oxygens. In 3-nitrophenol (meta-nitrophenol), delocalization of the negative charge to the nitro group via resonance is not geometrically possible; hence, the $-NO_2$ group stabilizes the anion primarily through the distance-dependent $-I$ effect. Phenol lacks any electron-withdrawing nitro group, making it the least acidic among the three. Therefore, 4-nitrophenol is significantly more acidic than 3-nitrophenol, which in turn is more acidic than phenol.",
+      "stem_fp": "34d28a44e0128084",
+      "body_md5": "b9f2827aba995e4aec6de56700b5605e",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "constraints": {
+        "reasoning": "electronic_effects",
+        "seed_slot_id": "chemistry-06",
+        "question_format": "MCQ_4",
+        "cognitive_operation": "Inductive vs resonance",
+        "forbidden_templates": [
+          "PHYS_STRETCH_20PCT_CURRENT",
+          "PHYS_STRETCH_2X_LENGTH_RATIO",
+          "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+          "CHEM_LATTICE_COMPARISON",
+          "CHEM_LATTICE_FACTORS",
+          "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+          "ZOO_ABO_SEQUENCE",
+          "ZOO_ABO_ANTIGEN_IDENTIFY"
+        ],
+        "correct_option_count": 1,
+        "explanation_required": true,
+        "avoid_paraphrase_duplicates": true,
+        "enforce_prior_stem_diversity": true
+      }
+    },
+    {
+      "id": "4f0dcbb1-c236-42a3-a148-cf8233326b52",
+      "status": "DRAFT",
+      "subject": "Chemistry",
+      "chapter": "Chemical Bonding and Molecular Structure",
+      "topic": "Ionic Bonding",
+      "concept": "Lattice Energy",
+      "concept_code": "lattice-energy",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-chemistry-09",
+      "difficulty": "medium",
+      "stem": "Which of the following thermochemical equations correctly represents the standard enthalpy change corresponding to the lattice energy of sodium chloride, $\\Delta_{lattice}H^\\circ(\\text{NaCl}, s)$?",
+      "options": [
+        {
+          "text": "$\\text{Na}^+(g) + \\text{Cl}^-(g) \\rightarrow \\text{NaCl}(s)$",
+          "label": "A"
+        },
+        {
+          "text": "$\\text{Na}(s) + \\frac{1}{2}\\text{Cl}_2(g) \\rightarrow \\text{NaCl}(s)$",
+          "label": "B"
+        },
+        {
+          "text": "$\\text{Na}^+(aq) + \\text{Cl}^-(aq) \\rightarrow \\text{NaCl}(s)$",
+          "label": "C"
+        },
+        {
+          "text": "$\\text{Na}(g) + \\text{Cl}(g) \\rightarrow \\text{NaCl}(s)$",
+          "label": "D"
+        }
+      ],
+      "correct_option": "A",
+      "explanation": "Lattice energy (or lattice enthalpy) is defined as the energy released when one mole of an ionic crystalline solid is formed from its constituent ions in the gaseous state under standard conditions. Thus, the equation $\\text{Na}^+(g) + \\text{Cl}^-(g) \\rightarrow \\text{NaCl}(s)$ precisely represents this process. Option B represents the standard enthalpy of formation ($\\Delta_f H^\\circ$), not the lattice energy. Option C involves aqueous ions, which corresponds to the reverse of dissolution/hydration processes rather than pure lattice formation. Option D involves neutral gaseous atoms rather than gaseous ions.",
+      "stem_fp": "bf1e0edbf7413043",
+      "body_md5": "111a67b617ba54aedf0854f99cc9b3a6",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "constraints": {
+        "reasoning": "definition_or_trend_single",
+        "seed_slot_id": "chemistry-09",
+        "question_format": "MCQ_4",
+        "cognitive_operation": "One lattice-energy item — not comparison/factor paraphrase",
+        "forbidden_templates": [
+          "PHYS_STRETCH_20PCT_CURRENT",
+          "PHYS_STRETCH_2X_LENGTH_RATIO",
+          "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+          "CHEM_LATTICE_COMPARISON",
+          "CHEM_LATTICE_FACTORS",
+          "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+          "ZOO_ABO_SEQUENCE",
+          "ZOO_ABO_ANTIGEN_IDENTIFY"
+        ],
+        "correct_option_count": 1,
+        "explanation_required": true,
+        "avoid_paraphrase_duplicates": true,
+        "enforce_prior_stem_diversity": true
+      }
+    },
+    {
+      "id": "e3e36b8e-ff15-455e-807d-eb32de6c1f75",
+      "status": "DRAFT",
+      "subject": "Chemistry",
+      "chapter": "Equilibrium",
+      "topic": "Ionic Equilibrium and pH",
+      "concept": "pH and Ionic Product of Water",
+      "concept_code": "ph-and-kw",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-chemistry-04",
+      "difficulty": "medium",
+      "stem": "At $50^\\circ\\text{C}$, the ionic product of pure water, $K_w$, is $5.5 \\times 10^{-14}$. What is the $\\text{pH}$ of neutral pure water at this temperature? $(\\text{Given: } \\log_{10}(2.35) \\approx 0.37)$",
+      "options": [
+        {
+          "text": "7.00",
+          "label": "A"
+        },
+        {
+          "text": "6.63",
+          "label": "B"
+        },
+        {
+          "text": "7.37",
+          "label": "C"
+        },
+        {
+          "text": "6.13",
+          "label": "D"
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "For pure water, neutrality implies that $[\\text{H}^+] = [\\text{OH}^-]$. \nSince $K_w = [\\text{H}^+][\\text{OH}^-] = [\\text{H}^+]^2$, we have:\n$[\\text{H}^+] = \\sqrt{K_w} = \\sqrt{5.5 \\times 10^{-14}} \\approx 2.35 \\times 10^{-7}\\text{ M}$.\n\nNow, calculate the $\\text{pH}$:\n$\\text{pH} = -\\log_{10}[\\text{H}^+] = -\\log_{10}(2.35 \\times 10^{-7}) = 7 - \\log_{10}(2.35) = 7 - 0.37 = 6.63$.\n\nOption A assumes $\\text{pH}$ is always $7$ at any temperature, which is incorrect because $K_w$ increases with temperature.\nOption C incorrectly adds the logarithmic value instead of subtracting it ($7 + 0.37$).\nOption D is a miscalculation using an incorrect formula for $K_w$ or logarithmic rules.",
+      "stem_fp": "9ed2433be3160680",
+      "body_md5": "0442b2f4a39bc659828bb6ae41814b67",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "constraints": {
+        "reasoning": "ph_calculation",
+        "seed_slot_id": "chemistry-04",
+        "question_format": "MCQ_4",
+        "cognitive_operation": "pH from [H+] or Kw",
+        "forbidden_templates": [
+          "PHYS_STRETCH_20PCT_CURRENT",
+          "PHYS_STRETCH_2X_LENGTH_RATIO",
+          "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+          "CHEM_LATTICE_COMPARISON",
+          "CHEM_LATTICE_FACTORS",
+          "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+          "ZOO_ABO_SEQUENCE",
+          "ZOO_ABO_ANTIGEN_IDENTIFY"
+        ],
+        "correct_option_count": 1,
+        "explanation_required": true,
+        "avoid_paraphrase_duplicates": true,
+        "enforce_prior_stem_diversity": true
+      }
+    },
+    {
+      "id": "621ffc10-0673-4d4f-a5be-c07ed2f7f48f",
+      "status": "DRAFT",
+      "subject": "Chemistry",
+      "chapter": "Equilibrium",
+      "topic": "Solubility Product",
+      "concept": "Solubility Product Ksp",
+      "concept_code": "ksp-basics",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-chemistry-05",
+      "difficulty": "medium",
+      "stem": "At $25^\\circ\\text{C}$, the solubility product ($K_{sp}$) of a sparingly soluble salt $M_2X_3$ in pure water is $1.08 \\times 10^{-23}$. Assuming no side reactions or hydrolysis occur, what is the molar concentration of $M^{3+}$ ions in its saturated aqueous solution?",
+      "options": [
+        {
+          "text": "$1.0 \\times 10^{-5}\\text{ M}$",
+          "label": "A"
+        },
+        {
+          "text": "$2.0 \\times 10^{-5}\\text{ M}$",
+          "label": "B"
+        },
+        {
+          "text": "$3.0 \\times 10^{-5}\\text{ M}$",
+          "label": "C"
+        },
+        {
+          "text": "$1.0 \\times 10^{-3}\\text{ M}$",
+          "label": "D"
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "The dissolution equilibrium of the salt $M_2X_3$ in water is:\n$$M_2X_3(s) \\rightleftharpoons 2M^{3+}(aq) + 3X^{2-}(aq)$$\n\nIf $s$ is the molar solubility of $M_2X_3$, then at equilibrium:\n$[M^{3+}] = 2s$\n$[X^{2-}] = 3s$\n\nThe expression for the solubility product $K_{sp}$ is:\n$$K_{sp} = [M^{3+}]^2 [X^{2-}]^3 = (2s)^2 (3s)^3 = 4s^2 \\cdot 27s^3 = 108s^5$$\n\nGiven $K_{sp} = 1.08 \\times 10^{-23}$:\n$$108s^5 = 1.08 \\times 10^{-23} = 108 \\times 10^{-25}$$\n$$s^5 = 10^{-25} \\implies s = 10^{-5}\\text{ M}$$\n\nTherefore, the concentration of $M^{3+}$ ions is:\n$$[M^{3+}] = 2s = 2 \\times 10^{-5}\\text{ M}$$\n\nOption A corresponds to the solubility $s$, Option C corresponds to $[X^{2-}] = 3s$, and Option D is an incorrect calculation.",
+      "stem_fp": "bcbd33b0f6ec881b",
+      "body_md5": "636791be3773682d24dcaeb75689747d",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "constraints": {
+        "reasoning": "solubility_product",
+        "seed_slot_id": "chemistry-05",
+        "question_format": "MCQ_4",
+        "cognitive_operation": "Ksp interpretation",
+        "forbidden_templates": [
+          "PHYS_STRETCH_20PCT_CURRENT",
+          "PHYS_STRETCH_2X_LENGTH_RATIO",
+          "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+          "CHEM_LATTICE_COMPARISON",
+          "CHEM_LATTICE_FACTORS",
+          "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+          "ZOO_ABO_SEQUENCE",
+          "ZOO_ABO_ANTIGEN_IDENTIFY"
+        ],
+        "correct_option_count": 1,
+        "explanation_required": true,
+        "avoid_paraphrase_duplicates": true,
+        "enforce_prior_stem_diversity": true
+      }
+    },
+    {
+      "id": "93c46e39-6a4c-4730-9ae7-a07a4bdab0a9",
+      "status": "DRAFT",
+      "subject": "Chemistry",
+      "chapter": "Chemical Bonding and Molecular Structure",
+      "topic": "Hybridization",
+      "concept": "sp, sp2, sp3 Hybridization",
+      "concept_code": "sp-sp2-sp3",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-chemistry-02",
+      "difficulty": "medium",
+      "stem": "Consider the molecule propadiene (allene), $\\text{H}_2\\text{C}=\\text{C}=\\text{CH}_2$. What is the hybridization state of each of the three carbon atoms, listed sequentially from left to right?",
+      "options": [
+        {
+          "text": "$sp^2, sp^2, sp^2$",
+          "label": "A"
+        },
+        {
+          "text": "$sp^2, sp, sp^2$",
+          "label": "B"
+        },
+        {
+          "text": "$sp^3, sp, sp^3$",
+          "label": "C"
+        },
+        {
+          "text": "$sp, sp^2, sp$",
+          "label": "D"
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "To determine the hybridization of each carbon atom in propadiene ($\\text{C}_1\\text{H}_2=\\text{C}_2=\\text{C}_3\\text{H}_2$):\n1. The terminal carbon atom $\\text{C}_1$ forms two $\\sigma$-bonds with hydrogen atoms and one $\\sigma$-bond with $\\text{C}_2$, plus one $\\pi$-bond. Having 3 $\\sigma$-bonds and 0 lone pairs gives a steric number of 3, corresponding to $sp^2$ hybridization.\n2. The central carbon atom $\\text{C}_2$ forms two $\\sigma$-bonds (one with $\\text{C}_1$ and one with $\\text{C}_3$) and two $\\pi$-bonds. Having 2 $\\sigma$-bonds and 0 lone pairs gives a steric number of 2, corresponding to $sp$ hybridization.\n3. The terminal carbon atom $\\text{C}_3$ forms two $\\sigma$-bonds with hydrogen atoms and one $\\sigma$-bond with $\\text{C}_2$, plus one $\\pi$-bond. Having 3 $\\sigma$-bonds and 0 lone pairs gives a steric number of 3, corresponding to $sp^2$ hybridization.\n\nTherefore, the sequence of hybridization states from left to right is $sp^2, sp, sp^2$.",
+      "stem_fp": "9ace3c72e72f46d5",
+      "body_md5": "0b4d9f8b0f4f0a1a6f005cb137de9220",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "constraints": {
+        "reasoning": "hybridization_identify",
+        "seed_slot_id": "chemistry-02",
+        "question_format": "MCQ_4",
+        "cognitive_operation": "Identify sp/sp2/sp3 from bonding",
+        "forbidden_templates": [
+          "PHYS_STRETCH_20PCT_CURRENT",
+          "PHYS_STRETCH_2X_LENGTH_RATIO",
+          "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+          "CHEM_LATTICE_COMPARISON",
+          "CHEM_LATTICE_FACTORS",
+          "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+          "ZOO_ABO_SEQUENCE",
+          "ZOO_ABO_ANTIGEN_IDENTIFY"
+        ],
+        "correct_option_count": 1,
+        "explanation_required": true,
+        "avoid_paraphrase_duplicates": true,
+        "enforce_prior_stem_diversity": true
+      }
+    },
+    {
+      "id": "aae4fe1b-9665-4216-be4b-2f758f4dbf70",
+      "status": "DRAFT",
+      "subject": "Chemistry",
+      "chapter": "Chemical Bonding and Molecular Structure",
+      "topic": "Hybridization",
+      "concept": "sp, sp2, sp3 Hybridization",
+      "concept_code": "sp-sp2-sp3",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-chemistry-10",
+      "difficulty": "hard",
+      "stem": "Consider the chemical species $\\text{NO}_2^+$, $\\text{NO}_2$, and $\\text{NO}_2^-$. How does the central nitrogen atom's hybrid orbital orientation correlate with the observed structural geometry across these three species?",
+      "options": [
+        {
+          "text": "$\\text{NO}_2^+$ is $sp$ hybridized with a linear geometry, while both $\\text{NO}_2$ and $\\text{NO}_2^-$ feature $sp^2$ hybridized nitrogen resulting in bent geometries with different bond angles.",
+          "label": "A"
+        },
+        {
+          "text": "$\\text{NO}_2^+$ is $sp^2$ hybridized with a bent geometry, whereas $\\text{NO}_2$ and $\\text{NO}_2^-$ are $sp$ hybridized with linear geometries.",
+          "label": "B"
+        },
+        {
+          "text": "$\\text{NO}_2^+$ and $\\text{NO}_2$ are both $sp$ hybridized linear species, while $\\text{NO}_2^-$ is $sp^3$ hybridized with a trigonal pyramidal geometry.",
+          "label": "C"
+        },
+        {
+          "text": "All three species possess $sp^2$ hybridized nitrogen atoms, giving them identical trigonal planar electron-pair geometries and identical bond angles.",
+          "label": "D"
+        }
+      ],
+      "correct_option": "A",
+      "explanation": "To determine geometry from hybridization, we evaluate steric numbers (number of bonded atoms + lone pairs/unpaired electron domains) for nitrogen in each species:\n1. $\\text{NO}_2^+$: Nitrogen has 5 valence electrons - 1 (positive charge) = 4 electrons, forming two double bonds with oxygen atoms and zero lone pairs. Steric number = 2 $\\rightarrow$ $sp$ hybridization, directing orbitals at $180^\\circ$, giving a linear molecular geometry.\n2. $\\text{NO}_2$: Nitrogen has 5 valence electrons, forming two bonds with oxygen and leaving 1 single unpaired electron in an orbital. Steric number = 3 domains $\\rightarrow$ $sp^2$ hybridization, leading to a bent geometry (bond angle $\\approx 134^\\circ$).\n3. $\\text{NO}_2^-$: Nitrogen has 5 valence electrons + 1 (negative charge) = 6 electrons, forming two bonds and holding 1 lone pair. Steric number = 3 domains $\\rightarrow$ $sp^2$ hybridization, leading to a bent geometry (bond angle $\\approx 115^\\circ$).\nThus, $\\text{NO}_2^+$ is $sp$ hybridized (linear), whereas $\\text{NO}_2$ and $\\text{NO}_2^-$ both utilize $sp^2$ hybrid orbitals on nitrogen to produce bent molecular geometries.",
+      "stem_fp": "73a4910eb02b66e4",
+      "body_md5": "853dce7125c2c6ee8f95adf175619782",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "constraints": {
+        "reasoning": "geometry_from_hybridization",
+        "seed_slot_id": "chemistry-10",
+        "question_format": "MCQ_4",
+        "cognitive_operation": "Link hybridization to shape (distinct from identify slot)",
+        "forbidden_templates": [
+          "PHYS_STRETCH_20PCT_CURRENT",
+          "PHYS_STRETCH_2X_LENGTH_RATIO",
+          "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+          "CHEM_LATTICE_COMPARISON",
+          "CHEM_LATTICE_FACTORS",
+          "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+          "ZOO_ABO_SEQUENCE",
+          "ZOO_ABO_ANTIGEN_IDENTIFY"
+        ],
+        "correct_option_count": 1,
+        "explanation_required": true,
+        "avoid_paraphrase_duplicates": true,
+        "enforce_prior_stem_diversity": true
+      }
+    },
+    {
+      "id": "a357fe24-b0ef-4bd5-b7f7-956f392f9942",
+      "status": "DRAFT",
+      "subject": "Chemistry",
+      "chapter": "Organic Chemistry - Basic Principles",
+      "topic": "Isomerism and Intermediates",
+      "concept": "Structural Isomerism",
+      "concept_code": "structural-isomerism",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-chemistry-07",
+      "difficulty": "easy",
+      "stem": "Which pair of organic molecules represents a set of functional isomers?",
+      "options": [
+        {
+          "text": "Ethanol and dimethyl ether",
+          "label": "A"
+        },
+        {
+          "text": "Propan-1-ol and propan-2-ol",
+          "label": "B"
+        },
+        {
+          "text": "Pentane and 2-methylbutane",
+          "label": "C"
+        },
+        {
+          "text": "Pent-1-ene and pent-2-ene",
+          "label": "D"
+        }
+      ],
+      "correct_option": "A",
+      "explanation": "Functional isomers have the same molecular formula but contain different functional groups. Ethanol (CH3CH2OH, an alcohol) and dimethyl ether (CH3OCH3, an ether) both have the molecular formula C2H6O, but belong to different functional group classes. Propan-1-ol and propan-2-ol are position isomers because the position of the -OH group differs. Pentane and 2-methylbutane are chain isomers because their carbon skeletons differ. Pent-1-ene and pent-2-ene are position isomers due to the difference in the position of the double bond.",
+      "stem_fp": "b774168c3c0a8e7a",
+      "body_md5": "6f0c4264b7c55988efff574c3b989a89",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "constraints": {
+        "reasoning": "isomer_classification",
+        "seed_slot_id": "chemistry-07",
+        "question_format": "MCQ_4",
+        "cognitive_operation": "Structural isomer recognition",
+        "forbidden_templates": [
+          "PHYS_STRETCH_20PCT_CURRENT",
+          "PHYS_STRETCH_2X_LENGTH_RATIO",
+          "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+          "CHEM_LATTICE_COMPARISON",
+          "CHEM_LATTICE_FACTORS",
+          "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+          "ZOO_ABO_SEQUENCE",
+          "ZOO_ABO_ANTIGEN_IDENTIFY"
+        ],
+        "correct_option_count": 1,
+        "explanation_required": true,
+        "avoid_paraphrase_duplicates": true,
+        "enforce_prior_stem_diversity": true
+      }
+    },
+    {
+      "id": "54907eea-4fcd-4855-8477-268bafe03e82",
+      "status": "DRAFT",
+      "subject": "Chemistry",
+      "chapter": "Chemical Bonding and Molecular Structure",
+      "topic": "Covalent Bonding and VSEPR Theory",
+      "concept": "VSEPR Theory",
+      "concept_code": "vsepr-theory",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-chemistry-01",
+      "difficulty": "medium",
+      "stem": "Consider the chemical species $\\text{XeF}_5^-$, $\\text{SF}_4$, and $\\text{ICl}_3$. According to the VSEPR theory, which of the following correctly pairs each species with its molecular geometry (shape)?",
+      "options": [
+        {
+          "text": "$\\text{XeF}_5^-$: Pentagonal planar; $\\text{SF}_4$: See-saw; $\\text{ICl}_3$: T-shaped",
+          "label": "A"
+        },
+        {
+          "text": "$\\text{XeF}_5^-$: Pentagonal bipyramidal; $\\text{SF}_4$: Square planar; $\\text{ICl}_3$: Trigonal planar",
+          "label": "B"
+        },
+        {
+          "text": "$\\text{XeF}_5^-$: Square pyramidal; $\\text{SF}_4$: Tetrahedral; $\\text{ICl}_3$: Trigonal bipyramidal",
+          "label": "C"
+        },
+        {
+          "text": "$\\text{XeF}_5^-$: Pentagonal planar; $\\text{SF}_4$: Square planar; $\\text{ICl}_3$: T-shaped",
+          "label": "D"
+        }
+      ],
+      "correct_option": "A",
+      "explanation": "To determine the molecular geometry using VSEPR theory:\n1. $\\text{XeF}_5^-$: Central Xe atom has 8 valence electrons + 5 (from F atoms) + 1 (negative charge) = 14 valence electrons, forming 7 electron pairs. This gives 5 bond pairs and 2 lone pairs ($AX_5E_2$). The steric number is 7 (pentagonal bipyramidal electron geometry). The two lone pairs occupy the axial positions to minimize repulsions, resulting in a pentagonal planar molecular geometry.\n2. $\\text{SF}_4$: Central S atom has 6 valence electrons + 4 (from F atoms) = 10 valence electrons, forming 5 electron pairs (4 bond pairs + 1 lone pair, $AX_4E$). The steric number is 5 (trigonal bipyramidal electron geometry). The lone pair occupies an equatorial position, giving a see-saw molecular geometry.\n3. $\\text{ICl}_3$: Central I atom has 7 valence electrons + 3 (from Cl atoms) = 10 valence electrons, forming 5 electron pairs (3 bond pairs + 2 lone pairs, $AX_3E_2$). The steric number is 5 (trigonal bipyramidal electron geometry). The two lone pairs occupy equatorial positions, leading to a T-shaped molecular geometry.\nTherefore, option A correctly pairs all three species with their shapes.",
+      "stem_fp": "bbe9715403aa69dc",
+      "body_md5": "5b61d0de3eba381f540486a2f15c81fc",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "constraints": {
+        "reasoning": "geometry_prediction",
+        "seed_slot_id": "chemistry-01",
+        "question_format": "MCQ_4",
+        "cognitive_operation": "Electron-pair geometry via VSEPR",
+        "forbidden_templates": [
+          "PHYS_STRETCH_20PCT_CURRENT",
+          "PHYS_STRETCH_2X_LENGTH_RATIO",
+          "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+          "CHEM_LATTICE_COMPARISON",
+          "CHEM_LATTICE_FACTORS",
+          "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+          "ZOO_ABO_SEQUENCE",
+          "ZOO_ABO_ANTIGEN_IDENTIFY"
+        ],
+        "correct_option_count": 1,
+        "explanation_required": true,
+        "avoid_paraphrase_duplicates": true,
+        "enforce_prior_stem_diversity": true
+      }
+    },
+    {
+      "id": "872a0115-cb0a-4109-99ff-55ada6774d51",
+      "status": "DRAFT",
+      "subject": "Physics",
+      "chapter": "Mechanical Properties of Fluids",
+      "topic": "Fluid Flow and Bernoulli",
+      "concept": "Bernoulli's Principle",
+      "concept_code": "bernoullis-principle",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-physics-06",
+      "difficulty": "medium",
+      "stem": "A non-viscous, incompressible liquid flows in a streamlined manner through a horizontal pipe of varying cross-sectional area. At a point $P$ where the cross-sectional area is $A_1$, the static pressure is $P_1$ and the fluid speed is $v_1$. At another point $Q$ downstream where the cross-sectional area decreases to $A_2 < A_1$, the static pressure is $P_2$ and the fluid speed is $v_2$. According to Bernoulli's principle applied along a streamline, which of the following statements correctly describes the relationship between the parameters at $P$ and $Q$?",
+      "options": [
+        {
+          "text": "$v_2 > v_1$ and $P_2 < P_1$, because total mechanical energy per unit volume is conserved along a streamline.",
+          "label": "A"
+        },
+        {
+          "text": "$v_2 > v_1$ and $P_2 > P_1$, because dynamic pressure increases with speed while static pressure remains constant.",
+          "label": "B"
+        },
+        {
+          "text": "$v_2 < v_1$ and $P_2 > P_1$, because an increase in kinetic energy requires an increase in static pressure.",
+          "label": "C"
+        },
+        {
+          "text": "$v_2 > v_1$ and $P_2 = P_1$, because static pressure is independent of fluid speed along a horizontal streamline.",
+          "label": "D"
+        }
+      ],
+      "correct_option": "A",
+      "explanation": "For an incompressible and non-viscous fluid in steady flow along a horizontal streamline, the equation of continuity ($A_1 v_1 = A_2 v_2$) applies. Since $A_2 < A_1$, the fluid speed increases at point $Q$, so $v_2 > v_1$.\n\nBernoulli's equation for horizontal flow (where gravitational potential energy density is constant) states that:\n$P_1 + \\frac{1}{2}\\rho v_1^2 = P_2 + \\frac{1}{2}\\rho v_2^2 = \\text{constant}$\n\nAs the fluid speed increases from $v_1$ to $v_2$, the kinetic energy per unit volume increases. To keep the total energy per unit volume constant along the streamline, the static pressure must decrease ($P_2 < P_1$). Therefore, option A is correct, while options B, C, and D violate either the continuity equation or Bernoulli's energy conservation principle.",
+      "stem_fp": "c194e848ecc36c0a",
+      "body_md5": "acc73c722d4305c75789c88588f6ea06",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "constraints": {
+        "reasoning": "conceptual_law",
+        "seed_slot_id": "physics-06",
+        "question_format": "MCQ_4",
+        "cognitive_operation": "Bernoulli along a streamline",
+        "forbidden_templates": [
+          "PHYS_STRETCH_20PCT_CURRENT",
+          "PHYS_STRETCH_2X_LENGTH_RATIO",
+          "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+          "CHEM_LATTICE_COMPARISON",
+          "CHEM_LATTICE_FACTORS",
+          "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+          "ZOO_ABO_SEQUENCE",
+          "ZOO_ABO_ANTIGEN_IDENTIFY"
+        ],
+        "correct_option_count": 1,
+        "explanation_required": true,
+        "avoid_paraphrase_duplicates": true,
+        "enforce_prior_stem_diversity": true
+      }
+    },
+    {
+      "id": "336ec42d-aa33-4b5b-8c46-f8d5461883b0",
+      "status": "DRAFT",
+      "subject": "Physics",
+      "chapter": "Electrostatics",
+      "topic": "Electric Charge and Coulomb's Law",
+      "concept": "Coulomb's Law",
+      "concept_code": "coulomb-force",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-physics-01",
+      "difficulty": "medium",
+      "stem": "Two identical small conducting spheres carrying charges $+q$ and $-3q$ are separated by a distance $r$ in vacuum, experiencing an attractive electrostatic force of magnitude $F_1$. The two spheres are brought into contact and then separated back to a distance $2r$. If $F_2$ is the magnitude of the new electrostatic force between them, what is the ratio $F_1 / F_2$?",
+      "options": [
+        {
+          "text": "12 : 1",
+          "label": "A"
+        },
+        {
+          "text": "3 : 1",
+          "label": "B"
+        },
+        {
+          "text": "16 : 3",
+          "label": "C"
+        },
+        {
+          "text": "4 : 3",
+          "label": "D"
+        }
+      ],
+      "correct_option": "A",
+      "explanation": "According to Coulomb's Law, the initial magnitude of force between the two charges is given by $F_1 = k \frac{|(+q)(-3q)|}{r^2} = 3k \frac{q^2}{r^2}$. When the two identical conducting spheres are brought into contact, the total charge $q_{total} = (+q) + (-3q) = -2q$ redistributes equally between them due to symmetry. Thus, each sphere acquires a charge of $q' = \frac{-2q}{2} = -q$. The spheres are then separated to a distance of $2r$. The new magnitude of force between them is $F_2 = k \frac{|(-q)(-q)|}{(2r)^2} = k \frac{q^2}{4r^2}$. Taking the ratio of $F_1$ to $F_2$, we get $\frac{F_1}{F_2} = \frac{3 k q^2 / r^2}{k q^2 / (4r^2)} = 3 \times 4 = 12$. Thus, $F_1 : F_2 = 12 : 1$. Options B, C, and D result from incorrect charge redistribution or failing to square the distance in the denominator.",
+      "stem_fp": "e085a26342486d31",
+      "body_md5": "4b1f956774e10106d17a2bcb596b6249",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "constraints": {
+        "reasoning": "conceptual_law",
+        "seed_slot_id": "physics-01",
+        "question_format": "MCQ_4",
+        "cognitive_operation": "Coulomb inverse-square force relationship",
+        "forbidden_templates": [
+          "PHYS_STRETCH_20PCT_CURRENT",
+          "PHYS_STRETCH_2X_LENGTH_RATIO",
+          "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+          "CHEM_LATTICE_COMPARISON",
+          "CHEM_LATTICE_FACTORS",
+          "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+          "ZOO_ABO_SEQUENCE",
+          "ZOO_ABO_ANTIGEN_IDENTIFY"
+        ],
+        "correct_option_count": 1,
+        "explanation_required": true,
+        "avoid_paraphrase_duplicates": true,
+        "enforce_prior_stem_diversity": true
+      }
+    },
+    {
+      "id": "e4a6fdc3-7a55-4762-a176-f8af33709308",
+      "status": "DRAFT",
+      "subject": "Physics",
+      "chapter": "Current Electricity",
+      "topic": "Resistance and Resistivity",
+      "concept": "Factors Affecting Resistance",
+      "concept_code": "factors-affecting-resistance",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-physics-09",
+      "difficulty": "medium",
+      "stem": "Two solid cylindrical rods, $X$ and $Y$, are made of different metallic materials. Rod $X$ has length $L$ and diameter $d$, while Rod $Y$ has length $2L$ and diameter $2d$. When the electrical resistance of Rod $X$ ($R_X$) is measured to be equal to the electrical resistance of Rod $Y$ ($R_Y$) at the same temperature, what is the ratio of the resistivity of the material of Rod $X$ ($\\rho_X$) to that of Rod $Y$ ($\\rho_Y$)?",
+      "options": [
+        {
+          "text": "1 : 2",
+          "label": "A"
+        },
+        {
+          "text": "2 : 1",
+          "label": "B"
+        },
+        {
+          "text": "1 : 4",
+          "label": "C"
+        },
+        {
+          "text": "4 : 1",
+          "label": "D"
+        }
+      ],
+      "correct_option": "A",
+      "explanation": "The electrical resistance of a cylindrical conductor is given by $R = \\frac{\\rho L}{A} = \\frac{\\rho L}{\\pi (d/2)^2} = \\frac{4\\rho L}{\\pi d^2}$.\n\nFor Rod $X$:\n$R_X = \\frac{4 \\rho_X L}{\\pi d^2}$\n\nFor Rod $Y$:\n$R_Y = \\frac{4 \\rho_Y (2L)}{\\pi (2d)^2} = \\frac{8 \\rho_Y L}{4 \\pi d^2} = \\frac{2 \\rho_Y L}{\\pi d^2}$\n\nGiven that $R_X = R_Y$:\n$\\frac{4 \\rho_X L}{\\pi d^2} = \\frac{2 \\rho_Y L}{\\pi d^2}$\n\nSimplifying gives:\n$4 \\rho_X = 2 \\rho_Y \\implies \\frac{\\rho_X}{\\rho_Y} = \\frac{2}{4} = \\frac{1}{2}$\n\nThus, the ratio $\\rho_X : \\rho_Y$ is $1 : 2$.\n\nOption A is correct.\nOption B is incorrect as it inverts the ratio.\nOptions C and D are incorrect because they result from erroneously squaring the length term alongside the diameter term or neglecting the linear scaling of length.",
+      "stem_fp": "86d13c9d497e173f",
+      "body_md5": "70aa1a150337cfbf002089e0fcbe3da5",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "constraints": {
+        "reasoning": "resistivity_reasoning",
+        "seed_slot_id": "physics-09",
+        "question_format": "MCQ_4",
+        "cognitive_operation": "R ∝ L/A material dependence (no wire-stretch current)",
+        "forbidden_templates": [
+          "PHYS_STRETCH_20PCT_CURRENT",
+          "PHYS_STRETCH_2X_LENGTH_RATIO",
+          "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+          "CHEM_LATTICE_COMPARISON",
+          "CHEM_LATTICE_FACTORS",
+          "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+          "ZOO_ABO_SEQUENCE",
+          "ZOO_ABO_ANTIGEN_IDENTIFY"
+        ],
+        "correct_option_count": 1,
+        "explanation_required": true,
+        "avoid_paraphrase_duplicates": true,
+        "enforce_prior_stem_diversity": true
+      }
+    },
+    {
+      "id": "a1f1d832-21a3-4fb6-86b8-fe07ed46ad18",
+      "status": "DRAFT",
+      "subject": "Physics",
+      "chapter": "Kinematics",
+      "topic": "Motion in a Straight Line",
+      "concept": "Kinematic Equations",
+      "concept_code": "kinematic-equations",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-physics-02",
+      "difficulty": "medium",
+      "stem": "A particle moving along a straight line with uniform acceleration covers a distance of $12\\text{ m}$ during the $3^{\\text{rd}}$ second of its motion and $20\\text{ m}$ during the $5^{\\text{th}}$ second of its motion. Assuming the particle started moving at $t = 0$, what is the total distance traveled by the particle in the first $4$ seconds?",
+      "options": [
+        {
+          "text": "32 m",
+          "label": "A"
+        },
+        {
+          "text": "48 m",
+          "label": "B"
+        },
+        {
+          "text": "24 m",
+          "label": "C"
+        },
+        {
+          "text": "40 m",
+          "label": "D"
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "The distance covered by a body in the $n^{\\text{th}}$ second of uniformly accelerated motion is given by the formula:\n$$s_n = u + \\frac{a}{2}(2n - 1)$$\n\nGiven:\nFor $n = 3$, $s_3 = 12\\text{ m}$:\n$$12 = u + \\frac{a}{2}(2(3) - 1) \\implies 12 = u + \\frac{5a}{2} \\quad \\text{--- (Equation 1)}$$\n\nFor $n = 5$, $s_5 = 20\\text{ m}$:\n$$20 = u + \\frac{a}{2}(2(5) - 1) \\implies 20 = u + \\frac{9a}{2} \\quad \\text{--- (Equation 2)}$$\n\nSubtracting Equation 1 from Equation 2:\n$$20 - 12 = \\left(u + \\frac{9a}{2}\\right) - \\left(u + \\frac{5a}{2}\\right)$$\n$$8 = \\frac{4a}{2} = 2a \\implies a = 4\\text{ m/s}^2$$\n\nSubstituting $a = 4\\text{ m/s}^2$ back into Equation 1:\n$$12 = u + \\frac{5(4)}{2} \\implies 12 = u + 10 \\implies u = 2\\text{ m/s}$$\n\nNow, to find the total distance traveled in the first $t = 4\\text{ seconds}$, we use the kinematic equation:\n$$s = ut + \\frac{1}{2}at^2$$\n$$s = (2)(4) + \\frac{1}{2}(4)(4)^2 = 8 + 2(16) = 8 + 32 = 48\\text{ m}$$\n\nHence, Option B is correct.\n- Option A (32 m) incorrectly considers only the $at^2/2$ term without adding initial velocity distance ($ut$).\n- Option C (24 m) represents the distance traveled in 2 seconds or incorrect algebra.\n- Option D (40 m) results from miscalculating the initial velocity or acceleration values.",
+      "stem_fp": "1fe04b2ed8fac996",
+      "body_md5": "641a4a93a65100ff90160ff64ae207ee",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "constraints": {
+        "reasoning": "numerical_application",
+        "seed_slot_id": "physics-02",
+        "question_format": "MCQ_4",
+        "cognitive_operation": "Apply v = u + at / s = ut + ½at²",
+        "forbidden_templates": [
+          "PHYS_STRETCH_20PCT_CURRENT",
+          "PHYS_STRETCH_2X_LENGTH_RATIO",
+          "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+          "CHEM_LATTICE_COMPARISON",
+          "CHEM_LATTICE_FACTORS",
+          "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+          "ZOO_ABO_SEQUENCE",
+          "ZOO_ABO_ANTIGEN_IDENTIFY"
+        ],
+        "correct_option_count": 1,
+        "explanation_required": true,
+        "avoid_paraphrase_duplicates": true,
+        "enforce_prior_stem_diversity": true
+      }
+    },
+    {
+      "id": "16dd7280-a48b-4437-80ac-a2b72b28d952",
+      "status": "DRAFT",
+      "subject": "Physics",
+      "chapter": "Laws of Motion",
+      "topic": "Newton's Laws and Momentum",
+      "concept": "Newton's Laws of Motion",
+      "concept_code": "newtons-laws",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-physics-03",
+      "difficulty": "easy",
+      "stem": "A passenger sitting in a smooth, uniformly accelerating train drops a small coin from rest relative to himself. From the perspective of an observer standing stationary on the ground outside, what is the path followed by the coin during its fall?",
+      "options": [
+        {
+          "text": "A straight vertical line falling downwards",
+          "label": "A"
+        },
+        {
+          "text": "A parabolic curve directed forward in the direction of the train's motion",
+          "label": "B"
+        },
+        {
+          "text": "A parabolic curve directed backward opposite to the train's motion",
+          "label": "C"
+        },
+        {
+          "text": "A straight inclined line tilted backward opposite to the train's motion",
+          "label": "D"
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "According to Newton's First Law of Motion, at the moment the coin is released, it possesses a horizontal velocity equal to the forward velocity of the train at that instant. Once released, no net horizontal force acts on the coin (ignoring air resistance), so its horizontal velocity remains constant. Vertically, the coin experiences a constant downward acceleration due to gravity ($g$). For a ground-based inertial observer, an object moving with constant horizontal velocity and undergoing constant vertical acceleration describes a parabolic path directed forward. From the accelerated frame inside the train, the path appears as a backward parabola, but the question asks for the ground frame observation.",
+      "stem_fp": "16e6ee896b5ad44d",
+      "body_md5": "e31206d82f4e32ac634cbadbdcce1aee",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "constraints": {
+        "reasoning": "conceptual_law",
+        "seed_slot_id": "physics-03",
+        "question_format": "MCQ_4",
+        "cognitive_operation": "Newton's second/third law reasoning",
+        "forbidden_templates": [
+          "PHYS_STRETCH_20PCT_CURRENT",
+          "PHYS_STRETCH_2X_LENGTH_RATIO",
+          "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+          "CHEM_LATTICE_COMPARISON",
+          "CHEM_LATTICE_FACTORS",
+          "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+          "ZOO_ABO_SEQUENCE",
+          "ZOO_ABO_ANTIGEN_IDENTIFY"
+        ],
+        "correct_option_count": 1,
+        "explanation_required": true,
+        "avoid_paraphrase_duplicates": true,
+        "enforce_prior_stem_diversity": true
+      }
+    },
+    {
+      "id": "b207ad06-7427-417e-abfd-a928ab68df84",
+      "status": "DRAFT",
+      "subject": "Physics",
+      "chapter": "Units and Measurement",
+      "topic": "SI Units and Measurement",
+      "concept": "SI Base and Derived Units",
+      "concept_code": "si-base-and-derived-units",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-physics-08",
+      "difficulty": "easy",
+      "stem": "Which of the following physical quantities is expressed using a fundamental (base) SI unit rather than a derived SI unit?",
+      "options": [
+        {
+          "text": "Electric charge",
+          "label": "A"
+        },
+        {
+          "text": "Luminous intensity",
+          "label": "B"
+        },
+        {
+          "text": "Electric potential",
+          "label": "C"
+        },
+        {
+          "text": "Frequency",
+          "label": "D"
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "In the International System of Units (SI), there are seven fundamental (base) quantities: length (meter), mass (kilogram), time (second), electric current (ampere), thermodynamic temperature (kelvin), amount of substance (mole), and luminous intensity (candela). Luminous intensity is measured in candela (cd), which is a base SI unit.\n\nOption A is incorrect because electric charge is measured in coulombs (C), which is a derived unit ($1\\text{ C} = 1\\text{ A}\\cdot\\text{s}$). The base quantity for electricity is electric current (ampere).\nOption C is incorrect because electric potential is measured in volts (V), which is a derived unit ($1\\text{ V} = 1\\text{ kg}\\cdot\\text{m}^2\\cdot\\text{s}^{-3}\\cdot\\text{A}^{-1}$).\nOption D is incorrect because frequency is measured in hertz (Hz), which is a derived unit ($1\\text{ Hz} = 1\\text{ s}^{-1}$).",
+      "stem_fp": "8134351e2892f852",
+      "body_md5": "0a1082eb3f28e607af4f30e1242fa0d4",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "constraints": {
+        "reasoning": "measurement_units",
+        "seed_slot_id": "physics-08",
+        "question_format": "MCQ_4",
+        "cognitive_operation": "SI base vs derived unit recognition",
+        "forbidden_templates": [
+          "PHYS_STRETCH_20PCT_CURRENT",
+          "PHYS_STRETCH_2X_LENGTH_RATIO",
+          "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+          "CHEM_LATTICE_COMPARISON",
+          "CHEM_LATTICE_FACTORS",
+          "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+          "ZOO_ABO_SEQUENCE",
+          "ZOO_ABO_ANTIGEN_IDENTIFY"
+        ],
+        "correct_option_count": 1,
+        "explanation_required": true,
+        "avoid_paraphrase_duplicates": true,
+        "enforce_prior_stem_diversity": true
+      }
+    },
+    {
+      "id": "3d0dbda5-7882-4e3f-90d8-3a479cf67ab2",
+      "status": "DRAFT",
+      "subject": "Physics",
+      "chapter": "Optics",
+      "topic": "Refraction and Lenses",
+      "concept": "Thin Lens Formula",
+      "concept_code": "lens-formula",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-physics-10",
+      "difficulty": "medium",
+      "stem": "A small object is placed perpendicular to the principal axis of a thin convex lens of focal length $f = +15\\text{ cm}$. A real image is formed on a screen on the opposite side of the lens. When the object is moved $10\\text{ cm}$ closer to the lens, the image formed on the screen shifts by $30\\text{ cm}$ further away from the lens to remain in focus. Find the initial distance of the object from the lens.",
+      "options": [
+        {
+          "text": "$25\\text{ cm}$",
+          "label": "A"
+        },
+        {
+          "text": "$30\\text{ cm}$",
+          "label": "B"
+        },
+        {
+          "text": "$40\\text{ cm}$",
+          "label": "C"
+        },
+        {
+          "text": "$45\\text{ cm}$",
+          "label": "D"
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "Using Cartesian sign conventions for a thin convex lens:\nFocal length $f = +15\\text{ cm}$.\n\nLet the initial object distance be $u_1 = -x$ (where $x > 0$).\nUsing the thin lens formula:\n$\\frac{1}{v_1} - \\frac{1}{u_1} = \\frac{1}{f} \\implies \\frac{1}{v_1} - \\frac{1}{-x} = \\frac{1}{15} \\implies \\frac{1}{v_1} = \\frac{1}{15} - \\frac{1}{x} = \\frac{x - 15}{15x}$\nThus, $v_1 = \\frac{15x}{x - 15}$.\nSince a real image is formed on a screen, $x > 15$.\n\nIn the second case, the object is moved $10\\text{ cm}$ closer to the lens, so $u_2 = -(x - 10)$.\nThe new image distance $v_2 = v_1 + 30$.\nUsing the lens formula for the second position:\n$\\frac{1}{v_2} - \\frac{1}{u_2} = \\frac{1}{f} \\implies \\frac{1}{v_1 + 30} + \\frac{1}{x - 10} = \\frac{1}{15}$\n$\\frac{1}{v_1 + 30} = \\frac{1}{15} - \\frac{1}{x - 10} = \\frac{x - 25}{15(x - 10)}$\nThus, $v_1 + 30 = \\frac{15(x - 10)}{x - 25}$.\n\nSubtracting $v_1$ from $v_1 + 30$ gives:\n$\\frac{15(x - 10)}{x - 25} - \\frac{15x}{x - 15} = 30$\nDividing the entire equation by $15$:\n$\\frac{x - 10}{x - 25} - \\frac{x}{x - 15} = 2$\n\nTaking a common denominator:\n$\\frac{(x - 10)(x - 15) - x(x - 25)}{(x - 25)(x - 15)} = 2$\n$\\frac{(x^2 - 25x + 150) - (x^2 - 25x)}{x^2 - 40x + 375} = 2$\n$\\frac{150}{x^2 - 40x + 375} = 2$\n$x^2 - 40x + 375 = 75$\n$x^2 - 40x + 300 = 0$\n\nSolving this quadratic equation:\n$(x - 30)(x - 10) = 0$\nThis gives $x = 30\\text{ cm}$ or $x = 10\\text{ cm}$.\n\nSince $x > 15\\text{ cm}$ for a real image to be formed initially on a screen, $x = 10\\text{ cm}$ is rejected.\nTherefore, the initial object distance is $30\\text{ cm}$.",
+      "stem_fp": "bf0db28992ba2529",
+      "body_md5": "2438e1c1c989e282c87bb46d6eb5c560",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "constraints": {
+        "reasoning": "numerical_application",
+        "seed_slot_id": "physics-10",
+        "question_format": "MCQ_4",
+        "cognitive_operation": "Thin lens formula 1/v − 1/u = 1/f",
+        "forbidden_templates": [
+          "PHYS_STRETCH_20PCT_CURRENT",
+          "PHYS_STRETCH_2X_LENGTH_RATIO",
+          "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+          "CHEM_LATTICE_COMPARISON",
+          "CHEM_LATTICE_FACTORS",
+          "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+          "ZOO_ABO_SEQUENCE",
+          "ZOO_ABO_ANTIGEN_IDENTIFY"
+        ],
+        "correct_option_count": 1,
+        "explanation_required": true,
+        "avoid_paraphrase_duplicates": true,
+        "enforce_prior_stem_diversity": true
+      }
+    },
+    {
+      "id": "061d07ed-ca1f-4f31-b7f8-cbdb3dfe8453",
+      "status": "DRAFT",
+      "subject": "Physics",
+      "chapter": "Work, Energy and Power",
+      "topic": "Work and Kinetic Energy",
+      "concept": "Work–Energy Theorem",
+      "concept_code": "work-energy-theorem",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-physics-04",
+      "difficulty": "medium",
+      "stem": "A particle of mass $m = 2\\text{ kg}$ moves along the positive $x$-axis under the influence of a single conservative force $F(x) = (6x^2 - 4x)\\text{ N}$, where $x$ is in meters. If the speed of the particle at $x = 1\\text{ m}$ is $2\\text{ m/s}$, what is its speed when it reaches $x = 3\\text{ m}$?",
+      "options": [
+        {
+          "text": "$\\sqrt{38}\\text{ m/s}$",
+          "label": "A"
+        },
+        {
+          "text": "$\\sqrt{36}\\text{ m/s}$",
+          "label": "B"
+        },
+        {
+          "text": "$\\sqrt{40}\\text{ m/s}$",
+          "label": "C"
+        },
+        {
+          "text": "$\\sqrt{44}\\text{ m/s}$",
+          "label": "D"
+        }
+      ],
+      "correct_option": "C",
+      "explanation": "According to the Work-Energy Theorem, the net work done on a particle by the force acting on it equals the change in its kinetic energy: $W_{\\text{net}} = \\Delta K = K_f - K_i$.\n\nFirst, calculate the work done by the force $F(x)$ as the particle moves from $x_1 = 1\\text{ m}$ to $x_2 = 3\\text{ m}$:\n$W = \\int_{x_1}^{x_2} F(x) \\, dx = \\int_{1}^{3} (6x^2 - 4x) \\, dx$\n\nIntegrating the expression:\n$W = \\left[ 2x^3 - 2x^2 \\right]_{1}^{3}$\n$W = \\left( 2(3)^3 - 2(3)^2 \\right) - \\left( 2(1)^3 - 2(1)^2 \\right)$\n$W = (54 - 18) - (2 - 2) = 36\\text{ J}$\n\nNow, apply the Work-Energy Theorem:\n$W = \\frac{1}{2} m v_f^2 - \\frac{1}{2} m v_i^2$\nGiven $m = 2\\text{ kg}$ and $v_i = 2\\text{ m/s}$:\n$36 = \\frac{1}{2} (2) v_f^2 - \\frac{1}{2} (2) (2)^2$\n$36 = v_f^2 - 4$\n$v_f^2 = 40$\n$v_f = \\sqrt{40}\\text{ m/s}$\n\nOption C correctly reflects this calculation. Option A arises if the initial kinetic energy is subtracted instead of added. Option B incorrectly assumes $v_f^2 = W$. Option D is a result of calculation errors in integration limits.",
+      "stem_fp": "3148365d28440a1b",
+      "body_md5": "2a61766e9b14ef9ad87bd44ddc9f812f",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "constraints": {
+        "reasoning": "numerical_application",
+        "seed_slot_id": "physics-04",
+        "question_format": "MCQ_4",
+        "cognitive_operation": "Net work equals ΔK",
+        "forbidden_templates": [
+          "PHYS_STRETCH_20PCT_CURRENT",
+          "PHYS_STRETCH_2X_LENGTH_RATIO",
+          "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+          "CHEM_LATTICE_COMPARISON",
+          "CHEM_LATTICE_FACTORS",
+          "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+          "ZOO_ABO_SEQUENCE",
+          "ZOO_ABO_ANTIGEN_IDENTIFY"
+        ],
+        "correct_option_count": 1,
+        "explanation_required": true,
+        "avoid_paraphrase_duplicates": true,
+        "enforce_prior_stem_diversity": true
+      }
+    },
+    {
+      "id": "b4a2e055-f141-4f05-8b06-850d84122b60",
+      "status": "DRAFT",
+      "subject": "Physics",
+      "chapter": "Mechanical Properties of Solids",
+      "topic": "Elastic Moduli",
+      "concept": "Young's Modulus",
+      "concept_code": "youngs-modulus",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-physics-05",
+      "difficulty": "medium",
+      "stem": "A uniform metallic wire of length $2.0\\text{ m}$ and cross-sectional area $1.0\\text{ mm}^2$ is suspended vertically from a rigid support. A mass of $4.0\\text{ kg}$ is attached to its free end, causing an elongation of $0.4\\text{ mm}$. Taking $g = 10\\text{ m/s}^2$, what is the Young's modulus of the material of the wire?",
+      "options": [
+        {
+          "text": "$1.0 \\times 10^{11}\\text{ N/m}^2$",
+          "label": "A"
+        },
+        {
+          "text": "$2.0 \\times 10^{11}\\text{ N/m}^2$",
+          "label": "B"
+        },
+        {
+          "text": "$2.0 \\times 10^{10}\\text{ N/m}^2$",
+          "label": "C"
+        },
+        {
+          "text": "$5.0 \\times 10^{11}\\text{ N/m}^2$",
+          "label": "D"
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "Young's modulus ($Y$) is defined as the ratio of longitudinal stress to longitudinal strain:\n$$Y = \\frac{\\text{Stress}}{\\text{Strain}} = \\frac{F / A}{\\Delta L / L} = \\frac{F \\cdot L}{A \\cdot \\Delta L}$$\n\nGiven parameters:\n- Force, $F = mg = 4.0\\text{ kg} \\times 10\\text{ m/s}^2 = 40\\text{ N}$\n- Initial length, $L = 2.0\\text{ m}$\n- Cross-sectional area, $A = 1.0\\text{ mm}^2 = 1.0 \\times 10^{-6}\\text{ m}^2$\n- Elongation, $\\Delta L = 0.4\\text{ mm} = 0.4 \\times 10^{-3}\\text{ m} = 4.0 \\times 10^{-4}\\text{ m}$\n\nSubstitute the given values into the formula:\n$$Y = \\frac{40 \\times 2.0}{(1.0 \\times 10^{-6}) \\times (4.0 \\times 10^{-4})}$$\n$$Y = \\frac{80}{4.0 \\times 10^{-10}} = 20 \\times 10^{10} = 2.0 \\times 10^{11}\\text{ N/m}^2$$\n\n- Option A ($1.0 \\times 10^{11}\\text{ N/m}^2$) results from using incorrect conversion or forgetting a factor of 2.\n- Option C ($2.0 \\times 10^{10}\\text{ N/m}^2$) is incorrect due to a power-of-ten calculation error.\n- Option D ($5.0 \\times 10^{11}\\text{ N/m}^2$) is obtained if strain is incorrectly calculated as $\\Delta L / A$.",
+      "stem_fp": "9bd6d563ca6fc2b2",
+      "body_md5": "180d9ffdcbacdd15db95f183647d84da",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "constraints": {
+        "reasoning": "material_property",
+        "seed_slot_id": "physics-05",
+        "question_format": "MCQ_4",
+        "cognitive_operation": "Y = stress/strain application",
+        "forbidden_templates": [
+          "PHYS_STRETCH_20PCT_CURRENT",
+          "PHYS_STRETCH_2X_LENGTH_RATIO",
+          "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+          "CHEM_LATTICE_COMPARISON",
+          "CHEM_LATTICE_FACTORS",
+          "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+          "ZOO_ABO_SEQUENCE",
+          "ZOO_ABO_ANTIGEN_IDENTIFY"
+        ],
+        "correct_option_count": 1,
+        "explanation_required": true,
+        "avoid_paraphrase_duplicates": true,
+        "enforce_prior_stem_diversity": true
+      }
+    },
+    {
+      "id": "92c31281-cbdf-4954-9b25-79342cb1b400",
+      "status": "DRAFT",
+      "subject": "Physics",
+      "chapter": "Thermodynamics",
+      "topic": "Laws of Thermodynamics",
+      "concept": "Zeroth and First Law",
+      "concept_code": "zeroth-and-first-law",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-physics-07",
+      "difficulty": "easy",
+      "stem": "According to the First Law of Thermodynamics, represented by the sign convention $\\Delta Q = \\Delta U + \\Delta W$, which statement correctly describes the change in internal energy ($\\Delta U$) during a thermodynamic process?",
+      "options": [
+        {
+          "text": "$\\Delta U$ depends only on the heat added to the system and is independent of the work done by the system.",
+          "label": "A"
+        },
+        {
+          "text": "$\\Delta U$ represents the total mechanical energy of the system including its bulk kinetic and potential energies.",
+          "label": "B"
+        },
+        {
+          "text": "$\\Delta U$ is a state function, meaning its value depends only on the initial and final states of the system, not the path taken.",
+          "label": "C"
+        },
+        {
+          "text": "$\\Delta U$ is a path function because both heat transfer ($\\Delta Q$) and work done ($\\Delta W$) depend on the specific path taken.",
+          "label": "D"
+        }
+      ],
+      "correct_option": "C",
+      "explanation": "According to the First Law of Thermodynamics, $\\Delta Q = \\Delta U + \\Delta W$, or $\\Delta U = \\Delta Q - \\Delta W$. Although heat transfer ($\\Delta Q$) and work done ($\\Delta W$) are path functions individually, their difference ($\\Delta U$) depends purely on the microscopic state of the system and is a state function. Therefore, $\\Delta U$ is determined solely by the initial and final states of the thermodynamic system. \n\n- Option A is incorrect because $\\Delta U$ depends on both $\\Delta Q$ and $\\Delta W$.\n- Option B is incorrect because internal energy refers to the sum of microscopic molecular kinetic and potential energies, excluding macroscopic (bulk) motion or position.\n- Option D is incorrect because $\\Delta U$ is a state function, not a path function.",
+      "stem_fp": "c344a84bf14840ca",
+      "body_md5": "a26fbb79939452ddfa7e11708c3c71f8",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "constraints": {
+        "reasoning": "conceptual_law",
+        "seed_slot_id": "physics-07",
+        "question_format": "MCQ_4",
+        "cognitive_operation": "First law ΔQ = ΔU + ΔW",
+        "forbidden_templates": [
+          "PHYS_STRETCH_20PCT_CURRENT",
+          "PHYS_STRETCH_2X_LENGTH_RATIO",
+          "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+          "CHEM_LATTICE_COMPARISON",
+          "CHEM_LATTICE_FACTORS",
+          "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+          "ZOO_ABO_SEQUENCE",
+          "ZOO_ABO_ANTIGEN_IDENTIFY"
+        ],
+        "correct_option_count": 1,
+        "explanation_required": true,
+        "avoid_paraphrase_duplicates": true,
+        "enforce_prior_stem_diversity": true
+      }
+    },
+    {
+      "id": "3dc11d2a-b9ad-4155-93ec-4cd7b3bae9af",
+      "status": "DRAFT",
+      "subject": "Zoology",
+      "chapter": "Body Fluids and Circulation",
+      "topic": "Cardiac Cycle",
+      "concept": "Cardiac Cycle Phases",
+      "concept_code": "cardiac-cycle-phases",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-zoology-01",
+      "difficulty": "medium",
+      "stem": "During a single human cardiac cycle at rest, a specific sequence of mechanical events occurs across the heart chambers. Which of the following accurately describes the correct sequential progression of events starting immediately after atrial systole?",
+      "options": [
+        {
+          "text": "Ventricular systole (isovolumetric contraction followed by ventricular ejection) → Joint diastole → Ventricular diastole",
+          "label": "A"
+        },
+        {
+          "text": "Isovolumetric relaxation → Ventricular ejection → Atrial diastole → Joint diastole",
+          "label": "B"
+        },
+        {
+          "text": "Ventricular systole (isovolumetric contraction followed by ventricular ejection) → Ventricular diastole (isovolumetric relaxation followed by ventricular filling) → Joint diastole",
+          "label": "C"
+        },
+        {
+          "text": "Ventricular ejection → Isovolumetric contraction → Isovolumetric relaxation → Atrial systole",
+          "label": "D"
+        }
+      ],
+      "correct_option": "C",
+      "explanation": "The cardiac cycle begins with atrial contraction (atrial systole) pushing remaining blood into the ventricles. Immediately following atrial systole, the ventricles enter ventricular systole. Ventricular systole begins with isovolumetric contraction (AV valves close, pressure builds without volume change) followed by ventricular ejection (semilunar valves open, blood pumped into arteries). Next, ventricular diastole begins with isovolumetric relaxation (semilunar valves close, ventricles relax without volume change) followed by early ventricular filling as AV valves open. As the cycle concludes before the next atrial systole, all four chambers remain relaxed simultaneously during joint diastole. Option C accurately traces this physiological progression.",
+      "stem_fp": "e0933fa7cc7a5e7e",
+      "body_md5": "1a27755effe026c7988a8c23021524b8",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "constraints": {
+        "reasoning": "process_sequence",
+        "seed_slot_id": "zoology-01",
+        "question_format": "MCQ_4",
+        "cognitive_operation": "Systole/diastole phase identification",
+        "forbidden_templates": [
+          "PHYS_STRETCH_20PCT_CURRENT",
+          "PHYS_STRETCH_2X_LENGTH_RATIO",
+          "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+          "CHEM_LATTICE_COMPARISON",
+          "CHEM_LATTICE_FACTORS",
+          "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+          "ZOO_ABO_SEQUENCE",
+          "ZOO_ABO_ANTIGEN_IDENTIFY"
+        ],
+        "correct_option_count": 1,
+        "explanation_required": true,
+        "avoid_paraphrase_duplicates": true,
+        "enforce_prior_stem_diversity": true
+      }
+    },
+    {
+      "id": "8a3937ce-5ad0-41af-bc84-17bf04c386ce",
+      "status": "DRAFT",
+      "subject": "Zoology",
+      "chapter": "Biomolecules",
+      "topic": "Nucleic Acids",
+      "concept": "DNA and RNA",
+      "concept_code": "dna-rna",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-zoology-04",
+      "difficulty": "medium",
+      "stem": "Which of the following statements correctly distinguishes the structural and functional properties of DNA from those of RNA in living organisms?",
+      "options": [
+        {
+          "text": "DNA contains a 2'-hydroxyl group on its pentose sugar, making it chemically less reactive and ideal for transient cellular signaling.",
+          "label": "A"
+        },
+        {
+          "text": "DNA utilizes uracil to form double-ring purine base pairs, whereas RNA utilizes thymine to prevent mutations during translation.",
+          "label": "B"
+        },
+        {
+          "text": "DNA serves as the stable long-term store of genetic information due to the absence of a 2'-OH group, while RNA contains a 2'-OH group and acts primarily as a functional participant in protein synthesis.",
+          "label": "C"
+        },
+        {
+          "text": "RNA forms a rigid double-helical structure stabilized exclusively by phosphodiester bonds to store genetic memory, whereas DNA is inherently single-stranded.",
+          "label": "D"
+        }
+      ],
+      "correct_option": "C",
+      "explanation": "Option C is correct because DNA contains 2'-deoxyribose (lacking an -OH group at the 2' carbon), which makes it chemically stable and suited for long-term genetic storage. RNA contains ribose (with a 2'-OH group), rendering it chemically more reactive and versatile for short-term functional roles like protein synthesis (mRNA, tRNA, rRNA). Option A is incorrect because DNA lacks a 2'-OH group; the 2'-OH is present in ribose sugar of RNA. Option B is incorrect because uracil and thymine are single-ring pyrimidines, not purines, and thymine is found in DNA while uracil is found in RNA. Option D is incorrect because DNA typically exists as a double helix while RNA is predominantly single-stranded.",
+      "stem_fp": "e9abed05c7120e90",
+      "body_md5": "1d3d9c6bddc7dde79834cdbed405d80f",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "constraints": {
+        "reasoning": "biomolecule_compare",
+        "seed_slot_id": "zoology-04",
+        "question_format": "MCQ_4",
+        "cognitive_operation": "DNA vs RNA structural/functional difference",
+        "forbidden_templates": [
+          "PHYS_STRETCH_20PCT_CURRENT",
+          "PHYS_STRETCH_2X_LENGTH_RATIO",
+          "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+          "CHEM_LATTICE_COMPARISON",
+          "CHEM_LATTICE_FACTORS",
+          "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+          "ZOO_ABO_SEQUENCE",
+          "ZOO_ABO_ANTIGEN_IDENTIFY"
+        ],
+        "correct_option_count": 1,
+        "explanation_required": true,
+        "avoid_paraphrase_duplicates": true,
+        "enforce_prior_stem_diversity": true
+      }
+    },
+    {
+      "id": "2e17c7e6-5d8f-4469-9cea-407177e61e8e",
+      "status": "DRAFT",
+      "subject": "Zoology",
+      "chapter": "Biomolecules",
+      "topic": "Proteins and Enzymes",
+      "concept": "Enzyme Action",
+      "concept_code": "enzyme-basics",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-zoology-03",
+      "difficulty": "medium",
+      "stem": "According to the induced-fit model of enzyme action, which of the following events best describes the interaction between an enzyme's active site and its substrate during the catalytic cycle?",
+      "options": [
+        {
+          "text": "The active site remains completely rigid and pre-formed, binding only to substrates that possess a complementary static structure.",
+          "label": "A"
+        },
+        {
+          "text": "Substrate binding induces a conformational change in the active site, optimizing chemical interactions to stabilize the transition state.",
+          "label": "B"
+        },
+        {
+          "text": "The substrate undergoes structural modification to fit the active site, while the tertiary structure of the enzyme remains entirely unchanged.",
+          "label": "C"
+        },
+        {
+          "text": "The active site permanently alters its chemical composition during substrate binding, converting the enzyme into a non-reusable product.",
+          "label": "D"
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "Option B is correct because Koshland's induced-fit model posits that the initial interaction between the substrate and the active site induces a dynamic conformational change in the enzyme. This change aligns the catalytic functional groups precisely around the substrate, stabilizing the high-energy transition state and lowering the activation energy. Option A describes the outdated Fischer's lock-and-key model rather than the induced-fit model. Option C is incorrect because the enzyme undergoes crucial conformational flexibility, not just the substrate. Option D is incorrect because enzymes act as biological catalysts and emerge chemically unchanged at the end of the catalytic cycle, ready to process another substrate molecule.",
+      "stem_fp": "55f8cccab9af3824",
+      "body_md5": "54e692134279c71b4b7c8b0b7889fd5d",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "constraints": {
+        "reasoning": "mechanism",
+        "seed_slot_id": "zoology-03",
+        "question_format": "MCQ_4",
+        "cognitive_operation": "Enzyme action / active site",
+        "forbidden_templates": [
+          "PHYS_STRETCH_20PCT_CURRENT",
+          "PHYS_STRETCH_2X_LENGTH_RATIO",
+          "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+          "CHEM_LATTICE_COMPARISON",
+          "CHEM_LATTICE_FACTORS",
+          "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+          "ZOO_ABO_SEQUENCE",
+          "ZOO_ABO_ANTIGEN_IDENTIFY"
+        ],
+        "correct_option_count": 1,
+        "explanation_required": true,
+        "avoid_paraphrase_duplicates": true,
+        "enforce_prior_stem_diversity": true
+      }
+    },
+    {
+      "id": "b690c0d3-98f6-4e57-851f-aae1ac6ad8cd",
+      "status": "DRAFT",
+      "subject": "Zoology",
+      "chapter": "Animal Kingdom",
+      "topic": "Chordata Basics",
+      "concept": "Fundamental Chordate Features",
+      "concept_code": "chordate-features",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-zoology-05",
+      "difficulty": "easy",
+      "stem": "Which set of anatomical structures correctly represents the four primary diagnostic features present at some stage in the lifecycle of all chordates?",
+      "options": [
+        {
+          "text": "Solid ventral nerve cord, notochord, paired pharyngeal gill slits, and post-anal tail",
+          "label": "A"
+        },
+        {
+          "text": "Dorsal hollow nerve cord, notochord, paired pharyngeal gill slits, and post-anal tail",
+          "label": "B"
+        },
+        {
+          "text": "Dorsal hollow nerve cord, vertebral column, paired pharyngeal gill slits, and post-anal tail",
+          "label": "C"
+        },
+        {
+          "text": "Solid dorsal nerve cord, notochord, ventral heart, and post-anal tail",
+          "label": "D"
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "All chordates fundamental diagnostic features present at some stage of development are: (1) a dorsal, hollow nerve cord, (2) a supportive notochord, (3) paired pharyngeal gill slits, and (4) a post-anal tail. Option A is incorrect because chordates possess a dorsal hollow nerve cord, whereas non-chordates typically have a ventral solid nerve cord. Option C is incorrect because the vertebral column is present only in subphylum Vertebrata, not in all chordates (e.g., Urochordata and Cephalochordata). Option D is incorrect because the chordate nerve cord is hollow, not solid.",
+      "stem_fp": "888e6e1d6493759a",
+      "body_md5": "6b4108a9977ce34d8272c91dfde12d0f",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "constraints": {
+        "reasoning": "classification",
+        "seed_slot_id": "zoology-05",
+        "question_format": "MCQ_4",
+        "cognitive_operation": "Fundamental chordate features",
+        "forbidden_templates": [
+          "PHYS_STRETCH_20PCT_CURRENT",
+          "PHYS_STRETCH_2X_LENGTH_RATIO",
+          "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+          "CHEM_LATTICE_COMPARISON",
+          "CHEM_LATTICE_FACTORS",
+          "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+          "ZOO_ABO_SEQUENCE",
+          "ZOO_ABO_ANTIGEN_IDENTIFY"
+        ],
+        "correct_option_count": 1,
+        "explanation_required": true,
+        "avoid_paraphrase_duplicates": true,
+        "enforce_prior_stem_diversity": true
+      }
+    },
+    {
+      "id": "dd7b5422-437d-4b0f-a2dc-f370ea0496c2",
+      "status": "DRAFT",
+      "subject": "Zoology",
+      "chapter": "Body Fluids and Circulation",
+      "topic": "Human Heart Anatomy",
+      "concept": "Structure of the Human Heart",
+      "concept_code": "heart-structure",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-zoology-02",
+      "difficulty": "easy",
+      "stem": "Which of the following heart valves is located between the right ventricle and the pulmonary artery, preventing the backflow of blood into the right ventricle during ventricular diastole?",
+      "options": [
+        {
+          "text": "Bicuspid valve",
+          "label": "A"
+        },
+        {
+          "text": "Tricuspid valve",
+          "label": "B"
+        },
+        {
+          "text": "Pulmonary semilunar valve",
+          "label": "C"
+        },
+        {
+          "text": "Aortic semilunar valve",
+          "label": "D"
+        }
+      ],
+      "correct_option": "C",
+      "explanation": "The pulmonary semilunar valve is situated at the opening between the right ventricle and the pulmonary artery. It opens during ventricular systole to allow blood flow into the pulmonary trunk and closes during ventricular diastole to prevent blood from flowing backward into the right ventricle. The bicuspid (mitral) valve guards the left atrioventricular opening, the tricuspid valve guards the right atrioventricular opening, and the aortic semilunar valve is located at the base of the aorta.",
+      "stem_fp": "b6b636a1508ee202",
+      "body_md5": "cf182df1ae1413286a1d811bf4ebdb7a",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing": "fixed:gemini",
+      "is_fallback": false,
+      "constraints": {
+        "reasoning": "anatomy_identify",
+        "seed_slot_id": "zoology-02",
+        "question_format": "MCQ_4",
+        "cognitive_operation": "Chamber/valve/vessel identification",
+        "forbidden_templates": [
+          "PHYS_STRETCH_20PCT_CURRENT",
+          "PHYS_STRETCH_2X_LENGTH_RATIO",
+          "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+          "CHEM_LATTICE_COMPARISON",
+          "CHEM_LATTICE_FACTORS",
+          "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+          "ZOO_ABO_SEQUENCE",
+          "ZOO_ABO_ANTIGEN_IDENTIFY"
+        ],
+        "correct_option_count": 1,
+        "explanation_required": true,
+        "avoid_paraphrase_duplicates": true,
+        "enforce_prior_stem_diversity": true
+      }
+    }
+  ],
+  "subject_counts": {
+    "Botany": 5,
+    "Chemistry": 10,
+    "Physics": 10,
+    "Zoology": 5
+  },
+  "status_counts": {
+    "DRAFT": 30
+  },
+  "integrity_before": {
+    "seed": {
+      "n": 30,
+      "status_counts": {
+        "DRAFT": 30
+      },
+      "bodies_fp": "398070f6305f9725b992f8761df17f6b766d6ddaf29e9b59cf69b51502333825"
+    },
+    "p3_95": {
+      "n": 95,
+      "status_counts": {
+        "DRAFT": 95
+      },
+      "bodies_fp": "3864a145d5bc2e85cf82df7f7987e838eb927bc57eb221212851e78f7d15f67a"
+    },
+    "checksum_counts": {
+      "total": 6339,
+      "published": 1049,
+      "draft": 5279,
+      "in_review": 11,
+      "approved": 0,
+      "archived": 0,
+      "changes_requested": 0
+    },
+    "legacy_fp": "13d51e697382663a28ffc44fd56aedb1",
+    "t6d_fp": "e0758fbcb071180b61a33f2b4581e894",
+    "t6f2_fp": "17a1672c444c8362ed0261dacf0f82c7",
+    "protected_published": 111
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "validator": "openai",
+  "model": "gpt-4o-mini",
+  "pass": 254,
+  "fail": 72,
+  "inconclusive": 0,
+  "budget": {
+    "max_cost_usd": 25.0,
+    "spent_usd": 0.0,
+    "request_count": 326,
+    "stopped": false,
+    "stop_reason": null
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "task": "BACKEND-RUNTIME-001",
+  "verdict": "GREEN",
+  "date": "2026-09-14",
+  "root_cause": "Backend process was not running (category A). Postgres :5432 and Redis :6379 were already available; .venv and .env existed.",
+  "startup_command": "cd apps/backend && .venv\\Scripts\\python.exe -m uvicorn app.main:app --host 127.0.0.1 --port 8000",
+  "process": {
+    "shell_pid": 19968,
+    "uvicorn_pid": 15840,
+    "bind": "127.0.0.1:8000"
+  },
+  "port_8000": "LISTEN",
+  "health": {
+    "url": "http://127.0.0.1:8000/health",
+    "success": true,
+    "data": { "status": "ok" }
+  },
+  "ready": {
+    "url": "http://127.0.0.1:8000/ready",
+    "success": true,
+    "database": true,
+    "redis": true
+  },
+  "api_smoke": {
+    "auth_register": 201,
+    "auth_login": 200,
+    "auth_me": 200,
+    "learning_mastery_overview": 200,
+    "learning_revision_due": 200,
+    "assessments_practice": 201,
+    "attempts_list": 200,
+    "subjects_list": 200
+  },
+  "files_changed": [],
+  "ops_only": true,
+  "frontend_untouched": true,
+  "frontend_3001": 200,
+  "no_next_dev": true,
+  "preserved": [
+    "A6-A12",
+    "BUILD-001",
+    "BUILD-002",
+    "ECAEP/Practice/Mock/AuthZ semantics",
+    "DB schema",
+    "frozen unmapped DRAFT questions"
+  ],
+  "note": "Public register created student backend-runtime-001@example.com for API smoke only; no content mutation.",
+  "commit": "not created"
+}

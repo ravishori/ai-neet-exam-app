@@ -1,0 +1,136 @@
+{
+  "audit": "TALOS_PRODUCTION_SEED_V2_PRACTICE_IMPLEMENTATION",
+  "date": "2026-09-04",
+  "gate": "SEED_V2 practice isolation — implementation verification only",
+  "complete_v2_practice_e2e_claimed": false,
+  "verdict": "GREEN",
+  "verdict_scope": "implementation",
+  "allowlist": {
+    "count": 100,
+    "sha256": "a3a8242433b69e80b1754807949767318fa19c41699ecea42c4c246b035b3978",
+    "membership": "EXACT_V2_ALLOWLIST",
+    "source": "docs/audits/TALOS_PRODUCTION_SEED_V2_PUBLICATION_AUTHORIZATION_20260904.json#exact_allowlist",
+    "subject_distribution": {
+      "Physics": 35,
+      "Chemistry": 35,
+      "Botany": 15,
+      "Zoology": 15
+    }
+  },
+  "scope_contract": {
+    "scope_type": "SEED_V2",
+    "client_sends": {
+      "scope_type": "SEED_V2",
+      "question_count": 100
+    },
+    "server_owns_membership": true,
+    "query": "id IN frozen_100 AND content_type=QUESTION AND status=PUBLISHED AND deleted_at IS NULL AND NOT (tags && superseded_tags)",
+    "superseded_tags": [
+      "seed-v2-rematerialization-superseded-20260903",
+      "seed-v2-numerical-remediation-superseded-20260904"
+    ],
+    "meta_fields": [
+      "seed_v2_allowlist_sha256",
+      "seed_v2_allowlist_count",
+      "available_count",
+      "requested_count",
+      "delivered_count",
+      "shrunk"
+    ]
+  },
+  "question_count": {
+    "generic_max": 90,
+    "seed_v2_max": 100,
+    "seed_v2_default": 100,
+    "isolated": true,
+    "full_cannot_request_100": true
+  },
+  "ui": {
+    "hero_practice_now": {
+      "label": "Practice now",
+      "scope_type": "FULL",
+      "question_count": 30,
+      "unchanged": true
+    },
+    "practice_seed_v1": {
+      "label": "Practice Seed V1",
+      "scope_type": "SEED_V1",
+      "question_count": 30,
+      "unchanged": true
+    },
+    "practice_seed_v2": {
+      "label": "Practice Seed V2",
+      "scope_type": "SEED_V2",
+      "question_count": 100
+    }
+  },
+  "implementation_files": [
+    "apps/backend/app/modules/assessment/seed_v2_allowlist.py",
+    "apps/backend/app/modules/assessment/repositories/assessment_repository.py",
+    "apps/backend/app/modules/assessment/services/assessment_service.py",
+    "apps/backend/app/modules/assessment/schemas/assessment.py",
+    "apps/backend/app/modules/assessment/models/assessment.py",
+    "apps/web/src/features/assessment/api.ts",
+    "apps/web/src/app/student/dashboard/page.tsx",
+    "apps/backend/tests/test_seed_v2_practice_isolation.py"
+  ],
+  "tests": {
+    "pytest_command": "pytest tests/test_seed_v2_practice_isolation.py tests/test_seed_v1_practice_isolation.py tests/test_practice_availability.py tests/test_practice_topic_scope.py",
+    "passed": 22,
+    "failed": 0,
+    "positive": [
+      "allowlist_integrity_sha_100",
+      "session_create_seed_v2",
+      "request_count_100",
+      "selected_ids_subset_allowlist",
+      "published_only",
+      "superseded_excluded",
+      "subject_distribution_artifact_35_35_15_15",
+      "answer_submit_progress_score_completion",
+      "explanation_after_submit",
+      "restart_attempt"
+    ],
+    "negative": [
+      "v1_id",
+      "t6d_id",
+      "t6f2_id",
+      "legacy_id",
+      "arbitrary_published",
+      "v2_historical_superseded",
+      "v2_draft",
+      "v2_approved",
+      "nonexistent_id",
+      "forged_client_scope",
+      "forged_allowlist_and_sha",
+      "full_scope_count_100"
+    ],
+    "count": {
+      "90_full": "accepted",
+      "91_100_seed_v2": "accepted",
+      "101": "rejected"
+    },
+    "v1_regression": {
+      "test_seed_v1_practice_isolation": "passed_unmodified",
+      "hero_practice_now": "UNCHANGED",
+      "practice_seed_v1": "UNCHANGED",
+      "seed_v1": "UNCHANGED",
+      "v1_allowlist_sha256": "c0cf70846233730ef384188f5b78cced2a7865f76d977a0af6063f803bc8f0c1",
+      "v1_publication_firewall": "UNCHANGED"
+    }
+  },
+  "protected_population": {
+    "content_mutation": false,
+    "gemini": false,
+    "publication_records_altered": false,
+    "v2_cohort_modified": false,
+    "v1_allowlist_modified": false
+  },
+  "limitations": [
+    "Implementation verification only; live student E2E against the production 100 is a separate gate",
+    "Pytest membership tests patch a 3-UUID pool; the frozen 100 is hashed from the authorization artifact",
+    "FULL practice can still sample V2 published items in the general pool",
+    "NCERT CERTIFIED_WITH_LIMITATION / page_verified=false limitations unchanged"
+  ],
+  "phase_stop": "SEED_V2_PRACTICE_IMPLEMENTATION_VERIFIED",
+  "next_gate_recommendation": "STOP — do not run full student E2E gate or 1k generation in this task"
+}

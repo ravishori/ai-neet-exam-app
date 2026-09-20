@@ -1,0 +1,46 @@
+{
+  "task": "FRONTEND-PREMIUM-005",
+  "title": "Practice Runner Premium Pass",
+  "verdict": "GREEN",
+  "date": "2026-09-14",
+  "files": [
+    "apps/web/src/app/student/attempts/[attemptId]/page.tsx",
+    "apps/web/src/app/student/attempts/[attemptId]/practice-runner.test.tsx",
+    "apps/web/src/components/question-panel.tsx",
+    "apps/web/src/components/question-palette.tsx",
+    "apps/web/src/components/question-palette.test.tsx",
+    "apps/web/src/components/ds/answer-option.tsx",
+    "apps/web/scripts/premium005-runner-live.mjs",
+    "docs/audits/frontend_premium_005_20260914.md",
+    "docs/audits/frontend_premium_005_20260914.json"
+  ],
+  "apis_hooks": [
+    "assessmentApi.getAttempt",
+    "assessmentApi.saveAnswer",
+    "assessmentApi.submitAttempt",
+    "useCountdown (unchanged semantics)",
+    "learningApi bookmark/note",
+    "questionsApi related/report"
+  ],
+  "tests": {
+    "existing_answer_option": "4/4",
+    "premium005_runner": "6/6",
+    "premium005_palette": "1/1",
+    "focused_total": "11/11",
+    "a12": "19/19",
+    "eslint": "0 errors",
+    "tsc": 0,
+    "build": "GREEN"
+  },
+  "live": {
+    "frontend": "http://127.0.0.1:3001",
+    "backend": "http://127.0.0.1:8000",
+    "overflow": 0,
+    "next_min_height_px": 48,
+    "option_min_height_px": 48,
+    "palette_min_height_px": 44,
+    "hydration": false
+  },
+  "protected_unchanged": true,
+  "commit": "not created"
+}

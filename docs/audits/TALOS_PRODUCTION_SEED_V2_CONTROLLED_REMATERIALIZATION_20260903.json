@@ -1,0 +1,644 @@
+{
+  "audit": "Production Seed V2 Controlled Rematerialization (4 slots)",
+  "date": "2026-09-03",
+  "captured_at": "2026-09-03T17:59:35.191113+00:00",
+  "verdict": "GREEN",
+  "targets": [
+    "physics-05",
+    "physics-21",
+    "zoology-12",
+    "zoology-15"
+  ],
+  "batch_uuid": "4509d488-c100-47f0-8357-4b1678abd00d",
+  "results": [
+    {
+      "slot_id": "physics-05",
+      "subject": "Physics",
+      "chapter": "Kinematics",
+      "topic": "Motion in a Straight Line",
+      "concept": "Instantaneous Velocity and Acceleration",
+      "difficulty": "medium",
+      "question_archetype": "diagram_data_interpretation",
+      "plan_blueprint_id": "8ceee218-5240-5d82-a752-d6cb7d7dfe19",
+      "factory_blueprint_id": "8a4d716a-b779-4283-b21e-ff876821251e",
+      "original_content_item_id": "2a22a821-d0bd-4c87-be2c-c35ef9664118",
+      "original_body_md5": "535937af2457ab2143d1d0a664bd117d",
+      "original_status": "DRAFT",
+      "original_assessment": {
+        "content_item_id": "2a22a821-d0bd-4c87-be2c-c35ef9664118",
+        "body_md5": "535937af2457ab2143d1d0a664bd117d",
+        "status": "DRAFT",
+        "visual": {
+          "ok": false,
+          "errors": [
+            "VISUAL_REQUIRED_MISSING_SVG",
+            "VISUAL_REQUIRED_BUT_MISSING",
+            "VISUAL_REQUIRED_MISSING_SPEC",
+            "VISUAL_REQUIRED_MISSING_DESCRIPTION",
+            "VISUAL_TYPE_MISSING"
+          ],
+          "warnings": [],
+          "visual_validation": {
+            "required": true,
+            "passed": false,
+            "errors": [
+              "VISUAL_REQUIRED_MISSING_SVG",
+              "VISUAL_REQUIRED_BUT_MISSING",
+              "VISUAL_REQUIRED_MISSING_SPEC",
+              "VISUAL_REQUIRED_MISSING_DESCRIPTION",
+              "VISUAL_TYPE_MISSING"
+            ]
+          },
+          "semantic_status": "STRUCTURALLY_VALID",
+          "has_diagram_svg": false,
+          "has_visual_spec": false,
+          "visual_spec_type": null,
+          "visual_spec_archetype": null,
+          "ncert_evidence_claim": null,
+          "visual_fingerprint": null
+        },
+        "semantic_status": "STRUCTURALLY_VALID",
+        "semantic_signals": [
+          "NO_DETERMINISTIC_AMBIGUITY_SIGNAL"
+        ]
+      },
+      "reason": "VISUAL_REQUIRED_MISSING",
+      "generation": {
+        "job_key": "remat-v2-20260903-physics-05-4e67b230",
+        "stop_reason": "TARGET_MET",
+        "attempted": 1,
+        "created": 1,
+        "cost_usd": 0.00216,
+        "routing_policy": "fixed:gemini",
+        "models": {
+          "gemini-3.6-flash": 1
+        },
+        "providers": {
+          "gemini": 1
+        },
+        "rejected_validation": 0,
+        "duplicate": 0,
+        "diversity_rejected": 0,
+        "failed_provider": 0,
+        "failed_parse": 0
+      },
+      "replacement_content_item_id": "9c51f8a1-bf72-4ca0-bcfd-e0aa5cb8ee53",
+      "success": true,
+      "replacement_body_md5": "54caf8d1648d56226755fec9120c64ed",
+      "replacement_status": "DRAFT",
+      "validation": {
+        "ok": true,
+        "errors": [],
+        "warnings": [
+          "SEMANTIC_REVIEW_REQUIRED",
+          "SEMANTIC_REVIEW_REQUIRED",
+          "SEMANTIC_REVIEW_REQUIRED",
+          "REQUIRES_REVIEW"
+        ],
+        "structural_status": "STRUCTURALLY_VALID",
+        "semantic_status": "SEMANTIC_REVIEW_REQUIRED",
+        "semantic_signals": [
+          "HIGH_OPTION_OVERLAP:A/B:1.00",
+          "HIGH_OPTION_OVERLAP:A/D:1.00",
+          "HIGH_OPTION_OVERLAP:B/D:1.00"
+        ],
+        "visual_validation": {
+          "required": true,
+          "passed": true,
+          "errors": []
+        }
+      },
+      "semantic_assessment": {
+        "status": "SEMANTIC_REVIEW_REQUIRED",
+        "signals": [
+          "HIGH_OPTION_OVERLAP:A/B:1.00",
+          "HIGH_OPTION_OVERLAP:A/D:1.00",
+          "HIGH_OPTION_OVERLAP:B/D:1.00"
+        ],
+        "hard_fail": false
+      },
+      "visual_assessment": {
+        "ok": true,
+        "errors": [],
+        "warnings": [
+          "SEMANTIC_REVIEW_REQUIRED",
+          "SEMANTIC_REVIEW_REQUIRED",
+          "SEMANTIC_REVIEW_REQUIRED",
+          "REQUIRES_REVIEW"
+        ],
+        "visual_validation": {
+          "required": true,
+          "passed": true,
+          "errors": []
+        },
+        "semantic_status": "SEMANTIC_REVIEW_REQUIRED",
+        "has_diagram_svg": true,
+        "has_visual_spec": true,
+        "visual_spec_type": "line_graph",
+        "visual_spec_archetype": "xt_slope_graph",
+        "ncert_evidence_claim": false,
+        "visual_fingerprint": "729c045aa6b237f276b1e634fb7d8e980eb0dec2cdf8ea7154c54501ec1434ea"
+      },
+      "duplicate_same_body_as_original": false,
+      "blueprint_identity_match": true,
+      "lineage": {
+        "original_preserved": true,
+        "original_id": "2a22a821-d0bd-4c87-be2c-c35ef9664118",
+        "replacement_id": "9c51f8a1-bf72-4ca0-bcfd-e0aa5cb8ee53",
+        "original_tags_include_superseded": "seed-v2-rematerialization-superseded-20260903",
+        "replacement_tags_include_remat": "seed-v2-rematerialization-20260903"
+      },
+      "method": "gemini"
+    },
+    {
+      "slot_id": "physics-21",
+      "subject": "Physics",
+      "chapter": "Mechanical Properties of Solids",
+      "topic": "Stress and Strain",
+      "concept": "Stress–Strain Curve",
+      "difficulty": "medium",
+      "question_archetype": "diagram_data_interpretation",
+      "plan_blueprint_id": "dd45593e-9469-5934-842f-6590124c36bb",
+      "factory_blueprint_id": "178457c5-b92d-4d81-9ed4-23c196dcf9f5",
+      "original_content_item_id": "0de3dfa3-bc5a-4791-aa5d-8346dd08f0c2",
+      "original_body_md5": "03c1380482be02bfe69ee6dd8fa53d81",
+      "original_status": "DRAFT",
+      "reason": "VISUAL_REQUIRED_MISSING",
+      "method": "gemini",
+      "generation": {
+        "rounds": [
+          {
+            "round": 1,
+            "stop_reason": "TARGET_MET",
+            "attempted": 1,
+            "created": 1,
+            "cost_usd": 0.0021165,
+            "rejected_validation": 0,
+            "failed_parse": 0,
+            "diversity_rejected": 0,
+            "ids": [
+              "1633f068-f0df-4ff5-ac0c-57be4417f29e"
+            ]
+          }
+        ],
+        "attempted": 1,
+        "cost_usd": 0.0021165
+      },
+      "replacement_content_item_id": "1633f068-f0df-4ff5-ac0c-57be4417f29e",
+      "success": true,
+      "replacement_body_md5": "b7cf572def5ce3799d0c8c66aee097d1",
+      "replacement_status": "DRAFT",
+      "validation": {
+        "ok": true,
+        "errors": [],
+        "warnings": [],
+        "structural_status": "STRUCTURALLY_VALID",
+        "semantic_status": "STRUCTURALLY_VALID",
+        "semantic_signals": [
+          "NO_DETERMINISTIC_AMBIGUITY_SIGNAL"
+        ],
+        "visual_validation": {
+          "required": true,
+          "passed": true,
+          "errors": []
+        }
+      },
+      "semantic_assessment": {
+        "status": "STRUCTURALLY_VALID",
+        "signals": [
+          "NO_DETERMINISTIC_AMBIGUITY_SIGNAL"
+        ],
+        "hard_fail": false
+      },
+      "visual_assessment": {
+        "ok": true,
+        "errors": [],
+        "warnings": [],
+        "visual_validation": {
+          "required": true,
+          "passed": true,
+          "errors": []
+        },
+        "semantic_status": "STRUCTURALLY_VALID",
+        "has_diagram_svg": true,
+        "has_visual_spec": true,
+        "visual_spec_type": "curve_graph",
+        "visual_spec_archetype": "stress_strain_curve",
+        "ncert_evidence_claim": false,
+        "visual_fingerprint": "071ebe12d592486a9369912ca301dacfe70306f1a997843cf4fa242d6b564ad6"
+      },
+      "duplicate_same_body_as_original": false,
+      "lineage": {
+        "original_preserved": true,
+        "original_id": "0de3dfa3-bc5a-4791-aa5d-8346dd08f0c2",
+        "replacement_id": "1633f068-f0df-4ff5-ac0c-57be4417f29e"
+      }
+    },
+    {
+      "slot_id": "zoology-12",
+      "subject": "Zoology",
+      "chapter": "Body Fluids and Circulation",
+      "topic": "ECG",
+      "concept": "P, QRS, T waves",
+      "difficulty": "medium",
+      "question_archetype": "diagram_data_interpretation",
+      "plan_blueprint_id": "0285dcfe-a1bc-5f1c-a57c-f5dfe0a92f4d",
+      "factory_blueprint_id": "a71712a9-155b-4013-9751-606d4e20c051",
+      "original_content_item_id": "7580a952-0869-4f38-ae62-8c18a49bfb6f",
+      "original_body_md5": "c9e9e96afb5ec5eaa2c6910dce91a824",
+      "original_status": "DRAFT",
+      "reason": "VISUAL_REQUIRED_MISSING",
+      "method": "gemini",
+      "generation": {
+        "rounds": [
+          {
+            "round": 1,
+            "stop_reason": "TARGET_MET",
+            "attempted": 1,
+            "created": 1,
+            "cost_usd": 0.00170025,
+            "rejected_validation": 0,
+            "failed_parse": 0,
+            "diversity_rejected": 0,
+            "ids": [
+              "ca0e7a05-38bb-4e12-a52d-4fd4c7a26b07"
+            ]
+          }
+        ],
+        "attempted": 1,
+        "cost_usd": 0.00170025
+      },
+      "replacement_content_item_id": "ca0e7a05-38bb-4e12-a52d-4fd4c7a26b07",
+      "success": true,
+      "replacement_body_md5": "6fe16f1b46fff47068f997d27711352c",
+      "replacement_status": "DRAFT",
+      "validation": {
+        "ok": true,
+        "errors": [],
+        "warnings": [
+          "SEMANTIC_REVIEW_REQUIRED",
+          "SEMANTIC_REVIEW_REQUIRED",
+          "REQUIRES_REVIEW"
+        ],
+        "structural_status": "STRUCTURALLY_VALID",
+        "semantic_status": "SEMANTIC_REVIEW_REQUIRED",
+        "semantic_signals": [
+          "EXPLANATION_ECHOES_NONCORRECT:B",
+          "EXPLANATION_ECHOES_NONCORRECT:D"
+        ],
+        "visual_validation": {
+          "required": true,
+          "passed": true,
+          "errors": []
+        }
+      },
+      "semantic_assessment": {
+        "status": "SEMANTIC_REVIEW_REQUIRED",
+        "signals": [
+          "EXPLANATION_ECHOES_NONCORRECT:B",
+          "EXPLANATION_ECHOES_NONCORRECT:D"
+        ],
+        "hard_fail": false
+      },
+      "visual_assessment": {
+        "ok": true,
+        "errors": [],
+        "warnings": [
+          "SEMANTIC_REVIEW_REQUIRED",
+          "SEMANTIC_REVIEW_REQUIRED",
+          "REQUIRES_REVIEW"
+        ],
+        "visual_validation": {
+          "required": true,
+          "passed": true,
+          "errors": []
+        },
+        "semantic_status": "SEMANTIC_REVIEW_REQUIRED",
+        "has_diagram_svg": true,
+        "has_visual_spec": true,
+        "visual_spec_type": "schematic",
+        "visual_spec_archetype": "ecg_wave_schematic",
+        "ncert_evidence_claim": false,
+        "visual_fingerprint": "07b03c292687ee541b9b987b4694ef99f59218a1975091dc82fa7966ceca93f8"
+      },
+      "duplicate_same_body_as_original": false,
+      "lineage": {
+        "original_preserved": true,
+        "original_id": "7580a952-0869-4f38-ae62-8c18a49bfb6f",
+        "replacement_id": "ca0e7a05-38bb-4e12-a52d-4fd4c7a26b07"
+      }
+    },
+    {
+      "slot_id": "zoology-15",
+      "subject": "Zoology",
+      "chapter": "Body Fluids and Circulation",
+      "topic": "Lymph and Double Circulation",
+      "concept": "Pulmonary vs systemic circuit",
+      "difficulty": "hard",
+      "question_archetype": "comparison",
+      "plan_blueprint_id": "be3c1759-3c35-5f02-af2c-973525d68d41",
+      "factory_blueprint_id": "5dd75e36-faf2-49a1-bb8d-8027c8c1fbde",
+      "original_content_item_id": "ef480cb5-8ede-451b-9444-940c7094e764",
+      "original_body_md5": "9fdd95c707adae28054a20d8a47787e9",
+      "original_status": "DRAFT",
+      "reason": "SEMANTIC_AMBIGUITY_DUAL_DEFENSIBLE",
+      "method": "deterministic_distractor_rewrite",
+      "generation": {
+        "rounds": [
+          {
+            "round": 1,
+            "stop_reason": "ATTEMPT_LIMIT",
+            "attempted": 2,
+            "created": 0,
+            "cost_usd": 0.0049185,
+            "rejected_validation": 1,
+            "failed_parse": 1,
+            "diversity_rejected": 0,
+            "ids": []
+          },
+          {
+            "round": 2,
+            "stop_reason": "ATTEMPT_LIMIT",
+            "attempted": 2,
+            "created": 0,
+            "cost_usd": 0.00460725,
+            "rejected_validation": 1,
+            "failed_parse": 1,
+            "diversity_rejected": 0,
+            "ids": []
+          }
+        ],
+        "attempted": 4,
+        "cost_usd": 0.00952575,
+        "deterministic_fallback": {
+          "success": true,
+          "errors": null,
+          "old_semantic": "SEMANTIC_AMBIGUITY_DETECTED",
+          "new_semantic": "SEMANTIC_REVIEW_REQUIRED"
+        }
+      },
+      "replacement_content_item_id": "03d1274b-35fa-446a-8742-164e9a28e8d3",
+      "success": true,
+      "replacement_body_md5": "4ccf520abba49ffcc463412fa21d751b",
+      "replacement_status": "DRAFT",
+      "validation": {
+        "ok": true,
+        "errors": [],
+        "warnings": [
+          "SEMANTIC_REVIEW_REQUIRED",
+          "REQUIRES_REVIEW"
+        ],
+        "structural_status": "STRUCTURALLY_VALID",
+        "semantic_status": "SEMANTIC_REVIEW_REQUIRED",
+        "semantic_signals": [
+          "EXPLANATION_REFERENCES_MULTIPLE_OPTIONS"
+        ],
+        "visual_validation": {
+          "required": false,
+          "passed": true,
+          "errors": []
+        }
+      },
+      "semantic_assessment": {
+        "status": "SEMANTIC_REVIEW_REQUIRED",
+        "signals": [
+          "EXPLANATION_REFERENCES_MULTIPLE_OPTIONS"
+        ],
+        "hard_fail": false
+      },
+      "visual_assessment": null,
+      "duplicate_same_body_as_original": false,
+      "lineage": {
+        "original_preserved": true,
+        "original_id": "ef480cb5-8ede-451b-9444-940c7094e764",
+        "replacement_id": "03d1274b-35fa-446a-8742-164e9a28e8d3"
+      }
+    }
+  ],
+  "originals_preserved": [
+    {
+      "slot_id": "physics-05",
+      "id": "2a22a821-d0bd-4c87-be2c-c35ef9664118",
+      "body_md5": "535937af2457ab2143d1d0a664bd117d",
+      "body_md5_unchanged_vs_prev": true,
+      "status": "DRAFT",
+      "has_superseded_tag": true
+    },
+    {
+      "slot_id": "physics-21",
+      "id": "0de3dfa3-bc5a-4791-aa5d-8346dd08f0c2",
+      "body_md5": "03c1380482be02bfe69ee6dd8fa53d81",
+      "body_md5_unchanged_vs_prev": true,
+      "status": "DRAFT",
+      "has_superseded_tag": true
+    },
+    {
+      "slot_id": "zoology-12",
+      "id": "7580a952-0869-4f38-ae62-8c18a49bfb6f",
+      "body_md5": "c9e9e96afb5ec5eaa2c6910dce91a824",
+      "body_md5_unchanged_vs_prev": true,
+      "status": "DRAFT",
+      "has_superseded_tag": true
+    },
+    {
+      "slot_id": "zoology-15",
+      "id": "ef480cb5-8ede-451b-9444-940c7094e764",
+      "body_md5": "9fdd95c707adae28054a20d8a47787e9",
+      "body_md5_unchanged_vs_prev": true,
+      "status": "DRAFT",
+      "has_superseded_tag": true
+    }
+  ],
+  "replacement_ids": [
+    "9c51f8a1-bf72-4ca0-bcfd-e0aa5cb8ee53",
+    "1633f068-f0df-4ff5-ac0c-57be4417f29e",
+    "ca0e7a05-38bb-4e12-a52d-4fd4c7a26b07",
+    "03d1274b-35fa-446a-8742-164e9a28e8d3"
+  ],
+  "provider": {
+    "provider": "gemini",
+    "provider_mode": "fixed",
+    "routing": "fixed:gemini",
+    "fallback_chain": "",
+    "fallback_count": 0,
+    "model_observed": [
+      "gemini-3.6-flash"
+    ],
+    "attempts": 13,
+    "created": 3,
+    "cost_usd": 0.029927250000000002,
+    "deterministic_visual_fallbacks": 0,
+    "deterministic_distractor_rewrites": 1
+  },
+  "integrity_before": {
+    "v2_bodies_fp": "430506b398bdbd4fa046ac218523fe748684fa948c5d3084c5a4476b125d6d66",
+    "v2_status": {
+      "DRAFT": 100
+    },
+    "v2_n": 100,
+    "v1_bodies_fp": "1be739413439ae0e93a87f11bd1823ad88f1cd19fad0022aeea163af3d6101a2",
+    "v1_n": 30,
+    "t6d": {
+      "total": 100,
+      "published": 100,
+      "draft": 0,
+      "content_fp": "e0758fbcb071180b61a33f2b4581e894"
+    },
+    "t6f2": {
+      "total": 938,
+      "content_fp": "17a1672c444c8362ed0261dacf0f82c7"
+    },
+    "legacy": {
+      "total": 5000,
+      "published": 0,
+      "draft": 5000,
+      "content_fp": "13d51e697382663a28ffc44fd56aedb1"
+    },
+    "cms_counts": {
+      "total": 6441,
+      "published": 1079,
+      "draft": 5351,
+      "in_review": 11,
+      "approved": 0
+    }
+  },
+  "integrity_after": {
+    "v2_bodies_fp": "430506b398bdbd4fa046ac218523fe748684fa948c5d3084c5a4476b125d6d66",
+    "v2_status": {
+      "DRAFT": 100
+    },
+    "v2_n": 100,
+    "v1_bodies_fp": "1be739413439ae0e93a87f11bd1823ad88f1cd19fad0022aeea163af3d6101a2",
+    "v1_n": 30,
+    "t6d": {
+      "total": 100,
+      "published": 100,
+      "draft": 0,
+      "content_fp": "e0758fbcb071180b61a33f2b4581e894"
+    },
+    "t6f2": {
+      "total": 938,
+      "content_fp": "17a1672c444c8362ed0261dacf0f82c7"
+    },
+    "legacy": {
+      "total": 5000,
+      "published": 0,
+      "draft": 5000,
+      "content_fp": "13d51e697382663a28ffc44fd56aedb1"
+    },
+    "cms_counts": {
+      "total": 6445,
+      "published": 1079,
+      "draft": 5355,
+      "approved": 0
+    }
+  },
+  "integrity_checks": {
+    "historical_v2_100_unchanged": true,
+    "protected_unchanged": true,
+    "approvals": 0,
+    "publications": 0,
+    "ecaep": 0,
+    "draft_delta": 4,
+    "rematerialized_tagged_count": 4
+  },
+  "zoology_12_regression": {
+    "original_id": "7580a952-0869-4f38-ae62-8c18a49bfb6f",
+    "original_had_visual": false,
+    "replacement_id": "ca0e7a05-38bb-4e12-a52d-4fd4c7a26b07",
+    "replacement_visual_ok": true,
+    "method": "gemini",
+    "success": true
+  },
+  "zoology_15_regression": {
+    "original_id": "ef480cb5-8ede-451b-9444-940c7094e764",
+    "original_semantic_status": "SEMANTIC_AMBIGUITY_DETECTED",
+    "original_signals": [
+      "EXPLANATION_REFERENCES_MULTIPLE_OPTIONS",
+      "DUAL_COMPLETE_CIRCUIT_OPTIONS:A,D"
+    ],
+    "replacement_id": "03d1274b-35fa-446a-8742-164e9a28e8d3",
+    "replacement_semantic": {
+      "status": "SEMANTIC_REVIEW_REQUIRED",
+      "signals": [
+        "EXPLANATION_REFERENCES_MULTIPLE_OPTIONS"
+      ],
+      "hard_fail": false
+    },
+    "gemini_rejected_ambiguous_attempt": true,
+    "success": true,
+    "false_exactly_one_certification": false
+  },
+  "counts": {
+    "gemini_calls_attempts": 13,
+    "new_content_items": 4,
+    "new_approvals": 0,
+    "new_publications": 0,
+    "new_ecaep": 0
+  },
+  "limitations": [
+    "Replacements are DRAFT only; not approved/published/NCERT-certified.",
+    "Historical P4 100 IDs remain the forensic cohort; replacements are additive with lineage tags."
+  ],
+  "next_gate_recommendation": "P5 re-sample with factory_sample_v2 on rematerialization-aware cohort; do not approve/publish yet",
+  "tests": {
+    "command": "pytest tests/test_seed_v2_p5_remediation.py tests/test_content_factory_p3.py tests/test_content_factory_p4.py tests/test_content_factory_p5.py -q",
+    "passed": 43,
+    "failed": 0,
+    "coverage": [
+      "visual-required blueprint propagation",
+      "visual materialization",
+      "missing visual rejection",
+      "valid visual acceptance",
+      "visual type validation",
+      "Zoology-12 regression (architecture)",
+      "semantic ambiguity detection",
+      "Zoology-15 regression",
+      "duplicate protection (via factory)",
+      "lineage preservation (DB tags)",
+      "protected-population integrity"
+    ]
+  },
+  "lineage_summary": [
+    {
+      "slot_id": "physics-05",
+      "original_id": "2a22a821-d0bd-4c87-be2c-c35ef9664118",
+      "replacement_id": "9c51f8a1-bf72-4ca0-bcfd-e0aa5cb8ee53",
+      "reason": "VISUAL_REQUIRED_MISSING",
+      "method": "gemini",
+      "original_fp": "535937af2457ab2143d1d0a664bd117d",
+      "replacement_fp": "54caf8d1648d56226755fec9120c64ed",
+      "success": true
+    },
+    {
+      "slot_id": "physics-21",
+      "original_id": "0de3dfa3-bc5a-4791-aa5d-8346dd08f0c2",
+      "replacement_id": "1633f068-f0df-4ff5-ac0c-57be4417f29e",
+      "reason": "VISUAL_REQUIRED_MISSING",
+      "method": "gemini",
+      "original_fp": "03c1380482be02bfe69ee6dd8fa53d81",
+      "replacement_fp": "b7cf572def5ce3799d0c8c66aee097d1",
+      "success": true
+    },
+    {
+      "slot_id": "zoology-12",
+      "original_id": "7580a952-0869-4f38-ae62-8c18a49bfb6f",
+      "replacement_id": "ca0e7a05-38bb-4e12-a52d-4fd4c7a26b07",
+      "reason": "VISUAL_REQUIRED_MISSING",
+      "method": "gemini",
+      "original_fp": "c9e9e96afb5ec5eaa2c6910dce91a824",
+      "replacement_fp": "6fe16f1b46fff47068f997d27711352c",
+      "success": true
+    },
+    {
+      "slot_id": "zoology-15",
+      "original_id": "ef480cb5-8ede-451b-9444-940c7094e764",
+      "replacement_id": "03d1274b-35fa-446a-8742-164e9a28e8d3",
+      "reason": "SEMANTIC_AMBIGUITY_DUAL_DEFENSIBLE",
+      "method": "deterministic_distractor_rewrite",
+      "original_fp": "9fdd95c707adae28054a20d8a47787e9",
+      "replacement_fp": "4ccf520abba49ffcc463412fa21d751b",
+      "success": true
+    }
+  ]
+}

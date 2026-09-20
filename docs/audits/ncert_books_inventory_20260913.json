@@ -1,0 +1,2300 @@
+{
+  "ambiguous": 0,
+  "anomalies": [
+    {
+      "code": "UNEXPECTED_NON_PDF",
+      "message": "non-PDF artifact under NCERT root: .zip",
+      "relative_path": "Class 11/Biology/kebo1dd.zip"
+    },
+    {
+      "code": "UNEXPECTED_NON_PDF",
+      "message": "non-PDF artifact under NCERT root: .zip",
+      "relative_path": "Class 11/Chemistry/kech1dd.zip"
+    },
+    {
+      "code": "UNEXPECTED_NON_PDF",
+      "message": "non-PDF artifact under NCERT root: .zip",
+      "relative_path": "Class 11/Chemistry/kech2dd.zip"
+    },
+    {
+      "code": "UNEXPECTED_NON_PDF",
+      "message": "non-PDF artifact under NCERT root: .zip",
+      "relative_path": "Class 11/Physics/keph1dd.zip"
+    },
+    {
+      "code": "UNEXPECTED_NON_PDF",
+      "message": "non-PDF artifact under NCERT root: .zip",
+      "relative_path": "Class 11/Physics/keph2dd.zip"
+    },
+    {
+      "code": "UNEXPECTED_NON_PDF",
+      "message": "non-PDF artifact under NCERT root: .zip",
+      "relative_path": "Class 12/Biology/lebo1dd.zip"
+    },
+    {
+      "code": "UNEXPECTED_NON_PDF",
+      "message": "non-PDF artifact under NCERT root: .lnk",
+      "relative_path": "Class 12/Chemistry 1/Class 12.lnk"
+    },
+    {
+      "code": "UNEXPECTED_NON_PDF",
+      "message": "non-PDF artifact under NCERT root: .zip",
+      "relative_path": "Class 12/Chemistry 1/lech1dd.zip"
+    },
+    {
+      "code": "UNEXPECTED_NON_PDF",
+      "message": "non-PDF artifact under NCERT root: .zip",
+      "relative_path": "Class 12/Chemistry 2/lech2dd.zip"
+    },
+    {
+      "code": "UNEXPECTED_NON_PDF",
+      "message": "non-PDF artifact under NCERT root: .zip",
+      "relative_path": "Class 12/Physics/leph1dd.zip"
+    },
+    {
+      "code": "UNEXPECTED_NON_PDF",
+      "message": "non-PDF artifact under NCERT root: .zip",
+      "relative_path": "Class 12/Physics/leph2dd.zip"
+    }
+  ],
+  "duplicates": 0,
+  "matrix": {
+    "Class 11/Biology": {
+      "ambiguous": 0,
+      "chapters": 19,
+      "duplicates": 0,
+      "entries": [
+        {
+          "chapter_number": 1,
+          "chapter_title": "The Living World",
+          "checksum_sha256": "e6b49c5eb878864ef1bd714799588fbf2f55afb30d72cac25e08bc5eab7778fd",
+          "class_level": "11",
+          "edition_hints": [
+            "Reprint"
+          ],
+          "file_name": "kebo101.pdf",
+          "file_size": 2263862,
+          "kind": "chapter",
+          "notes": [
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 1,
+          "readable": true,
+          "relative_path": "Class 11/Biology/kebo1dd/kebo101.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo101.pdf",
+          "status": "ok",
+          "subject_code": "BIOLOGY"
+        },
+        {
+          "chapter_number": 2,
+          "chapter_title": "2.1 Kingdom Monera",
+          "checksum_sha256": "7952d430151a776694c6c58518c332d20ff76f9758ccf44d8b1a7fe29fef36c9",
+          "class_level": "11",
+          "edition_hints": [
+            "Reprint"
+          ],
+          "file_name": "kebo102.pdf",
+          "file_size": 3293573,
+          "kind": "chapter",
+          "notes": [
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 1,
+          "readable": true,
+          "relative_path": "Class 11/Biology/kebo1dd/kebo102.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo102.pdf",
+          "status": "ok",
+          "subject_code": "BIOLOGY"
+        },
+        {
+          "chapter_number": 3,
+          "chapter_title": "3.1 Algae",
+          "checksum_sha256": "fefd9d98cd6dc4155aa8b7706f0db887c8f2017dd9cef26bcb049a085c871e9b",
+          "class_level": "11",
+          "edition_hints": [
+            "Reprint"
+          ],
+          "file_name": "kebo103.pdf",
+          "file_size": 5180471,
+          "kind": "chapter",
+          "notes": [
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 1,
+          "readable": true,
+          "relative_path": "Class 11/Biology/kebo1dd/kebo103.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo103.pdf",
+          "status": "ok",
+          "subject_code": "BIOLOGY"
+        },
+        {
+          "chapter_number": 4,
+          "chapter_title": "4.1 Basis of",
+          "checksum_sha256": "5eed592711d3c76a97310f410ce9b8b98db904afcc4ab9b8a38f37022c96a78a",
+          "class_level": "11",
+          "edition_hints": [
+            "Reprint"
+          ],
+          "file_name": "kebo104.pdf",
+          "file_size": 6218080,
+          "kind": "chapter",
+          "notes": [
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 1,
+          "readable": true,
+          "relative_path": "Class 11/Biology/kebo1dd/kebo104.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo104.pdf",
+          "status": "ok",
+          "subject_code": "BIOLOGY"
+        },
+        {
+          "chapter_number": 5,
+          "chapter_title": "Morphology of",
+          "checksum_sha256": "2e9b46c03dda48adb6663a88ce49803e18fe87caba96aa4a173ad1cc9a6eea11",
+          "class_level": "11",
+          "edition_hints": [
+            "Reprint"
+          ],
+          "file_name": "kebo105.pdf",
+          "file_size": 3431444,
+          "kind": "chapter",
+          "notes": [
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 1,
+          "readable": true,
+          "relative_path": "Class 11/Biology/kebo1dd/kebo105.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo105.pdf",
+          "status": "ok",
+          "subject_code": "BIOLOGY"
+        },
+        {
+          "chapter_number": 6,
+          "chapter_title": "6.1 The Tissue",
+          "checksum_sha256": "b341d037ddeaebcf435cea4ca5050bee10fae452d9c20480d639ab2580fa5b66",
+          "class_level": "11",
+          "edition_hints": [
+            "Reprint"
+          ],
+          "file_name": "kebo106.pdf",
+          "file_size": 1899888,
+          "kind": "chapter",
+          "notes": [
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 1,
+          "readable": true,
+          "relative_path": "Class 11/Biology/kebo1dd/kebo106.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo106.pdf",
+          "status": "ok",
+          "subject_code": "BIOLOGY"
+        },
+        {
+          "chapter_number": 7,
+          "chapter_title": "7.1",
+          "checksum_sha256": "75fd54a68b18b84f22e659695e28e32ebdc3f1de8be50ea38bed778b9ebcef26",
+          "class_level": "11",
+          "edition_hints": [
+            "Reprint"
+          ],
+          "file_name": "kebo107.pdf",
+          "file_size": 1012169,
+          "kind": "chapter",
+          "notes": [
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 1,
+          "readable": true,
+          "relative_path": "Class 11/Biology/kebo1dd/kebo107.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo107.pdf",
+          "status": "ok",
+          "subject_code": "BIOLOGY"
+        },
+        {
+          "chapter_number": 8,
+          "chapter_title": "of this unit, a brief description of",
+          "checksum_sha256": "6771c5ae1d6468e6585a5531d9a64cf06478d7ed05bb630eccd2b9a229ee2c28",
+          "class_level": "11",
+          "edition_hints": [
+            "Reprint"
+          ],
+          "file_name": "kebo108.pdf",
+          "file_size": 6985475,
+          "kind": "chapter",
+          "notes": [
+            "PDF text chapter 9 differs from filename chapter 8 (filename kept; likely TOC noise)",
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 1,
+          "readable": true,
+          "relative_path": "Class 11/Biology/kebo1dd/kebo108.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo108.pdf",
+          "status": "ok",
+          "subject_code": "BIOLOGY"
+        },
+        {
+          "chapter_number": 9,
+          "chapter_title": "9.1",
+          "checksum_sha256": "facdbbffa75e8355a1af5362a4e190826352f934bb4c0a6eb2dbb9ccffcf66f5",
+          "class_level": "11",
+          "edition_hints": [
+            "Reprint"
+          ],
+          "file_name": "kebo109.pdf",
+          "file_size": 1851950,
+          "kind": "chapter",
+          "notes": [
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 1,
+          "readable": true,
+          "relative_path": "Class 11/Biology/kebo1dd/kebo109.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo109.pdf",
+          "status": "ok",
+          "subject_code": "BIOLOGY"
+        },
+        {
+          "chapter_number": 10,
+          "chapter_title": "10.1 Cell Cycle",
+          "checksum_sha256": "1fbd61044264b30d19f075e4a9a15699b0d0f1d5c51cf094e4e9b18566bcb72c",
+          "class_level": "11",
+          "edition_hints": [
+            "Reprint"
+          ],
+          "file_name": "kebo110.pdf",
+          "file_size": 2488691,
+          "kind": "chapter",
+          "notes": [
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 1,
+          "readable": true,
+          "relative_path": "Class 11/Biology/kebo1dd/kebo110.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo110.pdf",
+          "status": "ok",
+          "subject_code": "BIOLOGY"
+        },
+        {
+          "chapter_number": 11,
+          "chapter_title": "Photosynthesis in Higher",
+          "checksum_sha256": "8302c09aa798d8fef6c4f01653caffbc09a3741d7b7c753f89201b1160f08090",
+          "class_level": "11",
+          "edition_hints": [
+            "Reprint"
+          ],
+          "file_name": "kebo111.pdf",
+          "file_size": 2676946,
+          "kind": "chapter",
+          "notes": [
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 1,
+          "readable": true,
+          "relative_path": "Class 11/Biology/kebo1dd/kebo111.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo111.pdf",
+          "status": "ok",
+          "subject_code": "BIOLOGY"
+        },
+        {
+          "chapter_number": 12,
+          "chapter_title": "12.1 Do Plants",
+          "checksum_sha256": "56aa058033d3b61ba9036d076058f752e96c2730bf7ef34a5beb83a913a672c3",
+          "class_level": "11",
+          "edition_hints": [
+            "Reprint"
+          ],
+          "file_name": "kebo112.pdf",
+          "file_size": 1652489,
+          "kind": "chapter",
+          "notes": [
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 1,
+          "readable": true,
+          "relative_path": "Class 11/Biology/kebo1dd/kebo112.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo112.pdf",
+          "status": "ok",
+          "subject_code": "BIOLOGY"
+        },
+        {
+          "chapter_number": 13,
+          "chapter_title": "Have you ever thought about where and how the structures like roots,",
+          "checksum_sha256": "f7b576963c4a1f1208fdc7df9e974781d7492a7150bcfdc33f27b71112057d26",
+          "class_level": "11",
+          "edition_hints": [
+            "Reprint"
+          ],
+          "file_name": "kebo113.pdf",
+          "file_size": 1921695,
+          "kind": "chapter",
+          "notes": [
+            "PDF text chapter 5 differs from filename chapter 13 (filename kept; likely TOC noise)",
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 1,
+          "readable": true,
+          "relative_path": "Class 11/Biology/kebo1dd/kebo113.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo113.pdf",
+          "status": "ok",
+          "subject_code": "BIOLOGY"
+        },
+        {
+          "chapter_number": 14,
+          "chapter_title": "Breathing and Exchange",
+          "checksum_sha256": "67cbf04d59739585ea139446ba30a097e5d7a8a58d39d30cff4154f55686d7e1",
+          "class_level": "11",
+          "edition_hints": [
+            "Reprint"
+          ],
+          "file_name": "kebo114.pdf",
+          "file_size": 2051478,
+          "kind": "chapter",
+          "notes": [
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 1,
+          "readable": true,
+          "relative_path": "Class 11/Biology/kebo1dd/kebo114.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo114.pdf",
+          "status": "ok",
+          "subject_code": "BIOLOGY"
+        },
+        {
+          "chapter_number": 15,
+          "chapter_title": "15.1 Blood",
+          "checksum_sha256": "02f8cd8f5755ea09466487d6829b7c6ef1bece4550c582d391d03a937d8a0907",
+          "class_level": "11",
+          "edition_hints": [
+            "Reprint"
+          ],
+          "file_name": "kebo115.pdf",
+          "file_size": 3105390,
+          "kind": "chapter",
+          "notes": [
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 1,
+          "readable": true,
+          "relative_path": "Class 11/Biology/kebo1dd/kebo115.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo115.pdf",
+          "status": "ok",
+          "subject_code": "BIOLOGY"
+        },
+        {
+          "chapter_number": 16,
+          "chapter_title": "16.1 Human",
+          "checksum_sha256": "9d026ee91d3787c85ab1241c594463a8714e3a79b7515ead3e584a155c885cb3",
+          "class_level": "11",
+          "edition_hints": [
+            "Reprint"
+          ],
+          "file_name": "kebo116.pdf",
+          "file_size": 1772375,
+          "kind": "chapter",
+          "notes": [
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 1,
+          "readable": true,
+          "relative_path": "Class 11/Biology/kebo1dd/kebo116.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo116.pdf",
+          "status": "ok",
+          "subject_code": "BIOLOGY"
+        },
+        {
+          "chapter_number": 17,
+          "chapter_title": "17.1 Types of",
+          "checksum_sha256": "e30781cb81fcc69053eb2afb4c3db7716f0c503fefd9630fa4f78ffc5606c92f",
+          "class_level": "11",
+          "edition_hints": [
+            "Reprint"
+          ],
+          "file_name": "kebo117.pdf",
+          "file_size": 4499800,
+          "kind": "chapter",
+          "notes": [
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 1,
+          "readable": true,
+          "relative_path": "Class 11/Biology/kebo1dd/kebo117.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo117.pdf",
+          "status": "ok",
+          "subject_code": "BIOLOGY"
+        },
+        {
+          "chapter_number": 18,
+          "chapter_title": "18.1 Neural System",
+          "checksum_sha256": "93aaeaa048937d768c9fbfd26479b2976fa007c59333e300ccbf105430be0469",
+          "class_level": "11",
+          "edition_hints": [
+            "Reprint"
+          ],
+          "file_name": "kebo118.pdf",
+          "file_size": 4252755,
+          "kind": "chapter",
+          "notes": [
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 1,
+          "readable": true,
+          "relative_path": "Class 11/Biology/kebo1dd/kebo118.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo118.pdf",
+          "status": "ok",
+          "subject_code": "BIOLOGY"
+        },
+        {
+          "chapter_number": 19,
+          "chapter_title": "19.1 Endocrine",
+          "checksum_sha256": "36961d654230fb419a07a7dd8a9200416e0ef475aec409a90cc567843fce4eb6",
+          "class_level": "11",
+          "edition_hints": [
+            "Reprint"
+          ],
+          "file_name": "kebo119.pdf",
+          "file_size": 2129866,
+          "kind": "chapter",
+          "notes": [
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 1,
+          "readable": true,
+          "relative_path": "Class 11/Biology/kebo1dd/kebo119.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo119.pdf",
+          "status": "ok",
+          "subject_code": "BIOLOGY"
+        },
+        {
+          "chapter_number": null,
+          "chapter_title": "Prelims.pmd",
+          "checksum_sha256": "87f5b38b6cc9e5bcd3ac9ec1001ae157734154929fe142d136fae97a632f74d2",
+          "class_level": "11",
+          "edition_hints": [
+            "Reprint",
+            "rationalised"
+          ],
+          "file_name": "kebo1ps.pdf",
+          "file_size": 2951992,
+          "kind": "prelims",
+          "notes": [],
+          "part_number": 1,
+          "readable": true,
+          "relative_path": "Class 11/Biology/kebo1dd/kebo1ps.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo1ps.pdf",
+          "status": "supplemental",
+          "subject_code": "BIOLOGY"
+        }
+      ],
+      "readable_chapters": 19,
+      "supplemental": 1,
+      "total_pdfs": 20
+    },
+    "Class 11/Chemistry": {
+      "ambiguous": 0,
+      "chapters": 9,
+      "duplicates": 0,
+      "entries": [
+        {
+          "chapter_number": 1,
+          "chapter_title": "), you have learnt that",
+          "checksum_sha256": "36404b6804adf41c7d02abcf23286ab6db698f5fca495dfe46a9027b83920045",
+          "class_level": "11",
+          "edition_hints": [
+            "Reprint"
+          ],
+          "file_name": "kech101.pdf",
+          "file_size": 4007589,
+          "kind": "chapter",
+          "notes": [
+            "PDF text chapter 2 differs from filename chapter 1 (filename kept; likely TOC noise)",
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 1,
+          "readable": true,
+          "relative_path": "Class 11/Chemistry/kech1dd/kech1dd/kech101.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Chemistry\\kech1dd\\kech1dd\\kech101.pdf",
+          "status": "ok",
+          "subject_code": "CHEMISTRY"
+        },
+        {
+          "chapter_number": 2,
+          "chapter_title": null,
+          "checksum_sha256": "068596155f1fd5e4056aef3d4ca7d63d2e1b6618e9eebac4ab285fded1f1ed6e",
+          "class_level": "11",
+          "edition_hints": [
+            "Reprint"
+          ],
+          "file_name": "kech102.pdf",
+          "file_size": 5484319,
+          "kind": "chapter",
+          "notes": [
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 1,
+          "readable": true,
+          "relative_path": "Class 11/Chemistry/kech1dd/kech1dd/kech102.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Chemistry\\kech1dd\\kech1dd\\kech102.pdf",
+          "status": "ok",
+          "subject_code": "CHEMISTRY"
+        },
+        {
+          "chapter_number": 3,
+          "chapter_title": null,
+          "checksum_sha256": "e01e686a520667030de33f2b2bfd93d825f9f107acd3a82a4b29404f4cb2f1e1",
+          "class_level": "11",
+          "edition_hints": [
+            "Reprint"
+          ],
+          "file_name": "kech103.pdf",
+          "file_size": 3442597,
+          "kind": "chapter",
+          "notes": [
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 1,
+          "readable": true,
+          "relative_path": "Class 11/Chemistry/kech1dd/kech1dd/kech103.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Chemistry\\kech1dd\\kech1dd\\kech103.pdf",
+          "status": "ok",
+          "subject_code": "CHEMISTRY"
+        },
+        {
+          "chapter_number": 4,
+          "chapter_title": null,
+          "checksum_sha256": "4cf435255e6aa810c1e519420d6403cf552946948e3f27c40b5ed1a21d106992",
+          "class_level": "11",
+          "edition_hints": [
+            "Reprint"
+          ],
+          "file_name": "kech104.pdf",
+          "file_size": 4543597,
+          "kind": "chapter",
+          "notes": [
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 1,
+          "readable": true,
+          "relative_path": "Class 11/Chemistry/kech1dd/kech1dd/kech104.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Chemistry\\kech1dd\\kech1dd\\kech104.pdf",
+          "status": "ok",
+          "subject_code": "CHEMISTRY"
+        },
+        {
+          "chapter_number": 5,
+          "chapter_title": null,
+          "checksum_sha256": "e2b5d180e6f16f33f6d636a742ed6c23ce6a55636e5edb7f26207a8ed48ec5f8",
+          "class_level": "11",
+          "edition_hints": [
+            "Reprint"
+          ],
+          "file_name": "kech105.pdf",
+          "file_size": 5123690,
+          "kind": "chapter",
+          "notes": [
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 1,
+          "readable": true,
+          "relative_path": "Class 11/Chemistry/kech1dd/kech1dd/kech105.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Chemistry\\kech1dd\\kech1dd\\kech105.pdf",
+          "status": "ok",
+          "subject_code": "CHEMISTRY"
+        },
+        {
+          "chapter_number": 6,
+          "chapter_title": null,
+          "checksum_sha256": "e4671fd2df7310063a18617ac0fe63eb714eae4d02a7d4a196f3adc809c9543b",
+          "class_level": "11",
+          "edition_hints": [
+            "Reprint"
+          ],
+          "file_name": "kech106.pdf",
+          "file_size": 5673525,
+          "kind": "chapter",
+          "notes": [
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 1,
+          "readable": true,
+          "relative_path": "Class 11/Chemistry/kech1dd/kech1dd/kech106.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Chemistry\\kech1dd\\kech1dd\\kech106.pdf",
+          "status": "ok",
+          "subject_code": "CHEMISTRY"
+        },
+        {
+          "chapter_number": null,
+          "chapter_title": null,
+          "checksum_sha256": "ae025c86efc623abf7f63476da897435e14aed0764774c337c11239b56c5afa7",
+          "class_level": "11",
+          "edition_hints": [
+            "Reprint"
+          ],
+          "file_name": "kech1a1.pdf",
+          "file_size": 1629935,
+          "kind": "appendix",
+          "notes": [],
+          "part_number": 1,
+          "readable": true,
+          "relative_path": "Class 11/Chemistry/kech1dd/kech1dd/kech1a1.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Chemistry\\kech1dd\\kech1dd\\kech1a1.pdf",
+          "status": "supplemental",
+          "subject_code": "CHEMISTRY"
+        },
+        {
+          "chapter_number": null,
+          "chapter_title": null,
+          "checksum_sha256": "2d2931a6b2bf5398616a7b8f2026d5d5726cc13aa34813fbdb71bb12545ea605",
+          "class_level": "11",
+          "edition_hints": [
+            "Reprint"
+          ],
+          "file_name": "kech1an.pdf",
+          "file_size": 1004028,
+          "kind": "answers",
+          "notes": [],
+          "part_number": 1,
+          "readable": true,
+          "relative_path": "Class 11/Chemistry/kech1dd/kech1dd/kech1an.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Chemistry\\kech1dd\\kech1dd\\kech1an.pdf",
+          "status": "supplemental",
+          "subject_code": "CHEMISTRY"
+        },
+        {
+          "chapter_number": null,
+          "chapter_title": null,
+          "checksum_sha256": "b79907421fdc31dc49646eb5b33a303c1d5228feb2bf9fd91f138bfde40e250b",
+          "class_level": "11",
+          "edition_hints": [
+            "First Edition",
+            "Reprint",
+            "Revised Edition",
+            "rationalised",
+            "reprint"
+          ],
+          "file_name": "kech1ps.pdf",
+          "file_size": 2228753,
+          "kind": "prelims",
+          "notes": [],
+          "part_number": 1,
+          "readable": true,
+          "relative_path": "Class 11/Chemistry/kech1dd/kech1dd/kech1ps.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Chemistry\\kech1dd\\kech1dd\\kech1ps.pdf",
+          "status": "supplemental",
+          "subject_code": "CHEMISTRY"
+        },
+        {
+          "chapter_number": 1,
+          "chapter_title": null,
+          "checksum_sha256": "e80210c578356baacefe980fad8714b251affac3c7ef36b866a45469327c848a",
+          "class_level": "11",
+          "edition_hints": [
+            "Reprint"
+          ],
+          "file_name": "kech201.pdf",
+          "file_size": 1929426,
+          "kind": "chapter",
+          "notes": [
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 2,
+          "readable": true,
+          "relative_path": "Class 11/Chemistry/kech2dd/kech201.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Chemistry\\kech2dd\\kech201.pdf",
+          "status": "ok",
+          "subject_code": "CHEMISTRY"
+        },
+        {
+          "chapter_number": 2,
+          "chapter_title": null,
+          "checksum_sha256": "2508afbdbbd6c34ed1eb619fb096738b312e6bc87658dbcb014fbc9f70979b89",
+          "class_level": "11",
+          "edition_hints": [
+            "Reprint"
+          ],
+          "file_name": "kech202.pdf",
+          "file_size": 4461600,
+          "kind": "chapter",
+          "notes": [
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 2,
+          "readable": true,
+          "relative_path": "Class 11/Chemistry/kech2dd/kech202.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Chemistry\\kech2dd\\kech202.pdf",
+          "status": "ok",
+          "subject_code": "CHEMISTRY"
+        },
+        {
+          "chapter_number": 3,
+          "chapter_title": null,
+          "checksum_sha256": "0afd5c294084a15d8c2d2be7d3b6bc09dd7a9a43d61691b29ff9791374a33046",
+          "class_level": "11",
+          "edition_hints": [
+            "Reprint"
+          ],
+          "file_name": "kech203.pdf",
+          "file_size": 3296381,
+          "kind": "chapter",
+          "notes": [
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 2,
+          "readable": true,
+          "relative_path": "Class 11/Chemistry/kech2dd/kech203.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Chemistry\\kech2dd\\kech203.pdf",
+          "status": "ok",
+          "subject_code": "CHEMISTRY"
+        },
+        {
+          "chapter_number": null,
+          "chapter_title": null,
+          "checksum_sha256": "8bd920a6fc27eb542ed17ff110f2a81de42dba2b56961318abbbe65dfd78826c",
+          "class_level": "11",
+          "edition_hints": [
+            "Reprint"
+          ],
+          "file_name": "kech2an.pdf",
+          "file_size": 491449,
+          "kind": "answers",
+          "notes": [],
+          "part_number": 2,
+          "readable": true,
+          "relative_path": "Class 11/Chemistry/kech2dd/kech2an.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Chemistry\\kech2dd\\kech2an.pdf",
+          "status": "supplemental",
+          "subject_code": "CHEMISTRY"
+        },
+        {
+          "chapter_number": null,
+          "chapter_title": null,
+          "checksum_sha256": "01938cca738e1717912a9aab686649cdfd984b0a96c48bb9f1ab6c665fcfb846",
+          "class_level": "11",
+          "edition_hints": [
+            "First Edition",
+            "Reprint",
+            "Revised Edition",
+            "rationalised",
+            "reprint"
+          ],
+          "file_name": "kech2ps.pdf",
+          "file_size": 1612754,
+          "kind": "prelims",
+          "notes": [],
+          "part_number": 2,
+          "readable": true,
+          "relative_path": "Class 11/Chemistry/kech2dd/kech2ps.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Chemistry\\kech2dd\\kech2ps.pdf",
+          "status": "supplemental",
+          "subject_code": "CHEMISTRY"
+        }
+      ],
+      "readable_chapters": 9,
+      "supplemental": 5,
+      "total_pdfs": 14
+    },
+    "Class 11/Physics": {
+      "ambiguous": 0,
+      "chapters": 14,
+      "duplicates": 0,
+      "entries": [
+        {
+          "chapter_number": 1,
+          "chapter_title": null,
+          "checksum_sha256": "2685cb3e2582bc0b3eb48f121a3959a3ad7e93d87bcda03762e605f034fa8380",
+          "class_level": "11",
+          "edition_hints": [
+            "Rationalised",
+            "Reprint"
+          ],
+          "file_name": "keph101.pdf",
+          "file_size": 1131750,
+          "kind": "chapter",
+          "notes": [
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 1,
+          "readable": true,
+          "relative_path": "Class 11/Physics/keph1dd/keph1dd/keph101.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph1dd\\keph1dd\\keph101.pdf",
+          "status": "ok",
+          "subject_code": "PHYSICS"
+        },
+        {
+          "chapter_number": 2,
+          "chapter_title": null,
+          "checksum_sha256": "cd0307176cef6d2ccf50a48f4342d82cec49d191f1869dc71da4ff5173846f27",
+          "class_level": "11",
+          "edition_hints": [
+            "Rationalised",
+            "Reprint"
+          ],
+          "file_name": "keph102.pdf",
+          "file_size": 1428396,
+          "kind": "chapter",
+          "notes": [
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 1,
+          "readable": true,
+          "relative_path": "Class 11/Physics/keph1dd/keph1dd/keph102.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph1dd\\keph1dd\\keph102.pdf",
+          "status": "ok",
+          "subject_code": "PHYSICS"
+        },
+        {
+          "chapter_number": 3,
+          "chapter_title": null,
+          "checksum_sha256": "7619da28a2e58c099426fe256a966383a8d7da6e23c69deee42b62481aecd355",
+          "class_level": "11",
+          "edition_hints": [
+            "Rationalised",
+            "Reprint"
+          ],
+          "file_name": "keph103.pdf",
+          "file_size": 2199149,
+          "kind": "chapter",
+          "notes": [
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 1,
+          "readable": true,
+          "relative_path": "Class 11/Physics/keph1dd/keph1dd/keph103.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph1dd\\keph1dd\\keph103.pdf",
+          "status": "ok",
+          "subject_code": "PHYSICS"
+        },
+        {
+          "chapter_number": 4,
+          "chapter_title": "Any internal forces in the system",
+          "checksum_sha256": "8a5df412b53d86040d73ec589ddc98ae23201c420973c7b910e1acca85d234ef",
+          "class_level": "11",
+          "edition_hints": [
+            "Rationalised",
+            "Reprint"
+          ],
+          "file_name": "keph104.pdf",
+          "file_size": 2107298,
+          "kind": "chapter",
+          "notes": [
+            "PDF text chapter 6 differs from filename chapter 4 (filename kept; likely TOC noise)",
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 1,
+          "readable": true,
+          "relative_path": "Class 11/Physics/keph1dd/keph1dd/keph104.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph1dd\\keph1dd\\keph104.pdf",
+          "status": "ok",
+          "subject_code": "PHYSICS"
+        },
+        {
+          "chapter_number": 5,
+          "chapter_title": "Physical quantities like displacement, velocity, acceleration,",
+          "checksum_sha256": "a6d4b72b0fc10230bd54393f86e58630ccd258d54269b60de226c68d0eaa937e",
+          "class_level": "11",
+          "edition_hints": [
+            "Rationalised",
+            "Reprint"
+          ],
+          "file_name": "keph105.pdf",
+          "file_size": 1989036,
+          "kind": "chapter",
+          "notes": [
+            "PDF text chapter 3 differs from filename chapter 5 (filename kept; likely TOC noise)",
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 1,
+          "readable": true,
+          "relative_path": "Class 11/Physics/keph1dd/keph1dd/keph105.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph1dd\\keph1dd\\keph105.pdf",
+          "status": "ok",
+          "subject_code": "PHYSICS"
+        },
+        {
+          "chapter_number": 6,
+          "chapter_title": null,
+          "checksum_sha256": "88e0ad16f315b3510e40cdc20e6d70d7b5412bac1926fd505a6a1836464ca3bb",
+          "class_level": "11",
+          "edition_hints": [
+            "Reprint"
+          ],
+          "file_name": "keph106.pdf",
+          "file_size": 4225580,
+          "kind": "chapter",
+          "notes": [
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 1,
+          "readable": true,
+          "relative_path": "Class 11/Physics/keph1dd/keph1dd/keph106.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph1dd\\keph1dd\\keph106.pdf",
+          "status": "ok",
+          "subject_code": "PHYSICS"
+        },
+        {
+          "chapter_number": 7,
+          "chapter_title": null,
+          "checksum_sha256": "631fbe30827cd5faa745698fe337ca2cf829356aa8124f1abb4f3d82b44d499a",
+          "class_level": "11",
+          "edition_hints": [
+            "Rationalised",
+            "Reprint"
+          ],
+          "file_name": "keph107.pdf",
+          "file_size": 1803762,
+          "kind": "chapter",
+          "notes": [
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 1,
+          "readable": true,
+          "relative_path": "Class 11/Physics/keph1dd/keph1dd/keph107.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph1dd\\keph1dd\\keph107.pdf",
+          "status": "ok",
+          "subject_code": "PHYSICS"
+        },
+        {
+          "chapter_number": null,
+          "chapter_title": null,
+          "checksum_sha256": "7c9eafd1d63e60fdc2495a94102b935b88745aa33959dd5cc928290f5fad7ae2",
+          "class_level": "11",
+          "edition_hints": [
+            "Rationalised",
+            "Reprint"
+          ],
+          "file_name": "keph1a1.pdf",
+          "file_size": 3782697,
+          "kind": "appendix",
+          "notes": [],
+          "part_number": 1,
+          "readable": true,
+          "relative_path": "Class 11/Physics/keph1dd/keph1dd/keph1a1.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph1dd\\keph1dd\\keph1a1.pdf",
+          "status": "supplemental",
+          "subject_code": "PHYSICS"
+        },
+        {
+          "chapter_number": null,
+          "chapter_title": "1.1",
+          "checksum_sha256": "79be0d7adeccc1deb630abaea390880063cdb4f37a2308934e8f63695985fbbc",
+          "class_level": "11",
+          "edition_hints": [
+            "Rationalised",
+            "Reprint"
+          ],
+          "file_name": "keph1an.pdf",
+          "file_size": 700119,
+          "kind": "answers",
+          "notes": [],
+          "part_number": 1,
+          "readable": true,
+          "relative_path": "Class 11/Physics/keph1dd/keph1dd/keph1an.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph1dd\\keph1dd\\keph1an.pdf",
+          "status": "supplemental",
+          "subject_code": "PHYSICS"
+        },
+        {
+          "chapter_number": null,
+          "chapter_title": null,
+          "checksum_sha256": "b06cce4e3d6c4c150869bd4f6221ed5aa86bb0ff1725e4effcd2615e85ff5782",
+          "class_level": "11",
+          "edition_hints": [
+            "Rationalised",
+            "Reprint"
+          ],
+          "file_name": "keph1ps.pdf",
+          "file_size": 1890608,
+          "kind": "prelims",
+          "notes": [],
+          "part_number": 1,
+          "readable": true,
+          "relative_path": "Class 11/Physics/keph1dd/keph1dd/keph1ps.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph1dd\\keph1dd\\keph1ps.pdf",
+          "status": "supplemental",
+          "subject_code": "PHYSICS"
+        },
+        {
+          "chapter_number": 1,
+          "chapter_title": ", we studied the rotation of the bodies and then",
+          "checksum_sha256": "54ef32e2d3eb1e47e87f9d8e6a49423b8b2cc77e4ac5efbc7c34670c49462de6",
+          "class_level": "11",
+          "edition_hints": [
+            "Rationalised",
+            "Reprint"
+          ],
+          "file_name": "keph201.pdf",
+          "file_size": 1223622,
+          "kind": "chapter",
+          "notes": [
+            "PDF text chapter 6 differs from filename chapter 1 (filename kept; likely TOC noise)",
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 2,
+          "readable": true,
+          "relative_path": "Class 11/Physics/keph2dd/keph2dd/keph201.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph2dd\\keph2dd\\keph201.pdf",
+          "status": "ok",
+          "subject_code": "PHYSICS"
+        },
+        {
+          "chapter_number": 2,
+          "chapter_title": null,
+          "checksum_sha256": "3ff64c89dcbfaf99ecec307d753b0bd2d3f731f17e2f16875d74749840d223b6",
+          "class_level": "11",
+          "edition_hints": [
+            "Rationalised",
+            "Reprint"
+          ],
+          "file_name": "keph202.pdf",
+          "file_size": 2186730,
+          "kind": "chapter",
+          "notes": [
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 2,
+          "readable": true,
+          "relative_path": "Class 11/Physics/keph2dd/keph2dd/keph202.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph2dd\\keph2dd\\keph202.pdf",
+          "status": "ok",
+          "subject_code": "PHYSICS"
+        },
+        {
+          "chapter_number": 3,
+          "chapter_title": "Table 10.3 lists measured specific",
+          "checksum_sha256": "b062894aea80298f8df2f83e34dc11f5f96577bfe08d0ad35e2e647a8446854e",
+          "class_level": "11",
+          "edition_hints": [
+            "Rationalised",
+            "Reprint"
+          ],
+          "file_name": "keph203.pdf",
+          "file_size": 2259386,
+          "kind": "chapter",
+          "notes": [
+            "PDF text chapter 11 differs from filename chapter 3 (filename kept; likely TOC noise)",
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 2,
+          "readable": true,
+          "relative_path": "Class 11/Physics/keph2dd/keph2dd/keph203.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph2dd\\keph2dd\\keph203.pdf",
+          "status": "ok",
+          "subject_code": "PHYSICS"
+        },
+        {
+          "chapter_number": 4,
+          "chapter_title": ") to be",
+          "checksum_sha256": "00462650d55bda8843f5fbf4eba1a7996faf13d04a8858fa04061b1309e090ba",
+          "class_level": "11",
+          "edition_hints": [
+            "Rationalised",
+            "Reprint"
+          ],
+          "file_name": "keph204.pdf",
+          "file_size": 1810896,
+          "kind": "chapter",
+          "notes": [
+            "PDF text chapter 10 differs from filename chapter 4 (filename kept; likely TOC noise)",
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 2,
+          "readable": true,
+          "relative_path": "Class 11/Physics/keph2dd/keph2dd/keph204.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph2dd\\keph2dd\\keph204.pdf",
+          "status": "ok",
+          "subject_code": "PHYSICS"
+        },
+        {
+          "chapter_number": 5,
+          "chapter_title": "for a more precise",
+          "checksum_sha256": "198ca1df5f392ee6aaac7fa8541d65a3354345a79eeca05875c19247adc7ddd9",
+          "class_level": "11",
+          "edition_hints": [
+            "Rationalised",
+            "Reprint"
+          ],
+          "file_name": "keph205.pdf",
+          "file_size": 1478476,
+          "kind": "chapter",
+          "notes": [
+            "PDF text chapter 1 differs from filename chapter 5 (filename kept; likely TOC noise)",
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 2,
+          "readable": true,
+          "relative_path": "Class 11/Physics/keph2dd/keph2dd/keph205.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph2dd\\keph2dd\\keph205.pdf",
+          "status": "ok",
+          "subject_code": "PHYSICS"
+        },
+        {
+          "chapter_number": 6,
+          "chapter_title": null,
+          "checksum_sha256": "adc85e61480ab919f13c6b0951a91d44315958b37bc5f6bfb3304fd256b1978d",
+          "class_level": "11",
+          "edition_hints": [
+            "Rationalised",
+            "Reprint"
+          ],
+          "file_name": "keph206.pdf",
+          "file_size": 1595588,
+          "kind": "chapter",
+          "notes": [
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 2,
+          "readable": true,
+          "relative_path": "Class 11/Physics/keph2dd/keph2dd/keph206.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph2dd\\keph2dd\\keph206.pdf",
+          "status": "ok",
+          "subject_code": "PHYSICS"
+        },
+        {
+          "chapter_number": 7,
+          "chapter_title": null,
+          "checksum_sha256": "9f39d09b0556c3a59b89d6b979189f960e5c663af11cdd52d6c7af0cd2e7d1c9",
+          "class_level": "11",
+          "edition_hints": [
+            "Rationalised",
+            "Reprint"
+          ],
+          "file_name": "keph207.pdf",
+          "file_size": 2026091,
+          "kind": "chapter",
+          "notes": [
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 2,
+          "readable": true,
+          "relative_path": "Class 11/Physics/keph2dd/keph2dd/keph207.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph2dd\\keph2dd\\keph207.pdf",
+          "status": "ok",
+          "subject_code": "PHYSICS"
+        },
+        {
+          "chapter_number": null,
+          "chapter_title": "8.1",
+          "checksum_sha256": "abed24380ce644a461d13743c7a180cc53f3941976c7560e8d81cc781765709c",
+          "class_level": "11",
+          "edition_hints": [
+            "Rationalised",
+            "Reprint"
+          ],
+          "file_name": "keph2an.pdf",
+          "file_size": 1082761,
+          "kind": "answers",
+          "notes": [],
+          "part_number": 2,
+          "readable": true,
+          "relative_path": "Class 11/Physics/keph2dd/keph2dd/keph2an.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph2dd\\keph2dd\\keph2an.pdf",
+          "status": "supplemental",
+          "subject_code": "PHYSICS"
+        },
+        {
+          "chapter_number": null,
+          "chapter_title": "as",
+          "checksum_sha256": "75b36508385f54afb66906cc52d871325802d156535c102b17c1e96842298482",
+          "class_level": "11",
+          "edition_hints": [
+            "First Edition",
+            "Reprint",
+            "Revised Edition",
+            "rationalised"
+          ],
+          "file_name": "keph2ps.pdf",
+          "file_size": 1443978,
+          "kind": "prelims",
+          "notes": [],
+          "part_number": 2,
+          "readable": true,
+          "relative_path": "Class 11/Physics/keph2dd/keph2dd/keph2ps.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph2dd\\keph2dd\\keph2ps.pdf",
+          "status": "supplemental",
+          "subject_code": "PHYSICS"
+        }
+      ],
+      "readable_chapters": 14,
+      "supplemental": 5,
+      "total_pdfs": 19
+    },
+    "Class 12/Biology": {
+      "ambiguous": 0,
+      "chapters": 13,
+      "duplicates": 0,
+      "entries": [
+        {
+          "chapter_number": 1,
+          "chapter_title": "Sexual Reproduction in",
+          "checksum_sha256": "039bad8cf195a93b90fa7857eda95f39bdd4fd278b3c8bced235f3b6cd71c25c",
+          "class_level": "12",
+          "edition_hints": [
+            "Reprint"
+          ],
+          "file_name": "lebo101.pdf",
+          "file_size": 36802891,
+          "kind": "chapter",
+          "notes": [
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 1,
+          "readable": true,
+          "relative_path": "Class 12/Biology/lebo1dd/lebo101.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo101.pdf",
+          "status": "ok",
+          "subject_code": "BIOLOGY"
+        },
+        {
+          "chapter_number": 2,
+          "chapter_title": "HUMAN REPRODUCTION",
+          "checksum_sha256": "af54d04d912114053befb30adf8e56580fe9ddb49c461160dba150a0d19a07a8",
+          "class_level": "12",
+          "edition_hints": [
+            "Reprint"
+          ],
+          "file_name": "lebo102.pdf",
+          "file_size": 64451743,
+          "kind": "chapter",
+          "notes": [
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 1,
+          "readable": true,
+          "relative_path": "Class 12/Biology/lebo1dd/lebo102.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo102.pdf",
+          "status": "ok",
+          "subject_code": "BIOLOGY"
+        },
+        {
+          "chapter_number": 3,
+          "chapter_title": "Now, let\u2019s discuss a closely related",
+          "checksum_sha256": "ef03cc524d286eb3ffc225a00422ce28f3fe18ab8e622424f0b1c748b45bf9f3",
+          "class_level": "12",
+          "edition_hints": [
+            "Reprint"
+          ],
+          "file_name": "lebo103.pdf",
+          "file_size": 1257758,
+          "kind": "chapter",
+          "notes": [
+            "PDF text chapter 2 differs from filename chapter 3 (filename kept; likely TOC noise)",
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 1,
+          "readable": true,
+          "relative_path": "Class 12/Biology/lebo1dd/lebo103.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo103.pdf",
+          "status": "ok",
+          "subject_code": "BIOLOGY"
+        },
+        {
+          "chapter_number": 4,
+          "chapter_title": "Principles of Inheritance",
+          "checksum_sha256": "d5f14fc2248860c029ab10aec2687165ed84d54917c10cd44057574f1c4bb456",
+          "class_level": "12",
+          "edition_hints": [
+            "Reprint"
+          ],
+          "file_name": "lebo104.pdf",
+          "file_size": 19209703,
+          "kind": "chapter",
+          "notes": [
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 1,
+          "readable": true,
+          "relative_path": "Class 12/Biology/lebo1dd/lebo104.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo104.pdf",
+          "status": "ok",
+          "subject_code": "BIOLOGY"
+        },
+        {
+          "chapter_number": 5,
+          "chapter_title": "MOLECULAR BASIS OF",
+          "checksum_sha256": "21d77cdaf37c11b26956bbdae0b9eff9700d723135ac55c1a2141b1caee8f017",
+          "class_level": "12",
+          "edition_hints": [
+            "Reprint"
+          ],
+          "file_name": "lebo105.pdf",
+          "file_size": 4133881,
+          "kind": "chapter",
+          "notes": [
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 1,
+          "readable": true,
+          "relative_path": "Class 12/Biology/lebo1dd/lebo105.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo105.pdf",
+          "status": "ok",
+          "subject_code": "BIOLOGY"
+        },
+        {
+          "chapter_number": 6,
+          "chapter_title": "EVOLUTION",
+          "checksum_sha256": "d2a181994b3d2a060226f4bf1b45ad581c6da69a8dd2a01e448704d6ce868071",
+          "class_level": "12",
+          "edition_hints": [
+            "Reprint"
+          ],
+          "file_name": "lebo106.pdf",
+          "file_size": 12722180,
+          "kind": "chapter",
+          "notes": [
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 1,
+          "readable": true,
+          "relative_path": "Class 12/Biology/lebo1dd/lebo106.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo106.pdf",
+          "status": "ok",
+          "subject_code": "BIOLOGY"
+        },
+        {
+          "chapter_number": 7,
+          "chapter_title": "Human Health and Disease",
+          "checksum_sha256": "afb1c7c2f7699e0572e09e9ee3279f4e61100ba0b117b3f34b9d1ac10bdeae75",
+          "class_level": "12",
+          "edition_hints": [
+            "Reprint"
+          ],
+          "file_name": "lebo107.pdf",
+          "file_size": 4502597,
+          "kind": "chapter",
+          "notes": [
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 1,
+          "readable": true,
+          "relative_path": "Class 12/Biology/lebo1dd/lebo107.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo107.pdf",
+          "status": "ok",
+          "subject_code": "BIOLOGY"
+        },
+        {
+          "chapter_number": 8,
+          "chapter_title": "MICROBES IN HUMAN WELFARE",
+          "checksum_sha256": "e96d234eab38ed70616c77101aedeaf4efa7d92ea8aececeb046d383061f63b7",
+          "class_level": "12",
+          "edition_hints": [
+            "Reprint"
+          ],
+          "file_name": "lebo108.pdf",
+          "file_size": 12940104,
+          "kind": "chapter",
+          "notes": [
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 1,
+          "readable": true,
+          "relative_path": "Class 12/Biology/lebo1dd/lebo108.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo108.pdf",
+          "status": "ok",
+          "subject_code": "BIOLOGY"
+        },
+        {
+          "chapter_number": 9,
+          "chapter_title": "Biotechnology : Principles and",
+          "checksum_sha256": "c30b908dca8e7166e9830ca48c376a4f0b21d63a8e05bf601a150da031c13122",
+          "class_level": "12",
+          "edition_hints": [
+            "Reprint"
+          ],
+          "file_name": "lebo109.pdf",
+          "file_size": 3136998,
+          "kind": "chapter",
+          "notes": [
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 1,
+          "readable": true,
+          "relative_path": "Class 12/Biology/lebo1dd/lebo109.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo109.pdf",
+          "status": "ok",
+          "subject_code": "BIOLOGY"
+        },
+        {
+          "chapter_number": 10,
+          "chapter_title": "BIOTECHNOLOGY AND ITS",
+          "checksum_sha256": "4da2923c699b97a1930ae6b1072bf75fb5b0429d724ead7ba06510f98730b826",
+          "class_level": "12",
+          "edition_hints": [
+            "Reprint"
+          ],
+          "file_name": "lebo110.pdf",
+          "file_size": 1493323,
+          "kind": "chapter",
+          "notes": [
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 1,
+          "readable": true,
+          "relative_path": "Class 12/Biology/lebo1dd/lebo110.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo110.pdf",
+          "status": "ok",
+          "subject_code": "BIOLOGY"
+        },
+        {
+          "chapter_number": 11,
+          "chapter_title": "Organisms and Populations",
+          "checksum_sha256": "5b483a3ee69f88ae67b43daa8095e5e5ba6278bb1f288fb1cdcd3b02f461276f",
+          "class_level": "12",
+          "edition_hints": [
+            "Reprint"
+          ],
+          "file_name": "lebo111.pdf",
+          "file_size": 1555427,
+          "kind": "chapter",
+          "notes": [
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 1,
+          "readable": true,
+          "relative_path": "Class 12/Biology/lebo1dd/lebo111.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo111.pdf",
+          "status": "ok",
+          "subject_code": "BIOLOGY"
+        },
+        {
+          "chapter_number": 12,
+          "chapter_title": "ECOSYSTEM",
+          "checksum_sha256": "6d73b01f7ad5492d08a67b695ae8c05230631f20b1b40c791ab7435b39d0e59e",
+          "class_level": "12",
+          "edition_hints": [
+            "Reprint"
+          ],
+          "file_name": "lebo112.pdf",
+          "file_size": 2415025,
+          "kind": "chapter",
+          "notes": [
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 1,
+          "readable": true,
+          "relative_path": "Class 12/Biology/lebo1dd/lebo112.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo112.pdf",
+          "status": "ok",
+          "subject_code": "BIOLOGY"
+        },
+        {
+          "chapter_number": 13,
+          "chapter_title": "BIODIVERSITY AND",
+          "checksum_sha256": "d4587f07dd122d19493a66fb2aae6f11ae02ef9124dea92634b524f078f20faa",
+          "class_level": "12",
+          "edition_hints": [
+            "Reprint"
+          ],
+          "file_name": "lebo113.pdf",
+          "file_size": 2344750,
+          "kind": "chapter",
+          "notes": [
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 1,
+          "readable": true,
+          "relative_path": "Class 12/Biology/lebo1dd/lebo113.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo113.pdf",
+          "status": "ok",
+          "subject_code": "BIOLOGY"
+        },
+        {
+          "chapter_number": null,
+          "chapter_title": "Prelims.pmd",
+          "checksum_sha256": "22804a9f4df81466593bf0fec0ff9f521b12a55887e32fb46340e528728ac771",
+          "class_level": "12",
+          "edition_hints": [
+            "First Edition",
+            "Reprint",
+            "Revised Edition",
+            "rationalised"
+          ],
+          "file_name": "lebo1ps.pdf",
+          "file_size": 573875,
+          "kind": "prelims",
+          "notes": [],
+          "part_number": 1,
+          "readable": true,
+          "relative_path": "Class 12/Biology/lebo1dd/lebo1ps.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo1ps.pdf",
+          "status": "supplemental",
+          "subject_code": "BIOLOGY"
+        }
+      ],
+      "readable_chapters": 13,
+      "supplemental": 1,
+      "total_pdfs": 14
+    },
+    "Class 12/Chemistry": {
+      "ambiguous": 0,
+      "chapters": 10,
+      "duplicates": 0,
+      "entries": [
+        {
+          "chapter_number": 1,
+          "chapter_title": null,
+          "checksum_sha256": "99d19dbb008280c361496c6e184be91b214d70fb40837749c692c8c52add341f",
+          "class_level": "12",
+          "edition_hints": [
+            "RATIONALISED",
+            "Reprint"
+          ],
+          "file_name": "lech101.pdf",
+          "file_size": 3944788,
+          "kind": "chapter",
+          "notes": [
+            "subject part folder retained: Chemistry 1",
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 1,
+          "readable": true,
+          "relative_path": "Class 12/Chemistry 1/lech1dd/lech101.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 1\\lech1dd\\lech101.pdf",
+          "status": "ok",
+          "subject_code": "CHEMISTRY"
+        },
+        {
+          "chapter_number": 2,
+          "chapter_title": null,
+          "checksum_sha256": "ca0f380fbfe6a0a4363251a646aafe451fe99c5fc8dba1aa9317438d2bc8705a",
+          "class_level": "12",
+          "edition_hints": [
+            "RATIONALISED",
+            "Reprint"
+          ],
+          "file_name": "lech102.pdf",
+          "file_size": 4383876,
+          "kind": "chapter",
+          "notes": [
+            "subject part folder retained: Chemistry 1",
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 1,
+          "readable": true,
+          "relative_path": "Class 12/Chemistry 1/lech1dd/lech102.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 1\\lech1dd\\lech102.pdf",
+          "status": "ok",
+          "subject_code": "CHEMISTRY"
+        },
+        {
+          "chapter_number": 3,
+          "chapter_title": null,
+          "checksum_sha256": "7c822864c114aa805cc63b1e44a028d16d0d4704afc3ad304d4dc4054945f320",
+          "class_level": "12",
+          "edition_hints": [
+            "RATIONALISED",
+            "Reprint"
+          ],
+          "file_name": "lech103.pdf",
+          "file_size": 3984702,
+          "kind": "chapter",
+          "notes": [
+            "subject part folder retained: Chemistry 1",
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 1,
+          "readable": true,
+          "relative_path": "Class 12/Chemistry 1/lech1dd/lech103.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 1\\lech1dd\\lech103.pdf",
+          "status": "ok",
+          "subject_code": "CHEMISTRY"
+        },
+        {
+          "chapter_number": 4,
+          "chapter_title": null,
+          "checksum_sha256": "4f33bf2825d1d693b78ae52c13002f45bce3881a3934790eaf34133b6ccb8972",
+          "class_level": "12",
+          "edition_hints": [
+            "RATIONALISED",
+            "Reprint"
+          ],
+          "file_name": "lech104.pdf",
+          "file_size": 4187695,
+          "kind": "chapter",
+          "notes": [
+            "subject part folder retained: Chemistry 1",
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 1,
+          "readable": true,
+          "relative_path": "Class 12/Chemistry 1/lech1dd/lech104.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 1\\lech1dd\\lech104.pdf",
+          "status": "ok",
+          "subject_code": "CHEMISTRY"
+        },
+        {
+          "chapter_number": 5,
+          "chapter_title": null,
+          "checksum_sha256": "9cca0d995461bb4ba9e02dd4c40b9c3ba40fccfdc132f4a8a0959a82cea209b3",
+          "class_level": "12",
+          "edition_hints": [
+            "RATIONALISED",
+            "Reprint"
+          ],
+          "file_name": "lech105.pdf",
+          "file_size": 3698309,
+          "kind": "chapter",
+          "notes": [
+            "subject part folder retained: Chemistry 1",
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 1,
+          "readable": true,
+          "relative_path": "Class 12/Chemistry 1/lech1dd/lech105.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 1\\lech1dd\\lech105.pdf",
+          "status": "ok",
+          "subject_code": "CHEMISTRY"
+        },
+        {
+          "chapter_number": null,
+          "chapter_title": null,
+          "checksum_sha256": "f6c8d6469430c6634d63c99bcd9a64375a1dbf4f468cc569f5d96ebf556ba8d4",
+          "class_level": "12",
+          "edition_hints": [
+            "RATIONALISED",
+            "Reprint"
+          ],
+          "file_name": "lech1a1.pdf",
+          "file_size": 1507101,
+          "kind": "appendix",
+          "notes": [
+            "subject part folder retained: Chemistry 1"
+          ],
+          "part_number": 1,
+          "readable": true,
+          "relative_path": "Class 12/Chemistry 1/lech1dd/lech1a1.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 1\\lech1dd\\lech1a1.pdf",
+          "status": "supplemental",
+          "subject_code": "CHEMISTRY"
+        },
+        {
+          "chapter_number": null,
+          "chapter_title": null,
+          "checksum_sha256": "b3c1e256b4fca5e45f13b2dca59fd80e0ee4ffd85e4645d01e13a76f66b388ae",
+          "class_level": "12",
+          "edition_hints": [
+            "RATIONALISED",
+            "Reprint"
+          ],
+          "file_name": "lech1an.pdf",
+          "file_size": 949452,
+          "kind": "answers",
+          "notes": [
+            "subject part folder retained: Chemistry 1"
+          ],
+          "part_number": 1,
+          "readable": true,
+          "relative_path": "Class 12/Chemistry 1/lech1dd/lech1an.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 1\\lech1dd\\lech1an.pdf",
+          "status": "supplemental",
+          "subject_code": "CHEMISTRY"
+        },
+        {
+          "chapter_number": null,
+          "chapter_title": null,
+          "checksum_sha256": "4ee7d6795559fc185f092a5f39431420d4f45aacddbe95dfa84d79056750b3d5",
+          "class_level": "12",
+          "edition_hints": [
+            "First Edition",
+            "RATIONALISED",
+            "Reprint",
+            "rationalised"
+          ],
+          "file_name": "lech1ps.pdf",
+          "file_size": 2854404,
+          "kind": "prelims",
+          "notes": [
+            "subject part folder retained: Chemistry 1"
+          ],
+          "part_number": 1,
+          "readable": true,
+          "relative_path": "Class 12/Chemistry 1/lech1dd/lech1ps.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 1\\lech1dd\\lech1ps.pdf",
+          "status": "supplemental",
+          "subject_code": "CHEMISTRY"
+        },
+        {
+          "chapter_number": 1,
+          "chapter_title": null,
+          "checksum_sha256": "faca920f61f7ac668957201f3a8093d204f6364949f4e1ad733af6b01cc4cb17",
+          "class_level": "12",
+          "edition_hints": [
+            "RATIONALISED",
+            "Reprint"
+          ],
+          "file_name": "lech201.pdf",
+          "file_size": 4346904,
+          "kind": "chapter",
+          "notes": [
+            "subject part folder retained: Chemistry 2",
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 2,
+          "readable": true,
+          "relative_path": "Class 12/Chemistry 2/lech2dd/lech201.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 2\\lech2dd\\lech201.pdf",
+          "status": "ok",
+          "subject_code": "CHEMISTRY"
+        },
+        {
+          "chapter_number": 2,
+          "chapter_title": null,
+          "checksum_sha256": "e7aedb4059f435db596bd76015684fa1186be8d6bee4ee4a6c3f2e81f58585be",
+          "class_level": "12",
+          "edition_hints": [
+            "RATIONALISED",
+            "Reprint"
+          ],
+          "file_name": "lech202.pdf",
+          "file_size": 4595173,
+          "kind": "chapter",
+          "notes": [
+            "subject part folder retained: Chemistry 2",
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 2,
+          "readable": true,
+          "relative_path": "Class 12/Chemistry 2/lech2dd/lech202.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 2\\lech2dd\\lech202.pdf",
+          "status": "ok",
+          "subject_code": "CHEMISTRY"
+        },
+        {
+          "chapter_number": 3,
+          "chapter_title": null,
+          "checksum_sha256": "23067221e09a8a61873f3a3a587a2ecb15d3104aeea00914dbc15111e772154e",
+          "class_level": "12",
+          "edition_hints": [
+            "RATIONALISED",
+            "Reprint"
+          ],
+          "file_name": "lech203.pdf",
+          "file_size": 4386923,
+          "kind": "chapter",
+          "notes": [
+            "subject part folder retained: Chemistry 2",
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 2,
+          "readable": true,
+          "relative_path": "Class 12/Chemistry 2/lech2dd/lech203.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 2\\lech2dd\\lech203.pdf",
+          "status": "ok",
+          "subject_code": "CHEMISTRY"
+        },
+        {
+          "chapter_number": 4,
+          "chapter_title": null,
+          "checksum_sha256": "a267ffea998fb68174c2abc87f79a71e646e93460efa73bbe15796a995cea29a",
+          "class_level": "12",
+          "edition_hints": [
+            "RATIONALISED",
+            "Reprint"
+          ],
+          "file_name": "lech204.pdf",
+          "file_size": 2920268,
+          "kind": "chapter",
+          "notes": [
+            "subject part folder retained: Chemistry 2",
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 2,
+          "readable": true,
+          "relative_path": "Class 12/Chemistry 2/lech2dd/lech204.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 2\\lech2dd\\lech204.pdf",
+          "status": "ok",
+          "subject_code": "CHEMISTRY"
+        },
+        {
+          "chapter_number": 5,
+          "chapter_title": null,
+          "checksum_sha256": "a6e215335dff95dfc4023bfbf1a994cbca7b35890ab75952a6cc1c390ba9c072",
+          "class_level": "12",
+          "edition_hints": [
+            "RATIONALISED",
+            "Reprint"
+          ],
+          "file_name": "lech205.pdf",
+          "file_size": 3124512,
+          "kind": "chapter",
+          "notes": [
+            "subject part folder retained: Chemistry 2",
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 2,
+          "readable": true,
+          "relative_path": "Class 12/Chemistry 2/lech2dd/lech205.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 2\\lech2dd\\lech205.pdf",
+          "status": "ok",
+          "subject_code": "CHEMISTRY"
+        },
+        {
+          "chapter_number": null,
+          "chapter_title": null,
+          "checksum_sha256": "e6bc2fc93811b71b60ef94f3e7ef17170cd03186f257b992b0211d0529ef9ec3",
+          "class_level": "12",
+          "edition_hints": [
+            "RATIONALISED",
+            "Reprint"
+          ],
+          "file_name": "lech2an.pdf",
+          "file_size": 1132192,
+          "kind": "answers",
+          "notes": [
+            "subject part folder retained: Chemistry 2"
+          ],
+          "part_number": 2,
+          "readable": true,
+          "relative_path": "Class 12/Chemistry 2/lech2dd/lech2an.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 2\\lech2dd\\lech2an.pdf",
+          "status": "supplemental",
+          "subject_code": "CHEMISTRY"
+        },
+        {
+          "chapter_number": null,
+          "chapter_title": null,
+          "checksum_sha256": "cced7943f47e78ef4abe798243021a46a02c39a5eff719b534cd153377fd9e58",
+          "class_level": "12",
+          "edition_hints": [
+            "First Edition",
+            "RATIONALISED",
+            "Reprint",
+            "Revised Edition",
+            "rationalised"
+          ],
+          "file_name": "lech2ps.pdf",
+          "file_size": 2388903,
+          "kind": "prelims",
+          "notes": [
+            "subject part folder retained: Chemistry 2"
+          ],
+          "part_number": 2,
+          "readable": true,
+          "relative_path": "Class 12/Chemistry 2/lech2dd/lech2ps.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 2\\lech2dd\\lech2ps.pdf",
+          "status": "supplemental",
+          "subject_code": "CHEMISTRY"
+        }
+      ],
+      "readable_chapters": 10,
+      "supplemental": 5,
+      "total_pdfs": 15
+    },
+    "Class 12/Physics": {
+      "ambiguous": 0,
+      "chapters": 14,
+      "duplicates": 0,
+      "entries": [
+        {
+          "chapter_number": 1,
+          "chapter_title": "of Class XI, Physics Textbook , Part I). In this system, the value of the",
+          "checksum_sha256": "ebfbdf8057d7e855385b1720c1771a89d807cb45f5f3b7b79d530f1e8880209f",
+          "class_level": "12",
+          "edition_hints": [
+            "RATIONALISED",
+            "Reprint"
+          ],
+          "file_name": "leph101.pdf",
+          "file_size": 3950051,
+          "kind": "chapter",
+          "notes": [
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 1,
+          "readable": true,
+          "relative_path": "Class 12/Physics/leph1dd/leph101.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Physics\\leph1dd\\leph101.pdf",
+          "status": "ok",
+          "subject_code": "PHYSICS"
+        },
+        {
+          "chapter_number": 2,
+          "chapter_title": "that for a uniformly charged spherical shell,",
+          "checksum_sha256": "d69c4f007bde6809f6d9cd401ec8d7ccd3d775070408ccc5b4c37c444c8faf24",
+          "class_level": "12",
+          "edition_hints": [
+            "RATIONALISED",
+            "Reprint"
+          ],
+          "file_name": "leph102.pdf",
+          "file_size": 3877189,
+          "kind": "chapter",
+          "notes": [
+            "PDF text chapter 1 differs from filename chapter 2 (filename kept; likely TOC noise)",
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 1,
+          "readable": true,
+          "relative_path": "Class 12/Physics/leph1dd/leph102.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Physics\\leph1dd\\leph102.pdf",
+          "status": "ok",
+          "subject_code": "PHYSICS"
+        },
+        {
+          "chapter_number": 3,
+          "chapter_title": ", all charges whether free or bound, were considered to be at",
+          "checksum_sha256": "a00ff04c376523c1e368ee80ef8338b615afceade4f5b293d5bb5849bb3cd894",
+          "class_level": "12",
+          "edition_hints": [
+            "RATIONALISED",
+            "Reprint"
+          ],
+          "file_name": "leph103.pdf",
+          "file_size": 2164963,
+          "kind": "chapter",
+          "notes": [
+            "PDF text chapter 1 differs from filename chapter 3 (filename kept; likely TOC noise)",
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 1,
+          "readable": true,
+          "relative_path": "Class 12/Physics/leph1dd/leph103.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Physics\\leph1dd\\leph103.pdf",
+          "status": "ok",
+          "subject_code": "PHYSICS"
+        },
+        {
+          "chapter_number": 4,
+          "chapter_title": "about",
+          "checksum_sha256": "9bea19084fa95e103eb4b22a7c008248395c022e7adae04fe11a9228067b6746",
+          "class_level": "12",
+          "edition_hints": [
+            "RATIONALISED",
+            "Reprint"
+          ],
+          "file_name": "leph104.pdf",
+          "file_size": 3693096,
+          "kind": "chapter",
+          "notes": [
+            "PDF text chapter 1 differs from filename chapter 4 (filename kept; likely TOC noise)",
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 1,
+          "readable": true,
+          "relative_path": "Class 12/Physics/leph1dd/leph104.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Physics\\leph1dd\\leph104.pdf",
+          "status": "ok",
+          "subject_code": "PHYSICS"
+        },
+        {
+          "chapter_number": 5,
+          "chapter_title": ", Figure 1.14(d). Electric field lines of an",
+          "checksum_sha256": "7ec2926362f9193efdb93c6e2e7b3cdc0909eeed29626c00f5afdcda84b6af80",
+          "class_level": "12",
+          "edition_hints": [
+            "RATIONALISED",
+            "Reprint"
+          ],
+          "file_name": "leph105.pdf",
+          "file_size": 1920361,
+          "kind": "chapter",
+          "notes": [
+            "PDF text chapter 1 differs from filename chapter 5 (filename kept; likely TOC noise)",
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 1,
+          "readable": true,
+          "relative_path": "Class 12/Physics/leph1dd/leph105.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Physics\\leph1dd\\leph105.pdf",
+          "status": "ok",
+          "subject_code": "PHYSICS"
+        },
+        {
+          "chapter_number": 6,
+          "chapter_title": "Magnetic flux through",
+          "checksum_sha256": "014dc9fb7804acee25838361b1a720e40e0c7ca0b0fb162adfc37706b9d1b932",
+          "class_level": "12",
+          "edition_hints": [
+            "RATIONALISED",
+            "Reprint"
+          ],
+          "file_name": "leph106.pdf",
+          "file_size": 2389063,
+          "kind": "chapter",
+          "notes": [
+            "PDF text chapter 1 differs from filename chapter 6 (filename kept; likely TOC noise)",
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 1,
+          "readable": true,
+          "relative_path": "Class 12/Physics/leph1dd/leph106.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Physics\\leph1dd\\leph106.pdf",
+          "status": "ok",
+          "subject_code": "PHYSICS"
+        },
+        {
+          "chapter_number": 7,
+          "chapter_title": null,
+          "checksum_sha256": "0d5759d1dda452a9a553e68756d31b5a4e5df7177f4d82d678cb0d32fe3b818f",
+          "class_level": "12",
+          "edition_hints": [
+            "RATIONALISED",
+            "Reprint"
+          ],
+          "file_name": "leph107.pdf",
+          "file_size": 2407491,
+          "kind": "chapter",
+          "notes": [
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 1,
+          "readable": true,
+          "relative_path": "Class 12/Physics/leph1dd/leph107.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Physics\\leph1dd\\leph107.pdf",
+          "status": "ok",
+          "subject_code": "PHYSICS"
+        },
+        {
+          "chapter_number": 8,
+          "chapter_title": ", we learnt that an electric current produces magnetic field",
+          "checksum_sha256": "3aa3a0d342659b5ce090a76d3406d5a74eed7653f2e2ba3479f83b6008b7aea8",
+          "class_level": "12",
+          "edition_hints": [
+            "RATIONALISED",
+            "Reprint"
+          ],
+          "file_name": "leph108.pdf",
+          "file_size": 1363968,
+          "kind": "chapter",
+          "notes": [
+            "PDF text chapter 4 differs from filename chapter 8 (filename kept; likely TOC noise)",
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 1,
+          "readable": true,
+          "relative_path": "Class 12/Physics/leph1dd/leph108.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Physics\\leph1dd\\leph108.pdf",
+          "status": "ok",
+          "subject_code": "PHYSICS"
+        },
+        {
+          "chapter_number": null,
+          "chapter_title": "1.1",
+          "checksum_sha256": "e6ced92f5d012352642d42b7bf68a6104d91b9f7eee437e4b6d7251c42bf707c",
+          "class_level": "12",
+          "edition_hints": [
+            "RATIONALISED",
+            "Reprint"
+          ],
+          "file_name": "leph1an.pdf",
+          "file_size": 580793,
+          "kind": "answers",
+          "notes": [],
+          "part_number": 1,
+          "readable": true,
+          "relative_path": "Class 12/Physics/leph1dd/leph1an.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Physics\\leph1dd\\leph1an.pdf",
+          "status": "supplemental",
+          "subject_code": "PHYSICS"
+        },
+        {
+          "chapter_number": null,
+          "chapter_title": null,
+          "checksum_sha256": "66bceeb91660d27a8c280dd7087daa874ffe2745b2905ee517ac6cbc67d5273b",
+          "class_level": "12",
+          "edition_hints": [
+            "First Edition",
+            "RATIONALISED",
+            "Reprint",
+            "Revised Edition",
+            "rationalised"
+          ],
+          "file_name": "leph1ps.pdf",
+          "file_size": 2611580,
+          "kind": "prelims",
+          "notes": [],
+          "part_number": 1,
+          "readable": true,
+          "relative_path": "Class 12/Physics/leph1dd/leph1ps.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Physics\\leph1dd\\leph1ps.pdf",
+          "status": "supplemental",
+          "subject_code": "PHYSICS"
+        },
+        {
+          "chapter_number": 1,
+          "chapter_title": ", that light is an",
+          "checksum_sha256": "5c9570cc9f45cbe8f8d62100ccecd3370f8d8085f57041764bd1940bf467d235",
+          "class_level": "12",
+          "edition_hints": [
+            "RATIONALISED",
+            "Reprint"
+          ],
+          "file_name": "leph201.pdf",
+          "file_size": 3392485,
+          "kind": "chapter",
+          "notes": [
+            "PDF text chapter 8 differs from filename chapter 1 (filename kept; likely TOC noise)",
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 2,
+          "readable": true,
+          "relative_path": "Class 12/Physics/leph2dd/leph201.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Physics\\leph2dd\\leph201.pdf",
+          "status": "ok",
+          "subject_code": "PHYSICS"
+        },
+        {
+          "chapter_number": 2,
+          "chapter_title": "on the basis of rectilinear propagation of",
+          "checksum_sha256": "315c746f4733971ab171e0cb145810ef8b5648c2604745a4fb57769f2714c91e",
+          "class_level": "12",
+          "edition_hints": [
+            "RATIONALISED",
+            "Reprint"
+          ],
+          "file_name": "leph202.pdf",
+          "file_size": 2682100,
+          "kind": "chapter",
+          "notes": [
+            "PDF text chapter 9 differs from filename chapter 2 (filename kept; likely TOC noise)",
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 2,
+          "readable": true,
+          "relative_path": "Class 12/Physics/leph2dd/leph202.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Physics\\leph2dd\\leph202.pdf",
+          "status": "ok",
+          "subject_code": "PHYSICS"
+        },
+        {
+          "chapter_number": 3,
+          "chapter_title": null,
+          "checksum_sha256": "8b465f3a3fddc009ec98b9065014231740bd2f1c29aba6c142ceabfbb73bf764",
+          "class_level": "12",
+          "edition_hints": [
+            "RATIONALISED",
+            "Reprint"
+          ],
+          "file_name": "leph203.pdf",
+          "file_size": 1791818,
+          "kind": "chapter",
+          "notes": [
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 2,
+          "readable": true,
+          "relative_path": "Class 12/Physics/leph2dd/leph203.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Physics\\leph2dd\\leph203.pdf",
+          "status": "ok",
+          "subject_code": "PHYSICS"
+        },
+        {
+          "chapter_number": 4,
+          "chapter_title": null,
+          "checksum_sha256": "6ddc6d11f464a9370911bdf349b46c9ba422d0f3d73ec69392d4b538e59dc31b",
+          "class_level": "12",
+          "edition_hints": [
+            "RATIONALISED",
+            "Reprint"
+          ],
+          "file_name": "leph204.pdf",
+          "file_size": 2055114,
+          "kind": "chapter",
+          "notes": [
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 2,
+          "readable": true,
+          "relative_path": "Class 12/Physics/leph2dd/leph204.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Physics\\leph2dd\\leph204.pdf",
+          "status": "ok",
+          "subject_code": "PHYSICS"
+        },
+        {
+          "chapter_number": 5,
+          "chapter_title": ", Rutherford was the pioneer who",
+          "checksum_sha256": "1f58e53087014ecb2da30275d3b240458e94c2a5d92a6910b64632261dad28b9",
+          "class_level": "12",
+          "edition_hints": [
+            "RATIONALISED",
+            "Reprint"
+          ],
+          "file_name": "leph205.pdf",
+          "file_size": 1830495,
+          "kind": "chapter",
+          "notes": [
+            "PDF text chapter 12 differs from filename chapter 5 (filename kept; likely TOC noise)",
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 2,
+          "readable": true,
+          "relative_path": "Class 12/Physics/leph2dd/leph205.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Physics\\leph2dd\\leph205.pdf",
+          "status": "ok",
+          "subject_code": "PHYSICS"
+        },
+        {
+          "chapter_number": 6,
+          "chapter_title": null,
+          "checksum_sha256": "a7e5dc3f4128097d6200a34fa6ad43260178db4d614eced95881f220cd8f7250",
+          "class_level": "12",
+          "edition_hints": [
+            "RATIONALISED",
+            "Reprint"
+          ],
+          "file_name": "leph206.pdf",
+          "file_size": 1883124,
+          "kind": "chapter",
+          "notes": [
+            "edition hints present \u2014 do not auto-select curriculum baseline"
+          ],
+          "part_number": 2,
+          "readable": true,
+          "relative_path": "Class 12/Physics/leph2dd/leph206.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Physics\\leph2dd\\leph206.pdf",
+          "status": "ok",
+          "subject_code": "PHYSICS"
+        },
+        {
+          "chapter_number": null,
+          "chapter_title": "9.1",
+          "checksum_sha256": "008ef2d5611383457689d9dcab545d35d2b3cfad73a783c9e2f257df18b5f804",
+          "class_level": "12",
+          "edition_hints": [
+            "RATIONALISED",
+            "Reprint"
+          ],
+          "file_name": "leph2an.pdf",
+          "file_size": 1661628,
+          "kind": "answers",
+          "notes": [],
+          "part_number": 2,
+          "readable": true,
+          "relative_path": "Class 12/Physics/leph2dd/leph2an.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Physics\\leph2dd\\leph2an.pdf",
+          "status": "supplemental",
+          "subject_code": "PHYSICS"
+        },
+        {
+          "chapter_number": null,
+          "chapter_title": null,
+          "checksum_sha256": "ec55ddcdc76286a233424784c52294f4352ff41a1e34846f6b8182c0145ff247",
+          "class_level": "12",
+          "edition_hints": [
+            "First Edition",
+            "RATIONALISED",
+            "Revised Edition",
+            "rationalised"
+          ],
+          "file_name": "leph2ps.pdf",
+          "file_size": 1718367,
+          "kind": "prelims",
+          "notes": [],
+          "part_number": 2,
+          "readable": true,
+          "relative_path": "Class 12/Physics/leph2dd/leph2ps.pdf",
+          "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Physics\\leph2dd\\leph2ps.pdf",
+          "status": "supplemental",
+          "subject_code": "PHYSICS"
+        }
+      ],
+      "readable_chapters": 14,
+      "supplemental": 4,
+      "total_pdfs": 18
+    }
+  },
+  "readable": 100,
+  "root": "D:\\ravishori\\AI Neet Exam App\\NCERT Books",
+  "total_pdfs": 100,
+  "unexpected": 0,
+  "unreadable": 0
+}

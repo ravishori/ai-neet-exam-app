@@ -1,0 +1,929 @@
+{
+  "task_id": "PYTHON-MCQ-ENGINE-001",
+  "engine_version": "python_mcq_engine_v1",
+  "verdict": "GREEN",
+  "source_root": "D:\\ravishori\\AI Neet Exam App\\NCERT Books",
+  "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt",
+  "pilot": {
+    "blueprint_id": "3d1ca441-882f-4cca-90b9-9ec71cff4233",
+    "subject": "CHEMISTRY",
+    "class_level": "12",
+    "chapter": "Biomolecules",
+    "topic": "Carbohydrates",
+    "concept": "Classification of Carbohydrates",
+    "source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 2\\lech2dd\\lech205.pdf",
+    "source_relative_path": "Class 12/Chemistry 2/lech2dd/lech205.pdf",
+    "evidence_pages_selected": [
+      1,
+      2,
+      4,
+      7,
+      8
+    ],
+    "seed": 20260914
+  },
+  "question_types_implemented": [
+    "DIRECT_FACT",
+    "DEFINITION_IDENTIFICATION",
+    "SI_UNIT_TERMINOLOGY",
+    "CONTROLLED_NUMERICAL",
+    "CONTROLLED_ASSOCIATION"
+  ],
+  "question_types_demonstrated": [
+    "CONTROLLED_ASSOCIATION",
+    "DEFINITION_IDENTIFICATION",
+    "DIRECT_FACT"
+  ],
+  "metrics": {
+    "candidates_attempted": 10,
+    "candidates_created": 9,
+    "candidates_skipped": 1,
+    "skip_reasons": {
+      "NCERT_EXPLICIT_FACT_MISSING": 1
+    },
+    "validation_failures": 0,
+    "duplicate_failures": 0,
+    "numerical_failures": 0,
+    "source_gate_failures": 1,
+    "syllabus_gate_failures": 0,
+    "provider_api_calls": 0,
+    "production_db_mutations": 0
+  },
+  "verification": {
+    "deterministic_reproducibility": true,
+    "duplicate_probe_rejected": true,
+    "unsupported_source_rejected": true,
+    "all_draft": true,
+    "canonical_source": true,
+    "syllabus_in_scope": true,
+    "provenance_present": true,
+    "existing_validator_passed": true,
+    "unique_stems": true,
+    "production_schema_inventory_unchanged": true
+  },
+  "database_before_observation": {
+    "question_statuses": {
+      "DRAFT": 5539,
+      "PUBLISHED": 1479,
+      "SUPERSEDED": 6,
+      "IN_REVIEW": 111
+    },
+    "unmapped_draft": 5034,
+    "blueprints": 445,
+    "knowledge_units": 381,
+    "python_engine_batches": 0
+  },
+  "database_after_observation": {
+    "question_statuses": {
+      "DRAFT": 5539,
+      "PUBLISHED": 1479,
+      "SUPERSEDED": 6,
+      "IN_REVIEW": 111
+    },
+    "unmapped_draft": 5034,
+    "blueprints": 445,
+    "knowledge_units": 381,
+    "python_engine_batches": 0
+  },
+  "observed_global_deltas": {
+    "question_statuses": {
+      "IN_REVIEW": 0,
+      "DRAFT": 0,
+      "SUPERSEDED": 0,
+      "PUBLISHED": 0
+    },
+    "blueprints": 0,
+    "knowledge_units": 0,
+    "unmapped_draft": 0,
+    "python_engine_batches": 0
+  },
+  "database_note": "This process issued SELECT statements only. Concurrent OpenAI worker activity may change global DRAFT/factory counts and is not attributed to this in-memory engine.",
+  "candidates": [
+    {
+      "fact_id": "home-sugar",
+      "question_type": "DIRECT_FACT",
+      "status": "DRAFT",
+      "body": {
+        "stem": "Which carbohydrate does NCERT name as the most common sugar used in homes?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Glucose"
+          },
+          {
+            "label": "B",
+            "text": "Fructose"
+          },
+          {
+            "label": "C",
+            "text": "Ribose"
+          },
+          {
+            "label": "D",
+            "text": "Sucrose"
+          }
+        ],
+        "correct_option": "D",
+        "explanation": "NCERT explicitly names sucrose as the most common sugar used in homes.",
+        "difficulty": "easy",
+        "bloom_level": "remember",
+        "pyq_year": null,
+        "ncert_evidence": {
+          "verification_level": "SOURCE_TEXT_VERIFIED",
+          "source_document": "Class 12/Chemistry 2/lech2dd/lech205.pdf",
+          "document_version": null,
+          "class_level": "12",
+          "chapter": "Biomolecules",
+          "section": "CF-C5 / Classification of Carbohydrates",
+          "page_number": null,
+          "source_excerpt": "The most common sugar, used in our homes is named as sucrose",
+          "verification_method": "deterministic_python_explicit_quote",
+          "source_pdf_relpath": "Class 12/Chemistry 2/lech2dd/lech205.pdf"
+        },
+        "provenance": {
+          "origin": "deterministic_python",
+          "source": "canonical_ncert",
+          "batch_id": null,
+          "validation_process": "python_mcq_engine_v1",
+          "verification_process": "generated_not_independently_ncert_certified",
+          "class_level": "12",
+          "chapter": "Biomolecules",
+          "section": "CF-C5 / Classification of Carbohydrates"
+        },
+        "numerical_evidence": null,
+        "calculation_check": null,
+        "diagram_svg": null,
+        "diagram_description": null,
+        "visual_spec": null
+      },
+      "subject": "CHEMISTRY",
+      "class_level": "12",
+      "chapter": "Biomolecules",
+      "topic": "Carbohydrates",
+      "concept": "Classification of Carbohydrates",
+      "source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 2\\lech2dd\\lech205.pdf",
+      "source_relative_path": "Class 12/Chemistry 2/lech2dd/lech205.pdf",
+      "evidence_pages": [
+        1,
+        2,
+        4,
+        7,
+        8
+      ],
+      "syllabus_binding": {
+        "status": "IN_SYLLABUS",
+        "subject": "CHEMISTRY",
+        "unit_number": 19,
+        "unit_name": "BIOMOLECULES",
+        "topic": "Carbohydrates: Classification; aldoses and ketoses: monosaccharides (glucose and fructose) and constituent monosaccharides of oligosaccharides (sucrose, lactose, and maltose).",
+        "topic_id": "CHEMISTRY:U19:T02",
+        "unit_id": "CHEMISTRY:U19",
+        "source_line": 479,
+        "detail": "exact topic_id match",
+        "reasons": []
+      },
+      "generation_method": "deterministic_python",
+      "engine_version": "python_mcq_engine_v1",
+      "seed": 20260914,
+      "stem_hash": "8871233c8b4dc6df2d73f411d460944827d6554126ad91dec3eb71adeda30c91",
+      "option_stem_hash": "a2710bf443183748f3f8f344b6bfababafa7770d3e568b8fce130f2c102e7342"
+    },
+    {
+      "fact_id": "monosaccharide-definition",
+      "question_type": "DEFINITION_IDENTIFICATION",
+      "status": "DRAFT",
+      "body": {
+        "stem": "What is a carbohydrate that cannot be hydrolysed further to a simpler polyhydroxy aldehyde or ketone called?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Oligosaccharide"
+          },
+          {
+            "label": "B",
+            "text": "Disaccharide"
+          },
+          {
+            "label": "C",
+            "text": "Monosaccharide"
+          },
+          {
+            "label": "D",
+            "text": "Polysaccharide"
+          }
+        ],
+        "correct_option": "C",
+        "explanation": "NCERT defines such a carbohydrate as a monosaccharide.",
+        "difficulty": "easy",
+        "bloom_level": "remember",
+        "pyq_year": null,
+        "ncert_evidence": {
+          "verification_level": "SOURCE_TEXT_VERIFIED",
+          "source_document": "Class 12/Chemistry 2/lech2dd/lech205.pdf",
+          "document_version": null,
+          "class_level": "12",
+          "chapter": "Biomolecules",
+          "section": "CF-C5 / Classification of Carbohydrates",
+          "page_number": null,
+          "source_excerpt": "is called a monosaccharide",
+          "verification_method": "deterministic_python_explicit_quote",
+          "source_pdf_relpath": "Class 12/Chemistry 2/lech2dd/lech205.pdf"
+        },
+        "provenance": {
+          "origin": "deterministic_python",
+          "source": "canonical_ncert",
+          "batch_id": null,
+          "validation_process": "python_mcq_engine_v1",
+          "verification_process": "generated_not_independently_ncert_certified",
+          "class_level": "12",
+          "chapter": "Biomolecules",
+          "section": "CF-C5 / Classification of Carbohydrates"
+        },
+        "numerical_evidence": null,
+        "calculation_check": null,
+        "diagram_svg": null,
+        "diagram_description": null,
+        "visual_spec": null
+      },
+      "subject": "CHEMISTRY",
+      "class_level": "12",
+      "chapter": "Biomolecules",
+      "topic": "Carbohydrates",
+      "concept": "Classification of Carbohydrates",
+      "source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 2\\lech2dd\\lech205.pdf",
+      "source_relative_path": "Class 12/Chemistry 2/lech2dd/lech205.pdf",
+      "evidence_pages": [
+        1,
+        2,
+        4,
+        7,
+        8
+      ],
+      "syllabus_binding": {
+        "status": "IN_SYLLABUS",
+        "subject": "CHEMISTRY",
+        "unit_number": 19,
+        "unit_name": "BIOMOLECULES",
+        "topic": "Carbohydrates: Classification; aldoses and ketoses: monosaccharides (glucose and fructose) and constituent monosaccharides of oligosaccharides (sucrose, lactose, and maltose).",
+        "topic_id": "CHEMISTRY:U19:T02",
+        "unit_id": "CHEMISTRY:U19",
+        "source_line": 479,
+        "detail": "exact topic_id match",
+        "reasons": []
+      },
+      "generation_method": "deterministic_python",
+      "engine_version": "python_mcq_engine_v1",
+      "seed": 20260914,
+      "stem_hash": "b073184ccc7f27ad62b22d93478b922caa93a7b222a22d8f396b41d188e7d4c3",
+      "option_stem_hash": "c32c5fd9b13e635d96495be420d6481b3e8170873fca4820d52eaf81d1c11110"
+    },
+    {
+      "fact_id": "oligosaccharide-definition",
+      "question_type": "DEFINITION_IDENTIFICATION",
+      "status": "DRAFT",
+      "body": {
+        "stem": "Which carbohydrate class yields two to ten monosaccharide units on hydrolysis?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Monosaccharide"
+          },
+          {
+            "label": "B",
+            "text": "Disaccharide"
+          },
+          {
+            "label": "C",
+            "text": "Polysaccharide"
+          },
+          {
+            "label": "D",
+            "text": "Oligosaccharide"
+          }
+        ],
+        "correct_option": "D",
+        "explanation": "NCERT defines oligosaccharides as yielding two to ten monosaccharide units.",
+        "difficulty": "easy",
+        "bloom_level": "remember",
+        "pyq_year": null,
+        "ncert_evidence": {
+          "verification_level": "SOURCE_TEXT_VERIFIED",
+          "source_document": "Class 12/Chemistry 2/lech2dd/lech205.pdf",
+          "document_version": null,
+          "class_level": "12",
+          "chapter": "Biomolecules",
+          "section": "CF-C5 / Classification of Carbohydrates",
+          "page_number": null,
+          "source_excerpt": "are called oligosaccharides",
+          "verification_method": "deterministic_python_explicit_quote",
+          "source_pdf_relpath": "Class 12/Chemistry 2/lech2dd/lech205.pdf"
+        },
+        "provenance": {
+          "origin": "deterministic_python",
+          "source": "canonical_ncert",
+          "batch_id": null,
+          "validation_process": "python_mcq_engine_v1",
+          "verification_process": "generated_not_independently_ncert_certified",
+          "class_level": "12",
+          "chapter": "Biomolecules",
+          "section": "CF-C5 / Classification of Carbohydrates"
+        },
+        "numerical_evidence": null,
+        "calculation_check": null,
+        "diagram_svg": null,
+        "diagram_description": null,
+        "visual_spec": null
+      },
+      "subject": "CHEMISTRY",
+      "class_level": "12",
+      "chapter": "Biomolecules",
+      "topic": "Carbohydrates",
+      "concept": "Classification of Carbohydrates",
+      "source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 2\\lech2dd\\lech205.pdf",
+      "source_relative_path": "Class 12/Chemistry 2/lech2dd/lech205.pdf",
+      "evidence_pages": [
+        1,
+        2,
+        4,
+        7,
+        8
+      ],
+      "syllabus_binding": {
+        "status": "IN_SYLLABUS",
+        "subject": "CHEMISTRY",
+        "unit_number": 19,
+        "unit_name": "BIOMOLECULES",
+        "topic": "Carbohydrates: Classification; aldoses and ketoses: monosaccharides (glucose and fructose) and constituent monosaccharides of oligosaccharides (sucrose, lactose, and maltose).",
+        "topic_id": "CHEMISTRY:U19:T02",
+        "unit_id": "CHEMISTRY:U19",
+        "source_line": 479,
+        "detail": "exact topic_id match",
+        "reasons": []
+      },
+      "generation_method": "deterministic_python",
+      "engine_version": "python_mcq_engine_v1",
+      "seed": 20260914,
+      "stem_hash": "21d2a32803781cce721fa8429dff2936cf2e267c95bd9d02b4142f6c1ed7edb3",
+      "option_stem_hash": "25d3cb82292b2d465f0aacfafa00d0b05da4545d30e0a0fe458b3aa7f8253083"
+    },
+    {
+      "fact_id": "polysaccharide-definition",
+      "question_type": "DEFINITION_IDENTIFICATION",
+      "status": "DRAFT",
+      "body": {
+        "stem": "Which carbohydrate class yields a large number of monosaccharide units on hydrolysis?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Oligosaccharide"
+          },
+          {
+            "label": "B",
+            "text": "Polysaccharide"
+          },
+          {
+            "label": "C",
+            "text": "Monosaccharide"
+          },
+          {
+            "label": "D",
+            "text": "Disaccharide"
+          }
+        ],
+        "correct_option": "B",
+        "explanation": "NCERT defines this class as polysaccharides.",
+        "difficulty": "easy",
+        "bloom_level": "remember",
+        "pyq_year": null,
+        "ncert_evidence": {
+          "verification_level": "SOURCE_TEXT_VERIFIED",
+          "source_document": "Class 12/Chemistry 2/lech2dd/lech205.pdf",
+          "document_version": null,
+          "class_level": "12",
+          "chapter": "Biomolecules",
+          "section": "CF-C5 / Classification of Carbohydrates",
+          "page_number": null,
+          "source_excerpt": "are called polysaccharides",
+          "verification_method": "deterministic_python_explicit_quote",
+          "source_pdf_relpath": "Class 12/Chemistry 2/lech2dd/lech205.pdf"
+        },
+        "provenance": {
+          "origin": "deterministic_python",
+          "source": "canonical_ncert",
+          "batch_id": null,
+          "validation_process": "python_mcq_engine_v1",
+          "verification_process": "generated_not_independently_ncert_certified",
+          "class_level": "12",
+          "chapter": "Biomolecules",
+          "section": "CF-C5 / Classification of Carbohydrates"
+        },
+        "numerical_evidence": null,
+        "calculation_check": null,
+        "diagram_svg": null,
+        "diagram_description": null,
+        "visual_spec": null
+      },
+      "subject": "CHEMISTRY",
+      "class_level": "12",
+      "chapter": "Biomolecules",
+      "topic": "Carbohydrates",
+      "concept": "Classification of Carbohydrates",
+      "source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 2\\lech2dd\\lech205.pdf",
+      "source_relative_path": "Class 12/Chemistry 2/lech2dd/lech205.pdf",
+      "evidence_pages": [
+        1,
+        2,
+        4,
+        7,
+        8
+      ],
+      "syllabus_binding": {
+        "status": "IN_SYLLABUS",
+        "subject": "CHEMISTRY",
+        "unit_number": 19,
+        "unit_name": "BIOMOLECULES",
+        "topic": "Carbohydrates: Classification; aldoses and ketoses: monosaccharides (glucose and fructose) and constituent monosaccharides of oligosaccharides (sucrose, lactose, and maltose).",
+        "topic_id": "CHEMISTRY:U19:T02",
+        "unit_id": "CHEMISTRY:U19",
+        "source_line": 479,
+        "detail": "exact topic_id match",
+        "reasons": []
+      },
+      "generation_method": "deterministic_python",
+      "engine_version": "python_mcq_engine_v1",
+      "seed": 20260914,
+      "stem_hash": "539becc2a35bef93c36a91a2f07879a4a8043e8dc64f9e65babbd8d188708060",
+      "option_stem_hash": "4db6e6620a7adf6c566f2e4c9dc900771cb033b2ddaf696364192fc00e658392"
+    },
+    {
+      "fact_id": "non-reducing-sugar",
+      "question_type": "DIRECT_FACT",
+      "status": "DRAFT",
+      "body": {
+        "stem": "Which carbohydrate is explicitly identified by NCERT as a non-reducing sugar?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Sucrose"
+          },
+          {
+            "label": "B",
+            "text": "Glucose"
+          },
+          {
+            "label": "C",
+            "text": "Ribose"
+          },
+          {
+            "label": "D",
+            "text": "Fructose"
+          }
+        ],
+        "correct_option": "A",
+        "explanation": "NCERT states that sucrose is non-reducing because its reducing groups form the glycosidic bond.",
+        "difficulty": "easy",
+        "bloom_level": "remember",
+        "pyq_year": null,
+        "ncert_evidence": {
+          "verification_level": "SOURCE_TEXT_VERIFIED",
+          "source_document": "Class 12/Chemistry 2/lech2dd/lech205.pdf",
+          "document_version": null,
+          "class_level": "12",
+          "chapter": "Biomolecules",
+          "section": "CF-C5 / Classification of Carbohydrates",
+          "page_number": null,
+          "source_excerpt": "sucrose is a non reducing sugar",
+          "verification_method": "deterministic_python_explicit_quote",
+          "source_pdf_relpath": "Class 12/Chemistry 2/lech2dd/lech205.pdf"
+        },
+        "provenance": {
+          "origin": "deterministic_python",
+          "source": "canonical_ncert",
+          "batch_id": null,
+          "validation_process": "python_mcq_engine_v1",
+          "verification_process": "generated_not_independently_ncert_certified",
+          "class_level": "12",
+          "chapter": "Biomolecules",
+          "section": "CF-C5 / Classification of Carbohydrates"
+        },
+        "numerical_evidence": null,
+        "calculation_check": null,
+        "diagram_svg": null,
+        "diagram_description": null,
+        "visual_spec": null
+      },
+      "subject": "CHEMISTRY",
+      "class_level": "12",
+      "chapter": "Biomolecules",
+      "topic": "Carbohydrates",
+      "concept": "Classification of Carbohydrates",
+      "source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 2\\lech2dd\\lech205.pdf",
+      "source_relative_path": "Class 12/Chemistry 2/lech2dd/lech205.pdf",
+      "evidence_pages": [
+        1,
+        2,
+        4,
+        7,
+        8
+      ],
+      "syllabus_binding": {
+        "status": "IN_SYLLABUS",
+        "subject": "CHEMISTRY",
+        "unit_number": 19,
+        "unit_name": "BIOMOLECULES",
+        "topic": "Carbohydrates: Classification; aldoses and ketoses: monosaccharides (glucose and fructose) and constituent monosaccharides of oligosaccharides (sucrose, lactose, and maltose).",
+        "topic_id": "CHEMISTRY:U19:T02",
+        "unit_id": "CHEMISTRY:U19",
+        "source_line": 479,
+        "detail": "exact topic_id match",
+        "reasons": []
+      },
+      "generation_method": "deterministic_python",
+      "engine_version": "python_mcq_engine_v1",
+      "seed": 20260914,
+      "stem_hash": "562de4dd49544191aa5c1006b84d42ba3ae1a8bba2cf03b316527ed469aa5619",
+      "option_stem_hash": "28cd4b00d1b0b99ae190b83acf07033f08864131c021dfa3cbf0bbad13129416"
+    },
+    {
+      "fact_id": "sucrose-hydrolysis",
+      "question_type": "CONTROLLED_ASSOCIATION",
+      "status": "DRAFT",
+      "body": {
+        "stem": "Which association gives the NCERT-stated hydrolysis products of sucrose?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Starch — polymer of alpha-glucose"
+          },
+          {
+            "label": "B",
+            "text": "Lactose — galactose and glucose"
+          },
+          {
+            "label": "C",
+            "text": "Maltose — two glucose units"
+          },
+          {
+            "label": "D",
+            "text": "Sucrose — glucose and fructose"
+          }
+        ],
+        "correct_option": "D",
+        "explanation": "NCERT states that sucrose hydrolysis gives glucose and fructose.",
+        "difficulty": "easy",
+        "bloom_level": "remember",
+        "pyq_year": null,
+        "ncert_evidence": {
+          "verification_level": "SOURCE_TEXT_VERIFIED",
+          "source_document": "Class 12/Chemistry 2/lech2dd/lech205.pdf",
+          "document_version": null,
+          "class_level": "12",
+          "chapter": "Biomolecules",
+          "section": "CF-C5 / Classification of Carbohydrates",
+          "page_number": null,
+          "source_excerpt": "sucrose on hydrolysis gives one molecule of glucose and one molecule of fructose",
+          "verification_method": "deterministic_python_explicit_quote",
+          "source_pdf_relpath": "Class 12/Chemistry 2/lech2dd/lech205.pdf"
+        },
+        "provenance": {
+          "origin": "deterministic_python",
+          "source": "canonical_ncert",
+          "batch_id": null,
+          "validation_process": "python_mcq_engine_v1",
+          "verification_process": "generated_not_independently_ncert_certified",
+          "class_level": "12",
+          "chapter": "Biomolecules",
+          "section": "CF-C5 / Classification of Carbohydrates"
+        },
+        "numerical_evidence": null,
+        "calculation_check": null,
+        "diagram_svg": null,
+        "diagram_description": null,
+        "visual_spec": null
+      },
+      "subject": "CHEMISTRY",
+      "class_level": "12",
+      "chapter": "Biomolecules",
+      "topic": "Carbohydrates",
+      "concept": "Classification of Carbohydrates",
+      "source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 2\\lech2dd\\lech205.pdf",
+      "source_relative_path": "Class 12/Chemistry 2/lech2dd/lech205.pdf",
+      "evidence_pages": [
+        1,
+        2,
+        4,
+        7,
+        8
+      ],
+      "syllabus_binding": {
+        "status": "IN_SYLLABUS",
+        "subject": "CHEMISTRY",
+        "unit_number": 19,
+        "unit_name": "BIOMOLECULES",
+        "topic": "Carbohydrates: Classification; aldoses and ketoses: monosaccharides (glucose and fructose) and constituent monosaccharides of oligosaccharides (sucrose, lactose, and maltose).",
+        "topic_id": "CHEMISTRY:U19:T02",
+        "unit_id": "CHEMISTRY:U19",
+        "source_line": 479,
+        "detail": "exact topic_id match",
+        "reasons": []
+      },
+      "generation_method": "deterministic_python",
+      "engine_version": "python_mcq_engine_v1",
+      "seed": 20260914,
+      "stem_hash": "b714a6776ec706193618b8ca915b9b9f97cf330db3900defece9d8dfbdaad64c",
+      "option_stem_hash": "e3c0c87c5b59fd759c6feb410eb343b62df51aabe68436c5375e640289487547"
+    },
+    {
+      "fact_id": "maltose-hydrolysis",
+      "question_type": "CONTROLLED_ASSOCIATION",
+      "status": "DRAFT",
+      "body": {
+        "stem": "Which association gives the NCERT-stated hydrolysis products of maltose?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Sucrose — glucose and fructose"
+          },
+          {
+            "label": "B",
+            "text": "Lactose — galactose and glucose"
+          },
+          {
+            "label": "C",
+            "text": "Starch — polymer of alpha-glucose"
+          },
+          {
+            "label": "D",
+            "text": "Maltose — two glucose units"
+          }
+        ],
+        "correct_option": "D",
+        "explanation": "NCERT states that maltose gives two molecules of glucose on hydrolysis.",
+        "difficulty": "easy",
+        "bloom_level": "remember",
+        "pyq_year": null,
+        "ncert_evidence": {
+          "verification_level": "SOURCE_TEXT_VERIFIED",
+          "source_document": "Class 12/Chemistry 2/lech2dd/lech205.pdf",
+          "document_version": null,
+          "class_level": "12",
+          "chapter": "Biomolecules",
+          "section": "CF-C5 / Classification of Carbohydrates",
+          "page_number": null,
+          "source_excerpt": "maltose gives two molecules of only glucose",
+          "verification_method": "deterministic_python_explicit_quote",
+          "source_pdf_relpath": "Class 12/Chemistry 2/lech2dd/lech205.pdf"
+        },
+        "provenance": {
+          "origin": "deterministic_python",
+          "source": "canonical_ncert",
+          "batch_id": null,
+          "validation_process": "python_mcq_engine_v1",
+          "verification_process": "generated_not_independently_ncert_certified",
+          "class_level": "12",
+          "chapter": "Biomolecules",
+          "section": "CF-C5 / Classification of Carbohydrates"
+        },
+        "numerical_evidence": null,
+        "calculation_check": null,
+        "diagram_svg": null,
+        "diagram_description": null,
+        "visual_spec": null
+      },
+      "subject": "CHEMISTRY",
+      "class_level": "12",
+      "chapter": "Biomolecules",
+      "topic": "Carbohydrates",
+      "concept": "Classification of Carbohydrates",
+      "source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 2\\lech2dd\\lech205.pdf",
+      "source_relative_path": "Class 12/Chemistry 2/lech2dd/lech205.pdf",
+      "evidence_pages": [
+        1,
+        2,
+        4,
+        7,
+        8
+      ],
+      "syllabus_binding": {
+        "status": "IN_SYLLABUS",
+        "subject": "CHEMISTRY",
+        "unit_number": 19,
+        "unit_name": "BIOMOLECULES",
+        "topic": "Carbohydrates: Classification; aldoses and ketoses: monosaccharides (glucose and fructose) and constituent monosaccharides of oligosaccharides (sucrose, lactose, and maltose).",
+        "topic_id": "CHEMISTRY:U19:T02",
+        "unit_id": "CHEMISTRY:U19",
+        "source_line": 479,
+        "detail": "exact topic_id match",
+        "reasons": []
+      },
+      "generation_method": "deterministic_python",
+      "engine_version": "python_mcq_engine_v1",
+      "seed": 20260914,
+      "stem_hash": "0bb5397922a47912e6557d362322b61c8bb678c0cbe0cfdf9f03ec0bef76af3b",
+      "option_stem_hash": "6d99165c10bbb5c3163b47611f1e6d11519792ddccf0326dac862a335613623c"
+    },
+    {
+      "fact_id": "maltose-linkage",
+      "question_type": "CONTROLLED_ASSOCIATION",
+      "status": "DRAFT",
+      "body": {
+        "stem": "Which association states the linkage described by NCERT for maltose?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Sucrose — C1 of glucose to C2 of fructose"
+          },
+          {
+            "label": "B",
+            "text": "Maltose — C1 to C4 between glucose units"
+          },
+          {
+            "label": "C",
+            "text": "Lactose — C1 of galactose to C4 of glucose"
+          },
+          {
+            "label": "D",
+            "text": "Amylopectin branching — C1 to C6"
+          }
+        ],
+        "correct_option": "B",
+        "explanation": "NCERT describes maltose with a C1-to-C4 linkage between its glucose units.",
+        "difficulty": "easy",
+        "bloom_level": "remember",
+        "pyq_year": null,
+        "ncert_evidence": {
+          "verification_level": "SOURCE_TEXT_VERIFIED",
+          "source_document": "Class 12/Chemistry 2/lech2dd/lech205.pdf",
+          "document_version": null,
+          "class_level": "12",
+          "chapter": "Biomolecules",
+          "section": "CF-C5 / Classification of Carbohydrates",
+          "page_number": null,
+          "source_excerpt": "C1 of one glucose (I) is linked to C4 of another glucose unit",
+          "verification_method": "deterministic_python_explicit_quote",
+          "source_pdf_relpath": "Class 12/Chemistry 2/lech2dd/lech205.pdf"
+        },
+        "provenance": {
+          "origin": "deterministic_python",
+          "source": "canonical_ncert",
+          "batch_id": null,
+          "validation_process": "python_mcq_engine_v1",
+          "verification_process": "generated_not_independently_ncert_certified",
+          "class_level": "12",
+          "chapter": "Biomolecules",
+          "section": "CF-C5 / Classification of Carbohydrates"
+        },
+        "numerical_evidence": null,
+        "calculation_check": null,
+        "diagram_svg": null,
+        "diagram_description": null,
+        "visual_spec": null
+      },
+      "subject": "CHEMISTRY",
+      "class_level": "12",
+      "chapter": "Biomolecules",
+      "topic": "Carbohydrates",
+      "concept": "Classification of Carbohydrates",
+      "source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 2\\lech2dd\\lech205.pdf",
+      "source_relative_path": "Class 12/Chemistry 2/lech2dd/lech205.pdf",
+      "evidence_pages": [
+        1,
+        2,
+        4,
+        7,
+        8
+      ],
+      "syllabus_binding": {
+        "status": "IN_SYLLABUS",
+        "subject": "CHEMISTRY",
+        "unit_number": 19,
+        "unit_name": "BIOMOLECULES",
+        "topic": "Carbohydrates: Classification; aldoses and ketoses: monosaccharides (glucose and fructose) and constituent monosaccharides of oligosaccharides (sucrose, lactose, and maltose).",
+        "topic_id": "CHEMISTRY:U19:T02",
+        "unit_id": "CHEMISTRY:U19",
+        "source_line": 479,
+        "detail": "exact topic_id match",
+        "reasons": []
+      },
+      "generation_method": "deterministic_python",
+      "engine_version": "python_mcq_engine_v1",
+      "seed": 20260914,
+      "stem_hash": "0c185d1c3d81fc7a0788911d21609eb7682bcc86b3c15bfdf990546509ab7d74",
+      "option_stem_hash": "98dd3d31d1725df425a9279ed5f00b9ce9cab141f8fdea7bd8f044e023d85cda"
+    },
+    {
+      "fact_id": "glycosidic-linkage-definition",
+      "question_type": "DEFINITION_IDENTIFICATION",
+      "status": "DRAFT",
+      "body": {
+        "stem": "What is the linkage through an oxygen atom between two monosaccharide units called?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Glycosidic linkage"
+          },
+          {
+            "label": "B",
+            "text": "Invert sugar"
+          },
+          {
+            "label": "C",
+            "text": "Non-reducing sugar"
+          },
+          {
+            "label": "D",
+            "text": "Reducing sugar"
+          }
+        ],
+        "correct_option": "A",
+        "explanation": "NCERT calls this oxygen bridge between monosaccharide units a glycosidic linkage.",
+        "difficulty": "easy",
+        "bloom_level": "remember",
+        "pyq_year": null,
+        "ncert_evidence": {
+          "verification_level": "SOURCE_TEXT_VERIFIED",
+          "source_document": "Class 12/Chemistry 2/lech2dd/lech205.pdf",
+          "document_version": null,
+          "class_level": "12",
+          "chapter": "Biomolecules",
+          "section": "CF-C5 / Classification of Carbohydrates",
+          "page_number": null,
+          "source_excerpt": "is called glycosidic linkage",
+          "verification_method": "deterministic_python_explicit_quote",
+          "source_pdf_relpath": "Class 12/Chemistry 2/lech2dd/lech205.pdf"
+        },
+        "provenance": {
+          "origin": "deterministic_python",
+          "source": "canonical_ncert",
+          "batch_id": null,
+          "validation_process": "python_mcq_engine_v1",
+          "verification_process": "generated_not_independently_ncert_certified",
+          "class_level": "12",
+          "chapter": "Biomolecules",
+          "section": "CF-C5 / Classification of Carbohydrates"
+        },
+        "numerical_evidence": null,
+        "calculation_check": null,
+        "diagram_svg": null,
+        "diagram_description": null,
+        "visual_spec": null
+      },
+      "subject": "CHEMISTRY",
+      "class_level": "12",
+      "chapter": "Biomolecules",
+      "topic": "Carbohydrates",
+      "concept": "Classification of Carbohydrates",
+      "source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 2\\lech2dd\\lech205.pdf",
+      "source_relative_path": "Class 12/Chemistry 2/lech2dd/lech205.pdf",
+      "evidence_pages": [
+        1,
+        2,
+        4,
+        7,
+        8
+      ],
+      "syllabus_binding": {
+        "status": "IN_SYLLABUS",
+        "subject": "CHEMISTRY",
+        "unit_number": 19,
+        "unit_name": "BIOMOLECULES",
+        "topic": "Carbohydrates: Classification; aldoses and ketoses: monosaccharides (glucose and fructose) and constituent monosaccharides of oligosaccharides (sucrose, lactose, and maltose).",
+        "topic_id": "CHEMISTRY:U19:T02",
+        "unit_id": "CHEMISTRY:U19",
+        "source_line": 479,
+        "detail": "exact topic_id match",
+        "reasons": []
+      },
+      "generation_method": "deterministic_python",
+      "engine_version": "python_mcq_engine_v1",
+      "seed": 20260914,
+      "stem_hash": "73c8fe322020d53ec22837edf24b66d942c0fd162caab32d9d4e400865aac048",
+      "option_stem_hash": "9583a7b05e30d8a109bc3ac96e7537ae717324815095893a90a3eafc17546247"
+    }
+  ],
+  "skipped": [
+    {
+      "fact_id": "milk-sugar",
+      "question_type": "DIRECT_FACT",
+      "reason": "NCERT_EXPLICIT_FACT_MISSING",
+      "details": [
+        "the sugar present in milk is known as lactose",
+        "the sugar present in milk is known as lactose",
+        "the sugar present in milk is known as lactose"
+      ]
+    }
+  ],
+  "tests": {
+    "focused": "7 passed",
+    "regression": "67 passed",
+    "ruff": "passed"
+  },
+  "known_limitations": [
+    "Pilot demonstrates direct fact, definition/identification, and controlled association only.",
+    "SI-unit and numerical templates are implemented and unit-tested but not used for this carbohydrate chapter.",
+    "Duplicate checking is in-memory hash-based; production DB dedupe remains persistence-coupled.",
+    "Explicit fact packs are curated inputs; this engine does not extract new facts autonomously.",
+    "Generated and validated candidates are not independently NCERT-certified."
+  ],
+  "recommended_next_task": "PYTHON-MCQ-ENGINE-002: independently verify the in-memory pilot against the cited canonical NCERT excerpts, then define a reviewed structured-fact schema and read-only fact-pack loader before any persistence pilot."
+}

@@ -1,0 +1,74 @@
+{
+  "sample_key": "sample-production-seed-v2-2026-09-03-batch-p5-resample-42",
+  "sample_id": "d2c6d9b3-d0c9-47b8-b01e-0932715a04aa",
+  "seed": 42,
+  "policy_version": "factory_sample_v2",
+  "formula": "min(100, max(5, ceil(2.0*sqrt(100)))) = 20",
+  "requested_sample_size": 20,
+  "actual_sample_size": 20,
+  "sampled_ids": [
+    "365637db-fe02-4817-8408-1a9a357364b5",
+    "8ab26257-2b2f-4f69-af55-ea2b220bc771",
+    "5e9f39a2-6562-4856-b7c7-96377b37058b",
+    "7d07b1fe-62af-44de-9115-755ac8f28007",
+    "9c51f8a1-bf72-4ca0-bcfd-e0aa5cb8ee53",
+    "90797037-3127-4c07-87cb-b3e00307d412",
+    "b51ed114-3e26-46d0-8ce2-ae737698c0b0",
+    "98a017d6-2445-4b92-ba49-e785a9a60b59",
+    "65ba5806-5fb7-42db-b677-fe3f41d122a5",
+    "17eb6ea3-ba95-45e6-86e6-676c2c139c14",
+    "fd4ab8f9-fd76-41e4-a549-39110dbe24a5",
+    "75f38af6-ef72-4273-828b-828b11f0b7b8",
+    "50e30aa3-44dc-424a-9d49-3f641e3faa98",
+    "db6b02e0-2f81-4187-8636-18305bddcc15",
+    "56d515a9-fb76-4c80-b9e7-88f7ef50b5d8",
+    "0f824701-461c-4635-babc-0a6420ed5e34",
+    "327cabf6-1ce2-4d5b-8fad-fe8ba01c647f",
+    "87bc87a5-95ee-4589-b886-c7bcd30f6b3f",
+    "2bb14e59-7865-4719-ab06-2b41c8f4e279",
+    "49488a4a-918f-46f1-b314-df6f86d0ef79"
+  ],
+  "subject_distribution": {
+    "Botany": 9,
+    "Chemistry": 7,
+    "Physics": 3,
+    "Zoology": 1
+  },
+  "difficulty_distribution": {
+    "easy": 8,
+    "medium": 6,
+    "hard": 6
+  },
+  "archetype_distribution": {
+    "direct_ncert_conceptual": 8,
+    "application": 4,
+    "diagram_data_interpretation": 1,
+    "numerical_calculation": 2,
+    "comparison": 4,
+    "sequence_order": 1
+  },
+  "visual_distribution": {
+    "visual_required": 1,
+    "non_visual": 19
+  },
+  "numerical_distribution": {
+    "numerical": 2,
+    "non_numerical": 18
+  },
+  "notes": [
+    "subject_floor_applied",
+    "visual_representation_applied",
+    "numerical_representation_applied"
+  ],
+  "idempotent": false,
+  "active_population_n": 100,
+  "historical_superseded_n": 4,
+  "remat_in_sample": [
+    "9c51f8a1-bf72-4ca0-bcfd-e0aa5cb8ee53"
+  ],
+  "remat_targeted_overlay": [
+    "1633f068-f0df-4ff5-ac0c-57be4417f29e",
+    "ca0e7a05-38bb-4e12-a52d-4fd4c7a26b07",
+    "03d1274b-35fa-446a-8742-164e9a28e8d3"
+  ]
+}

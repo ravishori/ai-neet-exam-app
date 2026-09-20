@@ -1,0 +1,21 @@
+---
+description: Core TALOS project priorities and verification posture (always on)
+alwaysApply: true
+---
+
+# Project core
+
+## Priorities
+- Accuracy over volume.
+- Implemented ≠ verified. GREEN requires measured evidence.
+- Official NCERT > NTA > verified project data > external sources (only when a task explicitly requires the latter).
+
+## Source honesty
+- Never silently invent, replace, or reconcile source material.
+- Never silently upgrade provenance.
+- Never treat model knowledge as syllabus or NCERT authority.
+
+## Change posture
+- High-risk work: inspect → execute → verify → audit.
+- Prefer surgical, idempotent mutations over broad rewrites.
+- Repository rules + measured audit artifacts beat prompt memory.

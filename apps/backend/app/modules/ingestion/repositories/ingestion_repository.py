@@ -28,6 +28,49 @@ class IngestionRepository:
         result = await self.session.execute(select(IngestionJob).where(IngestionJob.file_checksum == checksum))
         return result.scalars().first()
 
+    async def get_pilot_job(
+        self,
+        *,
+        source_document_id: uuid.UUID,
+        pilot_run_id: str,
+    ) -> IngestionJob | None:
+        result = await self.session.execute(
+            select(IngestionJob)
+            .where(
+                IngestionJob.source_document_id == source_document_id,
+                IngestionJob.pilot_run_id == pilot_run_id,
+            )
+            .order_by(IngestionJob.created_at.desc())
+        )
+        return result.scalars().first()
+
+    async def get_completed_job_for_source(self, source_document_id: uuid.UUID) -> IngestionJob | None:
+        """Most recent COMPLETED job linked to a registry source with sections."""
+        result = await self.session.execute(
+            select(IngestionJob)
+            .where(
+                IngestionJob.source_document_id == source_document_id,
+                IngestionJob.status == "COMPLETED",
+                IngestionJob.sections_detected > 0,
+            )
+            .order_by(IngestionJob.created_at.desc())
+        )
+        return result.scalars().first()
+
+    async def count_sections_for_source(self, source_document_id: uuid.UUID) -> int:
+        result = await self.session.execute(
+            text(
+                """
+                SELECT COUNT(*)
+                FROM ingestion.ingestion_sections s
+                JOIN ingestion.ingestion_jobs j ON j.id = s.job_id
+                WHERE j.source_document_id = :source_id
+                """
+            ),
+            {"source_id": str(source_document_id)},
+        )
+        return int(result.scalar_one())
+
     async def get_job(self, job_id: uuid.UUID) -> IngestionJob | None:
         result = await self.session.execute(select(IngestionJob).where(IngestionJob.id == job_id))
         return result.scalar_one_or_none()

@@ -1,0 +1,61 @@
+{
+  "task": "FRONTEND-PREMIUM-001",
+  "title": "Premium Student Dashboard Redesign",
+  "verdict": "GREEN",
+  "date": "2026-09-14",
+  "scope": [
+    "apps/web/src/app/student/dashboard/page.tsx",
+    "apps/web/src/app/student/dashboard/practice-now-hero.test.tsx",
+    "apps/web/scripts/premium001-dashboard-live.mjs"
+  ],
+  "ux": [
+    "hero command center with Continue practice CTA",
+    "readiness gauge + metric strip from real data",
+    "priorities: revision due + recommendations",
+    "subject performance themed bars",
+    "compact recent activity + QuickLaunchHub secondary"
+  ],
+  "apis_reused": [
+    "useMe",
+    "learningApi.overview",
+    "learningApi.revisionDue",
+    "learningApi.recommendations",
+    "assessmentApi.listAttempts",
+    "useStartPractice FULL/CONCEPT"
+  ],
+  "new_components": [
+    "HeroPracticeCta (page-local)",
+    "MetricPill (page-local)",
+    "SubjectMasteryRow (page-local)"
+  ],
+  "tests": {
+    "dashboard_vitest": "4/4",
+    "a12_vitest": "19/19",
+    "eslint": "pass (prior)",
+    "typescript_build": "npm run build GREEN (prior)",
+    "live_probe": "premium001-dashboard-live.mjs GREEN on :3001"
+  },
+  "live": {
+    "frontend": "http://127.0.0.1:3001",
+    "backend": "http://127.0.0.1:8000",
+    "viewports": ["390", "768", "1280", "1440"],
+    "overflow": 0,
+    "cta_min_height_px": 48,
+    "hydration_logs": [],
+    "themes": ["light", "dark"]
+  },
+  "untouched": [
+    "Practice/Mock scoring",
+    "attempts logic",
+    "ECAEP",
+    "AuthZ/auth session",
+    "DB schema",
+    "API contracts",
+    "academic taxonomy",
+    "NCERT provenance",
+    "syllabus boundaries",
+    "frozen unmapped DRAFT questions",
+    "A6-A9 shell (no regression edits)"
+  ],
+  "commit": "not created (per task)"
+}

@@ -4,7 +4,7 @@ import type { NamedRef, QuestionImage } from "@/features/questions/api";
 export type Assessment = {
   id: string;
   assessment_type: "PRACTICE" | "MOCK";
-  scope_type: "CONCEPT" | "CHAPTER" | "SUBJECT" | "FULL";
+  scope_type: "CONCEPT" | "TOPIC" | "CHAPTER" | "SUBJECT" | "FULL" | "SEED_V1" | "SEED_V2";
   scope_id: string | null;
   title: string;
   duration_minutes: number | null;
@@ -49,6 +49,8 @@ export type AttemptQuestion = AttemptQuestionMeta & {
   selected_option: string | null;
   confidence: Confidence | null;
   marked_for_review: boolean;
+  /** Inline SVG from CMS body (factory visuals); not NCERT evidence. */
+  diagram_svg?: string | null;
   correct_option?: string;
   explanation?: string;
   is_correct?: boolean | null;
@@ -60,7 +62,11 @@ export type AttemptDetail = AttemptSummary & {
   questions: AttemptQuestion[];
 };
 
-export type GenerateInput = { scope_type: "CONCEPT" | "CHAPTER" | "SUBJECT" | "FULL"; scope_id?: string; question_count?: number };
+export type GenerateInput = {
+  scope_type: "CONCEPT" | "TOPIC" | "CHAPTER" | "SUBJECT" | "FULL" | "SEED_V1" | "SEED_V2";
+  scope_id?: string;
+  question_count?: number;
+};
 
 export type SaveAnswerInput = {
   content_item_id: string;

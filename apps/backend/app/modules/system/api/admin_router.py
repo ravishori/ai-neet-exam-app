@@ -74,3 +74,18 @@ async def list_audit_logs(
         ],
         meta={"total": total, "limit": limit, "offset": offset},
     )
+
+
+@router.post("/diagnostics/controlled-failure")
+async def controlled_failure(confirm: str = Query(default="")):
+    """Non-production only — triggers the unhandled exception path for ops verification.
+
+    Requires `?confirm=yes`. Always 404 in production so it cannot be used as an attack surface.
+    """
+    from app.core.config import get_settings
+    from app.core.exceptions import NotFoundError
+
+    settings = get_settings()
+    if settings.is_production or confirm != "yes":
+        raise NotFoundError()
+    raise RuntimeError("CONTROLLED_FAILURE_FOR_OPS_VERIFICATION")

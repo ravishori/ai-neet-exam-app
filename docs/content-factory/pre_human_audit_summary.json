@@ -1,0 +1,621 @@
+{
+  "phase": "P2.3-R1-PreHumanAudit",
+  "generated_at": "2026-09-02T04:14:50.227537+00:00",
+  "gold_sample_checksum": "0a48122bf4657dae5e189d9ae5450c466fb62cde9f902c66980d4dab2ca7ee50",
+  "production_db_writes": 0,
+  "executive_summary": {
+    "total_audited": 100,
+    "critical": 0,
+    "high": 56,
+    "medium": 15,
+    "low": 29,
+    "likely_pass": 0,
+    "flagged": 0,
+    "review": 100
+  },
+  "answer_integrity": {
+    "correct_proposed_answers": 3,
+    "potential_wrong_answers": 0,
+    "multiple_answer_risks": 0,
+    "calculation_failures": 0,
+    "assertion_reason_failures": 7,
+    "inconclusive": 17
+  },
+  "ncert_integrity": {
+    "SUPPORTED_INFERENCE": 28,
+    "DIRECT": 69,
+    "WEAK_SUPPORT": 2,
+    "UNSUPPORTED": 1
+  },
+  "option_quality": {
+    "WEAK": 55,
+    "GOOD": 40,
+    "ACCEPTABLE": 5
+  },
+  "neet_suitability": {
+    "SUITABLE": 62,
+    "QUESTIONABLE": 33,
+    "SUITABLE_WITH_MINOR_EDIT": 5
+  },
+  "duplicate_analysis": {
+    "UNIQUE": 100
+  },
+  "question_type_analysis": {
+    "TYPE_CORRECT": 68,
+    "TYPE_MISMATCH": 32
+  },
+  "human_review_queue": [
+    {
+      "question_id": "p3-mcq-0536-c173c10c",
+      "subject": "CHEMISTRY",
+      "chapter": "5",
+      "problem": "distractor_quality_issue; question_type_mismatch; neet_suitability_concern",
+      "recommended_action": "HUMAN_REVIEW_OPTIONS",
+      "preaudit_priority": "HIGH"
+    },
+    {
+      "question_id": "p3-mcq-0662-5c2d616f",
+      "subject": "CHEMISTRY",
+      "chapter": "2",
+      "problem": "distractor_quality_issue; question_type_mismatch; neet_suitability_concern",
+      "recommended_action": "HUMAN_REVIEW_OPTIONS",
+      "preaudit_priority": "HIGH"
+    },
+    {
+      "question_id": "p3-mcq-0817-c3341d53",
+      "subject": "PHYSICS",
+      "chapter": "3",
+      "problem": "distractor_quality_issue; scientific_content_concern",
+      "recommended_action": "HUMAN_VERIFY",
+      "preaudit_priority": "HIGH"
+    },
+    {
+      "question_id": "p3-mcq-0146-d2bd4181",
+      "subject": "BIOLOGY",
+      "chapter": "2",
+      "problem": "distractor_quality_issue",
+      "recommended_action": "HUMAN_REVIEW_OPTIONS",
+      "preaudit_priority": "HIGH"
+    },
+    {
+      "question_id": "p3-mcq-0344-082d226d",
+      "subject": "CHEMISTRY",
+      "chapter": "9",
+      "problem": "distractor_quality_issue",
+      "recommended_action": "HUMAN_REVIEW_OPTIONS",
+      "preaudit_priority": "HIGH"
+    },
+    {
+      "question_id": "p3-mcq-0386-fb1ad1ab",
+      "subject": "CHEMISTRY",
+      "chapter": "3",
+      "problem": "distractor_quality_issue",
+      "recommended_action": "HUMAN_REVIEW_OPTIONS",
+      "preaudit_priority": "HIGH"
+    },
+    {
+      "question_id": "p3-mcq-0677-2aab90bd",
+      "subject": "PHYSICS",
+      "chapter": "8",
+      "problem": "distractor_quality_issue",
+      "recommended_action": "HUMAN_REVIEW_OPTIONS",
+      "preaudit_priority": "HIGH"
+    },
+    {
+      "question_id": "p3-mcq-0712-ef901f3e",
+      "subject": "PHYSICS",
+      "chapter": "2",
+      "problem": "distractor_quality_issue",
+      "recommended_action": "HUMAN_REVIEW_OPTIONS",
+      "preaudit_priority": "HIGH"
+    },
+    {
+      "question_id": "p3-mcq-0740-67a69836",
+      "subject": "PHYSICS",
+      "chapter": "5",
+      "problem": "distractor_quality_issue",
+      "recommended_action": "HUMAN_REVIEW_OPTIONS",
+      "preaudit_priority": "HIGH"
+    },
+    {
+      "question_id": "p3-mcq-0051-0e9610d5",
+      "subject": "BIOLOGY",
+      "chapter": "4",
+      "problem": "distractor_quality_issue; question_type_mismatch; neet_suitability_concern",
+      "recommended_action": "HUMAN_REVIEW_OPTIONS",
+      "preaudit_priority": "HIGH"
+    },
+    {
+      "question_id": "p3-mcq-0240-3c9e5496",
+      "subject": "BIOLOGY",
+      "chapter": "12",
+      "problem": "distractor_quality_issue; question_type_mismatch; neet_suitability_concern",
+      "recommended_action": "HUMAN_REVIEW_OPTIONS",
+      "preaudit_priority": "HIGH"
+    },
+    {
+      "question_id": "p3-mcq-0282-be133b05",
+      "subject": "BIOLOGY",
+      "chapter": "11",
+      "problem": "distractor_quality_issue; question_type_mismatch; neet_suitability_concern",
+      "recommended_action": "HUMAN_REVIEW_OPTIONS",
+      "preaudit_priority": "HIGH"
+    },
+    {
+      "question_id": "p3-mcq-0347-b3c00a5d",
+      "subject": "CHEMISTRY",
+      "chapter": "9",
+      "problem": "distractor_quality_issue; question_type_mismatch; neet_suitability_concern",
+      "recommended_action": "HUMAN_REVIEW_OPTIONS",
+      "preaudit_priority": "HIGH"
+    },
+    {
+      "question_id": "p3-mcq-0743-ab277aa3",
+      "subject": "PHYSICS",
+      "chapter": "1",
+      "problem": "distractor_quality_issue; question_type_mismatch; neet_suitability_concern",
+      "recommended_action": "HUMAN_REVIEW_OPTIONS",
+      "preaudit_priority": "HIGH"
+    },
+    {
+      "question_id": "p3-mcq-0806-6a54ee55",
+      "subject": "PHYSICS",
+      "chapter": "1",
+      "problem": "distractor_quality_issue; question_type_mismatch; neet_suitability_concern",
+      "recommended_action": "HUMAN_REVIEW_OPTIONS",
+      "preaudit_priority": "HIGH"
+    },
+    {
+      "question_id": "p3-mcq-0883-febc143f",
+      "subject": "PHYSICS",
+      "chapter": "4",
+      "problem": "distractor_quality_issue",
+      "recommended_action": "HUMAN_REVIEW_OPTIONS",
+      "preaudit_priority": "HIGH"
+    },
+    {
+      "question_id": "p3-mcq-0953-cfa9ff46",
+      "subject": "PHYSICS",
+      "chapter": "1",
+      "problem": "distractor_quality_issue; question_type_mismatch; neet_suitability_concern",
+      "recommended_action": "HUMAN_REVIEW_OPTIONS",
+      "preaudit_priority": "HIGH"
+    },
+    {
+      "question_id": "p3-mcq-0967-689e638d",
+      "subject": "PHYSICS",
+      "chapter": "2",
+      "problem": "distractor_quality_issue; question_type_mismatch; neet_suitability_concern",
+      "recommended_action": "HUMAN_REVIEW_OPTIONS",
+      "preaudit_priority": "HIGH"
+    },
+    {
+      "question_id": "p3-mcq-0006-46f7f225",
+      "subject": "BIOLOGY",
+      "chapter": "5",
+      "problem": "distractor_quality_issue",
+      "recommended_action": "HUMAN_REVIEW_OPTIONS",
+      "preaudit_priority": "HIGH"
+    },
+    {
+      "question_id": "p3-mcq-0027-9fef1de0",
+      "subject": "BIOLOGY",
+      "chapter": "19",
+      "problem": "distractor_quality_issue",
+      "recommended_action": "HUMAN_REVIEW_OPTIONS",
+      "preaudit_priority": "HIGH"
+    },
+    {
+      "question_id": "p3-mcq-0057-90a34bdb",
+      "subject": "BIOLOGY",
+      "chapter": "19",
+      "problem": "distractor_quality_issue",
+      "recommended_action": "HUMAN_REVIEW_OPTIONS",
+      "preaudit_priority": "HIGH"
+    },
+    {
+      "question_id": "p3-mcq-0084-20c4c995",
+      "subject": "BIOLOGY",
+      "chapter": "5",
+      "problem": "distractor_quality_issue",
+      "recommended_action": "HUMAN_REVIEW_OPTIONS",
+      "preaudit_priority": "HIGH"
+    },
+    {
+      "question_id": "p3-mcq-0102-c1d910d1",
+      "subject": "BIOLOGY",
+      "chapter": "5",
+      "problem": "distractor_quality_issue; question_type_mismatch; neet_suitability_concern",
+      "recommended_action": "HUMAN_REVIEW_OPTIONS",
+      "preaudit_priority": "HIGH"
+    },
+    {
+      "question_id": "p3-mcq-0120-193298b9",
+      "subject": "BIOLOGY",
+      "chapter": "13",
+      "problem": "distractor_quality_issue",
+      "recommended_action": "HUMAN_REVIEW_OPTIONS",
+      "preaudit_priority": "HIGH"
+    },
+    {
+      "question_id": "p3-mcq-0168-bb43512e",
+      "subject": "BIOLOGY",
+      "chapter": "11",
+      "problem": "distractor_quality_issue; question_type_mismatch; neet_suitability_concern",
+      "recommended_action": "HUMAN_REVIEW_OPTIONS",
+      "preaudit_priority": "HIGH"
+    },
+    {
+      "question_id": "p3-mcq-0174-b6e91065",
+      "subject": "BIOLOGY",
+      "chapter": "4",
+      "problem": "distractor_quality_issue",
+      "recommended_action": "HUMAN_REVIEW_OPTIONS",
+      "preaudit_priority": "HIGH"
+    },
+    {
+      "question_id": "p3-mcq-0204-21204b82",
+      "subject": "BIOLOGY",
+      "chapter": "17",
+      "problem": "distractor_quality_issue",
+      "recommended_action": "HUMAN_REVIEW_OPTIONS",
+      "preaudit_priority": "HIGH"
+    },
+    {
+      "question_id": "p3-mcq-0213-0fc42bf8",
+      "subject": "BIOLOGY",
+      "chapter": "10",
+      "problem": "distractor_quality_issue",
+      "recommended_action": "HUMAN_REVIEW_OPTIONS",
+      "preaudit_priority": "HIGH"
+    },
+    {
+      "question_id": "p3-mcq-0225-7651dbf0",
+      "subject": "BIOLOGY",
+      "chapter": "10",
+      "problem": "distractor_quality_issue",
+      "recommended_action": "HUMAN_REVIEW_OPTIONS",
+      "preaudit_priority": "HIGH"
+    },
+    {
+      "question_id": "p3-mcq-0353-0ba58540",
+      "subject": "CHEMISTRY",
+      "chapter": "2",
+      "problem": "distractor_quality_issue",
+      "recommended_action": "HUMAN_REVIEW_OPTIONS",
+      "preaudit_priority": "HIGH"
+    },
+    {
+      "question_id": "p3-mcq-0451-299ec680",
+      "subject": "CHEMISTRY",
+      "chapter": "5",
+      "problem": "distractor_quality_issue; question_type_mismatch; neet_suitability_concern",
+      "recommended_action": "HUMAN_REVIEW_OPTIONS",
+      "preaudit_priority": "HIGH"
+    },
+    {
+      "question_id": "p3-mcq-0467-10861fa7",
+      "subject": "CHEMISTRY",
+      "chapter": "1",
+      "problem": "distractor_quality_issue",
+      "recommended_action": "HUMAN_REVIEW_OPTIONS",
+      "preaudit_priority": "HIGH"
+    },
+    {
+      "question_id": "p3-mcq-0547-23858e16",
+      "subject": "CHEMISTRY",
+      "chapter": "3",
+      "problem": "distractor_quality_issue",
+      "recommended_action": "HUMAN_REVIEW_OPTIONS",
+      "preaudit_priority": "HIGH"
+    },
+    {
+      "question_id": "p3-mcq-0565-623e0257",
+      "subject": "CHEMISTRY",
+      "chapter": "2",
+      "problem": "ncert_support_issue; neet_suitability_concern",
+      "recommended_action": "HUMAN_CHECK_NCERT",
+      "preaudit_priority": "HIGH"
+    },
+    {
+      "question_id": "p3-mcq-0577-cce1fd7b",
+      "subject": "CHEMISTRY",
+      "chapter": "1",
+      "problem": "distractor_quality_issue; question_type_mismatch; neet_suitability_concern",
+      "recommended_action": "HUMAN_REVIEW_OPTIONS",
+      "preaudit_priority": "HIGH"
+    },
+    {
+      "question_id": "p3-mcq-0581-0e939d09",
+      "subject": "CHEMISTRY",
+      "chapter": "3",
+      "problem": "distractor_quality_issue; question_type_mismatch; neet_suitability_concern",
+      "recommended_action": "HUMAN_REVIEW_OPTIONS",
+      "preaudit_priority": "HIGH"
+    },
+    {
+      "question_id": "p3-mcq-0584-a341998c",
+      "subject": "CHEMISTRY",
+      "chapter": "8",
+      "problem": "distractor_quality_issue",
+      "recommended_action": "HUMAN_REVIEW_OPTIONS",
+      "preaudit_priority": "HIGH"
+    },
+    {
+      "question_id": "p3-mcq-0593-8b831d35",
+      "subject": "CHEMISTRY",
+      "chapter": "3",
+      "problem": "distractor_quality_issue",
+      "recommended_action": "HUMAN_REVIEW_OPTIONS",
+      "preaudit_priority": "HIGH"
+    },
+    {
+      "question_id": "p3-mcq-0635-e2d85026",
+      "subject": "CHEMISTRY",
+      "chapter": "2",
+      "problem": "distractor_quality_issue",
+      "recommended_action": "HUMAN_REVIEW_OPTIONS",
+      "preaudit_priority": "HIGH"
+    },
+    {
+      "question_id": "p3-mcq-0668-3fa01ceb",
+      "subject": "CHEMISTRY",
+      "chapter": "8",
+      "problem": "distractor_quality_issue",
+      "recommended_action": "HUMAN_REVIEW_OPTIONS",
+      "preaudit_priority": "HIGH"
+    },
+    {
+      "question_id": "p3-mcq-0713-52d84a38",
+      "subject": "PHYSICS",
+      "chapter": "5",
+      "problem": "distractor_quality_issue",
+      "recommended_action": "HUMAN_REVIEW_OPTIONS",
+      "preaudit_priority": "HIGH"
+    },
+    {
+      "question_id": "p3-mcq-0725-e5431382",
+      "subject": "PHYSICS",
+      "chapter": "3",
+      "problem": "distractor_quality_issue; question_type_mismatch; neet_suitability_concern",
+      "recommended_action": "HUMAN_REVIEW_OPTIONS",
+      "preaudit_priority": "HIGH"
+    },
+    {
+      "question_id": "p3-mcq-0776-f9f82331",
+      "subject": "PHYSICS",
+      "chapter": "6",
+      "problem": "distractor_quality_issue",
+      "recommended_action": "HUMAN_REVIEW_OPTIONS",
+      "preaudit_priority": "HIGH"
+    },
+    {
+      "question_id": "p3-mcq-0791-aa13e190",
+      "subject": "PHYSICS",
+      "chapter": "5",
+      "problem": "distractor_quality_issue",
+      "recommended_action": "HUMAN_REVIEW_OPTIONS",
+      "preaudit_priority": "HIGH"
+    },
+    {
+      "question_id": "p3-mcq-0803-ee7f7d58",
+      "subject": "PHYSICS",
+      "chapter": "6",
+      "problem": "distractor_quality_issue",
+      "recommended_action": "HUMAN_REVIEW_OPTIONS",
+      "preaudit_priority": "HIGH"
+    },
+    {
+      "question_id": "p3-mcq-0809-3c0ec43f",
+      "subject": "PHYSICS",
+      "chapter": "1",
+      "problem": "distractor_quality_issue; question_type_mismatch; neet_suitability_concern",
+      "recommended_action": "HUMAN_REVIEW_OPTIONS",
+      "preaudit_priority": "HIGH"
+    },
+    {
+      "question_id": "p3-mcq-0815-8fd8395e",
+      "subject": "PHYSICS",
+      "chapter": "1",
+      "problem": "distractor_quality_issue; question_type_mismatch; neet_suitability_concern",
+      "recommended_action": "HUMAN_REVIEW_OPTIONS",
+      "preaudit_priority": "HIGH"
+    },
+    {
+      "question_id": "p3-mcq-0842-33d2fe38",
+      "subject": "PHYSICS",
+      "chapter": "1",
+      "problem": "distractor_quality_issue",
+      "recommended_action": "HUMAN_REVIEW_OPTIONS",
+      "preaudit_priority": "HIGH"
+    },
+    {
+      "question_id": "p3-mcq-0854-1f08bfa2",
+      "subject": "PHYSICS",
+      "chapter": "2",
+      "problem": "distractor_quality_issue",
+      "recommended_action": "HUMAN_REVIEW_OPTIONS",
+      "preaudit_priority": "HIGH"
+    },
+    {
+      "question_id": "p3-mcq-0859-dacc49e2",
+      "subject": "PHYSICS",
+      "chapter": "6",
+      "problem": "distractor_quality_issue",
+      "recommended_action": "HUMAN_REVIEW_OPTIONS",
+      "preaudit_priority": "HIGH"
+    },
+    {
+      "question_id": "p3-mcq-0877-117f7f58",
+      "subject": "PHYSICS",
+      "chapter": "14",
+      "problem": "distractor_quality_issue",
+      "recommended_action": "HUMAN_REVIEW_OPTIONS",
+      "preaudit_priority": "HIGH"
+    },
+    {
+      "question_id": "p3-mcq-0896-a646000d",
+      "subject": "PHYSICS",
+      "chapter": "1",
+      "problem": "distractor_quality_issue",
+      "recommended_action": "HUMAN_REVIEW_OPTIONS",
+      "preaudit_priority": "HIGH"
+    },
+    {
+      "question_id": "p3-mcq-0917-8cb0f5a3",
+      "subject": "PHYSICS",
+      "chapter": "9",
+      "problem": "distractor_quality_issue",
+      "recommended_action": "HUMAN_REVIEW_OPTIONS",
+      "preaudit_priority": "HIGH"
+    },
+    {
+      "question_id": "p3-mcq-0920-167bd999",
+      "subject": "PHYSICS",
+      "chapter": "5",
+      "problem": "distractor_quality_issue",
+      "recommended_action": "HUMAN_REVIEW_OPTIONS",
+      "preaudit_priority": "HIGH"
+    },
+    {
+      "question_id": "p3-mcq-0938-aa010e1b",
+      "subject": "PHYSICS",
+      "chapter": "3",
+      "problem": "distractor_quality_issue",
+      "recommended_action": "HUMAN_REVIEW_OPTIONS",
+      "preaudit_priority": "HIGH"
+    },
+    {
+      "question_id": "p3-mcq-0986-3b1b1620",
+      "subject": "PHYSICS",
+      "chapter": "4",
+      "problem": "distractor_quality_issue",
+      "recommended_action": "HUMAN_REVIEW_OPTIONS",
+      "preaudit_priority": "HIGH"
+    },
+    {
+      "question_id": "p3-mcq-0911-07643da7",
+      "subject": "PHYSICS",
+      "chapter": "3",
+      "problem": "question_type_mismatch; neet_suitability_concern",
+      "recommended_action": "LIKELY_ACCEPT",
+      "preaudit_priority": "MEDIUM"
+    },
+    {
+      "question_id": "p3-mcq-0974-ccbc6b1a",
+      "subject": "PHYSICS",
+      "chapter": "14",
+      "problem": "answer_not_fully_verified_automatically",
+      "recommended_action": "HUMAN_VERIFY",
+      "preaudit_priority": "MEDIUM"
+    },
+    {
+      "question_id": "p3-mcq-0089-d7ca0a20",
+      "subject": "BIOLOGY",
+      "chapter": "4",
+      "problem": "question_type_mismatch; neet_suitability_concern",
+      "recommended_action": "LIKELY_ACCEPT",
+      "preaudit_priority": "MEDIUM"
+    },
+    {
+      "question_id": "p3-mcq-0152-fdf4d1df",
+      "subject": "BIOLOGY",
+      "chapter": "8",
+      "problem": "question_type_mismatch; neet_suitability_concern",
+      "recommended_action": "LIKELY_ACCEPT",
+      "preaudit_priority": "MEDIUM"
+    },
+    {
+      "question_id": "p3-mcq-0197-541b1504",
+      "subject": "BIOLOGY",
+      "chapter": "5",
+      "problem": "question_type_mismatch; neet_suitability_concern",
+      "recommended_action": "LIKELY_ACCEPT",
+      "preaudit_priority": "MEDIUM"
+    },
+    {
+      "question_id": "p3-mcq-0285-67052d7a",
+      "subject": "BIOLOGY",
+      "chapter": "1",
+      "problem": "question_type_mismatch; neet_suitability_concern",
+      "recommended_action": "LIKELY_ACCEPT",
+      "preaudit_priority": "MEDIUM"
+    },
+    {
+      "question_id": "p3-mcq-0343-6d2786e1",
+      "subject": "CHEMISTRY",
+      "chapter": "4",
+      "problem": "question_type_mismatch; neet_suitability_concern",
+      "recommended_action": "LIKELY_ACCEPT",
+      "preaudit_priority": "MEDIUM"
+    },
+    {
+      "question_id": "p3-mcq-0409-c217ed54",
+      "subject": "CHEMISTRY",
+      "chapter": "4",
+      "problem": "question_type_mismatch; neet_suitability_concern",
+      "recommended_action": "LIKELY_ACCEPT",
+      "preaudit_priority": "MEDIUM"
+    },
+    {
+      "question_id": "p3-mcq-0518-b1c65e9f",
+      "subject": "CHEMISTRY",
+      "chapter": "8",
+      "problem": "question_type_mismatch; neet_suitability_concern",
+      "recommended_action": "LIKELY_ACCEPT",
+      "preaudit_priority": "MEDIUM"
+    },
+    {
+      "question_id": "p3-mcq-0535-66fb3866",
+      "subject": "CHEMISTRY",
+      "chapter": "9",
+      "problem": "question_type_mismatch; neet_suitability_concern",
+      "recommended_action": "LIKELY_ACCEPT",
+      "preaudit_priority": "MEDIUM"
+    },
+    {
+      "question_id": "p3-mcq-0598-8a46352a",
+      "subject": "CHEMISTRY",
+      "chapter": "9",
+      "problem": "question_type_mismatch; neet_suitability_concern",
+      "recommended_action": "LIKELY_ACCEPT",
+      "preaudit_priority": "MEDIUM"
+    },
+    {
+      "question_id": "p3-mcq-0661-72e1926b",
+      "subject": "CHEMISTRY",
+      "chapter": "7",
+      "problem": "question_type_mismatch; neet_suitability_concern",
+      "recommended_action": "LIKELY_ACCEPT",
+      "preaudit_priority": "MEDIUM"
+    },
+    {
+      "question_id": "p3-mcq-0767-57dd6b02",
+      "subject": "PHYSICS",
+      "chapter": "6",
+      "problem": "question_type_mismatch; neet_suitability_concern",
+      "recommended_action": "LIKELY_ACCEPT",
+      "preaudit_priority": "MEDIUM"
+    },
+    {
+      "question_id": "p3-mcq-0935-671fa3f6",
+      "subject": "PHYSICS",
+      "chapter": "6",
+      "problem": "question_type_mismatch; neet_suitability_concern",
+      "recommended_action": "LIKELY_ACCEPT",
+      "preaudit_priority": "MEDIUM"
+    },
+    {
+      "question_id": "p3-mcq-0998-e727eac2",
+      "subject": "PHYSICS",
+      "chapter": "2",
+      "problem": "question_type_mismatch; neet_suitability_concern",
+      "recommended_action": "LIKELY_ACCEPT",
+      "preaudit_priority": "MEDIUM"
+    }
+  ],
+  "terminology_note": "pre-human audit / automated screening \u2014 human review pending; not human verified",
+  "audit_version": "p2_3_pre_human_audit_v1",
+  "substantive_note": "YELLOW \u2014 substantive questions remain for human review",
+  "verdict": "GREEN"
+}

@@ -107,7 +107,7 @@ async def test_ungrounded_response_creates_failed_knowledge_unit(db_session, mon
     assert "source-overlap" in unit.validation_detail
 
 
-async def test_duplicate_of_existing_passed_unit_is_rejected(db_session, monkeypatch):
+async def test_duplicate_of_existing_passed_unit_is_reanchored_to_section(db_session, monkeypatch):
     concept = await _any_concept(db_session)
     section_a = await _seed_section(db_session, concept_id=concept.id)
     section_b = await _seed_section(db_session, concept_id=concept.id)
@@ -127,8 +127,9 @@ async def test_duplicate_of_existing_passed_unit_is_rejected(db_session, monkeyp
     assert first.validation_status == "PASSED"
 
     second = await service.structure_section(section=section_b, concept=concept, author_id=uuid.uuid4())
-    assert second.validation_status == "FAILED"
-    assert "duplicate" in second.validation_detail
+    assert second.validation_status == "PASSED"
+    assert second.source_section_id == section_b.id
+    assert "reused from knowledge unit" in second.validation_detail
 
 
 async def test_fallback_response_creates_no_knowledge_unit(db_session, monkeypatch):

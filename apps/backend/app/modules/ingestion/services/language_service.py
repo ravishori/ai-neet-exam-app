@@ -15,6 +15,7 @@ new detection/normalization rules it needs, not a change to this module's
 shape. See LANGUAGE_NAMES below for the one place a new code's display
 name would need to be added.
 """
+
 import unicodedata
 from dataclasses import dataclass
 from typing import Protocol
@@ -51,9 +52,12 @@ _ZERO_WIDTH_CHARS = ("​", "‌", "‍", "﻿")
 # apostrophe-mangling fix for the same class of problem), not a general
 # Unicode-punctuation-folding table.
 _PUNCTUATION_MAP = {
-    "‘": "'", "’": "'",  # left/right single quotation mark
-    "“": '"', "”": '"',  # left/right double quotation mark
-    "–": "-", "—": "-",  # en dash, em dash
+    "‘": "'",
+    "’": "'",  # left/right single quotation mark
+    "“": '"',
+    "”": '"',  # left/right double quotation mark
+    "–": "-",
+    "—": "-",  # en dash, em dash
     "…": "...",  # horizontal ellipsis
     "�": "",  # replacement character — a failed-decode artifact, not content
 }
@@ -135,8 +139,7 @@ class TranslationService(Protocol):
     other. Any real implementation (calling an MT API, or an AIGateway
     prompt) is separately scoped, separately justified, future work."""
 
-    def translate(self, text: str, target_language: str) -> object:
-        ...
+    def translate(self, text: str, target_language: str) -> object: ...
 
 
 class NotImplementedTranslationService:

@@ -1,0 +1,273 @@
+{
+  "task_id": "PYTHON-MCQ-ENGINE-012",
+  "timestamp": "2026-09-14T19:56:04+0530",
+  "verdict": "GREEN",
+  "candidates_selected": 100,
+  "candidates_reviewed": 100,
+  "MCQ_ELIGIBLE": 58,
+  "REVIEW_REQUIRED": 0,
+  "REJECTED": 42,
+  "duplicate_count": 0,
+  "ambiguity_count": 0,
+  "insufficient_evidence_count": 0,
+  "syllabus_failures": 0,
+  "taxonomy_failures": 0,
+  "distractor_failures": 19,
+  "reason_code_distribution": {
+    "DIRECT_ANSWER_SPAN_UNSAFE": 5,
+    "QUESTION_NOT_FACT": 2,
+    "DISTRACTOR_EVIDENCE_MISSING": 6,
+    "DISTRACTOR_POOL_INSUFFICIENT": 13,
+    "FORMULA_SPAN_UNSAFE": 14,
+    "FORMULA_EQUALS_MISSING": 1,
+    "ASSOCIATION_PAIR_UNSAFE": 1
+  },
+  "subject_breakdown": {
+    "selected": {
+      "ZOOLOGY": 23,
+      "PHYSICS": 35,
+      "BOTANY": 19,
+      "CHEMISTRY": 23
+    },
+    "eligible": {
+      "ZOOLOGY": 13,
+      "PHYSICS": 17,
+      "BOTANY": 15,
+      "CHEMISTRY": 13
+    }
+  },
+  "fact_type_breakdown": {
+    "selected": {
+      "DIRECT_FACT": 40,
+      "RELATIONSHIP_FORMULA": 25,
+      "CONTROLLED_ASSOCIATION": 20,
+      "CONTROLLED_NUMERICAL": 10,
+      "SI_UNIT_DIMENSION": 5
+    },
+    "outcomes_by_category": {
+      "DIRECT_FACT": {
+        "MCQ_ELIGIBLE": 33,
+        "REJECTED": 7
+      },
+      "RELATIONSHIP_FORMULA": {
+        "REJECTED": 25
+      },
+      "CONTROLLED_ASSOCIATION": {
+        "MCQ_ELIGIBLE": 19,
+        "REJECTED": 1
+      },
+      "CONTROLLED_NUMERICAL": {
+        "MCQ_ELIGIBLE": 4,
+        "REJECTED": 6
+      },
+      "SI_UNIT_DIMENSION": {
+        "REJECTED": 3,
+        "MCQ_ELIGIBLE": 2
+      }
+    },
+    "eligible_by_category": {
+      "DIRECT_FACT": 33,
+      "CONTROLLED_ASSOCIATION": 19,
+      "CONTROLLED_NUMERICAL": 4,
+      "SI_UNIT_DIMENSION": 2
+    }
+  },
+  "chapter_breakdown": {
+    "selected": {
+      "ZOOLOGY:Human Health and Disease": 7,
+      "ZOOLOGY:Human Reproduction": 4,
+      "ZOOLOGY:Breathing and Exchange of Gases": 3,
+      "ZOOLOGY:Reproductive Health": 2,
+      "PHYSICS:Gravitation": 5,
+      "PHYSICS:Kinetic Theory": 6,
+      "PHYSICS:Mechanical Properties of Fluids": 2,
+      "PHYSICS:Electrostatics": 4,
+      "PHYSICS:Mechanical Properties of Solids": 3,
+      "PHYSICS:Work, Energy and Power": 3,
+      "PHYSICS:Systems of Particles and Rotational Motion": 5,
+      "BOTANY:Organisms and Populations": 1,
+      "BOTANY:Biotechnology and its Applications": 1,
+      "BOTANY:Ecosystem": 1,
+      "BOTANY:Principles of Inheritance and Variation": 1,
+      "BOTANY:Cell - The Unit of Life": 3,
+      "BOTANY:Plant Kingdom": 1,
+      "BOTANY:The Living World": 3,
+      "BOTANY:Photosynthesis in Higher Plants": 1,
+      "BOTANY:Sexual Reproduction in Flowering Plants": 2,
+      "CHEMISTRY:Thermodynamics": 4,
+      "CHEMISTRY:Biomolecules": 5,
+      "CHEMISTRY:Structure of Atom": 4,
+      "CHEMISTRY:Coordination Compounds": 1,
+      "CHEMISTRY:Equilibrium": 1,
+      "PHYSICS:Optics": 3,
+      "BOTANY:Biomolecules": 2,
+      "CHEMISTRY:Solutions": 1,
+      "CHEMISTRY:Electrochemistry": 3,
+      "CHEMISTRY:Some Basic Concepts of Chemistry": 2,
+      "CHEMISTRY:Chemical Kinetics": 2,
+      "PHYSICS:Laws of Motion": 2,
+      "ZOOLOGY:Structural Organisation in Animals": 1,
+      "ZOOLOGY:Body Fluids and Circulation": 2,
+      "BOTANY:Microbes in Human Welfare": 1,
+      "ZOOLOGY:Evolution": 4,
+      "BOTANY:Molecular Basis of Inheritance": 2,
+      "PHYSICS:Units and Measurement": 2
+    },
+    "eligible": {
+      "ZOOLOGY:Human Health and Disease": 4,
+      "ZOOLOGY:Human Reproduction": 2,
+      "ZOOLOGY:Breathing and Exchange of Gases": 1,
+      "PHYSICS:Gravitation": 1,
+      "PHYSICS:Kinetic Theory": 4,
+      "PHYSICS:Mechanical Properties of Fluids": 2,
+      "PHYSICS:Electrostatics": 3,
+      "PHYSICS:Mechanical Properties of Solids": 1,
+      "PHYSICS:Work, Energy and Power": 1,
+      "PHYSICS:Systems of Particles and Rotational Motion": 2,
+      "BOTANY:Organisms and Populations": 1,
+      "BOTANY:Biotechnology and its Applications": 1,
+      "BOTANY:Ecosystem": 1,
+      "BOTANY:Principles of Inheritance and Variation": 1,
+      "BOTANY:Cell - The Unit of Life": 3,
+      "BOTANY:Plant Kingdom": 1,
+      "BOTANY:The Living World": 2,
+      "BOTANY:Photosynthesis in Higher Plants": 1,
+      "BOTANY:Sexual Reproduction in Flowering Plants": 2,
+      "CHEMISTRY:Thermodynamics": 4,
+      "CHEMISTRY:Biomolecules": 4,
+      "CHEMISTRY:Structure of Atom": 1,
+      "CHEMISTRY:Coordination Compounds": 1,
+      "CHEMISTRY:Equilibrium": 1,
+      "ZOOLOGY:Structural Organisation in Animals": 1,
+      "ZOOLOGY:Body Fluids and Circulation": 2,
+      "PHYSICS:Optics": 1,
+      "BOTANY:Biomolecules": 1,
+      "BOTANY:Microbes in Human Welfare": 1,
+      "CHEMISTRY:Some Basic Concepts of Chemistry": 1,
+      "CHEMISTRY:Chemical Kinetics": 1,
+      "ZOOLOGY:Evolution": 3,
+      "PHYSICS:Units and Measurement": 2
+    }
+  },
+  "representative_evidence": [
+    {
+      "fact_id": "ncert-fact-v1-1adf471432beb642b8e02eeaf9d4c29c2427b8f0e026fd43be4059a3057048c2",
+      "analysis_category": "DIRECT_FACT",
+      "subject": "ZOOLOGY",
+      "chapter": "Human Health and Disease",
+      "evidence_excerpt": "This property called metastasis is the most feared property of malignant tumors",
+      "correct_option": "metastasis"
+    },
+    {
+      "fact_id": "ncert-fact-v1-166dc645c522e3d9841c414df84be7abee949058e812aaeb7af3955696923a5c",
+      "analysis_category": "DIRECT_FACT",
+      "subject": "ZOOLOGY",
+      "chapter": "Human Reproduction",
+      "evidence_excerpt": "The last part of the oviduct, isthmus has a narrow lumen and it joins the uterus",
+      "correct_option": "joins the uterus"
+    },
+    {
+      "fact_id": "ncert-fact-v1-0e7f867cc6aab5d5a72bd5884cc9c0bb1411058897424950108fb9e50f0b7472",
+      "analysis_category": "DIRECT_FACT",
+      "subject": "ZOOLOGY",
+      "chapter": "Human Reproduction",
+      "evidence_excerpt": "Ovaries are the primary female sex organs that produce the female gamete (ovum) and several steroid hormones (ovarian hormones)",
+      "correct_option": "ovum"
+    },
+    {
+      "fact_id": "ncert-fact-v1-35417f4afe37a3297c352a927765c8001cbbd66a742e0bf9fc38429526011b42",
+      "analysis_category": "DIRECT_FACT",
+      "subject": "ZOOLOGY",
+      "chapter": "Breathing and Exchange of Gases",
+      "evidence_excerpt": "Partial pressure of CO2, hydrogen ion concentration and temperature are the other factors which can interfere with this binding",
+      "correct_option": "can interfere with this binding"
+    },
+    {
+      "fact_id": "ncert-fact-v1-3c1b1ec794333d5e996f3b1f097bc029178460029e72b92f53e15715bb255670",
+      "analysis_category": "DIRECT_FACT",
+      "subject": "PHYSICS",
+      "chapter": "Gravitation",
+      "evidence_excerpt": "This is the reason that moon has no atmosphere",
+      "correct_option": "moon has no atmosphere"
+    },
+    {
+      "fact_id": "ncert-fact-v1-1b7c10e99ca0d1e293aa318fb4ac5b65d5427c5ae8c0d7a291d986d8ee0fac55",
+      "analysis_category": "DIRECT_FACT",
+      "subject": "PHYSICS",
+      "chapter": "Kinetic Theory",
+      "evidence_excerpt": "Here T is the temperature in kelvin or (absolute) scale",
+      "correct_option": "absolute"
+    },
+    {
+      "fact_id": "ncert-fact-v1-32703bf3d4ab0e66874174cf6ca562db14ccc6742d546ad74607f9d7452e0a4d",
+      "analysis_category": "DIRECT_FACT",
+      "subject": "PHYSICS",
+      "chapter": "Kinetic Theory",
+      "evidence_excerpt": "Thus the cylinder in this example contains 2 mol of helium",
+      "correct_option": "mol of helium"
+    },
+    {
+      "fact_id": "ncert-fact-v1-091dd78f1fcb92016fcb7c7f0ef6a70c7cdfd38fe3e4743df7952d5c459ad327",
+      "analysis_category": "DIRECT_FACT",
+      "subject": "PHYSICS",
+      "chapter": "Mechanical Properties of Fluids",
+      "evidence_excerpt": "9.9 A U-tube contains water and methylated spirit separated by mercury",
+      "correct_option": "separated by mercury"
+    }
+  ],
+  "target_mix": {
+    "DIRECT_FACT": 40,
+    "RELATIONSHIP_FORMULA": 25,
+    "CONTROLLED_ASSOCIATION": 20,
+    "CONTROLLED_NUMERICAL": 10,
+    "SI_UNIT_DIMENSION": 5
+  },
+  "fixture": "D:\\ravishori\\AI Neet Exam App\\apps\\backend\\tests\\fixtures\\python_mcq_engine_012_reviewed_nondef_v1.json",
+  "fixture_mutations": {
+    "engine_006_modified": false,
+    "engine_010_modified": false,
+    "engine_011_modified": false,
+    "engine_012_created": true,
+    "engine_010_eligible_count_unchanged": true
+  },
+  "engine_008_retired_excluded": true,
+  "automatic_promotion": false,
+  "database_before": {
+    "question_statuses": {
+      "DRAFT": 5552,
+      "PUBLISHED": 1479,
+      "SUPERSEDED": 6,
+      "IN_REVIEW": 111
+    },
+    "question_state_fingerprint": "741ce41e97dc4869c66b7bba5db5b3aa",
+    "unmapped_draft": 5034,
+    "blueprints": 445,
+    "knowledge_units": 381,
+    "content_reviews": 1824,
+    "engine_003_batches": 0
+  },
+  "database_after": {
+    "question_statuses": {
+      "DRAFT": 5552,
+      "PUBLISHED": 1479,
+      "SUPERSEDED": 6,
+      "IN_REVIEW": 111
+    },
+    "question_state_fingerprint": "741ce41e97dc4869c66b7bba5db5b3aa",
+    "unmapped_draft": 5034,
+    "blueprints": 445,
+    "knowledge_units": 381,
+    "content_reviews": 1824,
+    "engine_003_batches": 0
+  },
+  "production_safety_unchanged": true,
+  "provider_api_calls": 0,
+  "api_cost_inr": 0,
+  "production_db_mutations": 0,
+  "runtime_seconds": 169.582,
+  "tests": {
+    "focused": "4 passed",
+    "regression": "4 passed",
+    "ruff": "passed"
+  }
+}

@@ -1,0 +1,2591 @@
+{
+  "task": "NCERT-EVIDENCE-WRITE-REVIEW-001",
+  "generated_at": "2026-09-14T06:28:30.914425+00:00",
+  "mode": "READ_ONLY",
+  "input_audit": "D:\\ravishori\\AI Neet Exam App\\docs\\audits\\ncert_evidence_remediation_001.json",
+  "ncert_root": "D:\\ravishori\\AI Neet Exam App\\NCERT Books",
+  "audited_count": 14,
+  "architecture": {
+    "canonical_evidence_mechanism": [
+      "constraints.ncert_source_path (primary PDF binding)",
+      "constraints.ncert_source_relative (optional relative path)",
+      "constraints.ncert_derived (optional explicit NCERT flag)",
+      "constraints.ncert_section_heading (optional section hint)",
+      "constraints.ku_id (optional KU linkage for evidence composition)",
+      "blueprint.provenance_tier == 'authoritative' also forces NCERT declaration"
+    ],
+    "resolver": "app.modules.cms.services.ncert_generation_evidence.resolve_ncert_evidence_pack",
+    "source_gate": "app.modules.ingestion.services.ncert_canonical_source.assert_blueprint_ncert_source",
+    "generation_order": [
+      "syllabus assert_blueprint_neet_syllabus_scope",
+      "resolve_ncert_evidence_pack (if requires_ncert)",
+      "provider call only if evidence ready or NCERT not required"
+    ],
+    "no_new_table_required": true
+  },
+  "key_finding": "All 14 are provenance_tier='ai' with no ncert_source_path today, so the NCERT grounding gate does not currently require evidence (NCERT_EVIDENCE_NOT_REQUIRED). The existing canonical mechanism is constraints.ncert_source_path (+ optional ku_id / ncert_derived). Simulated merge of the recovered canonical PDF path yields NCERT_EVIDENCE_READY for 14/14 while leaving provenance_tier unchanged. No new table/API is required. Upgrading ai→authoritative is a separate provenance decision and is not recommended here.",
+  "by_recommendation": {
+    "SAFE_FOR_SURGICAL_EVIDENCE_WRITE": 14,
+    "EXISTING_REPRESENTATION_REUSE": 0,
+    "KU_REQUIRED_SEPARATE_TASK": 0,
+    "PROVENANCE_REVIEW_REQUIRED": 0,
+    "REMAIN_BLOCKED": 0
+  },
+  "gate_counts": {
+    "IN_SYLLABUS": 197,
+    "SYLLABUS_MAPPING_REVIEW_REQUIRED": 248
+  },
+  "simulation_summary": {
+    "all_pdf_readable": true,
+    "all_evidence_ready_if_path_written": true,
+    "all_ku_passed_present": true,
+    "provenance_tier_values": {
+      "ai": 14
+    }
+  },
+  "database_before": {
+    "chapters": 56,
+    "topics": 192,
+    "concepts": 318,
+    "kus": 381,
+    "blueprints": 445,
+    "status": {
+      "DRAFT": 5444,
+      "PUBLISHED": 1479,
+      "SUPERSEDED": 6,
+      "IN_REVIEW": 111
+    },
+    "unmapped_draft": 5034,
+    "candidates": 995,
+    "jobs": 751,
+    "runs": 751
+  },
+  "database_after": {
+    "chapters": 56,
+    "topics": 192,
+    "concepts": 318,
+    "kus": 381,
+    "blueprints": 445,
+    "status": {
+      "DRAFT": 5444,
+      "PUBLISHED": 1479,
+      "SUPERSEDED": 6,
+      "IN_REVIEW": 111
+    },
+    "unmapped_draft": 5034,
+    "candidates": 995,
+    "jobs": 751,
+    "runs": 751
+  },
+  "database_unchanged": true,
+  "provider_call_count": 0,
+  "blueprints": [
+    {
+      "blueprint_id": "660f336a-d767-404e-bb69-88f675803c88",
+      "blueprint_key": "factory-p3-pilot-2026-09-01-bp-botany-ncert_fact-easy",
+      "current_provenance": {
+        "population": "SOURCE_MISSING",
+        "provenance_tier": "ai",
+        "ncert_derived": null,
+        "ncert_source_path": null,
+        "declares_ncert_today": false
+      },
+      "subject": "BOTANY",
+      "class_level": "11",
+      "chapter": "Photosynthesis in Higher Plants",
+      "chapter_id": "c030eb7b-bcd9-4c9b-9a8e-dc0dc54fa32c",
+      "topic": "Light Reaction",
+      "topic_id": "32c38be5-8eab-4944-9e1b-d2bc0d9ef6ee",
+      "concept": "Photophosphorylation",
+      "concept_id": "ebc2133b-4b9a-46d9-9f5b-016384079d42",
+      "syllabus_mapping": {
+        "status": "IN_SYLLABUS",
+        "subject": "BIOLOGY",
+        "unit_number": 4,
+        "unit_name": "Plant Physiology",
+        "topic": "Photosynthesis: Photosynthesis as a means of Autotrophic nutrition; Site of photosynthesis take place; pigments involved in Photosynthesis (Elementary idea); Photochemical and biosynthetic phases of photosynthesis; Cyclic and non-cyclic photophosphorylation; Chemiosmotic hypothesis; Photorespiration C3 and C4 pathways; Factors affecting photosynthesis.",
+        "topic_id": "BIOLOGY:U04:T01"
+      },
+      "canonical_source": {
+        "relative_path": "Class 11/Biology/kebo1dd/kebo111.pdf",
+        "absolute_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo111.pdf",
+        "pdf_exists": true,
+        "pdf_readable": true,
+        "deterministic": true
+      },
+      "ncert_evidence_location": {
+        "pages": [
+          3,
+          6,
+          8,
+          9,
+          10
+        ],
+        "chars": 11999,
+        "excerpt": "[KU summary]\nH O\nH\nO\ne\n\n→\n\n+\n+\n+\n−\nWe need to emphasise here that the water splitting complex is associated\nwith the PS II, which itself is physically located on the inner side of the\nmembrane of the thylakoid. Then, where are the protons and O2 formed\nlikely to be released - in the lumen?\n\n[KU structured facts]\n- H O\nH\nO\ne\n\n→\n\n+\n+\n+\n−\nWe need to emphasi",
+        "status": "NCERT_EVIDENCE_READY",
+        "detail": "ok chars=11992 keyword_hits=91",
+        "error": null,
+        "deterministic": true
+      },
+      "existing_ku": {
+        "status": "PRESENT_PASSED",
+        "ku_id": "82c052c6-241c-4e53-890f-bcc582ac77e4",
+        "summary_chars": 279,
+        "linked_in_constraints": false,
+        "reuse": "YES_VIA_CONSTRAINTS_KU_ID"
+      },
+      "existing_evidence_representation": {
+        "constraints_keys": [
+          "avoid_paraphrase_duplicates",
+          "correct_option_count",
+          "explanation_required",
+          "neet_ug_2026",
+          "question_format",
+          "reasoning"
+        ],
+        "has_ncert_source_path": false,
+        "has_ncert_derived": false,
+        "has_ku_id": false,
+        "has_neet_ug_2026": true,
+        "generation_eligible": true,
+        "db_status": "ACTIVE",
+        "target_count": 1
+      },
+      "answers": {
+        "canonical_source_deterministic": true,
+        "ncert_evidence_deterministic": true,
+        "existing_ku_or_evidence_representation": true,
+        "can_reuse_existing_ku": true,
+        "smallest_safe_schema_compatible_write": {
+          "mechanism": "merge into cms.question_blueprints.constraints JSONB only",
+          "add_or_set": {
+            "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo111.pdf",
+            "ncert_source_relative": "Class 11/Biology/kebo1dd/kebo111.pdf",
+            "ku_id": "82c052c6-241c-4e53-890f-bcc582ac77e4"
+          },
+          "optional_consistency_flags": {
+            "ncert_derived": true,
+            "note": "Sibling GENERATION_READY blueprints set ncert_derived=true. Path alone already activates blueprint_declares_ncert_source. Setting ncert_derived is optional for gate activation but aligns with canonical peers."
+          },
+          "do_not_create": [
+            "new evidence table",
+            "new API",
+            "new KU",
+            "new blueprint"
+          ]
+        },
+        "would_write_change_provenance_tier": false,
+        "would_write_change_academic_taxonomy": false,
+        "would_write_alter_generation_eligible_flag": false,
+        "would_grounding_gate_recognize": true
+      },
+      "proposed_future_write": {
+        "mechanism": "merge into cms.question_blueprints.constraints JSONB only",
+        "add_or_set": {
+          "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo111.pdf",
+          "ncert_source_relative": "Class 11/Biology/kebo1dd/kebo111.pdf",
+          "ku_id": "82c052c6-241c-4e53-890f-bcc582ac77e4"
+        },
+        "optional_consistency_flags": {
+          "ncert_derived": true,
+          "note": "Sibling GENERATION_READY blueprints set ncert_derived=true. Path alone already activates blueprint_declares_ncert_source. Setting ncert_derived is optional for gate activation but aligns with canonical peers."
+        },
+        "do_not_create": [
+          "new evidence table",
+          "new API",
+          "new KU",
+          "new blueprint"
+        ]
+      },
+      "fields_that_may_change": [
+        "constraints.ncert_source_path",
+        "constraints.ncert_source_relative",
+        "constraints.ku_id",
+        "constraints.ncert_derived (optional)",
+        "constraints.ncert_section_heading (optional)",
+        "updated_at / updated_by (audit columns only)"
+      ],
+      "fields_that_must_remain_unchanged": [
+        "id",
+        "blueprint_key",
+        "provenance_tier",
+        "subject_id",
+        "chapter_id",
+        "topic_id",
+        "concept_id",
+        "target_count",
+        "generation_eligible (unless separate eligibility policy task)",
+        "constraints.neet_ug_2026",
+        "all unrelated constraint keys",
+        "question rows / KU rows / ECAEP"
+      ],
+      "provenance_impact": {
+        "provenance_tier_change_required": false,
+        "current_provenance_tier": "ai",
+        "ncert_path_is_constraint_binding_not_tier_migration": true,
+        "note": "Existing architecture binds NCERT PDFs via constraints.ncert_source_path. These 14 are provenance_tier='ai' with SOURCE_MISSING paths. A surgical constraints merge does NOT require changing provenance_tier. Upgrading ai→authoritative would be a separate provenance migration and is OUT OF SCOPE."
+      },
+      "generation_gate_impact": {
+        "current": {
+          "syllabus": "IN_SYLLABUS",
+          "declares_ncert": false,
+          "evidence_status_if_resolved": "NCERT_EVIDENCE_NOT_REQUIRED (non-declaring ai blueprint)",
+          "generation_eligible_flag": true,
+          "risk": "Because provenance_tier=ai and no ncert_source_path, the grounding gate does NOT require NCERT evidence today — generation could proceed without canonical evidence."
+        },
+        "after_surgical_path_write": {
+          "declares_ncert": true,
+          "expected_evidence_status": "NCERT_EVIDENCE_READY",
+          "grounding_gate_would_recognize": true,
+          "provider_allowed_only_if": "syllabus IN_SYLLABUS AND evidence NCERT_EVIDENCE_READY"
+        },
+        "conditions_for_GENERATION_READY_classification": [
+          "syllabus gate IN_SYLLABUS (already true)",
+          "taxonomy chapter/topic/concept linked (already true)",
+          "canonical ncert_source_path under NCERT Books (proposed write)",
+          "PDF readable (confirmed)",
+          "resolve_ncert_evidence_pack → NCERT_EVIDENCE_READY (simulated)",
+          "no StudyMaterial fallback"
+        ]
+      },
+      "architecture_note": "Existing mechanism sufficient: constraints.ncert_source_path (+ optional ku_id/ncert_derived). No new table/API. provenance_tier must remain 'ai' unless a separate provenance task authorizes upgrade.",
+      "recommendation": "SAFE_FOR_SURGICAL_EVIDENCE_WRITE",
+      "confidence": "high",
+      "fuzzy_authorized": false
+    },
+    {
+      "blueprint_id": "3c8f1b03-ac22-4b16-80c3-8e5e63473dba",
+      "blueprint_key": "factory-p3-pilot-2026-09-01-bp-physics-direct_concept-easy",
+      "current_provenance": {
+        "population": "SOURCE_MISSING",
+        "provenance_tier": "ai",
+        "ncert_derived": null,
+        "ncert_source_path": null,
+        "declares_ncert_today": false
+      },
+      "subject": "PHYSICS",
+      "class_level": "12",
+      "chapter": "Current Electricity",
+      "chapter_id": "44e651c0-5346-4439-a60d-6424e0768a9f",
+      "topic": "Electric Current and Ohm's Law",
+      "topic_id": "9c5ee8f8-4234-4618-a24e-e0251711bebc",
+      "concept": "Ohm's Law",
+      "concept_id": "9071ef5d-b62f-4159-91b6-90436a7705e6",
+      "syllabus_mapping": {
+        "status": "IN_SYLLABUS",
+        "subject": "PHYSICS",
+        "unit_number": 12,
+        "unit_name": "CURRENT ELECTRICITY",
+        "topic": "Electric current. Drift velocity, mobility and their relation with electric current. Ohm's law. Electrical resistance. V-I characteristics of Ohmic and non-ohmic conductors. Electrical energy and power. Electrical resistivity and conductivity. Series and parallel combinations of resistors; Temperature dependence of resistance.",
+        "topic_id": "PHYSICS:U12:T01"
+      },
+      "canonical_source": {
+        "relative_path": "Class 12/Physics/leph1dd/leph103.pdf",
+        "absolute_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Physics\\leph1dd\\leph103.pdf",
+        "pdf_exists": true,
+        "pdf_readable": true,
+        "deterministic": true
+      },
+      "ncert_evidence_location": {
+        "pages": [
+          2,
+          3,
+          4,
+          7
+        ],
+        "chars": 11996,
+        "excerpt": "[KU summary]\nThe potential difference across the ends of the\ncombination is clearly sum of the potential difference\nacross the two individual slabs and hence equals 2V. The\ncurrent through the combination is I and the resistance\nof the combination RC is [from Eq.\n\n[KU structured facts]\n- The potential difference across the ends of the\ncombination is clearly ",
+        "status": "NCERT_EVIDENCE_READY",
+        "detail": "ok chars=11991 keyword_hits=58",
+        "error": null,
+        "deterministic": true
+      },
+      "existing_ku": {
+        "status": "PRESENT_PASSED",
+        "ku_id": "3a3b9d1e-6ad4-43d9-9a5f-fd10d978913c",
+        "summary_chars": 250,
+        "linked_in_constraints": false,
+        "reuse": "YES_VIA_CONSTRAINTS_KU_ID"
+      },
+      "existing_evidence_representation": {
+        "constraints_keys": [
+          "avoid_paraphrase_duplicates",
+          "correct_option_count",
+          "explanation_required",
+          "neet_ug_2026",
+          "question_format",
+          "reasoning"
+        ],
+        "has_ncert_source_path": false,
+        "has_ncert_derived": false,
+        "has_ku_id": false,
+        "has_neet_ug_2026": true,
+        "generation_eligible": true,
+        "db_status": "ACTIVE",
+        "target_count": 15
+      },
+      "answers": {
+        "canonical_source_deterministic": true,
+        "ncert_evidence_deterministic": true,
+        "existing_ku_or_evidence_representation": true,
+        "can_reuse_existing_ku": true,
+        "smallest_safe_schema_compatible_write": {
+          "mechanism": "merge into cms.question_blueprints.constraints JSONB only",
+          "add_or_set": {
+            "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Physics\\leph1dd\\leph103.pdf",
+            "ncert_source_relative": "Class 12/Physics/leph1dd/leph103.pdf",
+            "ku_id": "3a3b9d1e-6ad4-43d9-9a5f-fd10d978913c"
+          },
+          "optional_consistency_flags": {
+            "ncert_derived": true,
+            "note": "Sibling GENERATION_READY blueprints set ncert_derived=true. Path alone already activates blueprint_declares_ncert_source. Setting ncert_derived is optional for gate activation but aligns with canonical peers."
+          },
+          "do_not_create": [
+            "new evidence table",
+            "new API",
+            "new KU",
+            "new blueprint"
+          ]
+        },
+        "would_write_change_provenance_tier": false,
+        "would_write_change_academic_taxonomy": false,
+        "would_write_alter_generation_eligible_flag": false,
+        "would_grounding_gate_recognize": true
+      },
+      "proposed_future_write": {
+        "mechanism": "merge into cms.question_blueprints.constraints JSONB only",
+        "add_or_set": {
+          "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Physics\\leph1dd\\leph103.pdf",
+          "ncert_source_relative": "Class 12/Physics/leph1dd/leph103.pdf",
+          "ku_id": "3a3b9d1e-6ad4-43d9-9a5f-fd10d978913c"
+        },
+        "optional_consistency_flags": {
+          "ncert_derived": true,
+          "note": "Sibling GENERATION_READY blueprints set ncert_derived=true. Path alone already activates blueprint_declares_ncert_source. Setting ncert_derived is optional for gate activation but aligns with canonical peers."
+        },
+        "do_not_create": [
+          "new evidence table",
+          "new API",
+          "new KU",
+          "new blueprint"
+        ]
+      },
+      "fields_that_may_change": [
+        "constraints.ncert_source_path",
+        "constraints.ncert_source_relative",
+        "constraints.ku_id",
+        "constraints.ncert_derived (optional)",
+        "constraints.ncert_section_heading (optional)",
+        "updated_at / updated_by (audit columns only)"
+      ],
+      "fields_that_must_remain_unchanged": [
+        "id",
+        "blueprint_key",
+        "provenance_tier",
+        "subject_id",
+        "chapter_id",
+        "topic_id",
+        "concept_id",
+        "target_count",
+        "generation_eligible (unless separate eligibility policy task)",
+        "constraints.neet_ug_2026",
+        "all unrelated constraint keys",
+        "question rows / KU rows / ECAEP"
+      ],
+      "provenance_impact": {
+        "provenance_tier_change_required": false,
+        "current_provenance_tier": "ai",
+        "ncert_path_is_constraint_binding_not_tier_migration": true,
+        "note": "Existing architecture binds NCERT PDFs via constraints.ncert_source_path. These 14 are provenance_tier='ai' with SOURCE_MISSING paths. A surgical constraints merge does NOT require changing provenance_tier. Upgrading ai→authoritative would be a separate provenance migration and is OUT OF SCOPE."
+      },
+      "generation_gate_impact": {
+        "current": {
+          "syllabus": "IN_SYLLABUS",
+          "declares_ncert": false,
+          "evidence_status_if_resolved": "NCERT_EVIDENCE_NOT_REQUIRED (non-declaring ai blueprint)",
+          "generation_eligible_flag": true,
+          "risk": "Because provenance_tier=ai and no ncert_source_path, the grounding gate does NOT require NCERT evidence today — generation could proceed without canonical evidence."
+        },
+        "after_surgical_path_write": {
+          "declares_ncert": true,
+          "expected_evidence_status": "NCERT_EVIDENCE_READY",
+          "grounding_gate_would_recognize": true,
+          "provider_allowed_only_if": "syllabus IN_SYLLABUS AND evidence NCERT_EVIDENCE_READY"
+        },
+        "conditions_for_GENERATION_READY_classification": [
+          "syllabus gate IN_SYLLABUS (already true)",
+          "taxonomy chapter/topic/concept linked (already true)",
+          "canonical ncert_source_path under NCERT Books (proposed write)",
+          "PDF readable (confirmed)",
+          "resolve_ncert_evidence_pack → NCERT_EVIDENCE_READY (simulated)",
+          "no StudyMaterial fallback"
+        ]
+      },
+      "architecture_note": "Existing mechanism sufficient: constraints.ncert_source_path (+ optional ku_id/ncert_derived). No new table/API. provenance_tier must remain 'ai' unless a separate provenance task authorizes upgrade.",
+      "recommendation": "SAFE_FOR_SURGICAL_EVIDENCE_WRITE",
+      "confidence": "high",
+      "fuzzy_authorized": false
+    },
+    {
+      "blueprint_id": "77576605-f3d4-420b-9faf-15a47d8cd48c",
+      "blueprint_key": "factory-p3-pilot-2026-09-01-bp-physics-formula_application-medium",
+      "current_provenance": {
+        "population": "SOURCE_MISSING",
+        "provenance_tier": "ai",
+        "ncert_derived": null,
+        "ncert_source_path": null,
+        "declares_ncert_today": false
+      },
+      "subject": "PHYSICS",
+      "class_level": "12",
+      "chapter": "Current Electricity",
+      "chapter_id": "44e651c0-5346-4439-a60d-6424e0768a9f",
+      "topic": "Electric Current and Ohm's Law",
+      "topic_id": "9c5ee8f8-4234-4618-a24e-e0251711bebc",
+      "concept": "Ohm's Law",
+      "concept_id": "9071ef5d-b62f-4159-91b6-90436a7705e6",
+      "syllabus_mapping": {
+        "status": "IN_SYLLABUS",
+        "subject": "PHYSICS",
+        "unit_number": 12,
+        "unit_name": "CURRENT ELECTRICITY",
+        "topic": "Electric current. Drift velocity, mobility and their relation with electric current. Ohm's law. Electrical resistance. V-I characteristics of Ohmic and non-ohmic conductors. Electrical energy and power. Electrical resistivity and conductivity. Series and parallel combinations of resistors; Temperature dependence of resistance.",
+        "topic_id": "PHYSICS:U12:T01"
+      },
+      "canonical_source": {
+        "relative_path": "Class 12/Physics/leph1dd/leph103.pdf",
+        "absolute_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Physics\\leph1dd\\leph103.pdf",
+        "pdf_exists": true,
+        "pdf_readable": true,
+        "deterministic": true
+      },
+      "ncert_evidence_location": {
+        "pages": [
+          2,
+          3,
+          4,
+          7
+        ],
+        "chars": 11996,
+        "excerpt": "[KU summary]\nThe potential difference across the ends of the\ncombination is clearly sum of the potential difference\nacross the two individual slabs and hence equals 2V. The\ncurrent through the combination is I and the resistance\nof the combination RC is [from Eq.\n\n[KU structured facts]\n- The potential difference across the ends of the\ncombination is clearly ",
+        "status": "NCERT_EVIDENCE_READY",
+        "detail": "ok chars=11991 keyword_hits=58",
+        "error": null,
+        "deterministic": true
+      },
+      "existing_ku": {
+        "status": "PRESENT_PASSED",
+        "ku_id": "3a3b9d1e-6ad4-43d9-9a5f-fd10d978913c",
+        "summary_chars": 250,
+        "linked_in_constraints": false,
+        "reuse": "YES_VIA_CONSTRAINTS_KU_ID"
+      },
+      "existing_evidence_representation": {
+        "constraints_keys": [
+          "avoid_paraphrase_duplicates",
+          "correct_option_count",
+          "explanation_required",
+          "neet_ug_2026",
+          "question_format",
+          "reasoning"
+        ],
+        "has_ncert_source_path": false,
+        "has_ncert_derived": false,
+        "has_ku_id": false,
+        "has_neet_ug_2026": true,
+        "generation_eligible": true,
+        "db_status": "ACTIVE",
+        "target_count": 2
+      },
+      "answers": {
+        "canonical_source_deterministic": true,
+        "ncert_evidence_deterministic": true,
+        "existing_ku_or_evidence_representation": true,
+        "can_reuse_existing_ku": true,
+        "smallest_safe_schema_compatible_write": {
+          "mechanism": "merge into cms.question_blueprints.constraints JSONB only",
+          "add_or_set": {
+            "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Physics\\leph1dd\\leph103.pdf",
+            "ncert_source_relative": "Class 12/Physics/leph1dd/leph103.pdf",
+            "ku_id": "3a3b9d1e-6ad4-43d9-9a5f-fd10d978913c"
+          },
+          "optional_consistency_flags": {
+            "ncert_derived": true,
+            "note": "Sibling GENERATION_READY blueprints set ncert_derived=true. Path alone already activates blueprint_declares_ncert_source. Setting ncert_derived is optional for gate activation but aligns with canonical peers."
+          },
+          "do_not_create": [
+            "new evidence table",
+            "new API",
+            "new KU",
+            "new blueprint"
+          ]
+        },
+        "would_write_change_provenance_tier": false,
+        "would_write_change_academic_taxonomy": false,
+        "would_write_alter_generation_eligible_flag": false,
+        "would_grounding_gate_recognize": true
+      },
+      "proposed_future_write": {
+        "mechanism": "merge into cms.question_blueprints.constraints JSONB only",
+        "add_or_set": {
+          "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Physics\\leph1dd\\leph103.pdf",
+          "ncert_source_relative": "Class 12/Physics/leph1dd/leph103.pdf",
+          "ku_id": "3a3b9d1e-6ad4-43d9-9a5f-fd10d978913c"
+        },
+        "optional_consistency_flags": {
+          "ncert_derived": true,
+          "note": "Sibling GENERATION_READY blueprints set ncert_derived=true. Path alone already activates blueprint_declares_ncert_source. Setting ncert_derived is optional for gate activation but aligns with canonical peers."
+        },
+        "do_not_create": [
+          "new evidence table",
+          "new API",
+          "new KU",
+          "new blueprint"
+        ]
+      },
+      "fields_that_may_change": [
+        "constraints.ncert_source_path",
+        "constraints.ncert_source_relative",
+        "constraints.ku_id",
+        "constraints.ncert_derived (optional)",
+        "constraints.ncert_section_heading (optional)",
+        "updated_at / updated_by (audit columns only)"
+      ],
+      "fields_that_must_remain_unchanged": [
+        "id",
+        "blueprint_key",
+        "provenance_tier",
+        "subject_id",
+        "chapter_id",
+        "topic_id",
+        "concept_id",
+        "target_count",
+        "generation_eligible (unless separate eligibility policy task)",
+        "constraints.neet_ug_2026",
+        "all unrelated constraint keys",
+        "question rows / KU rows / ECAEP"
+      ],
+      "provenance_impact": {
+        "provenance_tier_change_required": false,
+        "current_provenance_tier": "ai",
+        "ncert_path_is_constraint_binding_not_tier_migration": true,
+        "note": "Existing architecture binds NCERT PDFs via constraints.ncert_source_path. These 14 are provenance_tier='ai' with SOURCE_MISSING paths. A surgical constraints merge does NOT require changing provenance_tier. Upgrading ai→authoritative would be a separate provenance migration and is OUT OF SCOPE."
+      },
+      "generation_gate_impact": {
+        "current": {
+          "syllabus": "IN_SYLLABUS",
+          "declares_ncert": false,
+          "evidence_status_if_resolved": "NCERT_EVIDENCE_NOT_REQUIRED (non-declaring ai blueprint)",
+          "generation_eligible_flag": true,
+          "risk": "Because provenance_tier=ai and no ncert_source_path, the grounding gate does NOT require NCERT evidence today — generation could proceed without canonical evidence."
+        },
+        "after_surgical_path_write": {
+          "declares_ncert": true,
+          "expected_evidence_status": "NCERT_EVIDENCE_READY",
+          "grounding_gate_would_recognize": true,
+          "provider_allowed_only_if": "syllabus IN_SYLLABUS AND evidence NCERT_EVIDENCE_READY"
+        },
+        "conditions_for_GENERATION_READY_classification": [
+          "syllabus gate IN_SYLLABUS (already true)",
+          "taxonomy chapter/topic/concept linked (already true)",
+          "canonical ncert_source_path under NCERT Books (proposed write)",
+          "PDF readable (confirmed)",
+          "resolve_ncert_evidence_pack → NCERT_EVIDENCE_READY (simulated)",
+          "no StudyMaterial fallback"
+        ]
+      },
+      "architecture_note": "Existing mechanism sufficient: constraints.ncert_source_path (+ optional ku_id/ncert_derived). No new table/API. provenance_tier must remain 'ai' unless a separate provenance task authorizes upgrade.",
+      "recommendation": "SAFE_FOR_SURGICAL_EVIDENCE_WRITE",
+      "confidence": "high",
+      "fuzzy_authorized": false
+    },
+    {
+      "blueprint_id": "b23de1f1-1d95-452f-9ff9-d0f6d93ccf86",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-botany-02",
+      "current_provenance": {
+        "population": "SOURCE_MISSING",
+        "provenance_tier": "ai",
+        "ncert_derived": null,
+        "ncert_source_path": null,
+        "declares_ncert_today": false
+      },
+      "subject": "BOTANY",
+      "class_level": "11",
+      "chapter": "Photosynthesis in Higher Plants",
+      "chapter_id": "c030eb7b-bcd9-4c9b-9a8e-dc0dc54fa32c",
+      "topic": "Factors Affecting Photosynthesis",
+      "topic_id": "4039d404-67cb-4e88-b924-ea873c5c91e7",
+      "concept": "Photorespiration",
+      "concept_id": "b48f10f4-e5e1-4740-a62f-c1bcaf3865fb",
+      "syllabus_mapping": {
+        "status": "IN_SYLLABUS",
+        "subject": "BIOLOGY",
+        "unit_number": 4,
+        "unit_name": "Plant Physiology",
+        "topic": "Photosynthesis: Photosynthesis as a means of Autotrophic nutrition; Site of photosynthesis take place; pigments involved in Photosynthesis (Elementary idea); Photochemical and biosynthetic phases of photosynthesis; Cyclic and non-cyclic photophosphorylation; Chemiosmotic hypothesis; Photorespiration C3 and C4 pathways; Factors affecting photosynthesis.",
+        "topic_id": "BIOLOGY:U04:T01"
+      },
+      "canonical_source": {
+        "relative_path": "Class 11/Biology/kebo1dd/kebo111.pdf",
+        "absolute_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo111.pdf",
+        "pdf_exists": true,
+        "pdf_readable": true,
+        "deterministic": true
+      },
+      "ncert_evidence_location": {
+        "pages": [
+          3,
+          4,
+          6,
+          8,
+          9
+        ],
+        "chars": 11989,
+        "excerpt": "[KU summary]\ngh photosynthesis and are therefore called autotrophs. You have already learnt that the autotrophic nutrition is found only in plants\nand all other organisms that depend on the green plants for food are\nheterotrophs.\n\n[KU structured facts]\n- gh photosynthesis and are therefore called autotrophs.\n- You have already learnt that the autotrophic nut",
+        "status": "NCERT_EVIDENCE_READY",
+        "detail": "ok chars=11983 keyword_hits=69",
+        "error": null,
+        "deterministic": true
+      },
+      "existing_ku": {
+        "status": "PRESENT_PASSED",
+        "ku_id": "6c880e32-1670-4ca4-a859-7ed46b78d90c",
+        "summary_chars": 216,
+        "linked_in_constraints": false,
+        "reuse": "YES_VIA_CONSTRAINTS_KU_ID"
+      },
+      "existing_evidence_representation": {
+        "constraints_keys": [
+          "avoid_paraphrase_duplicates",
+          "cognitive_operation",
+          "correct_option_count",
+          "enforce_prior_stem_diversity",
+          "explanation_required",
+          "forbidden_templates",
+          "neet_ug_2026",
+          "question_format",
+          "reasoning",
+          "seed_slot_id"
+        ],
+        "has_ncert_source_path": false,
+        "has_ncert_derived": false,
+        "has_ku_id": false,
+        "has_neet_ug_2026": true,
+        "generation_eligible": true,
+        "db_status": "ACTIVE",
+        "target_count": 1
+      },
+      "answers": {
+        "canonical_source_deterministic": true,
+        "ncert_evidence_deterministic": true,
+        "existing_ku_or_evidence_representation": true,
+        "can_reuse_existing_ku": true,
+        "smallest_safe_schema_compatible_write": {
+          "mechanism": "merge into cms.question_blueprints.constraints JSONB only",
+          "add_or_set": {
+            "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo111.pdf",
+            "ncert_source_relative": "Class 11/Biology/kebo1dd/kebo111.pdf",
+            "ku_id": "6c880e32-1670-4ca4-a859-7ed46b78d90c"
+          },
+          "optional_consistency_flags": {
+            "ncert_derived": true,
+            "note": "Sibling GENERATION_READY blueprints set ncert_derived=true. Path alone already activates blueprint_declares_ncert_source. Setting ncert_derived is optional for gate activation but aligns with canonical peers."
+          },
+          "do_not_create": [
+            "new evidence table",
+            "new API",
+            "new KU",
+            "new blueprint"
+          ]
+        },
+        "would_write_change_provenance_tier": false,
+        "would_write_change_academic_taxonomy": false,
+        "would_write_alter_generation_eligible_flag": false,
+        "would_grounding_gate_recognize": true
+      },
+      "proposed_future_write": {
+        "mechanism": "merge into cms.question_blueprints.constraints JSONB only",
+        "add_or_set": {
+          "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo111.pdf",
+          "ncert_source_relative": "Class 11/Biology/kebo1dd/kebo111.pdf",
+          "ku_id": "6c880e32-1670-4ca4-a859-7ed46b78d90c"
+        },
+        "optional_consistency_flags": {
+          "ncert_derived": true,
+          "note": "Sibling GENERATION_READY blueprints set ncert_derived=true. Path alone already activates blueprint_declares_ncert_source. Setting ncert_derived is optional for gate activation but aligns with canonical peers."
+        },
+        "do_not_create": [
+          "new evidence table",
+          "new API",
+          "new KU",
+          "new blueprint"
+        ]
+      },
+      "fields_that_may_change": [
+        "constraints.ncert_source_path",
+        "constraints.ncert_source_relative",
+        "constraints.ku_id",
+        "constraints.ncert_derived (optional)",
+        "constraints.ncert_section_heading (optional)",
+        "updated_at / updated_by (audit columns only)"
+      ],
+      "fields_that_must_remain_unchanged": [
+        "id",
+        "blueprint_key",
+        "provenance_tier",
+        "subject_id",
+        "chapter_id",
+        "topic_id",
+        "concept_id",
+        "target_count",
+        "generation_eligible (unless separate eligibility policy task)",
+        "constraints.neet_ug_2026",
+        "all unrelated constraint keys",
+        "question rows / KU rows / ECAEP"
+      ],
+      "provenance_impact": {
+        "provenance_tier_change_required": false,
+        "current_provenance_tier": "ai",
+        "ncert_path_is_constraint_binding_not_tier_migration": true,
+        "note": "Existing architecture binds NCERT PDFs via constraints.ncert_source_path. These 14 are provenance_tier='ai' with SOURCE_MISSING paths. A surgical constraints merge does NOT require changing provenance_tier. Upgrading ai→authoritative would be a separate provenance migration and is OUT OF SCOPE."
+      },
+      "generation_gate_impact": {
+        "current": {
+          "syllabus": "IN_SYLLABUS",
+          "declares_ncert": false,
+          "evidence_status_if_resolved": "NCERT_EVIDENCE_NOT_REQUIRED (non-declaring ai blueprint)",
+          "generation_eligible_flag": true,
+          "risk": "Because provenance_tier=ai and no ncert_source_path, the grounding gate does NOT require NCERT evidence today — generation could proceed without canonical evidence."
+        },
+        "after_surgical_path_write": {
+          "declares_ncert": true,
+          "expected_evidence_status": "NCERT_EVIDENCE_READY",
+          "grounding_gate_would_recognize": true,
+          "provider_allowed_only_if": "syllabus IN_SYLLABUS AND evidence NCERT_EVIDENCE_READY"
+        },
+        "conditions_for_GENERATION_READY_classification": [
+          "syllabus gate IN_SYLLABUS (already true)",
+          "taxonomy chapter/topic/concept linked (already true)",
+          "canonical ncert_source_path under NCERT Books (proposed write)",
+          "PDF readable (confirmed)",
+          "resolve_ncert_evidence_pack → NCERT_EVIDENCE_READY (simulated)",
+          "no StudyMaterial fallback"
+        ]
+      },
+      "architecture_note": "Existing mechanism sufficient: constraints.ncert_source_path (+ optional ku_id/ncert_derived). No new table/API. provenance_tier must remain 'ai' unless a separate provenance task authorizes upgrade.",
+      "recommendation": "SAFE_FOR_SURGICAL_EVIDENCE_WRITE",
+      "confidence": "high",
+      "fuzzy_authorized": false
+    },
+    {
+      "blueprint_id": "dc569dd4-30d6-46c2-acb1-25dec036b15d",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-botany-03",
+      "current_provenance": {
+        "population": "SOURCE_MISSING",
+        "provenance_tier": "ai",
+        "ncert_derived": null,
+        "ncert_source_path": null,
+        "declares_ncert_today": false
+      },
+      "subject": "BOTANY",
+      "class_level": "11",
+      "chapter": "Photosynthesis in Higher Plants",
+      "chapter_id": "c030eb7b-bcd9-4c9b-9a8e-dc0dc54fa32c",
+      "topic": "Factors Affecting Photosynthesis",
+      "topic_id": "4039d404-67cb-4e88-b924-ea873c5c91e7",
+      "concept": "Limiting Factors (Blackman's Law)",
+      "concept_id": "a9ee6fdf-d7e5-4983-b8ba-ec70da704b14",
+      "syllabus_mapping": {
+        "status": "IN_SYLLABUS",
+        "subject": "BIOLOGY",
+        "unit_number": 4,
+        "unit_name": "Plant Physiology",
+        "topic": "Photosynthesis: Photosynthesis as a means of Autotrophic nutrition; Site of photosynthesis take place; pigments involved in Photosynthesis (Elementary idea); Photochemical and biosynthetic phases of photosynthesis; Cyclic and non-cyclic photophosphorylation; Chemiosmotic hypothesis; Photorespiration C3 and C4 pathways; Factors affecting photosynthesis.",
+        "topic_id": "BIOLOGY:U04:T01"
+      },
+      "canonical_source": {
+        "relative_path": "Class 11/Biology/kebo1dd/kebo111.pdf",
+        "absolute_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo111.pdf",
+        "pdf_exists": true,
+        "pdf_readable": true,
+        "deterministic": true
+      },
+      "ncert_evidence_location": {
+        "pages": [
+          3,
+          4,
+          5,
+          6,
+          9
+        ],
+        "chars": 11997,
+        "excerpt": "[KU summary]\n11.4\nHow many\nPigments are\ninvolved in\nPhotosynthesis? 11.6\nThe Electron\nTransport\n11.7\nWhere are the\nATP and NADPH\nUsed?\n\n[KU structured facts]\n- 11.4\nHow many\nPigments are\ninvolved in\nPhotosynthesis?\n- 11.6\nThe Electron\nTransport\n11.7\nWhere are the\nATP and NADPH\nUsed?\n- 11.8\nThe C4 Pathway\n11.9\nPhotorespiration\n11.10 Factors\naffecting\nPhotosyn",
+        "status": "NCERT_EVIDENCE_READY",
+        "detail": "ok chars=11990 keyword_hits=83",
+        "error": null,
+        "deterministic": true
+      },
+      "existing_ku": {
+        "status": "PRESENT_PASSED",
+        "ku_id": "8a87626e-ef07-43f0-a452-542e13cbec30",
+        "summary_chars": 121,
+        "linked_in_constraints": false,
+        "reuse": "YES_VIA_CONSTRAINTS_KU_ID"
+      },
+      "existing_evidence_representation": {
+        "constraints_keys": [
+          "avoid_paraphrase_duplicates",
+          "cognitive_operation",
+          "correct_option_count",
+          "enforce_prior_stem_diversity",
+          "explanation_required",
+          "forbidden_templates",
+          "neet_ug_2026",
+          "question_format",
+          "reasoning",
+          "seed_slot_id"
+        ],
+        "has_ncert_source_path": false,
+        "has_ncert_derived": false,
+        "has_ku_id": false,
+        "has_neet_ug_2026": true,
+        "generation_eligible": true,
+        "db_status": "ACTIVE",
+        "target_count": 1
+      },
+      "answers": {
+        "canonical_source_deterministic": true,
+        "ncert_evidence_deterministic": true,
+        "existing_ku_or_evidence_representation": true,
+        "can_reuse_existing_ku": true,
+        "smallest_safe_schema_compatible_write": {
+          "mechanism": "merge into cms.question_blueprints.constraints JSONB only",
+          "add_or_set": {
+            "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo111.pdf",
+            "ncert_source_relative": "Class 11/Biology/kebo1dd/kebo111.pdf",
+            "ku_id": "8a87626e-ef07-43f0-a452-542e13cbec30"
+          },
+          "optional_consistency_flags": {
+            "ncert_derived": true,
+            "note": "Sibling GENERATION_READY blueprints set ncert_derived=true. Path alone already activates blueprint_declares_ncert_source. Setting ncert_derived is optional for gate activation but aligns with canonical peers."
+          },
+          "do_not_create": [
+            "new evidence table",
+            "new API",
+            "new KU",
+            "new blueprint"
+          ]
+        },
+        "would_write_change_provenance_tier": false,
+        "would_write_change_academic_taxonomy": false,
+        "would_write_alter_generation_eligible_flag": false,
+        "would_grounding_gate_recognize": true
+      },
+      "proposed_future_write": {
+        "mechanism": "merge into cms.question_blueprints.constraints JSONB only",
+        "add_or_set": {
+          "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo111.pdf",
+          "ncert_source_relative": "Class 11/Biology/kebo1dd/kebo111.pdf",
+          "ku_id": "8a87626e-ef07-43f0-a452-542e13cbec30"
+        },
+        "optional_consistency_flags": {
+          "ncert_derived": true,
+          "note": "Sibling GENERATION_READY blueprints set ncert_derived=true. Path alone already activates blueprint_declares_ncert_source. Setting ncert_derived is optional for gate activation but aligns with canonical peers."
+        },
+        "do_not_create": [
+          "new evidence table",
+          "new API",
+          "new KU",
+          "new blueprint"
+        ]
+      },
+      "fields_that_may_change": [
+        "constraints.ncert_source_path",
+        "constraints.ncert_source_relative",
+        "constraints.ku_id",
+        "constraints.ncert_derived (optional)",
+        "constraints.ncert_section_heading (optional)",
+        "updated_at / updated_by (audit columns only)"
+      ],
+      "fields_that_must_remain_unchanged": [
+        "id",
+        "blueprint_key",
+        "provenance_tier",
+        "subject_id",
+        "chapter_id",
+        "topic_id",
+        "concept_id",
+        "target_count",
+        "generation_eligible (unless separate eligibility policy task)",
+        "constraints.neet_ug_2026",
+        "all unrelated constraint keys",
+        "question rows / KU rows / ECAEP"
+      ],
+      "provenance_impact": {
+        "provenance_tier_change_required": false,
+        "current_provenance_tier": "ai",
+        "ncert_path_is_constraint_binding_not_tier_migration": true,
+        "note": "Existing architecture binds NCERT PDFs via constraints.ncert_source_path. These 14 are provenance_tier='ai' with SOURCE_MISSING paths. A surgical constraints merge does NOT require changing provenance_tier. Upgrading ai→authoritative would be a separate provenance migration and is OUT OF SCOPE."
+      },
+      "generation_gate_impact": {
+        "current": {
+          "syllabus": "IN_SYLLABUS",
+          "declares_ncert": false,
+          "evidence_status_if_resolved": "NCERT_EVIDENCE_NOT_REQUIRED (non-declaring ai blueprint)",
+          "generation_eligible_flag": true,
+          "risk": "Because provenance_tier=ai and no ncert_source_path, the grounding gate does NOT require NCERT evidence today — generation could proceed without canonical evidence."
+        },
+        "after_surgical_path_write": {
+          "declares_ncert": true,
+          "expected_evidence_status": "NCERT_EVIDENCE_READY",
+          "grounding_gate_would_recognize": true,
+          "provider_allowed_only_if": "syllabus IN_SYLLABUS AND evidence NCERT_EVIDENCE_READY"
+        },
+        "conditions_for_GENERATION_READY_classification": [
+          "syllabus gate IN_SYLLABUS (already true)",
+          "taxonomy chapter/topic/concept linked (already true)",
+          "canonical ncert_source_path under NCERT Books (proposed write)",
+          "PDF readable (confirmed)",
+          "resolve_ncert_evidence_pack → NCERT_EVIDENCE_READY (simulated)",
+          "no StudyMaterial fallback"
+        ]
+      },
+      "architecture_note": "Existing mechanism sufficient: constraints.ncert_source_path (+ optional ku_id/ncert_derived). No new table/API. provenance_tier must remain 'ai' unless a separate provenance task authorizes upgrade.",
+      "recommendation": "SAFE_FOR_SURGICAL_EVIDENCE_WRITE",
+      "confidence": "high",
+      "fuzzy_authorized": false
+    },
+    {
+      "blueprint_id": "f0c87b9d-4159-4346-aab6-fc859a17c8cb",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-chemistry-03",
+      "current_provenance": {
+        "population": "SOURCE_MISSING",
+        "provenance_tier": "ai",
+        "ncert_derived": null,
+        "ncert_source_path": null,
+        "declares_ncert_today": false
+      },
+      "subject": "CHEMISTRY",
+      "class_level": "11",
+      "chapter": "Equilibrium",
+      "chapter_id": "178648dd-c1e0-4631-8871-31e38d687b51",
+      "topic": "Chemical Equilibrium",
+      "topic_id": "56e49676-96aa-42de-8f33-c68d8105313d",
+      "concept": "Equilibrium Constant Kc/Kp",
+      "concept_id": "f158f415-8e0d-4d4e-a8fc-b337e6ea2282",
+      "syllabus_mapping": {
+        "status": "IN_SYLLABUS",
+        "subject": "CHEMISTRY",
+        "unit_number": 6,
+        "unit_name": "EQUILIBRIUM",
+        "topic": "Equilibrium involving chemical processes: Law of chemical equilibrium, equilibrium constants ($K_p$ and $K_c$) and their significance, the significance of $\\Delta G$ and $\\Delta G^\\circ$ in chemical equilibrium, factors affecting equilibrium concentration, pressure, temperature, the effect of catalyst; Le Chatelier's principle.",
+        "topic_id": "CHEMISTRY:U06:T03"
+      },
+      "canonical_source": {
+        "relative_path": "Class 11/Chemistry/kech1dd/kech1dd/kech106.pdf",
+        "absolute_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Chemistry\\kech1dd\\kech1dd\\kech106.pdf",
+        "pdf_exists": true,
+        "pdf_readable": true,
+        "deterministic": true
+      },
+      "ncert_evidence_location": {
+        "pages": [
+          1,
+          2,
+          3
+        ],
+        "chars": 11059,
+        "excerpt": "[KU summary]\nUnit 6\nEquilibrium\nChemical equilibria are important in numerous biological\nand environmental processes. For example, equilibria\ninvolving O2 molecules and the protein hemoglobin play\na crucial role in the transport and delivery of O2 from\nour lungs to our muscles.\n\n[KU structured facts]\n- Unit 6\nEquilibrium\nChemical equilibria are important in ",
+        "status": "NCERT_EVIDENCE_READY",
+        "detail": "ok chars=11055 keyword_hits=73",
+        "error": null,
+        "deterministic": true
+      },
+      "existing_ku": {
+        "status": "PRESENT_PASSED",
+        "ku_id": "1cd86db0-ee03-4bff-9c85-ef8502858847",
+        "summary_chars": 265,
+        "linked_in_constraints": false,
+        "reuse": "YES_VIA_CONSTRAINTS_KU_ID"
+      },
+      "existing_evidence_representation": {
+        "constraints_keys": [
+          "avoid_paraphrase_duplicates",
+          "cognitive_operation",
+          "correct_option_count",
+          "enforce_prior_stem_diversity",
+          "explanation_required",
+          "forbidden_templates",
+          "neet_ug_2026",
+          "question_format",
+          "reasoning",
+          "seed_slot_id"
+        ],
+        "has_ncert_source_path": false,
+        "has_ncert_derived": false,
+        "has_ku_id": false,
+        "has_neet_ug_2026": true,
+        "generation_eligible": true,
+        "db_status": "ACTIVE",
+        "target_count": 1
+      },
+      "answers": {
+        "canonical_source_deterministic": true,
+        "ncert_evidence_deterministic": true,
+        "existing_ku_or_evidence_representation": true,
+        "can_reuse_existing_ku": true,
+        "smallest_safe_schema_compatible_write": {
+          "mechanism": "merge into cms.question_blueprints.constraints JSONB only",
+          "add_or_set": {
+            "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Chemistry\\kech1dd\\kech1dd\\kech106.pdf",
+            "ncert_source_relative": "Class 11/Chemistry/kech1dd/kech1dd/kech106.pdf",
+            "ku_id": "1cd86db0-ee03-4bff-9c85-ef8502858847"
+          },
+          "optional_consistency_flags": {
+            "ncert_derived": true,
+            "note": "Sibling GENERATION_READY blueprints set ncert_derived=true. Path alone already activates blueprint_declares_ncert_source. Setting ncert_derived is optional for gate activation but aligns with canonical peers."
+          },
+          "do_not_create": [
+            "new evidence table",
+            "new API",
+            "new KU",
+            "new blueprint"
+          ]
+        },
+        "would_write_change_provenance_tier": false,
+        "would_write_change_academic_taxonomy": false,
+        "would_write_alter_generation_eligible_flag": false,
+        "would_grounding_gate_recognize": true
+      },
+      "proposed_future_write": {
+        "mechanism": "merge into cms.question_blueprints.constraints JSONB only",
+        "add_or_set": {
+          "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Chemistry\\kech1dd\\kech1dd\\kech106.pdf",
+          "ncert_source_relative": "Class 11/Chemistry/kech1dd/kech1dd/kech106.pdf",
+          "ku_id": "1cd86db0-ee03-4bff-9c85-ef8502858847"
+        },
+        "optional_consistency_flags": {
+          "ncert_derived": true,
+          "note": "Sibling GENERATION_READY blueprints set ncert_derived=true. Path alone already activates blueprint_declares_ncert_source. Setting ncert_derived is optional for gate activation but aligns with canonical peers."
+        },
+        "do_not_create": [
+          "new evidence table",
+          "new API",
+          "new KU",
+          "new blueprint"
+        ]
+      },
+      "fields_that_may_change": [
+        "constraints.ncert_source_path",
+        "constraints.ncert_source_relative",
+        "constraints.ku_id",
+        "constraints.ncert_derived (optional)",
+        "constraints.ncert_section_heading (optional)",
+        "updated_at / updated_by (audit columns only)"
+      ],
+      "fields_that_must_remain_unchanged": [
+        "id",
+        "blueprint_key",
+        "provenance_tier",
+        "subject_id",
+        "chapter_id",
+        "topic_id",
+        "concept_id",
+        "target_count",
+        "generation_eligible (unless separate eligibility policy task)",
+        "constraints.neet_ug_2026",
+        "all unrelated constraint keys",
+        "question rows / KU rows / ECAEP"
+      ],
+      "provenance_impact": {
+        "provenance_tier_change_required": false,
+        "current_provenance_tier": "ai",
+        "ncert_path_is_constraint_binding_not_tier_migration": true,
+        "note": "Existing architecture binds NCERT PDFs via constraints.ncert_source_path. These 14 are provenance_tier='ai' with SOURCE_MISSING paths. A surgical constraints merge does NOT require changing provenance_tier. Upgrading ai→authoritative would be a separate provenance migration and is OUT OF SCOPE."
+      },
+      "generation_gate_impact": {
+        "current": {
+          "syllabus": "IN_SYLLABUS",
+          "declares_ncert": false,
+          "evidence_status_if_resolved": "NCERT_EVIDENCE_NOT_REQUIRED (non-declaring ai blueprint)",
+          "generation_eligible_flag": true,
+          "risk": "Because provenance_tier=ai and no ncert_source_path, the grounding gate does NOT require NCERT evidence today — generation could proceed without canonical evidence."
+        },
+        "after_surgical_path_write": {
+          "declares_ncert": true,
+          "expected_evidence_status": "NCERT_EVIDENCE_READY",
+          "grounding_gate_would_recognize": true,
+          "provider_allowed_only_if": "syllabus IN_SYLLABUS AND evidence NCERT_EVIDENCE_READY"
+        },
+        "conditions_for_GENERATION_READY_classification": [
+          "syllabus gate IN_SYLLABUS (already true)",
+          "taxonomy chapter/topic/concept linked (already true)",
+          "canonical ncert_source_path under NCERT Books (proposed write)",
+          "PDF readable (confirmed)",
+          "resolve_ncert_evidence_pack → NCERT_EVIDENCE_READY (simulated)",
+          "no StudyMaterial fallback"
+        ]
+      },
+      "architecture_note": "Existing mechanism sufficient: constraints.ncert_source_path (+ optional ku_id/ncert_derived). No new table/API. provenance_tier must remain 'ai' unless a separate provenance task authorizes upgrade.",
+      "recommendation": "SAFE_FOR_SURGICAL_EVIDENCE_WRITE",
+      "confidence": "high",
+      "fuzzy_authorized": false
+    },
+    {
+      "blueprint_id": "e8721ebe-9c1d-4e9b-ad51-f6a65a8adaff",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-chemistry-08",
+      "current_provenance": {
+        "population": "SOURCE_MISSING",
+        "provenance_tier": "ai",
+        "ncert_derived": null,
+        "ncert_source_path": null,
+        "declares_ncert_today": false
+      },
+      "subject": "CHEMISTRY",
+      "class_level": "11",
+      "chapter": "Organic Chemistry - Basic Principles",
+      "chapter_id": "a2fbdd9a-0b58-4fa4-8d65-3d9d6addb839",
+      "topic": "IUPAC and Homologous Series",
+      "topic_id": "fc5de132-793c-4c50-8e6c-d1310eb94829",
+      "concept": "Homologous Series",
+      "concept_id": "75e579f4-1e32-406c-9329-55097099bbaf",
+      "syllabus_mapping": {
+        "status": "IN_SYLLABUS",
+        "subject": "CHEMISTRY",
+        "unit_number": 14,
+        "unit_name": "SOME BASIC PRINCIPLES OF ORGANIC CHEMISTRY",
+        "topic": "Tetravalency of carbon: Shapes of simple molecules - hybridization (s and p): Classification of organic compounds based on functional groups: and those containing halogens, oxygen, nitrogen, and sulphur; Homologous series: Isomerism - structural and stereoisomerism. Nomenclature (Trivial and IUPAC)",
+        "topic_id": "CHEMISTRY:U14:T01"
+      },
+      "canonical_source": {
+        "relative_path": "Class 11/Chemistry/kech2dd/kech202.pdf",
+        "absolute_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Chemistry\\kech2dd\\kech202.pdf",
+        "pdf_exists": true,
+        "pdf_readable": true,
+        "deterministic": true
+      },
+      "ncert_evidence_location": {
+        "pages": [
+          1,
+          2,
+          6,
+          7
+        ],
+        "chars": 11987,
+        "excerpt": "[KU summary]\nFRPSRXQGV DQG WKHLU HYHU \u0010LQFUHDVLQJ\nQXPEHUV KDV PDGH LW QHFHVVDU\\ WR FODVVLI\\\nWKHP RQ WKH EDVLV RI WKHLU VWUXFWXUHV\u0011 oUJDQLF\nFRPSRXQGV DUH EURDGO\\ FODVVLILHG DV IROORZV\ni. Acyclic or open chain compounds\ntKHVH FRPSRXQGV DUH DOVR FDOOHG DV aliphatic\nFRPSRXQGV DQG FRQVLVW RI VWUDLJKW RU\nEUDQFKHG FKDLQ FRPSRXQGV\u000f IRU H[DPSOH\nKRPRF\\FOLF \u0011\nc\\FORKH[H",
+        "status": "NCERT_EVIDENCE_READY",
+        "detail": "ok chars=11981 keyword_hits=155",
+        "error": null,
+        "deterministic": true
+      },
+      "existing_ku": {
+        "status": "PRESENT_PASSED",
+        "ku_id": "5c0ddbff-12ce-42dc-9888-62f890e8287a",
+        "summary_chars": 500,
+        "linked_in_constraints": false,
+        "reuse": "YES_VIA_CONSTRAINTS_KU_ID"
+      },
+      "existing_evidence_representation": {
+        "constraints_keys": [
+          "avoid_paraphrase_duplicates",
+          "cognitive_operation",
+          "correct_option_count",
+          "enforce_prior_stem_diversity",
+          "explanation_required",
+          "forbidden_templates",
+          "neet_ug_2026",
+          "question_format",
+          "reasoning",
+          "seed_slot_id"
+        ],
+        "has_ncert_source_path": false,
+        "has_ncert_derived": false,
+        "has_ku_id": false,
+        "has_neet_ug_2026": true,
+        "generation_eligible": true,
+        "db_status": "ACTIVE",
+        "target_count": 1
+      },
+      "answers": {
+        "canonical_source_deterministic": true,
+        "ncert_evidence_deterministic": true,
+        "existing_ku_or_evidence_representation": true,
+        "can_reuse_existing_ku": true,
+        "smallest_safe_schema_compatible_write": {
+          "mechanism": "merge into cms.question_blueprints.constraints JSONB only",
+          "add_or_set": {
+            "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Chemistry\\kech2dd\\kech202.pdf",
+            "ncert_source_relative": "Class 11/Chemistry/kech2dd/kech202.pdf",
+            "ku_id": "5c0ddbff-12ce-42dc-9888-62f890e8287a"
+          },
+          "optional_consistency_flags": {
+            "ncert_derived": true,
+            "note": "Sibling GENERATION_READY blueprints set ncert_derived=true. Path alone already activates blueprint_declares_ncert_source. Setting ncert_derived is optional for gate activation but aligns with canonical peers."
+          },
+          "do_not_create": [
+            "new evidence table",
+            "new API",
+            "new KU",
+            "new blueprint"
+          ]
+        },
+        "would_write_change_provenance_tier": false,
+        "would_write_change_academic_taxonomy": false,
+        "would_write_alter_generation_eligible_flag": false,
+        "would_grounding_gate_recognize": true
+      },
+      "proposed_future_write": {
+        "mechanism": "merge into cms.question_blueprints.constraints JSONB only",
+        "add_or_set": {
+          "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Chemistry\\kech2dd\\kech202.pdf",
+          "ncert_source_relative": "Class 11/Chemistry/kech2dd/kech202.pdf",
+          "ku_id": "5c0ddbff-12ce-42dc-9888-62f890e8287a"
+        },
+        "optional_consistency_flags": {
+          "ncert_derived": true,
+          "note": "Sibling GENERATION_READY blueprints set ncert_derived=true. Path alone already activates blueprint_declares_ncert_source. Setting ncert_derived is optional for gate activation but aligns with canonical peers."
+        },
+        "do_not_create": [
+          "new evidence table",
+          "new API",
+          "new KU",
+          "new blueprint"
+        ]
+      },
+      "fields_that_may_change": [
+        "constraints.ncert_source_path",
+        "constraints.ncert_source_relative",
+        "constraints.ku_id",
+        "constraints.ncert_derived (optional)",
+        "constraints.ncert_section_heading (optional)",
+        "updated_at / updated_by (audit columns only)"
+      ],
+      "fields_that_must_remain_unchanged": [
+        "id",
+        "blueprint_key",
+        "provenance_tier",
+        "subject_id",
+        "chapter_id",
+        "topic_id",
+        "concept_id",
+        "target_count",
+        "generation_eligible (unless separate eligibility policy task)",
+        "constraints.neet_ug_2026",
+        "all unrelated constraint keys",
+        "question rows / KU rows / ECAEP"
+      ],
+      "provenance_impact": {
+        "provenance_tier_change_required": false,
+        "current_provenance_tier": "ai",
+        "ncert_path_is_constraint_binding_not_tier_migration": true,
+        "note": "Existing architecture binds NCERT PDFs via constraints.ncert_source_path. These 14 are provenance_tier='ai' with SOURCE_MISSING paths. A surgical constraints merge does NOT require changing provenance_tier. Upgrading ai→authoritative would be a separate provenance migration and is OUT OF SCOPE."
+      },
+      "generation_gate_impact": {
+        "current": {
+          "syllabus": "IN_SYLLABUS",
+          "declares_ncert": false,
+          "evidence_status_if_resolved": "NCERT_EVIDENCE_NOT_REQUIRED (non-declaring ai blueprint)",
+          "generation_eligible_flag": true,
+          "risk": "Because provenance_tier=ai and no ncert_source_path, the grounding gate does NOT require NCERT evidence today — generation could proceed without canonical evidence."
+        },
+        "after_surgical_path_write": {
+          "declares_ncert": true,
+          "expected_evidence_status": "NCERT_EVIDENCE_READY",
+          "grounding_gate_would_recognize": true,
+          "provider_allowed_only_if": "syllabus IN_SYLLABUS AND evidence NCERT_EVIDENCE_READY"
+        },
+        "conditions_for_GENERATION_READY_classification": [
+          "syllabus gate IN_SYLLABUS (already true)",
+          "taxonomy chapter/topic/concept linked (already true)",
+          "canonical ncert_source_path under NCERT Books (proposed write)",
+          "PDF readable (confirmed)",
+          "resolve_ncert_evidence_pack → NCERT_EVIDENCE_READY (simulated)",
+          "no StudyMaterial fallback"
+        ]
+      },
+      "architecture_note": "Existing mechanism sufficient: constraints.ncert_source_path (+ optional ku_id/ncert_derived). No new table/API. provenance_tier must remain 'ai' unless a separate provenance task authorizes upgrade.",
+      "recommendation": "SAFE_FOR_SURGICAL_EVIDENCE_WRITE",
+      "confidence": "high",
+      "fuzzy_authorized": false
+    },
+    {
+      "blueprint_id": "106e56f4-a1f0-49c0-9485-78c50c819776",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-physics-02",
+      "current_provenance": {
+        "population": "SOURCE_MISSING",
+        "provenance_tier": "ai",
+        "ncert_derived": null,
+        "ncert_source_path": null,
+        "declares_ncert_today": false
+      },
+      "subject": "PHYSICS",
+      "class_level": "11",
+      "chapter": "Kinematics",
+      "chapter_id": "b20f8158-cba8-41d2-a88e-3fbd1b2261d2",
+      "topic": "Motion in a Straight Line",
+      "topic_id": "bbceffb0-53f0-4ae0-8aa2-40ae031517ac",
+      "concept": "Kinematic Equations",
+      "concept_id": "f68b97fc-aba2-456d-b003-0801637f6a53",
+      "syllabus_mapping": {
+        "status": "IN_SYLLABUS",
+        "subject": "PHYSICS",
+        "unit_number": 2,
+        "unit_name": "KINEMATICS",
+        "topic": "The frame of reference, motion in a straight line, Position-time graph, speed and velocity; Uniform and non-uniform motion, average speed and instantaneous velocity, uniformly accelerated motion, velocity-time, position-time graph, relations for uniformly accelerated motion, Scalars and Vectors, Vector Addition and subtraction, scalar and vector products, Unit Vector, Resolution of a Vector. Relative Velocity, Motion in a plane, Projectile Motion, Uniform Circular Motion.",
+        "topic_id": "PHYSICS:U02:T01"
+      },
+      "canonical_source": {
+        "relative_path": "Class 11/Physics/keph1dd/keph1dd/keph102.pdf",
+        "absolute_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph1dd\\keph1dd\\keph102.pdf",
+        "pdf_exists": true,
+        "pdf_readable": true,
+        "deterministic": true
+      },
+      "ncert_evidence_location": {
+        "pages": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "chars": 11818,
+        "excerpt": "[KU summary]\nCHAPTER TWO\nMOTION IN A STRAIGHT LINE\n2.1\nIntroduction\n2.2\nInstantaneous velocity and\nspeed\n2.3\nAcceleration\n2.4\nKinematic equations for\nuniformly accelerated motion\n2.5\nRelative velocity\nSummary\nPoints to ponder\nExercises\n2.1 INTRODUCTION\nMotion is common to everything in the universe. Even when we are sleeping, air moves\ninto and out of our lu",
+        "status": "NCERT_EVIDENCE_READY",
+        "detail": "ok chars=11813 keyword_hits=81",
+        "error": null,
+        "deterministic": true
+      },
+      "existing_ku": {
+        "status": "PRESENT_PASSED",
+        "ku_id": "9152da9b-021e-4001-91e3-f46492a32a3a",
+        "summary_chars": 389,
+        "linked_in_constraints": false,
+        "reuse": "YES_VIA_CONSTRAINTS_KU_ID"
+      },
+      "existing_evidence_representation": {
+        "constraints_keys": [
+          "avoid_paraphrase_duplicates",
+          "cognitive_operation",
+          "correct_option_count",
+          "enforce_prior_stem_diversity",
+          "explanation_required",
+          "forbidden_templates",
+          "neet_ug_2026",
+          "question_format",
+          "reasoning",
+          "seed_slot_id"
+        ],
+        "has_ncert_source_path": false,
+        "has_ncert_derived": false,
+        "has_ku_id": false,
+        "has_neet_ug_2026": true,
+        "generation_eligible": true,
+        "db_status": "ACTIVE",
+        "target_count": 1
+      },
+      "answers": {
+        "canonical_source_deterministic": true,
+        "ncert_evidence_deterministic": true,
+        "existing_ku_or_evidence_representation": true,
+        "can_reuse_existing_ku": true,
+        "smallest_safe_schema_compatible_write": {
+          "mechanism": "merge into cms.question_blueprints.constraints JSONB only",
+          "add_or_set": {
+            "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph1dd\\keph1dd\\keph102.pdf",
+            "ncert_source_relative": "Class 11/Physics/keph1dd/keph1dd/keph102.pdf",
+            "ku_id": "9152da9b-021e-4001-91e3-f46492a32a3a"
+          },
+          "optional_consistency_flags": {
+            "ncert_derived": true,
+            "note": "Sibling GENERATION_READY blueprints set ncert_derived=true. Path alone already activates blueprint_declares_ncert_source. Setting ncert_derived is optional for gate activation but aligns with canonical peers."
+          },
+          "do_not_create": [
+            "new evidence table",
+            "new API",
+            "new KU",
+            "new blueprint"
+          ]
+        },
+        "would_write_change_provenance_tier": false,
+        "would_write_change_academic_taxonomy": false,
+        "would_write_alter_generation_eligible_flag": false,
+        "would_grounding_gate_recognize": true
+      },
+      "proposed_future_write": {
+        "mechanism": "merge into cms.question_blueprints.constraints JSONB only",
+        "add_or_set": {
+          "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph1dd\\keph1dd\\keph102.pdf",
+          "ncert_source_relative": "Class 11/Physics/keph1dd/keph1dd/keph102.pdf",
+          "ku_id": "9152da9b-021e-4001-91e3-f46492a32a3a"
+        },
+        "optional_consistency_flags": {
+          "ncert_derived": true,
+          "note": "Sibling GENERATION_READY blueprints set ncert_derived=true. Path alone already activates blueprint_declares_ncert_source. Setting ncert_derived is optional for gate activation but aligns with canonical peers."
+        },
+        "do_not_create": [
+          "new evidence table",
+          "new API",
+          "new KU",
+          "new blueprint"
+        ]
+      },
+      "fields_that_may_change": [
+        "constraints.ncert_source_path",
+        "constraints.ncert_source_relative",
+        "constraints.ku_id",
+        "constraints.ncert_derived (optional)",
+        "constraints.ncert_section_heading (optional)",
+        "updated_at / updated_by (audit columns only)"
+      ],
+      "fields_that_must_remain_unchanged": [
+        "id",
+        "blueprint_key",
+        "provenance_tier",
+        "subject_id",
+        "chapter_id",
+        "topic_id",
+        "concept_id",
+        "target_count",
+        "generation_eligible (unless separate eligibility policy task)",
+        "constraints.neet_ug_2026",
+        "all unrelated constraint keys",
+        "question rows / KU rows / ECAEP"
+      ],
+      "provenance_impact": {
+        "provenance_tier_change_required": false,
+        "current_provenance_tier": "ai",
+        "ncert_path_is_constraint_binding_not_tier_migration": true,
+        "note": "Existing architecture binds NCERT PDFs via constraints.ncert_source_path. These 14 are provenance_tier='ai' with SOURCE_MISSING paths. A surgical constraints merge does NOT require changing provenance_tier. Upgrading ai→authoritative would be a separate provenance migration and is OUT OF SCOPE."
+      },
+      "generation_gate_impact": {
+        "current": {
+          "syllabus": "IN_SYLLABUS",
+          "declares_ncert": false,
+          "evidence_status_if_resolved": "NCERT_EVIDENCE_NOT_REQUIRED (non-declaring ai blueprint)",
+          "generation_eligible_flag": true,
+          "risk": "Because provenance_tier=ai and no ncert_source_path, the grounding gate does NOT require NCERT evidence today — generation could proceed without canonical evidence."
+        },
+        "after_surgical_path_write": {
+          "declares_ncert": true,
+          "expected_evidence_status": "NCERT_EVIDENCE_READY",
+          "grounding_gate_would_recognize": true,
+          "provider_allowed_only_if": "syllabus IN_SYLLABUS AND evidence NCERT_EVIDENCE_READY"
+        },
+        "conditions_for_GENERATION_READY_classification": [
+          "syllabus gate IN_SYLLABUS (already true)",
+          "taxonomy chapter/topic/concept linked (already true)",
+          "canonical ncert_source_path under NCERT Books (proposed write)",
+          "PDF readable (confirmed)",
+          "resolve_ncert_evidence_pack → NCERT_EVIDENCE_READY (simulated)",
+          "no StudyMaterial fallback"
+        ]
+      },
+      "architecture_note": "Existing mechanism sufficient: constraints.ncert_source_path (+ optional ku_id/ncert_derived). No new table/API. provenance_tier must remain 'ai' unless a separate provenance task authorizes upgrade.",
+      "recommendation": "SAFE_FOR_SURGICAL_EVIDENCE_WRITE",
+      "confidence": "high",
+      "fuzzy_authorized": false
+    },
+    {
+      "blueprint_id": "937515bc-264c-455b-8ab7-1e782159abb3",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-physics-06",
+      "current_provenance": {
+        "population": "SOURCE_MISSING",
+        "provenance_tier": "ai",
+        "ncert_derived": null,
+        "ncert_source_path": null,
+        "declares_ncert_today": false
+      },
+      "subject": "PHYSICS",
+      "class_level": "11",
+      "chapter": "Mechanical Properties of Fluids",
+      "chapter_id": "d28f54b5-6919-411f-a7b2-2088b0ab3c29",
+      "topic": "Fluid Flow and Bernoulli",
+      "topic_id": "6697b220-f1bd-4a2d-be31-8bc6008942bb",
+      "concept": "Bernoulli's Principle",
+      "concept_id": "9c03982a-38d4-453a-9ad0-752bf6834a33",
+      "syllabus_mapping": {
+        "status": "IN_SYLLABUS",
+        "subject": "PHYSICS",
+        "unit_number": 7,
+        "unit_name": "PROPERTIES OF SOLIDS AND LIQUIDS",
+        "topic": "Viscosity. Stokes' law. terminal velocity, streamline, and turbulent flow. critical velocity. Bernoulli's principle and its applications.",
+        "topic_id": "PHYSICS:U07:T02"
+      },
+      "canonical_source": {
+        "relative_path": "Class 11/Physics/keph2dd/keph2dd/keph202.pdf",
+        "absolute_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph2dd\\keph2dd\\keph202.pdf",
+        "pdf_exists": true,
+        "pdf_readable": true,
+        "deterministic": true
+      },
+      "ncert_evidence_location": {
+        "pages": [
+          1,
+          2,
+          3
+        ],
+        "chars": 10177,
+        "excerpt": "[KU summary]\nspoon) is pressed against\nit with the same force. If an elephant were to step on a man's\nchest, his ribs would crack.\n\n[KU structured facts]\n- spoon) is pressed against\nit with the same force.\n- If an elephant were to step on a man's\nchest, his ribs would crack.\n- A circus performer across whose\n9.1\nIntroduction\n9.2\nPressure\n9.3\nStreamline flow\n",
+        "status": "NCERT_EVIDENCE_READY",
+        "detail": "ok chars=10172 keyword_hits=83",
+        "error": null,
+        "deterministic": true
+      },
+      "existing_ku": {
+        "status": "PRESENT_PASSED",
+        "ku_id": "c07d949b-1467-4e98-bfb4-71692addf7da",
+        "summary_chars": 117,
+        "linked_in_constraints": false,
+        "reuse": "YES_VIA_CONSTRAINTS_KU_ID"
+      },
+      "existing_evidence_representation": {
+        "constraints_keys": [
+          "avoid_paraphrase_duplicates",
+          "cognitive_operation",
+          "correct_option_count",
+          "enforce_prior_stem_diversity",
+          "explanation_required",
+          "forbidden_templates",
+          "neet_ug_2026",
+          "question_format",
+          "reasoning",
+          "seed_slot_id"
+        ],
+        "has_ncert_source_path": false,
+        "has_ncert_derived": false,
+        "has_ku_id": false,
+        "has_neet_ug_2026": true,
+        "generation_eligible": true,
+        "db_status": "ACTIVE",
+        "target_count": 1
+      },
+      "answers": {
+        "canonical_source_deterministic": true,
+        "ncert_evidence_deterministic": true,
+        "existing_ku_or_evidence_representation": true,
+        "can_reuse_existing_ku": true,
+        "smallest_safe_schema_compatible_write": {
+          "mechanism": "merge into cms.question_blueprints.constraints JSONB only",
+          "add_or_set": {
+            "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph2dd\\keph2dd\\keph202.pdf",
+            "ncert_source_relative": "Class 11/Physics/keph2dd/keph2dd/keph202.pdf",
+            "ku_id": "c07d949b-1467-4e98-bfb4-71692addf7da"
+          },
+          "optional_consistency_flags": {
+            "ncert_derived": true,
+            "note": "Sibling GENERATION_READY blueprints set ncert_derived=true. Path alone already activates blueprint_declares_ncert_source. Setting ncert_derived is optional for gate activation but aligns with canonical peers."
+          },
+          "do_not_create": [
+            "new evidence table",
+            "new API",
+            "new KU",
+            "new blueprint"
+          ]
+        },
+        "would_write_change_provenance_tier": false,
+        "would_write_change_academic_taxonomy": false,
+        "would_write_alter_generation_eligible_flag": false,
+        "would_grounding_gate_recognize": true
+      },
+      "proposed_future_write": {
+        "mechanism": "merge into cms.question_blueprints.constraints JSONB only",
+        "add_or_set": {
+          "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph2dd\\keph2dd\\keph202.pdf",
+          "ncert_source_relative": "Class 11/Physics/keph2dd/keph2dd/keph202.pdf",
+          "ku_id": "c07d949b-1467-4e98-bfb4-71692addf7da"
+        },
+        "optional_consistency_flags": {
+          "ncert_derived": true,
+          "note": "Sibling GENERATION_READY blueprints set ncert_derived=true. Path alone already activates blueprint_declares_ncert_source. Setting ncert_derived is optional for gate activation but aligns with canonical peers."
+        },
+        "do_not_create": [
+          "new evidence table",
+          "new API",
+          "new KU",
+          "new blueprint"
+        ]
+      },
+      "fields_that_may_change": [
+        "constraints.ncert_source_path",
+        "constraints.ncert_source_relative",
+        "constraints.ku_id",
+        "constraints.ncert_derived (optional)",
+        "constraints.ncert_section_heading (optional)",
+        "updated_at / updated_by (audit columns only)"
+      ],
+      "fields_that_must_remain_unchanged": [
+        "id",
+        "blueprint_key",
+        "provenance_tier",
+        "subject_id",
+        "chapter_id",
+        "topic_id",
+        "concept_id",
+        "target_count",
+        "generation_eligible (unless separate eligibility policy task)",
+        "constraints.neet_ug_2026",
+        "all unrelated constraint keys",
+        "question rows / KU rows / ECAEP"
+      ],
+      "provenance_impact": {
+        "provenance_tier_change_required": false,
+        "current_provenance_tier": "ai",
+        "ncert_path_is_constraint_binding_not_tier_migration": true,
+        "note": "Existing architecture binds NCERT PDFs via constraints.ncert_source_path. These 14 are provenance_tier='ai' with SOURCE_MISSING paths. A surgical constraints merge does NOT require changing provenance_tier. Upgrading ai→authoritative would be a separate provenance migration and is OUT OF SCOPE."
+      },
+      "generation_gate_impact": {
+        "current": {
+          "syllabus": "IN_SYLLABUS",
+          "declares_ncert": false,
+          "evidence_status_if_resolved": "NCERT_EVIDENCE_NOT_REQUIRED (non-declaring ai blueprint)",
+          "generation_eligible_flag": true,
+          "risk": "Because provenance_tier=ai and no ncert_source_path, the grounding gate does NOT require NCERT evidence today — generation could proceed without canonical evidence."
+        },
+        "after_surgical_path_write": {
+          "declares_ncert": true,
+          "expected_evidence_status": "NCERT_EVIDENCE_READY",
+          "grounding_gate_would_recognize": true,
+          "provider_allowed_only_if": "syllabus IN_SYLLABUS AND evidence NCERT_EVIDENCE_READY"
+        },
+        "conditions_for_GENERATION_READY_classification": [
+          "syllabus gate IN_SYLLABUS (already true)",
+          "taxonomy chapter/topic/concept linked (already true)",
+          "canonical ncert_source_path under NCERT Books (proposed write)",
+          "PDF readable (confirmed)",
+          "resolve_ncert_evidence_pack → NCERT_EVIDENCE_READY (simulated)",
+          "no StudyMaterial fallback"
+        ]
+      },
+      "architecture_note": "Existing mechanism sufficient: constraints.ncert_source_path (+ optional ku_id/ncert_derived). No new table/API. provenance_tier must remain 'ai' unless a separate provenance task authorizes upgrade.",
+      "recommendation": "SAFE_FOR_SURGICAL_EVIDENCE_WRITE",
+      "confidence": "high",
+      "fuzzy_authorized": false
+    },
+    {
+      "blueprint_id": "38772f04-ac54-4b76-8bcc-7fc4ff22bed5",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-physics-10",
+      "current_provenance": {
+        "population": "SOURCE_MISSING",
+        "provenance_tier": "ai",
+        "ncert_derived": null,
+        "ncert_source_path": null,
+        "declares_ncert_today": false
+      },
+      "subject": "PHYSICS",
+      "class_level": "12",
+      "chapter": "Optics",
+      "chapter_id": "b35e04b3-ab7b-4bb5-bfc4-ad7e914297c1",
+      "topic": "Refraction and Lenses",
+      "topic_id": "aebaf878-4048-451a-a585-0b5c9ed3c8bb",
+      "concept": "Thin Lens Formula",
+      "concept_id": "dea4d8e9-aa27-45e3-b142-04a1d1a6b98b",
+      "syllabus_mapping": {
+        "status": "IN_SYLLABUS",
+        "subject": "PHYSICS",
+        "unit_number": 16,
+        "unit_name": "OPTICS",
+        "topic": "Reflection of light, spherical mirrors, mirror formula. Refraction of light at plane and spherical surfaces, thin lens formula and lens maker formula. Total internal reflection and its applications. Magnification. Power of a Lens. Combination of thin lenses in contact. Refraction of light through a prism. Microscope and Astronomical Telescope (reflecting and refracting) and their magnifying powers.",
+        "topic_id": "PHYSICS:U16:T01"
+      },
+      "canonical_source": {
+        "relative_path": "Class 12/Physics/leph2dd/leph201.pdf",
+        "absolute_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Physics\\leph2dd\\leph201.pdf",
+        "pdf_exists": true,
+        "pdf_readable": true,
+        "deterministic": true
+      },
+      "ncert_evidence_location": {
+        "pages": [
+          9,
+          11,
+          12,
+          15
+        ],
+        "chars": 11994,
+        "excerpt": "[KU summary]\nvert image without changing\nits size make use of total internal reflection. Reprint 2026-27\n\nPhysics\n232\nelectrical signals which are converted to light\nby suitable transducers.\n\n[KU structured facts]\n- vert image without changing\nits size make use of total internal reflection.\n- Reprint 2026-27\n\nPhysics\n232\nelectrical signals which are converte",
+        "status": "NCERT_EVIDENCE_READY",
+        "detail": "ok chars=11987 keyword_hits=77",
+        "error": null,
+        "deterministic": true
+      },
+      "existing_ku": {
+        "status": "PRESENT_PASSED",
+        "ku_id": "580c2809-8ada-4c9b-bf7d-52eafdbe5aa4",
+        "summary_chars": 177,
+        "linked_in_constraints": false,
+        "reuse": "YES_VIA_CONSTRAINTS_KU_ID"
+      },
+      "existing_evidence_representation": {
+        "constraints_keys": [
+          "avoid_paraphrase_duplicates",
+          "cognitive_operation",
+          "correct_option_count",
+          "enforce_prior_stem_diversity",
+          "explanation_required",
+          "forbidden_templates",
+          "neet_ug_2026",
+          "question_format",
+          "reasoning",
+          "seed_slot_id"
+        ],
+        "has_ncert_source_path": false,
+        "has_ncert_derived": false,
+        "has_ku_id": false,
+        "has_neet_ug_2026": true,
+        "generation_eligible": true,
+        "db_status": "ACTIVE",
+        "target_count": 1
+      },
+      "answers": {
+        "canonical_source_deterministic": true,
+        "ncert_evidence_deterministic": true,
+        "existing_ku_or_evidence_representation": true,
+        "can_reuse_existing_ku": true,
+        "smallest_safe_schema_compatible_write": {
+          "mechanism": "merge into cms.question_blueprints.constraints JSONB only",
+          "add_or_set": {
+            "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Physics\\leph2dd\\leph201.pdf",
+            "ncert_source_relative": "Class 12/Physics/leph2dd/leph201.pdf",
+            "ku_id": "580c2809-8ada-4c9b-bf7d-52eafdbe5aa4"
+          },
+          "optional_consistency_flags": {
+            "ncert_derived": true,
+            "note": "Sibling GENERATION_READY blueprints set ncert_derived=true. Path alone already activates blueprint_declares_ncert_source. Setting ncert_derived is optional for gate activation but aligns with canonical peers."
+          },
+          "do_not_create": [
+            "new evidence table",
+            "new API",
+            "new KU",
+            "new blueprint"
+          ]
+        },
+        "would_write_change_provenance_tier": false,
+        "would_write_change_academic_taxonomy": false,
+        "would_write_alter_generation_eligible_flag": false,
+        "would_grounding_gate_recognize": true
+      },
+      "proposed_future_write": {
+        "mechanism": "merge into cms.question_blueprints.constraints JSONB only",
+        "add_or_set": {
+          "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Physics\\leph2dd\\leph201.pdf",
+          "ncert_source_relative": "Class 12/Physics/leph2dd/leph201.pdf",
+          "ku_id": "580c2809-8ada-4c9b-bf7d-52eafdbe5aa4"
+        },
+        "optional_consistency_flags": {
+          "ncert_derived": true,
+          "note": "Sibling GENERATION_READY blueprints set ncert_derived=true. Path alone already activates blueprint_declares_ncert_source. Setting ncert_derived is optional for gate activation but aligns with canonical peers."
+        },
+        "do_not_create": [
+          "new evidence table",
+          "new API",
+          "new KU",
+          "new blueprint"
+        ]
+      },
+      "fields_that_may_change": [
+        "constraints.ncert_source_path",
+        "constraints.ncert_source_relative",
+        "constraints.ku_id",
+        "constraints.ncert_derived (optional)",
+        "constraints.ncert_section_heading (optional)",
+        "updated_at / updated_by (audit columns only)"
+      ],
+      "fields_that_must_remain_unchanged": [
+        "id",
+        "blueprint_key",
+        "provenance_tier",
+        "subject_id",
+        "chapter_id",
+        "topic_id",
+        "concept_id",
+        "target_count",
+        "generation_eligible (unless separate eligibility policy task)",
+        "constraints.neet_ug_2026",
+        "all unrelated constraint keys",
+        "question rows / KU rows / ECAEP"
+      ],
+      "provenance_impact": {
+        "provenance_tier_change_required": false,
+        "current_provenance_tier": "ai",
+        "ncert_path_is_constraint_binding_not_tier_migration": true,
+        "note": "Existing architecture binds NCERT PDFs via constraints.ncert_source_path. These 14 are provenance_tier='ai' with SOURCE_MISSING paths. A surgical constraints merge does NOT require changing provenance_tier. Upgrading ai→authoritative would be a separate provenance migration and is OUT OF SCOPE."
+      },
+      "generation_gate_impact": {
+        "current": {
+          "syllabus": "IN_SYLLABUS",
+          "declares_ncert": false,
+          "evidence_status_if_resolved": "NCERT_EVIDENCE_NOT_REQUIRED (non-declaring ai blueprint)",
+          "generation_eligible_flag": true,
+          "risk": "Because provenance_tier=ai and no ncert_source_path, the grounding gate does NOT require NCERT evidence today — generation could proceed without canonical evidence."
+        },
+        "after_surgical_path_write": {
+          "declares_ncert": true,
+          "expected_evidence_status": "NCERT_EVIDENCE_READY",
+          "grounding_gate_would_recognize": true,
+          "provider_allowed_only_if": "syllabus IN_SYLLABUS AND evidence NCERT_EVIDENCE_READY"
+        },
+        "conditions_for_GENERATION_READY_classification": [
+          "syllabus gate IN_SYLLABUS (already true)",
+          "taxonomy chapter/topic/concept linked (already true)",
+          "canonical ncert_source_path under NCERT Books (proposed write)",
+          "PDF readable (confirmed)",
+          "resolve_ncert_evidence_pack → NCERT_EVIDENCE_READY (simulated)",
+          "no StudyMaterial fallback"
+        ]
+      },
+      "architecture_note": "Existing mechanism sufficient: constraints.ncert_source_path (+ optional ku_id/ncert_derived). No new table/API. provenance_tier must remain 'ai' unless a separate provenance task authorizes upgrade.",
+      "recommendation": "SAFE_FOR_SURGICAL_EVIDENCE_WRITE",
+      "confidence": "high",
+      "fuzzy_authorized": false
+    },
+    {
+      "blueprint_id": "fc3eac99-b5fc-45f2-a29f-31ea072da557",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-zoology-01",
+      "current_provenance": {
+        "population": "SOURCE_MISSING",
+        "provenance_tier": "ai",
+        "ncert_derived": null,
+        "ncert_source_path": null,
+        "declares_ncert_today": false
+      },
+      "subject": "ZOOLOGY",
+      "class_level": "11",
+      "chapter": "Body Fluids and Circulation",
+      "chapter_id": "81cce1e2-0fbd-4458-8c8a-34bcdc7e5967",
+      "topic": "Cardiac Cycle",
+      "topic_id": "4afaf5d8-225d-425b-8e8c-4271db6db373",
+      "concept": "Cardiac Cycle Phases",
+      "concept_id": "323c3c8a-ce3c-428f-9edb-20edf42574e9",
+      "syllabus_mapping": {
+        "status": "IN_SYLLABUS",
+        "subject": "BIOLOGY",
+        "unit_number": 5,
+        "unit_name": "Human Physiology",
+        "topic": "Body fluids and circulation: Composition of blood, blood groups, coagulation of blood; Composition of lymph and its function; Human circulatory system-Structure of human heart and blood vessels; Cardiac cycle, cardiac output, ECG, Double circulation; Regulation of cardiac activity; Disorders of circulatory system-Hypertension, Coronary artery disease, Angina pectoris, Heart failure.",
+        "topic_id": "BIOLOGY:U05:T02"
+      },
+      "canonical_source": {
+        "relative_path": "Class 11/Biology/kebo1dd/kebo115.pdf",
+        "absolute_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo115.pdf",
+        "pdf_exists": true,
+        "pdf_readable": true,
+        "deterministic": true
+      },
+      "ncert_evidence_location": {
+        "pages": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "chars": 11995,
+        "excerpt": "[KU summary]\nAN can generate the maximum number of action\npotentials, i.e., 70-75 min-1, and is responsible for initiating and\nmaintaining the rhythmic contractile activity of the heart. Our heart normally beats 70-75 times in a minute\n(average 72 beats min-1).\n\n[KU structured facts]\n- AN can generate the maximum number of action\npotentials, i.e., 70-75 min-",
+        "status": "NCERT_EVIDENCE_READY",
+        "detail": "ok chars=11989 keyword_hits=77",
+        "error": null,
+        "deterministic": true
+      },
+      "existing_ku": {
+        "status": "PRESENT_PASSED",
+        "ku_id": "0c70cdbf-f83c-4095-9195-a057da198f6d",
+        "summary_chars": 248,
+        "linked_in_constraints": false,
+        "reuse": "YES_VIA_CONSTRAINTS_KU_ID"
+      },
+      "existing_evidence_representation": {
+        "constraints_keys": [
+          "avoid_paraphrase_duplicates",
+          "cognitive_operation",
+          "correct_option_count",
+          "enforce_prior_stem_diversity",
+          "explanation_required",
+          "forbidden_templates",
+          "neet_ug_2026",
+          "question_format",
+          "reasoning",
+          "seed_slot_id"
+        ],
+        "has_ncert_source_path": false,
+        "has_ncert_derived": false,
+        "has_ku_id": false,
+        "has_neet_ug_2026": true,
+        "generation_eligible": true,
+        "db_status": "ACTIVE",
+        "target_count": 1
+      },
+      "answers": {
+        "canonical_source_deterministic": true,
+        "ncert_evidence_deterministic": true,
+        "existing_ku_or_evidence_representation": true,
+        "can_reuse_existing_ku": true,
+        "smallest_safe_schema_compatible_write": {
+          "mechanism": "merge into cms.question_blueprints.constraints JSONB only",
+          "add_or_set": {
+            "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo115.pdf",
+            "ncert_source_relative": "Class 11/Biology/kebo1dd/kebo115.pdf",
+            "ku_id": "0c70cdbf-f83c-4095-9195-a057da198f6d"
+          },
+          "optional_consistency_flags": {
+            "ncert_derived": true,
+            "note": "Sibling GENERATION_READY blueprints set ncert_derived=true. Path alone already activates blueprint_declares_ncert_source. Setting ncert_derived is optional for gate activation but aligns with canonical peers."
+          },
+          "do_not_create": [
+            "new evidence table",
+            "new API",
+            "new KU",
+            "new blueprint"
+          ]
+        },
+        "would_write_change_provenance_tier": false,
+        "would_write_change_academic_taxonomy": false,
+        "would_write_alter_generation_eligible_flag": false,
+        "would_grounding_gate_recognize": true
+      },
+      "proposed_future_write": {
+        "mechanism": "merge into cms.question_blueprints.constraints JSONB only",
+        "add_or_set": {
+          "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo115.pdf",
+          "ncert_source_relative": "Class 11/Biology/kebo1dd/kebo115.pdf",
+          "ku_id": "0c70cdbf-f83c-4095-9195-a057da198f6d"
+        },
+        "optional_consistency_flags": {
+          "ncert_derived": true,
+          "note": "Sibling GENERATION_READY blueprints set ncert_derived=true. Path alone already activates blueprint_declares_ncert_source. Setting ncert_derived is optional for gate activation but aligns with canonical peers."
+        },
+        "do_not_create": [
+          "new evidence table",
+          "new API",
+          "new KU",
+          "new blueprint"
+        ]
+      },
+      "fields_that_may_change": [
+        "constraints.ncert_source_path",
+        "constraints.ncert_source_relative",
+        "constraints.ku_id",
+        "constraints.ncert_derived (optional)",
+        "constraints.ncert_section_heading (optional)",
+        "updated_at / updated_by (audit columns only)"
+      ],
+      "fields_that_must_remain_unchanged": [
+        "id",
+        "blueprint_key",
+        "provenance_tier",
+        "subject_id",
+        "chapter_id",
+        "topic_id",
+        "concept_id",
+        "target_count",
+        "generation_eligible (unless separate eligibility policy task)",
+        "constraints.neet_ug_2026",
+        "all unrelated constraint keys",
+        "question rows / KU rows / ECAEP"
+      ],
+      "provenance_impact": {
+        "provenance_tier_change_required": false,
+        "current_provenance_tier": "ai",
+        "ncert_path_is_constraint_binding_not_tier_migration": true,
+        "note": "Existing architecture binds NCERT PDFs via constraints.ncert_source_path. These 14 are provenance_tier='ai' with SOURCE_MISSING paths. A surgical constraints merge does NOT require changing provenance_tier. Upgrading ai→authoritative would be a separate provenance migration and is OUT OF SCOPE."
+      },
+      "generation_gate_impact": {
+        "current": {
+          "syllabus": "IN_SYLLABUS",
+          "declares_ncert": false,
+          "evidence_status_if_resolved": "NCERT_EVIDENCE_NOT_REQUIRED (non-declaring ai blueprint)",
+          "generation_eligible_flag": true,
+          "risk": "Because provenance_tier=ai and no ncert_source_path, the grounding gate does NOT require NCERT evidence today — generation could proceed without canonical evidence."
+        },
+        "after_surgical_path_write": {
+          "declares_ncert": true,
+          "expected_evidence_status": "NCERT_EVIDENCE_READY",
+          "grounding_gate_would_recognize": true,
+          "provider_allowed_only_if": "syllabus IN_SYLLABUS AND evidence NCERT_EVIDENCE_READY"
+        },
+        "conditions_for_GENERATION_READY_classification": [
+          "syllabus gate IN_SYLLABUS (already true)",
+          "taxonomy chapter/topic/concept linked (already true)",
+          "canonical ncert_source_path under NCERT Books (proposed write)",
+          "PDF readable (confirmed)",
+          "resolve_ncert_evidence_pack → NCERT_EVIDENCE_READY (simulated)",
+          "no StudyMaterial fallback"
+        ]
+      },
+      "architecture_note": "Existing mechanism sufficient: constraints.ncert_source_path (+ optional ku_id/ncert_derived). No new table/API. provenance_tier must remain 'ai' unless a separate provenance task authorizes upgrade.",
+      "recommendation": "SAFE_FOR_SURGICAL_EVIDENCE_WRITE",
+      "confidence": "high",
+      "fuzzy_authorized": false
+    },
+    {
+      "blueprint_id": "0b1c8f98-35eb-43f7-bb8e-2398c4a46de5",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-zoology-03",
+      "current_provenance": {
+        "population": "SOURCE_MISSING",
+        "provenance_tier": "ai",
+        "ncert_derived": null,
+        "ncert_source_path": null,
+        "declares_ncert_today": false
+      },
+      "subject": "BOTANY",
+      "class_level": "11",
+      "chapter": "Biomolecules",
+      "chapter_id": "17f6994c-9776-4e66-8627-c44f7e0f08fe",
+      "topic": "Proteins and Enzymes",
+      "topic_id": "ceba634d-1c22-40ed-b891-5931e038dfac",
+      "concept": "Enzyme Action",
+      "concept_id": "688b4b23-a44a-47ca-b386-7605ec84faa7",
+      "syllabus_mapping": {
+        "status": "IN_SYLLABUS",
+        "subject": "BIOLOGY",
+        "unit_number": 3,
+        "unit_name": "Cell Structure and Function",
+        "topic": "Chemical constituents of living cells: Biomolecules-structure and function of proteins, carbohydrates, lipids, nucleic acids; Enzymes-types, properties, enzyme action, classification and nomenclature of enzymes.",
+        "topic_id": "BIOLOGY:U03:T02"
+      },
+      "canonical_source": {
+        "relative_path": "Class 11/Biology/kebo1dd/kebo109.pdf",
+        "absolute_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo109.pdf",
+        "pdf_exists": true,
+        "pdf_readable": true,
+        "deterministic": true
+      },
+      "ncert_evidence_location": {
+        "pages": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "chars": 11866,
+        "excerpt": "[KU summary]\n104\nBIOLOGY\nThere is a wide diversity in living organisms in our biosphere. Now a\nquestion that arises in our minds is: Are all living organisms made of the\nsame chemicals, i.e., elements and compounds?\n\n[KU structured facts]\n- 104\nBIOLOGY\nThere is a wide diversity in living organisms in our biosphere.\n- Now a\nquestion that arises in our minds i",
+        "status": "NCERT_EVIDENCE_READY",
+        "detail": "ok chars=11860 keyword_hits=73",
+        "error": null,
+        "deterministic": true
+      },
+      "existing_ku": {
+        "status": "PRESENT_PASSED",
+        "ku_id": "9d44a34b-502a-4c6f-b6ee-e1caa4d491c9",
+        "summary_chars": 202,
+        "linked_in_constraints": false,
+        "reuse": "YES_VIA_CONSTRAINTS_KU_ID"
+      },
+      "existing_evidence_representation": {
+        "constraints_keys": [
+          "avoid_paraphrase_duplicates",
+          "cognitive_operation",
+          "correct_option_count",
+          "enforce_prior_stem_diversity",
+          "explanation_required",
+          "forbidden_templates",
+          "neet_ug_2026",
+          "question_format",
+          "reasoning",
+          "seed_slot_id"
+        ],
+        "has_ncert_source_path": false,
+        "has_ncert_derived": false,
+        "has_ku_id": false,
+        "has_neet_ug_2026": true,
+        "generation_eligible": true,
+        "db_status": "ACTIVE",
+        "target_count": 1
+      },
+      "answers": {
+        "canonical_source_deterministic": true,
+        "ncert_evidence_deterministic": true,
+        "existing_ku_or_evidence_representation": true,
+        "can_reuse_existing_ku": true,
+        "smallest_safe_schema_compatible_write": {
+          "mechanism": "merge into cms.question_blueprints.constraints JSONB only",
+          "add_or_set": {
+            "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo109.pdf",
+            "ncert_source_relative": "Class 11/Biology/kebo1dd/kebo109.pdf",
+            "ku_id": "9d44a34b-502a-4c6f-b6ee-e1caa4d491c9"
+          },
+          "optional_consistency_flags": {
+            "ncert_derived": true,
+            "note": "Sibling GENERATION_READY blueprints set ncert_derived=true. Path alone already activates blueprint_declares_ncert_source. Setting ncert_derived is optional for gate activation but aligns with canonical peers."
+          },
+          "do_not_create": [
+            "new evidence table",
+            "new API",
+            "new KU",
+            "new blueprint"
+          ]
+        },
+        "would_write_change_provenance_tier": false,
+        "would_write_change_academic_taxonomy": false,
+        "would_write_alter_generation_eligible_flag": false,
+        "would_grounding_gate_recognize": true
+      },
+      "proposed_future_write": {
+        "mechanism": "merge into cms.question_blueprints.constraints JSONB only",
+        "add_or_set": {
+          "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo109.pdf",
+          "ncert_source_relative": "Class 11/Biology/kebo1dd/kebo109.pdf",
+          "ku_id": "9d44a34b-502a-4c6f-b6ee-e1caa4d491c9"
+        },
+        "optional_consistency_flags": {
+          "ncert_derived": true,
+          "note": "Sibling GENERATION_READY blueprints set ncert_derived=true. Path alone already activates blueprint_declares_ncert_source. Setting ncert_derived is optional for gate activation but aligns with canonical peers."
+        },
+        "do_not_create": [
+          "new evidence table",
+          "new API",
+          "new KU",
+          "new blueprint"
+        ]
+      },
+      "fields_that_may_change": [
+        "constraints.ncert_source_path",
+        "constraints.ncert_source_relative",
+        "constraints.ku_id",
+        "constraints.ncert_derived (optional)",
+        "constraints.ncert_section_heading (optional)",
+        "updated_at / updated_by (audit columns only)"
+      ],
+      "fields_that_must_remain_unchanged": [
+        "id",
+        "blueprint_key",
+        "provenance_tier",
+        "subject_id",
+        "chapter_id",
+        "topic_id",
+        "concept_id",
+        "target_count",
+        "generation_eligible (unless separate eligibility policy task)",
+        "constraints.neet_ug_2026",
+        "all unrelated constraint keys",
+        "question rows / KU rows / ECAEP"
+      ],
+      "provenance_impact": {
+        "provenance_tier_change_required": false,
+        "current_provenance_tier": "ai",
+        "ncert_path_is_constraint_binding_not_tier_migration": true,
+        "note": "Existing architecture binds NCERT PDFs via constraints.ncert_source_path. These 14 are provenance_tier='ai' with SOURCE_MISSING paths. A surgical constraints merge does NOT require changing provenance_tier. Upgrading ai→authoritative would be a separate provenance migration and is OUT OF SCOPE."
+      },
+      "generation_gate_impact": {
+        "current": {
+          "syllabus": "IN_SYLLABUS",
+          "declares_ncert": false,
+          "evidence_status_if_resolved": "NCERT_EVIDENCE_NOT_REQUIRED (non-declaring ai blueprint)",
+          "generation_eligible_flag": true,
+          "risk": "Because provenance_tier=ai and no ncert_source_path, the grounding gate does NOT require NCERT evidence today — generation could proceed without canonical evidence."
+        },
+        "after_surgical_path_write": {
+          "declares_ncert": true,
+          "expected_evidence_status": "NCERT_EVIDENCE_READY",
+          "grounding_gate_would_recognize": true,
+          "provider_allowed_only_if": "syllabus IN_SYLLABUS AND evidence NCERT_EVIDENCE_READY"
+        },
+        "conditions_for_GENERATION_READY_classification": [
+          "syllabus gate IN_SYLLABUS (already true)",
+          "taxonomy chapter/topic/concept linked (already true)",
+          "canonical ncert_source_path under NCERT Books (proposed write)",
+          "PDF readable (confirmed)",
+          "resolve_ncert_evidence_pack → NCERT_EVIDENCE_READY (simulated)",
+          "no StudyMaterial fallback"
+        ]
+      },
+      "architecture_note": "Existing mechanism sufficient: constraints.ncert_source_path (+ optional ku_id/ncert_derived). No new table/API. provenance_tier must remain 'ai' unless a separate provenance task authorizes upgrade.",
+      "recommendation": "SAFE_FOR_SURGICAL_EVIDENCE_WRITE",
+      "confidence": "high",
+      "fuzzy_authorized": false
+    },
+    {
+      "blueprint_id": "4d923ceb-e65c-47ff-b6b0-c18efb4f7534",
+      "blueprint_key": "production-seed-v1-2026-09-03-replace-bp-chemistry-replace-01",
+      "current_provenance": {
+        "population": "SOURCE_MISSING",
+        "provenance_tier": "ai",
+        "ncert_derived": null,
+        "ncert_source_path": null,
+        "declares_ncert_today": false
+      },
+      "subject": "CHEMISTRY",
+      "class_level": "11",
+      "chapter": "Equilibrium",
+      "chapter_id": "178648dd-c1e0-4631-8871-31e38d687b51",
+      "topic": "Chemical Equilibrium",
+      "topic_id": "56e49676-96aa-42de-8f33-c68d8105313d",
+      "concept": "Equilibrium Constant Kc/Kp",
+      "concept_id": "f158f415-8e0d-4d4e-a8fc-b337e6ea2282",
+      "syllabus_mapping": {
+        "status": "IN_SYLLABUS",
+        "subject": "CHEMISTRY",
+        "unit_number": 6,
+        "unit_name": "EQUILIBRIUM",
+        "topic": "Equilibrium involving chemical processes: Law of chemical equilibrium, equilibrium constants ($K_p$ and $K_c$) and their significance, the significance of $\\Delta G$ and $\\Delta G^\\circ$ in chemical equilibrium, factors affecting equilibrium concentration, pressure, temperature, the effect of catalyst; Le Chatelier's principle.",
+        "topic_id": "CHEMISTRY:U06:T03"
+      },
+      "canonical_source": {
+        "relative_path": "Class 11/Chemistry/kech1dd/kech1dd/kech106.pdf",
+        "absolute_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Chemistry\\kech1dd\\kech1dd\\kech106.pdf",
+        "pdf_exists": true,
+        "pdf_readable": true,
+        "deterministic": true
+      },
+      "ncert_evidence_location": {
+        "pages": [
+          1,
+          2,
+          3
+        ],
+        "chars": 11059,
+        "excerpt": "[KU summary]\nUnit 6\nEquilibrium\nChemical equilibria are important in numerous biological\nand environmental processes. For example, equilibria\ninvolving O2 molecules and the protein hemoglobin play\na crucial role in the transport and delivery of O2 from\nour lungs to our muscles.\n\n[KU structured facts]\n- Unit 6\nEquilibrium\nChemical equilibria are important in ",
+        "status": "NCERT_EVIDENCE_READY",
+        "detail": "ok chars=11055 keyword_hits=73",
+        "error": null,
+        "deterministic": true
+      },
+      "existing_ku": {
+        "status": "PRESENT_PASSED",
+        "ku_id": "1cd86db0-ee03-4bff-9c85-ef8502858847",
+        "summary_chars": 265,
+        "linked_in_constraints": false,
+        "reuse": "YES_VIA_CONSTRAINTS_KU_ID"
+      },
+      "existing_evidence_representation": {
+        "constraints_keys": [
+          "avoid_paraphrase_duplicates",
+          "cognitive_operation",
+          "correct_option_count",
+          "enforce_prior_stem_diversity",
+          "explanation_required",
+          "forbidden_templates",
+          "neet_ug_2026",
+          "question_format",
+          "reasoning",
+          "replacement_of",
+          "seed_slot_id"
+        ],
+        "has_ncert_source_path": false,
+        "has_ncert_derived": false,
+        "has_ku_id": false,
+        "has_neet_ug_2026": true,
+        "generation_eligible": true,
+        "db_status": "ACTIVE",
+        "target_count": 1
+      },
+      "answers": {
+        "canonical_source_deterministic": true,
+        "ncert_evidence_deterministic": true,
+        "existing_ku_or_evidence_representation": true,
+        "can_reuse_existing_ku": true,
+        "smallest_safe_schema_compatible_write": {
+          "mechanism": "merge into cms.question_blueprints.constraints JSONB only",
+          "add_or_set": {
+            "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Chemistry\\kech1dd\\kech1dd\\kech106.pdf",
+            "ncert_source_relative": "Class 11/Chemistry/kech1dd/kech1dd/kech106.pdf",
+            "ku_id": "1cd86db0-ee03-4bff-9c85-ef8502858847"
+          },
+          "optional_consistency_flags": {
+            "ncert_derived": true,
+            "note": "Sibling GENERATION_READY blueprints set ncert_derived=true. Path alone already activates blueprint_declares_ncert_source. Setting ncert_derived is optional for gate activation but aligns with canonical peers."
+          },
+          "do_not_create": [
+            "new evidence table",
+            "new API",
+            "new KU",
+            "new blueprint"
+          ]
+        },
+        "would_write_change_provenance_tier": false,
+        "would_write_change_academic_taxonomy": false,
+        "would_write_alter_generation_eligible_flag": false,
+        "would_grounding_gate_recognize": true
+      },
+      "proposed_future_write": {
+        "mechanism": "merge into cms.question_blueprints.constraints JSONB only",
+        "add_or_set": {
+          "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Chemistry\\kech1dd\\kech1dd\\kech106.pdf",
+          "ncert_source_relative": "Class 11/Chemistry/kech1dd/kech1dd/kech106.pdf",
+          "ku_id": "1cd86db0-ee03-4bff-9c85-ef8502858847"
+        },
+        "optional_consistency_flags": {
+          "ncert_derived": true,
+          "note": "Sibling GENERATION_READY blueprints set ncert_derived=true. Path alone already activates blueprint_declares_ncert_source. Setting ncert_derived is optional for gate activation but aligns with canonical peers."
+        },
+        "do_not_create": [
+          "new evidence table",
+          "new API",
+          "new KU",
+          "new blueprint"
+        ]
+      },
+      "fields_that_may_change": [
+        "constraints.ncert_source_path",
+        "constraints.ncert_source_relative",
+        "constraints.ku_id",
+        "constraints.ncert_derived (optional)",
+        "constraints.ncert_section_heading (optional)",
+        "updated_at / updated_by (audit columns only)"
+      ],
+      "fields_that_must_remain_unchanged": [
+        "id",
+        "blueprint_key",
+        "provenance_tier",
+        "subject_id",
+        "chapter_id",
+        "topic_id",
+        "concept_id",
+        "target_count",
+        "generation_eligible (unless separate eligibility policy task)",
+        "constraints.neet_ug_2026",
+        "all unrelated constraint keys",
+        "question rows / KU rows / ECAEP"
+      ],
+      "provenance_impact": {
+        "provenance_tier_change_required": false,
+        "current_provenance_tier": "ai",
+        "ncert_path_is_constraint_binding_not_tier_migration": true,
+        "note": "Existing architecture binds NCERT PDFs via constraints.ncert_source_path. These 14 are provenance_tier='ai' with SOURCE_MISSING paths. A surgical constraints merge does NOT require changing provenance_tier. Upgrading ai→authoritative would be a separate provenance migration and is OUT OF SCOPE."
+      },
+      "generation_gate_impact": {
+        "current": {
+          "syllabus": "IN_SYLLABUS",
+          "declares_ncert": false,
+          "evidence_status_if_resolved": "NCERT_EVIDENCE_NOT_REQUIRED (non-declaring ai blueprint)",
+          "generation_eligible_flag": true,
+          "risk": "Because provenance_tier=ai and no ncert_source_path, the grounding gate does NOT require NCERT evidence today — generation could proceed without canonical evidence."
+        },
+        "after_surgical_path_write": {
+          "declares_ncert": true,
+          "expected_evidence_status": "NCERT_EVIDENCE_READY",
+          "grounding_gate_would_recognize": true,
+          "provider_allowed_only_if": "syllabus IN_SYLLABUS AND evidence NCERT_EVIDENCE_READY"
+        },
+        "conditions_for_GENERATION_READY_classification": [
+          "syllabus gate IN_SYLLABUS (already true)",
+          "taxonomy chapter/topic/concept linked (already true)",
+          "canonical ncert_source_path under NCERT Books (proposed write)",
+          "PDF readable (confirmed)",
+          "resolve_ncert_evidence_pack → NCERT_EVIDENCE_READY (simulated)",
+          "no StudyMaterial fallback"
+        ]
+      },
+      "architecture_note": "Existing mechanism sufficient: constraints.ncert_source_path (+ optional ku_id/ncert_derived). No new table/API. provenance_tier must remain 'ai' unless a separate provenance task authorizes upgrade.",
+      "recommendation": "SAFE_FOR_SURGICAL_EVIDENCE_WRITE",
+      "confidence": "high",
+      "fuzzy_authorized": false
+    },
+    {
+      "blueprint_id": "327ca1ed-12db-44d0-8e6d-176918a344e8",
+      "blueprint_key": "production-seed-v1-2026-09-03-replace-bp-physics-replace-01",
+      "current_provenance": {
+        "population": "SOURCE_MISSING",
+        "provenance_tier": "ai",
+        "ncert_derived": null,
+        "ncert_source_path": null,
+        "declares_ncert_today": false
+      },
+      "subject": "PHYSICS",
+      "class_level": "11",
+      "chapter": "Kinematics",
+      "chapter_id": "b20f8158-cba8-41d2-a88e-3fbd1b2261d2",
+      "topic": "Motion in a Plane",
+      "topic_id": "d00b3234-7356-4cf0-8e65-62ce1dda04e0",
+      "concept": "Projectile Motion",
+      "concept_id": "2b051ef2-8a90-41e9-bb2f-e7dc3daf67bd",
+      "syllabus_mapping": {
+        "status": "IN_SYLLABUS",
+        "subject": "PHYSICS",
+        "unit_number": 2,
+        "unit_name": "KINEMATICS",
+        "topic": "The frame of reference, motion in a straight line, Position-time graph, speed and velocity; Uniform and non-uniform motion, average speed and instantaneous velocity, uniformly accelerated motion, velocity-time, position-time graph, relations for uniformly accelerated motion, Scalars and Vectors, Vector Addition and subtraction, scalar and vector products, Unit Vector, Resolution of a Vector. Relative Velocity, Motion in a plane, Projectile Motion, Uniform Circular Motion.",
+        "topic_id": "PHYSICS:U02:T01"
+      },
+      "canonical_source": {
+        "relative_path": "Class 11/Physics/keph1dd/keph1dd/keph103.pdf",
+        "absolute_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph1dd\\keph1dd\\keph103.pdf",
+        "pdf_exists": true,
+        "pdf_readable": true,
+        "deterministic": true
+      },
+      "ncert_evidence_location": {
+        "pages": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "chars": 11994,
+        "excerpt": "[KU summary]\ners\n3.4\nAddition and subtraction of\nvectors - graphical method\n3.5\nResolution of vectors\n3.6\nVector addition - analytical\nmethod\n3.7\nMotion in a plane\n3.8\nMotion in a plane with\nconstant acceleration\n3.9\nProjectile motion\n3.10 Uniform circular motion\nSummary\nPoints to ponder\nExercises\nReprint 2026-27\n\nPHYSICS\n28\njust as the ordinary numbers*. Fo",
+        "status": "NCERT_EVIDENCE_READY",
+        "detail": "ok chars=11987 keyword_hits=73",
+        "error": null,
+        "deterministic": true
+      },
+      "existing_ku": {
+        "status": "PRESENT_PASSED",
+        "ku_id": "07d8a0ec-4928-4046-bbe1-255cbdae476e",
+        "summary_chars": 500,
+        "linked_in_constraints": false,
+        "reuse": "YES_VIA_CONSTRAINTS_KU_ID"
+      },
+      "existing_evidence_representation": {
+        "constraints_keys": [
+          "avoid_paraphrase_duplicates",
+          "cognitive_operation",
+          "correct_option_count",
+          "enforce_prior_stem_diversity",
+          "explanation_required",
+          "forbidden_templates",
+          "neet_ug_2026",
+          "question_format",
+          "reasoning",
+          "replacement_of",
+          "seed_slot_id"
+        ],
+        "has_ncert_source_path": false,
+        "has_ncert_derived": false,
+        "has_ku_id": false,
+        "has_neet_ug_2026": true,
+        "generation_eligible": true,
+        "db_status": "ACTIVE",
+        "target_count": 1
+      },
+      "answers": {
+        "canonical_source_deterministic": true,
+        "ncert_evidence_deterministic": true,
+        "existing_ku_or_evidence_representation": true,
+        "can_reuse_existing_ku": true,
+        "smallest_safe_schema_compatible_write": {
+          "mechanism": "merge into cms.question_blueprints.constraints JSONB only",
+          "add_or_set": {
+            "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph1dd\\keph1dd\\keph103.pdf",
+            "ncert_source_relative": "Class 11/Physics/keph1dd/keph1dd/keph103.pdf",
+            "ku_id": "07d8a0ec-4928-4046-bbe1-255cbdae476e"
+          },
+          "optional_consistency_flags": {
+            "ncert_derived": true,
+            "note": "Sibling GENERATION_READY blueprints set ncert_derived=true. Path alone already activates blueprint_declares_ncert_source. Setting ncert_derived is optional for gate activation but aligns with canonical peers."
+          },
+          "do_not_create": [
+            "new evidence table",
+            "new API",
+            "new KU",
+            "new blueprint"
+          ]
+        },
+        "would_write_change_provenance_tier": false,
+        "would_write_change_academic_taxonomy": false,
+        "would_write_alter_generation_eligible_flag": false,
+        "would_grounding_gate_recognize": true
+      },
+      "proposed_future_write": {
+        "mechanism": "merge into cms.question_blueprints.constraints JSONB only",
+        "add_or_set": {
+          "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph1dd\\keph1dd\\keph103.pdf",
+          "ncert_source_relative": "Class 11/Physics/keph1dd/keph1dd/keph103.pdf",
+          "ku_id": "07d8a0ec-4928-4046-bbe1-255cbdae476e"
+        },
+        "optional_consistency_flags": {
+          "ncert_derived": true,
+          "note": "Sibling GENERATION_READY blueprints set ncert_derived=true. Path alone already activates blueprint_declares_ncert_source. Setting ncert_derived is optional for gate activation but aligns with canonical peers."
+        },
+        "do_not_create": [
+          "new evidence table",
+          "new API",
+          "new KU",
+          "new blueprint"
+        ]
+      },
+      "fields_that_may_change": [
+        "constraints.ncert_source_path",
+        "constraints.ncert_source_relative",
+        "constraints.ku_id",
+        "constraints.ncert_derived (optional)",
+        "constraints.ncert_section_heading (optional)",
+        "updated_at / updated_by (audit columns only)"
+      ],
+      "fields_that_must_remain_unchanged": [
+        "id",
+        "blueprint_key",
+        "provenance_tier",
+        "subject_id",
+        "chapter_id",
+        "topic_id",
+        "concept_id",
+        "target_count",
+        "generation_eligible (unless separate eligibility policy task)",
+        "constraints.neet_ug_2026",
+        "all unrelated constraint keys",
+        "question rows / KU rows / ECAEP"
+      ],
+      "provenance_impact": {
+        "provenance_tier_change_required": false,
+        "current_provenance_tier": "ai",
+        "ncert_path_is_constraint_binding_not_tier_migration": true,
+        "note": "Existing architecture binds NCERT PDFs via constraints.ncert_source_path. These 14 are provenance_tier='ai' with SOURCE_MISSING paths. A surgical constraints merge does NOT require changing provenance_tier. Upgrading ai→authoritative would be a separate provenance migration and is OUT OF SCOPE."
+      },
+      "generation_gate_impact": {
+        "current": {
+          "syllabus": "IN_SYLLABUS",
+          "declares_ncert": false,
+          "evidence_status_if_resolved": "NCERT_EVIDENCE_NOT_REQUIRED (non-declaring ai blueprint)",
+          "generation_eligible_flag": true,
+          "risk": "Because provenance_tier=ai and no ncert_source_path, the grounding gate does NOT require NCERT evidence today — generation could proceed without canonical evidence."
+        },
+        "after_surgical_path_write": {
+          "declares_ncert": true,
+          "expected_evidence_status": "NCERT_EVIDENCE_READY",
+          "grounding_gate_would_recognize": true,
+          "provider_allowed_only_if": "syllabus IN_SYLLABUS AND evidence NCERT_EVIDENCE_READY"
+        },
+        "conditions_for_GENERATION_READY_classification": [
+          "syllabus gate IN_SYLLABUS (already true)",
+          "taxonomy chapter/topic/concept linked (already true)",
+          "canonical ncert_source_path under NCERT Books (proposed write)",
+          "PDF readable (confirmed)",
+          "resolve_ncert_evidence_pack → NCERT_EVIDENCE_READY (simulated)",
+          "no StudyMaterial fallback"
+        ]
+      },
+      "architecture_note": "Existing mechanism sufficient: constraints.ncert_source_path (+ optional ku_id/ncert_derived). No new table/API. provenance_tier must remain 'ai' unless a separate provenance task authorizes upgrade.",
+      "recommendation": "SAFE_FOR_SURGICAL_EVIDENCE_WRITE",
+      "confidence": "high",
+      "fuzzy_authorized": false
+    }
+  ],
+  "verdict": "YELLOW",
+  "failures": [],
+  "limitations": [
+    "Read-only: no constraints/provenance/KU/blueprint writes performed.",
+    "Recommendations are design guidance for a future authorized surgical write task.",
+    "ncert_derived=true is optional for gate activation (path alone suffices) but matches peer canonical blueprints.",
+    "generation_eligible already True; attaching NCERT path would tighten the grounding gate (good).",
+    "StudyMaterial / 49 provenance-review / 2 Electrostatics cases were not touched."
+  ],
+  "tests": {
+    "pending": false,
+    "suites": [
+      {
+        "name": "syllabus_gate+remediation+grounding+provider",
+        "passed": 65,
+        "failed": 0,
+        "result": "PASS"
+      },
+      {
+        "name": "test_content_factory_p3",
+        "passed": 7,
+        "failed": 0,
+        "result": "PASS"
+      }
+    ],
+    "all_green": true,
+    "provider_call_count_during_audit": 0
+  },
+  "acceptance": {
+    "audited_14": true,
+    "no_db_mutation": true,
+    "no_provider": true,
+    "architecture_inspected": true,
+    "no_new_model": true,
+    "ready_untouched": true,
+    "review_untouched": true
+  }
+}

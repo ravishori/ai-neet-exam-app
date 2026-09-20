@@ -8,16 +8,41 @@ from conftest import csrf_headers
 pytestmark = pytest.mark.asyncio(loop_scope="session")
 
 EMAIL = "auth-test@example.com"
-PASSWORD = "AuthTest!2345"
+# Caller-supplied password validated by validate_password_policy (12+
+# chars, upper, lower, digit, special). Registration since migration
+# a1b2c3d4e5f7 hashes this password directly and sets
+# must_change_password=false.
+PASSWORD = "AuthTestPass!23"
 
 
 async def _register(client):
     resp = await client.post(
         "/api/v1/auth/register",
-        json={"email": EMAIL, "password": PASSWORD, "first_name": "Auth"},
+        json={
+            "email": EMAIL,
+            "first_name": "Auth",
+            "last_name": "Test",
+            "mobile": "9876500001",
+            "state_code": "KARNATAKA",
+            "city": "Bangalore",
+            "password": PASSWORD,
+        },
     )
     assert resp.status_code == 201, resp.text
     return resp.json()["data"]
+
+
+async def test_auth_methods_never_claims_unconfigured_provider(client):
+    resp = await client.get("/api/v1/auth/methods")
+    assert resp.status_code == 200
+    data = resp.json()["data"]
+    assert data["emailPassword"] is True
+    # Google/Microsoft have zero config anywhere in this codebase — must
+    # never be reported as available.
+    assert data["google"] is False
+    assert data["microsoft"] is False
+    assert isinstance(data["mobileOtp"], bool)
+    assert isinstance(data["emailOtp"], bool)
 
 
 async def test_login_with_correct_password_succeeds(client):

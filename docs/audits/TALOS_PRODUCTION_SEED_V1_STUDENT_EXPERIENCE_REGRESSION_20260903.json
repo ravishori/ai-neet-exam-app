@@ -1,0 +1,172 @@
+{
+  "audit": "Production Seed V1 Student Experience / Regression Audit",
+  "date": "2026-09-03",
+  "environment": {
+    "frontend_url": "localhost:3000",
+    "backend_url": "localhost:8000"
+  },
+  "seed_allowlist_hash": "c0cf70846233730ef384188f5b78cced2a7865f76d977a0af6063f803bc8f0c1",
+  "dashboard": {
+    "full_visible": true,
+    "full_enabled": true,
+    "seed_visible": true,
+    "seed_enabled": true,
+    "seed_aria_label": "Practice Seed V1 \u2014 exact 30 published questions",
+    "pass": true
+  },
+  "full_practice_regression": {
+    "practice_ok": true,
+    "practice_status": 201,
+    "attempt_ok": true,
+    "attempt_status": 201,
+    "scope_type": "FULL",
+    "meta_seed_v1_allowlist_sha256": null,
+    "question_count": 30,
+    "assessment_id": "d0f08f25-789e-41eb-b1e4-da50cafd59f2",
+    "attempt_id": "3d593a21-6396-4d5a-b8b1-b92ed97e239f",
+    "expected_scope_ok": true,
+    "url": "http://localhost:3000/student/attempts/3d593a21-6396-4d5a-b8b1-b92ed97e239f",
+    "outside_seed_count": 30,
+    "explanation_after_submit": true,
+    "pass": true
+  },
+  "seed_entry_point": {
+    "practice_ok": true,
+    "practice_status": 201,
+    "attempt_ok": true,
+    "attempt_status": 201,
+    "scope_type": "SEED_V1",
+    "meta_seed_v1_allowlist_sha256": "c0cf70846233730ef384188f5b78cced2a7865f76d977a0af6063f803bc8f0c1",
+    "question_count": 30,
+    "assessment_id": "ab2923d7-c3a2-478c-a358-c291c70d44f0",
+    "attempt_id": "8be657e4-3316-4aa6-9624-ac7fa4033390",
+    "expected_scope_ok": true,
+    "url": "http://localhost:3000/student/attempts/8be657e4-3316-4aa6-9624-ac7fa4033390",
+    "pass": true
+  },
+  "seed_firewall": {
+    "presented_count": 30,
+    "unique_count": 30,
+    "outside_allowlist": 0,
+    "pass": true
+  },
+  "answer_submission": {
+    "pass": true,
+    "hasCorrect": true,
+    "hasIncorrect": true
+  },
+  "explanation_after_submit": {
+    "pass": true,
+    "explanation_heading_count": 1
+  },
+  "next_question": {
+    "next_enabled": true,
+    "pass": true
+  },
+  "progress_and_score": {
+    "status": "SUBMITTED",
+    "pass": true,
+    "correct_count": 14,
+    "incorrect_count": 16
+  },
+  "refresh": {
+    "attempt_id": "625c49cd-3990-4026-9410-acb331b4532a",
+    "url_before": "http://localhost:3000/student/attempts/625c49cd-3990-4026-9410-acb331b4532a",
+    "url_after": "http://localhost:3000/student/attempts/625c49cd-3990-4026-9410-acb331b4532a",
+    "still_same_attempt_route": true,
+    "answered_persisted_server": true,
+    "pass": true
+  },
+  "back_forward_navigation": {
+    "attempt_status_before": "IN_PROGRESS",
+    "attempt_status_after": "IN_PROGRESS",
+    "pass": true
+  },
+  "duplicate_submission": {
+    "first_status": 200,
+    "second_status": 409,
+    "status_final": "SUBMITTED",
+    "pass": true
+  },
+  "session_restart": {
+    "pass": true,
+    "attempt_id_1": "164607b6-df4d-4b6f-96ff-bb741dcec37d",
+    "attempt_id_2": "92b8e0f8-9e9a-4808-8f44-fc29bb521c4d",
+    "sub1_status": 200
+  },
+  "logout_login": {
+    "unauth_me_status": 401,
+    "cross_attempt_status": 404,
+    "cross_denied": true,
+    "pass": true
+  },
+  "concurrent_sessions": {
+    "pass": true,
+    "seed_attempt_id": "fa321844-c6dd-4777-89b2-95af7c844a45",
+    "full_attempt_id": "4e7d64d3-feaa-46ad-a4b5-91f3d15f2dd6",
+    "seed_outside_count": 0
+  },
+  "route_security": {
+    "unknown_scope_rejected": true,
+    "bad_scope_status": 400,
+    "seed_scope_ok": true,
+    "pass": true
+  },
+  "responsive": {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "seed_visible": true,
+    "attempted_render": true,
+    "pass": true
+  },
+  "accessibility_smoke": {
+    "seed_aria_label": "Practice Seed V1 \u2014 exact 30 published questions",
+    "active_after_tab": {
+      "tag": "BUTTON",
+      "aria": "Practice Seed V1 \u2014 exact 30 published questions",
+      "text": "Practice Seed V1"
+    },
+    "pass": true
+  },
+  "runtime": {
+    "pass": true,
+    "notes": [
+      "Primary evidence from audit scripts completed without runtime exceptions.",
+      "Negative test HTTP statuses are expected (duplicate submit 409, unknown scope 400, cross-attempt 404)."
+    ]
+  },
+  "database_consistency": {
+    "pass": true,
+    "recent_seed_submitted_attempts": 9,
+    "protected_unchanged": {
+      "t6d": true,
+      "t6f2": true,
+      "legacy": true
+    },
+    "content_fingerprint_mismatches": []
+  },
+  "publication_firewall": {
+    "pass": true,
+    "published": 30,
+    "approved": null,
+    "draft": null,
+    "ecaep": 0,
+    "unintended_publications": 0
+  },
+  "exact30_integrity": {
+    "pass": true,
+    "allowlist_sha256": "c0cf70846233730ef384188f5b78cced2a7865f76d977a0af6063f803bc8f0c1",
+    "match": true,
+    "fingerprint_mismatches": []
+  },
+  "publication_firewall_details": {
+    "PUBLISHED": 30
+  },
+  "failures": [],
+  "limitations": [
+    "Runtime classification is inferred from audit script success and absence of captured runtime exceptions; exhaustive network tracing per request is not stored."
+  ],
+  "verdict": "GREEN"
+}

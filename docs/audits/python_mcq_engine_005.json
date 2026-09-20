@@ -1,0 +1,3560 @@
+{
+  "task_id": "PYTHON-MCQ-ENGINE-005",
+  "evaluation_id": "python-mcq-engine-005-eval-100-v1",
+  "timestamp": "2026-09-14T14:50:06+0530",
+  "verdict": "GREEN",
+  "engine_version": "python_mcq_engine_v1",
+  "source_root": "D:\\ravishori\\AI Neet Exam App\\NCERT Books",
+  "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt",
+  "fact_pack": {
+    "path": "D:\\ravishori\\AI Neet Exam App\\apps\\backend\\tests\\fixtures\\python_mcq_engine_005_eval_100.json",
+    "pack_id": "python-mcq-engine-005-eval-100-v1",
+    "schema_version": "ncert_fact_pack_v1",
+    "input_sha256": "1ce4a17f06d39db8274861104307d82d0fdff582ecb93a823f1a86e4e33ca706",
+    "fact_count": 100
+  },
+  "selected_facts": [
+    {
+      "fact_id": "ncert-fact-v1-00ea51a8e0a760679af83958b31a77995f2d0b385032a982c0832475d8aca930",
+      "subject": "CHEMISTRY",
+      "class_level": "12",
+      "chapter": "Biomolecules",
+      "topic": "Carbohydrates",
+      "concept": "Classification of Carbohydrates",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 2\\lech2dd\\lech205.pdf",
+      "source_relative_path": "Class 12/Chemistry 2/lech2dd/lech205.pdf",
+      "review_status": "REVIEWED",
+      "fact_type": "ASSOCIATION",
+      "syllabus_topic_id": "CHEMISTRY:U19:T02"
+    },
+    {
+      "fact_id": "ncert-fact-v1-01bd2b36a67fd77ce5cd13cc4207e60dec1107293368b88a2d40d66b575ed4bb",
+      "subject": "BOTANY",
+      "class_level": "11",
+      "chapter": "Photosynthesis in Higher Plants",
+      "topic": "Light Reaction",
+      "concept": "Photophosphorylation",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo111.pdf",
+      "source_relative_path": "Class 11/Biology/kebo1dd/kebo111.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "BIOLOGY:U04:T01"
+    },
+    {
+      "fact_id": "ncert-fact-v1-01ef17bd7a9a40eb44b7b3adbde2ff5f752f77abe079352c2b68c1d0703701f4",
+      "subject": "ZOOLOGY",
+      "class_level": "12",
+      "chapter": "Human Reproduction",
+      "topic": "Gametogenesis",
+      "concept": "Spermatogenesis and Oogenesis",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo102.pdf",
+      "source_relative_path": "Class 12/Biology/lebo1dd/lebo102.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "BIOLOGY:U06:T02"
+    },
+    {
+      "fact_id": "ncert-fact-v1-0352630d58948f6d3a8b21c4a69f171e3b595f347b853cc44da17abdb4e7f6c5",
+      "subject": "BOTANY",
+      "class_level": "11",
+      "chapter": "Plant Kingdom",
+      "topic": "Bryophytes",
+      "concept": "Bryophyte Ecology and Economic Roles",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo103.pdf",
+      "source_relative_path": "Class 11/Biology/kebo1dd/kebo103.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "BIOLOGY:U01:T03"
+    },
+    {
+      "fact_id": "ncert-fact-v1-145d70d856324b7de107fbef8f204fb82fbb7d684ab20002be8d0bd40b57624f",
+      "subject": "ZOOLOGY",
+      "class_level": "11",
+      "chapter": "Breathing and Exchange of Gases",
+      "topic": "Transport of Gases",
+      "concept": "Oxygen dissociation / Bohr effect qualitative",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo114.pdf",
+      "source_relative_path": "Class 11/Biology/kebo1dd/kebo114.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "BIOLOGY:U05:T01"
+    },
+    {
+      "fact_id": "ncert-fact-v1-1618c6030120479081c050decef7920f970f2a1d24d0ab2daaa476577ae27458",
+      "subject": "CHEMISTRY",
+      "class_level": "12",
+      "chapter": "Solutions",
+      "topic": "Colligative Properties",
+      "concept": "Abnormal Molar Mass and van't Hoff Factor",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 1\\lech1dd\\lech101.pdf",
+      "source_relative_path": "Class 12/Chemistry 1/lech1dd/lech101.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "CHEMISTRY:U05:T01"
+    },
+    {
+      "fact_id": "ncert-fact-v1-18b355e58ae94189502c6414b88d025cc1d8e9b36fbe06084f6de7dc7c54f98b",
+      "subject": "ZOOLOGY",
+      "class_level": "11",
+      "chapter": "Structural Organisation in Animals",
+      "topic": "Animal Tissues",
+      "concept": "Epithelial / connective / muscular / neural",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo107.pdf",
+      "source_relative_path": "Class 11/Biology/kebo1dd/kebo107.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "BIOLOGY:U02:T02"
+    },
+    {
+      "fact_id": "ncert-fact-v1-1a57dfcf6449da360fa048aeec699f22d3e60ae2106afb613d3fd3ed1dada69a",
+      "subject": "PHYSICS",
+      "class_level": "11",
+      "chapter": "Work, Energy and Power",
+      "topic": "Power and Collisions",
+      "concept": "Collisions",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph1dd\\keph1dd\\keph105.pdf",
+      "source_relative_path": "Class 11/Physics/keph1dd/keph1dd/keph105.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "PHYSICS:U04:T02"
+    },
+    {
+      "fact_id": "ncert-fact-v1-201186bf3d5f85eb5707d0f048e1ca91e16274abb6674f855e2647d0830d379f",
+      "subject": "CHEMISTRY",
+      "class_level": "12",
+      "chapter": "Coordination Compounds",
+      "topic": "Bonding in Coordination Compounds",
+      "concept": "Crystal Field Theory (CFT)",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 1\\lech1dd\\lech105.pdf",
+      "source_relative_path": "Class 12/Chemistry 1/lech1dd/lech105.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "CHEMISTRY:U12:T01"
+    },
+    {
+      "fact_id": "ncert-fact-v1-2189380d06e99dd00cfb96a3e0a6bd2bb24110bf9c73a05a2e5acf7b597ba4be",
+      "subject": "CHEMISTRY",
+      "class_level": "12",
+      "chapter": "Solutions",
+      "topic": "Colligative Properties",
+      "concept": "Abnormal Molar Mass and van't Hoff Factor",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 1\\lech1dd\\lech101.pdf",
+      "source_relative_path": "Class 12/Chemistry 1/lech1dd/lech101.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "CHEMISTRY:U05:T01"
+    },
+    {
+      "fact_id": "ncert-fact-v1-27a6e3e6d4c981bdf768db8ef46c5a366ea11ea12ef73b8389b8b942e736d652",
+      "subject": "PHYSICS",
+      "class_level": "11",
+      "chapter": "Work, Energy and Power",
+      "topic": "Power and Collisions",
+      "concept": "Collisions",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph1dd\\keph1dd\\keph105.pdf",
+      "source_relative_path": "Class 11/Physics/keph1dd/keph1dd/keph105.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "PHYSICS:U04:T02"
+    },
+    {
+      "fact_id": "ncert-fact-v1-2820fb196d117209708ede4577cca35e22fe2125b8d8c2f8af98e6b370900855",
+      "subject": "PHYSICS",
+      "class_level": "12",
+      "chapter": "Optics",
+      "topic": "Refraction and Lenses",
+      "concept": "Thin Lens Formula",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Physics\\leph2dd\\leph201.pdf",
+      "source_relative_path": "Class 12/Physics/leph2dd/leph201.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "PHYSICS:U16:T01"
+    },
+    {
+      "fact_id": "ncert-fact-v1-2cbb14e27f6ab0aa35b2623866a81de20842e584b39b7d9e21eec8d2824be390",
+      "subject": "PHYSICS",
+      "class_level": "11",
+      "chapter": "Gravitation",
+      "topic": "Universal Law of Gravitation",
+      "concept": "The Gravitational Constant",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph1dd\\keph1dd\\keph107.pdf",
+      "source_relative_path": "Class 11/Physics/keph1dd/keph1dd/keph107.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "PHYSICS:U06:T01"
+    },
+    {
+      "fact_id": "ncert-fact-v1-2d735ed49e28109fa8609de21cc939785489b4e90f4faff9ef236ea0a0fec5c8",
+      "subject": "CHEMISTRY",
+      "class_level": "11",
+      "chapter": "Equilibrium",
+      "topic": "Chemical Equilibrium",
+      "concept": "Equilibrium Constant Kc/Kp",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Chemistry\\kech1dd\\kech1dd\\kech106.pdf",
+      "source_relative_path": "Class 11/Chemistry/kech1dd/kech1dd/kech106.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "CHEMISTRY:U06:T03"
+    },
+    {
+      "fact_id": "ncert-fact-v1-2dbae71348a648d29e882ae86dbdb5a43354f24182c65b84bfbbe93e015fc1cd",
+      "subject": "BOTANY",
+      "class_level": "12",
+      "chapter": "Sexual Reproduction in Flowering Plants",
+      "topic": "Post-Fertilisation: Structures and Events",
+      "concept": "Apomixis and Polyembryony",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo101.pdf",
+      "source_relative_path": "Class 12/Biology/lebo1dd/lebo101.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "BIOLOGY:U06:T01"
+    },
+    {
+      "fact_id": "ncert-fact-v1-2e0b35d9ab7f4c7ffec2cdcf7401a2d71569f010ccfbbe71995db231ca4b3ede",
+      "subject": "BOTANY",
+      "class_level": "11",
+      "chapter": "Photosynthesis in Higher Plants",
+      "topic": "Light Reaction",
+      "concept": "Photophosphorylation",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo111.pdf",
+      "source_relative_path": "Class 11/Biology/kebo1dd/kebo111.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "BIOLOGY:U04:T01"
+    },
+    {
+      "fact_id": "ncert-fact-v1-35fbb88fe8e70391d0e10bb4e89e56b27c875c7718a17364e550f55f4fe628d4",
+      "subject": "BOTANY",
+      "class_level": "12",
+      "chapter": "Molecular Basis of Inheritance",
+      "topic": "Search for Genetic Material and Replication",
+      "concept": "The Genetic Material is DNA",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo105.pdf",
+      "source_relative_path": "Class 12/Biology/lebo1dd/lebo105.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "BIOLOGY:U07:T02"
+    },
+    {
+      "fact_id": "ncert-fact-v1-365cd5bc8c20c35f7c9eb2745410c31dfd4f4fb5c3bab3243b0b76437cc35fcc",
+      "subject": "BOTANY",
+      "class_level": "11",
+      "chapter": "Biomolecules",
+      "topic": "Proteins and Enzymes",
+      "concept": "Enzyme Action",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo109.pdf",
+      "source_relative_path": "Class 11/Biology/kebo1dd/kebo109.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "BIOLOGY:U03:T02"
+    },
+    {
+      "fact_id": "ncert-fact-v1-39ea50b728b51de324f0924fcacfce651f63337fe64db8559f06218eb3fa17bc",
+      "subject": "PHYSICS",
+      "class_level": "11",
+      "chapter": "Kinematics",
+      "topic": "Motion in a Straight Line",
+      "concept": "Kinematic Equations",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph1dd\\keph1dd\\keph102.pdf",
+      "source_relative_path": "Class 11/Physics/keph1dd/keph1dd/keph102.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "PHYSICS:U02:T01"
+    },
+    {
+      "fact_id": "ncert-fact-v1-39f6e3101a92e365b48fbf486d10524881c85e4f135ad648f71d4bccb57ef4cb",
+      "subject": "BOTANY",
+      "class_level": "11",
+      "chapter": "Plant Kingdom",
+      "topic": "Bryophytes",
+      "concept": "Bryophyte Ecology and Economic Roles",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo103.pdf",
+      "source_relative_path": "Class 11/Biology/kebo1dd/kebo103.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "BIOLOGY:U01:T03"
+    },
+    {
+      "fact_id": "ncert-fact-v1-3c5102e5cdd98ba4d824b3455d0125c1d00d4b0be59d5521fba3ed101ef4b192",
+      "subject": "PHYSICS",
+      "class_level": "11",
+      "chapter": "Gravitation",
+      "topic": "Universal Law of Gravitation",
+      "concept": "The Gravitational Constant",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph1dd\\keph1dd\\keph107.pdf",
+      "source_relative_path": "Class 11/Physics/keph1dd/keph1dd/keph107.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "PHYSICS:U06:T01"
+    },
+    {
+      "fact_id": "ncert-fact-v1-3c5454c983ae8c5de2753c4e31c15c9b0e5a0d591ef31370db04aafa1ffdc96d",
+      "subject": "BOTANY",
+      "class_level": "11",
+      "chapter": "Biomolecules",
+      "topic": "Proteins and Enzymes",
+      "concept": "Enzyme Action",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo109.pdf",
+      "source_relative_path": "Class 11/Biology/kebo1dd/kebo109.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "BIOLOGY:U03:T02"
+    },
+    {
+      "fact_id": "ncert-fact-v1-3c88d81875f36e4cd2371a313c86e2403eeca0234a15c20fb2807dbe417d4c27",
+      "subject": "PHYSICS",
+      "class_level": "11",
+      "chapter": "Kinematics",
+      "topic": "Motion in a Straight Line",
+      "concept": "Kinematic Equations",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph1dd\\keph1dd\\keph102.pdf",
+      "source_relative_path": "Class 11/Physics/keph1dd/keph1dd/keph102.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "PHYSICS:U02:T01"
+    },
+    {
+      "fact_id": "ncert-fact-v1-47615d7c2918f9d93dc6b8fa4b6f0d62455b945b77e5747d6e7983ce0f349009",
+      "subject": "CHEMISTRY",
+      "class_level": "12",
+      "chapter": "Chemical Kinetics",
+      "topic": "Temperature Dependence of Rate",
+      "concept": "Arrhenius Equation",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 1\\lech1dd\\lech103.pdf",
+      "source_relative_path": "Class 12/Chemistry 1/lech1dd/lech103.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "CHEMISTRY:U08:T01"
+    },
+    {
+      "fact_id": "ncert-fact-v1-47bdde71f10baac862b408936f8b7c1cd95be6ca798c77701be5da8bf9f48a2c",
+      "subject": "CHEMISTRY",
+      "class_level": "12",
+      "chapter": "Biomolecules",
+      "topic": "Carbohydrates",
+      "concept": "Classification of Carbohydrates",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 2\\lech2dd\\lech205.pdf",
+      "source_relative_path": "Class 12/Chemistry 2/lech2dd/lech205.pdf",
+      "review_status": "REVIEWED",
+      "fact_type": "DEFINITION",
+      "syllabus_topic_id": "CHEMISTRY:U19:T02"
+    },
+    {
+      "fact_id": "ncert-fact-v1-48d4ce8ef94c5c00c2ca725e2a7967c716241463fc7e54872650f506538b8085",
+      "subject": "CHEMISTRY",
+      "class_level": "12",
+      "chapter": "Coordination Compounds",
+      "topic": "Bonding in Coordination Compounds",
+      "concept": "Crystal Field Theory (CFT)",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 1\\lech1dd\\lech105.pdf",
+      "source_relative_path": "Class 12/Chemistry 1/lech1dd/lech105.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "CHEMISTRY:U12:T01"
+    },
+    {
+      "fact_id": "ncert-fact-v1-521c3ca731e31afe5c1ace7ac866dc5848890bc08e819aaabe925d929db9d0c2",
+      "subject": "ZOOLOGY",
+      "class_level": "12",
+      "chapter": "Reproductive Health",
+      "topic": "MTP, STIs and Infertility",
+      "concept": "Infertility",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo103.pdf",
+      "source_relative_path": "Class 12/Biology/lebo1dd/lebo103.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "BIOLOGY:U06:T03"
+    },
+    {
+      "fact_id": "ncert-fact-v1-5623895f3dd3ac93323c2a16f9ac9196b815c207c839ddf407c691f686e459c7",
+      "subject": "CHEMISTRY",
+      "class_level": "12",
+      "chapter": "Solutions",
+      "topic": "Colligative Properties",
+      "concept": "Abnormal Molar Mass and van't Hoff Factor",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 1\\lech1dd\\lech101.pdf",
+      "source_relative_path": "Class 12/Chemistry 1/lech1dd/lech101.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "CHEMISTRY:U05:T01"
+    },
+    {
+      "fact_id": "ncert-fact-v1-5624fa50188c042042db9f15a1f87fc9d9f130c7bf0064a3db531122d0981e02",
+      "subject": "BOTANY",
+      "class_level": "11",
+      "chapter": "Photosynthesis in Higher Plants",
+      "topic": "Light Reaction",
+      "concept": "Photophosphorylation",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo111.pdf",
+      "source_relative_path": "Class 11/Biology/kebo1dd/kebo111.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "BIOLOGY:U04:T01"
+    },
+    {
+      "fact_id": "ncert-fact-v1-5928829a891397c685f063140434b68b86982af1585e67c0483f33837808a66d",
+      "subject": "CHEMISTRY",
+      "class_level": "12",
+      "chapter": "Coordination Compounds",
+      "topic": "Bonding in Coordination Compounds",
+      "concept": "Crystal Field Theory (CFT)",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 1\\lech1dd\\lech105.pdf",
+      "source_relative_path": "Class 12/Chemistry 1/lech1dd/lech105.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "CHEMISTRY:U12:T01"
+    },
+    {
+      "fact_id": "ncert-fact-v1-5e77ca0cef8fdfafb26f547acd5784e5d2585c556ee397026ff5def3f3101870",
+      "subject": "CHEMISTRY",
+      "class_level": "12",
+      "chapter": "Chemical Kinetics",
+      "topic": "Temperature Dependence of Rate",
+      "concept": "Arrhenius Equation",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 1\\lech1dd\\lech103.pdf",
+      "source_relative_path": "Class 12/Chemistry 1/lech1dd/lech103.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "CHEMISTRY:U08:T01"
+    },
+    {
+      "fact_id": "ncert-fact-v1-5f5006ce75dad46ca02a234650866d0a1cdb33092b01f9af992f0f75dbe07b08",
+      "subject": "BOTANY",
+      "class_level": "12",
+      "chapter": "Sexual Reproduction in Flowering Plants",
+      "topic": "Post-Fertilisation: Structures and Events",
+      "concept": "Apomixis and Polyembryony",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo101.pdf",
+      "source_relative_path": "Class 12/Biology/lebo1dd/lebo101.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "BIOLOGY:U06:T01"
+    },
+    {
+      "fact_id": "ncert-fact-v1-610e15d061f0448407c053182d237dd30b4a63268b47f75d0c3628b00315739a",
+      "subject": "PHYSICS",
+      "class_level": "12",
+      "chapter": "Current Electricity",
+      "topic": "Electric Current and Ohm's Law",
+      "concept": "Ohm's Law",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Physics\\leph1dd\\leph103.pdf",
+      "source_relative_path": "Class 12/Physics/leph1dd/leph103.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "PHYSICS:U12:T01"
+    },
+    {
+      "fact_id": "ncert-fact-v1-65fd992b753458f8386805d50b1ca3c684a7ac0c29599ca17ca71696c06b0648",
+      "subject": "ZOOLOGY",
+      "class_level": "11",
+      "chapter": "Structural Organisation in Animals",
+      "topic": "Animal Tissues",
+      "concept": "Epithelial / connective / muscular / neural",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo107.pdf",
+      "source_relative_path": "Class 11/Biology/kebo1dd/kebo107.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "BIOLOGY:U02:T02"
+    },
+    {
+      "fact_id": "ncert-fact-v1-681e5df3f4844e3a427a2468ab8ba105499a20cb1ba54cb90e06f7d2e17efaa7",
+      "subject": "ZOOLOGY",
+      "class_level": "12",
+      "chapter": "Human Reproduction",
+      "topic": "Gametogenesis",
+      "concept": "Spermatogenesis and Oogenesis",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo102.pdf",
+      "source_relative_path": "Class 12/Biology/lebo1dd/lebo102.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "BIOLOGY:U06:T02"
+    },
+    {
+      "fact_id": "ncert-fact-v1-697f998b9280a527e6f05cdca3be0df11d8a6b58d1b5a28b425ccc5fcd2c17c8",
+      "subject": "PHYSICS",
+      "class_level": "12",
+      "chapter": "Optics",
+      "topic": "Refraction and Lenses",
+      "concept": "Thin Lens Formula",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Physics\\leph2dd\\leph201.pdf",
+      "source_relative_path": "Class 12/Physics/leph2dd/leph201.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "PHYSICS:U16:T01"
+    },
+    {
+      "fact_id": "ncert-fact-v1-6da36bf66909366d218f722769cb3646de85c23b72911fecbfab70622d8cf631",
+      "subject": "ZOOLOGY",
+      "class_level": "12",
+      "chapter": "Reproductive Health",
+      "topic": "MTP, STIs and Infertility",
+      "concept": "Infertility",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo103.pdf",
+      "source_relative_path": "Class 12/Biology/lebo1dd/lebo103.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "BIOLOGY:U06:T03"
+    },
+    {
+      "fact_id": "ncert-fact-v1-6dacb3b72faba2ebae11bddcc1ecb9f464bda9a6f132cea527fa21fe7dab2dbc",
+      "subject": "BOTANY",
+      "class_level": "12",
+      "chapter": "Molecular Basis of Inheritance",
+      "topic": "Search for Genetic Material and Replication",
+      "concept": "The Genetic Material is DNA",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo105.pdf",
+      "source_relative_path": "Class 12/Biology/lebo1dd/lebo105.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "BIOLOGY:U07:T02"
+    },
+    {
+      "fact_id": "ncert-fact-v1-6f0202c6694b79535b411d1d07f83abc3ee4ce63c3f20f08fa1dced6f898c6ce",
+      "subject": "CHEMISTRY",
+      "class_level": "12",
+      "chapter": "Coordination Compounds",
+      "topic": "Bonding in Coordination Compounds",
+      "concept": "Crystal Field Theory (CFT)",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 1\\lech1dd\\lech105.pdf",
+      "source_relative_path": "Class 12/Chemistry 1/lech1dd/lech105.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "CHEMISTRY:U12:T01"
+    },
+    {
+      "fact_id": "ncert-fact-v1-6f4d81f90c9ce16554f47c1dd77158e69c8e06b20db887bf0c7ec4d9228bf36d",
+      "subject": "CHEMISTRY",
+      "class_level": "11",
+      "chapter": "Equilibrium",
+      "topic": "Chemical Equilibrium",
+      "concept": "Equilibrium Constant Kc/Kp",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Chemistry\\kech1dd\\kech1dd\\kech106.pdf",
+      "source_relative_path": "Class 11/Chemistry/kech1dd/kech1dd/kech106.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "CHEMISTRY:U06:T03"
+    },
+    {
+      "fact_id": "ncert-fact-v1-6fd15694da8543f9f88f3e704070f209523be688cd9387611e2e44321e525ab4",
+      "subject": "ZOOLOGY",
+      "class_level": "11",
+      "chapter": "Structural Organisation in Animals",
+      "topic": "Animal Tissues",
+      "concept": "Epithelial / connective / muscular / neural",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo107.pdf",
+      "source_relative_path": "Class 11/Biology/kebo1dd/kebo107.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "BIOLOGY:U02:T02"
+    },
+    {
+      "fact_id": "ncert-fact-v1-714d2dda0c485c818e94b7f434a8d6933425fb8fcb8c7236845f9a905dbed8c2",
+      "subject": "BOTANY",
+      "class_level": "11",
+      "chapter": "Plant Kingdom",
+      "topic": "Bryophytes",
+      "concept": "Bryophyte Ecology and Economic Roles",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo103.pdf",
+      "source_relative_path": "Class 11/Biology/kebo1dd/kebo103.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "BIOLOGY:U01:T03"
+    },
+    {
+      "fact_id": "ncert-fact-v1-71ec0e5d9c4d179baf2e49049b1ef135d86a206dcffc22e0e3c67269a433f153",
+      "subject": "ZOOLOGY",
+      "class_level": "12",
+      "chapter": "Human Reproduction",
+      "topic": "Gametogenesis",
+      "concept": "Spermatogenesis and Oogenesis",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo102.pdf",
+      "source_relative_path": "Class 12/Biology/lebo1dd/lebo102.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "BIOLOGY:U06:T02"
+    },
+    {
+      "fact_id": "ncert-fact-v1-74a714afc6e72fe7188eb932ec4df999c1cb3e325d58a0b4450068954eac2f70",
+      "subject": "ZOOLOGY",
+      "class_level": "11",
+      "chapter": "Breathing and Exchange of Gases",
+      "topic": "Transport of Gases",
+      "concept": "Oxygen dissociation / Bohr effect qualitative",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo114.pdf",
+      "source_relative_path": "Class 11/Biology/kebo1dd/kebo114.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "BIOLOGY:U05:T01"
+    },
+    {
+      "fact_id": "ncert-fact-v1-7715c2e2793da46290228d2c54d4b3943a6fab3c2157248cecd0c1eaec32d665",
+      "subject": "ZOOLOGY",
+      "class_level": "12",
+      "chapter": "Human Reproduction",
+      "topic": "Gametogenesis",
+      "concept": "Spermatogenesis and Oogenesis",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo102.pdf",
+      "source_relative_path": "Class 12/Biology/lebo1dd/lebo102.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "BIOLOGY:U06:T02"
+    },
+    {
+      "fact_id": "ncert-fact-v1-7d76260fccb26045aec608204fd9fd4d5e590fd742b62e24a06d698d5634be9f",
+      "subject": "CHEMISTRY",
+      "class_level": "11",
+      "chapter": "Equilibrium",
+      "topic": "Chemical Equilibrium",
+      "concept": "Equilibrium Constant Kc/Kp",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Chemistry\\kech1dd\\kech1dd\\kech106.pdf",
+      "source_relative_path": "Class 11/Chemistry/kech1dd/kech1dd/kech106.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "CHEMISTRY:U06:T03"
+    },
+    {
+      "fact_id": "ncert-fact-v1-82065d92f54d2d6f334daddad85514b0e96408926dda4718c0eca5c439907046",
+      "subject": "ZOOLOGY",
+      "class_level": "11",
+      "chapter": "Breathing and Exchange of Gases",
+      "topic": "Transport of Gases",
+      "concept": "Oxygen dissociation / Bohr effect qualitative",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo114.pdf",
+      "source_relative_path": "Class 11/Biology/kebo1dd/kebo114.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "BIOLOGY:U05:T01"
+    },
+    {
+      "fact_id": "ncert-fact-v1-834bcab80aca63d8153e156281f7d70d0a0df6ad9e32719e113251faf351fba0",
+      "subject": "ZOOLOGY",
+      "class_level": "12",
+      "chapter": "Reproductive Health",
+      "topic": "MTP, STIs and Infertility",
+      "concept": "Infertility",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo103.pdf",
+      "source_relative_path": "Class 12/Biology/lebo1dd/lebo103.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "BIOLOGY:U06:T03"
+    },
+    {
+      "fact_id": "ncert-fact-v1-840d329f9b18e5c69105387b256223e9a8b558daa343b0775669508de6c58e7b",
+      "subject": "PHYSICS",
+      "class_level": "11",
+      "chapter": "Kinematics",
+      "topic": "Motion in a Straight Line",
+      "concept": "Kinematic Equations",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph1dd\\keph1dd\\keph102.pdf",
+      "source_relative_path": "Class 11/Physics/keph1dd/keph1dd/keph102.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "PHYSICS:U02:T01"
+    },
+    {
+      "fact_id": "ncert-fact-v1-8a69a6ebdbedea52237c407835db804dc8ac09d564b497253f4d6d92d6e17e7f",
+      "subject": "BOTANY",
+      "class_level": "11",
+      "chapter": "Biomolecules",
+      "topic": "Proteins and Enzymes",
+      "concept": "Enzyme Action",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo109.pdf",
+      "source_relative_path": "Class 11/Biology/kebo1dd/kebo109.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "BIOLOGY:U03:T02"
+    },
+    {
+      "fact_id": "ncert-fact-v1-8cf231c8f2366c1202c3726f2f6d5d7a3923e58bd8418c6b1ab390e6acf0687b",
+      "subject": "CHEMISTRY",
+      "class_level": "12",
+      "chapter": "Biomolecules",
+      "topic": "Carbohydrates",
+      "concept": "Classification of Carbohydrates",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 2\\lech2dd\\lech205.pdf",
+      "source_relative_path": "Class 12/Chemistry 2/lech2dd/lech205.pdf",
+      "review_status": "REVIEWED",
+      "fact_type": "DEFINITION",
+      "syllabus_topic_id": "CHEMISTRY:U19:T02"
+    },
+    {
+      "fact_id": "ncert-fact-v1-8f06713a8f45b3ca5c3b3b1e0b2d9547e4e7724572f4ec0acd41d7fbbfa71106",
+      "subject": "ZOOLOGY",
+      "class_level": "12",
+      "chapter": "Human Reproduction",
+      "topic": "Gametogenesis",
+      "concept": "Spermatogenesis and Oogenesis",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo102.pdf",
+      "source_relative_path": "Class 12/Biology/lebo1dd/lebo102.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "BIOLOGY:U06:T02"
+    },
+    {
+      "fact_id": "ncert-fact-v1-8f65ed383f02ca04c20e8fea08f4a2443c8a572bb6b763facaf80f8cf3dd769e",
+      "subject": "PHYSICS",
+      "class_level": "11",
+      "chapter": "Work, Energy and Power",
+      "topic": "Power and Collisions",
+      "concept": "Collisions",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph1dd\\keph1dd\\keph105.pdf",
+      "source_relative_path": "Class 11/Physics/keph1dd/keph1dd/keph105.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "PHYSICS:U04:T02"
+    },
+    {
+      "fact_id": "ncert-fact-v1-9266bf050a50ca4b0d267ab26caca9298ed53ab80657899fbb0b8eda3cadc646",
+      "subject": "PHYSICS",
+      "class_level": "11",
+      "chapter": "Work, Energy and Power",
+      "topic": "Power and Collisions",
+      "concept": "Collisions",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph1dd\\keph1dd\\keph105.pdf",
+      "source_relative_path": "Class 11/Physics/keph1dd/keph1dd/keph105.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "PHYSICS:U04:T02"
+    },
+    {
+      "fact_id": "ncert-fact-v1-92982f3a6fb87aa0caeb8228c6bddb3006d82bf9c5c4182ad3d9b387553855b5",
+      "subject": "CHEMISTRY",
+      "class_level": "11",
+      "chapter": "Equilibrium",
+      "topic": "Chemical Equilibrium",
+      "concept": "Equilibrium Constant Kc/Kp",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Chemistry\\kech1dd\\kech1dd\\kech106.pdf",
+      "source_relative_path": "Class 11/Chemistry/kech1dd/kech1dd/kech106.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "CHEMISTRY:U06:T03"
+    },
+    {
+      "fact_id": "ncert-fact-v1-94c1eed4126d13260ef01e2b0d057e00937c0a1a614e4216c2a3fab1a4bfdb43",
+      "subject": "ZOOLOGY",
+      "class_level": "11",
+      "chapter": "Body Fluids and Circulation",
+      "topic": "Cardiac Cycle",
+      "concept": "Cardiac Cycle Phases",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo115.pdf",
+      "source_relative_path": "Class 11/Biology/kebo1dd/kebo115.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "BIOLOGY:U05:T02"
+    },
+    {
+      "fact_id": "ncert-fact-v1-99dffdb25c33d6099d761280d412238a5e736f255cac88b519a2022fd652fa68",
+      "subject": "PHYSICS",
+      "class_level": "11",
+      "chapter": "Gravitation",
+      "topic": "Universal Law of Gravitation",
+      "concept": "The Gravitational Constant",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph1dd\\keph1dd\\keph107.pdf",
+      "source_relative_path": "Class 11/Physics/keph1dd/keph1dd/keph107.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "PHYSICS:U06:T01"
+    },
+    {
+      "fact_id": "ncert-fact-v1-9aa63db58e1163085efe1bbe7b8835e28967596978f178893b3cbc813b4b5c1c",
+      "subject": "CHEMISTRY",
+      "class_level": "12",
+      "chapter": "Biomolecules",
+      "topic": "Carbohydrates",
+      "concept": "Classification of Carbohydrates",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 2\\lech2dd\\lech205.pdf",
+      "source_relative_path": "Class 12/Chemistry 2/lech2dd/lech205.pdf",
+      "review_status": "REVIEWED",
+      "fact_type": "ASSOCIATION",
+      "syllabus_topic_id": "CHEMISTRY:U19:T02"
+    },
+    {
+      "fact_id": "ncert-fact-v1-9c6733c77b7da7c8e92403fca62b2ebda3caa11e38039ad6c5e2d28e4d6f1329",
+      "subject": "CHEMISTRY",
+      "class_level": "12",
+      "chapter": "Chemical Kinetics",
+      "topic": "Temperature Dependence of Rate",
+      "concept": "Arrhenius Equation",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 1\\lech1dd\\lech103.pdf",
+      "source_relative_path": "Class 12/Chemistry 1/lech1dd/lech103.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "CHEMISTRY:U08:T01"
+    },
+    {
+      "fact_id": "ncert-fact-v1-ad5cbe9b85e1a0ae28bc2d3ebea7573d9143a82975ef72b81e646b57250d056e",
+      "subject": "PHYSICS",
+      "class_level": "11",
+      "chapter": "Gravitation",
+      "topic": "Universal Law of Gravitation",
+      "concept": "The Gravitational Constant",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph1dd\\keph1dd\\keph107.pdf",
+      "source_relative_path": "Class 11/Physics/keph1dd/keph1dd/keph107.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "PHYSICS:U06:T01"
+    },
+    {
+      "fact_id": "ncert-fact-v1-ae2f1bf426b27751ce867a11dfeb8c9dcffef53963770e73631a98529418cd2f",
+      "subject": "PHYSICS",
+      "class_level": "11",
+      "chapter": "Kinematics",
+      "topic": "Motion in a Straight Line",
+      "concept": "Kinematic Equations",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph1dd\\keph1dd\\keph102.pdf",
+      "source_relative_path": "Class 11/Physics/keph1dd/keph1dd/keph102.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "PHYSICS:U02:T01"
+    },
+    {
+      "fact_id": "ncert-fact-v1-b088aa9488fcfc9405c61f37c80fbe1d6ece73119f21b8be395484436b280102",
+      "subject": "CHEMISTRY",
+      "class_level": "11",
+      "chapter": "Equilibrium",
+      "topic": "Chemical Equilibrium",
+      "concept": "Equilibrium Constant Kc/Kp",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Chemistry\\kech1dd\\kech1dd\\kech106.pdf",
+      "source_relative_path": "Class 11/Chemistry/kech1dd/kech1dd/kech106.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "CHEMISTRY:U06:T03"
+    },
+    {
+      "fact_id": "ncert-fact-v1-b2176d8dc6d5b51d080838c757c32a738f23af4411c162926fb32119b44c7510",
+      "subject": "PHYSICS",
+      "class_level": "12",
+      "chapter": "Current Electricity",
+      "topic": "Electric Current and Ohm's Law",
+      "concept": "Ohm's Law",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Physics\\leph1dd\\leph103.pdf",
+      "source_relative_path": "Class 12/Physics/leph1dd/leph103.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "PHYSICS:U12:T01"
+    },
+    {
+      "fact_id": "ncert-fact-v1-b2bb426092a70ec0a6c5e55a8d529c0eb8b9e971fe37015b1171506d73b17457",
+      "subject": "PHYSICS",
+      "class_level": "12",
+      "chapter": "Current Electricity",
+      "topic": "Electric Current and Ohm's Law",
+      "concept": "Ohm's Law",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Physics\\leph1dd\\leph103.pdf",
+      "source_relative_path": "Class 12/Physics/leph1dd/leph103.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "PHYSICS:U12:T01"
+    },
+    {
+      "fact_id": "ncert-fact-v1-b4aaf3be24dcb67d6e30536483612edc6b5670c5e9c24835da4f386af97c52f9",
+      "subject": "ZOOLOGY",
+      "class_level": "11",
+      "chapter": "Body Fluids and Circulation",
+      "topic": "Cardiac Cycle",
+      "concept": "Cardiac Cycle Phases",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo115.pdf",
+      "source_relative_path": "Class 11/Biology/kebo1dd/kebo115.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "BIOLOGY:U05:T02"
+    },
+    {
+      "fact_id": "ncert-fact-v1-b7bb0868a0f55764a6c102201349ae6a4fec1deb9587e0d356b2df09a4e457d2",
+      "subject": "ZOOLOGY",
+      "class_level": "11",
+      "chapter": "Structural Organisation in Animals",
+      "topic": "Animal Tissues",
+      "concept": "Epithelial / connective / muscular / neural",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo107.pdf",
+      "source_relative_path": "Class 11/Biology/kebo1dd/kebo107.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "BIOLOGY:U02:T02"
+    },
+    {
+      "fact_id": "ncert-fact-v1-bb59e3dbceb77bda4f96a4ffe7ebf600f515196e2e380e6335c807b438669cac",
+      "subject": "CHEMISTRY",
+      "class_level": "12",
+      "chapter": "Solutions",
+      "topic": "Colligative Properties",
+      "concept": "Abnormal Molar Mass and van't Hoff Factor",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 1\\lech1dd\\lech101.pdf",
+      "source_relative_path": "Class 12/Chemistry 1/lech1dd/lech101.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "CHEMISTRY:U05:T01"
+    },
+    {
+      "fact_id": "ncert-fact-v1-bbc5b0c8a89c07b4f4b429f37d3928a0e4f96590f212c8c2ccedd88d7df11b32",
+      "subject": "CHEMISTRY",
+      "class_level": "12",
+      "chapter": "Solutions",
+      "topic": "Colligative Properties",
+      "concept": "Abnormal Molar Mass and van't Hoff Factor",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 1\\lech1dd\\lech101.pdf",
+      "source_relative_path": "Class 12/Chemistry 1/lech1dd/lech101.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "CHEMISTRY:U05:T01"
+    },
+    {
+      "fact_id": "ncert-fact-v1-bf00d7c5b8c10baaf41cd2d15912dc20ab91b9419b2658259eca874eb67fff2b",
+      "subject": "CHEMISTRY",
+      "class_level": "12",
+      "chapter": "Chemical Kinetics",
+      "topic": "Temperature Dependence of Rate",
+      "concept": "Arrhenius Equation",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 1\\lech1dd\\lech103.pdf",
+      "source_relative_path": "Class 12/Chemistry 1/lech1dd/lech103.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "CHEMISTRY:U08:T01"
+    },
+    {
+      "fact_id": "ncert-fact-v1-bfc41c0f7cbe2d6c11d7472f7e3de9d54080b21c1f96e19741a341f6b3704a58",
+      "subject": "BOTANY",
+      "class_level": "12",
+      "chapter": "Sexual Reproduction in Flowering Plants",
+      "topic": "Post-Fertilisation: Structures and Events",
+      "concept": "Apomixis and Polyembryony",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo101.pdf",
+      "source_relative_path": "Class 12/Biology/lebo1dd/lebo101.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "BIOLOGY:U06:T01"
+    },
+    {
+      "fact_id": "ncert-fact-v1-c0a955b01ad2f789c43a67e80be618c0bdc04b0d3bf8c5014e967dd6206a2203",
+      "subject": "ZOOLOGY",
+      "class_level": "11",
+      "chapter": "Body Fluids and Circulation",
+      "topic": "Cardiac Cycle",
+      "concept": "Cardiac Cycle Phases",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo115.pdf",
+      "source_relative_path": "Class 11/Biology/kebo1dd/kebo115.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "BIOLOGY:U05:T02"
+    },
+    {
+      "fact_id": "ncert-fact-v1-c4a2454b7d7b21b7c1563f191b82bf6295df2f2cbb6f9d5005a3c221d18f57a1",
+      "subject": "ZOOLOGY",
+      "class_level": "12",
+      "chapter": "Reproductive Health",
+      "topic": "MTP, STIs and Infertility",
+      "concept": "Infertility",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo103.pdf",
+      "source_relative_path": "Class 12/Biology/lebo1dd/lebo103.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "BIOLOGY:U06:T03"
+    },
+    {
+      "fact_id": "ncert-fact-v1-ca641c9186f15ef8e94fc98372024fdf6e38ae3a65255a9a3dbc243acdf78994",
+      "subject": "BOTANY",
+      "class_level": "11",
+      "chapter": "Photosynthesis in Higher Plants",
+      "topic": "Light Reaction",
+      "concept": "Photophosphorylation",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo111.pdf",
+      "source_relative_path": "Class 11/Biology/kebo1dd/kebo111.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "BIOLOGY:U04:T01"
+    },
+    {
+      "fact_id": "ncert-fact-v1-ca645fd2786a72d3382170495eec9a710f140948e72f9f680cef99f942b66cbd",
+      "subject": "PHYSICS",
+      "class_level": "12",
+      "chapter": "Optics",
+      "topic": "Refraction and Lenses",
+      "concept": "Thin Lens Formula",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Physics\\leph2dd\\leph201.pdf",
+      "source_relative_path": "Class 12/Physics/leph2dd/leph201.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "PHYSICS:U16:T01"
+    },
+    {
+      "fact_id": "ncert-fact-v1-cb11f339912e9e102a1a2455a504a35361a0c469cdcbd1a62fead123bfbe5182",
+      "subject": "CHEMISTRY",
+      "class_level": "12",
+      "chapter": "Chemical Kinetics",
+      "topic": "Temperature Dependence of Rate",
+      "concept": "Arrhenius Equation",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 1\\lech1dd\\lech103.pdf",
+      "source_relative_path": "Class 12/Chemistry 1/lech1dd/lech103.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "CHEMISTRY:U08:T01"
+    },
+    {
+      "fact_id": "ncert-fact-v1-cccc0493d9dab11ce0aa450a2b0011a105f618262c941aee281be9ab33dfb73a",
+      "subject": "PHYSICS",
+      "class_level": "11",
+      "chapter": "Gravitation",
+      "topic": "Universal Law of Gravitation",
+      "concept": "The Gravitational Constant",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph1dd\\keph1dd\\keph107.pdf",
+      "source_relative_path": "Class 11/Physics/keph1dd/keph1dd/keph107.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "PHYSICS:U06:T01"
+    },
+    {
+      "fact_id": "ncert-fact-v1-ccf2a1556e49a2643f4b31415893c4f9d98b4b562025b2da9177155d83ca7505",
+      "subject": "PHYSICS",
+      "class_level": "11",
+      "chapter": "Work, Energy and Power",
+      "topic": "Power and Collisions",
+      "concept": "Collisions",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph1dd\\keph1dd\\keph105.pdf",
+      "source_relative_path": "Class 11/Physics/keph1dd/keph1dd/keph105.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "PHYSICS:U04:T02"
+    },
+    {
+      "fact_id": "ncert-fact-v1-cf6538bf1cfbd1e3bb5e5b9258ebc4490712ddef574c70a7d2cc5771d00a33f3",
+      "subject": "BOTANY",
+      "class_level": "12",
+      "chapter": "Molecular Basis of Inheritance",
+      "topic": "Search for Genetic Material and Replication",
+      "concept": "The Genetic Material is DNA",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo105.pdf",
+      "source_relative_path": "Class 12/Biology/lebo1dd/lebo105.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "BIOLOGY:U07:T02"
+    },
+    {
+      "fact_id": "ncert-fact-v1-d0d74bcff5115946c42573ca9ed5ca7105e5a21f5b0c300dc22020bbe9a9f971",
+      "subject": "PHYSICS",
+      "class_level": "12",
+      "chapter": "Current Electricity",
+      "topic": "Electric Current and Ohm's Law",
+      "concept": "Ohm's Law",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Physics\\leph1dd\\leph103.pdf",
+      "source_relative_path": "Class 12/Physics/leph1dd/leph103.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "PHYSICS:U12:T01"
+    },
+    {
+      "fact_id": "ncert-fact-v1-d10310e2f164cf2ec3bd7f3035dcf885f9fa654deff9d1e8b4db7d6c78fe6236",
+      "subject": "BOTANY",
+      "class_level": "12",
+      "chapter": "Sexual Reproduction in Flowering Plants",
+      "topic": "Post-Fertilisation: Structures and Events",
+      "concept": "Apomixis and Polyembryony",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo101.pdf",
+      "source_relative_path": "Class 12/Biology/lebo1dd/lebo101.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "BIOLOGY:U06:T01"
+    },
+    {
+      "fact_id": "ncert-fact-v1-d108e9bd5464bf467c67d87e8736aedececd0619a3417ec821113438234b52b8",
+      "subject": "PHYSICS",
+      "class_level": "12",
+      "chapter": "Current Electricity",
+      "topic": "Electric Current and Ohm's Law",
+      "concept": "Ohm's Law",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Physics\\leph1dd\\leph103.pdf",
+      "source_relative_path": "Class 12/Physics/leph1dd/leph103.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "PHYSICS:U12:T01"
+    },
+    {
+      "fact_id": "ncert-fact-v1-d2538af4332e5f65de4bff638c75dfcbb3abdf537ac1d0e05e9c6e7796e92ba7",
+      "subject": "ZOOLOGY",
+      "class_level": "11",
+      "chapter": "Body Fluids and Circulation",
+      "topic": "Cardiac Cycle",
+      "concept": "Cardiac Cycle Phases",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo115.pdf",
+      "source_relative_path": "Class 11/Biology/kebo1dd/kebo115.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "BIOLOGY:U05:T02"
+    },
+    {
+      "fact_id": "ncert-fact-v1-d38a6190a006619a78b0f3e3404c12ec5c523ab2a783d3be84f80aa152ef7b12",
+      "subject": "ZOOLOGY",
+      "class_level": "11",
+      "chapter": "Body Fluids and Circulation",
+      "topic": "Cardiac Cycle",
+      "concept": "Cardiac Cycle Phases",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo115.pdf",
+      "source_relative_path": "Class 11/Biology/kebo1dd/kebo115.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "BIOLOGY:U05:T02"
+    },
+    {
+      "fact_id": "ncert-fact-v1-d44725dd78d0a53052cbf75252e78a59bd6d76fff976c57184c9958b4ea4fcc1",
+      "subject": "BOTANY",
+      "class_level": "11",
+      "chapter": "Biomolecules",
+      "topic": "Proteins and Enzymes",
+      "concept": "Enzyme Action",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo109.pdf",
+      "source_relative_path": "Class 11/Biology/kebo1dd/kebo109.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "BIOLOGY:U03:T02"
+    },
+    {
+      "fact_id": "ncert-fact-v1-d5e52b342b208fc0e034e4f43c5b3839fabb780d19cbe0a7abaee53cbbd6e5ec",
+      "subject": "BOTANY",
+      "class_level": "12",
+      "chapter": "Molecular Basis of Inheritance",
+      "topic": "Search for Genetic Material and Replication",
+      "concept": "The Genetic Material is DNA",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo105.pdf",
+      "source_relative_path": "Class 12/Biology/lebo1dd/lebo105.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "BIOLOGY:U07:T02"
+    },
+    {
+      "fact_id": "ncert-fact-v1-d77a35a63c8fcaf25cec85dbbb8e7a62465495ae8d2712efc3436aa2950e4e54",
+      "subject": "ZOOLOGY",
+      "class_level": "11",
+      "chapter": "Structural Organisation in Animals",
+      "topic": "Animal Tissues",
+      "concept": "Epithelial / connective / muscular / neural",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo107.pdf",
+      "source_relative_path": "Class 11/Biology/kebo1dd/kebo107.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "BIOLOGY:U02:T02"
+    },
+    {
+      "fact_id": "ncert-fact-v1-d8333f900ec58bd7029750299f579b9332fd55075421ecb7ed5229e11c52f87f",
+      "subject": "BOTANY",
+      "class_level": "11",
+      "chapter": "Biomolecules",
+      "topic": "Proteins and Enzymes",
+      "concept": "Enzyme Action",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo109.pdf",
+      "source_relative_path": "Class 11/Biology/kebo1dd/kebo109.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "BIOLOGY:U03:T02"
+    },
+    {
+      "fact_id": "ncert-fact-v1-d96c7a060100bd9fcdb8e3d849566e9d72fd64fea17f4012729a210b7cd96fb8",
+      "subject": "PHYSICS",
+      "class_level": "12",
+      "chapter": "Optics",
+      "topic": "Refraction and Lenses",
+      "concept": "Thin Lens Formula",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Physics\\leph2dd\\leph201.pdf",
+      "source_relative_path": "Class 12/Physics/leph2dd/leph201.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "PHYSICS:U16:T01"
+    },
+    {
+      "fact_id": "ncert-fact-v1-e69917c4941e60c348db859d63b9654168e32fe87b0603497af07e5440afb6e6",
+      "subject": "BOTANY",
+      "class_level": "11",
+      "chapter": "Photosynthesis in Higher Plants",
+      "topic": "Light Reaction",
+      "concept": "Photophosphorylation",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo111.pdf",
+      "source_relative_path": "Class 11/Biology/kebo1dd/kebo111.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "BIOLOGY:U04:T01"
+    },
+    {
+      "fact_id": "ncert-fact-v1-e9f4efa1e27da151c87b32027bdb669634d0d77230844e23240b775883bc00a4",
+      "subject": "CHEMISTRY",
+      "class_level": "12",
+      "chapter": "Biomolecules",
+      "topic": "Carbohydrates",
+      "concept": "Classification of Carbohydrates",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 2\\lech2dd\\lech205.pdf",
+      "source_relative_path": "Class 12/Chemistry 2/lech2dd/lech205.pdf",
+      "review_status": "REVIEWED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "CHEMISTRY:U19:T02"
+    },
+    {
+      "fact_id": "ncert-fact-v1-f013fd8421939a8697bc66ef7dc77aa198622a74b6d7cb6db159589befc16d9d",
+      "subject": "PHYSICS",
+      "class_level": "11",
+      "chapter": "Kinematics",
+      "topic": "Motion in a Straight Line",
+      "concept": "Kinematic Equations",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph1dd\\keph1dd\\keph102.pdf",
+      "source_relative_path": "Class 11/Physics/keph1dd/keph1dd/keph102.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "PHYSICS:U02:T01"
+    },
+    {
+      "fact_id": "ncert-fact-v1-f1a8512a71467554b17d21f6c0a5053f38bd99c20509d7b5e3ffb203f2019275",
+      "subject": "BOTANY",
+      "class_level": "11",
+      "chapter": "Plant Kingdom",
+      "topic": "Bryophytes",
+      "concept": "Bryophyte Ecology and Economic Roles",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo103.pdf",
+      "source_relative_path": "Class 11/Biology/kebo1dd/kebo103.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "BIOLOGY:U01:T03"
+    },
+    {
+      "fact_id": "ncert-fact-v1-f2b475f3b8f4c4a2f6c1cc1899c3d65148f5b1b2f0febca9d1ca5b5a7f64ea50",
+      "subject": "BOTANY",
+      "class_level": "11",
+      "chapter": "Plant Kingdom",
+      "topic": "Bryophytes",
+      "concept": "Bryophyte Ecology and Economic Roles",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo103.pdf",
+      "source_relative_path": "Class 11/Biology/kebo1dd/kebo103.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "BIOLOGY:U01:T03"
+    },
+    {
+      "fact_id": "ncert-fact-v1-f53f708008813bd2f49f5d84896cfa7f9177e52ae08256a1821ebc8e47112eba",
+      "subject": "CHEMISTRY",
+      "class_level": "12",
+      "chapter": "Coordination Compounds",
+      "topic": "Bonding in Coordination Compounds",
+      "concept": "Crystal Field Theory (CFT)",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 1\\lech1dd\\lech105.pdf",
+      "source_relative_path": "Class 12/Chemistry 1/lech1dd/lech105.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "CHEMISTRY:U12:T01"
+    },
+    {
+      "fact_id": "ncert-fact-v1-f941170dd8add71725227020a7ad799168e37f137e8d384f4cd539a1b9ac2898",
+      "subject": "ZOOLOGY",
+      "class_level": "12",
+      "chapter": "Reproductive Health",
+      "topic": "MTP, STIs and Infertility",
+      "concept": "Infertility",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo103.pdf",
+      "source_relative_path": "Class 12/Biology/lebo1dd/lebo103.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "BIOLOGY:U06:T03"
+    },
+    {
+      "fact_id": "ncert-fact-v1-f96ac2e918688c9986c1efb656e8cffbe9df48b6c93494ce9d10fa7c1f53445b",
+      "subject": "PHYSICS",
+      "class_level": "12",
+      "chapter": "Optics",
+      "topic": "Refraction and Lenses",
+      "concept": "Thin Lens Formula",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Physics\\leph2dd\\leph201.pdf",
+      "source_relative_path": "Class 12/Physics/leph2dd/leph201.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "PHYSICS:U16:T01"
+    },
+    {
+      "fact_id": "ncert-fact-v1-fb36446428e570fc216300d6a9269e8abed68d54342f0f228a32b3cb6d19444b",
+      "subject": "ZOOLOGY",
+      "class_level": "11",
+      "chapter": "Breathing and Exchange of Gases",
+      "topic": "Transport of Gases",
+      "concept": "Oxygen dissociation / Bohr effect qualitative",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo114.pdf",
+      "source_relative_path": "Class 11/Biology/kebo1dd/kebo114.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "BIOLOGY:U05:T01"
+    },
+    {
+      "fact_id": "ncert-fact-v1-fc857d84d5e4701184c42310b1656a3aded1755f2653d7cb3c2a7cfc7f577583",
+      "subject": "BOTANY",
+      "class_level": "12",
+      "chapter": "Sexual Reproduction in Flowering Plants",
+      "topic": "Post-Fertilisation: Structures and Events",
+      "concept": "Apomixis and Polyembryony",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo101.pdf",
+      "source_relative_path": "Class 12/Biology/lebo1dd/lebo101.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "BIOLOGY:U06:T01"
+    },
+    {
+      "fact_id": "ncert-fact-v1-fd1ac6836928eb7bc734297b865cf64537665fcd871cd19e2013a1c05a791fc3",
+      "subject": "ZOOLOGY",
+      "class_level": "11",
+      "chapter": "Breathing and Exchange of Gases",
+      "topic": "Transport of Gases",
+      "concept": "Oxygen dissociation / Bohr effect qualitative",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo114.pdf",
+      "source_relative_path": "Class 11/Biology/kebo1dd/kebo114.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "BIOLOGY:U05:T01"
+    },
+    {
+      "fact_id": "ncert-fact-v1-fd2b3c2857a8bdd91029f82a8698e32ed601423a484e8aa56e4c82e3f532f10c",
+      "subject": "BOTANY",
+      "class_level": "12",
+      "chapter": "Molecular Basis of Inheritance",
+      "topic": "Search for Genetic Material and Replication",
+      "concept": "The Genetic Material is DNA",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo105.pdf",
+      "source_relative_path": "Class 12/Biology/lebo1dd/lebo105.pdf",
+      "review_status": "EXTRACTED",
+      "fact_type": "DIRECT_FACT",
+      "syllabus_topic_id": "BIOLOGY:U07:T02"
+    }
+  ],
+  "quality_results": [
+    {
+      "fact_id": "ncert-fact-v1-00ea51a8e0a760679af83958b31a77995f2d0b385032a982c0832475d8aca930",
+      "subject": "CHEMISTRY",
+      "class_level": "12",
+      "chapter": "Biomolecules",
+      "topic": "Carbohydrates",
+      "concept": "Classification of Carbohydrates",
+      "review_status": "REVIEWED",
+      "status": "FACT_APPROVED",
+      "workflow_stage": "MCQ_ELIGIBLE",
+      "mcq_eligible": true,
+      "reason_codes": []
+    },
+    {
+      "fact_id": "ncert-fact-v1-01bd2b36a67fd77ce5cd13cc4207e60dec1107293368b88a2d40d66b575ed4bb",
+      "subject": "BOTANY",
+      "class_level": "11",
+      "chapter": "Photosynthesis in Higher Plants",
+      "topic": "Light Reaction",
+      "concept": "Photophosphorylation",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-01ef17bd7a9a40eb44b7b3adbde2ff5f752f77abe079352c2b68c1d0703701f4",
+      "subject": "ZOOLOGY",
+      "class_level": "12",
+      "chapter": "Human Reproduction",
+      "topic": "Gametogenesis",
+      "concept": "Spermatogenesis and Oogenesis",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-0352630d58948f6d3a8b21c4a69f171e3b595f347b853cc44da17abdb4e7f6c5",
+      "subject": "BOTANY",
+      "class_level": "11",
+      "chapter": "Plant Kingdom",
+      "topic": "Bryophytes",
+      "concept": "Bryophyte Ecology and Economic Roles",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-145d70d856324b7de107fbef8f204fb82fbb7d684ab20002be8d0bd40b57624f",
+      "subject": "ZOOLOGY",
+      "class_level": "11",
+      "chapter": "Breathing and Exchange of Gases",
+      "topic": "Transport of Gases",
+      "concept": "Oxygen dissociation / Bohr effect qualitative",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-1618c6030120479081c050decef7920f970f2a1d24d0ab2daaa476577ae27458",
+      "subject": "CHEMISTRY",
+      "class_level": "12",
+      "chapter": "Solutions",
+      "topic": "Colligative Properties",
+      "concept": "Abnormal Molar Mass and van't Hoff Factor",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-18b355e58ae94189502c6414b88d025cc1d8e9b36fbe06084f6de7dc7c54f98b",
+      "subject": "ZOOLOGY",
+      "class_level": "11",
+      "chapter": "Structural Organisation in Animals",
+      "topic": "Animal Tissues",
+      "concept": "Epithelial / connective / muscular / neural",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-1a57dfcf6449da360fa048aeec699f22d3e60ae2106afb613d3fd3ed1dada69a",
+      "subject": "PHYSICS",
+      "class_level": "11",
+      "chapter": "Work, Energy and Power",
+      "topic": "Power and Collisions",
+      "concept": "Collisions",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-201186bf3d5f85eb5707d0f048e1ca91e16274abb6674f855e2647d0830d379f",
+      "subject": "CHEMISTRY",
+      "class_level": "12",
+      "chapter": "Coordination Compounds",
+      "topic": "Bonding in Coordination Compounds",
+      "concept": "Crystal Field Theory (CFT)",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-2189380d06e99dd00cfb96a3e0a6bd2bb24110bf9c73a05a2e5acf7b597ba4be",
+      "subject": "CHEMISTRY",
+      "class_level": "12",
+      "chapter": "Solutions",
+      "topic": "Colligative Properties",
+      "concept": "Abnormal Molar Mass and van't Hoff Factor",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-27a6e3e6d4c981bdf768db8ef46c5a366ea11ea12ef73b8389b8b942e736d652",
+      "subject": "PHYSICS",
+      "class_level": "11",
+      "chapter": "Work, Energy and Power",
+      "topic": "Power and Collisions",
+      "concept": "Collisions",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-2820fb196d117209708ede4577cca35e22fe2125b8d8c2f8af98e6b370900855",
+      "subject": "PHYSICS",
+      "class_level": "12",
+      "chapter": "Optics",
+      "topic": "Refraction and Lenses",
+      "concept": "Thin Lens Formula",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-2cbb14e27f6ab0aa35b2623866a81de20842e584b39b7d9e21eec8d2824be390",
+      "subject": "PHYSICS",
+      "class_level": "11",
+      "chapter": "Gravitation",
+      "topic": "Universal Law of Gravitation",
+      "concept": "The Gravitational Constant",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-2d735ed49e28109fa8609de21cc939785489b4e90f4faff9ef236ea0a0fec5c8",
+      "subject": "CHEMISTRY",
+      "class_level": "11",
+      "chapter": "Equilibrium",
+      "topic": "Chemical Equilibrium",
+      "concept": "Equilibrium Constant Kc/Kp",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-2dbae71348a648d29e882ae86dbdb5a43354f24182c65b84bfbbe93e015fc1cd",
+      "subject": "BOTANY",
+      "class_level": "12",
+      "chapter": "Sexual Reproduction in Flowering Plants",
+      "topic": "Post-Fertilisation: Structures and Events",
+      "concept": "Apomixis and Polyembryony",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-2e0b35d9ab7f4c7ffec2cdcf7401a2d71569f010ccfbbe71995db231ca4b3ede",
+      "subject": "BOTANY",
+      "class_level": "11",
+      "chapter": "Photosynthesis in Higher Plants",
+      "topic": "Light Reaction",
+      "concept": "Photophosphorylation",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-35fbb88fe8e70391d0e10bb4e89e56b27c875c7718a17364e550f55f4fe628d4",
+      "subject": "BOTANY",
+      "class_level": "12",
+      "chapter": "Molecular Basis of Inheritance",
+      "topic": "Search for Genetic Material and Replication",
+      "concept": "The Genetic Material is DNA",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-365cd5bc8c20c35f7c9eb2745410c31dfd4f4fb5c3bab3243b0b76437cc35fcc",
+      "subject": "BOTANY",
+      "class_level": "11",
+      "chapter": "Biomolecules",
+      "topic": "Proteins and Enzymes",
+      "concept": "Enzyme Action",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-39ea50b728b51de324f0924fcacfce651f63337fe64db8559f06218eb3fa17bc",
+      "subject": "PHYSICS",
+      "class_level": "11",
+      "chapter": "Kinematics",
+      "topic": "Motion in a Straight Line",
+      "concept": "Kinematic Equations",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-39f6e3101a92e365b48fbf486d10524881c85e4f135ad648f71d4bccb57ef4cb",
+      "subject": "BOTANY",
+      "class_level": "11",
+      "chapter": "Plant Kingdom",
+      "topic": "Bryophytes",
+      "concept": "Bryophyte Ecology and Economic Roles",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-3c5102e5cdd98ba4d824b3455d0125c1d00d4b0be59d5521fba3ed101ef4b192",
+      "subject": "PHYSICS",
+      "class_level": "11",
+      "chapter": "Gravitation",
+      "topic": "Universal Law of Gravitation",
+      "concept": "The Gravitational Constant",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-3c5454c983ae8c5de2753c4e31c15c9b0e5a0d591ef31370db04aafa1ffdc96d",
+      "subject": "BOTANY",
+      "class_level": "11",
+      "chapter": "Biomolecules",
+      "topic": "Proteins and Enzymes",
+      "concept": "Enzyme Action",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-3c88d81875f36e4cd2371a313c86e2403eeca0234a15c20fb2807dbe417d4c27",
+      "subject": "PHYSICS",
+      "class_level": "11",
+      "chapter": "Kinematics",
+      "topic": "Motion in a Straight Line",
+      "concept": "Kinematic Equations",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-47615d7c2918f9d93dc6b8fa4b6f0d62455b945b77e5747d6e7983ce0f349009",
+      "subject": "CHEMISTRY",
+      "class_level": "12",
+      "chapter": "Chemical Kinetics",
+      "topic": "Temperature Dependence of Rate",
+      "concept": "Arrhenius Equation",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-47bdde71f10baac862b408936f8b7c1cd95be6ca798c77701be5da8bf9f48a2c",
+      "subject": "CHEMISTRY",
+      "class_level": "12",
+      "chapter": "Biomolecules",
+      "topic": "Carbohydrates",
+      "concept": "Classification of Carbohydrates",
+      "review_status": "REVIEWED",
+      "status": "FACT_APPROVED",
+      "workflow_stage": "MCQ_ELIGIBLE",
+      "mcq_eligible": true,
+      "reason_codes": []
+    },
+    {
+      "fact_id": "ncert-fact-v1-48d4ce8ef94c5c00c2ca725e2a7967c716241463fc7e54872650f506538b8085",
+      "subject": "CHEMISTRY",
+      "class_level": "12",
+      "chapter": "Coordination Compounds",
+      "topic": "Bonding in Coordination Compounds",
+      "concept": "Crystal Field Theory (CFT)",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-521c3ca731e31afe5c1ace7ac866dc5848890bc08e819aaabe925d929db9d0c2",
+      "subject": "ZOOLOGY",
+      "class_level": "12",
+      "chapter": "Reproductive Health",
+      "topic": "MTP, STIs and Infertility",
+      "concept": "Infertility",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-5623895f3dd3ac93323c2a16f9ac9196b815c207c839ddf407c691f686e459c7",
+      "subject": "CHEMISTRY",
+      "class_level": "12",
+      "chapter": "Solutions",
+      "topic": "Colligative Properties",
+      "concept": "Abnormal Molar Mass and van't Hoff Factor",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-5624fa50188c042042db9f15a1f87fc9d9f130c7bf0064a3db531122d0981e02",
+      "subject": "BOTANY",
+      "class_level": "11",
+      "chapter": "Photosynthesis in Higher Plants",
+      "topic": "Light Reaction",
+      "concept": "Photophosphorylation",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-5928829a891397c685f063140434b68b86982af1585e67c0483f33837808a66d",
+      "subject": "CHEMISTRY",
+      "class_level": "12",
+      "chapter": "Coordination Compounds",
+      "topic": "Bonding in Coordination Compounds",
+      "concept": "Crystal Field Theory (CFT)",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-5e77ca0cef8fdfafb26f547acd5784e5d2585c556ee397026ff5def3f3101870",
+      "subject": "CHEMISTRY",
+      "class_level": "12",
+      "chapter": "Chemical Kinetics",
+      "topic": "Temperature Dependence of Rate",
+      "concept": "Arrhenius Equation",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-5f5006ce75dad46ca02a234650866d0a1cdb33092b01f9af992f0f75dbe07b08",
+      "subject": "BOTANY",
+      "class_level": "12",
+      "chapter": "Sexual Reproduction in Flowering Plants",
+      "topic": "Post-Fertilisation: Structures and Events",
+      "concept": "Apomixis and Polyembryony",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-610e15d061f0448407c053182d237dd30b4a63268b47f75d0c3628b00315739a",
+      "subject": "PHYSICS",
+      "class_level": "12",
+      "chapter": "Current Electricity",
+      "topic": "Electric Current and Ohm's Law",
+      "concept": "Ohm's Law",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-65fd992b753458f8386805d50b1ca3c684a7ac0c29599ca17ca71696c06b0648",
+      "subject": "ZOOLOGY",
+      "class_level": "11",
+      "chapter": "Structural Organisation in Animals",
+      "topic": "Animal Tissues",
+      "concept": "Epithelial / connective / muscular / neural",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-681e5df3f4844e3a427a2468ab8ba105499a20cb1ba54cb90e06f7d2e17efaa7",
+      "subject": "ZOOLOGY",
+      "class_level": "12",
+      "chapter": "Human Reproduction",
+      "topic": "Gametogenesis",
+      "concept": "Spermatogenesis and Oogenesis",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-697f998b9280a527e6f05cdca3be0df11d8a6b58d1b5a28b425ccc5fcd2c17c8",
+      "subject": "PHYSICS",
+      "class_level": "12",
+      "chapter": "Optics",
+      "topic": "Refraction and Lenses",
+      "concept": "Thin Lens Formula",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-6da36bf66909366d218f722769cb3646de85c23b72911fecbfab70622d8cf631",
+      "subject": "ZOOLOGY",
+      "class_level": "12",
+      "chapter": "Reproductive Health",
+      "topic": "MTP, STIs and Infertility",
+      "concept": "Infertility",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-6dacb3b72faba2ebae11bddcc1ecb9f464bda9a6f132cea527fa21fe7dab2dbc",
+      "subject": "BOTANY",
+      "class_level": "12",
+      "chapter": "Molecular Basis of Inheritance",
+      "topic": "Search for Genetic Material and Replication",
+      "concept": "The Genetic Material is DNA",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-6f0202c6694b79535b411d1d07f83abc3ee4ce63c3f20f08fa1dced6f898c6ce",
+      "subject": "CHEMISTRY",
+      "class_level": "12",
+      "chapter": "Coordination Compounds",
+      "topic": "Bonding in Coordination Compounds",
+      "concept": "Crystal Field Theory (CFT)",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-6f4d81f90c9ce16554f47c1dd77158e69c8e06b20db887bf0c7ec4d9228bf36d",
+      "subject": "CHEMISTRY",
+      "class_level": "11",
+      "chapter": "Equilibrium",
+      "topic": "Chemical Equilibrium",
+      "concept": "Equilibrium Constant Kc/Kp",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-6fd15694da8543f9f88f3e704070f209523be688cd9387611e2e44321e525ab4",
+      "subject": "ZOOLOGY",
+      "class_level": "11",
+      "chapter": "Structural Organisation in Animals",
+      "topic": "Animal Tissues",
+      "concept": "Epithelial / connective / muscular / neural",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-714d2dda0c485c818e94b7f434a8d6933425fb8fcb8c7236845f9a905dbed8c2",
+      "subject": "BOTANY",
+      "class_level": "11",
+      "chapter": "Plant Kingdom",
+      "topic": "Bryophytes",
+      "concept": "Bryophyte Ecology and Economic Roles",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-71ec0e5d9c4d179baf2e49049b1ef135d86a206dcffc22e0e3c67269a433f153",
+      "subject": "ZOOLOGY",
+      "class_level": "12",
+      "chapter": "Human Reproduction",
+      "topic": "Gametogenesis",
+      "concept": "Spermatogenesis and Oogenesis",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-74a714afc6e72fe7188eb932ec4df999c1cb3e325d58a0b4450068954eac2f70",
+      "subject": "ZOOLOGY",
+      "class_level": "11",
+      "chapter": "Breathing and Exchange of Gases",
+      "topic": "Transport of Gases",
+      "concept": "Oxygen dissociation / Bohr effect qualitative",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-7715c2e2793da46290228d2c54d4b3943a6fab3c2157248cecd0c1eaec32d665",
+      "subject": "ZOOLOGY",
+      "class_level": "12",
+      "chapter": "Human Reproduction",
+      "topic": "Gametogenesis",
+      "concept": "Spermatogenesis and Oogenesis",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-7d76260fccb26045aec608204fd9fd4d5e590fd742b62e24a06d698d5634be9f",
+      "subject": "CHEMISTRY",
+      "class_level": "11",
+      "chapter": "Equilibrium",
+      "topic": "Chemical Equilibrium",
+      "concept": "Equilibrium Constant Kc/Kp",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-82065d92f54d2d6f334daddad85514b0e96408926dda4718c0eca5c439907046",
+      "subject": "ZOOLOGY",
+      "class_level": "11",
+      "chapter": "Breathing and Exchange of Gases",
+      "topic": "Transport of Gases",
+      "concept": "Oxygen dissociation / Bohr effect qualitative",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-834bcab80aca63d8153e156281f7d70d0a0df6ad9e32719e113251faf351fba0",
+      "subject": "ZOOLOGY",
+      "class_level": "12",
+      "chapter": "Reproductive Health",
+      "topic": "MTP, STIs and Infertility",
+      "concept": "Infertility",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-840d329f9b18e5c69105387b256223e9a8b558daa343b0775669508de6c58e7b",
+      "subject": "PHYSICS",
+      "class_level": "11",
+      "chapter": "Kinematics",
+      "topic": "Motion in a Straight Line",
+      "concept": "Kinematic Equations",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-8a69a6ebdbedea52237c407835db804dc8ac09d564b497253f4d6d92d6e17e7f",
+      "subject": "BOTANY",
+      "class_level": "11",
+      "chapter": "Biomolecules",
+      "topic": "Proteins and Enzymes",
+      "concept": "Enzyme Action",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-8cf231c8f2366c1202c3726f2f6d5d7a3923e58bd8418c6b1ab390e6acf0687b",
+      "subject": "CHEMISTRY",
+      "class_level": "12",
+      "chapter": "Biomolecules",
+      "topic": "Carbohydrates",
+      "concept": "Classification of Carbohydrates",
+      "review_status": "REVIEWED",
+      "status": "FACT_APPROVED",
+      "workflow_stage": "MCQ_ELIGIBLE",
+      "mcq_eligible": true,
+      "reason_codes": []
+    },
+    {
+      "fact_id": "ncert-fact-v1-8f06713a8f45b3ca5c3b3b1e0b2d9547e4e7724572f4ec0acd41d7fbbfa71106",
+      "subject": "ZOOLOGY",
+      "class_level": "12",
+      "chapter": "Human Reproduction",
+      "topic": "Gametogenesis",
+      "concept": "Spermatogenesis and Oogenesis",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-8f65ed383f02ca04c20e8fea08f4a2443c8a572bb6b763facaf80f8cf3dd769e",
+      "subject": "PHYSICS",
+      "class_level": "11",
+      "chapter": "Work, Energy and Power",
+      "topic": "Power and Collisions",
+      "concept": "Collisions",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-9266bf050a50ca4b0d267ab26caca9298ed53ab80657899fbb0b8eda3cadc646",
+      "subject": "PHYSICS",
+      "class_level": "11",
+      "chapter": "Work, Energy and Power",
+      "topic": "Power and Collisions",
+      "concept": "Collisions",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-92982f3a6fb87aa0caeb8228c6bddb3006d82bf9c5c4182ad3d9b387553855b5",
+      "subject": "CHEMISTRY",
+      "class_level": "11",
+      "chapter": "Equilibrium",
+      "topic": "Chemical Equilibrium",
+      "concept": "Equilibrium Constant Kc/Kp",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-94c1eed4126d13260ef01e2b0d057e00937c0a1a614e4216c2a3fab1a4bfdb43",
+      "subject": "ZOOLOGY",
+      "class_level": "11",
+      "chapter": "Body Fluids and Circulation",
+      "topic": "Cardiac Cycle",
+      "concept": "Cardiac Cycle Phases",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-99dffdb25c33d6099d761280d412238a5e736f255cac88b519a2022fd652fa68",
+      "subject": "PHYSICS",
+      "class_level": "11",
+      "chapter": "Gravitation",
+      "topic": "Universal Law of Gravitation",
+      "concept": "The Gravitational Constant",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-9aa63db58e1163085efe1bbe7b8835e28967596978f178893b3cbc813b4b5c1c",
+      "subject": "CHEMISTRY",
+      "class_level": "12",
+      "chapter": "Biomolecules",
+      "topic": "Carbohydrates",
+      "concept": "Classification of Carbohydrates",
+      "review_status": "REVIEWED",
+      "status": "FACT_APPROVED",
+      "workflow_stage": "MCQ_ELIGIBLE",
+      "mcq_eligible": true,
+      "reason_codes": []
+    },
+    {
+      "fact_id": "ncert-fact-v1-9c6733c77b7da7c8e92403fca62b2ebda3caa11e38039ad6c5e2d28e4d6f1329",
+      "subject": "CHEMISTRY",
+      "class_level": "12",
+      "chapter": "Chemical Kinetics",
+      "topic": "Temperature Dependence of Rate",
+      "concept": "Arrhenius Equation",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-ad5cbe9b85e1a0ae28bc2d3ebea7573d9143a82975ef72b81e646b57250d056e",
+      "subject": "PHYSICS",
+      "class_level": "11",
+      "chapter": "Gravitation",
+      "topic": "Universal Law of Gravitation",
+      "concept": "The Gravitational Constant",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-ae2f1bf426b27751ce867a11dfeb8c9dcffef53963770e73631a98529418cd2f",
+      "subject": "PHYSICS",
+      "class_level": "11",
+      "chapter": "Kinematics",
+      "topic": "Motion in a Straight Line",
+      "concept": "Kinematic Equations",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-b088aa9488fcfc9405c61f37c80fbe1d6ece73119f21b8be395484436b280102",
+      "subject": "CHEMISTRY",
+      "class_level": "11",
+      "chapter": "Equilibrium",
+      "topic": "Chemical Equilibrium",
+      "concept": "Equilibrium Constant Kc/Kp",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-b2176d8dc6d5b51d080838c757c32a738f23af4411c162926fb32119b44c7510",
+      "subject": "PHYSICS",
+      "class_level": "12",
+      "chapter": "Current Electricity",
+      "topic": "Electric Current and Ohm's Law",
+      "concept": "Ohm's Law",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-b2bb426092a70ec0a6c5e55a8d529c0eb8b9e971fe37015b1171506d73b17457",
+      "subject": "PHYSICS",
+      "class_level": "12",
+      "chapter": "Current Electricity",
+      "topic": "Electric Current and Ohm's Law",
+      "concept": "Ohm's Law",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-b4aaf3be24dcb67d6e30536483612edc6b5670c5e9c24835da4f386af97c52f9",
+      "subject": "ZOOLOGY",
+      "class_level": "11",
+      "chapter": "Body Fluids and Circulation",
+      "topic": "Cardiac Cycle",
+      "concept": "Cardiac Cycle Phases",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-b7bb0868a0f55764a6c102201349ae6a4fec1deb9587e0d356b2df09a4e457d2",
+      "subject": "ZOOLOGY",
+      "class_level": "11",
+      "chapter": "Structural Organisation in Animals",
+      "topic": "Animal Tissues",
+      "concept": "Epithelial / connective / muscular / neural",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-bb59e3dbceb77bda4f96a4ffe7ebf600f515196e2e380e6335c807b438669cac",
+      "subject": "CHEMISTRY",
+      "class_level": "12",
+      "chapter": "Solutions",
+      "topic": "Colligative Properties",
+      "concept": "Abnormal Molar Mass and van't Hoff Factor",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-bbc5b0c8a89c07b4f4b429f37d3928a0e4f96590f212c8c2ccedd88d7df11b32",
+      "subject": "CHEMISTRY",
+      "class_level": "12",
+      "chapter": "Solutions",
+      "topic": "Colligative Properties",
+      "concept": "Abnormal Molar Mass and van't Hoff Factor",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-bf00d7c5b8c10baaf41cd2d15912dc20ab91b9419b2658259eca874eb67fff2b",
+      "subject": "CHEMISTRY",
+      "class_level": "12",
+      "chapter": "Chemical Kinetics",
+      "topic": "Temperature Dependence of Rate",
+      "concept": "Arrhenius Equation",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-bfc41c0f7cbe2d6c11d7472f7e3de9d54080b21c1f96e19741a341f6b3704a58",
+      "subject": "BOTANY",
+      "class_level": "12",
+      "chapter": "Sexual Reproduction in Flowering Plants",
+      "topic": "Post-Fertilisation: Structures and Events",
+      "concept": "Apomixis and Polyembryony",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-c0a955b01ad2f789c43a67e80be618c0bdc04b0d3bf8c5014e967dd6206a2203",
+      "subject": "ZOOLOGY",
+      "class_level": "11",
+      "chapter": "Body Fluids and Circulation",
+      "topic": "Cardiac Cycle",
+      "concept": "Cardiac Cycle Phases",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-c4a2454b7d7b21b7c1563f191b82bf6295df2f2cbb6f9d5005a3c221d18f57a1",
+      "subject": "ZOOLOGY",
+      "class_level": "12",
+      "chapter": "Reproductive Health",
+      "topic": "MTP, STIs and Infertility",
+      "concept": "Infertility",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-ca641c9186f15ef8e94fc98372024fdf6e38ae3a65255a9a3dbc243acdf78994",
+      "subject": "BOTANY",
+      "class_level": "11",
+      "chapter": "Photosynthesis in Higher Plants",
+      "topic": "Light Reaction",
+      "concept": "Photophosphorylation",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-ca645fd2786a72d3382170495eec9a710f140948e72f9f680cef99f942b66cbd",
+      "subject": "PHYSICS",
+      "class_level": "12",
+      "chapter": "Optics",
+      "topic": "Refraction and Lenses",
+      "concept": "Thin Lens Formula",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-cb11f339912e9e102a1a2455a504a35361a0c469cdcbd1a62fead123bfbe5182",
+      "subject": "CHEMISTRY",
+      "class_level": "12",
+      "chapter": "Chemical Kinetics",
+      "topic": "Temperature Dependence of Rate",
+      "concept": "Arrhenius Equation",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-cccc0493d9dab11ce0aa450a2b0011a105f618262c941aee281be9ab33dfb73a",
+      "subject": "PHYSICS",
+      "class_level": "11",
+      "chapter": "Gravitation",
+      "topic": "Universal Law of Gravitation",
+      "concept": "The Gravitational Constant",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-ccf2a1556e49a2643f4b31415893c4f9d98b4b562025b2da9177155d83ca7505",
+      "subject": "PHYSICS",
+      "class_level": "11",
+      "chapter": "Work, Energy and Power",
+      "topic": "Power and Collisions",
+      "concept": "Collisions",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-cf6538bf1cfbd1e3bb5e5b9258ebc4490712ddef574c70a7d2cc5771d00a33f3",
+      "subject": "BOTANY",
+      "class_level": "12",
+      "chapter": "Molecular Basis of Inheritance",
+      "topic": "Search for Genetic Material and Replication",
+      "concept": "The Genetic Material is DNA",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-d0d74bcff5115946c42573ca9ed5ca7105e5a21f5b0c300dc22020bbe9a9f971",
+      "subject": "PHYSICS",
+      "class_level": "12",
+      "chapter": "Current Electricity",
+      "topic": "Electric Current and Ohm's Law",
+      "concept": "Ohm's Law",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-d10310e2f164cf2ec3bd7f3035dcf885f9fa654deff9d1e8b4db7d6c78fe6236",
+      "subject": "BOTANY",
+      "class_level": "12",
+      "chapter": "Sexual Reproduction in Flowering Plants",
+      "topic": "Post-Fertilisation: Structures and Events",
+      "concept": "Apomixis and Polyembryony",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-d108e9bd5464bf467c67d87e8736aedececd0619a3417ec821113438234b52b8",
+      "subject": "PHYSICS",
+      "class_level": "12",
+      "chapter": "Current Electricity",
+      "topic": "Electric Current and Ohm's Law",
+      "concept": "Ohm's Law",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-d2538af4332e5f65de4bff638c75dfcbb3abdf537ac1d0e05e9c6e7796e92ba7",
+      "subject": "ZOOLOGY",
+      "class_level": "11",
+      "chapter": "Body Fluids and Circulation",
+      "topic": "Cardiac Cycle",
+      "concept": "Cardiac Cycle Phases",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-d38a6190a006619a78b0f3e3404c12ec5c523ab2a783d3be84f80aa152ef7b12",
+      "subject": "ZOOLOGY",
+      "class_level": "11",
+      "chapter": "Body Fluids and Circulation",
+      "topic": "Cardiac Cycle",
+      "concept": "Cardiac Cycle Phases",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-d44725dd78d0a53052cbf75252e78a59bd6d76fff976c57184c9958b4ea4fcc1",
+      "subject": "BOTANY",
+      "class_level": "11",
+      "chapter": "Biomolecules",
+      "topic": "Proteins and Enzymes",
+      "concept": "Enzyme Action",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-d5e52b342b208fc0e034e4f43c5b3839fabb780d19cbe0a7abaee53cbbd6e5ec",
+      "subject": "BOTANY",
+      "class_level": "12",
+      "chapter": "Molecular Basis of Inheritance",
+      "topic": "Search for Genetic Material and Replication",
+      "concept": "The Genetic Material is DNA",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-d77a35a63c8fcaf25cec85dbbb8e7a62465495ae8d2712efc3436aa2950e4e54",
+      "subject": "ZOOLOGY",
+      "class_level": "11",
+      "chapter": "Structural Organisation in Animals",
+      "topic": "Animal Tissues",
+      "concept": "Epithelial / connective / muscular / neural",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-d8333f900ec58bd7029750299f579b9332fd55075421ecb7ed5229e11c52f87f",
+      "subject": "BOTANY",
+      "class_level": "11",
+      "chapter": "Biomolecules",
+      "topic": "Proteins and Enzymes",
+      "concept": "Enzyme Action",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-d96c7a060100bd9fcdb8e3d849566e9d72fd64fea17f4012729a210b7cd96fb8",
+      "subject": "PHYSICS",
+      "class_level": "12",
+      "chapter": "Optics",
+      "topic": "Refraction and Lenses",
+      "concept": "Thin Lens Formula",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-e69917c4941e60c348db859d63b9654168e32fe87b0603497af07e5440afb6e6",
+      "subject": "BOTANY",
+      "class_level": "11",
+      "chapter": "Photosynthesis in Higher Plants",
+      "topic": "Light Reaction",
+      "concept": "Photophosphorylation",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-e9f4efa1e27da151c87b32027bdb669634d0d77230844e23240b775883bc00a4",
+      "subject": "CHEMISTRY",
+      "class_level": "12",
+      "chapter": "Biomolecules",
+      "topic": "Carbohydrates",
+      "concept": "Classification of Carbohydrates",
+      "review_status": "REVIEWED",
+      "status": "FACT_APPROVED",
+      "workflow_stage": "MCQ_ELIGIBLE",
+      "mcq_eligible": true,
+      "reason_codes": []
+    },
+    {
+      "fact_id": "ncert-fact-v1-f013fd8421939a8697bc66ef7dc77aa198622a74b6d7cb6db159589befc16d9d",
+      "subject": "PHYSICS",
+      "class_level": "11",
+      "chapter": "Kinematics",
+      "topic": "Motion in a Straight Line",
+      "concept": "Kinematic Equations",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-f1a8512a71467554b17d21f6c0a5053f38bd99c20509d7b5e3ffb203f2019275",
+      "subject": "BOTANY",
+      "class_level": "11",
+      "chapter": "Plant Kingdom",
+      "topic": "Bryophytes",
+      "concept": "Bryophyte Ecology and Economic Roles",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-f2b475f3b8f4c4a2f6c1cc1899c3d65148f5b1b2f0febca9d1ca5b5a7f64ea50",
+      "subject": "BOTANY",
+      "class_level": "11",
+      "chapter": "Plant Kingdom",
+      "topic": "Bryophytes",
+      "concept": "Bryophyte Ecology and Economic Roles",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-f53f708008813bd2f49f5d84896cfa7f9177e52ae08256a1821ebc8e47112eba",
+      "subject": "CHEMISTRY",
+      "class_level": "12",
+      "chapter": "Coordination Compounds",
+      "topic": "Bonding in Coordination Compounds",
+      "concept": "Crystal Field Theory (CFT)",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-f941170dd8add71725227020a7ad799168e37f137e8d384f4cd539a1b9ac2898",
+      "subject": "ZOOLOGY",
+      "class_level": "12",
+      "chapter": "Reproductive Health",
+      "topic": "MTP, STIs and Infertility",
+      "concept": "Infertility",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-f96ac2e918688c9986c1efb656e8cffbe9df48b6c93494ce9d10fa7c1f53445b",
+      "subject": "PHYSICS",
+      "class_level": "12",
+      "chapter": "Optics",
+      "topic": "Refraction and Lenses",
+      "concept": "Thin Lens Formula",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-fb36446428e570fc216300d6a9269e8abed68d54342f0f228a32b3cb6d19444b",
+      "subject": "ZOOLOGY",
+      "class_level": "11",
+      "chapter": "Breathing and Exchange of Gases",
+      "topic": "Transport of Gases",
+      "concept": "Oxygen dissociation / Bohr effect qualitative",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-fc857d84d5e4701184c42310b1656a3aded1755f2653d7cb3c2a7cfc7f577583",
+      "subject": "BOTANY",
+      "class_level": "12",
+      "chapter": "Sexual Reproduction in Flowering Plants",
+      "topic": "Post-Fertilisation: Structures and Events",
+      "concept": "Apomixis and Polyembryony",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-fd1ac6836928eb7bc734297b865cf64537665fcd871cd19e2013a1c05a791fc3",
+      "subject": "ZOOLOGY",
+      "class_level": "11",
+      "chapter": "Breathing and Exchange of Gases",
+      "topic": "Transport of Gases",
+      "concept": "Oxygen dissociation / Bohr effect qualitative",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "fact_id": "ncert-fact-v1-fd2b3c2857a8bdd91029f82a8698e32ed601423a484e8aa56e4c82e3f532f10c",
+      "subject": "BOTANY",
+      "class_level": "12",
+      "chapter": "Molecular Basis of Inheritance",
+      "topic": "Search for Genetic Material and Replication",
+      "concept": "The Genetic Material is DNA",
+      "review_status": "EXTRACTED",
+      "status": "FACT_REVIEW_REQUIRED",
+      "workflow_stage": "REVIEW_REQUIRED",
+      "mcq_eligible": false,
+      "reason_codes": [
+        "CONCEPT_BINDING_REVIEW_REQUIRED",
+        "FACT_REVIEW_REQUIRED"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "fact_id": "ncert-fact-v1-00ea51a8e0a760679af83958b31a77995f2d0b385032a982c0832475d8aca930",
+      "question_type": "CONTROLLED_ASSOCIATION",
+      "status": "DRAFT",
+      "body": {
+        "stem": "Which association gives the NCERT-stated hydrolysis products of sucrose?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Maltose — two glucose units"
+          },
+          {
+            "label": "B",
+            "text": "Lactose — galactose and glucose"
+          },
+          {
+            "label": "C",
+            "text": "Sucrose — glucose and fructose"
+          },
+          {
+            "label": "D",
+            "text": "Starch — polymer of alpha-glucose"
+          }
+        ],
+        "correct_option": "C",
+        "explanation": "NCERT states that sucrose hydrolysis gives glucose and fructose.",
+        "difficulty": "easy",
+        "bloom_level": "remember",
+        "pyq_year": null,
+        "ncert_evidence": {
+          "verification_level": "SOURCE_TEXT_VERIFIED",
+          "source_document": "Class 12/Chemistry 2/lech2dd/lech205.pdf",
+          "document_version": null,
+          "class_level": "12",
+          "chapter": "Biomolecules",
+          "section": null,
+          "page_number": null,
+          "source_excerpt": "sucrose on hydrolysis gives one molecule of glucose and one molecule of fructose",
+          "verification_method": "deterministic_python_explicit_quote",
+          "source_pdf_relpath": "Class 12/Chemistry 2/lech2dd/lech205.pdf"
+        },
+        "provenance": {
+          "origin": "deterministic_python",
+          "source": "canonical_ncert",
+          "batch_id": null,
+          "validation_process": "python_mcq_engine_v1",
+          "verification_process": "generated_not_independently_ncert_certified",
+          "class_level": "12",
+          "chapter": "Biomolecules",
+          "section": null
+        },
+        "numerical_evidence": null,
+        "calculation_check": null,
+        "diagram_svg": null,
+        "diagram_description": null,
+        "visual_spec": null
+      },
+      "subject": "CHEMISTRY",
+      "class_level": "12",
+      "chapter": "Biomolecules",
+      "topic": "Carbohydrates",
+      "concept": "Classification of Carbohydrates",
+      "source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 2\\lech2dd\\lech205.pdf",
+      "source_relative_path": "Class 12/Chemistry 2/lech2dd/lech205.pdf",
+      "evidence_pages": [],
+      "syllabus_binding": {
+        "status": "IN_SYLLABUS",
+        "subject": "CHEMISTRY",
+        "unit_number": 19,
+        "unit_name": "BIOMOLECULES",
+        "topic": "Carbohydrates: Classification; aldoses and ketoses: monosaccharides (glucose and fructose) and constituent monosaccharides of oligosaccharides (sucrose, lactose, and maltose).",
+        "topic_id": "CHEMISTRY:U19:T02",
+        "unit_id": "CHEMISTRY:U19",
+        "source_line": 479,
+        "detail": "exact topic_id match",
+        "reasons": []
+      },
+      "generation_method": "deterministic_python",
+      "engine_version": "python_mcq_engine_v1",
+      "seed": 20260914,
+      "stem_hash": "b714a6776ec706193618b8ca915b9b9f97cf330db3900defece9d8dfbdaad64c",
+      "option_stem_hash": "defcff2ea64dbb126b21c76324900b62fc7f94c37a12499b34db4accdce8d986"
+    },
+    {
+      "fact_id": "ncert-fact-v1-47bdde71f10baac862b408936f8b7c1cd95be6ca798c77701be5da8bf9f48a2c",
+      "question_type": "DEFINITION_IDENTIFICATION",
+      "status": "DRAFT",
+      "body": {
+        "stem": "Which carbohydrate class yields a large number of monosaccharide units on hydrolysis?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Polysaccharide"
+          },
+          {
+            "label": "B",
+            "text": "Oligosaccharide"
+          },
+          {
+            "label": "C",
+            "text": "Disaccharide"
+          },
+          {
+            "label": "D",
+            "text": "Monosaccharide"
+          }
+        ],
+        "correct_option": "A",
+        "explanation": "NCERT defines this class as polysaccharides.",
+        "difficulty": "easy",
+        "bloom_level": "remember",
+        "pyq_year": null,
+        "ncert_evidence": {
+          "verification_level": "SOURCE_TEXT_VERIFIED",
+          "source_document": "Class 12/Chemistry 2/lech2dd/lech205.pdf",
+          "document_version": null,
+          "class_level": "12",
+          "chapter": "Biomolecules",
+          "section": null,
+          "page_number": null,
+          "source_excerpt": "are called polysaccharides",
+          "verification_method": "deterministic_python_explicit_quote",
+          "source_pdf_relpath": "Class 12/Chemistry 2/lech2dd/lech205.pdf"
+        },
+        "provenance": {
+          "origin": "deterministic_python",
+          "source": "canonical_ncert",
+          "batch_id": null,
+          "validation_process": "python_mcq_engine_v1",
+          "verification_process": "generated_not_independently_ncert_certified",
+          "class_level": "12",
+          "chapter": "Biomolecules",
+          "section": null
+        },
+        "numerical_evidence": null,
+        "calculation_check": null,
+        "diagram_svg": null,
+        "diagram_description": null,
+        "visual_spec": null
+      },
+      "subject": "CHEMISTRY",
+      "class_level": "12",
+      "chapter": "Biomolecules",
+      "topic": "Carbohydrates",
+      "concept": "Classification of Carbohydrates",
+      "source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 2\\lech2dd\\lech205.pdf",
+      "source_relative_path": "Class 12/Chemistry 2/lech2dd/lech205.pdf",
+      "evidence_pages": [],
+      "syllabus_binding": {
+        "status": "IN_SYLLABUS",
+        "subject": "CHEMISTRY",
+        "unit_number": 19,
+        "unit_name": "BIOMOLECULES",
+        "topic": "Carbohydrates: Classification; aldoses and ketoses: monosaccharides (glucose and fructose) and constituent monosaccharides of oligosaccharides (sucrose, lactose, and maltose).",
+        "topic_id": "CHEMISTRY:U19:T02",
+        "unit_id": "CHEMISTRY:U19",
+        "source_line": 479,
+        "detail": "exact topic_id match",
+        "reasons": []
+      },
+      "generation_method": "deterministic_python",
+      "engine_version": "python_mcq_engine_v1",
+      "seed": 20260914,
+      "stem_hash": "539becc2a35bef93c36a91a2f07879a4a8043e8dc64f9e65babbd8d188708060",
+      "option_stem_hash": "fee39b27033c5852a4aaeb80b95fc05fbd1bb60325a584aa25d281987292d7ce"
+    },
+    {
+      "fact_id": "ncert-fact-v1-8cf231c8f2366c1202c3726f2f6d5d7a3923e58bd8418c6b1ab390e6acf0687b",
+      "question_type": "DEFINITION_IDENTIFICATION",
+      "status": "DRAFT",
+      "body": {
+        "stem": "What is a carbohydrate that cannot be hydrolysed further to a simpler polyhydroxy aldehyde or ketone called?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Disaccharide"
+          },
+          {
+            "label": "B",
+            "text": "Monosaccharide"
+          },
+          {
+            "label": "C",
+            "text": "Polysaccharide"
+          },
+          {
+            "label": "D",
+            "text": "Oligosaccharide"
+          }
+        ],
+        "correct_option": "B",
+        "explanation": "NCERT defines such a carbohydrate as a monosaccharide.",
+        "difficulty": "easy",
+        "bloom_level": "remember",
+        "pyq_year": null,
+        "ncert_evidence": {
+          "verification_level": "SOURCE_TEXT_VERIFIED",
+          "source_document": "Class 12/Chemistry 2/lech2dd/lech205.pdf",
+          "document_version": null,
+          "class_level": "12",
+          "chapter": "Biomolecules",
+          "section": null,
+          "page_number": null,
+          "source_excerpt": "is called a monosaccharide",
+          "verification_method": "deterministic_python_explicit_quote",
+          "source_pdf_relpath": "Class 12/Chemistry 2/lech2dd/lech205.pdf"
+        },
+        "provenance": {
+          "origin": "deterministic_python",
+          "source": "canonical_ncert",
+          "batch_id": null,
+          "validation_process": "python_mcq_engine_v1",
+          "verification_process": "generated_not_independently_ncert_certified",
+          "class_level": "12",
+          "chapter": "Biomolecules",
+          "section": null
+        },
+        "numerical_evidence": null,
+        "calculation_check": null,
+        "diagram_svg": null,
+        "diagram_description": null,
+        "visual_spec": null
+      },
+      "subject": "CHEMISTRY",
+      "class_level": "12",
+      "chapter": "Biomolecules",
+      "topic": "Carbohydrates",
+      "concept": "Classification of Carbohydrates",
+      "source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 2\\lech2dd\\lech205.pdf",
+      "source_relative_path": "Class 12/Chemistry 2/lech2dd/lech205.pdf",
+      "evidence_pages": [],
+      "syllabus_binding": {
+        "status": "IN_SYLLABUS",
+        "subject": "CHEMISTRY",
+        "unit_number": 19,
+        "unit_name": "BIOMOLECULES",
+        "topic": "Carbohydrates: Classification; aldoses and ketoses: monosaccharides (glucose and fructose) and constituent monosaccharides of oligosaccharides (sucrose, lactose, and maltose).",
+        "topic_id": "CHEMISTRY:U19:T02",
+        "unit_id": "CHEMISTRY:U19",
+        "source_line": 479,
+        "detail": "exact topic_id match",
+        "reasons": []
+      },
+      "generation_method": "deterministic_python",
+      "engine_version": "python_mcq_engine_v1",
+      "seed": 20260914,
+      "stem_hash": "b073184ccc7f27ad62b22d93478b922caa93a7b222a22d8f396b41d188e7d4c3",
+      "option_stem_hash": "ff515aeedd515367565ecca272c9a93d756a3051f18c1debc7f8a5a0b1d41ecf"
+    },
+    {
+      "fact_id": "ncert-fact-v1-9aa63db58e1163085efe1bbe7b8835e28967596978f178893b3cbc813b4b5c1c",
+      "question_type": "CONTROLLED_ASSOCIATION",
+      "status": "DRAFT",
+      "body": {
+        "stem": "Which association gives the NCERT-stated hydrolysis products of maltose?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Starch — polymer of alpha-glucose"
+          },
+          {
+            "label": "B",
+            "text": "Sucrose — glucose and fructose"
+          },
+          {
+            "label": "C",
+            "text": "Maltose — two glucose units"
+          },
+          {
+            "label": "D",
+            "text": "Lactose — galactose and glucose"
+          }
+        ],
+        "correct_option": "C",
+        "explanation": "NCERT states that maltose gives two molecules of glucose on hydrolysis.",
+        "difficulty": "easy",
+        "bloom_level": "remember",
+        "pyq_year": null,
+        "ncert_evidence": {
+          "verification_level": "SOURCE_TEXT_VERIFIED",
+          "source_document": "Class 12/Chemistry 2/lech2dd/lech205.pdf",
+          "document_version": null,
+          "class_level": "12",
+          "chapter": "Biomolecules",
+          "section": null,
+          "page_number": null,
+          "source_excerpt": "maltose gives two molecules of only glucose",
+          "verification_method": "deterministic_python_explicit_quote",
+          "source_pdf_relpath": "Class 12/Chemistry 2/lech2dd/lech205.pdf"
+        },
+        "provenance": {
+          "origin": "deterministic_python",
+          "source": "canonical_ncert",
+          "batch_id": null,
+          "validation_process": "python_mcq_engine_v1",
+          "verification_process": "generated_not_independently_ncert_certified",
+          "class_level": "12",
+          "chapter": "Biomolecules",
+          "section": null
+        },
+        "numerical_evidence": null,
+        "calculation_check": null,
+        "diagram_svg": null,
+        "diagram_description": null,
+        "visual_spec": null
+      },
+      "subject": "CHEMISTRY",
+      "class_level": "12",
+      "chapter": "Biomolecules",
+      "topic": "Carbohydrates",
+      "concept": "Classification of Carbohydrates",
+      "source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 2\\lech2dd\\lech205.pdf",
+      "source_relative_path": "Class 12/Chemistry 2/lech2dd/lech205.pdf",
+      "evidence_pages": [],
+      "syllabus_binding": {
+        "status": "IN_SYLLABUS",
+        "subject": "CHEMISTRY",
+        "unit_number": 19,
+        "unit_name": "BIOMOLECULES",
+        "topic": "Carbohydrates: Classification; aldoses and ketoses: monosaccharides (glucose and fructose) and constituent monosaccharides of oligosaccharides (sucrose, lactose, and maltose).",
+        "topic_id": "CHEMISTRY:U19:T02",
+        "unit_id": "CHEMISTRY:U19",
+        "source_line": 479,
+        "detail": "exact topic_id match",
+        "reasons": []
+      },
+      "generation_method": "deterministic_python",
+      "engine_version": "python_mcq_engine_v1",
+      "seed": 20260914,
+      "stem_hash": "0bb5397922a47912e6557d362322b61c8bb678c0cbe0cfdf9f03ec0bef76af3b",
+      "option_stem_hash": "273d13441858b835eee8497454f1f2c867b61fd3f74d153859ba787f3f3cb94b"
+    },
+    {
+      "fact_id": "ncert-fact-v1-e9f4efa1e27da151c87b32027bdb669634d0d77230844e23240b775883bc00a4",
+      "question_type": "DIRECT_FACT",
+      "status": "DRAFT",
+      "body": {
+        "stem": "Which carbohydrate is explicitly identified by NCERT as a non-reducing sugar?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Fructose"
+          },
+          {
+            "label": "B",
+            "text": "Glucose"
+          },
+          {
+            "label": "C",
+            "text": "Ribose"
+          },
+          {
+            "label": "D",
+            "text": "Sucrose"
+          }
+        ],
+        "correct_option": "D",
+        "explanation": "NCERT states that sucrose is non-reducing because its reducing groups form the glycosidic bond.",
+        "difficulty": "easy",
+        "bloom_level": "remember",
+        "pyq_year": null,
+        "ncert_evidence": {
+          "verification_level": "SOURCE_TEXT_VERIFIED",
+          "source_document": "Class 12/Chemistry 2/lech2dd/lech205.pdf",
+          "document_version": null,
+          "class_level": "12",
+          "chapter": "Biomolecules",
+          "section": null,
+          "page_number": null,
+          "source_excerpt": "sucrose is a non reducing sugar",
+          "verification_method": "deterministic_python_explicit_quote",
+          "source_pdf_relpath": "Class 12/Chemistry 2/lech2dd/lech205.pdf"
+        },
+        "provenance": {
+          "origin": "deterministic_python",
+          "source": "canonical_ncert",
+          "batch_id": null,
+          "validation_process": "python_mcq_engine_v1",
+          "verification_process": "generated_not_independently_ncert_certified",
+          "class_level": "12",
+          "chapter": "Biomolecules",
+          "section": null
+        },
+        "numerical_evidence": null,
+        "calculation_check": null,
+        "diagram_svg": null,
+        "diagram_description": null,
+        "visual_spec": null
+      },
+      "subject": "CHEMISTRY",
+      "class_level": "12",
+      "chapter": "Biomolecules",
+      "topic": "Carbohydrates",
+      "concept": "Classification of Carbohydrates",
+      "source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 2\\lech2dd\\lech205.pdf",
+      "source_relative_path": "Class 12/Chemistry 2/lech2dd/lech205.pdf",
+      "evidence_pages": [],
+      "syllabus_binding": {
+        "status": "IN_SYLLABUS",
+        "subject": "CHEMISTRY",
+        "unit_number": 19,
+        "unit_name": "BIOMOLECULES",
+        "topic": "Carbohydrates: Classification; aldoses and ketoses: monosaccharides (glucose and fructose) and constituent monosaccharides of oligosaccharides (sucrose, lactose, and maltose).",
+        "topic_id": "CHEMISTRY:U19:T02",
+        "unit_id": "CHEMISTRY:U19",
+        "source_line": 479,
+        "detail": "exact topic_id match",
+        "reasons": []
+      },
+      "generation_method": "deterministic_python",
+      "engine_version": "python_mcq_engine_v1",
+      "seed": 20260914,
+      "stem_hash": "562de4dd49544191aa5c1006b84d42ba3ae1a8bba2cf03b316527ed469aa5619",
+      "option_stem_hash": "108f6da602934d9830afe310ac474e099500d50b19c164ac906ec6603d234a67"
+    }
+  ],
+  "independent_verification": {
+    "counts": {
+      "PASS": 5,
+      "FAIL": 0,
+      "AMBIGUOUS": 0
+    },
+    "records": [
+      {
+        "fact_id": "ncert-fact-v1-00ea51a8e0a760679af83958b31a77995f2d0b385032a982c0832475d8aca930",
+        "subject": "CHEMISTRY",
+        "chapter": "Biomolecules",
+        "question_type": "CONTROLLED_ASSOCIATION",
+        "classification": "PASS",
+        "reason": "Independent PDF review supports stem/key/options with unique keyed answer.",
+        "checks": {
+          "cited_pdf_exists": true,
+          "inside_canonical_root": true,
+          "stem_supported": true,
+          "correct_answer_supported": true,
+          "all_options_supported_or_safely_derived": true,
+          "exactly_one_defensible": true,
+          "taxonomy_mapping_valid": true,
+          "syllabus_binding_valid": true,
+          "provenance_preserved": true,
+          "no_unsupported_enrichment": true
+        },
+        "stem_hash": "b714a6776ec706193618b8ca915b9b9f97cf330db3900defece9d8dfbdaad64c"
+      },
+      {
+        "fact_id": "ncert-fact-v1-47bdde71f10baac862b408936f8b7c1cd95be6ca798c77701be5da8bf9f48a2c",
+        "subject": "CHEMISTRY",
+        "chapter": "Biomolecules",
+        "question_type": "DEFINITION_IDENTIFICATION",
+        "classification": "PASS",
+        "reason": "Independent PDF review supports stem/key/options with unique keyed answer.",
+        "checks": {
+          "cited_pdf_exists": true,
+          "inside_canonical_root": true,
+          "stem_supported": true,
+          "correct_answer_supported": true,
+          "all_options_supported_or_safely_derived": true,
+          "exactly_one_defensible": true,
+          "taxonomy_mapping_valid": true,
+          "syllabus_binding_valid": true,
+          "provenance_preserved": true,
+          "no_unsupported_enrichment": true
+        },
+        "stem_hash": "539becc2a35bef93c36a91a2f07879a4a8043e8dc64f9e65babbd8d188708060"
+      },
+      {
+        "fact_id": "ncert-fact-v1-8cf231c8f2366c1202c3726f2f6d5d7a3923e58bd8418c6b1ab390e6acf0687b",
+        "subject": "CHEMISTRY",
+        "chapter": "Biomolecules",
+        "question_type": "DEFINITION_IDENTIFICATION",
+        "classification": "PASS",
+        "reason": "Independent PDF review supports stem/key/options with unique keyed answer.",
+        "checks": {
+          "cited_pdf_exists": true,
+          "inside_canonical_root": true,
+          "stem_supported": true,
+          "correct_answer_supported": true,
+          "all_options_supported_or_safely_derived": true,
+          "exactly_one_defensible": true,
+          "taxonomy_mapping_valid": true,
+          "syllabus_binding_valid": true,
+          "provenance_preserved": true,
+          "no_unsupported_enrichment": true
+        },
+        "stem_hash": "b073184ccc7f27ad62b22d93478b922caa93a7b222a22d8f396b41d188e7d4c3"
+      },
+      {
+        "fact_id": "ncert-fact-v1-9aa63db58e1163085efe1bbe7b8835e28967596978f178893b3cbc813b4b5c1c",
+        "subject": "CHEMISTRY",
+        "chapter": "Biomolecules",
+        "question_type": "CONTROLLED_ASSOCIATION",
+        "classification": "PASS",
+        "reason": "Independent PDF review supports stem/key/options with unique keyed answer.",
+        "checks": {
+          "cited_pdf_exists": true,
+          "inside_canonical_root": true,
+          "stem_supported": true,
+          "correct_answer_supported": true,
+          "all_options_supported_or_safely_derived": true,
+          "exactly_one_defensible": true,
+          "taxonomy_mapping_valid": true,
+          "syllabus_binding_valid": true,
+          "provenance_preserved": true,
+          "no_unsupported_enrichment": true
+        },
+        "stem_hash": "0bb5397922a47912e6557d362322b61c8bb678c0cbe0cfdf9f03ec0bef76af3b"
+      },
+      {
+        "fact_id": "ncert-fact-v1-e9f4efa1e27da151c87b32027bdb669634d0d77230844e23240b775883bc00a4",
+        "subject": "CHEMISTRY",
+        "chapter": "Biomolecules",
+        "question_type": "DIRECT_FACT",
+        "classification": "PASS",
+        "reason": "Independent PDF review supports stem/key/options with unique keyed answer.",
+        "checks": {
+          "cited_pdf_exists": true,
+          "inside_canonical_root": true,
+          "stem_supported": true,
+          "correct_answer_supported": true,
+          "all_options_supported_or_safely_derived": true,
+          "exactly_one_defensible": true,
+          "taxonomy_mapping_valid": true,
+          "syllabus_binding_valid": true,
+          "provenance_preserved": true,
+          "no_unsupported_enrichment": true
+        },
+        "stem_hash": "562de4dd49544191aa5c1006b84d42ba3ae1a8bba2cf03b316527ed469aa5619"
+      }
+    ]
+  },
+  "metrics": {
+    "facts_selected": 100,
+    "FACT_APPROVED": 5,
+    "FACT_REVIEW_REQUIRED": 95,
+    "FACT_REJECTED": 0,
+    "reason_code_distribution": {
+      "CONCEPT_BINDING_REVIEW_REQUIRED": 95,
+      "FACT_REVIEW_REQUIRED": 95
+    },
+    "candidates_attempted": 5,
+    "candidates_created": 5,
+    "generation_skips": 95,
+    "skip_reasons": {
+      "FACT_REVIEW_REQUIRED": 95
+    },
+    "question_type_distribution": {
+      "CONTROLLED_ASSOCIATION": 2,
+      "DEFINITION_IDENTIFICATION": 2,
+      "DIRECT_FACT": 1
+    },
+    "independent_PASS": 5,
+    "independent_FAIL": 0,
+    "independent_AMBIGUOUS": 0,
+    "verified_yield": 1.0,
+    "verified_yield_label": "READ-ONLY EVALUATION VERIFIED YIELD",
+    "duplicate_rate": 0.0,
+    "ambiguity_rate": 0.0,
+    "subject_distribution": {
+      "CHEMISTRY": 25,
+      "BOTANY": 25,
+      "ZOOLOGY": 25,
+      "PHYSICS": 25
+    },
+    "class_distribution": {
+      "12": 50,
+      "11": 50
+    },
+    "chapter_distribution": {
+      "CHEMISTRY:Biomolecules": 5,
+      "BOTANY:Photosynthesis in Higher Plants": 5,
+      "ZOOLOGY:Human Reproduction": 5,
+      "BOTANY:Plant Kingdom": 5,
+      "ZOOLOGY:Breathing and Exchange of Gases": 5,
+      "CHEMISTRY:Solutions": 5,
+      "ZOOLOGY:Structural Organisation in Animals": 5,
+      "PHYSICS:Work, Energy and Power": 5,
+      "CHEMISTRY:Coordination Compounds": 5,
+      "PHYSICS:Optics": 5,
+      "PHYSICS:Gravitation": 5,
+      "CHEMISTRY:Equilibrium": 5,
+      "BOTANY:Sexual Reproduction in Flowering Plants": 5,
+      "BOTANY:Molecular Basis of Inheritance": 5,
+      "BOTANY:Biomolecules": 5,
+      "PHYSICS:Kinematics": 5,
+      "CHEMISTRY:Chemical Kinetics": 5,
+      "ZOOLOGY:Reproductive Health": 5,
+      "PHYSICS:Current Electricity": 5,
+      "ZOOLOGY:Body Fluids and Circulation": 5
+    },
+    "chapter_count": 20,
+    "reproducible": true,
+    "first_run_count": 5,
+    "second_run_count": 5,
+    "runtime_seconds": 63.314,
+    "average_generation_time_seconds": 0.5039,
+    "average_verification_time_seconds": 0.051,
+    "peak_memory_bytes": 29958681,
+    "eligible_facts": 5,
+    "shortfall_to_100_generated": 95
+  },
+  "database_before": {
+    "question_statuses": {
+      "DRAFT": 5552,
+      "PUBLISHED": 1479,
+      "SUPERSEDED": 6,
+      "IN_REVIEW": 111
+    },
+    "question_state_fingerprint": "741ce41e97dc4869c66b7bba5db5b3aa",
+    "unmapped_draft": 5034,
+    "blueprints": 445,
+    "knowledge_units": 381,
+    "content_reviews": 1824,
+    "engine_003_batches": 0
+  },
+  "database_after": {
+    "question_statuses": {
+      "DRAFT": 5552,
+      "PUBLISHED": 1479,
+      "SUPERSEDED": 6,
+      "IN_REVIEW": 111
+    },
+    "question_state_fingerprint": "741ce41e97dc4869c66b7bba5db5b3aa",
+    "unmapped_draft": 5034,
+    "blueprints": 445,
+    "knowledge_units": 381,
+    "content_reviews": 1824,
+    "engine_003_batches": 0
+  },
+  "production_safety_unchanged": true,
+  "provider_api_calls": 0,
+  "api_cost_inr": 0,
+  "production_db_mutations": 0,
+  "worker_observation": {
+    "start": "UNKNOWN",
+    "end": "UNKNOWN",
+    "continuity_claimed": false
+  },
+  "tests": {
+    "focused": "9 passed",
+    "regression": "51 passed (focused+engine/adapter/loader/gate; --noconftest)",
+    "ruff": "passed"
+  },
+  "major_failure_patterns": [
+    "CONCEPT_BINDING_REVIEW_REQUIRED:95",
+    "FACT_REVIEW_REQUIRED:95"
+  ],
+  "limitations": [
+    "Only five ENGINE-004 facts were REVIEWED; 95 facts are EXTRACTED and fail closed until reviewed.",
+    "This evaluation measures pipeline behavior, not production readiness.",
+    "Independent verification applies only to generated candidates.",
+    "No semantic embedding dedupe was available.",
+    "OpenAI worker observation is UNKNOWN; continuity is not claimed."
+  ],
+  "recommended_next_task": "PYTHON-MCQ-ENGINE-006: curate and independently review additional multi-subject fact packs until each of Physics/Chemistry/Botany/Zoology has at least 25 REVIEWED+MCQ_ELIGIBLE facts with question templates, then re-run this read-only 100-fact evaluation without persistence."
+}

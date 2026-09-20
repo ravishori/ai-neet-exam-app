@@ -1,0 +1,31 @@
+{
+  "audit": "Seed V1 student experience: refresh/back/duplicate",
+  "date": "2026-09-03",
+  "allowlist_sha": "c0cf70846233730ef384188f5b78cced2a7865f76d977a0af6063f803bc8f0c1",
+  "expected_allowlist_sha": "c0cf70846233730ef384188f5b78cced2a7865f76d977a0af6063f803bc8f0c1",
+  "pass": true,
+  "dashboard": {
+    "seed_visible": true
+  },
+  "refresh": {
+    "attempt_id": "625c49cd-3990-4026-9410-acb331b4532a",
+    "url_before": "http://localhost:3000/student/attempts/625c49cd-3990-4026-9410-acb331b4532a",
+    "url_after": "http://localhost:3000/student/attempts/625c49cd-3990-4026-9410-acb331b4532a",
+    "still_same_attempt_route": true,
+    "answered_persisted_server": true,
+    "pass": true
+  },
+  "back_forward": {
+    "attempt_status_before": "IN_PROGRESS",
+    "attempt_status_after": "IN_PROGRESS",
+    "pass": true
+  },
+  "duplicate_submission": {
+    "first_status": 200,
+    "second_status": 409,
+    "status_final": "SUBMITTED",
+    "pass": true
+  },
+  "errors": [],
+  "student_email": "sx-reg-refresh-1788443770720-b760b5@example.com"
+}

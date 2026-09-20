@@ -9,6 +9,9 @@ _hasher = PasswordHasher()
 
 # BRD Sprint 1 password policy: 12+ chars, upper, lower, number, special.
 _MIN_LENGTH = 12
+
+# Non-blocking password-age recommendation. See auth_router `_user_to_me`.
+PASSWORD_MAX_AGE_DAYS = 90
 _COMMON_PASSWORDS = {
     "password123!", "qwertyuiop123", "letmein12345!", "admin12345678",
     "welcome123456", "iloveyou12345", "password1234!",

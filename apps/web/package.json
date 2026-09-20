@@ -8,7 +8,12 @@
     "start": "next start",
     "lint": "eslint",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "test:e2e": "playwright test",
+    "test:e2e:practice": "playwright test e2e/practice-now.spec.ts",
+    "test:e2e:smoke": "playwright test e2e/viewport-smoke.spec.ts",
+    "lighthouse:mobile": "node scripts/run-lighthouse-mobile.mjs",
+    "import:physics-5000": "cd ../backend && .venv/Scripts/python.exe scripts/import_physics_5000_to_talos.py"
   },
   "dependencies": {
     "@base-ui/react": "^1.6.0",
@@ -36,6 +41,8 @@
     "zod": "^4.4.3"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
+    "@playwright/test": "^1.62.1",
     "@tailwindcss/postcss": "^4",
     "@testing-library/jest-dom": "^7.0.0",
     "@testing-library/react": "^16.3.2",
@@ -47,6 +54,7 @@
     "eslint": "^9",
     "eslint-config-next": "^15.5.22",
     "jsdom": "^30.0.1",
+    "lighthouse": "^13.4.1",
     "tailwindcss": "^4",
     "typescript": "^5",
     "vitest": "^4.1.10"

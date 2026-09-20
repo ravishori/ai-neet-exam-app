@@ -1,0 +1,215 @@
+{
+  "audit": "Production Seed V2 P5 AMBER Remediation A–E",
+  "date": "2026-09-03",
+  "captured_at": "2026-09-03T17:49:27.499660+00:00",
+  "verdict": "GREEN",
+  "scope": {
+    "task": "Controlled V2 factory remediation only",
+    "no_new_generation": true,
+    "no_gemini": true,
+    "no_approve": true,
+    "no_publish": true,
+    "no_ecaep": true,
+    "no_diversity_forensics": true,
+    "no_ncert_certification": true,
+    "no_rewrite_of_current_100_bodies": true,
+    "no_factory_sample_v1_modification": true
+  },
+  "root_causes_addressed": {
+    "A_visual_blueprint": "Plan/slot lacked explicit visual_required; archetype string alone was insufficient.",
+    "B_visual_materialization": "No deterministic visual attach path after LLM text generation.",
+    "C_visual_validation": "validate_candidate_body did not fail visual-required items missing SVG/spec.",
+    "D_answer_ambiguity": "Structural correct_option check could PASS with dual-defensible options (zoology-15).",
+    "E_sampler_skew": "factory_sample_v1 UUID-ordered strata starved Physics/Botany."
+  },
+  "files_changed": [
+    "apps/backend/app/modules/cms/schemas/content_bodies.py",
+    "apps/backend/app/modules/cms/services/factory_v2_visual.py",
+    "apps/backend/app/modules/cms/services/factory_v2_answer_ambiguity.py",
+    "apps/backend/app/modules/cms/services/factory_sample_v2.py",
+    "apps/backend/app/modules/cms/services/factory_candidate_validation.py",
+    "apps/backend/app/modules/cms/services/content_factory_generation_service.py",
+    "apps/backend/app/modules/cms/prompts/factory_mcq.py",
+    "apps/backend/scripts/run_factory_production_seed_v2.py",
+    "apps/backend/scripts/build_seed_v2_phase1_plan.py",
+    "apps/backend/tests/test_seed_v2_p5_remediation.py",
+    "docs/audits/TALOS_PRODUCTION_SEED_V2_PLAN_20260903.json",
+    "docs/audits/TALOS_PRODUCTION_SEED_V2_P5_REMEDIATION_20260903.json",
+    "docs/audits/TALOS_PRODUCTION_SEED_V2_P5_REMEDIATION_REPORT_20260903.md"
+  ],
+  "functions_changed": {
+    "factory_v2_visual": [
+      "visual_fields_for_slot",
+      "enrich_slot_with_visual_fields",
+      "build_v2_generation_constraints",
+      "materialize_deterministic_visual",
+      "materialize_visual_for_slot",
+      "attach_visual_to_body"
+    ],
+    "factory_v2_answer_ambiguity": [
+      "assess_semantic_answer_uniqueness",
+      "assess_exactly_one_answer_semantics"
+    ],
+    "factory_sample_v2": [
+      "sample_v2",
+      "factory_sample_v2",
+      "result_to_dict"
+    ],
+    "factory_candidate_validation": [
+      "_validate_visual_constraints",
+      "validate_candidate_body",
+      "validate_candidate_body_detailed"
+    ],
+    "content_factory_generation_service": [
+      "attach_visual_to_body when constraints.visual_required; validate with constraints"
+    ],
+    "factory_mcq.build_user_prompt": [
+      "VISUAL REQUIRED / VISUAL NOT REQUIRED lines; exactly-one-unambiguous instruction"
+    ],
+    "run_factory_production_seed_v2": [
+      "build_v2_generation_constraints for future blueprint materialization"
+    ],
+    "build_seed_v2_phase1_plan.make_slot": [
+      "enrich_slot_with_visual_fields"
+    ]
+  },
+  "visual_enforcement": {
+    "planned_visual_slots_only": ["physics-05", "physics-21", "zoology-12"],
+    "extra_graphical_slots_invented": false,
+    "fields": ["visual_required", "visual_type", "visual_archetype", "visual_required_labels"],
+    "materialization": "deterministic SVG + visual_spec (ncert_evidence=false)",
+    "archetypes_supported": ["xt_slope_graph", "stress_strain_curve", "ecg_wave_schematic"],
+    "validation_failures_when_required": [
+      "VISUAL_REQUIRED_BUT_MISSING",
+      "VISUAL_REQUIRED_MISSING_SVG",
+      "VISUAL_REQUIRED_MISSING_SPEC",
+      "VISUAL_TYPE_MISMATCH",
+      "VISUAL_STEM_REFERENCE_MISSING",
+      "VISUAL_NCERT_EVIDENCE_FABRICATED"
+    ],
+    "visual_required_false": "no visual required",
+    "ncert_evidence_from_generated_visual": false
+  },
+  "answer_validation": {
+    "structural_path_preserved": true,
+    "semantic_statuses": [
+      "STRUCTURALLY_VALID",
+      "SEMANTIC_REVIEW_REQUIRED",
+      "SEMANTIC_AMBIGUITY_DETECTED"
+    ],
+    "hard_fail": "SEMANTIC_AMBIGUITY_DETECTED",
+    "soft_path": "SEMANTIC_REVIEW_REQUIRED → REQUIRES_REVIEW warning (does not auto-reject)",
+    "zoology_15_regression": "DUAL_COMPLETE_CIRCUIT_OPTIONS hard-fail on forensic A/D pattern",
+    "not_a_full_scientific_judge": true
+  },
+  "sampler": {
+    "name": "factory_sample_v2",
+    "module": "apps/backend/app/modules/cms/services/factory_sample_v2.py",
+    "factory_sample_v1_modified": false,
+    "properties": [
+      "deterministic",
+      "seed-controlled",
+      "subject floor round-robin",
+      "visual representation when present",
+      "numerical representation when present",
+      "strata fill by subject|difficulty|archetype"
+    ],
+    "report_fields": [
+      "requested_sample_size",
+      "actual_sample_size",
+      "subject_distribution",
+      "difficulty_distribution",
+      "archetype_distribution",
+      "visual_distribution",
+      "numerical_distribution",
+      "seed",
+      "sampled_ids"
+    ]
+  },
+  "tests": {
+    "remediation_file": "apps/backend/tests/test_seed_v2_p5_remediation.py",
+    "remediation_passed": 19,
+    "factory_suite_command": "pytest tests/test_seed_v2_p5_remediation.py tests/test_seed_v2_phase1_plan.py tests/test_content_factory_p3.py tests/test_content_factory_p4.py tests/test_content_factory_p5.py tests/test_factory_seed_diversity.py -q",
+    "factory_suite_passed": 55,
+    "factory_suite_failed": 0,
+    "coverage": [
+      "visual-required blueprint propagation",
+      "missing visual rejection",
+      "valid visual acceptance",
+      "visual type mismatch",
+      "diagram_data_interpretation without visual",
+      "semantic answer ambiguity interface",
+      "Zoology-15 regression",
+      "V2 sampler reproducibility",
+      "V2 sampler subject representation",
+      "V2 sampler visual representation",
+      "protected-population integrity (DB fingerprint vs P5 baseline)"
+    ]
+  },
+  "integrity": {
+    "before_after_match": true,
+    "v2_bodies_fp": "430506b398bdbd4fa046ac218523fe748684fa948c5d3084c5a4476b125d6d66",
+    "v2_status": {"DRAFT": 100},
+    "v1_bodies_fp": "1be739413439ae0e93a87f11bd1823ad88f1cd19fad0022aeea163af3d6101a2",
+    "v1_allowlist_sha256": "c0cf70846233730ef384188f5b78cced2a7865f76d977a0af6063f803bc8f0c1",
+    "t6d_fp": "e0758fbcb071180b61a33f2b4581e894",
+    "t6f2_fp": "17a1672c444c8362ed0261dacf0f82c7",
+    "legacy_fp": "13d51e697382663a28ffc44fd56aedb1",
+    "cms_counts": {
+      "total": 6441,
+      "published": 1079,
+      "draft": 5351,
+      "in_review": 11,
+      "approved": 0,
+      "archived": 0,
+      "changes_requested": 0
+    },
+    "protected_population": {
+      "V1": "UNCHANGED",
+      "T6-D": "UNCHANGED",
+      "T6-F2": "UNCHANGED",
+      "legacy": "UNCHANGED"
+    },
+    "current_v2_cohort": "UNCHANGED"
+  },
+  "counts": {
+    "gemini_calls": 0,
+    "new_generation_candidates": 0,
+    "new_approvals": 0,
+    "new_publications": 0,
+    "new_ecaep": 0,
+    "note_historical_batch_attempts": "batch still has 133 historical GenerationCandidate rows from P3; none added this task"
+  },
+  "plan_enrichment": {
+    "file": "docs/audits/TALOS_PRODUCTION_SEED_V2_PLAN_20260903.json",
+    "visual_required_true": ["physics-05", "physics-21", "zoology-12"],
+    "visual_required_false_slots": 97,
+    "slot_identities_preserved": true,
+    "stems_options_answers_unchanged_in_db": true
+  },
+  "remaining_limitations": [
+    "Current 100 DRAFT bodies remain text-only until a separately authorized visual rematerialization / limited re-gen of the 3 visual slots.",
+    "Semantic uniqueness is deterministic-pattern based; not a full scientific dual-correct judge. Uncertain cases → SEMANTIC_REVIEW_REQUIRED.",
+    "factory_sample_v1 remains available and unchanged for historical P5 sample reproducibility."
+  ],
+  "next_gate_recommendation": {
+    "gate": "Authorized limited remediation of visual slots + zoology-15 correction OR P5 re-sample with factory_sample_v2",
+    "do_not_run_yet": [
+      "full new 100 generation",
+      "Diversity Forensics",
+      "NCERT certification",
+      "approve",
+      "publish"
+    ]
+  },
+  "verdict_checklist": {
+    "A_visual_requirement_enforceable": true,
+    "B_missing_visual_cannot_pass": true,
+    "C_answer_ambiguity_detection_path": true,
+    "D_v2_sampler_reproducible_representative": true,
+    "E_regression_tests_pass": true,
+    "F_protected_unchanged": true,
+    "G_v2_cohort_unchanged": true,
+    "H_no_generation_approval_publication_ecaep": true
+  }
+}

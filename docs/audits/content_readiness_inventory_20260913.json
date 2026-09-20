@@ -1,0 +1,242 @@
+{
+  "generated_at": "2026-09-13T02:42:51.715476+00:00",
+  "phase": "3.2",
+  "database": {
+    "audit_target": "localhost:5432/trinetra_db",
+    "note": "Uses DATABASE_URL (live app). SELECT-only."
+  },
+  "safety": {
+    "select_only": true,
+    "no_auto_publish": true,
+    "student_visible_status": "PUBLISHED",
+    "do_not_mass_publish_unmapped_drafts": true
+  },
+  "overview": {
+    "by_type_status": [
+      {
+        "content_type": "CONCEPT_NOTE",
+        "status": "DRAFT",
+        "count": 7
+      },
+      {
+        "content_type": "CONCEPT_NOTE",
+        "status": "PUBLISHED",
+        "count": 6
+      },
+      {
+        "content_type": "FLASHCARD",
+        "status": "DRAFT",
+        "count": 12
+      },
+      {
+        "content_type": "FLASHCARD",
+        "status": "PUBLISHED",
+        "count": 338
+      },
+      {
+        "content_type": "FORMULA_SHEET",
+        "status": "DRAFT",
+        "count": 8
+      },
+      {
+        "content_type": "QUESTION",
+        "status": "DRAFT",
+        "count": 5298
+      },
+      {
+        "content_type": "QUESTION",
+        "status": "IN_REVIEW",
+        "count": 111
+      },
+      {
+        "content_type": "QUESTION",
+        "status": "PUBLISHED",
+        "count": 1479
+      },
+      {
+        "content_type": "QUESTION",
+        "status": "SUPERSEDED",
+        "count": 6
+      }
+    ],
+    "questions_by_subject_status": [
+      {
+        "subject": "Botany",
+        "status": "DRAFT",
+        "count": 41
+      },
+      {
+        "subject": "Botany",
+        "status": "PUBLISHED",
+        "count": 321
+      },
+      {
+        "subject": "Botany",
+        "status": "SUPERSEDED",
+        "count": 1
+      },
+      {
+        "subject": "Chemistry",
+        "status": "DRAFT",
+        "count": 73
+      },
+      {
+        "subject": "Chemistry",
+        "status": "PUBLISHED",
+        "count": 46
+      },
+      {
+        "subject": "Physics",
+        "status": "DRAFT",
+        "count": 119
+      },
+      {
+        "subject": "Physics",
+        "status": "IN_REVIEW",
+        "count": 11
+      },
+      {
+        "subject": "Physics",
+        "status": "PUBLISHED",
+        "count": 1089
+      },
+      {
+        "subject": "UNMAPPED",
+        "status": "DRAFT",
+        "count": 5024
+      },
+      {
+        "subject": "UNMAPPED",
+        "status": "SUPERSEDED",
+        "count": 5
+      },
+      {
+        "subject": "Zoology",
+        "status": "DRAFT",
+        "count": 41
+      },
+      {
+        "subject": "Zoology",
+        "status": "IN_REVIEW",
+        "count": 100
+      },
+      {
+        "subject": "Zoology",
+        "status": "PUBLISHED",
+        "count": 23
+      }
+    ]
+  },
+  "chemistry": {
+    "subject": "Chemistry",
+    "total_questions": 119,
+    "status_counts": {
+      "DRAFT": 73,
+      "PUBLISHED": 46
+    },
+    "mapped": 119,
+    "unmapped": 0,
+    "structurally_complete": 119,
+    "with_provenance_lineage": 118,
+    "ncert_verified_count": 45,
+    "ncert_note": "Provenance \u2260 NCERT certification. Count uses tags/body ncert evidence only.",
+    "possible_duplicate_stem_groups": 0,
+    "readiness_counts": {
+      "NEEDS REVIEW": 73,
+      "NEEDS SOURCE": 1,
+      "READY": 45
+    },
+    "chapter_distribution_published": {
+      "Chemical Bonding and Molecular Structure": 9,
+      "Equilibrium": 9,
+      "Organic Chemistry - Basic Principles": 7,
+      "Redox Reactions": 4,
+      "Electrochemistry": 3,
+      "Some Basic Concepts of Chemistry": 5,
+      "Structure of Atom": 5,
+      "Thermodynamics": 4
+    },
+    "chapter_distribution_all": {
+      "Chemical Bonding and Molecular Structure": 62,
+      "Equilibrium": 19,
+      "Organic Chemistry - Basic Principles": 17,
+      "Redox Reactions": 4,
+      "Electrochemistry": 3,
+      "Some Basic Concepts of Chemistry": 5,
+      "Structure of Atom": 5,
+      "Thermodynamics": 4
+    },
+    "chapters_zero_published": [],
+    "topics_zero_published_count": 0,
+    "concepts_zero_published_count": 0,
+    "operational_note": "Do not publish to reach quotas. Every promotion requires ECAEP gates + human action."
+  },
+  "zoology": {
+    "subject": "Zoology",
+    "total_questions": 164,
+    "status_counts": {
+      "PUBLISHED": 23,
+      "DRAFT": 41,
+      "IN_REVIEW": 100
+    },
+    "mapped": 164,
+    "unmapped": 0,
+    "structurally_complete": 164,
+    "with_provenance_lineage": 161,
+    "ncert_verified_count": 20,
+    "ncert_note": "Provenance \u2260 NCERT certification. Count uses tags/body ncert evidence only.",
+    "possible_duplicate_stem_groups": 0,
+    "readiness_counts": {
+      "NEEDS SOURCE": 3,
+      "NEEDS REVIEW": 141,
+      "READY": 20
+    },
+    "chapter_distribution_published": {
+      "Body Fluids and Circulation": 9,
+      "Animal Kingdom": 4,
+      "Biomolecules": 5,
+      "Structural Organisation in Animals": 2,
+      "Breathing and Exchange of Gases": 3
+    },
+    "chapter_distribution_all": {
+      "Body Fluids and Circulation": 26,
+      "Animal Kingdom": 112,
+      "Biomolecules": 13,
+      "Human Reproduction": 8,
+      "Structural Organisation in Animals": 2,
+      "Breathing and Exchange of Gases": 3
+    },
+    "chapters_zero_published": [
+      "Digestion and Absorption",
+      "Human Reproduction"
+    ],
+    "topics_zero_published_count": 14,
+    "concepts_zero_published_count": 30,
+    "operational_note": "Do not publish to reach quotas. Every promotion requires ECAEP gates + human action."
+  },
+  "unmapped_draft_disposition": {
+    "unmapped_draft_total": 5024,
+    "unmapped_draft_scanned": 5024,
+    "disposition_counts": {
+      "UNMAPPED": 5024
+    },
+    "rules": {
+      "never_auto_publish": true,
+      "classification_is_heuristic": true,
+      "does_not_certify_validity": true,
+      "tag_prefix": "disposition:",
+      "apply_tags": "Use explicit operator tooling only \u2014 this script never writes tags."
+    }
+  },
+  "integrity": {
+    "orphan_concepts": 0,
+    "questions_pointing_soft_deleted_concepts": 0,
+    "published_missing_four_options": 0
+  },
+  "neet_mock": {
+    "full_180_blocked": true,
+    "reason": "Zoology published=23 (<45 minimum for balanced Biology allocation). Chemistry published=46. Revalidate before claiming mock readiness.",
+    "do_not_publish_to_quota": true
+  },
+  "verification_procedure": "Re-run: cd apps/backend && python scripts/content_readiness_inventory.py. Do not hard-code these counts into product docs as permanent truth."
+}

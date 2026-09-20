@@ -1,0 +1,308 @@
+{
+  "audit_date": "2026-09-12",
+  "audit_phase": "0_readonly",
+  "repository": "ai-neet-exam-app",
+  "branch": "phase2-question-bank",
+  "generated_at": "2026-09-12T11:48:37.835836+00:00",
+  "code_modified": false,
+  "database_modified": false,
+  "overall_verdict": "AMBER \u2014 HARDENING REQUIRED",
+  "classification_counts": {
+    "IMPLEMENTED": [
+      "http_only_jwt_cookies",
+      "argon2",
+      "login_lockout",
+      "csrf_double_submit_most_mutations",
+      "structlog_redaction",
+      "request_trace_id",
+      "safe_error_envelope",
+      "api_security_headers",
+      "redis_rate_limit",
+      "assessment_attempt_ownership",
+      "ecaep_publication_gates",
+      "pdf_upload_validation",
+      "razorpay_order_create_hmac_verify",
+      "wave_ac_security_tests"
+    ],
+    "PARTIALLY_IMPLEMENTED": [
+      "login_rate_limit_fail_open",
+      "logout_without_csrf",
+      "mfa_api_without_ui",
+      "email_verify_not_login_gate",
+      "register_email_taken_enumeration",
+      "rls_least_privilege_docs_only",
+      "alert_email_needs_smtp",
+      "ai_fallback_no_circuit_breaker",
+      "factory_injection_gates_not_tutor",
+      "practice_silent_save_errors",
+      "payments_no_webhook",
+      "full_pool_seq_scan_debt",
+      "nextjs_no_csp"
+    ],
+    "MISSING": [
+      "opentelemetry_exporters",
+      "prometheus_metrics",
+      "practice_pool_redis_cache",
+      "ai_tutor_response_cache",
+      "payment_webhooks",
+      "stripe",
+      "pg_dump_restore_runbook",
+      "in_repo_nginx_tls",
+      "tenant_id_wiring"
+    ],
+    "UNVERIFIED": [
+      "coolify_live_tls",
+      "prod_smtp_delivery",
+      "prod_encryption_key",
+      "prod_razorpay_live",
+      "runtime_db_non_owner_role",
+      "backup_restore_drill_evidence",
+      "full_pool_at_scale"
+    ]
+  },
+  "p0_blockers": [
+    {
+      "id": "P0-TLS",
+      "title": "Production HTTPS/TLS verification",
+      "risk": "Credential/session interception"
+    },
+    {
+      "id": "P0-SMTP-ALERT",
+      "title": "SMTP + ALERT_EMAIL delivery proof",
+      "risk": "Silent production outages"
+    },
+    {
+      "id": "P0-WEB-CSP",
+      "title": "Next.js security headers/CSP",
+      "risk": "XSS on student UI"
+    },
+    {
+      "id": "P0-BACKUP",
+      "title": "Backup + restore drill",
+      "risk": "Data-loss unrecoverable"
+    },
+    {
+      "id": "P0-DB-ROLE",
+      "title": "DB least-privilege / RLS decision",
+      "risk": "Blast radius on SQLi/compromise"
+    },
+    {
+      "id": "P0-AUTH-RL",
+      "title": "Auth rate-limit fail-open policy",
+      "risk": "Brute force if Redis down"
+    },
+    {
+      "id": "P0-PRACTICE-UX",
+      "title": "Surface practice save/submit errors",
+      "risk": "Silent progress loss"
+    },
+    {
+      "id": "P0-SECRETS",
+      "title": "Prod secrets inventory/rotation",
+      "risk": "Key leakage"
+    },
+    {
+      "id": "P0-PAY-WEBHOOK",
+      "title": "Payment webhook before live money",
+      "risk": "Fraud/entitlement drift"
+    },
+    {
+      "id": "P0-ENC-KEY",
+      "title": "ENCRYPTION_KEY if MFA enabled",
+      "risk": "TOTP secret exposure"
+    }
+  ],
+  "p1_improvements": [
+    "opentelemetry",
+    "metrics_slos",
+    "practice_pool_cache_indexes",
+    "ai_cache_with_isolation",
+    "logout_csrf",
+    "cors_tighten",
+    "razorpay_webhooks_reconciliation",
+    "mfa_ui",
+    "ai_circuit_breakers"
+  ],
+  "scorecard": [
+    {
+      "area": "SQL injection",
+      "status": "GREEN",
+      "impl": "IMPLEMENTED",
+      "priority": "P0",
+      "evidence": "Parameterized text()/ORM in app modules"
+    },
+    {
+      "area": "XSS",
+      "status": "AMBER",
+      "impl": "PARTIALLY_IMPLEMENTED",
+      "priority": "P0",
+      "evidence": "Markdown safe; SVG data-URI; no Next CSP"
+    },
+    {
+      "area": "CSRF",
+      "status": "AMBER",
+      "impl": "PARTIALLY_IMPLEMENTED",
+      "priority": "P0",
+      "evidence": "verify_csrf; logout gap"
+    },
+    {
+      "area": "CORS",
+      "status": "AMBER",
+      "impl": "PARTIALLY_IMPLEMENTED",
+      "priority": "P0",
+      "evidence": "Explicit origins; allow_methods/headers *"
+    },
+    {
+      "area": "Authentication",
+      "status": "GREEN",
+      "impl": "IMPLEMENTED",
+      "priority": "P0",
+      "evidence": "Argon2, cookies, lockout, refresh rotation"
+    },
+    {
+      "area": "Authorization/IDOR",
+      "status": "AMBER",
+      "impl": "PARTIALLY_IMPLEMENTED",
+      "priority": "P0",
+      "evidence": "RBAC + attempt ownership; CMS uneven"
+    },
+    {
+      "area": "Secrets",
+      "status": "AMBER",
+      "impl": "PARTIALLY_IMPLEMENTED",
+      "priority": "P0",
+      "evidence": ".gitignore; prod vault UNVERIFIED"
+    },
+    {
+      "area": "Rate limiting",
+      "status": "AMBER",
+      "impl": "PARTIALLY_IMPLEMENTED",
+      "priority": "P0",
+      "evidence": "Redis; login fail-open"
+    },
+    {
+      "area": "Exception handling",
+      "status": "GREEN",
+      "impl": "IMPLEMENTED",
+      "priority": "P0",
+      "evidence": "Envelope + errorId"
+    },
+    {
+      "area": "Logging",
+      "status": "GREEN",
+      "impl": "IMPLEMENTED",
+      "priority": "P0",
+      "evidence": "structlog redaction"
+    },
+    {
+      "area": "Request correlation",
+      "status": "GREEN",
+      "impl": "IMPLEMENTED",
+      "priority": "P0",
+      "evidence": "X-Trace-Id"
+    },
+    {
+      "area": "Distributed tracing",
+      "status": "RED",
+      "impl": "MISSING",
+      "priority": "P1",
+      "evidence": "No OpenTelemetry"
+    },
+    {
+      "area": "Metrics/SLOs",
+      "status": "RED",
+      "impl": "MISSING",
+      "priority": "P1",
+      "evidence": "No /metrics; no practice SLO"
+    },
+    {
+      "area": "Admin alerting",
+      "status": "AMBER",
+      "impl": "PARTIALLY_IMPLEMENTED",
+      "priority": "P0",
+      "evidence": "alerts.py; SMTP UNVERIFIED"
+    },
+    {
+      "area": "API security headers",
+      "status": "GREEN",
+      "impl": "IMPLEMENTED",
+      "priority": "P0",
+      "evidence": "SecurityHeadersMiddleware"
+    },
+    {
+      "area": "Web security headers",
+      "status": "RED",
+      "impl": "MISSING",
+      "priority": "P0",
+      "evidence": "No Next CSP"
+    },
+    {
+      "area": "HTTPS/TLS",
+      "status": "UNVERIFIED",
+      "impl": "UNVERIFIED",
+      "priority": "P0",
+      "evidence": "Coolify docs only"
+    },
+    {
+      "area": "Backups/DR",
+      "status": "RED",
+      "impl": "MISSING",
+      "priority": "P0",
+      "evidence": "Volumes only"
+    },
+    {
+      "area": "Redis cache (general)",
+      "status": "AMBER",
+      "impl": "PARTIALLY_IMPLEMENTED",
+      "priority": "P1",
+      "evidence": "Rate limit/alert only"
+    },
+    {
+      "area": "Practice pool cache",
+      "status": "RED",
+      "impl": "MISSING",
+      "priority": "P1",
+      "evidence": "FULL load-all IDs"
+    },
+    {
+      "area": "AI response cache",
+      "status": "RED",
+      "impl": "MISSING",
+      "priority": "P1",
+      "evidence": "Tutor uncached"
+    },
+    {
+      "area": "Payments",
+      "status": "AMBER",
+      "impl": "PARTIALLY_IMPLEMENTED",
+      "priority": "P1",
+      "evidence": "Razorpay verify; no webhook"
+    },
+    {
+      "area": "ECAEP content trust",
+      "status": "GREEN",
+      "impl": "IMPLEMENTED",
+      "priority": "P0",
+      "evidence": "Workflow gates"
+    },
+    {
+      "area": "Frontend practice reliability",
+      "status": "AMBER",
+      "impl": "PARTIALLY_IMPLEMENTED",
+      "priority": "P0",
+      "evidence": "Silent save"
+    }
+  ],
+  "key_paths": {
+    "logging": "apps/backend/app/core/logging.py",
+    "middleware": "apps/backend/app/core/middleware.py",
+    "rate_limit": "apps/backend/app/core/rate_limit.py",
+    "exceptions": "apps/backend/app/core/exceptions.py",
+    "auth": "apps/backend/app/modules/identity/",
+    "commerce": "apps/backend/app/modules/commerce/",
+    "markdown": "apps/web/src/components/markdown-renderer.tsx",
+    "security_audit_prior": "docs/security-audit.md",
+    "database_security": "docs/database-security.md",
+    "deploy_runbook": "docs/deploy/RUNBOOK.md"
+  }
+}

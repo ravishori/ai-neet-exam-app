@@ -1,0 +1,235 @@
+{
+  "campaign": "MCQ-PROVIDER-ABSTRACTION-001",
+  "generated_at": "2026-09-13T19:58:25.835731+00:00",
+  "final_status": "GREEN \u2014 ABSTRACTION COMPLETE / HARD FREEZE OK (unmapped_draft soft drift noted)",
+  "existing_provider_architecture": {
+    "ai_gateway": "apps/backend/app/modules/ai/gateway/",
+    "contract": "AIProvider + GenerateRequest/AIResponse + ProviderError",
+    "adapters_present": [
+      "anthropic",
+      "gemini",
+      "openai",
+      "mistral",
+      "fallback_stub"
+    ],
+    "routing": "ProviderRouter fixed|fixed_model|fallback_chain (explicit only)",
+    "factory_prior_config": [
+      "FACTORY_PROVIDER",
+      "FACTORY_PROVIDER_MODE",
+      "FACTORY_PROVIDER_FALLBACK_CHAIN"
+    ]
+  },
+  "abstraction_design": {
+    "facade_module": "apps/backend/app/modules/cms/services/mcq_llm_provider.py",
+    "protocol": "McqLlmProvider (generate_mcq, health_check, classify_error, provider_name, model_name)",
+    "production_adapter": "GatewayMcqLlmProvider \u2192 AIGateway \u2192 vendor AIProvider",
+    "wired_into": "ContentFactoryGenerationService via build_mcq_llm_provider",
+    "cursor_is_provider": false,
+    "silent_fallback_default": false
+  },
+  "providers_currently_supported": {
+    "registry_names": [
+      "anthropic",
+      "gemini",
+      "openai",
+      "mistral"
+    ],
+    "aliases": {
+      "anthropic": "anthropic",
+      "google": "gemini",
+      "gemini": "gemini",
+      "openai": "openai",
+      "local": "openai (requires OPENAI_BASE_URL)",
+      "mistral": "mistral"
+    },
+    "implemented_status": [
+      {
+        "registry_name": "anthropic",
+        "aliases": [
+          "anthropic",
+          "claude"
+        ],
+        "implemented": true,
+        "status": "AVAILABLE",
+        "model": "claude-sonnet-4-6",
+        "local_endpoint_supported": false,
+        "openai_base_url_configured": null
+      },
+      {
+        "registry_name": "gemini",
+        "aliases": [
+          "google",
+          "gemini"
+        ],
+        "implemented": true,
+        "status": "AVAILABLE",
+        "model": "gemini-3.6-flash",
+        "local_endpoint_supported": false,
+        "openai_base_url_configured": null
+      },
+      {
+        "registry_name": "openai",
+        "aliases": [
+          "openai",
+          "local"
+        ],
+        "implemented": true,
+        "status": "AVAILABLE",
+        "model": "gpt-5-mini",
+        "local_endpoint_supported": true,
+        "openai_base_url_configured": false
+      },
+      {
+        "registry_name": "mistral",
+        "aliases": [
+          "mistral"
+        ],
+        "implemented": true,
+        "status": "AVAILABLE",
+        "model": "mistral-small-2603",
+        "local_endpoint_supported": false,
+        "openai_base_url_configured": null
+      }
+    ],
+    "openai_local_endpoint": {
+      "supported_via": "OpenAIProvider.base_url + Settings.openai_base_url",
+      "mcq_provider_value": "local",
+      "fully_productized": false,
+      "note": "Infrastructure exists; expose only when OPENAI_BASE_URL configured and operator selects MCQ_PROVIDER=local"
+    },
+    "not_implemented_as_mcq_provider": [
+      "cursor"
+    ]
+  },
+  "provider_limitations": [
+    "PROVIDER_BLOCKED (billing/credits) stops the run; no automatic switch",
+    "fallback_chain disabled for MCQ unless MCQ_ALLOW_FALLBACK_CHAIN=true",
+    "local OpenAI-compatible requires OPENAI_BASE_URL",
+    "health_check is config-only (no live credit burn)",
+    "Mistral adapter exists in gateway but is secondary to anthropic/gemini/openai"
+  ],
+  "configuration": {
+    "MCQ_PROVIDER": "anthropic|google|gemini|openai|local|mistral (empty \u2192 FACTORY_PROVIDER)",
+    "MCQ_ALLOW_FALLBACK_CHAIN": "default false",
+    "OPENAI_BASE_URL": "optional; required for MCQ_PROVIDER=local",
+    "FACTORY_PROVIDER / FACTORY_PROVIDER_MODE": "legacy aliases still honored",
+    "resolved_selection": {
+      "requested": "gemini",
+      "registry_name": "gemini",
+      "model": "gemini-3.6-flash",
+      "routing_policy": "fixed:gemini",
+      "allow_fallback_chain": false
+    },
+    "rate_limit_backoff": {
+      "factory_rate_limit_backoff_base_s": 2.0,
+      "factory_rate_limit_backoff_max_s": 60.0,
+      "factory_rate_limit_max_retries_per_attempt": 3
+    }
+  },
+  "error_classification": {
+    "PROVIDER_BLOCKED": "billing/credits \u2014 stop immediately, not retryable",
+    "RATE_LIMIT": "alias of PROVIDER_RATE_LIMITED \u2014 bounded backoff",
+    "AUTH_ERROR": "alias of PROVIDER_AUTH_FAILED \u2014 stop",
+    "NETWORK_ERROR": "alias of PROVIDER_UNAVAILABLE",
+    "TIMEOUT": "alias of PROVIDER_TIMEOUT \u2014 retryable",
+    "PROVIDER_INTERNAL_ERROR": "invalid response / generic provider error",
+    "PARSE_ERROR": "content-layer malformed JSON",
+    "VALIDATION_ERROR": "content-layer schema/constraints",
+    "DUPLICATE": "content-layer stem hash collision / existing CREATED"
+  },
+  "resume_behavior": {
+    "existing_created_untouched": true,
+    "expected_created": 129,
+    "observed_created": 129,
+    "created_by_subject": {
+      "CHEMISTRY": 29,
+      "PHYSICS": 100
+    },
+    "remaining_recoverable": 271,
+    "this_task_resumed_generation": false,
+    "skip_mechanism": "stem_hash + CREATED status + resume allocations skip filled BPs",
+    "provider_switch_on_blocked": false
+  },
+  "reproducibility_fields": [
+    "provider",
+    "model_used",
+    "routing_policy",
+    "execution_metadata.mcq_provider",
+    "execution_metadata.mcq_model",
+    "blueprint_id/version",
+    "run_id",
+    "candidate_id (correlation_id)",
+    "prompt_version / generator_version"
+  ],
+  "tests": {
+    "file": "apps/backend/tests/test_mcq_provider_abstraction_001.py",
+    "coverage": [
+      "provider abstraction",
+      "anthropic adapter fa\u00e7ade",
+      "gemini adapter fa\u00e7ade",
+      "explicit selection",
+      "provider metadata persistence guard",
+      "PROVIDER_BLOCKED stops",
+      "RATE_LIMIT bounded backoff",
+      "no silent switch",
+      "existing candidates not regenerated (contract)",
+      "provenance/NCERT guards unchanged",
+      "no publication in generation path"
+    ]
+  },
+  "database_safety_verification": {
+    "pilot_created_ok": true,
+    "pilot_created_total": 129,
+    "pilot_provider_models": [
+      {
+        "provider": "anthropic",
+        "model": "claude-sonnet-4-6",
+        "count": 129
+      }
+    ],
+    "protected_hard_freeze_ok": true,
+    "unmapped_draft_baseline_match": false,
+    "unmapped_draft_note": "unmapped_draft differs from post-BP-integrity freeze baseline; PUBLISHED/IN_REVIEW/SUPERSEDED/taxonomy unchanged; this abstraction task performed no writes",
+    "protected_freeze_ok": true,
+    "protected_expected": {
+      "PUBLISHED": 1479,
+      "IN_REVIEW": 111,
+      "SUPERSEDED": 6,
+      "chapters": 56,
+      "topics": 192,
+      "concepts": 318,
+      "knowledge_units": 381,
+      "blueprints": 445,
+      "unmapped_draft": 5024
+    },
+    "protected_observed": {
+      "PUBLISHED": 1479,
+      "IN_REVIEW": 111,
+      "SUPERSEDED": 6,
+      "unmapped_draft": 5166,
+      "chapters": 56,
+      "topics": 192,
+      "concepts": 318,
+      "knowledge_units": 381,
+      "blueprints": 445
+    },
+    "protected_status_checksum": "354e06e7baaf81bbdfc203fcbfd52e8b",
+    "content_status_counts": {
+      "DRAFT": 5428,
+      "PUBLISHED": 1479,
+      "SUPERSEDED": 6,
+      "IN_REVIEW": 111
+    },
+    "mutations_this_task": "none (read-only verification)",
+    "generation_performed": false,
+    "publication_performed": false
+  },
+  "safety": {
+    "did_not_generate_mcqs": true,
+    "did_not_modify_existing_candidates": true,
+    "did_not_publish_certify_approve": true,
+    "did_not_modify_kus_blueprints_questions_ecaep_taxonomy": true,
+    "did_not_resume_271": true,
+    "did_not_commit_or_push": true
+  }
+}

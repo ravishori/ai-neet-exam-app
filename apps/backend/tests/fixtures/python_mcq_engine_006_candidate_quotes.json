@@ -1,0 +1,1599 @@
+{
+  "chapters": [
+    {
+      "subject": "PHYSICS",
+      "chapter": "Kinematics",
+      "source_relative_path": "Class 11/Physics/keph1dd/keph1dd/keph102.pdf",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph1dd\\keph1dd\\keph102.pdf",
+      "candidate_count": 6,
+      "candidates": [
+        {
+          "quote": "We shall confine ourselves to the study of motion of objects along a straight line, also known as rectilinear motion",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The velocity at an instant is defined as the limit of the average velocity as the time interval Dt becomes infinitesimally small",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "How come in this case an area is equal to a distance?",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "⊳ Example 2.6 Stopping distance of vehicles : When brakes are applied to a moving vehicle, the distance it travels before stopping is called stopping distance",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The area under the velocity-time curve between times t1 and t2 is equal to the displacement of the object during that interval of time",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "[Average speed of a particle over an interval of time is defined as the total path length divided by the time interval]",
+          "kind": "definition",
+          "term_guess": ""
+        }
+      ]
+    },
+    {
+      "subject": "PHYSICS",
+      "chapter": "Current Electricity",
+      "source_relative_path": "Class 12/Physics/leph1dd/leph103.pdf",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Physics\\leph1dd\\leph103.pdf",
+      "candidate_count": 15,
+      "candidates": [
+        {
+          "quote": "Then Ohm’s law states that V µ I or, V = R I (3.3) where the constant of proportionality R is called the resistance of the conductor",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "Using the last equation, Ohm’s law reads I l V I R A ρ = × = (3.10) Current per unit area (taken normal to the current), I/A, is called current density and is denoted by j",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The current density, (which we have defined as the current through unit area normal to the current) is also directed along E, and is also a vector j (º j E/E)",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "Thus, the last equation can be written as, E = jr (3.12) or, j = s E (3.13) where s º1/r is called the conductivity",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The average value of ti then is t (known as relaxation time)",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The density of conduction electrons, n is equal to the number of atoms per cubic metre (assuming one conduction electron per Cu atom as is reasonable from its valence electron count of one)",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "An important quantity is the mobility m defined as the magnitude of the drift velocity per unit electric field: | | d E µ = v (3.24) The SI unit of mobility is m2/Vs and is 104 of the mobility in practical units (cm2/Vs)",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "a is called the temperature co-efficient of resistivity, and from Eq",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "This difference is called the electromotive force (emf) of the cell and is denoted by e",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "3.18, which is called the Wheatstone bridge",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "This (i.e., AC) is called the battery arm",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The bridge then is balanced, and from the balance condition the value of the unknown resistance R4 is given by, 2 4 3 1 R R R R = [3.64(b)] A practical device using this principle is called the meter bridge",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The work done per unit charge by the source in taking the charge from lower to higher potential energy (i.e., from one terminal of the source to the other) is called the electromotive force, or emf, of the source",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "Ohm’s law: The electric current I flowing through a substance is proportional to the voltage V across its ends, i.e., V µ I or V = RI, where R is called the resistance of the substance",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "In the temperature range in which resistivity increases linearly with temperature, the temperature coefficient of resistivity a is defined as the fractional increase in resistivity per unit increase in temperature",
+          "kind": "definition",
+          "term_guess": ""
+        }
+      ]
+    },
+    {
+      "subject": "PHYSICS",
+      "chapter": "Optics",
+      "source_relative_path": "Class 12/Physics/leph2dd/leph201.pdf",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Physics\\leph2dd\\leph201.pdf",
+      "candidate_count": 20,
+      "candidates": [
+        {
+          "quote": "Electromagnetic radiation belonging to this region of the spectrum (wavelength of about 400 nm to 750 nm) is called light",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The path is called a ray of light, and a bundle of such rays constitutes a beam of light",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "We have already studied that the geometric centre of a spherical mirror is called its pole while that of a spherical lens is called its optical centre",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The line joining the pole and the centre of curvature of the spherical mirror is known as the principal axis",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The point F is called the principal focus of the mirror",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "This is called the focal plane of the mirror [Fig",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The distance between the focus F and the pole P of the mirror is called the focal length of the mirror, denoted by f",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "Equation (9.2) then gives f = R/2 (9.3) 9.2.3 The mirror equation If rays emanating from a point actually meet at another point after reflection and/or refraction, that point is called the image of the first point",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "(9.6), we get – – – v f v f u + = – or – v f v f u = v f v u = + 1 Dividing it by v, we get 1 1 1 v u f + = (9.7) This relation is known as the mirror equation",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "This phenomenon is called refraction of light",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "This reflection is called the internal reflection",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "This is called total internal reflection",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The angle of incidence corresponding to an angle of refraction 90°, say ÐAO3N, is called the critical angle (ic ) for the given pair of media",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "Each fibre consists of a core and cladding",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "(9.19) gives n f n n 1 2 1 1 1 = − +     ( ) BC DC 1 2 (9.20) The point where image of an object placed at infinity is formed is called the focus F, of the lens and the distance f gives its focal length",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "(9.20) can be written as (9.21) Equation (9.21) is known as the lens maker’s formula",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The focus on the side of the (original) source of light is called the first focal point, whereas the other is called the second focal point",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The power P of a lens is defined as the tangent of the angle by which it converges or diverges a beam of light parallel to the principal axis falling at unit distance from the optical centre (Fig",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "Thus, P = 1 f (9.25) The SI unit for power of a lens is dioptre (D): 1D = 1m–1",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The angle between the emergent ray RS and the direction of the incident ray PQ is called the angle of deviation, d",
+          "kind": "definition",
+          "term_guess": ""
+        }
+      ]
+    },
+    {
+      "subject": "PHYSICS",
+      "chapter": "Work, Energy and Power",
+      "source_relative_path": "Class 11/Physics/keph1dd/keph1dd/keph105.pdf",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph1dd\\keph1dd\\keph105.pdf",
+      "candidate_count": 16,
+      "candidates": [
+        {
+          "quote": "There are two ways of multiplying vectors which we shall come across : one way known as the scalar product gives a scalar from two vectors and the other known as the vector product produces a new vector from two vectors",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "This quantity is called ‘work’ and is denoted by W",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "Work refers to the force and the displacement over which it acts",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "Equation (5.2) is also a special case of the work-energy (WE) theorem : The change in kinetic energy of a particle is equal to the work done on it by the net force",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The SI unit of these is joule (J), named after the famous British physicist James Prescott Joule (1811-1869)",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The earth’s crust is not uniform, but has discontinuities and dislocations that are called fault lines",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "Over the whole path, xi to xf, this means that Ki + V(xi ) = Kf + V(xf) (5.11) The quantity K +V(x), is called the total mechanical energy of the system",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "This force law for the spring is called Hooke’s law and is mathematically stated as Fs = − kx The constant k is called the spring constant",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "At maximum compression xm, the potential energy V of the spring is equal to the kinetic energy K of the moving car from the principle of conservation of mechanical energy",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "Power is defined as the time rate at which work is done or energy is transferred",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "In the SI, its unit is called a watt (W)",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "Such a collision is called an elastic collision",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "A collision in which the two particles move together after the collision is called a completely inelastic collision",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The material making up the light nuclei, usually heavy water (D2O) or graphite, is called a moderator",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "⊳ If the initial velocities and final velocities of both the bodies are along the same straight line, then it is called a one-dimensional collision, or head-on collision",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The first ball is called the cue while the second ball is called the target",
+          "kind": "definition",
+          "term_guess": ""
+        }
+      ]
+    },
+    {
+      "subject": "PHYSICS",
+      "chapter": "Gravitation",
+      "source_relative_path": "Class 11/Physics/keph1dd/keph1dd/keph107.pdf",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph1dd\\keph1dd\\keph107.pdf",
+      "candidate_count": 8,
+      "candidates": [
+        {
+          "quote": "The closest point is P and the farthest point is A, P is called the perihelion and A the aphelion",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "7.1(b)) The closed curve you get is called an ellipse",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The midpoint of the line PA is the centre of the ellipse O and the length PO = AO is called the semi-major axis of the ellipse",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "At equilibrium, this is equal to the restoring torque and hence 2 Mm G L d τ θ = (7.7) Observation of θ thus enables one to calculate G from this equation",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The earth can be thought of as being composed of a smaller sphere of radius (RE – d ) and a spherical shell of thickness d",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The gravitational potential due to the gravitational force of the earth is defined as the potential energy of a particle of unit mass at that point",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "This is called the escape speed, sometimes loosely called the escape velocity",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "7.10) is defined as the position where the two forces cancel each other exactly",
+          "kind": "definition",
+          "term_guess": ""
+        }
+      ]
+    },
+    {
+      "subject": "CHEMISTRY",
+      "chapter": "Biomolecules",
+      "source_relative_path": "Class 12/Chemistry 2/lech2dd/lech205.pdf",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 2\\lech2dd\\lech205.pdf",
+      "candidate_count": 20,
+      "candidates": [
+        {
+          "quote": "The most amazing thing about a living system is that it is composed of non-living atoms and molecules",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "Chemically, the carbohydrates may be defined as optically active polyhydroxy aldehydes or ketones or the compounds which produce such units on hydrolysis",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "Carbohydrates are classified on the basis of their behaviour on hydrolysis",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "(i) Monosaccharides: A carbohydrate that cannot be hydrolysed further to give simpler unit of polyhydroxy aldehyde or ketone is called a monosaccharide",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "(ii) Oligosaccharides: Carbohydrates that yield two to ten monosaccharide units, on hydrolysis, are called oligosaccharides",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "They are further classified as disaccharides, trisaccharides, tetrasaccharides, etc., depending upon the number of monosaccharides, they provide on hydrolysis",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The two monosaccharide units obtained on hydrolysis of a disaccharide may be same or different",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "For example, one molecule of sucrose on hydrolysis gives one molecule of glucose and one molecule of fructose whereas maltose gives two molecules of only glucose",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "(iii) Polysaccharides: Carbohydrates which yield a large number of monosaccharide units on hydrolysis are called polysaccharides",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "If a monosaccharide contains an aldehyde group, it is known as an aldose and if it contains a keto group, it is known as a ketose",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "+ H 6 10 5 n 2 6 12 6 393K; 2-3 atm (C H O ) + nH O nC H O → Starch or cellulose Glucose Glucose is an aldohexose and is also known as dextrose",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "In the case of carbohydrates, this refers to their relation with a particular isomer of glyceraldehyde",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "Such isomers, i.e., a-form and b-form, are called anomers",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The six membered cyclic structure of glucose is called pyranose structure (a– or b–), in analogy with pyran",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "Such a linkage between two monosaccharide units through oxygen atom is called glycosidic linkage",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "On the other hand, sugars in which these functional groups are free, are called reducing sugars, for example, maltose and lactose",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "(i) Sucrose: One of the common disaccharides is sucrose which on hydrolysis gives equimolar mixture of D-(+)-glucose and D-(-) fructose",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "(ii) Maltose: Another disaccharide, maltose is composed of two a-D-glucose units in which C1 of one glucose (I) is linked to C4 of another glucose unit (II)",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "It is composed of b-D-galactose and b-D-glucose",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "It is a polymer of a-glucose and consists of two components— Amylose and Amylopectin",
+          "kind": "definition",
+          "term_guess": ""
+        }
+      ]
+    },
+    {
+      "subject": "CHEMISTRY",
+      "chapter": "Coordination Compounds",
+      "source_relative_path": "Class 12/Chemistry 1/lech1dd/lech105.pdf",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 1\\lech1dd\\lech105.pdf",
+      "candidate_count": 19,
+      "candidates": [
+        {
+          "quote": "In modern terminology such compounds are called coordination compounds",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The secondary valence is equal to the coordination number and is fixed for a metal",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "In modern formulations, such spatial arrangements are called coordination polyhedra",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The species within the square bracket are coordination entities or complexes and the ions outside the square bracket are called counter ions",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "(b) Central atom/ion In a coordination entity, the atom/ion to which a fixed number of ions/groups are bound in a definite geometrical arrangement around it, is called the central atom or ion",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "( c ) Ligands The ions or molecules bound to the central atom/ion in the coordination entity are called ligands",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The number of such ligating groups is called the denticity of the ligand",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "Ligand which has two different donor atoms and either of the two ligetes in the complex is called ambidentate ligand",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "( d ) Coordination number The coordination number (CN) of a metal ion in a complex can be defined as the number of ligand donor atoms to which the metal is directly bonded",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The ionisable groups are written outside the bracket and are called counter ions",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "( h ) Homoleptic and heteroleptic complexes Complexes in which a metal is bound to only one kind of donor groups, e.g., [Co(NH3)6] 3+, are known as homoleptic",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "Complexes in which a metal is bound to more than one kind of donor groups, e.g., [Co(NH3)4Cl2] +, are known as heteroleptic",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "For example, Co in a complex cation is called cobalt and Pt is called platinum",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "For example, Co in a complex anion,   2 4 Co SCN      is called cobaltate",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The molecules or ions that cannot be superimposed are called chiral",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The two forms are called dextro (d) and laevo (l) depending upon the direction they rotate the plane of polarised light in a polarimeter (d rotates to the right, l to the left)",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "In the formation of this complex, since the inner d orbital (3d) is used in hybridisation, the complex, [Co(NH3)6] 3+ is called an inner orbital or low spin or spin paired complex",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "Ligands for which Do < P are known as weak field ligands and form high spin complexes",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "Ligands which produce this effect are known as strong field ligands and form low spin complexes",
+          "kind": "definition",
+          "term_guess": ""
+        }
+      ]
+    },
+    {
+      "subject": "CHEMISTRY",
+      "chapter": "Chemical Kinetics",
+      "source_relative_path": "Class 12/Chemistry 1/lech1dd/lech103.pdf",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 1\\lech1dd\\lech103.pdf",
+      "candidate_count": 13,
+      "candidates": [
+        {
+          "quote": "Similarly, the speed of a reaction or the rate of a reaction can be defined as the change in concentration of a reactant or product in unit time",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The representation of rate of reaction in terms of concentration of the reactants is known as rate law",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The equation like (3.4), which relates the rate of a reaction to concentration of reactants is called rate law or rate expression",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "Hence, the sum of powers of the concentration of the reactants in the rate law expression is called the order of that chemical reaction",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The reactions taking place in one step are called elementary reactions",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "When a sequence of elementary reactions (called mechanism) gives us the products, the reactions are called complex reactions",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The number of reacting species (atoms, ions or molecules) taking part in an elementary reaction, which must collide simultaneously in order to bring about a chemical reaction is called molecularity of a reaction",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "Species IO- is called as an intermediate since it is formed during the course of the reaction but not in the overall balanced equation",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "We have already noted that the concentration dependence of rate is called differential rate equation",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "Such reactions are called pseudo first order reactions",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "3.8: Distribution curve showing energies among gaseous molecules The energy required to form this intermediate, called activated complex (C), is known as activation energy (Ea)",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The number of collisions per second per unit volume of the reaction mixture is known as collision frequency (Z)",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "3.29 The time required for 10% completion of a first order reaction at 298K is equal to that required for its 25% completion at 308K",
+          "kind": "definition",
+          "term_guess": ""
+        }
+      ]
+    },
+    {
+      "subject": "CHEMISTRY",
+      "chapter": "Equilibrium",
+      "source_relative_path": "Class 11/Chemistry/kech1dd/kech1dd/kech106.pdf",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Chemistry\\kech1dd\\kech1dd\\kech106.pdf",
+      "candidate_count": 20,
+      "candidates": [
+        {
+          "quote": "Thus, at equilibrium, the rate of evaporation is equal to the rate of condensation",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The mixture of reactants and products in the equilibrium state is called an equilibrium mixture",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "Some important aspects of equilibrium involving physical and chemical processes are dealt in this unit along with the equilibrium involving ions in aqueous solutions which is called as ionic equilibrium",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "For any pure substance at atmospheric pressure, the temperature at which the solid and liquid phases are at equilibrium is called the normal melting point or normal freezing point of the substance",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "For any pure liquid at one atmospheric pressure (1.013 bar), the temperature at which the liquid and vapours are at equilibrium is called normal boiling point of the liquid",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "This equilibrium is dynamic in nature as it consists of a forward reaction in which the reactants give product(s) and reverse reaction in which product(s) gives the original reactants",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "6.4 Depiction of equilibrium for the reaction 6.3 LAW OF CHEMICAL EQUILIBRIUM AND EQUILIBRIUM CONSTANT A mixture of reactants and products in the equilibrium state is called an equilibrium mixture",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The equilibrium equation is also known as the law of mass action because in the early days of chemistry, concentration was called “active mass”",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "This is known as the Equilibrium Law or Law of Chemical Equilibrium",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The equilibrium constant for the reverse reaction is equal to the inverse of the equilibrium constant for the forward reaction",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "One category of substances conduct electricity in their aqueous solutions and are called electrolytes while the other do not and are thus, referred to as non-electrolytes",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "This type of equilibrium involving ions in aqueous solution is called ionic equilibrium",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "Dissociation refers to the process of separation of ions in water already existing as such in the solid state of the solute, as in sodium chloride",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "In 1899 he discussed the temperature dependence of reaction rates on the basis of an equation, now usually known as Arrhenius equation",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The acid-base pair that differs only by one proton is called a conjugate acid-base pair",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "Therefore, OH– is called the conjugate base of an acid H2O and NH4 + is called conjugate acid of the base NH3",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "[H2O] is incorporated within the equilibrium constant to give a new constant, Kw, which is called the ionic product of water",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "Using these notations, we can derive the equilibrium constant for the above discussed acid-dissociation equilibrium: Ka = c2α2 / c(1-α) = cα2 / 1-α Ka is called the dissociation or ionization constant of acid HX",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The equilibrium constant for base ionization is called base ionization constant and is represented by Kb",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "It can be seen from the net reaction that the equilibrium constant is equal to the product of equilibrium constants Ka and Kb for the reactions added",
+          "kind": "definition",
+          "term_guess": ""
+        }
+      ]
+    },
+    {
+      "subject": "CHEMISTRY",
+      "chapter": "Solutions",
+      "source_relative_path": "Class 12/Chemistry 1/lech1dd/lech101.pdf",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 1\\lech1dd\\lech101.pdf",
+      "candidate_count": 20,
+      "candidates": [
+        {
+          "quote": "Generally, the component that is present in the largest quantity is known as solvent",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "One or more components present in the solution other than solvent are called solutes",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "This process is known as crystallisation",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "Such a solution in which no more solute can be dissolved at the same temperature and pressure is called a saturated solution",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "Henry was the first to give a quantitative relation between pressure and solubility of a gas in a solvent which is known as Henry’s law",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "This blocks capillaries and creates a medical condition known as bends, which are painful and dangerous to life",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "Low blood oxygen causes climbers to become weak and unable to think clearly, symptoms of a condition known as anoxia",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "Another important class of solutions consists of solids dissolved in liquid, for example, sodium chloride, glucose, urea and cane sugar in water and iodine and sulphur dissolved in carbon disulphide",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "Liquids at a given temperature vapourise and under equilibrium conditions the pressure exerted by the vapours of the liquid over the liquid phase is called vapour pressure [Fig",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "Then according to Raoult’s law p1 µ x1 and p1 = x1 0 1 p (1.20) The proportionality constant is equal to the vapour pressure of pure solvent, 0 1 p ",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The solutions which obey Raoult’s law over the entire range of concentration are known as ideal solutions",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "When a solution does not obey Raoult’s law over the entire range of concentration, then it is called non-ideal solution",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "Once this composition, known as azeotrope composition, has been achieved, the liquid and vapour have the same composition, and no further separation occurs",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "Such properties are called colligative properties (colligative: from Latin: co means together, ligare means to bind)",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "It boils at the temperature at which its vapour pressure is equal to the atmospheric pressure",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The increase in the boiling point 0 b b b    T T T is known as elevation of boiling point",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "Thus, the freezing point of a substance may be defined as the temperature at which the vapour pressure of the substance in its liquid phase is equal to its vapour pressure in the solid phase",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "0 f f f    T T T is known as depression in freezing point",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "Membranes having this kind of properties are known as semipermeable membranes (SPM)",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "This process of flow of the solvent is called osmosis",
+          "kind": "definition",
+          "term_guess": ""
+        }
+      ]
+    },
+    {
+      "subject": "BOTANY",
+      "chapter": "Plant Kingdom",
+      "source_relative_path": "Class 11/Biology/kebo1dd/kebo103.pdf",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo103.pdf",
+      "candidate_count": 12,
+      "candidates": [
+        {
+          "quote": "In this chapter, we will deal in detail with further classification within Kingdom Plantae popularly known as the ‘plant kingdom’",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "It produces gametes, hence is called a gametophyte",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The male sex organ is called antheridium",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "3.2.2 Mosses The predominant stage of the life cycle of a moss is the gametophyte which consists of two stages",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "In majority of the pteridophytes all the spores are of similar kinds; such plants are called homosporous",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "Genera like Selaginella and Salvinia which produce two kinds of spores, macro (large) and micro (small) spores, are known as heterosporous",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The strobili bearing microsporophylls and microsporangia are called microsporangiate or male strobili",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "This reduced gametophyte is called a pollen grain",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The cones bearing megasporophylls with ovules or megasporangia are called macrosporangiate or female strobili",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The nucellus is protected by envelopes and the composite structure is called an ovule",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The main plant body of a bryophyte is gamete-producing and is called a gametophyte",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "After fertilisation the seeds remain exposed and therefore these plants are called naked-seeded plants",
+          "kind": "definition",
+          "term_guess": ""
+        }
+      ]
+    },
+    {
+      "subject": "BOTANY",
+      "chapter": "Photosynthesis in Higher Plants",
+      "source_relative_path": "Class 11/Biology/kebo1dd/kebo111.pdf",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo111.pdf",
+      "candidate_count": 6,
+      "candidates": [
+        {
+          "quote": "The former set of reactions, since they are directly light driven are called light reactions (photochemical reactions)",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "Hence, to distinguish the latter they are called, by convention, as dark reactions (carbon reactions)",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "In PS I the reaction centre chlorophyll a has an absorption peak at 700 nm, hence is called P700, while in PS II it has absorption maxima at 680 nm, and is called P680",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The ATP synthase enzyme consists of two parts: one called the CF0 is embedded in the thylakoid membrane and forms a transmembrane channel that carries out facilitated diffusion of protons across the membrane",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The other portion is called CF1 and protrudes on the outer surface of the thylakoid membrane on the side that faces the stroma",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The particularly large cells around the vascular bundles of the C4 plants are called bundle sheath cells, and the leaves which have such anatomy are said to have ‘Kranz’ anatomy",
+          "kind": "definition",
+          "term_guess": ""
+        }
+      ]
+    },
+    {
+      "subject": "BOTANY",
+      "chapter": "Sexual Reproduction in Flowering Plants",
+      "source_relative_path": "Class 12/Biology/lebo1dd/lebo101.pdf",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo101.pdf",
+      "candidate_count": 11,
+      "candidates": [
+        {
+          "quote": "You would recollect that the androecium consists of a whorl of stamens representing the male reproductive organ and the gynoecium represents the female reproductive organ",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The process of formation of microspores from a pollen mother cell (PMC) through meiosis is called microsporogenesis",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The inner wall of the pollen grain is called the intine",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "Megasporogenesis : The process of formation of megaspores from the megaspore mother cell is called megasporogenesis",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The egg apparatus, in turn, consists of two synergids and one egg cell",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "Three cells are at the chalazal end and are called the antipodals",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "This stage of endosperm development is called free-nuclear endosperm",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "In the grass family the cotyledon is called scutellum that is situated towards one side (lateral) of the embryonal axis",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "A seed typically consists of seed coat(s), cotyledon(s) and an embryo axis",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "Most fruits however develop only from the ovary and are called true fruits",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "Such fruits are called parthenocarpic fruits",
+          "kind": "definition",
+          "term_guess": ""
+        }
+      ]
+    },
+    {
+      "subject": "BOTANY",
+      "chapter": "Molecular Basis of Inheritance",
+      "source_relative_path": "Class 12/Biology/lebo1dd/lebo105.pdf",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo105.pdf",
+      "candidate_count": 13,
+      "candidates": [
+        {
+          "quote": "The length of DNA is usually defined as number of nucleotides (or a pair of nucleotide referred to as base pairs) present in it",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "For example, a bacteriophage known as φ×174 has 5386 nucleotides, Bacteriophage lambda has 48502 base pairs (bp), Escherichia coli has 4.6 × 106 bp, and haploid content of human DNA is 3.3 × 109 bp",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The chromatin that is more densely packed and stains dark are called as Heterochromatin",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "5.5.2 Transcription Unit and the Gene A gene is defined as the functional unit of inheritance",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The coding sequences or expressed sequences are defined as exons",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "Hence, sometime the regulatory sequences are loosely defined as regulatory genes, even though these sequences do not code for any RNA or protein",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The amino acids are joined by a bond which is known as a peptide bond",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The ribosome consists of structural RNAs and about 80 different proteins",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "During this stage, complexes composed of an amino acid linked to tRNA, sequentially bind to the appropriate codon in mRNA by forming complementary base pairs with the tRNA anticodon",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "5.8 REGULATION OF GENE EXPRESSION Regulation of gene expression refers to a very broad term that may occur at various levels",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "In lac operon (here lac refers to lactose), a polycistronic structural gene is regulated by a common promoter and regulatory genes",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The lac operon consists of one regulatory gene (the i gene – here the term i does not refer to inducer, rather it is derived from the word inhibitor) and three structural genes (z, y, and a)",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "(ii) The average gene consists of 3000 bases, but sizes vary greatly, with the largest known human gene being dystrophin at 2.4 million bases",
+          "kind": "definition",
+          "term_guess": ""
+        }
+      ]
+    },
+    {
+      "subject": "BOTANY",
+      "chapter": "Biomolecules",
+      "source_relative_path": "Class 11/Biology/kebo1dd/kebo109.pdf",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo109.pdf",
+      "candidate_count": 20,
+      "candidates": [
+        {
+          "quote": "One is called the filtrate or more technically, the acid-soluble pool, and the second, the retentate or the acid-insoluble fraction",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "One weighs a small amount of a living tissue (say a leaf or liver and this is called wet weight) and dry it",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The R group in these proteinaceous amino acids could be a hydrogen (the amino acid is called glycine), a methyl group (alanine), hydroxy methyl (serine), etc",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "When found attached to a sugar, they are called nucleosides",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "If a phosphate group is also found esterified to the sugar they are called nucleotides",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "These are called secondary metabolites (Table 9.3)",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "In a polysaccharide chain (say glycogen), the right end is called the reducing end and the left end is called the non-reducing end",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The skeletal heterocyclic ring is called as purine and pyrimidine respectively",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "A nucleic acid containing deoxyribose is called deoxyribonucleic acid (DNA) while that which contains ribose is called ribonucleic acid (RNA)",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "In inorganic chemistry, the structure invariably refers to the molecular formulae (e.g., NaCl, MgCl2, etc.)",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The last amino acid is called the C- terminal amino acid",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "Other regions of the protein thread are folded into other forms in what is called the secondary structure (Fig",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "Adult human haemoglobin consists of 4 subunits",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "A physical change simply refers to a change in shape without breaking of bonds",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "Rate of a physical or chemical process refers to the amount of product formed per unit time",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "A multistep chemical reaction, when each of the steps is catalysed by the same enzyme complex or different enzymes, is called a metabolic pathway",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The chemical or metabolic conversion refers to a reaction",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The chemical which is converted into a product is called a ‘substrate’",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The difference in average energy content of ‘S’ from that of this transition state is called ‘activation energy’",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "When the inhibitor closely resembles the substrate in its molecular structure and inhibits the activity of the enzyme, it is known as competitive inhibitor",
+          "kind": "definition",
+          "term_guess": ""
+        }
+      ]
+    },
+    {
+      "subject": "ZOOLOGY",
+      "chapter": "Body Fluids and Circulation",
+      "source_relative_path": "Class 11/Biology/kebo1dd/kebo115.pdf",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo115.pdf",
+      "candidate_count": 17,
+      "candidates": [
+        {
+          "quote": "Plasma without the clotting factors is called serum",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "Leucocytes are also known as white blood cells (WBC) as they are colourless due to the lack of haemoglobin",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "Therefore, such persons are called ‘universal recipients’",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "Such individuals are called Rh positive (Rh+ve) and those in whom this antigen is absent are called Rh negative (Rh-ve)",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "This condition is called erythroblastosis foetalis",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "This fluid released out is called the interstitial fluid or tissue fluid",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The fluid present in the lymphatic system is called the lymph",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "These branches give rise to minute fibres throughout the ventricular musculature of the respective sides and are called purkinje fibres",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "This sequential event in the heart which is cyclically repeated is called the cardiac cycle and it consists of systole and diastole of both the atria and ventricles",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "During a cardiac cycle, each ventricle pumps out approximately 70 mL of blood which is called the stroke volume",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "Therefore, the cardiac output can be defined as the volume of blood pumped out by each ventricle per minute and averages 5000 mL or 5 litres in a healthy individual",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "15.5 REGULATION OF CARDIAC ACTIVITY Normal activities of the heart are regulated intrinsically, i.e., auto regulated by specialised muscles (nodal tissue), hence the heart is called myogenic",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "Our circulatory system consists of a muscular pumping organ, heart, a network of vessels and a fluid, blood",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The cardiac cycle is formed by sequential events in the heart which is cyclically repeated and is called the cardiac cycle",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "About 70 mL of blood is pumped out by each ventricle during a cardiac cycle and it is called the stroke or beat volume",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "Volume of blood pumped out by each ventricle of heart per minute is called the cardiac output and it is equal to the product of stroke volume and heart rate (approx 5 litres)",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "Sino-atrial node is called the pacemaker of our heart",
+          "kind": "definition",
+          "term_guess": ""
+        }
+      ]
+    },
+    {
+      "subject": "ZOOLOGY",
+      "chapter": "Reproductive Health",
+      "source_relative_path": "Class 12/Biology/lebo1dd/lebo103.pdf",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo103.pdf",
+      "candidate_count": 9,
+      "candidates": [
+        {
+          "quote": "The term simply refers to healthy reproductive organs with normal functions",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "As chances of fertilisation are very high during this period, it is called the fertile period",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "Sterilisation procedure in the male is called ‘vasectomy’ and that in the female, ‘tubectomy’",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "3.3 MEDICAL TERMINATION OF PREGNANCY (MTP) Intentional or voluntary termination of pregnancy before full term is called medical termination of pregnancy (MTP) or induced abortion",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "However, where such corrections are not possible, the couples could be assisted to have children through certain special techniques commonly known as assisted reproductive technologies (ART)",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "Infections or diseases transmitted through sexual intercourse are called Sexually Transmitted Diseases (STIs)",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "Inability to conceive or produce children even after 2 years of unprotected sexual cohabitation is called infertility",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "In Vitro fertilisation followed by transfer of embryo into the female genital tract is one such method and is commonly known as the ‘Test Tube Baby’ Programme",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "(True/False) (b) Infertility is defined as the inability to produce a viable offspring and is always due to abnormalities/defects in the female partner",
+          "kind": "definition",
+          "term_guess": ""
+        }
+      ]
+    },
+    {
+      "subject": "ZOOLOGY",
+      "chapter": "Human Reproduction",
+      "source_relative_path": "Class 12/Biology/lebo1dd/lebo102.pdf",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo102.pdf",
+      "candidate_count": 18,
+      "candidates": [
+        {
+          "quote": "The process of formation of a mature female gamete is called oogenesis which is markedly different from spermatogenesis",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The primary follicles get surrounded by more layers of granulosa cells and a new theca and are called secondary follicles",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "monkeys, apes and human beings) is called menstrual cycle",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The first menstruation begins at puberty and is called menarche",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "In human females, menstruation is repeated at an average interval of about 28/29 days, and the cycle of events starting from one menstruation till the next one is called the menstrual cycle",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The process of fusion of a sperm with an ovum is called fertilisation",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "This is called implantation and it leads to pregnancy",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "2.7 PARTURITION AND LACTATION The average duration of human pregnancy is about 9 months which is called the gestation period",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "This process of delivery of the foetus (childbirth) is called parturition",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The milk produced during the initial few days of lactation is called colostrum which contains several antibodies absolutely essential to develop resistance for the new-born babies",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The male reproductive system is composed of a pair of testes, the male sex accessory ducts and the accessory glands and external genitalia",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The male external genitalia is called penis",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The female reproductive system consists of a pair of ovaries, a pair of oviducts, a uterus, a vagina, external genitalia, and a pair of mammary glands",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "A normal human sperm is composed of a head, neck, a middle piece and tail",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The process of formation of mature female gametes is called oogenesis",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The reproductive cycle of female primates is called menstrual cycle",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The process of childbirth is called parturition which is induced by a complex neuroendocrine mechanism involving cortisol, estrogens and oxytocin",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "(k) The structure which provides vascular connection between foetus and uterus is called _____________ 2",
+          "kind": "definition",
+          "term_guess": ""
+        }
+      ]
+    },
+    {
+      "subject": "ZOOLOGY",
+      "chapter": "Breathing and Exchange of Gases",
+      "source_relative_path": "Class 11/Biology/kebo1dd/kebo114.pdf",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo114.pdf",
+      "candidate_count": 2,
+      "candidates": [
+        {
+          "quote": "This process of exchange of O2 from the atmosphere with CO2 produced by the cells is called breathing, commonly known as respiration",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "Pressure contributed by an individual gas in a mixture of gases is called partial pressure and is represented as pO2 for oxygen and pCO2 for carbon dioxide",
+          "kind": "definition",
+          "term_guess": ""
+        }
+      ]
+    },
+    {
+      "subject": "ZOOLOGY",
+      "chapter": "Structural Organisation in Animals",
+      "source_relative_path": "Class 11/Biology/kebo1dd/kebo107.pdf",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo107.pdf",
+      "candidate_count": 18,
+      "candidates": [
+        {
+          "quote": "The human body is composed of billions of cells to perform various functions",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "For example, our heart consists of all the four types of tissues, i.e., epithelial, connective, muscular and neural",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "This discernable trend is called evolutionary trend (You will study the details in class XII)",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "Morphology refers to study of form or externally visible features",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "In case of animals this refers to the external appearance of the organs or parts of the body",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "Such animals are called cold blooded or poikilotherms",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "This protective coloration is called mimicry",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "This is known as summer sleep (aestivation) and winter sleep (hibernation) respectively",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The digestive system consists of alimentary canal and digestive glands",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The respiration by lungs is called pulmonary respiration",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The lymphatic system consists of lymph, lymph channels and lymph nodes",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The former is called hepatic portal system and the latter is called renal portal system",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The blood is composed of plasma and cells",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The excretory system consists of a pair of kidneys, ureters, cloaca and urinary bladder",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "Each kidney is composed of several structural and functional units called uriniferous tubules or nephrons",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "Hind-brain consists of cerebellum and medulla oblongata",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "A tissue is defined as group of cells along with intercellular substances performing one or more functions in the body",
+          "kind": "definition",
+          "term_guess": ""
+        },
+        {
+          "quote": "The alimentary canal consists of oesophagous, stomach, intestine and rectum, which open into the cloaca",
+          "kind": "definition",
+          "term_guess": ""
+        }
+      ]
+    }
+  ]
+}

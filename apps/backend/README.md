@@ -1,7 +1,11 @@
 # Trinetra backend
 
-FastAPI, modular monolith. See root `CLAUDE.md` and `docs/decisions/` before
-adding a module.
+FastAPI, modular monolith. See root `CLAUDE.md`, `docs/decisions/`, and
+`docs/product/` (current capability status) before adding a module.
+
+SP0–SP9 engineering scope is substantially implemented; production readiness
+and content volume are separate — see root `README.md`.
+
 
 ## Local setup (native — no Docker required)
 

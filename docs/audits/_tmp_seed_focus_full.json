@@ -1,0 +1,698 @@
+[
+  {
+    "id": "f6f59a22-5d9b-47a3-adb6-8dcf7ce56a1c",
+    "status": "DRAFT",
+    "subject": "Botany",
+    "chapter": "Photosynthesis in Higher Plants",
+    "topic": "Factors Affecting Photosynthesis",
+    "concept": "Photorespiration",
+    "concept_code": "photorespiration",
+    "blueprint_key": "production-seed-v1-2026-09-02-bp-botany-02",
+    "difficulty": "medium",
+    "stem": "In $C_3$ plants, when the ratio of $\\text{O}_2$ to $\\text{CO}_2$ increases at the site of RuBisCO, photorespiration is initiated. Which of the following sequence of events correctly describes the physiological consequences of this pathway?",
+    "options": [
+      {
+        "text": "RuBisCO binds $\\text{O}_2$ to form one molecule each of PGA and phosphoglycolate, releasing ATP and producing NADPH.",
+        "label": "A"
+      },
+      {
+        "text": "RuBisCO binds $\\text{O}_2$ to form two molecules of phosphoglycolate, consuming ATP and releasing $\\text{CO}_2$ without synthesizing sugars or NADPH.",
+        "label": "B"
+      },
+      {
+        "text": "RuBisCO binds $\\text{O}_2$ to form one molecule each of PGA and phosphoglycolate, consuming ATP and releasing $\\text{CO}_2$ without synthesizing sugars or NADPH.",
+        "label": "C"
+      },
+      {
+        "text": "RuBisCO binds $\\text{CO}_2$ to form two molecules of phosphoglycolate, which consumes NADPH to regenerate RuBP while releasing oxygen.",
+        "label": "D"
+      }
+    ],
+    "correct_option": "C",
+    "explanation": "Photorespiration occurs when RuBisCO functions as an oxygenase under high $\\text{O}_2$ and low $\\text{CO}_2$ conditions. RuBP combines with one molecule of $\\text{O}_2$ to form one 3-carbon molecule of 3-phosphoglycerate (PGA) and one 2-carbon molecule of 2-phosphoglycolate. The subsequent processing of phosphoglycolate across chloroplasts, peroxisomes, and mitochondria leads to the release of $\\text{CO}_2$ and the consumption of ATP, but yields neither ATP nor NADPH, nor does it synthesize sugar. Thus, it is a wasteful process competing directly with photosynthetic carbon fixation. Option A is incorrect because ATP is consumed, not released. Option B is incorrect because one PGA and one phosphoglycolate are formed, not two phosphoglycolates. Option D incorrectly states that RuBP binds $\\text{CO}_2$ to form phosphoglycolate.",
+    "stem_fp": "ed0ddd3c05695bd3",
+    "body_md5": "1cb341616cc7cc9c41fc36d68e769cb8",
+    "provider": "gemini",
+    "model": "gemini-3.6-flash",
+    "routing": "fixed:gemini",
+    "is_fallback": false,
+    "constraints": {
+      "reasoning": "process_consequence",
+      "seed_slot_id": "botany-02",
+      "question_format": "MCQ_4",
+      "cognitive_operation": "Photorespiration wastefulness in C3",
+      "forbidden_templates": [
+        "PHYS_STRETCH_20PCT_CURRENT",
+        "PHYS_STRETCH_2X_LENGTH_RATIO",
+        "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+        "CHEM_LATTICE_COMPARISON",
+        "CHEM_LATTICE_FACTORS",
+        "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+        "ZOO_ABO_SEQUENCE",
+        "ZOO_ABO_ANTIGEN_IDENTIFY"
+      ],
+      "correct_option_count": 1,
+      "explanation_required": true,
+      "avoid_paraphrase_duplicates": true,
+      "enforce_prior_stem_diversity": true
+    }
+  },
+  {
+    "id": "9dd374e7-c677-46ab-9e83-8cf0e6139feb",
+    "status": "DRAFT",
+    "subject": "Chemistry",
+    "chapter": "Organic Chemistry - Basic Principles",
+    "topic": "IUPAC and Homologous Series",
+    "concept": "Homologous Series",
+    "concept_code": "homologous-series",
+    "blueprint_key": "production-seed-v1-2026-09-02-bp-chemistry-08",
+    "difficulty": "easy",
+    "stem": "Which of the following statements correctly describes the characteristics of a homologous series of organic compounds?",
+    "options": [
+      {
+        "text": "Successive members differ in their molecular formula by a $-\\text{CH}_3-$ group.",
+        "label": "A"
+      },
+      {
+        "text": "Members show a gradual change in physical properties such as boiling point with increasing molar mass.",
+        "label": "B"
+      },
+      {
+        "text": "All members have identical physical properties regardless of their chain length.",
+        "label": "C"
+      },
+      {
+        "text": "Adjacent members differ in molecular mass by $12\\text{ u}$.",
+        "label": "D"
+      }
+    ],
+    "correct_option": "B",
+    "explanation": "A homologous series consists of structurally similar organic compounds that share the same general formula and functional group. Successive members differ by a methylene group ($-\\text{CH}_2-$), which corresponds to a difference of $14\\text{ u}$ in molecular mass (not $12\\text{ u}$ or a $-\\text{CH}_3-$ group). Because they have the same functional group, members exhibit similar chemical properties. However, as the carbon chain length increases, physical properties (like boiling point, melting point, and density) show a regular gradation due to the increase in molecular mass and van der Waals forces. Therefore, option B is correct.",
+    "stem_fp": "cb533e75678cc735",
+    "body_md5": "57655dcdc42d090320f8f432cd61ee9f",
+    "provider": "gemini",
+    "model": "gemini-3.6-flash",
+    "routing": "fixed:gemini",
+    "is_fallback": false,
+    "constraints": {
+      "reasoning": "series_traits",
+      "seed_slot_id": "chemistry-08",
+      "question_format": "MCQ_4",
+      "cognitive_operation": "Homologous series general formula/traits",
+      "forbidden_templates": [
+        "PHYS_STRETCH_20PCT_CURRENT",
+        "PHYS_STRETCH_2X_LENGTH_RATIO",
+        "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+        "CHEM_LATTICE_COMPARISON",
+        "CHEM_LATTICE_FACTORS",
+        "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+        "ZOO_ABO_SEQUENCE",
+        "ZOO_ABO_ANTIGEN_IDENTIFY"
+      ],
+      "correct_option_count": 1,
+      "explanation_required": true,
+      "avoid_paraphrase_duplicates": true,
+      "enforce_prior_stem_diversity": true
+    }
+  },
+  {
+    "id": "5b1b5f27-bb6d-4b35-8b1c-96c252278d98",
+    "status": "DRAFT",
+    "subject": "Chemistry",
+    "chapter": "Organic Chemistry - Basic Principles",
+    "topic": "Electronic Effects",
+    "concept": "Inductive and Resonance Effects",
+    "concept_code": "inductive-mesomeric",
+    "blueprint_key": "production-seed-v1-2026-09-02-bp-chemistry-06",
+    "difficulty": "medium",
+    "stem": "Consider the following statement regarding electron displacement effects in organic molecules: 'Resonance effects operate through $\\pi$-bonds and are delocalized, whereas inductive effects operate through $\\sigma$-bonds and diminish rapidly with distance.' Based on this fundamental difference, which of the following correctly explains the relative acidity of 4-nitrophenol, 3-nitrophenol, and phenol?",
+    "options": [
+      {
+        "text": "4-Nitrophenol is more acidic than 3-nitrophenol because the $-NO_2$ group exerts both strong $-I$ and $-R$ effects from the para-position, whereas from the meta-position, it exerts predominantly a $-I$ effect.",
+        "label": "A"
+      },
+      {
+        "text": "3-Nitrophenol is more acidic than 4-nitrophenol because the inductive effect ($-I$) is stronger at the meta-position than at the para-position, while resonance ($-R$) operates equally at both positions.",
+        "label": "B"
+      },
+      {
+        "text": "Phenol is more acidic than 3-nitrophenol because the $-NO_2$ group at the meta-position acts as an electron-donating group through resonance.",
+        "label": "C"
+      },
+      {
+        "text": "4-Nitrophenol and 3-nitrophenol have identical acidities because the $-NO_2$ group exerts only an inductive effect ($-I$) regardless of its position on the benzene ring.",
+        "label": "D"
+      }
+    ],
+    "correct_option": "A",
+    "explanation": "Acidity depends on the stabilization of the conjugate base (phenoxide ion). In 4-nitrophenol (para-nitrophenol), the strong electron-withdrawing nitro group ($-NO_2$) exerts both a strong negative inductive effect ($-I$) and a strong negative resonance effect ($-R$), directly delocalizing the negative charge on the oxygen atom onto the nitro oxygens. In 3-nitrophenol (meta-nitrophenol), delocalization of the negative charge to the nitro group via resonance is not geometrically possible; hence, the $-NO_2$ group stabilizes the anion primarily through the distance-dependent $-I$ effect. Phenol lacks any electron-withdrawing nitro group, making it the least acidic among the three. Therefore, 4-nitrophenol is significantly more acidic than 3-nitrophenol, which in turn is more acidic than phenol.",
+    "stem_fp": "34d28a44e0128084",
+    "body_md5": "b9f2827aba995e4aec6de56700b5605e",
+    "provider": "gemini",
+    "model": "gemini-3.6-flash",
+    "routing": "fixed:gemini",
+    "is_fallback": false,
+    "constraints": {
+      "reasoning": "electronic_effects",
+      "seed_slot_id": "chemistry-06",
+      "question_format": "MCQ_4",
+      "cognitive_operation": "Inductive vs resonance",
+      "forbidden_templates": [
+        "PHYS_STRETCH_20PCT_CURRENT",
+        "PHYS_STRETCH_2X_LENGTH_RATIO",
+        "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+        "CHEM_LATTICE_COMPARISON",
+        "CHEM_LATTICE_FACTORS",
+        "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+        "ZOO_ABO_SEQUENCE",
+        "ZOO_ABO_ANTIGEN_IDENTIFY"
+      ],
+      "correct_option_count": 1,
+      "explanation_required": true,
+      "avoid_paraphrase_duplicates": true,
+      "enforce_prior_stem_diversity": true
+    }
+  },
+  {
+    "id": "a357fe24-b0ef-4bd5-b7f7-956f392f9942",
+    "status": "DRAFT",
+    "subject": "Chemistry",
+    "chapter": "Organic Chemistry - Basic Principles",
+    "topic": "Isomerism and Intermediates",
+    "concept": "Structural Isomerism",
+    "concept_code": "structural-isomerism",
+    "blueprint_key": "production-seed-v1-2026-09-02-bp-chemistry-07",
+    "difficulty": "easy",
+    "stem": "Which pair of organic molecules represents a set of functional isomers?",
+    "options": [
+      {
+        "text": "Ethanol and dimethyl ether",
+        "label": "A"
+      },
+      {
+        "text": "Propan-1-ol and propan-2-ol",
+        "label": "B"
+      },
+      {
+        "text": "Pentane and 2-methylbutane",
+        "label": "C"
+      },
+      {
+        "text": "Pent-1-ene and pent-2-ene",
+        "label": "D"
+      }
+    ],
+    "correct_option": "A",
+    "explanation": "Functional isomers have the same molecular formula but contain different functional groups. Ethanol (CH3CH2OH, an alcohol) and dimethyl ether (CH3OCH3, an ether) both have the molecular formula C2H6O, but belong to different functional group classes. Propan-1-ol and propan-2-ol are position isomers because the position of the -OH group differs. Pentane and 2-methylbutane are chain isomers because their carbon skeletons differ. Pent-1-ene and pent-2-ene are position isomers due to the difference in the position of the double bond.",
+    "stem_fp": "b774168c3c0a8e7a",
+    "body_md5": "6f0c4264b7c55988efff574c3b989a89",
+    "provider": "gemini",
+    "model": "gemini-3.6-flash",
+    "routing": "fixed:gemini",
+    "is_fallback": false,
+    "constraints": {
+      "reasoning": "isomer_classification",
+      "seed_slot_id": "chemistry-07",
+      "question_format": "MCQ_4",
+      "cognitive_operation": "Structural isomer recognition",
+      "forbidden_templates": [
+        "PHYS_STRETCH_20PCT_CURRENT",
+        "PHYS_STRETCH_2X_LENGTH_RATIO",
+        "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+        "CHEM_LATTICE_COMPARISON",
+        "CHEM_LATTICE_FACTORS",
+        "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+        "ZOO_ABO_SEQUENCE",
+        "ZOO_ABO_ANTIGEN_IDENTIFY"
+      ],
+      "correct_option_count": 1,
+      "explanation_required": true,
+      "avoid_paraphrase_duplicates": true,
+      "enforce_prior_stem_diversity": true
+    }
+  },
+  {
+    "id": "54907eea-4fcd-4855-8477-268bafe03e82",
+    "status": "DRAFT",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding and Molecular Structure",
+    "topic": "Covalent Bonding and VSEPR Theory",
+    "concept": "VSEPR Theory",
+    "concept_code": "vsepr-theory",
+    "blueprint_key": "production-seed-v1-2026-09-02-bp-chemistry-01",
+    "difficulty": "medium",
+    "stem": "Consider the chemical species $\\text{XeF}_5^-$, $\\text{SF}_4$, and $\\text{ICl}_3$. According to the VSEPR theory, which of the following correctly pairs each species with its molecular geometry (shape)?",
+    "options": [
+      {
+        "text": "$\\text{XeF}_5^-$: Pentagonal planar; $\\text{SF}_4$: See-saw; $\\text{ICl}_3$: T-shaped",
+        "label": "A"
+      },
+      {
+        "text": "$\\text{XeF}_5^-$: Pentagonal bipyramidal; $\\text{SF}_4$: Square planar; $\\text{ICl}_3$: Trigonal planar",
+        "label": "B"
+      },
+      {
+        "text": "$\\text{XeF}_5^-$: Square pyramidal; $\\text{SF}_4$: Tetrahedral; $\\text{ICl}_3$: Trigonal bipyramidal",
+        "label": "C"
+      },
+      {
+        "text": "$\\text{XeF}_5^-$: Pentagonal planar; $\\text{SF}_4$: Square planar; $\\text{ICl}_3$: T-shaped",
+        "label": "D"
+      }
+    ],
+    "correct_option": "A",
+    "explanation": "To determine the molecular geometry using VSEPR theory:\n1. $\\text{XeF}_5^-$: Central Xe atom has 8 valence electrons + 5 (from F atoms) + 1 (negative charge) = 14 valence electrons, forming 7 electron pairs. This gives 5 bond pairs and 2 lone pairs ($AX_5E_2$). The steric number is 7 (pentagonal bipyramidal electron geometry). The two lone pairs occupy the axial positions to minimize repulsions, resulting in a pentagonal planar molecular geometry.\n2. $\\text{SF}_4$: Central S atom has 6 valence electrons + 4 (from F atoms) = 10 valence electrons, forming 5 electron pairs (4 bond pairs + 1 lone pair, $AX_4E$). The steric number is 5 (trigonal bipyramidal electron geometry). The lone pair occupies an equatorial position, giving a see-saw molecular geometry.\n3. $\\text{ICl}_3$: Central I atom has 7 valence electrons + 3 (from Cl atoms) = 10 valence electrons, forming 5 electron pairs (3 bond pairs + 2 lone pairs, $AX_3E_2$). The steric number is 5 (trigonal bipyramidal electron geometry). The two lone pairs occupy equatorial positions, leading to a T-shaped molecular geometry.\nTherefore, option A correctly pairs all three species with their shapes.",
+    "stem_fp": "bbe9715403aa69dc",
+    "body_md5": "5b61d0de3eba381f540486a2f15c81fc",
+    "provider": "gemini",
+    "model": "gemini-3.6-flash",
+    "routing": "fixed:gemini",
+    "is_fallback": false,
+    "constraints": {
+      "reasoning": "geometry_prediction",
+      "seed_slot_id": "chemistry-01",
+      "question_format": "MCQ_4",
+      "cognitive_operation": "Electron-pair geometry via VSEPR",
+      "forbidden_templates": [
+        "PHYS_STRETCH_20PCT_CURRENT",
+        "PHYS_STRETCH_2X_LENGTH_RATIO",
+        "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+        "CHEM_LATTICE_COMPARISON",
+        "CHEM_LATTICE_FACTORS",
+        "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+        "ZOO_ABO_SEQUENCE",
+        "ZOO_ABO_ANTIGEN_IDENTIFY"
+      ],
+      "correct_option_count": 1,
+      "explanation_required": true,
+      "avoid_paraphrase_duplicates": true,
+      "enforce_prior_stem_diversity": true
+    }
+  },
+  {
+    "id": "a1f1d832-21a3-4fb6-86b8-fe07ed46ad18",
+    "status": "DRAFT",
+    "subject": "Physics",
+    "chapter": "Kinematics",
+    "topic": "Motion in a Straight Line",
+    "concept": "Kinematic Equations",
+    "concept_code": "kinematic-equations",
+    "blueprint_key": "production-seed-v1-2026-09-02-bp-physics-02",
+    "difficulty": "medium",
+    "stem": "A particle moving along a straight line with uniform acceleration covers a distance of $12\\text{ m}$ during the $3^{\\text{rd}}$ second of its motion and $20\\text{ m}$ during the $5^{\\text{th}}$ second of its motion. Assuming the particle started moving at $t = 0$, what is the total distance traveled by the particle in the first $4$ seconds?",
+    "options": [
+      {
+        "text": "32 m",
+        "label": "A"
+      },
+      {
+        "text": "48 m",
+        "label": "B"
+      },
+      {
+        "text": "24 m",
+        "label": "C"
+      },
+      {
+        "text": "40 m",
+        "label": "D"
+      }
+    ],
+    "correct_option": "B",
+    "explanation": "The distance covered by a body in the $n^{\\text{th}}$ second of uniformly accelerated motion is given by the formula:\n$$s_n = u + \\frac{a}{2}(2n - 1)$$\n\nGiven:\nFor $n = 3$, $s_3 = 12\\text{ m}$:\n$$12 = u + \\frac{a}{2}(2(3) - 1) \\implies 12 = u + \\frac{5a}{2} \\quad \\text{--- (Equation 1)}$$\n\nFor $n = 5$, $s_5 = 20\\text{ m}$:\n$$20 = u + \\frac{a}{2}(2(5) - 1) \\implies 20 = u + \\frac{9a}{2} \\quad \\text{--- (Equation 2)}$$\n\nSubtracting Equation 1 from Equation 2:\n$$20 - 12 = \\left(u + \\frac{9a}{2}\\right) - \\left(u + \\frac{5a}{2}\\right)$$\n$$8 = \\frac{4a}{2} = 2a \\implies a = 4\\text{ m/s}^2$$\n\nSubstituting $a = 4\\text{ m/s}^2$ back into Equation 1:\n$$12 = u + \\frac{5(4)}{2} \\implies 12 = u + 10 \\implies u = 2\\text{ m/s}$$\n\nNow, to find the total distance traveled in the first $t = 4\\text{ seconds}$, we use the kinematic equation:\n$$s = ut + \\frac{1}{2}at^2$$\n$$s = (2)(4) + \\frac{1}{2}(4)(4)^2 = 8 + 2(16) = 8 + 32 = 48\\text{ m}$$\n\nHence, Option B is correct.\n- Option A (32 m) incorrectly considers only the $at^2/2$ term without adding initial velocity distance ($ut$).\n- Option C (24 m) represents the distance traveled in 2 seconds or incorrect algebra.\n- Option D (40 m) results from miscalculating the initial velocity or acceleration values.",
+    "stem_fp": "1fe04b2ed8fac996",
+    "body_md5": "641a4a93a65100ff90160ff64ae207ee",
+    "provider": "gemini",
+    "model": "gemini-3.6-flash",
+    "routing": "fixed:gemini",
+    "is_fallback": false,
+    "constraints": {
+      "reasoning": "numerical_application",
+      "seed_slot_id": "physics-02",
+      "question_format": "MCQ_4",
+      "cognitive_operation": "Apply v = u + at / s = ut + ½at²",
+      "forbidden_templates": [
+        "PHYS_STRETCH_20PCT_CURRENT",
+        "PHYS_STRETCH_2X_LENGTH_RATIO",
+        "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+        "CHEM_LATTICE_COMPARISON",
+        "CHEM_LATTICE_FACTORS",
+        "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+        "ZOO_ABO_SEQUENCE",
+        "ZOO_ABO_ANTIGEN_IDENTIFY"
+      ],
+      "correct_option_count": 1,
+      "explanation_required": true,
+      "avoid_paraphrase_duplicates": true,
+      "enforce_prior_stem_diversity": true
+    }
+  },
+  {
+    "id": "3d0dbda5-7882-4e3f-90d8-3a479cf67ab2",
+    "status": "DRAFT",
+    "subject": "Physics",
+    "chapter": "Optics",
+    "topic": "Refraction and Lenses",
+    "concept": "Thin Lens Formula",
+    "concept_code": "lens-formula",
+    "blueprint_key": "production-seed-v1-2026-09-02-bp-physics-10",
+    "difficulty": "medium",
+    "stem": "A small object is placed perpendicular to the principal axis of a thin convex lens of focal length $f = +15\\text{ cm}$. A real image is formed on a screen on the opposite side of the lens. When the object is moved $10\\text{ cm}$ closer to the lens, the image formed on the screen shifts by $30\\text{ cm}$ further away from the lens to remain in focus. Find the initial distance of the object from the lens.",
+    "options": [
+      {
+        "text": "$25\\text{ cm}$",
+        "label": "A"
+      },
+      {
+        "text": "$30\\text{ cm}$",
+        "label": "B"
+      },
+      {
+        "text": "$40\\text{ cm}$",
+        "label": "C"
+      },
+      {
+        "text": "$45\\text{ cm}$",
+        "label": "D"
+      }
+    ],
+    "correct_option": "B",
+    "explanation": "Using Cartesian sign conventions for a thin convex lens:\nFocal length $f = +15\\text{ cm}$.\n\nLet the initial object distance be $u_1 = -x$ (where $x > 0$).\nUsing the thin lens formula:\n$\\frac{1}{v_1} - \\frac{1}{u_1} = \\frac{1}{f} \\implies \\frac{1}{v_1} - \\frac{1}{-x} = \\frac{1}{15} \\implies \\frac{1}{v_1} = \\frac{1}{15} - \\frac{1}{x} = \\frac{x - 15}{15x}$\nThus, $v_1 = \\frac{15x}{x - 15}$.\nSince a real image is formed on a screen, $x > 15$.\n\nIn the second case, the object is moved $10\\text{ cm}$ closer to the lens, so $u_2 = -(x - 10)$.\nThe new image distance $v_2 = v_1 + 30$.\nUsing the lens formula for the second position:\n$\\frac{1}{v_2} - \\frac{1}{u_2} = \\frac{1}{f} \\implies \\frac{1}{v_1 + 30} + \\frac{1}{x - 10} = \\frac{1}{15}$\n$\\frac{1}{v_1 + 30} = \\frac{1}{15} - \\frac{1}{x - 10} = \\frac{x - 25}{15(x - 10)}$\nThus, $v_1 + 30 = \\frac{15(x - 10)}{x - 25}$.\n\nSubtracting $v_1$ from $v_1 + 30$ gives:\n$\\frac{15(x - 10)}{x - 25} - \\frac{15x}{x - 15} = 30$\nDividing the entire equation by $15$:\n$\\frac{x - 10}{x - 25} - \\frac{x}{x - 15} = 2$\n\nTaking a common denominator:\n$\\frac{(x - 10)(x - 15) - x(x - 25)}{(x - 25)(x - 15)} = 2$\n$\\frac{(x^2 - 25x + 150) - (x^2 - 25x)}{x^2 - 40x + 375} = 2$\n$\\frac{150}{x^2 - 40x + 375} = 2$\n$x^2 - 40x + 375 = 75$\n$x^2 - 40x + 300 = 0$\n\nSolving this quadratic equation:\n$(x - 30)(x - 10) = 0$\nThis gives $x = 30\\text{ cm}$ or $x = 10\\text{ cm}$.\n\nSince $x > 15\\text{ cm}$ for a real image to be formed initially on a screen, $x = 10\\text{ cm}$ is rejected.\nTherefore, the initial object distance is $30\\text{ cm}$.",
+    "stem_fp": "bf0db28992ba2529",
+    "body_md5": "2438e1c1c989e282c87bb46d6eb5c560",
+    "provider": "gemini",
+    "model": "gemini-3.6-flash",
+    "routing": "fixed:gemini",
+    "is_fallback": false,
+    "constraints": {
+      "reasoning": "numerical_application",
+      "seed_slot_id": "physics-10",
+      "question_format": "MCQ_4",
+      "cognitive_operation": "Thin lens formula 1/v − 1/u = 1/f",
+      "forbidden_templates": [
+        "PHYS_STRETCH_20PCT_CURRENT",
+        "PHYS_STRETCH_2X_LENGTH_RATIO",
+        "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+        "CHEM_LATTICE_COMPARISON",
+        "CHEM_LATTICE_FACTORS",
+        "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+        "ZOO_ABO_SEQUENCE",
+        "ZOO_ABO_ANTIGEN_IDENTIFY"
+      ],
+      "correct_option_count": 1,
+      "explanation_required": true,
+      "avoid_paraphrase_duplicates": true,
+      "enforce_prior_stem_diversity": true
+    }
+  },
+  {
+    "id": "3dc11d2a-b9ad-4155-93ec-4cd7b3bae9af",
+    "status": "DRAFT",
+    "subject": "Zoology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Cardiac Cycle",
+    "concept": "Cardiac Cycle Phases",
+    "concept_code": "cardiac-cycle-phases",
+    "blueprint_key": "production-seed-v1-2026-09-02-bp-zoology-01",
+    "difficulty": "medium",
+    "stem": "During a single human cardiac cycle at rest, a specific sequence of mechanical events occurs across the heart chambers. Which of the following accurately describes the correct sequential progression of events starting immediately after atrial systole?",
+    "options": [
+      {
+        "text": "Ventricular systole (isovolumetric contraction followed by ventricular ejection) → Joint diastole → Ventricular diastole",
+        "label": "A"
+      },
+      {
+        "text": "Isovolumetric relaxation → Ventricular ejection → Atrial diastole → Joint diastole",
+        "label": "B"
+      },
+      {
+        "text": "Ventricular systole (isovolumetric contraction followed by ventricular ejection) → Ventricular diastole (isovolumetric relaxation followed by ventricular filling) → Joint diastole",
+        "label": "C"
+      },
+      {
+        "text": "Ventricular ejection → Isovolumetric contraction → Isovolumetric relaxation → Atrial systole",
+        "label": "D"
+      }
+    ],
+    "correct_option": "C",
+    "explanation": "The cardiac cycle begins with atrial contraction (atrial systole) pushing remaining blood into the ventricles. Immediately following atrial systole, the ventricles enter ventricular systole. Ventricular systole begins with isovolumetric contraction (AV valves close, pressure builds without volume change) followed by ventricular ejection (semilunar valves open, blood pumped into arteries). Next, ventricular diastole begins with isovolumetric relaxation (semilunar valves close, ventricles relax without volume change) followed by early ventricular filling as AV valves open. As the cycle concludes before the next atrial systole, all four chambers remain relaxed simultaneously during joint diastole. Option C accurately traces this physiological progression.",
+    "stem_fp": "e0933fa7cc7a5e7e",
+    "body_md5": "1a27755effe026c7988a8c23021524b8",
+    "provider": "gemini",
+    "model": "gemini-3.6-flash",
+    "routing": "fixed:gemini",
+    "is_fallback": false,
+    "constraints": {
+      "reasoning": "process_sequence",
+      "seed_slot_id": "zoology-01",
+      "question_format": "MCQ_4",
+      "cognitive_operation": "Systole/diastole phase identification",
+      "forbidden_templates": [
+        "PHYS_STRETCH_20PCT_CURRENT",
+        "PHYS_STRETCH_2X_LENGTH_RATIO",
+        "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+        "CHEM_LATTICE_COMPARISON",
+        "CHEM_LATTICE_FACTORS",
+        "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+        "ZOO_ABO_SEQUENCE",
+        "ZOO_ABO_ANTIGEN_IDENTIFY"
+      ],
+      "correct_option_count": 1,
+      "explanation_required": true,
+      "avoid_paraphrase_duplicates": true,
+      "enforce_prior_stem_diversity": true
+    }
+  },
+  {
+    "id": "8a3937ce-5ad0-41af-bc84-17bf04c386ce",
+    "status": "DRAFT",
+    "subject": "Zoology",
+    "chapter": "Biomolecules",
+    "topic": "Nucleic Acids",
+    "concept": "DNA and RNA",
+    "concept_code": "dna-rna",
+    "blueprint_key": "production-seed-v1-2026-09-02-bp-zoology-04",
+    "difficulty": "medium",
+    "stem": "Which of the following statements correctly distinguishes the structural and functional properties of DNA from those of RNA in living organisms?",
+    "options": [
+      {
+        "text": "DNA contains a 2'-hydroxyl group on its pentose sugar, making it chemically less reactive and ideal for transient cellular signaling.",
+        "label": "A"
+      },
+      {
+        "text": "DNA utilizes uracil to form double-ring purine base pairs, whereas RNA utilizes thymine to prevent mutations during translation.",
+        "label": "B"
+      },
+      {
+        "text": "DNA serves as the stable long-term store of genetic information due to the absence of a 2'-OH group, while RNA contains a 2'-OH group and acts primarily as a functional participant in protein synthesis.",
+        "label": "C"
+      },
+      {
+        "text": "RNA forms a rigid double-helical structure stabilized exclusively by phosphodiester bonds to store genetic memory, whereas DNA is inherently single-stranded.",
+        "label": "D"
+      }
+    ],
+    "correct_option": "C",
+    "explanation": "Option C is correct because DNA contains 2'-deoxyribose (lacking an -OH group at the 2' carbon), which makes it chemically stable and suited for long-term genetic storage. RNA contains ribose (with a 2'-OH group), rendering it chemically more reactive and versatile for short-term functional roles like protein synthesis (mRNA, tRNA, rRNA). Option A is incorrect because DNA lacks a 2'-OH group; the 2'-OH is present in ribose sugar of RNA. Option B is incorrect because uracil and thymine are single-ring pyrimidines, not purines, and thymine is found in DNA while uracil is found in RNA. Option D is incorrect because DNA typically exists as a double helix while RNA is predominantly single-stranded.",
+    "stem_fp": "e9abed05c7120e90",
+    "body_md5": "1d3d9c6bddc7dde79834cdbed405d80f",
+    "provider": "gemini",
+    "model": "gemini-3.6-flash",
+    "routing": "fixed:gemini",
+    "is_fallback": false,
+    "constraints": {
+      "reasoning": "biomolecule_compare",
+      "seed_slot_id": "zoology-04",
+      "question_format": "MCQ_4",
+      "cognitive_operation": "DNA vs RNA structural/functional difference",
+      "forbidden_templates": [
+        "PHYS_STRETCH_20PCT_CURRENT",
+        "PHYS_STRETCH_2X_LENGTH_RATIO",
+        "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+        "CHEM_LATTICE_COMPARISON",
+        "CHEM_LATTICE_FACTORS",
+        "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+        "ZOO_ABO_SEQUENCE",
+        "ZOO_ABO_ANTIGEN_IDENTIFY"
+      ],
+      "correct_option_count": 1,
+      "explanation_required": true,
+      "avoid_paraphrase_duplicates": true,
+      "enforce_prior_stem_diversity": true
+    }
+  },
+  {
+    "id": "2e17c7e6-5d8f-4469-9cea-407177e61e8e",
+    "status": "DRAFT",
+    "subject": "Zoology",
+    "chapter": "Biomolecules",
+    "topic": "Proteins and Enzymes",
+    "concept": "Enzyme Action",
+    "concept_code": "enzyme-basics",
+    "blueprint_key": "production-seed-v1-2026-09-02-bp-zoology-03",
+    "difficulty": "medium",
+    "stem": "According to the induced-fit model of enzyme action, which of the following events best describes the interaction between an enzyme's active site and its substrate during the catalytic cycle?",
+    "options": [
+      {
+        "text": "The active site remains completely rigid and pre-formed, binding only to substrates that possess a complementary static structure.",
+        "label": "A"
+      },
+      {
+        "text": "Substrate binding induces a conformational change in the active site, optimizing chemical interactions to stabilize the transition state.",
+        "label": "B"
+      },
+      {
+        "text": "The substrate undergoes structural modification to fit the active site, while the tertiary structure of the enzyme remains entirely unchanged.",
+        "label": "C"
+      },
+      {
+        "text": "The active site permanently alters its chemical composition during substrate binding, converting the enzyme into a non-reusable product.",
+        "label": "D"
+      }
+    ],
+    "correct_option": "B",
+    "explanation": "Option B is correct because Koshland's induced-fit model posits that the initial interaction between the substrate and the active site induces a dynamic conformational change in the enzyme. This change aligns the catalytic functional groups precisely around the substrate, stabilizing the high-energy transition state and lowering the activation energy. Option A describes the outdated Fischer's lock-and-key model rather than the induced-fit model. Option C is incorrect because the enzyme undergoes crucial conformational flexibility, not just the substrate. Option D is incorrect because enzymes act as biological catalysts and emerge chemically unchanged at the end of the catalytic cycle, ready to process another substrate molecule.",
+    "stem_fp": "55f8cccab9af3824",
+    "body_md5": "54e692134279c71b4b7c8b0b7889fd5d",
+    "provider": "gemini",
+    "model": "gemini-3.6-flash",
+    "routing": "fixed:gemini",
+    "is_fallback": false,
+    "constraints": {
+      "reasoning": "mechanism",
+      "seed_slot_id": "zoology-03",
+      "question_format": "MCQ_4",
+      "cognitive_operation": "Enzyme action / active site",
+      "forbidden_templates": [
+        "PHYS_STRETCH_20PCT_CURRENT",
+        "PHYS_STRETCH_2X_LENGTH_RATIO",
+        "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+        "CHEM_LATTICE_COMPARISON",
+        "CHEM_LATTICE_FACTORS",
+        "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+        "ZOO_ABO_SEQUENCE",
+        "ZOO_ABO_ANTIGEN_IDENTIFY"
+      ],
+      "correct_option_count": 1,
+      "explanation_required": true,
+      "avoid_paraphrase_duplicates": true,
+      "enforce_prior_stem_diversity": true
+    }
+  },
+  {
+    "id": "b690c0d3-98f6-4e57-851f-aae1ac6ad8cd",
+    "status": "DRAFT",
+    "subject": "Zoology",
+    "chapter": "Animal Kingdom",
+    "topic": "Chordata Basics",
+    "concept": "Fundamental Chordate Features",
+    "concept_code": "chordate-features",
+    "blueprint_key": "production-seed-v1-2026-09-02-bp-zoology-05",
+    "difficulty": "easy",
+    "stem": "Which set of anatomical structures correctly represents the four primary diagnostic features present at some stage in the lifecycle of all chordates?",
+    "options": [
+      {
+        "text": "Solid ventral nerve cord, notochord, paired pharyngeal gill slits, and post-anal tail",
+        "label": "A"
+      },
+      {
+        "text": "Dorsal hollow nerve cord, notochord, paired pharyngeal gill slits, and post-anal tail",
+        "label": "B"
+      },
+      {
+        "text": "Dorsal hollow nerve cord, vertebral column, paired pharyngeal gill slits, and post-anal tail",
+        "label": "C"
+      },
+      {
+        "text": "Solid dorsal nerve cord, notochord, ventral heart, and post-anal tail",
+        "label": "D"
+      }
+    ],
+    "correct_option": "B",
+    "explanation": "All chordates fundamental diagnostic features present at some stage of development are: (1) a dorsal, hollow nerve cord, (2) a supportive notochord, (3) paired pharyngeal gill slits, and (4) a post-anal tail. Option A is incorrect because chordates possess a dorsal hollow nerve cord, whereas non-chordates typically have a ventral solid nerve cord. Option C is incorrect because the vertebral column is present only in subphylum Vertebrata, not in all chordates (e.g., Urochordata and Cephalochordata). Option D is incorrect because the chordate nerve cord is hollow, not solid.",
+    "stem_fp": "888e6e1d6493759a",
+    "body_md5": "6b4108a9977ce34d8272c91dfde12d0f",
+    "provider": "gemini",
+    "model": "gemini-3.6-flash",
+    "routing": "fixed:gemini",
+    "is_fallback": false,
+    "constraints": {
+      "reasoning": "classification",
+      "seed_slot_id": "zoology-05",
+      "question_format": "MCQ_4",
+      "cognitive_operation": "Fundamental chordate features",
+      "forbidden_templates": [
+        "PHYS_STRETCH_20PCT_CURRENT",
+        "PHYS_STRETCH_2X_LENGTH_RATIO",
+        "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+        "CHEM_LATTICE_COMPARISON",
+        "CHEM_LATTICE_FACTORS",
+        "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+        "ZOO_ABO_SEQUENCE",
+        "ZOO_ABO_ANTIGEN_IDENTIFY"
+      ],
+      "correct_option_count": 1,
+      "explanation_required": true,
+      "avoid_paraphrase_duplicates": true,
+      "enforce_prior_stem_diversity": true
+    }
+  },
+  {
+    "id": "dd7b5422-437d-4b0f-a2dc-f370ea0496c2",
+    "status": "DRAFT",
+    "subject": "Zoology",
+    "chapter": "Body Fluids and Circulation",
+    "topic": "Human Heart Anatomy",
+    "concept": "Structure of the Human Heart",
+    "concept_code": "heart-structure",
+    "blueprint_key": "production-seed-v1-2026-09-02-bp-zoology-02",
+    "difficulty": "easy",
+    "stem": "Which of the following heart valves is located between the right ventricle and the pulmonary artery, preventing the backflow of blood into the right ventricle during ventricular diastole?",
+    "options": [
+      {
+        "text": "Bicuspid valve",
+        "label": "A"
+      },
+      {
+        "text": "Tricuspid valve",
+        "label": "B"
+      },
+      {
+        "text": "Pulmonary semilunar valve",
+        "label": "C"
+      },
+      {
+        "text": "Aortic semilunar valve",
+        "label": "D"
+      }
+    ],
+    "correct_option": "C",
+    "explanation": "The pulmonary semilunar valve is situated at the opening between the right ventricle and the pulmonary artery. It opens during ventricular systole to allow blood flow into the pulmonary trunk and closes during ventricular diastole to prevent blood from flowing backward into the right ventricle. The bicuspid (mitral) valve guards the left atrioventricular opening, the tricuspid valve guards the right atrioventricular opening, and the aortic semilunar valve is located at the base of the aorta.",
+    "stem_fp": "b6b636a1508ee202",
+    "body_md5": "cf182df1ae1413286a1d811bf4ebdb7a",
+    "provider": "gemini",
+    "model": "gemini-3.6-flash",
+    "routing": "fixed:gemini",
+    "is_fallback": false,
+    "constraints": {
+      "reasoning": "anatomy_identify",
+      "seed_slot_id": "zoology-02",
+      "question_format": "MCQ_4",
+      "cognitive_operation": "Chamber/valve/vessel identification",
+      "forbidden_templates": [
+        "PHYS_STRETCH_20PCT_CURRENT",
+        "PHYS_STRETCH_2X_LENGTH_RATIO",
+        "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+        "CHEM_LATTICE_COMPARISON",
+        "CHEM_LATTICE_FACTORS",
+        "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+        "ZOO_ABO_SEQUENCE",
+        "ZOO_ABO_ANTIGEN_IDENTIFY"
+      ],
+      "correct_option_count": 1,
+      "explanation_required": true,
+      "avoid_paraphrase_duplicates": true,
+      "enforce_prior_stem_diversity": true
+    }
+  }
+]

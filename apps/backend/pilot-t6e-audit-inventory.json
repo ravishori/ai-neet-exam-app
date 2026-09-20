@@ -1,0 +1,4326 @@
+{
+  "batch_id": "physics-t6d-pilot-20260902",
+  "db_writes": 0,
+  "baseline": {
+    "pilot_count": 100,
+    "pilot_by_status": {
+      "PUBLISHED": 100
+    },
+    "pilot_published": 100,
+    "pilot_draft": 0,
+    "legacy_count": 5000,
+    "legacy_null_concept": 5000,
+    "legacy_published": 0,
+    "legacy_fingerprint": "937c60a9aaa5dcbedfa9b5bc569d45a0",
+    "legacy_fingerprint_row": {
+      "total": "5000",
+      "null_c": "5000",
+      "published": "0",
+      "fp": "937c60a9aaa5dcbedfa9b5bc569d45a0"
+    },
+    "expected_legacy_fp_prefix": "937c60a9",
+    "legacy_fp_prefix_match": true,
+    "missing_in_db": [],
+    "extra_in_db": [],
+    "total_physicsish": 5173
+  },
+  "gates_rerun": {
+    "candidates": 100,
+    "accepted": 100,
+    "rejected": 0,
+    "held": 0,
+    "duplicate_rate": 0.0
+  },
+  "structural_failures": [],
+  "numerical": {
+    "total": 57,
+    "verified": 35,
+    "failures": 0,
+    "independent_unavailable": 22,
+    "rate_verified_of_checkable": 1.0,
+    "details": [
+      {
+        "pilot_qid": "t6d-001",
+        "slug": "physics-t6d-pilot-20260902-q001",
+        "correct_option": "B",
+        "is_numerical": true,
+        "expected": 20,
+        "recomputed": 20,
+        "match": true,
+        "note": "v=u+at",
+        "unit_ok": true,
+        "hold_recommendation": false
+      },
+      {
+        "pilot_qid": "t6d-002",
+        "slug": "physics-t6d-pilot-20260902-q002",
+        "correct_option": "B",
+        "is_numerical": true,
+        "expected": 12,
+        "recomputed": 12,
+        "match": true,
+        "note": "v=u+at",
+        "unit_ok": true,
+        "hold_recommendation": false
+      },
+      {
+        "pilot_qid": "t6d-003",
+        "slug": "physics-t6d-pilot-20260902-q003",
+        "correct_option": "B",
+        "is_numerical": true,
+        "expected": 12,
+        "recomputed": 12,
+        "match": true,
+        "note": "v=u+at",
+        "unit_ok": true,
+        "hold_recommendation": false
+      },
+      {
+        "pilot_qid": "t6d-004",
+        "slug": "physics-t6d-pilot-20260902-q004",
+        "correct_option": "B",
+        "is_numerical": true,
+        "expected": 15,
+        "recomputed": 15,
+        "match": true,
+        "note": "v=u+at",
+        "unit_ok": true,
+        "hold_recommendation": false
+      },
+      {
+        "pilot_qid": "t6d-005",
+        "slug": "physics-t6d-pilot-20260902-q005",
+        "correct_option": "B",
+        "is_numerical": true,
+        "expected": 25,
+        "recomputed": 25,
+        "match": true,
+        "note": "v=u+at",
+        "unit_ok": true,
+        "hold_recommendation": false
+      },
+      {
+        "pilot_qid": "t6d-006",
+        "slug": "physics-t6d-pilot-20260902-q006",
+        "correct_option": "B",
+        "is_numerical": true,
+        "expected": 20,
+        "recomputed": 20,
+        "match": true,
+        "note": "v=u+at",
+        "unit_ok": true,
+        "hold_recommendation": false
+      },
+      {
+        "pilot_qid": "t6d-007",
+        "slug": "physics-t6d-pilot-20260902-q007",
+        "correct_option": "B",
+        "is_numerical": true,
+        "expected": 4,
+        "recomputed": 4,
+        "match": true,
+        "note": "v=u+at",
+        "unit_ok": true,
+        "hold_recommendation": false
+      },
+      {
+        "pilot_qid": "t6d-008",
+        "slug": "physics-t6d-pilot-20260902-q008",
+        "correct_option": "B",
+        "is_numerical": true,
+        "expected": 20,
+        "recomputed": 20,
+        "match": true,
+        "note": "v=u+at",
+        "unit_ok": true,
+        "hold_recommendation": false
+      },
+      {
+        "pilot_qid": "t6d-009",
+        "slug": "physics-t6d-pilot-20260902-q009",
+        "correct_option": "A",
+        "is_numerical": true,
+        "expected": 4.0,
+        "recomputed": 4.0,
+        "match": true,
+        "note": "v_avg",
+        "unit_ok": true,
+        "hold_recommendation": false
+      },
+      {
+        "pilot_qid": "t6d-010",
+        "slug": "physics-t6d-pilot-20260902-q010",
+        "correct_option": "A",
+        "is_numerical": true,
+        "expected": 5.0,
+        "recomputed": 5.0,
+        "match": true,
+        "note": "v_avg",
+        "unit_ok": true,
+        "hold_recommendation": false
+      },
+      {
+        "pilot_qid": "t6d-011",
+        "slug": "physics-t6d-pilot-20260902-q011",
+        "correct_option": "A",
+        "is_numerical": true,
+        "expected": 3.0,
+        "recomputed": 3.0,
+        "match": true,
+        "note": "v_avg",
+        "unit_ok": true,
+        "hold_recommendation": false
+      },
+      {
+        "pilot_qid": "t6d-012",
+        "slug": "physics-t6d-pilot-20260902-q012",
+        "correct_option": "A",
+        "is_numerical": true,
+        "expected": 4.0,
+        "recomputed": 4.0,
+        "match": true,
+        "note": "v_avg",
+        "unit_ok": true,
+        "hold_recommendation": false
+      },
+      {
+        "pilot_qid": "t6d-013",
+        "slug": "physics-t6d-pilot-20260902-q013",
+        "correct_option": "B",
+        "is_numerical": true,
+        "expected": 15,
+        "recomputed": 15,
+        "match": true,
+        "note": "v_rel",
+        "unit_ok": true,
+        "hold_recommendation": false
+      },
+      {
+        "pilot_qid": "t6d-014",
+        "slug": "physics-t6d-pilot-20260902-q014",
+        "correct_option": "B",
+        "is_numerical": true,
+        "expected": 5,
+        "recomputed": 5,
+        "match": true,
+        "note": "v_rel",
+        "unit_ok": true,
+        "hold_recommendation": false
+      },
+      {
+        "pilot_qid": "t6d-015",
+        "slug": "physics-t6d-pilot-20260902-q015",
+        "correct_option": "B",
+        "is_numerical": true,
+        "expected": 20,
+        "recomputed": 20,
+        "match": true,
+        "note": "v_rel",
+        "unit_ok": true,
+        "hold_recommendation": false
+      },
+      {
+        "pilot_qid": "t6d-016",
+        "slug": "physics-t6d-pilot-20260902-q016",
+        "correct_option": "B",
+        "is_numerical": true,
+        "expected": 8,
+        "recomputed": 8,
+        "match": true,
+        "note": "v_rel",
+        "unit_ok": true,
+        "hold_recommendation": false
+      },
+      {
+        "pilot_qid": "t6d-017",
+        "slug": "physics-t6d-pilot-20260902-q017",
+        "correct_option": "C",
+        "is_numerical": true,
+        "expected": 34.64,
+        "recomputed": 34.64101615137754,
+        "match": true,
+        "note": "projectile_R",
+        "unit_ok": true,
+        "hold_recommendation": false
+      },
+      {
+        "pilot_qid": "t6d-018",
+        "slug": "physics-t6d-pilot-20260902-q018",
+        "correct_option": "C",
+        "is_numerical": true,
+        "expected": 10.0,
+        "recomputed": 10.0,
+        "match": true,
+        "note": "projectile_R",
+        "unit_ok": true,
+        "hold_recommendation": false
+      },
+      {
+        "pilot_qid": "t6d-019",
+        "slug": "physics-t6d-pilot-20260902-q019",
+        "correct_option": "C",
+        "is_numerical": true,
+        "expected": 138.56,
+        "recomputed": 138.56406460551017,
+        "match": true,
+        "note": "projectile_R",
+        "unit_ok": true,
+        "hold_recommendation": false
+      },
+      {
+        "pilot_qid": "t6d-020",
+        "slug": "physics-t6d-pilot-20260902-q020",
+        "correct_option": "C",
+        "is_numerical": true,
+        "expected": 40.0,
+        "recomputed": 40.0,
+        "match": true,
+        "note": "projectile_R",
+        "unit_ok": true,
+        "hold_recommendation": false
+      },
+      {
+        "pilot_qid": "t6d-021",
+        "slug": "physics-t6d-pilot-20260902-q021",
+        "correct_option": "C",
+        "is_numerical": true,
+        "expected": 77.94,
+        "recomputed": 77.94228634059948,
+        "match": true,
+        "note": "projectile_R",
+        "unit_ok": true,
+        "hold_recommendation": false
+      },
+      {
+        "pilot_qid": "t6d-022",
+        "slug": "physics-t6d-pilot-20260902-q022",
+        "correct_option": "C",
+        "is_numerical": true,
+        "expected": 250.0,
+        "recomputed": 250.0,
+        "match": true,
+        "note": "projectile_R",
+        "unit_ok": true,
+        "hold_recommendation": false
+      },
+      {
+        "pilot_qid": "t6d-023",
+        "slug": "physics-t6d-pilot-20260902-q023",
+        "correct_option": "C",
+        "is_numerical": true,
+        "expected": 19.49,
+        "recomputed": 19.485571585149867,
+        "match": true,
+        "note": "projectile_R",
+        "unit_ok": true,
+        "hold_recommendation": false
+      },
+      {
+        "pilot_qid": "t6d-024",
+        "slug": "physics-t6d-pilot-20260902-q024",
+        "correct_option": "C",
+        "is_numerical": true,
+        "expected": 62.5,
+        "recomputed": 62.5,
+        "match": true,
+        "note": "projectile_R",
+        "unit_ok": true,
+        "hold_recommendation": false
+      },
+      {
+        "pilot_qid": "t6d-025",
+        "slug": "physics-t6d-pilot-20260902-q025",
+        "correct_option": "B",
+        "is_numerical": true,
+        "expected": 5.0,
+        "recomputed": 5.0,
+        "match": true,
+        "note": "vector_mag",
+        "unit_ok": true,
+        "hold_recommendation": false
+      },
+      {
+        "pilot_qid": "t6d-026",
+        "slug": "physics-t6d-pilot-20260902-q026",
+        "correct_option": "B",
+        "is_numerical": true,
+        "expected": 13.0,
+        "recomputed": 13.0,
+        "match": true,
+        "note": "vector_mag",
+        "unit_ok": true,
+        "hold_recommendation": false
+      },
+      {
+        "pilot_qid": "t6d-027",
+        "slug": "physics-t6d-pilot-20260902-q027",
+        "correct_option": "B",
+        "is_numerical": true,
+        "expected": 10.0,
+        "recomputed": 10.0,
+        "match": true,
+        "note": "vector_mag",
+        "unit_ok": true,
+        "hold_recommendation": false
+      },
+      {
+        "pilot_qid": "t6d-028",
+        "slug": "physics-t6d-pilot-20260902-q028",
+        "correct_option": "B",
+        "is_numerical": true,
+        "expected": 15.0,
+        "recomputed": 15.0,
+        "match": true,
+        "note": "vector_mag",
+        "unit_ok": true,
+        "hold_recommendation": false
+      },
+      {
+        "pilot_qid": "t6d-029",
+        "slug": "physics-t6d-pilot-20260902-q029",
+        "correct_option": "B",
+        "is_numerical": true,
+        "expected": 20.0,
+        "recomputed": 20.0,
+        "match": true,
+        "note": "centripetal",
+        "unit_ok": true,
+        "hold_recommendation": false
+      },
+      {
+        "pilot_qid": "t6d-030",
+        "slug": "physics-t6d-pilot-20260902-q030",
+        "correct_option": "B",
+        "is_numerical": true,
+        "expected": 40.0,
+        "recomputed": 40.0,
+        "match": true,
+        "note": "centripetal",
+        "unit_ok": true,
+        "hold_recommendation": false
+      },
+      {
+        "pilot_qid": "t6d-031",
+        "slug": "physics-t6d-pilot-20260902-q031",
+        "correct_option": "B",
+        "is_numerical": true,
+        "expected": 18.0,
+        "recomputed": 18.0,
+        "match": true,
+        "note": "centripetal",
+        "unit_ok": true,
+        "hold_recommendation": false
+      },
+      {
+        "pilot_qid": "t6d-032",
+        "slug": "physics-t6d-pilot-20260902-q032",
+        "correct_option": "B",
+        "is_numerical": true,
+        "expected": 45.0,
+        "recomputed": 45.0,
+        "match": true,
+        "note": "centripetal",
+        "unit_ok": true,
+        "hold_recommendation": false
+      },
+      {
+        "pilot_qid": "t6d-039",
+        "slug": "physics-t6d-pilot-20260902-q039",
+        "correct_option": "A",
+        "is_numerical": true,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "INDEPENDENT_RECOMPUTE_UNAVAILABLE; gate_said=True:unchecked-keys-ok; keys=['x', 'y']",
+        "unit_ok": null,
+        "hold_recommendation": true
+      },
+      {
+        "pilot_qid": "t6d-040",
+        "slug": "physics-t6d-pilot-20260902-q040",
+        "correct_option": "A",
+        "is_numerical": true,
+        "expected": 6,
+        "recomputed": 6,
+        "match": true,
+        "note": "F=ma",
+        "unit_ok": true,
+        "hold_recommendation": false
+      },
+      {
+        "pilot_qid": "t6d-041",
+        "slug": "physics-t6d-pilot-20260902-q041",
+        "correct_option": "A",
+        "is_numerical": true,
+        "expected": 10,
+        "recomputed": 10,
+        "match": true,
+        "note": "F=ma",
+        "unit_ok": true,
+        "hold_recommendation": false
+      },
+      {
+        "pilot_qid": "t6d-042",
+        "slug": "physics-t6d-pilot-20260902-q042",
+        "correct_option": "A",
+        "is_numerical": true,
+        "expected": 16,
+        "recomputed": 16,
+        "match": true,
+        "note": "F=ma",
+        "unit_ok": true,
+        "hold_recommendation": false
+      },
+      {
+        "pilot_qid": "t6d-044",
+        "slug": "physics-t6d-pilot-20260902-q044",
+        "correct_option": "A",
+        "is_numerical": true,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "INDEPENDENT_RECOMPUTE_UNAVAILABLE; gate_said=True:scalar check present; keys=['p']",
+        "unit_ok": null,
+        "hold_recommendation": true
+      },
+      {
+        "pilot_qid": "t6d-046",
+        "slug": "physics-t6d-pilot-20260902-q046",
+        "correct_option": "B",
+        "is_numerical": true,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "INDEPENDENT_RECOMPUTE_UNAVAILABLE; gate_said=True:scalar check present; keys=['f_max']",
+        "unit_ok": null,
+        "hold_recommendation": true
+      },
+      {
+        "pilot_qid": "t6d-048",
+        "slug": "physics-t6d-pilot-20260902-q048",
+        "correct_option": "A",
+        "is_numerical": true,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "INDEPENDENT_RECOMPUTE_UNAVAILABLE; gate_said=True:work numeric present; keys=['W']",
+        "unit_ok": null,
+        "hold_recommendation": true
+      },
+      {
+        "pilot_qid": "t6d-049",
+        "slug": "physics-t6d-pilot-20260902-q049",
+        "correct_option": "A",
+        "is_numerical": true,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "INDEPENDENT_RECOMPUTE_UNAVAILABLE; gate_said=True:work numeric present; keys=['W']",
+        "unit_ok": null,
+        "hold_recommendation": true
+      },
+      {
+        "pilot_qid": "t6d-050",
+        "slug": "physics-t6d-pilot-20260902-q050",
+        "correct_option": "A",
+        "is_numerical": true,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "INDEPENDENT_RECOMPUTE_UNAVAILABLE; gate_said=True:work numeric present; keys=['W']",
+        "unit_ok": null,
+        "hold_recommendation": true
+      },
+      {
+        "pilot_qid": "t6d-052",
+        "slug": "physics-t6d-pilot-20260902-q052",
+        "correct_option": "B",
+        "is_numerical": true,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "INDEPENDENT_RECOMPUTE_UNAVAILABLE; gate_said=True:delta-K present; keys=['dK']",
+        "unit_ok": null,
+        "hold_recommendation": true
+      },
+      {
+        "pilot_qid": "t6d-055",
+        "slug": "physics-t6d-pilot-20260902-q055",
+        "correct_option": "A",
+        "is_numerical": true,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "INDEPENDENT_RECOMPUTE_UNAVAILABLE; gate_said=True:power present; keys=['P']",
+        "unit_ok": null,
+        "hold_recommendation": true
+      },
+      {
+        "pilot_qid": "t6d-057",
+        "slug": "physics-t6d-pilot-20260902-q057",
+        "correct_option": "B",
+        "is_numerical": true,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "INDEPENDENT_RECOMPUTE_UNAVAILABLE; gate_said=True:scalar check present; keys=['x_cm']",
+        "unit_ok": null,
+        "hold_recommendation": true
+      },
+      {
+        "pilot_qid": "t6d-061",
+        "slug": "physics-t6d-pilot-20260902-q061",
+        "correct_option": "B",
+        "is_numerical": true,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "INDEPENDENT_RECOMPUTE_UNAVAILABLE; gate_said=True:scalar check present; keys=['tau']",
+        "unit_ok": null,
+        "hold_recommendation": true
+      },
+      {
+        "pilot_qid": "t6d-064",
+        "slug": "physics-t6d-pilot-20260902-q064",
+        "correct_option": "B",
+        "is_numerical": true,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "INDEPENDENT_RECOMPUTE_UNAVAILABLE; gate_said=True:scalar check present; keys=['I']",
+        "unit_ok": null,
+        "hold_recommendation": true
+      },
+      {
+        "pilot_qid": "t6d-090",
+        "slug": "physics-t6d-pilot-20260902-q090",
+        "correct_option": "A",
+        "is_numerical": true,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "INDEPENDENT_RECOMPUTE_UNAVAILABLE; gate_said=True:unchecked-keys-ok; keys=['a', 't', 'u', 'v']",
+        "unit_ok": null,
+        "hold_recommendation": true
+      },
+      {
+        "pilot_qid": "t6d-091",
+        "slug": "physics-t6d-pilot-20260902-q091",
+        "correct_option": "A",
+        "is_numerical": true,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "INDEPENDENT_RECOMPUTE_UNAVAILABLE; gate_said=True:unchecked-keys-ok; keys=['a', 't', 'u', 'v']",
+        "unit_ok": null,
+        "hold_recommendation": true
+      },
+      {
+        "pilot_qid": "t6d-092",
+        "slug": "physics-t6d-pilot-20260902-q092",
+        "correct_option": "A",
+        "is_numerical": true,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "INDEPENDENT_RECOMPUTE_UNAVAILABLE; gate_said=True:unchecked-keys-ok; keys=['a', 't', 'u', 'v']",
+        "unit_ok": null,
+        "hold_recommendation": true
+      },
+      {
+        "pilot_qid": "t6d-093",
+        "slug": "physics-t6d-pilot-20260902-q093",
+        "correct_option": "A",
+        "is_numerical": true,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "INDEPENDENT_RECOMPUTE_UNAVAILABLE; gate_said=True:unchecked-keys-ok; keys=['a', 't', 'u', 'v']",
+        "unit_ok": null,
+        "hold_recommendation": true
+      },
+      {
+        "pilot_qid": "t6d-094",
+        "slug": "physics-t6d-pilot-20260902-q094",
+        "correct_option": "A",
+        "is_numerical": true,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "INDEPENDENT_RECOMPUTE_UNAVAILABLE; gate_said=True:unchecked-keys-ok; keys=['a', 't', 'u', 'v']",
+        "unit_ok": null,
+        "hold_recommendation": true
+      },
+      {
+        "pilot_qid": "t6d-095",
+        "slug": "physics-t6d-pilot-20260902-q095",
+        "correct_option": "A",
+        "is_numerical": true,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "INDEPENDENT_RECOMPUTE_UNAVAILABLE; gate_said=True:unchecked-keys-ok; keys=['a', 't', 'u', 'v']",
+        "unit_ok": null,
+        "hold_recommendation": true
+      },
+      {
+        "pilot_qid": "t6d-096",
+        "slug": "physics-t6d-pilot-20260902-q096",
+        "correct_option": "A",
+        "is_numerical": true,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "INDEPENDENT_RECOMPUTE_UNAVAILABLE; gate_said=True:unchecked-keys-ok; keys=['a', 't', 'u', 'v']",
+        "unit_ok": null,
+        "hold_recommendation": true
+      },
+      {
+        "pilot_qid": "t6d-097",
+        "slug": "physics-t6d-pilot-20260902-q097",
+        "correct_option": "A",
+        "is_numerical": true,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "INDEPENDENT_RECOMPUTE_UNAVAILABLE; gate_said=True:unchecked-keys-ok; keys=['a', 't', 'u', 'v']",
+        "unit_ok": null,
+        "hold_recommendation": true
+      },
+      {
+        "pilot_qid": "t6d-098",
+        "slug": "physics-t6d-pilot-20260902-q098",
+        "correct_option": "A",
+        "is_numerical": true,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "INDEPENDENT_RECOMPUTE_UNAVAILABLE; gate_said=True:unchecked-keys-ok; keys=['a', 't', 'u', 'v']",
+        "unit_ok": null,
+        "hold_recommendation": true
+      },
+      {
+        "pilot_qid": "t6d-099",
+        "slug": "physics-t6d-pilot-20260902-q099",
+        "correct_option": "A",
+        "is_numerical": true,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "INDEPENDENT_RECOMPUTE_UNAVAILABLE; gate_said=True:unchecked-keys-ok; keys=['a', 't', 'u', 'v']",
+        "unit_ok": null,
+        "hold_recommendation": true
+      },
+      {
+        "pilot_qid": "t6d-100",
+        "slug": "physics-t6d-pilot-20260902-q100",
+        "correct_option": "A",
+        "is_numerical": true,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "INDEPENDENT_RECOMPUTE_UNAVAILABLE; gate_said=True:unchecked-keys-ok; keys=['a', 't', 'u', 'v']",
+        "unit_ok": null,
+        "hold_recommendation": true
+      }
+    ]
+  },
+  "ncert": {
+    "classes": {
+      "SUPPORTED_WITH_INFERENCE": 95,
+      "DIRECTLY_SUPPORTED": 5
+    },
+    "page_level_verified": 0,
+    "section_level_verified": 100,
+    "directly_supported": 5,
+    "inference": 95,
+    "unsupported": 0,
+    "invalid": 0,
+    "distinction": {
+      "ncert_aligned": 100,
+      "ncert_source_verified_section_pdf": 100,
+      "page_level_ncert_verified": 0
+    }
+  },
+  "taxonomy": {
+    "kinematics_topics_in_db": [
+      {
+        "code": "motion-in-a-straight-line",
+        "name": "Motion in a Straight Line"
+      },
+      {
+        "code": "motion-in-a-plane",
+        "name": "Motion in a Plane"
+      }
+    ],
+    "chapter_counts": {
+      "kinematics": 43,
+      "units-and-measurement": 7,
+      "laws-of-motion": 8,
+      "work-energy-power": 9,
+      "systems-of-particles-rotational-motion": 10,
+      "mechanical-properties-of-solids": 6,
+      "mechanical-properties-of-fluids": 6,
+      "thermodynamics-physics": 6,
+      "kinetic-theory": 5
+    },
+    "topic_counts": {
+      "motion-in-a-straight-line": 27,
+      "motion-in-a-plane": 16,
+      "si-units-and-measurement": 2,
+      "significant-figures-and-errors": 2,
+      "dimensions-and-dimensional-analysis": 3,
+      "newtons-laws-and-momentum": 5,
+      "friction-and-common-forces": 2,
+      "dynamics-of-circular-motion": 1,
+      "work-and-kinetic-energy": 5,
+      "potential-energy-and-conservation": 2,
+      "power-and-collisions": 2,
+      "centre-of-mass": 3,
+      "torque-and-angular-momentum": 3,
+      "moment-of-inertia-rotational-dynamics": 4,
+      "stress-and-strain": 3,
+      "elastic-moduli": 3,
+      "pressure-in-fluids": 2,
+      "fluid-flow-and-bernoulli": 2,
+      "viscosity-and-surface-tension": 2,
+      "laws-of-thermodynamics": 3,
+      "heat-work-internal-energy": 1,
+      "thermodynamic-processes": 2,
+      "kinetic-theory-ideal-gas": 3,
+      "equipartition-and-mean-free-path": 2
+    },
+    "concept_counts": {
+      "kinematic-equations": 19,
+      "instantaneous-velocity-acceleration": 4,
+      "relative-velocity-1d": 4,
+      "projectile-motion": 8,
+      "vectors-in-plane-motion": 4,
+      "uniform-circular-motion": 4,
+      "si-base-and-derived-units": 2,
+      "significant-figures": 2,
+      "dimensional-formulae": 2,
+      "dimensional-analysis-applications": 1,
+      "newtons-laws": 3,
+      "conservation-of-momentum": 2,
+      "friction": 2,
+      "dynamics-uniform-circular-motion": 1,
+      "work-by-a-force": 3,
+      "work-energy-theorem": 2,
+      "potential-energy": 1,
+      "conservation-mechanical-energy": 1,
+      "power": 1,
+      "collisions": 1,
+      "centre-of-mass-system": 2,
+      "motion-of-centre-of-mass": 1,
+      "torque": 2,
+      "angular-momentum": 1,
+      "moment-of-inertia": 2,
+      "rotational-kinematics": 1,
+      "dynamics-of-rotational-motion": 1,
+      "stress-strain-definitions": 2,
+      "stress-strain-curve": 1,
+      "youngs-modulus": 1,
+      "shear-modulus": 1,
+      "bulk-modulus": 1,
+      "hydrostatic-pressure-pascal": 2,
+      "streamline-flow": 1,
+      "bernoullis-principle": 1,
+      "viscosity": 1,
+      "surface-tension": 1,
+      "zeroth-and-first-law": 2,
+      "second-law-and-carnot": 1,
+      "heat-internal-energy-work": 1,
+      "thermodynamic-process-types": 2,
+      "behaviour-of-gases": 2,
+      "kinetic-interpretation-temperature": 1,
+      "law-of-equipartition": 1,
+      "mean-free-path": 1
+    },
+    "kinematics_misflags": [],
+    "straight_count": 27,
+    "plane_count": 16
+  },
+  "duplicates": {
+    "exact_intra_pilot_hash_collisions": 0,
+    "vs_non_pilot_existing": 0,
+    "vs_legacy": 0,
+    "dup_lookup_ms": 13.96
+  },
+  "difficulty": {
+    "easy": 84,
+    "medium": 16
+  },
+  "question_types": {
+    "Numerical": 57,
+    "Conceptual": 41,
+    "Graph/diagram": 2
+  },
+  "coverage": {
+    "chapters_represented": 9,
+    "topics_represented": 24,
+    "concepts_represented": 45,
+    "unused_p0_chapters": [],
+    "unused_topics_sample": [],
+    "unused_concepts_count": 0
+  },
+  "provenance_failures": [],
+  "provenance_fail_count": 0,
+  "practice": {
+    "pilot_published_subject": 100,
+    "kinematics_chapter": 43,
+    "motion_straight": 27,
+    "motion_plane": 16,
+    "topic_id_overlap": 0,
+    "timings_ms": {
+      "subject_pilot_count": 2.49,
+      "chapter_kinematics": 2.16,
+      "topic_straight": 3.35,
+      "topic_plane": 2.55
+    },
+    "browser_e2e": "NOT VERIFIED",
+    "answer_submission_e2e": "NOT VERIFIED",
+    "note": "Pool membership and TOPIC isolation verified via read-only SQL; browser UX/scoring path not automated in this audit."
+  },
+  "performance": {
+    "dup_lookup_ms": 13.96,
+    "taxonomy_lookup_ms": 0.12,
+    "fingerprint_100_stems_ms": 0.86,
+    "practice_timings_ms": {
+      "subject_pilot_count": 2.49,
+      "chapter_kinematics": 2.16,
+      "topic_straight": 3.35,
+      "topic_plane": 2.55
+    },
+    "publication_query_latency": "NOT MEASURED",
+    "question_retrieval_latency_api": "NOT MEASURED"
+  },
+  "throughput": {
+    "note": "T6-D CLI did not persist wall-clock metrics in audit; NOT AVAILABLE",
+    "human_intervention": "curated bank authoring (pre-pilot); runtime gates automatic"
+  },
+  "idempotency": {
+    "reported_t6d": {
+      "created_second_run": 0,
+      "duplicate_inserts": 0
+    },
+    "mechanism": "slug uniqueness + batch tag + service skip-if-exists (inspect physics_t6d_service.py)",
+    "mutation_rerun_this_audit": false
+  },
+  "questions": [
+    {
+      "pilot_qid": "t6d-001",
+      "slug": "physics-t6d-pilot-20260902-q001",
+      "chapter": "kinematics",
+      "topic": "motion-in-a-straight-line",
+      "concept": "kinematic-equations",
+      "difficulty": "easy",
+      "type": "Numerical",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 2 \u00a72.4",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-2.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": true,
+        "expected": 20,
+        "recomputed": 20,
+        "match": true,
+        "note": "v=u+at",
+        "unit_ok": true,
+        "hold_recommendation": false
+      },
+      "correct": "B",
+      "stem_short": "A particle starts with velocity 10 m/s and constant acceleration 2 m/s\u00b2. Its velocity after 5 s is (take kinematic equat"
+    },
+    {
+      "pilot_qid": "t6d-002",
+      "slug": "physics-t6d-pilot-20260902-q002",
+      "chapter": "kinematics",
+      "topic": "motion-in-a-straight-line",
+      "concept": "kinematic-equations",
+      "difficulty": "easy",
+      "type": "Numerical",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 2 \u00a72.4",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-2.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": true,
+        "expected": 12,
+        "recomputed": 12,
+        "match": true,
+        "note": "v=u+at",
+        "unit_ok": true,
+        "hold_recommendation": false
+      },
+      "correct": "B",
+      "stem_short": "A particle starts with velocity 0 m/s and constant acceleration 4 m/s\u00b2. Its velocity after 3 s is (take kinematic equati"
+    },
+    {
+      "pilot_qid": "t6d-003",
+      "slug": "physics-t6d-pilot-20260902-q003",
+      "chapter": "kinematics",
+      "topic": "motion-in-a-straight-line",
+      "concept": "kinematic-equations",
+      "difficulty": "easy",
+      "type": "Numerical",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 2 \u00a72.4",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-2.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": true,
+        "expected": 12,
+        "recomputed": 12,
+        "match": true,
+        "note": "v=u+at",
+        "unit_ok": true,
+        "hold_recommendation": false
+      },
+      "correct": "B",
+      "stem_short": "A particle starts with velocity 20 m/s and constant acceleration -2 m/s\u00b2. Its velocity after 4 s is (take kinematic equa"
+    },
+    {
+      "pilot_qid": "t6d-004",
+      "slug": "physics-t6d-pilot-20260902-q004",
+      "chapter": "kinematics",
+      "topic": "motion-in-a-straight-line",
+      "concept": "kinematic-equations",
+      "difficulty": "easy",
+      "type": "Numerical",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 2 \u00a72.4",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-2.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": true,
+        "expected": 15,
+        "recomputed": 15,
+        "match": true,
+        "note": "v=u+at",
+        "unit_ok": true,
+        "hold_recommendation": false
+      },
+      "correct": "B",
+      "stem_short": "A particle starts with velocity 5 m/s and constant acceleration 5 m/s\u00b2. Its velocity after 2 s is (take kinematic equati"
+    },
+    {
+      "pilot_qid": "t6d-005",
+      "slug": "physics-t6d-pilot-20260902-q005",
+      "chapter": "kinematics",
+      "topic": "motion-in-a-straight-line",
+      "concept": "kinematic-equations",
+      "difficulty": "easy",
+      "type": "Numerical",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 2 \u00a72.4",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-2.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": true,
+        "expected": 25,
+        "recomputed": 25,
+        "match": true,
+        "note": "v=u+at",
+        "unit_ok": true,
+        "hold_recommendation": false
+      },
+      "correct": "B",
+      "stem_short": "A particle starts with velocity 15 m/s and constant acceleration 1 m/s\u00b2. Its velocity after 10 s is (take kinematic equa"
+    },
+    {
+      "pilot_qid": "t6d-006",
+      "slug": "physics-t6d-pilot-20260902-q006",
+      "chapter": "kinematics",
+      "topic": "motion-in-a-straight-line",
+      "concept": "kinematic-equations",
+      "difficulty": "easy",
+      "type": "Numerical",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 2 \u00a72.4",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-2.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": true,
+        "expected": 20,
+        "recomputed": 20,
+        "match": true,
+        "note": "v=u+at",
+        "unit_ok": true,
+        "hold_recommendation": false
+      },
+      "correct": "B",
+      "stem_short": "A particle starts with velocity 8 m/s and constant acceleration 3 m/s\u00b2. Its velocity after 4 s is (take kinematic equati"
+    },
+    {
+      "pilot_qid": "t6d-007",
+      "slug": "physics-t6d-pilot-20260902-q007",
+      "chapter": "kinematics",
+      "topic": "motion-in-a-straight-line",
+      "concept": "kinematic-equations",
+      "difficulty": "easy",
+      "type": "Numerical",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 2 \u00a72.4",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-2.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": true,
+        "expected": 4,
+        "recomputed": 4,
+        "match": true,
+        "note": "v=u+at",
+        "unit_ok": true,
+        "hold_recommendation": false
+      },
+      "correct": "B",
+      "stem_short": "A particle starts with velocity 12 m/s and constant acceleration -4 m/s\u00b2. Its velocity after 2 s is (take kinematic equa"
+    },
+    {
+      "pilot_qid": "t6d-008",
+      "slug": "physics-t6d-pilot-20260902-q008",
+      "chapter": "kinematics",
+      "topic": "motion-in-a-straight-line",
+      "concept": "kinematic-equations",
+      "difficulty": "easy",
+      "type": "Numerical",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 2 \u00a72.4",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-2.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": true,
+        "expected": 20,
+        "recomputed": 20,
+        "match": true,
+        "note": "v=u+at",
+        "unit_ok": true,
+        "hold_recommendation": false
+      },
+      "correct": "B",
+      "stem_short": "A particle starts with velocity 0 m/s and constant acceleration 10 m/s\u00b2. Its velocity after 2 s is (take kinematic equat"
+    },
+    {
+      "pilot_qid": "t6d-009",
+      "slug": "physics-t6d-pilot-20260902-q009",
+      "chapter": "kinematics",
+      "topic": "motion-in-a-straight-line",
+      "concept": "instantaneous-velocity-acceleration",
+      "difficulty": "easy",
+      "type": "Numerical",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 2 \u00a72.2-2.3",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-2.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": true,
+        "expected": 4.0,
+        "recomputed": 4.0,
+        "match": true,
+        "note": "v_avg",
+        "unit_ok": true,
+        "hold_recommendation": false
+      },
+      "correct": "A",
+      "stem_short": "Along a straight line, a particle\u2019s position changes by 12 m in 3 s at nearly constant rate. The average velocity over t"
+    },
+    {
+      "pilot_qid": "t6d-010",
+      "slug": "physics-t6d-pilot-20260902-q010",
+      "chapter": "kinematics",
+      "topic": "motion-in-a-straight-line",
+      "concept": "instantaneous-velocity-acceleration",
+      "difficulty": "easy",
+      "type": "Numerical",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 2 \u00a72.2-2.3",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-2.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": true,
+        "expected": 5.0,
+        "recomputed": 5.0,
+        "match": true,
+        "note": "v_avg",
+        "unit_ok": true,
+        "hold_recommendation": false
+      },
+      "correct": "A",
+      "stem_short": "Along a straight line, a particle\u2019s position changes by 20 m in 4 s at nearly constant rate. The average velocity over t"
+    },
+    {
+      "pilot_qid": "t6d-011",
+      "slug": "physics-t6d-pilot-20260902-q011",
+      "chapter": "kinematics",
+      "topic": "motion-in-a-straight-line",
+      "concept": "instantaneous-velocity-acceleration",
+      "difficulty": "easy",
+      "type": "Numerical",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 2 \u00a72.2-2.3",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-2.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": true,
+        "expected": 3.0,
+        "recomputed": 3.0,
+        "match": true,
+        "note": "v_avg",
+        "unit_ok": true,
+        "hold_recommendation": false
+      },
+      "correct": "A",
+      "stem_short": "Along a straight line, a particle\u2019s position changes by 15 m in 5 s at nearly constant rate. The average velocity over t"
+    },
+    {
+      "pilot_qid": "t6d-012",
+      "slug": "physics-t6d-pilot-20260902-q012",
+      "chapter": "kinematics",
+      "topic": "motion-in-a-straight-line",
+      "concept": "instantaneous-velocity-acceleration",
+      "difficulty": "easy",
+      "type": "Numerical",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 2 \u00a72.2-2.3",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-2.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": true,
+        "expected": 4.0,
+        "recomputed": 4.0,
+        "match": true,
+        "note": "v_avg",
+        "unit_ok": true,
+        "hold_recommendation": false
+      },
+      "correct": "A",
+      "stem_short": "Along a straight line, a particle\u2019s position changes by 8 m in 2 s at nearly constant rate. The average velocity over th"
+    },
+    {
+      "pilot_qid": "t6d-013",
+      "slug": "physics-t6d-pilot-20260902-q013",
+      "chapter": "kinematics",
+      "topic": "motion-in-a-straight-line",
+      "concept": "relative-velocity-1d",
+      "difficulty": "easy",
+      "type": "Numerical",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 2 \u00a72.5",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-2.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": true,
+        "expected": 15,
+        "recomputed": 15,
+        "match": true,
+        "note": "v_rel",
+        "unit_ok": true,
+        "hold_recommendation": false
+      },
+      "correct": "B",
+      "stem_short": "Car A moves at 20 m/s and car B at 5 m/s in the same direction on a straight road. Velocity of A relative to B is (NCERT"
+    },
+    {
+      "pilot_qid": "t6d-014",
+      "slug": "physics-t6d-pilot-20260902-q014",
+      "chapter": "kinematics",
+      "topic": "motion-in-a-straight-line",
+      "concept": "relative-velocity-1d",
+      "difficulty": "easy",
+      "type": "Numerical",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 2 \u00a72.5",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-2.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": true,
+        "expected": 5,
+        "recomputed": 5,
+        "match": true,
+        "note": "v_rel",
+        "unit_ok": true,
+        "hold_recommendation": false
+      },
+      "correct": "B",
+      "stem_short": "Car A moves at 15 m/s and car B at 10 m/s in the same direction on a straight road. Velocity of A relative to B is (NCER"
+    },
+    {
+      "pilot_qid": "t6d-015",
+      "slug": "physics-t6d-pilot-20260902-q015",
+      "chapter": "kinematics",
+      "topic": "motion-in-a-straight-line",
+      "concept": "relative-velocity-1d",
+      "difficulty": "easy",
+      "type": "Numerical",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 2 \u00a72.5",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-2.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": true,
+        "expected": 20,
+        "recomputed": 20,
+        "match": true,
+        "note": "v_rel",
+        "unit_ok": true,
+        "hold_recommendation": false
+      },
+      "correct": "B",
+      "stem_short": "Car A moves at 30 m/s and car B at 10 m/s in the same direction on a straight road. Velocity of A relative to B is (NCER"
+    },
+    {
+      "pilot_qid": "t6d-016",
+      "slug": "physics-t6d-pilot-20260902-q016",
+      "chapter": "kinematics",
+      "topic": "motion-in-a-straight-line",
+      "concept": "relative-velocity-1d",
+      "difficulty": "easy",
+      "type": "Numerical",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 2 \u00a72.5",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-2.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": true,
+        "expected": 8,
+        "recomputed": 8,
+        "match": true,
+        "note": "v_rel",
+        "unit_ok": true,
+        "hold_recommendation": false
+      },
+      "correct": "B",
+      "stem_short": "Car A moves at 12 m/s and car B at 4 m/s in the same direction on a straight road. Velocity of A relative to B is (NCERT"
+    },
+    {
+      "pilot_qid": "t6d-017",
+      "slug": "physics-t6d-pilot-20260902-q017",
+      "chapter": "kinematics",
+      "topic": "motion-in-a-plane",
+      "concept": "projectile-motion",
+      "difficulty": "medium",
+      "type": "Numerical",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 3 \u00a73.9",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-3.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": true,
+        "expected": 34.64,
+        "recomputed": 34.64101615137754,
+        "match": true,
+        "note": "projectile_R",
+        "unit_ok": true,
+        "hold_recommendation": false
+      },
+      "correct": "C",
+      "stem_short": "A projectile is launched with speed 20 m/s at 30\u00b0 to the horizontal. Taking g = 10 m/s\u00b2, its horizontal range is approxi"
+    },
+    {
+      "pilot_qid": "t6d-018",
+      "slug": "physics-t6d-pilot-20260902-q018",
+      "chapter": "kinematics",
+      "topic": "motion-in-a-plane",
+      "concept": "projectile-motion",
+      "difficulty": "medium",
+      "type": "Numerical",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 3 \u00a73.9",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-3.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": true,
+        "expected": 10.0,
+        "recomputed": 10.0,
+        "match": true,
+        "note": "projectile_R",
+        "unit_ok": true,
+        "hold_recommendation": false
+      },
+      "correct": "C",
+      "stem_short": "A projectile is launched with speed 10 m/s at 45\u00b0 to the horizontal. Taking g = 10 m/s\u00b2, its horizontal range is approxi"
+    },
+    {
+      "pilot_qid": "t6d-019",
+      "slug": "physics-t6d-pilot-20260902-q019",
+      "chapter": "kinematics",
+      "topic": "motion-in-a-plane",
+      "concept": "projectile-motion",
+      "difficulty": "medium",
+      "type": "Numerical",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 3 \u00a73.9",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-3.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": true,
+        "expected": 138.56,
+        "recomputed": 138.56406460551017,
+        "match": true,
+        "note": "projectile_R",
+        "unit_ok": true,
+        "hold_recommendation": false
+      },
+      "correct": "C",
+      "stem_short": "A projectile is launched with speed 40 m/s at 30\u00b0 to the horizontal. Taking g = 10 m/s\u00b2, its horizontal range is approxi"
+    },
+    {
+      "pilot_qid": "t6d-020",
+      "slug": "physics-t6d-pilot-20260902-q020",
+      "chapter": "kinematics",
+      "topic": "motion-in-a-plane",
+      "concept": "projectile-motion",
+      "difficulty": "medium",
+      "type": "Numerical",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 3 \u00a73.9",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-3.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": true,
+        "expected": 40.0,
+        "recomputed": 40.0,
+        "match": true,
+        "note": "projectile_R",
+        "unit_ok": true,
+        "hold_recommendation": false
+      },
+      "correct": "C",
+      "stem_short": "A projectile is launched with speed 20 m/s at 45\u00b0 to the horizontal. Taking g = 10 m/s\u00b2, its horizontal range is approxi"
+    },
+    {
+      "pilot_qid": "t6d-021",
+      "slug": "physics-t6d-pilot-20260902-q021",
+      "chapter": "kinematics",
+      "topic": "motion-in-a-plane",
+      "concept": "projectile-motion",
+      "difficulty": "medium",
+      "type": "Numerical",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 3 \u00a73.9",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-3.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": true,
+        "expected": 77.94,
+        "recomputed": 77.94228634059948,
+        "match": true,
+        "note": "projectile_R",
+        "unit_ok": true,
+        "hold_recommendation": false
+      },
+      "correct": "C",
+      "stem_short": "A projectile is launched with speed 30 m/s at 60\u00b0 to the horizontal. Taking g = 10 m/s\u00b2, its horizontal range is approxi"
+    },
+    {
+      "pilot_qid": "t6d-022",
+      "slug": "physics-t6d-pilot-20260902-q022",
+      "chapter": "kinematics",
+      "topic": "motion-in-a-plane",
+      "concept": "projectile-motion",
+      "difficulty": "medium",
+      "type": "Numerical",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 3 \u00a73.9",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-3.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": true,
+        "expected": 250.0,
+        "recomputed": 250.0,
+        "match": true,
+        "note": "projectile_R",
+        "unit_ok": true,
+        "hold_recommendation": false
+      },
+      "correct": "C",
+      "stem_short": "A projectile is launched with speed 50 m/s at 45\u00b0 to the horizontal. Taking g = 10 m/s\u00b2, its horizontal range is approxi"
+    },
+    {
+      "pilot_qid": "t6d-023",
+      "slug": "physics-t6d-pilot-20260902-q023",
+      "chapter": "kinematics",
+      "topic": "motion-in-a-plane",
+      "concept": "projectile-motion",
+      "difficulty": "medium",
+      "type": "Numerical",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 3 \u00a73.9",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-3.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": true,
+        "expected": 19.49,
+        "recomputed": 19.485571585149867,
+        "match": true,
+        "note": "projectile_R",
+        "unit_ok": true,
+        "hold_recommendation": false
+      },
+      "correct": "C",
+      "stem_short": "A projectile is launched with speed 15 m/s at 30\u00b0 to the horizontal. Taking g = 10 m/s\u00b2, its horizontal range is approxi"
+    },
+    {
+      "pilot_qid": "t6d-024",
+      "slug": "physics-t6d-pilot-20260902-q024",
+      "chapter": "kinematics",
+      "topic": "motion-in-a-plane",
+      "concept": "projectile-motion",
+      "difficulty": "medium",
+      "type": "Numerical",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 3 \u00a73.9",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-3.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": true,
+        "expected": 62.5,
+        "recomputed": 62.5,
+        "match": true,
+        "note": "projectile_R",
+        "unit_ok": true,
+        "hold_recommendation": false
+      },
+      "correct": "C",
+      "stem_short": "A projectile is launched with speed 25 m/s at 45\u00b0 to the horizontal. Taking g = 10 m/s\u00b2, its horizontal range is approxi"
+    },
+    {
+      "pilot_qid": "t6d-025",
+      "slug": "physics-t6d-pilot-20260902-q025",
+      "chapter": "kinematics",
+      "topic": "motion-in-a-plane",
+      "concept": "vectors-in-plane-motion",
+      "difficulty": "easy",
+      "type": "Numerical",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 3 \u00a73.2-3.7",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-3.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": true,
+        "expected": 5.0,
+        "recomputed": 5.0,
+        "match": true,
+        "note": "vector_mag",
+        "unit_ok": true,
+        "hold_recommendation": false
+      },
+      "correct": "B",
+      "stem_short": "A displacement vector in a plane has components \u0394x = 3 m and \u0394y = 4 m. Its magnitude is (NCERT XI Ch 3 \u00a73.2\u20133.7):"
+    },
+    {
+      "pilot_qid": "t6d-026",
+      "slug": "physics-t6d-pilot-20260902-q026",
+      "chapter": "kinematics",
+      "topic": "motion-in-a-plane",
+      "concept": "vectors-in-plane-motion",
+      "difficulty": "easy",
+      "type": "Numerical",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 3 \u00a73.2-3.7",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-3.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": true,
+        "expected": 13.0,
+        "recomputed": 13.0,
+        "match": true,
+        "note": "vector_mag",
+        "unit_ok": true,
+        "hold_recommendation": false
+      },
+      "correct": "B",
+      "stem_short": "A displacement vector in a plane has components \u0394x = 5 m and \u0394y = 12 m. Its magnitude is (NCERT XI Ch 3 \u00a73.2\u20133.7):"
+    },
+    {
+      "pilot_qid": "t6d-027",
+      "slug": "physics-t6d-pilot-20260902-q027",
+      "chapter": "kinematics",
+      "topic": "motion-in-a-plane",
+      "concept": "vectors-in-plane-motion",
+      "difficulty": "easy",
+      "type": "Numerical",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 3 \u00a73.2-3.7",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-3.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": true,
+        "expected": 10.0,
+        "recomputed": 10.0,
+        "match": true,
+        "note": "vector_mag",
+        "unit_ok": true,
+        "hold_recommendation": false
+      },
+      "correct": "B",
+      "stem_short": "A displacement vector in a plane has components \u0394x = 8 m and \u0394y = 6 m. Its magnitude is (NCERT XI Ch 3 \u00a73.2\u20133.7):"
+    },
+    {
+      "pilot_qid": "t6d-028",
+      "slug": "physics-t6d-pilot-20260902-q028",
+      "chapter": "kinematics",
+      "topic": "motion-in-a-plane",
+      "concept": "vectors-in-plane-motion",
+      "difficulty": "easy",
+      "type": "Numerical",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 3 \u00a73.2-3.7",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-3.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": true,
+        "expected": 15.0,
+        "recomputed": 15.0,
+        "match": true,
+        "note": "vector_mag",
+        "unit_ok": true,
+        "hold_recommendation": false
+      },
+      "correct": "B",
+      "stem_short": "A displacement vector in a plane has components \u0394x = 9 m and \u0394y = 12 m. Its magnitude is (NCERT XI Ch 3 \u00a73.2\u20133.7):"
+    },
+    {
+      "pilot_qid": "t6d-029",
+      "slug": "physics-t6d-pilot-20260902-q029",
+      "chapter": "kinematics",
+      "topic": "motion-in-a-plane",
+      "concept": "uniform-circular-motion",
+      "difficulty": "easy",
+      "type": "Numerical",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 3 \u00a73.10",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-3.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": true,
+        "expected": 20.0,
+        "recomputed": 20.0,
+        "match": true,
+        "note": "centripetal",
+        "unit_ok": true,
+        "hold_recommendation": false
+      },
+      "correct": "B",
+      "stem_short": "A particle moves in uniform circular motion with speed 10 m/s on a circle of radius 5 m. The centripetal acceleration ma"
+    },
+    {
+      "pilot_qid": "t6d-030",
+      "slug": "physics-t6d-pilot-20260902-q030",
+      "chapter": "kinematics",
+      "topic": "motion-in-a-plane",
+      "concept": "uniform-circular-motion",
+      "difficulty": "easy",
+      "type": "Numerical",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 3 \u00a73.10",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-3.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": true,
+        "expected": 40.0,
+        "recomputed": 40.0,
+        "match": true,
+        "note": "centripetal",
+        "unit_ok": true,
+        "hold_recommendation": false
+      },
+      "correct": "B",
+      "stem_short": "A particle moves in uniform circular motion with speed 20 m/s on a circle of radius 10 m. The centripetal acceleration m"
+    },
+    {
+      "pilot_qid": "t6d-031",
+      "slug": "physics-t6d-pilot-20260902-q031",
+      "chapter": "kinematics",
+      "topic": "motion-in-a-plane",
+      "concept": "uniform-circular-motion",
+      "difficulty": "easy",
+      "type": "Numerical",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 3 \u00a73.10",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-3.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": true,
+        "expected": 18.0,
+        "recomputed": 18.0,
+        "match": true,
+        "note": "centripetal",
+        "unit_ok": true,
+        "hold_recommendation": false
+      },
+      "correct": "B",
+      "stem_short": "A particle moves in uniform circular motion with speed 6 m/s on a circle of radius 2 m. The centripetal acceleration mag"
+    },
+    {
+      "pilot_qid": "t6d-032",
+      "slug": "physics-t6d-pilot-20260902-q032",
+      "chapter": "kinematics",
+      "topic": "motion-in-a-plane",
+      "concept": "uniform-circular-motion",
+      "difficulty": "easy",
+      "type": "Numerical",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 3 \u00a73.10",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-3.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": true,
+        "expected": 45.0,
+        "recomputed": 45.0,
+        "match": true,
+        "note": "centripetal",
+        "unit_ok": true,
+        "hold_recommendation": false
+      },
+      "correct": "B",
+      "stem_short": "A particle moves in uniform circular motion with speed 15 m/s on a circle of radius 5 m. The centripetal acceleration ma"
+    },
+    {
+      "pilot_qid": "t6d-033",
+      "slug": "physics-t6d-pilot-20260902-q033",
+      "chapter": "units-and-measurement",
+      "topic": "si-units-and-measurement",
+      "concept": "si-base-and-derived-units",
+      "difficulty": "easy",
+      "type": "Conceptual",
+      "ncert": {
+        "class": "DIRECTLY_SUPPORTED",
+        "ncert_reference": "NCERT XI Physics Ch 1 \u00a71.2",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-1.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": false,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "conceptual"
+      },
+      "correct": "C",
+      "stem_short": "Which of the following is an SI base unit (NCERT XI Ch 1 \u00a71.2)?"
+    },
+    {
+      "pilot_qid": "t6d-034",
+      "slug": "physics-t6d-pilot-20260902-q034",
+      "chapter": "units-and-measurement",
+      "topic": "si-units-and-measurement",
+      "concept": "si-base-and-derived-units",
+      "difficulty": "easy",
+      "type": "Conceptual",
+      "ncert": {
+        "class": "DIRECTLY_SUPPORTED",
+        "ncert_reference": "NCERT XI Physics Ch 1 \u00a71.2",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-1.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": false,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "conceptual"
+      },
+      "correct": "B",
+      "stem_short": "The SI unit of force (newton) is a derived unit equal to (NCERT XI Ch 1 \u00a71.2):"
+    },
+    {
+      "pilot_qid": "t6d-035",
+      "slug": "physics-t6d-pilot-20260902-q035",
+      "chapter": "units-and-measurement",
+      "topic": "significant-figures-and-errors",
+      "concept": "significant-figures",
+      "difficulty": "easy",
+      "type": "Graph/diagram",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 1 \u00a71.3",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-1.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": false,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "conceptual"
+      },
+      "correct": "B",
+      "stem_short": "The number of significant figures in 0.00250 is (NCERT XI Ch 1 \u00a71.3):"
+    },
+    {
+      "pilot_qid": "t6d-036",
+      "slug": "physics-t6d-pilot-20260902-q036",
+      "chapter": "units-and-measurement",
+      "topic": "significant-figures-and-errors",
+      "concept": "significant-figures",
+      "difficulty": "medium",
+      "type": "Graph/diagram",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 1 \u00a71.3",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-1.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": false,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "conceptual"
+      },
+      "correct": "B",
+      "stem_short": "When 2.5 and 1.25 are added, the result reported to correct significant figures is (NCERT XI Ch 1 \u00a71.3):"
+    },
+    {
+      "pilot_qid": "t6d-037",
+      "slug": "physics-t6d-pilot-20260902-q037",
+      "chapter": "units-and-measurement",
+      "topic": "dimensions-and-dimensional-analysis",
+      "concept": "dimensional-formulae",
+      "difficulty": "easy",
+      "type": "Conceptual",
+      "ncert": {
+        "class": "DIRECTLY_SUPPORTED",
+        "ncert_reference": "NCERT XI Physics Ch 1 \u00a71.4-1.5",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-1.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": false,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "conceptual"
+      },
+      "correct": "B",
+      "stem_short": "Dimensional formula of kinetic energy is (NCERT XI Ch 1 \u00a71.4\u20131.5):"
+    },
+    {
+      "pilot_qid": "t6d-038",
+      "slug": "physics-t6d-pilot-20260902-q038",
+      "chapter": "units-and-measurement",
+      "topic": "dimensions-and-dimensional-analysis",
+      "concept": "dimensional-formulae",
+      "difficulty": "easy",
+      "type": "Conceptual",
+      "ncert": {
+        "class": "DIRECTLY_SUPPORTED",
+        "ncert_reference": "NCERT XI Physics Ch 1 \u00a71.4-1.5",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-1.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": false,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "conceptual"
+      },
+      "correct": "A",
+      "stem_short": "Dimensional formula of pressure is (NCERT XI Ch 1 \u00a71.4\u20131.5):"
+    },
+    {
+      "pilot_qid": "t6d-039",
+      "slug": "physics-t6d-pilot-20260902-q039",
+      "chapter": "units-and-measurement",
+      "topic": "dimensions-and-dimensional-analysis",
+      "concept": "dimensional-analysis-applications",
+      "difficulty": "medium",
+      "type": "Numerical",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 1 \u00a71.6",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-1.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": true,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "INDEPENDENT_RECOMPUTE_UNAVAILABLE; gate_said=True:unchecked-keys-ok; keys=['x', 'y']",
+        "unit_ok": null,
+        "hold_recommendation": true
+      },
+      "correct": "A",
+      "stem_short": "If force F depends on mass m, acceleration a as F = k m^x a^y, dimensional consistency requires (NCERT XI Ch 1 \u00a71.6):"
+    },
+    {
+      "pilot_qid": "t6d-040",
+      "slug": "physics-t6d-pilot-20260902-q040",
+      "chapter": "laws-of-motion",
+      "topic": "newtons-laws-and-momentum",
+      "concept": "newtons-laws",
+      "difficulty": "easy",
+      "type": "Numerical",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 4 \u00a74.3-4.6",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-4.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": true,
+        "expected": 6,
+        "recomputed": 6,
+        "match": true,
+        "note": "F=ma",
+        "unit_ok": true,
+        "hold_recommendation": false
+      },
+      "correct": "A",
+      "stem_short": "A net force acts on mass 2 kg producing acceleration 3 m/s\u00b2. The force magnitude is (NCERT XI Ch 4):"
+    },
+    {
+      "pilot_qid": "t6d-041",
+      "slug": "physics-t6d-pilot-20260902-q041",
+      "chapter": "laws-of-motion",
+      "topic": "newtons-laws-and-momentum",
+      "concept": "newtons-laws",
+      "difficulty": "easy",
+      "type": "Numerical",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 4 \u00a74.3-4.6",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-4.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": true,
+        "expected": 10,
+        "recomputed": 10,
+        "match": true,
+        "note": "F=ma",
+        "unit_ok": true,
+        "hold_recommendation": false
+      },
+      "correct": "A",
+      "stem_short": "A net force acts on mass 5 kg producing acceleration 2 m/s\u00b2. The force magnitude is (NCERT XI Ch 4):"
+    },
+    {
+      "pilot_qid": "t6d-042",
+      "slug": "physics-t6d-pilot-20260902-q042",
+      "chapter": "laws-of-motion",
+      "topic": "newtons-laws-and-momentum",
+      "concept": "newtons-laws",
+      "difficulty": "easy",
+      "type": "Numerical",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 4 \u00a74.3-4.6",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-4.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": true,
+        "expected": 16,
+        "recomputed": 16,
+        "match": true,
+        "note": "F=ma",
+        "unit_ok": true,
+        "hold_recommendation": false
+      },
+      "correct": "A",
+      "stem_short": "A net force acts on mass 4 kg producing acceleration 4 m/s\u00b2. The force magnitude is (NCERT XI Ch 4):"
+    },
+    {
+      "pilot_qid": "t6d-043",
+      "slug": "physics-t6d-pilot-20260902-q043",
+      "chapter": "laws-of-motion",
+      "topic": "newtons-laws-and-momentum",
+      "concept": "conservation-of-momentum",
+      "difficulty": "easy",
+      "type": "Conceptual",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 4 \u00a74.7",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-4.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": false,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "conceptual"
+      },
+      "correct": "C",
+      "stem_short": "In the absence of external force, the total linear momentum of a system (NCERT XI Ch 4 \u00a74.7):"
+    },
+    {
+      "pilot_qid": "t6d-044",
+      "slug": "physics-t6d-pilot-20260902-q044",
+      "chapter": "laws-of-motion",
+      "topic": "newtons-laws-and-momentum",
+      "concept": "conservation-of-momentum",
+      "difficulty": "medium",
+      "type": "Numerical",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 4 \u00a74.7",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-4.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": true,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "INDEPENDENT_RECOMPUTE_UNAVAILABLE; gate_said=True:scalar check present; keys=['p']",
+        "unit_ok": null,
+        "hold_recommendation": true
+      },
+      "correct": "A",
+      "stem_short": "Two masses 2 kg and 3 kg move toward each other at 3 m/s and 2 m/s. Total momentum before collision (same line) is:"
+    },
+    {
+      "pilot_qid": "t6d-045",
+      "slug": "physics-t6d-pilot-20260902-q045",
+      "chapter": "laws-of-motion",
+      "topic": "friction-and-common-forces",
+      "concept": "friction",
+      "difficulty": "easy",
+      "type": "Conceptual",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 4 \u00a74.9",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-4.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": false,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "conceptual"
+      },
+      "correct": "B",
+      "stem_short": "Kinetic friction on a sliding block (NCERT XI Ch 4 \u00a74.9) is typically:"
+    },
+    {
+      "pilot_qid": "t6d-046",
+      "slug": "physics-t6d-pilot-20260902-q046",
+      "chapter": "laws-of-motion",
+      "topic": "friction-and-common-forces",
+      "concept": "friction",
+      "difficulty": "easy",
+      "type": "Numerical",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 4 \u00a74.9",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-4.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": true,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "INDEPENDENT_RECOMPUTE_UNAVAILABLE; gate_said=True:scalar check present; keys=['f_max']",
+        "unit_ok": null,
+        "hold_recommendation": true
+      },
+      "correct": "B",
+      "stem_short": "For \u03bc_s = 0.4 and N = 50 N, maximum static friction is approximately:"
+    },
+    {
+      "pilot_qid": "t6d-047",
+      "slug": "physics-t6d-pilot-20260902-q047",
+      "chapter": "laws-of-motion",
+      "topic": "dynamics-of-circular-motion",
+      "concept": "dynamics-uniform-circular-motion",
+      "difficulty": "easy",
+      "type": "Conceptual",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 4 \u00a74.10",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-4.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": false,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "conceptual"
+      },
+      "correct": "C",
+      "stem_short": "For uniform circular motion, the net force toward the centre equals (NCERT XI Ch 4 \u00a74.10):"
+    },
+    {
+      "pilot_qid": "t6d-048",
+      "slug": "physics-t6d-pilot-20260902-q048",
+      "chapter": "work-energy-power",
+      "topic": "work-and-kinetic-energy",
+      "concept": "work-by-a-force",
+      "difficulty": "easy",
+      "type": "Numerical",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 5 \u00a75.3",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-5.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": true,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "INDEPENDENT_RECOMPUTE_UNAVAILABLE; gate_said=True:work numeric present; keys=['W']",
+        "unit_ok": null,
+        "hold_recommendation": true
+      },
+      "correct": "A",
+      "stem_short": "A constant force 10 N displaces a body by 4 m along its line of action. Work done is (NCERT XI Ch 5 \u00a75.3):"
+    },
+    {
+      "pilot_qid": "t6d-049",
+      "slug": "physics-t6d-pilot-20260902-q049",
+      "chapter": "work-energy-power",
+      "topic": "work-and-kinetic-energy",
+      "concept": "work-by-a-force",
+      "difficulty": "easy",
+      "type": "Numerical",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 5 \u00a75.3",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-5.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": true,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "INDEPENDENT_RECOMPUTE_UNAVAILABLE; gate_said=True:work numeric present; keys=['W']",
+        "unit_ok": null,
+        "hold_recommendation": true
+      },
+      "correct": "A",
+      "stem_short": "A constant force 5 N displaces a body by 6 m along its line of action. Work done is (NCERT XI Ch 5 \u00a75.3):"
+    },
+    {
+      "pilot_qid": "t6d-050",
+      "slug": "physics-t6d-pilot-20260902-q050",
+      "chapter": "work-energy-power",
+      "topic": "work-and-kinetic-energy",
+      "concept": "work-by-a-force",
+      "difficulty": "easy",
+      "type": "Numerical",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 5 \u00a75.3",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-5.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": true,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "INDEPENDENT_RECOMPUTE_UNAVAILABLE; gate_said=True:work numeric present; keys=['W']",
+        "unit_ok": null,
+        "hold_recommendation": true
+      },
+      "correct": "A",
+      "stem_short": "A constant force 8 N displaces a body by 3 m along its line of action. Work done is (NCERT XI Ch 5 \u00a75.3):"
+    },
+    {
+      "pilot_qid": "t6d-051",
+      "slug": "physics-t6d-pilot-20260902-q051",
+      "chapter": "work-energy-power",
+      "topic": "work-and-kinetic-energy",
+      "concept": "work-energy-theorem",
+      "difficulty": "easy",
+      "type": "Conceptual",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 5 \u00a75.6",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-5.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": false,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "conceptual"
+      },
+      "correct": "B",
+      "stem_short": "According to the work\u2013energy theorem (NCERT XI Ch 5 \u00a75.6), net work done on a particle equals:"
+    },
+    {
+      "pilot_qid": "t6d-052",
+      "slug": "physics-t6d-pilot-20260902-q052",
+      "chapter": "work-energy-power",
+      "topic": "work-and-kinetic-energy",
+      "concept": "work-energy-theorem",
+      "difficulty": "medium",
+      "type": "Numerical",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 5 \u00a75.6",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-5.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": true,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "INDEPENDENT_RECOMPUTE_UNAVAILABLE; gate_said=True:delta-K present; keys=['dK']",
+        "unit_ok": null,
+        "hold_recommendation": true
+      },
+      "correct": "B",
+      "stem_short": "A 2 kg particle speeds from 3 m/s to 5 m/s. Net work done is:"
+    },
+    {
+      "pilot_qid": "t6d-053",
+      "slug": "physics-t6d-pilot-20260902-q053",
+      "chapter": "work-energy-power",
+      "topic": "potential-energy-and-conservation",
+      "concept": "potential-energy",
+      "difficulty": "easy",
+      "type": "Conceptual",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 5 \u00a75.7",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-5.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": false,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "conceptual"
+      },
+      "correct": "B",
+      "stem_short": "Gravitational potential energy near Earth for mass m raised by height h (NCERT XI Ch 5 \u00a75.7) is:"
+    },
+    {
+      "pilot_qid": "t6d-054",
+      "slug": "physics-t6d-pilot-20260902-q054",
+      "chapter": "work-energy-power",
+      "topic": "potential-energy-and-conservation",
+      "concept": "conservation-mechanical-energy",
+      "difficulty": "easy",
+      "type": "Conceptual",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 5 \u00a75.8",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-5.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": false,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "conceptual"
+      },
+      "correct": "C",
+      "stem_short": "For a conservative force field with no non-conservative work (NCERT XI Ch 5 \u00a75.8):"
+    },
+    {
+      "pilot_qid": "t6d-055",
+      "slug": "physics-t6d-pilot-20260902-q055",
+      "chapter": "work-energy-power",
+      "topic": "power-and-collisions",
+      "concept": "power",
+      "difficulty": "easy",
+      "type": "Numerical",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 5 \u00a75.10",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-5.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": true,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "INDEPENDENT_RECOMPUTE_UNAVAILABLE; gate_said=True:power present; keys=['P']",
+        "unit_ok": null,
+        "hold_recommendation": true
+      },
+      "correct": "A",
+      "stem_short": "Average power when 100 J of work is done in 4 s is (NCERT XI Ch 5 \u00a75.10):"
+    },
+    {
+      "pilot_qid": "t6d-056",
+      "slug": "physics-t6d-pilot-20260902-q056",
+      "chapter": "work-energy-power",
+      "topic": "power-and-collisions",
+      "concept": "collisions",
+      "difficulty": "easy",
+      "type": "Conceptual",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 5 \u00a75.11",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-5.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": false,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "conceptual"
+      },
+      "correct": "B",
+      "stem_short": "In a perfectly inelastic collision of two free particles (NCERT XI Ch 5 \u00a75.11):"
+    },
+    {
+      "pilot_qid": "t6d-057",
+      "slug": "physics-t6d-pilot-20260902-q057",
+      "chapter": "systems-of-particles-rotational-motion",
+      "topic": "centre-of-mass",
+      "concept": "centre-of-mass-system",
+      "difficulty": "easy",
+      "type": "Numerical",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 6 \u00a76.2",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-6.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": true,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "INDEPENDENT_RECOMPUTE_UNAVAILABLE; gate_said=True:scalar check present; keys=['x_cm']",
+        "unit_ok": null,
+        "hold_recommendation": true
+      },
+      "correct": "B",
+      "stem_short": "For two equal masses at x=0 and x=2 m, the centre of mass is at (NCERT XI Ch 6 \u00a76.2):"
+    },
+    {
+      "pilot_qid": "t6d-058",
+      "slug": "physics-t6d-pilot-20260902-q058",
+      "chapter": "systems-of-particles-rotational-motion",
+      "topic": "centre-of-mass",
+      "concept": "centre-of-mass-system",
+      "difficulty": "easy",
+      "type": "Conceptual",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 6 \u00a76.2",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-6.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": false,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "conceptual"
+      },
+      "correct": "C",
+      "stem_short": "The centre of mass of a uniform rod of length L lies (NCERT XI Ch 6 \u00a76.2):"
+    },
+    {
+      "pilot_qid": "t6d-059",
+      "slug": "physics-t6d-pilot-20260902-q059",
+      "chapter": "systems-of-particles-rotational-motion",
+      "topic": "centre-of-mass",
+      "concept": "motion-of-centre-of-mass",
+      "difficulty": "easy",
+      "type": "Conceptual",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 6 \u00a76.3",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-6.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": false,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "conceptual"
+      },
+      "correct": "B",
+      "stem_short": "Acceleration of the centre of mass of a system equals (NCERT XI Ch 6 \u00a76.3):"
+    },
+    {
+      "pilot_qid": "t6d-060",
+      "slug": "physics-t6d-pilot-20260902-q060",
+      "chapter": "systems-of-particles-rotational-motion",
+      "topic": "torque-and-angular-momentum",
+      "concept": "torque",
+      "difficulty": "easy",
+      "type": "Conceptual",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 6 \u00a76.7",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-6.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": false,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "conceptual"
+      },
+      "correct": "B",
+      "stem_short": "Torque of force F about a point is (NCERT XI Ch 6 \u00a76.7):"
+    },
+    {
+      "pilot_qid": "t6d-061",
+      "slug": "physics-t6d-pilot-20260902-q061",
+      "chapter": "systems-of-particles-rotational-motion",
+      "topic": "torque-and-angular-momentum",
+      "concept": "torque",
+      "difficulty": "easy",
+      "type": "Numerical",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 6 \u00a76.7",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-6.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": true,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "INDEPENDENT_RECOMPUTE_UNAVAILABLE; gate_said=True:scalar check present; keys=['tau']",
+        "unit_ok": null,
+        "hold_recommendation": true
+      },
+      "correct": "B",
+      "stem_short": "A force 5 N acts perpendicular at 2 m from a pivot. Torque magnitude is:"
+    },
+    {
+      "pilot_qid": "t6d-062",
+      "slug": "physics-t6d-pilot-20260902-q062",
+      "chapter": "systems-of-particles-rotational-motion",
+      "topic": "torque-and-angular-momentum",
+      "concept": "angular-momentum",
+      "difficulty": "easy",
+      "type": "Conceptual",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 6 \u00a76.7",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-6.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": false,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "conceptual"
+      },
+      "correct": "B",
+      "stem_short": "Angular momentum of a particle about origin is (NCERT XI Ch 6 \u00a76.7):"
+    },
+    {
+      "pilot_qid": "t6d-063",
+      "slug": "physics-t6d-pilot-20260902-q063",
+      "chapter": "systems-of-particles-rotational-motion",
+      "topic": "moment-of-inertia-rotational-dynamics",
+      "concept": "moment-of-inertia",
+      "difficulty": "easy",
+      "type": "Conceptual",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 6 \u00a76.9",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-6.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": false,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "conceptual"
+      },
+      "correct": "C",
+      "stem_short": "Moment of inertia of a point mass m at distance r from axis is (NCERT XI Ch 6 \u00a76.9):"
+    },
+    {
+      "pilot_qid": "t6d-064",
+      "slug": "physics-t6d-pilot-20260902-q064",
+      "chapter": "systems-of-particles-rotational-motion",
+      "topic": "moment-of-inertia-rotational-dynamics",
+      "concept": "moment-of-inertia",
+      "difficulty": "easy",
+      "type": "Numerical",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 6 \u00a76.9",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-6.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": true,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "INDEPENDENT_RECOMPUTE_UNAVAILABLE; gate_said=True:scalar check present; keys=['I']",
+        "unit_ok": null,
+        "hold_recommendation": true
+      },
+      "correct": "B",
+      "stem_short": "For m = 2 kg at r = 3 m, I about the axis is:"
+    },
+    {
+      "pilot_qid": "t6d-065",
+      "slug": "physics-t6d-pilot-20260902-q065",
+      "chapter": "systems-of-particles-rotational-motion",
+      "topic": "moment-of-inertia-rotational-dynamics",
+      "concept": "rotational-kinematics",
+      "difficulty": "easy",
+      "type": "Conceptual",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 6 \u00a76.10",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-6.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": false,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "conceptual"
+      },
+      "correct": "A",
+      "stem_short": "Analog of v = u + at in pure rotation (constant \u03b1) is (NCERT XI Ch 6 \u00a76.10):"
+    },
+    {
+      "pilot_qid": "t6d-066",
+      "slug": "physics-t6d-pilot-20260902-q066",
+      "chapter": "systems-of-particles-rotational-motion",
+      "topic": "moment-of-inertia-rotational-dynamics",
+      "concept": "dynamics-of-rotational-motion",
+      "difficulty": "easy",
+      "type": "Conceptual",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 6 \u00a76.11",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-6.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": false,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "conceptual"
+      },
+      "correct": "B",
+      "stem_short": "Newton\u2019s second law for rotation about a fixed axis is (NCERT XI Ch 6 \u00a76.11):"
+    },
+    {
+      "pilot_qid": "t6d-067",
+      "slug": "physics-t6d-pilot-20260902-q067",
+      "chapter": "mechanical-properties-of-solids",
+      "topic": "stress-and-strain",
+      "concept": "stress-strain-definitions",
+      "difficulty": "easy",
+      "type": "Conceptual",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 8 \u00a78.2",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-8.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": false,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "conceptual"
+      },
+      "correct": "B",
+      "stem_short": "Longitudinal stress is defined as (NCERT XI Ch 8 \u00a78.2):"
+    },
+    {
+      "pilot_qid": "t6d-068",
+      "slug": "physics-t6d-pilot-20260902-q068",
+      "chapter": "mechanical-properties-of-solids",
+      "topic": "stress-and-strain",
+      "concept": "stress-strain-definitions",
+      "difficulty": "easy",
+      "type": "Conceptual",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 8 \u00a78.2",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-8.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": false,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "conceptual"
+      },
+      "correct": "A",
+      "stem_short": "Longitudinal strain is (NCERT XI Ch 8 \u00a78.2):"
+    },
+    {
+      "pilot_qid": "t6d-069",
+      "slug": "physics-t6d-pilot-20260902-q069",
+      "chapter": "mechanical-properties-of-solids",
+      "topic": "stress-and-strain",
+      "concept": "stress-strain-curve",
+      "difficulty": "medium",
+      "type": "Conceptual",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 8 \u00a78.4",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-8.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": false,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "conceptual"
+      },
+      "correct": "B",
+      "stem_short": "On a typical stress\u2013strain curve for a metal, the elastic limit is near (NCERT XI Ch 8 \u00a78.4):"
+    },
+    {
+      "pilot_qid": "t6d-070",
+      "slug": "physics-t6d-pilot-20260902-q070",
+      "chapter": "mechanical-properties-of-solids",
+      "topic": "elastic-moduli",
+      "concept": "youngs-modulus",
+      "difficulty": "easy",
+      "type": "Conceptual",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 8 \u00a78.5",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-8.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": false,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "conceptual"
+      },
+      "correct": "C",
+      "stem_short": "Young\u2019s modulus Y equals (NCERT XI Ch 8 \u00a78.5):"
+    },
+    {
+      "pilot_qid": "t6d-071",
+      "slug": "physics-t6d-pilot-20260902-q071",
+      "chapter": "mechanical-properties-of-solids",
+      "topic": "elastic-moduli",
+      "concept": "shear-modulus",
+      "difficulty": "easy",
+      "type": "Conceptual",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 8 \u00a78.5",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-8.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": false,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "conceptual"
+      },
+      "correct": "B",
+      "stem_short": "Shear modulus relates (NCERT XI Ch 8 \u00a78.5):"
+    },
+    {
+      "pilot_qid": "t6d-072",
+      "slug": "physics-t6d-pilot-20260902-q072",
+      "chapter": "mechanical-properties-of-solids",
+      "topic": "elastic-moduli",
+      "concept": "bulk-modulus",
+      "difficulty": "easy",
+      "type": "Conceptual",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 8 \u00a78.5",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-8.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": false,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "conceptual"
+      },
+      "correct": "A",
+      "stem_short": "Bulk modulus B is (NCERT XI Ch 8 \u00a78.5):"
+    },
+    {
+      "pilot_qid": "t6d-073",
+      "slug": "physics-t6d-pilot-20260902-q073",
+      "chapter": "mechanical-properties-of-fluids",
+      "topic": "pressure-in-fluids",
+      "concept": "hydrostatic-pressure-pascal",
+      "difficulty": "easy",
+      "type": "Conceptual",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 9 \u00a79.2",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-9.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": false,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "conceptual"
+      },
+      "correct": "A",
+      "stem_short": "Pressure at depth h in an incompressible liquid of density \u03c1 is (gauge) (NCERT XI Ch 9 \u00a79.2):"
+    },
+    {
+      "pilot_qid": "t6d-074",
+      "slug": "physics-t6d-pilot-20260902-q074",
+      "chapter": "mechanical-properties-of-fluids",
+      "topic": "pressure-in-fluids",
+      "concept": "hydrostatic-pressure-pascal",
+      "difficulty": "easy",
+      "type": "Conceptual",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 9 \u00a79.2",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-9.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": false,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "conceptual"
+      },
+      "correct": "B",
+      "stem_short": "Pascal\u2019s law states that a pressure change in an enclosed incompressible fluid is transmitted:"
+    },
+    {
+      "pilot_qid": "t6d-075",
+      "slug": "physics-t6d-pilot-20260902-q075",
+      "chapter": "mechanical-properties-of-fluids",
+      "topic": "fluid-flow-and-bernoulli",
+      "concept": "streamline-flow",
+      "difficulty": "easy",
+      "type": "Conceptual",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 9 \u00a79.3",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-9.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": false,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "conceptual"
+      },
+      "correct": "B",
+      "stem_short": "In steady streamline flow, streamlines (NCERT XI Ch 9 \u00a79.3):"
+    },
+    {
+      "pilot_qid": "t6d-076",
+      "slug": "physics-t6d-pilot-20260902-q076",
+      "chapter": "mechanical-properties-of-fluids",
+      "topic": "fluid-flow-and-bernoulli",
+      "concept": "bernoullis-principle",
+      "difficulty": "medium",
+      "type": "Conceptual",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 9 \u00a79.4",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-9.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": false,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "conceptual"
+      },
+      "correct": "A",
+      "stem_short": "Bernoulli\u2019s equation for steady, incompressible, non-viscous flow along a streamline (NCERT XI Ch 9 \u00a79.4) conserves:"
+    },
+    {
+      "pilot_qid": "t6d-077",
+      "slug": "physics-t6d-pilot-20260902-q077",
+      "chapter": "mechanical-properties-of-fluids",
+      "topic": "viscosity-and-surface-tension",
+      "concept": "viscosity",
+      "difficulty": "easy",
+      "type": "Conceptual",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 9 \u00a79.5",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-9.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": false,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "conceptual"
+      },
+      "correct": "A",
+      "stem_short": "Viscous force between layers of a fluid is (NCERT XI Ch 9 \u00a79.5) proportional to:"
+    },
+    {
+      "pilot_qid": "t6d-078",
+      "slug": "physics-t6d-pilot-20260902-q078",
+      "chapter": "mechanical-properties-of-fluids",
+      "topic": "viscosity-and-surface-tension",
+      "concept": "surface-tension",
+      "difficulty": "easy",
+      "type": "Conceptual",
+      "ncert": {
+        "class": "DIRECTLY_SUPPORTED",
+        "ncert_reference": "NCERT XI Physics Ch 9 \u00a79.6",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-9.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": false,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "conceptual"
+      },
+      "correct": "A",
+      "stem_short": "Surface tension has SI unit (NCERT XI Ch 9 \u00a79.6):"
+    },
+    {
+      "pilot_qid": "t6d-079",
+      "slug": "physics-t6d-pilot-20260902-q079",
+      "chapter": "thermodynamics-physics",
+      "topic": "laws-of-thermodynamics",
+      "concept": "zeroth-and-first-law",
+      "difficulty": "easy",
+      "type": "Conceptual",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 11 \u00a711.3-11.5",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-11.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": false,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "conceptual"
+      },
+      "correct": "A",
+      "stem_short": "The first law of thermodynamics is essentially (NCERT XI Ch 11 \u00a711.3\u201311.5):"
+    },
+    {
+      "pilot_qid": "t6d-080",
+      "slug": "physics-t6d-pilot-20260902-q080",
+      "chapter": "thermodynamics-physics",
+      "topic": "laws-of-thermodynamics",
+      "concept": "zeroth-and-first-law",
+      "difficulty": "easy",
+      "type": "Conceptual",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 11 \u00a711.3-11.5",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-11.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": false,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "conceptual"
+      },
+      "correct": "B",
+      "stem_short": "Zeroth law of thermodynamics introduces the concept of:"
+    },
+    {
+      "pilot_qid": "t6d-081",
+      "slug": "physics-t6d-pilot-20260902-q081",
+      "chapter": "thermodynamics-physics",
+      "topic": "laws-of-thermodynamics",
+      "concept": "second-law-and-carnot",
+      "difficulty": "medium",
+      "type": "Conceptual",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 11 \u00a711.9-11.11",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-11.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": false,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "conceptual"
+      },
+      "correct": "A",
+      "stem_short": "A Carnot engine operating between T_h and T_c (kelvin) has efficiency (NCERT XI Ch 11 \u00a711.9\u201311.11):"
+    },
+    {
+      "pilot_qid": "t6d-082",
+      "slug": "physics-t6d-pilot-20260902-q082",
+      "chapter": "thermodynamics-physics",
+      "topic": "heat-work-internal-energy",
+      "concept": "heat-internal-energy-work",
+      "difficulty": "easy",
+      "type": "Conceptual",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 11 \u00a711.4",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-11.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": false,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "conceptual"
+      },
+      "correct": "C",
+      "stem_short": "Internal energy of an ideal gas depends primarily on (NCERT XI Ch 11 \u00a711.4):"
+    },
+    {
+      "pilot_qid": "t6d-083",
+      "slug": "physics-t6d-pilot-20260902-q083",
+      "chapter": "thermodynamics-physics",
+      "topic": "thermodynamic-processes",
+      "concept": "thermodynamic-process-types",
+      "difficulty": "easy",
+      "type": "Conceptual",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 11 \u00a711.8",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-11.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": false,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "conceptual"
+      },
+      "correct": "A",
+      "stem_short": "In an isothermal process for an ideal gas (NCERT XI Ch 11 \u00a711.8):"
+    },
+    {
+      "pilot_qid": "t6d-084",
+      "slug": "physics-t6d-pilot-20260902-q084",
+      "chapter": "thermodynamics-physics",
+      "topic": "thermodynamic-processes",
+      "concept": "thermodynamic-process-types",
+      "difficulty": "easy",
+      "type": "Conceptual",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 11 \u00a711.8",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-11.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": false,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "conceptual"
+      },
+      "correct": "A",
+      "stem_short": "An adiabatic process for an ideal gas is characterized by:"
+    },
+    {
+      "pilot_qid": "t6d-085",
+      "slug": "physics-t6d-pilot-20260902-q085",
+      "chapter": "kinetic-theory",
+      "topic": "kinetic-theory-ideal-gas",
+      "concept": "behaviour-of-gases",
+      "difficulty": "easy",
+      "type": "Conceptual",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 12 \u00a712.3",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-12.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": false,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "conceptual"
+      },
+      "correct": "A",
+      "stem_short": "Ideal gas equation is (NCERT XI Ch 12 \u00a712.3):"
+    },
+    {
+      "pilot_qid": "t6d-086",
+      "slug": "physics-t6d-pilot-20260902-q086",
+      "chapter": "kinetic-theory",
+      "topic": "kinetic-theory-ideal-gas",
+      "concept": "behaviour-of-gases",
+      "difficulty": "easy",
+      "type": "Conceptual",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 12 \u00a712.3",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-12.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": false,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "conceptual"
+      },
+      "correct": "B",
+      "stem_short": "At constant temperature, Boyle\u2019s law states:"
+    },
+    {
+      "pilot_qid": "t6d-087",
+      "slug": "physics-t6d-pilot-20260902-q087",
+      "chapter": "kinetic-theory",
+      "topic": "kinetic-theory-ideal-gas",
+      "concept": "kinetic-interpretation-temperature",
+      "difficulty": "easy",
+      "type": "Conceptual",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 12 \u00a712.4",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-12.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": false,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "conceptual"
+      },
+      "correct": "A",
+      "stem_short": "Absolute temperature of an ideal gas is proportional to (NCERT XI Ch 12 \u00a712.4):"
+    },
+    {
+      "pilot_qid": "t6d-088",
+      "slug": "physics-t6d-pilot-20260902-q088",
+      "chapter": "kinetic-theory",
+      "topic": "equipartition-and-mean-free-path",
+      "concept": "law-of-equipartition",
+      "difficulty": "easy",
+      "type": "Conceptual",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 12 \u00a712.5",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-12.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": false,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "conceptual"
+      },
+      "correct": "A",
+      "stem_short": "By equipartition, each quadratic energy term contributes (NCERT XI Ch 12 \u00a712.5):"
+    },
+    {
+      "pilot_qid": "t6d-089",
+      "slug": "physics-t6d-pilot-20260902-q089",
+      "chapter": "kinetic-theory",
+      "topic": "equipartition-and-mean-free-path",
+      "concept": "mean-free-path",
+      "difficulty": "medium",
+      "type": "Conceptual",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 12 \u00a712.7",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-12.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": false,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "conceptual"
+      },
+      "correct": "C",
+      "stem_short": "Mean free path of gas molecules (NCERT XI Ch 12 \u00a712.7) decreases when:"
+    },
+    {
+      "pilot_qid": "t6d-090",
+      "slug": "physics-t6d-pilot-20260902-q090",
+      "chapter": "kinematics",
+      "topic": "motion-in-a-straight-line",
+      "concept": "kinematic-equations",
+      "difficulty": "easy",
+      "type": "Numerical",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 2 \u00a72.4",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-2.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": true,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "INDEPENDENT_RECOMPUTE_UNAVAILABLE; gate_said=True:unchecked-keys-ok; keys=['a', 't', 'u', 'v']",
+        "unit_ok": null,
+        "hold_recommendation": true
+      },
+      "correct": "A",
+      "stem_short": "[Pilot 90] A body with u = 6 m/s and a = 1 m/s\u00b2 has speed after 4 s (v = u + at; NCERT XI Ch 2 \u00a72.4):"
+    },
+    {
+      "pilot_qid": "t6d-091",
+      "slug": "physics-t6d-pilot-20260902-q091",
+      "chapter": "kinematics",
+      "topic": "motion-in-a-straight-line",
+      "concept": "kinematic-equations",
+      "difficulty": "easy",
+      "type": "Numerical",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 2 \u00a72.4",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-2.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": true,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "INDEPENDENT_RECOMPUTE_UNAVAILABLE; gate_said=True:unchecked-keys-ok; keys=['a', 't', 'u', 'v']",
+        "unit_ok": null,
+        "hold_recommendation": true
+      },
+      "correct": "A",
+      "stem_short": "[Pilot 91] A body with u = 7 m/s and a = 2 m/s\u00b2 has speed after 5 s (v = u + at; NCERT XI Ch 2 \u00a72.4):"
+    },
+    {
+      "pilot_qid": "t6d-092",
+      "slug": "physics-t6d-pilot-20260902-q092",
+      "chapter": "kinematics",
+      "topic": "motion-in-a-straight-line",
+      "concept": "kinematic-equations",
+      "difficulty": "easy",
+      "type": "Numerical",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 2 \u00a72.4",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-2.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": true,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "INDEPENDENT_RECOMPUTE_UNAVAILABLE; gate_said=True:unchecked-keys-ok; keys=['a', 't', 'u', 'v']",
+        "unit_ok": null,
+        "hold_recommendation": true
+      },
+      "correct": "A",
+      "stem_short": "[Pilot 92] A body with u = 8 m/s and a = 3 m/s\u00b2 has speed after 2 s (v = u + at; NCERT XI Ch 2 \u00a72.4):"
+    },
+    {
+      "pilot_qid": "t6d-093",
+      "slug": "physics-t6d-pilot-20260902-q093",
+      "chapter": "kinematics",
+      "topic": "motion-in-a-straight-line",
+      "concept": "kinematic-equations",
+      "difficulty": "easy",
+      "type": "Numerical",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 2 \u00a72.4",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-2.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": true,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "INDEPENDENT_RECOMPUTE_UNAVAILABLE; gate_said=True:unchecked-keys-ok; keys=['a', 't', 'u', 'v']",
+        "unit_ok": null,
+        "hold_recommendation": true
+      },
+      "correct": "A",
+      "stem_short": "[Pilot 93] A body with u = 9 m/s and a = 1 m/s\u00b2 has speed after 3 s (v = u + at; NCERT XI Ch 2 \u00a72.4):"
+    },
+    {
+      "pilot_qid": "t6d-094",
+      "slug": "physics-t6d-pilot-20260902-q094",
+      "chapter": "kinematics",
+      "topic": "motion-in-a-straight-line",
+      "concept": "kinematic-equations",
+      "difficulty": "easy",
+      "type": "Numerical",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 2 \u00a72.4",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-2.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": true,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "INDEPENDENT_RECOMPUTE_UNAVAILABLE; gate_said=True:unchecked-keys-ok; keys=['a', 't', 'u', 'v']",
+        "unit_ok": null,
+        "hold_recommendation": true
+      },
+      "correct": "A",
+      "stem_short": "[Pilot 94] A body with u = 10 m/s and a = 2 m/s\u00b2 has speed after 4 s (v = u + at; NCERT XI Ch 2 \u00a72.4):"
+    },
+    {
+      "pilot_qid": "t6d-095",
+      "slug": "physics-t6d-pilot-20260902-q095",
+      "chapter": "kinematics",
+      "topic": "motion-in-a-straight-line",
+      "concept": "kinematic-equations",
+      "difficulty": "easy",
+      "type": "Numerical",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 2 \u00a72.4",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-2.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": true,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "INDEPENDENT_RECOMPUTE_UNAVAILABLE; gate_said=True:unchecked-keys-ok; keys=['a', 't', 'u', 'v']",
+        "unit_ok": null,
+        "hold_recommendation": true
+      },
+      "correct": "A",
+      "stem_short": "[Pilot 95] A body with u = 6 m/s and a = 3 m/s\u00b2 has speed after 5 s (v = u + at; NCERT XI Ch 2 \u00a72.4):"
+    },
+    {
+      "pilot_qid": "t6d-096",
+      "slug": "physics-t6d-pilot-20260902-q096",
+      "chapter": "kinematics",
+      "topic": "motion-in-a-straight-line",
+      "concept": "kinematic-equations",
+      "difficulty": "easy",
+      "type": "Numerical",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 2 \u00a72.4",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-2.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": true,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "INDEPENDENT_RECOMPUTE_UNAVAILABLE; gate_said=True:unchecked-keys-ok; keys=['a', 't', 'u', 'v']",
+        "unit_ok": null,
+        "hold_recommendation": true
+      },
+      "correct": "A",
+      "stem_short": "[Pilot 96] A body with u = 7 m/s and a = 1 m/s\u00b2 has speed after 2 s (v = u + at; NCERT XI Ch 2 \u00a72.4):"
+    },
+    {
+      "pilot_qid": "t6d-097",
+      "slug": "physics-t6d-pilot-20260902-q097",
+      "chapter": "kinematics",
+      "topic": "motion-in-a-straight-line",
+      "concept": "kinematic-equations",
+      "difficulty": "easy",
+      "type": "Numerical",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 2 \u00a72.4",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-2.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": true,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "INDEPENDENT_RECOMPUTE_UNAVAILABLE; gate_said=True:unchecked-keys-ok; keys=['a', 't', 'u', 'v']",
+        "unit_ok": null,
+        "hold_recommendation": true
+      },
+      "correct": "A",
+      "stem_short": "[Pilot 97] A body with u = 8 m/s and a = 2 m/s\u00b2 has speed after 3 s (v = u + at; NCERT XI Ch 2 \u00a72.4):"
+    },
+    {
+      "pilot_qid": "t6d-098",
+      "slug": "physics-t6d-pilot-20260902-q098",
+      "chapter": "kinematics",
+      "topic": "motion-in-a-straight-line",
+      "concept": "kinematic-equations",
+      "difficulty": "easy",
+      "type": "Numerical",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 2 \u00a72.4",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-2.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": true,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "INDEPENDENT_RECOMPUTE_UNAVAILABLE; gate_said=True:unchecked-keys-ok; keys=['a', 't', 'u', 'v']",
+        "unit_ok": null,
+        "hold_recommendation": true
+      },
+      "correct": "A",
+      "stem_short": "[Pilot 98] A body with u = 9 m/s and a = 3 m/s\u00b2 has speed after 4 s (v = u + at; NCERT XI Ch 2 \u00a72.4):"
+    },
+    {
+      "pilot_qid": "t6d-099",
+      "slug": "physics-t6d-pilot-20260902-q099",
+      "chapter": "kinematics",
+      "topic": "motion-in-a-straight-line",
+      "concept": "kinematic-equations",
+      "difficulty": "easy",
+      "type": "Numerical",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 2 \u00a72.4",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-2.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": true,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "INDEPENDENT_RECOMPUTE_UNAVAILABLE; gate_said=True:unchecked-keys-ok; keys=['a', 't', 'u', 'v']",
+        "unit_ok": null,
+        "hold_recommendation": true
+      },
+      "correct": "A",
+      "stem_short": "[Pilot 99] A body with u = 10 m/s and a = 1 m/s\u00b2 has speed after 5 s (v = u + at; NCERT XI Ch 2 \u00a72.4):"
+    },
+    {
+      "pilot_qid": "t6d-100",
+      "slug": "physics-t6d-pilot-20260902-q100",
+      "chapter": "kinematics",
+      "topic": "motion-in-a-straight-line",
+      "concept": "kinematic-equations",
+      "difficulty": "easy",
+      "type": "Numerical",
+      "ncert": {
+        "class": "SUPPORTED_WITH_INFERENCE",
+        "ncert_reference": "NCERT XI Physics Ch 2 \u00a72.4",
+        "source_pdf": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-2.pdf",
+        "pdf_exists": true,
+        "page_level_verified": false,
+        "section_level_verified": true,
+        "ncert_aligned": true,
+        "ncert_source_verified": true,
+        "page_level_ncert_verified": false
+      },
+      "structural": {
+        "ok": true,
+        "failures": []
+      },
+      "numerical": {
+        "is_numerical": true,
+        "match": null,
+        "expected": null,
+        "recomputed": null,
+        "note": "INDEPENDENT_RECOMPUTE_UNAVAILABLE; gate_said=True:unchecked-keys-ok; keys=['a', 't', 'u', 'v']",
+        "unit_ok": null,
+        "hold_recommendation": true
+      },
+      "correct": "A",
+      "stem_short": "[Pilot 100] A body with u = 6 m/s and a = 2 m/s\u00b2 has speed after 2 s (v = u + at; NCERT XI Ch 2 \u00a72.4):"
+    }
+  ]
+}

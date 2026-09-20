@@ -1,0 +1,18 @@
+---
+description: NEET MCQ quality bar for authored/generated questions
+globs: apps/backend/app/modules/cms/**/*
+alwaysApply: false
+---
+
+# MCQ quality
+
+## Item requirements
+- Exactly one defensible correct answer.
+- Four meaningful A–D options (plausible distractors; no throwaways).
+- Clear NEET-level wording; no ambiguity tricks.
+- NCERT-supported factual claims when the item is NCERT-grounded.
+
+## Status discipline
+- Independent validation required before verified/published status.
+- Generation ≠ validation ≠ publication.
+- Do not mark items verified based only on successful generation.

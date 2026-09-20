@@ -1,0 +1,55 @@
+name: Dependency Review
+
+on:
+  pull_request:
+    branches:
+      - main
+      - develop
+
+permissions:
+  contents: read
+
+jobs:
+
+  dependency-review:
+
+    name: Dependency Review
+
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      pull-requests: write
+
+    steps:
+
+      # ----------------------------------------------------------------------
+      # Checkout Repository
+      # ----------------------------------------------------------------------
+
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      # ----------------------------------------------------------------------
+      # Dependency Review
+      # ----------------------------------------------------------------------
+
+      - name: Review Dependencies
+        uses: actions/dependency-review-action@v4
+
+        with:
+
+          # Fail on High or Critical vulnerabilities
+          fail-on-severity: high
+
+          # Optional: Fail on GPL licenses
+          deny-licenses: GPL-2.0,GPL-3.0,AGPL-3.0
+
+          # Optional: Warn if dependency count increases significantly
+          warn-only: false
+
+          # Display license information
+          license-check: true
+
+          # Display vulnerability summary
+          vulnerability-check: true

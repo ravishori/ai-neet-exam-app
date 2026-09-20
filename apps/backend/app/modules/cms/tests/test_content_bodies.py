@@ -18,13 +18,18 @@ def test_concept_note_body_missing_required_field():
 def test_question_body_valid():
     body = {
         "stem": "What is I = V/R?",
-        "options": [{"label": "A", "text": "Ohm's Law"}, {"label": "B", "text": "Newton's Law"}],
+        "options": [
+            {"label": "A", "text": "Ohm's Law"},
+            {"label": "B", "text": "Newton's Law"},
+            {"label": "C", "text": "Hooke's Law"},
+            {"label": "D", "text": "Faraday's Law"},
+        ],
         "correct_option": "A",
         "explanation": "Ohm's Law relates V, I, R.",
     }
     result = validate_body("QUESTION", body)
     assert result["difficulty"] == "medium"  # default applied
-    assert len(result["options"]) == 2
+    assert len(result["options"]) == 4
 
 
 def test_unknown_content_type_rejected():

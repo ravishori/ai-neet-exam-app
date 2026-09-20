@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { Bookmark, Check, Flag, NotebookPen, Share2, X } from "lucide-react";
+import { Bookmark, Flag, NotebookPen, Share2 } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -16,6 +16,8 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Textarea } from "@/components/ui/textarea";
+import { AnswerOption, type AnswerOptionState } from "@/components/ds/answer-option";
+import { SubjectChip } from "@/components/ds";
 import { MarkdownRenderer } from "@/components/markdown-renderer";
 import { QuestionExplainCard } from "@/components/question-explain-card";
 import type { AttemptQuestion, Confidence } from "@/features/assessment/api";
@@ -90,7 +92,7 @@ function PreviousAttempts({ contentItemId }: { contentItemId: string }) {
           <ul className="flex flex-col gap-2 text-sm">
             {query.data.map((entry, idx) => (
               <li key={idx} className="flex items-center justify-between gap-2 rounded-md border border-border px-3 py-2">
-                <span className={entry.is_correct ? "text-green-700 dark:text-green-400" : "text-destructive"}>
+                <span className={entry.is_correct ? "text-success" : "text-destructive"}>
                   {entry.selected_option ? `Selected ${entry.selected_option}` : "Skipped"} — {entry.is_correct ? "Correct" : "Incorrect"}
                 </span>
                 <span className="text-xs text-muted-foreground">{new Date(entry.answered_at).toLocaleDateString()}</span>
@@ -190,28 +192,59 @@ export function QuestionPanel({
   }
 
   return (
-    <div className="flex flex-col gap-4">
-      <div className="flex flex-wrap items-center justify-between gap-2">
-        <span className="text-sm font-medium text-muted-foreground">
-          Question {index + 1} of {total}
-        </span>
-        <div className="flex flex-wrap items-center gap-1.5">
-          <DifficultyBadge difficulty={question.difficulty} />
-          <Badge variant="outline">{question.question_type}</Badge>
-          {question.pyq_year && <Badge variant="ghost">PYQ {question.pyq_year}</Badge>}
+    <div className="flex flex-col gap-5">
+      <header className="flex flex-col gap-2.5">
+        <div className="flex flex-wrap items-center justify-between gap-2">
+          <p className="text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+            Question {index + 1}
+            <span className="font-normal text-border" aria-hidden>
+              {" "}
+              /{" "}
+            </span>
+            <span className="font-medium tabular-nums text-foreground/70">{total}</span>
+          </p>
+          <div className="flex flex-wrap items-center gap-1.5">
+            <DifficultyBadge difficulty={question.difficulty} />
+            {question.pyq_year ? <Badge variant="ghost">PYQ {question.pyq_year}</Badge> : null}
+          </div>
         </div>
-      </div>
 
-      <div className="flex flex-wrap items-center gap-1.5" aria-label="Question metadata">
-        {question.subject && <Badge variant="outline">{question.subject.name}</Badge>}
-        {question.chapter && <Badge variant="outline">{question.chapter.name}</Badge>}
-        {question.topic && <Badge variant="outline">{question.topic.name}</Badge>}
-        {question.concept && <Badge variant="outline">{question.concept.name}</Badge>}
-      </div>
+        <div className="flex flex-wrap items-center gap-1.5" aria-label="Question metadata">
+          {question.subject ? <SubjectChip subject={question.subject.name} /> : null}
+          {question.chapter ? (
+            <span className="truncate text-xs text-muted-foreground">{question.chapter.name}</span>
+          ) : null}
+          {question.topic ? (
+            <span className="truncate text-xs text-muted-foreground">
+              <span className="text-border" aria-hidden>
+                ·{" "}
+              </span>
+              {question.topic.name}
+            </span>
+          ) : null}
+        </div>
+      </header>
 
-      <div className="text-lg leading-relaxed font-medium text-foreground">
+      <div
+        className="text-question text-base font-medium leading-relaxed text-foreground sm:text-lg"
+        data-testid="practice-runner-stem"
+      >
         <MarkdownRenderer content={question.stem} />
       </div>
+
+      {question.diagram_svg ? (
+        <figure
+          className="overflow-x-auto rounded-xl border border-border bg-muted/30 p-3"
+          data-testid="question-diagram-svg"
+          aria-label="Diagram accompanying this question"
+        >
+          <img
+            src={`data:image/svg+xml;charset=utf-8,${encodeURIComponent(question.diagram_svg)}`}
+            alt="Diagram accompanying this question"
+            className="mx-auto h-auto max-h-72 w-auto max-w-full object-contain"
+          />
+        </figure>
+      ) : null}
 
       {question.images.length > 0 && (
         <div className="flex flex-wrap gap-3">
@@ -221,49 +254,37 @@ export function QuestionPanel({
         </div>
       )}
 
-      <fieldset className="flex flex-col gap-2" disabled={isSubmitted}>
+      <fieldset className="flex flex-col gap-2.5" disabled={isSubmitted}>
         <legend className="sr-only">Answer options</legend>
         {question.options.map((opt, optIdx) => {
           const isSelected = question.selected_option === opt.label;
           const isCorrectOpt = isSubmitted && question.correct_option === opt.label;
           const isWrongSelected = isSubmitted && isSelected && !isCorrectOpt;
+          let state: AnswerOptionState = "default";
+          if (isCorrectOpt) state = "correct";
+          else if (isWrongSelected) state = "incorrect";
+          else if (!isSubmitted && isSelected) state = "selected";
           return (
-            <button
+            <AnswerOption
               key={opt.label}
-              type="button"
+              label={opt.label}
+              letter={optIdx < 4 ? String.fromCharCode(65 + optIdx) : opt.label}
+              text={opt.text}
+              state={state}
               disabled={isSubmitted}
-              onClick={() => onSelectOption(opt.label)}
-              className={cn(
-                "flex items-start gap-3 rounded-lg border p-3 text-left text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50 disabled:cursor-default",
-                isCorrectOpt && "border-green-600 bg-green-50 dark:border-green-500 dark:bg-green-950",
-                isWrongSelected && "border-destructive bg-destructive/10",
-                !isSubmitted && isSelected && "border-primary bg-primary/5",
-                !isSubmitted && !isSelected && "border-border hover:border-primary/50 hover:bg-muted/50"
-              )}
-            >
-              <span
-                className={cn(
-                  "flex size-6 shrink-0 items-center justify-center rounded-full border text-xs font-semibold tabular-nums",
-                  isSelected || isCorrectOpt ? "border-current" : "border-muted-foreground/40 text-muted-foreground"
-                )}
-                aria-hidden="true"
-              >
-                {optIdx < 4 ? String.fromCharCode(65 + optIdx) : opt.label}
-              </span>
-              <span className="pt-0.5">{opt.text}</span>
-              {isCorrectOpt && <Check className="ml-auto size-4 shrink-0 text-green-600 dark:text-green-400" aria-hidden="true" />}
-              {isWrongSelected && <X className="ml-auto size-4 shrink-0 text-destructive" aria-hidden="true" />}
-            </button>
+              onSelect={() => onSelectOption(opt.label)}
+            />
           );
         })}
       </fieldset>
-      <p className="text-xs text-muted-foreground">Keyboard shortcuts: A, B, C, D select an option.</p>
+      <p className="text-xs text-muted-foreground">Keyboard: A–D select · ← → navigate</p>
 
-      <div className="flex flex-wrap items-center gap-2">
+      <div className="flex flex-wrap items-center gap-1.5 border-t border-border/50 pt-3">
         <Button
           type="button"
-          variant={question.bookmarked ? "default" : "outline"}
+          variant={question.bookmarked ? "secondary" : "ghost"}
           size="sm"
+          className="min-h-11 touch-manipulation"
           onClick={() => bookmarkToggle.mutate()}
           disabled={bookmarkToggle.isPending}
         >
@@ -271,11 +292,26 @@ export function QuestionPanel({
           {question.bookmarked ? "Bookmarked" : "Bookmark"}
         </Button>
 
-        <Dialog open={noteDialogOpen} onOpenChange={(open) => {
-          setNoteDialogOpen(open);
-          if (open) setNoteText(noteQuery.data?.note_text ?? "");
-        }}>
-          <DialogTrigger render={<Button type="button" variant="outline" size="sm" />}>
+        {!isSubmitted && (
+          <Button
+            type="button"
+            variant={question.marked_for_review ? "secondary" : "ghost"}
+            size="sm"
+            className="min-h-11 touch-manipulation"
+            onClick={onToggleMarkForReview}
+          >
+            {question.marked_for_review ? "Marked for review" : "Mark for review"}
+          </Button>
+        )}
+
+        <Dialog
+          open={noteDialogOpen}
+          onOpenChange={(open) => {
+            setNoteDialogOpen(open);
+            if (open) setNoteText(noteQuery.data?.note_text ?? "");
+          }}
+        >
+          <DialogTrigger render={<Button type="button" variant="ghost" size="sm" className="min-h-11 touch-manipulation" />}>
             <NotebookPen className="size-3.5" aria-hidden="true" /> Note
           </DialogTrigger>
           <DialogContent>
@@ -297,20 +333,22 @@ export function QuestionPanel({
           </DialogContent>
         </Dialog>
 
-        <Button type="button" variant="outline" size="sm" onClick={handleShare}>
+        <Button type="button" variant="ghost" size="sm" className="min-h-11 touch-manipulation" onClick={handleShare}>
           <Share2 className="size-3.5" aria-hidden="true" /> {shareCopied ? "Link copied" : "Share"}
         </Button>
 
         <PreviousAttempts contentItemId={question.content_item_id} />
 
-        <Dialog onOpenChange={(open) => {
-          if (!open) {
-            setReportSubmitted(false);
-            setReportComment("");
-          }
-        }}>
-          <DialogTrigger render={<Button type="button" variant="ghost" size="sm" />}>
-            <Flag className="size-3.5" aria-hidden="true" /> Report issue
+        <Dialog
+          onOpenChange={(open) => {
+            if (!open) {
+              setReportSubmitted(false);
+              setReportComment("");
+            }
+          }}
+        >
+          <DialogTrigger render={<Button type="button" variant="ghost" size="sm" className="min-h-11 touch-manipulation" />}>
+            <Flag className="size-3.5" aria-hidden="true" /> Report
           </DialogTrigger>
           <DialogContent>
             <DialogHeader>
@@ -318,7 +356,7 @@ export function QuestionPanel({
               <DialogDescription>Flag a problem with this question for the content team to review.</DialogDescription>
             </DialogHeader>
             {reportSubmitted ? (
-              <p className="text-sm text-green-700 dark:text-green-400">Thanks — your report has been submitted.</p>
+              <p className="text-sm text-success">Thanks — your report has been submitted.</p>
             ) : (
               <>
                 <div className="flex flex-col gap-1.5">
@@ -352,33 +390,25 @@ export function QuestionPanel({
       </div>
 
       {!isSubmitted && (
-        <div className="flex flex-wrap items-center gap-2 border-t pt-3">
-          <span className="text-xs font-medium text-muted-foreground">How confident are you?</span>
+        <div className="flex flex-wrap items-center gap-2">
+          <span className="text-xs font-medium text-muted-foreground">Confidence</span>
           {CONFIDENCE_OPTIONS.map((c) => (
             <Button
               key={c.value}
               type="button"
               size="sm"
-              variant={question.confidence === c.value ? "default" : "outline"}
+              className={cn("min-h-11 touch-manipulation", question.confidence === c.value ? "" : "text-muted-foreground")}
+              variant={question.confidence === c.value ? "secondary" : "ghost"}
               onClick={() => onSetConfidence(c.value)}
             >
               {c.label}
             </Button>
           ))}
-          <Button
-            type="button"
-            size="sm"
-            variant={question.marked_for_review ? "default" : "outline"}
-            className="ml-auto"
-            onClick={onToggleMarkForReview}
-          >
-            {question.marked_for_review ? "Marked for review" : "Mark for review"}
-          </Button>
         </div>
       )}
 
       {isSubmitted && (
-        <div className="flex flex-col gap-4 border-t pt-4">
+        <div className="flex flex-col gap-4 border-t border-border/50 pt-4">
           <div className="flex flex-wrap items-center gap-3 text-sm">
             <Badge variant={question.is_correct ? "secondary" : "destructive"}>
               {question.is_correct === null ? "Skipped" : question.is_correct ? "Correct" : "Incorrect"}

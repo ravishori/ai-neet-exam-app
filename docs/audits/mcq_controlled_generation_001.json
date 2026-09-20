@@ -1,0 +1,2805 @@
+{
+  "task": "MCQ-CONTROLLED-GENERATION-001",
+  "generated_at": "2026-09-14T07:08:41.719505+00:00",
+  "provider_routing": {
+    "FACTORY_PROVIDER": "openai",
+    "MCQ_PROVIDER": "openai",
+    "FACTORY_PROVIDER_MODE": "fixed",
+    "model_hint": "gpt-5-mini",
+    "prior_attempt": {
+      "provider": "anthropic",
+      "result": "PROVIDER_BLOCKED",
+      "summary": "Provider billing/credits blocked (20/20)"
+    }
+  },
+  "inputs": {
+    "coverage_audit": "D:\\ravishori\\AI Neet Exam App\\docs\\audits\\mcq_evidence_coverage_002.json",
+    "write_002_audit": "D:\\ravishori\\AI Neet Exam App\\docs\\audits\\ncert_evidence_write_002.json",
+    "generation_ready_pool_size": 146,
+    "selected_blueprint_ids": {
+      "PHYSICS": [
+        "c3b84dbd-fdba-4aba-972c-dd003434d5fd",
+        "2b4ea5b2-14af-4acd-bcc0-75032d027f89",
+        "90259894-e5a5-4101-a8d7-3edc32c4a438",
+        "6eb6f7fb-c1b3-474c-bd1a-a367f5ede46f",
+        "a64869b6-35bd-4157-a288-33e3ae0e4f6b"
+      ],
+      "CHEMISTRY": [
+        "e19d233c-484e-4c44-9e6d-bf8cfa4650ab",
+        "b16a3525-d661-4454-a8b5-3470371d1338",
+        "97de2381-bd37-42b8-aa16-e8b49dfd91f4",
+        "3d1ca441-882f-4cca-90b9-9ec71cff4233",
+        "c865e8ec-8ead-4389-9a48-c9b175e1e540"
+      ],
+      "BOTANY": [
+        "c6ba6917-36d7-48ae-be62-16fd0303708d",
+        "593123ef-a1b8-4b20-97fc-3094f0734c02",
+        "f46924a9-9e7e-4145-9b2b-629db2bbe31c",
+        "217d5fb3-f927-4aef-a3e1-7922ceaf91d2",
+        "259b33ac-8d6c-4672-a02a-e852fd341a7d"
+      ],
+      "ZOOLOGY": [
+        "23919ba1-0216-4898-9955-56afdccaac1d",
+        "33b094ff-129e-4d2d-b15c-d0a3035fad9d",
+        "a8a184fc-2113-4ac5-92e1-2b840ea821a1",
+        "50a31356-c644-4dbc-a867-e9002bfb4211",
+        "4ba4a908-6847-40ab-980b-a8ae19192502"
+      ]
+    },
+    "selected_blueprint_keys": {
+      "PHYSICS": [
+        "bp-create-001-20260913-bp-physics-gravitational-constant-mcq",
+        "bp-create-002-20260913-bp-physics-angular-momentum-mcq",
+        "bp-create-002-20260913-bp-physics-behaviour-of-gases-mcq",
+        "bp-create-002-20260913-bp-physics-bernoullis-principle-mcq",
+        "bp-create-002-20260913-bp-physics-bulk-modulus-mcq"
+      ],
+      "CHEMISTRY": [
+        "bp-create-001-20260913-bp-chemistry-abnormal-molar-mass-vant-hoff-mcq",
+        "bp-create-001-20260913-bp-chemistry-acylation-and-alkylation-amines-mcq",
+        "bp-create-001-20260913-bp-chemistry-arrhenius-equation-mcq",
+        "bp-create-001-20260913-bp-chemistry-classification-of-carbohydrates-mcq",
+        "bp-create-001-20260913-bp-chemistry-crystal-field-theory-mcq"
+      ],
+      "BOTANY": [
+        "bp-create-001-20260913-bp-botany-apomixis-polyembryony-mcq",
+        "bp-create-001-20260913-bp-botany-biocontrol-biofertilisers-mcq",
+        "bp-create-001-20260913-bp-botany-decomposition-mcq",
+        "bp-create-001-20260913-bp-botany-dna-as-genetic-material-mcq",
+        "bp-create-001-20260913-bp-botany-enzyme-basics-mcq"
+      ],
+      "ZOOLOGY": [
+        "bp-create-001-20260913-bp-zoology-cancer-mcq",
+        "bp-create-001-20260913-bp-zoology-infertility-assisted-reproduction-mcq",
+        "bp-create-001-20260913-bp-zoology-origin-of-life-mcq",
+        "bp-create-001-20260913-bp-zoology-spermatogenesis-oogenesis-mcq",
+        "bp-create-002-20260913-bp-zoology-abo-blood-grouping-mcq"
+      ]
+    }
+  },
+  "database_before": {
+    "chapters": 56,
+    "topics": 192,
+    "concepts": 318,
+    "kus": 381,
+    "blueprints": 445,
+    "status": {
+      "DRAFT": 5444,
+      "PUBLISHED": 1479,
+      "SUPERSEDED": 6,
+      "IN_REVIEW": 111
+    },
+    "unmapped_draft": 5034,
+    "candidates": 1015,
+    "jobs": 771,
+    "runs": 771,
+    "published": 1479
+  },
+  "database_after": {
+    "chapters": 56,
+    "topics": 192,
+    "concepts": 318,
+    "kus": 381,
+    "blueprints": 445,
+    "status": {
+      "DRAFT": 5464,
+      "PUBLISHED": 1479,
+      "SUPERSEDED": 6,
+      "IN_REVIEW": 111
+    },
+    "unmapped_draft": 5034,
+    "candidates": 1036,
+    "jobs": 791,
+    "runs": 791,
+    "published": 1479
+  },
+  "metrics": {
+    "requested": 20,
+    "attempted": 21,
+    "created": 20,
+    "failed_parse": 1,
+    "rejected_validation": 0,
+    "failed_provider": 0,
+    "duplicate": 0,
+    "syllabus_gate_failures": 0,
+    "ncert_evidence_failures": 0,
+    "latency_ms_sum": 537854,
+    "estimated_cost_usd": 0.098451,
+    "created_by_subject": {
+      "PHYSICS": 5,
+      "CHEMISTRY": 5,
+      "BOTANY": 5,
+      "ZOOLOGY": 5
+    }
+  },
+  "subject_results": {
+    "PHYSICS": {
+      "batch_id": "0ad9b26f-0ef2-4872-9a3a-dc6c57556031",
+      "requested": 5,
+      "created": 5,
+      "stats": {
+        "created": 5,
+        "attempted": 5,
+        "rejected_validation": 0,
+        "duplicate": 0,
+        "failed_provider": 0,
+        "failed_parse": 0,
+        "diversity_rejected": 0,
+        "requested": 5,
+        "cost_usd_milli": 27
+      },
+      "runs": [
+        {
+          "blueprint_id": "c3b84dbd-fdba-4aba-972c-dd003434d5fd",
+          "blueprint_key": "bp-create-001-20260913-bp-physics-gravitational-constant-mcq",
+          "subject": "PHYSICS",
+          "chapter": "Gravitation",
+          "topic": "Universal Law of Gravitation",
+          "concept": "The Gravitational Constant",
+          "class_level": "11",
+          "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph1dd\\keph1dd\\keph107.pdf",
+          "ncert_relative": "Class 11/Physics/keph1dd/keph1dd/keph107.pdf",
+          "syllabus": {
+            "subject": "PHYSICS",
+            "unit_number": 6,
+            "unit_name": "GRAVITATION",
+            "topic_id": "PHYSICS:U06:T01"
+          },
+          "requested": 1,
+          "created": 1,
+          "attempted": 1,
+          "rejected_validation": 0,
+          "duplicate": 0,
+          "failed_provider": 0,
+          "failed_parse": 0,
+          "diversity_rejected": 0,
+          "stop_reason": "TARGET_MET",
+          "cost_usd": 0.0082285,
+          "latency_ms": 28068,
+          "provider": {
+            "openai": 1
+          },
+          "model": {
+            "gpt-5-mini": 1
+          },
+          "job_id": "08674a78-4dab-4043-b947-daf039fc3847",
+          "run_id": "7c120712-e071-49e1-a3d1-6d2ec9d5fc52",
+          "batch_id": "0ad9b26f-0ef2-4872-9a3a-dc6c57556031",
+          "content_item_ids": [
+            "d85492b1-bdd0-4029-8e32-434a02c136a3"
+          ]
+        },
+        {
+          "blueprint_id": "2b4ea5b2-14af-4acd-bcc0-75032d027f89",
+          "blueprint_key": "bp-create-002-20260913-bp-physics-angular-momentum-mcq",
+          "subject": "PHYSICS",
+          "chapter": "Systems of Particles and Rotational Motion",
+          "topic": "Torque and Angular Momentum",
+          "concept": "Angular Momentum",
+          "class_level": "11",
+          "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph1dd\\keph1dd\\keph106.pdf",
+          "ncert_relative": "Class 11/Physics/keph1dd/keph1dd/keph106.pdf",
+          "syllabus": {
+            "subject": "PHYSICS",
+            "unit_number": 5,
+            "unit_name": "ROTATIONAL MOTION",
+            "topic_id": "PHYSICS:U05:T01"
+          },
+          "requested": 1,
+          "created": 1,
+          "attempted": 1,
+          "rejected_validation": 0,
+          "duplicate": 0,
+          "failed_provider": 0,
+          "failed_parse": 0,
+          "diversity_rejected": 0,
+          "stop_reason": "TARGET_MET",
+          "cost_usd": 0.00517025,
+          "latency_ms": 24763,
+          "provider": {
+            "openai": 1
+          },
+          "model": {
+            "gpt-5-mini": 1
+          },
+          "job_id": "0f071ff3-d641-49e4-ac9d-0d4989d44cd9",
+          "run_id": "6c16a36a-28f0-46b9-9fa3-66bdd13f8941",
+          "batch_id": "0ad9b26f-0ef2-4872-9a3a-dc6c57556031",
+          "content_item_ids": [
+            "59a19bed-6287-40ef-aa61-7a839c1e77c7"
+          ]
+        },
+        {
+          "blueprint_id": "90259894-e5a5-4101-a8d7-3edc32c4a438",
+          "blueprint_key": "bp-create-002-20260913-bp-physics-behaviour-of-gases-mcq",
+          "subject": "PHYSICS",
+          "chapter": "Kinetic Theory",
+          "topic": "Kinetic Theory of an Ideal Gas",
+          "concept": "Behaviour of Gases",
+          "class_level": "11",
+          "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph2dd\\keph2dd\\keph205.pdf",
+          "ncert_relative": "Class 11/Physics/keph2dd/keph2dd/keph205.pdf",
+          "syllabus": {
+            "subject": "PHYSICS",
+            "unit_number": 9,
+            "unit_name": "KINETIC THEORY OF GASES",
+            "topic_id": "PHYSICS:U09:T01"
+          },
+          "requested": 1,
+          "created": 1,
+          "attempted": 1,
+          "rejected_validation": 0,
+          "duplicate": 0,
+          "failed_provider": 0,
+          "failed_parse": 0,
+          "diversity_rejected": 0,
+          "stop_reason": "TARGET_MET",
+          "cost_usd": 0.00562525,
+          "latency_ms": 33645,
+          "provider": {
+            "openai": 1
+          },
+          "model": {
+            "gpt-5-mini": 1
+          },
+          "job_id": "32476bc7-748c-45c0-bc0d-4defe1c9f1b5",
+          "run_id": "9214f207-af81-4b9a-bc99-32c07b44cf48",
+          "batch_id": "0ad9b26f-0ef2-4872-9a3a-dc6c57556031",
+          "content_item_ids": [
+            "5443980e-2bd7-408e-8c13-f23a0404d86a"
+          ]
+        },
+        {
+          "blueprint_id": "6eb6f7fb-c1b3-474c-bd1a-a367f5ede46f",
+          "blueprint_key": "bp-create-002-20260913-bp-physics-bernoullis-principle-mcq",
+          "subject": "PHYSICS",
+          "chapter": "Mechanical Properties of Fluids",
+          "topic": "Fluid Flow and Bernoulli",
+          "concept": "Bernoulli's Principle",
+          "class_level": "11",
+          "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph2dd\\keph2dd\\keph202.pdf",
+          "ncert_relative": "Class 11/Physics/keph2dd/keph2dd/keph202.pdf",
+          "syllabus": {
+            "subject": "PHYSICS",
+            "unit_number": 7,
+            "unit_name": "PROPERTIES OF SOLIDS AND LIQUIDS",
+            "topic_id": "PHYSICS:U07:T02"
+          },
+          "requested": 1,
+          "created": 1,
+          "attempted": 1,
+          "rejected_validation": 0,
+          "duplicate": 0,
+          "failed_provider": 0,
+          "failed_parse": 0,
+          "diversity_rejected": 0,
+          "stop_reason": "TARGET_MET",
+          "cost_usd": 0.00513425,
+          "latency_ms": 25867,
+          "provider": {
+            "openai": 1
+          },
+          "model": {
+            "gpt-5-mini": 1
+          },
+          "job_id": "d07543aa-96cd-4c0a-8af2-321142100113",
+          "run_id": "7019bf37-1310-4214-9a96-ee165921898a",
+          "batch_id": "0ad9b26f-0ef2-4872-9a3a-dc6c57556031",
+          "content_item_ids": [
+            "bf839690-4e6f-4792-9254-d813546dc7f2"
+          ]
+        },
+        {
+          "blueprint_id": "a64869b6-35bd-4157-a288-33e3ae0e4f6b",
+          "blueprint_key": "bp-create-002-20260913-bp-physics-bulk-modulus-mcq",
+          "subject": "PHYSICS",
+          "chapter": "Mechanical Properties of Solids",
+          "topic": "Elastic Moduli",
+          "concept": "Bulk Modulus",
+          "class_level": "11",
+          "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph2dd\\keph2dd\\keph201.pdf",
+          "ncert_relative": "Class 11/Physics/keph2dd/keph2dd/keph201.pdf",
+          "syllabus": {
+            "subject": "PHYSICS",
+            "unit_number": 7,
+            "unit_name": "PROPERTIES OF SOLIDS AND LIQUIDS",
+            "topic_id": "PHYSICS:U07:T01"
+          },
+          "requested": 1,
+          "created": 1,
+          "attempted": 1,
+          "rejected_validation": 0,
+          "duplicate": 0,
+          "failed_provider": 0,
+          "failed_parse": 0,
+          "diversity_rejected": 0,
+          "stop_reason": "TARGET_MET",
+          "cost_usd": 0.0041435,
+          "latency_ms": 22618,
+          "provider": {
+            "openai": 1
+          },
+          "model": {
+            "gpt-5-mini": 1
+          },
+          "job_id": "654b3620-81b3-4625-8ff1-a6882ca3a038",
+          "run_id": "5a500190-adfd-4edc-ae12-7f19831302a0",
+          "batch_id": "0ad9b26f-0ef2-4872-9a3a-dc6c57556031",
+          "content_item_ids": [
+            "e7525491-a390-452f-bd96-3e50052d5604"
+          ]
+        }
+      ]
+    },
+    "CHEMISTRY": {
+      "batch_id": "a8a4a4aa-9a8c-4121-8a19-74a9ede43b0c",
+      "requested": 5,
+      "created": 5,
+      "stats": {
+        "created": 5,
+        "attempted": 5,
+        "rejected_validation": 0,
+        "duplicate": 0,
+        "failed_provider": 0,
+        "failed_parse": 0,
+        "diversity_rejected": 0,
+        "requested": 5,
+        "cost_usd_milli": 19
+      },
+      "runs": [
+        {
+          "blueprint_id": "e19d233c-484e-4c44-9e6d-bf8cfa4650ab",
+          "blueprint_key": "bp-create-001-20260913-bp-chemistry-abnormal-molar-mass-vant-hoff-mcq",
+          "subject": "CHEMISTRY",
+          "chapter": "Solutions",
+          "topic": "Colligative Properties",
+          "concept": "Abnormal Molar Mass and van't Hoff Factor",
+          "class_level": "12",
+          "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 1\\lech1dd\\lech101.pdf",
+          "ncert_relative": "Class 12/Chemistry 1/lech1dd/lech101.pdf",
+          "syllabus": {
+            "subject": "CHEMISTRY",
+            "unit_number": 5,
+            "unit_name": "SOLUTIONS",
+            "topic_id": "CHEMISTRY:U05:T01"
+          },
+          "requested": 1,
+          "created": 1,
+          "attempted": 1,
+          "rejected_validation": 0,
+          "duplicate": 0,
+          "failed_provider": 0,
+          "failed_parse": 0,
+          "diversity_rejected": 0,
+          "stop_reason": "TARGET_MET",
+          "cost_usd": 0.00478325,
+          "latency_ms": 26899,
+          "provider": {
+            "openai": 1
+          },
+          "model": {
+            "gpt-5-mini": 1
+          },
+          "job_id": "efbe5a4f-56be-41b0-9e71-be6719756900",
+          "run_id": "cdf0b2e2-010a-4fb1-b311-b67020c61d95",
+          "batch_id": "a8a4a4aa-9a8c-4121-8a19-74a9ede43b0c",
+          "content_item_ids": [
+            "c558931f-1507-4950-b498-611bff82f0e6"
+          ]
+        },
+        {
+          "blueprint_id": "b16a3525-d661-4454-a8b5-3470371d1338",
+          "blueprint_key": "bp-create-001-20260913-bp-chemistry-acylation-and-alkylation-amines-mcq",
+          "subject": "CHEMISTRY",
+          "chapter": "Amines",
+          "topic": "Chemical Reactions of Amines",
+          "concept": "Acylation, Alkylation and Carbylamine Reactions",
+          "class_level": "12",
+          "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 2\\lech2dd\\lech204.pdf",
+          "ncert_relative": "Class 12/Chemistry 2/lech2dd/lech204.pdf",
+          "syllabus": {
+            "subject": "CHEMISTRY",
+            "unit_number": 18,
+            "unit_name": "ORGANIC COMPOUNDS CONTAINING NITROGEN",
+            "topic_id": "CHEMISTRY:U18:T02"
+          },
+          "requested": 1,
+          "created": 1,
+          "attempted": 1,
+          "rejected_validation": 0,
+          "duplicate": 0,
+          "failed_provider": 0,
+          "failed_parse": 0,
+          "diversity_rejected": 0,
+          "stop_reason": "TARGET_MET",
+          "cost_usd": 0.0038065,
+          "latency_ms": 24003,
+          "provider": {
+            "openai": 1
+          },
+          "model": {
+            "gpt-5-mini": 1
+          },
+          "job_id": "606965d3-91ad-4556-9516-30dc30621e98",
+          "run_id": "05f9d335-b2bf-4f72-b0e6-ceed0b2497e9",
+          "batch_id": "a8a4a4aa-9a8c-4121-8a19-74a9ede43b0c",
+          "content_item_ids": [
+            "367009bb-9cc8-4ba1-a011-964321ba51af"
+          ]
+        },
+        {
+          "blueprint_id": "97de2381-bd37-42b8-aa16-e8b49dfd91f4",
+          "blueprint_key": "bp-create-001-20260913-bp-chemistry-arrhenius-equation-mcq",
+          "subject": "CHEMISTRY",
+          "chapter": "Chemical Kinetics",
+          "topic": "Temperature Dependence of Rate",
+          "concept": "Arrhenius Equation",
+          "class_level": "12",
+          "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 1\\lech1dd\\lech103.pdf",
+          "ncert_relative": "Class 12/Chemistry 1/lech1dd/lech103.pdf",
+          "syllabus": {
+            "subject": "CHEMISTRY",
+            "unit_number": 8,
+            "unit_name": "CHEMICAL KINETICS",
+            "topic_id": "CHEMISTRY:U08:T01"
+          },
+          "requested": 1,
+          "created": 1,
+          "attempted": 1,
+          "rejected_validation": 0,
+          "duplicate": 0,
+          "failed_provider": 0,
+          "failed_parse": 0,
+          "diversity_rejected": 0,
+          "stop_reason": "TARGET_MET",
+          "cost_usd": 0.00441225,
+          "latency_ms": 23111,
+          "provider": {
+            "openai": 1
+          },
+          "model": {
+            "gpt-5-mini": 1
+          },
+          "job_id": "b5c92d1e-daad-40a4-96ba-b37e20f2f723",
+          "run_id": "ab51b5ae-e7e0-4a98-9331-ecc1fba49a0d",
+          "batch_id": "a8a4a4aa-9a8c-4121-8a19-74a9ede43b0c",
+          "content_item_ids": [
+            "62202056-650f-4ae3-85a7-db11ec3df6a0"
+          ]
+        },
+        {
+          "blueprint_id": "3d1ca441-882f-4cca-90b9-9ec71cff4233",
+          "blueprint_key": "bp-create-001-20260913-bp-chemistry-classification-of-carbohydrates-mcq",
+          "subject": "CHEMISTRY",
+          "chapter": "Biomolecules",
+          "topic": "Carbohydrates",
+          "concept": "Classification of Carbohydrates",
+          "class_level": "12",
+          "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 2\\lech2dd\\lech205.pdf",
+          "ncert_relative": "Class 12/Chemistry 2/lech2dd/lech205.pdf",
+          "syllabus": {
+            "subject": "CHEMISTRY",
+            "unit_number": 19,
+            "unit_name": "BIOMOLECULES",
+            "topic_id": "CHEMISTRY:U19:T02"
+          },
+          "requested": 1,
+          "created": 1,
+          "attempted": 1,
+          "rejected_validation": 0,
+          "duplicate": 0,
+          "failed_provider": 0,
+          "failed_parse": 0,
+          "diversity_rejected": 0,
+          "stop_reason": "TARGET_MET",
+          "cost_usd": 0.0047945,
+          "latency_ms": 27792,
+          "provider": {
+            "openai": 1
+          },
+          "model": {
+            "gpt-5-mini": 1
+          },
+          "job_id": "8ad27aad-4b6d-437b-8a9e-e6c898a2cd06",
+          "run_id": "ac1e9705-9fc1-44b5-bec5-3699b2b31235",
+          "batch_id": "a8a4a4aa-9a8c-4121-8a19-74a9ede43b0c",
+          "content_item_ids": [
+            "a4c2d7a4-b4b8-409f-9cc7-f81bc3d13105"
+          ]
+        },
+        {
+          "blueprint_id": "c865e8ec-8ead-4389-9a48-c9b175e1e540",
+          "blueprint_key": "bp-create-001-20260913-bp-chemistry-crystal-field-theory-mcq",
+          "subject": "CHEMISTRY",
+          "chapter": "Coordination Compounds",
+          "topic": "Bonding in Coordination Compounds",
+          "concept": "Crystal Field Theory (CFT)",
+          "class_level": "12",
+          "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 1\\lech1dd\\lech105.pdf",
+          "ncert_relative": "Class 12/Chemistry 1/lech1dd/lech105.pdf",
+          "syllabus": {
+            "subject": "CHEMISTRY",
+            "unit_number": 12,
+            "unit_name": "CO-ORDINATION COMPOUNDS",
+            "topic_id": "CHEMISTRY:U12:T01"
+          },
+          "requested": 1,
+          "created": 1,
+          "attempted": 1,
+          "rejected_validation": 0,
+          "duplicate": 0,
+          "failed_provider": 0,
+          "failed_parse": 0,
+          "diversity_rejected": 0,
+          "stop_reason": "TARGET_MET",
+          "cost_usd": 0.0044735,
+          "latency_ms": 21034,
+          "provider": {
+            "openai": 1
+          },
+          "model": {
+            "gpt-5-mini": 1
+          },
+          "job_id": "6ff5a229-705d-4ca6-925d-04b995aef969",
+          "run_id": "0f84d93e-c64c-4dd1-a7d7-9e2817102f6a",
+          "batch_id": "a8a4a4aa-9a8c-4121-8a19-74a9ede43b0c",
+          "content_item_ids": [
+            "4e9d208f-a545-4888-a78c-61fd638d7a7c"
+          ]
+        }
+      ]
+    },
+    "BOTANY": {
+      "batch_id": "2e53ae95-f684-4cd7-80f6-cfb0d39f55e3",
+      "requested": 5,
+      "created": 5,
+      "stats": {
+        "created": 5,
+        "attempted": 6,
+        "rejected_validation": 0,
+        "duplicate": 0,
+        "failed_provider": 0,
+        "failed_parse": 1,
+        "diversity_rejected": 0,
+        "requested": 5,
+        "cost_usd_milli": 26
+      },
+      "runs": [
+        {
+          "blueprint_id": "c6ba6917-36d7-48ae-be62-16fd0303708d",
+          "blueprint_key": "bp-create-001-20260913-bp-botany-apomixis-polyembryony-mcq",
+          "subject": "BOTANY",
+          "chapter": "Sexual Reproduction in Flowering Plants",
+          "topic": "Post-Fertilisation: Structures and Events",
+          "concept": "Apomixis and Polyembryony",
+          "class_level": "12",
+          "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo101.pdf",
+          "ncert_relative": "Class 12/Biology/lebo1dd/lebo101.pdf",
+          "syllabus": {
+            "subject": "BIOLOGY",
+            "unit_number": 6,
+            "unit_name": "Reproduction",
+            "topic_id": "BIOLOGY:U06:T01"
+          },
+          "requested": 1,
+          "created": 1,
+          "attempted": 1,
+          "rejected_validation": 0,
+          "duplicate": 0,
+          "failed_provider": 0,
+          "failed_parse": 0,
+          "diversity_rejected": 0,
+          "stop_reason": "TARGET_MET",
+          "cost_usd": 0.00415225,
+          "latency_ms": 25337,
+          "provider": {
+            "openai": 1
+          },
+          "model": {
+            "gpt-5-mini": 1
+          },
+          "job_id": "708e3f96-11d9-4e14-8164-63f7f5f41542",
+          "run_id": "ea18dd9e-fcf1-41be-860c-3ef13e3c9d81",
+          "batch_id": "2e53ae95-f684-4cd7-80f6-cfb0d39f55e3",
+          "content_item_ids": [
+            "23478703-0f93-4b27-8848-a2aab87468b7"
+          ]
+        },
+        {
+          "blueprint_id": "593123ef-a1b8-4b20-97fc-3094f0734c02",
+          "blueprint_key": "bp-create-001-20260913-bp-botany-biocontrol-biofertilisers-mcq",
+          "subject": "BOTANY",
+          "chapter": "Microbes in Human Welfare",
+          "topic": "Microbes in Sewage Treatment, Biogas, Biocontrol and Biofertilisers",
+          "concept": "Biocontrol Agents and Biofertilisers",
+          "class_level": "12",
+          "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo108.pdf",
+          "ncert_relative": "Class 12/Biology/lebo1dd/lebo108.pdf",
+          "syllabus": {
+            "subject": "BIOLOGY",
+            "unit_number": 8,
+            "unit_name": "Biology and Human Welfare",
+            "topic_id": "BIOLOGY:U08:T02"
+          },
+          "requested": 1,
+          "created": 1,
+          "attempted": 2,
+          "rejected_validation": 0,
+          "duplicate": 0,
+          "failed_provider": 0,
+          "failed_parse": 1,
+          "diversity_rejected": 0,
+          "stop_reason": "TARGET_MET",
+          "cost_usd": 0.011052,
+          "latency_ms": 63784,
+          "provider": {
+            "openai": 2
+          },
+          "model": {
+            "gpt-5-mini": 2
+          },
+          "job_id": "729bc7ae-ae7d-4465-87e1-ef7bbfbf67eb",
+          "run_id": "36450882-c29e-4bf5-819a-3f74b40e35cb",
+          "batch_id": "2e53ae95-f684-4cd7-80f6-cfb0d39f55e3",
+          "content_item_ids": [
+            "7ad3eee8-8d99-477e-8284-b67dcfd3530b"
+          ]
+        },
+        {
+          "blueprint_id": "f46924a9-9e7e-4145-9b2b-629db2bbe31c",
+          "blueprint_key": "bp-create-001-20260913-bp-botany-decomposition-mcq",
+          "subject": "BOTANY",
+          "chapter": "Ecosystem",
+          "topic": "Decomposition, Energy Flow and Ecological Pyramids",
+          "concept": "Decomposition",
+          "class_level": "12",
+          "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo112.pdf",
+          "ncert_relative": "Class 12/Biology/lebo1dd/lebo112.pdf",
+          "syllabus": {
+            "subject": "BIOLOGY",
+            "unit_number": 10,
+            "unit_name": "Ecology and Environment",
+            "topic_id": "BIOLOGY:U10:T02"
+          },
+          "requested": 1,
+          "created": 1,
+          "attempted": 1,
+          "rejected_validation": 0,
+          "duplicate": 0,
+          "failed_provider": 0,
+          "failed_parse": 0,
+          "diversity_rejected": 0,
+          "stop_reason": "TARGET_MET",
+          "cost_usd": 0.0027495,
+          "latency_ms": 15956,
+          "provider": {
+            "openai": 1
+          },
+          "model": {
+            "gpt-5-mini": 1
+          },
+          "job_id": "8003946e-2063-41b8-9650-47dfdbb8ba79",
+          "run_id": "649d7a76-ca7f-40cd-91b9-ec6cf917980e",
+          "batch_id": "2e53ae95-f684-4cd7-80f6-cfb0d39f55e3",
+          "content_item_ids": [
+            "b62641ef-e462-4e0f-9ec4-d922c21c1038"
+          ]
+        },
+        {
+          "blueprint_id": "217d5fb3-f927-4aef-a3e1-7922ceaf91d2",
+          "blueprint_key": "bp-create-001-20260913-bp-botany-dna-as-genetic-material-mcq",
+          "subject": "BOTANY",
+          "chapter": "Molecular Basis of Inheritance",
+          "topic": "Search for Genetic Material and Replication",
+          "concept": "The Genetic Material is DNA",
+          "class_level": "12",
+          "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo105.pdf",
+          "ncert_relative": "Class 12/Biology/lebo1dd/lebo105.pdf",
+          "syllabus": {
+            "subject": "BIOLOGY",
+            "unit_number": 7,
+            "unit_name": "Genetics and Evolution",
+            "topic_id": "BIOLOGY:U07:T02"
+          },
+          "requested": 1,
+          "created": 1,
+          "attempted": 1,
+          "rejected_validation": 0,
+          "duplicate": 0,
+          "failed_provider": 0,
+          "failed_parse": 0,
+          "diversity_rejected": 0,
+          "stop_reason": "TARGET_MET",
+          "cost_usd": 0.00478675,
+          "latency_ms": 30321,
+          "provider": {
+            "openai": 1
+          },
+          "model": {
+            "gpt-5-mini": 1
+          },
+          "job_id": "628000e5-662f-4be3-8bf8-24d16db9f387",
+          "run_id": "f3345197-5e0f-4926-826d-d9cdd330e123",
+          "batch_id": "2e53ae95-f684-4cd7-80f6-cfb0d39f55e3",
+          "content_item_ids": [
+            "5e711bb2-632c-42cd-8b20-fbe5a605af54"
+          ]
+        },
+        {
+          "blueprint_id": "259b33ac-8d6c-4672-a02a-e852fd341a7d",
+          "blueprint_key": "bp-create-001-20260913-bp-botany-enzyme-basics-mcq",
+          "subject": "BOTANY",
+          "chapter": "Biomolecules",
+          "topic": "Proteins and Enzymes",
+          "concept": "Enzyme Action",
+          "class_level": "11",
+          "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo109.pdf",
+          "ncert_relative": "Class 11/Biology/kebo1dd/kebo109.pdf",
+          "syllabus": {
+            "subject": "BIOLOGY",
+            "unit_number": 3,
+            "unit_name": "Cell Structure and Function",
+            "topic_id": "BIOLOGY:U03:T02"
+          },
+          "requested": 1,
+          "created": 1,
+          "attempted": 1,
+          "rejected_validation": 0,
+          "duplicate": 0,
+          "failed_provider": 0,
+          "failed_parse": 0,
+          "diversity_rejected": 0,
+          "stop_reason": "TARGET_MET",
+          "cost_usd": 0.0050325,
+          "latency_ms": 33269,
+          "provider": {
+            "openai": 1
+          },
+          "model": {
+            "gpt-5-mini": 1
+          },
+          "job_id": "6baed407-8f36-4cc8-b3e5-16faac3d44e3",
+          "run_id": "ce28bc4d-76d4-44e2-b3c4-d6030f86cc71",
+          "batch_id": "2e53ae95-f684-4cd7-80f6-cfb0d39f55e3",
+          "content_item_ids": [
+            "8a34a408-4b00-4b44-a473-5417c6f1a813"
+          ]
+        }
+      ]
+    },
+    "ZOOLOGY": {
+      "batch_id": "bdebd96d-00f1-4dbb-9b77-974fc37cb05f",
+      "requested": 5,
+      "created": 5,
+      "stats": {
+        "created": 5,
+        "attempted": 5,
+        "rejected_validation": 0,
+        "duplicate": 0,
+        "failed_provider": 0,
+        "failed_parse": 0,
+        "diversity_rejected": 0,
+        "requested": 5,
+        "cost_usd_milli": 18
+      },
+      "runs": [
+        {
+          "blueprint_id": "23919ba1-0216-4898-9955-56afdccaac1d",
+          "blueprint_key": "bp-create-001-20260913-bp-zoology-cancer-mcq",
+          "subject": "ZOOLOGY",
+          "chapter": "Human Health and Disease",
+          "topic": "AIDS, Cancer and Drugs/Alcohol Abuse",
+          "concept": "Cancer",
+          "class_level": "12",
+          "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo107.pdf",
+          "ncert_relative": "Class 12/Biology/lebo1dd/lebo107.pdf",
+          "syllabus": {
+            "subject": "BIOLOGY",
+            "unit_number": 8,
+            "unit_name": "Biology and Human Welfare",
+            "topic_id": "BIOLOGY:U08:T01"
+          },
+          "requested": 1,
+          "created": 1,
+          "attempted": 1,
+          "rejected_validation": 0,
+          "duplicate": 0,
+          "failed_provider": 0,
+          "failed_parse": 0,
+          "diversity_rejected": 0,
+          "stop_reason": "TARGET_MET",
+          "cost_usd": 0.0034295,
+          "latency_ms": 18284,
+          "provider": {
+            "openai": 1
+          },
+          "model": {
+            "gpt-5-mini": 1
+          },
+          "job_id": "6c2d66c5-12db-4ccd-9fb2-5853daa4d908",
+          "run_id": "f4f36d90-cdda-4b6c-9515-14134b74caed",
+          "batch_id": "bdebd96d-00f1-4dbb-9b77-974fc37cb05f",
+          "content_item_ids": [
+            "2969078b-85df-430a-a1df-0e2b133a6c1c"
+          ]
+        },
+        {
+          "blueprint_id": "33b094ff-129e-4d2d-b15c-d0a3035fad9d",
+          "blueprint_key": "bp-create-001-20260913-bp-zoology-infertility-assisted-reproduction-mcq",
+          "subject": "ZOOLOGY",
+          "chapter": "Reproductive Health",
+          "topic": "MTP, STIs and Infertility",
+          "concept": "Infertility",
+          "class_level": "12",
+          "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo103.pdf",
+          "ncert_relative": "Class 12/Biology/lebo1dd/lebo103.pdf",
+          "syllabus": {
+            "subject": "BIOLOGY",
+            "unit_number": 6,
+            "unit_name": "Reproduction",
+            "topic_id": "BIOLOGY:U06:T03"
+          },
+          "requested": 1,
+          "created": 1,
+          "attempted": 1,
+          "rejected_validation": 0,
+          "duplicate": 0,
+          "failed_provider": 0,
+          "failed_parse": 0,
+          "diversity_rejected": 0,
+          "stop_reason": "TARGET_MET",
+          "cost_usd": 0.0032915,
+          "latency_ms": 15859,
+          "provider": {
+            "openai": 1
+          },
+          "model": {
+            "gpt-5-mini": 1
+          },
+          "job_id": "633bf6ad-ace1-4860-aa3a-f19bf0abf7a6",
+          "run_id": "9bf0d662-f1c3-4590-bb66-0bd523e66600",
+          "batch_id": "bdebd96d-00f1-4dbb-9b77-974fc37cb05f",
+          "content_item_ids": [
+            "0c7bf964-f039-4513-94d9-96a0e5358270"
+          ]
+        },
+        {
+          "blueprint_id": "a8a184fc-2113-4ac5-92e1-2b840ea821a1",
+          "blueprint_key": "bp-create-001-20260913-bp-zoology-origin-of-life-mcq",
+          "subject": "ZOOLOGY",
+          "chapter": "Evolution",
+          "topic": "Origin of Life and Evidences for Evolution",
+          "concept": "Origin of Life",
+          "class_level": "12",
+          "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo106.pdf",
+          "ncert_relative": "Class 12/Biology/lebo1dd/lebo106.pdf",
+          "syllabus": {
+            "subject": "BIOLOGY",
+            "unit_number": 7,
+            "unit_name": "Genetics and Evolution",
+            "topic_id": "BIOLOGY:U07:T03"
+          },
+          "requested": 1,
+          "created": 1,
+          "attempted": 1,
+          "rejected_validation": 0,
+          "duplicate": 0,
+          "failed_provider": 0,
+          "failed_parse": 0,
+          "diversity_rejected": 0,
+          "stop_reason": "TARGET_MET",
+          "cost_usd": 0.00455275,
+          "latency_ms": 25950,
+          "provider": {
+            "openai": 1
+          },
+          "model": {
+            "gpt-5-mini": 1
+          },
+          "job_id": "29ca875c-216d-4344-b1ac-fb7a9050af3c",
+          "run_id": "b6647834-47a5-4277-a382-0cb4a49edf3d",
+          "batch_id": "bdebd96d-00f1-4dbb-9b77-974fc37cb05f",
+          "content_item_ids": [
+            "dbc434c2-48d3-466e-bd69-1bfaffe49446"
+          ]
+        },
+        {
+          "blueprint_id": "50a31356-c644-4dbc-a867-e9002bfb4211",
+          "blueprint_key": "bp-create-001-20260913-bp-zoology-spermatogenesis-oogenesis-mcq",
+          "subject": "ZOOLOGY",
+          "chapter": "Human Reproduction",
+          "topic": "Gametogenesis",
+          "concept": "Spermatogenesis and Oogenesis",
+          "class_level": "12",
+          "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo102.pdf",
+          "ncert_relative": "Class 12/Biology/lebo1dd/lebo102.pdf",
+          "syllabus": {
+            "subject": "BIOLOGY",
+            "unit_number": 6,
+            "unit_name": "Reproduction",
+            "topic_id": "BIOLOGY:U06:T02"
+          },
+          "requested": 1,
+          "created": 1,
+          "attempted": 1,
+          "rejected_validation": 0,
+          "duplicate": 0,
+          "failed_provider": 0,
+          "failed_parse": 0,
+          "diversity_rejected": 0,
+          "stop_reason": "TARGET_MET",
+          "cost_usd": 0.00520325,
+          "latency_ms": 32388,
+          "provider": {
+            "openai": 1
+          },
+          "model": {
+            "gpt-5-mini": 1
+          },
+          "job_id": "280c7b7b-a8ef-4864-bda2-48e735b2d5fb",
+          "run_id": "a4651dce-5f2f-44d7-b5d8-9d4cbaf0ced1",
+          "batch_id": "bdebd96d-00f1-4dbb-9b77-974fc37cb05f",
+          "content_item_ids": [
+            "53db1530-7984-4d15-a813-7ecad61ed689"
+          ]
+        },
+        {
+          "blueprint_id": "4ba4a908-6847-40ab-980b-a8ae19192502",
+          "blueprint_key": "bp-create-002-20260913-bp-zoology-abo-blood-grouping-mcq",
+          "subject": "ZOOLOGY",
+          "chapter": "Body Fluids and Circulation",
+          "topic": "Blood and Blood Groups",
+          "concept": "ABO Blood Grouping System",
+          "class_level": "11",
+          "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo115.pdf",
+          "ncert_relative": "Class 11/Biology/kebo1dd/kebo115.pdf",
+          "syllabus": {
+            "subject": "BIOLOGY",
+            "unit_number": 5,
+            "unit_name": "Human Physiology",
+            "topic_id": "BIOLOGY:U05:T02"
+          },
+          "requested": 1,
+          "created": 1,
+          "attempted": 1,
+          "rejected_validation": 0,
+          "duplicate": 0,
+          "failed_provider": 0,
+          "failed_parse": 0,
+          "diversity_rejected": 0,
+          "stop_reason": "TARGET_MET",
+          "cost_usd": 0.003629,
+          "latency_ms": 18906,
+          "provider": {
+            "openai": 1
+          },
+          "model": {
+            "gpt-5-mini": 1
+          },
+          "job_id": "385b65dc-50e7-47d4-b318-a0bd6eab7960",
+          "run_id": "4fc9ccde-536b-43da-8d08-a3cb17da67c0",
+          "batch_id": "bdebd96d-00f1-4dbb-9b77-974fc37cb05f",
+          "content_item_ids": [
+            "e8626dc4-7bec-4a76-ac98-a0d379fc3107"
+          ]
+        }
+      ]
+    }
+  },
+  "runs": [
+    {
+      "blueprint_id": "c3b84dbd-fdba-4aba-972c-dd003434d5fd",
+      "blueprint_key": "bp-create-001-20260913-bp-physics-gravitational-constant-mcq",
+      "subject": "PHYSICS",
+      "chapter": "Gravitation",
+      "topic": "Universal Law of Gravitation",
+      "concept": "The Gravitational Constant",
+      "class_level": "11",
+      "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph1dd\\keph1dd\\keph107.pdf",
+      "ncert_relative": "Class 11/Physics/keph1dd/keph1dd/keph107.pdf",
+      "syllabus": {
+        "subject": "PHYSICS",
+        "unit_number": 6,
+        "unit_name": "GRAVITATION",
+        "topic_id": "PHYSICS:U06:T01"
+      },
+      "requested": 1,
+      "created": 1,
+      "attempted": 1,
+      "rejected_validation": 0,
+      "duplicate": 0,
+      "failed_provider": 0,
+      "failed_parse": 0,
+      "diversity_rejected": 0,
+      "stop_reason": "TARGET_MET",
+      "cost_usd": 0.0082285,
+      "latency_ms": 28068,
+      "provider": {
+        "openai": 1
+      },
+      "model": {
+        "gpt-5-mini": 1
+      },
+      "job_id": "08674a78-4dab-4043-b947-daf039fc3847",
+      "run_id": "7c120712-e071-49e1-a3d1-6d2ec9d5fc52",
+      "batch_id": "0ad9b26f-0ef2-4872-9a3a-dc6c57556031",
+      "content_item_ids": [
+        "d85492b1-bdd0-4029-8e32-434a02c136a3"
+      ]
+    },
+    {
+      "blueprint_id": "2b4ea5b2-14af-4acd-bcc0-75032d027f89",
+      "blueprint_key": "bp-create-002-20260913-bp-physics-angular-momentum-mcq",
+      "subject": "PHYSICS",
+      "chapter": "Systems of Particles and Rotational Motion",
+      "topic": "Torque and Angular Momentum",
+      "concept": "Angular Momentum",
+      "class_level": "11",
+      "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph1dd\\keph1dd\\keph106.pdf",
+      "ncert_relative": "Class 11/Physics/keph1dd/keph1dd/keph106.pdf",
+      "syllabus": {
+        "subject": "PHYSICS",
+        "unit_number": 5,
+        "unit_name": "ROTATIONAL MOTION",
+        "topic_id": "PHYSICS:U05:T01"
+      },
+      "requested": 1,
+      "created": 1,
+      "attempted": 1,
+      "rejected_validation": 0,
+      "duplicate": 0,
+      "failed_provider": 0,
+      "failed_parse": 0,
+      "diversity_rejected": 0,
+      "stop_reason": "TARGET_MET",
+      "cost_usd": 0.00517025,
+      "latency_ms": 24763,
+      "provider": {
+        "openai": 1
+      },
+      "model": {
+        "gpt-5-mini": 1
+      },
+      "job_id": "0f071ff3-d641-49e4-ac9d-0d4989d44cd9",
+      "run_id": "6c16a36a-28f0-46b9-9fa3-66bdd13f8941",
+      "batch_id": "0ad9b26f-0ef2-4872-9a3a-dc6c57556031",
+      "content_item_ids": [
+        "59a19bed-6287-40ef-aa61-7a839c1e77c7"
+      ]
+    },
+    {
+      "blueprint_id": "90259894-e5a5-4101-a8d7-3edc32c4a438",
+      "blueprint_key": "bp-create-002-20260913-bp-physics-behaviour-of-gases-mcq",
+      "subject": "PHYSICS",
+      "chapter": "Kinetic Theory",
+      "topic": "Kinetic Theory of an Ideal Gas",
+      "concept": "Behaviour of Gases",
+      "class_level": "11",
+      "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph2dd\\keph2dd\\keph205.pdf",
+      "ncert_relative": "Class 11/Physics/keph2dd/keph2dd/keph205.pdf",
+      "syllabus": {
+        "subject": "PHYSICS",
+        "unit_number": 9,
+        "unit_name": "KINETIC THEORY OF GASES",
+        "topic_id": "PHYSICS:U09:T01"
+      },
+      "requested": 1,
+      "created": 1,
+      "attempted": 1,
+      "rejected_validation": 0,
+      "duplicate": 0,
+      "failed_provider": 0,
+      "failed_parse": 0,
+      "diversity_rejected": 0,
+      "stop_reason": "TARGET_MET",
+      "cost_usd": 0.00562525,
+      "latency_ms": 33645,
+      "provider": {
+        "openai": 1
+      },
+      "model": {
+        "gpt-5-mini": 1
+      },
+      "job_id": "32476bc7-748c-45c0-bc0d-4defe1c9f1b5",
+      "run_id": "9214f207-af81-4b9a-bc99-32c07b44cf48",
+      "batch_id": "0ad9b26f-0ef2-4872-9a3a-dc6c57556031",
+      "content_item_ids": [
+        "5443980e-2bd7-408e-8c13-f23a0404d86a"
+      ]
+    },
+    {
+      "blueprint_id": "6eb6f7fb-c1b3-474c-bd1a-a367f5ede46f",
+      "blueprint_key": "bp-create-002-20260913-bp-physics-bernoullis-principle-mcq",
+      "subject": "PHYSICS",
+      "chapter": "Mechanical Properties of Fluids",
+      "topic": "Fluid Flow and Bernoulli",
+      "concept": "Bernoulli's Principle",
+      "class_level": "11",
+      "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph2dd\\keph2dd\\keph202.pdf",
+      "ncert_relative": "Class 11/Physics/keph2dd/keph2dd/keph202.pdf",
+      "syllabus": {
+        "subject": "PHYSICS",
+        "unit_number": 7,
+        "unit_name": "PROPERTIES OF SOLIDS AND LIQUIDS",
+        "topic_id": "PHYSICS:U07:T02"
+      },
+      "requested": 1,
+      "created": 1,
+      "attempted": 1,
+      "rejected_validation": 0,
+      "duplicate": 0,
+      "failed_provider": 0,
+      "failed_parse": 0,
+      "diversity_rejected": 0,
+      "stop_reason": "TARGET_MET",
+      "cost_usd": 0.00513425,
+      "latency_ms": 25867,
+      "provider": {
+        "openai": 1
+      },
+      "model": {
+        "gpt-5-mini": 1
+      },
+      "job_id": "d07543aa-96cd-4c0a-8af2-321142100113",
+      "run_id": "7019bf37-1310-4214-9a96-ee165921898a",
+      "batch_id": "0ad9b26f-0ef2-4872-9a3a-dc6c57556031",
+      "content_item_ids": [
+        "bf839690-4e6f-4792-9254-d813546dc7f2"
+      ]
+    },
+    {
+      "blueprint_id": "a64869b6-35bd-4157-a288-33e3ae0e4f6b",
+      "blueprint_key": "bp-create-002-20260913-bp-physics-bulk-modulus-mcq",
+      "subject": "PHYSICS",
+      "chapter": "Mechanical Properties of Solids",
+      "topic": "Elastic Moduli",
+      "concept": "Bulk Modulus",
+      "class_level": "11",
+      "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph2dd\\keph2dd\\keph201.pdf",
+      "ncert_relative": "Class 11/Physics/keph2dd/keph2dd/keph201.pdf",
+      "syllabus": {
+        "subject": "PHYSICS",
+        "unit_number": 7,
+        "unit_name": "PROPERTIES OF SOLIDS AND LIQUIDS",
+        "topic_id": "PHYSICS:U07:T01"
+      },
+      "requested": 1,
+      "created": 1,
+      "attempted": 1,
+      "rejected_validation": 0,
+      "duplicate": 0,
+      "failed_provider": 0,
+      "failed_parse": 0,
+      "diversity_rejected": 0,
+      "stop_reason": "TARGET_MET",
+      "cost_usd": 0.0041435,
+      "latency_ms": 22618,
+      "provider": {
+        "openai": 1
+      },
+      "model": {
+        "gpt-5-mini": 1
+      },
+      "job_id": "654b3620-81b3-4625-8ff1-a6882ca3a038",
+      "run_id": "5a500190-adfd-4edc-ae12-7f19831302a0",
+      "batch_id": "0ad9b26f-0ef2-4872-9a3a-dc6c57556031",
+      "content_item_ids": [
+        "e7525491-a390-452f-bd96-3e50052d5604"
+      ]
+    },
+    {
+      "blueprint_id": "e19d233c-484e-4c44-9e6d-bf8cfa4650ab",
+      "blueprint_key": "bp-create-001-20260913-bp-chemistry-abnormal-molar-mass-vant-hoff-mcq",
+      "subject": "CHEMISTRY",
+      "chapter": "Solutions",
+      "topic": "Colligative Properties",
+      "concept": "Abnormal Molar Mass and van't Hoff Factor",
+      "class_level": "12",
+      "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 1\\lech1dd\\lech101.pdf",
+      "ncert_relative": "Class 12/Chemistry 1/lech1dd/lech101.pdf",
+      "syllabus": {
+        "subject": "CHEMISTRY",
+        "unit_number": 5,
+        "unit_name": "SOLUTIONS",
+        "topic_id": "CHEMISTRY:U05:T01"
+      },
+      "requested": 1,
+      "created": 1,
+      "attempted": 1,
+      "rejected_validation": 0,
+      "duplicate": 0,
+      "failed_provider": 0,
+      "failed_parse": 0,
+      "diversity_rejected": 0,
+      "stop_reason": "TARGET_MET",
+      "cost_usd": 0.00478325,
+      "latency_ms": 26899,
+      "provider": {
+        "openai": 1
+      },
+      "model": {
+        "gpt-5-mini": 1
+      },
+      "job_id": "efbe5a4f-56be-41b0-9e71-be6719756900",
+      "run_id": "cdf0b2e2-010a-4fb1-b311-b67020c61d95",
+      "batch_id": "a8a4a4aa-9a8c-4121-8a19-74a9ede43b0c",
+      "content_item_ids": [
+        "c558931f-1507-4950-b498-611bff82f0e6"
+      ]
+    },
+    {
+      "blueprint_id": "b16a3525-d661-4454-a8b5-3470371d1338",
+      "blueprint_key": "bp-create-001-20260913-bp-chemistry-acylation-and-alkylation-amines-mcq",
+      "subject": "CHEMISTRY",
+      "chapter": "Amines",
+      "topic": "Chemical Reactions of Amines",
+      "concept": "Acylation, Alkylation and Carbylamine Reactions",
+      "class_level": "12",
+      "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 2\\lech2dd\\lech204.pdf",
+      "ncert_relative": "Class 12/Chemistry 2/lech2dd/lech204.pdf",
+      "syllabus": {
+        "subject": "CHEMISTRY",
+        "unit_number": 18,
+        "unit_name": "ORGANIC COMPOUNDS CONTAINING NITROGEN",
+        "topic_id": "CHEMISTRY:U18:T02"
+      },
+      "requested": 1,
+      "created": 1,
+      "attempted": 1,
+      "rejected_validation": 0,
+      "duplicate": 0,
+      "failed_provider": 0,
+      "failed_parse": 0,
+      "diversity_rejected": 0,
+      "stop_reason": "TARGET_MET",
+      "cost_usd": 0.0038065,
+      "latency_ms": 24003,
+      "provider": {
+        "openai": 1
+      },
+      "model": {
+        "gpt-5-mini": 1
+      },
+      "job_id": "606965d3-91ad-4556-9516-30dc30621e98",
+      "run_id": "05f9d335-b2bf-4f72-b0e6-ceed0b2497e9",
+      "batch_id": "a8a4a4aa-9a8c-4121-8a19-74a9ede43b0c",
+      "content_item_ids": [
+        "367009bb-9cc8-4ba1-a011-964321ba51af"
+      ]
+    },
+    {
+      "blueprint_id": "97de2381-bd37-42b8-aa16-e8b49dfd91f4",
+      "blueprint_key": "bp-create-001-20260913-bp-chemistry-arrhenius-equation-mcq",
+      "subject": "CHEMISTRY",
+      "chapter": "Chemical Kinetics",
+      "topic": "Temperature Dependence of Rate",
+      "concept": "Arrhenius Equation",
+      "class_level": "12",
+      "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 1\\lech1dd\\lech103.pdf",
+      "ncert_relative": "Class 12/Chemistry 1/lech1dd/lech103.pdf",
+      "syllabus": {
+        "subject": "CHEMISTRY",
+        "unit_number": 8,
+        "unit_name": "CHEMICAL KINETICS",
+        "topic_id": "CHEMISTRY:U08:T01"
+      },
+      "requested": 1,
+      "created": 1,
+      "attempted": 1,
+      "rejected_validation": 0,
+      "duplicate": 0,
+      "failed_provider": 0,
+      "failed_parse": 0,
+      "diversity_rejected": 0,
+      "stop_reason": "TARGET_MET",
+      "cost_usd": 0.00441225,
+      "latency_ms": 23111,
+      "provider": {
+        "openai": 1
+      },
+      "model": {
+        "gpt-5-mini": 1
+      },
+      "job_id": "b5c92d1e-daad-40a4-96ba-b37e20f2f723",
+      "run_id": "ab51b5ae-e7e0-4a98-9331-ecc1fba49a0d",
+      "batch_id": "a8a4a4aa-9a8c-4121-8a19-74a9ede43b0c",
+      "content_item_ids": [
+        "62202056-650f-4ae3-85a7-db11ec3df6a0"
+      ]
+    },
+    {
+      "blueprint_id": "3d1ca441-882f-4cca-90b9-9ec71cff4233",
+      "blueprint_key": "bp-create-001-20260913-bp-chemistry-classification-of-carbohydrates-mcq",
+      "subject": "CHEMISTRY",
+      "chapter": "Biomolecules",
+      "topic": "Carbohydrates",
+      "concept": "Classification of Carbohydrates",
+      "class_level": "12",
+      "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 2\\lech2dd\\lech205.pdf",
+      "ncert_relative": "Class 12/Chemistry 2/lech2dd/lech205.pdf",
+      "syllabus": {
+        "subject": "CHEMISTRY",
+        "unit_number": 19,
+        "unit_name": "BIOMOLECULES",
+        "topic_id": "CHEMISTRY:U19:T02"
+      },
+      "requested": 1,
+      "created": 1,
+      "attempted": 1,
+      "rejected_validation": 0,
+      "duplicate": 0,
+      "failed_provider": 0,
+      "failed_parse": 0,
+      "diversity_rejected": 0,
+      "stop_reason": "TARGET_MET",
+      "cost_usd": 0.0047945,
+      "latency_ms": 27792,
+      "provider": {
+        "openai": 1
+      },
+      "model": {
+        "gpt-5-mini": 1
+      },
+      "job_id": "8ad27aad-4b6d-437b-8a9e-e6c898a2cd06",
+      "run_id": "ac1e9705-9fc1-44b5-bec5-3699b2b31235",
+      "batch_id": "a8a4a4aa-9a8c-4121-8a19-74a9ede43b0c",
+      "content_item_ids": [
+        "a4c2d7a4-b4b8-409f-9cc7-f81bc3d13105"
+      ]
+    },
+    {
+      "blueprint_id": "c865e8ec-8ead-4389-9a48-c9b175e1e540",
+      "blueprint_key": "bp-create-001-20260913-bp-chemistry-crystal-field-theory-mcq",
+      "subject": "CHEMISTRY",
+      "chapter": "Coordination Compounds",
+      "topic": "Bonding in Coordination Compounds",
+      "concept": "Crystal Field Theory (CFT)",
+      "class_level": "12",
+      "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 1\\lech1dd\\lech105.pdf",
+      "ncert_relative": "Class 12/Chemistry 1/lech1dd/lech105.pdf",
+      "syllabus": {
+        "subject": "CHEMISTRY",
+        "unit_number": 12,
+        "unit_name": "CO-ORDINATION COMPOUNDS",
+        "topic_id": "CHEMISTRY:U12:T01"
+      },
+      "requested": 1,
+      "created": 1,
+      "attempted": 1,
+      "rejected_validation": 0,
+      "duplicate": 0,
+      "failed_provider": 0,
+      "failed_parse": 0,
+      "diversity_rejected": 0,
+      "stop_reason": "TARGET_MET",
+      "cost_usd": 0.0044735,
+      "latency_ms": 21034,
+      "provider": {
+        "openai": 1
+      },
+      "model": {
+        "gpt-5-mini": 1
+      },
+      "job_id": "6ff5a229-705d-4ca6-925d-04b995aef969",
+      "run_id": "0f84d93e-c64c-4dd1-a7d7-9e2817102f6a",
+      "batch_id": "a8a4a4aa-9a8c-4121-8a19-74a9ede43b0c",
+      "content_item_ids": [
+        "4e9d208f-a545-4888-a78c-61fd638d7a7c"
+      ]
+    },
+    {
+      "blueprint_id": "c6ba6917-36d7-48ae-be62-16fd0303708d",
+      "blueprint_key": "bp-create-001-20260913-bp-botany-apomixis-polyembryony-mcq",
+      "subject": "BOTANY",
+      "chapter": "Sexual Reproduction in Flowering Plants",
+      "topic": "Post-Fertilisation: Structures and Events",
+      "concept": "Apomixis and Polyembryony",
+      "class_level": "12",
+      "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo101.pdf",
+      "ncert_relative": "Class 12/Biology/lebo1dd/lebo101.pdf",
+      "syllabus": {
+        "subject": "BIOLOGY",
+        "unit_number": 6,
+        "unit_name": "Reproduction",
+        "topic_id": "BIOLOGY:U06:T01"
+      },
+      "requested": 1,
+      "created": 1,
+      "attempted": 1,
+      "rejected_validation": 0,
+      "duplicate": 0,
+      "failed_provider": 0,
+      "failed_parse": 0,
+      "diversity_rejected": 0,
+      "stop_reason": "TARGET_MET",
+      "cost_usd": 0.00415225,
+      "latency_ms": 25337,
+      "provider": {
+        "openai": 1
+      },
+      "model": {
+        "gpt-5-mini": 1
+      },
+      "job_id": "708e3f96-11d9-4e14-8164-63f7f5f41542",
+      "run_id": "ea18dd9e-fcf1-41be-860c-3ef13e3c9d81",
+      "batch_id": "2e53ae95-f684-4cd7-80f6-cfb0d39f55e3",
+      "content_item_ids": [
+        "23478703-0f93-4b27-8848-a2aab87468b7"
+      ]
+    },
+    {
+      "blueprint_id": "593123ef-a1b8-4b20-97fc-3094f0734c02",
+      "blueprint_key": "bp-create-001-20260913-bp-botany-biocontrol-biofertilisers-mcq",
+      "subject": "BOTANY",
+      "chapter": "Microbes in Human Welfare",
+      "topic": "Microbes in Sewage Treatment, Biogas, Biocontrol and Biofertilisers",
+      "concept": "Biocontrol Agents and Biofertilisers",
+      "class_level": "12",
+      "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo108.pdf",
+      "ncert_relative": "Class 12/Biology/lebo1dd/lebo108.pdf",
+      "syllabus": {
+        "subject": "BIOLOGY",
+        "unit_number": 8,
+        "unit_name": "Biology and Human Welfare",
+        "topic_id": "BIOLOGY:U08:T02"
+      },
+      "requested": 1,
+      "created": 1,
+      "attempted": 2,
+      "rejected_validation": 0,
+      "duplicate": 0,
+      "failed_provider": 0,
+      "failed_parse": 1,
+      "diversity_rejected": 0,
+      "stop_reason": "TARGET_MET",
+      "cost_usd": 0.011052,
+      "latency_ms": 63784,
+      "provider": {
+        "openai": 2
+      },
+      "model": {
+        "gpt-5-mini": 2
+      },
+      "job_id": "729bc7ae-ae7d-4465-87e1-ef7bbfbf67eb",
+      "run_id": "36450882-c29e-4bf5-819a-3f74b40e35cb",
+      "batch_id": "2e53ae95-f684-4cd7-80f6-cfb0d39f55e3",
+      "content_item_ids": [
+        "7ad3eee8-8d99-477e-8284-b67dcfd3530b"
+      ]
+    },
+    {
+      "blueprint_id": "f46924a9-9e7e-4145-9b2b-629db2bbe31c",
+      "blueprint_key": "bp-create-001-20260913-bp-botany-decomposition-mcq",
+      "subject": "BOTANY",
+      "chapter": "Ecosystem",
+      "topic": "Decomposition, Energy Flow and Ecological Pyramids",
+      "concept": "Decomposition",
+      "class_level": "12",
+      "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo112.pdf",
+      "ncert_relative": "Class 12/Biology/lebo1dd/lebo112.pdf",
+      "syllabus": {
+        "subject": "BIOLOGY",
+        "unit_number": 10,
+        "unit_name": "Ecology and Environment",
+        "topic_id": "BIOLOGY:U10:T02"
+      },
+      "requested": 1,
+      "created": 1,
+      "attempted": 1,
+      "rejected_validation": 0,
+      "duplicate": 0,
+      "failed_provider": 0,
+      "failed_parse": 0,
+      "diversity_rejected": 0,
+      "stop_reason": "TARGET_MET",
+      "cost_usd": 0.0027495,
+      "latency_ms": 15956,
+      "provider": {
+        "openai": 1
+      },
+      "model": {
+        "gpt-5-mini": 1
+      },
+      "job_id": "8003946e-2063-41b8-9650-47dfdbb8ba79",
+      "run_id": "649d7a76-ca7f-40cd-91b9-ec6cf917980e",
+      "batch_id": "2e53ae95-f684-4cd7-80f6-cfb0d39f55e3",
+      "content_item_ids": [
+        "b62641ef-e462-4e0f-9ec4-d922c21c1038"
+      ]
+    },
+    {
+      "blueprint_id": "217d5fb3-f927-4aef-a3e1-7922ceaf91d2",
+      "blueprint_key": "bp-create-001-20260913-bp-botany-dna-as-genetic-material-mcq",
+      "subject": "BOTANY",
+      "chapter": "Molecular Basis of Inheritance",
+      "topic": "Search for Genetic Material and Replication",
+      "concept": "The Genetic Material is DNA",
+      "class_level": "12",
+      "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo105.pdf",
+      "ncert_relative": "Class 12/Biology/lebo1dd/lebo105.pdf",
+      "syllabus": {
+        "subject": "BIOLOGY",
+        "unit_number": 7,
+        "unit_name": "Genetics and Evolution",
+        "topic_id": "BIOLOGY:U07:T02"
+      },
+      "requested": 1,
+      "created": 1,
+      "attempted": 1,
+      "rejected_validation": 0,
+      "duplicate": 0,
+      "failed_provider": 0,
+      "failed_parse": 0,
+      "diversity_rejected": 0,
+      "stop_reason": "TARGET_MET",
+      "cost_usd": 0.00478675,
+      "latency_ms": 30321,
+      "provider": {
+        "openai": 1
+      },
+      "model": {
+        "gpt-5-mini": 1
+      },
+      "job_id": "628000e5-662f-4be3-8bf8-24d16db9f387",
+      "run_id": "f3345197-5e0f-4926-826d-d9cdd330e123",
+      "batch_id": "2e53ae95-f684-4cd7-80f6-cfb0d39f55e3",
+      "content_item_ids": [
+        "5e711bb2-632c-42cd-8b20-fbe5a605af54"
+      ]
+    },
+    {
+      "blueprint_id": "259b33ac-8d6c-4672-a02a-e852fd341a7d",
+      "blueprint_key": "bp-create-001-20260913-bp-botany-enzyme-basics-mcq",
+      "subject": "BOTANY",
+      "chapter": "Biomolecules",
+      "topic": "Proteins and Enzymes",
+      "concept": "Enzyme Action",
+      "class_level": "11",
+      "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo109.pdf",
+      "ncert_relative": "Class 11/Biology/kebo1dd/kebo109.pdf",
+      "syllabus": {
+        "subject": "BIOLOGY",
+        "unit_number": 3,
+        "unit_name": "Cell Structure and Function",
+        "topic_id": "BIOLOGY:U03:T02"
+      },
+      "requested": 1,
+      "created": 1,
+      "attempted": 1,
+      "rejected_validation": 0,
+      "duplicate": 0,
+      "failed_provider": 0,
+      "failed_parse": 0,
+      "diversity_rejected": 0,
+      "stop_reason": "TARGET_MET",
+      "cost_usd": 0.0050325,
+      "latency_ms": 33269,
+      "provider": {
+        "openai": 1
+      },
+      "model": {
+        "gpt-5-mini": 1
+      },
+      "job_id": "6baed407-8f36-4cc8-b3e5-16faac3d44e3",
+      "run_id": "ce28bc4d-76d4-44e2-b3c4-d6030f86cc71",
+      "batch_id": "2e53ae95-f684-4cd7-80f6-cfb0d39f55e3",
+      "content_item_ids": [
+        "8a34a408-4b00-4b44-a473-5417c6f1a813"
+      ]
+    },
+    {
+      "blueprint_id": "23919ba1-0216-4898-9955-56afdccaac1d",
+      "blueprint_key": "bp-create-001-20260913-bp-zoology-cancer-mcq",
+      "subject": "ZOOLOGY",
+      "chapter": "Human Health and Disease",
+      "topic": "AIDS, Cancer and Drugs/Alcohol Abuse",
+      "concept": "Cancer",
+      "class_level": "12",
+      "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo107.pdf",
+      "ncert_relative": "Class 12/Biology/lebo1dd/lebo107.pdf",
+      "syllabus": {
+        "subject": "BIOLOGY",
+        "unit_number": 8,
+        "unit_name": "Biology and Human Welfare",
+        "topic_id": "BIOLOGY:U08:T01"
+      },
+      "requested": 1,
+      "created": 1,
+      "attempted": 1,
+      "rejected_validation": 0,
+      "duplicate": 0,
+      "failed_provider": 0,
+      "failed_parse": 0,
+      "diversity_rejected": 0,
+      "stop_reason": "TARGET_MET",
+      "cost_usd": 0.0034295,
+      "latency_ms": 18284,
+      "provider": {
+        "openai": 1
+      },
+      "model": {
+        "gpt-5-mini": 1
+      },
+      "job_id": "6c2d66c5-12db-4ccd-9fb2-5853daa4d908",
+      "run_id": "f4f36d90-cdda-4b6c-9515-14134b74caed",
+      "batch_id": "bdebd96d-00f1-4dbb-9b77-974fc37cb05f",
+      "content_item_ids": [
+        "2969078b-85df-430a-a1df-0e2b133a6c1c"
+      ]
+    },
+    {
+      "blueprint_id": "33b094ff-129e-4d2d-b15c-d0a3035fad9d",
+      "blueprint_key": "bp-create-001-20260913-bp-zoology-infertility-assisted-reproduction-mcq",
+      "subject": "ZOOLOGY",
+      "chapter": "Reproductive Health",
+      "topic": "MTP, STIs and Infertility",
+      "concept": "Infertility",
+      "class_level": "12",
+      "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo103.pdf",
+      "ncert_relative": "Class 12/Biology/lebo1dd/lebo103.pdf",
+      "syllabus": {
+        "subject": "BIOLOGY",
+        "unit_number": 6,
+        "unit_name": "Reproduction",
+        "topic_id": "BIOLOGY:U06:T03"
+      },
+      "requested": 1,
+      "created": 1,
+      "attempted": 1,
+      "rejected_validation": 0,
+      "duplicate": 0,
+      "failed_provider": 0,
+      "failed_parse": 0,
+      "diversity_rejected": 0,
+      "stop_reason": "TARGET_MET",
+      "cost_usd": 0.0032915,
+      "latency_ms": 15859,
+      "provider": {
+        "openai": 1
+      },
+      "model": {
+        "gpt-5-mini": 1
+      },
+      "job_id": "633bf6ad-ace1-4860-aa3a-f19bf0abf7a6",
+      "run_id": "9bf0d662-f1c3-4590-bb66-0bd523e66600",
+      "batch_id": "bdebd96d-00f1-4dbb-9b77-974fc37cb05f",
+      "content_item_ids": [
+        "0c7bf964-f039-4513-94d9-96a0e5358270"
+      ]
+    },
+    {
+      "blueprint_id": "a8a184fc-2113-4ac5-92e1-2b840ea821a1",
+      "blueprint_key": "bp-create-001-20260913-bp-zoology-origin-of-life-mcq",
+      "subject": "ZOOLOGY",
+      "chapter": "Evolution",
+      "topic": "Origin of Life and Evidences for Evolution",
+      "concept": "Origin of Life",
+      "class_level": "12",
+      "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo106.pdf",
+      "ncert_relative": "Class 12/Biology/lebo1dd/lebo106.pdf",
+      "syllabus": {
+        "subject": "BIOLOGY",
+        "unit_number": 7,
+        "unit_name": "Genetics and Evolution",
+        "topic_id": "BIOLOGY:U07:T03"
+      },
+      "requested": 1,
+      "created": 1,
+      "attempted": 1,
+      "rejected_validation": 0,
+      "duplicate": 0,
+      "failed_provider": 0,
+      "failed_parse": 0,
+      "diversity_rejected": 0,
+      "stop_reason": "TARGET_MET",
+      "cost_usd": 0.00455275,
+      "latency_ms": 25950,
+      "provider": {
+        "openai": 1
+      },
+      "model": {
+        "gpt-5-mini": 1
+      },
+      "job_id": "29ca875c-216d-4344-b1ac-fb7a9050af3c",
+      "run_id": "b6647834-47a5-4277-a382-0cb4a49edf3d",
+      "batch_id": "bdebd96d-00f1-4dbb-9b77-974fc37cb05f",
+      "content_item_ids": [
+        "dbc434c2-48d3-466e-bd69-1bfaffe49446"
+      ]
+    },
+    {
+      "blueprint_id": "50a31356-c644-4dbc-a867-e9002bfb4211",
+      "blueprint_key": "bp-create-001-20260913-bp-zoology-spermatogenesis-oogenesis-mcq",
+      "subject": "ZOOLOGY",
+      "chapter": "Human Reproduction",
+      "topic": "Gametogenesis",
+      "concept": "Spermatogenesis and Oogenesis",
+      "class_level": "12",
+      "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo102.pdf",
+      "ncert_relative": "Class 12/Biology/lebo1dd/lebo102.pdf",
+      "syllabus": {
+        "subject": "BIOLOGY",
+        "unit_number": 6,
+        "unit_name": "Reproduction",
+        "topic_id": "BIOLOGY:U06:T02"
+      },
+      "requested": 1,
+      "created": 1,
+      "attempted": 1,
+      "rejected_validation": 0,
+      "duplicate": 0,
+      "failed_provider": 0,
+      "failed_parse": 0,
+      "diversity_rejected": 0,
+      "stop_reason": "TARGET_MET",
+      "cost_usd": 0.00520325,
+      "latency_ms": 32388,
+      "provider": {
+        "openai": 1
+      },
+      "model": {
+        "gpt-5-mini": 1
+      },
+      "job_id": "280c7b7b-a8ef-4864-bda2-48e735b2d5fb",
+      "run_id": "a4651dce-5f2f-44d7-b5d8-9d4cbaf0ced1",
+      "batch_id": "bdebd96d-00f1-4dbb-9b77-974fc37cb05f",
+      "content_item_ids": [
+        "53db1530-7984-4d15-a813-7ecad61ed689"
+      ]
+    },
+    {
+      "blueprint_id": "4ba4a908-6847-40ab-980b-a8ae19192502",
+      "blueprint_key": "bp-create-002-20260913-bp-zoology-abo-blood-grouping-mcq",
+      "subject": "ZOOLOGY",
+      "chapter": "Body Fluids and Circulation",
+      "topic": "Blood and Blood Groups",
+      "concept": "ABO Blood Grouping System",
+      "class_level": "11",
+      "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo115.pdf",
+      "ncert_relative": "Class 11/Biology/kebo1dd/kebo115.pdf",
+      "syllabus": {
+        "subject": "BIOLOGY",
+        "unit_number": 5,
+        "unit_name": "Human Physiology",
+        "topic_id": "BIOLOGY:U05:T02"
+      },
+      "requested": 1,
+      "created": 1,
+      "attempted": 1,
+      "rejected_validation": 0,
+      "duplicate": 0,
+      "failed_provider": 0,
+      "failed_parse": 0,
+      "diversity_rejected": 0,
+      "stop_reason": "TARGET_MET",
+      "cost_usd": 0.003629,
+      "latency_ms": 18906,
+      "provider": {
+        "openai": 1
+      },
+      "model": {
+        "gpt-5-mini": 1
+      },
+      "job_id": "385b65dc-50e7-47d4-b318-a0bd6eab7960",
+      "run_id": "4fc9ccde-536b-43da-8d08-a3cb17da67c0",
+      "batch_id": "bdebd96d-00f1-4dbb-9b77-974fc37cb05f",
+      "content_item_ids": [
+        "e8626dc4-7bec-4a76-ac98-a0d379fc3107"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "85068a48-884b-4330-9dac-b5e889abfe95",
+      "batch_id": "0ad9b26f-0ef2-4872-9a3a-dc6c57556031",
+      "job_id": "08674a78-4dab-4043-b947-daf039fc3847",
+      "run_id": "7c120712-e071-49e1-a3d1-6d2ec9d5fc52",
+      "blueprint_id": "c3b84dbd-fdba-4aba-972c-dd003434d5fd",
+      "candidate_status": "CREATED",
+      "provider": "openai",
+      "model_used": "gpt-5-mini",
+      "error_code": null,
+      "error_summary": null,
+      "stem_hash": "4fa059ca1e6298eb8bdfaf022b373e1ab79c4f208c491a4b2b3ce1d7a935d0e4",
+      "stem_preview": "The NCERT discussion in Chapter 7 shows that if the Moon is roughly 60 times farther from the centre of the Earth than the Earth's radius, then using the inverse-square form of Newton's law of gravitation the ratio of the acceleration due t",
+      "lineage": {
+        "content_item_id": "d85492b1-bdd0-4029-8e32-434a02c136a3",
+        "content_status": "DRAFT",
+        "concept_id": "53c7ab2f-294a-4001-b25a-d63561b23bcb",
+        "latest_version_id": "064ad8bc-137d-4a3c-a20a-7efa6c362641",
+        "knowledge_unit_id": null,
+        "source_refs": null,
+        "ncert_evidence": null,
+        "syllabus_ref": null,
+        "version_model_used": "gpt-5-mini",
+        "generation_cost_usd": 0.0082285
+      },
+      "published": false,
+      "subject": "PHYSICS",
+      "chapter": "Gravitation",
+      "topic": "Universal Law of Gravitation",
+      "concept": "The Gravitational Constant",
+      "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph1dd\\keph1dd\\keph107.pdf",
+      "ncert_relative": "Class 11/Physics/keph1dd/keph1dd/keph107.pdf",
+      "syllabus_mapping": {
+        "subject": "PHYSICS",
+        "unit_number": 6,
+        "unit_name": "GRAVITATION",
+        "topic_id": "PHYSICS:U06:T01"
+      },
+      "evidence_pages": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "candidate_id": "66884363-3c6b-458d-b264-1f834bb0161b",
+      "batch_id": "0ad9b26f-0ef2-4872-9a3a-dc6c57556031",
+      "job_id": "0f071ff3-d641-49e4-ac9d-0d4989d44cd9",
+      "run_id": "6c16a36a-28f0-46b9-9fa3-66bdd13f8941",
+      "blueprint_id": "2b4ea5b2-14af-4acd-bcc0-75032d027f89",
+      "candidate_status": "CREATED",
+      "provider": "openai",
+      "model_used": "gpt-5-mini",
+      "error_code": null,
+      "error_summary": null,
+      "stem_hash": "57f9d081ab8aaf1fc0f5a37dd7931178cd7f91424aa098518e27e47aca286bc2",
+      "stem_preview": "A solid cylinder rolls without slipping down an inclined plane (as described in the NCERT excerpt). Which one of the following best explains why the cylinder has angular momentum (i.e., a rotational component of motion) about its centre of ",
+      "lineage": {
+        "content_item_id": "59a19bed-6287-40ef-aa61-7a839c1e77c7",
+        "content_status": "DRAFT",
+        "concept_id": "95ff6981-eeb4-4791-972c-0e618e4517a8",
+        "latest_version_id": "a8bd8b9e-7b2c-4c1a-ad17-78bdee399b25",
+        "knowledge_unit_id": null,
+        "source_refs": null,
+        "ncert_evidence": null,
+        "syllabus_ref": null,
+        "version_model_used": "gpt-5-mini",
+        "generation_cost_usd": 0.00517025
+      },
+      "published": false,
+      "subject": "PHYSICS",
+      "chapter": "Systems of Particles and Rotational Motion",
+      "topic": "Torque and Angular Momentum",
+      "concept": "Angular Momentum",
+      "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph1dd\\keph1dd\\keph106.pdf",
+      "ncert_relative": "Class 11/Physics/keph1dd/keph1dd/keph106.pdf",
+      "syllabus_mapping": {
+        "subject": "PHYSICS",
+        "unit_number": 5,
+        "unit_name": "ROTATIONAL MOTION",
+        "topic_id": "PHYSICS:U05:T01"
+      },
+      "evidence_pages": [
+        1,
+        2,
+        4
+      ]
+    },
+    {
+      "candidate_id": "62180823-a206-49e4-a6a9-3b0aeefe0898",
+      "batch_id": "0ad9b26f-0ef2-4872-9a3a-dc6c57556031",
+      "job_id": "32476bc7-748c-45c0-bc0d-4defe1c9f1b5",
+      "run_id": "9214f207-af81-4b9a-bc99-32c07b44cf48",
+      "blueprint_id": "90259894-e5a5-4101-a8d7-3edc32c4a438",
+      "candidate_status": "CREATED",
+      "provider": "openai",
+      "model_used": "gpt-5-mini",
+      "error_code": null,
+      "error_summary": null,
+      "stem_hash": "4b846d3b7562433cda2f8f7567861f5acb315b079576453892b325b604f5a45b",
+      "stem_preview": "Two containers of equal volume are maintained at the same temperature and pressure; one contains oxygen gas and the other contains helium gas (both treated as ideal). According to the kinetic theory ideas and statements in the NCERT excerpt",
+      "lineage": {
+        "content_item_id": "5443980e-2bd7-408e-8c13-f23a0404d86a",
+        "content_status": "DRAFT",
+        "concept_id": "26875973-d75b-4ee1-afcf-129b2dd5d94a",
+        "latest_version_id": "53e390b4-6e77-4ba4-be79-8477d6a5c032",
+        "knowledge_unit_id": null,
+        "source_refs": null,
+        "ncert_evidence": null,
+        "syllabus_ref": null,
+        "version_model_used": "gpt-5-mini",
+        "generation_cost_usd": 0.00562525
+      },
+      "published": false,
+      "subject": "PHYSICS",
+      "chapter": "Kinetic Theory",
+      "topic": "Kinetic Theory of an Ideal Gas",
+      "concept": "Behaviour of Gases",
+      "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph2dd\\keph2dd\\keph205.pdf",
+      "ncert_relative": "Class 11/Physics/keph2dd/keph2dd/keph205.pdf",
+      "syllabus_mapping": {
+        "subject": "PHYSICS",
+        "unit_number": 9,
+        "unit_name": "KINETIC THEORY OF GASES",
+        "topic_id": "PHYSICS:U09:T01"
+      },
+      "evidence_pages": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "candidate_id": "79f4ecbd-af0c-4fd1-8c86-40c36f31c5ec",
+      "batch_id": "0ad9b26f-0ef2-4872-9a3a-dc6c57556031",
+      "job_id": "d07543aa-96cd-4c0a-8af2-321142100113",
+      "run_id": "7019bf37-1310-4214-9a96-ee165921898a",
+      "blueprint_id": "6eb6f7fb-c1b3-474c-bd1a-a367f5ede46f",
+      "candidate_status": "CREATED",
+      "provider": "openai",
+      "model_used": "gpt-5-mini",
+      "error_code": null,
+      "error_summary": null,
+      "stem_hash": "6ccf475006c7245489947be91e7bab6c790e1eff272ebc1abaed550dcf2cb2d0",
+      "stem_preview": "The NCERT excerpt (pages 1–3 of Chapter 9, Mechanical Properties of Fluids) discusses pressure in fluids and the conditions for flow and equilibrium. Which one of the following statements is explicitly supported by the text in these pages?",
+      "lineage": {
+        "content_item_id": "bf839690-4e6f-4792-9254-d813546dc7f2",
+        "content_status": "DRAFT",
+        "concept_id": "9c03982a-38d4-453a-9ad0-752bf6834a33",
+        "latest_version_id": "d64e2758-ab5a-4728-abfe-f3a72357e286",
+        "knowledge_unit_id": null,
+        "source_refs": null,
+        "ncert_evidence": null,
+        "syllabus_ref": null,
+        "version_model_used": "gpt-5-mini",
+        "generation_cost_usd": 0.00513425
+      },
+      "published": false,
+      "subject": "PHYSICS",
+      "chapter": "Mechanical Properties of Fluids",
+      "topic": "Fluid Flow and Bernoulli",
+      "concept": "Bernoulli's Principle",
+      "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph2dd\\keph2dd\\keph202.pdf",
+      "ncert_relative": "Class 11/Physics/keph2dd/keph2dd/keph202.pdf",
+      "syllabus_mapping": {
+        "subject": "PHYSICS",
+        "unit_number": 7,
+        "unit_name": "PROPERTIES OF SOLIDS AND LIQUIDS",
+        "topic_id": "PHYSICS:U07:T02"
+      },
+      "evidence_pages": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "candidate_id": "50cc069d-185e-4ace-a977-d4c61a2b1a6f",
+      "batch_id": "0ad9b26f-0ef2-4872-9a3a-dc6c57556031",
+      "job_id": "654b3620-81b3-4625-8ff1-a6882ca3a038",
+      "run_id": "5a500190-adfd-4edc-ae12-7f19831302a0",
+      "blueprint_id": "a64869b6-35bd-4157-a288-33e3ae0e4f6b",
+      "candidate_status": "CREATED",
+      "provider": "openai",
+      "model_used": "gpt-5-mini",
+      "error_code": null,
+      "error_summary": null,
+      "stem_hash": "765a0c201213a05ee81ae3251a0c13fb2f89b0724db4c9750d38eadf33a95e53",
+      "stem_preview": "Two small homogeneous solid spheres of different materials are placed separately in a fluid and subjected to the same uniform external pressure. Based on the NCERT discussion of hydraulic stress, volume strain and Hooke’s law, which of the ",
+      "lineage": {
+        "content_item_id": "e7525491-a390-452f-bd96-3e50052d5604",
+        "content_status": "DRAFT",
+        "concept_id": "1ede7940-4469-435b-8108-65af344f240e",
+        "latest_version_id": "34adcf6c-9d52-4ee8-a23a-14885142c22b",
+        "knowledge_unit_id": null,
+        "source_refs": null,
+        "ncert_evidence": null,
+        "syllabus_ref": null,
+        "version_model_used": "gpt-5-mini",
+        "generation_cost_usd": 0.0041435
+      },
+      "published": false,
+      "subject": "PHYSICS",
+      "chapter": "Mechanical Properties of Solids",
+      "topic": "Elastic Moduli",
+      "concept": "Bulk Modulus",
+      "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph2dd\\keph2dd\\keph201.pdf",
+      "ncert_relative": "Class 11/Physics/keph2dd/keph2dd/keph201.pdf",
+      "syllabus_mapping": {
+        "subject": "PHYSICS",
+        "unit_number": 7,
+        "unit_name": "PROPERTIES OF SOLIDS AND LIQUIDS",
+        "topic_id": "PHYSICS:U07:T01"
+      },
+      "evidence_pages": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "candidate_id": "6f331eb2-3e75-4588-8a61-a54498932ea4",
+      "batch_id": "2e53ae95-f684-4cd7-80f6-cfb0d39f55e3",
+      "job_id": "708e3f96-11d9-4e14-8164-63f7f5f41542",
+      "run_id": "ea18dd9e-fcf1-41be-860c-3ef13e3c9d81",
+      "blueprint_id": "c6ba6917-36d7-48ae-be62-16fd0303708d",
+      "candidate_status": "CREATED",
+      "provider": "openai",
+      "model_used": "gpt-5-mini",
+      "error_code": null,
+      "error_summary": null,
+      "stem_hash": "9a7001c8c787c0303fd9e1c103030da90cf47ba5a2f439f58d83b66824211b7e",
+      "stem_preview": "In NCERT Class 12 Biology Chapter 1 (Sexual Reproduction in Flowering Plants), which subsection title explicitly deals with asexual seed formation (apomixis) and the occurrence of more than one embryo in a seed (polyembryony)?",
+      "lineage": {
+        "content_item_id": "23478703-0f93-4b27-8848-a2aab87468b7",
+        "content_status": "DRAFT",
+        "concept_id": "6a5baaf5-5fc3-4336-a973-70f36165fb0c",
+        "latest_version_id": "3f25959f-7144-42d4-a7e8-a36a58de1038",
+        "knowledge_unit_id": null,
+        "source_refs": null,
+        "ncert_evidence": null,
+        "syllabus_ref": null,
+        "version_model_used": "gpt-5-mini",
+        "generation_cost_usd": 0.00415225
+      },
+      "published": false,
+      "subject": "BOTANY",
+      "chapter": "Sexual Reproduction in Flowering Plants",
+      "topic": "Post-Fertilisation: Structures and Events",
+      "concept": "Apomixis and Polyembryony",
+      "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo101.pdf",
+      "ncert_relative": "Class 12/Biology/lebo1dd/lebo101.pdf",
+      "syllabus_mapping": {
+        "subject": "BIOLOGY",
+        "unit_number": 6,
+        "unit_name": "Reproduction",
+        "topic_id": "BIOLOGY:U06:T01"
+      },
+      "evidence_pages": [
+        2,
+        3,
+        11,
+        15,
+        17
+      ]
+    },
+    {
+      "candidate_id": "606b3f7b-2989-430f-a058-4a3f63480154",
+      "batch_id": "2e53ae95-f684-4cd7-80f6-cfb0d39f55e3",
+      "job_id": "729bc7ae-ae7d-4465-87e1-ef7bbfbf67eb",
+      "run_id": "36450882-c29e-4bf5-819a-3f74b40e35cb",
+      "blueprint_id": "593123ef-a1b8-4b20-97fc-3094f0734c02",
+      "candidate_status": "CREATED",
+      "provider": "openai",
+      "model_used": "gpt-5-mini",
+      "error_code": null,
+      "error_summary": null,
+      "stem_hash": "50902c837822675a4f812bbee047ad0c3caf5002cf268451761159e8efd1034d",
+      "stem_preview": "Refer to the list of section headings for Chapter 8 (Microbes in Human Welfare) given in the NCERT excerpt. Which pair of section titles correctly corresponds to (i) use of microbes for biological control of pests and (ii) use of microbes t",
+      "lineage": {
+        "content_item_id": "7ad3eee8-8d99-477e-8284-b67dcfd3530b",
+        "content_status": "DRAFT",
+        "concept_id": "5021bad3-96d8-4e23-98df-c44597ce8003",
+        "latest_version_id": "86f03ca6-54e1-4373-8d58-bd33fa0db888",
+        "knowledge_unit_id": null,
+        "source_refs": null,
+        "ncert_evidence": null,
+        "syllabus_ref": null,
+        "version_model_used": "gpt-5-mini",
+        "generation_cost_usd": 0.005361
+      },
+      "published": false,
+      "subject": "BOTANY",
+      "chapter": "Microbes in Human Welfare",
+      "topic": "Microbes in Sewage Treatment, Biogas, Biocontrol and Biofertilisers",
+      "concept": "Biocontrol Agents and Biofertilisers",
+      "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo108.pdf",
+      "ncert_relative": "Class 12/Biology/lebo1dd/lebo108.pdf",
+      "syllabus_mapping": {
+        "subject": "BIOLOGY",
+        "unit_number": 8,
+        "unit_name": "Biology and Human Welfare",
+        "topic_id": "BIOLOGY:U08:T02"
+      },
+      "evidence_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "candidate_id": "cab5799a-7a7f-4b3a-949b-46ec3d8fcf27",
+      "batch_id": "2e53ae95-f684-4cd7-80f6-cfb0d39f55e3",
+      "job_id": "8003946e-2063-41b8-9650-47dfdbb8ba79",
+      "run_id": "649d7a76-ca7f-40cd-91b9-ec6cf917980e",
+      "blueprint_id": "f46924a9-9e7e-4145-9b2b-629db2bbe31c",
+      "candidate_status": "CREATED",
+      "provider": "openai",
+      "model_used": "gpt-5-mini",
+      "error_code": null,
+      "error_summary": null,
+      "stem_hash": "4f47b845648374651b39c1a4a18d86cac7ab60c09bac539706ab4e636f6a3bde",
+      "stem_preview": "According to NCERT Class 12 Biology (Chapter 12, §12.3) on decomposition, which of the following statements is correct?",
+      "lineage": {
+        "content_item_id": "b62641ef-e462-4e0f-9ec4-d922c21c1038",
+        "content_status": "DRAFT",
+        "concept_id": "1b19f8e6-108e-483e-8180-a12a5866aeae",
+        "latest_version_id": "2297e8d1-79f4-46e7-8d63-fcf46418760c",
+        "knowledge_unit_id": null,
+        "source_refs": null,
+        "ncert_evidence": null,
+        "syllabus_ref": null,
+        "version_model_used": "gpt-5-mini",
+        "generation_cost_usd": 0.0027495
+      },
+      "published": false,
+      "subject": "BOTANY",
+      "chapter": "Ecosystem",
+      "topic": "Decomposition, Energy Flow and Ecological Pyramids",
+      "concept": "Decomposition",
+      "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo112.pdf",
+      "ncert_relative": "Class 12/Biology/lebo1dd/lebo112.pdf",
+      "syllabus_mapping": {
+        "subject": "BIOLOGY",
+        "unit_number": 10,
+        "unit_name": "Ecology and Environment",
+        "topic_id": "BIOLOGY:U10:T02"
+      },
+      "evidence_pages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "candidate_id": "64fbabe3-ec5f-4d28-b44b-2579f3bd9cc0",
+      "batch_id": "2e53ae95-f684-4cd7-80f6-cfb0d39f55e3",
+      "job_id": "628000e5-662f-4be3-8bf8-24d16db9f387",
+      "run_id": "f3345197-5e0f-4926-826d-d9cdd330e123",
+      "blueprint_id": "217d5fb3-f927-4aef-a3e1-7922ceaf91d2",
+      "candidate_status": "CREATED",
+      "provider": "openai",
+      "model_used": "gpt-5-mini",
+      "error_code": null,
+      "error_summary": null,
+      "stem_hash": "4ec78786101ab863daaf109b896105b1666db892bd84d064c0306922f27fe17e",
+      "stem_preview": "Which combination of experimental observations from Avery–MacLeod–McCarty and Hershey–Chase (as described in NCERT Class XII, Chapter 5 §5.2) provides the strongest, NCERT-supported evidence that DNA is the genetic material?",
+      "lineage": {
+        "content_item_id": "5e711bb2-632c-42cd-8b20-fbe5a605af54",
+        "content_status": "DRAFT",
+        "concept_id": "296d161b-44e3-44a2-949b-1dd9e5bfe35c",
+        "latest_version_id": "e548c7fd-9a83-463f-a7a5-f40cee20ff36",
+        "knowledge_unit_id": null,
+        "source_refs": null,
+        "ncert_evidence": null,
+        "syllabus_ref": null,
+        "version_model_used": "gpt-5-mini",
+        "generation_cost_usd": 0.00478675
+      },
+      "published": false,
+      "subject": "BOTANY",
+      "chapter": "Molecular Basis of Inheritance",
+      "topic": "Search for Genetic Material and Replication",
+      "concept": "The Genetic Material is DNA",
+      "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo105.pdf",
+      "ncert_relative": "Class 12/Biology/lebo1dd/lebo105.pdf",
+      "syllabus_mapping": {
+        "subject": "BIOLOGY",
+        "unit_number": 7,
+        "unit_name": "Genetics and Evolution",
+        "topic_id": "BIOLOGY:U07:T02"
+      },
+      "evidence_pages": [
+        1,
+        7,
+        9,
+        15,
+        17
+      ]
+    },
+    {
+      "candidate_id": "ee95e880-3684-4c58-8d7a-d642c0408f8f",
+      "batch_id": "2e53ae95-f684-4cd7-80f6-cfb0d39f55e3",
+      "job_id": "6baed407-8f36-4cc8-b3e5-16faac3d44e3",
+      "run_id": "ce28bc4d-76d4-44e2-b3c4-d6030f86cc71",
+      "blueprint_id": "259b33ac-8d6c-4672-a02a-e852fd341a7d",
+      "candidate_status": "CREATED",
+      "provider": "openai",
+      "model_used": "gpt-5-mini",
+      "error_code": null,
+      "error_summary": null,
+      "stem_hash": "68b4abadc03eafecca6acce221cb04c8bcabb0ed272ccd75b324ed1a28c08cfb",
+      "stem_preview": "A student reads that amino acids have an ionizable nature and that their structures change in solutions of different pH. Which of the following best explains why the ionization state of an amino acid changes when pH is altered?",
+      "lineage": {
+        "content_item_id": "8a34a408-4b00-4b44-a473-5417c6f1a813",
+        "content_status": "DRAFT",
+        "concept_id": "688b4b23-a44a-47ca-b386-7605ec84faa7",
+        "latest_version_id": "16f7a0c8-3176-4b46-9ed1-1bf1dff589f8",
+        "knowledge_unit_id": null,
+        "source_refs": null,
+        "ncert_evidence": null,
+        "syllabus_ref": null,
+        "version_model_used": "gpt-5-mini",
+        "generation_cost_usd": 0.0050325
+      },
+      "published": false,
+      "subject": "BOTANY",
+      "chapter": "Biomolecules",
+      "topic": "Proteins and Enzymes",
+      "concept": "Enzyme Action",
+      "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo109.pdf",
+      "ncert_relative": "Class 11/Biology/kebo1dd/kebo109.pdf",
+      "syllabus_mapping": {
+        "subject": "BIOLOGY",
+        "unit_number": 3,
+        "unit_name": "Cell Structure and Function",
+        "topic_id": "BIOLOGY:U03:T02"
+      },
+      "evidence_pages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "candidate_id": "a8234099-48a4-4e50-9864-93765485d674",
+      "batch_id": "2e53ae95-f684-4cd7-80f6-cfb0d39f55e3",
+      "job_id": "729bc7ae-ae7d-4465-87e1-ef7bbfbf67eb",
+      "run_id": "36450882-c29e-4bf5-819a-3f74b40e35cb",
+      "blueprint_id": "593123ef-a1b8-4b20-97fc-3094f0734c02",
+      "candidate_status": "FAILED_PARSE",
+      "provider": "openai",
+      "model_used": "gpt-5-mini",
+      "error_code": "MALFORMED_JSON",
+      "error_summary": "finishReason=length: Expecting value: line 1 column 1 (char 0)",
+      "stem_hash": null,
+      "stem_preview": null,
+      "lineage": {},
+      "published": false,
+      "subject": "BOTANY",
+      "chapter": "Microbes in Human Welfare",
+      "topic": "Microbes in Sewage Treatment, Biogas, Biocontrol and Biofertilisers",
+      "concept": "Biocontrol Agents and Biofertilisers",
+      "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo108.pdf",
+      "ncert_relative": "Class 12/Biology/lebo1dd/lebo108.pdf",
+      "syllabus_mapping": {
+        "subject": "BIOLOGY",
+        "unit_number": 8,
+        "unit_name": "Biology and Human Welfare",
+        "topic_id": "BIOLOGY:U08:T02"
+      },
+      "evidence_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "candidate_id": "46469936-348b-49ad-b906-9bcfcef4737f",
+      "batch_id": "a8a4a4aa-9a8c-4121-8a19-74a9ede43b0c",
+      "job_id": "efbe5a4f-56be-41b0-9e71-be6719756900",
+      "run_id": "cdf0b2e2-010a-4fb1-b311-b67020c61d95",
+      "blueprint_id": "e19d233c-484e-4c44-9e6d-bf8cfa4650ab",
+      "candidate_status": "CREATED",
+      "provider": "openai",
+      "model_used": "gpt-5-mini",
+      "error_code": null,
+      "error_summary": null,
+      "stem_hash": "0558cde413f1352b4ebb9d9e501f1d52038498346fcd712260f840a537d6b219",
+      "stem_preview": "One mole of KCl (molar mass 74.5 g mol–1) is dissolved in 1.00 kg of water. The observed elevation of boiling point of the solution is 0.88 K. Given that Kb for water is 0.52 K kg mol–1 (as in the NCERT discussion of boiling point elevation",
+      "lineage": {
+        "content_item_id": "c558931f-1507-4950-b498-611bff82f0e6",
+        "content_status": "DRAFT",
+        "concept_id": "71664e58-d4eb-460c-b21b-750f18e8005d",
+        "latest_version_id": "0df912d7-78da-4d5c-8adf-6d8dbd75de6d",
+        "knowledge_unit_id": null,
+        "source_refs": null,
+        "ncert_evidence": null,
+        "syllabus_ref": null,
+        "version_model_used": "gpt-5-mini",
+        "generation_cost_usd": 0.00478325
+      },
+      "published": false,
+      "subject": "CHEMISTRY",
+      "chapter": "Solutions",
+      "topic": "Colligative Properties",
+      "concept": "Abnormal Molar Mass and van't Hoff Factor",
+      "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 1\\lech1dd\\lech101.pdf",
+      "ncert_relative": "Class 12/Chemistry 1/lech1dd/lech101.pdf",
+      "syllabus_mapping": {
+        "subject": "CHEMISTRY",
+        "unit_number": 5,
+        "unit_name": "SOLUTIONS",
+        "topic_id": "CHEMISTRY:U05:T01"
+      },
+      "evidence_pages": [
+        15,
+        16,
+        17,
+        21
+      ]
+    },
+    {
+      "candidate_id": "8a3797ac-5ec3-480e-95f3-a39dc412e0a7",
+      "batch_id": "a8a4a4aa-9a8c-4121-8a19-74a9ede43b0c",
+      "job_id": "606965d3-91ad-4556-9516-30dc30621e98",
+      "run_id": "05f9d335-b2bf-4f72-b0e6-ceed0b2497e9",
+      "blueprint_id": "b16a3525-d661-4454-a8b5-3470371d1338",
+      "candidate_status": "CREATED",
+      "provider": "openai",
+      "model_used": "gpt-5-mini",
+      "error_code": null,
+      "error_summary": null,
+      "stem_hash": "5cbb37fe170d501ffbc1c10b9fb3db5b23bcaabfca1e338dade27afe929bced5",
+      "stem_preview": "Which one of the following statements correctly describes an acylation reaction of a primary aliphatic amine as given in the NCERT discussion on reactions of amines?",
+      "lineage": {
+        "content_item_id": "367009bb-9cc8-4ba1-a011-964321ba51af",
+        "content_status": "DRAFT",
+        "concept_id": "7673b059-d61f-4485-b4cf-1ba94ad5d385",
+        "latest_version_id": "05dfeeff-3826-413e-a43c-e56b7f3595f7",
+        "knowledge_unit_id": null,
+        "source_refs": null,
+        "ncert_evidence": null,
+        "syllabus_ref": null,
+        "version_model_used": "gpt-5-mini",
+        "generation_cost_usd": 0.0038065
+      },
+      "published": false,
+      "subject": "CHEMISTRY",
+      "chapter": "Amines",
+      "topic": "Chemical Reactions of Amines",
+      "concept": "Acylation, Alkylation and Carbylamine Reactions",
+      "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 2\\lech2dd\\lech204.pdf",
+      "ncert_relative": "Class 12/Chemistry 2/lech2dd/lech204.pdf",
+      "syllabus_mapping": {
+        "subject": "CHEMISTRY",
+        "unit_number": 18,
+        "unit_name": "ORGANIC COMPOUNDS CONTAINING NITROGEN",
+        "topic_id": "CHEMISTRY:U18:T02"
+      },
+      "evidence_pages": [
+        4,
+        7,
+        10,
+        11,
+        12
+      ]
+    },
+    {
+      "candidate_id": "28b95f8b-e9ca-4a3c-8497-c43f4696bcb5",
+      "batch_id": "a8a4a4aa-9a8c-4121-8a19-74a9ede43b0c",
+      "job_id": "b5c92d1e-daad-40a4-96ba-b37e20f2f723",
+      "run_id": "ab51b5ae-e7e0-4a98-9331-ecc1fba49a0d",
+      "blueprint_id": "97de2381-bd37-42b8-aa16-e8b49dfd91f4",
+      "candidate_status": "CREATED",
+      "provider": "openai",
+      "model_used": "gpt-5-mini",
+      "error_code": null,
+      "error_summary": null,
+      "stem_hash": "cf13d9e520ada6534a1af8321e7b45840c2200f9b68a216ef2a2739c041fc745",
+      "stem_preview": "According to the NCERT discussion in the Chemical Kinetics unit on temperature dependence of rate and the Arrhenius equation, which one of the following statements is correct?",
+      "lineage": {
+        "content_item_id": "62202056-650f-4ae3-85a7-db11ec3df6a0",
+        "content_status": "DRAFT",
+        "concept_id": "1778dbe8-bb73-4fe2-9d0f-b59591a85b36",
+        "latest_version_id": "437ec602-619b-4f0e-81e7-f5a55a8428b2",
+        "knowledge_unit_id": null,
+        "source_refs": null,
+        "ncert_evidence": null,
+        "syllabus_ref": null,
+        "version_model_used": "gpt-5-mini",
+        "generation_cost_usd": 0.00441225
+      },
+      "published": false,
+      "subject": "CHEMISTRY",
+      "chapter": "Chemical Kinetics",
+      "topic": "Temperature Dependence of Rate",
+      "concept": "Arrhenius Equation",
+      "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 1\\lech1dd\\lech103.pdf",
+      "ncert_relative": "Class 12/Chemistry 1/lech1dd/lech103.pdf",
+      "syllabus_mapping": {
+        "subject": "CHEMISTRY",
+        "unit_number": 8,
+        "unit_name": "CHEMICAL KINETICS",
+        "topic_id": "CHEMISTRY:U08:T01"
+      },
+      "evidence_pages": [
+        1,
+        6,
+        11,
+        17,
+        18
+      ]
+    },
+    {
+      "candidate_id": "e7794849-3efc-46ff-9f53-f2fad54b72e6",
+      "batch_id": "a8a4a4aa-9a8c-4121-8a19-74a9ede43b0c",
+      "job_id": "8ad27aad-4b6d-437b-8a9e-e6c898a2cd06",
+      "run_id": "ac1e9705-9fc1-44b5-bec5-3699b2b31235",
+      "blueprint_id": "3d1ca441-882f-4cca-90b9-9ec71cff4233",
+      "candidate_status": "CREATED",
+      "provider": "openai",
+      "model_used": "gpt-5-mini",
+      "error_code": null,
+      "error_summary": null,
+      "stem_hash": "e72cecfa118c0c172a5212a424143107d2f338c2c7c50c21a3ec1bcb40c115ee",
+      "stem_preview": "Which of the following statements about classification of carbohydrates and their reducing behaviour is correct?",
+      "lineage": {
+        "content_item_id": "a4c2d7a4-b4b8-409f-9cc7-f81bc3d13105",
+        "content_status": "DRAFT",
+        "concept_id": "9384555f-5e4e-4273-943e-caa935827bba",
+        "latest_version_id": "5e9acef5-d326-4abf-b767-4350682bddea",
+        "knowledge_unit_id": null,
+        "source_refs": null,
+        "ncert_evidence": null,
+        "syllabus_ref": null,
+        "version_model_used": "gpt-5-mini",
+        "generation_cost_usd": 0.0047945
+      },
+      "published": false,
+      "subject": "CHEMISTRY",
+      "chapter": "Biomolecules",
+      "topic": "Carbohydrates",
+      "concept": "Classification of Carbohydrates",
+      "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 2\\lech2dd\\lech205.pdf",
+      "ncert_relative": "Class 12/Chemistry 2/lech2dd/lech205.pdf",
+      "syllabus_mapping": {
+        "subject": "CHEMISTRY",
+        "unit_number": 19,
+        "unit_name": "BIOMOLECULES",
+        "topic_id": "CHEMISTRY:U19:T02"
+      },
+      "evidence_pages": [
+        1,
+        2,
+        4,
+        7,
+        8
+      ]
+    },
+    {
+      "candidate_id": "5d34eeb8-91fd-4386-907a-a9f797a2c579",
+      "batch_id": "a8a4a4aa-9a8c-4121-8a19-74a9ede43b0c",
+      "job_id": "6ff5a229-705d-4ca6-925d-04b995aef969",
+      "run_id": "0f84d93e-c64c-4dd1-a7d7-9e2817102f6a",
+      "blueprint_id": "c865e8ec-8ead-4389-9a48-c9b175e1e540",
+      "candidate_status": "CREATED",
+      "provider": "openai",
+      "model_used": "gpt-5-mini",
+      "error_code": null,
+      "error_summary": null,
+      "stem_hash": "13543e763aff4a702a16f5596398bc6bc6c59428f361d52267490a88285b5d82",
+      "stem_preview": "According to the Crystal Field Theory description given in the NCERT excerpt (Class XII, Ch.5 §5.5), which one of the following statements is correct?",
+      "lineage": {
+        "content_item_id": "4e9d208f-a545-4888-a78c-61fd638d7a7c",
+        "content_status": "DRAFT",
+        "concept_id": "ed496b49-f2ec-4b50-a655-dca3a1e30a46",
+        "latest_version_id": "05f1ea72-9e43-40b2-98c2-4f8d42fa8df1",
+        "knowledge_unit_id": null,
+        "source_refs": null,
+        "ncert_evidence": null,
+        "syllabus_ref": null,
+        "version_model_used": "gpt-5-mini",
+        "generation_cost_usd": 0.0044735
+      },
+      "published": false,
+      "subject": "CHEMISTRY",
+      "chapter": "Coordination Compounds",
+      "topic": "Bonding in Coordination Compounds",
+      "concept": "Crystal Field Theory (CFT)",
+      "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 1\\lech1dd\\lech105.pdf",
+      "ncert_relative": "Class 12/Chemistry 1/lech1dd/lech105.pdf",
+      "syllabus_mapping": {
+        "subject": "CHEMISTRY",
+        "unit_number": 12,
+        "unit_name": "CO-ORDINATION COMPOUNDS",
+        "topic_id": "CHEMISTRY:U12:T01"
+      },
+      "evidence_pages": [
+        1,
+        5,
+        11,
+        14
+      ]
+    },
+    {
+      "candidate_id": "38606508-0bce-4503-9534-994312d9def9",
+      "batch_id": "bdebd96d-00f1-4dbb-9b77-974fc37cb05f",
+      "job_id": "6c2d66c5-12db-4ccd-9fb2-5853daa4d908",
+      "run_id": "f4f36d90-cdda-4b6c-9515-14134b74caed",
+      "blueprint_id": "23919ba1-0216-4898-9955-56afdccaac1d",
+      "candidate_status": "CREATED",
+      "provider": "openai",
+      "model_used": "gpt-5-mini",
+      "error_code": null,
+      "error_summary": null,
+      "stem_hash": "fbb19ad8e7a2e47e954027fb6bd6496f3fde3c057bf250bb43b40fa3d6712d2c",
+      "stem_preview": "According to NCERT Class XII Biology (Ch. 7 §7.4), which of the following characteristics most clearly distinguishes a malignant tumour from a benign tumour?",
+      "lineage": {
+        "content_item_id": "2969078b-85df-430a-a1df-0e2b133a6c1c",
+        "content_status": "DRAFT",
+        "concept_id": "58a81356-7c73-448e-a5db-d5f08d011aef",
+        "latest_version_id": "9a040f6d-b1f7-472c-8bad-ac243a203646",
+        "knowledge_unit_id": null,
+        "source_refs": null,
+        "ncert_evidence": null,
+        "syllabus_ref": null,
+        "version_model_used": "gpt-5-mini",
+        "generation_cost_usd": 0.0034295
+      },
+      "published": false,
+      "subject": "ZOOLOGY",
+      "chapter": "Human Health and Disease",
+      "topic": "AIDS, Cancer and Drugs/Alcohol Abuse",
+      "concept": "Cancer",
+      "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo107.pdf",
+      "ncert_relative": "Class 12/Biology/lebo1dd/lebo107.pdf",
+      "syllabus_mapping": {
+        "subject": "BIOLOGY",
+        "unit_number": 8,
+        "unit_name": "Biology and Human Welfare",
+        "topic_id": "BIOLOGY:U08:T01"
+      },
+      "evidence_pages": [
+        2,
+        3,
+        4,
+        14,
+        15
+      ]
+    },
+    {
+      "candidate_id": "7103ca17-7261-40fb-a7bb-d6259a334afc",
+      "batch_id": "bdebd96d-00f1-4dbb-9b77-974fc37cb05f",
+      "job_id": "633bf6ad-ace1-4860-aa3a-f19bf0abf7a6",
+      "run_id": "9bf0d662-f1c3-4590-bb66-0bd523e66600",
+      "blueprint_id": "33b094ff-129e-4d2d-b15c-d0a3035fad9d",
+      "candidate_status": "CREATED",
+      "provider": "openai",
+      "model_used": "gpt-5-mini",
+      "error_code": null,
+      "error_summary": null,
+      "stem_hash": "920d401e79a74b27a57a68126ceb4d5f2ead011d10ea07326884781ac210fd7c",
+      "stem_preview": "According to the NCERT excerpt on Reproductive Health (pages shown), which statement best describes how national Reproductive and Child Health (RCH) programmes address infertility?",
+      "lineage": {
+        "content_item_id": "0c7bf964-f039-4513-94d9-96a0e5358270",
+        "content_status": "DRAFT",
+        "concept_id": "59da18ed-3d16-4850-8ba9-4502226347d5",
+        "latest_version_id": "df342277-bc24-4e2b-927f-b4b8548b5784",
+        "knowledge_unit_id": null,
+        "source_refs": null,
+        "ncert_evidence": null,
+        "syllabus_ref": null,
+        "version_model_used": "gpt-5-mini",
+        "generation_cost_usd": 0.0032915
+      },
+      "published": false,
+      "subject": "ZOOLOGY",
+      "chapter": "Reproductive Health",
+      "topic": "MTP, STIs and Infertility",
+      "concept": "Infertility",
+      "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo103.pdf",
+      "ncert_relative": "Class 12/Biology/lebo1dd/lebo103.pdf",
+      "syllabus_mapping": {
+        "subject": "BIOLOGY",
+        "unit_number": 6,
+        "unit_name": "Reproduction",
+        "topic_id": "BIOLOGY:U06:T03"
+      },
+      "evidence_pages": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "candidate_id": "36fab368-dc08-461f-8ee1-d31591de0d1a",
+      "batch_id": "bdebd96d-00f1-4dbb-9b77-974fc37cb05f",
+      "job_id": "29ca875c-216d-4344-b1ac-fb7a9050af3c",
+      "run_id": "b6647834-47a5-4277-a382-0cb4a49edf3d",
+      "blueprint_id": "a8a184fc-2113-4ac5-92e1-2b840ea821a1",
+      "candidate_status": "CREATED",
+      "provider": "openai",
+      "model_used": "gpt-5-mini",
+      "error_code": null,
+      "error_summary": null,
+      "stem_hash": "dab48f0d482a714a351e686b30ec7295c955bca1d68f5126b191ace00a58a461",
+      "stem_preview": "The passage describes several ideas and experiments about the origin of life. Which of the following best summarizes a conclusion supported by the experiments and observations reported in the passage?",
+      "lineage": {
+        "content_item_id": "dbc434c2-48d3-466e-bd69-1bfaffe49446",
+        "content_status": "DRAFT",
+        "concept_id": "134ba0cd-2c72-49b4-af50-d605fb82d920",
+        "latest_version_id": "4c6e070c-d2d3-457c-87f6-fce52fee7995",
+        "knowledge_unit_id": null,
+        "source_refs": null,
+        "ncert_evidence": null,
+        "syllabus_ref": null,
+        "version_model_used": "gpt-5-mini",
+        "generation_cost_usd": 0.00455275
+      },
+      "published": false,
+      "subject": "ZOOLOGY",
+      "chapter": "Evolution",
+      "topic": "Origin of Life and Evidences for Evolution",
+      "concept": "Origin of Life",
+      "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo106.pdf",
+      "ncert_relative": "Class 12/Biology/lebo1dd/lebo106.pdf",
+      "syllabus_mapping": {
+        "subject": "BIOLOGY",
+        "unit_number": 7,
+        "unit_name": "Genetics and Evolution",
+        "topic_id": "BIOLOGY:U07:T03"
+      },
+      "evidence_pages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "candidate_id": "f6c127c5-44ba-4f02-bd6e-eb85789d3819",
+      "batch_id": "bdebd96d-00f1-4dbb-9b77-974fc37cb05f",
+      "job_id": "280c7b7b-a8ef-4864-bda2-48e735b2d5fb",
+      "run_id": "a4651dce-5f2f-44d7-b5d8-9d4cbaf0ced1",
+      "blueprint_id": "50a31356-c644-4dbc-a867-e9002bfb4211",
+      "candidate_status": "CREATED",
+      "provider": "openai",
+      "model_used": "gpt-5-mini",
+      "error_code": null,
+      "error_summary": null,
+      "stem_hash": "0cd87fbeda749409a0cbb49aa7ee5a3bfc1a1fce7e4bf23f55f8caa628d3fa60",
+      "stem_preview": "According to the NCERT excerpt on human reproduction, which of the following statements correctly contrasts spermatogenesis and ovum formation (oogenesis) in humans?",
+      "lineage": {
+        "content_item_id": "53db1530-7984-4d15-a813-7ecad61ed689",
+        "content_status": "DRAFT",
+        "concept_id": "5c935c46-6820-4eb6-a75c-f68ca9596878",
+        "latest_version_id": "2086e881-2579-4b39-bb7a-5f298be08309",
+        "knowledge_unit_id": null,
+        "source_refs": null,
+        "ncert_evidence": null,
+        "syllabus_ref": null,
+        "version_model_used": "gpt-5-mini",
+        "generation_cost_usd": 0.00520325
+      },
+      "published": false,
+      "subject": "ZOOLOGY",
+      "chapter": "Human Reproduction",
+      "topic": "Gametogenesis",
+      "concept": "Spermatogenesis and Oogenesis",
+      "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo102.pdf",
+      "ncert_relative": "Class 12/Biology/lebo1dd/lebo102.pdf",
+      "syllabus_mapping": {
+        "subject": "BIOLOGY",
+        "unit_number": 6,
+        "unit_name": "Reproduction",
+        "topic_id": "BIOLOGY:U06:T02"
+      },
+      "evidence_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "candidate_id": "13a06efc-3d5e-4176-b287-ed40e00c6853",
+      "batch_id": "bdebd96d-00f1-4dbb-9b77-974fc37cb05f",
+      "job_id": "385b65dc-50e7-47d4-b318-a0bd6eab7960",
+      "run_id": "4fc9ccde-536b-43da-8d08-a3cb17da67c0",
+      "blueprint_id": "4ba4a908-6847-40ab-980b-a8ae19192502",
+      "candidate_status": "CREATED",
+      "provider": "openai",
+      "model_used": "gpt-5-mini",
+      "error_code": null,
+      "error_summary": null,
+      "stem_hash": "fa14a56c5b7d88d87637eda0e6136f2139420960f5a93a11cb130cdbb6048845",
+      "stem_preview": "A blood sample shows the presence of antigen B on the red blood cells and the plasma contains anti-A antibodies. According to the NCERT description of the ABO system, which option correctly identifies the blood group and the donor groups co",
+      "lineage": {
+        "content_item_id": "e8626dc4-7bec-4a76-ac98-a0d379fc3107",
+        "content_status": "DRAFT",
+        "concept_id": "0ff1635a-2bc2-4fce-a18e-a2d619db6f8c",
+        "latest_version_id": "6be0c9fa-ac36-4292-b684-74a5b92de2ad",
+        "knowledge_unit_id": null,
+        "source_refs": null,
+        "ncert_evidence": null,
+        "syllabus_ref": null,
+        "version_model_used": "gpt-5-mini",
+        "generation_cost_usd": 0.003629
+      },
+      "published": false,
+      "subject": "ZOOLOGY",
+      "chapter": "Body Fluids and Circulation",
+      "topic": "Blood and Blood Groups",
+      "concept": "ABO Blood Grouping System",
+      "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo115.pdf",
+      "ncert_relative": "Class 11/Biology/kebo1dd/kebo115.pdf",
+      "syllabus_mapping": {
+        "subject": "BIOLOGY",
+        "unit_number": 5,
+        "unit_name": "Human Physiology",
+        "topic_id": "BIOLOGY:U05:T02"
+      },
+      "evidence_pages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  ],
+  "verification": {
+    "exactly_20_requested": true,
+    "subject_distribution_requested_5_5_5_5": true,
+    "created_count": 20,
+    "created_by_subject": {
+      "PHYSICS": 5,
+      "CHEMISTRY": 5,
+      "BOTANY": 5,
+      "ZOOLOGY": 5
+    },
+    "created_content_items": 20,
+    "all_created_draft": true,
+    "any_non_draft_item": false,
+    "duplicate_stem_hashes_among_created": false,
+    "every_created_has_canonical_ncert_path": true,
+    "every_created_has_syllabus_mapping": true,
+    "provider_failures_classified": true,
+    "note": "Syllabus/NCERT gates are enforced pre-LLM by Content Factory; this block checks persisted lineage fields."
+  },
+  "safety": {
+    "published_delta": 0,
+    "any_candidate_published": false,
+    "inventory_core_unchanged": true,
+    "unmapped_draft_unchanged": true,
+    "candidates_delta": 21,
+    "jobs_delta": 20,
+    "runs_delta": 20
+  },
+  "verdict": "GREEN",
+  "acceptance": {
+    "requested_20": true,
+    "subject_slots_5_each": true,
+    "created_20_5_each": true,
+    "no_publication": true,
+    "inventory_freeze": true,
+    "verification_ok": true,
+    "note": "Generation success ≠ independent NCERT certification"
+  },
+  "limitations": [
+    "Deterministic validation only; no independent editorial NCERT certification.",
+    "Used live GENERATION_READY pool (IN_SYLLABUS + NCERT_EVIDENCE_READY), not stale coverage-002 alone.",
+    "First attempt anthropic → PROVIDER_BLOCKED (billing); retry fixed to openai.",
+    "Prior anthropic failed candidate/job/run rows remain in DB from the blocked attempt."
+  ],
+  "failures": []
+}

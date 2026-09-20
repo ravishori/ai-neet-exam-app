@@ -1,0 +1,200 @@
+{
+  "captured_at": "2026-09-03T19:40:38.469Z",
+  "web": "http://127.0.0.1:3000",
+  "api": "http://127.0.0.1:8000",
+  "steps": [
+    {
+      "step": "register",
+      "status": 201,
+      "ok": true
+    },
+    {
+      "step": "dashboard_loaded",
+      "url": "http://localhost:3000/student/dashboard"
+    },
+    {
+      "step": "auth_me_from_browser",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "step": "cta_visibility",
+      "practice_now": true,
+      "seed_v1": true,
+      "seed_v2": true,
+      "seed_v2_enabled": true,
+      "seed_v2_aria": "Practice Seed V2 — exact 100 published questions"
+    },
+    {
+      "step": "practice_api_response",
+      "status": 201,
+      "ok": true,
+      "client_body": {
+        "scope_type": "SEED_V2",
+        "question_count": 100
+      },
+      "assessment_id": "d51fe46d-df96-4130-b1ee-f7c643490560",
+      "question_count": 100,
+      "scope_type": "SEED_V2",
+      "title": "Production Seed V2 practice",
+      "meta": {
+        "available_count": 100,
+        "requested_count": 100,
+        "delivered_count": 100,
+        "shrunk": false,
+        "seed_v2_allowlist_sha256": "a3a8242433b69e80b1754807949767318fa19c41699ecea42c4c246b035b3978",
+        "seed_v2_allowlist_count": 100
+      }
+    },
+    {
+      "step": "attempt_api_response",
+      "status": 201,
+      "ok": true,
+      "attempt_id": "b89ec30a-5f14-4b94-bb58-f0a181ffef3c"
+    },
+    {
+      "step": "navigated_to_attempt",
+      "url": "http://localhost:3000/student/attempts/b89ec30a-5f14-4b94-bb58-f0a181ffef3c"
+    },
+    {
+      "step": "seed_v2_firewall",
+      "presented_count": 100,
+      "outside_count": 0,
+      "all_in_allowlist": true,
+      "unique_count": 100,
+      "leak_before_submit": 0
+    },
+    {
+      "step": "first_question_rendered",
+      "question_label": "Q 1 / 100",
+      "explanation_heading_count_before_submit": 0,
+      "option_a_pressed": "true",
+      "four_options": 4
+    },
+    {
+      "step": "next_question",
+      "label": "Q 2 / 100"
+    },
+    {
+      "step": "refresh",
+      "url": "http://localhost:3000/student/attempts/b89ec30a-5f14-4b94-bb58-f0a181ffef3c",
+      "still_attempt": true
+    },
+    {
+      "step": "submit_http",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "step": "submitted_sample",
+      "scoreVisible": true,
+      "correctText": "2 correct",
+      "explanation_heading_count_after_submit": 1
+    },
+    {
+      "step": "visual_physics_05_after_submit",
+      "index": 4,
+      "img_count": 0,
+      "svg_count": 12
+    },
+    {
+      "step": "back_forward",
+      "url": "http://localhost:3000/student/attempts/b89ec30a-5f14-4b94-bb58-f0a181ffef3c"
+    },
+    {
+      "step": "duplicate_submit",
+      "status": 409
+    },
+    {
+      "step": "mobile_overflow_px",
+      "overflow": 0
+    }
+  ],
+  "console_errors": [
+    "Failed to load resource: the server responded with a status of 409 (Conflict)"
+  ],
+  "page_errors": [],
+  "network": [
+    {
+      "url": "http://localhost:8000/api/v1/attempts",
+      "method": "GET",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "url": "http://localhost:8000/api/v1/assessments/practice",
+      "method": "POST",
+      "status": 201,
+      "ok": true
+    },
+    {
+      "url": "http://localhost:8000/api/v1/assessments/d51fe46d-df96-4130-b1ee-f7c643490560/attempts",
+      "method": "POST",
+      "status": 201,
+      "ok": true
+    },
+    {
+      "url": "http://localhost:8000/api/v1/attempts/b89ec30a-5f14-4b94-bb58-f0a181ffef3c",
+      "method": "GET",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "url": "http://localhost:8000/api/v1/attempts/b89ec30a-5f14-4b94-bb58-f0a181ffef3c",
+      "method": "GET",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "url": "http://localhost:8000/api/v1/attempts/b89ec30a-5f14-4b94-bb58-f0a181ffef3c/answers",
+      "method": "POST",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "url": "http://localhost:8000/api/v1/attempts/b89ec30a-5f14-4b94-bb58-f0a181ffef3c",
+      "method": "GET",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "url": "http://localhost:8000/api/v1/attempts/b89ec30a-5f14-4b94-bb58-f0a181ffef3c/answers",
+      "method": "POST",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "url": "http://localhost:8000/api/v1/attempts/b89ec30a-5f14-4b94-bb58-f0a181ffef3c",
+      "method": "GET",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "url": "http://localhost:8000/api/v1/attempts/b89ec30a-5f14-4b94-bb58-f0a181ffef3c",
+      "method": "GET",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "url": "http://localhost:8000/api/v1/attempts/b89ec30a-5f14-4b94-bb58-f0a181ffef3c/submit",
+      "method": "POST",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "url": "http://localhost:8000/api/v1/attempts/b89ec30a-5f14-4b94-bb58-f0a181ffef3c",
+      "method": "GET",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "url": "http://localhost:8000/api/v1/attempts/b89ec30a-5f14-4b94-bb58-f0a181ffef3c/submit",
+      "method": "POST",
+      "status": 409,
+      "ok": false
+    }
+  ],
+  "pass": true,
+  "full_100_browser_completion": false,
+  "student_email": "seed-v2-browser-1788464438469@example.com"
+}

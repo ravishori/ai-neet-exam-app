@@ -3,8 +3,17 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 
 import { Alert, AlertDescription } from "@/components/ui/alert";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
+import { Skeleton } from "@/components/ui/skeleton";
+import {
+  PageHeader,
+  StudentPage,
+  SurfaceCard,
+  SurfaceCardContent,
+  SurfaceCardDescription,
+  SurfaceCardHeader,
+  SurfaceCardTitle,
+} from "@/components/ds";
 import { ApiError } from "@/lib/api-client";
 import { usersApi } from "@/features/users/api";
 
@@ -22,45 +31,54 @@ export default function SettingsPage() {
     onSuccess: (updated) => queryClient.setQueryData(["users", "me"], updated),
   });
 
-  if (isLoading) {
-    return <main className="flex-1 px-6 py-12 text-center text-sm text-muted-foreground">Loading…</main>;
-  }
-
   return (
-    <main className="flex flex-1 justify-center px-6 py-12">
-      <Card className="w-full max-w-lg">
-        <CardHeader>
-          <CardTitle>Settings</CardTitle>
-          <CardDescription>Content language and study preferences.</CardDescription>
-        </CardHeader>
-        <CardContent className="flex flex-col gap-4">
-          {updateLanguage.isError && (
-            <Alert variant="destructive">
-              <AlertDescription>
-                {updateLanguage.error instanceof ApiError ? updateLanguage.error.message : "Something went wrong"}
-              </AlertDescription>
-            </Alert>
-          )}
-          <div className="flex flex-col gap-1.5">
-            <Label>Content language</Label>
-            <select
-              className="h-9 w-56 rounded-md border bg-background px-2 text-sm"
-              value={profile?.preferred_language ?? "en"}
-              disabled={updateLanguage.isPending}
-              onChange={(e) => updateLanguage.mutate(e.target.value)}
-            >
-              {LANGUAGES.map((l) => (
-                <option key={l.code} value={l.code}>
-                  {l.label}
-                </option>
-              ))}
-            </select>
-            <p className="text-xs text-muted-foreground">
-              Concept notes and questions show in this language where translated, with English as a fallback.
-            </p>
-          </div>
-        </CardContent>
-      </Card>
-    </main>
+    <StudentPage width="md">
+      <PageHeader
+        eyebrow="Account"
+        title="Settings"
+        description="Content language and study preferences. Theme is available from the header."
+      />
+
+      {isLoading ? (
+        <Skeleton className="h-40 w-full rounded-2xl" aria-busy="true" />
+      ) : (
+        <SurfaceCard accent="none">
+          <SurfaceCardHeader>
+            <SurfaceCardTitle>Preferences</SurfaceCardTitle>
+            <SurfaceCardDescription>Changes save as soon as you pick a language.</SurfaceCardDescription>
+          </SurfaceCardHeader>
+          <SurfaceCardContent className="flex flex-col gap-4">
+            {updateLanguage.isError && (
+              <Alert variant="destructive">
+                <AlertDescription>
+                  {updateLanguage.error instanceof ApiError
+                    ? updateLanguage.error.message
+                    : "We couldn’t save that setting. Try again."}
+                </AlertDescription>
+              </Alert>
+            )}
+            <div className="flex flex-col gap-1.5">
+              <Label htmlFor="content-language">Content language</Label>
+              <select
+                id="content-language"
+                className="h-11 w-full max-w-xs rounded-lg border bg-background px-3 text-sm"
+                value={profile?.preferred_language ?? "en"}
+                disabled={updateLanguage.isPending}
+                onChange={(e) => updateLanguage.mutate(e.target.value)}
+              >
+                {LANGUAGES.map((l) => (
+                  <option key={l.code} value={l.code}>
+                    {l.label}
+                  </option>
+                ))}
+              </select>
+              <p className="text-caption">
+                Concept notes and questions show in this language where translated, with English as a fallback.
+              </p>
+            </div>
+          </SurfaceCardContent>
+        </SurfaceCard>
+      )}
+    </StudentPage>
   );
 }

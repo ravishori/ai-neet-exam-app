@@ -1,0 +1,58 @@
+{
+  "id": "2e17c7e6-5d8f-4469-9cea-407177e61e8e",
+  "status": "DRAFT",
+  "subject": "Zoology",
+  "chapter": "Biomolecules",
+  "topic": "Proteins and Enzymes",
+  "concept": "Enzyme Action",
+  "concept_code": "enzyme-basics",
+  "blueprint_key": "production-seed-v1-2026-09-02-bp-zoology-03",
+  "difficulty": "medium",
+  "stem": "According to the induced-fit model of enzyme action, which of the following events best describes the interaction between an enzyme's active site and its substrate during the catalytic cycle?",
+  "options": [
+    {
+      "text": "The active site remains completely rigid and pre-formed, binding only to substrates that possess a complementary static structure.",
+      "label": "A"
+    },
+    {
+      "text": "Substrate binding induces a conformational change in the active site, optimizing chemical interactions to stabilize the transition state.",
+      "label": "B"
+    },
+    {
+      "text": "The substrate undergoes structural modification to fit the active site, while the tertiary structure of the enzyme remains entirely unchanged.",
+      "label": "C"
+    },
+    {
+      "text": "The active site permanently alters its chemical composition during substrate binding, converting the enzyme into a non-reusable product.",
+      "label": "D"
+    }
+  ],
+  "correct_option": "B",
+  "explanation": "Option B is correct because Koshland's induced-fit model posits that the initial interaction between the substrate and the active site induces a dynamic conformational change in the enzyme. This change aligns the catalytic functional groups precisely around the substrate, stabilizing the high-energy transition state and lowering the activation energy. Option A describes the outdated Fischer's lock-and-key model rather than the induced-fit model. Option C is incorrect because the enzyme undergoes crucial conformational flexibility, not just the substrate. Option D is incorrect because enzymes act as biological catalysts and emerge chemically unchanged at the end of the catalytic cycle, ready to process another substrate molecule.",
+  "stem_fp": "55f8cccab9af3824",
+  "body_md5": "54e692134279c71b4b7c8b0b7889fd5d",
+  "provider": "gemini",
+  "model": "gemini-3.6-flash",
+  "routing": "fixed:gemini",
+  "is_fallback": false,
+  "constraints": {
+    "reasoning": "mechanism",
+    "seed_slot_id": "zoology-03",
+    "question_format": "MCQ_4",
+    "cognitive_operation": "Enzyme action / active site",
+    "forbidden_templates": [
+      "PHYS_STRETCH_20PCT_CURRENT",
+      "PHYS_STRETCH_2X_LENGTH_RATIO",
+      "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+      "CHEM_LATTICE_COMPARISON",
+      "CHEM_LATTICE_FACTORS",
+      "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+      "ZOO_ABO_SEQUENCE",
+      "ZOO_ABO_ANTIGEN_IDENTIFY"
+    ],
+    "correct_option_count": 1,
+    "explanation_required": true,
+    "avoid_paraphrase_duplicates": true,
+    "enforce_prior_stem_diversity": true
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "after": {
+    "status": {
+      "DRAFT": 5444,
+      "PUBLISHED": 1479,
+      "SUPERSEDED": 6,
+      "IN_REVIEW": 111
+    },
+    "unmapped": 5034,
+    "pastq_pilot": 10
+  },
+  "meta_gaps": {
+    "no_year": 0,
+    "no_subject": 651,
+    "incomplete_options": 492
+  },
+  "pilot_sample": [
+    {
+      "file": "NEET2015.pdf",
+      "year": 2015,
+      "q": 8,
+      "subject": null,
+      "staging_status": "READY_FOR_REVIEW",
+      "answer": "C",
+      "has_visual": false,
+      "stem_preview": "Caprolactam is used for the manufacture of : Sol. Given species : Op, O,-!, Oot! On",
+      "staging_id": "5498ee25-b897-49f9-aad3-dca305dcdb55",
+      "page": 2
+    },
+    {
+      "file": "NEET2015.pdf",
+      "year": 2015,
+      "q": 10,
+      "subject": null,
+      "staging_status": "VISUAL_REVIEW_REQUIRED",
+      "answer": "C",
+      "has_visual": true,
+      "stem_preview": "Strong reducing behaviour of H,PO, is due to : cream\n: ae 3) SiCl,,",
+      "staging_id": "fe3fa381-fc36-48d5-a47c-03b335d2df4f",
+      "page": 2
+    },
+    {
+      "file": "NEET2015.pdf",
+      "year": 2015,
+      "q": 9,
+      "subject": null,
+      "staging_status": "READY_FOR_REVIEW",
+      "answer": "B",
+      "has_visual": false,
+      "stem_preview": "On heatingwhich of the following releases CO, most",
+      "staging_id": "e3bb6bcd-c210-4e2c-8fd6-b4fda5de0d94",
+      "page": 2
+    },
+    {
+      "file": "NEET2017.pdf",
+      "year": 2017,
+      "q": 2,
+      "subject": null,
+      "staging_status": "ANSWER_REVIEW_REQUIRED",
+      "answer": null,
+      "has_visual": false,
+      "stem_preview": "Which cells of \u2018Crypts of Lieberkuhn\u2019 secrete\nantibacterial lysizymue ? 7... Flowers which have single ovule in the ovary and",
+      "staging_id": "41a31ace-19f7-4594-b596-ffcc95ecf180",
+      "page": 2
+    },
+    {
+      "file": "NEET2021.pdf",
+      "year": 2021,
+      "q": 7,
+      "subject": "Botany",
+      "staging_status": "ANSWER_REVIEW_REQUIRED",
+      "answer": null,
+      "has_visual": false,
+      "stem_preview": "Match List - 1 with List - 2",
+      "staging_id": "5762cfdf-245b-4dbb-9e67-2b04d26ffa58",
+      "page": 1
+    }
+  ]
+}

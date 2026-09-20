@@ -12,6 +12,7 @@ import pytest
 from sqlalchemy import select
 
 from conftest import csrf_headers
+from helpers_publishable_question import publishable_question_body
 
 pytestmark = pytest.mark.asyncio(loop_scope="session")
 
@@ -32,12 +33,12 @@ async def _publish_question(client, concept_id: str) -> str:
             "title": "Image test question",
             "slug": f"image-test-question-{uuid.uuid4().hex[:10]}",
             "language": "en",
-            "body": {
-                "stem": "What does the diagram show?",
-                "options": [{"label": "A", "text": "x"}, {"label": "B", "text": "y"}],
-                "correct_option": "A",
-                "explanation": "n/a",
-            },
+            "body": publishable_question_body(stem="What does the diagram show?", correct_option="A", explanation="Test explanation for NEET MCQ gates.", options=[
+                    {"label": "A", "text": "x"},
+                    {"label": "B", "text": "y"},
+                    {"label": "C", "text": "z"},
+                    {"label": "D", "text": "w"},
+                ],),
         },
         headers=csrf_headers(client),
     )

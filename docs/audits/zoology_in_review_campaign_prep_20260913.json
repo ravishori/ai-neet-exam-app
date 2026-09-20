@@ -1,0 +1,3906 @@
+{
+  "generated_at": "2026-09-13T03:10:29.444551+00:00",
+  "campaign": {
+    "name": "Zoology IN_REVIEW controlled ECAEP review",
+    "scope": {
+      "subject_name": "Zoology",
+      "status": "IN_REVIEW",
+      "content_type": "QUESTION"
+    },
+    "excludes": [
+      "Chemistry",
+      "Physics",
+      "Botany",
+      "DRAFT",
+      "PUBLISHED",
+      "SUPERSEDED",
+      "unmapped_DRAFT"
+    ],
+    "read_only": true,
+    "no_auto_approve": true,
+    "no_auto_publish": true,
+    "no_quota_publishing": true,
+    "provenance_is_not_ncert_certification": true
+  },
+  "totals": {
+    "matching_population": 100,
+    "authoritative": true,
+    "all_mapped": true,
+    "all_zoology": true,
+    "all_in_review": true
+  },
+  "distributions": {
+    "by_chapter": {
+      "Animal Kingdom": 100
+    },
+    "by_topic": {
+      "Chordata": 20,
+      "Basis of Classification": 17,
+      "Arthropoda": 9,
+      "Coelenterata (Cnidaria)": 8,
+      "Annelida": 7,
+      "Platyhelminthes": 7,
+      "Aschelminthes": 6,
+      "Echinodermata": 6,
+      "Mollusca": 6,
+      "Porifera": 6,
+      "Ctenophora": 4,
+      "Hemichordata": 4
+    },
+    "by_class_level": {
+      "11": 100
+    },
+    "ncert_verification_level": {
+      "NOT_VERIFIED": 100
+    }
+  },
+  "prep_warning_counts": {
+    "MISSING_NCERT_EVIDENCE": 100
+  },
+  "duplicate_risk": {
+    "method": "exact_normalized_stem_within_campaign",
+    "near_duplicate_semantic_search": "unavailable_in_this_script",
+    "packet_method": "editorial_review_service.find_suspected_duplicates (exact stem; sample scan)",
+    "exact_stem_duplicate_groups": 0,
+    "exact_stem_duplicate_items": 0,
+    "groups": []
+  },
+  "review_packet_fields": [
+    "item_id",
+    "academic.subject/chapter/topic/concept",
+    "academic.class_level",
+    "question.stem/options/correct_option/explanation/difficulty",
+    "provenance",
+    "ncert",
+    "structural",
+    "publication_eligibility",
+    "suspected_duplicates",
+    "checklist",
+    "blocking_reasons (via eligibility + structural)"
+  ],
+  "ecaep_human_checklist": [
+    "A Scientific correctness",
+    "B Exactly one defensible answer",
+    "C Four meaningful options",
+    "D No duplicate/near-duplicate",
+    "E Clear wording",
+    "F No ambiguity",
+    "G Correct chapter/topic/concept",
+    "H NCERT alignment/evidence",
+    "I Appropriate NEET relevance",
+    "J Appropriate difficulty",
+    "K Explanation correctness",
+    "L Provenance completeness",
+    "M Publication blockers"
+  ],
+  "operator_urls": {
+    "admin_queue": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+    "api_queue": "/api/v1/cms/editorial-review-queue?subject_name=Zoology&status=IN_REVIEW"
+  },
+  "items": [
+    {
+      "id": "aef5ab30-96b8-4f11-8d12-0b76c9561c60",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000049: The phylum name Annelida comes from the Latin annulus, meaning little ring, because the body surface of these animals is",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Annelida",
+      "concept": "Annelida Characters",
+      "concept_id": "be7011d7-f3c8-5834-bfd6-743af522532b",
+      "difficulty": "easy",
+      "correct_option": "A",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/aef5ab30-96b8-4f11-8d12-0b76c9561c60/review-packet",
+      "admin_content_url": "/admin/content/aef5ab30-96b8-4f11-8d12-0b76c9561c60"
+    },
+    {
+      "id": "8089f2ed-d94e-42f9-baef-6c10c22bf029",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000050: Annelids are correctly described as",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Annelida",
+      "concept": "Annelida Characters",
+      "concept_id": "be7011d7-f3c8-5834-bfd6-743af522532b",
+      "difficulty": "easy",
+      "correct_option": "B",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/8089f2ed-d94e-42f9-baef-6c10c22bf029/review-packet",
+      "admin_content_url": "/admin/content/8089f2ed-d94e-42f9-baef-6c10c22bf029"
+    },
+    {
+      "id": "08ab30c1-7e58-4d2b-ab81-2d865792c08c",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000051: An aquatic annelid swims using paired lateral appendages. What are these appendages called and in which annelid genus are they found?",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Annelida",
+      "concept": "Annelida Characters",
+      "concept_id": "be7011d7-f3c8-5834-bfd6-743af522532b",
+      "difficulty": "medium",
+      "correct_option": "C",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/08ab30c1-7e58-4d2b-ab81-2d865792c08c/review-packet",
+      "admin_content_url": "/admin/content/08ab30c1-7e58-4d2b-ab81-2d865792c08c"
+    },
+    {
+      "id": "dc65d1e7-b381-46e0-bfb6-e4cf59037679",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000052: Osmoregulation and excretion in annelids are carried out by",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Annelida",
+      "concept": "Annelida Characters",
+      "concept_id": "be7011d7-f3c8-5834-bfd6-743af522532b",
+      "difficulty": "easy",
+      "correct_option": "D",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/dc65d1e7-b381-46e0-bfb6-e4cf59037679/review-packet",
+      "admin_content_url": "/admin/content/dc65d1e7-b381-46e0-bfb6-e4cf59037679"
+    },
+    {
+      "id": "d631927f-5d5f-4b30-b75c-d7d5c59d4182",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000053: Which combination correctly describes the circulatory and neural systems of annelids?",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Annelida",
+      "concept": "Annelida Characters",
+      "concept_id": "be7011d7-f3c8-5834-bfd6-743af522532b",
+      "difficulty": "medium",
+      "correct_option": "A",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/d631927f-5d5f-4b30-b75c-d7d5c59d4182/review-packet",
+      "admin_content_url": "/admin/content/d631927f-5d5f-4b30-b75c-d7d5c59d4182"
+    },
+    {
+      "id": "ae5ce466-0d64-41b1-8bb0-2c19b84163d5",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000054: Which phylum is characterised by body segmentation resembling a series of rings?",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Annelida",
+      "concept": "Annelida Characters",
+      "concept_id": "be7011d7-f3c8-5834-bfd6-743af522532b",
+      "difficulty": "easy",
+      "correct_option": "B",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/ae5ce466-0d64-41b1-8bb0-2c19b84163d5/review-packet",
+      "admin_content_url": "/admin/content/ae5ce466-0d64-41b1-8bb0-2c19b84163d5"
+    },
+    {
+      "id": "3b793dbb-6aea-42ee-adfb-2329ff80b193",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000055: Which statement about annelid sexuality and examples is correct?",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Annelida",
+      "concept": "Annelida Examples",
+      "concept_id": "23b0bc4c-e9db-5bb5-8eae-e9d75cd65cd7",
+      "difficulty": "medium",
+      "correct_option": "C",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/3b793dbb-6aea-42ee-adfb-2329ff80b193/review-packet",
+      "admin_content_url": "/admin/content/3b793dbb-6aea-42ee-adfb-2329ff80b193"
+    },
+    {
+      "id": "8f45df45-2b59-4fa4-9f66-a7fa886f98d8",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000056: Which statement about Arthropoda is correct?",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Arthropoda",
+      "concept": "Arthropoda Characters",
+      "concept_id": "6dfc4145-142b-5f36-9a5a-0e2c5259f6ae",
+      "difficulty": "easy",
+      "correct_option": "D",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/8f45df45-2b59-4fa4-9f66-a7fa886f98d8/review-packet",
+      "admin_content_url": "/admin/content/8f45df45-2b59-4fa4-9f66-a7fa886f98d8"
+    },
+    {
+      "id": "4e3cf385-4367-4706-9521-b3293437773e",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000057: The arthropod body is covered by which kind of exoskeleton, and how is its name explained?",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Arthropoda",
+      "concept": "Arthropoda Characters",
+      "concept_id": "6dfc4145-142b-5f36-9a5a-0e2c5259f6ae",
+      "difficulty": "medium",
+      "correct_option": "A",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/4e3cf385-4367-4706-9521-b3293437773e/review-packet",
+      "admin_content_url": "/admin/content/4e3cf385-4367-4706-9521-b3293437773e"
+    },
+    {
+      "id": "a37505ec-fb79-4b30-a7ad-1cbcd0ab0da5",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000058: Excretion in arthropods takes place through",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Arthropoda",
+      "concept": "Arthropoda Characters",
+      "concept_id": "6dfc4145-142b-5f36-9a5a-0e2c5259f6ae",
+      "difficulty": "easy",
+      "correct_option": "B",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/a37505ec-fb79-4b30-a7ad-1cbcd0ab0da5/review-packet",
+      "admin_content_url": "/admin/content/a37505ec-fb79-4b30-a7ad-1cbcd0ab0da5"
+    },
+    {
+      "id": "c1f5d333-f838-4703-9fe3-78819dafb6cc",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000059: Which set of respiratory organs is listed for arthropods?",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Arthropoda",
+      "concept": "Arthropoda Characters",
+      "concept_id": "6dfc4145-142b-5f36-9a5a-0e2c5259f6ae",
+      "difficulty": "medium",
+      "correct_option": "C",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/c1f5d333-f838-4703-9fe3-78819dafb6cc/review-packet",
+      "admin_content_url": "/admin/content/c1f5d333-f838-4703-9fe3-78819dafb6cc"
+    },
+    {
+      "id": "ced0b89c-335a-4bb0-9627-aaa2f94e1302",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000060: The circulatory system of arthropods is of which type?",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Arthropoda",
+      "concept": "Arthropoda Characters",
+      "concept_id": "6dfc4145-142b-5f36-9a5a-0e2c5259f6ae",
+      "difficulty": "easy",
+      "correct_option": "D",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/ced0b89c-335a-4bb0-9627-aaa2f94e1302/review-packet",
+      "admin_content_url": "/admin/content/ced0b89c-335a-4bb0-9627-aaa2f94e1302"
+    },
+    {
+      "id": "77b7b348-ce72-41a1-a52f-b6b0c161184f",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000061: Which sensory structures are named for arthropods?",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Arthropoda",
+      "concept": "Arthropoda Characters",
+      "concept_id": "6dfc4145-142b-5f36-9a5a-0e2c5259f6ae",
+      "difficulty": "medium",
+      "correct_option": "A",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/77b7b348-ce72-41a1-a52f-b6b0c161184f/review-packet",
+      "admin_content_url": "/admin/content/77b7b348-ce72-41a1-a52f-b6b0c161184f"
+    },
+    {
+      "id": "40bf661a-4f83-4baa-8782-860105d23b1a",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000062: Which set correctly matches economically important insects with their common names?",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Arthropoda",
+      "concept": "Arthropoda Examples and Economic Importance",
+      "concept_id": "4bac197e-b9db-593c-9046-d7177d577a1c",
+      "difficulty": "easy",
+      "correct_option": "B",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/40bf661a-4f83-4baa-8782-860105d23b1a/review-packet",
+      "admin_content_url": "/admin/content/40bf661a-4f83-4baa-8782-860105d23b1a"
+    },
+    {
+      "id": "bcd99d66-a299-4697-9063-ee87da31309f",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000063: Which arthropod is cited as a living fossil?",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Arthropoda",
+      "concept": "Arthropoda Examples and Economic Importance",
+      "concept_id": "4bac197e-b9db-593c-9046-d7177d577a1c",
+      "difficulty": "easy",
+      "correct_option": "C",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/bcd99d66-a299-4697-9063-ee87da31309f/review-packet",
+      "admin_content_url": "/admin/content/bcd99d66-a299-4697-9063-ee87da31309f"
+    },
+    {
+      "id": "cdd63a6f-1eee-462b-80ba-bc252c15fc1b",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000064: Which arthropods are listed as vectors and which as the gregarious pest?",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Arthropoda",
+      "concept": "Arthropoda Examples and Economic Importance",
+      "concept_id": "4bac197e-b9db-593c-9046-d7177d577a1c",
+      "difficulty": "medium",
+      "correct_option": "D",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/cdd63a6f-1eee-462b-80ba-bc252c15fc1b/review-packet",
+      "admin_content_url": "/admin/content/cdd63a6f-1eee-462b-80ba-bc252c15fc1b"
+    },
+    {
+      "id": "aa64545b-d4b2-4ceb-8ddc-0e020cbca427",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000043: Why are the members of Aschelminthes known as roundworms?",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Aschelminthes",
+      "concept": "Aschelminthes Characters",
+      "concept_id": "3d3f3391-e708-5480-bf0d-4ade0ca78560",
+      "difficulty": "easy",
+      "correct_option": "C",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/aa64545b-d4b2-4ceb-8ddc-0e020cbca427/review-packet",
+      "admin_content_url": "/admin/content/aa64545b-d4b2-4ceb-8ddc-0e020cbca427"
+    },
+    {
+      "id": "2c58fe6f-f97e-44f4-bd14-4fa536da6ceb",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000044: Aschelminthes are best described as",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Aschelminthes",
+      "concept": "Aschelminthes Characters",
+      "concept_id": "3d3f3391-e708-5480-bf0d-4ade0ca78560",
+      "difficulty": "easy",
+      "correct_option": "D",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/2c58fe6f-f97e-44f4-bd14-4fa536da6ceb/review-packet",
+      "admin_content_url": "/admin/content/2c58fe6f-f97e-44f4-bd14-4fa536da6ceb"
+    },
+    {
+      "id": "48071fb6-c568-4df2-9348-bb5aa7ac9cdf",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000045: The complete alimentary canal of a roundworm is provided with a",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Aschelminthes",
+      "concept": "Aschelminthes Characters",
+      "concept_id": "3d3f3391-e708-5480-bf0d-4ade0ca78560",
+      "difficulty": "medium",
+      "correct_option": "A",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/48071fb6-c568-4df2-9348-bb5aa7ac9cdf/review-packet",
+      "admin_content_url": "/admin/content/48071fb6-c568-4df2-9348-bb5aa7ac9cdf"
+    },
+    {
+      "id": "dfde0efd-ca7b-4f00-b6c4-7648d9f85237",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000046: Roundworms are dioecious, which means that",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Aschelminthes",
+      "concept": "Aschelminthes Characters",
+      "concept_id": "3d3f3391-e708-5480-bf0d-4ade0ca78560",
+      "difficulty": "easy",
+      "correct_option": "B",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/dfde0efd-ca7b-4f00-b6c4-7648d9f85237/review-packet",
+      "admin_content_url": "/admin/content/dfde0efd-ca7b-4f00-b6c4-7648d9f85237"
+    },
+    {
+      "id": "6e3161d8-f746-48aa-abd7-5993086555fa",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000047: Body wastes are removed from the body cavity of a roundworm by",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Aschelminthes",
+      "concept": "Aschelminthes Characters",
+      "concept_id": "3d3f3391-e708-5480-bf0d-4ade0ca78560",
+      "difficulty": "medium",
+      "correct_option": "C",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/6e3161d8-f746-48aa-abd7-5993086555fa/review-packet",
+      "admin_content_url": "/admin/content/6e3161d8-f746-48aa-abd7-5993086555fa"
+    },
+    {
+      "id": "49273e12-fba2-43bb-a5c0-f48d3bb55500",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000048: Match the aschelminth genera with their common names.",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Aschelminthes",
+      "concept": "Aschelminthes Examples",
+      "concept_id": "141ba73c-aea1-57ff-9cdd-b54f103095e8",
+      "difficulty": "medium",
+      "correct_option": "D",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/49273e12-fba2-43bb-a5c0-f48d3bb55500/review-packet",
+      "admin_content_url": "/admin/content/49273e12-fba2-43bb-a5c0-f48d3bb55500"
+    },
+    {
+      "id": "18147500-d4fb-4a1b-917f-5345d4229ebb",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000001: All members of Animalia are multicellular, yet they are still placed at different levels of organisation because",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Basis of Classification",
+      "concept": "Levels of Organisation",
+      "concept_id": "f5112095-56f7-54d4-b8eb-0a16f50e00e0",
+      "difficulty": "easy",
+      "correct_option": "A",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/18147500-d4fb-4a1b-917f-5345d4229ebb/review-packet",
+      "admin_content_url": "/admin/content/18147500-d4fb-4a1b-917f-5345d4229ebb"
+    },
+    {
+      "id": "06588730-81ca-4831-a06d-8b418bad5816",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000002: In sponges the cells are arranged as loose cell aggregates; such an arrangement is termed",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Basis of Classification",
+      "concept": "Levels of Organisation",
+      "concept_id": "f5112095-56f7-54d4-b8eb-0a16f50e00e0",
+      "difficulty": "easy",
+      "correct_option": "B",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/06588730-81ca-4831-a06d-8b418bad5816/review-packet",
+      "admin_content_url": "/admin/content/06588730-81ca-4831-a06d-8b418bad5816"
+    },
+    {
+      "id": "78fa5558-97cc-425c-8035-7e64505744a0",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000003: Which group of animals exhibits the tissue level of organisation?",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Basis of Classification",
+      "concept": "Levels of Organisation",
+      "concept_id": "f5112095-56f7-54d4-b8eb-0a16f50e00e0",
+      "difficulty": "easy",
+      "correct_option": "C",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/78fa5558-97cc-425c-8035-7e64505744a0/review-packet",
+      "admin_content_url": "/admin/content/78fa5558-97cc-425c-8035-7e64505744a0"
+    },
+    {
+      "id": "651c9f9e-f898-4bd2-af49-ea4e2bd6e328",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000004: Tissues grouped together into organs, each specialised for a particular function, is a level exhibited by members of",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Basis of Classification",
+      "concept": "Levels of Organisation",
+      "concept_id": "f5112095-56f7-54d4-b8eb-0a16f50e00e0",
+      "difficulty": "medium",
+      "correct_option": "D",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/651c9f9e-f898-4bd2-af49-ea4e2bd6e328/review-packet",
+      "admin_content_url": "/admin/content/651c9f9e-f898-4bd2-af49-ea4e2bd6e328"
+    },
+    {
+      "id": "ee917147-29ba-4407-9549-fd80d9540b72",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000005: In which set of animals have organs associated to form functional systems, each concerned with a specific physiological function?",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Basis of Classification",
+      "concept": "Levels of Organisation",
+      "concept_id": "f5112095-56f7-54d4-b8eb-0a16f50e00e0",
+      "difficulty": "medium",
+      "correct_option": "A",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/ee917147-29ba-4407-9549-fd80d9540b72/review-packet",
+      "admin_content_url": "/admin/content/ee917147-29ba-4407-9549-fd80d9540b72"
+    },
+    {
+      "id": "7e070b9f-44c7-4859-87d7-ea87145847c1",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000006: Which contrast between an incomplete and a complete digestive system is correct?",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Basis of Classification",
+      "concept": "Digestive and Circulatory Patterns",
+      "concept_id": "d0764162-6407-5435-86f9-153fc2e4b932",
+      "difficulty": "easy",
+      "correct_option": "B",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/7e070b9f-44c7-4859-87d7-ea87145847c1/review-packet",
+      "admin_content_url": "/admin/content/7e070b9f-44c7-4859-87d7-ea87145847c1"
+    },
+    {
+      "id": "208567f8-e281-4bd2-917a-fd674e2a31f2",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000007: In the open type of circulatory system, blood pumped out of the heart",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Basis of Classification",
+      "concept": "Digestive and Circulatory Patterns",
+      "concept_id": "d0764162-6407-5435-86f9-153fc2e4b932",
+      "difficulty": "easy",
+      "correct_option": "C",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/208567f8-e281-4bd2-917a-fd674e2a31f2/review-packet",
+      "admin_content_url": "/admin/content/208567f8-e281-4bd2-917a-fd674e2a31f2"
+    },
+    {
+      "id": "96327adb-3a03-400c-aed1-2e20d17939e3",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000008: Which description matches the closed type of circulation?",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Basis of Classification",
+      "concept": "Digestive and Circulatory Patterns",
+      "concept_id": "d0764162-6407-5435-86f9-153fc2e4b932",
+      "difficulty": "easy",
+      "correct_option": "D",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/96327adb-3a03-400c-aed1-2e20d17939e3/review-packet",
+      "admin_content_url": "/admin/content/96327adb-3a03-400c-aed1-2e20d17939e3"
+    },
+    {
+      "id": "6ec0556c-e707-4b2b-90f6-4eb24dde42df",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000009: Sponges are said to be mostly asymmetrical, which means that",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Basis of Classification",
+      "concept": "Symmetry",
+      "concept_id": "a3a614ff-4f68-5164-8f72-5df792f38d3a",
+      "difficulty": "medium",
+      "correct_option": "A",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/6ec0556c-e707-4b2b-90f6-4eb24dde42df/review-packet",
+      "admin_content_url": "/admin/content/6ec0556c-e707-4b2b-90f6-4eb24dde42df"
+    },
+    {
+      "id": "4aad2b17-a08e-4fb2-961a-0acbca4a8cdc",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000010: Radial symmetry, in which any plane through the central axis produces two identical halves, is the body plan of",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Basis of Classification",
+      "concept": "Symmetry",
+      "concept_id": "a3a614ff-4f68-5164-8f72-5df792f38d3a",
+      "difficulty": "easy",
+      "correct_option": "B",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/4aad2b17-a08e-4fb2-961a-0acbca4a8cdc/review-packet",
+      "admin_content_url": "/admin/content/4aad2b17-a08e-4fb2-961a-0acbca4a8cdc"
+    },
+    {
+      "id": "5f5c8bf0-1d3d-4f35-832c-18d1509d6ccf",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000011: Animals such as annelids and arthropods can be divided into identical left and right halves in only one plane; this condition is called",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Basis of Classification",
+      "concept": "Symmetry",
+      "concept_id": "a3a614ff-4f68-5164-8f72-5df792f38d3a",
+      "difficulty": "easy",
+      "correct_option": "C",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/5f5c8bf0-1d3d-4f35-832c-18d1509d6ccf/review-packet",
+      "admin_content_url": "/admin/content/5f5c8bf0-1d3d-4f35-832c-18d1509d6ccf"
+    },
+    {
+      "id": "b6e2303e-7a54-4505-a719-072fe1118250",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000012: Coelenterates are diploblastic animals. Which layer occupies the space between their ectoderm and endoderm?",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Basis of Classification",
+      "concept": "Diploblastic and Triploblastic Organisation",
+      "concept_id": "20865cba-c91a-50ec-a606-06f6ab2d3353",
+      "difficulty": "medium",
+      "correct_option": "D",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/b6e2303e-7a54-4505-a719-072fe1118250/review-packet",
+      "admin_content_url": "/admin/content/b6e2303e-7a54-4505-a719-072fe1118250"
+    },
+    {
+      "id": "f1780df8-a7fe-48e7-b0e9-392030e5061d",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000013: Triploblastic animals, whose embryo develops a mesoderm between ectoderm and endoderm, span which range of phyla?",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Basis of Classification",
+      "concept": "Diploblastic and Triploblastic Organisation",
+      "concept_id": "20865cba-c91a-50ec-a606-06f6ab2d3353",
+      "difficulty": "medium",
+      "correct_option": "A",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/f1780df8-a7fe-48e7-b0e9-392030e5061d/review-packet",
+      "admin_content_url": "/admin/content/f1780df8-a7fe-48e7-b0e9-392030e5061d"
+    },
+    {
+      "id": "9ef602f6-8214-49b3-89e1-5ac0c813fc37",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000014: A body cavity lined by mesoderm is a coelom. Which list contains only coelomates?",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Basis of Classification",
+      "concept": "Coelom, Pseudocoelom and Acoelomates",
+      "concept_id": "f8a9d892-985d-5ec7-b717-32b42fa5c874",
+      "difficulty": "medium",
+      "correct_option": "B",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/9ef602f6-8214-49b3-89e1-5ac0c813fc37/review-packet",
+      "admin_content_url": "/admin/content/9ef602f6-8214-49b3-89e1-5ac0c813fc37"
+    },
+    {
+      "id": "781df1cf-1652-4438-856f-94350f126de5",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000015: In pseudocoelomates such as aschelminthes, how is the mesoderm arranged?",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Basis of Classification",
+      "concept": "Coelom, Pseudocoelom and Acoelomates",
+      "concept_id": "f8a9d892-985d-5ec7-b717-32b42fa5c874",
+      "difficulty": "easy",
+      "correct_option": "C",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/781df1cf-1652-4438-856f-94350f126de5/review-packet",
+      "admin_content_url": "/admin/content/781df1cf-1652-4438-856f-94350f126de5"
+    },
+    {
+      "id": "563ec1f9-013f-46b0-816b-7ec8da4aa5b3",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000016: Animals in which the body cavity is altogether absent are called acoelomates; which phylum is cited as the example?",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Basis of Classification",
+      "concept": "Coelom, Pseudocoelom and Acoelomates",
+      "concept_id": "f8a9d892-985d-5ec7-b717-32b42fa5c874",
+      "difficulty": "easy",
+      "correct_option": "D",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/563ec1f9-013f-46b0-816b-7ec8da4aa5b3/review-packet",
+      "admin_content_url": "/admin/content/563ec1f9-013f-46b0-816b-7ec8da4aa5b3"
+    },
+    {
+      "id": "3de06dc6-9aea-4a77-8205-47f1df0462fa",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000017: Serial repetition of at least some organs along a body divided externally and internally into segments, as seen in the earthworm, is known as",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Basis of Classification",
+      "concept": "Segmentation and Metamerism",
+      "concept_id": "c55eef7b-860e-5dcb-a0f4-540f8e759bb2",
+      "difficulty": "easy",
+      "correct_option": "A",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/3de06dc6-9aea-4a77-8205-47f1df0462fa/review-packet",
+      "admin_content_url": "/admin/content/3de06dc6-9aea-4a77-8205-47f1df0462fa"
+    },
+    {
+      "id": "4656f74f-57f8-41f1-b458-a4d4de963d66",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000081: The notochord is best defined as",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Chordata",
+      "concept": "Fundamental Chordate Features",
+      "concept_id": "4dfe854a-a99b-52fd-9fc3-c2b49b7ac092",
+      "difficulty": "easy",
+      "correct_option": "A",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/4656f74f-57f8-41f1-b458-a4d4de963d66/review-packet",
+      "admin_content_url": "/admin/content/4656f74f-57f8-41f1-b458-a4d4de963d66"
+    },
+    {
+      "id": "bf3ea1dc-9dbf-4a28-b751-7b5857f6c834",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000082: Animals that do not form a notochord are called non-chordates; which range of phyla is given as the example?",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Chordata",
+      "concept": "Fundamental Chordate Features",
+      "concept_id": "4dfe854a-a99b-52fd-9fc3-c2b49b7ac092",
+      "difficulty": "medium",
+      "correct_option": "B",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/bf3ea1dc-9dbf-4a28-b751-7b5857f6c834/review-packet",
+      "admin_content_url": "/admin/content/bf3ea1dc-9dbf-4a28-b751-7b5857f6c834"
+    },
+    {
+      "id": "4905cb2b-0249-4d92-81ee-4c618db0fed0",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000083: Which three features fundamentally characterise animals of phylum Chordata?",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Chordata",
+      "concept": "Fundamental Chordate Features",
+      "concept_id": "4dfe854a-a99b-52fd-9fc3-c2b49b7ac092",
+      "difficulty": "medium",
+      "correct_option": "C",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/4905cb2b-0249-4d92-81ee-4c618db0fed0/review-packet",
+      "admin_content_url": "/admin/content/4905cb2b-0249-4d92-81ee-4c618db0fed0"
+    },
+    {
+      "id": "b1502346-8ad7-4670-9b1f-1b8ce6a7f477",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000084: How does the central nervous system of chordates differ from that of non-chordates?",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Chordata",
+      "concept": "Fundamental Chordate Features",
+      "concept_id": "4dfe854a-a99b-52fd-9fc3-c2b49b7ac092",
+      "difficulty": "medium",
+      "correct_option": "D",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/b1502346-8ad7-4670-9b1f-1b8ce6a7f477/review-packet",
+      "admin_content_url": "/admin/content/b1502346-8ad7-4670-9b1f-1b8ce6a7f477"
+    },
+    {
+      "id": "30d370fe-08c1-4651-b67f-db2084686fa4",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000085: Which pair of contrasts between chordates and non-chordates is stated correctly?",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Chordata",
+      "concept": "Fundamental Chordate Features",
+      "concept_id": "4dfe854a-a99b-52fd-9fc3-c2b49b7ac092",
+      "difficulty": "medium",
+      "correct_option": "A",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/30d370fe-08c1-4651-b67f-db2084686fa4/review-packet",
+      "admin_content_url": "/admin/content/30d370fe-08c1-4651-b67f-db2084686fa4"
+    },
+    {
+      "id": "dbf2e57d-a42d-4d88-9759-b987e832f353",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000086: Phylum Chordata is divided into three subphyla. Which two of them are referred to as protochordates and are exclusively marine?",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Chordata",
+      "concept": "Protochordates",
+      "concept_id": "a5c84163-7e2e-5476-82cd-1dffaef23412",
+      "difficulty": "easy",
+      "correct_option": "B",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/dbf2e57d-a42d-4d88-9759-b987e832f353/review-packet",
+      "admin_content_url": "/admin/content/dbf2e57d-a42d-4d88-9759-b987e832f353"
+    },
+    {
+      "id": "dd323374-5b1e-494a-a153-a56d9c30ffee",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000087: How does the extent of the notochord differ between Urochordata and Cephalochordata?",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Chordata",
+      "concept": "Protochordates",
+      "concept_id": "a5c84163-7e2e-5476-82cd-1dffaef23412",
+      "difficulty": "medium",
+      "correct_option": "C",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/dd323374-5b1e-494a-a153-a56d9c30ffee/review-packet",
+      "admin_content_url": "/admin/content/dd323374-5b1e-494a-a153-a56d9c30ffee"
+    },
+    {
+      "id": "5026b42f-e775-4603-8ca1-79ba13fb98e4",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000088: Which grouping of protochordate examples is correct?",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Chordata",
+      "concept": "Protochordates",
+      "concept_id": "a5c84163-7e2e-5476-82cd-1dffaef23412",
+      "difficulty": "medium",
+      "correct_option": "D",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/5026b42f-e775-4603-8ca1-79ba13fb98e4/review-packet",
+      "admin_content_url": "/admin/content/5026b42f-e775-4603-8ca1-79ba13fb98e4"
+    },
+    {
+      "id": "7cdcd4dc-3eb3-40a6-828e-2c5c7276bd78",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000089: The statement that all vertebrates are chordates but all chordates are not vertebrates follows from the fact that vertebrates",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Chordata",
+      "concept": "Vertebrata Divisions",
+      "concept_id": "2ec604a8-6354-562d-b81f-5120664c0b21",
+      "difficulty": "medium",
+      "correct_option": "A",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/7cdcd4dc-3eb3-40a6-828e-2c5c7276bd78/review-packet",
+      "admin_content_url": "/admin/content/7cdcd4dc-3eb3-40a6-828e-2c5c7276bd78"
+    },
+    {
+      "id": "83c256f7-8013-479e-b834-092229424854",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000090: Besides the basic chordate characters, which additional features do vertebrates possess?",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Chordata",
+      "concept": "Vertebrata Divisions",
+      "concept_id": "2ec604a8-6354-562d-b81f-5120664c0b21",
+      "difficulty": "medium",
+      "correct_option": "B",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/83c256f7-8013-479e-b834-092229424854/review-packet",
+      "admin_content_url": "/admin/content/83c256f7-8013-479e-b834-092229424854"
+    },
+    {
+      "id": "5762319f-6146-412d-bd6d-b4a46a8fd30e",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000091: How is subphylum Vertebrata classified?",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Chordata",
+      "concept": "Vertebrata Divisions",
+      "concept_id": "2ec604a8-6354-562d-b81f-5120664c0b21",
+      "difficulty": "medium",
+      "correct_option": "C",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/5762319f-6146-412d-bd6d-b4a46a8fd30e/review-packet",
+      "admin_content_url": "/admin/content/5762319f-6146-412d-bd6d-b4a46a8fd30e"
+    },
+    {
+      "id": "7c5ec0a9-356f-4629-8a9a-f88caa38c27d",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000092: Which combination of features describes the living members of class Cyclostomata?",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Chordata",
+      "concept": "Cyclostomata, Chondrichthyes and Osteichthyes",
+      "concept_id": "54ae69aa-c3bb-510c-9311-72e27d0fb650",
+      "difficulty": "medium",
+      "correct_option": "D",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/7c5ec0a9-356f-4629-8a9a-f88caa38c27d/review-packet",
+      "admin_content_url": "/admin/content/7c5ec0a9-356f-4629-8a9a-f88caa38c27d"
+    },
+    {
+      "id": "5658dadc-11f5-4df4-b41c-724f825ac325",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000093: Which statement about the class Chondrichthyes is correct?",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Chordata",
+      "concept": "Cyclostomata, Chondrichthyes and Osteichthyes",
+      "concept_id": "54ae69aa-c3bb-510c-9311-72e27d0fb650",
+      "difficulty": "medium",
+      "correct_option": "A",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/5658dadc-11f5-4df4-b41c-724f825ac325/review-packet",
+      "admin_content_url": "/admin/content/5658dadc-11f5-4df4-b41c-724f825ac325"
+    },
+    {
+      "id": "9a12456d-0a62-4cc0-9e19-03639f8536a9",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000094: Why must a shark keep swimming constantly?",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Chordata",
+      "concept": "Cyclostomata, Chondrichthyes and Osteichthyes",
+      "concept_id": "54ae69aa-c3bb-510c-9311-72e27d0fb650",
+      "difficulty": "easy",
+      "correct_option": "B",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/9a12456d-0a62-4cc0-9e19-03639f8536a9/review-packet",
+      "admin_content_url": "/admin/content/9a12456d-0a62-4cc0-9e19-03639f8536a9"
+    },
+    {
+      "id": "22ebd699-a09b-4593-9fce-67de268e3f7b",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000095: Which matching of cartilaginous fishes with their special features is correct?",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Chordata",
+      "concept": "Cyclostomata, Chondrichthyes and Osteichthyes",
+      "concept_id": "54ae69aa-c3bb-510c-9311-72e27d0fb650",
+      "difficulty": "medium",
+      "correct_option": "C",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/22ebd699-a09b-4593-9fce-67de268e3f7b/review-packet",
+      "admin_content_url": "/admin/content/22ebd699-a09b-4593-9fce-67de268e3f7b"
+    },
+    {
+      "id": "64144e93-3f20-496f-af1c-db2cb31e468e",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000096: Which features characterise class Osteichthyes?",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Chordata",
+      "concept": "Cyclostomata, Chondrichthyes and Osteichthyes",
+      "concept_id": "54ae69aa-c3bb-510c-9311-72e27d0fb650",
+      "difficulty": "medium",
+      "correct_option": "D",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/64144e93-3f20-496f-af1c-db2cb31e468e/review-packet",
+      "admin_content_url": "/admin/content/64144e93-3f20-496f-af1c-db2cb31e468e"
+    },
+    {
+      "id": "acff8226-ec65-4ff6-9215-27fffd178ca0",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000097: Which combination of features is correct for class Amphibia?",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Chordata",
+      "concept": "Amphibia, Reptilia, Aves and Mammalia",
+      "concept_id": "530b77fd-062a-5c89-8b2f-e0faee8bc179",
+      "difficulty": "medium",
+      "correct_option": "A",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/acff8226-ec65-4ff6-9215-27fffd178ca0/review-packet",
+      "admin_content_url": "/admin/content/acff8226-ec65-4ff6-9215-27fffd178ca0"
+    },
+    {
+      "id": "6069ee00-b353-47cb-86b7-5ab7b02fa3f7",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000098: Which set of features is correct for class Reptilia?",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Chordata",
+      "concept": "Amphibia, Reptilia, Aves and Mammalia",
+      "concept_id": "530b77fd-062a-5c89-8b2f-e0faee8bc179",
+      "difficulty": "medium",
+      "correct_option": "B",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/6069ee00-b353-47cb-86b7-5ab7b02fa3f7/review-packet",
+      "admin_content_url": "/admin/content/6069ee00-b353-47cb-86b7-5ab7b02fa3f7"
+    },
+    {
+      "id": "3c19085f-78a2-475e-9d0a-4e3f2b3d6267",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000099: Which set of modifications is described as helping birds to fly?",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Chordata",
+      "concept": "Amphibia, Reptilia, Aves and Mammalia",
+      "concept_id": "530b77fd-062a-5c89-8b2f-e0faee8bc179",
+      "difficulty": "medium",
+      "correct_option": "C",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/3c19085f-78a2-475e-9d0a-4e3f2b3d6267/review-packet",
+      "admin_content_url": "/admin/content/3c19085f-78a2-475e-9d0a-4e3f2b3d6267"
+    },
+    {
+      "id": "047c30ff-42c1-4a05-bfe2-27667fab9457",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000100: Which features are given as the unique or defining characters of mammals?",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Chordata",
+      "concept": "Amphibia, Reptilia, Aves and Mammalia",
+      "concept_id": "530b77fd-062a-5c89-8b2f-e0faee8bc179",
+      "difficulty": "medium",
+      "correct_option": "D",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/047c30ff-42c1-4a05-bfe2-27667fab9457/review-packet",
+      "admin_content_url": "/admin/content/047c30ff-42c1-4a05-bfe2-27667fab9457"
+    },
+    {
+      "id": "39ffe8f4-e734-47fe-bd59-157837ccaf10",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000024: The name Cnidaria is derived from cnidoblasts or cnidocytes, which contain",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Coelenterata (Cnidaria)",
+      "concept": "Cnidaria Characters and Body Forms",
+      "concept_id": "7ec22cdd-d4d7-59c8-842a-acce5091552e",
+      "difficulty": "easy",
+      "correct_option": "D",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/39ffe8f4-e734-47fe-bd59-157837ccaf10/review-packet",
+      "admin_content_url": "/admin/content/39ffe8f4-e734-47fe-bd59-157837ccaf10"
+    },
+    {
+      "id": "b9180453-7ef8-4884-90dd-8a071c3dc415",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000025: A cnidarian anchors itself, defends itself and captures its prey. Which structure serves all three purposes?",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Coelenterata (Cnidaria)",
+      "concept": "Cnidaria Characters and Body Forms",
+      "concept_id": "7ec22cdd-d4d7-59c8-842a-acce5091552e",
+      "difficulty": "medium",
+      "correct_option": "A",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/b9180453-7ef8-4884-90dd-8a071c3dc415/review-packet",
+      "admin_content_url": "/admin/content/b9180453-7ef8-4884-90dd-8a071c3dc415"
+    },
+    {
+      "id": "28902f8d-ae08-421e-a3d6-1f9628177a41",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000026: The single opening of the central gastro-vascular cavity of a cnidarian is the mouth, which is borne on the",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Coelenterata (Cnidaria)",
+      "concept": "Cnidaria Characters and Body Forms",
+      "concept_id": "7ec22cdd-d4d7-59c8-842a-acce5091552e",
+      "difficulty": "medium",
+      "correct_option": "B",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/28902f8d-ae08-421e-a3d6-1f9628177a41/review-packet",
+      "admin_content_url": "/admin/content/28902f8d-ae08-421e-a3d6-1f9628177a41"
+    },
+    {
+      "id": "7f75c7fc-1c0c-48a0-be0f-3bd33df26833",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000027: Cnidarians exhibit two basic body forms, which are named",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Coelenterata (Cnidaria)",
+      "concept": "Cnidaria Characters and Body Forms",
+      "concept_id": "7ec22cdd-d4d7-59c8-842a-acce5091552e",
+      "difficulty": "easy",
+      "correct_option": "C",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/7f75c7fc-1c0c-48a0-be0f-3bd33df26833/review-packet",
+      "admin_content_url": "/admin/content/7f75c7fc-1c0c-48a0-be0f-3bd33df26833"
+    },
+    {
+      "id": "9a496db0-af91-4063-8881-1fb054a41602",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000028: Which contrast between the two cnidarian body forms is correct?",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Coelenterata (Cnidaria)",
+      "concept": "Cnidaria Characters and Body Forms",
+      "concept_id": "7ec22cdd-d4d7-59c8-842a-acce5091552e",
+      "difficulty": "easy",
+      "correct_option": "D",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/9a496db0-af91-4063-8881-1fb054a41602/review-packet",
+      "admin_content_url": "/admin/content/9a496db0-af91-4063-8881-1fb054a41602"
+    },
+    {
+      "id": "cce32859-1c4e-412a-b646-8dcac192c160",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000029: In Obelia the polyps produce medusae asexually while the medusae form polyps sexually. This alternation of generation is called",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Coelenterata (Cnidaria)",
+      "concept": "Cnidaria Characters and Body Forms",
+      "concept_id": "7ec22cdd-d4d7-59c8-842a-acce5091552e",
+      "difficulty": "medium",
+      "correct_option": "A",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/cce32859-1c4e-412a-b646-8dcac192c160/review-packet",
+      "admin_content_url": "/admin/content/cce32859-1c4e-412a-b646-8dcac192c160"
+    },
+    {
+      "id": "56f38049-5778-4176-b40c-6578500b7e84",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000030: The skeleton of corals is composed of",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Coelenterata (Cnidaria)",
+      "concept": "Cnidaria Characters and Body Forms",
+      "concept_id": "7ec22cdd-d4d7-59c8-842a-acce5091552e",
+      "difficulty": "easy",
+      "correct_option": "B",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/56f38049-5778-4176-b40c-6578500b7e84/review-packet",
+      "admin_content_url": "/admin/content/56f38049-5778-4176-b40c-6578500b7e84"
+    },
+    {
+      "id": "c32acfe7-0598-468b-873b-9e9e2911aeff",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000031: Identify the correctly matched set of coelenterate examples and common names.",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Coelenterata (Cnidaria)",
+      "concept": "Cnidaria Examples",
+      "concept_id": "003c27a3-9218-51dd-8f1e-dda56b66bfda",
+      "difficulty": "medium",
+      "correct_option": "C",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/c32acfe7-0598-468b-873b-9e9e2911aeff/review-packet",
+      "admin_content_url": "/admin/content/c32acfe7-0598-468b-873b-9e9e2911aeff"
+    },
+    {
+      "id": "1b2d782d-992e-429d-bd89-4c3d630481c6",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000032: Locomotion in ctenophores, popularly called sea walnuts or comb jellies, is brought about by",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Ctenophora",
+      "concept": "Ctenophora Characters",
+      "concept_id": "bbf3b7d5-326f-5585-af65-d3eef5255345",
+      "difficulty": "easy",
+      "correct_option": "D",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/1b2d782d-992e-429d-bd89-4c3d630481c6/review-packet",
+      "admin_content_url": "/admin/content/1b2d782d-992e-429d-bd89-4c3d630481c6"
+    },
+    {
+      "id": "6d820765-dd91-4b02-a652-ec8d9c25f676",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000033: Phylum Ctenophora is characterised as",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Ctenophora",
+      "concept": "Ctenophora Characters",
+      "concept_id": "bbf3b7d5-326f-5585-af65-d3eef5255345",
+      "difficulty": "easy",
+      "correct_option": "A",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/6d820765-dd91-4b02-a652-ec8d9c25f676/review-packet",
+      "admin_content_url": "/admin/content/6d820765-dd91-4b02-a652-ec8d9c25f676"
+    },
+    {
+      "id": "639ea347-f748-4926-9a43-5a16fc07b1a3",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000034: Bioluminescence, defined as the property of a living organism to emit light, is well-marked in which phylum?",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Ctenophora",
+      "concept": "Ctenophora Characters",
+      "concept_id": "bbf3b7d5-326f-5585-af65-d3eef5255345",
+      "difficulty": "easy",
+      "correct_option": "B",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/639ea347-f748-4926-9a43-5a16fc07b1a3/review-packet",
+      "admin_content_url": "/admin/content/639ea347-f748-4926-9a43-5a16fc07b1a3"
+    },
+    {
+      "id": "d171b5d4-e992-4fbc-95c1-1f07a680ff6e",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000035: Which statement about reproduction in Pleurobrachia and Ctenoplana is correct?",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Ctenophora",
+      "concept": "Ctenophora Characters",
+      "concept_id": "bbf3b7d5-326f-5585-af65-d3eef5255345",
+      "difficulty": "medium",
+      "correct_option": "C",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/d171b5d4-e992-4fbc-95c1-1f07a680ff6e/review-packet",
+      "admin_content_url": "/admin/content/d171b5d4-e992-4fbc-95c1-1f07a680ff6e"
+    },
+    {
+      "id": "1a41d932-be17-4b3e-bc49-ad1d5fdae4e1",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000071: The name Echinodermata, meaning spiny bodied, refers to an endoskeleton made of",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Echinodermata",
+      "concept": "Echinodermata Characters",
+      "concept_id": "43f01406-4ec4-5c41-87b9-6eb97096417b",
+      "difficulty": "medium",
+      "correct_option": "C",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/1a41d932-be17-4b3e-bc49-ad1d5fdae4e1/review-packet",
+      "admin_content_url": "/admin/content/1a41d932-be17-4b3e-bc49-ad1d5fdae4e1"
+    },
+    {
+      "id": "d8ae237b-3b6d-41d2-bbc0-b031506ff9a2",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000072: A starfish moves over the sea floor, seizes and transports its food and also respires using a single distinctive system. Which system is this?",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Echinodermata",
+      "concept": "Echinodermata Characters",
+      "concept_id": "43f01406-4ec4-5c41-87b9-6eb97096417b",
+      "difficulty": "medium",
+      "correct_option": "D",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/d8ae237b-3b6d-41d2-bbc0-b031506ff9a2/review-packet",
+      "admin_content_url": "/admin/content/d8ae237b-3b6d-41d2-bbc0-b031506ff9a2"
+    },
+    {
+      "id": "dddb4764-1fea-4da7-89eb-f3aeef74c10b",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000073: How does symmetry differ between adult and larval echinoderms?",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Echinodermata",
+      "concept": "Echinodermata Characters",
+      "concept_id": "43f01406-4ec4-5c41-87b9-6eb97096417b",
+      "difficulty": "medium",
+      "correct_option": "A",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/dddb4764-1fea-4da7-89eb-f3aeef74c10b/review-packet",
+      "admin_content_url": "/admin/content/dddb4764-1fea-4da7-89eb-f3aeef74c10b"
+    },
+    {
+      "id": "0229062e-4174-4cd4-9bcc-111ea9f448ab",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000074: A water vascular system together with radial symmetry is the distinctive feature of which phylum?",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Echinodermata",
+      "concept": "Echinodermata Characters",
+      "concept_id": "43f01406-4ec4-5c41-87b9-6eb97096417b",
+      "difficulty": "easy",
+      "correct_option": "B",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/0229062e-4174-4cd4-9bcc-111ea9f448ab/review-packet",
+      "admin_content_url": "/admin/content/0229062e-4174-4cd4-9bcc-111ea9f448ab"
+    },
+    {
+      "id": "59eb95cb-fee8-4e52-a9ac-276e11f688b8",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000075: Which statement about the echinoderm digestive and excretory systems is correct?",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Echinodermata",
+      "concept": "Echinodermata Characters",
+      "concept_id": "43f01406-4ec4-5c41-87b9-6eb97096417b",
+      "difficulty": "medium",
+      "correct_option": "C",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/59eb95cb-fee8-4e52-a9ac-276e11f688b8/review-packet",
+      "admin_content_url": "/admin/content/59eb95cb-fee8-4e52-a9ac-276e11f688b8"
+    },
+    {
+      "id": "a90668d5-ee97-44ee-88d4-79c6b4eb6280",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000076: Which pairing of echinoderms with their common names is correct?",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Echinodermata",
+      "concept": "Echinodermata Examples",
+      "concept_id": "8bd9505e-d656-5dcc-aaac-f4e65d742d4d",
+      "difficulty": "easy",
+      "correct_option": "D",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/a90668d5-ee97-44ee-88d4-79c6b4eb6280/review-packet",
+      "admin_content_url": "/admin/content/a90668d5-ee97-44ee-88d4-79c6b4eb6280"
+    },
+    {
+      "id": "fe8911af-dcc2-4ac4-aac3-62d93bfd8fca",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000077: Hemichordates possess a rudimentary structure similar to a notochord in the collar region, called the",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Hemichordata",
+      "concept": "Hemichordata Characters and Examples",
+      "concept_id": "aab210c1-2c5e-5f57-94f1-9cda329f6fba",
+      "difficulty": "medium",
+      "correct_option": "A",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/fe8911af-dcc2-4ac4-aac3-62d93bfd8fca/review-packet",
+      "admin_content_url": "/admin/content/fe8911af-dcc2-4ac4-aac3-62d93bfd8fca"
+    },
+    {
+      "id": "5786bf1d-d27d-4a37-b7f9-9ec7387a0512",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000078: The cylindrical body of a hemichordate is composed of which three regions, in order?",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Hemichordata",
+      "concept": "Hemichordata Characters and Examples",
+      "concept_id": "aab210c1-2c5e-5f57-94f1-9cda329f6fba",
+      "difficulty": "easy",
+      "correct_option": "B",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/5786bf1d-d27d-4a37-b7f9-9ec7387a0512/review-packet",
+      "admin_content_url": "/admin/content/5786bf1d-d27d-4a37-b7f9-9ec7387a0512"
+    },
+    {
+      "id": "4877dfbf-e028-4c0e-aa18-b213049f2a39",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000079: Which combination is correct for hemichordates?",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Hemichordata",
+      "concept": "Hemichordata Characters and Examples",
+      "concept_id": "aab210c1-2c5e-5f57-94f1-9cda329f6fba",
+      "difficulty": "medium",
+      "correct_option": "C",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/4877dfbf-e028-4c0e-aa18-b213049f2a39/review-packet",
+      "admin_content_url": "/admin/content/4877dfbf-e028-4c0e-aa18-b213049f2a39"
+    },
+    {
+      "id": "f4e10cb8-2487-4a82-a1cb-a8e3c7297dc9",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000080: Which genera are given as examples of Hemichordata?",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Hemichordata",
+      "concept": "Hemichordata Characters and Examples",
+      "concept_id": "aab210c1-2c5e-5f57-94f1-9cda329f6fba",
+      "difficulty": "easy",
+      "correct_option": "D",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/f4e10cb8-2487-4a82-a1cb-a8e3c7297dc9/review-packet",
+      "admin_content_url": "/admin/content/f4e10cb8-2487-4a82-a1cb-a8e3c7297dc9"
+    },
+    {
+      "id": "86b1d57c-86b7-4ad4-a5cc-78911ff3607d",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000065: Which phylum is described as the second largest animal phylum?",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Mollusca",
+      "concept": "Mollusca Characters",
+      "concept_id": "1cef03cf-95c7-5b95-be26-301807f6ef38",
+      "difficulty": "easy",
+      "correct_option": "A",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/86b1d57c-86b7-4ad4-a5cc-78911ff3607d/review-packet",
+      "admin_content_url": "/admin/content/86b1d57c-86b7-4ad4-a5cc-78911ff3607d"
+    },
+    {
+      "id": "a21aa963-f1d5-4ffd-b50e-55afccef61e6",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000066: The mouth of a mollusc contains a file-like rasping organ used for feeding, called the",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Mollusca",
+      "concept": "Mollusca Characters",
+      "concept_id": "1cef03cf-95c7-5b95-be26-301807f6ef38",
+      "difficulty": "easy",
+      "correct_option": "B",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/a21aa963-f1d5-4ffd-b50e-55afccef61e6/review-packet",
+      "admin_content_url": "/admin/content/a21aa963-f1d5-4ffd-b50e-55afccef61e6"
+    },
+    {
+      "id": "6a6f342a-3af0-4201-814f-668976528b1a",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000067: Which description of the molluscan body is correct?",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Mollusca",
+      "concept": "Mollusca Characters",
+      "concept_id": "1cef03cf-95c7-5b95-be26-301807f6ef38",
+      "difficulty": "medium",
+      "correct_option": "C",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/6a6f342a-3af0-4201-814f-668976528b1a/review-packet",
+      "admin_content_url": "/admin/content/6a6f342a-3af0-4201-814f-668976528b1a"
+    },
+    {
+      "id": "d5e9c8f6-b901-473b-a9da-0de5cdea98c6",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000068: In molluscs, the space between the visceral hump and the soft spongy layer of skin covering it is called the mantle cavity, and it houses",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Mollusca",
+      "concept": "Mollusca Characters",
+      "concept_id": "1cef03cf-95c7-5b95-be26-301807f6ef38",
+      "difficulty": "medium",
+      "correct_option": "D",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/d5e9c8f6-b901-473b-a9da-0de5cdea98c6/review-packet",
+      "admin_content_url": "/admin/content/d5e9c8f6-b901-473b-a9da-0de5cdea98c6"
+    },
+    {
+      "id": "56bc9beb-d49d-4626-9f51-a40b6101c95a",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000069: Which pairing of molluscs with their common names is correct?",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Mollusca",
+      "concept": "Mollusca Examples",
+      "concept_id": "037c5ba2-6b98-5870-a6b8-a0cc0f610a3b",
+      "difficulty": "easy",
+      "correct_option": "A",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/56bc9beb-d49d-4626-9f51-a40b6101c95a/review-packet",
+      "admin_content_url": "/admin/content/56bc9beb-d49d-4626-9f51-a40b6101c95a"
+    },
+    {
+      "id": "c2e33da5-62f4-44f4-a9b2-b5f4af9f484e",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000070: Which set of statements about molluscs is correct?",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Mollusca",
+      "concept": "Mollusca Characters",
+      "concept_id": "1cef03cf-95c7-5b95-be26-301807f6ef38",
+      "difficulty": "medium",
+      "correct_option": "B",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/c2e33da5-62f4-44f4-a9b2-b5f4af9f484e/review-packet",
+      "admin_content_url": "/admin/content/c2e33da5-62f4-44f4-a9b2-b5f4af9f484e"
+    },
+    {
+      "id": "8db8b591-0911-4efd-bbd1-e2a5a46bacad",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000036: Platyhelminths are called flatworms because their body is",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Platyhelminthes",
+      "concept": "Platyhelminthes Characters",
+      "concept_id": "d4d6d47c-0125-5df4-986c-e6035b475626",
+      "difficulty": "easy",
+      "correct_option": "D",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/8db8b591-0911-4efd-bbd1-e2a5a46bacad/review-packet",
+      "admin_content_url": "/admin/content/8db8b591-0911-4efd-bbd1-e2a5a46bacad"
+    },
+    {
+      "id": "26f1408c-2df7-4326-8600-4977e765f1e6",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000037: Flatworms are correctly described as",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Platyhelminthes",
+      "concept": "Platyhelminthes Characters",
+      "concept_id": "d4d6d47c-0125-5df4-986c-e6035b475626",
+      "difficulty": "easy",
+      "correct_option": "A",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/26f1408c-2df7-4326-8600-4977e765f1e6/review-packet",
+      "admin_content_url": "/admin/content/26f1408c-2df7-4326-8600-4977e765f1e6"
+    },
+    {
+      "id": "1d243fa1-4058-4575-ab1c-5ecdcd173702",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000038: Which structures are present in the parasitic forms of Platyhelminthes?",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Platyhelminthes",
+      "concept": "Platyhelminthes Characters",
+      "concept_id": "d4d6d47c-0125-5df4-986c-e6035b475626",
+      "difficulty": "medium",
+      "correct_option": "B",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/1d243fa1-4058-4575-ab1c-5ecdcd173702/review-packet",
+      "admin_content_url": "/admin/content/1d243fa1-4058-4575-ab1c-5ecdcd173702"
+    },
+    {
+      "id": "37995b06-d455-46a2-9cd3-d2b49883b4a3",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000039: Some flatworms absorb nutrients from the host directly through their body surface. Which further statement about them holds?",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Platyhelminthes",
+      "concept": "Platyhelminthes Characters",
+      "concept_id": "d4d6d47c-0125-5df4-986c-e6035b475626",
+      "difficulty": "medium",
+      "correct_option": "C",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/37995b06-d455-46a2-9cd3-d2b49883b4a3/review-packet",
+      "admin_content_url": "/admin/content/37995b06-d455-46a2-9cd3-d2b49883b4a3"
+    },
+    {
+      "id": "e9835906-bf94-427d-bab0-e2237d845130",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000040: Which specialised cells carry out osmoregulation and excretion in flatworms?",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Platyhelminthes",
+      "concept": "Platyhelminthes Characters",
+      "concept_id": "d4d6d47c-0125-5df4-986c-e6035b475626",
+      "difficulty": "easy",
+      "correct_option": "D",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/e9835906-bf94-427d-bab0-e2237d845130/review-packet",
+      "admin_content_url": "/admin/content/e9835906-bf94-427d-bab0-e2237d845130"
+    },
+    {
+      "id": "87e13a8a-b8cf-4913-b1c3-b453b3493cd3",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000041: Which flatworm possesses a high regeneration capacity?",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Platyhelminthes",
+      "concept": "Platyhelminthes Characters",
+      "concept_id": "d4d6d47c-0125-5df4-986c-e6035b475626",
+      "difficulty": "easy",
+      "correct_option": "A",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/87e13a8a-b8cf-4913-b1c3-b453b3493cd3/review-packet",
+      "admin_content_url": "/admin/content/87e13a8a-b8cf-4913-b1c3-b453b3493cd3"
+    },
+    {
+      "id": "ada404f3-58ef-4145-807a-e2362908427d",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000042: Taenia and Fasciola are cited as flatworms; their common names are respectively",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Platyhelminthes",
+      "concept": "Platyhelminthes Examples",
+      "concept_id": "28645b8e-1773-5310-a75b-47914b05396c",
+      "difficulty": "medium",
+      "correct_option": "B",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/ada404f3-58ef-4145-807a-e2362908427d/review-packet",
+      "admin_content_url": "/admin/content/ada404f3-58ef-4145-807a-e2362908427d"
+    },
+    {
+      "id": "67f1b4ae-1eed-46f7-9200-ee478c7c6918",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000018: Members of phylum Porifera, commonly called sponges, are described as",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Porifera",
+      "concept": "Porifera Characters and Canal System",
+      "concept_id": "db2a08f2-a458-5def-8633-b6a40b6b567e",
+      "difficulty": "medium",
+      "correct_option": "B",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/67f1b4ae-1eed-46f7-9200-ee478c7c6918/review-packet",
+      "admin_content_url": "/admin/content/67f1b4ae-1eed-46f7-9200-ee478c7c6918"
+    },
+    {
+      "id": "258f57d1-8bee-4da2-8818-fb9d80822e81",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000019: Which sequence correctly traces water flow through a sponge?",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Porifera",
+      "concept": "Porifera Characters and Canal System",
+      "concept_id": "db2a08f2-a458-5def-8633-b6a40b6b567e",
+      "difficulty": "easy",
+      "correct_option": "C",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/258f57d1-8bee-4da2-8818-fb9d80822e81/review-packet",
+      "admin_content_url": "/admin/content/258f57d1-8bee-4da2-8818-fb9d80822e81"
+    },
+    {
+      "id": "00dbf482-f2ca-43c7-8027-4d7454fa06f9",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000020: A sponge fixed to a rock feeds, exchanges respiratory gases and removes waste without moving. Which arrangement makes this possible?",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Porifera",
+      "concept": "Porifera Characters and Canal System",
+      "concept_id": "db2a08f2-a458-5def-8633-b6a40b6b567e",
+      "difficulty": "medium",
+      "correct_option": "D",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/00dbf482-f2ca-43c7-8027-4d7454fa06f9/review-packet",
+      "admin_content_url": "/admin/content/00dbf482-f2ca-43c7-8027-4d7454fa06f9"
+    },
+    {
+      "id": "6db2fc66-32a6-49c3-8e27-2bcf7c3d0198",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000021: Which cells line the spongocoel and the canals of a sponge?",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Porifera",
+      "concept": "Porifera Characters and Canal System",
+      "concept_id": "db2a08f2-a458-5def-8633-b6a40b6b567e",
+      "difficulty": "medium",
+      "correct_option": "A",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/6db2fc66-32a6-49c3-8e27-2bcf7c3d0198/review-packet",
+      "admin_content_url": "/admin/content/6db2fc66-32a6-49c3-8e27-2bcf7c3d0198"
+    },
+    {
+      "id": "aaa47367-8354-488d-8c3a-c7fbd340f267",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000022: Which pairing of a sponge with its common name is correct?",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Porifera",
+      "concept": "Porifera Examples",
+      "concept_id": "e46a017a-af69-5d80-8492-631bb9c3930d",
+      "difficulty": "easy",
+      "correct_option": "B",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/aaa47367-8354-488d-8c3a-c7fbd340f267/review-packet",
+      "admin_content_url": "/admin/content/aaa47367-8354-488d-8c3a-c7fbd340f267"
+    },
+    {
+      "id": "e4fc614c-2101-4bfd-bb06-6d2fe88808a6",
+      "title": "GEMINI-20260912-BIO11-CH04-B001-000023: Which combination of statements about sponges is correct?",
+      "status": "IN_REVIEW",
+      "subject": "Zoology",
+      "class_level": "11",
+      "class_level_source": "academic.chapters.class_level",
+      "class_tag": "11",
+      "chapter": "Animal Kingdom",
+      "topic": "Porifera",
+      "concept": "Porifera Characters and Canal System",
+      "concept_id": "db2a08f2-a458-5def-8633-b6a40b6b567e",
+      "difficulty": "medium",
+      "correct_option": "C",
+      "option_count": 4,
+      "has_explanation": true,
+      "provenance": {
+        "model_used": "composer",
+        "knowledge_unit_id": null,
+        "has_lineage": true
+      },
+      "ncert": {
+        "verification_level": "NOT_VERIFIED",
+        "is_verified": false,
+        "has_structured_evidence": true,
+        "disclaimer": "Provenance/source fields are not NCERT certification. Only structured ncert_evidence / explicit certify-ncert counts. Do not invent NCERT verification."
+      },
+      "structural_valid": true,
+      "structural_issues": [],
+      "publication_eligible_now": false,
+      "publication_note": "IN_REVIEW cannot publish; requires APPROVED + explicit publish + gates.",
+      "prep_warnings": [
+        "MISSING_NCERT_EVIDENCE"
+      ],
+      "admin_queue_url": "/admin/ai-review?subject_name=Zoology&status=IN_REVIEW",
+      "review_packet_path": "/api/v1/cms/content-items/e4fc614c-2101-4bfd-bb06-6d2fe88808a6/review-packet",
+      "admin_content_url": "/admin/content/e4fc614c-2101-4bfd-bb06-6d2fe88808a6"
+    }
+  ],
+  "db_meta": {
+    "audit_target": "localhost:5432/trinetra_db",
+    "note": "Uses DATABASE_URL (live app). SELECT-only. No content mutation."
+  }
+}

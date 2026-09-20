@@ -1,0 +1,26 @@
+[
+  {
+    "fact_id": "ncert-fact-v1-9ae177c32481d48fd8ae8b0c7d0731874bcd21050fdcc54837065be99ac8d369",
+    "subject": "PHYSICS",
+    "chapter": "Work, Energy and Power",
+    "reason": "DUPLICATE_FACT_ID"
+  },
+  {
+    "fact_id": "ncert-fact-v1-aff9468da124b1f725ddb6771e648d3b0501aa5ba7835bc27864dfa06886deaf",
+    "subject": "CHEMISTRY",
+    "chapter": "Biomolecules",
+    "reason": "DUPLICATE_FACT_ID"
+  },
+  {
+    "fact_id": "ncert-fact-v1-9ef37aa06afeb7561af55fea8f090d33d315c750696b99445c56b24ec2512dc3",
+    "subject": "BOTANY",
+    "chapter": "Photosynthesis in Higher Plants",
+    "reason": "DUPLICATE_FACT_ID"
+  },
+  {
+    "fact_id": "ncert-fact-v1-74aa9f2bda045338f1b7e021b29e027a651e8b11c05f6d3457fb6fd22887eb05",
+    "subject": "ZOOLOGY",
+    "chapter": "Body Fluids and Circulation",
+    "reason": "DUPLICATE_FACT_ID"
+  }
+]

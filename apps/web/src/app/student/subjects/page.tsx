@@ -2,32 +2,57 @@
 
 import Link from "next/link";
 import { useQuery } from "@tanstack/react-query";
+import { BookOpen } from "lucide-react";
 
-import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  PageHeader,
+  StudentPage,
+  SubjectChip,
+  SurfaceCard,
+  SurfaceCardDescription,
+  SurfaceCardHeader,
+  SurfaceCardTitle,
+} from "@/components/ds";
+import { EmptyState } from "@/components/ui/empty-state";
+import { Skeleton } from "@/components/ui/skeleton";
 import { academicApi } from "@/features/academic/api";
 
 export default function SubjectsPage() {
   const { data: subjects, isLoading } = useQuery({ queryKey: ["academic", "subjects"], queryFn: academicApi.subjects });
 
-  if (isLoading) {
-    return <main className="flex-1 px-6 py-12 text-center text-sm text-muted-foreground">Loading…</main>;
-  }
-
   return (
-    <main className="flex-1 px-6 py-10">
-      <h1 className="mb-6 text-xl font-semibold">Subjects</h1>
-      <div className="grid gap-3 sm:grid-cols-2">
-        {subjects?.map((subject) => (
-          <Link key={subject.id} href={`/student/subjects/${subject.id}`}>
-            <Card className="transition-colors hover:bg-muted">
-              <CardHeader>
-                <CardTitle>{subject.name}</CardTitle>
-                <CardDescription>NEET</CardDescription>
-              </CardHeader>
-            </Card>
-          </Link>
-        ))}
-      </div>
-    </main>
+    <StudentPage width="lg">
+      <PageHeader
+        eyebrow="Curriculum"
+        title="Subjects"
+        description="Physics, Chemistry, and Biology — open a subject, then pick a chapter to practice."
+      />
+
+      {isLoading ? (
+        <div className="grid gap-3 sm:grid-cols-2" aria-busy="true" aria-live="polite">
+          <Skeleton className="h-24 w-full rounded-2xl" />
+          <Skeleton className="h-24 w-full rounded-2xl" />
+          <Skeleton className="h-24 w-full rounded-2xl" />
+        </div>
+      ) : !subjects?.length ? (
+        <EmptyState icon={BookOpen} title="No subjects yet" description="Subjects will appear once the academic catalog is seeded." />
+      ) : (
+        <div className="grid gap-3 sm:grid-cols-2">
+          {subjects.map((subject) => (
+            <Link key={subject.id} href={`/student/subjects/${subject.id}`} className="block">
+              <SurfaceCard subject={subject.name} accent="left" className="h-full">
+                <SurfaceCardHeader>
+                  <div className="flex items-center justify-between gap-2">
+                    <SurfaceCardTitle>{subject.name}</SurfaceCardTitle>
+                    <SubjectChip subject={subject.name} />
+                  </div>
+                  <SurfaceCardDescription>Browse chapters → practice concepts</SurfaceCardDescription>
+                </SurfaceCardHeader>
+              </SurfaceCard>
+            </Link>
+          ))}
+        </div>
+      )}
+    </StudentPage>
   );
 }

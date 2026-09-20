@@ -1,0 +1,741 @@
+{
+  "generated_at": "2026-09-13T11:04:41.304244+00:00",
+  "final_status": "YELLOW — PARTIALLY VERIFIED",
+  "owner_decisions": [
+    "Approved Rationalised Reprint 2026–27 under NCERT Books as curriculum baseline",
+    "Biology XII ownership mapping: NOT SUPPLIED (placeholder) — unresolved",
+    "Apply CF-C1 Chemistry XII scaffolding where absent; preserve Electrochemistry",
+    "Preserve legacy/aggregate taxonomy unless explicit mapping requires change",
+    "Do not modify 5,024 unmapped DRAFTs / PUBLISHED / IN_REVIEW / SUPERSEDED",
+    "Do not change ECAEP publication/safety rules"
+  ],
+  "ncert": {
+    "root": "D:\\ravishori\\AI Neet Exam App\\NCERT Books",
+    "root_ok": true,
+    "gravitation_pdf": {
+      "path": "Class 11/Physics/keph1dd/keph1dd/keph107.pdf",
+      "allowed": true,
+      "validated": true,
+      "error": null
+    },
+    "electrochemistry_pdf": {
+      "path": "Class 12/Chemistry 1/lech1dd/lech102.pdf",
+      "allowed": true,
+      "validated": true,
+      "error": null
+    }
+  },
+  "chemistry": {
+    "before_codes": [
+      "electrochemistry"
+    ],
+    "after_codes": [
+      "alcohols-phenols-and-ethers",
+      "aldehydes-ketones-and-carboxylic-acids",
+      "amines",
+      "biomolecules-chem",
+      "chemical-kinetics",
+      "coordination-compounds",
+      "d-and-f-block-elements",
+      "electrochemistry",
+      "haloalkanes-and-haloarenes",
+      "solutions"
+    ],
+    "electrochemistry_before": {
+      "code": "electrochemistry",
+      "name": "Electrochemistry",
+      "class_level": "12",
+      "topics": 3,
+      "concepts": 3
+    },
+    "electrochemistry_after": {
+      "code": "electrochemistry",
+      "name": "Electrochemistry",
+      "class_level": "12",
+      "topics": 3,
+      "concepts": 3
+    },
+    "cfc1_complete": true,
+    "apply": {
+      "already_existing": [
+        {
+          "code": "electrochemistry",
+          "name": "Electrochemistry",
+          "class_level": "12",
+          "note": "preserved; not modified"
+        }
+      ],
+      "applied_chapters": [
+        {
+          "code": "solutions",
+          "name": "Solutions",
+          "class_level": "12"
+        },
+        {
+          "code": "chemical-kinetics",
+          "name": "Chemical Kinetics",
+          "class_level": "12"
+        },
+        {
+          "code": "d-and-f-block-elements",
+          "name": "The d- and f-Block Elements",
+          "class_level": "12"
+        },
+        {
+          "code": "coordination-compounds",
+          "name": "Coordination Compounds",
+          "class_level": "12"
+        },
+        {
+          "code": "haloalkanes-and-haloarenes",
+          "name": "Haloalkanes and Haloarenes",
+          "class_level": "12"
+        },
+        {
+          "code": "alcohols-phenols-and-ethers",
+          "name": "Alcohols, Phenols and Ethers",
+          "class_level": "12"
+        },
+        {
+          "code": "aldehydes-ketones-and-carboxylic-acids",
+          "name": "Aldehydes, Ketones and Carboxylic Acids",
+          "class_level": "12"
+        },
+        {
+          "code": "amines",
+          "name": "Amines",
+          "class_level": "12"
+        },
+        {
+          "code": "biomolecules-chem",
+          "name": "Biomolecules",
+          "class_level": "12"
+        }
+      ],
+      "applied_topics": [
+        {
+          "chapter": "solutions",
+          "code": "types-and-concentration-of-solutions"
+        },
+        {
+          "chapter": "solutions",
+          "code": "raoults-law-and-vapour-pressure"
+        },
+        {
+          "chapter": "solutions",
+          "code": "colligative-properties"
+        },
+        {
+          "chapter": "chemical-kinetics",
+          "code": "rate-of-a-chemical-reaction"
+        },
+        {
+          "chapter": "chemical-kinetics",
+          "code": "rate-law-and-order-of-reaction"
+        },
+        {
+          "chapter": "chemical-kinetics",
+          "code": "temperature-dependence-of-rate"
+        },
+        {
+          "chapter": "d-and-f-block-elements",
+          "code": "position-and-electronic-configuration-dblock"
+        },
+        {
+          "chapter": "d-and-f-block-elements",
+          "code": "general-properties-transition-metals"
+        },
+        {
+          "chapter": "d-and-f-block-elements",
+          "code": "important-compounds-of-transition-metals"
+        },
+        {
+          "chapter": "d-and-f-block-elements",
+          "code": "lanthanoids-and-actinoids"
+        },
+        {
+          "chapter": "coordination-compounds",
+          "code": "werners-theory-and-terminology"
+        },
+        {
+          "chapter": "coordination-compounds",
+          "code": "nomenclature-of-coordination-compounds"
+        },
+        {
+          "chapter": "coordination-compounds",
+          "code": "isomerism-in-coordination-compounds"
+        },
+        {
+          "chapter": "coordination-compounds",
+          "code": "bonding-in-coordination-compounds"
+        },
+        {
+          "chapter": "haloalkanes-and-haloarenes",
+          "code": "classification-and-nomenclature-halides"
+        },
+        {
+          "chapter": "haloalkanes-and-haloarenes",
+          "code": "methods-of-preparation-haloalkanes"
+        },
+        {
+          "chapter": "haloalkanes-and-haloarenes",
+          "code": "substitution-and-elimination-reactions"
+        },
+        {
+          "chapter": "haloalkanes-and-haloarenes",
+          "code": "haloarenes-and-polyhalogen-compounds"
+        },
+        {
+          "chapter": "alcohols-phenols-and-ethers",
+          "code": "alcohols-classification-and-preparation"
+        },
+        {
+          "chapter": "alcohols-phenols-and-ethers",
+          "code": "physical-and-chemical-properties-of-alcohols"
+        },
+        {
+          "chapter": "alcohols-phenols-and-ethers",
+          "code": "phenols-preparation-and-reactions"
+        },
+        {
+          "chapter": "alcohols-phenols-and-ethers",
+          "code": "ethers-preparation-and-reactions"
+        },
+        {
+          "chapter": "aldehydes-ketones-and-carboxylic-acids",
+          "code": "nomenclature-and-structure-carbonyl"
+        },
+        {
+          "chapter": "aldehydes-ketones-and-carboxylic-acids",
+          "code": "preparation-of-aldehydes-and-ketones"
+        },
+        {
+          "chapter": "aldehydes-ketones-and-carboxylic-acids",
+          "code": "reactions-of-aldehydes-and-ketones"
+        },
+        {
+          "chapter": "aldehydes-ketones-and-carboxylic-acids",
+          "code": "carboxylic-acids-preparation-and-reactions"
+        },
+        {
+          "chapter": "amines",
+          "code": "structure-and-classification-of-amines"
+        },
+        {
+          "chapter": "amines",
+          "code": "preparation-and-basicity-of-amines"
+        },
+        {
+          "chapter": "amines",
+          "code": "chemical-reactions-of-amines"
+        },
+        {
+          "chapter": "amines",
+          "code": "diazonium-salts"
+        },
+        {
+          "chapter": "biomolecules-chem",
+          "code": "carbohydrates"
+        },
+        {
+          "chapter": "biomolecules-chem",
+          "code": "amino-acids-and-proteins"
+        },
+        {
+          "chapter": "biomolecules-chem",
+          "code": "nucleic-acids"
+        },
+        {
+          "chapter": "biomolecules-chem",
+          "code": "vitamins-and-hormones"
+        }
+      ],
+      "applied_concepts": [
+        {
+          "chapter": "solutions",
+          "topic": "types-and-concentration-of-solutions",
+          "code": "types-of-solutions"
+        },
+        {
+          "chapter": "solutions",
+          "topic": "types-and-concentration-of-solutions",
+          "code": "concentration-expressions"
+        },
+        {
+          "chapter": "solutions",
+          "topic": "raoults-law-and-vapour-pressure",
+          "code": "raoults-law"
+        },
+        {
+          "chapter": "solutions",
+          "topic": "raoults-law-and-vapour-pressure",
+          "code": "ideal-and-non-ideal-solutions"
+        },
+        {
+          "chapter": "solutions",
+          "topic": "colligative-properties",
+          "code": "boiling-and-freezing-point"
+        },
+        {
+          "chapter": "solutions",
+          "topic": "colligative-properties",
+          "code": "abnormal-molar-mass-vant-hoff"
+        },
+        {
+          "chapter": "chemical-kinetics",
+          "topic": "rate-of-a-chemical-reaction",
+          "code": "average-and-instantaneous-rate"
+        },
+        {
+          "chapter": "chemical-kinetics",
+          "topic": "rate-of-a-chemical-reaction",
+          "code": "factors-affecting-rate"
+        },
+        {
+          "chapter": "chemical-kinetics",
+          "topic": "rate-law-and-order-of-reaction",
+          "code": "rate-expression-and-rate-constant"
+        },
+        {
+          "chapter": "chemical-kinetics",
+          "topic": "rate-law-and-order-of-reaction",
+          "code": "integrated-rate-equations"
+        },
+        {
+          "chapter": "chemical-kinetics",
+          "topic": "temperature-dependence-of-rate",
+          "code": "arrhenius-equation"
+        },
+        {
+          "chapter": "chemical-kinetics",
+          "topic": "temperature-dependence-of-rate",
+          "code": "collision-theory"
+        },
+        {
+          "chapter": "d-and-f-block-elements",
+          "topic": "position-and-electronic-configuration-dblock",
+          "code": "transition-elements-electron-config"
+        },
+        {
+          "chapter": "d-and-f-block-elements",
+          "topic": "general-properties-transition-metals",
+          "code": "variable-oxidation-states"
+        },
+        {
+          "chapter": "d-and-f-block-elements",
+          "topic": "general-properties-transition-metals",
+          "code": "colour-magnetism-and-catalysis"
+        },
+        {
+          "chapter": "d-and-f-block-elements",
+          "topic": "important-compounds-of-transition-metals",
+          "code": "permanganate-and-dichromate"
+        },
+        {
+          "chapter": "d-and-f-block-elements",
+          "topic": "lanthanoids-and-actinoids",
+          "code": "lanthanoid-contraction"
+        },
+        {
+          "chapter": "d-and-f-block-elements",
+          "topic": "lanthanoids-and-actinoids",
+          "code": "actinoid-contraction-comparison"
+        },
+        {
+          "chapter": "coordination-compounds",
+          "topic": "werners-theory-and-terminology",
+          "code": "primary-and-secondary-valency"
+        },
+        {
+          "chapter": "coordination-compounds",
+          "topic": "werners-theory-and-terminology",
+          "code": "ligands-and-denticity"
+        },
+        {
+          "chapter": "coordination-compounds",
+          "topic": "nomenclature-of-coordination-compounds",
+          "code": "iupac-naming-rules"
+        },
+        {
+          "chapter": "coordination-compounds",
+          "topic": "isomerism-in-coordination-compounds",
+          "code": "structural-isomerism-complexes"
+        },
+        {
+          "chapter": "coordination-compounds",
+          "topic": "isomerism-in-coordination-compounds",
+          "code": "stereoisomerism-complexes"
+        },
+        {
+          "chapter": "coordination-compounds",
+          "topic": "bonding-in-coordination-compounds",
+          "code": "valence-bond-theory-complexes"
+        },
+        {
+          "chapter": "coordination-compounds",
+          "topic": "bonding-in-coordination-compounds",
+          "code": "crystal-field-theory"
+        },
+        {
+          "chapter": "haloalkanes-and-haloarenes",
+          "topic": "classification-and-nomenclature-halides",
+          "code": "primary-secondary-tertiary-halides"
+        },
+        {
+          "chapter": "haloalkanes-and-haloarenes",
+          "topic": "classification-and-nomenclature-halides",
+          "code": "iupac-nomenclature-halides"
+        },
+        {
+          "chapter": "haloalkanes-and-haloarenes",
+          "topic": "methods-of-preparation-haloalkanes",
+          "code": "preparation-from-alcohols"
+        },
+        {
+          "chapter": "haloalkanes-and-haloarenes",
+          "topic": "methods-of-preparation-haloalkanes",
+          "code": "preparation-from-hydrocarbons"
+        },
+        {
+          "chapter": "haloalkanes-and-haloarenes",
+          "topic": "substitution-and-elimination-reactions",
+          "code": "sn1-vs-sn2-mechanism"
+        },
+        {
+          "chapter": "haloalkanes-and-haloarenes",
+          "topic": "substitution-and-elimination-reactions",
+          "code": "e1-vs-e2-elimination"
+        },
+        {
+          "chapter": "haloalkanes-and-haloarenes",
+          "topic": "haloarenes-and-polyhalogen-compounds",
+          "code": "nucleophilic-substitution-in-haloarenes"
+        },
+        {
+          "chapter": "haloalkanes-and-haloarenes",
+          "topic": "haloarenes-and-polyhalogen-compounds",
+          "code": "common-polyhalogen-uses"
+        },
+        {
+          "chapter": "alcohols-phenols-and-ethers",
+          "topic": "alcohols-classification-and-preparation",
+          "code": "classification-of-alcohols"
+        },
+        {
+          "chapter": "alcohols-phenols-and-ethers",
+          "topic": "alcohols-classification-and-preparation",
+          "code": "preparation-of-alcohols"
+        },
+        {
+          "chapter": "alcohols-phenols-and-ethers",
+          "topic": "physical-and-chemical-properties-of-alcohols",
+          "code": "hydrogen-bonding-and-boiling-point"
+        },
+        {
+          "chapter": "alcohols-phenols-and-ethers",
+          "topic": "physical-and-chemical-properties-of-alcohols",
+          "code": "acidity-esterification-oxidation-alcohols"
+        },
+        {
+          "chapter": "alcohols-phenols-and-ethers",
+          "topic": "phenols-preparation-and-reactions",
+          "code": "industrial-preparation-of-phenol"
+        },
+        {
+          "chapter": "alcohols-phenols-and-ethers",
+          "topic": "phenols-preparation-and-reactions",
+          "code": "electrophilic-substitution-in-phenol"
+        },
+        {
+          "chapter": "alcohols-phenols-and-ethers",
+          "topic": "ethers-preparation-and-reactions",
+          "code": "williamson-ether-synthesis"
+        },
+        {
+          "chapter": "alcohols-phenols-and-ethers",
+          "topic": "ethers-preparation-and-reactions",
+          "code": "cleavage-of-ethers-by-hi"
+        },
+        {
+          "chapter": "aldehydes-ketones-and-carboxylic-acids",
+          "topic": "nomenclature-and-structure-carbonyl",
+          "code": "iupac-nomenclature-carbonyl"
+        },
+        {
+          "chapter": "aldehydes-ketones-and-carboxylic-acids",
+          "topic": "nomenclature-and-structure-carbonyl",
+          "code": "carbonyl-electronic-structure"
+        },
+        {
+          "chapter": "aldehydes-ketones-and-carboxylic-acids",
+          "topic": "preparation-of-aldehydes-and-ketones",
+          "code": "preparation-from-alcohols-hydrocarbons"
+        },
+        {
+          "chapter": "aldehydes-ketones-and-carboxylic-acids",
+          "topic": "reactions-of-aldehydes-and-ketones",
+          "code": "nucleophilic-addition-carbonyl"
+        },
+        {
+          "chapter": "aldehydes-ketones-and-carboxylic-acids",
+          "topic": "reactions-of-aldehydes-and-ketones",
+          "code": "aldol-cannizzaro-reactions"
+        },
+        {
+          "chapter": "aldehydes-ketones-and-carboxylic-acids",
+          "topic": "carboxylic-acids-preparation-and-reactions",
+          "code": "preparation-of-carboxylic-acids"
+        },
+        {
+          "chapter": "aldehydes-ketones-and-carboxylic-acids",
+          "topic": "carboxylic-acids-preparation-and-reactions",
+          "code": "acidity-and-reactions-of-carboxylic-acids"
+        },
+        {
+          "chapter": "amines",
+          "topic": "structure-and-classification-of-amines",
+          "code": "primary-secondary-tertiary-amines"
+        },
+        {
+          "chapter": "amines",
+          "topic": "structure-and-classification-of-amines",
+          "code": "nomenclature-of-amines"
+        },
+        {
+          "chapter": "amines",
+          "topic": "preparation-and-basicity-of-amines",
+          "code": "preparation-of-amines"
+        },
+        {
+          "chapter": "amines",
+          "topic": "preparation-and-basicity-of-amines",
+          "code": "basicity-of-amines"
+        },
+        {
+          "chapter": "amines",
+          "topic": "chemical-reactions-of-amines",
+          "code": "acylation-and-alkylation-amines"
+        },
+        {
+          "chapter": "amines",
+          "topic": "chemical-reactions-of-amines",
+          "code": "hinsberg-test"
+        },
+        {
+          "chapter": "amines",
+          "topic": "diazonium-salts",
+          "code": "preparation-of-diazonium-salts"
+        },
+        {
+          "chapter": "amines",
+          "topic": "diazonium-salts",
+          "code": "sandmeyer-and-coupling-reactions"
+        },
+        {
+          "chapter": "biomolecules-chem",
+          "topic": "carbohydrates",
+          "code": "classification-of-carbohydrates"
+        },
+        {
+          "chapter": "biomolecules-chem",
+          "topic": "carbohydrates",
+          "code": "structure-of-glucose-and-fructose"
+        },
+        {
+          "chapter": "biomolecules-chem",
+          "topic": "amino-acids-and-proteins",
+          "code": "classification-and-zwitterion"
+        },
+        {
+          "chapter": "biomolecules-chem",
+          "topic": "amino-acids-and-proteins",
+          "code": "protein-structure-levels"
+        },
+        {
+          "chapter": "biomolecules-chem",
+          "topic": "nucleic-acids",
+          "code": "dna-vs-rna"
+        },
+        {
+          "chapter": "biomolecules-chem",
+          "topic": "vitamins-and-hormones",
+          "code": "vitamin-classification"
+        }
+      ],
+      "skipped": [],
+      "errors": []
+    },
+    "idempotent_reapply": {
+      "applied_chapters": 0,
+      "applied_topics": 0,
+      "applied_concepts": 0
+    }
+  },
+  "biology": {
+    "mapping_supplied": false,
+    "unresolved": [
+      [
+        1,
+        "Sexual Reproduction in Flowering Plants"
+      ],
+      [
+        2,
+        "Human Reproduction"
+      ],
+      [
+        3,
+        "Reproductive Health"
+      ],
+      [
+        4,
+        "Principles of Inheritance and Variation"
+      ],
+      [
+        5,
+        "Molecular Basis of Inheritance"
+      ],
+      [
+        6,
+        "Evolution"
+      ],
+      [
+        7,
+        "Human Health and Disease"
+      ],
+      [
+        8,
+        "Microbes in Human Welfare"
+      ],
+      [
+        9,
+        "Biotechnology: Principles and Processes"
+      ],
+      [
+        10,
+        "Biotechnology and its Applications"
+      ],
+      [
+        11,
+        "Organisms and Populations"
+      ],
+      [
+        12,
+        "Ecosystem"
+      ],
+      [
+        13,
+        "Biodiversity and Conservation"
+      ]
+    ]
+  },
+  "physics": {
+    "gravitation_pdf_validated": true,
+    "gravitation_db": {
+      "code": "gravitation",
+      "name": "Gravitation",
+      "class_level": "11",
+      "topics": 0,
+      "concepts": 0
+    },
+    "aggregate_taxonomy_changed": false
+  },
+  "safety_before": {
+    "status": {
+      "DRAFT": 5298,
+      "PUBLISHED": 1479,
+      "SUPERSEDED": 6,
+      "IN_REVIEW": 111
+    },
+    "unmapped_draft": 5024,
+    "chapters": 36,
+    "topics": 125,
+    "concepts": 192,
+    "knowledge_units": 73,
+    "question_blueprints": 137,
+    "content_batches": 11,
+    "generation_jobs": 204,
+    "generation_runs": 204,
+    "generation_candidates": 392,
+    "chem12_codes": [
+      "electrochemistry"
+    ],
+    "electrochemistry": {
+      "code": "electrochemistry",
+      "name": "Electrochemistry",
+      "class_level": "12",
+      "topics": 3,
+      "concepts": 3
+    },
+    "gravitation_db": {
+      "code": "gravitation",
+      "name": "Gravitation",
+      "class_level": "11",
+      "topics": 0,
+      "concepts": 0
+    }
+  },
+  "safety_after": {
+    "status": {
+      "DRAFT": 5298,
+      "PUBLISHED": 1479,
+      "SUPERSEDED": 6,
+      "IN_REVIEW": 111
+    },
+    "unmapped_draft": 5024,
+    "chapters": 45,
+    "topics": 159,
+    "concepts": 254,
+    "knowledge_units": 73,
+    "question_blueprints": 137,
+    "content_batches": 11,
+    "generation_jobs": 204,
+    "generation_runs": 204,
+    "generation_candidates": 392,
+    "chem12_codes": [
+      "alcohols-phenols-and-ethers",
+      "aldehydes-ketones-and-carboxylic-acids",
+      "amines",
+      "biomolecules-chem",
+      "chemical-kinetics",
+      "coordination-compounds",
+      "d-and-f-block-elements",
+      "electrochemistry",
+      "haloalkanes-and-haloarenes",
+      "solutions"
+    ],
+    "electrochemistry": {
+      "code": "electrochemistry",
+      "name": "Electrochemistry",
+      "class_level": "12",
+      "topics": 3,
+      "concepts": 3
+    },
+    "gravitation_db": {
+      "code": "gravitation",
+      "name": "Gravitation",
+      "class_level": "11",
+      "topics": 0,
+      "concepts": 0
+    }
+  },
+  "content_safety_unchanged": true,
+  "skipped_items": [
+    "Biology XII Botany/Zoology ownership mapping was a placeholder — no taxonomy applied",
+    "No blueprints generated",
+    "No MCQs generated",
+    "Legacy aggregate Physics taxonomy (e.g. Kinematics) preserved",
+    "Full seed_academic() not run — surgical CF-C1 Chemistry XII only"
+  ],
+  "tests": {
+    "passed": 40,
+    "failed": 0,
+    "command": "pytest app/modules/ingestion/tests/test_ncert_canonical_source.py app/modules/academic/tests/test_cf_c1_chemistry_class_12.py app/modules/academic/tests/test_chapter_class_level.py -q",
+    "details": "40 passed; duplicate chapter codes=0; orphan topics/concepts=0; idempotent re-apply applied 0 chapters",
+    "integrity": {
+      "duplicate_chapter_codes": 0,
+      "orphan_topics": 0,
+      "orphan_concepts": 0,
+      "idempotent_second_apply_chapters": 0
+    }
+  }
+}

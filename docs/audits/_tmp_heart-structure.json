@@ -1,0 +1,58 @@
+{
+  "id": "dd7b5422-437d-4b0f-a2dc-f370ea0496c2",
+  "status": "DRAFT",
+  "subject": "Zoology",
+  "chapter": "Body Fluids and Circulation",
+  "topic": "Human Heart Anatomy",
+  "concept": "Structure of the Human Heart",
+  "concept_code": "heart-structure",
+  "blueprint_key": "production-seed-v1-2026-09-02-bp-zoology-02",
+  "difficulty": "easy",
+  "stem": "Which of the following heart valves is located between the right ventricle and the pulmonary artery, preventing the backflow of blood into the right ventricle during ventricular diastole?",
+  "options": [
+    {
+      "text": "Bicuspid valve",
+      "label": "A"
+    },
+    {
+      "text": "Tricuspid valve",
+      "label": "B"
+    },
+    {
+      "text": "Pulmonary semilunar valve",
+      "label": "C"
+    },
+    {
+      "text": "Aortic semilunar valve",
+      "label": "D"
+    }
+  ],
+  "correct_option": "C",
+  "explanation": "The pulmonary semilunar valve is situated at the opening between the right ventricle and the pulmonary artery. It opens during ventricular systole to allow blood flow into the pulmonary trunk and closes during ventricular diastole to prevent blood from flowing backward into the right ventricle. The bicuspid (mitral) valve guards the left atrioventricular opening, the tricuspid valve guards the right atrioventricular opening, and the aortic semilunar valve is located at the base of the aorta.",
+  "stem_fp": "b6b636a1508ee202",
+  "body_md5": "cf182df1ae1413286a1d811bf4ebdb7a",
+  "provider": "gemini",
+  "model": "gemini-3.6-flash",
+  "routing": "fixed:gemini",
+  "is_fallback": false,
+  "constraints": {
+    "reasoning": "anatomy_identify",
+    "seed_slot_id": "zoology-02",
+    "question_format": "MCQ_4",
+    "cognitive_operation": "Chamber/valve/vessel identification",
+    "forbidden_templates": [
+      "PHYS_STRETCH_20PCT_CURRENT",
+      "PHYS_STRETCH_2X_LENGTH_RATIO",
+      "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+      "CHEM_LATTICE_COMPARISON",
+      "CHEM_LATTICE_FACTORS",
+      "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+      "ZOO_ABO_SEQUENCE",
+      "ZOO_ABO_ANTIGEN_IDENTIFY"
+    ],
+    "correct_option_count": 1,
+    "explanation_required": true,
+    "avoid_paraphrase_duplicates": true,
+    "enforce_prior_stem_diversity": true
+  }
+}

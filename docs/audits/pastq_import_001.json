@@ -1,0 +1,98 @@
+{
+  "campaign": "PASTQ-IMPORT-001",
+  "generated_at": "2026-09-14T07:15:00+05:30",
+  "final_verdict": "YELLOW",
+  "states": {
+    "IMPLEMENTED": true,
+    "TESTED": true,
+    "PILOT_IMPORTED": true,
+    "FULLY_IMPORTED": false,
+    "VERIFIED_FULL_CORPUS": false
+  },
+  "source_root": "D:\\ravishori\\AI Neet Exam App\\PastQuestionPapers",
+  "source_files_modified": false,
+  "ncert_contaminated": false,
+  "auto_published": false,
+  "summary": {
+    "files_discovered": 15,
+    "files_readable": 15,
+    "files_failed": 0,
+    "papers_detected": 14,
+    "papers_requiring_review": 2,
+    "questions_extracted": 1066,
+    "questions_valid": 783,
+    "questions_invalid": 283,
+    "questions_requiring_review": 1314,
+    "questions_ready_for_import": 20,
+    "answers_detected": 169,
+    "answer_conflicts": 0,
+    "visual_questions": 102,
+    "duplicates": {
+      "UNIQUE": 981,
+      "DUPLICATE_WITHIN_IMPORT": 85,
+      "POTENTIAL_DUPLICATE": 0,
+      "DUPLICATE_EXISTING": 0
+    },
+    "years_detected": [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2026],
+    "subjects_detected": [],
+    "scanned_ocr_required_files": [
+      "NEET2015.pdf",
+      "NEET2017.pdf",
+      "NEET2021.pdf",
+      "Neet2022.pdf",
+      "NEET2026-11.pdf",
+      "Neet2026-12.pdf",
+      "RENeet2026.pdf"
+    ]
+  },
+  "database": {
+    "pilot_drafts_created_tagged_pastq": 10,
+    "PUBLISHED": 1479,
+    "IN_REVIEW": 111,
+    "SUPERSEDED": 6,
+    "DRAFT_total_questions": 5444,
+    "unmapped_draft_null_concept": 5034,
+    "unmapped_note": "Baseline was 5024; +10 new pastq pilot DRAFTs with concept_id NULL. Existing 5024 rows not mutated.",
+    "published_unchanged": true,
+    "in_review_unchanged": true,
+    "idempotent_reimport": "already_exists (fixed after initial double-pilot)"
+  },
+  "provenance": {
+    "origin": "past_question_paper",
+    "ncert_derived": false,
+    "ncert_evidence": null,
+    "tags": [
+      "ecaep:intake-draft-only",
+      "origin:past-question-paper",
+      "not-ncert-derived",
+      "import:pastq-001"
+    ]
+  },
+  "tests": {
+    "file": "apps/backend/tests/test_pastq_import_001.py",
+    "passed": 13,
+    "failed": 0
+  },
+  "commands": [
+    "python -m app.modules.cms.acquisition.pastq.cli --dry-run",
+    "python -m app.modules.cms.acquisition.pastq.cli --import --pilot --limit 5",
+    "python -m pytest tests/test_pastq_import_001.py -q"
+  ],
+  "staging_dir": "data/staging/pastq_import_001",
+  "reports": [
+    "docs/audits/pastq_import_001_source_inventory.md",
+    "docs/audits/pastq_import_001_source_inventory.json",
+    "docs/audits/pastq_import_001.md",
+    "docs/audits/pastq_import_001.json"
+  ],
+  "limitations": [
+    "7/15 PDFs scanned/empty text require OCR before reliable extraction",
+    "Only 20 questions ready for CMS import (answer + four options required by schema)",
+    "No automatic chapter/topic/concept mapping",
+    "NEET2026.pdf year conflict with text NEET (UG)-2025",
+    "Full 2015-2026 collection not imported"
+  ],
+  "next_step": "OCR scanned PDFs into staging; improve answer-key association; another small pilot only — no bulk import yet",
+  "commit": false,
+  "push": false
+}

@@ -1,0 +1,2308 @@
+{
+  "task": "NCERT-EVIDENCE-WRITE-002",
+  "generated_at": "2026-09-14T06:40:44.563746+00:00",
+  "input_review": "D:\\ravishori\\AI Neet Exam App\\docs\\audits\\ncert_evidence_write_review_001.json",
+  "target_count": 14,
+  "target_ids": [
+    "0b1c8f98-35eb-43f7-bb8e-2398c4a46de5",
+    "106e56f4-a1f0-49c0-9485-78c50c819776",
+    "327ca1ed-12db-44d0-8e6d-176918a344e8",
+    "38772f04-ac54-4b76-8bcc-7fc4ff22bed5",
+    "3c8f1b03-ac22-4b16-80c3-8e5e63473dba",
+    "4d923ceb-e65c-47ff-b6b0-c18efb4f7534",
+    "660f336a-d767-404e-bb69-88f675803c88",
+    "77576605-f3d4-420b-9faf-15a47d8cd48c",
+    "937515bc-264c-455b-8ab7-1e782159abb3",
+    "b23de1f1-1d95-452f-9ff9-d0f6d93ccf86",
+    "dc569dd4-30d6-46c2-acb1-25dec036b15d",
+    "e8721ebe-9c1d-4e9b-ad51-f6a65a8adaff",
+    "f0c87b9d-4159-4346-aab6-fc859a17c8cb",
+    "fc3eac99-b5fc-45f2-a29f-31ea072da557"
+  ],
+  "ncert_derived_written": false,
+  "ncert_derived_required": false,
+  "database_before": {
+    "chapters": 56,
+    "topics": 192,
+    "concepts": 318,
+    "kus": 381,
+    "blueprints": 445,
+    "status": {
+      "DRAFT": 5444,
+      "PUBLISHED": 1479,
+      "SUPERSEDED": 6,
+      "IN_REVIEW": 111
+    },
+    "unmapped_draft": 5034,
+    "candidates": 995,
+    "jobs": 751,
+    "runs": 751,
+    "populations": {
+      "CANONICAL_NCERT": 322,
+      "SOURCE_MISSING": 23,
+      "LEGACY_STUDYMATERIAL": 100
+    },
+    "syllabus_gate": {
+      "IN_SYLLABUS": 197,
+      "SYLLABUS_MAPPING_REVIEW_REQUIRED": 248
+    }
+  },
+  "database_after": {
+    "chapters": 56,
+    "topics": 192,
+    "concepts": 318,
+    "kus": 381,
+    "blueprints": 445,
+    "status": {
+      "DRAFT": 5444,
+      "PUBLISHED": 1479,
+      "SUPERSEDED": 6,
+      "IN_REVIEW": 111
+    },
+    "unmapped_draft": 5034,
+    "candidates": 995,
+    "jobs": 751,
+    "runs": 751,
+    "populations": {
+      "CANONICAL_NCERT": 322,
+      "SOURCE_MISSING": 23,
+      "LEGACY_STUDYMATERIAL": 100
+    },
+    "syllabus_gate": {
+      "IN_SYLLABUS": 197,
+      "SYLLABUS_MAPPING_REVIEW_REQUIRED": 248
+    }
+  },
+  "database_unchanged": true,
+  "population_shift": {
+    "before": {
+      "CANONICAL_NCERT": 322,
+      "SOURCE_MISSING": 23,
+      "LEGACY_STUDYMATERIAL": 100
+    },
+    "after": {
+      "CANONICAL_NCERT": 322,
+      "SOURCE_MISSING": 23,
+      "LEGACY_STUDYMATERIAL": 100
+    }
+  },
+  "before_constraints_snapshot": {
+    "660f336a-d767-404e-bb69-88f675803c88": {
+      "ku_id": "82c052c6-241c-4e53-890f-bcc582ac77e4",
+      "reasoning": "ncert_fact",
+      "neet_ug_2026": {
+        "topic": "Photosynthesis: Photosynthesis as a means of Autotrophic nutrition; Site of photosynthesis take place; pigments involved in Photosynthesis (Elementary idea); Photochemical and biosynthetic phases of photosynthesis; Cyclic and non-cyclic photophosphorylation; Chemiosmotic hypothesis; Photorespiration C3 and C4 pathways; Factors affecting photosynthesis.",
+        "subject": "BIOLOGY",
+        "topic_id": "BIOLOGY:U04:T01",
+        "unit_name": "Plant Physiology",
+        "applied_by": "SYLLABUS-MAPPING-REMEDIATION-002",
+        "unit_number": 4,
+        "syllabus_sha256": "82a616e31ba75d6e5d6422537c8ef5a4ceafb7a7e3449109696b12839b100ceb",
+        "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+      },
+      "question_format": "MCQ_4",
+      "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo111.pdf",
+      "correct_option_count": 1,
+      "explanation_required": true,
+      "ncert_source_relative": "Class 11/Biology/kebo1dd/kebo111.pdf",
+      "avoid_paraphrase_duplicates": true
+    },
+    "3c8f1b03-ac22-4b16-80c3-8e5e63473dba": {
+      "ku_id": "3a3b9d1e-6ad4-43d9-9a5f-fd10d978913c",
+      "reasoning": "direct_concept",
+      "neet_ug_2026": {
+        "topic": "Electric current. Drift velocity, mobility and their relation with electric current. Ohm's law. Electrical resistance. V-I characteristics of Ohmic and non-ohmic conductors. Electrical energy and power. Electrical resistivity and conductivity. Series and parallel combinations of resistors; Temperature dependence of resistance.",
+        "subject": "PHYSICS",
+        "topic_id": "PHYSICS:U12:T01",
+        "unit_name": "CURRENT ELECTRICITY",
+        "applied_by": "SYLLABUS-MAPPING-REMEDIATION-002",
+        "unit_number": 12,
+        "syllabus_sha256": "82a616e31ba75d6e5d6422537c8ef5a4ceafb7a7e3449109696b12839b100ceb",
+        "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+      },
+      "question_format": "MCQ_4",
+      "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Physics\\leph1dd\\leph103.pdf",
+      "correct_option_count": 1,
+      "explanation_required": true,
+      "ncert_source_relative": "Class 12/Physics/leph1dd/leph103.pdf",
+      "avoid_paraphrase_duplicates": true
+    },
+    "77576605-f3d4-420b-9faf-15a47d8cd48c": {
+      "ku_id": "3a3b9d1e-6ad4-43d9-9a5f-fd10d978913c",
+      "reasoning": "formula_application",
+      "neet_ug_2026": {
+        "topic": "Electric current. Drift velocity, mobility and their relation with electric current. Ohm's law. Electrical resistance. V-I characteristics of Ohmic and non-ohmic conductors. Electrical energy and power. Electrical resistivity and conductivity. Series and parallel combinations of resistors; Temperature dependence of resistance.",
+        "subject": "PHYSICS",
+        "topic_id": "PHYSICS:U12:T01",
+        "unit_name": "CURRENT ELECTRICITY",
+        "applied_by": "SYLLABUS-MAPPING-REMEDIATION-002",
+        "unit_number": 12,
+        "syllabus_sha256": "82a616e31ba75d6e5d6422537c8ef5a4ceafb7a7e3449109696b12839b100ceb",
+        "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+      },
+      "question_format": "MCQ_4",
+      "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Physics\\leph1dd\\leph103.pdf",
+      "correct_option_count": 1,
+      "explanation_required": true,
+      "ncert_source_relative": "Class 12/Physics/leph1dd/leph103.pdf",
+      "avoid_paraphrase_duplicates": true
+    },
+    "b23de1f1-1d95-452f-9ff9-d0f6d93ccf86": {
+      "ku_id": "6c880e32-1670-4ca4-a859-7ed46b78d90c",
+      "reasoning": "process_consequence",
+      "neet_ug_2026": {
+        "topic": "Photosynthesis: Photosynthesis as a means of Autotrophic nutrition; Site of photosynthesis take place; pigments involved in Photosynthesis (Elementary idea); Photochemical and biosynthetic phases of photosynthesis; Cyclic and non-cyclic photophosphorylation; Chemiosmotic hypothesis; Photorespiration C3 and C4 pathways; Factors affecting photosynthesis.",
+        "subject": "BIOLOGY",
+        "topic_id": "BIOLOGY:U04:T01",
+        "unit_name": "Plant Physiology",
+        "applied_by": "SYLLABUS-MAPPING-REMEDIATION-002",
+        "unit_number": 4,
+        "syllabus_sha256": "82a616e31ba75d6e5d6422537c8ef5a4ceafb7a7e3449109696b12839b100ceb",
+        "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+      },
+      "seed_slot_id": "botany-02",
+      "question_format": "MCQ_4",
+      "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo111.pdf",
+      "cognitive_operation": "Photorespiration wastefulness in C3",
+      "forbidden_templates": [
+        "PHYS_STRETCH_20PCT_CURRENT",
+        "PHYS_STRETCH_2X_LENGTH_RATIO",
+        "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+        "CHEM_LATTICE_COMPARISON",
+        "CHEM_LATTICE_FACTORS",
+        "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+        "ZOO_ABO_SEQUENCE",
+        "ZOO_ABO_ANTIGEN_IDENTIFY"
+      ],
+      "correct_option_count": 1,
+      "explanation_required": true,
+      "ncert_source_relative": "Class 11/Biology/kebo1dd/kebo111.pdf",
+      "avoid_paraphrase_duplicates": true,
+      "enforce_prior_stem_diversity": true
+    },
+    "dc569dd4-30d6-46c2-acb1-25dec036b15d": {
+      "ku_id": "8a87626e-ef07-43f0-a452-542e13cbec30",
+      "reasoning": "blackman_law",
+      "neet_ug_2026": {
+        "topic": "Photosynthesis: Photosynthesis as a means of Autotrophic nutrition; Site of photosynthesis take place; pigments involved in Photosynthesis (Elementary idea); Photochemical and biosynthetic phases of photosynthesis; Cyclic and non-cyclic photophosphorylation; Chemiosmotic hypothesis; Photorespiration C3 and C4 pathways; Factors affecting photosynthesis.",
+        "subject": "BIOLOGY",
+        "topic_id": "BIOLOGY:U04:T01",
+        "unit_name": "Plant Physiology",
+        "applied_by": "SYLLABUS-MAPPING-REMEDIATION-002",
+        "unit_number": 4,
+        "syllabus_sha256": "82a616e31ba75d6e5d6422537c8ef5a4ceafb7a7e3449109696b12839b100ceb",
+        "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+      },
+      "seed_slot_id": "botany-03",
+      "question_format": "MCQ_4",
+      "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo111.pdf",
+      "cognitive_operation": "Blackman's law of limiting factors",
+      "forbidden_templates": [
+        "PHYS_STRETCH_20PCT_CURRENT",
+        "PHYS_STRETCH_2X_LENGTH_RATIO",
+        "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+        "CHEM_LATTICE_COMPARISON",
+        "CHEM_LATTICE_FACTORS",
+        "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+        "ZOO_ABO_SEQUENCE",
+        "ZOO_ABO_ANTIGEN_IDENTIFY"
+      ],
+      "correct_option_count": 1,
+      "explanation_required": true,
+      "ncert_source_relative": "Class 11/Biology/kebo1dd/kebo111.pdf",
+      "avoid_paraphrase_duplicates": true,
+      "enforce_prior_stem_diversity": true
+    },
+    "f0c87b9d-4159-4346-aab6-fc859a17c8cb": {
+      "ku_id": "1cd86db0-ee03-4bff-9c85-ef8502858847",
+      "reasoning": "kc_kp_meaning",
+      "neet_ug_2026": {
+        "topic": "Equilibrium involving chemical processes: Law of chemical equilibrium, equilibrium constants ($K_p$ and $K_c$) and their significance, the significance of $\\Delta G$ and $\\Delta G^\\circ$ in chemical equilibrium, factors affecting equilibrium concentration, pressure, temperature, the effect of catalyst; Le Chatelier's principle.",
+        "subject": "CHEMISTRY",
+        "topic_id": "CHEMISTRY:U06:T03",
+        "unit_name": "EQUILIBRIUM",
+        "applied_by": "SYLLABUS-MAPPING-REMEDIATION-002",
+        "unit_number": 6,
+        "syllabus_sha256": "82a616e31ba75d6e5d6422537c8ef5a4ceafb7a7e3449109696b12839b100ceb",
+        "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+      },
+      "seed_slot_id": "chemistry-03",
+      "question_format": "MCQ_4",
+      "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Chemistry\\kech1dd\\kech1dd\\kech106.pdf",
+      "cognitive_operation": "Meaning of Kc/Kp",
+      "forbidden_templates": [
+        "PHYS_STRETCH_20PCT_CURRENT",
+        "PHYS_STRETCH_2X_LENGTH_RATIO",
+        "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+        "CHEM_LATTICE_COMPARISON",
+        "CHEM_LATTICE_FACTORS",
+        "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+        "ZOO_ABO_SEQUENCE",
+        "ZOO_ABO_ANTIGEN_IDENTIFY"
+      ],
+      "correct_option_count": 1,
+      "explanation_required": true,
+      "ncert_source_relative": "Class 11/Chemistry/kech1dd/kech1dd/kech106.pdf",
+      "avoid_paraphrase_duplicates": true,
+      "enforce_prior_stem_diversity": true
+    },
+    "e8721ebe-9c1d-4e9b-ad51-f6a65a8adaff": {
+      "ku_id": "5c0ddbff-12ce-42dc-9888-62f890e8287a",
+      "reasoning": "series_traits",
+      "neet_ug_2026": {
+        "topic": "Tetravalency of carbon: Shapes of simple molecules - hybridization (s and p): Classification of organic compounds based on functional groups: and those containing halogens, oxygen, nitrogen, and sulphur; Homologous series: Isomerism - structural and stereoisomerism. Nomenclature (Trivial and IUPAC)",
+        "subject": "CHEMISTRY",
+        "topic_id": "CHEMISTRY:U14:T01",
+        "unit_name": "SOME BASIC PRINCIPLES OF ORGANIC CHEMISTRY",
+        "applied_by": "SYLLABUS-MAPPING-REMEDIATION-002",
+        "unit_number": 14,
+        "syllabus_sha256": "82a616e31ba75d6e5d6422537c8ef5a4ceafb7a7e3449109696b12839b100ceb",
+        "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+      },
+      "seed_slot_id": "chemistry-08",
+      "question_format": "MCQ_4",
+      "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Chemistry\\kech2dd\\kech202.pdf",
+      "cognitive_operation": "Homologous series general formula/traits",
+      "forbidden_templates": [
+        "PHYS_STRETCH_20PCT_CURRENT",
+        "PHYS_STRETCH_2X_LENGTH_RATIO",
+        "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+        "CHEM_LATTICE_COMPARISON",
+        "CHEM_LATTICE_FACTORS",
+        "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+        "ZOO_ABO_SEQUENCE",
+        "ZOO_ABO_ANTIGEN_IDENTIFY"
+      ],
+      "correct_option_count": 1,
+      "explanation_required": true,
+      "ncert_source_relative": "Class 11/Chemistry/kech2dd/kech202.pdf",
+      "avoid_paraphrase_duplicates": true,
+      "enforce_prior_stem_diversity": true
+    },
+    "106e56f4-a1f0-49c0-9485-78c50c819776": {
+      "ku_id": "9152da9b-021e-4001-91e3-f46492a32a3a",
+      "reasoning": "numerical_application",
+      "neet_ug_2026": {
+        "topic": "The frame of reference, motion in a straight line, Position-time graph, speed and velocity; Uniform and non-uniform motion, average speed and instantaneous velocity, uniformly accelerated motion, velocity-time, position-time graph, relations for uniformly accelerated motion, Scalars and Vectors, Vector Addition and subtraction, scalar and vector products, Unit Vector, Resolution of a Vector. Relative Velocity, Motion in a plane, Projectile Motion, Uniform Circular Motion.",
+        "subject": "PHYSICS",
+        "topic_id": "PHYSICS:U02:T01",
+        "unit_name": "KINEMATICS",
+        "applied_by": "SYLLABUS-MAPPING-REMEDIATION-002",
+        "unit_number": 2,
+        "syllabus_sha256": "82a616e31ba75d6e5d6422537c8ef5a4ceafb7a7e3449109696b12839b100ceb",
+        "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+      },
+      "seed_slot_id": "physics-02",
+      "question_format": "MCQ_4",
+      "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph1dd\\keph1dd\\keph102.pdf",
+      "cognitive_operation": "Apply v = u + at / s = ut + ½at²",
+      "forbidden_templates": [
+        "PHYS_STRETCH_20PCT_CURRENT",
+        "PHYS_STRETCH_2X_LENGTH_RATIO",
+        "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+        "CHEM_LATTICE_COMPARISON",
+        "CHEM_LATTICE_FACTORS",
+        "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+        "ZOO_ABO_SEQUENCE",
+        "ZOO_ABO_ANTIGEN_IDENTIFY"
+      ],
+      "correct_option_count": 1,
+      "explanation_required": true,
+      "ncert_source_relative": "Class 11/Physics/keph1dd/keph1dd/keph102.pdf",
+      "avoid_paraphrase_duplicates": true,
+      "enforce_prior_stem_diversity": true
+    },
+    "937515bc-264c-455b-8ab7-1e782159abb3": {
+      "ku_id": "c07d949b-1467-4e98-bfb4-71692addf7da",
+      "reasoning": "conceptual_law",
+      "neet_ug_2026": {
+        "topic": "Viscosity. Stokes' law. terminal velocity, streamline, and turbulent flow. critical velocity. Bernoulli's principle and its applications.",
+        "subject": "PHYSICS",
+        "topic_id": "PHYSICS:U07:T02",
+        "unit_name": "PROPERTIES OF SOLIDS AND LIQUIDS",
+        "applied_by": "SYLLABUS-MAPPING-REMEDIATION-002",
+        "unit_number": 7,
+        "syllabus_sha256": "82a616e31ba75d6e5d6422537c8ef5a4ceafb7a7e3449109696b12839b100ceb",
+        "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+      },
+      "seed_slot_id": "physics-06",
+      "question_format": "MCQ_4",
+      "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph2dd\\keph2dd\\keph202.pdf",
+      "cognitive_operation": "Bernoulli along a streamline",
+      "forbidden_templates": [
+        "PHYS_STRETCH_20PCT_CURRENT",
+        "PHYS_STRETCH_2X_LENGTH_RATIO",
+        "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+        "CHEM_LATTICE_COMPARISON",
+        "CHEM_LATTICE_FACTORS",
+        "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+        "ZOO_ABO_SEQUENCE",
+        "ZOO_ABO_ANTIGEN_IDENTIFY"
+      ],
+      "correct_option_count": 1,
+      "explanation_required": true,
+      "ncert_source_relative": "Class 11/Physics/keph2dd/keph2dd/keph202.pdf",
+      "avoid_paraphrase_duplicates": true,
+      "enforce_prior_stem_diversity": true
+    },
+    "38772f04-ac54-4b76-8bcc-7fc4ff22bed5": {
+      "ku_id": "580c2809-8ada-4c9b-bf7d-52eafdbe5aa4",
+      "reasoning": "numerical_application",
+      "neet_ug_2026": {
+        "topic": "Reflection of light, spherical mirrors, mirror formula. Refraction of light at plane and spherical surfaces, thin lens formula and lens maker formula. Total internal reflection and its applications. Magnification. Power of a Lens. Combination of thin lenses in contact. Refraction of light through a prism. Microscope and Astronomical Telescope (reflecting and refracting) and their magnifying powers.",
+        "subject": "PHYSICS",
+        "topic_id": "PHYSICS:U16:T01",
+        "unit_name": "OPTICS",
+        "applied_by": "SYLLABUS-MAPPING-REMEDIATION-002",
+        "unit_number": 16,
+        "syllabus_sha256": "82a616e31ba75d6e5d6422537c8ef5a4ceafb7a7e3449109696b12839b100ceb",
+        "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+      },
+      "seed_slot_id": "physics-10",
+      "question_format": "MCQ_4",
+      "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Physics\\leph2dd\\leph201.pdf",
+      "cognitive_operation": "Thin lens formula 1/v − 1/u = 1/f",
+      "forbidden_templates": [
+        "PHYS_STRETCH_20PCT_CURRENT",
+        "PHYS_STRETCH_2X_LENGTH_RATIO",
+        "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+        "CHEM_LATTICE_COMPARISON",
+        "CHEM_LATTICE_FACTORS",
+        "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+        "ZOO_ABO_SEQUENCE",
+        "ZOO_ABO_ANTIGEN_IDENTIFY"
+      ],
+      "correct_option_count": 1,
+      "explanation_required": true,
+      "ncert_source_relative": "Class 12/Physics/leph2dd/leph201.pdf",
+      "avoid_paraphrase_duplicates": true,
+      "enforce_prior_stem_diversity": true
+    },
+    "fc3eac99-b5fc-45f2-a29f-31ea072da557": {
+      "ku_id": "0c70cdbf-f83c-4095-9195-a057da198f6d",
+      "reasoning": "process_sequence",
+      "neet_ug_2026": {
+        "topic": "Body fluids and circulation: Composition of blood, blood groups, coagulation of blood; Composition of lymph and its function; Human circulatory system-Structure of human heart and blood vessels; Cardiac cycle, cardiac output, ECG, Double circulation; Regulation of cardiac activity; Disorders of circulatory system-Hypertension, Coronary artery disease, Angina pectoris, Heart failure.",
+        "subject": "BIOLOGY",
+        "topic_id": "BIOLOGY:U05:T02",
+        "unit_name": "Human Physiology",
+        "applied_by": "SYLLABUS-MAPPING-REMEDIATION-002",
+        "unit_number": 5,
+        "syllabus_sha256": "82a616e31ba75d6e5d6422537c8ef5a4ceafb7a7e3449109696b12839b100ceb",
+        "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+      },
+      "seed_slot_id": "zoology-01",
+      "question_format": "MCQ_4",
+      "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo115.pdf",
+      "cognitive_operation": "Systole/diastole phase identification",
+      "forbidden_templates": [
+        "PHYS_STRETCH_20PCT_CURRENT",
+        "PHYS_STRETCH_2X_LENGTH_RATIO",
+        "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+        "CHEM_LATTICE_COMPARISON",
+        "CHEM_LATTICE_FACTORS",
+        "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+        "ZOO_ABO_SEQUENCE",
+        "ZOO_ABO_ANTIGEN_IDENTIFY"
+      ],
+      "correct_option_count": 1,
+      "explanation_required": true,
+      "ncert_source_relative": "Class 11/Biology/kebo1dd/kebo115.pdf",
+      "avoid_paraphrase_duplicates": true,
+      "enforce_prior_stem_diversity": true
+    },
+    "0b1c8f98-35eb-43f7-bb8e-2398c4a46de5": {
+      "ku_id": "9d44a34b-502a-4c6f-b6ee-e1caa4d491c9",
+      "reasoning": "mechanism",
+      "neet_ug_2026": {
+        "topic": "Chemical constituents of living cells: Biomolecules-structure and function of proteins, carbohydrates, lipids, nucleic acids; Enzymes-types, properties, enzyme action, classification and nomenclature of enzymes.",
+        "subject": "BIOLOGY",
+        "topic_id": "BIOLOGY:U03:T02",
+        "unit_name": "Cell Structure and Function",
+        "applied_by": "SYLLABUS-MAPPING-REMEDIATION-002",
+        "unit_number": 3,
+        "syllabus_sha256": "82a616e31ba75d6e5d6422537c8ef5a4ceafb7a7e3449109696b12839b100ceb",
+        "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+      },
+      "seed_slot_id": "zoology-03",
+      "question_format": "MCQ_4",
+      "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo109.pdf",
+      "cognitive_operation": "Enzyme action / active site",
+      "forbidden_templates": [
+        "PHYS_STRETCH_20PCT_CURRENT",
+        "PHYS_STRETCH_2X_LENGTH_RATIO",
+        "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+        "CHEM_LATTICE_COMPARISON",
+        "CHEM_LATTICE_FACTORS",
+        "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+        "ZOO_ABO_SEQUENCE",
+        "ZOO_ABO_ANTIGEN_IDENTIFY"
+      ],
+      "correct_option_count": 1,
+      "explanation_required": true,
+      "ncert_source_relative": "Class 11/Biology/kebo1dd/kebo109.pdf",
+      "avoid_paraphrase_duplicates": true,
+      "enforce_prior_stem_diversity": true
+    },
+    "4d923ceb-e65c-47ff-b6b0-c18efb4f7534": {
+      "ku_id": "1cd86db0-ee03-4bff-9c85-ef8502858847",
+      "reasoning": "le_chatelier_shift",
+      "neet_ug_2026": {
+        "topic": "Equilibrium involving chemical processes: Law of chemical equilibrium, equilibrium constants ($K_p$ and $K_c$) and their significance, the significance of $\\Delta G$ and $\\Delta G^\\circ$ in chemical equilibrium, factors affecting equilibrium concentration, pressure, temperature, the effect of catalyst; Le Chatelier's principle.",
+        "subject": "CHEMISTRY",
+        "topic_id": "CHEMISTRY:U06:T03",
+        "unit_name": "EQUILIBRIUM",
+        "applied_by": "SYLLABUS-MAPPING-REMEDIATION-002",
+        "unit_number": 6,
+        "syllabus_sha256": "82a616e31ba75d6e5d6422537c8ef5a4ceafb7a7e3449109696b12839b100ceb",
+        "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+      },
+      "seed_slot_id": "chemistry-replace-01",
+      "replacement_of": "54907eea-4fcd-4855-8477-268bafe03e82",
+      "question_format": "MCQ_4",
+      "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Chemistry\\kech1dd\\kech1dd\\kech106.pdf",
+      "cognitive_operation": "Apply Le Chatelier's principle / effect of concentration, pressure, or temperature on a chemical equilibrium as treated in NCERT Class 11 Equilibrium. Do NOT use XeF5−, heptacoordinate VSEPR, lattice-energy comparison templates, or unsupported enrichment.",
+      "forbidden_templates": [
+        "PHYS_STRETCH_20PCT_CURRENT",
+        "PHYS_STRETCH_2X_LENGTH_RATIO",
+        "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+        "CHEM_LATTICE_COMPARISON",
+        "CHEM_LATTICE_FACTORS",
+        "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+        "ZOO_ABO_SEQUENCE",
+        "ZOO_ABO_ANTIGEN_IDENTIFY"
+      ],
+      "correct_option_count": 1,
+      "explanation_required": true,
+      "ncert_source_relative": "Class 11/Chemistry/kech1dd/kech1dd/kech106.pdf",
+      "avoid_paraphrase_duplicates": true,
+      "enforce_prior_stem_diversity": true
+    },
+    "327ca1ed-12db-44d0-8e6d-176918a344e8": {
+      "ku_id": "07d8a0ec-4928-4046-bbe1-255cbdae476e",
+      "reasoning": "projectile_time_of_flight",
+      "neet_ug_2026": {
+        "topic": "The frame of reference, motion in a straight line, Position-time graph, speed and velocity; Uniform and non-uniform motion, average speed and instantaneous velocity, uniformly accelerated motion, velocity-time, position-time graph, relations for uniformly accelerated motion, Scalars and Vectors, Vector Addition and subtraction, scalar and vector products, Unit Vector, Resolution of a Vector. Relative Velocity, Motion in a plane, Projectile Motion, Uniform Circular Motion.",
+        "subject": "PHYSICS",
+        "topic_id": "PHYSICS:U02:T01",
+        "unit_name": "KINEMATICS",
+        "applied_by": "SYLLABUS-MAPPING-REMEDIATION-002",
+        "unit_number": 2,
+        "syllabus_sha256": "82a616e31ba75d6e5d6422537c8ef5a4ceafb7a7e3449109696b12839b100ceb",
+        "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+      },
+      "seed_slot_id": "physics-replace-01",
+      "replacement_of": "a1f1d832-21a3-4fb6-86b8-fe07ed46ad18",
+      "question_format": "MCQ_4",
+      "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph1dd\\keph1dd\\keph103.pdf",
+      "cognitive_operation": "Apply projectile-motion relations (time of flight / range / max height) for motion under gravity. Prefer a clear numerical or single-concept application. Do NOT use distance-in-nth-second kinematics or wire-stretch/Ohm templates.",
+      "forbidden_templates": [
+        "PHYS_STRETCH_20PCT_CURRENT",
+        "PHYS_STRETCH_2X_LENGTH_RATIO",
+        "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+        "CHEM_LATTICE_COMPARISON",
+        "CHEM_LATTICE_FACTORS",
+        "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+        "ZOO_ABO_SEQUENCE",
+        "ZOO_ABO_ANTIGEN_IDENTIFY"
+      ],
+      "correct_option_count": 1,
+      "explanation_required": true,
+      "ncert_source_relative": "Class 11/Physics/keph1dd/keph1dd/keph103.pdf",
+      "avoid_paraphrase_duplicates": true,
+      "enforce_prior_stem_diversity": true
+    }
+  },
+  "first_run": {
+    "applied": 0,
+    "skipped_identical": 14
+  },
+  "second_run": {
+    "applied": 0,
+    "skipped_identical": 14
+  },
+  "idempotency": {
+    "ok": true,
+    "first_applied": 0,
+    "second_applied": 0
+  },
+  "changed_blueprints": [
+    {
+      "blueprint_id": "660f336a-d767-404e-bb69-88f675803c88",
+      "blueprint_key": "factory-p3-pilot-2026-09-01-bp-botany-ncert_fact-easy",
+      "before_constraints": {
+        "ku_id": "82c052c6-241c-4e53-890f-bcc582ac77e4",
+        "reasoning": "ncert_fact",
+        "neet_ug_2026": {
+          "topic": "Photosynthesis: Photosynthesis as a means of Autotrophic nutrition; Site of photosynthesis take place; pigments involved in Photosynthesis (Elementary idea); Photochemical and biosynthetic phases of photosynthesis; Cyclic and non-cyclic photophosphorylation; Chemiosmotic hypothesis; Photorespiration C3 and C4 pathways; Factors affecting photosynthesis.",
+          "subject": "BIOLOGY",
+          "topic_id": "BIOLOGY:U04:T01",
+          "unit_name": "Plant Physiology",
+          "applied_by": "SYLLABUS-MAPPING-REMEDIATION-002",
+          "unit_number": 4,
+          "syllabus_sha256": "82a616e31ba75d6e5d6422537c8ef5a4ceafb7a7e3449109696b12839b100ceb",
+          "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+        },
+        "question_format": "MCQ_4",
+        "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo111.pdf",
+        "correct_option_count": 1,
+        "explanation_required": true,
+        "ncert_source_relative": "Class 11/Biology/kebo1dd/kebo111.pdf",
+        "avoid_paraphrase_duplicates": true
+      },
+      "after_constraints": {
+        "ku_id": "82c052c6-241c-4e53-890f-bcc582ac77e4",
+        "reasoning": "ncert_fact",
+        "neet_ug_2026": {
+          "topic": "Photosynthesis: Photosynthesis as a means of Autotrophic nutrition; Site of photosynthesis take place; pigments involved in Photosynthesis (Elementary idea); Photochemical and biosynthetic phases of photosynthesis; Cyclic and non-cyclic photophosphorylation; Chemiosmotic hypothesis; Photorespiration C3 and C4 pathways; Factors affecting photosynthesis.",
+          "subject": "BIOLOGY",
+          "topic_id": "BIOLOGY:U04:T01",
+          "unit_name": "Plant Physiology",
+          "applied_by": "SYLLABUS-MAPPING-REMEDIATION-002",
+          "unit_number": 4,
+          "syllabus_sha256": "82a616e31ba75d6e5d6422537c8ef5a4ceafb7a7e3449109696b12839b100ceb",
+          "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+        },
+        "question_format": "MCQ_4",
+        "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo111.pdf",
+        "correct_option_count": 1,
+        "explanation_required": true,
+        "ncert_source_relative": "Class 11/Biology/kebo1dd/kebo111.pdf",
+        "avoid_paraphrase_duplicates": true
+      },
+      "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo111.pdf",
+      "ncert_source_relative": "Class 11/Biology/kebo1dd/kebo111.pdf",
+      "ku_id": "82c052c6-241c-4e53-890f-bcc582ac77e4",
+      "provenance_before": "ai",
+      "provenance_after": "ai",
+      "taxonomy_before": {
+        "subject_id": "92283579-413a-45d7-8d77-0c407fe7d277",
+        "chapter_id": "c030eb7b-bcd9-4c9b-9a8e-dc0dc54fa32c",
+        "topic_id": "32c38be5-8eab-4944-9e1b-d2bc0d9ef6ee",
+        "concept_id": "ebc2133b-4b9a-46d9-9f5b-016384079d42",
+        "target_count": 1,
+        "subject_code": "BOTANY",
+        "class_level": "11"
+      },
+      "taxonomy_after": {
+        "subject_id": "92283579-413a-45d7-8d77-0c407fe7d277",
+        "chapter_id": "c030eb7b-bcd9-4c9b-9a8e-dc0dc54fa32c",
+        "topic_id": "32c38be5-8eab-4944-9e1b-d2bc0d9ef6ee",
+        "concept_id": "ebc2133b-4b9a-46d9-9f5b-016384079d42",
+        "target_count": 1,
+        "subject_code": "BOTANY",
+        "class_level": "11"
+      },
+      "syllabus_binding_before": {
+        "topic": "Photosynthesis: Photosynthesis as a means of Autotrophic nutrition; Site of photosynthesis take place; pigments involved in Photosynthesis (Elementary idea); Photochemical and biosynthetic phases of photosynthesis; Cyclic and non-cyclic photophosphorylation; Chemiosmotic hypothesis; Photorespiration C3 and C4 pathways; Factors affecting photosynthesis.",
+        "subject": "BIOLOGY",
+        "topic_id": "BIOLOGY:U04:T01",
+        "unit_name": "Plant Physiology",
+        "applied_by": "SYLLABUS-MAPPING-REMEDIATION-002",
+        "unit_number": 4,
+        "syllabus_sha256": "82a616e31ba75d6e5d6422537c8ef5a4ceafb7a7e3449109696b12839b100ceb",
+        "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+      },
+      "syllabus_binding_after": {
+        "topic": "Photosynthesis: Photosynthesis as a means of Autotrophic nutrition; Site of photosynthesis take place; pigments involved in Photosynthesis (Elementary idea); Photochemical and biosynthetic phases of photosynthesis; Cyclic and non-cyclic photophosphorylation; Chemiosmotic hypothesis; Photorespiration C3 and C4 pathways; Factors affecting photosynthesis.",
+        "subject": "BIOLOGY",
+        "topic_id": "BIOLOGY:U04:T01",
+        "unit_name": "Plant Physiology",
+        "applied_by": "SYLLABUS-MAPPING-REMEDIATION-002",
+        "unit_number": 4,
+        "syllabus_sha256": "82a616e31ba75d6e5d6422537c8ef5a4ceafb7a7e3449109696b12839b100ceb",
+        "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+      },
+      "gate_before": {
+        "note": "already_applied_or_rerun"
+      },
+      "gate_after": {
+        "syllabus": "IN_SYLLABUS",
+        "evidence": "NCERT_EVIDENCE_READY"
+      },
+      "changed_fields": [
+        "ncert_source_path",
+        "ncert_source_relative",
+        "ku_id"
+      ],
+      "unchanged_fields": [
+        "provenance_tier"
+      ],
+      "note": "idempotent_rerun_snapshot"
+    },
+    {
+      "blueprint_id": "3c8f1b03-ac22-4b16-80c3-8e5e63473dba",
+      "blueprint_key": "factory-p3-pilot-2026-09-01-bp-physics-direct_concept-easy",
+      "before_constraints": {
+        "ku_id": "3a3b9d1e-6ad4-43d9-9a5f-fd10d978913c",
+        "reasoning": "direct_concept",
+        "neet_ug_2026": {
+          "topic": "Electric current. Drift velocity, mobility and their relation with electric current. Ohm's law. Electrical resistance. V-I characteristics of Ohmic and non-ohmic conductors. Electrical energy and power. Electrical resistivity and conductivity. Series and parallel combinations of resistors; Temperature dependence of resistance.",
+          "subject": "PHYSICS",
+          "topic_id": "PHYSICS:U12:T01",
+          "unit_name": "CURRENT ELECTRICITY",
+          "applied_by": "SYLLABUS-MAPPING-REMEDIATION-002",
+          "unit_number": 12,
+          "syllabus_sha256": "82a616e31ba75d6e5d6422537c8ef5a4ceafb7a7e3449109696b12839b100ceb",
+          "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+        },
+        "question_format": "MCQ_4",
+        "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Physics\\leph1dd\\leph103.pdf",
+        "correct_option_count": 1,
+        "explanation_required": true,
+        "ncert_source_relative": "Class 12/Physics/leph1dd/leph103.pdf",
+        "avoid_paraphrase_duplicates": true
+      },
+      "after_constraints": {
+        "ku_id": "3a3b9d1e-6ad4-43d9-9a5f-fd10d978913c",
+        "reasoning": "direct_concept",
+        "neet_ug_2026": {
+          "topic": "Electric current. Drift velocity, mobility and their relation with electric current. Ohm's law. Electrical resistance. V-I characteristics of Ohmic and non-ohmic conductors. Electrical energy and power. Electrical resistivity and conductivity. Series and parallel combinations of resistors; Temperature dependence of resistance.",
+          "subject": "PHYSICS",
+          "topic_id": "PHYSICS:U12:T01",
+          "unit_name": "CURRENT ELECTRICITY",
+          "applied_by": "SYLLABUS-MAPPING-REMEDIATION-002",
+          "unit_number": 12,
+          "syllabus_sha256": "82a616e31ba75d6e5d6422537c8ef5a4ceafb7a7e3449109696b12839b100ceb",
+          "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+        },
+        "question_format": "MCQ_4",
+        "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Physics\\leph1dd\\leph103.pdf",
+        "correct_option_count": 1,
+        "explanation_required": true,
+        "ncert_source_relative": "Class 12/Physics/leph1dd/leph103.pdf",
+        "avoid_paraphrase_duplicates": true
+      },
+      "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Physics\\leph1dd\\leph103.pdf",
+      "ncert_source_relative": "Class 12/Physics/leph1dd/leph103.pdf",
+      "ku_id": "3a3b9d1e-6ad4-43d9-9a5f-fd10d978913c",
+      "provenance_before": "ai",
+      "provenance_after": "ai",
+      "taxonomy_before": {
+        "subject_id": "8546ab39-2401-4e1f-91e7-a22e27afe147",
+        "chapter_id": "44e651c0-5346-4439-a60d-6424e0768a9f",
+        "topic_id": "9c5ee8f8-4234-4618-a24e-e0251711bebc",
+        "concept_id": "9071ef5d-b62f-4159-91b6-90436a7705e6",
+        "target_count": 15,
+        "subject_code": "PHYSICS",
+        "class_level": "12"
+      },
+      "taxonomy_after": {
+        "subject_id": "8546ab39-2401-4e1f-91e7-a22e27afe147",
+        "chapter_id": "44e651c0-5346-4439-a60d-6424e0768a9f",
+        "topic_id": "9c5ee8f8-4234-4618-a24e-e0251711bebc",
+        "concept_id": "9071ef5d-b62f-4159-91b6-90436a7705e6",
+        "target_count": 15,
+        "subject_code": "PHYSICS",
+        "class_level": "12"
+      },
+      "syllabus_binding_before": {
+        "topic": "Electric current. Drift velocity, mobility and their relation with electric current. Ohm's law. Electrical resistance. V-I characteristics of Ohmic and non-ohmic conductors. Electrical energy and power. Electrical resistivity and conductivity. Series and parallel combinations of resistors; Temperature dependence of resistance.",
+        "subject": "PHYSICS",
+        "topic_id": "PHYSICS:U12:T01",
+        "unit_name": "CURRENT ELECTRICITY",
+        "applied_by": "SYLLABUS-MAPPING-REMEDIATION-002",
+        "unit_number": 12,
+        "syllabus_sha256": "82a616e31ba75d6e5d6422537c8ef5a4ceafb7a7e3449109696b12839b100ceb",
+        "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+      },
+      "syllabus_binding_after": {
+        "topic": "Electric current. Drift velocity, mobility and their relation with electric current. Ohm's law. Electrical resistance. V-I characteristics of Ohmic and non-ohmic conductors. Electrical energy and power. Electrical resistivity and conductivity. Series and parallel combinations of resistors; Temperature dependence of resistance.",
+        "subject": "PHYSICS",
+        "topic_id": "PHYSICS:U12:T01",
+        "unit_name": "CURRENT ELECTRICITY",
+        "applied_by": "SYLLABUS-MAPPING-REMEDIATION-002",
+        "unit_number": 12,
+        "syllabus_sha256": "82a616e31ba75d6e5d6422537c8ef5a4ceafb7a7e3449109696b12839b100ceb",
+        "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+      },
+      "gate_before": {
+        "note": "already_applied_or_rerun"
+      },
+      "gate_after": {
+        "syllabus": "IN_SYLLABUS",
+        "evidence": "NCERT_EVIDENCE_READY"
+      },
+      "changed_fields": [
+        "ncert_source_path",
+        "ncert_source_relative",
+        "ku_id"
+      ],
+      "unchanged_fields": [
+        "provenance_tier"
+      ],
+      "note": "idempotent_rerun_snapshot"
+    },
+    {
+      "blueprint_id": "77576605-f3d4-420b-9faf-15a47d8cd48c",
+      "blueprint_key": "factory-p3-pilot-2026-09-01-bp-physics-formula_application-medium",
+      "before_constraints": {
+        "ku_id": "3a3b9d1e-6ad4-43d9-9a5f-fd10d978913c",
+        "reasoning": "formula_application",
+        "neet_ug_2026": {
+          "topic": "Electric current. Drift velocity, mobility and their relation with electric current. Ohm's law. Electrical resistance. V-I characteristics of Ohmic and non-ohmic conductors. Electrical energy and power. Electrical resistivity and conductivity. Series and parallel combinations of resistors; Temperature dependence of resistance.",
+          "subject": "PHYSICS",
+          "topic_id": "PHYSICS:U12:T01",
+          "unit_name": "CURRENT ELECTRICITY",
+          "applied_by": "SYLLABUS-MAPPING-REMEDIATION-002",
+          "unit_number": 12,
+          "syllabus_sha256": "82a616e31ba75d6e5d6422537c8ef5a4ceafb7a7e3449109696b12839b100ceb",
+          "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+        },
+        "question_format": "MCQ_4",
+        "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Physics\\leph1dd\\leph103.pdf",
+        "correct_option_count": 1,
+        "explanation_required": true,
+        "ncert_source_relative": "Class 12/Physics/leph1dd/leph103.pdf",
+        "avoid_paraphrase_duplicates": true
+      },
+      "after_constraints": {
+        "ku_id": "3a3b9d1e-6ad4-43d9-9a5f-fd10d978913c",
+        "reasoning": "formula_application",
+        "neet_ug_2026": {
+          "topic": "Electric current. Drift velocity, mobility and their relation with electric current. Ohm's law. Electrical resistance. V-I characteristics of Ohmic and non-ohmic conductors. Electrical energy and power. Electrical resistivity and conductivity. Series and parallel combinations of resistors; Temperature dependence of resistance.",
+          "subject": "PHYSICS",
+          "topic_id": "PHYSICS:U12:T01",
+          "unit_name": "CURRENT ELECTRICITY",
+          "applied_by": "SYLLABUS-MAPPING-REMEDIATION-002",
+          "unit_number": 12,
+          "syllabus_sha256": "82a616e31ba75d6e5d6422537c8ef5a4ceafb7a7e3449109696b12839b100ceb",
+          "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+        },
+        "question_format": "MCQ_4",
+        "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Physics\\leph1dd\\leph103.pdf",
+        "correct_option_count": 1,
+        "explanation_required": true,
+        "ncert_source_relative": "Class 12/Physics/leph1dd/leph103.pdf",
+        "avoid_paraphrase_duplicates": true
+      },
+      "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Physics\\leph1dd\\leph103.pdf",
+      "ncert_source_relative": "Class 12/Physics/leph1dd/leph103.pdf",
+      "ku_id": "3a3b9d1e-6ad4-43d9-9a5f-fd10d978913c",
+      "provenance_before": "ai",
+      "provenance_after": "ai",
+      "taxonomy_before": {
+        "subject_id": "8546ab39-2401-4e1f-91e7-a22e27afe147",
+        "chapter_id": "44e651c0-5346-4439-a60d-6424e0768a9f",
+        "topic_id": "9c5ee8f8-4234-4618-a24e-e0251711bebc",
+        "concept_id": "9071ef5d-b62f-4159-91b6-90436a7705e6",
+        "target_count": 2,
+        "subject_code": "PHYSICS",
+        "class_level": "12"
+      },
+      "taxonomy_after": {
+        "subject_id": "8546ab39-2401-4e1f-91e7-a22e27afe147",
+        "chapter_id": "44e651c0-5346-4439-a60d-6424e0768a9f",
+        "topic_id": "9c5ee8f8-4234-4618-a24e-e0251711bebc",
+        "concept_id": "9071ef5d-b62f-4159-91b6-90436a7705e6",
+        "target_count": 2,
+        "subject_code": "PHYSICS",
+        "class_level": "12"
+      },
+      "syllabus_binding_before": {
+        "topic": "Electric current. Drift velocity, mobility and their relation with electric current. Ohm's law. Electrical resistance. V-I characteristics of Ohmic and non-ohmic conductors. Electrical energy and power. Electrical resistivity and conductivity. Series and parallel combinations of resistors; Temperature dependence of resistance.",
+        "subject": "PHYSICS",
+        "topic_id": "PHYSICS:U12:T01",
+        "unit_name": "CURRENT ELECTRICITY",
+        "applied_by": "SYLLABUS-MAPPING-REMEDIATION-002",
+        "unit_number": 12,
+        "syllabus_sha256": "82a616e31ba75d6e5d6422537c8ef5a4ceafb7a7e3449109696b12839b100ceb",
+        "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+      },
+      "syllabus_binding_after": {
+        "topic": "Electric current. Drift velocity, mobility and their relation with electric current. Ohm's law. Electrical resistance. V-I characteristics of Ohmic and non-ohmic conductors. Electrical energy and power. Electrical resistivity and conductivity. Series and parallel combinations of resistors; Temperature dependence of resistance.",
+        "subject": "PHYSICS",
+        "topic_id": "PHYSICS:U12:T01",
+        "unit_name": "CURRENT ELECTRICITY",
+        "applied_by": "SYLLABUS-MAPPING-REMEDIATION-002",
+        "unit_number": 12,
+        "syllabus_sha256": "82a616e31ba75d6e5d6422537c8ef5a4ceafb7a7e3449109696b12839b100ceb",
+        "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+      },
+      "gate_before": {
+        "note": "already_applied_or_rerun"
+      },
+      "gate_after": {
+        "syllabus": "IN_SYLLABUS",
+        "evidence": "NCERT_EVIDENCE_READY"
+      },
+      "changed_fields": [
+        "ncert_source_path",
+        "ncert_source_relative",
+        "ku_id"
+      ],
+      "unchanged_fields": [
+        "provenance_tier"
+      ],
+      "note": "idempotent_rerun_snapshot"
+    },
+    {
+      "blueprint_id": "b23de1f1-1d95-452f-9ff9-d0f6d93ccf86",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-botany-02",
+      "before_constraints": {
+        "ku_id": "6c880e32-1670-4ca4-a859-7ed46b78d90c",
+        "reasoning": "process_consequence",
+        "neet_ug_2026": {
+          "topic": "Photosynthesis: Photosynthesis as a means of Autotrophic nutrition; Site of photosynthesis take place; pigments involved in Photosynthesis (Elementary idea); Photochemical and biosynthetic phases of photosynthesis; Cyclic and non-cyclic photophosphorylation; Chemiosmotic hypothesis; Photorespiration C3 and C4 pathways; Factors affecting photosynthesis.",
+          "subject": "BIOLOGY",
+          "topic_id": "BIOLOGY:U04:T01",
+          "unit_name": "Plant Physiology",
+          "applied_by": "SYLLABUS-MAPPING-REMEDIATION-002",
+          "unit_number": 4,
+          "syllabus_sha256": "82a616e31ba75d6e5d6422537c8ef5a4ceafb7a7e3449109696b12839b100ceb",
+          "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+        },
+        "seed_slot_id": "botany-02",
+        "question_format": "MCQ_4",
+        "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo111.pdf",
+        "cognitive_operation": "Photorespiration wastefulness in C3",
+        "forbidden_templates": [
+          "PHYS_STRETCH_20PCT_CURRENT",
+          "PHYS_STRETCH_2X_LENGTH_RATIO",
+          "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+          "CHEM_LATTICE_COMPARISON",
+          "CHEM_LATTICE_FACTORS",
+          "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+          "ZOO_ABO_SEQUENCE",
+          "ZOO_ABO_ANTIGEN_IDENTIFY"
+        ],
+        "correct_option_count": 1,
+        "explanation_required": true,
+        "ncert_source_relative": "Class 11/Biology/kebo1dd/kebo111.pdf",
+        "avoid_paraphrase_duplicates": true,
+        "enforce_prior_stem_diversity": true
+      },
+      "after_constraints": {
+        "ku_id": "6c880e32-1670-4ca4-a859-7ed46b78d90c",
+        "reasoning": "process_consequence",
+        "neet_ug_2026": {
+          "topic": "Photosynthesis: Photosynthesis as a means of Autotrophic nutrition; Site of photosynthesis take place; pigments involved in Photosynthesis (Elementary idea); Photochemical and biosynthetic phases of photosynthesis; Cyclic and non-cyclic photophosphorylation; Chemiosmotic hypothesis; Photorespiration C3 and C4 pathways; Factors affecting photosynthesis.",
+          "subject": "BIOLOGY",
+          "topic_id": "BIOLOGY:U04:T01",
+          "unit_name": "Plant Physiology",
+          "applied_by": "SYLLABUS-MAPPING-REMEDIATION-002",
+          "unit_number": 4,
+          "syllabus_sha256": "82a616e31ba75d6e5d6422537c8ef5a4ceafb7a7e3449109696b12839b100ceb",
+          "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+        },
+        "seed_slot_id": "botany-02",
+        "question_format": "MCQ_4",
+        "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo111.pdf",
+        "cognitive_operation": "Photorespiration wastefulness in C3",
+        "forbidden_templates": [
+          "PHYS_STRETCH_20PCT_CURRENT",
+          "PHYS_STRETCH_2X_LENGTH_RATIO",
+          "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+          "CHEM_LATTICE_COMPARISON",
+          "CHEM_LATTICE_FACTORS",
+          "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+          "ZOO_ABO_SEQUENCE",
+          "ZOO_ABO_ANTIGEN_IDENTIFY"
+        ],
+        "correct_option_count": 1,
+        "explanation_required": true,
+        "ncert_source_relative": "Class 11/Biology/kebo1dd/kebo111.pdf",
+        "avoid_paraphrase_duplicates": true,
+        "enforce_prior_stem_diversity": true
+      },
+      "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo111.pdf",
+      "ncert_source_relative": "Class 11/Biology/kebo1dd/kebo111.pdf",
+      "ku_id": "6c880e32-1670-4ca4-a859-7ed46b78d90c",
+      "provenance_before": "ai",
+      "provenance_after": "ai",
+      "taxonomy_before": {
+        "subject_id": "92283579-413a-45d7-8d77-0c407fe7d277",
+        "chapter_id": "c030eb7b-bcd9-4c9b-9a8e-dc0dc54fa32c",
+        "topic_id": "4039d404-67cb-4e88-b924-ea873c5c91e7",
+        "concept_id": "b48f10f4-e5e1-4740-a62f-c1bcaf3865fb",
+        "target_count": 1,
+        "subject_code": "BOTANY",
+        "class_level": "11"
+      },
+      "taxonomy_after": {
+        "subject_id": "92283579-413a-45d7-8d77-0c407fe7d277",
+        "chapter_id": "c030eb7b-bcd9-4c9b-9a8e-dc0dc54fa32c",
+        "topic_id": "4039d404-67cb-4e88-b924-ea873c5c91e7",
+        "concept_id": "b48f10f4-e5e1-4740-a62f-c1bcaf3865fb",
+        "target_count": 1,
+        "subject_code": "BOTANY",
+        "class_level": "11"
+      },
+      "syllabus_binding_before": {
+        "topic": "Photosynthesis: Photosynthesis as a means of Autotrophic nutrition; Site of photosynthesis take place; pigments involved in Photosynthesis (Elementary idea); Photochemical and biosynthetic phases of photosynthesis; Cyclic and non-cyclic photophosphorylation; Chemiosmotic hypothesis; Photorespiration C3 and C4 pathways; Factors affecting photosynthesis.",
+        "subject": "BIOLOGY",
+        "topic_id": "BIOLOGY:U04:T01",
+        "unit_name": "Plant Physiology",
+        "applied_by": "SYLLABUS-MAPPING-REMEDIATION-002",
+        "unit_number": 4,
+        "syllabus_sha256": "82a616e31ba75d6e5d6422537c8ef5a4ceafb7a7e3449109696b12839b100ceb",
+        "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+      },
+      "syllabus_binding_after": {
+        "topic": "Photosynthesis: Photosynthesis as a means of Autotrophic nutrition; Site of photosynthesis take place; pigments involved in Photosynthesis (Elementary idea); Photochemical and biosynthetic phases of photosynthesis; Cyclic and non-cyclic photophosphorylation; Chemiosmotic hypothesis; Photorespiration C3 and C4 pathways; Factors affecting photosynthesis.",
+        "subject": "BIOLOGY",
+        "topic_id": "BIOLOGY:U04:T01",
+        "unit_name": "Plant Physiology",
+        "applied_by": "SYLLABUS-MAPPING-REMEDIATION-002",
+        "unit_number": 4,
+        "syllabus_sha256": "82a616e31ba75d6e5d6422537c8ef5a4ceafb7a7e3449109696b12839b100ceb",
+        "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+      },
+      "gate_before": {
+        "note": "already_applied_or_rerun"
+      },
+      "gate_after": {
+        "syllabus": "IN_SYLLABUS",
+        "evidence": "NCERT_EVIDENCE_READY"
+      },
+      "changed_fields": [
+        "ncert_source_path",
+        "ncert_source_relative",
+        "ku_id"
+      ],
+      "unchanged_fields": [
+        "provenance_tier"
+      ],
+      "note": "idempotent_rerun_snapshot"
+    },
+    {
+      "blueprint_id": "dc569dd4-30d6-46c2-acb1-25dec036b15d",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-botany-03",
+      "before_constraints": {
+        "ku_id": "8a87626e-ef07-43f0-a452-542e13cbec30",
+        "reasoning": "blackman_law",
+        "neet_ug_2026": {
+          "topic": "Photosynthesis: Photosynthesis as a means of Autotrophic nutrition; Site of photosynthesis take place; pigments involved in Photosynthesis (Elementary idea); Photochemical and biosynthetic phases of photosynthesis; Cyclic and non-cyclic photophosphorylation; Chemiosmotic hypothesis; Photorespiration C3 and C4 pathways; Factors affecting photosynthesis.",
+          "subject": "BIOLOGY",
+          "topic_id": "BIOLOGY:U04:T01",
+          "unit_name": "Plant Physiology",
+          "applied_by": "SYLLABUS-MAPPING-REMEDIATION-002",
+          "unit_number": 4,
+          "syllabus_sha256": "82a616e31ba75d6e5d6422537c8ef5a4ceafb7a7e3449109696b12839b100ceb",
+          "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+        },
+        "seed_slot_id": "botany-03",
+        "question_format": "MCQ_4",
+        "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo111.pdf",
+        "cognitive_operation": "Blackman's law of limiting factors",
+        "forbidden_templates": [
+          "PHYS_STRETCH_20PCT_CURRENT",
+          "PHYS_STRETCH_2X_LENGTH_RATIO",
+          "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+          "CHEM_LATTICE_COMPARISON",
+          "CHEM_LATTICE_FACTORS",
+          "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+          "ZOO_ABO_SEQUENCE",
+          "ZOO_ABO_ANTIGEN_IDENTIFY"
+        ],
+        "correct_option_count": 1,
+        "explanation_required": true,
+        "ncert_source_relative": "Class 11/Biology/kebo1dd/kebo111.pdf",
+        "avoid_paraphrase_duplicates": true,
+        "enforce_prior_stem_diversity": true
+      },
+      "after_constraints": {
+        "ku_id": "8a87626e-ef07-43f0-a452-542e13cbec30",
+        "reasoning": "blackman_law",
+        "neet_ug_2026": {
+          "topic": "Photosynthesis: Photosynthesis as a means of Autotrophic nutrition; Site of photosynthesis take place; pigments involved in Photosynthesis (Elementary idea); Photochemical and biosynthetic phases of photosynthesis; Cyclic and non-cyclic photophosphorylation; Chemiosmotic hypothesis; Photorespiration C3 and C4 pathways; Factors affecting photosynthesis.",
+          "subject": "BIOLOGY",
+          "topic_id": "BIOLOGY:U04:T01",
+          "unit_name": "Plant Physiology",
+          "applied_by": "SYLLABUS-MAPPING-REMEDIATION-002",
+          "unit_number": 4,
+          "syllabus_sha256": "82a616e31ba75d6e5d6422537c8ef5a4ceafb7a7e3449109696b12839b100ceb",
+          "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+        },
+        "seed_slot_id": "botany-03",
+        "question_format": "MCQ_4",
+        "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo111.pdf",
+        "cognitive_operation": "Blackman's law of limiting factors",
+        "forbidden_templates": [
+          "PHYS_STRETCH_20PCT_CURRENT",
+          "PHYS_STRETCH_2X_LENGTH_RATIO",
+          "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+          "CHEM_LATTICE_COMPARISON",
+          "CHEM_LATTICE_FACTORS",
+          "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+          "ZOO_ABO_SEQUENCE",
+          "ZOO_ABO_ANTIGEN_IDENTIFY"
+        ],
+        "correct_option_count": 1,
+        "explanation_required": true,
+        "ncert_source_relative": "Class 11/Biology/kebo1dd/kebo111.pdf",
+        "avoid_paraphrase_duplicates": true,
+        "enforce_prior_stem_diversity": true
+      },
+      "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo111.pdf",
+      "ncert_source_relative": "Class 11/Biology/kebo1dd/kebo111.pdf",
+      "ku_id": "8a87626e-ef07-43f0-a452-542e13cbec30",
+      "provenance_before": "ai",
+      "provenance_after": "ai",
+      "taxonomy_before": {
+        "subject_id": "92283579-413a-45d7-8d77-0c407fe7d277",
+        "chapter_id": "c030eb7b-bcd9-4c9b-9a8e-dc0dc54fa32c",
+        "topic_id": "4039d404-67cb-4e88-b924-ea873c5c91e7",
+        "concept_id": "a9ee6fdf-d7e5-4983-b8ba-ec70da704b14",
+        "target_count": 1,
+        "subject_code": "BOTANY",
+        "class_level": "11"
+      },
+      "taxonomy_after": {
+        "subject_id": "92283579-413a-45d7-8d77-0c407fe7d277",
+        "chapter_id": "c030eb7b-bcd9-4c9b-9a8e-dc0dc54fa32c",
+        "topic_id": "4039d404-67cb-4e88-b924-ea873c5c91e7",
+        "concept_id": "a9ee6fdf-d7e5-4983-b8ba-ec70da704b14",
+        "target_count": 1,
+        "subject_code": "BOTANY",
+        "class_level": "11"
+      },
+      "syllabus_binding_before": {
+        "topic": "Photosynthesis: Photosynthesis as a means of Autotrophic nutrition; Site of photosynthesis take place; pigments involved in Photosynthesis (Elementary idea); Photochemical and biosynthetic phases of photosynthesis; Cyclic and non-cyclic photophosphorylation; Chemiosmotic hypothesis; Photorespiration C3 and C4 pathways; Factors affecting photosynthesis.",
+        "subject": "BIOLOGY",
+        "topic_id": "BIOLOGY:U04:T01",
+        "unit_name": "Plant Physiology",
+        "applied_by": "SYLLABUS-MAPPING-REMEDIATION-002",
+        "unit_number": 4,
+        "syllabus_sha256": "82a616e31ba75d6e5d6422537c8ef5a4ceafb7a7e3449109696b12839b100ceb",
+        "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+      },
+      "syllabus_binding_after": {
+        "topic": "Photosynthesis: Photosynthesis as a means of Autotrophic nutrition; Site of photosynthesis take place; pigments involved in Photosynthesis (Elementary idea); Photochemical and biosynthetic phases of photosynthesis; Cyclic and non-cyclic photophosphorylation; Chemiosmotic hypothesis; Photorespiration C3 and C4 pathways; Factors affecting photosynthesis.",
+        "subject": "BIOLOGY",
+        "topic_id": "BIOLOGY:U04:T01",
+        "unit_name": "Plant Physiology",
+        "applied_by": "SYLLABUS-MAPPING-REMEDIATION-002",
+        "unit_number": 4,
+        "syllabus_sha256": "82a616e31ba75d6e5d6422537c8ef5a4ceafb7a7e3449109696b12839b100ceb",
+        "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+      },
+      "gate_before": {
+        "note": "already_applied_or_rerun"
+      },
+      "gate_after": {
+        "syllabus": "IN_SYLLABUS",
+        "evidence": "NCERT_EVIDENCE_READY"
+      },
+      "changed_fields": [
+        "ncert_source_path",
+        "ncert_source_relative",
+        "ku_id"
+      ],
+      "unchanged_fields": [
+        "provenance_tier"
+      ],
+      "note": "idempotent_rerun_snapshot"
+    },
+    {
+      "blueprint_id": "f0c87b9d-4159-4346-aab6-fc859a17c8cb",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-chemistry-03",
+      "before_constraints": {
+        "ku_id": "1cd86db0-ee03-4bff-9c85-ef8502858847",
+        "reasoning": "kc_kp_meaning",
+        "neet_ug_2026": {
+          "topic": "Equilibrium involving chemical processes: Law of chemical equilibrium, equilibrium constants ($K_p$ and $K_c$) and their significance, the significance of $\\Delta G$ and $\\Delta G^\\circ$ in chemical equilibrium, factors affecting equilibrium concentration, pressure, temperature, the effect of catalyst; Le Chatelier's principle.",
+          "subject": "CHEMISTRY",
+          "topic_id": "CHEMISTRY:U06:T03",
+          "unit_name": "EQUILIBRIUM",
+          "applied_by": "SYLLABUS-MAPPING-REMEDIATION-002",
+          "unit_number": 6,
+          "syllabus_sha256": "82a616e31ba75d6e5d6422537c8ef5a4ceafb7a7e3449109696b12839b100ceb",
+          "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+        },
+        "seed_slot_id": "chemistry-03",
+        "question_format": "MCQ_4",
+        "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Chemistry\\kech1dd\\kech1dd\\kech106.pdf",
+        "cognitive_operation": "Meaning of Kc/Kp",
+        "forbidden_templates": [
+          "PHYS_STRETCH_20PCT_CURRENT",
+          "PHYS_STRETCH_2X_LENGTH_RATIO",
+          "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+          "CHEM_LATTICE_COMPARISON",
+          "CHEM_LATTICE_FACTORS",
+          "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+          "ZOO_ABO_SEQUENCE",
+          "ZOO_ABO_ANTIGEN_IDENTIFY"
+        ],
+        "correct_option_count": 1,
+        "explanation_required": true,
+        "ncert_source_relative": "Class 11/Chemistry/kech1dd/kech1dd/kech106.pdf",
+        "avoid_paraphrase_duplicates": true,
+        "enforce_prior_stem_diversity": true
+      },
+      "after_constraints": {
+        "ku_id": "1cd86db0-ee03-4bff-9c85-ef8502858847",
+        "reasoning": "kc_kp_meaning",
+        "neet_ug_2026": {
+          "topic": "Equilibrium involving chemical processes: Law of chemical equilibrium, equilibrium constants ($K_p$ and $K_c$) and their significance, the significance of $\\Delta G$ and $\\Delta G^\\circ$ in chemical equilibrium, factors affecting equilibrium concentration, pressure, temperature, the effect of catalyst; Le Chatelier's principle.",
+          "subject": "CHEMISTRY",
+          "topic_id": "CHEMISTRY:U06:T03",
+          "unit_name": "EQUILIBRIUM",
+          "applied_by": "SYLLABUS-MAPPING-REMEDIATION-002",
+          "unit_number": 6,
+          "syllabus_sha256": "82a616e31ba75d6e5d6422537c8ef5a4ceafb7a7e3449109696b12839b100ceb",
+          "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+        },
+        "seed_slot_id": "chemistry-03",
+        "question_format": "MCQ_4",
+        "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Chemistry\\kech1dd\\kech1dd\\kech106.pdf",
+        "cognitive_operation": "Meaning of Kc/Kp",
+        "forbidden_templates": [
+          "PHYS_STRETCH_20PCT_CURRENT",
+          "PHYS_STRETCH_2X_LENGTH_RATIO",
+          "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+          "CHEM_LATTICE_COMPARISON",
+          "CHEM_LATTICE_FACTORS",
+          "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+          "ZOO_ABO_SEQUENCE",
+          "ZOO_ABO_ANTIGEN_IDENTIFY"
+        ],
+        "correct_option_count": 1,
+        "explanation_required": true,
+        "ncert_source_relative": "Class 11/Chemistry/kech1dd/kech1dd/kech106.pdf",
+        "avoid_paraphrase_duplicates": true,
+        "enforce_prior_stem_diversity": true
+      },
+      "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Chemistry\\kech1dd\\kech1dd\\kech106.pdf",
+      "ncert_source_relative": "Class 11/Chemistry/kech1dd/kech1dd/kech106.pdf",
+      "ku_id": "1cd86db0-ee03-4bff-9c85-ef8502858847",
+      "provenance_before": "ai",
+      "provenance_after": "ai",
+      "taxonomy_before": {
+        "subject_id": "33259dfe-9180-4dfd-828f-a99d83a99ceb",
+        "chapter_id": "178648dd-c1e0-4631-8871-31e38d687b51",
+        "topic_id": "56e49676-96aa-42de-8f33-c68d8105313d",
+        "concept_id": "f158f415-8e0d-4d4e-a8fc-b337e6ea2282",
+        "target_count": 1,
+        "subject_code": "CHEMISTRY",
+        "class_level": "11"
+      },
+      "taxonomy_after": {
+        "subject_id": "33259dfe-9180-4dfd-828f-a99d83a99ceb",
+        "chapter_id": "178648dd-c1e0-4631-8871-31e38d687b51",
+        "topic_id": "56e49676-96aa-42de-8f33-c68d8105313d",
+        "concept_id": "f158f415-8e0d-4d4e-a8fc-b337e6ea2282",
+        "target_count": 1,
+        "subject_code": "CHEMISTRY",
+        "class_level": "11"
+      },
+      "syllabus_binding_before": {
+        "topic": "Equilibrium involving chemical processes: Law of chemical equilibrium, equilibrium constants ($K_p$ and $K_c$) and their significance, the significance of $\\Delta G$ and $\\Delta G^\\circ$ in chemical equilibrium, factors affecting equilibrium concentration, pressure, temperature, the effect of catalyst; Le Chatelier's principle.",
+        "subject": "CHEMISTRY",
+        "topic_id": "CHEMISTRY:U06:T03",
+        "unit_name": "EQUILIBRIUM",
+        "applied_by": "SYLLABUS-MAPPING-REMEDIATION-002",
+        "unit_number": 6,
+        "syllabus_sha256": "82a616e31ba75d6e5d6422537c8ef5a4ceafb7a7e3449109696b12839b100ceb",
+        "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+      },
+      "syllabus_binding_after": {
+        "topic": "Equilibrium involving chemical processes: Law of chemical equilibrium, equilibrium constants ($K_p$ and $K_c$) and their significance, the significance of $\\Delta G$ and $\\Delta G^\\circ$ in chemical equilibrium, factors affecting equilibrium concentration, pressure, temperature, the effect of catalyst; Le Chatelier's principle.",
+        "subject": "CHEMISTRY",
+        "topic_id": "CHEMISTRY:U06:T03",
+        "unit_name": "EQUILIBRIUM",
+        "applied_by": "SYLLABUS-MAPPING-REMEDIATION-002",
+        "unit_number": 6,
+        "syllabus_sha256": "82a616e31ba75d6e5d6422537c8ef5a4ceafb7a7e3449109696b12839b100ceb",
+        "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+      },
+      "gate_before": {
+        "note": "already_applied_or_rerun"
+      },
+      "gate_after": {
+        "syllabus": "IN_SYLLABUS",
+        "evidence": "NCERT_EVIDENCE_READY"
+      },
+      "changed_fields": [
+        "ncert_source_path",
+        "ncert_source_relative",
+        "ku_id"
+      ],
+      "unchanged_fields": [
+        "provenance_tier"
+      ],
+      "note": "idempotent_rerun_snapshot"
+    },
+    {
+      "blueprint_id": "e8721ebe-9c1d-4e9b-ad51-f6a65a8adaff",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-chemistry-08",
+      "before_constraints": {
+        "ku_id": "5c0ddbff-12ce-42dc-9888-62f890e8287a",
+        "reasoning": "series_traits",
+        "neet_ug_2026": {
+          "topic": "Tetravalency of carbon: Shapes of simple molecules - hybridization (s and p): Classification of organic compounds based on functional groups: and those containing halogens, oxygen, nitrogen, and sulphur; Homologous series: Isomerism - structural and stereoisomerism. Nomenclature (Trivial and IUPAC)",
+          "subject": "CHEMISTRY",
+          "topic_id": "CHEMISTRY:U14:T01",
+          "unit_name": "SOME BASIC PRINCIPLES OF ORGANIC CHEMISTRY",
+          "applied_by": "SYLLABUS-MAPPING-REMEDIATION-002",
+          "unit_number": 14,
+          "syllabus_sha256": "82a616e31ba75d6e5d6422537c8ef5a4ceafb7a7e3449109696b12839b100ceb",
+          "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+        },
+        "seed_slot_id": "chemistry-08",
+        "question_format": "MCQ_4",
+        "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Chemistry\\kech2dd\\kech202.pdf",
+        "cognitive_operation": "Homologous series general formula/traits",
+        "forbidden_templates": [
+          "PHYS_STRETCH_20PCT_CURRENT",
+          "PHYS_STRETCH_2X_LENGTH_RATIO",
+          "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+          "CHEM_LATTICE_COMPARISON",
+          "CHEM_LATTICE_FACTORS",
+          "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+          "ZOO_ABO_SEQUENCE",
+          "ZOO_ABO_ANTIGEN_IDENTIFY"
+        ],
+        "correct_option_count": 1,
+        "explanation_required": true,
+        "ncert_source_relative": "Class 11/Chemistry/kech2dd/kech202.pdf",
+        "avoid_paraphrase_duplicates": true,
+        "enforce_prior_stem_diversity": true
+      },
+      "after_constraints": {
+        "ku_id": "5c0ddbff-12ce-42dc-9888-62f890e8287a",
+        "reasoning": "series_traits",
+        "neet_ug_2026": {
+          "topic": "Tetravalency of carbon: Shapes of simple molecules - hybridization (s and p): Classification of organic compounds based on functional groups: and those containing halogens, oxygen, nitrogen, and sulphur; Homologous series: Isomerism - structural and stereoisomerism. Nomenclature (Trivial and IUPAC)",
+          "subject": "CHEMISTRY",
+          "topic_id": "CHEMISTRY:U14:T01",
+          "unit_name": "SOME BASIC PRINCIPLES OF ORGANIC CHEMISTRY",
+          "applied_by": "SYLLABUS-MAPPING-REMEDIATION-002",
+          "unit_number": 14,
+          "syllabus_sha256": "82a616e31ba75d6e5d6422537c8ef5a4ceafb7a7e3449109696b12839b100ceb",
+          "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+        },
+        "seed_slot_id": "chemistry-08",
+        "question_format": "MCQ_4",
+        "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Chemistry\\kech2dd\\kech202.pdf",
+        "cognitive_operation": "Homologous series general formula/traits",
+        "forbidden_templates": [
+          "PHYS_STRETCH_20PCT_CURRENT",
+          "PHYS_STRETCH_2X_LENGTH_RATIO",
+          "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+          "CHEM_LATTICE_COMPARISON",
+          "CHEM_LATTICE_FACTORS",
+          "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+          "ZOO_ABO_SEQUENCE",
+          "ZOO_ABO_ANTIGEN_IDENTIFY"
+        ],
+        "correct_option_count": 1,
+        "explanation_required": true,
+        "ncert_source_relative": "Class 11/Chemistry/kech2dd/kech202.pdf",
+        "avoid_paraphrase_duplicates": true,
+        "enforce_prior_stem_diversity": true
+      },
+      "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Chemistry\\kech2dd\\kech202.pdf",
+      "ncert_source_relative": "Class 11/Chemistry/kech2dd/kech202.pdf",
+      "ku_id": "5c0ddbff-12ce-42dc-9888-62f890e8287a",
+      "provenance_before": "ai",
+      "provenance_after": "ai",
+      "taxonomy_before": {
+        "subject_id": "33259dfe-9180-4dfd-828f-a99d83a99ceb",
+        "chapter_id": "a2fbdd9a-0b58-4fa4-8d65-3d9d6addb839",
+        "topic_id": "fc5de132-793c-4c50-8e6c-d1310eb94829",
+        "concept_id": "75e579f4-1e32-406c-9329-55097099bbaf",
+        "target_count": 1,
+        "subject_code": "CHEMISTRY",
+        "class_level": "11"
+      },
+      "taxonomy_after": {
+        "subject_id": "33259dfe-9180-4dfd-828f-a99d83a99ceb",
+        "chapter_id": "a2fbdd9a-0b58-4fa4-8d65-3d9d6addb839",
+        "topic_id": "fc5de132-793c-4c50-8e6c-d1310eb94829",
+        "concept_id": "75e579f4-1e32-406c-9329-55097099bbaf",
+        "target_count": 1,
+        "subject_code": "CHEMISTRY",
+        "class_level": "11"
+      },
+      "syllabus_binding_before": {
+        "topic": "Tetravalency of carbon: Shapes of simple molecules - hybridization (s and p): Classification of organic compounds based on functional groups: and those containing halogens, oxygen, nitrogen, and sulphur; Homologous series: Isomerism - structural and stereoisomerism. Nomenclature (Trivial and IUPAC)",
+        "subject": "CHEMISTRY",
+        "topic_id": "CHEMISTRY:U14:T01",
+        "unit_name": "SOME BASIC PRINCIPLES OF ORGANIC CHEMISTRY",
+        "applied_by": "SYLLABUS-MAPPING-REMEDIATION-002",
+        "unit_number": 14,
+        "syllabus_sha256": "82a616e31ba75d6e5d6422537c8ef5a4ceafb7a7e3449109696b12839b100ceb",
+        "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+      },
+      "syllabus_binding_after": {
+        "topic": "Tetravalency of carbon: Shapes of simple molecules - hybridization (s and p): Classification of organic compounds based on functional groups: and those containing halogens, oxygen, nitrogen, and sulphur; Homologous series: Isomerism - structural and stereoisomerism. Nomenclature (Trivial and IUPAC)",
+        "subject": "CHEMISTRY",
+        "topic_id": "CHEMISTRY:U14:T01",
+        "unit_name": "SOME BASIC PRINCIPLES OF ORGANIC CHEMISTRY",
+        "applied_by": "SYLLABUS-MAPPING-REMEDIATION-002",
+        "unit_number": 14,
+        "syllabus_sha256": "82a616e31ba75d6e5d6422537c8ef5a4ceafb7a7e3449109696b12839b100ceb",
+        "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+      },
+      "gate_before": {
+        "note": "already_applied_or_rerun"
+      },
+      "gate_after": {
+        "syllabus": "IN_SYLLABUS",
+        "evidence": "NCERT_EVIDENCE_READY"
+      },
+      "changed_fields": [
+        "ncert_source_path",
+        "ncert_source_relative",
+        "ku_id"
+      ],
+      "unchanged_fields": [
+        "provenance_tier"
+      ],
+      "note": "idempotent_rerun_snapshot"
+    },
+    {
+      "blueprint_id": "106e56f4-a1f0-49c0-9485-78c50c819776",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-physics-02",
+      "before_constraints": {
+        "ku_id": "9152da9b-021e-4001-91e3-f46492a32a3a",
+        "reasoning": "numerical_application",
+        "neet_ug_2026": {
+          "topic": "The frame of reference, motion in a straight line, Position-time graph, speed and velocity; Uniform and non-uniform motion, average speed and instantaneous velocity, uniformly accelerated motion, velocity-time, position-time graph, relations for uniformly accelerated motion, Scalars and Vectors, Vector Addition and subtraction, scalar and vector products, Unit Vector, Resolution of a Vector. Relative Velocity, Motion in a plane, Projectile Motion, Uniform Circular Motion.",
+          "subject": "PHYSICS",
+          "topic_id": "PHYSICS:U02:T01",
+          "unit_name": "KINEMATICS",
+          "applied_by": "SYLLABUS-MAPPING-REMEDIATION-002",
+          "unit_number": 2,
+          "syllabus_sha256": "82a616e31ba75d6e5d6422537c8ef5a4ceafb7a7e3449109696b12839b100ceb",
+          "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+        },
+        "seed_slot_id": "physics-02",
+        "question_format": "MCQ_4",
+        "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph1dd\\keph1dd\\keph102.pdf",
+        "cognitive_operation": "Apply v = u + at / s = ut + ½at²",
+        "forbidden_templates": [
+          "PHYS_STRETCH_20PCT_CURRENT",
+          "PHYS_STRETCH_2X_LENGTH_RATIO",
+          "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+          "CHEM_LATTICE_COMPARISON",
+          "CHEM_LATTICE_FACTORS",
+          "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+          "ZOO_ABO_SEQUENCE",
+          "ZOO_ABO_ANTIGEN_IDENTIFY"
+        ],
+        "correct_option_count": 1,
+        "explanation_required": true,
+        "ncert_source_relative": "Class 11/Physics/keph1dd/keph1dd/keph102.pdf",
+        "avoid_paraphrase_duplicates": true,
+        "enforce_prior_stem_diversity": true
+      },
+      "after_constraints": {
+        "ku_id": "9152da9b-021e-4001-91e3-f46492a32a3a",
+        "reasoning": "numerical_application",
+        "neet_ug_2026": {
+          "topic": "The frame of reference, motion in a straight line, Position-time graph, speed and velocity; Uniform and non-uniform motion, average speed and instantaneous velocity, uniformly accelerated motion, velocity-time, position-time graph, relations for uniformly accelerated motion, Scalars and Vectors, Vector Addition and subtraction, scalar and vector products, Unit Vector, Resolution of a Vector. Relative Velocity, Motion in a plane, Projectile Motion, Uniform Circular Motion.",
+          "subject": "PHYSICS",
+          "topic_id": "PHYSICS:U02:T01",
+          "unit_name": "KINEMATICS",
+          "applied_by": "SYLLABUS-MAPPING-REMEDIATION-002",
+          "unit_number": 2,
+          "syllabus_sha256": "82a616e31ba75d6e5d6422537c8ef5a4ceafb7a7e3449109696b12839b100ceb",
+          "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+        },
+        "seed_slot_id": "physics-02",
+        "question_format": "MCQ_4",
+        "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph1dd\\keph1dd\\keph102.pdf",
+        "cognitive_operation": "Apply v = u + at / s = ut + ½at²",
+        "forbidden_templates": [
+          "PHYS_STRETCH_20PCT_CURRENT",
+          "PHYS_STRETCH_2X_LENGTH_RATIO",
+          "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+          "CHEM_LATTICE_COMPARISON",
+          "CHEM_LATTICE_FACTORS",
+          "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+          "ZOO_ABO_SEQUENCE",
+          "ZOO_ABO_ANTIGEN_IDENTIFY"
+        ],
+        "correct_option_count": 1,
+        "explanation_required": true,
+        "ncert_source_relative": "Class 11/Physics/keph1dd/keph1dd/keph102.pdf",
+        "avoid_paraphrase_duplicates": true,
+        "enforce_prior_stem_diversity": true
+      },
+      "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph1dd\\keph1dd\\keph102.pdf",
+      "ncert_source_relative": "Class 11/Physics/keph1dd/keph1dd/keph102.pdf",
+      "ku_id": "9152da9b-021e-4001-91e3-f46492a32a3a",
+      "provenance_before": "ai",
+      "provenance_after": "ai",
+      "taxonomy_before": {
+        "subject_id": "8546ab39-2401-4e1f-91e7-a22e27afe147",
+        "chapter_id": "b20f8158-cba8-41d2-a88e-3fbd1b2261d2",
+        "topic_id": "bbceffb0-53f0-4ae0-8aa2-40ae031517ac",
+        "concept_id": "f68b97fc-aba2-456d-b003-0801637f6a53",
+        "target_count": 1,
+        "subject_code": "PHYSICS",
+        "class_level": "11"
+      },
+      "taxonomy_after": {
+        "subject_id": "8546ab39-2401-4e1f-91e7-a22e27afe147",
+        "chapter_id": "b20f8158-cba8-41d2-a88e-3fbd1b2261d2",
+        "topic_id": "bbceffb0-53f0-4ae0-8aa2-40ae031517ac",
+        "concept_id": "f68b97fc-aba2-456d-b003-0801637f6a53",
+        "target_count": 1,
+        "subject_code": "PHYSICS",
+        "class_level": "11"
+      },
+      "syllabus_binding_before": {
+        "topic": "The frame of reference, motion in a straight line, Position-time graph, speed and velocity; Uniform and non-uniform motion, average speed and instantaneous velocity, uniformly accelerated motion, velocity-time, position-time graph, relations for uniformly accelerated motion, Scalars and Vectors, Vector Addition and subtraction, scalar and vector products, Unit Vector, Resolution of a Vector. Relative Velocity, Motion in a plane, Projectile Motion, Uniform Circular Motion.",
+        "subject": "PHYSICS",
+        "topic_id": "PHYSICS:U02:T01",
+        "unit_name": "KINEMATICS",
+        "applied_by": "SYLLABUS-MAPPING-REMEDIATION-002",
+        "unit_number": 2,
+        "syllabus_sha256": "82a616e31ba75d6e5d6422537c8ef5a4ceafb7a7e3449109696b12839b100ceb",
+        "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+      },
+      "syllabus_binding_after": {
+        "topic": "The frame of reference, motion in a straight line, Position-time graph, speed and velocity; Uniform and non-uniform motion, average speed and instantaneous velocity, uniformly accelerated motion, velocity-time, position-time graph, relations for uniformly accelerated motion, Scalars and Vectors, Vector Addition and subtraction, scalar and vector products, Unit Vector, Resolution of a Vector. Relative Velocity, Motion in a plane, Projectile Motion, Uniform Circular Motion.",
+        "subject": "PHYSICS",
+        "topic_id": "PHYSICS:U02:T01",
+        "unit_name": "KINEMATICS",
+        "applied_by": "SYLLABUS-MAPPING-REMEDIATION-002",
+        "unit_number": 2,
+        "syllabus_sha256": "82a616e31ba75d6e5d6422537c8ef5a4ceafb7a7e3449109696b12839b100ceb",
+        "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+      },
+      "gate_before": {
+        "note": "already_applied_or_rerun"
+      },
+      "gate_after": {
+        "syllabus": "IN_SYLLABUS",
+        "evidence": "NCERT_EVIDENCE_READY"
+      },
+      "changed_fields": [
+        "ncert_source_path",
+        "ncert_source_relative",
+        "ku_id"
+      ],
+      "unchanged_fields": [
+        "provenance_tier"
+      ],
+      "note": "idempotent_rerun_snapshot"
+    },
+    {
+      "blueprint_id": "937515bc-264c-455b-8ab7-1e782159abb3",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-physics-06",
+      "before_constraints": {
+        "ku_id": "c07d949b-1467-4e98-bfb4-71692addf7da",
+        "reasoning": "conceptual_law",
+        "neet_ug_2026": {
+          "topic": "Viscosity. Stokes' law. terminal velocity, streamline, and turbulent flow. critical velocity. Bernoulli's principle and its applications.",
+          "subject": "PHYSICS",
+          "topic_id": "PHYSICS:U07:T02",
+          "unit_name": "PROPERTIES OF SOLIDS AND LIQUIDS",
+          "applied_by": "SYLLABUS-MAPPING-REMEDIATION-002",
+          "unit_number": 7,
+          "syllabus_sha256": "82a616e31ba75d6e5d6422537c8ef5a4ceafb7a7e3449109696b12839b100ceb",
+          "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+        },
+        "seed_slot_id": "physics-06",
+        "question_format": "MCQ_4",
+        "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph2dd\\keph2dd\\keph202.pdf",
+        "cognitive_operation": "Bernoulli along a streamline",
+        "forbidden_templates": [
+          "PHYS_STRETCH_20PCT_CURRENT",
+          "PHYS_STRETCH_2X_LENGTH_RATIO",
+          "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+          "CHEM_LATTICE_COMPARISON",
+          "CHEM_LATTICE_FACTORS",
+          "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+          "ZOO_ABO_SEQUENCE",
+          "ZOO_ABO_ANTIGEN_IDENTIFY"
+        ],
+        "correct_option_count": 1,
+        "explanation_required": true,
+        "ncert_source_relative": "Class 11/Physics/keph2dd/keph2dd/keph202.pdf",
+        "avoid_paraphrase_duplicates": true,
+        "enforce_prior_stem_diversity": true
+      },
+      "after_constraints": {
+        "ku_id": "c07d949b-1467-4e98-bfb4-71692addf7da",
+        "reasoning": "conceptual_law",
+        "neet_ug_2026": {
+          "topic": "Viscosity. Stokes' law. terminal velocity, streamline, and turbulent flow. critical velocity. Bernoulli's principle and its applications.",
+          "subject": "PHYSICS",
+          "topic_id": "PHYSICS:U07:T02",
+          "unit_name": "PROPERTIES OF SOLIDS AND LIQUIDS",
+          "applied_by": "SYLLABUS-MAPPING-REMEDIATION-002",
+          "unit_number": 7,
+          "syllabus_sha256": "82a616e31ba75d6e5d6422537c8ef5a4ceafb7a7e3449109696b12839b100ceb",
+          "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+        },
+        "seed_slot_id": "physics-06",
+        "question_format": "MCQ_4",
+        "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph2dd\\keph2dd\\keph202.pdf",
+        "cognitive_operation": "Bernoulli along a streamline",
+        "forbidden_templates": [
+          "PHYS_STRETCH_20PCT_CURRENT",
+          "PHYS_STRETCH_2X_LENGTH_RATIO",
+          "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+          "CHEM_LATTICE_COMPARISON",
+          "CHEM_LATTICE_FACTORS",
+          "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+          "ZOO_ABO_SEQUENCE",
+          "ZOO_ABO_ANTIGEN_IDENTIFY"
+        ],
+        "correct_option_count": 1,
+        "explanation_required": true,
+        "ncert_source_relative": "Class 11/Physics/keph2dd/keph2dd/keph202.pdf",
+        "avoid_paraphrase_duplicates": true,
+        "enforce_prior_stem_diversity": true
+      },
+      "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph2dd\\keph2dd\\keph202.pdf",
+      "ncert_source_relative": "Class 11/Physics/keph2dd/keph2dd/keph202.pdf",
+      "ku_id": "c07d949b-1467-4e98-bfb4-71692addf7da",
+      "provenance_before": "ai",
+      "provenance_after": "ai",
+      "taxonomy_before": {
+        "subject_id": "8546ab39-2401-4e1f-91e7-a22e27afe147",
+        "chapter_id": "d28f54b5-6919-411f-a7b2-2088b0ab3c29",
+        "topic_id": "6697b220-f1bd-4a2d-be31-8bc6008942bb",
+        "concept_id": "9c03982a-38d4-453a-9ad0-752bf6834a33",
+        "target_count": 1,
+        "subject_code": "PHYSICS",
+        "class_level": "11"
+      },
+      "taxonomy_after": {
+        "subject_id": "8546ab39-2401-4e1f-91e7-a22e27afe147",
+        "chapter_id": "d28f54b5-6919-411f-a7b2-2088b0ab3c29",
+        "topic_id": "6697b220-f1bd-4a2d-be31-8bc6008942bb",
+        "concept_id": "9c03982a-38d4-453a-9ad0-752bf6834a33",
+        "target_count": 1,
+        "subject_code": "PHYSICS",
+        "class_level": "11"
+      },
+      "syllabus_binding_before": {
+        "topic": "Viscosity. Stokes' law. terminal velocity, streamline, and turbulent flow. critical velocity. Bernoulli's principle and its applications.",
+        "subject": "PHYSICS",
+        "topic_id": "PHYSICS:U07:T02",
+        "unit_name": "PROPERTIES OF SOLIDS AND LIQUIDS",
+        "applied_by": "SYLLABUS-MAPPING-REMEDIATION-002",
+        "unit_number": 7,
+        "syllabus_sha256": "82a616e31ba75d6e5d6422537c8ef5a4ceafb7a7e3449109696b12839b100ceb",
+        "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+      },
+      "syllabus_binding_after": {
+        "topic": "Viscosity. Stokes' law. terminal velocity, streamline, and turbulent flow. critical velocity. Bernoulli's principle and its applications.",
+        "subject": "PHYSICS",
+        "topic_id": "PHYSICS:U07:T02",
+        "unit_name": "PROPERTIES OF SOLIDS AND LIQUIDS",
+        "applied_by": "SYLLABUS-MAPPING-REMEDIATION-002",
+        "unit_number": 7,
+        "syllabus_sha256": "82a616e31ba75d6e5d6422537c8ef5a4ceafb7a7e3449109696b12839b100ceb",
+        "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+      },
+      "gate_before": {
+        "note": "already_applied_or_rerun"
+      },
+      "gate_after": {
+        "syllabus": "IN_SYLLABUS",
+        "evidence": "NCERT_EVIDENCE_READY"
+      },
+      "changed_fields": [
+        "ncert_source_path",
+        "ncert_source_relative",
+        "ku_id"
+      ],
+      "unchanged_fields": [
+        "provenance_tier"
+      ],
+      "note": "idempotent_rerun_snapshot"
+    },
+    {
+      "blueprint_id": "38772f04-ac54-4b76-8bcc-7fc4ff22bed5",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-physics-10",
+      "before_constraints": {
+        "ku_id": "580c2809-8ada-4c9b-bf7d-52eafdbe5aa4",
+        "reasoning": "numerical_application",
+        "neet_ug_2026": {
+          "topic": "Reflection of light, spherical mirrors, mirror formula. Refraction of light at plane and spherical surfaces, thin lens formula and lens maker formula. Total internal reflection and its applications. Magnification. Power of a Lens. Combination of thin lenses in contact. Refraction of light through a prism. Microscope and Astronomical Telescope (reflecting and refracting) and their magnifying powers.",
+          "subject": "PHYSICS",
+          "topic_id": "PHYSICS:U16:T01",
+          "unit_name": "OPTICS",
+          "applied_by": "SYLLABUS-MAPPING-REMEDIATION-002",
+          "unit_number": 16,
+          "syllabus_sha256": "82a616e31ba75d6e5d6422537c8ef5a4ceafb7a7e3449109696b12839b100ceb",
+          "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+        },
+        "seed_slot_id": "physics-10",
+        "question_format": "MCQ_4",
+        "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Physics\\leph2dd\\leph201.pdf",
+        "cognitive_operation": "Thin lens formula 1/v − 1/u = 1/f",
+        "forbidden_templates": [
+          "PHYS_STRETCH_20PCT_CURRENT",
+          "PHYS_STRETCH_2X_LENGTH_RATIO",
+          "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+          "CHEM_LATTICE_COMPARISON",
+          "CHEM_LATTICE_FACTORS",
+          "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+          "ZOO_ABO_SEQUENCE",
+          "ZOO_ABO_ANTIGEN_IDENTIFY"
+        ],
+        "correct_option_count": 1,
+        "explanation_required": true,
+        "ncert_source_relative": "Class 12/Physics/leph2dd/leph201.pdf",
+        "avoid_paraphrase_duplicates": true,
+        "enforce_prior_stem_diversity": true
+      },
+      "after_constraints": {
+        "ku_id": "580c2809-8ada-4c9b-bf7d-52eafdbe5aa4",
+        "reasoning": "numerical_application",
+        "neet_ug_2026": {
+          "topic": "Reflection of light, spherical mirrors, mirror formula. Refraction of light at plane and spherical surfaces, thin lens formula and lens maker formula. Total internal reflection and its applications. Magnification. Power of a Lens. Combination of thin lenses in contact. Refraction of light through a prism. Microscope and Astronomical Telescope (reflecting and refracting) and their magnifying powers.",
+          "subject": "PHYSICS",
+          "topic_id": "PHYSICS:U16:T01",
+          "unit_name": "OPTICS",
+          "applied_by": "SYLLABUS-MAPPING-REMEDIATION-002",
+          "unit_number": 16,
+          "syllabus_sha256": "82a616e31ba75d6e5d6422537c8ef5a4ceafb7a7e3449109696b12839b100ceb",
+          "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+        },
+        "seed_slot_id": "physics-10",
+        "question_format": "MCQ_4",
+        "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Physics\\leph2dd\\leph201.pdf",
+        "cognitive_operation": "Thin lens formula 1/v − 1/u = 1/f",
+        "forbidden_templates": [
+          "PHYS_STRETCH_20PCT_CURRENT",
+          "PHYS_STRETCH_2X_LENGTH_RATIO",
+          "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+          "CHEM_LATTICE_COMPARISON",
+          "CHEM_LATTICE_FACTORS",
+          "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+          "ZOO_ABO_SEQUENCE",
+          "ZOO_ABO_ANTIGEN_IDENTIFY"
+        ],
+        "correct_option_count": 1,
+        "explanation_required": true,
+        "ncert_source_relative": "Class 12/Physics/leph2dd/leph201.pdf",
+        "avoid_paraphrase_duplicates": true,
+        "enforce_prior_stem_diversity": true
+      },
+      "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Physics\\leph2dd\\leph201.pdf",
+      "ncert_source_relative": "Class 12/Physics/leph2dd/leph201.pdf",
+      "ku_id": "580c2809-8ada-4c9b-bf7d-52eafdbe5aa4",
+      "provenance_before": "ai",
+      "provenance_after": "ai",
+      "taxonomy_before": {
+        "subject_id": "8546ab39-2401-4e1f-91e7-a22e27afe147",
+        "chapter_id": "b35e04b3-ab7b-4bb5-bfc4-ad7e914297c1",
+        "topic_id": "aebaf878-4048-451a-a585-0b5c9ed3c8bb",
+        "concept_id": "dea4d8e9-aa27-45e3-b142-04a1d1a6b98b",
+        "target_count": 1,
+        "subject_code": "PHYSICS",
+        "class_level": "12"
+      },
+      "taxonomy_after": {
+        "subject_id": "8546ab39-2401-4e1f-91e7-a22e27afe147",
+        "chapter_id": "b35e04b3-ab7b-4bb5-bfc4-ad7e914297c1",
+        "topic_id": "aebaf878-4048-451a-a585-0b5c9ed3c8bb",
+        "concept_id": "dea4d8e9-aa27-45e3-b142-04a1d1a6b98b",
+        "target_count": 1,
+        "subject_code": "PHYSICS",
+        "class_level": "12"
+      },
+      "syllabus_binding_before": {
+        "topic": "Reflection of light, spherical mirrors, mirror formula. Refraction of light at plane and spherical surfaces, thin lens formula and lens maker formula. Total internal reflection and its applications. Magnification. Power of a Lens. Combination of thin lenses in contact. Refraction of light through a prism. Microscope and Astronomical Telescope (reflecting and refracting) and their magnifying powers.",
+        "subject": "PHYSICS",
+        "topic_id": "PHYSICS:U16:T01",
+        "unit_name": "OPTICS",
+        "applied_by": "SYLLABUS-MAPPING-REMEDIATION-002",
+        "unit_number": 16,
+        "syllabus_sha256": "82a616e31ba75d6e5d6422537c8ef5a4ceafb7a7e3449109696b12839b100ceb",
+        "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+      },
+      "syllabus_binding_after": {
+        "topic": "Reflection of light, spherical mirrors, mirror formula. Refraction of light at plane and spherical surfaces, thin lens formula and lens maker formula. Total internal reflection and its applications. Magnification. Power of a Lens. Combination of thin lenses in contact. Refraction of light through a prism. Microscope and Astronomical Telescope (reflecting and refracting) and their magnifying powers.",
+        "subject": "PHYSICS",
+        "topic_id": "PHYSICS:U16:T01",
+        "unit_name": "OPTICS",
+        "applied_by": "SYLLABUS-MAPPING-REMEDIATION-002",
+        "unit_number": 16,
+        "syllabus_sha256": "82a616e31ba75d6e5d6422537c8ef5a4ceafb7a7e3449109696b12839b100ceb",
+        "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+      },
+      "gate_before": {
+        "note": "already_applied_or_rerun"
+      },
+      "gate_after": {
+        "syllabus": "IN_SYLLABUS",
+        "evidence": "NCERT_EVIDENCE_READY"
+      },
+      "changed_fields": [
+        "ncert_source_path",
+        "ncert_source_relative",
+        "ku_id"
+      ],
+      "unchanged_fields": [
+        "provenance_tier"
+      ],
+      "note": "idempotent_rerun_snapshot"
+    },
+    {
+      "blueprint_id": "fc3eac99-b5fc-45f2-a29f-31ea072da557",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-zoology-01",
+      "before_constraints": {
+        "ku_id": "0c70cdbf-f83c-4095-9195-a057da198f6d",
+        "reasoning": "process_sequence",
+        "neet_ug_2026": {
+          "topic": "Body fluids and circulation: Composition of blood, blood groups, coagulation of blood; Composition of lymph and its function; Human circulatory system-Structure of human heart and blood vessels; Cardiac cycle, cardiac output, ECG, Double circulation; Regulation of cardiac activity; Disorders of circulatory system-Hypertension, Coronary artery disease, Angina pectoris, Heart failure.",
+          "subject": "BIOLOGY",
+          "topic_id": "BIOLOGY:U05:T02",
+          "unit_name": "Human Physiology",
+          "applied_by": "SYLLABUS-MAPPING-REMEDIATION-002",
+          "unit_number": 5,
+          "syllabus_sha256": "82a616e31ba75d6e5d6422537c8ef5a4ceafb7a7e3449109696b12839b100ceb",
+          "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+        },
+        "seed_slot_id": "zoology-01",
+        "question_format": "MCQ_4",
+        "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo115.pdf",
+        "cognitive_operation": "Systole/diastole phase identification",
+        "forbidden_templates": [
+          "PHYS_STRETCH_20PCT_CURRENT",
+          "PHYS_STRETCH_2X_LENGTH_RATIO",
+          "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+          "CHEM_LATTICE_COMPARISON",
+          "CHEM_LATTICE_FACTORS",
+          "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+          "ZOO_ABO_SEQUENCE",
+          "ZOO_ABO_ANTIGEN_IDENTIFY"
+        ],
+        "correct_option_count": 1,
+        "explanation_required": true,
+        "ncert_source_relative": "Class 11/Biology/kebo1dd/kebo115.pdf",
+        "avoid_paraphrase_duplicates": true,
+        "enforce_prior_stem_diversity": true
+      },
+      "after_constraints": {
+        "ku_id": "0c70cdbf-f83c-4095-9195-a057da198f6d",
+        "reasoning": "process_sequence",
+        "neet_ug_2026": {
+          "topic": "Body fluids and circulation: Composition of blood, blood groups, coagulation of blood; Composition of lymph and its function; Human circulatory system-Structure of human heart and blood vessels; Cardiac cycle, cardiac output, ECG, Double circulation; Regulation of cardiac activity; Disorders of circulatory system-Hypertension, Coronary artery disease, Angina pectoris, Heart failure.",
+          "subject": "BIOLOGY",
+          "topic_id": "BIOLOGY:U05:T02",
+          "unit_name": "Human Physiology",
+          "applied_by": "SYLLABUS-MAPPING-REMEDIATION-002",
+          "unit_number": 5,
+          "syllabus_sha256": "82a616e31ba75d6e5d6422537c8ef5a4ceafb7a7e3449109696b12839b100ceb",
+          "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+        },
+        "seed_slot_id": "zoology-01",
+        "question_format": "MCQ_4",
+        "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo115.pdf",
+        "cognitive_operation": "Systole/diastole phase identification",
+        "forbidden_templates": [
+          "PHYS_STRETCH_20PCT_CURRENT",
+          "PHYS_STRETCH_2X_LENGTH_RATIO",
+          "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+          "CHEM_LATTICE_COMPARISON",
+          "CHEM_LATTICE_FACTORS",
+          "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+          "ZOO_ABO_SEQUENCE",
+          "ZOO_ABO_ANTIGEN_IDENTIFY"
+        ],
+        "correct_option_count": 1,
+        "explanation_required": true,
+        "ncert_source_relative": "Class 11/Biology/kebo1dd/kebo115.pdf",
+        "avoid_paraphrase_duplicates": true,
+        "enforce_prior_stem_diversity": true
+      },
+      "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo115.pdf",
+      "ncert_source_relative": "Class 11/Biology/kebo1dd/kebo115.pdf",
+      "ku_id": "0c70cdbf-f83c-4095-9195-a057da198f6d",
+      "provenance_before": "ai",
+      "provenance_after": "ai",
+      "taxonomy_before": {
+        "subject_id": "1bbd31b8-60a1-4630-bdca-23167454b934",
+        "chapter_id": "81cce1e2-0fbd-4458-8c8a-34bcdc7e5967",
+        "topic_id": "4afaf5d8-225d-425b-8e8c-4271db6db373",
+        "concept_id": "323c3c8a-ce3c-428f-9edb-20edf42574e9",
+        "target_count": 1,
+        "subject_code": "ZOOLOGY",
+        "class_level": "11"
+      },
+      "taxonomy_after": {
+        "subject_id": "1bbd31b8-60a1-4630-bdca-23167454b934",
+        "chapter_id": "81cce1e2-0fbd-4458-8c8a-34bcdc7e5967",
+        "topic_id": "4afaf5d8-225d-425b-8e8c-4271db6db373",
+        "concept_id": "323c3c8a-ce3c-428f-9edb-20edf42574e9",
+        "target_count": 1,
+        "subject_code": "ZOOLOGY",
+        "class_level": "11"
+      },
+      "syllabus_binding_before": {
+        "topic": "Body fluids and circulation: Composition of blood, blood groups, coagulation of blood; Composition of lymph and its function; Human circulatory system-Structure of human heart and blood vessels; Cardiac cycle, cardiac output, ECG, Double circulation; Regulation of cardiac activity; Disorders of circulatory system-Hypertension, Coronary artery disease, Angina pectoris, Heart failure.",
+        "subject": "BIOLOGY",
+        "topic_id": "BIOLOGY:U05:T02",
+        "unit_name": "Human Physiology",
+        "applied_by": "SYLLABUS-MAPPING-REMEDIATION-002",
+        "unit_number": 5,
+        "syllabus_sha256": "82a616e31ba75d6e5d6422537c8ef5a4ceafb7a7e3449109696b12839b100ceb",
+        "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+      },
+      "syllabus_binding_after": {
+        "topic": "Body fluids and circulation: Composition of blood, blood groups, coagulation of blood; Composition of lymph and its function; Human circulatory system-Structure of human heart and blood vessels; Cardiac cycle, cardiac output, ECG, Double circulation; Regulation of cardiac activity; Disorders of circulatory system-Hypertension, Coronary artery disease, Angina pectoris, Heart failure.",
+        "subject": "BIOLOGY",
+        "topic_id": "BIOLOGY:U05:T02",
+        "unit_name": "Human Physiology",
+        "applied_by": "SYLLABUS-MAPPING-REMEDIATION-002",
+        "unit_number": 5,
+        "syllabus_sha256": "82a616e31ba75d6e5d6422537c8ef5a4ceafb7a7e3449109696b12839b100ceb",
+        "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+      },
+      "gate_before": {
+        "note": "already_applied_or_rerun"
+      },
+      "gate_after": {
+        "syllabus": "IN_SYLLABUS",
+        "evidence": "NCERT_EVIDENCE_READY"
+      },
+      "changed_fields": [
+        "ncert_source_path",
+        "ncert_source_relative",
+        "ku_id"
+      ],
+      "unchanged_fields": [
+        "provenance_tier"
+      ],
+      "note": "idempotent_rerun_snapshot"
+    },
+    {
+      "blueprint_id": "0b1c8f98-35eb-43f7-bb8e-2398c4a46de5",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-zoology-03",
+      "before_constraints": {
+        "ku_id": "9d44a34b-502a-4c6f-b6ee-e1caa4d491c9",
+        "reasoning": "mechanism",
+        "neet_ug_2026": {
+          "topic": "Chemical constituents of living cells: Biomolecules-structure and function of proteins, carbohydrates, lipids, nucleic acids; Enzymes-types, properties, enzyme action, classification and nomenclature of enzymes.",
+          "subject": "BIOLOGY",
+          "topic_id": "BIOLOGY:U03:T02",
+          "unit_name": "Cell Structure and Function",
+          "applied_by": "SYLLABUS-MAPPING-REMEDIATION-002",
+          "unit_number": 3,
+          "syllabus_sha256": "82a616e31ba75d6e5d6422537c8ef5a4ceafb7a7e3449109696b12839b100ceb",
+          "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+        },
+        "seed_slot_id": "zoology-03",
+        "question_format": "MCQ_4",
+        "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo109.pdf",
+        "cognitive_operation": "Enzyme action / active site",
+        "forbidden_templates": [
+          "PHYS_STRETCH_20PCT_CURRENT",
+          "PHYS_STRETCH_2X_LENGTH_RATIO",
+          "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+          "CHEM_LATTICE_COMPARISON",
+          "CHEM_LATTICE_FACTORS",
+          "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+          "ZOO_ABO_SEQUENCE",
+          "ZOO_ABO_ANTIGEN_IDENTIFY"
+        ],
+        "correct_option_count": 1,
+        "explanation_required": true,
+        "ncert_source_relative": "Class 11/Biology/kebo1dd/kebo109.pdf",
+        "avoid_paraphrase_duplicates": true,
+        "enforce_prior_stem_diversity": true
+      },
+      "after_constraints": {
+        "ku_id": "9d44a34b-502a-4c6f-b6ee-e1caa4d491c9",
+        "reasoning": "mechanism",
+        "neet_ug_2026": {
+          "topic": "Chemical constituents of living cells: Biomolecules-structure and function of proteins, carbohydrates, lipids, nucleic acids; Enzymes-types, properties, enzyme action, classification and nomenclature of enzymes.",
+          "subject": "BIOLOGY",
+          "topic_id": "BIOLOGY:U03:T02",
+          "unit_name": "Cell Structure and Function",
+          "applied_by": "SYLLABUS-MAPPING-REMEDIATION-002",
+          "unit_number": 3,
+          "syllabus_sha256": "82a616e31ba75d6e5d6422537c8ef5a4ceafb7a7e3449109696b12839b100ceb",
+          "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+        },
+        "seed_slot_id": "zoology-03",
+        "question_format": "MCQ_4",
+        "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo109.pdf",
+        "cognitive_operation": "Enzyme action / active site",
+        "forbidden_templates": [
+          "PHYS_STRETCH_20PCT_CURRENT",
+          "PHYS_STRETCH_2X_LENGTH_RATIO",
+          "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+          "CHEM_LATTICE_COMPARISON",
+          "CHEM_LATTICE_FACTORS",
+          "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+          "ZOO_ABO_SEQUENCE",
+          "ZOO_ABO_ANTIGEN_IDENTIFY"
+        ],
+        "correct_option_count": 1,
+        "explanation_required": true,
+        "ncert_source_relative": "Class 11/Biology/kebo1dd/kebo109.pdf",
+        "avoid_paraphrase_duplicates": true,
+        "enforce_prior_stem_diversity": true
+      },
+      "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo109.pdf",
+      "ncert_source_relative": "Class 11/Biology/kebo1dd/kebo109.pdf",
+      "ku_id": "9d44a34b-502a-4c6f-b6ee-e1caa4d491c9",
+      "provenance_before": "ai",
+      "provenance_after": "ai",
+      "taxonomy_before": {
+        "subject_id": "92283579-413a-45d7-8d77-0c407fe7d277",
+        "chapter_id": "17f6994c-9776-4e66-8627-c44f7e0f08fe",
+        "topic_id": "ceba634d-1c22-40ed-b891-5931e038dfac",
+        "concept_id": "688b4b23-a44a-47ca-b386-7605ec84faa7",
+        "target_count": 1,
+        "subject_code": "BOTANY",
+        "class_level": "11"
+      },
+      "taxonomy_after": {
+        "subject_id": "92283579-413a-45d7-8d77-0c407fe7d277",
+        "chapter_id": "17f6994c-9776-4e66-8627-c44f7e0f08fe",
+        "topic_id": "ceba634d-1c22-40ed-b891-5931e038dfac",
+        "concept_id": "688b4b23-a44a-47ca-b386-7605ec84faa7",
+        "target_count": 1,
+        "subject_code": "BOTANY",
+        "class_level": "11"
+      },
+      "syllabus_binding_before": {
+        "topic": "Chemical constituents of living cells: Biomolecules-structure and function of proteins, carbohydrates, lipids, nucleic acids; Enzymes-types, properties, enzyme action, classification and nomenclature of enzymes.",
+        "subject": "BIOLOGY",
+        "topic_id": "BIOLOGY:U03:T02",
+        "unit_name": "Cell Structure and Function",
+        "applied_by": "SYLLABUS-MAPPING-REMEDIATION-002",
+        "unit_number": 3,
+        "syllabus_sha256": "82a616e31ba75d6e5d6422537c8ef5a4ceafb7a7e3449109696b12839b100ceb",
+        "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+      },
+      "syllabus_binding_after": {
+        "topic": "Chemical constituents of living cells: Biomolecules-structure and function of proteins, carbohydrates, lipids, nucleic acids; Enzymes-types, properties, enzyme action, classification and nomenclature of enzymes.",
+        "subject": "BIOLOGY",
+        "topic_id": "BIOLOGY:U03:T02",
+        "unit_name": "Cell Structure and Function",
+        "applied_by": "SYLLABUS-MAPPING-REMEDIATION-002",
+        "unit_number": 3,
+        "syllabus_sha256": "82a616e31ba75d6e5d6422537c8ef5a4ceafb7a7e3449109696b12839b100ceb",
+        "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+      },
+      "gate_before": {
+        "note": "already_applied_or_rerun"
+      },
+      "gate_after": {
+        "syllabus": "IN_SYLLABUS",
+        "evidence": "NCERT_EVIDENCE_READY"
+      },
+      "changed_fields": [
+        "ncert_source_path",
+        "ncert_source_relative",
+        "ku_id"
+      ],
+      "unchanged_fields": [
+        "provenance_tier"
+      ],
+      "note": "idempotent_rerun_snapshot"
+    },
+    {
+      "blueprint_id": "4d923ceb-e65c-47ff-b6b0-c18efb4f7534",
+      "blueprint_key": "production-seed-v1-2026-09-03-replace-bp-chemistry-replace-01",
+      "before_constraints": {
+        "ku_id": "1cd86db0-ee03-4bff-9c85-ef8502858847",
+        "reasoning": "le_chatelier_shift",
+        "neet_ug_2026": {
+          "topic": "Equilibrium involving chemical processes: Law of chemical equilibrium, equilibrium constants ($K_p$ and $K_c$) and their significance, the significance of $\\Delta G$ and $\\Delta G^\\circ$ in chemical equilibrium, factors affecting equilibrium concentration, pressure, temperature, the effect of catalyst; Le Chatelier's principle.",
+          "subject": "CHEMISTRY",
+          "topic_id": "CHEMISTRY:U06:T03",
+          "unit_name": "EQUILIBRIUM",
+          "applied_by": "SYLLABUS-MAPPING-REMEDIATION-002",
+          "unit_number": 6,
+          "syllabus_sha256": "82a616e31ba75d6e5d6422537c8ef5a4ceafb7a7e3449109696b12839b100ceb",
+          "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+        },
+        "seed_slot_id": "chemistry-replace-01",
+        "replacement_of": "54907eea-4fcd-4855-8477-268bafe03e82",
+        "question_format": "MCQ_4",
+        "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Chemistry\\kech1dd\\kech1dd\\kech106.pdf",
+        "cognitive_operation": "Apply Le Chatelier's principle / effect of concentration, pressure, or temperature on a chemical equilibrium as treated in NCERT Class 11 Equilibrium. Do NOT use XeF5−, heptacoordinate VSEPR, lattice-energy comparison templates, or unsupported enrichment.",
+        "forbidden_templates": [
+          "PHYS_STRETCH_20PCT_CURRENT",
+          "PHYS_STRETCH_2X_LENGTH_RATIO",
+          "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+          "CHEM_LATTICE_COMPARISON",
+          "CHEM_LATTICE_FACTORS",
+          "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+          "ZOO_ABO_SEQUENCE",
+          "ZOO_ABO_ANTIGEN_IDENTIFY"
+        ],
+        "correct_option_count": 1,
+        "explanation_required": true,
+        "ncert_source_relative": "Class 11/Chemistry/kech1dd/kech1dd/kech106.pdf",
+        "avoid_paraphrase_duplicates": true,
+        "enforce_prior_stem_diversity": true
+      },
+      "after_constraints": {
+        "ku_id": "1cd86db0-ee03-4bff-9c85-ef8502858847",
+        "reasoning": "le_chatelier_shift",
+        "neet_ug_2026": {
+          "topic": "Equilibrium involving chemical processes: Law of chemical equilibrium, equilibrium constants ($K_p$ and $K_c$) and their significance, the significance of $\\Delta G$ and $\\Delta G^\\circ$ in chemical equilibrium, factors affecting equilibrium concentration, pressure, temperature, the effect of catalyst; Le Chatelier's principle.",
+          "subject": "CHEMISTRY",
+          "topic_id": "CHEMISTRY:U06:T03",
+          "unit_name": "EQUILIBRIUM",
+          "applied_by": "SYLLABUS-MAPPING-REMEDIATION-002",
+          "unit_number": 6,
+          "syllabus_sha256": "82a616e31ba75d6e5d6422537c8ef5a4ceafb7a7e3449109696b12839b100ceb",
+          "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+        },
+        "seed_slot_id": "chemistry-replace-01",
+        "replacement_of": "54907eea-4fcd-4855-8477-268bafe03e82",
+        "question_format": "MCQ_4",
+        "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Chemistry\\kech1dd\\kech1dd\\kech106.pdf",
+        "cognitive_operation": "Apply Le Chatelier's principle / effect of concentration, pressure, or temperature on a chemical equilibrium as treated in NCERT Class 11 Equilibrium. Do NOT use XeF5−, heptacoordinate VSEPR, lattice-energy comparison templates, or unsupported enrichment.",
+        "forbidden_templates": [
+          "PHYS_STRETCH_20PCT_CURRENT",
+          "PHYS_STRETCH_2X_LENGTH_RATIO",
+          "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+          "CHEM_LATTICE_COMPARISON",
+          "CHEM_LATTICE_FACTORS",
+          "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+          "ZOO_ABO_SEQUENCE",
+          "ZOO_ABO_ANTIGEN_IDENTIFY"
+        ],
+        "correct_option_count": 1,
+        "explanation_required": true,
+        "ncert_source_relative": "Class 11/Chemistry/kech1dd/kech1dd/kech106.pdf",
+        "avoid_paraphrase_duplicates": true,
+        "enforce_prior_stem_diversity": true
+      },
+      "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Chemistry\\kech1dd\\kech1dd\\kech106.pdf",
+      "ncert_source_relative": "Class 11/Chemistry/kech1dd/kech1dd/kech106.pdf",
+      "ku_id": "1cd86db0-ee03-4bff-9c85-ef8502858847",
+      "provenance_before": "ai",
+      "provenance_after": "ai",
+      "taxonomy_before": {
+        "subject_id": "33259dfe-9180-4dfd-828f-a99d83a99ceb",
+        "chapter_id": "178648dd-c1e0-4631-8871-31e38d687b51",
+        "topic_id": "56e49676-96aa-42de-8f33-c68d8105313d",
+        "concept_id": "f158f415-8e0d-4d4e-a8fc-b337e6ea2282",
+        "target_count": 1,
+        "subject_code": "CHEMISTRY",
+        "class_level": "11"
+      },
+      "taxonomy_after": {
+        "subject_id": "33259dfe-9180-4dfd-828f-a99d83a99ceb",
+        "chapter_id": "178648dd-c1e0-4631-8871-31e38d687b51",
+        "topic_id": "56e49676-96aa-42de-8f33-c68d8105313d",
+        "concept_id": "f158f415-8e0d-4d4e-a8fc-b337e6ea2282",
+        "target_count": 1,
+        "subject_code": "CHEMISTRY",
+        "class_level": "11"
+      },
+      "syllabus_binding_before": {
+        "topic": "Equilibrium involving chemical processes: Law of chemical equilibrium, equilibrium constants ($K_p$ and $K_c$) and their significance, the significance of $\\Delta G$ and $\\Delta G^\\circ$ in chemical equilibrium, factors affecting equilibrium concentration, pressure, temperature, the effect of catalyst; Le Chatelier's principle.",
+        "subject": "CHEMISTRY",
+        "topic_id": "CHEMISTRY:U06:T03",
+        "unit_name": "EQUILIBRIUM",
+        "applied_by": "SYLLABUS-MAPPING-REMEDIATION-002",
+        "unit_number": 6,
+        "syllabus_sha256": "82a616e31ba75d6e5d6422537c8ef5a4ceafb7a7e3449109696b12839b100ceb",
+        "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+      },
+      "syllabus_binding_after": {
+        "topic": "Equilibrium involving chemical processes: Law of chemical equilibrium, equilibrium constants ($K_p$ and $K_c$) and their significance, the significance of $\\Delta G$ and $\\Delta G^\\circ$ in chemical equilibrium, factors affecting equilibrium concentration, pressure, temperature, the effect of catalyst; Le Chatelier's principle.",
+        "subject": "CHEMISTRY",
+        "topic_id": "CHEMISTRY:U06:T03",
+        "unit_name": "EQUILIBRIUM",
+        "applied_by": "SYLLABUS-MAPPING-REMEDIATION-002",
+        "unit_number": 6,
+        "syllabus_sha256": "82a616e31ba75d6e5d6422537c8ef5a4ceafb7a7e3449109696b12839b100ceb",
+        "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+      },
+      "gate_before": {
+        "note": "already_applied_or_rerun"
+      },
+      "gate_after": {
+        "syllabus": "IN_SYLLABUS",
+        "evidence": "NCERT_EVIDENCE_READY"
+      },
+      "changed_fields": [
+        "ncert_source_path",
+        "ncert_source_relative",
+        "ku_id"
+      ],
+      "unchanged_fields": [
+        "provenance_tier"
+      ],
+      "note": "idempotent_rerun_snapshot"
+    },
+    {
+      "blueprint_id": "327ca1ed-12db-44d0-8e6d-176918a344e8",
+      "blueprint_key": "production-seed-v1-2026-09-03-replace-bp-physics-replace-01",
+      "before_constraints": {
+        "ku_id": "07d8a0ec-4928-4046-bbe1-255cbdae476e",
+        "reasoning": "projectile_time_of_flight",
+        "neet_ug_2026": {
+          "topic": "The frame of reference, motion in a straight line, Position-time graph, speed and velocity; Uniform and non-uniform motion, average speed and instantaneous velocity, uniformly accelerated motion, velocity-time, position-time graph, relations for uniformly accelerated motion, Scalars and Vectors, Vector Addition and subtraction, scalar and vector products, Unit Vector, Resolution of a Vector. Relative Velocity, Motion in a plane, Projectile Motion, Uniform Circular Motion.",
+          "subject": "PHYSICS",
+          "topic_id": "PHYSICS:U02:T01",
+          "unit_name": "KINEMATICS",
+          "applied_by": "SYLLABUS-MAPPING-REMEDIATION-002",
+          "unit_number": 2,
+          "syllabus_sha256": "82a616e31ba75d6e5d6422537c8ef5a4ceafb7a7e3449109696b12839b100ceb",
+          "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+        },
+        "seed_slot_id": "physics-replace-01",
+        "replacement_of": "a1f1d832-21a3-4fb6-86b8-fe07ed46ad18",
+        "question_format": "MCQ_4",
+        "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph1dd\\keph1dd\\keph103.pdf",
+        "cognitive_operation": "Apply projectile-motion relations (time of flight / range / max height) for motion under gravity. Prefer a clear numerical or single-concept application. Do NOT use distance-in-nth-second kinematics or wire-stretch/Ohm templates.",
+        "forbidden_templates": [
+          "PHYS_STRETCH_20PCT_CURRENT",
+          "PHYS_STRETCH_2X_LENGTH_RATIO",
+          "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+          "CHEM_LATTICE_COMPARISON",
+          "CHEM_LATTICE_FACTORS",
+          "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+          "ZOO_ABO_SEQUENCE",
+          "ZOO_ABO_ANTIGEN_IDENTIFY"
+        ],
+        "correct_option_count": 1,
+        "explanation_required": true,
+        "ncert_source_relative": "Class 11/Physics/keph1dd/keph1dd/keph103.pdf",
+        "avoid_paraphrase_duplicates": true,
+        "enforce_prior_stem_diversity": true
+      },
+      "after_constraints": {
+        "ku_id": "07d8a0ec-4928-4046-bbe1-255cbdae476e",
+        "reasoning": "projectile_time_of_flight",
+        "neet_ug_2026": {
+          "topic": "The frame of reference, motion in a straight line, Position-time graph, speed and velocity; Uniform and non-uniform motion, average speed and instantaneous velocity, uniformly accelerated motion, velocity-time, position-time graph, relations for uniformly accelerated motion, Scalars and Vectors, Vector Addition and subtraction, scalar and vector products, Unit Vector, Resolution of a Vector. Relative Velocity, Motion in a plane, Projectile Motion, Uniform Circular Motion.",
+          "subject": "PHYSICS",
+          "topic_id": "PHYSICS:U02:T01",
+          "unit_name": "KINEMATICS",
+          "applied_by": "SYLLABUS-MAPPING-REMEDIATION-002",
+          "unit_number": 2,
+          "syllabus_sha256": "82a616e31ba75d6e5d6422537c8ef5a4ceafb7a7e3449109696b12839b100ceb",
+          "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+        },
+        "seed_slot_id": "physics-replace-01",
+        "replacement_of": "a1f1d832-21a3-4fb6-86b8-fe07ed46ad18",
+        "question_format": "MCQ_4",
+        "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph1dd\\keph1dd\\keph103.pdf",
+        "cognitive_operation": "Apply projectile-motion relations (time of flight / range / max height) for motion under gravity. Prefer a clear numerical or single-concept application. Do NOT use distance-in-nth-second kinematics or wire-stretch/Ohm templates.",
+        "forbidden_templates": [
+          "PHYS_STRETCH_20PCT_CURRENT",
+          "PHYS_STRETCH_2X_LENGTH_RATIO",
+          "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+          "CHEM_LATTICE_COMPARISON",
+          "CHEM_LATTICE_FACTORS",
+          "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+          "ZOO_ABO_SEQUENCE",
+          "ZOO_ABO_ANTIGEN_IDENTIFY"
+        ],
+        "correct_option_count": 1,
+        "explanation_required": true,
+        "ncert_source_relative": "Class 11/Physics/keph1dd/keph1dd/keph103.pdf",
+        "avoid_paraphrase_duplicates": true,
+        "enforce_prior_stem_diversity": true
+      },
+      "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph1dd\\keph1dd\\keph103.pdf",
+      "ncert_source_relative": "Class 11/Physics/keph1dd/keph1dd/keph103.pdf",
+      "ku_id": "07d8a0ec-4928-4046-bbe1-255cbdae476e",
+      "provenance_before": "ai",
+      "provenance_after": "ai",
+      "taxonomy_before": {
+        "subject_id": "8546ab39-2401-4e1f-91e7-a22e27afe147",
+        "chapter_id": "b20f8158-cba8-41d2-a88e-3fbd1b2261d2",
+        "topic_id": "d00b3234-7356-4cf0-8e65-62ce1dda04e0",
+        "concept_id": "2b051ef2-8a90-41e9-bb2f-e7dc3daf67bd",
+        "target_count": 1,
+        "subject_code": "PHYSICS",
+        "class_level": "11"
+      },
+      "taxonomy_after": {
+        "subject_id": "8546ab39-2401-4e1f-91e7-a22e27afe147",
+        "chapter_id": "b20f8158-cba8-41d2-a88e-3fbd1b2261d2",
+        "topic_id": "d00b3234-7356-4cf0-8e65-62ce1dda04e0",
+        "concept_id": "2b051ef2-8a90-41e9-bb2f-e7dc3daf67bd",
+        "target_count": 1,
+        "subject_code": "PHYSICS",
+        "class_level": "11"
+      },
+      "syllabus_binding_before": {
+        "topic": "The frame of reference, motion in a straight line, Position-time graph, speed and velocity; Uniform and non-uniform motion, average speed and instantaneous velocity, uniformly accelerated motion, velocity-time, position-time graph, relations for uniformly accelerated motion, Scalars and Vectors, Vector Addition and subtraction, scalar and vector products, Unit Vector, Resolution of a Vector. Relative Velocity, Motion in a plane, Projectile Motion, Uniform Circular Motion.",
+        "subject": "PHYSICS",
+        "topic_id": "PHYSICS:U02:T01",
+        "unit_name": "KINEMATICS",
+        "applied_by": "SYLLABUS-MAPPING-REMEDIATION-002",
+        "unit_number": 2,
+        "syllabus_sha256": "82a616e31ba75d6e5d6422537c8ef5a4ceafb7a7e3449109696b12839b100ceb",
+        "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+      },
+      "syllabus_binding_after": {
+        "topic": "The frame of reference, motion in a straight line, Position-time graph, speed and velocity; Uniform and non-uniform motion, average speed and instantaneous velocity, uniformly accelerated motion, velocity-time, position-time graph, relations for uniformly accelerated motion, Scalars and Vectors, Vector Addition and subtraction, scalar and vector products, Unit Vector, Resolution of a Vector. Relative Velocity, Motion in a plane, Projectile Motion, Uniform Circular Motion.",
+        "subject": "PHYSICS",
+        "topic_id": "PHYSICS:U02:T01",
+        "unit_name": "KINEMATICS",
+        "applied_by": "SYLLABUS-MAPPING-REMEDIATION-002",
+        "unit_number": 2,
+        "syllabus_sha256": "82a616e31ba75d6e5d6422537c8ef5a4ceafb7a7e3449109696b12839b100ceb",
+        "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt"
+      },
+      "gate_before": {
+        "note": "already_applied_or_rerun"
+      },
+      "gate_after": {
+        "syllabus": "IN_SYLLABUS",
+        "evidence": "NCERT_EVIDENCE_READY"
+      },
+      "changed_fields": [
+        "ncert_source_path",
+        "ncert_source_relative",
+        "ku_id"
+      ],
+      "unchanged_fields": [
+        "provenance_tier"
+      ],
+      "note": "idempotent_rerun_snapshot"
+    }
+  ],
+  "population_evidence_after": {
+    "IN_SYLLABUS_EVIDENCE_READY": 146,
+    "SYLLABUS_MAPPING_REVIEW_REQUIRED": 248,
+    "IN_SYLLABUS_EVIDENCE_NOT_REQUIRED": 7,
+    "IN_SYLLABUS_EVIDENCE_INSUFFICIENT": 44
+  },
+  "evidence_ready_includes_all_14": true,
+  "provider_smoke": {
+    "review_blueprint_id": "0d707747-0340-4628-826a-c20561cc8c91",
+    "review_stop": "SYLLABUS_MAPPING_REVIEW_REQUIRED",
+    "target_blueprint_id": "dc569dd4-30d6-46c2-acb1-25dec036b15d",
+    "target_forced_insuff_stop": "NCERT_EVIDENCE_INSUFFICIENT",
+    "provider_calls": 0,
+    "ok": true
+  },
+  "provider_call_count": 0,
+  "rollback_status": "committed_ok",
+  "verdict": "GREEN",
+  "failures": [],
+  "limitations": [
+    "ncert_derived was omitted (optional for gate; path alone declares NCERT).",
+    "provenance_tier remains ai for all 14.",
+    "49 provenance-review / 2 Electrostatics / 248 syllabus-review cases untouched.",
+    "No MCQ generation performed."
+  ],
+  "tests": {
+    "pending": false,
+    "suites": [
+      {
+        "name": "test_ncert_evidence_write_002",
+        "passed": 3,
+        "failed": 0,
+        "result": "PASS"
+      }
+    ],
+    "all_green": true
+  },
+  "acceptance": {
+    "applied_14": true,
+    "idempotent": true,
+    "inventory_frozen": true,
+    "review_248": true,
+    "all_14_evidence_ready": true,
+    "no_provider": true
+  }
+}

@@ -1,0 +1,245 @@
+{
+  "generated_at": "2026-09-13T18:48:44.379104+00:00",
+  "mode": "READ-ONLY",
+  "final_status": "GREEN — MCQ PILOT AUTHORIZATION READY",
+  "executive_verdict": "All 308 canonical NCERT blueprints passed integrity checks. Legacy StudyMaterial=100, AI=37 preserved. PROJECTED capacity=616. Question/factory freeze intact. Ready for owner-authorized MCQ pilot — not started.",
+  "ncert_root": "D:\\ravishori\\AI Neet Exam App\\NCERT Books",
+  "before": {
+    "status": {
+      "DRAFT": 5298,
+      "PUBLISHED": 1479,
+      "SUPERSEDED": 6,
+      "IN_REVIEW": 111
+    },
+    "unmapped_draft": 5024,
+    "chapters": 56,
+    "topics": 192,
+    "concepts": 318,
+    "knowledge_units": 381,
+    "question_blueprints": 445,
+    "content_batches": 11,
+    "generation_jobs": 204,
+    "generation_runs": 204,
+    "generation_candidates": 392,
+    "studymaterial_path_kus": 73,
+    "digestion_kus": 0,
+    "concepts_with_ncert_ku": 308
+  },
+  "after": {
+    "status": {
+      "DRAFT": 5298,
+      "PUBLISHED": 1479,
+      "SUPERSEDED": 6,
+      "IN_REVIEW": 111
+    },
+    "unmapped_draft": 5024,
+    "chapters": 56,
+    "topics": 192,
+    "concepts": 318,
+    "knowledge_units": 381,
+    "question_blueprints": 445,
+    "content_batches": 11,
+    "generation_jobs": 204,
+    "generation_runs": 204,
+    "generation_candidates": 392,
+    "studymaterial_path_kus": 73,
+    "digestion_kus": 0,
+    "concepts_with_ncert_ku": 308
+  },
+  "snapshot_identical": true,
+  "freeze_ok": true,
+  "audit": {
+    "canonical_count": 308,
+    "canonical_passed": 308,
+    "canonical_failed": 0,
+    "failing_canonical": [],
+    "assert_failures": [],
+    "incorrect_provenance": [],
+    "invalid_or_unreadable_paths": [],
+    "source_missing_keys": [],
+    "source_missing_count": 0,
+    "provenance_counts": {
+      "CANONICAL_NCERT_BACKED": 308,
+      "LEGACY_STUDYMATERIAL": 100,
+      "LEGACY_AI": 37,
+      "SOURCE_MISSING": 0,
+      "OTHER_LEGACY": 0,
+      "TOTAL": 445,
+      "LEGACY_TOTAL": 137
+    },
+    "legacy_protection": {
+      "studymaterial_count": 100,
+      "ai_count": 37,
+      "expected_studymaterial": 100,
+      "expected_ai": 37,
+      "studymaterial_ok": true,
+      "ai_ok": true,
+      "studymaterial_keys_sample": [
+        "production-seed-v2-2026-09-03-bp-zoology-06",
+        "production-seed-v2-2026-09-03-bp-botany-10",
+        "production-seed-v2-2026-09-03-bp-zoology-07",
+        "production-seed-v2-2026-09-03-bp-zoology-13",
+        "production-seed-v2-2026-09-03-bp-botany-08",
+        "production-seed-v2-2026-09-03-bp-botany-11",
+        "production-seed-v2-2026-09-03-bp-botany-09",
+        "production-seed-v2-2026-09-03-bp-botany-12",
+        "production-seed-v2-2026-09-03-bp-botany-07",
+        "production-seed-v2-2026-09-03-bp-botany-01"
+      ],
+      "ai_keys_sample": [
+        "production-seed-v1-2026-09-02-bp-botany-01",
+        "production-seed-v1-2026-09-02-bp-zoology-04",
+        "production-seed-v1-2026-09-02-bp-zoology-03",
+        "production-seed-v1-2026-09-02-bp-botany-04",
+        "production-seed-v1-2026-09-02-bp-botany-03",
+        "factory-p3-pilot-2026-09-01-bp-botany-ncert_fact-easy",
+        "production-seed-v1-2026-09-02-bp-botany-02",
+        "production-seed-v1-2026-09-02-bp-botany-05",
+        "production-seed-v1-2026-09-02-bp-chemistry-03",
+        "production-seed-v1-2026-09-03-replace-bp-chemistry-replace-01"
+      ],
+      "note": "Legacy BPs counted in-place; not converted/rewritten/deleted by this audit."
+    },
+    "duplicates": {
+      "multi_canonical_bp_concepts": [],
+      "same_concept_same_target": []
+    },
+    "subject_stats": {
+      "PHYSICS": {
+        "canonical_ncert_bps": 67,
+        "canonical_ncert_concepts_covered": 67,
+        "expected_concepts": 67,
+        "concepts_match_expected": true,
+        "bps_per_concept_distribution": {
+          "1": 67
+        },
+        "target_count_distribution": {
+          "2": 67
+        },
+        "PROJECTED_capacity": 134,
+        "expected_PROJECTED_capacity": 134,
+        "capacity_match_expected": true,
+        "failing_bps": 0
+      },
+      "CHEMISTRY": {
+        "canonical_ncert_bps": 92,
+        "canonical_ncert_concepts_covered": 92,
+        "expected_concepts": 92,
+        "concepts_match_expected": true,
+        "bps_per_concept_distribution": {
+          "1": 92
+        },
+        "target_count_distribution": {
+          "2": 92
+        },
+        "PROJECTED_capacity": 184,
+        "expected_PROJECTED_capacity": 184,
+        "capacity_match_expected": true,
+        "failing_bps": 0
+      },
+      "BOTANY": {
+        "canonical_ncert_bps": 95,
+        "canonical_ncert_concepts_covered": 95,
+        "expected_concepts": 95,
+        "concepts_match_expected": true,
+        "bps_per_concept_distribution": {
+          "1": 95
+        },
+        "target_count_distribution": {
+          "2": 95
+        },
+        "PROJECTED_capacity": 190,
+        "expected_PROJECTED_capacity": 190,
+        "capacity_match_expected": true,
+        "failing_bps": 0
+      },
+      "ZOOLOGY": {
+        "canonical_ncert_bps": 54,
+        "canonical_ncert_concepts_covered": 54,
+        "expected_concepts": 54,
+        "concepts_match_expected": true,
+        "bps_per_concept_distribution": {
+          "1": 54
+        },
+        "target_count_distribution": {
+          "2": 54
+        },
+        "PROJECTED_capacity": 108,
+        "expected_PROJECTED_capacity": 108,
+        "capacity_match_expected": true,
+        "failing_bps": 0
+      }
+    },
+    "PROJECTED_total_capacity": 616,
+    "PROJECTED_total_expected": 616,
+    "PROJECTED_match": true,
+    "exclusions": {
+      "taxonomy_review_on_canonical": [],
+      "digestion_on_canonical": [],
+      "sv2c_botany_15_canonical_bps": [
+        {
+          "blueprint_key": "bp-create-001-20260913-bp-botany-sv2c-botany-15-mcq",
+          "concept_code": "sv2c-botany-15",
+          "note": "pre-existing MERGE_REVIEW pair member; not merged; flagged only"
+        }
+      ]
+    },
+    "anomalies": [],
+    "all_canonical_pass": true,
+    "canonical_sample_passed": [
+      {
+        "blueprint_key": "bp-create-001-20260913-bp-botany-apomixis-polyembryony-mcq",
+        "concept_code": "apomixis-polyembryony",
+        "subject": "BOTANY",
+        "target_count": 2
+      },
+      {
+        "blueprint_key": "bp-create-002-20260913-bp-botany-bc-archaebacteria-mcq",
+        "concept_code": "bc-archaebacteria",
+        "subject": "BOTANY",
+        "target_count": 2
+      },
+      {
+        "blueprint_key": "bp-create-002-20260913-bp-botany-bc-classification-history-mcq",
+        "concept_code": "bc-classification-history",
+        "subject": "BOTANY",
+        "target_count": 2
+      },
+      {
+        "blueprint_key": "bp-create-002-20260913-bp-botany-bc-eubacteria-mycoplasma-mcq",
+        "concept_code": "bc-eubacteria-mycoplasma",
+        "subject": "BOTANY",
+        "target_count": 2
+      },
+      {
+        "blueprint_key": "bp-create-002-20260913-bp-botany-bc-fungi-structure-nutrition-repro-mcq",
+        "concept_code": "bc-fungi-structure-nutrition-repro",
+        "subject": "BOTANY",
+        "target_count": 2
+      }
+    ]
+  },
+  "tests": {
+    "passed": 74,
+    "failed": 0,
+    "exit_code": 0,
+    "command": "D:\\ravishori\\AI Neet Exam App\\apps\\backend\\.venv\\Scripts\\python.exe -m pytest app/modules/ingestion/tests/test_ncert_canonical_source.py tests/test_content_factory_p2.py app/modules/academic/tests/test_cf_c1_chemistry_class_12.py app/modules/academic/tests/test_chapter_class_level.py app/modules/academic/tests/test_physics_p0_taxonomy.py tests/test_cms_workflow.py tests/test_cms_publish_quality.py tests/test_phase32_content_readiness_safety.py tests/test_phase33_ecaep_publication_safety.py -q --tb=line",
+    "tail": "\napp/modules/academic/tests/test_cf_c1_chemistry_class_12.py::test_all_nine_new_chem12_chapters_present_in_seed\n  app\\modules\\academic\\tests\\test_cf_c1_chemistry_class_12.py:76: PytestWarning: The test <Function test_all_nine_new_chem12_chapters_present_in_seed> is marked with '@pytest.mark.asyncio' but it is not an async function. Please remove the asyncio mark. If the test is not marked explicitly, check for global marks applied via 'pytestmark'.\n    def test_all_nine_new_chem12_chapters_present_in_seed():\n\napp/modules/academic/tests/test_cf_c1_chemistry_class_12.py::test_electrochemistry_seed_row_is_unchanged\n  app\\modules\\academic\\tests\\test_cf_c1_chemistry_class_12.py:84: PytestWarning: The test <Function test_electrochemistry_seed_row_is_unchanged> is marked with '@pytest.mark.asyncio' but it is not an async function. Please remove the asyncio mark. If the test is not marked explicitly, check for global marks applied via 'pytestmark'.\n    def test_electrochemistry_seed_row_is_unchanged():\n\napp/modules/academic/tests/test_cf_c1_chemistry_class_12.py::test_no_duplicate_chapter_slugs_across_all_chemistry\n  app\\modules\\academic\\tests\\test_cf_c1_chemistry_class_12.py:97: PytestWarning: The test <Function test_no_duplicate_chapter_slugs_across_all_chemistry> is marked with '@pytest.mark.asyncio' but it is not an async function. Please remove the asyncio mark. If the test is not marked explicitly, check for global marks applied via 'pytestmark'.\n    def test_no_duplicate_chapter_slugs_across_all_chemistry():\n\napp/modules/academic/tests/test_cf_c1_chemistry_class_12.py::test_topic_slugs_are_unique_within_chemistry\n  app\\modules\\academic\\tests\\test_cf_c1_chemistry_class_12.py:102: PytestWarning: The test <Function test_topic_slugs_are_unique_within_chemistry> is marked with '@pytest.mark.asyncio' but it is not an async function. Please remove the asyncio mark. If the test is not marked explicitly, check for global marks applied via 'pytestmark'.\n    def test_topic_slugs_are_unique_within_chemistry():\n\napp/modules/academic/tests/test_cf_c1_chemistry_class_12.py::test_concept_slugs_are_unique_within_chemistry\n  app\\modules\\academic\\tests\\test_cf_c1_chemistry_class_12.py:109: PytestWarning: The test <Function test_concept_slugs_are_unique_within_chemistry> is marked with '@pytest.mark.asyncio' but it is not an async function. Please remove the asyncio mark. If the test is not marked explicitly, check for global marks applied via 'pytestmark'.\n    def test_concept_slugs_are_unique_within_chemistry():\n\napp/modules/academic/tests/test_cf_c1_chemistry_class_12.py::test_every_new_chapter_has_source_grounded_topics_and_concepts\n  app\\modules\\academic\\tests\\test_cf_c1_chemistry_class_12.py:116: PytestWarning: The test <Function test_every_new_chapter_has_source_grounded_topics_and_concepts> is marked with '@pytest.mark.asyncio' but it is not an async function. Please remove the asyncio mark. If the test is not marked explicitly, check for global marks applied via 'pytestmark'.\n    def test_every_new_chapter_has_source_grounded_topics_and_concepts():\n\napp/modules/academic/tests/test_cf_c1_chemistry_class_12.py::test_physics_seed_is_unchanged_by_cf_c1\n  app\\modules\\academic\\tests\\test_cf_c1_chemistry_class_12.py:134: PytestWarning: The test <Function test_physics_seed_is_unchanged_by_cf_c1> is marked with '@pytest.mark.asyncio' but it is not an async function. Please remove the asyncio mark. If the test is not marked explicitly, check for global marks applied via 'pytestmark'.\n    def test_physics_seed_is_unchanged_by_cf_c1():\n\napp/modules/academic/tests/test_cf_c1_chemistry_class_12.py::test_botany_seed_is_unchanged_by_cf_c1\n  app\\modules\\academic\\tests\\test_cf_c1_chemistry_class_12.py:149: PytestWarning: The test <Function test_botany_seed_is_unchanged_by_cf_c1> is marked with '@pytest.mark.asyncio' but it is not an async function. Please remove the asyncio mark. If the test is not marked explicitly, check for global marks applied via 'pytestmark'.\n    def test_botany_seed_is_unchanged_by_cf_c1():\n\napp/modules/academic/tests/test_cf_c1_chemistry_class_12.py::test_zoology_seed_is_unchanged_by_cf_c1\n  app\\modules\\academic\\tests\\test_cf_c1_chemistry_class_12.py:160: PytestWarning: The test <Function test_zoology_seed_is_unchanged_by_cf_c1> is marked with '@pytest.mark.asyncio' but it is not an async function. Please remove the asyncio mark. If the test is not marked explicitly, check for global marks applied via 'pytestmark'.\n    def test_zoology_seed_is_unchanged_by_cf_c1():\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n74 passed, 15 warnings in 103.48s (0:01:43)\nsys:1: DeprecationWarning: builtin type swigvarlink has no __module__ attribute"
+  },
+  "files_changed": [
+    "docs/audits/bp_integrity_003_20260913.md",
+    "docs/audits/bp_integrity_003_20260913.json",
+    "apps/backend/scripts/bp_integrity_003_readonly.py"
+  ],
+  "confirmation": {
+    "db_mutated": false,
+    "blueprints_created": false,
+    "blueprints_modified": false,
+    "kus_modified": false,
+    "mcqs_generated": false,
+    "pilot_400_started": false,
+    "published": false,
+    "committed": false,
+    "pushed": false
+  }
+}

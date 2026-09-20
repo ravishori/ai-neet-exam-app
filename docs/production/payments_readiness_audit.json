@@ -1,0 +1,65 @@
+{
+  "audit_date": "2026-09-12",
+  "audit_phase": "0_readonly",
+  "repository": "ai-neet-exam-app",
+  "branch": "phase2-question-bank",
+  "generated_at": "2026-09-12T11:48:37.835836+00:00",
+  "code_modified": false,
+  "database_modified": false,
+  "overall_verdict": "AMBER \u2014 HARDENING REQUIRED",
+  "domain": "payments",
+  "overall": "PARTIALLY_IMPLEMENTED",
+  "gateway": "razorpay",
+  "stripe": "MISSING",
+  "findings": [
+    {
+      "id": "PAY-ORDER",
+      "title": "Server-side order create",
+      "status": "IMPLEMENTED"
+    },
+    {
+      "id": "PAY-VERIFY",
+      "title": "Client payment signature verify",
+      "status": "IMPLEMENTED"
+    },
+    {
+      "id": "PAY-WEBHOOK",
+      "title": "Webhook endpoint",
+      "status": "MISSING"
+    },
+    {
+      "id": "PAY-RECON",
+      "title": "Reconciliation job",
+      "status": "MISSING"
+    },
+    {
+      "id": "PAY-REFUND",
+      "title": "Refunds",
+      "status": "MISSING"
+    },
+    {
+      "id": "PAY-FAILCLOSED",
+      "title": "Fail closed without keys",
+      "status": "IMPLEMENTED"
+    }
+  ],
+  "stores_expected": [
+    "order_id",
+    "razorpay_order_id",
+    "payment_id",
+    "amount",
+    "currency",
+    "status"
+  ],
+  "must_not_store": [
+    "raw_card_data",
+    "cvv",
+    "full_pan"
+  ],
+  "go_live_blockers": [
+    "webhook_idempotency",
+    "signature_verify_on_webhook",
+    "entitlement_state_machine",
+    "reconciliation"
+  ]
+}

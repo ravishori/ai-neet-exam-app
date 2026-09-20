@@ -1,0 +1,26 @@
+---
+description: Canonical NCERT Books corpus is the only factual evidence root for NCERT-grounded MCQs
+alwaysApply: true
+---
+
+# NCERT source boundary
+
+## Canonical root
+- Factual NCERT evidence for generation/grounding: `NCERT Books/` (repo root).
+- Config accessor: `NCERT_SOURCE_ROOT` / `get_ncert_source_root()`.
+- Architecture note: `docs/architecture/ncert_canonical_source.md`.
+
+## Hard exclusions (may not substitute for canonical NCERT evidence)
+- `StudyMaterial/` (legacy corpus; not generation evidence)
+- Web / coaching / other textbooks
+- Model knowledge or generated explanations
+- External PDFs outside the canonical root
+
+## Provenance
+- Syllabus mapping and NCERT provenance are independent.
+- Do not rewrite StudyMaterial → NCERT provenance unless a task explicitly authorizes that migration.
+- Do not invent missing `ncert_source_path` values.
+
+## StudyMaterial archive (non-evidence)
+- For legacy StudyMaterial discovery/extraction only, follow `studymaterial-archive.mdc`.
+- That archive is **not** a factual substitute for `NCERT Books/`.

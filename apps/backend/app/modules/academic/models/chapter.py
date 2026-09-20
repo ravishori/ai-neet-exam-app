@@ -20,6 +20,9 @@ class Chapter(Base, AuditedBase):
     display_order: Mapped[int] = mapped_column(Integer, default=0, nullable=False)
     # NEET-specific: roughly how much of the exam this chapter accounts for.
     neet_weightage_percent: Mapped[float | None] = mapped_column(Numeric(4, 1))
+    # NCERT class ownership (RS-003-B-1). Remains NULLABLE for forward
+    # compatibility; Biology XI Biomolecules is resolved as BOTANY / 11 (CF-C4b).
+    class_level: Mapped[str | None] = mapped_column(String(2))
 
     subject: Mapped["Subject"] = relationship(back_populates="chapters")
     topics: Mapped[list["Topic"]] = relationship(

@@ -1,0 +1,75 @@
+{
+  "audit": "TALOS_PRODUCTION_SEED_V2_PRACTICE_E2E_REMEDIATION",
+  "date": "2026-09-04",
+  "verdict": "GREEN",
+  "base_commit": "96a46283caa47c49e4f3b1112c13bcbaff22483d",
+  "publication_authorization_reopened": false,
+  "v1_practice_modified": false,
+  "content_mutation": false,
+  "gemini_calls": 0,
+  "original_amber_findings": [
+    "diagram_svg not rendered in student UI",
+    "browser did not traverse all 100 questions",
+    "logout/login API-only"
+  ],
+  "gap1_visual": {
+    "root_cause": "Attempt API only surfaced KU visual_assets as images; V2 SVG lives on body.diagram_svg; QuestionPanel only rendered images",
+    "fix_files": [
+      "apps/backend/app/modules/assessment/api/assessment_router.py",
+      "apps/web/src/features/assessment/api.ts",
+      "apps/web/src/components/question-panel.tsx"
+    ],
+    "browser_results": {
+      "physics-05": { "id": "9c51f8a1-bf72-4ca0-bcfd-e0aa5cb8ee53", "visible": true, "img_natural_ok": true },
+      "physics-21": { "id": "1633f068-f0df-4ff5-ac0c-57be4417f29e", "visible": true, "img_natural_ok": true },
+      "zoology-12": { "id": "ca0e7a05-38bb-4e12-a52d-4fd4c7a26b07", "visible": true, "img_natural_ok": true },
+      "mobile_390_physics_05_visible": true,
+      "mobile_overflow_px": 0,
+      "claimed_as_ncert_evidence": false
+    }
+  },
+  "gap2_full100": {
+    "script": "apps/web/e2e/seed-v2-full100-browser-audit.cjs",
+    "evidence": "docs/audits/TALOS_PRODUCTION_SEED_V2_FULL100_BROWSER_EVIDENCE_20260904.json",
+    "visited_count": 100,
+    "unique_question_count": 100,
+    "duplicate_question_count": 0,
+    "outside_allowlist_count": 0,
+    "failed_render_count": 0,
+    "failed_submission_count": 0,
+    "completion_sum_correct_incorrect_skipped": 100,
+    "pass": true
+  },
+  "gap3_logout_login": {
+    "script": "apps/web/e2e/seed-v2-logout-login-browser-audit.cjs",
+    "evidence": "docs/audits/TALOS_PRODUCTION_SEED_V2_LOGOUT_LOGIN_BROWSER_EVIDENCE_20260904.json",
+    "unauth_me_status": 401,
+    "attempt_blocked_when_logged_out": true,
+    "browser_login_ok": true,
+    "prior_attempt_resumable_same_user": true,
+    "new_seed_v2_different_assessment": true,
+    "scope_remains_seed_v2": true,
+    "pass": true
+  },
+  "v1_regression": {
+    "hero_practice_now": "UNCHANGED",
+    "practice_seed_v1": "UNCHANGED",
+    "seed_v1_allowlist": "UNCHANGED",
+    "pytest_isolation_passed": 12,
+    "playwright_seed_v2_sample_passed": 2
+  },
+  "database_integrity": {
+    "v2_published": 100,
+    "subject_distribution": { "Physics": 35, "Chemistry": 35, "Botany": 15, "Zoology": 15 },
+    "allowlist_sha256": "a3a8242433b69e80b1754807949767318fa19c41699ecea42c4c246b035b3978",
+    "deleted": 0,
+    "superseded": 0,
+    "v1_published": 30,
+    "publication_mutation": false,
+    "ncert_mutation": false
+  },
+  "limitations": [
+    "Full-100 browser used Option A for every question (deterministic save-answer path)",
+    "This remediation does not by itself declare the overall V2 Practice product gate CLOSED"
+  ]
+}

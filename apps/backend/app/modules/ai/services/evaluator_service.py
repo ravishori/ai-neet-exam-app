@@ -4,6 +4,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.logging import get_logger
 from app.modules.ai.gateway.ai_gateway import AIGateway
+from app.modules.ai.gateway.base import ProviderError
 from app.modules.ai.prompts import evaluator as evaluator_prompts
 from app.modules.ai.services.json_utils import parse_json_response
 
@@ -19,17 +20,29 @@ class EvaluatorService:
         self.gateway = AIGateway(session)
 
     async def evaluate(self, *, content_type: str, body: dict) -> dict:
-        response = await self.gateway.generate(
-            agent_type="EVALUATOR",
-            system_prompt=evaluator_prompts.SYSTEM_PROMPT,
-            user_prompt=evaluator_prompts.build_prompt(content_type=content_type, body=body),
-            max_tokens=400,
-        )
+        try:
+            response = await self.gateway.generate(
+                agent_type="EVALUATOR",
+                system_prompt=evaluator_prompts.SYSTEM_PROMPT,
+                user_prompt=evaluator_prompts.build_prompt(content_type=content_type, body=body),
+                max_tokens=400,
+            )
+        except ProviderError as exc:
+            # ECAEP must not hard-fail on provider billing/auth outages — human review continues.
+            logger.warning("evaluator_provider_error", code=exc.code, provider=exc.provider)
+            return {
+                "status": "error",
+                "reason": f"AI check unavailable ({exc.code}) — content proceeds to human review.",
+                "flags": [],
+                "similarity_matches": [],
+                "confidence": None,
+                "checked_at": datetime.now(UTC).isoformat(),
+            }
 
         if response.is_fallback:
             return {
                 "status": "skipped",
-                "reason": "AI Gateway is in fallback mode (no ANTHROPIC_API_KEY) — content proceeds to human review unchecked.",
+                "reason": "AI Gateway is in fallback mode (no live provider) — content proceeds to human review unchecked.",
                 "flags": [],
                 "similarity_matches": [],
                 "confidence": None,

@@ -1,0 +1,33 @@
+{
+  "recovery": {
+    "mean_field_agreement": 0.875,
+    "disagreement_count": 8,
+    "unanimous_count": 30
+  },
+  "mcq": {
+    "gemini": {
+      "total": 334,
+      "validated": 0,
+      "rejected": 334,
+      "inconclusive": 0,
+      "human_review": 0,
+      "cost_usd": 0.64865
+    },
+    "openai": {
+      "total": 333,
+      "validated": 0,
+      "rejected": 333,
+      "inconclusive": 0,
+      "human_review": 0,
+      "cost_usd": 0.0
+    },
+    "anthropic": {
+      "total": 333,
+      "validated": 0,
+      "rejected": 333,
+      "inconclusive": 0,
+      "human_review": 0,
+      "cost_usd": 0.0
+    }
+  }
+}

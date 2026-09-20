@@ -1,0 +1,58 @@
+{
+  "id": "b690c0d3-98f6-4e57-851f-aae1ac6ad8cd",
+  "status": "DRAFT",
+  "subject": "Zoology",
+  "chapter": "Animal Kingdom",
+  "topic": "Chordata Basics",
+  "concept": "Fundamental Chordate Features",
+  "concept_code": "chordate-features",
+  "blueprint_key": "production-seed-v1-2026-09-02-bp-zoology-05",
+  "difficulty": "easy",
+  "stem": "Which set of anatomical structures correctly represents the four primary diagnostic features present at some stage in the lifecycle of all chordates?",
+  "options": [
+    {
+      "text": "Solid ventral nerve cord, notochord, paired pharyngeal gill slits, and post-anal tail",
+      "label": "A"
+    },
+    {
+      "text": "Dorsal hollow nerve cord, notochord, paired pharyngeal gill slits, and post-anal tail",
+      "label": "B"
+    },
+    {
+      "text": "Dorsal hollow nerve cord, vertebral column, paired pharyngeal gill slits, and post-anal tail",
+      "label": "C"
+    },
+    {
+      "text": "Solid dorsal nerve cord, notochord, ventral heart, and post-anal tail",
+      "label": "D"
+    }
+  ],
+  "correct_option": "B",
+  "explanation": "All chordates fundamental diagnostic features present at some stage of development are: (1) a dorsal, hollow nerve cord, (2) a supportive notochord, (3) paired pharyngeal gill slits, and (4) a post-anal tail. Option A is incorrect because chordates possess a dorsal hollow nerve cord, whereas non-chordates typically have a ventral solid nerve cord. Option C is incorrect because the vertebral column is present only in subphylum Vertebrata, not in all chordates (e.g., Urochordata and Cephalochordata). Option D is incorrect because the chordate nerve cord is hollow, not solid.",
+  "stem_fp": "888e6e1d6493759a",
+  "body_md5": "6b4108a9977ce34d8272c91dfde12d0f",
+  "provider": "gemini",
+  "model": "gemini-3.6-flash",
+  "routing": "fixed:gemini",
+  "is_fallback": false,
+  "constraints": {
+    "reasoning": "classification",
+    "seed_slot_id": "zoology-05",
+    "question_format": "MCQ_4",
+    "cognitive_operation": "Fundamental chordate features",
+    "forbidden_templates": [
+      "PHYS_STRETCH_20PCT_CURRENT",
+      "PHYS_STRETCH_2X_LENGTH_RATIO",
+      "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+      "CHEM_LATTICE_COMPARISON",
+      "CHEM_LATTICE_FACTORS",
+      "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+      "ZOO_ABO_SEQUENCE",
+      "ZOO_ABO_ANTIGEN_IDENTIFY"
+    ],
+    "correct_option_count": 1,
+    "explanation_required": true,
+    "avoid_paraphrase_duplicates": true,
+    "enforce_prior_stem_diversity": true
+  }
+}
