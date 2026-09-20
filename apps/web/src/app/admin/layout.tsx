@@ -12,6 +12,7 @@ const ADMIN_PRIMARY = [
   { href: "/admin", label: "Dashboard" },
   { href: "/admin/content", label: "Questions" },
   { href: "/admin/ai-review", label: "Editorial Review" },
+  { href: "/admin/content/review-queue", label: "Review Queue" },
 ];
 
 const ADMIN_MORE_SECTIONS: NavSection[] = [

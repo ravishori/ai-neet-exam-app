@@ -43,6 +43,17 @@ class BulkContentActionRequest(BaseModel):
     action: str  # publish | archive
 
 
+class TrustedFactorySubmitRequest(BaseModel):
+    """Explicit item selection only — never "all DRAFTs" or a bare batch_key.
+    batch_id is required so the caller states which generation batch they
+    believe these items came from; each item's real batch is still
+    independently re-verified server-side (trusted_factory_submission.py),
+    not trusted from this field alone."""
+
+    item_ids: list[str] = Field(min_length=1, max_length=200)
+    batch_id: str
+
+
 class ResolveReportRequest(BaseModel):
     status: str  # RESOLVED | DISMISSED
 

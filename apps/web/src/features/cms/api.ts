@@ -103,6 +103,75 @@ export type EditorialQueueMeta = {
 
 export type ReviewChecklistItem = { id: string; category: string; prompt: string };
 
+// --- HR-1 Review Queue Foundation (review-queue / review-sessions / claims) ---
+
+export type RiskBucket = "RED" | "AMBER" | "GREEN";
+
+export type ReviewQueueRow = {
+  id: string;
+  title: string;
+  status: WorkflowState;
+  academic: {
+    subject: EditorialNamedNode;
+    chapter: (EditorialNamedNode & { class_level?: string | null }) | null;
+    topic: EditorialNamedNode;
+    concept: EditorialNamedNode;
+    class_level: string | null;
+  };
+  batch_id: string | null;
+  is_trusted_factory: boolean;
+  risk_bucket: RiskBucket;
+  risk_reasons: string[];
+  created_at: string;
+};
+
+export type ReviewQueueMeta = {
+  total: number;
+  limit: number;
+  offset: number;
+  risk_bucket: RiskBucket | null;
+  ordering: string;
+  risk_filter_scan_cap: number | null;
+  no_llm_used_for_risk: boolean;
+  no_auto_approve: boolean;
+  no_auto_publish: boolean;
+};
+
+export type ReviewQueueParams = {
+  subject_id?: string;
+  class_level?: string;
+  chapter_id?: string;
+  topic_id?: string;
+  batch_id?: string;
+  risk_bucket?: RiskBucket;
+  limit?: number;
+  offset?: number;
+};
+
+export type ReviewSession = {
+  id: string;
+  reviewer_id: string;
+  session_size: number;
+  item_ids: string[];
+  position: number;
+  status: "ACTIVE" | "COMPLETED" | "ABANDONED";
+  created_at: string;
+  updated_at: string;
+  current_item_id: string | null;
+  remaining: number;
+};
+
+export type ReviewClaim = {
+  id: string;
+  content_item_id: string;
+  reviewer_id: string;
+  session_id: string | null;
+  status: "ACTIVE" | "RELEASED" | "EXPIRED" | "COMPLETED";
+  claimed_at: string;
+  expires_at: string;
+  released_at: string | null;
+};
+
 export type BatchAPilotReport = {
   pilot_id: string;
   batch_id: string;
@@ -189,6 +258,9 @@ export type ReviewPacket = {
     duplicate_class?: string;
     quarantine?: boolean;
     scientific_certification?: boolean;
+    blueprint_id?: string | null;
+    blueprint_version?: number | null;
+    generation_run_id?: string | null;
     disclaimer: string;
     factory_review?: {
       factory_review_item_id: string;
@@ -451,6 +523,59 @@ export const cmsApi = {
   submit: (id: string) => apiClient.post<ContentItem>(`/api/v1/cms/content-items/${id}/submit`),
   review: (id: string, data: { decision: "approve" | "request_changes"; comment?: string }) =>
     apiClient.post<ContentItem>(`/api/v1/cms/content-items/${id}/review`, data),
+  // HR-1 review queue (read-only; never approves/publishes)
+  reviewQueue: async (params: ReviewQueueParams = {}): Promise<{ data: ReviewQueueRow[]; meta: ReviewQueueMeta }> => {
+    const query = new URLSearchParams();
+    if (params.subject_id) query.set("subject_id", params.subject_id);
+    if (params.class_level) query.set("class_level", params.class_level);
+    if (params.chapter_id) query.set("chapter_id", params.chapter_id);
+    if (params.topic_id) query.set("topic_id", params.topic_id);
+    if (params.batch_id) query.set("batch_id", params.batch_id);
+    if (params.risk_bucket) query.set("risk_bucket", params.risk_bucket);
+    query.set("limit", String(params.limit ?? 25));
+    query.set("offset", String(params.offset ?? 0));
+    const body = await apiClient.getFull<ReviewQueueRow[]>(`/api/v1/cms/review-queue?${query.toString()}`);
+    return { data: body.data ?? [], meta: body.meta as unknown as ReviewQueueMeta };
+  },
+  // HR-1 review sessions — reviewer working set, resumable, default size 25.
+  createReviewSession: (data: {
+    session_size?: number;
+    subject_id?: string;
+    class_level?: string;
+    chapter_id?: string;
+    topic_id?: string;
+    batch_id?: string;
+    risk_bucket?: RiskBucket;
+  }) => apiClient.post<ReviewSession>("/api/v1/cms/review-sessions", data),
+  getReviewSession: (id: string) => apiClient.get<ReviewSession>(`/api/v1/cms/review-sessions/${id}`),
+  advanceReviewSession: (id: string) => apiClient.post<ReviewSession>(`/api/v1/cms/review-sessions/${id}/advance`),
+  // HR-1 claims — lease-based coordination only; backend is authoritative.
+  claimReviewItem: (itemId: string, sessionId?: string | null) =>
+    apiClient.post<ReviewClaim>(
+      `/api/v1/cms/content-items/${itemId}/claim${sessionId ? `?session_id=${sessionId}` : ""}`,
+    ),
+  releaseReviewClaim: (itemId: string) =>
+    apiClient.post<ReviewClaim>(`/api/v1/cms/content-items/${itemId}/release-claim`),
+  // HR-2.5 pilot instrumentation — records evidence only, never mutates content_items.
+  recordPilotEvent: (data: {
+    pilot_id: string;
+    content_item_id: string;
+    decision: "APPROVED" | "CHANGES_REQUESTED" | "SKIPPED" | "FLAGGED";
+    review_started_at: string;
+    decision_submitted_at: string;
+    review_duration_seconds: number;
+    subject?: string | null;
+    class_level?: string | null;
+    chapter?: string | null;
+    batch_id?: string | null;
+    risk_bucket?: string | null;
+    reason?: string | null;
+    note?: string | null;
+  }) => apiClient.post<{ id: string }>("/api/v1/cms/review-pilot/events", data),
+  getPilotReport: (pilotId: string) =>
+    apiClient.get<Record<string, unknown>>(
+      `/api/v1/cms/review-pilot/report?pilot_id=${encodeURIComponent(pilotId)}`,
+    ),
   publish: (id: string) => apiClient.post<ContentItem>(`/api/v1/cms/content-items/${id}/publish`),
   archive: (id: string) => apiClient.post<ContentItem>(`/api/v1/cms/content-items/${id}/archive`),
   coverage: () => apiClient.get<CoverageRow[]>("/api/v1/cms/coverage"),

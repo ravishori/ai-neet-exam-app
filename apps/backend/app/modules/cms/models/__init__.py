@@ -13,6 +13,7 @@ from app.modules.cms.models.content_version import ContentVersion
 from app.modules.cms.models.content_version_knowledge_unit import ContentVersionKnowledgeUnit
 from app.modules.cms.models.factory_qa import FactoryReviewItem, QAResult, QuestionFingerprint, ReviewSample
 from app.modules.cms.models.generation_candidate import GenerationCandidate
+from app.modules.cms.models.review_queue import ReviewClaim, ReviewSession
 from app.modules.cms.models.review_sandbox import (
     ReviewSandboxAiReview,
     ReviewSandboxAuditEvent,
@@ -47,4 +48,6 @@ __all__ = [
     "ReviewSandboxHumanReview",
     "ReviewSandboxAiReview",
     "ReviewSandboxAuditEvent",
+    "ReviewSession",
+    "ReviewClaim",
 ]

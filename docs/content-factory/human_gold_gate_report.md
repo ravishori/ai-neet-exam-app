@@ -1,6 +1,6 @@
 # P2.3 Human-Gold Validation Gate
 
-Generated: 2026-09-02T04:14:56.387279+00:00
+Generated: 2026-09-19T12:01:45.222205+00:00
 
 > Human review is the gold standard. AI validation does not overwrite human decisions.
 

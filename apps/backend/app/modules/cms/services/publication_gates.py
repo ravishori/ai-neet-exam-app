@@ -48,6 +48,24 @@ class PublicationGateReport:
             ]
         )
 
+    @property
+    def content_ready(self) -> bool:
+        """Same as `passed` but excludes `review_state_ok` — used by callers
+        (e.g. TRUSTED-FACTORY-SUBMIT-001) that need "would this pass publish()
+        on content grounds" for a DRAFT/pre-review item, where review_state_ok
+        is by definition always false. Never used to skip the actual
+        publish()-time review_state_ok check itself."""
+        return all(
+            [
+                self.structural_ok,
+                self.scientific_ok,
+                self.ncert_ok,
+                self.taxonomy_ok,
+                self.duplicate_ok,
+                self.provenance_ok,
+            ]
+        )
+
 
 def _section_from_ncert_ref(ref: str) -> str | None:
     # e.g. "NCERT XI Physics Ch 2 §2.4" → "2.4" or full ref as section anchor
@@ -254,25 +272,39 @@ async def assert_question_publishable(
     return report
 
 
+_CLASS_LEVEL_ROMAN = {"11": "XI", "12": "XII"}
+
+
 def build_section_ncert_evidence(
     *,
     ncert_reference: str,
     source_pdf_relpath: str,
     class_level: str = "11",
+    subject: str = "Physics",
 ) -> dict[str, Any]:
-    """SECTION_VERIFIED evidence — never invents page numbers."""
+    """SECTION_VERIFIED evidence — never invents page numbers.
+
+    `class_level` and `subject` default to the values this helper's
+    original two callers (physics_t6d_bank.py, cms/seed.py) always used —
+    both are Physics-XI-only, so their behavior is unchanged. Callers with
+    other subjects/classes (e.g. the bulk-generated corpus) must pass
+    both explicitly, sourced only from data already on the blueprint
+    (neet_ug_2026.subject, chapter.class_level) — never invented.
+    """
     section = _section_from_ncert_ref(ncert_reference)
     chapter = ncert_reference
+    roman_class = _CLASS_LEVEL_ROMAN.get(class_level, class_level)
+    source_document = f"NCERT Class {roman_class} {subject}"
     ev = NcertEvidence(
         verification_level="SECTION_VERIFIED",
-        source_document="NCERT Class XI Physics",
+        source_document=source_document,
         document_version="reprint-on-disk",
         class_level=class_level,
         chapter=chapter,
         section=section,
         page_number=None,
         source_excerpt=None,
-        verification_method="Gate-4 section reference + Class XI PDF on disk",
+        verification_method=f"Gate-4 section reference + Class {roman_class} PDF on disk",
         source_pdf_relpath=source_pdf_relpath,
     )
     return ev.model_dump()

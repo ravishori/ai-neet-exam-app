@@ -1,7 +1,7 @@
 {
   "gate": "P2.3_HUMAN_GOLD",
   "gate_version": "p2_3_human_gold_gate_v1",
-  "generated_at": "2026-09-02T04:14:56.387279+00:00",
+  "generated_at": "2026-09-19T12:01:45.222205+00:00",
   "sample_size": 100,
   "human_reviewed": 0,
   "pending": 100,

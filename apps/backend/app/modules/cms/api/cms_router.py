@@ -15,9 +15,14 @@ from app.modules.cms.schemas.content_item import (
     ContentReportRequest,
     ResolveReportRequest,
     ReviewDecisionRequest,
+    TrustedFactorySubmitRequest,
 )
+from app.modules.cms.schemas.review_pilot import RecordPilotEventRequest
+from app.modules.cms.schemas.review_queue import CreateReviewSessionRequest
 from app.modules.cms.services.content_workflow_service import ContentWorkflowService
 from app.modules.cms.services.editorial_review_service import EditorialReviewService
+from app.modules.cms.services.review_pilot_service import build_pilot_report, record_pilot_event
+from app.modules.cms.services.review_queue_service import ReviewQueueService
 from app.modules.identity.dependencies import get_current_user, require_permission, verify_csrf
 from app.modules.identity.models.user import User
 from app.modules.system.services.audit_service import AuditService, request_context
@@ -364,6 +369,191 @@ async def get_content_intake(
     )
 
 
+def _review_session(s) -> dict:
+    return {
+        "id": str(s.id),
+        "reviewer_id": str(s.reviewer_id),
+        "session_size": s.session_size,
+        "item_ids": [str(i) for i in s.item_ids],
+        "position": s.position,
+        "status": s.status,
+        "created_at": s.created_at,
+        "updated_at": s.updated_at,
+        "current_item_id": str(s.item_ids[s.position]) if s.position < len(s.item_ids) else None,
+        "remaining": max(0, len(s.item_ids) - s.position),
+    }
+
+
+def _review_claim(c) -> dict:
+    return {
+        "id": str(c.id),
+        "content_item_id": str(c.content_item_id),
+        "reviewer_id": str(c.reviewer_id),
+        "session_id": str(c.session_id) if c.session_id else None,
+        "status": c.status,
+        "claimed_at": c.claimed_at,
+        "expires_at": c.expires_at,
+        "released_at": c.released_at,
+    }
+
+
+@router.get("/review-queue", dependencies=[Depends(require_permission("content.review"))])
+async def get_review_queue(
+    subject_id: uuid.UUID | None = None,
+    class_level: str | None = Query(default=None, description="'11' or '12' (Chapter.class_level)"),
+    chapter_id: uuid.UUID | None = None,
+    topic_id: uuid.UUID | None = None,
+    batch_id: uuid.UUID | None = Query(default=None, description="Content Factory generation_candidates.batch_id"),
+    risk_bucket: str | None = Query(default=None, description="RED | AMBER | GREEN"),
+    limit: int = Query(default=25, ge=1, le=200),
+    offset: int = Query(default=0, ge=0),
+    db: AsyncSession = Depends(get_db),
+):
+    """HR-1 — the human review queue. IN_REVIEW QUESTIONs only, deterministic
+    risk-bucketed (no LLM), stable created_at/id ordering. Read-only — never
+    mutates content_items."""
+    service = ReviewQueueService(db)
+    rows, total, meta = await service.list_queue(
+        subject_id=subject_id,
+        class_level=class_level,
+        chapter_id=chapter_id,
+        topic_id=topic_id,
+        batch_id=batch_id,
+        risk_bucket=risk_bucket,
+        limit=limit,
+        offset=offset,
+    )
+    return envelope(success=True, data=rows, meta=meta)
+
+
+@router.post(
+    "/review-sessions", dependencies=[Depends(require_permission("content.review")), Depends(verify_csrf)]
+)
+async def create_review_session(
+    payload: CreateReviewSessionRequest,
+    request: Request,
+    user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db),
+):
+    """HR-1 — snapshot a reviewer's working set (default 25 items) from the
+    current review queue. Never claims or mutates any content item."""
+    service = ReviewQueueService(db)
+    ctx = request_context(request)
+    session_row = await service.create_session(
+        reviewer_id=user.id,
+        session_size=payload.session_size,
+        subject_id=uuid.UUID(payload.subject_id) if payload.subject_id else None,
+        class_level=payload.class_level,
+        chapter_id=uuid.UUID(payload.chapter_id) if payload.chapter_id else None,
+        topic_id=uuid.UUID(payload.topic_id) if payload.topic_id else None,
+        batch_id=uuid.UUID(payload.batch_id) if payload.batch_id else None,
+        risk_bucket=payload.risk_bucket,
+        **ctx,
+    )
+    return envelope(success=True, data=_review_session(session_row), status_code=201)
+
+
+@router.get("/review-sessions/{session_id}", dependencies=[Depends(require_permission("content.review"))])
+async def get_review_session(session_id: uuid.UUID, db: AsyncSession = Depends(get_db)):
+    """HR-1 — resume a session: current position/progress and status."""
+    service = ReviewQueueService(db)
+    session_row = await service.get_session(session_id)
+    if not session_row:
+        raise NotFoundError("Review session not found")
+    return envelope(success=True, data=_review_session(session_row))
+
+
+@router.post(
+    "/review-sessions/{session_id}/advance",
+    dependencies=[Depends(require_permission("content.review")), Depends(verify_csrf)],
+)
+async def advance_review_session(
+    session_id: uuid.UUID, user: User = Depends(get_current_user), db: AsyncSession = Depends(get_db)
+):
+    """HR-1 — record progress: move to the next item in the session."""
+    service = ReviewQueueService(db)
+    session_row = await service.advance_session(session_id, reviewer_id=user.id)
+    return envelope(success=True, data=_review_session(session_row))
+
+
+@router.post(
+    "/content-items/{item_id}/claim",
+    dependencies=[Depends(require_permission("content.review")), Depends(verify_csrf)],
+)
+async def claim_review_item(
+    item_id: uuid.UUID,
+    request: Request,
+    session_id: uuid.UUID | None = None,
+    user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db),
+):
+    """HR-1 — lease-based claim so two reviewers don't work the same
+    IN_REVIEW question. Never changes content_items.status. Expired leases
+    are reclaimable; an active lease held by someone else is never silently
+    overwritten."""
+    service = ReviewQueueService(db)
+    ctx = request_context(request)
+    claim = await service.claim_item(item_id, reviewer_id=user.id, session_id=session_id, **ctx)
+    return envelope(success=True, data=_review_claim(claim))
+
+
+@router.post(
+    "/content-items/{item_id}/release-claim",
+    dependencies=[Depends(require_permission("content.review")), Depends(verify_csrf)],
+)
+async def release_review_claim(
+    item_id: uuid.UUID,
+    request: Request,
+    user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db),
+):
+    """HR-1 — voluntarily release a held claim before the lease expires."""
+    service = ReviewQueueService(db)
+    ctx = request_context(request)
+    claim = await service.release_claim(item_id, reviewer_id=user.id, **ctx)
+    return envelope(success=True, data=_review_claim(claim))
+
+
+@router.post(
+    "/review-pilot/events", dependencies=[Depends(require_permission("content.review")), Depends(verify_csrf)]
+)
+async def record_review_pilot_event(
+    payload: RecordPilotEventRequest,
+    request: Request,
+    user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db),
+):
+    """HR-2.5 — pilot instrumentation only. Never mutates content_items;
+    the real approve/request_changes call is made separately via the
+    existing /content-items/{id}/review endpoint."""
+    ctx = request_context(request)
+    row = await record_pilot_event(
+        db,
+        pilot_id=payload.pilot_id,
+        content_item_id=uuid.UUID(payload.content_item_id),
+        actor_user_id=user.id,
+        decision=payload.decision,
+        review_started_at=payload.review_started_at,
+        decision_submitted_at=payload.decision_submitted_at,
+        review_duration_seconds=payload.review_duration_seconds,
+        subject=payload.subject,
+        class_level=payload.class_level,
+        chapter=payload.chapter,
+        batch_id=payload.batch_id,
+        risk_bucket=payload.risk_bucket,
+        reason=payload.reason,
+        note=payload.note,
+        **ctx,
+    )
+    return envelope(success=True, data={"id": str(row.id)}, status_code=201)
+
+
+@router.get("/review-pilot/report", dependencies=[Depends(require_permission("content.review"))])
+async def get_review_pilot_report(pilot_id: str, db: AsyncSession = Depends(get_db)):
+    """HR-2.5 — read-only pilot evidence report. Never approves/publishes."""
+    return envelope(success=True, data=await build_pilot_report(db, pilot_id=pilot_id))
+
+
 BULK_ACTIONS = {"publish", "archive"}
 
 
@@ -403,6 +593,54 @@ async def bulk_content_action(
             results.append({"id": raw_id, "success": True})
         except AppError as exc:
             results.append({"id": raw_id, "success": False, "error": exc.message})
+    return envelope(success=True, data=results)
+
+
+@router.post(
+    "/content-items/submit-trusted-batch",
+    dependencies=[Depends(require_permission("content.factory.trusted_submit")), Depends(verify_csrf)],
+)
+async def submit_trusted_factory_batch(
+    payload: TrustedFactorySubmitRequest,
+    request: Request,
+    user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db),
+):
+    """TRUSTED-FACTORY-SUBMIT-001 — narrow DRAFT -> IN_REVIEW path for
+    explicitly-selected, deterministically-eligible Content Factory items,
+    skipping the redundant EVALUATOR LLM call. Never bypasses review() or
+    publish() — each item still needs a genuine human review() decision to
+    reach APPROVED, and publish() re-runs its full gate set independently.
+
+    Requires an explicit item_ids list and batch_id — never operates on
+    "all DRAFTs". Each item's real generation batch is independently
+    re-verified server-side; a mismatched batch_id rejects that item.
+    Each item is evaluated/applied independently so one ineligible item
+    doesn't block the rest."""
+    try:
+        batch_uuid = uuid.UUID(payload.batch_id)
+    except ValueError as exc:
+        raise AppError("Invalid batch_id", code="VALIDATION_ERROR", status_code=422) from exc
+
+    service = ContentWorkflowService(db)
+    ctx = request_context(request)
+    results = []
+    for raw_id in payload.item_ids:
+        try:
+            item_id = uuid.UUID(raw_id)
+        except ValueError:
+            results.append({"id": raw_id, "success": False, "error": "Invalid item_id"})
+            continue
+        try:
+            await service.submit_for_review_trusted_factory(
+                item_id,
+                actor_id=user.id,
+                expected_batch_id=batch_uuid,
+                **ctx,
+            )
+            results.append({"id": raw_id, "success": True})
+        except AppError as exc:
+            results.append({"id": raw_id, "success": False, "error": exc.message, "code": exc.code})
     return envelope(success=True, data=results)
 
 

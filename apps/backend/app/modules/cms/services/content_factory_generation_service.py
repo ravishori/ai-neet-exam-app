@@ -77,6 +77,7 @@ from app.modules.cms.services.mcq_llm_provider import (
     report_error_alias,
 )
 from app.modules.cms.services.ncert_claim_grounding import validate_ncert_claim_grounding
+from app.modules.cms.services.retrieval_leakage_filter import detect_retrieval_leakage
 from app.modules.cms.services.ncert_generation_evidence import (
     NcertEvidencePack,
     parse_ku_id,
@@ -329,6 +330,7 @@ class ContentFactoryGenerationService:
         actor_id: uuid.UUID,
         job_key: str | None = None,
         sync_cap: bool = True,
+        bulk_mode: bool = False,
         **ctx,
     ) -> dict[str, Any]:
         """Create/attach job+run and generate until target valid unique DRAFTs or bounds hit."""
@@ -411,6 +413,7 @@ class ContentFactoryGenerationService:
             blueprint=bp,
             target_count=target_count,
             actor_id=actor_id,
+            bulk_mode=bulk_mode,
             **ctx,
         )
         stats.latency_ms = int((time.perf_counter() - started) * 1000)
@@ -501,8 +504,17 @@ class ContentFactoryGenerationService:
         blueprint: QuestionBlueprint,
         target_count: int,
         actor_id: uuid.UUID,
+        bulk_mode: bool = False,
         **ctx,
     ) -> GenerationStats:
+        # BULK-MODE-001: opt-in, per-call flag only — never a global setting.
+        # Skips the synchronous NCERT-evidence-sufficiency gate and the
+        # claim-level NCERT grounding check (§ below); SYLLABUS-GATE-001,
+        # structural validation, duplicate detection, and retrieval-leakage
+        # filtering are never affected by this flag. No NCERT evidence is
+        # ever fabricated — the field is simply left absent/null when the
+        # evidence pack is not ready, exactly as bulk driver callers expect.
+
         stats = GenerationStats(requested=target_count)
         stats.routing_policy = self.mcq_provider.selection.routing_policy
         max_attempts = max(target_count, int(target_count * settings.factory_max_pilot_attempt_multiplier))
@@ -538,8 +550,12 @@ class ContentFactoryGenerationService:
             return stats
 
         # MCQ-NCERT-GROUNDING-001: evidence sufficiency gate (no LLM if insufficient).
+        # BULK-MODE-001: bulk callers defer this — candidates are still
+        # generated, just without a hard block on evidence readiness. The
+        # prompt still receives evidence_text when ready; when not ready,
+        # ncert_evidence_text stays None downstream (never fabricated).
         evidence_pack = await self._resolve_generation_evidence(blueprint, ctx_data)
-        if evidence_pack.requires_ncert and not evidence_pack.is_ready:
+        if evidence_pack.requires_ncert and not evidence_pack.is_ready and not bulk_mode:
             stats.stop_reason = "NCERT_EVIDENCE_INSUFFICIENT"
             logger.warning(
                 "ncert_evidence_insufficient",
@@ -764,8 +780,22 @@ class ContentFactoryGenerationService:
                 await self.session.commit()
                 continue
 
+            # RETRIEVAL-LEAKAGE-001: cheap always-on filter (not gated by
+            # bulk_mode) — rejects meta-questions where the model surfaces
+            # its own retrieval scaffolding ("the supplied excerpt...")
+            # instead of testable subject content.
+            leakage_hit = detect_retrieval_leakage(validated.get("stem", ""))
+            if leakage_hit:
+                candidate.status = "REJECTED_VALIDATION"
+                candidate.error_code = "META_LEAKAGE"
+                candidate.error_summary = f"META_LEAKAGE:{leakage_hit}"[:500]
+                stats.rejected_validation += 1
+                await self.session.commit()
+                continue
+
             # MCQ-NCERT-GROUNDING-001: claim-level grounding (provider-neutral; above adapters).
-            if evidence_pack.requires_ncert:
+            # BULK-MODE-001: bulk callers defer this expensive claim-level check.
+            if evidence_pack.requires_ncert and not bulk_mode:
                 grounding = validate_ncert_claim_grounding(validated, evidence_pack)
                 if not grounding.ok:
                     candidate.status = "REJECTED_VALIDATION"

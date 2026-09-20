@@ -39,6 +39,7 @@ from app.modules.ingestion.api.ingestion_router import router as ingestion_route
 from app.modules.knowledge.api.knowledge_router import router as knowledge_router
 from app.modules.learning.api.mastery_router import router as mastery_router
 from app.modules.learning.api.question_interaction_router import router as question_interaction_router
+from app.modules.learning.api.student_preference_router import router as student_preference_router
 from app.modules.system.api.admin_router import router as admin_router
 from app.shared.responses import envelope
 
@@ -96,6 +97,7 @@ app.include_router(weekly_revision_router)
 app.include_router(ai_router)
 app.include_router(mastery_router)
 app.include_router(question_interaction_router)
+app.include_router(student_preference_router)
 app.include_router(admin_router)
 app.include_router(analytics_router)
 app.include_router(commerce_router)

@@ -444,6 +444,106 @@ class ContentWorkflowService:
         logger.info("content_submitted", item_id=str(item.id), commit=commit)
         return await self.repo.get_item(item.id)
 
+    async def submit_for_review_trusted_factory(
+        self,
+        item_id: uuid.UUID,
+        *,
+        actor_id: uuid.UUID,
+        expected_batch_id: uuid.UUID | None = None,
+        trace_id: str | None = None,
+        ip_address: str | None = None,
+        user_agent: str | None = None,
+        commit: bool = True,
+    ) -> ContentItem:
+        """TRUSTED-FACTORY-SUBMIT-001 — DRAFT → IN_REVIEW for an explicitly
+        eligible Content Factory item, skipping the redundant EVALUATOR LLM
+        call (see trusted_factory_submission.py for why it's redundant here
+        and exactly what is still checked).
+
+        Requires an explicit `item_id` (and, for real batch operations, the
+        caller supplies `expected_batch_id` too) — never scans/selects
+        DRAFTs on its own. Every eligibility criterion is re-verified here,
+        every call; nothing is cached or inferred from a prior call.
+
+        Never skips or weakens review() or publish() — this only replaces
+        the EVALUATOR step inside the DRAFT->IN_REVIEW transition. The item
+        still requires a genuine human review() decision to reach APPROVED,
+        and publish() still runs the full gate set independently.
+        """
+        from app.modules.cms.services.trusted_factory_submission import (
+            evaluate_trusted_factory_submission,
+        )
+
+        eligibility = await evaluate_trusted_factory_submission(
+            self.session, item_id, expected_batch_id=expected_batch_id
+        )
+        if not eligibility.eligible:
+            raise AppError(
+                "Item is not eligible for trusted Content Factory submission: "
+                + "; ".join(eligibility.reasons),
+                code="NOT_TRUSTED_FACTORY_ELIGIBLE",
+                status_code=422,
+            )
+
+        item = await self.repo.get_item(item_id)
+        if not item:
+            raise AppError("Content item not found", code="NOT_FOUND", status_code=404)
+        latest = await self.repo.get_version(item.latest_version_id)
+        if not latest:
+            raise AppError("Content version not found", code="NOT_FOUND", status_code=404)
+
+        # Same report shape EvaluatorService already uses for its own
+        # "skipped" case (ai_check_service.py) — never claims the evaluator
+        # ran; advisory-only, exactly like a real evaluator report would be.
+        latest.ai_check_report = {
+            "status": "skipped_trusted_factory",
+            "reason": (
+                "Deterministic Content Factory + publication gates already "
+                "satisfied (structural, taxonomy, provenance, NCERT-grounded "
+                "evidence, numerical, duplicate); EVALUATOR LLM call skipped "
+                "as redundant advisory-only signal. See audit log "
+                "content.submit_trusted_factory for full criteria."
+            ),
+            "flags": [],
+            "similarity_matches": [],
+            "confidence": None,
+            "checked_at": datetime.now(UTC).isoformat(),
+        }
+        latest.workflow_state = "IN_REVIEW"
+        item.status = "IN_REVIEW"
+
+        self.session.add(
+            AuditLog(
+                actor_user_id=actor_id,
+                action="content.submit_trusted_factory",
+                entity_type="content_item",
+                entity_id=item.id,
+                log_metadata={
+                    "content_version_id": str(latest.id),
+                    "evaluator_skipped": True,
+                    "generation_job_id": str(eligibility.generation_job_id) if eligibility.generation_job_id else None,
+                    "generation_run_id": str(eligibility.generation_run_id) if eligibility.generation_run_id else None,
+                    "blueprint_id": str(eligibility.blueprint_id) if eligibility.blueprint_id else None,
+                    "batch_id": str(eligibility.batch_id) if eligibility.batch_id else None,
+                },
+                trace_id=trace_id,
+                ip_address=ip_address,
+                user_agent=user_agent,
+            )
+        )
+
+        if commit:
+            await self.repo.commit()
+        else:
+            await self.repo.flush()
+        logger.info(
+            "content_submitted_trusted_factory",
+            item_id=str(item.id),
+            batch_id=str(eligibility.batch_id) if eligibility.batch_id else None,
+            commit=commit,
+        )
+        return await self.repo.get_item(item.id)
+
     async def evaluate_review(
         self, item_id: uuid.UUID, *, decision: str = "approve"
     ) -> dict:
