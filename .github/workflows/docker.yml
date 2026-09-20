@@ -74,6 +74,42 @@ jobs:
           cache-to: type=gha,mode=max
 
       # ----------------------------------------------------------------------
+      # Smoke-Test Backend Image
+      # ----------------------------------------------------------------------
+
+      - name: Smoke-Test Backend Image
+
+        run: |
+          docker rm -f backend-smoke 2>/dev/null || true
+          trap 'docker rm -f backend-smoke 2>/dev/null || true' EXIT
+
+          docker run -d --name backend-smoke -p 8000:8000 \
+            -e DATABASE_URL="postgresql+asyncpg://placeholder:placeholder@localhost:5432/placeholder" \
+            -e JWT_SECRET="ci-smoke-test-placeholder-not-a-real-secret" \
+            backend:latest
+
+          healthy=""
+          for i in $(seq 1 15); do
+            if ! docker ps -q -f name=backend-smoke -f status=running | grep -q .; then
+              echo "Container exited early"
+              break
+            fi
+            if curl -sf http://localhost:8000/health > /dev/null 2>&1; then
+              healthy=1
+              break
+            fi
+            sleep 1
+          done
+
+          echo "----- container logs -----"
+          docker logs backend-smoke || true
+
+          if [ -z "$healthy" ]; then
+            echo "::error::Backend image failed to become healthy within 15s"
+            exit 1
+          fi
+
+      # ----------------------------------------------------------------------
       # Build Frontend Image
       # ----------------------------------------------------------------------
 
