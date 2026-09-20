@@ -41,11 +41,39 @@ SESSION_TTL_DAYS = 7
 SANDBOX_UPLOAD_ROOT = Path("data/staging/mcq/p2_3_human_gold/sandbox_uploads")
 SANDBOX_EXPORT_ROOT = Path("data/staging/mcq/p2_3_human_gold/sandbox_exports")
 
+# This file lives 6 directories below the repo root in a normal checkout
+# (services -> cms -> modules -> app -> backend -> apps -> <repo root>).
+# The Docker image flattens that: COPY . . in apps/backend/Dockerfile puts
+# this file at /app/app/modules/cms/services/..., only 4 directories above
+# /, so parents[6] doesn't exist there and raises IndexError at import time
+# (this crashed production — see the human-gold-sandbox regression test).
+# WORKDIR /app in that Dockerfile *is* the flattened repo root, so it's the
+# correct fallback rather than an unrelated guess.
+_REPO_ROOT_PARENT_DEPTH = 6
+_DOCKER_REPO_ROOT = Path("/app")
+
+
+def resolve_human_gold_repo_root(anchor_file: str) -> Path:
+    """Repo root for a file this many directories below it in a normal
+    checkout, falling back to the Docker image's flattened root. Raises
+    rather than silently pointing at an unrelated directory if neither
+    holds."""
+    parents = Path(anchor_file).resolve().parents
+    if len(parents) > _REPO_ROOT_PARENT_DEPTH:
+        return parents[_REPO_ROOT_PARENT_DEPTH]
+    if _DOCKER_REPO_ROOT.is_dir():
+        return _DOCKER_REPO_ROOT
+    raise RuntimeError(
+        f"Cannot determine repo root for human-gold-sandbox: {anchor_file!r} "
+        f"has only {len(parents)} parent directories and {_DOCKER_REPO_ROOT} "
+        "does not exist."
+    )
+
 
 class HumanGoldSandboxService:
     def __init__(self, session: AsyncSession, *, repo_root: Path | None = None):
         self.session = session
-        self.repo_root = repo_root or Path(__file__).resolve().parents[6]
+        self.repo_root = repo_root or resolve_human_gold_repo_root(__file__)
 
     async def _audit(
         self,
