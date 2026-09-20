@@ -65,3 +65,19 @@ Thumbs.db
 /code to start projec.txt
 /code to start project.txt
 /# Phase-D Review Environment — Startup Guide.txt
+
+# --- Local database backups / imported datasets / generated reports ---
+/Backups/
+/data/ncert/
+/apps/data/ncert/
+/apps/reports/
+/reports/
+
+# --- Local source/import spreadsheets and archives ---
+/Missing Answers.csv.xlsx
+/Missing Answers.xls.xlsx
+/Missing data-1789841351879
+/MisssingAnsv2.xlsx
+/NCERT Books.zip
+/Questions without ansers.xls
+/data-1789841456683.xlsx
