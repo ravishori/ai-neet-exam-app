@@ -14,6 +14,7 @@ class SubjectResponse(BaseModel):
     code: str
     name: str
     display_order: int
+    neet_weightage_percent: float | None = None
 
 
 class ChapterResponse(BaseModel):

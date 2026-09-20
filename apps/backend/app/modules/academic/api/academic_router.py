@@ -31,6 +31,9 @@ def _subject(s: Subject) -> dict:
         "code": s.code,
         "name": s.name,
         "display_order": s.display_order,
+        "neet_weightage_percent": (
+            float(s.neet_weightage_percent) if s.neet_weightage_percent is not None else None
+        ),
     }
 
 

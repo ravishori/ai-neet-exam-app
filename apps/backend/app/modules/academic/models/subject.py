@@ -1,6 +1,6 @@
 import uuid
 
-from sqlalchemy import ForeignKey, Integer, String
+from sqlalchemy import ForeignKey, Integer, Numeric, String
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
@@ -18,6 +18,10 @@ class Subject(Base, AuditedBase):
     code: Mapped[str] = mapped_column(String(50), nullable=False)
     name: Mapped[str] = mapped_column(String(100), nullable=False)
     display_order: Mapped[int] = mapped_column(Integer, default=0, nullable=False)
+    # NEET blueprint weightage in percent. Mirrors the identically-named
+    # column on ``academic.chapters`` — nullable for legacy rows, populated
+    # for the seeded NEET subjects by migration d4e5f7a8b9c0.
+    neet_weightage_percent: Mapped[float | None] = mapped_column(Numeric(4, 1))
 
     exam: Mapped["Exam"] = relationship(back_populates="subjects")
     chapters: Mapped[list["Chapter"]] = relationship(
