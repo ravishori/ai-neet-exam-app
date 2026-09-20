@@ -1,0 +1,17 @@
+{
+  "$schema": "https://schema.railpack.com",
+  "steps": {
+    "createuser": {
+      "commands": [
+        "useradd --create-home --shell /bin/bash app"
+      ]
+    }
+  },
+  "deploy": {
+    "aptPackages": ["gosu"],
+    "inputs": [
+      { "step": "createuser" }
+    ],
+    "startCommand": "gosu app uvicorn app.main:app --host 0.0.0.0 --port $PORT"
+  }
+}
