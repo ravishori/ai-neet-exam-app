@@ -151,7 +151,7 @@ jobs:
 
     - name: Trivy Filesystem Scan
 
-      uses: aquasecurity/trivy-action@v0.31.0
+      uses: aquasecurity/trivy-action@v0.36.0
 
       with:
         scan-type: fs
