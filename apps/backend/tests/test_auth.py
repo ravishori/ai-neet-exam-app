@@ -32,6 +32,19 @@ async def _register(client):
     return resp.json()["data"]
 
 
+async def test_auth_methods_never_claims_unconfigured_provider(client):
+    resp = await client.get("/api/v1/auth/methods")
+    assert resp.status_code == 200
+    data = resp.json()["data"]
+    assert data["emailPassword"] is True
+    # Google/Microsoft have zero config anywhere in this codebase — must
+    # never be reported as available.
+    assert data["google"] is False
+    assert data["microsoft"] is False
+    assert isinstance(data["mobileOtp"], bool)
+    assert isinstance(data["emailOtp"], bool)
+
+
 async def test_login_with_correct_password_succeeds(client):
     await _register(client)
     await client.post("/api/v1/auth/logout")

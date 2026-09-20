@@ -43,6 +43,12 @@ PERMISSIONS = [
     ("content.factory.create", "Create Content Factory batches/jobs and advance batch orchestration status"),
     ("content.factory.execute", "Create/complete GenerationRuns and advance job status (no AI generation in P1)"),
     ("content.factory.certify", "Certify factory batches (reserved; certification wave later)"),
+    (
+        "content.factory.trusted_submit",
+        "Submit an explicitly eligible Content Factory DRAFT to IN_REVIEW "
+        "without the EVALUATOR LLM call (TRUSTED-FACTORY-SUBMIT-001; never "
+        "bypasses review()/publish())",
+    ),
 ]
 
 ROLE_PERMISSIONS = {
@@ -55,6 +61,7 @@ ROLE_PERMISSIONS = {
         "content.force_edit_published",
         "knowledge.manage", "visual_assets.review", "search.admin", "audit.view",
         "content.factory.view", "content.factory.create", "content.factory.execute", "content.factory.certify",
+        "content.factory.trusted_submit",
     ],
     "CONTENT_MANAGER": [
         "questions.read", "questions.create", "questions.update",
@@ -62,6 +69,7 @@ ROLE_PERMISSIONS = {
         "content.review", "content.approve", "content.publish", "content.archive",
         "knowledge.manage", "visual_assets.review",
         "content.factory.view", "content.factory.create", "content.factory.execute", "content.factory.certify",
+        "content.factory.trusted_submit",
     ],
     "TEACHER": [
         "questions.read", "questions.create", "reports.view",
