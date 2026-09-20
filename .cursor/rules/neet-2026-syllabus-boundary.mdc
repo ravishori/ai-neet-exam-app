@@ -1,0 +1,36 @@
+---
+description: Mandatory NEET-UG-2026 syllabus + NCERT dual gates for all MCQ/content work
+alwaysApply: true
+---
+
+# NEET-2026 syllabus + NCERT factual gates
+
+## Authority
+- Syllabus: NMC/UGMEB NEET (UG)-2026 — local copy `NEETSyllabus.txt` at repo root.
+- Parse the full file; do not hard-code a shortened syllabus.
+- Current shape: Physics 20 units, Chemistry 20 units, Biology 10 units.
+- NCERT facts: `NCERT Books/` only (not StudyMaterial as generation root).
+
+## Dual gates (both required)
+1. **Syllabus scope** — WHAT may be asked → reject `SYLLABUS_OUT_OF_SCOPE`
+2. **NCERT evidence** — WHAT facts may support an NCERT-grounded MCQ → reject if unsupported
+
+Reject both: `IN_SYLLABUS + NCERT_UNSUPPORTED` and `NCERT_SUPPORTED + SYLLABUS_OUT_OF_SCOPE`.
+
+Proceed to editorial only if: `IN_SYLLABUS` + `NCERT_SUPPORTED` + `VALIDATED` + `UNIQUE`.
+
+## Before create/modify/classify/validate/import (MCQ, blueprint, topic, concept, batch, job)
+1. Resolve against NEET-UG-2026 syllabus  
+2. Confirm subject  
+3. Confirm syllabus unit  
+4. Confirm topic/subtopic  
+5. Preserve syllabus reference  
+6. Reject out-of-scope  
+
+## Forbidden
+- Expand syllabus from model knowledge or older NEET syllabi
+- Treat PYQ appearance, NCERT chapter presence, or scientific relevance as syllabus authority
+- Silently substitute another syllabus
+
+## Pipeline order
+Syllabus scope → NCERT evidence → Blueprint → LLM → Validation → NCERT claim grounding → Dedupe → Editorial → Publish

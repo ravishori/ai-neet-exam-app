@@ -1,0 +1,1880 @@
+{
+  "phase": "P2.1F",
+  "type": "ROOT_CAUSE_ANALYSIS",
+  "status": "COMPLETE",
+  "timestamp": "2026-09-01T16:18:23.795177+00:00",
+  "population": {
+    "cross_column_flags": 44,
+    "confirmed_contamination": 25,
+    "confirmed_expected": 25,
+    "count_discrepancy": null,
+    "class_e": 34,
+    "class_e_false_positive": 17,
+    "valid_contaminated": 6,
+    "hr_q3_p2_in_confirmed_set": false,
+    "canonical_dipole_case": "1d7ffd36a442fa95:p2:q3",
+    "hr_q3_p2_r2_parsed_options_clean": true
+  },
+  "root_causes": [
+    {
+      "code": "B",
+      "label": "QUESTION BOUNDARY FAILURE",
+      "count": 1,
+      "pct_of_25": 4.0,
+      "examples": [
+        "8633a3811ea07447:p5:q4"
+      ]
+    },
+    {
+      "code": "C",
+      "label": "OPTION BOUNDARY FAILURE",
+      "count": 20,
+      "pct_of_25": 80.0,
+      "examples": [
+        "00d8cababe821fcf:p8:q3",
+        "10030e374de702ab:p9:q3",
+        "34ba281c8f7a45b9:p2:q6"
+      ]
+    },
+    {
+      "code": "F",
+      "label": "QUESTION MARKER DETECTION FAILURE",
+      "count": 1,
+      "pct_of_25": 4.0,
+      "examples": [
+        "1d7ffd36a442fa95:p2:q3"
+      ]
+    },
+    {
+      "code": "I",
+      "label": "OCR SOURCE CORRUPTION",
+      "count": 3,
+      "pct_of_25": 12.0,
+      "examples": [
+        "00d8cababe821fcf:p11:q73",
+        "8633a3811ea07447:p13:q82",
+        "f7a45c960ede2f29:p13:q64"
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "question_id": "00d8cababe821fcf:p8:q3",
+      "year": "2023",
+      "paper_set": "Paper-20231108005448",
+      "page": 8,
+      "question_number": 3,
+      "affected_field": "option_a",
+      "foreign_question_number": 3,
+      "source_column": "LEFT",
+      "destination_column": "LEFT",
+      "geometry_layout": "TWO_COLUMN",
+      "ocr_evidence": "See ocr.words.p2_1e_full.jsonl for page",
+      "r2_extracted_stem": "— Methylbutan— 2 —ol\nCH,\n|",
+      "r2_extracted_options": [
+        "CH,-C-CH, Br\nbes 60\n3\nBr\n|",
+        "CH,-C-CH,-CH,\nOn,",
+        "CH, CH=CH-CH,",
+        "CH; —-CH-CH-CH,"
+      ],
+      "raw_extracted_excerpt": "— Methylbutan— 2 —ol\nCH,\n|\n(1) CH,-C-CH, Br\nbes 60\n3\nBr\n|\n(2) CH,-C-CH,-CH,\nOn,\n(3) CH, CH=CH-CH,\n(4) CH; —-CH-CH-CH,\n| |\nCH, Br",
+      "neighbors": {
+        "previous": null,
+        "next": {
+          "question_id": "00d8cababe821fcf:p8:q51",
+          "stem": "Amongst the given options which of the\nfollowing molecules /ion acts as a Lewis\nacid?\nb on oO nes\n52"
+        }
+      },
+      "cross_column_flag": [
+        "option_contains_foreign_question_marker"
+      ],
+      "quality_status": "VALID",
+      "class_e": true,
+      "extraction_path": {
+        "stages": [
+          "SOURCE/PDF",
+          "OCR WORDS",
+          "GEOMETRY",
+          "READING ORDER",
+          "QUESTION SEGMENTATION",
+          "OPTION SEGMENTATION",
+          "CLASSIFICATION"
+        ],
+        "first_failure_stage": "OPTION SEGMENTATION"
+      },
+      "primary_root_cause": "C",
+      "secondary_root_cause": "D",
+      "audit_classification": "REAL_EXTRACTION_ERROR"
+    },
+    {
+      "question_id": "00d8cababe821fcf:p11:q73",
+      "year": "2023",
+      "paper_set": "Paper-20231108005448",
+      "page": 11,
+      "question_number": 73,
+      "affected_field": "option_b",
+      "foreign_question_number": 35,
+      "source_column": "LEFT",
+      "destination_column": "LEFT",
+      "geometry_layout": "TWO_COLUMN",
+      "ocr_evidence": "See ocr.words.p2_1e_full.jsonl for page",
+      "r2_extracted_stem": "Which amongst the following\ncorrect graphical representation\nLaw?\nNV, v\n2\nT N3\nP\nQ)\nV,<V><V;\ntT\nt\nT3>T)>T,\nP",
+      "r2_extracted_options": [
+        "",
+        "T,\nqT,\n35\nVv\nTr\n3 Th\n1\nT\nP\nG3) T3>T,>T,\nK —_=\nt\nT3>T>T,\nP",
+        "",
+        "1,\nT;\nT\n|\nK—"
+      ],
+      "raw_extracted_excerpt": "Which amongst the following\ncorrect graphical representation\nLaw?\nNV, v\n2\nT N3\nP\nQ)\nV,<V><V;\ntT\nt\nT3>T)>T,\nP\n(2)\nT,\nqT,\n35\nVv\nTr\n3 Th\n1\nT\nP\nG3) T3>T,>T,\nK —_=\nt\nT3>T>T,\nP\n(4) 1,\nT;\nT\n|\nK—",
+      "neighbors": {
+        "previous": null,
+        "next": {
+          "question_id": "00d8cababe821fcf:p11:q75",
+          "stem": "Which of the following statements are NOT\ncorrect?\nA. Hydrogen is used to reduce heavy metal\noxides to metals.\nB. Heavy "
+        }
+      },
+      "cross_column_flag": [
+        "option_contains_foreign_question_marker"
+      ],
+      "quality_status": "DIAGRAM_DEPENDENT",
+      "class_e": false,
+      "extraction_path": {
+        "stages": [
+          "SOURCE/PDF",
+          "OCR WORDS",
+          "GEOMETRY",
+          "READING ORDER",
+          "QUESTION SEGMENTATION",
+          "OPTION SEGMENTATION",
+          "CLASSIFICATION"
+        ],
+        "first_failure_stage": "OCR SOURCE"
+      },
+      "primary_root_cause": "I",
+      "secondary_root_cause": "G",
+      "audit_classification": "REAL_EXTRACTION_ERROR"
+    },
+    {
+      "question_id": "10030e374de702ab:p9:q3",
+      "year": "2023",
+      "paper_set": "Paper-20231108010819",
+      "page": 9,
+      "question_number": 3,
+      "affected_field": "option_b",
+      "foreign_question_number": 3,
+      "source_column": "LEFT",
+      "destination_column": "LEFT",
+      "geometry_layout": "TWO_COLUMN",
+      "ocr_evidence": "See ocr.words.p2_1e_full.jsonl for page",
+      "r2_extracted_stem": "— Methylbutan— 2 —ol\nBr 61\n1 |",
+      "r2_extracted_options": [
+        "CH; aa ~ CH;\nCH,",
+        "CH,CH=CH-CH,\n3 H H_CH_cH\n@) ¢ ae i ~ CHS\nCH, Br\nCHs",
+        "",
+        "CH,-C-CH, Br\n|\nCH;\n59"
+      ],
+      "raw_extracted_excerpt": "— Methylbutan— 2 —ol\nBr 61\n1 |\n(1) CH; aa ~ CH;\nCH,\n(2) CH,CH=CH-CH,\n3 H H_CH_cH\n@) ¢ ae i ~ CHS\nCH, Br\nCHs\n(4) CH,-C-CH, Br\n|\nCH;\n59",
+      "neighbors": {
+        "previous": null,
+        "next": {
+          "question_id": "10030e374de702ab:p9:q57",
+          "stem": "Weight (g) of two moles of the organic\ncompound, which is obtained by heating\nsodium ethanoate with sodium hydroxide in\n"
+        }
+      },
+      "cross_column_flag": [
+        "option_contains_foreign_question_marker"
+      ],
+      "quality_status": "PARTIAL",
+      "class_e": true,
+      "extraction_path": {
+        "stages": [
+          "SOURCE/PDF",
+          "OCR WORDS",
+          "GEOMETRY",
+          "READING ORDER",
+          "QUESTION SEGMENTATION",
+          "OPTION SEGMENTATION",
+          "CLASSIFICATION"
+        ],
+        "first_failure_stage": "OPTION SEGMENTATION"
+      },
+      "primary_root_cause": "C",
+      "secondary_root_cause": "D",
+      "audit_classification": "REAL_EXTRACTION_ERROR"
+    },
+    {
+      "question_id": "1d7ffd36a442fa95:p2:q3",
+      "year": "2023",
+      "paper_set": "Paper-20231108005054",
+      "page": 2,
+      "question_number": 3,
+      "affected_field": "option_c",
+      "foreign_question_number": 4,
+      "source_column": "LEFT",
+      "destination_column": "LEFT",
+      "geometry_layout": "TWO_COLUMN",
+      "ocr_evidence": "See ocr.words.p2_1e_full.jsonl for page",
+      "r2_extracted_stem": "A full wave rectifier circuit consists of two\np-n junction diodes, a centre-tapped\ntransft , it d a load resistance.\nsiaepsin igure is denecanereleneeaceeatbaaaanaied 8\nWhich of these components remov",
+      "r2_extracted_options": [
+        "Capacitor",
+        "Load resistance",
+        "A centre-tapped transformer\n4) p-n junction diodes\n@ pny\nar :\n4 An electric dipole is placed at an angle of\n30° with an electric field of intensity\n2x10°NC\"!. It experiences a torque equal to\n4",
+        ""
+      ],
+      "raw_extracted_excerpt": "A full wave rectifier circuit consists of two\np-n junction diodes, a centre-tapped\ntransft , it d a load resistance.\nsiaepsin igure is denecanereleneeaceeatbaaaanaied 8\nWhich of these components remove the ac\nripple from the rectified output?\n(1) Capacitor\n(2) Load resistance\n(3) A centre-tapped transformer\n4) p-n junction diodes\n@ pny\nar :\n4 An electric dipole is placed at an angle of\n30° with an",
+      "neighbors": {
+        "previous": {
+          "question_id": "1d7ffd36a442fa95:p2:q1",
+          "stem": "The ratio of radius of gyration of a solid\nsphere of mass M and radius R about its\nown axis to the radius of gyration of"
+        },
+        "next": {
+          "question_id": "1d7ffd36a442fa95:p2:q4",
+          "stem": "Nm. Calculate the magnitude of charge\non the dipole, if the dipole length is 2 cm."
+        }
+      },
+      "cross_column_flag": [
+        "option_contains_foreign_question_marker"
+      ],
+      "quality_status": "DIAGRAM_DEPENDENT",
+      "class_e": false,
+      "extraction_path": {
+        "stages": [
+          "SOURCE/PDF",
+          "OCR WORDS",
+          "GEOMETRY",
+          "READING ORDER",
+          "QUESTION SEGMENTATION",
+          "OPTION SEGMENTATION",
+          "CLASSIFICATION"
+        ],
+        "first_failure_stage": "QUESTION MARKER DETECTION"
+      },
+      "primary_root_cause": "F",
+      "secondary_root_cause": "C",
+      "audit_classification": "REAL_EXTRACTION_ERROR"
+    },
+    {
+      "question_id": "34ba281c8f7a45b9:p2:q6",
+      "year": "2023",
+      "paper_set": "Paper-20231108011809",
+      "page": 2,
+      "question_number": 6,
+      "affected_field": "option_b",
+      "foreign_question_number": 10,
+      "source_column": "RIGHT",
+      "destination_column": "RIGHT",
+      "geometry_layout": "TWO_COLUMN",
+      "ocr_evidence": "See ocr.words.p2_1e_full.jsonl for page",
+      "r2_extracted_stem": "The net magnetic flux through any closed\nsurface is :",
+      "r2_extracted_options": [
+        "Zero",
+        "Positive\nIf the galvanometer G does not show any\ndeflection in the circuit shown, the value of\n.\nR is given by :\n400Q\n+ R +\n10 V 2V\n- -",
+        "",
+        ""
+      ],
+      "raw_extracted_excerpt": "The net magnetic flux through any closed\nsurface is :\n(1) Zero (2) Positive\nIf the galvanometer G does not show any\ndeflection in the circuit shown, the value of\n.\nR is given by :\n400Q\n+ R +\n10 V 2V\n- -\n(1) 2000 (2) 500\n(3) 1002 (4) 4002\nInaseries LCR circuit, the inductance L is\n10",
+      "neighbors": {
+        "previous": {
+          "question_id": "34ba281c8f7a45b9:p2:q5",
+          "stem": "If a -dS=0 over a surface, then :\nSs"
+        },
+        "next": {
+          "question_id": "34ba281c8f7a45b9:p2:q10",
+          "stem": "mH, capacitance C is 1 uF and resistance\nRis 100Q. The frequency at which resonance\noccurs is :"
+        }
+      },
+      "cross_column_flag": [
+        "option_contains_foreign_question_marker"
+      ],
+      "quality_status": "PARTIAL",
+      "class_e": true,
+      "extraction_path": {
+        "stages": [
+          "SOURCE/PDF",
+          "OCR WORDS",
+          "GEOMETRY",
+          "READING ORDER",
+          "QUESTION SEGMENTATION",
+          "OPTION SEGMENTATION",
+          "CLASSIFICATION"
+        ],
+        "first_failure_stage": "OPTION SEGMENTATION"
+      },
+      "primary_root_cause": "C",
+      "secondary_root_cause": "B",
+      "audit_classification": "REAL_EXTRACTION_ERROR"
+    },
+    {
+      "question_id": "7e4dabb5a199588d:p10:q52",
+      "year": "2025",
+      "paper_set": "NEET-2025-EN-47",
+      "page": 10,
+      "question_number": 52,
+      "affected_field": "option_c",
+      "foreign_question_number": 3,
+      "source_column": "RIGHT",
+      "destination_column": "RIGHT",
+      "geometry_layout": "TWO_COLUMN",
+      "ocr_evidence": "See ocr.words.p2_1e_full.jsonl for page",
+      "r2_extracted_stem": "The major product of the following reaction\nis:\n0 (i) CH;MgBr\ner en (excess)\n(ii) HzO °\n3\nO",
+      "r2_extracted_options": [
+        "oy\nO\nCH; on\nQ) CN\nCH\n3 /OH CH",
+        "",
+        "err 3\nO\nH.C OH\n3 OH",
+        ". rae\n3\nWhich one of the following compounds can\nexist as cis-trans isomers?"
+      ],
+      "raw_extracted_excerpt": "The major product of the following reaction\nis:\n0 (i) CH;MgBr\ner en (excess)\n(ii) HzO °\n3\nO\n(1) oy\nO\nCH; on\nQ) CN\nCH\n3 /OH CH\n(3) err 3\nO\nH.C OH\n3 OH\n(4) . rae\n3\nWhich one of the following compounds can\nexist as cis-trans isomers?\n(1) 1,2-Dimethylcyclohexane\n(2) Pent-1-ene\n(G3) 2-Methylhex-2-ene\n(4) 1,1-Dimethylcyclopropane\nAmong the following, choose the ones with\nequal number of atoms.\nA. 212 g ",
+      "neighbors": {
+        "previous": {
+          "question_id": "7e4dabb5a199588d:p10:q51",
+          "stem": "= Match List I with List II 53.\nList I List II\n(Mixture) (Method of\nSeparation)\nA. CHCl, + 1. Distillation\nCsH;NH> under"
+        },
+        "next": null
+      },
+      "cross_column_flag": [
+        "option_contains_foreign_question_marker"
+      ],
+      "quality_status": "PARTIAL",
+      "class_e": true,
+      "extraction_path": {
+        "stages": [
+          "SOURCE/PDF",
+          "OCR WORDS",
+          "GEOMETRY",
+          "READING ORDER",
+          "QUESTION SEGMENTATION",
+          "OPTION SEGMENTATION",
+          "CLASSIFICATION"
+        ],
+        "first_failure_stage": "OPTION SEGMENTATION"
+      },
+      "primary_root_cause": "C",
+      "secondary_root_cause": "B",
+      "audit_classification": "REAL_EXTRACTION_ERROR"
+    },
+    {
+      "question_id": "8633a3811ea07447:p5:q4",
+      "year": "2023",
+      "paper_set": "Paper-20231108004734",
+      "page": 5,
+      "question_number": 4,
+      "affected_field": "option_d",
+      "foreign_question_number": 290,
+      "source_column": "RIGHT",
+      "destination_column": "RIGHT",
+      "geometry_layout": "TWO_COLUMN",
+      "ocr_evidence": "See ocr.words.p2_1e_full.jsonl for page",
+      "r2_extracted_stem": "Nm. Calculate the magnitude of charge\non the dipole, if the dipole length is 2 cm.",
+      "r2_extracted_options": [
+        "8 mc Q) 6 mc",
+        "",
+        "4 mC",
+        "2 mC\nThe magnitude and direction of the current\nin the following circuit is\n290 WV5V io\nA tH B\nD C\n70"
+      ],
+      "raw_extracted_excerpt": "Nm. Calculate the magnitude of charge\non the dipole, if the dipole length is 2 cm.\n(1) 8 mc Q) 6 mc\n(3) 4 mC (4) 2 mC\nThe magnitude and direction of the current\nin the following circuit is\n290 WV5V io\nA tH B\nD C\n70\n(1) 0.2 A from B to A through E\n(2) 0.5 A from A to B through E\n5\n(3) 5 A from 4 to B through £\n(4) 1.5 A from B to A through E\nThe net magnetic flux through any closed\nsurface is :\n(1)",
+      "neighbors": {
+        "previous": null,
+        "next": {
+          "question_id": "8633a3811ea07447:p5:q10",
+          "stem": "mH, capacitance C is 1 uF and resistance\nis 100Q. i\nRis The frequency at which resonance\noccurs is :"
+        }
+      },
+      "cross_column_flag": [
+        "option_contains_foreign_question_marker"
+      ],
+      "quality_status": "PARTIAL",
+      "class_e": true,
+      "extraction_path": {
+        "stages": [
+          "SOURCE/PDF",
+          "OCR WORDS",
+          "GEOMETRY",
+          "READING ORDER",
+          "QUESTION SEGMENTATION",
+          "OPTION SEGMENTATION",
+          "CLASSIFICATION"
+        ],
+        "first_failure_stage": "QUESTION SEGMENTATION"
+      },
+      "primary_root_cause": "B",
+      "secondary_root_cause": "F",
+      "audit_classification": "REAL_EXTRACTION_ERROR"
+    },
+    {
+      "question_id": "8633a3811ea07447:p13:q82",
+      "year": "2023",
+      "paper_set": "Paper-20231108004734",
+      "page": 13,
+      "question_number": 82,
+      "affected_field": "option_b",
+      "foreign_question_number": 37,
+      "source_column": "LEFT",
+      "destination_column": "LEFT",
+      "geometry_layout": "TWO_COLUMN",
+      "ocr_evidence": "See ocr.words.p2_1e_full.jsonl for page",
+      "r2_extracted_stem": "Which amongst the following options is\ncorrect graphical representation of Boyle’s\nLaw?\nT T3>T>>T,\nP",
+      "r2_extracted_options": [
+        "T\nT\nT;\nv— 84\nTs\n1 27,\nP",
+        "T.>T.>T\n37 tar ty\nA=\n85\nT T;>T)>T,\nP",
+        "T;\nT,\nT\nWA .\nVv\n1\n2\n(4 P\n)\nV<V><V;\n:\nT—",
+        ""
+      ],
+      "raw_extracted_excerpt": "Which amongst the following options is\ncorrect graphical representation of Boyle’s\nLaw?\nT T3>T>>T,\nP\n(1)\nT\nT\nT;\nv— 84\nTs\n1 27,\nP\n(2) T.>T.>T\n37 tar ty\nA=\n85\nT T;>T)>T,\nP\n(3) T;\nT,\nT\nWA .\nVv\n1\n2\n(4 P\n)\nV<V><V;\n:\nT—",
+      "neighbors": {
+        "previous": null,
+        "next": {
+          "question_id": "8633a3811ea07447:p13:q83",
+          "stem": "The right option for the mass of CO,\nproduced by heating 20g of 20% pure\nlimestone is (Atomic mass of Ca = 40)\n[caco, —1"
+        }
+      },
+      "cross_column_flag": [
+        "option_contains_foreign_question_marker"
+      ],
+      "quality_status": "DIAGRAM_DEPENDENT",
+      "class_e": false,
+      "extraction_path": {
+        "stages": [
+          "SOURCE/PDF",
+          "OCR WORDS",
+          "GEOMETRY",
+          "READING ORDER",
+          "QUESTION SEGMENTATION",
+          "OPTION SEGMENTATION",
+          "CLASSIFICATION"
+        ],
+        "first_failure_stage": "OCR SOURCE"
+      },
+      "primary_root_cause": "I",
+      "secondary_root_cause": "G",
+      "audit_classification": "REAL_EXTRACTION_ERROR"
+    },
+    {
+      "question_id": "8633a3811ea07447:p20:q133",
+      "year": "2023",
+      "paper_set": "Paper-20231108004734",
+      "page": 20,
+      "question_number": 133,
+      "affected_field": "option_a",
+      "foreign_question_number": 4,
+      "source_column": "LEFT",
+      "destination_column": "LEFT",
+      "geometry_layout": "TWO_COLUMN",
+      "ocr_evidence": "See ocr.words.p2_1e_full.jsonl for page",
+      "r2_extracted_stem": "Given below are two statements :\nStatement I : Endarch and exarch are the\nterms often used for describing the position\n.\nof secondary xylem in the plant body.\nStatement II : Exarch condition is the mo",
+      "r2_extracted_options": [
+        "Both Statement I and Statement II\nare true.",
+        "Both Statement I and Statement II\nare false.\n2 :",
+        "Statement I is correct but\n:\nStatement II is false.\n4 Lisi",
+        "ceement i moore but"
+      ],
+      "raw_extracted_excerpt": "Given below are two statements :\nStatement I : Endarch and exarch are the\nterms often used for describing the position\n.\nof secondary xylem in the plant body.\nStatement II : Exarch condition is the most\ncommon feature of the root system.\nIn the light of the above statements, choose\nthe correct answer from the options given\nbelow :\n.\n(1) Both Statement I and Statement II\nare true.\n(2) Both Statemen",
+      "neighbors": {
+        "previous": null,
+        "next": {
+          "question_id": "8633a3811ea07447:p20:q134",
+          "stem": "Frequency of recombination between gene\npairs on same chromosome as a measure of\nthe distance between genes to map their"
+        }
+      },
+      "cross_column_flag": [
+        "option_contains_foreign_question_marker"
+      ],
+      "quality_status": "VALID",
+      "class_e": true,
+      "extraction_path": {
+        "stages": [
+          "SOURCE/PDF",
+          "OCR WORDS",
+          "GEOMETRY",
+          "READING ORDER",
+          "QUESTION SEGMENTATION",
+          "OPTION SEGMENTATION",
+          "CLASSIFICATION"
+        ],
+        "first_failure_stage": "OPTION SEGMENTATION"
+      },
+      "primary_root_cause": "C",
+      "secondary_root_cause": "D",
+      "audit_classification": "REAL_EXTRACTION_ERROR"
+    },
+    {
+      "question_id": "87c534cad98b7b4e:p3:q7",
+      "year": "2025",
+      "paper_set": "NEET-2025-EN-45",
+      "page": 3,
+      "question_number": 7,
+      "affected_field": "option_a",
+      "foreign_question_number": 1,
+      "source_column": "LEFT",
+      "destination_column": "LEFT",
+      "geometry_layout": "TWO_COLUMN",
+      "ocr_evidence": "See ocr.words.p2_1e_full.jsonl for page",
+      "r2_extracted_stem": "A bob of heavy mass m is suspended by a light\nstring of length /. The bob is given a horizontal\nvelocity vy as shown in figure. If the string gets\nslack at some point P making an angle 9 from\nthe hori",
+      "r2_extracted_options": [
+        "(sin 02\nre)\n1 VW\n2) |>a\n2+3sin@\ncos 0 VA",
+        "",
+        "243 sin0\nIs",
+        "sin 0 ) 2\n2+3sin @"
+      ],
+      "raw_extracted_excerpt": "A bob of heavy mass m is suspended by a light\nstring of length /. The bob is given a horizontal\nvelocity vy as shown in figure. If the string gets\nslack at some point P making an angle 9 from\nthe horizontal, the ratio of the speed v of the\nbob at point P to its initial speed vp is:\n~.\nfo ‘\n~ P\n' 4 8 ---\n\\ t\nm ~°\n(1) (sin 02\nre)\n1 VW\n2) |>a\n2+3sin@\ncos 0 VA\n(3) 243 sin0\nIs\n(4) sin 0 ) 2\n2+3sin @",
+      "neighbors": {
+        "previous": {
+          "question_id": "87c534cad98b7b4e:p3:q6",
+          "stem": "The current passing through the battery in the\ngiven circuit, 1s:\n150\n5Q\nA Cc\na .\nF 30 1.50 D\nly 5V\n3"
+        },
+        "next": {
+          "question_id": "87c534cad98b7b4e:p3:q9",
+          "stem": "The electric field in a plane electromagnetic\nwave is given b\ng y\nE. = 60cos (5x+1.5x10°)V /m.\n.\nThen expression for the"
+        }
+      },
+      "cross_column_flag": [
+        "option_contains_foreign_question_marker"
+      ],
+      "quality_status": "DIAGRAM_DEPENDENT",
+      "class_e": false,
+      "extraction_path": {
+        "stages": [
+          "SOURCE/PDF",
+          "OCR WORDS",
+          "GEOMETRY",
+          "READING ORDER",
+          "QUESTION SEGMENTATION",
+          "OPTION SEGMENTATION",
+          "CLASSIFICATION"
+        ],
+        "first_failure_stage": "OPTION SEGMENTATION"
+      },
+      "primary_root_cause": "C",
+      "secondary_root_cause": "D",
+      "audit_classification": "REAL_EXTRACTION_ERROR"
+    },
+    {
+      "question_id": "87c534cad98b7b4e:p13:q65",
+      "year": "2025",
+      "paper_set": "NEET-2025-EN-45",
+      "page": 13,
+      "question_number": 65,
+      "affected_field": "option_a",
+      "foreign_question_number": 4,
+      "source_column": "RIGHT",
+      "destination_column": "RIGHT",
+      "geometry_layout": "TWO_COLUMN",
+      "ocr_evidence": "See ocr.words.p2_1e_full.jsonl for page",
+      "r2_extracted_stem": "C(s)+2H,(g) > CH,(g); AH=-74.8 kJ mol!\nWhich of the following diagrams gives an\naccurate representation of the above reaction?\n[R — reactants; P — products]\ninerey 1\n(kJ mol \")} R",
+      "r2_extracted_options": [
+        "T 74.8 P\n—> Reaction progress\nEnergy P\n(kJ mol!)\nR\n4 T 74.8\n2)\n—> Reaction progress\nEnergy,\n(kJ mol”) R ) 74.8\nT P",
+        "",
+        "—> Reaction progress\nEnergy ;\n(kJ mol!)\n« ple nag\n—> Reaction progress\n66",
+        ""
+      ],
+      "raw_extracted_excerpt": "C(s)+2H,(g) > CH,(g); AH=-74.8 kJ mol!\nWhich of the following diagrams gives an\naccurate representation of the above reaction?\n[R — reactants; P — products]\ninerey 1\n(kJ mol \")} R\n(1) T 74.8 P\n—> Reaction progress\nEnergy P\n(kJ mol!)\nR\n4 T 74.8\n2)\n—> Reaction progress\nEnergy,\n(kJ mol”) R ) 74.8\nT P\n(3)\n—> Reaction progress\nEnergy ;\n(kJ mol!)\n« ple nag\n—> Reaction progress\n66",
+      "neighbors": {
+        "previous": {
+          "question_id": "87c534cad98b7b4e:p13:q64",
+          "stem": "= Match List - I with List - II\nList-I List-IT\nA. XeO; I. sp3d; linear\nB. XeF, Il. sp3; pyramidal\nC. XeOF II. sp3d3: dis"
+        },
+        "next": {
+          "question_id": "87c534cad98b7b4e:p13:q66",
+          "stem": "= Match List - I with List - II\nList-I List-II ;\n(Example) (Type of Solution)\nA. Humidity I. Solid in solid\nB. Alloys Il"
+        }
+      },
+      "cross_column_flag": [
+        "option_contains_foreign_question_marker"
+      ],
+      "quality_status": "DIAGRAM_DEPENDENT",
+      "class_e": false,
+      "extraction_path": {
+        "stages": [
+          "SOURCE/PDF",
+          "OCR WORDS",
+          "GEOMETRY",
+          "READING ORDER",
+          "QUESTION SEGMENTATION",
+          "OPTION SEGMENTATION",
+          "CLASSIFICATION"
+        ],
+        "first_failure_stage": "OPTION SEGMENTATION"
+      },
+      "primary_root_cause": "C",
+      "secondary_root_cause": "D",
+      "audit_classification": "REAL_EXTRACTION_ERROR"
+    },
+    {
+      "question_id": "9fcfff3f33350907:p8:q57",
+      "year": "2023",
+      "paper_set": "Paper-20231108012938",
+      "page": 8,
+      "question_number": 57,
+      "affected_field": "option_b",
+      "foreign_question_number": 3,
+      "source_column": "RIGHT",
+      "destination_column": "RIGHT",
+      "geometry_layout": "TWO_COLUMN",
+      "ocr_evidence": "See ocr.words.p2_1e_full.jsonl for page",
+      "r2_extracted_stem": "Complete the following reaction :\n(roto\nOH\nHCN\nIA] [B]\ncone. H»SO4 [c]\nA\n[C] is ____",
+      "r2_extracted_options": [
+        "( \\-aw",
+        "( S-coon\noC > Cp\n3 OH (4 COOH\nConsider the following reaction and identify\nthe product (P).\nCH; aa “A —CH;\nHBr\n——> Product (P)\nCH; OH\n3",
+        "",
+        ""
+      ],
+      "raw_extracted_excerpt": "Complete the following reaction :\n(roto\nOH\nHCN\nIA] [B]\ncone. H»SO4 [c]\nA\n[C] is ____\n(1) ( \\-aw (2) ( S-coon\noC > Cp\n3 OH (4 COOH\nConsider the following reaction and identify\nthe product (P).\nCH; aa “A —CH;\nHBr\n——> Product (P)\nCH; OH\n3",
+      "neighbors": {
+        "previous": {
+          "question_id": "9fcfff3f33350907:p8:q56",
+          "stem": "Given below are two statements : one is\nlabelled as Assertion A and the other is\nlabelled as Reason R :\nAssertion A : He"
+        },
+        "next": null
+      },
+      "cross_column_flag": [
+        "option_contains_foreign_question_marker"
+      ],
+      "quality_status": "PARTIAL",
+      "class_e": true,
+      "extraction_path": {
+        "stages": [
+          "SOURCE/PDF",
+          "OCR WORDS",
+          "GEOMETRY",
+          "READING ORDER",
+          "QUESTION SEGMENTATION",
+          "OPTION SEGMENTATION",
+          "CLASSIFICATION"
+        ],
+        "first_failure_stage": "OPTION SEGMENTATION"
+      },
+      "primary_root_cause": "C",
+      "secondary_root_cause": "B",
+      "audit_classification": "REAL_EXTRACTION_ERROR"
+    },
+    {
+      "question_id": "a1c3361678271d6e:p24:q162",
+      "year": "2023",
+      "paper_set": "Paper-20231108004832",
+      "page": 24,
+      "question_number": 162,
+      "affected_field": "option_a",
+      "foreign_question_number": 4,
+      "source_column": "RIGHT",
+      "destination_column": "RIGHT",
+      "geometry_layout": "TWO_COLUMN",
+      "ocr_evidence": "See ocr.words.p2_1e_full.jsonl for page",
+      "r2_extracted_stem": "Which of the following are NOT considered\nas the part of endomembrane system?\nA. Mitochondria B. Endoplasmic\nReticulum\nCc. Chloroplasts D. Golgi complex\nE. Peroxisomes ;\nese the most appropriate answe",
+      "r2_extracted_options": [
+        "e Cc nnd E only\ne options given below:",
+        "A and D only",
+        "A, D and E only\n4 B 4D onl",
+        "any only"
+      ],
+      "raw_extracted_excerpt": "Which of the following are NOT considered\nas the part of endomembrane system?\nA. Mitochondria B. Endoplasmic\nReticulum\nCc. Chloroplasts D. Golgi complex\nE. Peroxisomes ;\nese the most appropriate answer from\n(1) e Cc nnd E only\ne options given below:\n(2) A and D only\n(3) A, D and E only\n4 B 4D onl\n(4) any only\n163",
+      "neighbors": {
+        "previous": {
+          "question_id": "a1c3361678271d6e:p24:q161",
+          "stem": "Given below are two statements:\nStatement I: Ligaments are dense\nirregular tissue.\nStat t Il: Cartilage is d 1\ntesla mag"
+        },
+        "next": {
+          "question_id": "a1c3361678271d6e:p24:q163",
+          "stem": "Given below are two statements:\nStatement I: A protein is imagined as a line\nthe left end represented by first amino aci"
+        }
+      },
+      "cross_column_flag": [
+        "option_contains_foreign_question_marker"
+      ],
+      "quality_status": "VALID",
+      "class_e": true,
+      "extraction_path": {
+        "stages": [
+          "SOURCE/PDF",
+          "OCR WORDS",
+          "GEOMETRY",
+          "READING ORDER",
+          "QUESTION SEGMENTATION",
+          "OPTION SEGMENTATION",
+          "CLASSIFICATION"
+        ],
+        "first_failure_stage": "OPTION SEGMENTATION"
+      },
+      "primary_root_cause": "C",
+      "secondary_root_cause": "B",
+      "audit_classification": "REAL_EXTRACTION_ERROR"
+    },
+    {
+      "question_id": "a1c3361678271d6e:p26:q172",
+      "year": "2023",
+      "paper_set": "Paper-20231108004832",
+      "page": 26,
+      "question_number": 172,
+      "affected_field": "option_d",
+      "foreign_question_number": 173,
+      "source_column": "LEFT",
+      "destination_column": "LEFT",
+      "geometry_layout": "TWO_COLUMN",
+      "ocr_evidence": "See ocr.words.p2_1e_full.jsonl for page",
+      "r2_extracted_stem": "Which of the following functions is carried\nout by cytoskeleton in a cell?",
+      "r2_extracted_options": [
+        "Protein synthesis",
+        "",
+        "Transportation",
+        "Nuclear division\nd d and bsorbed\n173 O th igest\nnee aie unengesteg an ana sone\nsubstances enter the caecum, their backflow\nis prevented by-\nP »"
+      ],
+      "raw_extracted_excerpt": "Which of the following functions is carried\nout by cytoskeleton in a cell?\n(1) Protein synthesis\n(3) Transportation\n(4) Nuclear division\nd d and bsorbed\n173 O th igest\nnee aie unengesteg an ana sone\nsubstances enter the caecum, their backflow\nis prevented by-\nP »\n(1) Ileo - caecal valve\n(2) Gastro - oesophageal sphincter\n(3) Pyloric sphincter\n(4) Sphincter of Oddi",
+      "neighbors": {
+        "previous": {
+          "question_id": "a1c3361678271d6e:p26:q171",
+          "stem": "Match List I with List If with respect to\nhuman eye.\nList I List I\nA. Fovea I. Visible coloured portion\nof eye that regu"
+        },
+        "next": null
+      },
+      "cross_column_flag": [
+        "option_contains_foreign_question_marker"
+      ],
+      "quality_status": "PARTIAL",
+      "class_e": true,
+      "extraction_path": {
+        "stages": [
+          "SOURCE/PDF",
+          "OCR WORDS",
+          "GEOMETRY",
+          "READING ORDER",
+          "QUESTION SEGMENTATION",
+          "OPTION SEGMENTATION",
+          "CLASSIFICATION"
+        ],
+        "first_failure_stage": "OPTION SEGMENTATION"
+      },
+      "primary_root_cause": "C",
+      "secondary_root_cause": "B",
+      "audit_classification": "REAL_EXTRACTION_ERROR"
+    },
+    {
+      "question_id": "a43894b5fbc8cd28:p9:q3",
+      "year": "2023",
+      "paper_set": "Paper-20231108011342",
+      "page": 9,
+      "question_number": 3,
+      "affected_field": "option_b",
+      "foreign_question_number": 3,
+      "source_column": "RIGHT",
+      "destination_column": "RIGHT",
+      "geometry_layout": "TWO_COLUMN",
+      "ocr_evidence": "See ocr.words.p2_1e_full.jsonl for page",
+      "r2_extracted_stem": "— Methylbutan— 2 -ol",
+      "r2_extracted_options": [
+        "CH; CH=CH -CH,",
+        "CH, ~ FH CH CH\nCH, Br\n3\nos",
+        "CH,-C-CH, Br\n|\nCH\n3\nBr",
+        "CH; ~C-CH, CH"
+      ],
+      "raw_extracted_excerpt": "— Methylbutan— 2 -ol\n(1) CH; CH=CH -CH,\n(2) CH, ~ FH CH CH\nCH, Br\n3\nos\n(3) CH,-C-CH, Br\n|\nCH\n3\nBr\n(4) CH; ~C-CH, CH\nCH,\nGiven below are two statements : one is\nlabelled as Assertion A and the other is\nlabelled as Reason R :\nAssertion A : In equation AG =~-nFE,,,),\nvalue of A,G depends on n.\nReasons R : E,,j, is an intensive property\nand A.G is an extensive property.\nIn the light of the above state",
+      "neighbors": {
+        "previous": {
+          "question_id": "a43894b5fbc8cd28:p9:q1",
+          "stem": "2: 2: 2p, =m2\n(x\"2p, =x° 2p, <o2p, < 6” 2p,"
+        },
+        "next": {
+          "question_id": "a43894b5fbc8cd28:p9:q5",
+          "stem": "2p, <(x 2p, =1 2p, )<o 2p,"
+        }
+      },
+      "cross_column_flag": [
+        "option_contains_foreign_question_marker"
+      ],
+      "quality_status": "VALID",
+      "class_e": true,
+      "extraction_path": {
+        "stages": [
+          "SOURCE/PDF",
+          "OCR WORDS",
+          "GEOMETRY",
+          "READING ORDER",
+          "QUESTION SEGMENTATION",
+          "OPTION SEGMENTATION",
+          "CLASSIFICATION"
+        ],
+        "first_failure_stage": "OPTION SEGMENTATION"
+      },
+      "primary_root_cause": "C",
+      "secondary_root_cause": "D",
+      "audit_classification": "REAL_EXTRACTION_ERROR"
+    },
+    {
+      "question_id": "b69d582ff457c62e:p14:q55",
+      "year": "2024",
+      "paper_set": "Paper-20250124133115",
+      "page": 14,
+      "question_number": 55,
+      "affected_field": "option_c",
+      "foreign_question_number": 4,
+      "source_column": "LEFT",
+      "destination_column": "LEFT",
+      "geometry_layout": "TWO_COLUMN",
+      "ocr_evidence": "See ocr.words.p2_1e_full.jsonl for page",
+      "r2_extracted_stem": "The most stable carbocation among the following\n®\nis:",
+      "r2_extracted_options": [
+        "CH,\nCH;\noc\n°\nCH,",
+        "",
+        "“NSN oN\nH,C~ SCH~ “CH,\n, ©\nqi\nC CH\n®\n4 cu cu |\n3 CH,\n56",
+        ""
+      ],
+      "raw_extracted_excerpt": "The most stable carbocation among the following\n®\nis:\n(1) CH,\nCH;\noc\n°\nCH,\n(3) “NSN oN\nH,C~ SCH~ “CH,\n, ©\nqi\nC CH\n®\n4 cu cu |\n3 CH,\n56",
+      "neighbors": {
+        "previous": null,
+        "next": {
+          "question_id": "b69d582ff457c62e:p14:q56",
+          "stem": "The E® value for the Mn>*/Mn2* couple is more\npositive than that of Cr3*/Cr2* or Fe3*/Fe2* due\nto change of"
+        }
+      },
+      "cross_column_flag": [
+        "option_contains_foreign_question_marker"
+      ],
+      "quality_status": "PARTIAL",
+      "class_e": true,
+      "extraction_path": {
+        "stages": [
+          "SOURCE/PDF",
+          "OCR WORDS",
+          "GEOMETRY",
+          "READING ORDER",
+          "QUESTION SEGMENTATION",
+          "OPTION SEGMENTATION",
+          "CLASSIFICATION"
+        ],
+        "first_failure_stage": "OPTION SEGMENTATION"
+      },
+      "primary_root_cause": "C",
+      "secondary_root_cause": "D",
+      "audit_classification": "REAL_EXTRACTION_ERROR"
+    },
+    {
+      "question_id": "b69d582ff457c62e:p20:q81",
+      "year": "2024",
+      "paper_set": "Paper-20250124133115",
+      "page": 20,
+      "question_number": 81,
+      "affected_field": "option_b",
+      "foreign_question_number": 3,
+      "source_column": "LEFT",
+      "destination_column": "LEFT",
+      "geometry_layout": "TWO_COLUMN",
+      "ocr_evidence": "See ocr.words.p2_1e_full.jsonl for page",
+      "r2_extracted_stem": "Match List I with List II.\nList I (Reaction) List II (Reagents/\nCondition)\nO\nA OXD2Oro0 1k Oe\nAnhyd. AICI,\nO\nBO “FO, Il. CrO,\nc CY UO Il. KMnO,/\nKOH, A\nCH,CH; .\nDz or > IV. (i) 03\nCOOK -\nCr (ii) Zn-H,",
+      "r2_extracted_options": [
+        "A-TV, B-L, C-II, D-Ill",
+        "A-I, B-AV, C-Il, D-II\n3 AN BI, eae\n82 ‘Spin only’ magnetic moment is same for which\nof the following ions?\nA. Tit B. Cr2+\nCc. Mn‘* D. Fe2*\nE. Se\nChoose the most appropriate answer from the\noptions given below:",
+        "",
+        ""
+      ],
+      "raw_extracted_excerpt": "Match List I with List II.\nList I (Reaction) List II (Reagents/\nCondition)\nO\nA OXD2Oro0 1k Oe\nAnhyd. AICI,\nO\nBO “FO, Il. CrO,\nc CY UO Il. KMnO,/\nKOH, A\nCH,CH; .\nDz or > IV. (i) 03\nCOOK -\nCr (ii) Zn-H,O\nChoose the correct answer from the options given\nbelow:\n(1) A-TV, B-L, C-II, D-Ill\n(2) A-I, B-AV, C-Il, D-II\n3 AN BI, eae\n82 ‘Spin only’ magnetic moment is same for which\nof the following ions?\nA. T",
+      "neighbors": {
+        "previous": {
+          "question_id": "b69d582ff457c62e:p20:q3",
+          "stem": "Lair aS any =\nG3) oa pica ant ae s"
+        },
+        "next": {
+          "question_id": "b69d582ff457c62e:p20:q82",
+          "stem": "amreh ESL ah & feng * aw g\n‘A ue : B. Crt\nC M on D Fe2t\nE Scot » Fe\n. . .\nwire fag ay fercee A aad wel oat a"
+        }
+      },
+      "cross_column_flag": [
+        "option_contains_foreign_question_marker"
+      ],
+      "quality_status": "PARTIAL",
+      "class_e": true,
+      "extraction_path": {
+        "stages": [
+          "SOURCE/PDF",
+          "OCR WORDS",
+          "GEOMETRY",
+          "READING ORDER",
+          "QUESTION SEGMENTATION",
+          "OPTION SEGMENTATION",
+          "CLASSIFICATION"
+        ],
+        "first_failure_stage": "OPTION SEGMENTATION"
+      },
+      "primary_root_cause": "C",
+      "secondary_root_cause": "D",
+      "audit_classification": "REAL_EXTRACTION_ERROR"
+    },
+    {
+      "question_id": "d11cf53d4d8ef5b0:p30:q195",
+      "year": "2023",
+      "paper_set": "Paper-20231108005321",
+      "page": 30,
+      "question_number": 195,
+      "affected_field": "option_b",
+      "foreign_question_number": 5,
+      "source_column": "LEFT",
+      "destination_column": "LEFT",
+      "geometry_layout": "TWO_COLUMN",
+      "ocr_evidence": "See ocr.words.p2_1e_full.jsonl for page",
+      "r2_extracted_stem": "Which one of the following is the sequence\n. . :\non corresponding coding strand, if the\nsequence on mRNA formed is as follows\n5° AUCGAUCGAUCGAUCGAUCG\n89\nAUCG AUCG 3’?",
+      "r2_extracted_options": [
+        "3° UAGCUAGCUAGCUAGCUA\n,\nGCUAGCUAGC 5",
+        "5° ATCGATCGATCGATCGATCG\n5\nATCGATCG 3",
+        "3° ATCGATCGATCGATCGATCG\n;\nAICGATCG 9",
+        "5’? UAGCUAGCUAGCUAGCUA"
+      ],
+      "raw_extracted_excerpt": "Which one of the following is the sequence\n. . :\non corresponding coding strand, if the\nsequence on mRNA formed is as follows\n5° AUCGAUCGAUCGAUCGAUCG\n89\nAUCG AUCG 3’?\n(1) 3° UAGCUAGCUAGCUAGCUA\n,\nGCUAGCUAGC 5\n(2) 5° ATCGATCGATCGATCGATCG\n5\nATCGATCG 3\n(3) 3° ATCGATCGATCGATCGATCG\n;\nAICGATCG 9\n(4) 5’? UAGCUAGCUAGCUAGCUA\nGCUAGC UAGC 3°\n196",
+      "neighbors": {
+        "previous": null,
+        "next": {
+          "question_id": "d11cf53d4d8ef5b0:p30:q196",
+          "stem": "Which one of the following is NOT an\nadvantage of inbreeding?\n."
+        }
+      },
+      "cross_column_flag": [
+        "option_contains_foreign_question_marker"
+      ],
+      "quality_status": "VALID",
+      "class_e": true,
+      "extraction_path": {
+        "stages": [
+          "SOURCE/PDF",
+          "OCR WORDS",
+          "GEOMETRY",
+          "READING ORDER",
+          "QUESTION SEGMENTATION",
+          "OPTION SEGMENTATION",
+          "CLASSIFICATION"
+        ],
+        "first_failure_stage": "OPTION SEGMENTATION"
+      },
+      "primary_root_cause": "C",
+      "secondary_root_cause": "D",
+      "audit_classification": "REAL_EXTRACTION_ERROR"
+    },
+    {
+      "question_id": "dbdcfa0a13d13467:p25:q165",
+      "year": "2023",
+      "paper_set": "Paper-20231108011242",
+      "page": 25,
+      "question_number": 165,
+      "affected_field": "option_a",
+      "foreign_question_number": 3,
+      "source_column": "LEFT",
+      "destination_column": "LEFT",
+      "geometry_layout": "TWO_COLUMN",
+      "ocr_evidence": "See ocr.words.p2_1e_full.jsonl for page",
+      "r2_extracted_stem": "Which of the following functions is carried\nout by cytoskeleton in a cell?",
+      "r2_extracted_options": [
+        "Nuclear division\n3 Moule",
+        "",
+        "",
+        "Transportation\n166"
+      ],
+      "raw_extracted_excerpt": "Which of the following functions is carried\nout by cytoskeleton in a cell?\n(1) Nuclear division\n3 Moule\n(4) Transportation\n166",
+      "neighbors": {
+        "previous": {
+          "question_id": "dbdcfa0a13d13467:p25:q164",
+          "stem": "Match List I with List II with respect to\nist h List Il\nA. Fovea I. Visible coloured portion\nof eye that regulates\ndiame"
+        },
+        "next": {
+          "question_id": "dbdcfa0a13d13467:p25:q166",
+          "stem": "Broad palm with single palm crease is visible\nin a person suffering from-"
+        }
+      },
+      "cross_column_flag": [
+        "option_contains_foreign_question_marker"
+      ],
+      "quality_status": "PARTIAL",
+      "class_e": true,
+      "extraction_path": {
+        "stages": [
+          "SOURCE/PDF",
+          "OCR WORDS",
+          "GEOMETRY",
+          "READING ORDER",
+          "QUESTION SEGMENTATION",
+          "OPTION SEGMENTATION",
+          "CLASSIFICATION"
+        ],
+        "first_failure_stage": "OPTION SEGMENTATION"
+      },
+      "primary_root_cause": "C",
+      "secondary_root_cause": "B",
+      "audit_classification": "REAL_EXTRACTION_ERROR"
+    },
+    {
+      "question_id": "ee3990aec2dfa279:p8:q52",
+      "year": "2023",
+      "paper_set": "Paper-20231108010507",
+      "page": 8,
+      "question_number": 52,
+      "affected_field": "option_c",
+      "foreign_question_number": 7,
+      "source_column": "LEFT",
+      "destination_column": "LEFT",
+      "geometry_layout": "TWO_COLUMN",
+      "ocr_evidence": "See ocr.words.p2_1e_full.jsonl for page",
+      "r2_extracted_stem": "Which amongst the following options is\ncorrect graphical representation of Boyle’s\nLaw?\nI \\\nT3>T)>T,\n() y\nT.\n1\n1\nA—-\nNi\nNo\n1 :\nP",
+      "r2_extracted_options": [
+        "",
+        "V,<V2<V3\nT—\nT 54.\nT3>T,>T,\nP",
+        "T\n1,\nT;\nvy—\n1; T,\n7\nT\nP",
+        "T3>T,>T,\ni\nA —_=7"
+      ],
+      "raw_extracted_excerpt": "Which amongst the following options is\ncorrect graphical representation of Boyle’s\nLaw?\nI \\\nT3>T)>T,\n() y\nT.\n1\n1\nA—-\nNi\nNo\n1 :\nP\n(2)\nV,<V2<V3\nT—\nT 54.\nT3>T,>T,\nP\n(3)\nT\n1,\nT;\nvy—\n1; T,\n7\nT\nP\n(4)\nT3>T,>T,\ni\nA —_=7",
+      "neighbors": {
+        "previous": {
+          "question_id": "ee3990aec2dfa279:p8:q51",
+          "stem": "Amongst the given options which of the\nfollowing molecules /ion acts as a Lewis\nacid?"
+        },
+        "next": {
+          "question_id": "ee3990aec2dfa279:p8:q53",
+          "stem": "Identify product (A) in the following\nreaction:\n9\nfe)\n271s _,(4)+2H,0\nconc. HCl 2\na"
+        }
+      },
+      "cross_column_flag": [
+        "option_contains_foreign_question_marker"
+      ],
+      "quality_status": "DIAGRAM_DEPENDENT",
+      "class_e": false,
+      "extraction_path": {
+        "stages": [
+          "SOURCE/PDF",
+          "OCR WORDS",
+          "GEOMETRY",
+          "READING ORDER",
+          "QUESTION SEGMENTATION",
+          "OPTION SEGMENTATION",
+          "CLASSIFICATION"
+        ],
+        "first_failure_stage": "OPTION SEGMENTATION"
+      },
+      "primary_root_cause": "C",
+      "secondary_root_cause": "D",
+      "audit_classification": "REAL_EXTRACTION_ERROR"
+    },
+    {
+      "question_id": "f5378eb6785774c3:p8:q52",
+      "year": "2023",
+      "paper_set": "Paper-20231108010032",
+      "page": 8,
+      "question_number": 52,
+      "affected_field": "option_c",
+      "foreign_question_number": 53,
+      "source_column": "LEFT",
+      "destination_column": "LEFT",
+      "geometry_layout": "TWO_COLUMN",
+      "ocr_evidence": "See ocr.words.p2_1e_full.jsonl for page",
+      "r2_extracted_stem": "Intermolecular forces are forces of attraction\nand repulsion between interacting particles\nthat will include :\nB. dipole - induced dipole forces.\nC. hydrogen bonding.\nD. covalent bonding.\nE. dispersio",
+      "r2_extracted_options": [
+        "B, C, D, E are correct.",
+        "A, B, C, D are correct.",
+        "A, B, C, E are correct.\n53 Whi .\nich amongst the following molecules on\npolymerization produces neoprene?",
+        ""
+      ],
+      "raw_extracted_excerpt": "Intermolecular forces are forces of attraction\nand repulsion between interacting particles\nthat will include :\nB. dipole - induced dipole forces.\nC. hydrogen bonding.\nD. covalent bonding.\nE. dispersion forces.\nthe options given below :\nChoose the most appropriate answer from\n(1) B, C, D, E are correct.\n(2) A, B, C, D are correct.\n(3) A, B, C, E are correct.\n53 Whi .\nich amongst the following molec",
+      "neighbors": {
+        "previous": {
+          "question_id": "f5378eb6785774c3:p8:q51",
+          "stem": "The given compound\nCH=CH -CH-CH, CH,\nom\nis an example of ."
+        },
+        "next": {
+          "question_id": "f5378eb6785774c3:p8:q54",
+          "stem": "Identify product (A) in the following\nreaction:\n7\noO\nZn—Hg\nSone Her? (A) + 220"
+        }
+      },
+      "cross_column_flag": [
+        "option_contains_foreign_question_marker"
+      ],
+      "quality_status": "PARTIAL",
+      "class_e": true,
+      "extraction_path": {
+        "stages": [
+          "SOURCE/PDF",
+          "OCR WORDS",
+          "GEOMETRY",
+          "READING ORDER",
+          "QUESTION SEGMENTATION",
+          "OPTION SEGMENTATION",
+          "CLASSIFICATION"
+        ],
+        "first_failure_stage": "OPTION SEGMENTATION"
+      },
+      "primary_root_cause": "C",
+      "secondary_root_cause": "D",
+      "audit_classification": "REAL_EXTRACTION_ERROR"
+    },
+    {
+      "question_id": "f5378eb6785774c3:p21:q145",
+      "year": "2023",
+      "paper_set": "Paper-20231108010032",
+      "page": 21,
+      "question_number": 145,
+      "affected_field": "option_c",
+      "foreign_question_number": 7,
+      "source_column": "RIGHT",
+      "destination_column": "RIGHT",
+      "geometry_layout": "TWO_COLUMN",
+      "ocr_evidence": "See ocr.words.p2_1e_full.jsonl for page",
+      "r2_extracted_stem": "Match List I with List II :\n. «\nList 1 ListIE\nA. Cohesion I. More attraction in\nliquid phase\n. .\nB. Adhesion II. Mutual attraction\namong water\nmolecules\nC. Surface Ill. Water loss in\ntensi liquid ph:\n",
+      "r2_extracted_options": [
+        "A-II, B-IV, C-I, D-III",
+        "A-IV, B-IIl, C-II, D-I",
+        "A-II, B-I, C-IV, D-II\n7 TC :",
+        "A-IL, B-l, C-IV, D-Ill"
+      ],
+      "raw_extracted_excerpt": "Match List I with List II :\n. «\nList 1 ListIE\nA. Cohesion I. More attraction in\nliquid phase\n. .\nB. Adhesion II. Mutual attraction\namong water\nmolecules\nC. Surface Ill. Water loss in\ntensi liquid ph:\nension qu P ase\nD. Guttation IV. Attraction towards\npolar surfaces\nCh h fi h :\n: oose the correct answer from the options\ngiven below :\n(1) A-II, B-IV, C-I, D-III\n(2) A-IV, B-IIl, C-II, D-I\n(3) A-II, ",
+      "neighbors": {
+        "previous": {
+          "question_id": "f5378eb6785774c3:p21:q144",
+          "stem": "Melonate inhibits the growth of pathogenic\n: vey ge .\nbacteria by inhibiting the activity of"
+        },
+        "next": null
+      },
+      "cross_column_flag": [
+        "option_contains_foreign_question_marker"
+      ],
+      "quality_status": "VALID",
+      "class_e": true,
+      "extraction_path": {
+        "stages": [
+          "SOURCE/PDF",
+          "OCR WORDS",
+          "GEOMETRY",
+          "READING ORDER",
+          "QUESTION SEGMENTATION",
+          "OPTION SEGMENTATION",
+          "CLASSIFICATION"
+        ],
+        "first_failure_stage": "OPTION SEGMENTATION"
+      },
+      "primary_root_cause": "C",
+      "secondary_root_cause": "D",
+      "audit_classification": "REAL_EXTRACTION_ERROR"
+    },
+    {
+      "question_id": "f7a45c960ede2f29:p2:q3",
+      "year": "2025",
+      "paper_set": "NEET-2025-EN-48",
+      "page": 2,
+      "question_number": 3,
+      "affected_field": "option_d",
+      "foreign_question_number": 4,
+      "source_column": "LEFT",
+      "destination_column": "LEFT",
+      "geometry_layout": "TWO_COLUMN",
+      "ocr_evidence": "See ocr.words.p2_1e_full.jsonl for page",
+      "r2_extracted_stem": "A ball of mass 0.5 kg is dropped from a height\nof 40 m. The ball hits the ground and rises\nto a height of 10 m. The impulse imparted to| 7\nthe ball during its collision with the ground is\n(Take g = 9.",
+      "r2_extracted_options": [
+        "",
+        "84NS\n(G3) 21 NS",
+        "",
+        "7NS\n4 The intensity of transmitted light when a\npolaroid sheet, placed between two crossed\npolaroids at 22.5° from the polarization axis\nof one of the polaroid, is (/p is the intensity of\npolaroid)\npolarised light after passing through the first\nIo Io\n08 16\nI I\n0 0\nB) > 4) =\n2 4"
+      ],
+      "raw_extracted_excerpt": "A ball of mass 0.5 kg is dropped from a height\nof 40 m. The ball hits the ground and rises\nto a height of 10 m. The impulse imparted to| 7\nthe ball during its collision with the ground is\n(Take g = 9.8 m/s)\n(dl) 0 (2) 84NS\n(G3) 21 NS (4) 7NS\n4 The intensity of transmitted light when a\npolaroid sheet, placed between two crossed\npolaroids at 22.5° from the polarization axis\nof one of the polaroid, i",
+      "neighbors": {
+        "previous": {
+          "question_id": "f7a45c960ede2f29:p2:q2",
+          "stem": "An electric dipole with dipole moment\n5"
+        },
+        "next": {
+          "question_id": "f7a45c960ede2f29:p2:q4",
+          "stem": "x 105 NIC. The dipole is then rotated through\nan angle of 60° with respect to the electric\nfield. The change in the pote"
+        }
+      },
+      "cross_column_flag": [
+        "option_contains_foreign_question_marker"
+      ],
+      "quality_status": "PARTIAL",
+      "class_e": true,
+      "extraction_path": {
+        "stages": [
+          "SOURCE/PDF",
+          "OCR WORDS",
+          "GEOMETRY",
+          "READING ORDER",
+          "QUESTION SEGMENTATION",
+          "OPTION SEGMENTATION",
+          "CLASSIFICATION"
+        ],
+        "first_failure_stage": "OPTION SEGMENTATION"
+      },
+      "primary_root_cause": "C",
+      "secondary_root_cause": "B",
+      "audit_classification": "REAL_EXTRACTION_ERROR"
+    },
+    {
+      "question_id": "f7a45c960ede2f29:p13:q64",
+      "year": "2025",
+      "paper_set": "NEET-2025-EN-48",
+      "page": 13,
+      "question_number": 64,
+      "affected_field": "option_d",
+      "foreign_question_number": 65,
+      "source_column": "LEFT",
+      "destination_column": "LEFT",
+      "geometry_layout": "TWO_COLUMN",
+      "ocr_evidence": "See ocr.words.p2_1e_full.jsonl for page",
+      "r2_extracted_stem": "C(s)+2H,(g)->CH,(g); AH =-74.8 kJ mol!\nWhich of the following diagrams gives an\naccurate representation of the above reaction?\n[R — reactants; P —» products]\nEnergy\nkJ mol!\n( Te l 74.8",
+      "r2_extracted_options": [
+        "T P 67\n;\n—> Reaction progress\n(a mot) P\nmo\nt R 74.8\n2)\n—> Reaction progress\nEnergy\n(kJ mol)| 68\nP",
+        "",
+        "T 74.8\n-\n—> Reaction progress\nEnergy\n(kJ mol!) | P\nR 74.8",
+        "T\n—> Reaction progress\n69\n65 Sugar ‘X’\nA. is found inh\n+ 1S founcrin toney.\nB. is a keto sugar.\n, ;\nC. exists in @ and B - anomeric forms.\nD. is laevorotatory.\n*X’ is:"
+      ],
+      "raw_extracted_excerpt": "C(s)+2H,(g)->CH,(g); AH =-74.8 kJ mol!\nWhich of the following diagrams gives an\naccurate representation of the above reaction?\n[R — reactants; P —» products]\nEnergy\nkJ mol!\n( Te l 74.8\n(1) T P 67\n;\n—> Reaction progress\n(a mot) P\nmo\nt R 74.8\n2)\n—> Reaction progress\nEnergy\n(kJ mol)| 68\nP\n(3) T 74.8\n-\n—> Reaction progress\nEnergy\n(kJ mol!) | P\nR 74.8\n(4) T\n—> Reaction progress\n69\n65 Sugar ‘X’\nA. is fo",
+      "neighbors": {
+        "previous": null,
+        "next": {
+          "question_id": "f7a45c960ede2f29:p13:q66",
+          "stem": "Total number of possible isomers (both\nstructural as well as stereoisomers) of cyclic\nethers of molecular formula CyHg0 "
+        }
+      },
+      "cross_column_flag": [
+        "option_contains_foreign_question_marker"
+      ],
+      "quality_status": "PARTIAL",
+      "class_e": false,
+      "extraction_path": {
+        "stages": [
+          "SOURCE/PDF",
+          "OCR WORDS",
+          "GEOMETRY",
+          "READING ORDER",
+          "QUESTION SEGMENTATION",
+          "OPTION SEGMENTATION",
+          "CLASSIFICATION"
+        ],
+        "first_failure_stage": "OCR SOURCE"
+      },
+      "primary_root_cause": "I",
+      "secondary_root_cause": "G",
+      "audit_classification": "REAL_EXTRACTION_ERROR"
+    },
+    {
+      "question_id": "f7a45c960ede2f29:p28:q164",
+      "year": "2025",
+      "paper_set": "NEET-2025-EN-48",
+      "page": 28,
+      "question_number": 164,
+      "affected_field": "option_a",
+      "foreign_question_number": 3,
+      "source_column": "LEFT",
+      "destination_column": "LEFT",
+      "geometry_layout": "TWO_COLUMN",
+      "ocr_evidence": "See ocr.words.p2_1e_full.jsonl for page",
+      "r2_extracted_stem": "Which of the following diagrams is correct\nwith regard to the proximal (P) and distal (D)\ntubule of the Nephron.\n_P D\nMRongact OTH KOS",
+      "r2_extracted_options": [
+        "ail ikea\nNaCl\nHY NH, “ot\nP D\nNad HCOy Nal NH,\nQ)\nHt HO Pit\naa\n2 2\nP D\nHCOT NaCl H,O HCO,\n3 Rac 2 ‘ ’\nG) Pet:\nHY HO nt\nP D\nHCO; 1 HO NaCl 1,0 HCO;\ni)",
+        "",
+        "",
+        "Por\n+ + yt\nue NHS en\n165"
+      ],
+      "raw_extracted_excerpt": "Which of the following diagrams is correct\nwith regard to the proximal (P) and distal (D)\ntubule of the Nephron.\n_P D\nMRongact OTH KOS\n(1) ail ikea\nNaCl\nHY NH, “ot\nP D\nNad HCOy Nal NH,\nQ)\nHt HO Pit\naa\n2 2\nP D\nHCOT NaCl H,O HCO,\n3 Rac 2 ‘ ’\nG) Pet:\nHY HO nt\nP D\nHCO; 1 HO NaCl 1,0 HCO;\ni)\n(4) Por\n+ + yt\nue NHS en\n165",
+      "neighbors": {
+        "previous": {
+          "question_id": "f7a45c960ede2f29:p28:q163",
+          "stem": "Which of the following statement is correct\nabout location of the male frog copulatory\npad * . ."
+        },
+        "next": {
+          "question_id": "f7a45c960ede2f29:p28:q165",
+          "stem": "Identify the statement that is NOT correct."
+        }
+      },
+      "cross_column_flag": [
+        "option_contains_foreign_question_marker"
+      ],
+      "quality_status": "DIAGRAM_DEPENDENT",
+      "class_e": false,
+      "extraction_path": {
+        "stages": [
+          "SOURCE/PDF",
+          "OCR WORDS",
+          "GEOMETRY",
+          "READING ORDER",
+          "QUESTION SEGMENTATION",
+          "OPTION SEGMENTATION",
+          "CLASSIFICATION"
+        ],
+        "first_failure_stage": "OPTION SEGMENTATION"
+      },
+      "primary_root_cause": "C",
+      "secondary_root_cause": "D",
+      "audit_classification": "REAL_EXTRACTION_ERROR"
+    }
+  ],
+  "six_valid_contaminated_cases": [
+    {
+      "question_id": "00d8cababe821fcf:p8:q3",
+      "year": "2023",
+      "paper_set": "Paper-20231108005448",
+      "page": 8,
+      "question_number": 3,
+      "affected_field": "option_a",
+      "foreign_question_number": 3,
+      "source_column": "LEFT",
+      "destination_column": "LEFT",
+      "geometry_layout": "TWO_COLUMN",
+      "ocr_evidence": "See ocr.words.p2_1e_full.jsonl for page",
+      "r2_extracted_stem": "— Methylbutan— 2 —ol\nCH,\n|",
+      "r2_extracted_options": [
+        "CH,-C-CH, Br\nbes 60\n3\nBr\n|",
+        "CH,-C-CH,-CH,\nOn,",
+        "CH, CH=CH-CH,",
+        "CH; —-CH-CH-CH,"
+      ],
+      "raw_extracted_excerpt": "— Methylbutan— 2 —ol\nCH,\n|\n(1) CH,-C-CH, Br\nbes 60\n3\nBr\n|\n(2) CH,-C-CH,-CH,\nOn,\n(3) CH, CH=CH-CH,\n(4) CH; —-CH-CH-CH,\n| |\nCH, Br",
+      "neighbors": {
+        "previous": null,
+        "next": {
+          "question_id": "00d8cababe821fcf:p8:q51",
+          "stem": "Amongst the given options which of the\nfollowing molecules /ion acts as a Lewis\nacid?\nb on oO nes\n52"
+        }
+      },
+      "cross_column_flag": [
+        "option_contains_foreign_question_marker"
+      ],
+      "quality_status": "VALID",
+      "class_e": true,
+      "extraction_path": {
+        "stages": [
+          "SOURCE/PDF",
+          "OCR WORDS",
+          "GEOMETRY",
+          "READING ORDER",
+          "QUESTION SEGMENTATION",
+          "OPTION SEGMENTATION",
+          "CLASSIFICATION"
+        ],
+        "first_failure_stage": "OPTION SEGMENTATION"
+      },
+      "primary_root_cause": "C",
+      "secondary_root_cause": "D",
+      "audit_classification": "REAL_EXTRACTION_ERROR",
+      "why_validator_accepted": "classify_quality_p2_1c marks VALID when 4 options filled and stem length threshold met; detect_cross_column_contamination flags foreign marker but does not downgrade quality",
+      "missing_invariant": "VALID must require zero geometry_quality_flags and no foreign question stem tokens in options",
+      "failure_layer": "CLASSIFICATION",
+      "reject_signal": "geometry_quality_flags non-empty OR foreign stem token in option fields"
+    },
+    {
+      "question_id": "8633a3811ea07447:p20:q133",
+      "year": "2023",
+      "paper_set": "Paper-20231108004734",
+      "page": 20,
+      "question_number": 133,
+      "affected_field": "option_a",
+      "foreign_question_number": 4,
+      "source_column": "LEFT",
+      "destination_column": "LEFT",
+      "geometry_layout": "TWO_COLUMN",
+      "ocr_evidence": "See ocr.words.p2_1e_full.jsonl for page",
+      "r2_extracted_stem": "Given below are two statements :\nStatement I : Endarch and exarch are the\nterms often used for describing the position\n.\nof secondary xylem in the plant body.\nStatement II : Exarch condition is the mo",
+      "r2_extracted_options": [
+        "Both Statement I and Statement II\nare true.",
+        "Both Statement I and Statement II\nare false.\n2 :",
+        "Statement I is correct but\n:\nStatement II is false.\n4 Lisi",
+        "ceement i moore but"
+      ],
+      "raw_extracted_excerpt": "Given below are two statements :\nStatement I : Endarch and exarch are the\nterms often used for describing the position\n.\nof secondary xylem in the plant body.\nStatement II : Exarch condition is the most\ncommon feature of the root system.\nIn the light of the above statements, choose\nthe correct answer from the options given\nbelow :\n.\n(1) Both Statement I and Statement II\nare true.\n(2) Both Statemen",
+      "neighbors": {
+        "previous": null,
+        "next": {
+          "question_id": "8633a3811ea07447:p20:q134",
+          "stem": "Frequency of recombination between gene\npairs on same chromosome as a measure of\nthe distance between genes to map their"
+        }
+      },
+      "cross_column_flag": [
+        "option_contains_foreign_question_marker"
+      ],
+      "quality_status": "VALID",
+      "class_e": true,
+      "extraction_path": {
+        "stages": [
+          "SOURCE/PDF",
+          "OCR WORDS",
+          "GEOMETRY",
+          "READING ORDER",
+          "QUESTION SEGMENTATION",
+          "OPTION SEGMENTATION",
+          "CLASSIFICATION"
+        ],
+        "first_failure_stage": "OPTION SEGMENTATION"
+      },
+      "primary_root_cause": "C",
+      "secondary_root_cause": "D",
+      "audit_classification": "REAL_EXTRACTION_ERROR",
+      "why_validator_accepted": "classify_quality_p2_1c marks VALID when 4 options filled and stem length threshold met; detect_cross_column_contamination flags foreign marker but does not downgrade quality",
+      "missing_invariant": "VALID must require zero geometry_quality_flags and no foreign question stem tokens in options",
+      "failure_layer": "CLASSIFICATION",
+      "reject_signal": "geometry_quality_flags non-empty OR foreign stem token in option fields"
+    },
+    {
+      "question_id": "a1c3361678271d6e:p24:q162",
+      "year": "2023",
+      "paper_set": "Paper-20231108004832",
+      "page": 24,
+      "question_number": 162,
+      "affected_field": "option_a",
+      "foreign_question_number": 4,
+      "source_column": "RIGHT",
+      "destination_column": "RIGHT",
+      "geometry_layout": "TWO_COLUMN",
+      "ocr_evidence": "See ocr.words.p2_1e_full.jsonl for page",
+      "r2_extracted_stem": "Which of the following are NOT considered\nas the part of endomembrane system?\nA. Mitochondria B. Endoplasmic\nReticulum\nCc. Chloroplasts D. Golgi complex\nE. Peroxisomes ;\nese the most appropriate answe",
+      "r2_extracted_options": [
+        "e Cc nnd E only\ne options given below:",
+        "A and D only",
+        "A, D and E only\n4 B 4D onl",
+        "any only"
+      ],
+      "raw_extracted_excerpt": "Which of the following are NOT considered\nas the part of endomembrane system?\nA. Mitochondria B. Endoplasmic\nReticulum\nCc. Chloroplasts D. Golgi complex\nE. Peroxisomes ;\nese the most appropriate answer from\n(1) e Cc nnd E only\ne options given below:\n(2) A and D only\n(3) A, D and E only\n4 B 4D onl\n(4) any only\n163",
+      "neighbors": {
+        "previous": {
+          "question_id": "a1c3361678271d6e:p24:q161",
+          "stem": "Given below are two statements:\nStatement I: Ligaments are dense\nirregular tissue.\nStat t Il: Cartilage is d 1\ntesla mag"
+        },
+        "next": {
+          "question_id": "a1c3361678271d6e:p24:q163",
+          "stem": "Given below are two statements:\nStatement I: A protein is imagined as a line\nthe left end represented by first amino aci"
+        }
+      },
+      "cross_column_flag": [
+        "option_contains_foreign_question_marker"
+      ],
+      "quality_status": "VALID",
+      "class_e": true,
+      "extraction_path": {
+        "stages": [
+          "SOURCE/PDF",
+          "OCR WORDS",
+          "GEOMETRY",
+          "READING ORDER",
+          "QUESTION SEGMENTATION",
+          "OPTION SEGMENTATION",
+          "CLASSIFICATION"
+        ],
+        "first_failure_stage": "OPTION SEGMENTATION"
+      },
+      "primary_root_cause": "C",
+      "secondary_root_cause": "B",
+      "audit_classification": "REAL_EXTRACTION_ERROR",
+      "why_validator_accepted": "classify_quality_p2_1c marks VALID when 4 options filled and stem length threshold met; detect_cross_column_contamination flags foreign marker but does not downgrade quality",
+      "missing_invariant": "VALID must require zero geometry_quality_flags and no foreign question stem tokens in options",
+      "failure_layer": "CLASSIFICATION",
+      "reject_signal": "geometry_quality_flags non-empty OR foreign stem token in option fields"
+    },
+    {
+      "question_id": "a43894b5fbc8cd28:p9:q3",
+      "year": "2023",
+      "paper_set": "Paper-20231108011342",
+      "page": 9,
+      "question_number": 3,
+      "affected_field": "option_b",
+      "foreign_question_number": 3,
+      "source_column": "RIGHT",
+      "destination_column": "RIGHT",
+      "geometry_layout": "TWO_COLUMN",
+      "ocr_evidence": "See ocr.words.p2_1e_full.jsonl for page",
+      "r2_extracted_stem": "— Methylbutan— 2 -ol",
+      "r2_extracted_options": [
+        "CH; CH=CH -CH,",
+        "CH, ~ FH CH CH\nCH, Br\n3\nos",
+        "CH,-C-CH, Br\n|\nCH\n3\nBr",
+        "CH; ~C-CH, CH"
+      ],
+      "raw_extracted_excerpt": "— Methylbutan— 2 -ol\n(1) CH; CH=CH -CH,\n(2) CH, ~ FH CH CH\nCH, Br\n3\nos\n(3) CH,-C-CH, Br\n|\nCH\n3\nBr\n(4) CH; ~C-CH, CH\nCH,\nGiven below are two statements : one is\nlabelled as Assertion A and the other is\nlabelled as Reason R :\nAssertion A : In equation AG =~-nFE,,,),\nvalue of A,G depends on n.\nReasons R : E,,j, is an intensive property\nand A.G is an extensive property.\nIn the light of the above state",
+      "neighbors": {
+        "previous": {
+          "question_id": "a43894b5fbc8cd28:p9:q1",
+          "stem": "2: 2: 2p, =m2\n(x\"2p, =x° 2p, <o2p, < 6” 2p,"
+        },
+        "next": {
+          "question_id": "a43894b5fbc8cd28:p9:q5",
+          "stem": "2p, <(x 2p, =1 2p, )<o 2p,"
+        }
+      },
+      "cross_column_flag": [
+        "option_contains_foreign_question_marker"
+      ],
+      "quality_status": "VALID",
+      "class_e": true,
+      "extraction_path": {
+        "stages": [
+          "SOURCE/PDF",
+          "OCR WORDS",
+          "GEOMETRY",
+          "READING ORDER",
+          "QUESTION SEGMENTATION",
+          "OPTION SEGMENTATION",
+          "CLASSIFICATION"
+        ],
+        "first_failure_stage": "OPTION SEGMENTATION"
+      },
+      "primary_root_cause": "C",
+      "secondary_root_cause": "D",
+      "audit_classification": "REAL_EXTRACTION_ERROR",
+      "why_validator_accepted": "classify_quality_p2_1c marks VALID when 4 options filled and stem length threshold met; detect_cross_column_contamination flags foreign marker but does not downgrade quality",
+      "missing_invariant": "VALID must require zero geometry_quality_flags and no foreign question stem tokens in options",
+      "failure_layer": "CLASSIFICATION",
+      "reject_signal": "geometry_quality_flags non-empty OR foreign stem token in option fields"
+    },
+    {
+      "question_id": "d11cf53d4d8ef5b0:p30:q195",
+      "year": "2023",
+      "paper_set": "Paper-20231108005321",
+      "page": 30,
+      "question_number": 195,
+      "affected_field": "option_b",
+      "foreign_question_number": 5,
+      "source_column": "LEFT",
+      "destination_column": "LEFT",
+      "geometry_layout": "TWO_COLUMN",
+      "ocr_evidence": "See ocr.words.p2_1e_full.jsonl for page",
+      "r2_extracted_stem": "Which one of the following is the sequence\n. . :\non corresponding coding strand, if the\nsequence on mRNA formed is as follows\n5° AUCGAUCGAUCGAUCGAUCG\n89\nAUCG AUCG 3’?",
+      "r2_extracted_options": [
+        "3° UAGCUAGCUAGCUAGCUA\n,\nGCUAGCUAGC 5",
+        "5° ATCGATCGATCGATCGATCG\n5\nATCGATCG 3",
+        "3° ATCGATCGATCGATCGATCG\n;\nAICGATCG 9",
+        "5’? UAGCUAGCUAGCUAGCUA"
+      ],
+      "raw_extracted_excerpt": "Which one of the following is the sequence\n. . :\non corresponding coding strand, if the\nsequence on mRNA formed is as follows\n5° AUCGAUCGAUCGAUCGAUCG\n89\nAUCG AUCG 3’?\n(1) 3° UAGCUAGCUAGCUAGCUA\n,\nGCUAGCUAGC 5\n(2) 5° ATCGATCGATCGATCGATCG\n5\nATCGATCG 3\n(3) 3° ATCGATCGATCGATCGATCG\n;\nAICGATCG 9\n(4) 5’? UAGCUAGCUAGCUAGCUA\nGCUAGC UAGC 3°\n196",
+      "neighbors": {
+        "previous": null,
+        "next": {
+          "question_id": "d11cf53d4d8ef5b0:p30:q196",
+          "stem": "Which one of the following is NOT an\nadvantage of inbreeding?\n."
+        }
+      },
+      "cross_column_flag": [
+        "option_contains_foreign_question_marker"
+      ],
+      "quality_status": "VALID",
+      "class_e": true,
+      "extraction_path": {
+        "stages": [
+          "SOURCE/PDF",
+          "OCR WORDS",
+          "GEOMETRY",
+          "READING ORDER",
+          "QUESTION SEGMENTATION",
+          "OPTION SEGMENTATION",
+          "CLASSIFICATION"
+        ],
+        "first_failure_stage": "OPTION SEGMENTATION"
+      },
+      "primary_root_cause": "C",
+      "secondary_root_cause": "D",
+      "audit_classification": "REAL_EXTRACTION_ERROR",
+      "why_validator_accepted": "classify_quality_p2_1c marks VALID when 4 options filled and stem length threshold met; detect_cross_column_contamination flags foreign marker but does not downgrade quality",
+      "missing_invariant": "VALID must require zero geometry_quality_flags and no foreign question stem tokens in options",
+      "failure_layer": "CLASSIFICATION",
+      "reject_signal": "geometry_quality_flags non-empty OR foreign stem token in option fields"
+    },
+    {
+      "question_id": "f5378eb6785774c3:p21:q145",
+      "year": "2023",
+      "paper_set": "Paper-20231108010032",
+      "page": 21,
+      "question_number": 145,
+      "affected_field": "option_c",
+      "foreign_question_number": 7,
+      "source_column": "RIGHT",
+      "destination_column": "RIGHT",
+      "geometry_layout": "TWO_COLUMN",
+      "ocr_evidence": "See ocr.words.p2_1e_full.jsonl for page",
+      "r2_extracted_stem": "Match List I with List II :\n. «\nList 1 ListIE\nA. Cohesion I. More attraction in\nliquid phase\n. .\nB. Adhesion II. Mutual attraction\namong water\nmolecules\nC. Surface Ill. Water loss in\ntensi liquid ph:\n",
+      "r2_extracted_options": [
+        "A-II, B-IV, C-I, D-III",
+        "A-IV, B-IIl, C-II, D-I",
+        "A-II, B-I, C-IV, D-II\n7 TC :",
+        "A-IL, B-l, C-IV, D-Ill"
+      ],
+      "raw_extracted_excerpt": "Match List I with List II :\n. «\nList 1 ListIE\nA. Cohesion I. More attraction in\nliquid phase\n. .\nB. Adhesion II. Mutual attraction\namong water\nmolecules\nC. Surface Ill. Water loss in\ntensi liquid ph:\nension qu P ase\nD. Guttation IV. Attraction towards\npolar surfaces\nCh h fi h :\n: oose the correct answer from the options\ngiven below :\n(1) A-II, B-IV, C-I, D-III\n(2) A-IV, B-IIl, C-II, D-I\n(3) A-II, ",
+      "neighbors": {
+        "previous": {
+          "question_id": "f5378eb6785774c3:p21:q144",
+          "stem": "Melonate inhibits the growth of pathogenic\n: vey ge .\nbacteria by inhibiting the activity of"
+        },
+        "next": null
+      },
+      "cross_column_flag": [
+        "option_contains_foreign_question_marker"
+      ],
+      "quality_status": "VALID",
+      "class_e": true,
+      "extraction_path": {
+        "stages": [
+          "SOURCE/PDF",
+          "OCR WORDS",
+          "GEOMETRY",
+          "READING ORDER",
+          "QUESTION SEGMENTATION",
+          "OPTION SEGMENTATION",
+          "CLASSIFICATION"
+        ],
+        "first_failure_stage": "OPTION SEGMENTATION"
+      },
+      "primary_root_cause": "C",
+      "secondary_root_cause": "D",
+      "audit_classification": "REAL_EXTRACTION_ERROR",
+      "why_validator_accepted": "classify_quality_p2_1c marks VALID when 4 options filled and stem length threshold met; detect_cross_column_contamination flags foreign marker but does not downgrade quality",
+      "missing_invariant": "VALID must require zero geometry_quality_flags and no foreign question stem tokens in options",
+      "failure_layer": "CLASSIFICATION",
+      "reject_signal": "geometry_quality_flags non-empty OR foreign stem token in option fields"
+    }
+  ],
+  "q3_q5_hr_analysis": {
+    "q3_record": {
+      "question_id": "00d8cababe821fcf:p2:q3",
+      "quality": "VALID",
+      "geometry_column": "LEFT",
+      "options": {
+        "option_a": "Load resistance",
+        "option_b": "A centre-tapped transformer",
+        "option_c": "p-n junction diodes",
+        "option_d": "Capacitor"
+      },
+      "raw_excerpt": "A full wave rectifier circuit consists of two\np-n junction diodes, a centre-tapped\ntransformer, capacitor and a load resistance.\nWhich of these components remove the ac\nripple from the rectified output? 8\n(1) Load resistance\n(2) A centre-tapped transformer\n(3) p-n junction diodes\n(4) Capacitor\n4 A football player is moving southward and | 9\nsuddenly turns eastward with the same speed\nto avoid an opponent. The force that acts on\nF rn\nthe player while turning is :\n(1) alon th-west\n5 ‘le 8 eet :\n(2) along eastwar\n(3) along northward\n(4) along north-east 10\n— :\n5",
+      "flags": null
+    },
+    "q5_record": {
+      "question_id": "00d8cababe821fcf:p2:q5",
+      "quality": "PARTIAL",
+      "options": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "stem": "An electric dipole is placed at an angle of\n30° with an electric field of intensity\n2x10°NC!. It experiences a torque equal to\n4"
+    },
+    "q4_record": {
+      "question_id": "00d8cababe821fcf:p2:q4",
+      "options": [
+        "2 mC",
+        "8 mC",
+        "6 mC",
+        "4mC"
+      ],
+      "stem": "Nm. Calculate the magnitude of charge\non the dipole, if the dipole length is 2 cm."
+    },
+    "dipole_ocr_word_count": 3,
+    "dipole_word_samples": [
+      {
+        "text": "dipole",
+        "left": 401,
+        "top": 1755,
+        "line": 37
+      },
+      {
+        "text": "dipole,",
+        "left": 335,
+        "top": 1927,
+        "line": 41
+      },
+      {
+        "text": "dipole",
+        "left": 524,
+        "top": 1927,
+        "line": 41
+      }
+    ],
+    "corpus_left_column_excerpt": "<<<COLUMN:LEFT>>>\n1 A vehicle travels half the distance with speed\n® and the remaining distance with speed\n20. Its average speed is:\n30 >\nQa — Q) —\n4 3\n20 49\n(3) 3 (4) 3 7\n2 The half life of a radioactive substance is\n20 minutes. In how much time, the activity\nof substance drops to (a) of its initial\nvalue?\n(1) 80 minutes (2) 20 minutes\n(3) 40 minutes (4) 60 minutes\n3 A full wave rectifier circuit consists of two\np-n junction diodes, a centre-tapped\ntransformer, capacitor and a load resistance.\nWhich of these components remove the ac\nripple from the rectified output? 8\n(1) Load resistance\n(2) A centre-tapped transformer\n(3) p-n junction diodes\n(4) Capacitor\n4 A football player is moving southward and | 9\nsuddenly turns eastward with the same speed\nto avoid an opponent. The force that acts on\nF rn\nthe player while turning is :\n(1) alon th-west\n5 ‘le 8 eet :\n(2) along eastwar\n(3) along northward\n(4) along north-east 10\n— :\n5 An electric dipole is placed at an angle of\n30° with an electric field of intensity\n2x10°NC!. It experiences a torque equal to\n4 Nm. Calculate the magnitude of charge\non the dipole, if the dipole length is 2 cm.\n(1) 2 mC (2) 8 mC\n(3) 6 mC (4) 4mC\n",
+    "reconstruction": {
+      "where_q5_text_occurs": "LEFT column OCR stream between Q3 option markers and validated Q5 marker",
+      "physical_column": "LEFT",
+      "reading_order_position": "After Q3 (1)-(4) markers, before validated Q5 line-start marker",
+      "why_assigned_to_q3_option_c": "Q3 question block spans Q3 marker to Q5 marker. Option (3) text boundary extends through OCR lines containing Q5 stem fragment ('4 An electric dipole...') because false/ambiguous '4' marker or uncapped multiline option text before second (1) boundary.",
+      "failure_before_option_parsing": true,
+      "option_parser_exposes_upstream": true,
+      "q5_segmentation_related": true,
+      "primary_root_cause": "B+F",
+      "explanation": "Earliest causal failure: QUESTION SEGMENTATION assigns Q3 block including Q5 stem region; QUESTION MARKER DETECTION fails to split spurious Q4 marker / delayed Q5 marker; OPTION SEGMENTATION then maps dipole text into Q3 option_c."
+    },
+    "q5_defect": {
+      "known_defect": true,
+      "quality": "PARTIAL",
+      "root_cause_category": "B+F",
+      "related_to_cross_column": true,
+      "same_mechanism_as_q3_option_c": true,
+      "option_parser_fault": false,
+      "disposition": "REMAIN_PARTIAL",
+      "explanation": "Spurious Q4 marker splits dipole stem; options land on Q4; Q5 left with stem-only PARTIAL."
+    }
+  },
+  "q5_analysis": {
+    "known_defect": true,
+    "quality": "PARTIAL",
+    "root_cause_category": "B+F",
+    "related_to_cross_column": true,
+    "same_mechanism_as_q3_option_c": true,
+    "option_parser_fault": false,
+    "disposition": "REMAIN_PARTIAL",
+    "explanation": "Spurious Q4 marker splits dipole stem; options land on Q4; Q5 left with stem-only PARTIAL."
+  },
+  "q15_regression_status": "PASS",
+  "q15_q20_regression_status": "PASS",
+  "other_cross_column_flags": {
+    "count": 19,
+    "classifications": {
+      "OCR_ARTIFACT": 19
+    },
+    "note": "19 OCR_ARTIFACT/heuristic flags — not confirmed semantic contamination"
+  },
+  "common_root_cause_valid_vs_other": true,
+  "generalized_remediation": [
+    {
+      "rule": "Question block must end before foreign validated question marker or foreign stem signature in same column",
+      "why_required": "Prevents Q3 block from including Q5 stem region",
+      "failure_cases_covered": [
+        "1d7ffd36a442fa95:p2:q3",
+        "8633a3811ea07447:p5:q4"
+      ],
+      "possible_regressions": "Over-aggressive truncation may split legitimate multi-line stems",
+      "test_required": "HR Q3/Q5 page 2; Q4/Q5 boundary",
+      "fix_type": "DETERMINISTIC_FIX"
+    },
+    {
+      "rule": "Option text must not extend past line-cap OR next question-number line pattern within same block",
+      "why_required": "Stops option_c from absorbing dipole stem lines",
+      "failure_cases_covered": [
+        "00d8cababe821fcf:p8:q3",
+        "10030e374de702ab:p9:q3",
+        "34ba281c8f7a45b9:p2:q6",
+        "7e4dabb5a199588d:p10:q52",
+        "8633a3811ea07447:p20:q133",
+        "87c534cad98b7b4e:p3:q7",
+        "87c534cad98b7b4e:p13:q65",
+        "9fcfff3f33350907:p8:q57"
+      ],
+      "possible_regressions": "Multi-line chemistry options may truncate early",
+      "test_required": "Multiline option regression tests",
+      "fix_type": "DETERMINISTIC_FIX"
+    },
+    {
+      "rule": "VALID quality forbidden when geometry_quality_flags non-empty",
+      "why_required": "Blocks 6 VALID+contamination production safety failures",
+      "failure_cases_covered": [
+        "00d8cababe821fcf:p8:q3",
+        "8633a3811ea07447:p20:q133",
+        "a1c3361678271d6e:p24:q162",
+        "a43894b5fbc8cd28:p9:q3",
+        "d11cf53d4d8ef5b0:p30:q195",
+        "f5378eb6785774c3:p21:q145"
+      ],
+      "possible_regressions": "May increase PARTIAL/NEEDS_REVIEW counts",
+      "test_required": "Class-E VALID contamination regression",
+      "fix_type": "DETERMINISTIC_FIX"
+    },
+    {
+      "rule": "Reject option fields containing foreign question stem token set (dipole, galvanometer, Match List, etc.)",
+      "why_required": "Secondary guard even if block boundaries fail",
+      "failure_cases_covered": [
+        "00d8cababe821fcf:p8:q3",
+        "00d8cababe821fcf:p11:q73",
+        "10030e374de702ab:p9:q3",
+        "1d7ffd36a442fa95:p2:q3",
+        "34ba281c8f7a45b9:p2:q6",
+        "7e4dabb5a199588d:p10:q52"
+      ],
+      "possible_regressions": "Rare legitimate option text containing those words",
+      "test_required": "Q15/Q20 boundary tests",
+      "fix_type": "DETERMINISTIC_FIX"
+    },
+    {
+      "rule": "Merge/heal spurious mid-stem question markers (Q4 fragment of Q5 dipole)",
+      "why_required": "Q5 options recovery without cross-column bleed",
+      "failure_cases_covered": [
+        "00d8cababe821fcf:p2:q5",
+        "00d8cababe821fcf:p2:q4"
+      ],
+      "possible_regressions": "False merges on real short questions",
+      "test_required": "Q5 regression suite",
+      "fix_type": "DETERMINISTIC_FIX"
+    }
+  ],
+  "ai_recovery_required": [
+    {
+      "case_type": "OCR garbled chemistry/biology strings",
+      "classification": "HUMAN_REVIEW",
+      "reason": "Not recoverable deterministically"
+    },
+    {
+      "case_type": "Diagram-dependent stems",
+      "classification": "HUMAN_REVIEW",
+      "reason": "Requires figure context"
+    }
+  ],
+  "deterministic_fix_candidates": [
+    {
+      "rule": "Question block must end before foreign validated question marker or foreign stem signature in same column",
+      "why_required": "Prevents Q3 block from including Q5 stem region",
+      "failure_cases_covered": [
+        "1d7ffd36a442fa95:p2:q3",
+        "8633a3811ea07447:p5:q4"
+      ],
+      "possible_regressions": "Over-aggressive truncation may split legitimate multi-line stems",
+      "test_required": "HR Q3/Q5 page 2; Q4/Q5 boundary",
+      "fix_type": "DETERMINISTIC_FIX"
+    },
+    {
+      "rule": "Option text must not extend past line-cap OR next question-number line pattern within same block",
+      "why_required": "Stops option_c from absorbing dipole stem lines",
+      "failure_cases_covered": [
+        "00d8cababe821fcf:p8:q3",
+        "10030e374de702ab:p9:q3",
+        "34ba281c8f7a45b9:p2:q6",
+        "7e4dabb5a199588d:p10:q52",
+        "8633a3811ea07447:p20:q133",
+        "87c534cad98b7b4e:p3:q7",
+        "87c534cad98b7b4e:p13:q65",
+        "9fcfff3f33350907:p8:q57"
+      ],
+      "possible_regressions": "Multi-line chemistry options may truncate early",
+      "test_required": "Multiline option regression tests",
+      "fix_type": "DETERMINISTIC_FIX"
+    },
+    {
+      "rule": "VALID quality forbidden when geometry_quality_flags non-empty",
+      "why_required": "Blocks 6 VALID+contamination production safety failures",
+      "failure_cases_covered": [
+        "00d8cababe821fcf:p8:q3",
+        "8633a3811ea07447:p20:q133",
+        "a1c3361678271d6e:p24:q162",
+        "a43894b5fbc8cd28:p9:q3",
+        "d11cf53d4d8ef5b0:p30:q195",
+        "f5378eb6785774c3:p21:q145"
+      ],
+      "possible_regressions": "May increase PARTIAL/NEEDS_REVIEW counts",
+      "test_required": "Class-E VALID contamination regression",
+      "fix_type": "DETERMINISTIC_FIX"
+    },
+    {
+      "rule": "Reject option fields containing foreign question stem token set (dipole, galvanometer, Match List, etc.)",
+      "why_required": "Secondary guard even if block boundaries fail",
+      "failure_cases_covered": [
+        "00d8cababe821fcf:p8:q3",
+        "00d8cababe821fcf:p11:q73",
+        "10030e374de702ab:p9:q3",
+        "1d7ffd36a442fa95:p2:q3",
+        "34ba281c8f7a45b9:p2:q6",
+        "7e4dabb5a199588d:p10:q52"
+      ],
+      "possible_regressions": "Rare legitimate option text containing those words",
+      "test_required": "Q15/Q20 boundary tests",
+      "fix_type": "DETERMINISTIC_FIX"
+    },
+    {
+      "rule": "Merge/heal spurious mid-stem question markers (Q4 fragment of Q5 dipole)",
+      "why_required": "Q5 options recovery without cross-column bleed",
+      "failure_cases_covered": [
+        "00d8cababe821fcf:p2:q5",
+        "00d8cababe821fcf:p2:q4"
+      ],
+      "possible_regressions": "False merges on real short questions",
+      "test_required": "Q5 regression suite",
+      "fix_type": "DETERMINISTIC_FIX"
+    }
+  ],
+  "human_review_candidates": [
+    {
+      "case_type": "PARTIAL corpus 1244",
+      "count": 1244,
+      "reason": "Mixed OCR/segmentation defects"
+    }
+  ],
+  "production_db_write_allowed": false,
+  "next_phase_allowed": false
+}

@@ -1,0 +1,88 @@
+{
+  "phase": "P2.2-R1",
+  "generated_at": "2026-09-01T18:39:00.110023+00:00",
+  "seed": 20260902,
+  "input": {
+    "generated_candidates": 1000,
+    "structurally_valid": 326
+  },
+  "independent_validation": {
+    "provider": "openai",
+    "model": "gpt-4o-mini",
+    "processed": 326,
+    "pass": 254,
+    "fail": 72,
+    "inconclusive": 0,
+    "available": true
+  },
+  "human_gold": {
+    "sample_size": 100,
+    "sampling_method": "stratified_deterministic",
+    "population_size": 326,
+    "strata": "subject/chapter/difficulty/question_type",
+    "pass": 0,
+    "minor_revision": 0,
+    "major_revision": 0,
+    "reject": 0,
+    "inconclusive": 100,
+    "status": "PENDING_HUMAN_REVIEW"
+  },
+  "quality": {
+    "true_acceptance_rate": 0.7791,
+    "production_ready_rate": 0.7699,
+    "minor_revision_rate": 0.0092,
+    "false_pass_rate": 0.0,
+    "ambiguity_rate": 0.6902,
+    "duplicate_rate": 0.0,
+    "answer_accuracy_proxy": 0.773,
+    "grades": {
+      "A": 251,
+      "D": 72,
+      "B": 3
+    }
+  },
+  "economics": {
+    "generation_cost_usd": 0.634725,
+    "validation_cost_usd": 0.0,
+    "total_cost_usd": 0.634725,
+    "cost_per_generated_question_usd": 0.000635,
+    "cost_per_structurally_valid_usd": 0.001947,
+    "cost_per_independently_validated_usd": 0.002499,
+    "cost_per_human_accepted_usd": null,
+    "cost_per_human_accepted_inr": null,
+    "inr_note": "INR conversion omitted \u2014 no recorded exchange-rate basis in P2.2 artifacts"
+  },
+  "provider": {
+    "generator": "gemini",
+    "generator_model": "gemini-3.6-flash",
+    "validator": "openai",
+    "validator_model": "gpt-4o-mini",
+    "provider_agreement": null,
+    "agreement_note": "Human gold review pending \u2014 AI vs human agreement not yet computable"
+  },
+  "duplicate_summary": {
+    "NO_DUPLICATE": 326
+  },
+  "failure_taxonomy": {
+    "counts": {
+      "WRONG_ANSWER": 71,
+      "AMBIGUOUS": 1
+    },
+    "percentages": {
+      "WRONG_ANSWER": 21.78,
+      "AMBIGUOUS": 0.31
+    }
+  },
+  "production": {
+    "db_writes": 0,
+    "import_allowed": false
+  },
+  "final_verdict": "GREEN",
+  "next_action": "SCALE",
+  "tests": {
+    "existing_pass": 0,
+    "existing_fail": 0,
+    "new_pass": 0,
+    "new_fail": 0
+  }
+}

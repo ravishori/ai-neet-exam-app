@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
@@ -29,10 +29,66 @@ const STATE_VARIANT: Record<WorkflowState, "default" | "secondary" | "outline" |
   ARCHIVED: "outline",
 };
 
-const PAGE_SIZE = 20;
+const CONTENT_TYPES = ["QUESTION", "CONCEPT_NOTE", "FLASHCARD", "DIAGRAM", "VIDEO_REF", "FORMULA_SHEET"] as const;
+
+/** Known Phase D pilot runs — select only; does not mutate CMS records. */
+const PILOT_RUN_OPTIONS = [
+  { value: "", label: "All pilot runs" },
+  { value: "phase-d-30-mcq-authorized-20260825", label: "phase-d-30-mcq-authorized-20260825 (authorized)" },
+  { value: "phase-d-30-mcq-v1", label: "phase-d-30-mcq-v1 (historical)" },
+] as const;
+
+const PAGE_SIZE = 50;
+
+function ContentReadinessBanner() {
+  const { data, isLoading } = useQuery({
+    queryKey: ["cms", "content-readiness"],
+    queryFn: () => cmsApi.contentReadiness(),
+  });
+
+  if (isLoading) {
+    return <Skeleton className="h-24 w-full" />;
+  }
+  if (!data) return null;
+
+  return (
+    <Card className="border-amber-500/30 bg-amber-500/5">
+      <CardHeader className="pb-2">
+        <CardTitle className="text-base">Content readiness (QUESTIONs)</CardTitle>
+        <CardDescription>
+          Human ECAEP review required before publish. Never bulk-publish drafts. Feature readiness ≠ content readiness.{" "}
+          <Link href="/admin/ai-review" className="underline underline-offset-2">
+            Open editorial review queue
+          </Link>
+        </CardDescription>
+      </CardHeader>
+      <CardContent className="flex flex-wrap gap-3 text-sm">
+        <Badge variant="default">Published {data.published}</Badge>
+        <Badge variant="outline">Draft {data.draft}</Badge>
+        <Badge variant="secondary">In review {data.in_review}</Badge>
+        <Badge variant="secondary">Approved waiting {data.approved_awaiting_publish}</Badge>
+        <Badge variant={data.unmapped_concept ? "destructive" : "outline"}>Unmapped {data.unmapped_concept}</Badge>
+        <p className="w-full text-xs text-muted-foreground">{data.campaign_notes.first_target_suggestion}</p>
+        {data.published < data.campaign_notes.full_neet_mock_not_ready_below && (
+          <p className="w-full text-xs text-muted-foreground">
+            Full NEET mock not content-ready below {data.campaign_notes.full_neet_mock_not_ready_below} published questions
+            (currently {data.published}).
+          </p>
+        )}
+        {data.chapter_imbalance?.high_draft_concentration?.slice(0, 3).map((ch) => (
+          <p key={`${ch.subject_name}-${ch.chapter_name}`} className="w-full text-xs text-muted-foreground">
+            Concentration: {ch.subject_name} · {ch.chapter_name} — {ch.draft} drafts / {ch.published} published
+          </p>
+        ))}
+      </CardContent>
+    </Card>
+  );
+}
 
 function QuestionsTab() {
   const [statusFilter, setStatusFilter] = useState("");
+  const [contentTypeFilter, setContentTypeFilter] = useState("");
+  const [pilotRunFilter, setPilotRunFilter] = useState("");
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(0);
   const [selected, setSelected] = useState<Set<string>>(new Set());
@@ -41,8 +97,16 @@ function QuestionsTab() {
   const queryClient = useQueryClient();
 
   const { data, isLoading } = useQuery({
-    queryKey: ["cms", "list", statusFilter, search, page],
-    queryFn: () => cmsApi.list({ status: statusFilter || undefined, search: search || undefined, limit: PAGE_SIZE, offset: page * PAGE_SIZE }),
+    queryKey: ["cms", "list", statusFilter, contentTypeFilter, pilotRunFilter, search, page],
+    queryFn: () =>
+      cmsApi.list({
+        status: statusFilter || undefined,
+        content_type: contentTypeFilter || undefined,
+        pilot_run_id: pilotRunFilter || undefined,
+        search: search || undefined,
+        limit: PAGE_SIZE,
+        offset: page * PAGE_SIZE,
+      }),
   });
 
   const generate = useMutation({
@@ -73,7 +137,8 @@ function QuestionsTab() {
 
   return (
     <div className="flex flex-col gap-6">
-      <Card>
+      <ContentReadinessBanner />
+      <Card className="surface-glass border-0">
         <CardHeader>
           <CardTitle className="text-base">Generate with AI</CardTitle>
           <CardDescription>Pick a concept and let the Question Generator agent draft a question for review.</CardDescription>
@@ -95,6 +160,7 @@ function QuestionsTab() {
         <select
           className="h-9 rounded-md border bg-background px-2 text-sm"
           value={statusFilter}
+          aria-label="Filter by status"
           onChange={(e) => {
             setStatusFilter(e.target.value);
             setPage(0);
@@ -104,6 +170,37 @@ function QuestionsTab() {
           {Object.keys(STATE_VARIANT).map((s) => (
             <option key={s} value={s}>
               {s}
+            </option>
+          ))}
+        </select>
+        <select
+          className="h-9 rounded-md border bg-background px-2 text-sm"
+          value={contentTypeFilter}
+          aria-label="Filter by content type"
+          onChange={(e) => {
+            setContentTypeFilter(e.target.value);
+            setPage(0);
+          }}
+        >
+          <option value="">All content types</option>
+          {CONTENT_TYPES.map((t) => (
+            <option key={t} value={t}>
+              {t}
+            </option>
+          ))}
+        </select>
+        <select
+          className="h-9 max-w-md rounded-md border bg-background px-2 text-sm"
+          value={pilotRunFilter}
+          aria-label="Filter by pilot run"
+          onChange={(e) => {
+            setPilotRunFilter(e.target.value);
+            setPage(0);
+          }}
+        >
+          {PILOT_RUN_OPTIONS.map((opt) => (
+            <option key={opt.value || "all"} value={opt.value}>
+              {opt.label}
             </option>
           ))}
         </select>
@@ -119,8 +216,14 @@ function QuestionsTab() {
         {selected.size > 0 && (
           <div className="ml-auto flex items-center gap-2">
             <span className="text-xs text-muted-foreground">{selected.size} selected</span>
-            <Button size="sm" variant="outline" disabled={bulkAction.isPending} onClick={() => bulkAction.mutate("publish")}>
-              Bulk publish
+            <Button
+              size="sm"
+              variant="outline"
+              disabled={bulkAction.isPending}
+              title="Only APPROVED items that pass quality gates will publish; drafts fail safely"
+              onClick={() => bulkAction.mutate("publish")}
+            >
+              Bulk publish (approved only)
             </Button>
             <Button size="sm" variant="outline" disabled={bulkAction.isPending} onClick={() => bulkAction.mutate("archive")}>
               Bulk archive
@@ -128,6 +231,13 @@ function QuestionsTab() {
           </div>
         )}
       </div>
+
+      {!isLoading && (
+        <p className="text-xs text-muted-foreground">
+          Showing {items.length} of {total}
+          {pilotRunFilter ? ` · pilot_run_id=${pilotRunFilter}` : ""}
+        </p>
+      )}
 
       {bulkAction.data && (
         <Alert>
@@ -259,15 +369,18 @@ function ReportsTab() {
   );
 }
 
-export default function ContentListPage() {
+function ContentListInner() {
   const searchParams = useSearchParams();
   const defaultTab = searchParams.get("tab") === "reports" ? "reports" : "questions";
 
   return (
-    <main className="flex-1 px-4 py-8 sm:px-6">
+    <main className="flex-1 px-4 py-8 sm:px-6 animate-fade-slide-up">
       <div className="mx-auto flex max-w-4xl flex-col gap-6">
-        <div className="flex items-center justify-between">
-          <h1 className="font-heading text-xl font-semibold">Content</h1>
+        <div className="flex items-center justify-between gap-3">
+          <div className="space-y-1">
+            <p className="text-xs font-medium uppercase tracking-[0.14em] text-muted-foreground">CMS · ECAEP</p>
+            <h1 className="font-heading text-2xl font-bold tracking-tight">Content</h1>
+          </div>
           <Link href="/admin/content/new" className={cn(buttonVariants())}>
             New content
           </Link>
@@ -287,5 +400,19 @@ export default function ContentListPage() {
         </Tabs>
       </div>
     </main>
+  );
+}
+
+export default function ContentListPage() {
+  return (
+    <Suspense
+      fallback={
+        <main className="flex-1 px-4 py-8 sm:px-6">
+          <Skeleton className="mx-auto h-96 max-w-4xl w-full" />
+        </main>
+      }
+    >
+      <ContentListInner />
+    </Suspense>
   );
 }

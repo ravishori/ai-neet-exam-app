@@ -3,9 +3,18 @@
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useQuery } from "@tanstack/react-query";
+import { Shapes } from "lucide-react";
 
+import {
+  PageHeader,
+  StudentPage,
+  SurfaceCard,
+  SurfaceCardHeader,
+  SurfaceCardTitle,
+} from "@/components/ds";
 import { Badge } from "@/components/ui/badge";
-import { Card, CardHeader, CardTitle } from "@/components/ui/card";
+import { EmptyState } from "@/components/ui/empty-state";
+import { Skeleton } from "@/components/ui/skeleton";
 import { MasteryBadge } from "@/components/mastery-badge";
 import { academicApi } from "@/features/academic/api";
 import { learningApi } from "@/features/learning/api";
@@ -27,31 +36,38 @@ export default function TopicConceptsPage() {
   });
   const levelByConceptId = new Map(mastery?.concepts.map((c) => [c.concept_id, c.mastery_level]));
 
-  if (isLoading) {
-    return <main className="flex-1 px-6 py-12 text-center text-sm text-muted-foreground">Loading…</main>;
-  }
-
   return (
-    <main className="flex-1 px-6 py-10">
-      <div className="mb-6 flex items-center justify-between">
-        <h1 className="text-xl font-semibold">{topic?.name ?? "Concepts"}</h1>
-        {mastery && <p className="text-sm text-muted-foreground">Topic average: {mastery.average_score}%</p>}
-      </div>
-      <div className="grid gap-3">
-        {concepts?.map((concept) => (
-          <Link key={concept.id} href={`/student/concepts/${concept.id}`}>
-            <Card className="transition-colors hover:bg-muted">
-              <CardHeader className="flex-row items-center justify-between space-y-0">
-                <CardTitle className="text-base">{concept.name}</CardTitle>
-                <div className="flex items-center gap-2">
-                  <Badge variant="outline">{concept.difficulty}</Badge>
-                  {levelByConceptId.get(concept.id) && <MasteryBadge level={levelByConceptId.get(concept.id)!} />}
-                </div>
-              </CardHeader>
-            </Card>
-          </Link>
-        ))}
-      </div>
-    </main>
+    <StudentPage width="lg">
+      <PageHeader
+        eyebrow={topic?.name ?? "Topic"}
+        title="Concepts"
+        description={mastery ? `Topic average: ${mastery.average_score}%` : "Open a concept for notes, flashcards, and practice."}
+      />
+
+      {isLoading ? (
+        <div className="grid gap-3" aria-busy="true">
+          <Skeleton className="h-16 w-full rounded-2xl" />
+          <Skeleton className="h-16 w-full rounded-2xl" />
+        </div>
+      ) : !concepts?.length ? (
+        <EmptyState icon={Shapes} title="No concepts yet" description="Concepts for this topic are not available yet." />
+      ) : (
+        <div className="grid gap-3">
+          {concepts.map((concept) => (
+            <Link key={concept.id} href={`/student/concepts/${concept.id}`} className="block">
+              <SurfaceCard accent="left">
+                <SurfaceCardHeader className="flex-row items-center justify-between space-y-0 pb-4">
+                  <SurfaceCardTitle className="text-base">{concept.name}</SurfaceCardTitle>
+                  <div className="flex items-center gap-2">
+                    <Badge variant="outline">{concept.difficulty}</Badge>
+                    {levelByConceptId.get(concept.id) && <MasteryBadge level={levelByConceptId.get(concept.id)!} />}
+                  </div>
+                </SurfaceCardHeader>
+              </SurfaceCard>
+            </Link>
+          ))}
+        </div>
+      )}
+    </StudentPage>
   );
 }

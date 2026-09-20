@@ -34,6 +34,7 @@ export type RevisionDueItem = {
   mastery_level: MasteryLevel;
   mastery_score: number;
   next_review_at: string | null;
+  published_question_count?: number;
 };
 
 export type RecommendationReason = "due_for_revision" | "weak_concept" | "new_concept";
@@ -43,6 +44,7 @@ export type RecommendationItem = {
   concept_name: string;
   reason: RecommendationReason;
   mastery_score: number | null;
+  published_question_count?: number;
 };
 
 export type MicroCompetencyMastery = {

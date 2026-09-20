@@ -1,0 +1,199 @@
+{
+  "audit": "TALOS_PRODUCTION_SEED_V1_PRACTICE_ISOLATION_REMEDIATION",
+  "date": "2026-09-03",
+  "captured_at": "2026-09-03T13:15:43.800378+00:00",
+  "allowlist_hash": "c0cf70846233730ef384188f5b78cced2a7865f76d977a0af6063f803bc8f0c1",
+  "expected_allowlist_hash": "c0cf70846233730ef384188f5b78cced2a7865f76d977a0af6063f803bc8f0c1",
+  "population": {
+    "total": 30,
+    "physics": 10,
+    "chemistry": 10,
+    "botany": 5,
+    "zoology": 5
+  },
+  "scope_contract": {
+    "scope_type": "SEED_V1",
+    "client_sends": {
+      "scope_type": "SEED_V1",
+      "question_count": 30
+    },
+    "server_owns_membership": true,
+    "membership_source": "docs/audits/TALOS_PRODUCTION_SEED_V1_PUBLICATION_AUTHORIZATION_20260903.json#exact_uuid_allowlist",
+    "query": "ContentItem.id IN (frozen 30) AND status=PUBLISHED AND deleted_at IS NULL",
+    "full_unchanged": "scope_type=FULL still samples all published questions",
+    "meta_fields": [
+      "seed_v1_allowlist_sha256",
+      "seed_v1_allowlist_count",
+      "available_count"
+    ]
+  },
+  "implementation_files": [
+    "apps/backend/app/modules/assessment/seed_v1_allowlist.py",
+    "apps/backend/app/modules/assessment/repositories/assessment_repository.py",
+    "apps/backend/app/modules/assessment/services/assessment_service.py",
+    "apps/backend/app/modules/assessment/schemas/assessment.py",
+    "apps/backend/app/modules/assessment/models/assessment.py",
+    "apps/web/src/features/assessment/api.ts",
+    "apps/web/src/app/student/dashboard/page.tsx",
+    "apps/backend/tests/test_seed_v1_practice_isolation.py",
+    "apps/backend/scripts/run_seed_v1_live_practice_e2e_audit.py",
+    "apps/web/e2e/seed-v1-live-practice-browser-audit.cjs"
+  ],
+  "before_after": {
+    "before": "Hero Practice Now FULL only; Seed isolation required audit-pinned assessment",
+    "after": "FULL unchanged; new Practice Seed V1 CTA \u2192 POST scope_type=SEED_V1 server-enforced allowlist"
+  },
+  "test_results": {
+    "pytest_seed_and_practice": "15 passed (test_seed_v1_practice_isolation + topic_scope + availability)",
+    "live_backend_e2e_verdict": "GREEN",
+    "live_backend_gate_summary": {
+      "population": "30/30",
+      "practice_now": "PASS",
+      "first_question": "PASS",
+      "population_firewall_controlled": "PASS",
+      "population_firewall_full_scope": "BROADER_OK",
+      "seed_scope": "PASS",
+      "answer_submission": "PASS",
+      "explanation_after_submit": "PASS",
+      "next_question": "PASS",
+      "progress": "PASS",
+      "scoring": "PASS",
+      "completion": "PASS",
+      "runtime_api": "PASS",
+      "database_consistency": "PASS",
+      "post_audit_integrity": "PASS",
+      "t6d": "UNCHANGED",
+      "t6f2": "UNCHANGED",
+      "ecaep": 0
+    },
+    "browser_e2e_pass": true
+  },
+  "browser_e2e_evidence": {
+    "path": "D:\\ravishori\\AI Neet Exam App\\docs\\audits\\TALOS_PRODUCTION_SEED_V1_LIVE_PRACTICE_BROWSER_EVIDENCE_20260903.json",
+    "scope_type": "SEED_V1",
+    "meta": {
+      "available_count": 30,
+      "requested_count": 30,
+      "delivered_count": 30,
+      "shrunk": false,
+      "seed_v1_allowlist_sha256": "c0cf70846233730ef384188f5b78cced2a7865f76d977a0af6063f803bc8f0c1",
+      "seed_v1_allowlist_count": 30
+    },
+    "firewall": {
+      "step": "seed_firewall",
+      "presented_count": 30,
+      "outside_count": 0,
+      "outside_sample": [],
+      "all_in_allowlist": true,
+      "unique_count": 30
+    },
+    "pass": true
+  },
+  "exact_served_uuids_seed_session": [
+    "061d07ed-ca1f-4f31-b7f8-cbdb3dfe8453",
+    "16dd7280-a48b-4437-80ac-a2b72b28d952",
+    "18f304f5-89b2-4bcb-a4dd-b04eb6374cad",
+    "1d598d79-afe1-4ddb-8f32-2b51c8fb2b02",
+    "27552790-48f4-48ba-bc37-fdbd14902dfb",
+    "2e17c7e6-5d8f-4469-9cea-407177e61e8e",
+    "336ec42d-aa33-4b5b-8c46-f8d5461883b0",
+    "3c565dee-ea37-4937-bb32-4006ce383006",
+    "3d0dbda5-7882-4e3f-90d8-3a479cf67ab2",
+    "3dc11d2a-b9ad-4155-93ec-4cd7b3bae9af",
+    "4f0dcbb1-c236-42a3-a148-cf8233326b52",
+    "5b1b5f27-bb6d-4b35-8b1c-96c252278d98",
+    "621ffc10-0673-4d4f-a5be-c07ed2f7f48f",
+    "7e4fb145-08fe-43cf-accc-ef53e9535b07",
+    "872a0115-cb0a-4109-99ff-55ada6774d51",
+    "8a3937ce-5ad0-41af-bc84-17bf04c386ce",
+    "92c31281-cbdf-4954-9b25-79342cb1b400",
+    "93c46e39-6a4c-4730-9ae7-a07a4bdab0a9",
+    "9dd374e7-c677-46ab-9e83-8cf0e6139feb",
+    "a357fe24-b0ef-4bd5-b7f7-956f392f9942",
+    "aae4fe1b-9665-4216-be4b-2f758f4dbf70",
+    "b207ad06-7427-417e-abfd-a928ab68df84",
+    "b4a2e055-f141-4f05-8b06-850d84122b60",
+    "b690c0d3-98f6-4e57-851f-aae1ac6ad8cd",
+    "c85bba09-451b-4b2f-988d-e440929fa770",
+    "dd7b5422-437d-4b0f-a2dc-f370ea0496c2",
+    "e15d0065-7b79-477c-b9ec-81bc421a6a71",
+    "e3e36b8e-ff15-455e-807d-eb32de6c1f75",
+    "e4a6fdc3-7a55-4762-a176-f8af33709308",
+    "f6f59a22-5d9b-47a3-adb6-8dcf7ce56a1c"
+  ],
+  "seed_firewall": {
+    "controlled_exact_allowlist_match": true,
+    "outside": [],
+    "browser_all_in_allowlist": true
+  },
+  "full_regression": {
+    "full_available_broader_than_seed": true,
+    "full_outside_seed_count": 28,
+    "note": "FULL remains all PUBLISHED inventory (Seed+T6-D+T6-F2)"
+  },
+  "content_integrity": {
+    "status_counts": {
+      "PUBLISHED": 30
+    },
+    "fingerprint_mismatches": [],
+    "ncert_note": "content fingerprints exclude ncert_evidence field; bodies unchanged vs post-publication audit"
+  },
+  "protected_population_integrity": {
+    "snapshot": {
+      "t6d": {
+        "total": 100,
+        "published": 100,
+        "draft": 0,
+        "approved": 0,
+        "content_fp": "e0758fbcb071180b61a33f2b4581e894",
+        "tag": "physics-t6d-pilot-20260902"
+      },
+      "t6f2": {
+        "total": 938,
+        "content_fp": "17a1672c444c8362ed0261dacf0f82c7",
+        "tag": "physics-t6f1-pilot-20260902"
+      },
+      "legacy": {
+        "total": 5000,
+        "published": 0,
+        "draft": 5000,
+        "approved": 0,
+        "content_fp": "13d51e697382663a28ffc44fd56aedb1",
+        "tag": "legacy-physics-5000-import-20260902"
+      }
+    },
+    "unchanged": {
+      "t6d": true,
+      "t6f2": true,
+      "legacy": true
+    }
+  },
+  "ecaep": 0,
+  "gates": {
+    "implementation": "PASS",
+    "seed_scope": "PASS",
+    "exact_allowlist": "PASS",
+    "seed_firewall": "PASS",
+    "hero_seed_cta": "PASS",
+    "practice_init": "PASS",
+    "answer_submission": "PASS",
+    "explanation": "PASS",
+    "next_question": "PASS",
+    "progress": "PASS",
+    "scoring": "PASS",
+    "completion": "PASS",
+    "full_regression": "PASS",
+    "browser_e2e": "PASS",
+    "backend_e2e": "PASS",
+    "content_integrity": "PASS",
+    "t6d_unchanged": "PASS",
+    "t6f2_unchanged": "PASS",
+    "ecaep_zero": "PASS"
+  },
+  "failures": [],
+  "limitations": [
+    "SEED_V1 is practice-scoped; mock generation can also accept SEED_V1 if requested but UI only exposes practice CTA.",
+    "FULL Hero CTA remains the default broad practice entry point."
+  ],
+  "verdict": "GREEN"
+}

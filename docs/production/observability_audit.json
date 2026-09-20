@@ -1,0 +1,43 @@
+{
+  "audit_date": "2026-09-12",
+  "audit_phase": "0_readonly",
+  "repository": "ai-neet-exam-app",
+  "branch": "phase2-question-bank",
+  "generated_at": "2026-09-12T11:48:37.835836+00:00",
+  "code_modified": false,
+  "database_modified": false,
+  "overall_verdict": "AMBER \u2014 HARDENING REQUIRED",
+  "domain": "observability",
+  "findings": [
+    {
+      "id": "OBS-LOG",
+      "title": "Structured logging",
+      "status": "IMPLEMENTED"
+    },
+    {
+      "id": "OBS-CORR",
+      "title": "Request correlation IDs",
+      "status": "IMPLEMENTED"
+    },
+    {
+      "id": "OBS-OTEL",
+      "title": "OpenTelemetry",
+      "status": "MISSING"
+    },
+    {
+      "id": "OBS-METRICS",
+      "title": "Metrics/Prometheus",
+      "status": "MISSING"
+    },
+    {
+      "id": "OBS-SLO",
+      "title": "Practice latency SLO",
+      "status": "MISSING"
+    },
+    {
+      "id": "OBS-ALERT",
+      "title": "Admin critical alerts",
+      "status": "PARTIALLY_IMPLEMENTED"
+    }
+  ]
+}

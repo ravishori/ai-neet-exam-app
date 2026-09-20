@@ -3,7 +3,7 @@ import uuid
 from datetime import UTC, datetime
 from pathlib import Path
 
-from fastapi import APIRouter, BackgroundTasks, Depends, File, Form, Query, Request, UploadFile
+from fastapi import APIRouter, BackgroundTasks, Body, Depends, File, Form, Query, Request, UploadFile
 from pydantic import BaseModel, Field
 from sqlalchemy.ext.asyncio import AsyncSession
 
@@ -13,10 +13,15 @@ from app.core.exceptions import AppError, NotFoundError
 from app.core.logging import get_logger
 from app.modules.identity.dependencies import get_current_user, require_permission, verify_csrf
 from app.modules.identity.models.user import User
-from app.modules.ingestion.models import IngestionJob
+from app.modules.ingestion.models import IngestionJob, SourceDocument
 from app.modules.ingestion.repositories.ingestion_repository import IngestionRepository
-from app.modules.ingestion.schemas.ingestion import StartIngestionJobRequest
+from app.modules.ingestion.repositories.source_academic_mapping_repository import SourceAcademicMappingRepository
+from app.modules.ingestion.repositories.source_document_repository import SourceDocumentRepository
+from app.modules.ingestion.schemas.ingestion import DiscoverSourceDocumentsRequest, StartIngestionJobRequest
 from app.modules.ingestion.services.ingestion_pipeline_service import IngestionPipelineService
+from app.modules.ingestion.services.pilot_mcq_orchestration_service import PilotMcqOrchestrationService
+from app.modules.ingestion.services.source_academic_mapping_service import SourceAcademicMappingService
+from app.modules.ingestion.services.study_material_discovery_service import StudyMaterialDiscoveryService
 from app.modules.system.services.audit_service import AuditService, request_context
 from app.shared.responses import envelope
 
@@ -90,6 +95,7 @@ def _job(job: IngestionJob) -> dict:
     return {
         "id": str(job.id),
         "source_file_path": job.source_file_path,
+        "source_document_id": str(job.source_document_id) if job.source_document_id else None,
         "original_filename": job.original_filename,
         "status": job.status,
         "stage_detail": job.stage_detail,
@@ -117,6 +123,159 @@ async def _run_pipeline_in_background(job_id: uuid.UUID, author_id: uuid.UUID) -
         await pipeline.run(job_id=job_id, author_id=author_id)
 
 
+def _source_document(doc: SourceDocument, mapping: dict | None = None) -> dict:
+    """Public shape — omit absolute_source_path_dev (dev filesystem leak)."""
+    data = {
+        "id": str(doc.id),
+        "relative_source_path": doc.relative_source_path,
+        "file_name": doc.file_name,
+        "file_type": doc.file_type,
+        "file_size": doc.file_size,
+        "checksum_sha256": doc.checksum_sha256,
+        "class_level": doc.class_level,
+        "subject_code": doc.subject_code,
+        "title": doc.title,
+        "publisher": doc.publisher,
+        "edition": doc.edition,
+        "page_count": doc.page_count,
+        "ingestion_status": doc.ingestion_status,
+        "created_at": doc.created_at,
+        "updated_at": doc.updated_at,
+    }
+    if mapping is not None:
+        data["academic_mapping"] = mapping
+    return data
+
+
+@router.post(
+    "/source-documents/discover",
+    dependencies=[Depends(require_permission("content.create")), Depends(verify_csrf)],
+)
+async def discover_source_documents(
+    request: Request,
+    payload: DiscoverSourceDocumentsRequest = Body(default=DiscoverSourceDocumentsRequest()),
+    user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db),
+):
+    """Recursively register NEET Physics/Chemistry/Biology PDFs under the
+    configured StudyMaterial root (ADR-0030). Never accepts a client-supplied
+    filesystem root. Does not generate MCQs.
+    """
+    service = StudyMaterialDiscoveryService(db)
+    report = await service.discover(dry_run=payload.dry_run)
+
+    await AuditService(db).log(
+        actor_user_id=user.id,
+        action="source_documents.discover",
+        entity_type="source_document",
+        metadata={
+            "discovered": report.discovered,
+            "registered": report.registered,
+            "duplicates": report.duplicates,
+            "dry_run": report.dry_run,
+        },
+        **request_context(request),
+    )
+    return envelope(success=True, data=report.to_api_dict())
+
+
+@router.get("/source-documents/coverage", dependencies=[Depends(require_permission("content.create"))])
+async def source_document_coverage(db: AsyncSession = Depends(get_db)):
+    """Present / mapped / unmapped / pilot-ready counts for the NEET corpus."""
+    report = await SourceAcademicMappingService(db).coverage_report()
+    return envelope(success=True, data=report.to_api_dict())
+
+
+@router.post(
+    "/source-documents/map",
+    dependencies=[Depends(require_permission("content.create")), Depends(verify_csrf)],
+)
+async def sync_source_academic_mappings(
+    request: Request,
+    user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db),
+):
+    """Apply explicit registry mappings to all registered source documents."""
+    report = await SourceAcademicMappingService(db).sync_all()
+    await AuditService(db).log(
+        actor_user_id=user.id,
+        action="source_documents.map",
+        entity_type="source_academic_mapping",
+        metadata=report.to_api_dict(),
+        **request_context(request),
+    )
+    return envelope(success=True, data=report.to_api_dict())
+
+
+@router.get("/source-documents/{document_id}", dependencies=[Depends(require_permission("content.create"))])
+async def get_source_document(document_id: uuid.UUID, db: AsyncSession = Depends(get_db)):
+    repo = SourceDocumentRepository(db)
+    doc = await repo.get(document_id)
+    if not doc:
+        raise NotFoundError("Source document not found")
+    mapping = await SourceAcademicMappingRepository(db).get_for_source(document_id)
+    mapping_dict = SourceAcademicMappingService(db).mapping_to_dict(mapping)
+    return envelope(success=True, data=_source_document(doc, mapping_dict))
+
+
+@router.get("/source-documents", dependencies=[Depends(require_permission("content.create"))])
+async def list_source_documents(
+    subject_code: str | None = Query(default=None),
+    class_level: str | None = Query(default=None),
+    limit: int = Query(default=50, ge=1, le=200),
+    offset: int = Query(default=0, ge=0),
+    db: AsyncSession = Depends(get_db),
+):
+    repo = SourceDocumentRepository(db)
+    docs, total = await repo.list_neet(
+        subject_code=subject_code.upper() if subject_code else None,
+        class_level=class_level,
+        limit=limit,
+        offset=offset,
+    )
+    return envelope(
+        success=True,
+        data=[_source_document(d) for d in docs],
+        meta={"total": total, "limit": limit, "offset": offset},
+    )
+
+
+@router.post(
+    "/pilot/mcq-run",
+    dependencies=[Depends(require_permission("content.create")), Depends(verify_csrf)],
+)
+async def run_pilot_mcq(
+    request: Request,
+    force: bool = Query(default=False),
+    dry_run: bool = Query(default=False),
+    user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db),
+):
+    """Phase D: mandatory 30-MCQ pilot (10 Physics + 10 Chemistry + 10 Biology).
+
+    Uses source-aware ingestion only — never auto-publishes. Idempotent per
+    pilot_run_id unless force=true.
+    """
+    report = await PilotMcqOrchestrationService(db).run(
+        author_id=user.id, force=force, dry_run=dry_run
+    )
+    await AuditService(db).log(
+        actor_user_id=user.id,
+        action="pilot.mcq_run",
+        entity_type="ingestion_job",
+        metadata=report.to_api_dict(),
+        **request_context(request),
+    )
+    status_code = 422 if report.blocked else 202
+    return envelope(success=not report.blocked, data=report.to_api_dict(), status_code=status_code)
+
+
+@router.get("/pilot/provenance", dependencies=[Depends(require_permission("content.create"))])
+async def pilot_provenance(db: AsyncSession = Depends(get_db)):
+    summary = await PilotMcqOrchestrationService(db).provenance_summary()
+    return envelope(success=True, data=summary)
+
+
 @router.post(
     "/jobs",
     dependencies=[Depends(require_permission("content.create")), Depends(verify_csrf)],
@@ -127,9 +286,12 @@ async def start_ingestion_job(
     user: User = Depends(get_current_user),
     db: AsyncSession = Depends(get_db),
 ):
-    resolved_path = _resolve_and_guard_path(payload.file_path)
     pipeline = IngestionPipelineService(db)
-    job = await pipeline.start_job(file_path=resolved_path, chapter_code=payload.chapter_code)
+    if payload.source_document_id is not None:
+        job = await pipeline.start_job(source_document_id=payload.source_document_id)
+    else:
+        resolved_path = _resolve_and_guard_path(payload.file_path)  # type: ignore[arg-type]
+        job = await pipeline.start_job(file_path=resolved_path, chapter_code=payload.chapter_code)
 
     if job.status != "COMPLETED":
         background_tasks.add_task(_run_pipeline_in_background, job.id, user.id)
@@ -204,7 +366,12 @@ async def get_ingestion_job_detail(job_id: uuid.UUID, db: AsyncSession = Depends
         data={
             **_job(job),
             "sections": [
-                {"id": str(s.id), "heading": s.heading, "source_page": s.source_page, "matched_concept_id": str(s.matched_concept_id) if s.matched_concept_id else None}
+                {
+                    "id": str(s.id),
+                    "heading": s.heading,
+                    "source_page": s.source_page,
+                    "matched_concept_id": str(s.matched_concept_id) if s.matched_concept_id else None,
+                }
                 for s in sections
             ],
             "knowledge_units": [
@@ -282,7 +449,9 @@ async def list_visual_assets(
     assets, total = await repo.list_visual_assets_paginated(
         review_status=review_status, asset_type=asset_type, limit=limit, offset=offset
     )
-    return envelope(success=True, data=[_visual_asset(a) for a in assets], meta={"total": total, "limit": limit, "offset": offset})
+    return envelope(
+        success=True, data=[_visual_asset(a) for a in assets], meta={"total": total, "limit": limit, "offset": offset}
+    )
 
 
 @router.post(

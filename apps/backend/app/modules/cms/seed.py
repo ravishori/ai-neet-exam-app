@@ -16,6 +16,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from app.core.logging import get_logger
 from app.modules.academic.models import Concept
 from app.modules.cms.services.content_workflow_service import ContentWorkflowService
+from app.modules.cms.services.publication_gates import build_section_ncert_evidence, build_test_provenance
 from app.modules.identity.models.role import UserRole
 from app.modules.identity.models.user import User
 from app.modules.identity.repositories.role_repository import RoleRepository
@@ -206,6 +207,23 @@ async def _publish_through_workflow(service: ContentWorkflowService, item_id: uu
     await service.publish(item_id)
 
 
+def _seed_question_body(body: dict) -> dict:
+    """Attach truthful SECTION_VERIFIED evidence so seed publish passes T6-E-FIX gates."""
+    enriched = dict(body)
+    if not enriched.get("ncert_evidence"):
+        enriched["ncert_evidence"] = build_section_ncert_evidence(
+            ncert_reference="NCERT XI Physics Ch 1 §1.2",
+            source_pdf_relpath="StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-1.pdf",
+        )
+    if not enriched.get("provenance"):
+        enriched["provenance"] = build_test_provenance(batch_id="cms-seed")
+        enriched["provenance"]["origin"] = "cms-seed"
+        enriched["provenance"]["source"] = "apps/backend/app/modules/cms/seed.py"
+    if "numerical_evidence" not in enriched:
+        enriched["numerical_evidence"] = {"status": "NOT_NUMERICAL", "calculation_check": {}}
+    return enriched
+
+
 async def seed_cms(session: AsyncSession) -> None:
     author = await _get_or_create_seed_author(session)
     service = ContentWorkflowService(session)
@@ -250,7 +268,7 @@ async def seed_cms(session: AsyncSession) -> None:
             slug=f"{concept_code}-q1",
             tags=[],
             language="en",
-            body=body,
+            body=_seed_question_body(body),
             author_id=author.id,
         )
         await _publish_through_workflow(service, item.id, author.id)

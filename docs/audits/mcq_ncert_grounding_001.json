@@ -1,0 +1,95 @@
+{
+  "campaign": "MCQ-NCERT-GROUNDING-001",
+  "generated_at": "2026-09-14T06:50:00+05:30",
+  "final_status": "GREEN — NCERT GROUNDING HARDENED / READY FOR CONTROLLED RE-TEST",
+  "database_mutations": false,
+  "mcqs_generated": false,
+  "pilot_271_resumed": false,
+  "legacy_candidates_modified": false,
+  "architecture_findings_pre_change": {
+    "ncert_text_passed_to_llm": false,
+    "ku_text_passed_to_llm": false,
+    "section_page_passed_to_llm": false,
+    "ncert_path_policy_only": true,
+    "model_could_use_general_knowledge": true,
+    "validator_checked_claims_vs_ncert": false,
+    "insertion_points": {
+      "evidence_sufficiency": "ContentFactoryGenerationService._execute_run before provider call",
+      "claim_grounding": "after validate_candidate_body, before create_item"
+    }
+  },
+  "root_cause_verify_001_failures": {
+    "chemistry_8d727dc4": "Anfinsen/urea/BME enrichment absent from lech205.pdf; factory supplied no passage",
+    "botany_bb4a0741": "streptomycin/Streptomyces/secondary metabolites absent from lebo108.pdf; factory supplied no passage"
+  },
+  "grounding_architecture": {
+    "evidence_module": "apps/backend/app/modules/cms/services/ncert_generation_evidence.py",
+    "claim_module": "apps/backend/app/modules/cms/services/ncert_claim_grounding.py",
+    "prompt_module": "apps/backend/app/modules/cms/prompts/factory_mcq.py",
+    "prompt_version": "neet_mcq_factory_v2",
+    "generator_version": "factory_p3_v2_ncert",
+    "wired_in": "apps/backend/app/modules/cms/services/content_factory_generation_service.py",
+    "provider_neutral": true,
+    "providers_covered": ["anthropic", "gemini", "openai", "mistral", "local"],
+    "evidence_statuses": [
+      "NCERT_EVIDENCE_READY",
+      "NCERT_EVIDENCE_INSUFFICIENT",
+      "NCERT_EVIDENCE_NOT_REQUIRED"
+    ],
+    "reject_code": "NCERT_UNSUPPORTED",
+    "insufficient_stops_provider_call": true
+  },
+  "tests": {
+    "file": "apps/backend/tests/test_mcq_ncert_grounding_001.py",
+    "passed": 16,
+    "failed": 0,
+    "factory_p3_suite": "23 passed with grounding suite (combined run)",
+    "coverage": [
+      "ncert_evidence_resolution",
+      "evidence_sufficiency_gate",
+      "evidence_in_generation_request",
+      "unsupported_claim_rejection",
+      "unsupported_option_rejection",
+      "unsupported_explanation_rejection",
+      "multiple_answer_detection",
+      "numerical_verification",
+      "provider_neutral",
+      "chemistry_regression_fixture",
+      "botany_regression_fixture",
+      "zoology_positive_fixture",
+      "physics_we_positive_fixture",
+      "no_database_mutation_freeze"
+    ]
+  },
+  "database_freeze": {
+    "protected_hard_ok": true,
+    "PUBLISHED": 1479,
+    "IN_REVIEW": 111,
+    "SUPERSEDED": 6,
+    "chapters": 56,
+    "topics": 192,
+    "concepts": 318,
+    "knowledge_units": 381,
+    "blueprints": 445,
+    "unmapped_draft_null_concept": 5024,
+    "pilot_created": 129,
+    "smoke_status": "CREATED",
+    "benchmark_five_status": "CREATED",
+    "verification_mutated_db": false
+  },
+  "remaining_limitations": [
+    "Pattern-based high-signal entity gate is not full semantic entailment",
+    "Soft paraphrases without high-signal absent entities may still pass",
+    "Non-NCERT ai blueprints skip NCERT evidence gate by design",
+    "Controlled OpenAI re-benchmark deferred (explicit STOP)"
+  ],
+  "stop": {
+    "no_benchmark": true,
+    "no_generation": true,
+    "no_271_resume": true,
+    "no_publish": true,
+    "no_certify": true,
+    "no_commit": true,
+    "no_push": true
+  }
+}

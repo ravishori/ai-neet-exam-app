@@ -1,0 +1,89 @@
+{
+  "phase": "D.5B",
+  "started_at": "2026-08-31T14:04:49.694168+00:00",
+  "transaction": "COMMITTED",
+  "error": null,
+  "committed_at": "2026-08-31T14:04:49.870434+00:00",
+  "taxonomy_concepts_created": 1,
+  "limiting_factors_id": "a9ee6fdf-d7e5-4983-b8ba-ec70da704b14",
+  "content_items_body_modified": 8,
+  "new_content_versions": 8,
+  "metadata_remaps": 3,
+  "ku_relationships_copied": 8,
+  "body_ops": {
+    "8d50e829-6540-44bc-882a-6b140a33da17": {
+      "action": "REVISE",
+      "old_version_id": "a614bc69-58be-4486-8468-01e40ced2548",
+      "new_version_id": "447d055a-a65d-482f-aa08-1094fa3c255a",
+      "approved_body_hash": "ba8bdd894a2c5903c6f4e7ac94687a1c10a5895cc7dbdf55bdd5de603a8b44fd",
+      "correct_option": "A",
+      "difficulty": "medium"
+    },
+    "85fee888-47f6-408d-ab05-39b131233322": {
+      "action": "REPLACE",
+      "old_version_id": "d4c89a95-b134-4c1b-bfc8-645679d14c74",
+      "new_version_id": "9f1a01b1-6214-4c41-b7b5-fa4d2e0d5c30",
+      "approved_body_hash": "dd820f0397acd427eaab763914778befa7e4b7cb7ed28c2356bb9c6ace8efeb7",
+      "correct_option": "B",
+      "difficulty": "medium"
+    },
+    "87f621ab-a1d8-4097-8152-573b6fa46914": {
+      "action": "REVISE",
+      "old_version_id": "012ca4ee-911e-4e0a-aaa3-7fb112685f55",
+      "new_version_id": "426854ee-a49c-4cf9-87d6-922b4227a9f3",
+      "approved_body_hash": "ebb82b9890b92f2d958015e36ee520276a6eff5b197ebcc4836eeb6a164c8e41",
+      "correct_option": "C",
+      "difficulty": "medium"
+    },
+    "863f1289-87a0-4253-b996-c0aff8c47988": {
+      "action": "REVISE",
+      "old_version_id": "e8c46c44-9cb3-48c8-96db-21ec8bcc527a",
+      "new_version_id": "4184101a-d9a5-4f0a-a3f4-2043310bce3c",
+      "approved_body_hash": "80284132074e406a57921417ced29359229c03c50bd53d9ca1afe91eebbfdfde",
+      "correct_option": "B",
+      "difficulty": "hard"
+    },
+    "ade9900b-1ab2-4a5d-aa29-a5f4a605366e": {
+      "action": "REVISE",
+      "old_version_id": "32b58f53-daf9-4d68-9cc9-8bc4f766156b",
+      "new_version_id": "c48f845e-cd4e-412a-b17e-8a929d0ed6a2",
+      "approved_body_hash": "72a9c542164f4eb018e81a4692f386802567f494224f40e07ff6122829b1e619",
+      "correct_option": "A",
+      "difficulty": "hard"
+    },
+    "c7a54ae9-5044-44d3-bfa4-8a5bbc6c5ef2": {
+      "action": "REPLACE",
+      "old_version_id": "4117b472-cea2-469b-9f76-0c3be97c4760",
+      "new_version_id": "34a569f8-fb66-411d-a9d3-6cff23883471",
+      "approved_body_hash": "39a73a74ccd7e3686314cbcb99a955cfe463ad3146ffe580dea5dc7d5c13716c",
+      "correct_option": "A",
+      "difficulty": "easy"
+    },
+    "7b80d6db-9c07-4b42-a92d-df74ab8428b3": {
+      "action": "REVISE",
+      "old_version_id": "fef85035-402e-4c8d-9db4-024745bca160",
+      "new_version_id": "d4c1fedd-c2ad-41f5-b51e-699633fa058c",
+      "approved_body_hash": "79323f5f7f3b7f777104b35a0278cfb460b1d4f78a5b175af95cc93459bcc140",
+      "correct_option": "A",
+      "difficulty": "hard"
+    },
+    "a42a3589-8070-40c2-9181-f76642b33a85": {
+      "action": "REVISE",
+      "old_version_id": "8d39848a-8a60-47c8-8997-09a827fa3e6e",
+      "new_version_id": "35f7c7d8-1674-4945-8c01-ebd49394fc8c",
+      "approved_body_hash": "0655fd63ac0242de7a090fd391d2a8ef47757c277be63f9e519890a9be73fb0b",
+      "correct_option": "A",
+      "difficulty": "easy"
+    }
+  },
+  "new_versions": {
+    "8d50e829-6540-44bc-882a-6b140a33da17": "447d055a-a65d-482f-aa08-1094fa3c255a",
+    "85fee888-47f6-408d-ab05-39b131233322": "9f1a01b1-6214-4c41-b7b5-fa4d2e0d5c30",
+    "87f621ab-a1d8-4097-8152-573b6fa46914": "426854ee-a49c-4cf9-87d6-922b4227a9f3",
+    "863f1289-87a0-4253-b996-c0aff8c47988": "4184101a-d9a5-4f0a-a3f4-2043310bce3c",
+    "ade9900b-1ab2-4a5d-aa29-a5f4a605366e": "c48f845e-cd4e-412a-b17e-8a929d0ed6a2",
+    "c7a54ae9-5044-44d3-bfa4-8a5bbc6c5ef2": "34a569f8-fb66-411d-a9d3-6cff23883471",
+    "7b80d6db-9c07-4b42-a92d-df74ab8428b3": "d4c1fedd-c2ad-41f5-b51e-699633fa058c",
+    "a42a3589-8070-40c2-9181-f76642b33a85": "35f7c7d8-1674-4945-8c01-ebd49394fc8c"
+  }
+}

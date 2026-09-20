@@ -1,0 +1,89 @@
+{
+  "captured_at": "2026-09-02T16:52:39.505706+00:00",
+  "authoritative_rule": "factory_sample_v1",
+  "formula": "n=min(N, max(5, ceil(2.0*sqrt(N))))",
+  "population_size_N": 95,
+  "computed_sample_size": 20,
+  "actual_sample_size": 20,
+  "seed": 42,
+  "selection_algorithm": "ContentFactorySamplingService._stratified_draw round-robin by subject|family|difficulty|blueprint",
+  "sample_key": "sample-factory-p3-pilot-2026-09-01-batch-p3-95-42",
+  "sample_id": "c0081360-751f-40ae-a999-12c2698bc18c",
+  "idempotent_hit": false,
+  "strata": {
+    "strata_counts": {
+      "8546ab39-2401-4e1f-91e7-a22e27afe147|06b13ff6-2a39-4c3d-976a-09e76b4a33bf|medium|77576605-f3d4-420b-9faf-15a47d8cd48c": 25,
+      "8546ab39-2401-4e1f-91e7-a22e27afe147|2470c363-d05a-4330-bc47-b19aa789a9c8|easy|3c8f1b03-ac22-4b16-80c3-8e5e63473dba": 15,
+      "33259dfe-9180-4dfd-828f-a99d83a99ceb|e86fdd63-526d-43ab-9063-0d1d4db66da1|medium|c746c965-0c2c-4fa6-91a5-78464042b054": 20,
+      "92283579-413a-45d7-8d77-0c407fe7d277|011e68f2-dfe6-4f5d-ae53-98390ff9d364|easy|660f336a-d767-404e-bb69-88f675803c88": 20,
+      "1bbd31b8-60a1-4630-bdca-23167454b934|53b801de-27d7-4b23-811d-a4e67d3cddd1|medium|819aac4f-bd7a-424c-8a7b-736a5e5abdf6": 15
+    },
+    "selected_by_strata": {
+      "1bbd31b8-60a1-4630-bdca-23167454b934|53b801de-27d7-4b23-811d-a4e67d3cddd1|medium|819aac4f-bd7a-424c-8a7b-736a5e5abdf6": 4,
+      "33259dfe-9180-4dfd-828f-a99d83a99ceb|e86fdd63-526d-43ab-9063-0d1d4db66da1|medium|c746c965-0c2c-4fa6-91a5-78464042b054": 4,
+      "8546ab39-2401-4e1f-91e7-a22e27afe147|06b13ff6-2a39-4c3d-976a-09e76b4a33bf|medium|77576605-f3d4-420b-9faf-15a47d8cd48c": 4,
+      "8546ab39-2401-4e1f-91e7-a22e27afe147|2470c363-d05a-4330-bc47-b19aa789a9c8|easy|3c8f1b03-ac22-4b16-80c3-8e5e63473dba": 4,
+      "92283579-413a-45d7-8d77-0c407fe7d277|011e68f2-dfe6-4f5d-ae53-98390ff9d364|easy|660f336a-d767-404e-bb69-88f675803c88": 4
+    },
+    "population_restriction": "p3_gemini_95_only",
+    "excluded_older_batch_created": 5,
+    "formula": "min(95, max(5, ceil(2.0*sqrt(95)))) = 20"
+  },
+  "selected_candidate_ids": [
+    "a1c5abc4-ada7-4b40-9c57-f27fc3b76227",
+    "55a95388-ad70-4a8e-ab29-46f1b3fbda9f",
+    "ef166196-0c2b-498a-99c2-6580d06a9187",
+    "6b6f00e8-8336-41f0-8396-8d645000764b",
+    "534eeaef-50d5-4f90-8435-e74a70f448b8",
+    "0e8c544b-d1b3-4de8-bdd7-3ade83d8ff6b",
+    "38ae327f-dba0-4e1a-b6e2-ee3f40332337",
+    "638db5e0-8bdc-40b6-b4ff-96e621ba38f5",
+    "47adb269-23aa-43ae-86be-d8fec2a913f8",
+    "cc634ca9-bc94-45de-bc26-3ac238ad924e",
+    "b2800717-4dd8-492d-b86e-99c352d6dbcc",
+    "566e8682-2fee-4f19-8a27-fc9380c87589",
+    "6466c2d8-cc35-4c68-8361-ac8ea293d93e",
+    "25fca454-28e4-4ca0-b080-c1f916af7989",
+    "cb515a75-3a61-4b42-a2c6-e6eabc966c2d",
+    "c90aa206-7669-4416-8c09-aba6309044e8",
+    "1e430658-686e-484f-bcc5-ef89489507a0",
+    "6076cfcb-eb89-456b-b53f-0b4993bb1521",
+    "879b47fd-2122-4f72-977a-9cc727cbfd50",
+    "c08f4216-7324-4224-888e-737b92ea982b"
+  ],
+  "selected_item_ids": [
+    "00ea201f-6879-4714-b8c1-65b73c64d3ac",
+    "06f482fd-7a9c-4ab4-af3a-04fd45ed6f7b",
+    "12e1d3fd-c1ec-4610-9101-f5a6271b88b2",
+    "14d5b9ce-f2db-47f2-9cd6-093f68c08b7c",
+    "1688d0d2-72d8-4cd3-a9b8-6cbcecc2b27b",
+    "31959259-6612-4826-b878-85571e2e4952",
+    "411e52ae-5946-456f-832f-9769e9e8b267",
+    "49052063-51a8-4e92-b970-fa2c163bc225",
+    "4f7c774c-3ca9-49a4-8923-7ad256809781",
+    "52a054bd-e368-4575-8e1d-b012f6e39d9b",
+    "5502fd26-32e0-4d3d-bc49-2fcfded63006",
+    "55fb1405-489d-4d1b-880f-3a23eb8398c5",
+    "5eb8f972-b5ed-425d-9290-61660fc68232",
+    "610ac645-b3d9-4a4b-aae7-0861f0933122",
+    "8704a88f-38cd-4be1-93b3-31cced984712",
+    "c63c00be-61ad-49f6-99a3-7b5f10a3daf7",
+    "c9effada-d968-42cb-9f79-bba0a221030e",
+    "cf312a49-3079-4824-8b87-46bb20ec6899",
+    "e19e4ad1-f881-4864-bb82-3d4cf4126647",
+    "e64bab8b-c42d-41a7-b735-612df5397eca"
+  ],
+  "population_distribution_by_subject": {
+    "Botany": 20,
+    "Chemistry": 20,
+    "Physics": 40,
+    "Zoology": 15
+  },
+  "sample_distribution_by_subject": {
+    "Botany": 4,
+    "Chemistry": 4,
+    "Physics": 8,
+    "Zoology": 4
+  },
+  "population_restriction": "P3 Gemini 95 only"
+}

@@ -96,10 +96,61 @@ values (not committed anywhere — the compose file only references
 compose file hardcodes them to the container paths its own volumes
 mount at (`/data/studymaterial`, `/data/visualassets`); see section 8.
 
-Not wired up: outbound email (SMTP). Password-reset/verification emails
-only work against the dev-only Mailpit container in `docker-compose.yml`
-— in this prod compose they silently go nowhere. Pre-existing gap
-(`email_service.py` has no SMTP backend), not introduced by this deploy.
+NEET corpus discovery (ADR-0030) always uses that configured root only —
+Physics / Chemistry / Biology recursively; Maths and Uploads are ignored.
+See `docs/architecture/studymaterial-ingestion-runbook.md`.
+
+### Outbound email (SMTP) and critical alerts
+
+The backend **does** include an SMTP path in
+`apps/backend/app/modules/identity/services/email_service.py` (smtplib).
+If `SMTP_HOST` and `SMTP_FROM` are set, mail is sent; if unset in
+production, the app logs `email_not_configured` / `alert_email_not_configured`
+and does not raise (enumeration-safe auth flows still return generic
+responses).
+
+Required Coolify env for real delivery:
+
+| Variable | Required for mail | Notes |
+|---|---|---|
+| `SMTP_HOST` | yes | Provider hostname |
+| `SMTP_PORT` | yes | Usually 587 |
+| `SMTP_USERNAME` / `SMTP_PASSWORD` | if provider requires auth | Never commit |
+| `SMTP_FROM` | yes | Envelope From |
+| `SMTP_USE_TLS` | recommended | `true` for STARTTLS |
+| `ALERT_EMAIL` | yes for ops alerts | Destination for `maybe_send_critical_alert` |
+| `WEB_APP_URL` | yes for reset/verify links | Public frontend origin |
+
+Local Mailpit (`docker-compose.yml`, ports 1025/8025) remains the
+dev-only path. **Prod compose does not ship Mailpit** — without SMTP_*
+production email is a silent no-op. H1 Ops Truth requires an end-to-end
+mailbox proof before calling alerts VERIFIED.
+
+### MFA field encryption
+
+TOTP secrets use Fernet via `ENCRYPTION_KEY`
+(`apps/backend/app/core/crypto.py`). If MFA enroll/verify is enabled in
+an environment, `ENCRYPTION_KEY` **must** be set or those routes return
+`ENCRYPTION_NOT_CONFIGURED` (503). Generate with
+`python -c "from cryptography.fernet import Fernet; print(Fernet.generate_key().decode())"`
+and store only in the secret manager / Coolify env — never in git.
+
+### Payments go / no-go (H1)
+
+Omit `RAZORPAY_KEY_ID` / `RAZORPAY_KEY_SECRET` until H6 webhook work is
+authorized. With keys omitted, commerce order creation returns
+`PAYMENT_GATEWAY_NOT_CONFIGURED` (fail-closed). **Do not enable live
+payments** as part of H1.
+
+### Database backups
+
+Docker volumes persist across redeploys but are **not** a backup.
+Follow `docs/deploy/BACKUP_RESTORE.md` and
+`scripts/ops/pg_backup.ps1` / `pg_restore_drill.ps1`. Schedule off-host
+`pg_dump` for any environment that matters.
+
+Not wired historically into this runbook (corrected during H1): SMTP
+exists in code; backups must be operator-driven.
 
 ## 7. HTTPS / SSL
 

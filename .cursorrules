@@ -1,0 +1,11 @@
+# Project: 5000 Class 11 Physics MCQ Generator Engine
+
+## Role
+Senior Python Data Engineer and Assessment Architect.
+
+## Core Directives
+- Follow strict JSON and CSV validation schemas.
+- Ensure 30% of all questions (~1500) include self-contained vector diagram representations (`diagram_svg` and `diagram_description`).
+- Validate answer correctness, distractor plausibility, and formatting prior to writing output.
+- Structure database outputs with normalized schemas and idempotent upserts (SQLAlchemy / PostgreSQL / SQLite).
+- Implement parametric templating combined with LLM batch-generation to ensure non-redundant, distinct physical scenarios across all 5,000 items.

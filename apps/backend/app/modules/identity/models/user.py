@@ -1,6 +1,8 @@
+import uuid
 from datetime import datetime
 
-from sqlalchemy import Boolean, DateTime, Integer, String
+from sqlalchemy import Boolean, DateTime, ForeignKey, Integer, String, Text
+from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.core.database import Base
@@ -20,6 +22,38 @@ class User(Base, AuditedBase):
     phone: Mapped[str | None] = mapped_column(String(20))
     avatar_url: Mapped[str | None] = mapped_column(String(500))
 
+    # Mobile-OTP login + address (added by identity_profile_mobile_state_city migration).
+    # `mobile_e164` is the canonical E.164 representation ("+91XXXXXXXXXX"); the
+    # legacy `phone` column above is not repurposed. Nullable so existing rows
+    # migrate safely; new registrations enforce non-null at the service layer.
+    mobile_e164: Mapped[str | None] = mapped_column(String(20))
+    # `state_code` / `city_name` are DENORMALIZED views of state_id / city_id
+    # — populated automatically by the profile validator from the master
+    # tables. Kept for API compatibility and cheap read paths.
+    state_code: Mapped[str | None] = mapped_column(String(64))
+    city_name: Mapped[str | None] = mapped_column(String(120))
+    # Master-data FKs — added by identity_geo_master_tables migration.
+    state_id: Mapped[uuid.UUID | None] = mapped_column(
+        UUID(as_uuid=True),
+        ForeignKey("identity.states.id", ondelete="RESTRICT"),
+        nullable=True,
+    )
+    city_id: Mapped[uuid.UUID | None] = mapped_column(
+        UUID(as_uuid=True),
+        ForeignKey("identity.cities.id", ondelete="RESTRICT"),
+        nullable=True,
+    )
+    # Retained for backward compatibility with existing rows that were
+    # created under the auto-issued-initial-credential policy. Public
+    # registration since a1b2c3d4e5f7 uses the user's own password and
+    # sets this to false.
+    must_change_password: Mapped[bool] = mapped_column(Boolean, default=False, nullable=False)
+    # Last time this user's password_hash was set. NULL for pre-existing
+    # rows (unknown history); populated at register() and every
+    # change_password / reset_password. Drives the 90-day non-blocking
+    # reminder — NULL is treated as "no reminder".
+    password_changed_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
+
     status: Mapped[str] = mapped_column(String(20), default="active", nullable=False)
     email_verified: Mapped[bool] = mapped_column(Boolean, default=False, nullable=False)
 
@@ -36,6 +70,10 @@ class User(Base, AuditedBase):
     email_verification_expires_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
     password_reset_token_hash: Mapped[str | None] = mapped_column(String(64))
     password_reset_expires_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
+
+    totp_secret_encrypted: Mapped[str | None] = mapped_column(Text)
+    totp_enabled: Mapped[bool] = mapped_column(Boolean, default=False, nullable=False)
+    totp_confirmed_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
 
     roles: Mapped[list["UserRole"]] = relationship(back_populates="user", cascade="all, delete-orphan")
     refresh_tokens: Mapped[list["RefreshToken"]] = relationship(

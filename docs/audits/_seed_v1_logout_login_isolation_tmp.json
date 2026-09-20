@@ -1,0 +1,11 @@
+{
+  "audit": "Seed V1 logout/login isolation (tmp)",
+  "date": "2026-09-03",
+  "unauth_me_status": 401,
+  "cross_attempt_status": 404,
+  "pass": true,
+  "cross_denied": true,
+  "email1": "sx-reg-logout-one-1788443945288-acd213@example.com",
+  "email2": "sx-reg-logout-two-1788443945426-4a3cb3@example.com",
+  "attempt_id": "9d6dd195-5149-4e44-b74b-39bfe5bc3eb6"
+}

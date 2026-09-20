@@ -1,0 +1,2349 @@
+{
+  "captured_at": "2026-09-02T16:52:39.505706+00:00",
+  "disclaimer": "P4 = automated QA. P5 = human review. Packet is read-only content snapshot.",
+  "sample_key": "sample-factory-p3-pilot-2026-09-01-batch-p3-95-42",
+  "sample_id": "c0081360-751f-40ae-a999-12c2698bc18c",
+  "seed": 42,
+  "items": [
+    {
+      "factory_review_item_id": "89404313-43ed-4bb0-9117-3f3854b2fd5e",
+      "candidate_id": "cc634ca9-bc94-45de-bc26-3ac238ad924e",
+      "item_id": "00ea201f-6879-4714-b8c1-65b73c64d3ac",
+      "selection_class": "GREEN_SAMPLE",
+      "review_status": "SELECTED",
+      "subject": "Botany",
+      "chapter": "Photosynthesis in Higher Plants",
+      "topic": "Light Reaction",
+      "concept": "Photophosphorylation",
+      "difficulty": "easy",
+      "stem": "Which of the following serves as the direct source of energy utilized by the ATP synthase enzyme to synthesize ATP during photophosphorylation in chloroplasts?",
+      "options": [
+        {
+          "text": "High-energy electrons transferred directly from Photosystem I",
+          "label": "A"
+        },
+        {
+          "text": "Breakdown of the proton gradient across the thylakoid membrane",
+          "label": "B"
+        },
+        {
+          "text": "Direct hydrolysis of NADPH in the stroma",
+          "label": "C"
+        },
+        {
+          "text": "Splitting of water molecules on the outer surface of the thylakoid membrane",
+          "label": "D"
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "According to Mitchell's chemiosmotic hypothesis, ATP synthesis by ATP synthase is driven by the movement of protons down their electrochemical gradient (breakdown of the proton gradient) from the thylakoid lumen into the stroma. Option A is incorrect because high-energy electrons power the proton pumps, but do not directly drive ATP synthase. Option C is incorrect because NADPH is a product of light reactions and is not hydrolyzed to synthesize ATP. Option D is incorrect because photolysis of water occurs on the inner side (lumen side) of the thylakoid membrane, contributing to the gradient rather than directly driving ATP synthase.",
+      "status": "DRAFT",
+      "workflow_state": "DRAFT",
+      "body_md5": "ce21bf0348e795a0fedb5d0c06d8ee42",
+      "tags": [
+        "factory-p3",
+        "batch:22c5684b-cf86-4137-82bf-be237be1e2ee",
+        "job:3aa8f5c6-b45e-4b6f-bbe1-d79c6ea2fd45",
+        "run:d31a151b-ee69-4353-b42b-6cdf54dc25a5",
+        "blueprint:660f336a-d767-404e-bb69-88f675803c88",
+        "bp-v:1",
+        "family:factory-p3-pilot-2026-09-01-botany-ncert_fact",
+        "provider:gemini",
+        "model:gemini-3.6-flash",
+        "routing:fixed:gemini",
+        "provenance:ai"
+      ],
+      "provider": "gemini",
+      "routing": "fixed:gemini",
+      "model": "gemini-3.6-flash",
+      "is_fallback": false,
+      "p4_classification": "GREEN",
+      "p4_gate_results": {
+        "E_ANSWER": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": [
+            "NO_SCIENTIFIC_CERTIFICATION"
+          ]
+        },
+        "G_SAFETY": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "A_STRUCTURE": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "B_BLUEPRINT": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "C_HIERARCHY": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "F_DUPLICATE": {
+          "detail": {
+            "of_item_ids": [],
+            "duplicate_class": "UNIQUE",
+            "of_candidate_ids": []
+          },
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": [
+            "SEMANTIC_DEDUPE_NOT_AVAILABLE",
+            "SEMANTIC_UNCHECKED"
+          ]
+        },
+        "D_PROVENANCE": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        }
+      },
+      "p4_note": "P4 = automated QA; P5 = human review",
+      "scientific_certification": false,
+      "ncert_verified": false
+    },
+    {
+      "factory_review_item_id": "e78c1ec6-091b-4b75-991f-4e8ae680b838",
+      "candidate_id": "38ae327f-dba0-4e1a-b6e2-ee3f40332337",
+      "item_id": "06f482fd-7a9c-4ab4-af3a-04fd45ed6f7b",
+      "selection_class": "GREEN_SAMPLE",
+      "review_status": "SELECTED",
+      "subject": "Chemistry",
+      "chapter": "Chemical Bonding and Molecular Structure",
+      "topic": "Ionic Bonding",
+      "concept": "Lattice Energy",
+      "difficulty": "medium",
+      "stem": "Which of the following comparisons regarding the magnitude of lattice energy is correct based on electrostatic principles?",
+      "options": [
+        {
+          "text": "NaCl > MgO because Na+ and Cl- are larger in size than Mg2+ and O2-",
+          "label": "A"
+        },
+        {
+          "text": "MgO > NaCl because the product of ionic charges is greater in MgO",
+          "label": "B"
+        },
+        {
+          "text": "LiF < NaF because Li+ has a smaller ionic radius than Na+",
+          "label": "C"
+        },
+        {
+          "text": "NaCl > LiF because NaCl has a higher molar mass than LiF",
+          "label": "D"
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "Lattice energy (U) is directly proportional to the product of the ionic charges (|q1 * q2|) and inversely proportional to the interionic distance (r0 = r+ + r-). For MgO, the charge product is |(+2) * (-2)| = 4, whereas for NaCl, the charge product is |(+1) * (-1)| = 1. Because charge magnitude has a dominant effect over small differences in ionic radii, MgO has a significantly greater lattice energy than NaCl. Option A is incorrect because larger ionic size decreases lattice energy, and MgO actually has higher lattice energy. Option C is incorrect because Li+ is smaller than Na+, making the interionic distance in LiF smaller, which results in LiF having a higher lattice energy than NaF. Option D is incorrect because lattice energy depends on ionic charge and size, not molar mass.",
+      "status": "DRAFT",
+      "workflow_state": "DRAFT",
+      "body_md5": "1102cd48177e1ccf2151cc031b804937",
+      "tags": [
+        "factory-p3",
+        "batch:22c5684b-cf86-4137-82bf-be237be1e2ee",
+        "job:2e0a8447-ae39-46af-a0d9-ccb7ade7ac29",
+        "run:60d1ef7a-902f-42bb-9bd8-965560be7ade",
+        "blueprint:c746c965-0c2c-4fa6-91a5-78464042b054",
+        "bp-v:1",
+        "family:factory-p3-pilot-2026-09-01-chemistry-conceptual",
+        "provider:gemini",
+        "model:gemini-3.6-flash",
+        "routing:fixed:gemini",
+        "provenance:ai"
+      ],
+      "provider": "gemini",
+      "routing": "fixed:gemini",
+      "model": "gemini-3.6-flash",
+      "is_fallback": false,
+      "p4_classification": "GREEN",
+      "p4_gate_results": {
+        "E_ANSWER": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": [
+            "NO_SCIENTIFIC_CERTIFICATION"
+          ]
+        },
+        "G_SAFETY": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "A_STRUCTURE": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "B_BLUEPRINT": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "C_HIERARCHY": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "F_DUPLICATE": {
+          "detail": {
+            "of_item_ids": [],
+            "duplicate_class": "UNIQUE",
+            "of_candidate_ids": []
+          },
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": [
+            "SEMANTIC_DEDUPE_NOT_AVAILABLE",
+            "SEMANTIC_UNCHECKED"
+          ]
+        },
+        "D_PROVENANCE": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        }
+      },
+      "p4_note": "P4 = automated QA; P5 = human review",
+      "scientific_certification": false,
+      "ncert_verified": false
+    },
+    {
+      "factory_review_item_id": "5bda83ec-b512-4291-89ee-4ba62ff7d85f",
+      "candidate_id": "6076cfcb-eb89-456b-b53f-0b4993bb1521",
+      "item_id": "12e1d3fd-c1ec-4610-9101-f5a6271b88b2",
+      "selection_class": "GREEN_SAMPLE",
+      "review_status": "SELECTED",
+      "subject": "Physics",
+      "chapter": "Current Electricity",
+      "topic": "Electric Current and Ohm's Law",
+      "concept": "Ohm's Law",
+      "difficulty": "medium",
+      "stem": "A metallic wire of uniform cross-sectional area has a resistance $R$. It is connected across a constant DC voltage source $V$, drawing a current $I$. The wire is then stretched uniformly such that its length increases by $20\\%$, while keeping the applied voltage $V$ unchanged. Assuming the temperature and density of the wire remain constant, what is the new current drawn from the voltage source?",
+      "options": [
+        {
+          "text": "0.69 I",
+          "label": "A"
+        },
+        {
+          "text": "0.83 I",
+          "label": "B"
+        },
+        {
+          "text": "1.20 I",
+          "label": "C"
+        },
+        {
+          "text": "1.44 I",
+          "label": "D"
+        }
+      ],
+      "correct_option": "A",
+      "explanation": "According to Ohm's Law, $I = \\frac{V}{R}$.\n\nWhen a wire is stretched uniformly, its volume $A \\times l$ remains constant, where $A$ is the cross-sectional area and $l$ is the length.\nIf the initial length is $l_1$, the new length is $l_2 = 1.20 \\, l_1$.\nSince volume is conserved ($A_1 l_1 = A_2 l_2$), the new area is $A_2 = \\frac{A_1}{1.20}$.\n\nThe resistance of a wire is given by $R = \\rho \\frac{l}{A}$.\nThus, the new resistance $R'$ is:\n$R' = \\rho \\frac{l_2}{A_2} = \\rho \\frac{1.20 \\, l_1}{A_1 / 1.20} = (1.20)^2 \\left(\\rho \\frac{l_1}{A_1}\\right) = 1.44 \\, R$.\n\nSince the applied voltage $V$ remains constant, the new current $I'$ is:\n$I' = \\frac{V}{R'} = \\frac{V}{1.44 \\, R} = \\frac{I}{1.44} \\approx 0.694 \\, I \\approx 0.69 \\, I$.\n\nOption A is correct.\nOption B wrongly assumes resistance increases linearly with length ($R' = 1.2 R$), giving $I' = I / 1.2 = 0.83 I$.\nOption C incorrectly assumes current increases proportionally with length.\nOption D calculates the new resistance ratio ($1.44$) rather than the new current ratio.",
+      "status": "DRAFT",
+      "workflow_state": "DRAFT",
+      "body_md5": "b55f9fd9ca7e71e6159a7897112d0bac",
+      "tags": [
+        "factory-p3",
+        "batch:22c5684b-cf86-4137-82bf-be237be1e2ee",
+        "job:7aa0460d-2f64-4736-a248-16c965a0fc0c",
+        "run:3d93b123-b90c-4b35-95cd-73bd0444e0ec",
+        "blueprint:77576605-f3d4-420b-9faf-15a47d8cd48c",
+        "bp-v:1",
+        "family:factory-p3-pilot-2026-09-01-physics-formula_application",
+        "provider:gemini",
+        "model:gemini-3.6-flash",
+        "routing:fixed:gemini",
+        "provenance:ai"
+      ],
+      "provider": "gemini",
+      "routing": "fixed:gemini",
+      "model": "gemini-3.6-flash",
+      "is_fallback": false,
+      "p4_classification": "GREEN",
+      "p4_gate_results": {
+        "E_ANSWER": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": [
+            "NO_SCIENTIFIC_CERTIFICATION"
+          ]
+        },
+        "G_SAFETY": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "A_STRUCTURE": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "B_BLUEPRINT": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "C_HIERARCHY": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "F_DUPLICATE": {
+          "detail": {
+            "of_item_ids": [],
+            "duplicate_class": "UNIQUE",
+            "of_candidate_ids": []
+          },
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": [
+            "SEMANTIC_DEDUPE_NOT_AVAILABLE",
+            "SEMANTIC_UNCHECKED"
+          ]
+        },
+        "D_PROVENANCE": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        }
+      },
+      "p4_note": "P4 = automated QA; P5 = human review",
+      "scientific_certification": false,
+      "ncert_verified": false
+    },
+    {
+      "factory_review_item_id": "734533c2-aa59-47dd-bbdc-25f8e4e7183b",
+      "candidate_id": "6b6f00e8-8336-41f0-8396-8d645000764b",
+      "item_id": "14d5b9ce-f2db-47f2-9cd6-093f68c08b7c",
+      "selection_class": "GREEN_SAMPLE",
+      "review_status": "SELECTED",
+      "subject": "Physics",
+      "chapter": "Current Electricity",
+      "topic": "Electric Current and Ohm's Law",
+      "concept": "Ohm's Law",
+      "difficulty": "easy",
+      "stem": "A metallic conductor obeys Ohm's law at a constant temperature. If the potential difference across its ends is doubled, how do its electrical resistance and the current flowing through it change?",
+      "options": [
+        {
+          "text": "Resistance doubles and current remains unchanged.",
+          "label": "A"
+        },
+        {
+          "text": "Resistance remains unchanged and current doubles.",
+          "label": "B"
+        },
+        {
+          "text": "Both resistance and current double.",
+          "label": "C"
+        },
+        {
+          "text": "Resistance is halved and current doubles.",
+          "label": "D"
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "According to Ohm's law, $V = IR$, or $I = \\frac{V}{R}$. For an ohmic conductor at a constant temperature, the resistance ($R$) is an intrinsic property that depends on the dimensions and material of the conductor, not on the applied potential difference ($V$). Therefore, when $V$ is doubled, the resistance remains unchanged, and the current $I$ increases by a factor of two (doubles).",
+      "status": "DRAFT",
+      "workflow_state": "DRAFT",
+      "body_md5": "790d12106539a62b22dd53c493ae5cfb",
+      "tags": [
+        "factory-p3",
+        "batch:22c5684b-cf86-4137-82bf-be237be1e2ee",
+        "job:7cad378a-688e-46d3-ae4b-4eaef83d5d2d",
+        "run:84644456-521f-48cc-b5fe-654749d74ccc",
+        "blueprint:3c8f1b03-ac22-4b16-80c3-8e5e63473dba",
+        "bp-v:1",
+        "family:factory-p3-pilot-2026-09-01-physics-direct_concept",
+        "provider:gemini",
+        "model:gemini-3.6-flash",
+        "routing:fixed:gemini",
+        "provenance:ai"
+      ],
+      "provider": "gemini",
+      "routing": "fixed:gemini",
+      "model": "gemini-3.6-flash",
+      "is_fallback": false,
+      "p4_classification": "GREEN",
+      "p4_gate_results": {
+        "E_ANSWER": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": [
+            "NO_SCIENTIFIC_CERTIFICATION"
+          ]
+        },
+        "G_SAFETY": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "A_STRUCTURE": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "B_BLUEPRINT": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "C_HIERARCHY": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "F_DUPLICATE": {
+          "detail": {
+            "of_item_ids": [],
+            "duplicate_class": "UNIQUE",
+            "of_candidate_ids": []
+          },
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": [
+            "SEMANTIC_DEDUPE_NOT_AVAILABLE",
+            "SEMANTIC_UNCHECKED"
+          ]
+        },
+        "D_PROVENANCE": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        }
+      },
+      "p4_note": "P4 = automated QA; P5 = human review",
+      "scientific_certification": false,
+      "ncert_verified": false
+    },
+    {
+      "factory_review_item_id": "9c8494f9-9608-4237-a976-29ed1257228f",
+      "candidate_id": "a1c5abc4-ada7-4b40-9c57-f27fc3b76227",
+      "item_id": "1688d0d2-72d8-4cd3-a9b8-6cbcecc2b27b",
+      "selection_class": "GREEN_SAMPLE",
+      "review_status": "SELECTED",
+      "subject": "Zoology",
+      "chapter": "Body Fluids and Circulation",
+      "topic": "Blood and Blood Groups",
+      "concept": "ABO Blood Grouping System",
+      "difficulty": "medium",
+      "stem": "A medical laboratory technician is performing blood grouping tests to determine the ABO blood type of a patient's sample. Arrange the following steps in the correct chronological sequence to accurately identify the blood group:\n\nI. Mix the RBC suspensions with Anti-A antibody serum in one well and Anti-B antibody serum in another well.\nII. Collect a fresh venous blood sample from the patient and separate the red blood cells.\nIII. Observe both wells for agglutination (clumping of RBCs).\nIV. Prepare a diluted suspension of the washed red blood cells in normal saline.\nV. Determine the presence of surface antigens A or B based on the pattern of agglutination observed.",
+      "options": [
+        {
+          "text": "II \u2192 IV \u2192 I \u2192 III \u2192 V",
+          "label": "A"
+        },
+        {
+          "text": "IV \u2192 II \u2192 I \u2192 V \u2192 III",
+          "label": "B"
+        },
+        {
+          "text": "II \u2192 I \u2192 IV \u2192 III \u2192 V",
+          "label": "C"
+        },
+        {
+          "text": "I \u2192 II \u2192 IV \u2192 III \u2192 V",
+          "label": "D"
+        }
+      ],
+      "correct_option": "A",
+      "explanation": "The correct logical sequence for forward ABO blood grouping is:\n1. Collect the blood sample and separate the red blood cells (Step II).\n2. Prepare a uniform, diluted cell suspension using normal saline to standardize the reaction (Step IV).\n3. Mix the prepared RBC suspension with specific antisera (Anti-A and Anti-B) (Step I).\n4. Observe the mixture visually or microscopically for agglutination (clumping) (Step III).\n5. Deduce the specific blood group based on agglutination patterns (e.g., agglutination with Anti-A indicates Antigen A is present) (Step V).\n\nOptions B, C, and D disrupt the required experimental procedure sequence.",
+      "status": "DRAFT",
+      "workflow_state": "DRAFT",
+      "body_md5": "e7cbdbb791d77224c8785d1e7fa6ba4c",
+      "tags": [
+        "factory-p3",
+        "batch:22c5684b-cf86-4137-82bf-be237be1e2ee",
+        "job:59eaf0f1-b17f-4fa0-90f7-33285cf41c38",
+        "run:1dcaa772-37f7-4c53-b76f-25eff743bfa6",
+        "blueprint:819aac4f-bd7a-424c-8a7b-736a5e5abdf6",
+        "bp-v:1",
+        "family:factory-p3-pilot-2026-09-01-zoology-process_sequence",
+        "provider:gemini",
+        "model:gemini-3.6-flash",
+        "routing:fixed:gemini",
+        "provenance:ai"
+      ],
+      "provider": "gemini",
+      "routing": "fixed:gemini",
+      "model": "gemini-3.6-flash",
+      "is_fallback": false,
+      "p4_classification": "GREEN",
+      "p4_gate_results": {
+        "E_ANSWER": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": [
+            "NO_SCIENTIFIC_CERTIFICATION"
+          ]
+        },
+        "G_SAFETY": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "A_STRUCTURE": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "B_BLUEPRINT": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "C_HIERARCHY": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "F_DUPLICATE": {
+          "detail": {
+            "of_item_ids": [],
+            "duplicate_class": "UNIQUE",
+            "of_candidate_ids": []
+          },
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": [
+            "SEMANTIC_DEDUPE_NOT_AVAILABLE",
+            "SEMANTIC_UNCHECKED"
+          ]
+        },
+        "D_PROVENANCE": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        }
+      },
+      "p4_note": "P4 = automated QA; P5 = human review",
+      "scientific_certification": false,
+      "ncert_verified": false
+    },
+    {
+      "factory_review_item_id": "68f38daf-0625-4f60-9d5c-53126a88995e",
+      "candidate_id": "1e430658-686e-484f-bcc5-ef89489507a0",
+      "item_id": "31959259-6612-4826-b878-85571e2e4952",
+      "selection_class": "GREEN_SAMPLE",
+      "review_status": "SELECTED",
+      "subject": "Chemistry",
+      "chapter": "Chemical Bonding and Molecular Structure",
+      "topic": "Ionic Bonding",
+      "concept": "Lattice Energy",
+      "difficulty": "medium",
+      "stem": "Which of the following ionic compounds exhibits the highest magnitude of lattice energy?",
+      "options": [
+        {
+          "text": "LiF",
+          "label": "A"
+        },
+        {
+          "text": "NaCl",
+          "label": "B"
+        },
+        {
+          "text": "MgO",
+          "label": "C"
+        },
+        {
+          "text": "KBr",
+          "label": "D"
+        }
+      ],
+      "correct_option": "C",
+      "explanation": "Lattice energy is directly proportional to the product of the charges on the constituent gaseous ions (q1 * q2) and inversely proportional to the inter-ionic distance (r0). For MgO, the ions are Mg2+ and O2-, giving a charge product of |(+2) * (-2)| = 4. For LiF, NaCl, and KBr, the ions are monovalent, giving a charge product of |(+1) * (-1)| = 1. Since the charge factor dominates over the size factor, MgO has significantly higher lattice energy than LiF, NaCl, and KBr.",
+      "status": "DRAFT",
+      "workflow_state": "DRAFT",
+      "body_md5": "4d68b97922b04ac03e52aebb550e4118",
+      "tags": [
+        "factory-p3",
+        "batch:22c5684b-cf86-4137-82bf-be237be1e2ee",
+        "job:2e0a8447-ae39-46af-a0d9-ccb7ade7ac29",
+        "run:60d1ef7a-902f-42bb-9bd8-965560be7ade",
+        "blueprint:c746c965-0c2c-4fa6-91a5-78464042b054",
+        "bp-v:1",
+        "family:factory-p3-pilot-2026-09-01-chemistry-conceptual",
+        "provider:gemini",
+        "model:gemini-3.6-flash",
+        "routing:fixed:gemini",
+        "provenance:ai"
+      ],
+      "provider": "gemini",
+      "routing": "fixed:gemini",
+      "model": "gemini-3.6-flash",
+      "is_fallback": false,
+      "p4_classification": "GREEN",
+      "p4_gate_results": {
+        "E_ANSWER": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": [
+            "NO_SCIENTIFIC_CERTIFICATION"
+          ]
+        },
+        "G_SAFETY": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "A_STRUCTURE": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "B_BLUEPRINT": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "C_HIERARCHY": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "F_DUPLICATE": {
+          "detail": {
+            "of_item_ids": [],
+            "duplicate_class": "UNIQUE",
+            "of_candidate_ids": []
+          },
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": [
+            "SEMANTIC_DEDUPE_NOT_AVAILABLE",
+            "SEMANTIC_UNCHECKED"
+          ]
+        },
+        "D_PROVENANCE": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        }
+      },
+      "p4_note": "P4 = automated QA; P5 = human review",
+      "scientific_certification": false,
+      "ncert_verified": false
+    },
+    {
+      "factory_review_item_id": "d34773a2-86bb-4380-9540-789a247b077b",
+      "candidate_id": "c08f4216-7324-4224-888e-737b92ea982b",
+      "item_id": "411e52ae-5946-456f-832f-9769e9e8b267",
+      "selection_class": "GREEN_SAMPLE",
+      "review_status": "SELECTED",
+      "subject": "Botany",
+      "chapter": "Photosynthesis in Higher Plants",
+      "topic": "Light Reaction",
+      "concept": "Photophosphorylation",
+      "difficulty": "easy",
+      "stem": "In light reactions of photosynthesis, the synthesis of ATP from ADP and inorganic phosphate in the presence of light is called photophosphorylation. Which of the following statements correctly describes non-cyclic photophosphorylation?",
+      "options": [
+        {
+          "text": "It involves only Photosystem I and produces only ATP.",
+          "label": "A"
+        },
+        {
+          "text": "It involves both Photosystem I and Photosystem II, resulting in the synthesis of both ATP and NADPH.",
+          "label": "B"
+        },
+        {
+          "text": "It occurs exclusively in the stroma lamellae membranes.",
+          "label": "C"
+        },
+        {
+          "text": "It involves the movement of electrons in a closed circular loop back to PS I.",
+          "label": "D"
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "In non-cyclic photophosphorylation, both Photosystem II (PS II) and Photosystem I (PS I) work in series (Z-scheme). Electron flow is unidirectional, leading to photolysis of water, release of oxygen, and the formation of both ATP and NADPH + H+. Option A describes cyclic photophosphorylation. Option C is incorrect because non-cyclic photophosphorylation occurs in the grana thylakoid membranes, whereas stroma lamellae lack PS II and NADP reductase enzyme. Option D describes cyclic electron flow.",
+      "status": "DRAFT",
+      "workflow_state": "DRAFT",
+      "body_md5": "254b15c214e2032fd92f4ac9cad2007f",
+      "tags": [
+        "factory-p3",
+        "batch:22c5684b-cf86-4137-82bf-be237be1e2ee",
+        "job:3aa8f5c6-b45e-4b6f-bbe1-d79c6ea2fd45",
+        "run:d31a151b-ee69-4353-b42b-6cdf54dc25a5",
+        "blueprint:660f336a-d767-404e-bb69-88f675803c88",
+        "bp-v:1",
+        "family:factory-p3-pilot-2026-09-01-botany-ncert_fact",
+        "provider:gemini",
+        "model:gemini-3.6-flash",
+        "routing:fixed:gemini",
+        "provenance:ai"
+      ],
+      "provider": "gemini",
+      "routing": "fixed:gemini",
+      "model": "gemini-3.6-flash",
+      "is_fallback": false,
+      "p4_classification": "GREEN",
+      "p4_gate_results": {
+        "E_ANSWER": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": [
+            "NO_SCIENTIFIC_CERTIFICATION"
+          ]
+        },
+        "G_SAFETY": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "A_STRUCTURE": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "B_BLUEPRINT": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "C_HIERARCHY": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "F_DUPLICATE": {
+          "detail": {
+            "of_item_ids": [],
+            "duplicate_class": "UNIQUE",
+            "of_candidate_ids": []
+          },
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": [
+            "SEMANTIC_DEDUPE_NOT_AVAILABLE",
+            "SEMANTIC_UNCHECKED"
+          ]
+        },
+        "D_PROVENANCE": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        }
+      },
+      "p4_note": "P4 = automated QA; P5 = human review",
+      "scientific_certification": false,
+      "ncert_verified": false
+    },
+    {
+      "factory_review_item_id": "ca8f1cd6-5c36-4068-b4e2-db8df3adcc38",
+      "candidate_id": "cb515a75-3a61-4b42-a2c6-e6eabc966c2d",
+      "item_id": "49052063-51a8-4e92-b970-fa2c163bc225",
+      "selection_class": "GREEN_SAMPLE",
+      "review_status": "SELECTED",
+      "subject": "Botany",
+      "chapter": "Photosynthesis in Higher Plants",
+      "topic": "Light Reaction",
+      "concept": "Photophosphorylation",
+      "difficulty": "easy",
+      "stem": "In light reactions of photosynthesis, the synthesis of ATP from ADP and inorganic phosphate in the presence of light is known as photophosphorylation. Which of the following statements correctly describes non-cyclic photophosphorylation?",
+      "options": [
+        {
+          "text": "It involves only Photosystem I and produces only ATP.",
+          "label": "A"
+        },
+        {
+          "text": "It involves both Photosystem I and Photosystem II, resulting in the synthesis of both ATP and NADPH + H+.",
+          "label": "B"
+        },
+        {
+          "text": "It occurs exclusively in the stroma lamellae membranes where PS II is absent.",
+          "label": "C"
+        },
+        {
+          "text": "It involves the cycling of electrons within Photosystem II without any external electron source.",
+          "label": "D"
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "Non-cyclic photophosphorylation involves both Photosystem II (PS II) and Photosystem I (PS I) operating in series (Z-scheme). In this process, electrons lost by PS II do not cycle back but are used to reduce NADP+ to NADPH + H+, while ATP is synthesized via chemiosmosis. Thus, both ATP and NADPH + H+ are produced. Option A and C describe cyclic photophosphorylation, which involves only PS I and occurs in the stroma lamellae. Option D is incorrect because electron transport in non-cyclic photophosphorylation is non-cyclic and requires water splitting as a continuous source of electrons.",
+      "status": "DRAFT",
+      "workflow_state": "DRAFT",
+      "body_md5": "34417849eb33e7037cb3656c2e82d5d3",
+      "tags": [
+        "factory-p3",
+        "batch:22c5684b-cf86-4137-82bf-be237be1e2ee",
+        "job:3aa8f5c6-b45e-4b6f-bbe1-d79c6ea2fd45",
+        "run:d31a151b-ee69-4353-b42b-6cdf54dc25a5",
+        "blueprint:660f336a-d767-404e-bb69-88f675803c88",
+        "bp-v:1",
+        "family:factory-p3-pilot-2026-09-01-botany-ncert_fact",
+        "provider:gemini",
+        "model:gemini-3.6-flash",
+        "routing:fixed:gemini",
+        "provenance:ai"
+      ],
+      "provider": "gemini",
+      "routing": "fixed:gemini",
+      "model": "gemini-3.6-flash",
+      "is_fallback": false,
+      "p4_classification": "GREEN",
+      "p4_gate_results": {
+        "E_ANSWER": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": [
+            "NO_SCIENTIFIC_CERTIFICATION"
+          ]
+        },
+        "G_SAFETY": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "A_STRUCTURE": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "B_BLUEPRINT": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "C_HIERARCHY": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "F_DUPLICATE": {
+          "detail": {
+            "of_item_ids": [],
+            "duplicate_class": "UNIQUE",
+            "of_candidate_ids": []
+          },
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": [
+            "SEMANTIC_DEDUPE_NOT_AVAILABLE",
+            "SEMANTIC_UNCHECKED"
+          ]
+        },
+        "D_PROVENANCE": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        }
+      },
+      "p4_note": "P4 = automated QA; P5 = human review",
+      "scientific_certification": false,
+      "ncert_verified": false
+    },
+    {
+      "factory_review_item_id": "1cdc2744-276b-49c3-96c9-792fdfc86a6c",
+      "candidate_id": "566e8682-2fee-4f19-8a27-fc9380c87589",
+      "item_id": "4f7c774c-3ca9-49a4-8923-7ad256809781",
+      "selection_class": "GREEN_SAMPLE",
+      "review_status": "SELECTED",
+      "subject": "Chemistry",
+      "chapter": "Chemical Bonding and Molecular Structure",
+      "topic": "Ionic Bonding",
+      "concept": "Lattice Energy",
+      "difficulty": "medium",
+      "stem": "Which of the following statements regarding lattice energy and the formation of ionic solids is correct?",
+      "options": [
+        {
+          "text": "Lattice energy is defined as the energy absorbed when one mole of an ionic crystal is formed from its constituent gaseous ions.",
+          "label": "A"
+        },
+        {
+          "text": "A higher magnitude of lattice energy generally leads to a lower melting point for the ionic solid.",
+          "label": "B"
+        },
+        {
+          "text": "Lattice energy increases as the charge on the constituent ions increases and their ionic radii decrease.",
+          "label": "C"
+        },
+        {
+          "text": "Lattice energy depends exclusively on the ionic radii and is independent of the charge on the ions.",
+          "label": "D"
+        }
+      ],
+      "correct_option": "C",
+      "explanation": "According to Coulomb's Law, lattice energy is directly proportional to the product of the charges on the constituent ions (q1 * q2) and inversely proportional to the inter-ionic distance (r). Therefore, higher ionic charges and smaller ionic radii lead to a stronger electrostatic attraction, releasing more energy upon lattice formation (higher lattice energy). Option A is incorrect because the formation of an ionic solid from gaseous ions is an exothermic process, meaning energy is released, not absorbed. Option B is incorrect because a higher lattice energy indicates stronger ionic bonds, resulting in a higher melting point. Option D is incorrect because lattice energy depends significantly on both ionic charge and ionic radius.",
+      "status": "DRAFT",
+      "workflow_state": "DRAFT",
+      "body_md5": "e7cd42d4c18aa556b42126e72dad0c70",
+      "tags": [
+        "factory-p3",
+        "batch:22c5684b-cf86-4137-82bf-be237be1e2ee",
+        "job:2e0a8447-ae39-46af-a0d9-ccb7ade7ac29",
+        "run:60d1ef7a-902f-42bb-9bd8-965560be7ade",
+        "blueprint:c746c965-0c2c-4fa6-91a5-78464042b054",
+        "bp-v:1",
+        "family:factory-p3-pilot-2026-09-01-chemistry-conceptual",
+        "provider:gemini",
+        "model:gemini-3.6-flash",
+        "routing:fixed:gemini",
+        "provenance:ai"
+      ],
+      "provider": "gemini",
+      "routing": "fixed:gemini",
+      "model": "gemini-3.6-flash",
+      "is_fallback": false,
+      "p4_classification": "GREEN",
+      "p4_gate_results": {
+        "E_ANSWER": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": [
+            "NO_SCIENTIFIC_CERTIFICATION"
+          ]
+        },
+        "G_SAFETY": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "A_STRUCTURE": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "B_BLUEPRINT": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "C_HIERARCHY": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "F_DUPLICATE": {
+          "detail": {
+            "of_item_ids": [],
+            "duplicate_class": "UNIQUE",
+            "of_candidate_ids": []
+          },
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": [
+            "SEMANTIC_DEDUPE_NOT_AVAILABLE",
+            "SEMANTIC_UNCHECKED"
+          ]
+        },
+        "D_PROVENANCE": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        }
+      },
+      "p4_note": "P4 = automated QA; P5 = human review",
+      "scientific_certification": false,
+      "ncert_verified": false
+    },
+    {
+      "factory_review_item_id": "7d5a244e-9fc6-4f83-b3ce-d21ad50b2ba3",
+      "candidate_id": "25fca454-28e4-4ca0-b080-c1f916af7989",
+      "item_id": "52a054bd-e368-4575-8e1d-b012f6e39d9b",
+      "selection_class": "GREEN_SAMPLE",
+      "review_status": "SELECTED",
+      "subject": "Physics",
+      "chapter": "Current Electricity",
+      "topic": "Electric Current and Ohm's Law",
+      "concept": "Ohm's Law",
+      "difficulty": "easy",
+      "stem": "A metallic conductor obeys Ohm's law at a constant temperature. If the potential difference across its ends is reduced to one-third of its initial value, how will the electrical resistance of the conductor change?",
+      "options": [
+        {
+          "text": "It will decrease to one-third of its initial value.",
+          "label": "A"
+        },
+        {
+          "text": "It will increase to three times its initial value.",
+          "label": "B"
+        },
+        {
+          "text": "It will remain unchanged.",
+          "label": "C"
+        },
+        {
+          "text": "It will decrease to one-ninth of its initial value.",
+          "label": "D"
+        }
+      ],
+      "correct_option": "C",
+      "explanation": "According to Ohm's law ($V = IR$), for an ohmic conductor at a constant physical state (such as constant temperature, length, and cross-sectional area), the resistance $R$ is an intrinsic property of the conductor. It depends on the material's resistivity and geometry ($R = \\rho L/A$), not on the applied potential difference $V$ or the current $I$. Changing the voltage changes the current proportionally, leaving the resistance unchanged.",
+      "status": "DRAFT",
+      "workflow_state": "DRAFT",
+      "body_md5": "3df01c36298c68566782389d88183c0d",
+      "tags": [
+        "factory-p3",
+        "batch:22c5684b-cf86-4137-82bf-be237be1e2ee",
+        "job:7cad378a-688e-46d3-ae4b-4eaef83d5d2d",
+        "run:84644456-521f-48cc-b5fe-654749d74ccc",
+        "blueprint:3c8f1b03-ac22-4b16-80c3-8e5e63473dba",
+        "bp-v:1",
+        "family:factory-p3-pilot-2026-09-01-physics-direct_concept",
+        "provider:gemini",
+        "model:gemini-3.6-flash",
+        "routing:fixed:gemini",
+        "provenance:ai"
+      ],
+      "provider": "gemini",
+      "routing": "fixed:gemini",
+      "model": "gemini-3.6-flash",
+      "is_fallback": false,
+      "p4_classification": "GREEN",
+      "p4_gate_results": {
+        "E_ANSWER": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": [
+            "NO_SCIENTIFIC_CERTIFICATION"
+          ]
+        },
+        "G_SAFETY": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "A_STRUCTURE": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "B_BLUEPRINT": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "C_HIERARCHY": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "F_DUPLICATE": {
+          "detail": {
+            "of_item_ids": [],
+            "duplicate_class": "UNIQUE",
+            "of_candidate_ids": []
+          },
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": [
+            "SEMANTIC_DEDUPE_NOT_AVAILABLE",
+            "SEMANTIC_UNCHECKED"
+          ]
+        },
+        "D_PROVENANCE": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        }
+      },
+      "p4_note": "P4 = automated QA; P5 = human review",
+      "scientific_certification": false,
+      "ncert_verified": false
+    },
+    {
+      "factory_review_item_id": "fb58de9c-4bea-43a8-a9b4-ba0beed46506",
+      "candidate_id": "879b47fd-2122-4f72-977a-9cc727cbfd50",
+      "item_id": "5502fd26-32e0-4d3d-bc49-2fcfded63006",
+      "selection_class": "GREEN_SAMPLE",
+      "review_status": "SELECTED",
+      "subject": "Physics",
+      "chapter": "Current Electricity",
+      "topic": "Electric Current and Ohm's Law",
+      "concept": "Ohm's Law",
+      "difficulty": "easy",
+      "stem": "A metallic conductor obeys Ohm's law at a constant temperature. If the potential difference across the conductor is doubled, what happens to its electrical resistance and the current flowing through it?",
+      "options": [
+        {
+          "text": "Resistance is doubled, and current remains unchanged.",
+          "label": "A"
+        },
+        {
+          "text": "Resistance remains unchanged, and current is doubled.",
+          "label": "B"
+        },
+        {
+          "text": "Resistance is halved, and current is quadrupled.",
+          "label": "C"
+        },
+        {
+          "text": "Both resistance and current are doubled.",
+          "label": "D"
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "According to Ohm's law ($V = IR$), for a given metallic conductor at constant temperature, resistance ($R$) is a property of the material and its geometry, remaining constant regardless of changes in potential difference ($V$). Current ($I$) is directly proportional to potential difference ($V$). Therefore, doubling the potential difference ($V \\rightarrow 2V$) causes the current to double ($I \\rightarrow 2I$) while resistance remains unchanged.",
+      "status": "DRAFT",
+      "workflow_state": "DRAFT",
+      "body_md5": "095ac59ff7b7e9cff91ea8dedf2e4299",
+      "tags": [
+        "factory-p3",
+        "batch:22c5684b-cf86-4137-82bf-be237be1e2ee",
+        "job:7cad378a-688e-46d3-ae4b-4eaef83d5d2d",
+        "run:84644456-521f-48cc-b5fe-654749d74ccc",
+        "blueprint:3c8f1b03-ac22-4b16-80c3-8e5e63473dba",
+        "bp-v:1",
+        "family:factory-p3-pilot-2026-09-01-physics-direct_concept",
+        "provider:gemini",
+        "model:gemini-3.6-flash",
+        "routing:fixed:gemini",
+        "provenance:ai"
+      ],
+      "provider": "gemini",
+      "routing": "fixed:gemini",
+      "model": "gemini-3.6-flash",
+      "is_fallback": false,
+      "p4_classification": "GREEN",
+      "p4_gate_results": {
+        "E_ANSWER": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": [
+            "NO_SCIENTIFIC_CERTIFICATION"
+          ]
+        },
+        "G_SAFETY": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "A_STRUCTURE": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "B_BLUEPRINT": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "C_HIERARCHY": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "F_DUPLICATE": {
+          "detail": {
+            "of_item_ids": [],
+            "duplicate_class": "UNIQUE",
+            "of_candidate_ids": []
+          },
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": [
+            "SEMANTIC_DEDUPE_NOT_AVAILABLE",
+            "SEMANTIC_UNCHECKED"
+          ]
+        },
+        "D_PROVENANCE": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        }
+      },
+      "p4_note": "P4 = automated QA; P5 = human review",
+      "scientific_certification": false,
+      "ncert_verified": false
+    },
+    {
+      "factory_review_item_id": "391fa888-0c63-481d-ae44-4e24482b51d6",
+      "candidate_id": "47adb269-23aa-43ae-86be-d8fec2a913f8",
+      "item_id": "55fb1405-489d-4d1b-880f-3a23eb8398c5",
+      "selection_class": "GREEN_SAMPLE",
+      "review_status": "SELECTED",
+      "subject": "Physics",
+      "chapter": "Current Electricity",
+      "topic": "Electric Current and Ohm's Law",
+      "concept": "Ohm's Law",
+      "difficulty": "easy",
+      "stem": "According to Ohm's law, for an ohmic conductor kept at a constant temperature, which statement correctly describes the relationship between potential difference ($V$), current ($I$), and resistance ($R$)?",
+      "options": [
+        {
+          "text": "Resistance $R$ is directly proportional to the applied potential difference $V$.",
+          "label": "A"
+        },
+        {
+          "text": "Current $I$ flowing through the conductor is directly proportional to the potential difference $V$ across its ends.",
+          "label": "B"
+        },
+        {
+          "text": "Current $I$ is inversely proportional to the potential difference $V$ across the conductor.",
+          "label": "C"
+        },
+        {
+          "text": "Resistance $R$ decreases linearly as the current $I$ through the conductor increases.",
+          "label": "D"
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "Ohm's law states that the current ($I$) flowing through a conductor is directly proportional to the potential difference ($V$) applied across its ends, provided physical conditions like temperature remain constant ($I \\propto V$, or $V = IR$). The resistance $R$ is a constant property of the conductor material and geometry at a given temperature; it does not depend on the applied voltage $V$ or current $I$. Therefore, option B is correct, while options A, C, and D describe incorrect relationships.",
+      "status": "DRAFT",
+      "workflow_state": "DRAFT",
+      "body_md5": "90d86c53049f34f7b9782c42c1922d89",
+      "tags": [
+        "factory-p3",
+        "batch:22c5684b-cf86-4137-82bf-be237be1e2ee",
+        "job:7cad378a-688e-46d3-ae4b-4eaef83d5d2d",
+        "run:84644456-521f-48cc-b5fe-654749d74ccc",
+        "blueprint:3c8f1b03-ac22-4b16-80c3-8e5e63473dba",
+        "bp-v:1",
+        "family:factory-p3-pilot-2026-09-01-physics-direct_concept",
+        "provider:gemini",
+        "model:gemini-3.6-flash",
+        "routing:fixed:gemini",
+        "provenance:ai"
+      ],
+      "provider": "gemini",
+      "routing": "fixed:gemini",
+      "model": "gemini-3.6-flash",
+      "is_fallback": false,
+      "p4_classification": "GREEN",
+      "p4_gate_results": {
+        "E_ANSWER": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": [
+            "NO_SCIENTIFIC_CERTIFICATION"
+          ]
+        },
+        "G_SAFETY": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "A_STRUCTURE": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "B_BLUEPRINT": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "C_HIERARCHY": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "F_DUPLICATE": {
+          "detail": {
+            "of_item_ids": [],
+            "duplicate_class": "UNIQUE",
+            "of_candidate_ids": []
+          },
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": [
+            "SEMANTIC_DEDUPE_NOT_AVAILABLE",
+            "SEMANTIC_UNCHECKED"
+          ]
+        },
+        "D_PROVENANCE": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        }
+      },
+      "p4_note": "P4 = automated QA; P5 = human review",
+      "scientific_certification": false,
+      "ncert_verified": false
+    },
+    {
+      "factory_review_item_id": "35e78d90-0bbd-4be2-a40e-64dab0c5dd1b",
+      "candidate_id": "0e8c544b-d1b3-4de8-bdd7-3ade83d8ff6b",
+      "item_id": "5eb8f972-b5ed-425d-9290-61660fc68232",
+      "selection_class": "GREEN_SAMPLE",
+      "review_status": "SELECTED",
+      "subject": "Zoology",
+      "chapter": "Body Fluids and Circulation",
+      "topic": "Blood and Blood Groups",
+      "concept": "ABO Blood Grouping System",
+      "difficulty": "medium",
+      "stem": "A patient with unknown blood type requires an emergency transfusion. A laboratory technician performs a rapid slide agglutination test using standard Anti-A and Anti-B sera. The observed reaction sequence and results are as follows:\n\nStep 1: Blood sample is mixed with Anti-A serum $\\rightarrow$ No agglutination occurs.\nStep 2: Blood sample is mixed with Anti-B serum $\\rightarrow$ Visible agglutination (clumping) occurs.\n\nBased on these specific antigenic interactions, which of the following correctly identifies the antigen present on the patient's RBCs and the safe donor blood group(s) for this patient?",
+      "options": [
+        {
+          "text": "Antigen A is present; Can receive blood from Group A and Group O only",
+          "label": "A"
+        },
+        {
+          "text": "Antigen B is present; Can receive blood from Group B and Group O only",
+          "label": "B"
+        },
+        {
+          "text": "Both Antigens A and B are present; Can receive blood from Group AB and Group O only",
+          "label": "C"
+        },
+        {
+          "text": "Neither Antigen A nor B is present; Can receive blood from Group O only",
+          "label": "D"
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "In ABO blood grouping, agglutination occurs when a specific surface antigen on RBCs reacts with its corresponding antibody in the antiserum. \n- Step 1: No agglutination with Anti-A serum indicates that Antigen A is absent on the RBCs.\n- Step 2: Agglutination with Anti-B serum confirms that Antigen B is present on the RBCs.\nTherefore, the patient belongs to Blood Group B. Individuals with Blood Group B have Antigen B on their RBC surface and anti-A antibodies in their plasma. Consequently, they can safely receive blood from donors of Group B (matching antigen) and Group O (universal donor with no A or B antigens). Receiving blood from Group A or Group AB would cause immune rejection due to anti-A antibodies.",
+      "status": "DRAFT",
+      "workflow_state": "DRAFT",
+      "body_md5": "7069f595bcb09428bc54b71277567c38",
+      "tags": [
+        "factory-p3",
+        "batch:22c5684b-cf86-4137-82bf-be237be1e2ee",
+        "job:59eaf0f1-b17f-4fa0-90f7-33285cf41c38",
+        "run:1dcaa772-37f7-4c53-b76f-25eff743bfa6",
+        "blueprint:819aac4f-bd7a-424c-8a7b-736a5e5abdf6",
+        "bp-v:1",
+        "family:factory-p3-pilot-2026-09-01-zoology-process_sequence",
+        "provider:gemini",
+        "model:gemini-3.6-flash",
+        "routing:fixed:gemini",
+        "provenance:ai"
+      ],
+      "provider": "gemini",
+      "routing": "fixed:gemini",
+      "model": "gemini-3.6-flash",
+      "is_fallback": false,
+      "p4_classification": "GREEN",
+      "p4_gate_results": {
+        "E_ANSWER": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": [
+            "NO_SCIENTIFIC_CERTIFICATION"
+          ]
+        },
+        "G_SAFETY": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "A_STRUCTURE": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "B_BLUEPRINT": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "C_HIERARCHY": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "F_DUPLICATE": {
+          "detail": {
+            "of_item_ids": [],
+            "duplicate_class": "UNIQUE",
+            "of_candidate_ids": []
+          },
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": [
+            "SEMANTIC_DEDUPE_NOT_AVAILABLE",
+            "SEMANTIC_UNCHECKED"
+          ]
+        },
+        "D_PROVENANCE": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        }
+      },
+      "p4_note": "P4 = automated QA; P5 = human review",
+      "scientific_certification": false,
+      "ncert_verified": false
+    },
+    {
+      "factory_review_item_id": "14a1ed4c-893d-4412-937e-40e7377bd477",
+      "candidate_id": "534eeaef-50d5-4f90-8435-e74a70f448b8",
+      "item_id": "610ac645-b3d9-4a4b-aae7-0861f0933122",
+      "selection_class": "GREEN_SAMPLE",
+      "review_status": "SELECTED",
+      "subject": "Botany",
+      "chapter": "Photosynthesis in Higher Plants",
+      "topic": "Light Reaction",
+      "concept": "Photophosphorylation",
+      "difficulty": "easy",
+      "stem": "Which of the following processes occurs during non-cyclic photophosphorylation in the light reaction of photosynthesis?",
+      "options": [
+        {
+          "text": "Photolysis of water, release of O2, and synthesis of both ATP and NADPH",
+          "label": "A"
+        },
+        {
+          "text": "Synthesis of ATP only, without the photolysis of water or O2 release",
+          "label": "B"
+        },
+        {
+          "text": "Involvement of Photosystem I only, with reduction of NADP+",
+          "label": "C"
+        },
+        {
+          "text": "Photolysis of water and synthesis of NADPH only, without ATP formation",
+          "label": "D"
+        }
+      ],
+      "correct_option": "A",
+      "explanation": "During non-cyclic photophosphorylation, both Photosystem II and Photosystem I work in series. Water is split (photolysis) at PS II to supply electrons, releasing oxygen gas. As electrons flow through the electron transport chain, a proton gradient is established across the thylakoid membrane, driving ATP synthesis. Finally, electrons are transferred to NADP+ to form NADPH. Thus, photolysis of water, release of O2, and synthesis of both ATP and NADPH occur.",
+      "status": "DRAFT",
+      "workflow_state": "DRAFT",
+      "body_md5": "ee47d48ba10bbc95415822cc0126dd7d",
+      "tags": [
+        "factory-p3",
+        "batch:22c5684b-cf86-4137-82bf-be237be1e2ee",
+        "job:3aa8f5c6-b45e-4b6f-bbe1-d79c6ea2fd45",
+        "run:d31a151b-ee69-4353-b42b-6cdf54dc25a5",
+        "blueprint:660f336a-d767-404e-bb69-88f675803c88",
+        "bp-v:1",
+        "family:factory-p3-pilot-2026-09-01-botany-ncert_fact",
+        "provider:gemini",
+        "model:gemini-3.6-flash",
+        "routing:fixed:gemini",
+        "provenance:ai"
+      ],
+      "provider": "gemini",
+      "routing": "fixed:gemini",
+      "model": "gemini-3.6-flash",
+      "is_fallback": false,
+      "p4_classification": "GREEN",
+      "p4_gate_results": {
+        "E_ANSWER": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": [
+            "NO_SCIENTIFIC_CERTIFICATION"
+          ]
+        },
+        "G_SAFETY": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "A_STRUCTURE": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "B_BLUEPRINT": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "C_HIERARCHY": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "F_DUPLICATE": {
+          "detail": {
+            "of_item_ids": [],
+            "duplicate_class": "UNIQUE",
+            "of_candidate_ids": []
+          },
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": [
+            "SEMANTIC_DEDUPE_NOT_AVAILABLE",
+            "SEMANTIC_UNCHECKED"
+          ]
+        },
+        "D_PROVENANCE": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        }
+      },
+      "p4_note": "P4 = automated QA; P5 = human review",
+      "scientific_certification": false,
+      "ncert_verified": false
+    },
+    {
+      "factory_review_item_id": "c2066625-1fe2-4dd1-8604-dcedf073b01b",
+      "candidate_id": "55a95388-ad70-4a8e-ab29-46f1b3fbda9f",
+      "item_id": "8704a88f-38cd-4be1-93b3-31cced984712",
+      "selection_class": "GREEN_SAMPLE",
+      "review_status": "SELECTED",
+      "subject": "Chemistry",
+      "chapter": "Chemical Bonding and Molecular Structure",
+      "topic": "Ionic Bonding",
+      "concept": "Lattice Energy",
+      "difficulty": "medium",
+      "stem": "Which of the following statements correctly describes the factors influencing lattice energy and their relationship with the stability of an ionic compound?",
+      "options": [
+        {
+          "text": "Lattice energy decreases as ionic charges increase, leading to a higher melting point.",
+          "label": "A"
+        },
+        {
+          "text": "Lattice energy increases with an increase in interionic distance, making the crystal lattice stronger.",
+          "label": "B"
+        },
+        {
+          "text": "Lattice energy is directly proportional to the product of ionic charges and inversely proportional to the distance between ion centers.",
+          "label": "C"
+        },
+        {
+          "text": "Lattice energy depends solely on the ionization enthalpy of the metal cation forming the ionic solid.",
+          "label": "D"
+        }
+      ],
+      "correct_option": "C",
+      "explanation": "Lattice energy (U) is governed by Coulomb's law of electrostatic attraction and is given by U \u221d (|q1 \u00b7 q2|) / r, where q1 and q2 are the charges on the ions and r is the interionic distance (radius of cation + radius of anion). Therefore, higher ionic charges and smaller ionic radii lead to greater lattice energy, releasing more energy during lattice formation and providing greater stability to the ionic solid. Option A is incorrect because lattice energy increases with higher ionic charges. Option B is incorrect because lattice energy decreases as interionic distance increases. Option D is incorrect because lattice energy also depends heavily on the electron gain enthalpy of the anion and the sizes and charges of both constituent ions.",
+      "status": "DRAFT",
+      "workflow_state": "DRAFT",
+      "body_md5": "2f263263d781b2dd36e5aa6c318d7679",
+      "tags": [
+        "factory-p3",
+        "batch:22c5684b-cf86-4137-82bf-be237be1e2ee",
+        "job:2e0a8447-ae39-46af-a0d9-ccb7ade7ac29",
+        "run:60d1ef7a-902f-42bb-9bd8-965560be7ade",
+        "blueprint:c746c965-0c2c-4fa6-91a5-78464042b054",
+        "bp-v:1",
+        "family:factory-p3-pilot-2026-09-01-chemistry-conceptual",
+        "provider:gemini",
+        "model:gemini-3.6-flash",
+        "routing:fixed:gemini",
+        "provenance:ai"
+      ],
+      "provider": "gemini",
+      "routing": "fixed:gemini",
+      "model": "gemini-3.6-flash",
+      "is_fallback": false,
+      "p4_classification": "GREEN",
+      "p4_gate_results": {
+        "E_ANSWER": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": [
+            "NO_SCIENTIFIC_CERTIFICATION"
+          ]
+        },
+        "G_SAFETY": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "A_STRUCTURE": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "B_BLUEPRINT": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "C_HIERARCHY": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "F_DUPLICATE": {
+          "detail": {
+            "of_item_ids": [],
+            "duplicate_class": "UNIQUE",
+            "of_candidate_ids": []
+          },
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": [
+            "SEMANTIC_DEDUPE_NOT_AVAILABLE",
+            "SEMANTIC_UNCHECKED"
+          ]
+        },
+        "D_PROVENANCE": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        }
+      },
+      "p4_note": "P4 = automated QA; P5 = human review",
+      "scientific_certification": false,
+      "ncert_verified": false
+    },
+    {
+      "factory_review_item_id": "b06da2f2-c96c-467f-9193-8b3fdce7ca6c",
+      "candidate_id": "638db5e0-8bdc-40b6-b4ff-96e621ba38f5",
+      "item_id": "c63c00be-61ad-49f6-99a3-7b5f10a3daf7",
+      "selection_class": "GREEN_SAMPLE",
+      "review_status": "SELECTED",
+      "subject": "Physics",
+      "chapter": "Current Electricity",
+      "topic": "Electric Current and Ohm's Law",
+      "concept": "Ohm's Law",
+      "difficulty": "medium",
+      "stem": "A cylindrical metallic wire of uniform cross-sectional area has a resistance of $12~\\Omega$. It is connected across a constant DC voltage source $V$. The wire is now uniformly stretched such that its length increases by $20\\%$, while keeping the total volume constant. If the stretched wire is reconnected to the same voltage source $V$, what is the new current flowing through the wire in terms of the initial current $I_0$?",
+      "options": [
+        {
+          "text": "$0.69~I_0$",
+          "label": "A"
+        },
+        {
+          "text": "$0.83~I_0$",
+          "label": "B"
+        },
+        {
+          "text": "$1.20~I_0$",
+          "label": "C"
+        },
+        {
+          "text": "$1.44~I_0$",
+          "label": "D"
+        }
+      ],
+      "correct_option": "A",
+      "explanation": "The resistance of a wire of length $L$ and uniform cross-sectional area $A$ is given by $R = \\rho \\frac{L}{A}$.\nSince the volume $V = A \\cdot L$ remains constant during stretching, we can express area as $A = \\frac{V}{L}$, which gives $R = \\rho \\frac{L^2}{V}$. Thus, resistance is directly proportional to the square of its length ($R \\propto L^2$).\n\nWhen the length is increased by $20\\%$, the new length becomes $L' = 1.20 L$.\nThe new resistance $R'$ is:\n$R' = R \\left(\\frac{L'}{L}\\right)^2 = R (1.20)^2 = 1.44 R$.\n\nAccording to Ohm's Law, $I = \\frac{V}{R}$.\nSince the applied voltage $V$ remains constant:\n$I' = \\frac{V}{R'} = \\frac{V}{1.44 R} = \\frac{I_0}{1.44} \\approx 0.694 I_0 \\approx 0.69 I_0$.\n\n- Option A ($0.69 I_0$) correctly accounts for the decrease in current due to the increase in resistance by a factor of $1.44$.\n- Option B ($0.83 I_0$) incorrectly assumes $R \\propto L$ instead of $R \\propto L^2$, leading to $I' = \\frac{I_0}{1.20} \\approx 0.83 I_0$.\n- Option C ($1.20 I_0$) incorrectly assumes current increases proportionally with length.\n- Option D ($1.44 I_0$) represents the factor by which resistance increases, not how current changes.",
+      "status": "DRAFT",
+      "workflow_state": "DRAFT",
+      "body_md5": "c5ca960774a4471ff8ea0835fbb03387",
+      "tags": [
+        "factory-p3",
+        "batch:22c5684b-cf86-4137-82bf-be237be1e2ee",
+        "job:7aa0460d-2f64-4736-a248-16c965a0fc0c",
+        "run:3d93b123-b90c-4b35-95cd-73bd0444e0ec",
+        "blueprint:77576605-f3d4-420b-9faf-15a47d8cd48c",
+        "bp-v:1",
+        "family:factory-p3-pilot-2026-09-01-physics-formula_application",
+        "provider:gemini",
+        "model:gemini-3.6-flash",
+        "routing:fixed:gemini",
+        "provenance:ai"
+      ],
+      "provider": "gemini",
+      "routing": "fixed:gemini",
+      "model": "gemini-3.6-flash",
+      "is_fallback": false,
+      "p4_classification": "GREEN",
+      "p4_gate_results": {
+        "E_ANSWER": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": [
+            "NO_SCIENTIFIC_CERTIFICATION"
+          ]
+        },
+        "G_SAFETY": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "A_STRUCTURE": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "B_BLUEPRINT": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "C_HIERARCHY": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "F_DUPLICATE": {
+          "detail": {
+            "of_item_ids": [],
+            "duplicate_class": "UNIQUE",
+            "of_candidate_ids": []
+          },
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": [
+            "SEMANTIC_DEDUPE_NOT_AVAILABLE",
+            "SEMANTIC_UNCHECKED"
+          ]
+        },
+        "D_PROVENANCE": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        }
+      },
+      "p4_note": "P4 = automated QA; P5 = human review",
+      "scientific_certification": false,
+      "ncert_verified": false
+    },
+    {
+      "factory_review_item_id": "73cffc9b-3407-4241-abb5-dd7a1276f112",
+      "candidate_id": "b2800717-4dd8-492d-b86e-99c352d6dbcc",
+      "item_id": "c9effada-d968-42cb-9f79-bba0a221030e",
+      "selection_class": "GREEN_SAMPLE",
+      "review_status": "SELECTED",
+      "subject": "Zoology",
+      "chapter": "Body Fluids and Circulation",
+      "topic": "Blood and Blood Groups",
+      "concept": "ABO Blood Grouping System",
+      "difficulty": "medium",
+      "stem": "A patient with blood group A positive requires a blood transfusion. Arrange the following steps in the correct chronological sequence to determine the compatibility of donor blood using standard laboratory agglutination procedures:\n\nI. Addition of standard Anti-A and Anti-B antibodies (antisera) to separate drops of donor blood.\nII. Collection of the donor blood sample.\nIII. Observation of clumping (agglutination) to confirm the donor's ABO group.\nIV. Cross-matching the donor's RBCs with the recipient's serum to ensure no agglutination occurs.",
+      "options": [
+        {
+          "text": "II \u2192 I \u2192 III \u2192 IV",
+          "label": "A"
+        },
+        {
+          "text": "I \u2192 II \u2192 IV \u2192 III",
+          "label": "B"
+        },
+        {
+          "text": "II \u2192 III \u2192 I \u2192 IV",
+          "label": "C"
+        },
+        {
+          "text": "IV \u2192 II \u2192 I \u2192 III",
+          "label": "D"
+        }
+      ],
+      "correct_option": "A",
+      "explanation": "The correct sequence for blood group determination and compatibility testing is:\n1. Step II: First, a blood sample is collected from the potential donor.\n2. Step I: The donor's blood drops are mixed separately with commercial Anti-A and Anti-B antisera.\n3. Step III: The presence or absence of agglutination is observed to identify the specific ABO antigens present on the donor's RBCs, thereby confirming the donor's blood group.\n4. Step IV: Finally, major cross-matching is performed by mixing the donor's RBCs with the recipient's serum to confirm safety and prevent transfusion reactions before administration.\n\nOption A correctly follows this logical process (II \u2192 I \u2192 III \u2192 IV). Options B, C, and D disrupt the required logical sequence.",
+      "status": "DRAFT",
+      "workflow_state": "DRAFT",
+      "body_md5": "5c73ec3b553381f7f2e081af04fdd53c",
+      "tags": [
+        "factory-p3",
+        "batch:22c5684b-cf86-4137-82bf-be237be1e2ee",
+        "job:59eaf0f1-b17f-4fa0-90f7-33285cf41c38",
+        "run:1dcaa772-37f7-4c53-b76f-25eff743bfa6",
+        "blueprint:819aac4f-bd7a-424c-8a7b-736a5e5abdf6",
+        "bp-v:1",
+        "family:factory-p3-pilot-2026-09-01-zoology-process_sequence",
+        "provider:gemini",
+        "model:gemini-3.6-flash",
+        "routing:fixed:gemini",
+        "provenance:ai"
+      ],
+      "provider": "gemini",
+      "routing": "fixed:gemini",
+      "model": "gemini-3.6-flash",
+      "is_fallback": false,
+      "p4_classification": "GREEN",
+      "p4_gate_results": {
+        "E_ANSWER": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": [
+            "NO_SCIENTIFIC_CERTIFICATION"
+          ]
+        },
+        "G_SAFETY": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "A_STRUCTURE": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "B_BLUEPRINT": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "C_HIERARCHY": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "F_DUPLICATE": {
+          "detail": {
+            "of_item_ids": [],
+            "duplicate_class": "UNIQUE",
+            "of_candidate_ids": []
+          },
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": [
+            "SEMANTIC_DEDUPE_NOT_AVAILABLE",
+            "SEMANTIC_UNCHECKED"
+          ]
+        },
+        "D_PROVENANCE": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        }
+      },
+      "p4_note": "P4 = automated QA; P5 = human review",
+      "scientific_certification": false,
+      "ncert_verified": false
+    },
+    {
+      "factory_review_item_id": "16aa52c7-04ac-470d-bc3d-4b1183c8702d",
+      "candidate_id": "c90aa206-7669-4416-8c09-aba6309044e8",
+      "item_id": "cf312a49-3079-4824-8b87-46bb20ec6899",
+      "selection_class": "GREEN_SAMPLE",
+      "review_status": "SELECTED",
+      "subject": "Zoology",
+      "chapter": "Body Fluids and Circulation",
+      "topic": "Blood and Blood Groups",
+      "concept": "ABO Blood Grouping System",
+      "difficulty": "medium",
+      "stem": "During a routine diagnostic procedure to determine an individual's ABO blood group, a lab technician adds specific monoclonal antibodies to blood drops on a tile and observes for agglutination. Arrange the following steps in the correct chronological sequence to correctly identify a sample containing only antigen B on its RBCs:\n\nI. Mix drop 1 with anti-A antibodies and drop 2 with anti-B antibodies.\nII. Observe anti-A reaction (no clumping) and anti-B reaction (clumping).\nIII. Place two separate drops of the patient's blood sample on a clean glass tile.\nIV. Deduce that the patient has Blood Group B.",
+      "options": [
+        {
+          "text": "III \u2192 I \u2192 II \u2192 IV",
+          "label": "A"
+        },
+        {
+          "text": "I \u2192 III \u2192 II \u2192 IV",
+          "label": "B"
+        },
+        {
+          "text": "III \u2192 II \u2192 I \u2192 IV",
+          "label": "C"
+        },
+        {
+          "text": "I \u2192 II \u2192 III \u2192 IV",
+          "label": "D"
+        }
+      ],
+      "correct_option": "A",
+      "explanation": "The correct procedural sequence for blood group determination is:\n1. Step III: Place two separate drops of the patient's blood sample on a clean glass tile.\n2. Step I: Add and mix specific antisera (anti-A to drop 1 and anti-B to drop 2).\n3. Step II: Observe the resulting reaction patterns (no agglutination with anti-A, and visible agglutination/clumping with anti-B due to the presence of surface antigen B).\n4. Step IV: Conclude/deduce the blood group based on agglutination results (Blood Group B).\n\nOptions B, C, and D disrupt the required diagnostic sequence by attempting to add antibodies before placing the blood drops or observing reactions before mixing.",
+      "status": "DRAFT",
+      "workflow_state": "DRAFT",
+      "body_md5": "d2ddba5f07557fdec7d880368b49b783",
+      "tags": [
+        "factory-p3",
+        "batch:22c5684b-cf86-4137-82bf-be237be1e2ee",
+        "job:59eaf0f1-b17f-4fa0-90f7-33285cf41c38",
+        "run:1dcaa772-37f7-4c53-b76f-25eff743bfa6",
+        "blueprint:819aac4f-bd7a-424c-8a7b-736a5e5abdf6",
+        "bp-v:1",
+        "family:factory-p3-pilot-2026-09-01-zoology-process_sequence",
+        "provider:gemini",
+        "model:gemini-3.6-flash",
+        "routing:fixed:gemini",
+        "provenance:ai"
+      ],
+      "provider": "gemini",
+      "routing": "fixed:gemini",
+      "model": "gemini-3.6-flash",
+      "is_fallback": false,
+      "p4_classification": "GREEN",
+      "p4_gate_results": {
+        "E_ANSWER": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": [
+            "NO_SCIENTIFIC_CERTIFICATION"
+          ]
+        },
+        "G_SAFETY": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "A_STRUCTURE": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "B_BLUEPRINT": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "C_HIERARCHY": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "F_DUPLICATE": {
+          "detail": {
+            "of_item_ids": [],
+            "duplicate_class": "UNIQUE",
+            "of_candidate_ids": []
+          },
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": [
+            "SEMANTIC_DEDUPE_NOT_AVAILABLE",
+            "SEMANTIC_UNCHECKED"
+          ]
+        },
+        "D_PROVENANCE": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        }
+      },
+      "p4_note": "P4 = automated QA; P5 = human review",
+      "scientific_certification": false,
+      "ncert_verified": false
+    },
+    {
+      "factory_review_item_id": "ebb38b53-e91b-47a5-b141-e0031807581d",
+      "candidate_id": "6466c2d8-cc35-4c68-8361-ac8ea293d93e",
+      "item_id": "e19e4ad1-f881-4864-bb82-3d4cf4126647",
+      "selection_class": "GREEN_SAMPLE",
+      "review_status": "SELECTED",
+      "subject": "Physics",
+      "chapter": "Current Electricity",
+      "topic": "Electric Current and Ohm's Law",
+      "concept": "Ohm's Law",
+      "difficulty": "medium",
+      "stem": "A cylindrical metallic conductor of uniform cross-sectional area has a resistance of $12\\text{ }\\Omega$. It is connected across a constant DC voltage source $V$. The conductor is then uniformly stretched so that its length increases by $20\\%$ while its density remains unchanged. If the same voltage source $V$ is applied across the stretched conductor, what is the new current flowing through it in terms of the initial current $I$? (Assume temperature remains constant and the conductor obeys Ohm's law)",
+      "options": [
+        {
+          "text": "$0.69 I$",
+          "label": "A"
+        },
+        {
+          "text": "$0.83 I$",
+          "label": "B"
+        },
+        {
+          "text": "$1.20 I$",
+          "label": "C"
+        },
+        {
+          "text": "$1.44 I$",
+          "label": "D"
+        }
+      ],
+      "correct_option": "A",
+      "explanation": "According to Ohm's law, $I = \\frac{V}{R}$.\n\nWhen a wire is stretched uniformly, its volume $U = A \\cdot l$ remains constant.\nLet initial length be $l_1$ and initial area be $A_1$.\nNew length, $l_2 = l_1 + 0.20 l_1 = 1.20 l_1$.\nSince volume is constant ($A_1 l_1 = A_2 l_2$), the new cross-sectional area becomes $A_2 = \\frac{A_1 l_1}{l_2} = \\frac{A_1}{1.20}$.\n\nThe resistance of a conductor is given by $R = \\rho \\frac{l}{A}$.\nThus, the new resistance $R_2$ is:\n$R_2 = \\rho \\frac{l_2}{A_2} = \\rho \\frac{1.20 l_1}{\\frac{A_1}{1.20}} = (1.20)^2 \\rho \\frac{l_1}{A_1} = 1.44 R_1$.\n\nSince the applied voltage $V$ remains constant, the new current $I_2$ is given by:\n$I_2 = \\frac{V}{R_2} = \\frac{V}{1.44 R_1} = \\frac{I}{1.44} \\approx 0.694 I \\approx 0.69 I$.\n\n- Option A is correct.\n- Option B ($0.83 I$) incorrectly assumes resistance increases linearly with length ($R \\propto l$) without accounting for the decrease in area.\n- Option C ($1.20 I$) incorrectly assumes current increases proportionally with length.\n- Option D ($1.44 I$) represents the factor by which resistance increases, not the ratio of the new current to the initial current.",
+      "status": "DRAFT",
+      "workflow_state": "DRAFT",
+      "body_md5": "6c97ada18a7aea49f54b017f956e5c6f",
+      "tags": [
+        "factory-p3",
+        "batch:22c5684b-cf86-4137-82bf-be237be1e2ee",
+        "job:7aa0460d-2f64-4736-a248-16c965a0fc0c",
+        "run:3d93b123-b90c-4b35-95cd-73bd0444e0ec",
+        "blueprint:77576605-f3d4-420b-9faf-15a47d8cd48c",
+        "bp-v:1",
+        "family:factory-p3-pilot-2026-09-01-physics-formula_application",
+        "provider:gemini",
+        "model:gemini-3.6-flash",
+        "routing:fixed:gemini",
+        "provenance:ai"
+      ],
+      "provider": "gemini",
+      "routing": "fixed:gemini",
+      "model": "gemini-3.6-flash",
+      "is_fallback": false,
+      "p4_classification": "GREEN",
+      "p4_gate_results": {
+        "E_ANSWER": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": [
+            "NO_SCIENTIFIC_CERTIFICATION"
+          ]
+        },
+        "G_SAFETY": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "A_STRUCTURE": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "B_BLUEPRINT": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "C_HIERARCHY": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "F_DUPLICATE": {
+          "detail": {
+            "of_item_ids": [],
+            "duplicate_class": "UNIQUE",
+            "of_candidate_ids": []
+          },
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": [
+            "SEMANTIC_DEDUPE_NOT_AVAILABLE",
+            "SEMANTIC_UNCHECKED"
+          ]
+        },
+        "D_PROVENANCE": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        }
+      },
+      "p4_note": "P4 = automated QA; P5 = human review",
+      "scientific_certification": false,
+      "ncert_verified": false
+    },
+    {
+      "factory_review_item_id": "f7aca944-4b62-4891-a4e7-ef55ebf09240",
+      "candidate_id": "ef166196-0c2b-498a-99c2-6580d06a9187",
+      "item_id": "e64bab8b-c42d-41a7-b735-612df5397eca",
+      "selection_class": "GREEN_SAMPLE",
+      "review_status": "SELECTED",
+      "subject": "Physics",
+      "chapter": "Current Electricity",
+      "topic": "Electric Current and Ohm's Law",
+      "concept": "Ohm's Law",
+      "difficulty": "medium",
+      "stem": "A cylindrical metallic wire of uniform cross-sectional area has a resistance of $12~\\Omega$. It is connected across a constant DC voltage source $V$. The wire is then uniformly stretched until its length becomes double its original length, while remaining connected to the same voltage source $V$. Assuming the density and resistivity of the material remain unchanged, what is the ratio of the initial electric current to the final electric current passing through the wire?",
+      "options": [
+        {
+          "text": "1 : 4",
+          "label": "A"
+        },
+        {
+          "text": "4 : 1",
+          "label": "B"
+        },
+        {
+          "text": "1 : 2",
+          "label": "C"
+        },
+        {
+          "text": "2 : 1",
+          "label": "D"
+        }
+      ],
+      "correct_option": "B",
+      "explanation": "According to Ohm's Law, $I = \\frac{V}{R}$. Since the applied voltage $V$ remains constant, the current is inversely proportional to resistance ($I \\propto \\frac{1}{R}$).\n\nWhen a wire of length $L_1$ and cross-sectional area $A_1$ is stretched uniformly to length $L_2 = 2L_1$, its volume $V_{\\text{vol}} = A \\times L$ remains constant ($A_1 L_1 = A_2 L_2$). Thus, $A_2 = \\frac{A_1}{2}$.\n\nThe initial resistance is $R_1 = \\rho \\frac{L_1}{A_1}$.\nThe final resistance is $R_2 = \\rho \\frac{L_2}{A_2} = \\rho \\frac{2L_1}{A_1 / 2} = 4 \\left(\\rho \\frac{L_1}{A_1}\\right) = 4R_1$.\n\nUsing Ohm's Law for initial and final states:\n$I_1 = \\frac{V}{R_1}$ and $I_2 = \\frac{V}{R_2} = \\frac{V}{4R_1}$.\n\nTherefore, the ratio of initial current to final current is:\n$$\\frac{I_1}{I_2} = \\frac{V/R_1}{V/(4R_1)} = \\frac{4}{1} = 4 : 1$$\n\nOption A (1 : 4) incorrectly calculates the inverse ratio ($I_2 : I_1$).\nOption C (1 : 2) and Option D (2 : 1) fail to account for the simultaneous decrease in cross-sectional area when the wire is stretched.",
+      "status": "DRAFT",
+      "workflow_state": "DRAFT",
+      "body_md5": "f028f485538d071d6fdcb566012902d7",
+      "tags": [
+        "factory-p3",
+        "batch:22c5684b-cf86-4137-82bf-be237be1e2ee",
+        "job:7aa0460d-2f64-4736-a248-16c965a0fc0c",
+        "run:3d93b123-b90c-4b35-95cd-73bd0444e0ec",
+        "blueprint:77576605-f3d4-420b-9faf-15a47d8cd48c",
+        "bp-v:1",
+        "family:factory-p3-pilot-2026-09-01-physics-formula_application",
+        "provider:gemini",
+        "model:gemini-3.6-flash",
+        "routing:fixed:gemini",
+        "provenance:ai"
+      ],
+      "provider": "gemini",
+      "routing": "fixed:gemini",
+      "model": "gemini-3.6-flash",
+      "is_fallback": false,
+      "p4_classification": "GREEN",
+      "p4_gate_results": {
+        "E_ANSWER": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": [
+            "NO_SCIENTIFIC_CERTIFICATION"
+          ]
+        },
+        "G_SAFETY": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "A_STRUCTURE": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "B_BLUEPRINT": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "C_HIERARCHY": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        },
+        "F_DUPLICATE": {
+          "detail": {
+            "of_item_ids": [],
+            "duplicate_class": "UNIQUE",
+            "of_candidate_ids": []
+          },
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": [
+            "SEMANTIC_DEDUPE_NOT_AVAILABLE",
+            "SEMANTIC_UNCHECKED"
+          ]
+        },
+        "D_PROVENANCE": {
+          "detail": {},
+          "passed": true,
+          "failures": [],
+          "severity": "INFO",
+          "warnings": []
+        }
+      },
+      "p4_note": "P4 = automated QA; P5 = human review",
+      "scientific_certification": false,
+      "ncert_verified": false
+    }
+  ]
+}

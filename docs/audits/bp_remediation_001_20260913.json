@@ -1,0 +1,290 @@
+{
+  "generated_at": "2026-09-13T17:59:32.724187+00:00",
+  "final_status": "GREEN — COMPLETE/VERIFIED",
+  "rows_updated": 5,
+  "botany_subject_id": "92283579-413a-45d7-8d77-0c407fe7d277",
+  "zoology_subject_id": "1bbd31b8-60a1-4630-bdca-23167454b934",
+  "before_blueprints": [
+    {
+      "blueprint_id": "0b1c8f98-35eb-43f7-bb8e-2398c4a46de5",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-zoology-03",
+      "subject_id": "1bbd31b8-60a1-4630-bdca-23167454b934",
+      "subject_code": "ZOOLOGY",
+      "chapter_id": "17f6994c-9776-4e66-8627-c44f7e0f08fe",
+      "topic_id": "ceba634d-1c22-40ed-b891-5931e038dfac",
+      "concept_id": "688b4b23-a44a-47ca-b386-7605ec84faa7",
+      "target_count": 1,
+      "provenance_tier": "ai"
+    },
+    {
+      "blueprint_id": "876a2f73-994b-4a7b-bc5d-252267f8d2a3",
+      "blueprint_key": "production-seed-v1-2026-09-02-bp-zoology-04",
+      "subject_id": "1bbd31b8-60a1-4630-bdca-23167454b934",
+      "subject_code": "ZOOLOGY",
+      "chapter_id": "17f6994c-9776-4e66-8627-c44f7e0f08fe",
+      "topic_id": "84c041a9-bd7e-4f47-bcf4-f7a6afd2c761",
+      "concept_id": "cabdac4c-949a-4298-8b22-5b2eb0acab37",
+      "target_count": 1,
+      "provenance_tier": "ai"
+    },
+    {
+      "blueprint_id": "dafae464-f60d-443f-b526-3e0c93390929",
+      "blueprint_key": "production-seed-v2-2026-09-03-bp-zoology-06",
+      "subject_id": "1bbd31b8-60a1-4630-bdca-23167454b934",
+      "subject_code": "ZOOLOGY",
+      "chapter_id": "17f6994c-9776-4e66-8627-c44f7e0f08fe",
+      "topic_id": "826c3643-e78e-42ab-9fb5-ad228089e570",
+      "concept_id": "74858845-0941-4608-9e0d-127c3512909d",
+      "target_count": 1,
+      "provenance_tier": "ai"
+    },
+    {
+      "blueprint_id": "04e93763-bc48-472e-adb3-4088d872e1c4",
+      "blueprint_key": "production-seed-v2-2026-09-03-bp-zoology-07",
+      "subject_id": "1bbd31b8-60a1-4630-bdca-23167454b934",
+      "subject_code": "ZOOLOGY",
+      "chapter_id": "17f6994c-9776-4e66-8627-c44f7e0f08fe",
+      "topic_id": "84c041a9-bd7e-4f47-bcf4-f7a6afd2c761",
+      "concept_id": "cabdac4c-949a-4298-8b22-5b2eb0acab37",
+      "target_count": 1,
+      "provenance_tier": "ai"
+    },
+    {
+      "blueprint_id": "8a42a7e2-c76f-4b64-be74-8fb0e3b472b5",
+      "blueprint_key": "production-seed-v2-2026-09-03-bp-zoology-13",
+      "subject_id": "1bbd31b8-60a1-4630-bdca-23167454b934",
+      "subject_code": "ZOOLOGY",
+      "chapter_id": "17f6994c-9776-4e66-8627-c44f7e0f08fe",
+      "topic_id": "ceba634d-1c22-40ed-b891-5931e038dfac",
+      "concept_id": "688b4b23-a44a-47ca-b386-7605ec84faa7",
+      "target_count": 1,
+      "provenance_tier": "ai"
+    }
+  ],
+  "verification": {
+    "ok": true,
+    "comparisons": [
+      {
+        "blueprint_id": "0b1c8f98-35eb-43f7-bb8e-2398c4a46de5",
+        "blueprint_key": "production-seed-v1-2026-09-02-bp-zoology-03",
+        "before_subject_id": "1bbd31b8-60a1-4630-bdca-23167454b934",
+        "before_subject_code": "ZOOLOGY",
+        "after_subject_id": "92283579-413a-45d7-8d77-0c407fe7d277",
+        "after_subject_code": "BOTANY",
+        "chapter_id": "17f6994c-9776-4e66-8627-c44f7e0f08fe",
+        "topic_id": "ceba634d-1c22-40ed-b891-5931e038dfac",
+        "concept_id": "688b4b23-a44a-47ca-b386-7605ec84faa7",
+        "preserved": {
+          "blueprint_id": true,
+          "chapter_id": true,
+          "topic_id": true,
+          "concept_id": true,
+          "target_count": true,
+          "provenance_tier": true,
+          "constraints": true,
+          "status": true,
+          "generation_eligible": true,
+          "blueprint_key": true
+        },
+        "subject_fixed": true
+      },
+      {
+        "blueprint_id": "876a2f73-994b-4a7b-bc5d-252267f8d2a3",
+        "blueprint_key": "production-seed-v1-2026-09-02-bp-zoology-04",
+        "before_subject_id": "1bbd31b8-60a1-4630-bdca-23167454b934",
+        "before_subject_code": "ZOOLOGY",
+        "after_subject_id": "92283579-413a-45d7-8d77-0c407fe7d277",
+        "after_subject_code": "BOTANY",
+        "chapter_id": "17f6994c-9776-4e66-8627-c44f7e0f08fe",
+        "topic_id": "84c041a9-bd7e-4f47-bcf4-f7a6afd2c761",
+        "concept_id": "cabdac4c-949a-4298-8b22-5b2eb0acab37",
+        "preserved": {
+          "blueprint_id": true,
+          "chapter_id": true,
+          "topic_id": true,
+          "concept_id": true,
+          "target_count": true,
+          "provenance_tier": true,
+          "constraints": true,
+          "status": true,
+          "generation_eligible": true,
+          "blueprint_key": true
+        },
+        "subject_fixed": true
+      },
+      {
+        "blueprint_id": "dafae464-f60d-443f-b526-3e0c93390929",
+        "blueprint_key": "production-seed-v2-2026-09-03-bp-zoology-06",
+        "before_subject_id": "1bbd31b8-60a1-4630-bdca-23167454b934",
+        "before_subject_code": "ZOOLOGY",
+        "after_subject_id": "92283579-413a-45d7-8d77-0c407fe7d277",
+        "after_subject_code": "BOTANY",
+        "chapter_id": "17f6994c-9776-4e66-8627-c44f7e0f08fe",
+        "topic_id": "826c3643-e78e-42ab-9fb5-ad228089e570",
+        "concept_id": "74858845-0941-4608-9e0d-127c3512909d",
+        "preserved": {
+          "blueprint_id": true,
+          "chapter_id": true,
+          "topic_id": true,
+          "concept_id": true,
+          "target_count": true,
+          "provenance_tier": true,
+          "constraints": true,
+          "status": true,
+          "generation_eligible": true,
+          "blueprint_key": true
+        },
+        "subject_fixed": true
+      },
+      {
+        "blueprint_id": "04e93763-bc48-472e-adb3-4088d872e1c4",
+        "blueprint_key": "production-seed-v2-2026-09-03-bp-zoology-07",
+        "before_subject_id": "1bbd31b8-60a1-4630-bdca-23167454b934",
+        "before_subject_code": "ZOOLOGY",
+        "after_subject_id": "92283579-413a-45d7-8d77-0c407fe7d277",
+        "after_subject_code": "BOTANY",
+        "chapter_id": "17f6994c-9776-4e66-8627-c44f7e0f08fe",
+        "topic_id": "84c041a9-bd7e-4f47-bcf4-f7a6afd2c761",
+        "concept_id": "cabdac4c-949a-4298-8b22-5b2eb0acab37",
+        "preserved": {
+          "blueprint_id": true,
+          "chapter_id": true,
+          "topic_id": true,
+          "concept_id": true,
+          "target_count": true,
+          "provenance_tier": true,
+          "constraints": true,
+          "status": true,
+          "generation_eligible": true,
+          "blueprint_key": true
+        },
+        "subject_fixed": true
+      },
+      {
+        "blueprint_id": "8a42a7e2-c76f-4b64-be74-8fb0e3b472b5",
+        "blueprint_key": "production-seed-v2-2026-09-03-bp-zoology-13",
+        "before_subject_id": "1bbd31b8-60a1-4630-bdca-23167454b934",
+        "before_subject_code": "ZOOLOGY",
+        "after_subject_id": "92283579-413a-45d7-8d77-0c407fe7d277",
+        "after_subject_code": "BOTANY",
+        "chapter_id": "17f6994c-9776-4e66-8627-c44f7e0f08fe",
+        "topic_id": "ceba634d-1c22-40ed-b891-5931e038dfac",
+        "concept_id": "688b4b23-a44a-47ca-b386-7605ec84faa7",
+        "preserved": {
+          "blueprint_id": true,
+          "chapter_id": true,
+          "topic_id": true,
+          "concept_id": true,
+          "target_count": true,
+          "provenance_tier": true,
+          "constraints": true,
+          "status": true,
+          "generation_eligible": true,
+          "blueprint_key": true
+        },
+        "subject_fixed": true
+      }
+    ],
+    "subject_ownership_drift_remaining": 0,
+    "duplicate_keys": [],
+    "orphan_missing_concept": 0,
+    "all_botany": true
+  },
+  "dependencies": {
+    "questions_before": {
+      "DRAFT": 8,
+      "PUBLISHED": 5
+    },
+    "questions_after": {
+      "DRAFT": 8,
+      "PUBLISHED": 5
+    },
+    "question_ids_unchanged": true,
+    "published_count": 5,
+    "draft_count": 8,
+    "concept_ids_unchanged": true,
+    "concept_ids": [
+      "74858845-0941-4608-9e0d-127c3512909d",
+      "cabdac4c-949a-4298-8b22-5b2eb0acab37",
+      "688b4b23-a44a-47ca-b386-7605ec84faa7"
+    ],
+    "chem_blueprints": 0,
+    "chem_chapter": {
+      "id": "933a0d17-537f-4995-b0ae-6ce23a32a449",
+      "code": "biomolecules-chem",
+      "class_level": "12",
+      "subject": "CHEMISTRY"
+    }
+  },
+  "before": {
+    "status": {
+      "DRAFT": 5298,
+      "PUBLISHED": 1479,
+      "SUPERSEDED": 6,
+      "IN_REVIEW": 111
+    },
+    "unmapped_draft": 5024,
+    "chapters": 56,
+    "topics": 192,
+    "concepts": 318,
+    "knowledge_units": 202,
+    "question_blueprints": 137,
+    "content_batches": 11,
+    "generation_jobs": 204,
+    "generation_runs": 204,
+    "generation_candidates": 392
+  },
+  "after": {
+    "status": {
+      "DRAFT": 5298,
+      "PUBLISHED": 1479,
+      "SUPERSEDED": 6,
+      "IN_REVIEW": 111
+    },
+    "unmapped_draft": 5024,
+    "chapters": 56,
+    "topics": 192,
+    "concepts": 318,
+    "knowledge_units": 202,
+    "question_blueprints": 137,
+    "content_batches": 11,
+    "generation_jobs": 204,
+    "generation_runs": 204,
+    "generation_candidates": 392
+  },
+  "freeze_ok": true,
+  "snapshot_counts_identical": true,
+  "tests": {
+    "passed": 70,
+    "failed": 0,
+    "exit_code": 0,
+    "command": "D:\\ravishori\\AI Neet Exam App\\apps\\backend\\.venv\\Scripts\\python.exe -m pytest app/modules/ingestion/tests/test_ncert_canonical_source.py app/modules/academic/tests/test_cf_c1_chemistry_class_12.py app/modules/academic/tests/test_chapter_class_level.py app/modules/academic/tests/test_physics_p0_taxonomy.py tests/test_cms_workflow.py tests/test_cms_publish_quality.py tests/test_phase32_content_readiness_safety.py tests/test_phase33_ecaep_publication_safety.py -q --tb=line",
+    "unavailable": [
+      "app/modules/cms/tests/test_question_blueprints.py",
+      "tests/test_blueprint_integrity.py",
+      "app/modules/academic/tests/test_cf_c2_biology.py",
+      "app/modules/academic/tests/test_cf_c3_gravitation.py",
+      "app/modules/academic/tests/test_cf_c4_biomolecules.py",
+      "app/modules/academic/tests/test_cf_c5_ku_backfill.py"
+    ],
+    "tail": "  app\\modules\\academic\\tests\\test_cf_c1_chemistry_class_12.py:84: PytestWarning: The test <Function test_electrochemistry_seed_row_is_unchanged> is marked with '@pytest.mark.asyncio' but it is not an async function. Please remove the asyncio mark. If the test is not marked explicitly, check for global marks applied via 'pytestmark'.\n    def test_electrochemistry_seed_row_is_unchanged():\n\napp/modules/academic/tests/test_cf_c1_chemistry_class_12.py::test_no_duplicate_chapter_slugs_across_all_chemistry\n  app\\modules\\academic\\tests\\test_cf_c1_chemistry_class_12.py:97: PytestWarning: The test <Function test_no_duplicate_chapter_slugs_across_all_chemistry> is marked with '@pytest.mark.asyncio' but it is not an async function. Please remove the asyncio mark. If the test is not marked explicitly, check for global marks applied via 'pytestmark'.\n    def test_no_duplicate_chapter_slugs_across_all_chemistry():\n\napp/modules/academic/tests/test_cf_c1_chemistry_class_12.py::test_topic_slugs_are_unique_within_chemistry\n  app\\modules\\academic\\tests\\test_cf_c1_chemistry_class_12.py:102: PytestWarning: The test <Function test_topic_slugs_are_unique_within_chemistry> is marked with '@pytest.mark.asyncio' but it is not an async function. Please remove the asyncio mark. If the test is not marked explicitly, check for global marks applied via 'pytestmark'.\n    def test_topic_slugs_are_unique_within_chemistry():\n\napp/modules/academic/tests/test_cf_c1_chemistry_class_12.py::test_concept_slugs_are_unique_within_chemistry\n  app\\modules\\academic\\tests\\test_cf_c1_chemistry_class_12.py:109: PytestWarning: The test <Function test_concept_slugs_are_unique_within_chemistry> is marked with '@pytest.mark.asyncio' but it is not an async function. Please remove the asyncio mark. If the test is not marked explicitly, check for global marks applied via 'pytestmark'.\n    def test_concept_slugs_are_unique_within_chemistry():\n\napp/modules/academic/tests/test_cf_c1_chemistry_class_12.py::test_every_new_chapter_has_source_grounded_topics_and_concepts\n  app\\modules\\academic\\tests\\test_cf_c1_chemistry_class_12.py:116: PytestWarning: The test <Function test_every_new_chapter_has_source_grounded_topics_and_concepts> is marked with '@pytest.mark.asyncio' but it is not an async function. Please remove the asyncio mark. If the test is not marked explicitly, check for global marks applied via 'pytestmark'.\n    def test_every_new_chapter_has_source_grounded_topics_and_concepts():\n\napp/modules/academic/tests/test_cf_c1_chemistry_class_12.py::test_physics_seed_is_unchanged_by_cf_c1\n  app\\modules\\academic\\tests\\test_cf_c1_chemistry_class_12.py:134: PytestWarning: The test <Function test_physics_seed_is_unchanged_by_cf_c1> is marked with '@pytest.mark.asyncio' but it is not an async function. Please remove the asyncio mark. If the test is not marked explicitly, check for global marks applied via 'pytestmark'.\n    def test_physics_seed_is_unchanged_by_cf_c1():\n\napp/modules/academic/tests/test_cf_c1_chemistry_class_12.py::test_botany_seed_is_unchanged_by_cf_c1\n  app\\modules\\academic\\tests\\test_cf_c1_chemistry_class_12.py:149: PytestWarning: The test <Function test_botany_seed_is_unchanged_by_cf_c1> is marked with '@pytest.mark.asyncio' but it is not an async function. Please remove the asyncio mark. If the test is not marked explicitly, check for global marks applied via 'pytestmark'.\n    def test_botany_seed_is_unchanged_by_cf_c1():\n\napp/modules/academic/tests/test_cf_c1_chemistry_class_12.py::test_zoology_seed_is_unchanged_by_cf_c1\n  app\\modules\\academic\\tests\\test_cf_c1_chemistry_class_12.py:160: PytestWarning: The test <Function test_zoology_seed_is_unchanged_by_cf_c1> is marked with '@pytest.mark.asyncio' but it is not an async function. Please remove the asyncio mark. If the test is not marked explicitly, check for global marks applied via 'pytestmark'.\n    def test_zoology_seed_is_unchanged_by_cf_c1():\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n70 passed, 15 warnings in 87.06s (0:01:27)\n\nsys:1: DeprecationWarning: builtin type swigvarlink has no __module__ attribute"
+  },
+  "files_changed": [
+    "docs/audits/bp_remediation_001_20260913.md",
+    "docs/audits/bp_remediation_001_20260913.json",
+    "apps/backend/scripts/bp_remediation_001_biomolecules_subject.py",
+    "cms.question_blueprints.subject_id (5 rows only)"
+  ],
+  "confirmation": {
+    "only_subject_id_updated": true,
+    "questions_mutated": false,
+    "kus_mutated": false,
+    "taxonomy_mutated": false,
+    "provenance_rewritten": false,
+    "blueprints_created": false,
+    "mcqs_generated": false,
+    "ai_called": false,
+    "committed": false,
+    "pushed": false
+  }
+}

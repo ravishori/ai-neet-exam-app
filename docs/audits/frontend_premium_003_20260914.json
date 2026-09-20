@@ -1,0 +1,41 @@
+{
+  "task": "FRONTEND-PREMIUM-003",
+  "title": "Dashboard Premium Polish Pass",
+  "verdict": "GREEN",
+  "date": "2026-09-14",
+  "prior": { "task": "FRONTEND-PREMIUM-002", "verdict": "YELLOW", "score": 7.5 },
+  "targets": {
+    "cta_hierarchy": "ConceptPracticeLink text actions; zero Practice now outline buttons",
+    "mobile_hero": "390 heroH ~506 (was ~835); gauge+metrics row; no readiness metric duplicate",
+    "subject_zero": "tinted row, Not started yet, Open link to subject",
+    "dark_secondary": "ghost Configure scope with muted foreground",
+    "email": "status strip below hero + /verify-email link"
+  },
+  "files": [
+    "apps/web/src/app/student/dashboard/page.tsx",
+    "apps/web/src/app/student/dashboard/practice-now-hero.test.tsx",
+    "apps/web/scripts/premium003-dashboard-live.mjs"
+  ],
+  "apis_unchanged": true,
+  "tests": {
+    "dashboard": "6/6",
+    "a12": "19/19",
+    "eslint": 0,
+    "build": "GREEN"
+  },
+  "live": {
+    "frontend": "http://127.0.0.1:3001",
+    "backend": "http://127.0.0.1:8000",
+    "overflow": 0,
+    "practice_now_count": 0,
+    "email_in_hero": false,
+    "hydration": false
+  },
+  "untouched": [
+    "Practice/Mock/ECAEP/AuthZ/DB/API contracts",
+    "taxonomy/NCERT/syllabus",
+    "A6-A12",
+    "frozen DRAFTs"
+  ],
+  "commit": "not created"
+}

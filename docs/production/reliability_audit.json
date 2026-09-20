@@ -1,0 +1,51 @@
+{
+  "audit_date": "2026-09-12",
+  "audit_phase": "0_readonly",
+  "repository": "ai-neet-exam-app",
+  "branch": "phase2-question-bank",
+  "generated_at": "2026-09-12T11:48:37.835836+00:00",
+  "code_modified": false,
+  "database_modified": false,
+  "overall_verdict": "AMBER \u2014 HARDENING REQUIRED",
+  "domain": "reliability",
+  "findings": [
+    {
+      "id": "REL-EXC",
+      "title": "Backend exception handling",
+      "status": "IMPLEMENTED"
+    },
+    {
+      "id": "REL-FE-ERR",
+      "title": "Frontend route error.tsx",
+      "status": "IMPLEMENTED"
+    },
+    {
+      "id": "REL-SAVE",
+      "title": "Practice save/submit error UX",
+      "status": "PARTIALLY_IMPLEMENTED",
+      "detail": "Often no onError surfacing"
+    },
+    {
+      "id": "REL-RETRY",
+      "title": "Retry/circuit breaker",
+      "status": "PARTIALLY_IMPLEMENTED",
+      "detail": "AI fallback chain; no tenacity"
+    },
+    {
+      "id": "REL-BACKUP",
+      "title": "Backups/DR",
+      "status": "MISSING"
+    },
+    {
+      "id": "REL-MIG",
+      "title": "Alembic migrations",
+      "status": "IMPLEMENTED",
+      "detail": "Schema via Alembic; prod drill UNVERIFIED"
+    },
+    {
+      "id": "REL-READY",
+      "title": "/health /ready",
+      "status": "IMPLEMENTED"
+    }
+  ]
+}

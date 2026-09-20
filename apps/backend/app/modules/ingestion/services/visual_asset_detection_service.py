@@ -34,6 +34,7 @@ header/footer/watermark — regardless of which publisher's template
 produced it. This is a strictly more general signal than any hardcoded
 coordinate list and is what actually catches this case.
 """
+
 import hashlib
 import math
 import os

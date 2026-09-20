@@ -1,0 +1,165 @@
+{
+  "campaign": "openai-adapter-fix-001-20260914",
+  "generated_at": "2026-09-14T00:32:37.419769+00:00",
+  "final_status": "GREEN \u2014 OPENAI ADAPTER FIX + SMOKE CREATED",
+  "previous_failure": {
+    "source": "MCQ-PROVIDER-BENCHMARK-001",
+    "model": "gpt-5-mini",
+    "http_status": 400,
+    "error": "Unsupported parameter: 'max_tokens' \u2014 use 'max_completion_tokens'"
+  },
+  "inspection": {
+    "api_endpoint": "POST {base_url}/chat/completions (OpenAI Chat Completions)",
+    "transport": "httpx (no openai Python SDK installed)",
+    "httpx_version": "0.28.1",
+    "openai_sdk_version": null,
+    "api_style": "Chat Completions (not Responses API)",
+    "old_incompatible_parameter": "max_tokens",
+    "corrected_parameter": "max_completion_tokens",
+    "temperature_handling": "omitted for gpt-5 family (non-default temperature unsupported)",
+    "structured_output": "response_format.type=json_object preserved",
+    "model_uses_max_completion_tokens": true
+  },
+  "model": "gpt-5-mini",
+  "provider": "openai",
+  "routing_policy": "fixed:openai",
+  "blueprint": {
+    "blueprint_id": "27d9ff19-3b8b-41b8-8734-786854d4c808",
+    "blueprint_key": "bp-create-002-20260913-bp-physics-drift-velocity-mcq",
+    "subject": "PHYSICS",
+    "class_level": "12",
+    "chapter": "Current Electricity",
+    "topic": "Electric Current and Ohm's Law",
+    "concept": "Drift Velocity",
+    "ncert_source_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Physics\\leph1dd\\leph103.pdf",
+    "provenance_tier": "authoritative"
+  },
+  "smoke": {
+    "requested": 1,
+    "created": 1,
+    "attempted": 1,
+    "failed_parse": 0,
+    "rejected_validation": 0,
+    "duplicate": 0,
+    "failed_provider": 0,
+    "stop_reason": "TARGET_MET",
+    "cost_usd": 0.0033585,
+    "batch_key": "openai-adapter-fix-001-20260914-smoke-drift-velocity-38079956",
+    "batch_id": "b5745653-3230-4980-b307-4565cd4723aa",
+    "request_success": true,
+    "provider_reached_model": true,
+    "parse_result": "SUCCESS",
+    "deterministic_validation_result": "PASS",
+    "candidates": [
+      {
+        "candidate_id": "aa41982d-8b25-4dfd-81ce-87c3297d9d49",
+        "status": "CREATED",
+        "error_code": null,
+        "error_summary": null,
+        "provider": "openai",
+        "model_used": "gpt-5-mini",
+        "cost_usd": 0.0033585,
+        "cost_status": "ESTIMATED",
+        "content_item_id": "8b295bc4-83a5-48c3-85b1-7bb058fd0450",
+        "routing_policy": "fixed:openai",
+        "stem_hash": "f3a5672a91713fe0a104caf28b3c6a4fcac1d16d8509824dbfd2a281604fab19"
+      }
+    ],
+    "candidate_id": "aa41982d-8b25-4dfd-81ce-87c3297d9d49",
+    "content_item_id": "8b295bc4-83a5-48c3-85b1-7bb058fd0450",
+    "provider_metadata": {
+      "provider": "openai",
+      "model_used": "gpt-5-mini",
+      "routing_policy": "fixed:openai",
+      "cost_status": "ESTIMATED"
+    },
+    "published": false,
+    "ncert_certified": false,
+    "editorially_approved": false,
+    "ncert_verification_status": "NOT PERFORMED",
+    "counted_toward_271": false,
+    "part_of_400_pilot": false
+  },
+  "database_safety": {
+    "pilot_created_before": 129,
+    "pilot_created_after": 129,
+    "pilot_created_ok": true,
+    "protected_hard_before": {
+      "PUBLISHED": 1479,
+      "IN_REVIEW": 111,
+      "SUPERSEDED": 6,
+      "chapters": 56,
+      "topics": 192,
+      "concepts": 318,
+      "knowledge_units": 381,
+      "blueprints": 445
+    },
+    "protected_hard_after": {
+      "PUBLISHED": 1479,
+      "IN_REVIEW": 111,
+      "SUPERSEDED": 6,
+      "chapters": 56,
+      "topics": 192,
+      "concepts": 318,
+      "knowledge_units": 381,
+      "blueprints": 445
+    },
+    "protected_hard_ok": true,
+    "status_counts_before": {
+      "DRAFT": 5428,
+      "PUBLISHED": 1479,
+      "SUPERSEDED": 6,
+      "IN_REVIEW": 111
+    },
+    "status_counts_after": {
+      "DRAFT": 5429,
+      "PUBLISHED": 1479,
+      "SUPERSEDED": 6,
+      "IN_REVIEW": 111
+    },
+    "pilot_created_verified": 129,
+    "protected_hard_verified": {
+      "PUBLISHED": 1479,
+      "IN_REVIEW": 111,
+      "SUPERSEDED": 6,
+      "blueprints": 445,
+      "kus": 381
+    }
+  },
+  "tests": {
+    "command": "D:\\ravishori\\AI Neet Exam App\\apps\\backend\\.venv\\Scripts\\python.exe -m pytest tests/test_openai_adapter_fix_001.py tests/test_mcq_provider_abstraction_001.py::test_provider_blocked_must_stop_and_not_retry tests/test_mcq_provider_abstraction_001.py::test_rate_limit_retries_with_bounded_backoff -q --tb=line",
+    "exit_code": 0,
+    "tail": "tests/test_openai_adapter_fix_001.py::test_other_adapters_unchanged_import_surface\n  tests\\test_openai_adapter_fix_001.py:212: PytestWarning: The test <Function test_other_adapters_unchanged_import_surface> is marked with '@pytest.mark.asyncio' but it is not an async function. Please remove the asyncio mark. If the test is not marked explicitly, check for global marks applied via 'pytestmark'.\n    def test_other_adapters_unchanged_import_surface():\n\ntests/test_openai_adapter_fix_001.py::test_provider_blocked_still_stops_and_rate_limit_retryable\n  tests\\test_openai_adapter_fix_001.py:227: PytestWarning: The test <Function test_provider_blocked_still_stops_and_rate_limit_retryable> is marked with '@pytest.mark.asyncio' but it is not an async function. Please remove the asyncio mark. If the test is not marked explicitly, check for global marks applied via 'pytestmark'.\n    def test_provider_blocked_still_stops_and_rate_limit_retryable():\n\ntests/test_mcq_provider_abstraction_001.py::test_provider_blocked_must_stop_and_not_retry\n  tests\\test_mcq_provider_abstraction_001.py:155: PytestWarning: The test <Function test_provider_blocked_must_stop_and_not_retry> is marked with '@pytest.mark.asyncio' but it is not an async function. Please remove the asyncio mark. If the test is not marked explicitly, check for global marks applied via 'pytestmark'.\n    def test_provider_blocked_must_stop_and_not_retry():\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n12 passed, 13 warnings in 0.28s\nsys:1: DeprecationWarning: builtin type swigvarlink has no __module__ attribute"
+  },
+  "confirmation": {
+    "did_not_rerun_20_benchmark": true,
+    "did_not_resume_271": true,
+    "did_not_run_400_pilot": true,
+    "did_not_publish": true,
+    "did_not_certify": true,
+    "did_not_commit": true,
+    "did_not_push": true
+  },
+  "adapter_changes": {
+    "file": "apps/backend/app/modules/ai/gateway/openai_provider.py",
+    "parameter_fix": "max_tokens -> max_completion_tokens for gpt-5/o1/o3/o4 families",
+    "legacy_models": "gpt-4o-* still use max_tokens",
+    "temperature": "omitted for gpt-5 family when non-default",
+    "reasoning_headroom": "max_completion_tokens = min(max(budget*2, budget+1024), 8192)",
+    "lineage_model": "response.model keeps request model; api dated id in safe_metadata.api_model",
+    "unchanged": [
+      "McqLlmProvider",
+      "anthropic",
+      "gemini",
+      "mistral",
+      "blueprint",
+      "ncert",
+      "ecaep"
+    ]
+  },
+  "smoke_attempts_note": [
+    "Attempt 1: provider reached; FAILED_BUDGET due dated model id pricing miss \u2014 fixed via lineage model",
+    "Attempt 2: provider reached; FAILED_PARSE finish=length empty body \u2014 fixed via reasoning token headroom",
+    "Attempt 3 (final reported): CREATED=1, DRAFT item, not published"
+  ]
+}

@@ -1,7 +1,10 @@
 from fastapi import Depends, Request
 
 from app.core.exceptions import AppError
+from app.core.logging import get_logger
 from app.core.redis import get_redis
+
+logger = get_logger("rate_limit")
 
 
 class RateLimitExceeded(AppError):
@@ -14,9 +17,20 @@ class RateLimitExceeded(AppError):
         self.retry_after_seconds = retry_after_seconds
 
 
-async def _check(key: str, *, limit: int, window_seconds: int) -> None:
+def _client_ip(request: Request) -> str:
+    """Prefer direct ASGI client host. If TRUST_PROXY_HEADERS is ever enabled
+    via settings, X-Forwarded-For could be consulted — left off by default to
+    prevent spoofed client IPs from bypassing buckets.
+    """
+    return request.client.host if request.client else "unknown"
+
+
+async def _check(key: str, *, limit: int, window_seconds: int, fail_closed: bool) -> None:
     redis_client = get_redis()
     if redis_client is None:
+        if fail_closed:
+            logger.warning("rate_limit_redis_unavailable", key_prefix=key, fail_closed=True)
+            raise RateLimitExceeded(retry_after_seconds=window_seconds)
         return
 
     try:
@@ -29,37 +43,46 @@ async def _check(key: str, *, limit: int, window_seconds: int) -> None:
     except RateLimitExceeded:
         raise
     except Exception:
+        if fail_closed:
+            logger.warning("rate_limit_redis_error", key_prefix=key, fail_closed=True, exc_info=True)
+            raise RateLimitExceeded(retry_after_seconds=window_seconds)
+        logger.warning("rate_limit_fail_open", key_prefix=key)
         return
 
 
-def rate_limit(key_prefix: str, *, limit: int, window_seconds: int):
+def rate_limit(key_prefix: str, *, limit: int, window_seconds: int, fail_closed: bool = False):
     """Fixed-window counter in Redis, keyed on client IP + key_prefix.
 
-    For unauthenticated routes (login/register/refresh) — see rate_limit_per_user
-    for authenticated routes where per-user is the fairer key.
+    For unauthenticated routes (login/register/refresh). Auth-sensitive
+    recovery endpoints should pass fail_closed=True so Redis outages do not
+    silently remove protection.
 
-    Fails open (no limiting) if Redis isn't reachable — a rate limiter that
-    takes the API down when its own dependency is unavailable is worse than
-    no rate limiter, see ADR-0018.
+    Default remains fail-open for login/register (ADR-0018) so a Redis blip
+    does not take down the whole auth surface.
     """
 
     async def dependency(request: Request) -> None:
-        ip = request.client.host if request.client else "unknown"
-        await _check(f"ratelimit:{key_prefix}:{ip}", limit=limit, window_seconds=window_seconds)
+        ip = _client_ip(request)
+        await _check(
+            f"ratelimit:{key_prefix}:{ip}",
+            limit=limit,
+            window_seconds=window_seconds,
+            fail_closed=fail_closed,
+        )
 
     return dependency
 
 
-def rate_limit_per_user(key_prefix: str, *, limit: int, window_seconds: int):
-    """Same fixed-window limiter, keyed on the authenticated user's id instead
-    of IP — fairer for routes behind auth (AI Gateway, commerce) where a
-    shared office/NAT IP shouldn't share one budget, and a per-call cost
-    (real AI tokens once a key is configured, per ADR-0014) is exactly what
-    this is meant to bound.
-    """
+def rate_limit_per_user(key_prefix: str, *, limit: int, window_seconds: int, fail_closed: bool = False):
+    """Same fixed-window limiter, keyed on the authenticated user's id."""
     from app.modules.identity.dependencies import get_current_user
 
     async def dependency(request: Request, user=Depends(get_current_user)) -> None:
-        await _check(f"ratelimit:{key_prefix}:{user.id}", limit=limit, window_seconds=window_seconds)
+        await _check(
+            f"ratelimit:{key_prefix}:{user.id}",
+            limit=limit,
+            window_seconds=window_seconds,
+            fail_closed=fail_closed,
+        )
 
     return dependency

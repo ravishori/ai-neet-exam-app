@@ -12,8 +12,14 @@ from app.modules.learning.services.mastery_service import MasteryService
 
 logger = get_logger("assessment")
 
-SCOPE_TYPES = {"CONCEPT", "CHAPTER", "SUBJECT", "FULL"}
+# Practice/mock scopes — TOPIC added for TALOS Kinematics chapter+topic contract (T6-C).
+# SEED_V1 / SEED_V2 are server-owned isolation of frozen publication allowlists.
+SCOPE_TYPES = {"CONCEPT", "TOPIC", "CHAPTER", "SUBJECT", "FULL", "SEED_V1", "SEED_V2"}
 DEFAULT_PRACTICE_COUNT = 10
+SEED_V1_DEFAULT_PRACTICE_COUNT = 30
+SEED_V2_DEFAULT_PRACTICE_COUNT = 100
+# Scopes that do not require scope_id (server resolves membership).
+SCOPES_WITHOUT_ID = frozenset({"FULL", "SEED_V1", "SEED_V2"})
 
 # Real NEET pattern: 45 questions/subject (Physics, Chemistry, Botany,
 # Zoology) = 180 total, 200 marks, single 180-minute sitting — see
@@ -91,19 +97,24 @@ class AssessmentService:
     ) -> Assessment:
         if scope_type not in SCOPE_TYPES:
             raise AppError(f"Unknown scope_type: {scope_type}", code="INVALID_SCOPE", status_code=400)
-        if scope_type != "FULL" and not scope_id:
+        if scope_type not in SCOPES_WITHOUT_ID and not scope_id:
             raise AppError(f"scope_id is required for scope_type={scope_type}", code="MISSING_SCOPE_ID", status_code=400)
 
         available = await self.repo.published_question_ids_for_scope(scope_type, scope_id)
         if not available:
             raise AppError(
-                "No published questions available for this scope yet — try a broader scope.",
+                "Not enough published questions are currently available for this selection. "
+                "Try another topic or subject, or return to the dashboard.",
                 code="NO_QUESTIONS_AVAILABLE",
                 status_code=422,
             )
 
-        selected = sample_question_ids(available, question_count or len(available))
-        return await self._persist_assessment(
+        if question_count is None:
+            requested = len(available)
+        else:
+            requested = question_count
+        selected = sample_question_ids(available, requested)
+        assessment = await self._persist_assessment(
             assessment_type=assessment_type,
             scope_type=scope_type,
             scope_id=scope_id,
@@ -114,19 +125,53 @@ class AssessmentService:
             title=title,
             author_id=author_id,
         )
+        # Honest inventory meta — shrink when pool < requested is the existing contract.
+        meta = {
+            "available_count": len(available),
+            "requested_count": requested,
+            "delivered_count": len(selected),
+            "shrunk": len(selected) < requested,
+        }
+        if scope_type == "SEED_V1":
+            from app.modules.assessment.seed_v1_allowlist import seed_v1_allowlist_sha256
+
+            meta["seed_v1_allowlist_sha256"] = seed_v1_allowlist_sha256()
+            meta["seed_v1_allowlist_count"] = 30
+        if scope_type == "SEED_V2":
+            from app.modules.assessment.seed_v2_allowlist import seed_v2_allowlist_sha256
+
+            meta["seed_v2_allowlist_sha256"] = seed_v2_allowlist_sha256()
+            meta["seed_v2_allowlist_count"] = 100
+        assessment._availability_meta = meta  # type: ignore[attr-defined]
+        return assessment
 
     async def generate_practice(
         self, *, scope_type: str, scope_id: uuid.UUID | None, question_count: int | None, user_id: uuid.UUID
     ) -> Assessment:
+        if question_count is None:
+            if scope_type == "SEED_V1":
+                default_count = SEED_V1_DEFAULT_PRACTICE_COUNT
+            elif scope_type == "SEED_V2":
+                default_count = SEED_V2_DEFAULT_PRACTICE_COUNT
+            else:
+                default_count = DEFAULT_PRACTICE_COUNT
+        else:
+            default_count = question_count
+        if scope_type == "SEED_V1":
+            title = "Production Seed V1 practice"
+        elif scope_type == "SEED_V2":
+            title = "Production Seed V2 practice"
+        else:
+            title = "Practice set"
         return await self._generate(
             assessment_type="PRACTICE",
             scope_type=scope_type,
             scope_id=scope_id,
-            question_count=question_count or DEFAULT_PRACTICE_COUNT,
+            question_count=default_count,
             marks=1,
             negative_marks=0,
             duration_minutes=None,
-            title="Practice set",
+            title=title,
             author_id=user_id,
         )
 
@@ -180,7 +225,8 @@ class AssessmentService:
 
         if not selected:
             raise AppError(
-                "No published questions available yet for a full mock.",
+                "Not enough published questions are currently available for a full mock. "
+                "Try a subject mock or practice set instead.",
                 code="NO_QUESTIONS_AVAILABLE",
                 status_code=422,
             )

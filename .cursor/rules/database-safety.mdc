@@ -1,0 +1,21 @@
+---
+description: Surgical DB mutation safety — preserve IDs, provenance, frozen inventories
+alwaysApply: true
+---
+
+# Database safety
+
+## Preserve
+- Primary keys and foreign-key relationships.
+- Provenance / source lineage unless the task explicitly authorizes migration.
+- Frozen or unmapped inventories during unrelated tasks (measure; do not assume stale counts).
+
+## Mutation style
+- Surgical writes only; merge JSON constraints without wiping unrelated keys.
+- Transactional apply with full rollback on any target failure.
+- Idempotent remediations: second execution must report zero additional changes.
+- Never hand-edit deployed schemas; use Alembic for schema changes.
+
+## Counts
+- Capture actual before/after counts from the live DB.
+- Do not hard-code stale PUBLISHED/DRAFT/unmapped figures into new tasks.

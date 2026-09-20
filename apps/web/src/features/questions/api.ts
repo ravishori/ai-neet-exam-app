@@ -12,6 +12,18 @@ export type QuestionImage = {
   height_px: number | null;
 };
 
+export type QuestionProvenance = {
+  source: "PROJECT_AUTHORED" | "NCERT_INGESTED" | "AI_GENERATED";
+  ncert_verification_level: string | null;
+  ncert_reference_tag: string | null;
+  source_pdf: string | null;
+  model_used: string | null;
+  prompt_version: string | null;
+  confidence_score: number | null;
+  knowledge_unit_id: string | null;
+  authored_at: string | null;
+};
+
 export type QuestionSummary = {
   id: string;
   stem: string | null;
@@ -27,23 +39,27 @@ export type QuestionSummary = {
   chapter: NamedRef;
   subject: NamedRef;
   ncert_reference: string | null;
+  class_level: "11" | "12" | null;
+  provenance: QuestionProvenance;
   images: QuestionImage[];
 };
 
 export type ReportReason = "WRONG_ANSWER" | "UNCLEAR" | "TYPO" | "OFFENSIVE" | "OTHER";
 
 export type ScopeType = "SUBJECT" | "CHAPTER" | "TOPIC" | "CONCEPT";
+export type ClassLevel = "11" | "12";
 
 export type QuestionListParams = {
   scopeType?: ScopeType;
   scopeId?: string;
+  classLevel?: ClassLevel;
   limit?: number;
   offset?: number;
 };
 
 export type QuestionListResult = {
   data: QuestionSummary[];
-  meta: { total: number; limit: number; offset: number };
+  meta: { total: number; limit: number; offset: number; class_level: ClassLevel | null };
 };
 
 export const questionsApi = {
@@ -53,6 +69,7 @@ export const questionsApi = {
       query.set("scope_type", params.scopeType);
       query.set("scope_id", params.scopeId);
     }
+    if (params.classLevel) query.set("class_level", params.classLevel);
     query.set("limit", String(params.limit ?? 20));
     query.set("offset", String(params.offset ?? 0));
     const body = await apiClient.getFull<QuestionSummary[]>(`/api/v1/cms/questions?${query.toString()}`);

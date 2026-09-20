@@ -1,0 +1,923 @@
+{
+  "audit": "Production Seed V2 Diversity Forensics — Exact Active 100",
+  "date": "2026-09-03",
+  "captured_at": "2026-09-03T18:16:23.889552+00:00",
+  "scope": "READ_ONLY_V2_COHORT_FORENSICS",
+  "evidence_label": "V2_cohort_evidence_not_global_bank",
+  "verdict": "GREEN",
+  "active_population": {
+    "n": 100,
+    "subject_counts": {
+      "Physics": 35,
+      "Chemistry": 35,
+      "Botany": 15,
+      "Zoology": 15
+    },
+    "ids": [
+      "455d9f51-46cf-4135-9634-ee4bbe41e9d0",
+      "3f9436e0-0eed-48c1-a068-af3a803667c3",
+      "cef32375-732a-4db8-984b-837ce7168b61",
+      "026357fc-f79f-4a16-b355-3d30a283de95",
+      "9c51f8a1-bf72-4ca0-bcfd-e0aa5cb8ee53",
+      "8b1f2415-9d33-465a-99e4-acc2e8491500",
+      "243220f6-451c-4119-bcd6-2fae725b8b31",
+      "5e9f39a2-6562-4856-b7c7-96377b37058b",
+      "dccc294c-0e9a-4a0b-abde-12701846dc0c",
+      "4304a3ef-26c7-4494-bd87-7af1a40759f8",
+      "223c5cdf-6759-43ed-acd6-7a47b0f52d33",
+      "83d24a21-ab6d-4202-bf75-771fff1cd506",
+      "d233736a-e115-4d61-90de-b4998181ea61",
+      "62c96899-7c2b-44c9-ab32-376ba70650e2",
+      "2d18944a-bdf7-4b3b-9c3a-9edf8b9a3347",
+      "aa84f293-0e59-4062-9318-9cf978b9a4ab",
+      "64c9715e-9ef0-4dd6-abed-bb2229a99104",
+      "13a5b48f-eed5-47db-989e-ba6e295d8c5d",
+      "91f731fa-a93b-49b1-9ad0-065e64c28242",
+      "03f040b6-3623-4126-8503-e61be9b0dabd",
+      "1633f068-f0df-4ff5-ac0c-57be4417f29e",
+      "dcce1f39-4b95-4daf-9d8d-e48f5f44680f",
+      "a45f2865-ce45-4b28-8b92-55899db89b0f",
+      "a3349338-419c-4fb0-b67d-136e07d32e79",
+      "a6aff10c-1a68-4149-aa4c-bac9a911aa34",
+      "51d180a3-54eb-4934-99cd-3a5ffaf7f3d5",
+      "58e7eca3-58d5-43b4-8f40-08097daab9ff",
+      "1bb4e0d1-be56-41b0-aae5-0c4cf0763b66",
+      "2f76035c-b214-41ac-b110-9fd8935eefa2",
+      "001ce3c7-0610-47c4-bfb9-a1ff9be3fe9d",
+      "243250fb-1e7e-4267-99ce-1d2eea59fd1d",
+      "6f292988-e616-4aeb-b4be-efc207807315",
+      "9d9ed9f9-0046-49bc-a359-2add3a40625a",
+      "690202d2-83dd-4645-8034-cfb19f54833a",
+      "90797037-3127-4c07-87cb-b3e00307d412",
+      "805f642a-89f0-4353-8916-c049b49b2a17",
+      "5495447f-a0d9-4495-9d26-2519c500edd9",
+      "d6d56711-a420-46c3-b932-682165000e1c",
+      "399ed33b-61c8-4897-aeba-0eefc786c661",
+      "327cabf6-1ce2-4d5b-8fad-fe8ba01c647f",
+      "724e2942-926c-4f6e-a848-aa1d8ea96bb8",
+      "1690557a-8372-4a45-b424-7d511c2c4299",
+      "c678b585-9ceb-46cb-bb5d-12283c6bfef7",
+      "01376a3b-15aa-4cd9-863b-269fac72c962",
+      "0f824701-461c-4635-babc-0a6420ed5e34",
+      "12b7d2ab-d676-453c-8b8d-79fd045c921f",
+      "218a528a-9866-4f5f-bf72-b8ffcda2c632",
+      "87bc87a5-95ee-4589-b886-c7bcd30f6b3f",
+      "2f05524a-6062-43e2-b2b7-c8db7d30464a",
+      "0ca20864-3662-4ea3-b461-103bdeb8ebb4",
+      "91e24169-866a-4861-957e-b5235ad0cc2c",
+      "49488a4a-918f-46f1-b314-df6f86d0ef79",
+      "2333d9b0-e872-4f51-b810-51f01b51466e",
+      "018a8df7-f948-49c7-b678-e3404881827b",
+      "5c4229c8-ba1e-4550-a59a-f234f7b3b11d",
+      "1b8ca0cd-e48b-4b74-9b34-1b5cece39056",
+      "8ab26257-2b2f-4f69-af55-ea2b220bc771",
+      "2bb14e59-7865-4719-ab06-2b41c8f4e279",
+      "5bc7b52f-02d3-45d3-901b-a2da435ec0dd",
+      "c95a88d4-b703-4974-aecd-eb7ed29316bb",
+      "a9367de4-9a3f-4197-aea3-bffcc4185038",
+      "d384a577-af56-4859-ad7c-f5be95f955b0",
+      "2ea2a262-4366-4f7a-968a-e21d8af0aa1a",
+      "0c22c7b2-5f3d-40fd-8c4b-fbf6026420a2",
+      "416e1b9a-f599-457c-823b-a7dc956b84b8",
+      "92e50ad1-fb46-4422-be9c-b21c2f190f60",
+      "6a340561-bc61-4438-8e98-d519a756c7b6",
+      "07534837-e642-4c88-a28c-bbac512864c7",
+      "e2105825-50b6-472f-8fb7-9736e3bdcf9f",
+      "65ba5806-5fb7-42db-b677-fe3f41d122a5",
+      "bb924974-f142-4aa0-bad3-acf403d553ab",
+      "209c82ad-5f16-44b2-be6d-520acc9eed19",
+      "b51ed114-3e26-46d0-8ce2-ae737698c0b0",
+      "cc3d0fad-83f2-4822-9800-c4f659cc6c43",
+      "98a017d6-2445-4b92-ba49-e785a9a60b59",
+      "ca882ca8-5f6a-4960-a38a-4ad6292f531c",
+      "75f38af6-ef72-4273-828b-828b11f0b7b8",
+      "09c44e57-2b1b-40e5-8af9-56b65ba7eb5b",
+      "fd4ab8f9-fd76-41e4-a549-39110dbe24a5",
+      "17eb6ea3-ba95-45e6-86e6-676c2c139c14",
+      "db6b02e0-2f81-4187-8636-18305bddcc15",
+      "87c6dc0a-182d-4e22-928e-a6a17095b243",
+      "bd45b01c-0556-4f13-99b1-46d8b4f7f179",
+      "63771831-5b56-4707-9036-fc3c80c05fb8",
+      "ebd4098b-ecb8-4ba6-bc6f-7c931fba5713",
+      "2094c380-2abd-480b-a76a-a8b789e6d5c4",
+      "ebda7901-e9cb-4bca-9b33-fbb194b20249",
+      "96ed1997-30e1-4700-8c46-9264172e15db",
+      "0ad44242-2e5b-41fa-9ddf-0489b4177296",
+      "7d07b1fe-62af-44de-9115-755ac8f28007",
+      "9e4239a3-a54d-4928-85b9-d3b22c96bc3a",
+      "ca0e7a05-38bb-4e12-a52d-4fd4c7a26b07",
+      "5b397eb5-41ac-4108-87e3-81878da1a644",
+      "e4a25829-5d09-4629-8e0c-45729e944f3f",
+      "03d1274b-35fa-446a-8742-164e9a28e8d3",
+      "56d515a9-fb76-4c80-b9e7-88f7ef50b5d8",
+      "7f545252-9ddc-4780-854e-4f045dac8005",
+      "365637db-fe02-4817-8408-1a9a357364b5",
+      "50e30aa3-44dc-424a-9d49-3f641e3faa98",
+      "10bc35c3-30d2-4cbc-b998-ba5bdf530ab6"
+    ],
+    "replacements": {
+      "physics-05": "9c51f8a1-bf72-4ca0-bcfd-e0aa5cb8ee53",
+      "physics-21": "1633f068-f0df-4ff5-ac0c-57be4417f29e",
+      "zoology-12": "ca0e7a05-38bb-4e12-a52d-4fd4c7a26b07",
+      "zoology-15": "03d1274b-35fa-446a-8742-164e9a28e8d3"
+    },
+    "definition": "P3/P4 slots with rematerialized replacements for four remediated slots"
+  },
+  "historical_exclusions": {
+    "n": 4,
+    "ids": [
+      "2a22a821-d0bd-4c87-be2c-c35ef9664118",
+      "0de3dfa3-bc5a-4791-aa5d-8346dd08f0c2",
+      "7580a952-0869-4f38-ae62-8c18a49bfb6f",
+      "ef480cb5-8ede-451b-9444-940c7094e764"
+    ],
+    "slot_map": {
+      "physics-05": "2a22a821-d0bd-4c87-be2c-c35ef9664118",
+      "physics-21": "0de3dfa3-bc5a-4791-aa5d-8346dd08f0c2",
+      "zoology-12": "7580a952-0869-4f38-ae62-8c18a49bfb6f",
+      "zoology-15": "ef480cb5-8ede-451b-9444-940c7094e764"
+    },
+    "note": "Superseded originals excluded from all active diversity metrics"
+  },
+  "exact_duplicate": {
+    "body_duplicate_groups": {},
+    "group_count": 0,
+    "pair_equivalent": 0,
+    "expected": 0
+  },
+  "normalized_duplicate": {
+    "normalized_stem_groups": {},
+    "group_count": 0,
+    "expected": 0
+  },
+  "near_duplicate": {
+    "pair_count": 0,
+    "pairs": [],
+    "method": "factory_seed_diversity.classify_against_prior jaccard>=0.72 on stem tokens",
+    "threshold": 0.72,
+    "threshold_source": "apps/backend/app/modules/cms/services/factory_seed_diversity.py"
+  },
+  "same_template_repetition": {
+    "forbidden_template_pair_count": 0,
+    "forbidden_template_pairs": [],
+    "forbidden_template_hits_by_item": [],
+    "structure_archetype_clusters": [],
+    "identical_skeleton_clusters": [],
+    "method_notes": [
+      "SAME_TEMPLATE via known V1 forbidden regex families",
+      "Additional skeleton/option-structure clusters reported separately (not forced into UNIQUE)"
+    ]
+  },
+  "conceptual_overlap": {
+    "legitimate_pair_count": 1,
+    "legitimate_pairs_sample": [
+      {
+        "item_id_A": "98a017d6-2445-4b92-ba49-e785a9a60b59",
+        "item_id_B": "96ed1997-30e1-4700-8c46-9264172e15db",
+        "subject_A": "Botany",
+        "subject_B": "Zoology",
+        "classification": "LEGITIMATE_CONCEPTUAL_OVERLAP",
+        "code": null
+      }
+    ],
+    "chapter_top": [
+      {
+        "key": "Chemistry/Chemical Bonding and Molecular Structure",
+        "count": 5,
+        "pct": 5.0
+      },
+      {
+        "key": "Chemistry/Equilibrium",
+        "count": 5,
+        "pct": 5.0
+      },
+      {
+        "key": "Chemistry/Some Basic Concepts of Chemistry",
+        "count": 5,
+        "pct": 5.0
+      },
+      {
+        "key": "Chemistry/Structure of Atom",
+        "count": 5,
+        "pct": 5.0
+      },
+      {
+        "key": "Chemistry/Organic Chemistry - Basic Principles",
+        "count": 4,
+        "pct": 4.0
+      },
+      {
+        "key": "Chemistry/Redox Reactions",
+        "count": 4,
+        "pct": 4.0
+      },
+      {
+        "key": "Chemistry/Thermodynamics",
+        "count": 4,
+        "pct": 4.0
+      },
+      {
+        "key": "Physics/Kinematics",
+        "count": 4,
+        "pct": 4.0
+      },
+      {
+        "key": "Physics/Systems of Particles and Rotational Motion",
+        "count": 4,
+        "pct": 4.0
+      },
+      {
+        "key": "Physics/Work, Energy and Power",
+        "count": 4,
+        "pct": 4.0
+      },
+      {
+        "key": "Zoology/Body Fluids and Circulation",
+        "count": 4,
+        "pct": 4.0
+      },
+      {
+        "key": "Botany/Cell - The Unit of Life",
+        "count": 3,
+        "pct": 3.0
+      },
+      {
+        "key": "Botany/Photosynthesis in Higher Plants",
+        "count": 3,
+        "pct": 3.0
+      },
+      {
+        "key": "Chemistry/Electrochemistry",
+        "count": 3,
+        "pct": 3.0
+      },
+      {
+        "key": "Physics/Laws of Motion",
+        "count": 3,
+        "pct": 3.0
+      }
+    ],
+    "topic_top": [
+      {
+        "key": "Chemistry/Hybridization",
+        "count": 2,
+        "pct": 2.0
+      },
+      {
+        "key": "Physics/Dimensions and Dimensional Analysis",
+        "count": 2,
+        "pct": 2.0
+      },
+      {
+        "key": "Physics/Laws of Thermodynamics",
+        "count": 2,
+        "pct": 2.0
+      },
+      {
+        "key": "Physics/Motion in a Plane",
+        "count": 2,
+        "pct": 2.0
+      },
+      {
+        "key": "Physics/Motion in a Straight Line",
+        "count": 2,
+        "pct": 2.0
+      },
+      {
+        "key": "Physics/Newton's Laws and Momentum",
+        "count": 2,
+        "pct": 2.0
+      },
+      {
+        "key": "Physics/Potential Energy and Conservation",
+        "count": 2,
+        "pct": 2.0
+      },
+      {
+        "key": "Physics/Stress and Strain",
+        "count": 2,
+        "pct": 2.0
+      },
+      {
+        "key": "Physics/Torque and Angular Momentum",
+        "count": 2,
+        "pct": 2.0
+      },
+      {
+        "key": "Botany/Algae and Bryophytes",
+        "count": 1,
+        "pct": 1.0
+      },
+      {
+        "key": "Botany/Cell Organelles",
+        "count": 1,
+        "pct": 1.0
+      },
+      {
+        "key": "Botany/Cell Theory and Cell Types",
+        "count": 1,
+        "pct": 1.0
+      },
+      {
+        "key": "Botany/Dark Reaction (Calvin Cycle)",
+        "count": 1,
+        "pct": 1.0
+      },
+      {
+        "key": "Botany/Diversity and Taxonomy",
+        "count": 1,
+        "pct": 1.0
+      },
+      {
+        "key": "Botany/Double Fertilisation",
+        "count": 1,
+        "pct": 1.0
+      }
+    ],
+    "concept_top": [
+      {
+        "key": "Chemistry/sp-sp2-sp3",
+        "count": 2,
+        "pct": 2.0
+      },
+      {
+        "key": "Botany/Algae classes / bryophyte haplodiplontic idea",
+        "count": 1,
+        "pct": 1.0
+      },
+      {
+        "key": "Botany/Auxin / gibberellin / cytokinin / ethylene / ABA roles",
+        "count": 1,
+        "pct": 1.0
+      },
+      {
+        "key": "Botany/Floral formula / placentation types",
+        "count": 1,
+        "pct": 1.0
+      },
+      {
+        "key": "Botany/Herbarium / botanical gardens / keys (qualitative)",
+        "count": 1,
+        "pct": 1.0
+      },
+      {
+        "key": "Botany/Heterospory / gymnosperm seeds",
+        "count": 1,
+        "pct": 1.0
+      },
+      {
+        "key": "Botany/Modifications of root/stem/leaf",
+        "count": 1,
+        "pct": 1.0
+      },
+      {
+        "key": "Botany/SDP/LDP qualitative",
+        "count": 1,
+        "pct": 1.0
+      },
+      {
+        "key": "Botany/Syngamy and triple fusion",
+        "count": 1,
+        "pct": 1.0
+      },
+      {
+        "key": "Botany/Taxonomic hierarchy / binomial nomenclature",
+        "count": 1,
+        "pct": 1.0
+      },
+      {
+        "key": "Botany/c3-c4-pathway",
+        "count": 1,
+        "pct": 1.0
+      },
+      {
+        "key": "Botany/fluid-mosaic",
+        "count": 1,
+        "pct": 1.0
+      },
+      {
+        "key": "Botany/limiting-factors",
+        "count": 1,
+        "pct": 1.0
+      },
+      {
+        "key": "Botany/mitochondria-chloroplast",
+        "count": 1,
+        "pct": 1.0
+      },
+      {
+        "key": "Botany/photophosphorylation",
+        "count": 1,
+        "pct": 1.0
+      }
+    ],
+    "blueprint_unique": 100,
+    "max_chapter_count": 5,
+    "max_concept_count": 2,
+    "excessive_concentration_flags": []
+  },
+  "subject_distribution": {
+    "observed": {
+      "Physics": 35,
+      "Chemistry": 35,
+      "Botany": 15,
+      "Zoology": 15
+    },
+    "expected": {
+      "Physics": 35,
+      "Chemistry": 35,
+      "Botany": 15,
+      "Zoology": 15
+    },
+    "match": true,
+    "note": "Subject allocation ≠ conceptual diversity"
+  },
+  "difficulty_distribution": {
+    "plan_expected": {
+      "easy": 25,
+      "medium": 60,
+      "hard": 15
+    },
+    "plan_observed": {
+      "easy": 25,
+      "medium": 60,
+      "hard": 15
+    },
+    "body_observed": {
+      "easy": 25,
+      "medium": 60,
+      "hard": 15
+    },
+    "plan_match": true
+  },
+  "archetype_distribution": {
+    "observed": {
+      "direct_ncert_conceptual": 42,
+      "application": 22,
+      "numerical_calculation": 14,
+      "diagram_data_interpretation": 3,
+      "comparison": 14,
+      "statement_based": 2,
+      "sequence_order": 3
+    },
+    "plan_expected": {
+      "direct_ncert_conceptual": 42,
+      "application": 22,
+      "numerical_calculation": 14,
+      "diagram_data_interpretation": 3,
+      "comparison": 14,
+      "statement_based": 2,
+      "sequence_order": 3
+    }
+  },
+  "graphical_analysis": {
+    "visual_required_count": 3,
+    "visual_required_slot_ids": [
+      "physics-05",
+      "physics-21",
+      "zoology-12"
+    ],
+    "actual_with_svg_and_spec": 3,
+    "visual_type_distribution": {
+      "line_graph": 1,
+      "curve_graph": 1,
+      "schematic": 1
+    },
+    "visual_archetype_distribution": {
+      "xt_slope_graph": 1,
+      "stress_strain_curve": 1,
+      "ecg_wave_schematic": 1
+    },
+    "unique_visual_spec_fingerprints": 3,
+    "unique_svg_fingerprints": 3,
+    "repeated_visual_spec": {},
+    "repeated_svg": {},
+    "not_40pct_target_claim": true,
+    "note": "3/100 is rematerialization validation cohort, not production graphical target"
+  },
+  "numerical_analysis": {
+    "numerical_count": 14,
+    "calculation_types": {
+      "suvat_1d": 1,
+      "projectile_range": 1,
+      "momentum_1d": 1,
+      "work_energy": 1,
+      "com_two_body": 1,
+      "youngs_modulus": 1,
+      "carnot_efficiency": 1,
+      "coulomb_force": 1,
+      "thin_lens": 1,
+      "ydse_fringe": 1,
+      "mole_conversion": 1,
+      "empirical_formula": 1,
+      "hess_law": 1,
+      "ph_strong_acid": 1
+    },
+    "identical_skeleton_clusters": [],
+    "note": "Changing numbers alone is not genuine diversity if skeleton identical"
+  },
+  "chemistry_concentration": {
+    "total": 35,
+    "largest_chapter": [
+      "Chemical Bonding and Molecular Structure",
+      5
+    ],
+    "largest_topic": [
+      "Hybridization",
+      2
+    ],
+    "largest_concept": [
+      "sp-sp2-sp3",
+      2
+    ],
+    "chapter_distribution": {
+      "Some Basic Concepts of Chemistry": 5,
+      "Structure of Atom": 5,
+      "Chemical Bonding and Molecular Structure": 5,
+      "Thermodynamics": 4,
+      "Equilibrium": 5,
+      "Redox Reactions": 4,
+      "Organic Chemistry - Basic Principles": 4,
+      "Electrochemistry": 3
+    },
+    "topic_distribution": {
+      "Laws of Chemical Combination": 1,
+      "Mole Concept": 1,
+      "Empirical and Molecular Formula": 1,
+      "Molarity and Concentration": 1,
+      "Stoichiometry of Reactions": 1,
+      "Bohr Model": 1,
+      "Quantum Numbers": 1,
+      "Electronic Configuration": 1,
+      "Photoelectric Effect and Dual Nature": 1,
+      "Orbitals": 1,
+      "Covalent Bonding and VSEPR Theory": 1,
+      "Hybridization": 2,
+      "Ionic Bonding": 1,
+      "First Law of Thermodynamics (Chemistry)": 1,
+      "Enthalpy": 1,
+      "Hess's Law": 1,
+      "Entropy and Spontaneity": 1,
+      "Chemical Equilibrium": 1,
+      "Le Chatelier's Principle": 1,
+      "Ionic Equilibrium and pH": 1,
+      "Acids, Bases and Buffers": 1,
+      "Solubility Product": 1,
+      "Oxidation Number": 1,
+      "Redox Identification": 1,
+      "Balancing Redox Reactions": 1,
+      "Types of Redox Reactions": 1,
+      "IUPAC and Homologous Series": 1,
+      "Isomerism and Intermediates": 1,
+      "Electronic Effects": 1,
+      "IUPAC Nomenclature": 1,
+      "Galvanic Cells": 1,
+      "Nernst Equation": 1,
+      "Ionic vs Covalent Bonding": 1,
+      "Conductance of Electrolytic Solutions": 1
+    },
+    "concept_unique_count": 34,
+    "archetype_distribution": {
+      "direct_ncert_conceptual": 13,
+      "numerical_calculation": 4,
+      "application": 12,
+      "statement_based": 2,
+      "comparison": 4
+    },
+    "near_duplicate_chem_pairs": 0,
+    "template_clusters_involving_chem": 0,
+    "largest_near_duplicate_cluster_note": "See near_duplicate.pairs filtered Chemistry",
+    "largest_chapter_count": 5,
+    "largest_chapters_tied": [
+      "Chemical Bonding and Molecular Structure",
+      "Equilibrium",
+      "Some Basic Concepts of Chemistry",
+      "Structure of Atom"
+    ]
+  },
+  "previous_v1_pattern_recurrence": {
+    "forbidden_template_scan": [
+      {
+        "pattern": "PHYS_STRETCH_20PCT_CURRENT",
+        "count": 0,
+        "candidate_ids": [],
+        "slot_ids": [],
+        "status": "ABSENT"
+      },
+      {
+        "pattern": "PHYS_STRETCH_2X_LENGTH_RATIO",
+        "count": 0,
+        "candidate_ids": [],
+        "slot_ids": [],
+        "status": "ABSENT"
+      },
+      {
+        "pattern": "PHYS_OHM_V_DOUBLED_R_CONSTANT",
+        "count": 0,
+        "candidate_ids": [],
+        "slot_ids": [],
+        "status": "ABSENT"
+      },
+      {
+        "pattern": "CHEM_LATTICE_COMPARISON",
+        "count": 0,
+        "candidate_ids": [],
+        "slot_ids": [],
+        "status": "ABSENT"
+      },
+      {
+        "pattern": "CHEM_LATTICE_FACTORS",
+        "count": 0,
+        "candidate_ids": [],
+        "slot_ids": [],
+        "status": "ABSENT"
+      },
+      {
+        "pattern": "BOT_NONCYCLIC_PHOTOPHOSPHORYLATION",
+        "count": 0,
+        "candidate_ids": [],
+        "slot_ids": [],
+        "status": "ABSENT"
+      },
+      {
+        "pattern": "ZOO_ABO_SEQUENCE",
+        "count": 0,
+        "candidate_ids": [],
+        "slot_ids": [],
+        "status": "ABSENT"
+      },
+      {
+        "pattern": "ZOO_ABO_ANTIGEN_IDENTIFY",
+        "count": 0,
+        "candidate_ids": [],
+        "slot_ids": [],
+        "status": "ABSENT"
+      }
+    ],
+    "extra_keyword_scans": {
+      "ABO_agglutination_keywords": {
+        "count": 0,
+        "ids": []
+      },
+      "noncyclic_photophosphorylation": {
+        "count": 0,
+        "ids": []
+      },
+      "ohm_v_doubled": {
+        "count": 0,
+        "ids": []
+      },
+      "stretch_20pct_or_2x": {
+        "count": 0,
+        "ids": []
+      },
+      "lattice_energy_compare": {
+        "count": 0,
+        "ids": []
+      }
+    },
+    "any_present": false
+  },
+  "semantic_dedupe": {
+    "status": "SEMANTIC_DEDUPE_NOT_AVAILABLE",
+    "claim_semantic_uniqueness": false,
+    "method": null,
+    "model_index": null,
+    "threshold": null,
+    "note": "factory_dedupe_service / factory_seed_diversity: deterministic lexical only; no pgvector"
+  },
+  "item_label_counts": {
+    "UNIQUE": 98,
+    "LEGITIMATE_CONCEPTUAL_OVERLAP": 2
+  },
+  "pair_counts": {
+    "LEGITIMATE_CONCEPTUAL_OVERLAP": 1
+  },
+  "rematerialized_vs_remaining_96": [
+    {
+      "replacement_id": "9c51f8a1-bf72-4ca0-bcfd-e0aa5cb8ee53",
+      "slot_id": "physics-05",
+      "classification": "UNIQUE_VS_REMAINING_96",
+      "other_id": null
+    },
+    {
+      "replacement_id": "1633f068-f0df-4ff5-ac0c-57be4417f29e",
+      "slot_id": "physics-21",
+      "classification": "UNIQUE_VS_REMAINING_96",
+      "other_id": null
+    },
+    {
+      "replacement_id": "ca0e7a05-38bb-4e12-a52d-4fd4c7a26b07",
+      "slot_id": "zoology-12",
+      "classification": "UNIQUE_VS_REMAINING_96",
+      "other_id": null
+    },
+    {
+      "replacement_id": "03d1274b-35fa-446a-8742-164e9a28e8d3",
+      "slot_id": "zoology-15",
+      "classification": "UNIQUE_VS_REMAINING_96",
+      "other_id": null
+    }
+  ],
+  "cluster_tables": {
+    "top_chapters": [
+      {
+        "key": "Chemistry/Chemical Bonding and Molecular Structure",
+        "count": 5,
+        "pct": 5.0
+      },
+      {
+        "key": "Chemistry/Equilibrium",
+        "count": 5,
+        "pct": 5.0
+      },
+      {
+        "key": "Chemistry/Some Basic Concepts of Chemistry",
+        "count": 5,
+        "pct": 5.0
+      },
+      {
+        "key": "Chemistry/Structure of Atom",
+        "count": 5,
+        "pct": 5.0
+      },
+      {
+        "key": "Chemistry/Organic Chemistry - Basic Principles",
+        "count": 4,
+        "pct": 4.0
+      },
+      {
+        "key": "Chemistry/Redox Reactions",
+        "count": 4,
+        "pct": 4.0
+      },
+      {
+        "key": "Chemistry/Thermodynamics",
+        "count": 4,
+        "pct": 4.0
+      },
+      {
+        "key": "Physics/Kinematics",
+        "count": 4,
+        "pct": 4.0
+      },
+      {
+        "key": "Physics/Systems of Particles and Rotational Motion",
+        "count": 4,
+        "pct": 4.0
+      },
+      {
+        "key": "Physics/Work, Energy and Power",
+        "count": 4,
+        "pct": 4.0
+      },
+      {
+        "key": "Zoology/Body Fluids and Circulation",
+        "count": 4,
+        "pct": 4.0
+      },
+      {
+        "key": "Botany/Cell - The Unit of Life",
+        "count": 3,
+        "pct": 3.0
+      }
+    ],
+    "top_concepts": [
+      {
+        "key": "Chemistry/sp-sp2-sp3",
+        "count": 2,
+        "pct": 2.0
+      },
+      {
+        "key": "Botany/Algae classes / bryophyte haplodiplontic idea",
+        "count": 1,
+        "pct": 1.0
+      },
+      {
+        "key": "Botany/Auxin / gibberellin / cytokinin / ethylene / ABA roles",
+        "count": 1,
+        "pct": 1.0
+      },
+      {
+        "key": "Botany/Floral formula / placentation types",
+        "count": 1,
+        "pct": 1.0
+      },
+      {
+        "key": "Botany/Herbarium / botanical gardens / keys (qualitative)",
+        "count": 1,
+        "pct": 1.0
+      },
+      {
+        "key": "Botany/Heterospory / gymnosperm seeds",
+        "count": 1,
+        "pct": 1.0
+      },
+      {
+        "key": "Botany/Modifications of root/stem/leaf",
+        "count": 1,
+        "pct": 1.0
+      },
+      {
+        "key": "Botany/SDP/LDP qualitative",
+        "count": 1,
+        "pct": 1.0
+      },
+      {
+        "key": "Botany/Syngamy and triple fusion",
+        "count": 1,
+        "pct": 1.0
+      },
+      {
+        "key": "Botany/Taxonomic hierarchy / binomial nomenclature",
+        "count": 1,
+        "pct": 1.0
+      },
+      {
+        "key": "Botany/c3-c4-pathway",
+        "count": 1,
+        "pct": 1.0
+      },
+      {
+        "key": "Botany/fluid-mosaic",
+        "count": 1,
+        "pct": 1.0
+      }
+    ],
+    "template_structure_clusters": []
+  },
+  "integrity_before": {
+    "active_fp": "6448372c8691b8e9840beb758aaf87a3aef88d16bd69e281e24137a524e48f9b",
+    "active_n": 100,
+    "active_status": {
+      "DRAFT": 100
+    },
+    "historical_fp": "b4a8c2316b6d02f0a22cc1a145f6c61450196629b9320d0d72d463b465cd7fae",
+    "historical_n": 4,
+    "v1_fp": "1be739413439ae0e93a87f11bd1823ad88f1cd19fad0022aeea163af3d6101a2",
+    "t6d_fp": "e0758fbcb071180b61a33f2b4581e894",
+    "t6f2_fp": "17a1672c444c8362ed0261dacf0f82c7",
+    "legacy_fp": "13d51e697382663a28ffc44fd56aedb1"
+  },
+  "integrity_after": {
+    "active_fp": "6448372c8691b8e9840beb758aaf87a3aef88d16bd69e281e24137a524e48f9b",
+    "active_n": 100,
+    "active_status": {
+      "DRAFT": 100
+    },
+    "historical_fp": "b4a8c2316b6d02f0a22cc1a145f6c61450196629b9320d0d72d463b465cd7fae",
+    "historical_n": 4,
+    "v1_fp": "1be739413439ae0e93a87f11bd1823ad88f1cd19fad0022aeea163af3d6101a2",
+    "t6d_fp": "e0758fbcb071180b61a33f2b4581e894",
+    "t6f2_fp": "17a1672c444c8362ed0261dacf0f82c7",
+    "legacy_fp": "13d51e697382663a28ffc44fd56aedb1"
+  },
+  "integrity_checks": {
+    "active_unchanged": true,
+    "historical_unchanged": true,
+    "protected_unchanged": true,
+    "approvals": 0,
+    "publications": 0,
+    "ecaep": 0,
+    "body_mutations": 0,
+    "status_mutations": 0
+  },
+  "counts": {
+    "generation": 0,
+    "approvals": 0,
+    "publications": 0,
+    "ecaep": 0
+  },
+  "limitations": [
+    "Cohort forensic only — not global-bank uniqueness proof.",
+    "SEMANTIC_DEDUPE_NOT_AVAILABLE — no embeddings/pgvector in this wave; lexical/template classifiers only.",
+    "Do not equate exact/normalized uniqueness with semantic uniqueness.",
+    "3/100 visual slots is rematerialization validation, not the eventual 40% production target.",
+    "Legitimate conceptual overlap on shared NCERT topics is expected and not counted as duplication."
+  ],
+  "remediation_recommendation": "No systemic remediation required before considering NCERT certification gate",
+  "next_gate_recommendation": "NCERT certification gate (separate authorization) — still no approve/publish",
+  "phase_stop": "DIVERSITY_FORENSICS_COMPLETE",
+  "tests": {
+    "run_at": "2026-09-03T18:18:06.731871+00:00",
+    "commands": [
+      "pytest tests/test_factory_seed_diversity.py tests/test_seed_v2_p5_remediation.py -q",
+      "pytest tests/test_seed_v2_phase1_plan.py tests/test_factory_seed_diversity.py -q"
+    ],
+    "results": [
+      {
+        "suite": "test_factory_seed_diversity + test_seed_v2_p5_remediation",
+        "passed": 27,
+        "failed": 0
+      },
+      {
+        "suite": "test_seed_v2_phase1_plan + test_factory_seed_diversity",
+        "passed": 12,
+        "failed": 0
+      }
+    ],
+    "thresholds_weakened": false,
+    "production_content_mutated_for_pass": false
+  },
+  "script": "apps/backend/scripts/run_factory_v2_diversity_forensics.py"
+}

@@ -12,6 +12,14 @@
 
 # testing
 /coverage
+/test-results/
+/playwright-report/
+/blob-report/
+/e2e/.auth/
+/lighthouse-reports/
+/e2e-matrix-run.txt
+/lighthouse-run.txt
+/build-phase2.txt
 
 # next.js
 /.next/

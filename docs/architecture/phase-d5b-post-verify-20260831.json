@@ -1,0 +1,465 @@
+{
+  "pilot_30": true,
+  "draft_30": true,
+  "published_0": true,
+  "global": {
+    "DRAFT": 78,
+    "PUBLISHED": 11,
+    "IN_REVIEW": 1
+  },
+  "body_hashes": [
+    {
+      "id": "8d50e829",
+      "match": true,
+      "actual": "ba8bdd894a2c5903c6f4e7ac94687a1c10a5895cc7dbdf55bdd5de603a8b44fd",
+      "expected": "ba8bdd894a2c5903c6f4e7ac94687a1c10a5895cc7dbdf55bdd5de603a8b44fd"
+    },
+    {
+      "id": "85fee888",
+      "match": true,
+      "actual": "dd820f0397acd427eaab763914778befa7e4b7cb7ed28c2356bb9c6ace8efeb7",
+      "expected": "dd820f0397acd427eaab763914778befa7e4b7cb7ed28c2356bb9c6ace8efeb7"
+    },
+    {
+      "id": "87f621ab",
+      "match": true,
+      "actual": "ebb82b9890b92f2d958015e36ee520276a6eff5b197ebcc4836eeb6a164c8e41",
+      "expected": "ebb82b9890b92f2d958015e36ee520276a6eff5b197ebcc4836eeb6a164c8e41"
+    },
+    {
+      "id": "863f1289",
+      "match": true,
+      "actual": "80284132074e406a57921417ced29359229c03c50bd53d9ca1afe91eebbfdfde",
+      "expected": "80284132074e406a57921417ced29359229c03c50bd53d9ca1afe91eebbfdfde"
+    },
+    {
+      "id": "ade9900b",
+      "match": true,
+      "actual": "72a9c542164f4eb018e81a4692f386802567f494224f40e07ff6122829b1e619",
+      "expected": "72a9c542164f4eb018e81a4692f386802567f494224f40e07ff6122829b1e619"
+    },
+    {
+      "id": "c7a54ae9",
+      "match": true,
+      "actual": "39a73a74ccd7e3686314cbcb99a955cfe463ad3146ffe580dea5dc7d5c13716c",
+      "expected": "39a73a74ccd7e3686314cbcb99a955cfe463ad3146ffe580dea5dc7d5c13716c"
+    },
+    {
+      "id": "7b80d6db",
+      "match": true,
+      "actual": "79323f5f7f3b7f777104b35a0278cfb460b1d4f78a5b175af95cc93459bcc140",
+      "expected": "79323f5f7f3b7f777104b35a0278cfb460b1d4f78a5b175af95cc93459bcc140"
+    },
+    {
+      "id": "a42a3589",
+      "match": true,
+      "actual": "0655fd63ac0242de7a090fd391d2a8ef47757c277be63f9e519890a9be73fb0b",
+      "expected": "0655fd63ac0242de7a090fd391d2a8ef47757c277be63f9e519890a9be73fb0b"
+    }
+  ],
+  "ku_lineage": [
+    {
+      "id": "8d50e829",
+      "ku_n": 1,
+      "ok": true
+    },
+    {
+      "id": "85fee888",
+      "ku_n": 1,
+      "ok": true
+    },
+    {
+      "id": "87f621ab",
+      "ku_n": 1,
+      "ok": true
+    },
+    {
+      "id": "863f1289",
+      "ku_n": 1,
+      "ok": true
+    },
+    {
+      "id": "ade9900b",
+      "ku_n": 1,
+      "ok": true
+    },
+    {
+      "id": "c7a54ae9",
+      "ku_n": 1,
+      "ok": true
+    },
+    {
+      "id": "7b80d6db",
+      "ku_n": 1,
+      "ok": true
+    },
+    {
+      "id": "a42a3589",
+      "ku_n": 1,
+      "ok": true
+    }
+  ],
+  "taxonomy": {
+    "count": 1,
+    "row": {
+      "id": "a9ee6fdf-d7e5-4983-b8ba-ec70da704b14",
+      "code": "limiting-factors",
+      "name": "Limiting Factors (Blackman's Law)",
+      "topic_id": "4039d404-67cb-4e88-b924-ea873c5c91e7",
+      "topic": "factors-affecting-photosynthesis",
+      "chapter": "photosynthesis",
+      "subject": "BOTANY"
+    },
+    "ok": true
+  },
+  "metadata": {
+    "e6b9fb1e": {
+      "concept": "limiting-factors",
+      "ok": true
+    },
+    "8d50e829": {
+      "concept": "limiting-factors",
+      "ok": true
+    },
+    "ade9900b": {
+      "concept": "ohms-law-concept",
+      "topic": "ohms-law",
+      "ok": true
+    }
+  },
+  "pointers": [
+    {
+      "id": "8d50e829",
+      "ok": true
+    },
+    {
+      "id": "85fee888",
+      "ok": true
+    },
+    {
+      "id": "87f621ab",
+      "ok": true
+    },
+    {
+      "id": "863f1289",
+      "ok": true
+    },
+    {
+      "id": "ade9900b",
+      "ok": true
+    },
+    {
+      "id": "c7a54ae9",
+      "ok": true
+    },
+    {
+      "id": "7b80d6db",
+      "ok": true
+    },
+    {
+      "id": "a42a3589",
+      "ok": true
+    }
+  ],
+  "untouched": [
+    {
+      "id": "5dc99543",
+      "type": "original",
+      "ok": true
+    },
+    {
+      "id": "8a979c6a",
+      "type": "original",
+      "ok": true
+    },
+    {
+      "id": "2602f9da",
+      "type": "original",
+      "ok": true
+    },
+    {
+      "id": "f81153c3",
+      "type": "original",
+      "ok": true
+    },
+    {
+      "id": "10d4d997",
+      "type": "original",
+      "ok": true
+    },
+    {
+      "id": "fc61e6e7",
+      "type": "original",
+      "ok": true
+    },
+    {
+      "id": "e6b9fb1e",
+      "type": "keep_body_remap",
+      "ok": true
+    },
+    {
+      "id": "f78dbbf2",
+      "type": "original",
+      "ok": true
+    },
+    {
+      "id": "c91a89ec",
+      "type": "original",
+      "ok": true
+    },
+    {
+      "id": "b33b47de",
+      "type": "original",
+      "ok": true
+    },
+    {
+      "id": "90d13ef4",
+      "type": "original",
+      "ok": true
+    },
+    {
+      "id": "acbbdd83",
+      "type": "original",
+      "ok": true
+    },
+    {
+      "id": "2f165110",
+      "type": "original",
+      "ok": true
+    },
+    {
+      "id": "92dec49f",
+      "type": "original",
+      "ok": true
+    },
+    {
+      "id": "b55bb380",
+      "type": "original",
+      "ok": true
+    },
+    {
+      "id": "8c577dd2",
+      "type": "original",
+      "ok": true
+    },
+    {
+      "id": "23815930",
+      "type": "original",
+      "ok": true
+    },
+    {
+      "id": "62f4b1f1",
+      "type": "original",
+      "ok": true
+    },
+    {
+      "id": "26ed6b35",
+      "type": "original",
+      "ok": true
+    },
+    {
+      "id": "9c80cb11",
+      "type": "original",
+      "ok": true
+    },
+    {
+      "id": "3493be87",
+      "type": "original",
+      "ok": true
+    },
+    {
+      "id": "5d4ca5da",
+      "type": "original",
+      "ok": true
+    }
+  ],
+  "pilot_filter": {
+    "count": 30,
+    "ok": true
+  },
+  "student_published": 11,
+  "c7_stem_contains_R_equals_VI": true,
+  "answers": [
+    {
+      "id": "8d50e829",
+      "ok": true,
+      "answer": "A"
+    },
+    {
+      "id": "85fee888",
+      "ok": true,
+      "answer": "B"
+    },
+    {
+      "id": "87f621ab",
+      "ok": true,
+      "answer": "C"
+    },
+    {
+      "id": "863f1289",
+      "ok": true,
+      "answer": "B"
+    },
+    {
+      "id": "ade9900b",
+      "ok": true,
+      "answer": "A"
+    },
+    {
+      "id": "c7a54ae9",
+      "ok": true,
+      "answer": "A"
+    },
+    {
+      "id": "7b80d6db",
+      "ok": true,
+      "answer": "A"
+    },
+    {
+      "id": "a42a3589",
+      "ok": true,
+      "answer": "A"
+    }
+  ],
+  "smoke": {
+    "fail": 0,
+    "ok": true
+  },
+  "unauthorized": [],
+  "before_after": [
+    {
+      "id": "8d50e829",
+      "before_version": "a614bc69",
+      "after_latest": "447d055a",
+      "current_preserved": true,
+      "old_retained": true,
+      "body_hash_before": "a765eca979ef",
+      "body_hash_after": "ba8bdd894a2c",
+      "answer": "A",
+      "difficulty": "medium",
+      "concept": "limiting-factors",
+      "topic": "factors-affecting-photosynthesis",
+      "status": "DRAFT",
+      "expected": true
+    },
+    {
+      "id": "85fee888",
+      "before_version": "d4c89a95",
+      "after_latest": "9f1a01b1",
+      "current_preserved": true,
+      "old_retained": true,
+      "body_hash_before": "6cfb07b6eb0b",
+      "body_hash_after": "dd820f0397ac",
+      "answer": "B",
+      "difficulty": "medium",
+      "concept": "photorespiration",
+      "topic": "factors-affecting-photosynthesis",
+      "status": "DRAFT",
+      "expected": true
+    },
+    {
+      "id": "87f621ab",
+      "before_version": "012ca4ee",
+      "after_latest": "426854ee",
+      "current_preserved": true,
+      "old_retained": true,
+      "body_hash_before": "e038a5ccec1c",
+      "body_hash_after": "ebb82b9890b9",
+      "answer": "C",
+      "difficulty": "medium",
+      "concept": "vsepr-theory",
+      "topic": "covalent-bonding-vsepr",
+      "status": "DRAFT",
+      "expected": true
+    },
+    {
+      "id": "863f1289",
+      "before_version": "e8c46c44",
+      "after_latest": "4184101a",
+      "current_preserved": true,
+      "old_retained": true,
+      "body_hash_before": "fc103b457c49",
+      "body_hash_after": "80284132074e",
+      "answer": "B",
+      "difficulty": "hard",
+      "concept": "sp-sp2-sp3",
+      "topic": "hybridization",
+      "status": "DRAFT",
+      "expected": true
+    },
+    {
+      "id": "ade9900b",
+      "before_version": "32b58f53",
+      "after_latest": "c48f845e",
+      "current_preserved": true,
+      "old_retained": true,
+      "body_hash_before": "2cf0db77521a",
+      "body_hash_after": "72a9c542164f",
+      "answer": "A",
+      "difficulty": "hard",
+      "concept": "ohms-law-concept",
+      "topic": "ohms-law",
+      "status": "DRAFT",
+      "expected": true
+    },
+    {
+      "id": "c7a54ae9",
+      "before_version": "4117b472",
+      "after_latest": "34a569f8",
+      "current_preserved": true,
+      "old_retained": true,
+      "body_hash_before": "1cf9331ef398",
+      "body_hash_after": "39a73a74ccd7",
+      "answer": "A",
+      "difficulty": "easy",
+      "concept": "ohms-law-concept",
+      "topic": "ohms-law",
+      "status": "DRAFT",
+      "expected": true
+    },
+    {
+      "id": "7b80d6db",
+      "before_version": "fef85035",
+      "after_latest": "d4c1fedd",
+      "current_preserved": true,
+      "old_retained": true,
+      "body_hash_before": "defe8dd4489e",
+      "body_hash_after": "79323f5f7f3b",
+      "answer": "A",
+      "difficulty": "hard",
+      "concept": "kcl-kvl",
+      "topic": "kirchhoffs-laws",
+      "status": "DRAFT",
+      "expected": true
+    },
+    {
+      "id": "a42a3589",
+      "before_version": "8d39848a",
+      "after_latest": "35f7c7d8",
+      "current_preserved": true,
+      "old_retained": true,
+      "body_hash_before": "5f4eb3f68080",
+      "body_hash_after": "0655fd63ac02",
+      "answer": "A",
+      "difficulty": "easy",
+      "concept": "drift-velocity",
+      "topic": "ohms-law",
+      "status": "DRAFT",
+      "expected": true
+    }
+  ],
+  "global_ok": true,
+  "c7_matches_signed": true,
+  "7b_answer_A": true,
+  "85_answer_B": true,
+  "verdict": "GREEN",
+  "verified_at": "2026-08-31T14:05:58.004938+00:00",
+  "apply_summary": {
+    "transaction": "COMMITTED",
+    "content_items_body_modified": 8,
+    "new_content_versions": 8,
+    "taxonomy_concepts_created": 1,
+    "metadata_remaps": 3,
+    "ku_relationships_copied": 8
+  }
+}

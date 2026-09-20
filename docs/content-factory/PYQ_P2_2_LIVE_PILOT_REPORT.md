@@ -1,0 +1,147 @@
+# P2.2 Live AI Pilot Report
+
+Generated: 2026-09-01T18:16:10.933946+00:00
+Seed: 20260901
+
+## Budget
+{
+  "max_cost_usd": 75.0,
+  "spent_usd": 0.648779,
+  "request_count": 1326,
+  "stopped": false,
+  "stop_reason": null
+}
+
+## Track A — PYQ Recovery
+{
+  "candidates": 50,
+  "processed": 50,
+  "ai_recovered": 25,
+  "deterministic_recovered": 0,
+  "verified": 27,
+  "failed": 0,
+  "inconclusive": 1,
+  "human_review": 20,
+  "provider_disagreement": 8,
+  "skipped_rerun": true,
+  "false_recovery": 0,
+  "human_verdict_pending": 50,
+  "cohort_ids": [
+    "cd4583ce844d9f5c:p22:q149",
+    "68144ff73f8a4119:p13:q84",
+    "df0707ec85be4616:p4:q20",
+    "cd4583ce844d9f5c:p10:q61",
+    "2b2bc0f64b041d11:p3:q10",
+    "2b2bc0f64b041d11:p14:q72",
+    "6c0df3028143ff02:p24:q158",
+    "b69d582ff457c62e:p4:q10",
+    "530db8cab5eb3f34:p25:q169",
+    "2b2bc0f64b041d11:p4:q18",
+    "b69d582ff457c62e:p42:q3",
+    "f7a45c960ede2f29:p5:q22",
+    "204ae2d806cddc1b:p5:q29",
+    "38d7f2187e79f7a7:p6:q37",
+    "b69d582ff457c62e:p40:q174",
+    "1d6b4be1305ce0be:p14:q91",
+    "6c0df3028143ff02:p8:q52",
+    "b69d582ff457c62e:p48:q13",
+    "87c534cad98b7b4e:p5:q30",
+    "1d6b4be1305ce0be:p7:q41",
+    "87c534cad98b7b4e:p5:q27",
+    "7e4dabb5a199588d:p28:q161",
+    "1d7ffd36a442fa95:p17:q104",
+    "f7a45c960ede2f29:p6:q27",
+    "ee3990aec2dfa279:p2:q20",
+    "a1c3361678271d6e:p16:q96",
+    "1d6b4be1305ce0be:p7:q45",
+    "297fcb0c37dbdddb:p7:q49",
+    "1d7ffd36a442fa95:p13:q81",
+    "1d6b4be1305ce0be:p12:q75",
+    "dbdcfa0a13d13467:p17:q101",
+    "6c0df3028143ff02:p13:q80",
+    "68144ff73f8a4119:p13:q83",
+    "8633a3811ea07447:p23:q156",
+    "a43894b5fbc8cd28:p9:q1",
+    "297fcb0c37dbdddb:p13:q80",
+    "dbdcfa0a13d13467:p16:q95",
+    "b69d582ff457c62e:p15:q59",
+    "f5378eb6785774c3:p3:q12",
+    "1d6b4be1305ce0be:p8:q50",
+    "f5378eb6785774c3:p21:q141",
+    "7e4dabb5a199588d:p8:q38",
+    "7e4dabb5a199588d:p7:q33",
+    "ee3990aec2dfa279:p2:q9",
+    "10030e374de702ab:p18:q11",
+    "82a7cff8dca5bb40:p5:q30",
+    "68144ff73f8a4119:p23:q151",
+    "38d7f2187e79f7a7:p25:q166",
+    "f7a45c960ede2f29:p9:q43",
+    "f5378eb6785774c3:p6:q40"
+  ],
+  "verdict": "GREEN"
+}
+
+## Track B — NCERT MCQ
+{
+  "generated": 1000,
+  "validated": 0,
+  "rejected": 1000,
+  "inconclusive": 0,
+  "human_review": 0,
+  "exact_duplicate_count": 0,
+  "near_duplicate_count": 0,
+  "semantic_duplicate_count": 0,
+  "cost_usd": 0.648779,
+  "subject_distribution": {
+    "BIOLOGY": 310,
+    "CHEMISTRY": 389,
+    "PHYSICS": 301
+  },
+  "chapter_distribution_sample": {
+    "BIOLOGY:4": 31,
+    "CHEMISTRY:6": 52,
+    "PHYSICS:1": 43,
+    "PHYSICS:8": 17,
+    "BIOLOGY:16": 10,
+    "BIOLOGY:5": 32,
+    "PHYSICS:4": 30,
+    "BIOLOGY:3": 18,
+    "PHYSICS:3": 34,
+    "BIOLOGY:7": 18,
+    "CHEMISTRY:5": 37,
+    "CHEMISTRY:3": 32,
+    "PHYSICS:6": 36,
+    "PHYSICS:14": 14,
+    "BIOLOGY:15": 8,
+    "PHYSICS:2": 30,
+    "CHEMISTRY:2": 49,
+    "PHYSICS:11": 13,
+    "BIOLOGY:12": 8,
+    "CHEMISTRY:8": 45,
+    "CHEMISTRY:9": 39,
+    "BIOLOGY:6": 24,
+    "CHEMISTRY:7": 41,
+    "BIOLOGY:1": 26,
+    "BIOLOGY:10": 15,
+    "BIOLOGY:9": 19,
+    "CHEMISTRY:1": 41,
+    "BIOLOGY:18": 6,
+    "BIOLOGY:11": 16,
+    "PHYSICS:5": 29
+  },
+  "human_sample_size": 100,
+  "human_verdict_pending": 100,
+  "generation_success_rate": 1.0,
+  "source_support_rate": 0.326,
+  "verdict": "RED"
+}
+
+## Verdicts
+{
+  "track_a": "GREEN",
+  "track_b": "RED",
+  "overall": "YELLOW"
+}
+
+Production import: BLOCKED
+Human review: see PYQ_P2_2_HUMAN_REVIEW.csv

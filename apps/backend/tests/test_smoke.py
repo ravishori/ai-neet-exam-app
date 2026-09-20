@@ -14,7 +14,14 @@ async def test_health_check_does_not_need_auth(client):
 async def test_register_then_me_reflects_new_user(client):
     resp = await client.post(
         "/api/v1/auth/register",
-        json={"email": "smoke-test@example.com", "password": "SmokeTest!234", "first_name": "Smoke"},
+        json={
+            "email": "smoke-test@example.com",
+            "first_name": "Smoke",
+            "last_name": "Tester",
+            "mobile": "9876500901",
+            "state_code": "KARNATAKA",
+            "city": "Bangalore",
+        },
     )
     assert resp.status_code == 201, resp.text
 

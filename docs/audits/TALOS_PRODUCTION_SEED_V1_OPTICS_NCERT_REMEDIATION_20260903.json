@@ -1,0 +1,402 @@
+{
+  "metadata": {
+    "captured_at": "2026-09-03T07:50:20.755796+00:00",
+    "mode": "OPTICS_NCERT_PART2_ACQUISITION_AND_EVIDENCE_REMEDIATION",
+    "approved_executed": false,
+    "published_executed": false,
+    "ecaep_executed": false,
+    "study_material_zip_note": "StudyMaterial.zip contains Class 12 Physics Part-I only (chapters 1-8); Part-II absent in zip. Official Part-II acquired from ncert.nic.in."
+  },
+  "authorization_reference": "docs/audits/TALOS_PRODUCTION_SEED_V1_PUBLICATION_AUTHORIZATION_20260903.json",
+  "allowlist_sha256": "c0cf70846233730ef384188f5b78cced2a7865f76d977a0af6063f803bc8f0c1",
+  "allowlist_hash_match": true,
+  "allowlist_count": 30,
+  "target_item": "3d0dbda5-7882-4e3f-90d8-3a479cf67ab2",
+  "source_acquisition": {
+    "official_source_identified": true,
+    "official_pdf_acquired": true,
+    "document_identity_verified": true,
+    "portal": "https://ncert.nic.in/textbook.php?leph2=0-6",
+    "study_material_zip_had_part2": false,
+    "files": [
+      {
+        "filename": "ncert-book-class-12-physics-part-2-prelims.pdf",
+        "relative_path": "StudyMaterial/Physics/Class 12-Physics/ncert-book-class-12-physics-part-2-prelims.pdf",
+        "size_bytes": 1718367,
+        "sha256": "ec55ddcdc76286a233424784c52294f4352ff41a1e34846f6b8182c0145ff247",
+        "pages": 18,
+        "pdf_metadata_title": "D:\\TEXTBOOKS\\RATIONALISED 20222-23\\Neha\\12090 — Physics Part-II\\1 Source Files\\Prelims\\Prelims.pmd",
+        "text_header_lines": [
+          "PHYSICS",
+          "PART – II",
+          "TEXTBOOK FOR CLASS XII"
+        ],
+        "source_url": "https://ncert.nic.in/textbook/pdf/leph2ps.pdf",
+        "publisher": "NCERT",
+        "class": "12",
+        "subject": "Physics",
+        "part": "II",
+        "edition_year": "unknown"
+      },
+      {
+        "filename": "ncert-book-class-12-physics-part-2-chapter-9.pdf",
+        "relative_path": "StudyMaterial/Physics/Class 12-Physics/ncert-book-class-12-physics-part-2-chapter-9.pdf",
+        "size_bytes": 3392485,
+        "sha256": "5c9570cc9f45cbe8f8d62100ccecd3370f8d8085f57041764bd1940bf467d235",
+        "pages": 34,
+        "pdf_metadata_title": "D:\\TEXTBOOKS\\RATIONALISED 20222-23\\Neha\\12090 — Physics Part-II\\1 Source Files\\Chapter-9\\Chapter-9.pmd",
+        "text_header_lines": [
+          "Chapter Nine",
+          "RAY OPTICS",
+          "AND OPTICAL",
+          "INSTRUMENTS",
+          "9.1  INTRODUCTION",
+          "Nature has endowed the human eye (retina) with the sensitivity to detect",
+          "electromagnetic waves within a small range of the electromagnetic",
+          "spectrum. Electromagnetic radiation belonging to this region of the"
+        ],
+        "source_url": "https://ncert.nic.in/textbook/pdf/leph201.pdf",
+        "publisher": "NCERT",
+        "class": "12",
+        "subject": "Physics",
+        "part": "II",
+        "edition_year": "unknown"
+      },
+      {
+        "filename": "ncert-book-class-12-physics-part-2-chapter-10.pdf",
+        "relative_path": "StudyMaterial/Physics/Class 12-Physics/ncert-book-class-12-physics-part-2-chapter-10.pdf",
+        "size_bytes": 2682100,
+        "sha256": "315c746f4733971ab171e0cb145810ef8b5648c2604745a4fb57769f2714c91e",
+        "pages": 19,
+        "pdf_metadata_title": "D:\\TEXTBOOKS\\RATIONALISED 20222-23\\Neha\\12090 — Physics Part-II\\1 Source Files\\Chapter-10\\Chapter-10.pmd",
+        "text_header_lines": [
+          "255",
+          "Wave Optics",
+          "Chapter Ten",
+          "WAVE OPTICS",
+          "10.1  INTRODUCTION",
+          "In 1637 Descartes gave the corpuscular model of light and derived Snell’s",
+          "law. It explained the laws of reflection and refraction of light at an interface.",
+          "The corpuscular model predicted that if the ray of light (on refraction)"
+        ],
+        "source_url": "https://ncert.nic.in/textbook/pdf/leph202.pdf",
+        "publisher": "NCERT",
+        "class": "12",
+        "subject": "Physics",
+        "part": "II",
+        "edition_year": "unknown"
+      },
+      {
+        "filename": "ncert-book-class-12-physics-part-2-chapter-11.pdf",
+        "relative_path": "StudyMaterial/Physics/Class 12-Physics/ncert-book-class-12-physics-part-2-chapter-11.pdf",
+        "size_bytes": 1791818,
+        "sha256": "8b465f3a3fddc009ec98b9065014231740bd2f1c29aba6c142ceabfbb73bf764",
+        "pages": 16,
+        "pdf_metadata_title": "D:\\TEXTBOOKS\\RATIONALISED 20222-23\\Neha\\12090 — Physics Part-II\\1 Source Files\\Chapter-11\\Chapter 11.pmd",
+        "text_header_lines": [
+          "Physics",
+          "274",
+          "11.1  INTRODUCTION",
+          "The Maxwell’s equations of electromagnetism and Hertz experiments on",
+          "the generation and detection of electromagnetic waves in 1887 strongly",
+          "established the wave nature of light. Towards the same period at the end",
+          "of 19th century, experimental investigations on conduction of electricity",
+          "(electric discharge) through gases at low pressure in a discharge tube led"
+        ],
+        "source_url": "https://ncert.nic.in/textbook/pdf/leph203.pdf",
+        "publisher": "NCERT",
+        "class": "12",
+        "subject": "Physics",
+        "part": "II",
+        "edition_year": "unknown"
+      },
+      {
+        "filename": "ncert-book-class-12-physics-part-2-chapter-12.pdf",
+        "relative_path": "StudyMaterial/Physics/Class 12-Physics/ncert-book-class-12-physics-part-2-chapter-12.pdf",
+        "size_bytes": 2055114,
+        "sha256": "6ddc6d11f464a9370911bdf349b46c9ba422d0f3d73ec69392d4b538e59dc31b",
+        "pages": 16,
+        "pdf_metadata_title": "D:\\TEXTBOOKS\\RATIONALISED 20222-23\\Neha\\12090 — Physics Part-II\\1 Source Files\\Chapter-12\\Chapter 12.pmd",
+        "text_header_lines": [
+          "Physics",
+          "290",
+          "12.1  INTRODUCTION",
+          "By the nineteenth century, enough evidence had accumulated in favour of",
+          "atomic hypothesis of matter. In 1897, the experiments on electric discharge",
+          "through gases carried out by the English physicist J. J. Thomson (1856 –",
+          "1940) revealed that atoms of different elements contain negatively charged",
+          "constituents (electrons) that are identical for all atoms. However, atoms on a"
+        ],
+        "source_url": "https://ncert.nic.in/textbook/pdf/leph204.pdf",
+        "publisher": "NCERT",
+        "class": "12",
+        "subject": "Physics",
+        "part": "II",
+        "edition_year": "unknown"
+      },
+      {
+        "filename": "ncert-book-class-12-physics-part-2-chapter-13.pdf",
+        "relative_path": "StudyMaterial/Physics/Class 12-Physics/ncert-book-class-12-physics-part-2-chapter-13.pdf",
+        "size_bytes": 1830495,
+        "sha256": "1f58e53087014ecb2da30275d3b240458e94c2a5d92a6910b64632261dad28b9",
+        "pages": 17,
+        "pdf_metadata_title": "D:\\TEXTBOOKS\\RATIONALISED 20222-23\\Neha\\12090 — Physics Part-II\\1 Source Files\\Chapter-13\\Chapter 13.pmd",
+        "text_header_lines": [
+          "Physics",
+          "306",
+          "13.1  INTRODUCTION",
+          "In the previous chapter, we have learnt that in every atom, the positive",
+          "charge and mass are densely concentrated at the centre of the atom",
+          "forming its nucleus. The overall dimensions of a nucleus are much smaller",
+          "than those of an atom. Experiments on scattering of a-particles",
+          "demonstrated that the radius of a nucleus was smaller than the radius"
+        ],
+        "source_url": "https://ncert.nic.in/textbook/pdf/leph205.pdf",
+        "publisher": "NCERT",
+        "class": "12",
+        "subject": "Physics",
+        "part": "II",
+        "edition_year": "unknown"
+      },
+      {
+        "filename": "ncert-book-class-12-physics-part-2-chapter-14.pdf",
+        "relative_path": "StudyMaterial/Physics/Class 12-Physics/ncert-book-class-12-physics-part-2-chapter-14.pdf",
+        "size_bytes": 1883124,
+        "sha256": "a7e5dc3f4128097d6200a34fa6ad43260178db4d614eced95881f220cd8f7250",
+        "pages": 21,
+        "pdf_metadata_title": "D:\\TEXTBOOKS\\RATIONALISED 20222-23\\Neha\\12090 — Physics Part-II\\1 Source Files\\Chapter-14\\Chapter 14.pmd",
+        "text_header_lines": [
+          "14.1  INTRODUCTION",
+          "Devices in which a controlled flow of electrons can be obtained are the",
+          "basic building blocks of all the electronic circuits. Before the discovery of",
+          "transistor in 1948, such devices were mostly vacuum tubes (also called",
+          "valves) like the vacuum diode which has two electrodes, viz., anode (often",
+          "called plate) and cathode; triode which has three electrodes – cathode,",
+          "plate and grid; tetrode and pentode (respectively with 4 and 5 electrodes).",
+          "In a vacuum tube, the electrons are supplied by a heated cathode and"
+        ],
+        "source_url": "https://ncert.nic.in/textbook/pdf/leph206.pdf",
+        "publisher": "NCERT",
+        "class": "12",
+        "subject": "Physics",
+        "part": "II",
+        "edition_year": "unknown"
+      }
+    ],
+    "primary_optics_chapter": {
+      "filename": "ncert-book-class-12-physics-part-2-chapter-9.pdf",
+      "relative_path": "StudyMaterial/Physics/Class 12-Physics/ncert-book-class-12-physics-part-2-chapter-9.pdf",
+      "size_bytes": 3392485,
+      "sha256": "5c9570cc9f45cbe8f8d62100ccecd3370f8d8085f57041764bd1940bf467d235",
+      "pages": 34,
+      "pdf_metadata_title": "D:\\TEXTBOOKS\\RATIONALISED 20222-23\\Neha\\12090 — Physics Part-II\\1 Source Files\\Chapter-9\\Chapter-9.pmd",
+      "text_header_lines": [
+        "Chapter Nine",
+        "RAY OPTICS",
+        "AND OPTICAL",
+        "INSTRUMENTS",
+        "9.1  INTRODUCTION",
+        "Nature has endowed the human eye (retina) with the sensitivity to detect",
+        "electromagnetic waves within a small range of the electromagnetic",
+        "spectrum. Electromagnetic radiation belonging to this region of the"
+      ],
+      "source_url": "https://ncert.nic.in/textbook/pdf/leph201.pdf",
+      "publisher": "NCERT",
+      "class": "12",
+      "subject": "Physics",
+      "part": "II",
+      "edition_year": "unknown"
+    }
+  },
+  "source_identity": {
+    "title": "PHYSICS PART – II TEXTBOOK FOR CLASS XII / Chapter Nine RAY OPTICS AND OPTICAL INSTRUMENTS",
+    "class": "12",
+    "subject": "Physics",
+    "part": "II",
+    "publisher": "National Council of Educational Research and Training (NCERT)",
+    "edition_year": "unknown"
+  },
+  "source_checksum": {
+    "filename": "ncert-book-class-12-physics-part-2-chapter-9.pdf",
+    "sha256": "5c9570cc9f45cbe8f8d62100ccecd3370f8d8085f57041764bd1940bf467d235",
+    "size_bytes": 3392485
+  },
+  "source_provenance": {
+    "source_url": "https://ncert.nic.in/textbook/pdf/leph201.pdf",
+    "registered_path": "StudyMaterial/Physics/Class 12-Physics/ncert-book-class-12-physics-part-2-chapter-9.pdf"
+  },
+  "question_verification": {
+    "proposition": "Initial object distance for thin convex lens f=+15 cm given image-shift constraints",
+    "principle": "Thin lens formula 1/v - 1/u = 1/f (Cartesian sign convention)",
+    "algebra_summary": "Quadratic x^2-40x+300=0; roots 30,10; reject x=10 (x>f for real image)",
+    "independent_answer": "B",
+    "options_check": {
+      "A": "25 rejected",
+      "B": "30 accepted",
+      "C": "40 rejected",
+      "D": "45 rejected"
+    }
+  },
+  "answer_verification": {
+    "stored_answer": "B",
+    "independent_answer": "B",
+    "answer_match": true
+  },
+  "explanation_verification": {
+    "explanation_consistent": true,
+    "note": "Explanation derives thin-lens formula consistently; yields B=30 cm"
+  },
+  "ncert_evidence_before": null,
+  "ncert_evidence_after": {
+    "verification_level": "SOURCE_TEXT_VERIFIED",
+    "source_document": "NCERT Physics Class XII Part-II",
+    "document_version": "StudyMaterial-on-disk from ncert.nic.in leph201.pdf",
+    "class_level": "12",
+    "chapter": "Ray Optics and Optical Instruments (Chapter Nine)",
+    "section": "9.4 Thin lenses / Thin lens formula (Ray Optics and Optical Instruments)",
+    "page_number": null,
+    "source_excerpt": "ngle spherical surface and follow it by thin lenses. A thin lens is a transparent optical medium bounded by two surfaces; at least one of which should be spherical. Applying the formula for image formation by a single spherical surface successively at the two surfaces of a lens,",
+    "verification_method": "Official NCERT download (ncert.nic.in/textbook/pdf/leph201.pdf); pymupdf locate thin-lens formula; independent algebra MATCH; no page number invented. StudyMaterial.zip lacked Part-II.",
+    "source_pdf_relpath": "StudyMaterial/Physics/Class 12-Physics/ncert-book-class-12-physics-part-2-chapter-9.pdf"
+  },
+  "ncert_certification_result": {
+    "previous": {
+      "certification_decision": "CERTIFIED_WITH_LIMITATION",
+      "ncert_classification": "SCIENTIFICALLY_VALID_NOT_DIRECTLY_LOCATED_IN_NCERT",
+      "ncert_source": null
+    },
+    "new": {
+      "certification_decision": "CERTIFIED_WITH_LIMITATION",
+      "ncert_classification": "NCERT_DERIVED",
+      "ncert_source": "StudyMaterial/Physics/Class 12-Physics/ncert-book-class-12-physics-part-2-chapter-9.pdf",
+      "page_verified": false,
+      "reason": "Official Part-II Ray Optics PDF acquired; thin-lens formula text located; answer MATCH; page numbers not invented"
+    }
+  },
+  "publication_gate_results": {
+    "as_draft": {
+      "passed": false,
+      "structural_ok": true,
+      "scientific_ok": true,
+      "ncert_ok": true,
+      "taxonomy_ok": true,
+      "duplicate_ok": true,
+      "provenance_ok": true,
+      "review_state_ok": false,
+      "numerical_status": "NOT_NUMERICAL",
+      "ncert_level": "SOURCE_TEXT_VERIFIED",
+      "reasons": [
+        "review:not_approved"
+      ]
+    },
+    "if_approved": {
+      "passed": true,
+      "structural_ok": true,
+      "scientific_ok": true,
+      "ncert_ok": true,
+      "taxonomy_ok": true,
+      "duplicate_ok": true,
+      "provenance_ok": true,
+      "review_state_ok": true,
+      "numerical_status": "NOT_NUMERICAL",
+      "ncert_level": "SOURCE_TEXT_VERIFIED",
+      "reasons": []
+    }
+  },
+  "approval_preflight": {
+    "READY_FOR_APPROVAL": 30,
+    "BLOCKED": 0,
+    "blocked_ids": [],
+    "APPROVED": 0,
+    "eligible_for_approval_target_item": true,
+    "target_blocking_reasons": []
+  },
+  "exact_30_result": {
+    "READY_FOR_APPROVAL": 30,
+    "BLOCKED": 0
+  },
+  "protected_population_integrity": {
+    "before": {
+      "t6d": {
+        "total": 100,
+        "published": 100,
+        "draft": 0,
+        "content_fp": "e0758fbcb071180b61a33f2b4581e894",
+        "tag": "physics-t6d-pilot-20260902"
+      },
+      "legacy": {
+        "total": 5000,
+        "published": 0,
+        "draft": 5000,
+        "content_fp": "13d51e697382663a28ffc44fd56aedb1",
+        "tag": "legacy-physics-5000-import-20260902"
+      },
+      "t6f2": {
+        "total": 938,
+        "content_fp": "17a1672c444c8362ed0261dacf0f82c7",
+        "tag": "physics-t6f1-pilot-20260902"
+      }
+    },
+    "after": {
+      "t6d": {
+        "total": 100,
+        "published": 100,
+        "draft": 0,
+        "content_fp": "e0758fbcb071180b61a33f2b4581e894",
+        "tag": "physics-t6d-pilot-20260902"
+      },
+      "legacy": {
+        "total": 5000,
+        "published": 0,
+        "draft": 5000,
+        "content_fp": "13d51e697382663a28ffc44fd56aedb1",
+        "tag": "legacy-physics-5000-import-20260902"
+      },
+      "t6f2": {
+        "total": 938,
+        "content_fp": "17a1672c444c8362ed0261dacf0f82c7",
+        "tag": "physics-t6f1-pilot-20260902"
+      }
+    },
+    "unexpected_protected_mutations": []
+  },
+  "content_integrity": {
+    "target_content_fingerprint_before": "33ebe1235d5adfc9a5bc060a0a9dec4b137ddc67f49d750dc5ffe949afad2078",
+    "target_content_fingerprint_after": "33ebe1235d5adfc9a5bc060a0a9dec4b137ddc67f49d750dc5ffe949afad2078",
+    "stem_options_answer_explanation_changed": false,
+    "other_29_ncert_evidence_unchanged": true
+  },
+  "status_integrity": {
+    "draft": 30,
+    "approved": 0,
+    "published": 0,
+    "ecaep": 0
+  },
+  "tests": {
+    "tests_run": [
+      "tests/test_physics_t6d_pilot.py",
+      "tests/test_physics_t6f2_publish.py",
+      "tests/test_content_factory_p4.py",
+      "filter: ncert or publication or gate or evidence"
+    ],
+    "tests_passed": 11,
+    "tests_failed": 0,
+    "tests_deselected": 15,
+    "note": "test_publication_gates.py does not exist; used t6e/t6d/t6f2/p4 related suites"
+  },
+  "limitations": [
+    "page_number=null; page_verified=false; printed page not claimed",
+    "CERTIFIED_WITH_LIMITATION retained (page-level not verified)",
+    "StudyMaterial.zip did not contain Part-II; files acquired from official NCERT URLs",
+    "APPROVED=0; publication not executed"
+  ],
+  "final_verdict": "GREEN — OPTICS NCERT EVIDENCE RESOLVED",
+  "distinctions": {
+    "CERTIFIED": true,
+    "ALLOWLIST_READY": true,
+    "APPROVAL_PREFLIGHT": true,
+    "APPROVED": false,
+    "PUBLICATION": false,
+    "ECAEP": 0
+  }
+}

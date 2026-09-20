@@ -1,29 +1,91 @@
 version: 2
+
 updates:
-  - package-ecosystem: pip
-    directory: /apps/backend
+
+  # --------------------------------------------------------------------------
+  # GitHub Actions
+  # --------------------------------------------------------------------------
+  - package-ecosystem: "github-actions"
+    directory: "/"
     schedule:
-      interval: weekly
+      interval: "weekly"
+
+    open-pull-requests-limit: 10
+
+    labels:
+      - dependencies
+      - github-actions
+
+    commit-message:
+      prefix: "chore"
+
+  # --------------------------------------------------------------------------
+  # Python Backend
+  # --------------------------------------------------------------------------
+  - package-ecosystem: "pip"
+    directory: "/apps/backend"
+
+    schedule:
+      interval: "weekly"
+
+    open-pull-requests-limit: 10
+
+    labels:
+      - backend
+      - dependencies
+
+    commit-message:
+      prefix: "deps"
+
+  # --------------------------------------------------------------------------
+  # Frontend
+  # --------------------------------------------------------------------------
+  - package-ecosystem: "npm"
+    directory: "/apps/frontend"
+
+    schedule:
+      interval: "weekly"
+
+    open-pull-requests-limit: 10
+
+    labels:
+      - frontend
+      - dependencies
+
+    commit-message:
+      prefix: "deps"
+
+  # --------------------------------------------------------------------------
+  # Docker
+  # --------------------------------------------------------------------------
+  - package-ecosystem: "docker"
+    directory: "/"
+
+    schedule:
+      interval: "weekly"
+
     open-pull-requests-limit: 5
 
-  - package-ecosystem: npm
-    directory: /apps/web
+    labels:
+      - docker
+      - dependencies
+
+    commit-message:
+      prefix: "deps"
+
+  # --------------------------------------------------------------------------
+  # Terraform (Optional)
+  # --------------------------------------------------------------------------
+  - package-ecosystem: "terraform"
+    directory: "/infrastructure"
+
     schedule:
-      interval: weekly
+      interval: "monthly"
+
     open-pull-requests-limit: 5
 
-  - package-ecosystem: github-actions
-    directory: /
-    schedule:
-      interval: weekly
-    open-pull-requests-limit: 5
+    labels:
+      - infrastructure
 
-  - package-ecosystem: docker
-    directory: /apps/backend
-    schedule:
-      interval: weekly
-
-  - package-ecosystem: docker
-    directory: /apps/web
-    schedule:
-      interval: weekly
+    commit-message:
+      prefix: "deps"

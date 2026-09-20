@@ -1,0 +1,22 @@
+---
+description: Audit/remediation task cadence — measure, mutate only if authorized, verify, artifact
+alwaysApply: true
+---
+
+# Audit protocol
+
+## Cadence
+1. Measure actual before-state.
+2. Execute **only** the authorized mutation (or none for read-only audits).
+3. Measure after-state.
+4. Verify invariants (gates, freezes, provider_call_count).
+5. Produce machine-readable audit under `docs/audits/` (`.md` + `.json`).
+
+## Authority
+- Permanent policy → `.cursor/rules/` (+ `docs/architecture/` when cited).
+- Measured task state → prior `docs/audits/*.json` artifacts.
+- Task prompts supply only task-specific deltas.
+
+## Verdict
+- GREEN requires evidence (counts, IDs, gate results), not implementation claims.
+- Populations for writes must be loaded from audit JSON IDs — not rediscovered ad hoc.

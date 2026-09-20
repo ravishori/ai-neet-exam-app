@@ -14,6 +14,7 @@ import pytest
 from sqlalchemy import select
 
 from conftest import csrf_headers
+from helpers_publishable_question import publishable_question_body
 
 pytestmark = pytest.mark.asyncio(loop_scope="session")
 
@@ -34,18 +35,12 @@ async def _publish_question(client, concept_id: str, *, correct_option: str = "B
             "title": "KU mastery test question",
             "slug": f"ku-mastery-test-question-{concept_id[:8]}",
             "language": "en",
-            "body": {
-                "stem": "1 + 1 = ?",
-                "options": [
+            "body": publishable_question_body(stem="1 + 1 = ?", correct_option=correct_option, explanation="Basic arithmetic.", options=[
                     {"label": "A", "text": "1"},
                     {"label": "B", "text": "2"},
                     {"label": "C", "text": "3"},
                     {"label": "D", "text": "11"},
-                ],
-                "correct_option": correct_option,
-                "explanation": "Basic arithmetic.",
-                "difficulty": "easy",
-            },
+                ],),
         },
         headers=csrf_headers(client),
     )

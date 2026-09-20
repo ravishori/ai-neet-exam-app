@@ -1,0 +1,524 @@
+{
+  "task_id": "PYTHON-MCQ-ENGINE-013",
+  "timestamp": "2026-09-14T20:12:33+0530",
+  "verdict": "GREEN",
+  "baseline": {
+    "engine_010_mcq_eligible": 414,
+    "engine_012_mcq_eligible": 58,
+    "combined_potential_before_013": 472
+  },
+  "candidates_selected": 200,
+  "candidates_reviewed": 200,
+  "MCQ_ELIGIBLE": 77,
+  "REVIEW_REQUIRED": 0,
+  "REJECTED": 123,
+  "eligibility_rate": 0.385,
+  "selection_shortfall": {
+    "DIRECT_FACT": {
+      "target": 100,
+      "available_unused": 173,
+      "selected": 100,
+      "shortfall": 0,
+      "by_subject_available": {
+        "CHEMISTRY": 54,
+        "BOTANY": 34,
+        "PHYSICS": 85
+      }
+    },
+    "CONTROLLED_ASSOCIATION": {
+      "target": 60,
+      "available_unused": 82,
+      "selected": 60,
+      "shortfall": 0,
+      "by_subject_available": {
+        "CHEMISTRY": 45,
+        "BOTANY": 18,
+        "PHYSICS": 17,
+        "ZOOLOGY": 2
+      }
+    },
+    "CONTROLLED_NUMERICAL": {
+      "target": 25,
+      "available_unused": 34,
+      "selected": 25,
+      "shortfall": 0,
+      "by_subject_available": {
+        "PHYSICS": 15,
+        "BOTANY": 9,
+        "CHEMISTRY": 8,
+        "ZOOLOGY": 2
+      }
+    },
+    "SI_UNIT_DIMENSION": {
+      "target": 15,
+      "available_unused": 16,
+      "selected": 15,
+      "shortfall": 0,
+      "by_subject_available": {
+        "CHEMISTRY": 6,
+        "PHYSICS": 10
+      }
+    }
+  },
+  "deferred_categories": [
+    "RELATIONSHIP_FORMULA"
+  ],
+  "duplicate_count": 0,
+  "ambiguity_count": 3,
+  "insufficient_evidence_count": 0,
+  "syllabus_failures": 0,
+  "taxonomy_failures": 0,
+  "distractor_failures": 9,
+  "reason_code_distribution": {
+    "DIRECT_ANSWER_SPAN_UNSAFE": 60,
+    "QUESTION_NOT_FACT": 8,
+    "ASSOCIATION_PAIR_UNSAFE": 23,
+    "DISTRACTOR_POOL_INSUFFICIENT": 9,
+    "NUMERICAL_RANGE_AMBIGUOUS": 3,
+    "ANSWER_NOT_IN_EVIDENCE": 1,
+    "NUMERICAL_CONTRACT_UNSUPPORTED": 9,
+    "SI_UNIT_PAIR_UNSAFE": 10
+  },
+  "subject_breakdown": {
+    "selected": {
+      "PHYSICS": 71,
+      "BOTANY": 57,
+      "CHEMISTRY": 68,
+      "ZOOLOGY": 4
+    },
+    "eligible": {
+      "PHYSICS": 31,
+      "BOTANY": 15,
+      "CHEMISTRY": 31
+    }
+  },
+  "fact_type_breakdown": {
+    "selected": {
+      "DIRECT_FACT": 100,
+      "CONTROLLED_ASSOCIATION": 60,
+      "CONTROLLED_NUMERICAL": 25,
+      "SI_UNIT_DIMENSION": 15
+    },
+    "outcomes_by_category": {
+      "DIRECT_FACT": {
+        "MCQ_ELIGIBLE": 34,
+        "REJECTED": 66
+      },
+      "CONTROLLED_ASSOCIATION": {
+        "REJECTED": 26,
+        "MCQ_ELIGIBLE": 34
+      },
+      "CONTROLLED_NUMERICAL": {
+        "REJECTED": 17,
+        "MCQ_ELIGIBLE": 8
+      },
+      "SI_UNIT_DIMENSION": {
+        "REJECTED": 14,
+        "MCQ_ELIGIBLE": 1
+      }
+    },
+    "eligible_by_category": {
+      "DIRECT_FACT": 34,
+      "CONTROLLED_ASSOCIATION": 34,
+      "CONTROLLED_NUMERICAL": 8,
+      "SI_UNIT_DIMENSION": 1
+    }
+  },
+  "chapter_breakdown": {
+    "selected": {
+      "PHYSICS:Mechanical Properties of Solids": 4,
+      "PHYSICS:Current Electricity": 8,
+      "PHYSICS:Laws of Motion": 10,
+      "PHYSICS:Mechanical Properties of Fluids": 9,
+      "PHYSICS:Kinetic Theory": 6,
+      "PHYSICS:Units and Measurement": 3,
+      "PHYSICS:Electrostatics": 11,
+      "PHYSICS:Gravitation": 5,
+      "PHYSICS:Systems of Particles and Rotational Motion": 3,
+      "PHYSICS:Work, Energy and Power": 3,
+      "PHYSICS:Optics": 7,
+      "BOTANY:Photosynthesis in Higher Plants": 7,
+      "BOTANY:Cell - The Unit of Life": 12,
+      "BOTANY:Plant Growth and Development": 1,
+      "BOTANY:Biomolecules": 6,
+      "BOTANY:Principles of Inheritance and Variation": 2,
+      "BOTANY:The Living World": 1,
+      "BOTANY:Sexual Reproduction in Flowering Plants": 8,
+      "BOTANY:Plant Kingdom": 2,
+      "BOTANY:Microbes in Human Welfare": 2,
+      "BOTANY:Biodiversity and Conservation": 4,
+      "BOTANY:Ecosystem": 2,
+      "BOTANY:Molecular Basis of Inheritance": 10,
+      "CHEMISTRY:Chemical Bonding and Molecular Structure": 2,
+      "CHEMISTRY:Some Basic Concepts of Chemistry": 15,
+      "CHEMISTRY:Biomolecules": 5,
+      "CHEMISTRY:Equilibrium": 7,
+      "CHEMISTRY:Coordination Compounds": 2,
+      "CHEMISTRY:The d- and f-Block Elements": 3,
+      "CHEMISTRY:Redox Reactions": 3,
+      "CHEMISTRY:Structure of Atom": 14,
+      "CHEMISTRY:Chemical Kinetics": 2,
+      "CHEMISTRY:Solutions": 3,
+      "CHEMISTRY:Electrochemistry": 5,
+      "CHEMISTRY:Thermodynamics": 6,
+      "CHEMISTRY:Amines": 1,
+      "ZOOLOGY:Structural Organisation in Animals": 1,
+      "ZOOLOGY:Human Reproduction": 2,
+      "PHYSICS:Kinematics": 2,
+      "ZOOLOGY:Breathing and Exchange of Gases": 1
+    },
+    "eligible": {
+      "PHYSICS:Mechanical Properties of Solids": 2,
+      "PHYSICS:Current Electricity": 2,
+      "PHYSICS:Laws of Motion": 5,
+      "PHYSICS:Mechanical Properties of Fluids": 5,
+      "PHYSICS:Kinetic Theory": 5,
+      "PHYSICS:Units and Measurement": 2,
+      "PHYSICS:Electrostatics": 2,
+      "PHYSICS:Gravitation": 2,
+      "PHYSICS:Systems of Particles and Rotational Motion": 2,
+      "BOTANY:Photosynthesis in Higher Plants": 3,
+      "BOTANY:Cell - The Unit of Life": 5,
+      "BOTANY:Plant Growth and Development": 1,
+      "BOTANY:Biomolecules": 3,
+      "CHEMISTRY:Chemical Bonding and Molecular Structure": 2,
+      "CHEMISTRY:Some Basic Concepts of Chemistry": 7,
+      "CHEMISTRY:Biomolecules": 2,
+      "CHEMISTRY:Equilibrium": 4,
+      "CHEMISTRY:Coordination Compounds": 1,
+      "CHEMISTRY:The d- and f-Block Elements": 2,
+      "CHEMISTRY:Redox Reactions": 3,
+      "CHEMISTRY:Structure of Atom": 7,
+      "PHYSICS:Optics": 3,
+      "BOTANY:Molecular Basis of Inheritance": 2,
+      "CHEMISTRY:Electrochemistry": 1,
+      "CHEMISTRY:Solutions": 2,
+      "PHYSICS:Work, Energy and Power": 1,
+      "BOTANY:Sexual Reproduction in Flowering Plants": 1
+    }
+  },
+  "representative_evidence": [
+    {
+      "fact_id": "ncert-fact-v1-1f33c53aaa8f2319943188bf54595b1eface914a22b3771e2f01269e928b5193",
+      "analysis_category": "DIRECT_FACT",
+      "subject": "PHYSICS",
+      "chapter": "Mechanical Properties of Solids",
+      "evidence_excerpt": "Each thighbone (femur) of this performer has a length of 50 cm and an effective radius of 2.0 cm",
+      "correct_option": "femur"
+    },
+    {
+      "fact_id": "ncert-fact-v1-2bf8d13e032fcbc760c0c7b42b9703be1ccf8b7492c25afe56cda27720907de4",
+      "analysis_category": "DIRECT_FACT",
+      "subject": "PHYSICS",
+      "chapter": "Current Electricity",
+      "evidence_excerpt": "The current flowing through the combination is the same as that flowing through either of the slabs",
+      "correct_option": "flowing through either of the slabs"
+    },
+    {
+      "fact_id": "ncert-fact-v1-1ded9155e825adf064ff5e67c9b025f88946122c8db6ec9b70e4ef4155f0ace1",
+      "analysis_category": "DIRECT_FACT",
+      "subject": "PHYSICS",
+      "chapter": "Laws of Motion",
+      "evidence_excerpt": "For a car taking a circular turn on a horizontal road, the centripetal force is the force of friction",
+      "correct_option": "force of friction"
+    },
+    {
+      "fact_id": "ncert-fact-v1-1a2e404f0a3b1c66493363f86b70e8528ab295efaa5fbd050583b86f0ab05596",
+      "analysis_category": "DIRECT_FACT",
+      "subject": "PHYSICS",
+      "chapter": "Mechanical Properties of Fluids",
+      "evidence_excerpt": "Thus, more appropriately, the surface energy is the energy of the interface between two materials and depends on both of them",
+      "correct_option": "both of them"
+    },
+    {
+      "fact_id": "ncert-fact-v1-2b168571669b8406a136e777c3a3c384d5fcbb676d4cea473ce7a32eec5f011f",
+      "analysis_category": "DIRECT_FACT",
+      "subject": "PHYSICS",
+      "chapter": "Laws of Motion",
+      "evidence_excerpt": "The centripetal force for motion of a planet around the sun is the is the static friction that provides the centripetal acceleration",
+      "correct_option": "provides the centripetal acceleration"
+    },
+    {
+      "fact_id": "ncert-fact-v1-30515e706b6db40cad72fbf179b8e557a0f7789eab52398f9c78822fe92430a9",
+      "analysis_category": "DIRECT_FACT",
+      "subject": "PHYSICS",
+      "chapter": "Kinetic Theory",
+      "evidence_excerpt": "Note that each rotational degree of freedom contributes a term to the energy that contains square of a rotational variable of motion",
+      "correct_option": "variable of motion"
+    },
+    {
+      "fact_id": "ncert-fact-v1-36c51cc533b2f460c1b514722d6d5e0269522576e01583c7628b51e200e2d780",
+      "analysis_category": "DIRECT_FACT",
+      "subject": "PHYSICS",
+      "chapter": "Units and Measurement",
+      "evidence_excerpt": "The dimensions of a physical quantity are the powers (or exponents) to which the base quantities are raised to represent that quantity",
+      "correct_option": "quantity"
+    },
+    {
+      "fact_id": "ncert-fact-v1-0c374efb63de372d394d7bb083c1a4d0e039ad302144c4753b5ebc0f412f6283",
+      "analysis_category": "DIRECT_FACT",
+      "subject": "PHYSICS",
+      "chapter": "Kinetic Theory",
+      "evidence_excerpt": "(ii) We can also write µ1 = (m1/M1) and µ2 = (m2/M2) where m1 and m2 are the masses of 1 and 2; and M1 and M2 are their molecular masses",
+      "correct_option": "m1/M1"
+    }
+  ],
+  "engine012_distractor_failure_analysis": {
+    "count": 19,
+    "classification_counts": {
+      "distractor_construction_failure": 15,
+      "ocr_evidence_quality_problem": 3,
+      "underlying_fact_invalid": 1
+    },
+    "cases": [
+      {
+        "fact_id": "ncert-fact-v1-2ec3248f31e15035fc6b008914e7bb24637d1cd995985702e1f1500088d7e24a",
+        "analysis_category": "RELATIONSHIP_FORMULA",
+        "subject": "PHYSICS",
+        "chapter": "Optics",
+        "failure_reason": "DISTRACTOR_EVIDENCE_MISSING",
+        "classification": "distractor_construction_failure",
+        "detail": "DISTRACTOR_EVIDENCE_MISSING; RELATIONSHIP_FORMULA deferred by ENGINE-013",
+        "evidence_excerpt": "(iii) For a glass lens in air, n2 = 1.5, n1 = 1, f = +20 cm"
+      },
+      {
+        "fact_id": "ncert-fact-v1-39cec031a7896060987798883d40ea0a2617d95789be67f669da8f50069154ca",
+        "analysis_category": "RELATIONSHIP_FORMULA",
+        "subject": "PHYSICS",
+        "chapter": "Electrostatics",
+        "failure_reason": "DISTRACTOR_POOL_INSUFFICIENT",
+        "classification": "distractor_construction_failure",
+        "detail": "DISTRACTOR_POOL_INSUFFICIENT; RELATIONSHIP_FORMULA deferred by ENGINE-013",
+        "evidence_excerpt": "1.24 are Ex = ax1/2, Ey = Ez = 0, in which a = 800 N/C m1/2"
+      },
+      {
+        "fact_id": "ncert-fact-v1-29bff80571a5218700ddd88d59553c730f910c28e9a3856b475d08d27e5ecf7b",
+        "analysis_category": "RELATIONSHIP_FORMULA",
+        "subject": "PHYSICS",
+        "chapter": "Systems of Particles and Rotational Motion",
+        "failure_reason": "DISTRACTOR_EVIDENCE_MISSING",
+        "classification": "distractor_construction_failure",
+        "detail": "DISTRACTOR_EVIDENCE_MISSING; RELATIONSHIP_FORMULA deferred by ENGINE-013",
+        "evidence_excerpt": "The force acting on the second particle is given by 2 2 2 m = F a and so on"
+      },
+      {
+        "fact_id": "ncert-fact-v1-0b759fe1de79ce1bc2c258bac28b4ac414e4fc19982c88b9f5a34d337118d62d",
+        "analysis_category": "RELATIONSHIP_FORMULA",
+        "subject": "PHYSICS",
+        "chapter": "Work, Energy and Power",
+        "failure_reason": "DISTRACTOR_EVIDENCE_MISSING",
+        "classification": "ocr_evidence_quality_problem",
+        "detail": "DISTRACTOR_EVIDENCE_MISSING; RELATIONSHIP_FORMULA deferred by ENGINE-013",
+        "evidence_excerpt": "(5.13) and (5.14) 5 E mgL 2 = Equating this to the energy at A 5 2 2 2 0 m mgL v = or, 5 0 v gL = (ii) It is clear from Eq"
+      },
+      {
+        "fact_id": "ncert-fact-v1-1c0953c9cbdd9c2e9cc8330e6122adcd60338db273833da4f06b960405741f05",
+        "analysis_category": "RELATIONSHIP_FORMULA",
+        "subject": "PHYSICS",
+        "chapter": "Gravitation",
+        "failure_reason": "DISTRACTOR_EVIDENCE_MISSING",
+        "classification": "distractor_construction_failure",
+        "detail": "DISTRACTOR_EVIDENCE_MISSING; RELATIONSHIP_FORMULA deferred by ENGINE-013",
+        "evidence_excerpt": "From equation (7.35),the speed V for h = 0 is 2 ( 0) / E E V h GM R gR    (7.36) where we have used the relation g = 2 / E GM R"
+      },
+      {
+        "fact_id": "ncert-fact-v1-397c17c82a6af21ae2259a4bd63e2c83b6f3db7e8fa1fc0ce7907cdb403e8440",
+        "analysis_category": "RELATIONSHIP_FORMULA",
+        "subject": "PHYSICS",
+        "chapter": "Kinetic Theory",
+        "failure_reason": "DISTRACTOR_EVIDENCE_MISSING",
+        "classification": "distractor_construction_failure",
+        "detail": "DISTRACTOR_EVIDENCE_MISSING; RELATIONSHIP_FORMULA deferred by ENGINE-013",
+        "evidence_excerpt": "Thus, each vibrational mode gives 2 (not 1) degrees of freedom (kinetic and potential energy modes), corresponding to the energy 2 × ½ k B T = k B T"
+      },
+      {
+        "fact_id": "ncert-fact-v1-3486152da5c0130d317ab8af87a648da659276e2d68f291bc25f96e5e344dfcf",
+        "analysis_category": "RELATIONSHIP_FORMULA",
+        "subject": "PHYSICS",
+        "chapter": "Gravitation",
+        "failure_reason": "DISTRACTOR_EVIDENCE_MISSING",
+        "classification": "distractor_construction_failure",
+        "detail": "DISTRACTOR_EVIDENCE_MISSING; RELATIONSHIP_FORMULA deferred by ENGINE-013",
+        "evidence_excerpt": "(7.10) 2 E E M m F G R = (7.11) The acceleration experienced by the mass m, which is usually denoted by the symbol g is related to F by Newton’s 2nd law by rela"
+      },
+      {
+        "fact_id": "ncert-fact-v1-3953123c60d838daf1d0d9a28f724f3022bd6c2ffe4d34850fe1e428379dbfc2",
+        "analysis_category": "RELATIONSHIP_FORMULA",
+        "subject": "CHEMISTRY",
+        "chapter": "Solutions",
+        "failure_reason": "DISTRACTOR_POOL_INSUFFICIENT",
+        "classification": "distractor_construction_failure",
+        "detail": "DISTRACTOR_POOL_INSUFFICIENT; RELATIONSHIP_FORMULA deferred by ENGINE-013",
+        "evidence_excerpt": "In the solution of a gas in a liquid, one of the components is so volatile that it exists as a gas and we have already seen that its solubility is given by Henr"
+      },
+      {
+        "fact_id": "ncert-fact-v1-1a1350f302d9c4a8766b42d24c7b5981272a29c1eb9e3733eafaa34519ba6b41",
+        "analysis_category": "RELATIONSHIP_FORMULA",
+        "subject": "CHEMISTRY",
+        "chapter": "Electrochemistry",
+        "failure_reason": "DISTRACTOR_POOL_INSUFFICIENT",
+        "classification": "distractor_construction_failure",
+        "detail": "DISTRACTOR_POOL_INSUFFICIENT; RELATIONSHIP_FORMULA deferred by ENGINE-013",
+        "evidence_excerpt": "However, coulometers are now obsolete and we now have constant current (I) sources available and the quantity of electricity Q, passed is given by Q = It Q is i"
+      },
+      {
+        "fact_id": "ncert-fact-v1-2c4a0e4fb1404b6b8d5e7e3f85d4a7d04e674e8f59e5ad491a1fa8d8a9b7d541",
+        "analysis_category": "RELATIONSHIP_FORMULA",
+        "subject": "CHEMISTRY",
+        "chapter": "Some Basic Concepts of Chemistry",
+        "failure_reason": "DISTRACTOR_POOL_INSUFFICIENT",
+        "classification": "distractor_construction_failure",
+        "detail": "DISTRACTOR_POOL_INSUFFICIENT; RELATIONSHIP_FORMULA deferred by ENGINE-013",
+        "evidence_excerpt": "Solution M = 3 mol L–1 Mass of NaCl in 1 L solution = 3 × 58.5 = 175.5 g Mass of 1L solution = 1000 × 1.25 = 1250 g (since density = 1.25 g mL–1) Mass of water "
+      },
+      {
+        "fact_id": "ncert-fact-v1-20e020b54d9e035d0a459af17600478531995917f9062ef8563f030da03b8146",
+        "analysis_category": "CONTROLLED_NUMERICAL",
+        "subject": "ZOOLOGY",
+        "chapter": "Human Health and Disease",
+        "failure_reason": "DISTRACTOR_POOL_INSUFFICIENT",
+        "classification": "distractor_construction_failure",
+        "detail": "DISTRACTOR_POOL_INSUFFICIENT",
+        "evidence_excerpt": "It constitutes about 50 per cent of the lymphoid tissue in human body"
+      },
+      {
+        "fact_id": "ncert-fact-v1-1d015c5ea56ea3ec3382375dc67fb44cf689d0fbc488c94dba30e701110b6de2",
+        "analysis_category": "CONTROLLED_NUMERICAL",
+        "subject": "PHYSICS",
+        "chapter": "Mechanical Properties of Solids",
+        "failure_reason": "DISTRACTOR_POOL_INSUFFICIENT",
+        "classification": "distractor_construction_failure",
+        "detail": "DISTRACTOR_POOL_INSUFFICIENT",
+        "evidence_excerpt": "Thus a thicker rope of radius about 3 cm is recommended"
+      },
+      {
+        "fact_id": "ncert-fact-v1-1237c61a16f0d8385ca33847dd04ea202b6d271064bb5b6f0b69d3d856aa6519",
+        "analysis_category": "CONTROLLED_NUMERICAL",
+        "subject": "PHYSICS",
+        "chapter": "Kinetic Theory",
+        "failure_reason": "DISTRACTOR_POOL_INSUFFICIENT",
+        "classification": "distractor_construction_failure",
+        "detail": "DISTRACTOR_POOL_INSUFFICIENT",
+        "evidence_excerpt": "In solids, which are tightly packed, atoms are spaced about a few angstroms (2 Å) apart"
+      },
+      {
+        "fact_id": "ncert-fact-v1-3b166ba427e1dedcf225771587989f1ece2128bf2499e898bc52347ad44daaa9",
+        "analysis_category": "CONTROLLED_NUMERICAL",
+        "subject": "BOTANY",
+        "chapter": "Molecular Basis of Inheritance",
+        "failure_reason": "DISTRACTOR_POOL_INSUFFICIENT",
+        "classification": "underlying_fact_invalid",
+        "detail": "DISTRACTOR_POOL_INSUFFICIENT",
+        "evidence_excerpt": "You have studied about mutation and its effect in Chapter 4"
+      },
+      {
+        "fact_id": "ncert-fact-v1-0d9060180c0b40c6a4d2ac06f20048aeb0cc0a98496f32dcc81405007237f9ee",
+        "analysis_category": "CONTROLLED_NUMERICAL",
+        "subject": "BOTANY",
+        "chapter": "Molecular Basis of Inheritance",
+        "failure_reason": "DISTRACTOR_POOL_INSUFFICIENT",
+        "classification": "distractor_construction_failure",
+        "detail": "DISTRACTOR_POOL_INSUFFICIENT",
+        "evidence_excerpt": "The ribosome consists of structural RNAs and about 80 different proteins"
+      },
+      {
+        "fact_id": "ncert-fact-v1-2be39a01d55c1dd3e4e5f404568f65894dff4534f84ac4b0611f54bf5842442d",
+        "analysis_category": "CONTROLLED_NUMERICAL",
+        "subject": "CHEMISTRY",
+        "chapter": "Biomolecules",
+        "failure_reason": "DISTRACTOR_POOL_INSUFFICIENT",
+        "classification": "distractor_construction_failure",
+        "detail": "DISTRACTOR_POOL_INSUFFICIENT",
+        "evidence_excerpt": "About 20 monosaccharides are known to occur in nature"
+      },
+      {
+        "fact_id": "ncert-fact-v1-08c943da10ae194b878c58f067e0c859e4db14a0039cdb4ffd911c2e44d2e4c5",
+        "analysis_category": "SI_UNIT_DIMENSION",
+        "subject": "ZOOLOGY",
+        "chapter": "Evolution",
+        "failure_reason": "DISTRACTOR_POOL_INSUFFICIENT",
+        "classification": "distractor_construction_failure",
+        "detail": "DISTRACTOR_POOL_INSUFFICIENT",
+        "evidence_excerpt": "Stellar distances are measured in light years"
+      },
+      {
+        "fact_id": "ncert-fact-v1-08954363c14d21412408e1df9123fb5a7a2cd0b25fa0efef8c7ac22198290dca",
+        "analysis_category": "SI_UNIT_DIMENSION",
+        "subject": "CHEMISTRY",
+        "chapter": "Electrochemistry",
+        "failure_reason": "DISTRACTOR_POOL_INSUFFICIENT",
+        "classification": "ocr_evidence_quality_problem",
+        "detail": "DISTRACTOR_POOL_INSUFFICIENT",
+        "evidence_excerpt": "The electrical resistance is represented by the symbol ‘R’ and it is measured in ohm (W) which in terms of SI base units is equal to (kg m2)/(S3 A2)"
+      },
+      {
+        "fact_id": "ncert-fact-v1-25c7331738460b372dc24249cc9a58362f537f66f8ae60d96bd8218972c57523",
+        "analysis_category": "SI_UNIT_DIMENSION",
+        "subject": "PHYSICS",
+        "chapter": "Mechanical Properties of Solids",
+        "failure_reason": "DISTRACTOR_POOL_INSUFFICIENT",
+        "classification": "ocr_evidence_quality_problem",
+        "detail": "DISTRACTOR_POOL_INSUFFICIENT",
+        "evidence_excerpt": "SI unit of bulk modulus is the same as that of pressure i.e., N m–2 or Pa"
+      }
+    ],
+    "note": "ENGINE-013 does not weaken distractor safety to recover these candidates. RELATIONSHIP_FORMULA remains deferred."
+  },
+  "target_mix": {
+    "DIRECT_FACT": 100,
+    "CONTROLLED_ASSOCIATION": 60,
+    "CONTROLLED_NUMERICAL": 25,
+    "SI_UNIT_DIMENSION": 15
+  },
+  "fixture": "D:\\ravishori\\AI Neet Exam App\\apps\\backend\\tests\\fixtures\\python_mcq_engine_013_reviewed_nondef_v1.json",
+  "fixture_mutations": {
+    "engine_006_modified": false,
+    "engine_010_modified": false,
+    "engine_011_modified": false,
+    "engine_012_modified": false,
+    "engine_013_created": true,
+    "engine_010_eligible_count_unchanged": true,
+    "engine_012_eligible_count_unchanged": true
+  },
+  "engine_008_retired_excluded": true,
+  "automatic_promotion": false,
+  "database_before": {
+    "question_statuses": {
+      "DRAFT": 5552,
+      "PUBLISHED": 1479,
+      "SUPERSEDED": 6,
+      "IN_REVIEW": 111
+    },
+    "question_state_fingerprint": "741ce41e97dc4869c66b7bba5db5b3aa",
+    "unmapped_draft": 5034,
+    "blueprints": 445,
+    "knowledge_units": 381,
+    "content_reviews": 1824,
+    "engine_003_batches": 0
+  },
+  "database_after": {
+    "question_statuses": {
+      "DRAFT": 5552,
+      "PUBLISHED": 1479,
+      "SUPERSEDED": 6,
+      "IN_REVIEW": 111
+    },
+    "question_state_fingerprint": "741ce41e97dc4869c66b7bba5db5b3aa",
+    "unmapped_draft": 5034,
+    "blueprints": 445,
+    "knowledge_units": 381,
+    "content_reviews": 1824,
+    "engine_003_batches": 0
+  },
+  "production_safety_unchanged": true,
+  "provider_api_calls": 0,
+  "api_cost_inr": 0,
+  "production_db_mutations": 0,
+  "runtime_seconds": 109.471,
+  "tests": {
+    "focused": "4 passed",
+    "regression": "8 passed (012+013)",
+    "ruff": "passed"
+  },
+  "combined_eligible_after_013_if_merged": 549
+}

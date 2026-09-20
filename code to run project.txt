@@ -17,6 +17,11 @@ bash
 cd /d "D:\ravishori\AI Neet Exam App\apps\web" && npm run dev
 
 
+
+cd D:\ravishori\AI Neet Exam App\apps\web 
+npm run dev
+
+
 Then open `http://localhost:3000` in a browser. `apps/web/.env.local` already points `NEXT_PUBLIC_API_URL` at `http://localhost:8000`.
 
 ## Heads-up: ports 8000 and 3000 are currently occupied

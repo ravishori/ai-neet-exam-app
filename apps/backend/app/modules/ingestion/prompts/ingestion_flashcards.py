@@ -13,8 +13,4 @@ same point twice."""
 
 
 def build_prompt(*, concept_name: str, section_heading: str, source_text: str, source_page: int) -> str:
-    return (
-        f"Concept: {concept_name}\n"
-        f"Textbook section: {section_heading} (page {source_page})\n\n"
-        f"Verified facts:\n{source_text}"
-    )
+    return f"Concept: {concept_name}\nTextbook section: {section_heading} (page {source_page})\n\nVerified facts:\n{source_text}"

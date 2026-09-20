@@ -3,6 +3,7 @@ PDFs built in-memory with PyMuPDF itself — self-contained and portable,
 rather than depending on an external publisher's PDF outside the repo. Each
 fixture reproduces one of the three real cases this session's manual work
 actually encountered before this service existed."""
+
 import fitz
 import pytest
 

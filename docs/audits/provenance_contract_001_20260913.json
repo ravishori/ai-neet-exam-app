@@ -1,0 +1,816 @@
+{
+  "generated_at": "2026-09-13T17:54:33.040318+00:00",
+  "final_status": "GREEN — COMPLETE/VERIFIED",
+  "mode": "READ-ONLY",
+  "ncert_root": "D:\\ravishori\\AI Neet Exam App\\NCERT Books",
+  "enum": {
+    "allowed_tiers": [
+      "authoritative",
+      "licensed",
+      "human",
+      "ai",
+      "derived"
+    ],
+    "source_types": [
+      "HUMAN",
+      "AI",
+      "LICENSED",
+      "AUTHORITATIVE",
+      "DERIVED",
+      "MIXED"
+    ],
+    "rejected_false_claims": [
+      "official",
+      "official_source",
+      "nta",
+      "ncert_official"
+    ],
+    "ncert_not_in_enum": true
+  },
+  "db_schema": {
+    "question_blueprints_columns": [
+      {
+        "column_name": "blueprint_key",
+        "data_type": "character varying",
+        "is_nullable": "NO",
+        "character_maximum_length": 120
+      },
+      {
+        "column_name": "blueprint_version",
+        "data_type": "integer",
+        "is_nullable": "NO",
+        "character_maximum_length": null
+      },
+      {
+        "column_name": "subject_id",
+        "data_type": "uuid",
+        "is_nullable": "NO",
+        "character_maximum_length": null
+      },
+      {
+        "column_name": "chapter_id",
+        "data_type": "uuid",
+        "is_nullable": "NO",
+        "character_maximum_length": null
+      },
+      {
+        "column_name": "topic_id",
+        "data_type": "uuid",
+        "is_nullable": "NO",
+        "character_maximum_length": null
+      },
+      {
+        "column_name": "concept_id",
+        "data_type": "uuid",
+        "is_nullable": "NO",
+        "character_maximum_length": null
+      },
+      {
+        "column_name": "learning_objective_id",
+        "data_type": "uuid",
+        "is_nullable": "NO",
+        "character_maximum_length": null
+      },
+      {
+        "column_name": "question_family_id",
+        "data_type": "uuid",
+        "is_nullable": "NO",
+        "character_maximum_length": null
+      },
+      {
+        "column_name": "difficulty",
+        "data_type": "character varying",
+        "is_nullable": "NO",
+        "character_maximum_length": 20
+      },
+      {
+        "column_name": "target_count",
+        "data_type": "integer",
+        "is_nullable": "NO",
+        "character_maximum_length": null
+      },
+      {
+        "column_name": "constraints",
+        "data_type": "jsonb",
+        "is_nullable": "NO",
+        "character_maximum_length": null
+      },
+      {
+        "column_name": "provenance_tier",
+        "data_type": "character varying",
+        "is_nullable": "NO",
+        "character_maximum_length": 30
+      },
+      {
+        "column_name": "status",
+        "data_type": "character varying",
+        "is_nullable": "NO",
+        "character_maximum_length": 30
+      },
+      {
+        "column_name": "generation_eligible",
+        "data_type": "boolean",
+        "is_nullable": "NO",
+        "character_maximum_length": null
+      },
+      {
+        "column_name": "is_active",
+        "data_type": "boolean",
+        "is_nullable": "NO",
+        "character_maximum_length": null
+      },
+      {
+        "column_name": "last_validation",
+        "data_type": "jsonb",
+        "is_nullable": "YES",
+        "character_maximum_length": null
+      },
+      {
+        "column_name": "id",
+        "data_type": "uuid",
+        "is_nullable": "NO",
+        "character_maximum_length": null
+      },
+      {
+        "column_name": "created_at",
+        "data_type": "timestamp with time zone",
+        "is_nullable": "NO",
+        "character_maximum_length": null
+      },
+      {
+        "column_name": "updated_at",
+        "data_type": "timestamp with time zone",
+        "is_nullable": "NO",
+        "character_maximum_length": null
+      },
+      {
+        "column_name": "created_by",
+        "data_type": "uuid",
+        "is_nullable": "YES",
+        "character_maximum_length": null
+      },
+      {
+        "column_name": "updated_by",
+        "data_type": "uuid",
+        "is_nullable": "YES",
+        "character_maximum_length": null
+      },
+      {
+        "column_name": "deleted_at",
+        "data_type": "timestamp with time zone",
+        "is_nullable": "YES",
+        "character_maximum_length": null
+      },
+      {
+        "column_name": "version",
+        "data_type": "integer",
+        "is_nullable": "NO",
+        "character_maximum_length": null
+      }
+    ],
+    "content_batches_source_columns": [
+      {
+        "column_name": "source_tier",
+        "data_type": "character varying",
+        "is_nullable": "NO"
+      },
+      {
+        "column_name": "source_type",
+        "data_type": "character varying",
+        "is_nullable": "NO"
+      }
+    ],
+    "blueprint_has_knowledge_unit_id": false,
+    "blueprint_has_source_document_id": false,
+    "blueprint_check_constraints": [],
+    "live_provenance_tier_counts": [
+      {
+        "provenance_tier": "ai",
+        "n": 137
+      }
+    ],
+    "note": "provenance_tier is String(30) NOT NULL with no DB CHECK enum; allowed values enforced in Pydantic + planning service."
+  },
+  "implementation_locations": [
+    "apps/backend/app/modules/cms/models/content_factory.py (SOURCE_TIERS)",
+    "apps/backend/app/modules/cms/models/content_factory_planning.py (PROVENANCE_TIERS)",
+    "apps/backend/app/modules/cms/schemas/content_factory_planning.py (Pydantic validator)",
+    "apps/backend/app/modules/cms/schemas/content_factory.py (batch source_tier)",
+    "apps/backend/app/modules/cms/services/content_factory_planning_service.py (PROVENANCE_FALSE_CLAIM)",
+    "apps/backend/app/modules/cms/services/content_factory_generation_service.py (assert_blueprint_ncert_source)",
+    "apps/backend/app/modules/ingestion/services/ncert_canonical_source.py (CF-SOURCE-001)",
+    "apps/backend/alembic/versions/f6a7b8c9d0e1_cms_content_factory_p2_planning.py",
+    "apps/backend/alembic/versions/e5f6a7b8c9d0_cms_content_factory_p1.py",
+    "docs/architecture/ncert_canonical_source.md",
+    "docs/product/CONTENT_FACTORY_P2_IMPLEMENTATION.md",
+    "docs/product/CONTENT_FACTORY_DATA_MODEL.md",
+    "docs/product/CONTENT_FACTORY_ARCHITECTURE.md",
+    "apps/backend/scripts/bp_coverage_001_readonly.py (incorrect audit gate)",
+    "apps/backend/scripts/bp_coverage_002_reconciliation.py (reproduces audit gate)"
+  ],
+  "tier_meanings": {
+    "authoritative": {
+      "meaning": "Authority-class / source-of-truth material for factory provenance — trusted textbook grounding, NOT a claim of official NTA endorsement or that TALOS content is 'official NCERT'.",
+      "ncert_fit": true,
+      "evidence": [
+        "content_factory_planning.py: PROVENANCE_TIERS = SOURCE_TIERS; rejects official claims",
+        "test_ncert_canonical_source.test_blueprint_with_canonical_source_accepts uses provenance_tier='authoritative' + ncert_source_path under NCERT Books",
+        "blueprint_declares_ncert_source: tier=='authoritative' implies NCERT binding required",
+        "CONTENT_FACTORY_DATA_MODEL.md: source_tier = Authority class",
+        "CONTENT_FACTORY_P2_IMPLEMENTATION.md: rejects official_source/nta/ncert_official"
+      ],
+      "why_appropriate_for_canonical_ncert": "Existing CF-SOURCE-001 tests and factory guards already bind authoritative + ncert_source_path to NCERT_SOURCE_ROOT. No schema change required to represent canonical NCERT PDFs."
+    },
+    "licensed": {
+      "meaning": "Licensed third-party corpus (not the default NCERT Books path)."
+    },
+    "human": {
+      "meaning": "Human-authored generation contract / SME-authored lineage."
+    },
+    "ai": {
+      "meaning": "AI-assisted generation contract; does not by itself require NCERT PDF binding."
+    },
+    "derived": {
+      "meaning": "Derived from other content without claiming primary textbook authority."
+    },
+    "explicitly_not_allowed": {
+      "values": [
+        "official",
+        "official_source",
+        "nta",
+        "ncert_official",
+        "ncert"
+      ],
+      "reason": "'ncert' is not in PROVENANCE_TIERS (Pydantic rejects). official/nta/ncert_official rejected as false official claims. Product rule: never invent official NTA/NCERT labels on content."
+    }
+  },
+  "canonical_ncert_representation": {
+    "summary": "Canonical NCERT is already representable without schema change: provenance_tier='authoritative' plus constraints binding a PDF under D:\\ravishori\\AI Neet Exam App\\NCERT Books.",
+    "why_not_ncert_tier": "Adding 'ncert' would (1) invent a non-enum value already rejected by Pydantic, (2) risk false official-claim confusion already blocked for official/nta/ncert_official, and (3) diverge from CF-SOURCE-001 tests that already use authoritative.",
+    "schema_change_required": false,
+    "contract_clear": true,
+    "prod_gate_requires_literal_ncert": false
+  },
+  "evidence_capabilities": {
+    "canonical_ncert_pdf_path": {
+      "supported": true,
+      "where": "question_blueprints.constraints JSONB keys: ncert_source_path, canonical_ncert_pdf, source_pdf_path",
+      "guard": "assert_blueprint_ncert_source / validate_ncert_generation_source",
+      "root": "NCERT_SOURCE_ROOT / Settings.ncert_source_root → NCERT Books"
+    },
+    "source_document_identity": {
+      "supported_on_blueprint": false,
+      "note": "No blueprint.source_document_id column. Identity is path string in constraints; ingestion.source_documents exists for KU/ingestion lineage, not blueprint FK."
+    },
+    "chapter": {
+      "supported": true,
+      "where": "question_blueprints.chapter_id → academic.chapters"
+    },
+    "section": {
+      "supported": false,
+      "note": "No first-class blueprint section field; KU may link ingestion_sections."
+    },
+    "page_or_section_evidence": {
+      "supported_on_blueprint": "partial/optional via unconstrained constraints JSONB",
+      "supported_on_questions": "ncert_evidence body/tags on ContentItem (ECAEP certification path)",
+      "note": "Blueprint constraints may store free-form keys but factory REQUIRED_CONSTRAINT_KEYS only mandate question_format/correct_option_count/explanation_required."
+    },
+    "ncert_verification_state": {
+      "on_blueprint": false,
+      "on_question": true,
+      "note": "ECAEP certify-ncert / ncert_evidence.verification_level — orthogonal to blueprint tier."
+    },
+    "provenance_tier": {
+      "supported": true,
+      "allowed": [
+        "authoritative",
+        "licensed",
+        "human",
+        "ai",
+        "derived"
+      ],
+      "rejected_false_claims": [
+        "official",
+        "official_source",
+        "nta",
+        "ncert_official"
+      ],
+      "canonical_ncert_representation": "authoritative + constraints path under NCERT Books"
+    },
+    "gaps": [
+      "No dedicated blueprint.knowledge_unit_id",
+      "No dedicated blueprint.source_document_id",
+      "No structured page/section schema on blueprints",
+      "No DB CHECK enum for provenance_tier (app-layer only)",
+      "StudyMaterial paths can sit in constraints until generation assert rejects for ncert_derived"
+    ]
+  },
+  "gate_mismatch": {
+    "all_hits": [
+      {
+        "path": "apps/backend/scripts/bp_coverage_001_readonly.py",
+        "match_lines": [
+          {
+            "line": 204,
+            "text": "if (bp.get(\"provenance_tier\") or \"\").lower() != \"ncert\":"
+          },
+          {
+            "line": 403,
+            "text": "\"No NCERT-tier GENERATION_READY blueprints (provenance_tier!=ncert)\""
+          },
+          {
+            "line": 631,
+            "text": "\"## 8. NCERT provenance findings\","
+          },
+          {
+            "line": 632,
+            "text": "\"- All 137 blueprints have `provenance_tier='ai'` — **not** NCERT-Books-traceable in schema.\","
+          },
+          {
+            "line": 634,
+            "text": "\"- Future NCERT-derived generation requires provenance upgrade or new blueprints \""
+          },
+          {
+            "line": 748,
+            "text": "\"All 137 blueprints use provenance_tier='ai' — zero NCERT-Books-tier GENERATION_READY blueprints.\","
+          },
+          {
+            "line": 767,
+            "text": "\"with explicit NCERT provenance (or extend schema).\","
+          }
+        ]
+      },
+      {
+        "path": "apps/backend/scripts/bp_coverage_002_reconciliation.py",
+        "match_lines": [
+          {
+            "line": 366,
+            "text": "def classify_provenance(bp: dict, ncert_root: Path) -> dict:"
+          },
+          {
+            "line": 411,
+            "text": "reasons.append(\"provenance_tier=ai with no canonical NCERT Books path in constraints\")"
+          },
+          {
+            "line": 455,
+            "text": "if (bp.get(\"provenance_tier\") or \"\").lower() != \"ncert\":"
+          },
+          {
+            "line": 474,
+            "text": "\"audit gate requires provenance_tier=='ncert' OR StudyMaterial path flagged; \""
+          },
+          {
+            "line": 496,
+            "text": "if (bp.get(\"provenance_tier\") or \"\").lower() != \"ncert\":"
+          },
+          {
+            "line": 499,
+            "text": "\"BP-001 GENERATION_READY requires provenance_tier=='ncert', which is not a valid schema tier. \""
+          },
+          {
+            "line": 729,
+            "text": "if provenance_by_id[b[\"blueprint_id\"]][\"classification\"] == \"CANONICAL_NCERT_BACKED\""
+          },
+          {
+            "line": 884,
+            "text": "\"BP-001 GENERATION_READY requires `provenance_tier=='ncert'` which is **not** a valid tier \""
+          }
+        ]
+      },
+      {
+        "path": "apps/backend/scripts/provenance_contract_001_readonly.py",
+        "match_lines": [
+          {
+            "line": 1,
+            "text": "\"\"\"PROVENANCE-CONTRACT-001 — Read-only NCERT provenance contract audit."
+          },
+          {
+            "line": 209,
+            "text": "\"\"\"Find provenance_tier == 'ncert' checks (audit scripts vs production).\"\"\""
+          },
+          {
+            "line": 221,
+            "text": "if re.search(r\"provenance_tier[^\\n]{0,40}['\\\"]ncert['\\\"]|['\\\"]ncert['\\\"][^\\n]{0,40}provenance\", text_body):"
+          },
+          {
+            "line": 225,
+            "text": "if \"provenance\" in line.lower() and \"ncert\" in line.lower():"
+          },
+          {
+            "line": 251,
+            "text": "\"(ncert_derived / path keys / provenance_tier==authoritative). \""
+          },
+          {
+            "line": 321,
+            "text": "\"provenance_tier='authoritative' + ncert_source_path under NCERT Books\","
+          },
+          {
+            "line": 347,
+            "text": "\"'ncert' is not in PROVENANCE_TIERS (Pydantic rejects). \""
+          },
+          {
+            "line": 461,
+            "text": "\"Do NOT add provenance_tier='ncert' to the schema (would conflict with false-claim policy and Pydantic enum).\","
+          }
+        ]
+      },
+      {
+        "path": "docs/audits/bp_coverage_002_reconciliation_20260913.json",
+        "match_lines": [
+          {
+            "line": 4109,
+            "text": "\"provenance_tier=ai with no canonical NCERT Books path in constraints\""
+          },
+          {
+            "line": 4167,
+            "text": "\"provenance_tier=ai with no canonical NCERT Books path in constraints\""
+          },
+          {
+            "line": 4245,
+            "text": "\"provenance_tier=ai with no canonical NCERT Books path in constraints\""
+          },
+          {
+            "line": 4283,
+            "text": "\"provenance_tier=ai with no canonical NCERT Books path in constraints\""
+          },
+          {
+            "line": 4321,
+            "text": "\"provenance_tier=ai with no canonical NCERT Books path in constraints\""
+          },
+          {
+            "line": 4359,
+            "text": "\"provenance_tier=ai with no canonical NCERT Books path in constraints\""
+          },
+          {
+            "line": 4617,
+            "text": "\"provenance_tier=ai with no canonical NCERT Books path in constraints\""
+          },
+          {
+            "line": 4635,
+            "text": "\"provenance_tier=ai with no canonical NCERT Books path in constraints\""
+          }
+        ]
+      },
+      {
+        "path": "docs/audits/bp_coverage_002_reconciliation_20260913.md",
+        "match_lines": [
+          {
+            "line": 50,
+            "text": "- Schema note: allowed SOURCE_TIERS=`['authoritative', 'licensed', 'human', 'ai', 'derived']`; BP-001 GENERATION_READY requires `provenance_tier=='ncert'` which is **not** a valid tier → structural re"
+          },
+          {
+            "line": 138,
+            "text": "- For NCERT-derived 400 pilot: create NEW blueprints only after owner approval, bound to NCERT Books paths + PASSED KU concepts; do not rewrite legacy ai-tier provenance silently."
+          },
+          {
+            "line": 140,
+            "text": "- Decide whether audit GENERATION_READY should map to provenance_tier='authoritative' + canonical path (schema-aligned) instead of impossible 'ncert' tier."
+          }
+        ]
+      }
+    ],
+    "production_app_or_tests_hits": [],
+    "audit_script_hits": [
+      {
+        "path": "apps/backend/scripts/bp_coverage_001_readonly.py",
+        "match_lines": [
+          {
+            "line": 204,
+            "text": "if (bp.get(\"provenance_tier\") or \"\").lower() != \"ncert\":"
+          },
+          {
+            "line": 403,
+            "text": "\"No NCERT-tier GENERATION_READY blueprints (provenance_tier!=ncert)\""
+          },
+          {
+            "line": 631,
+            "text": "\"## 8. NCERT provenance findings\","
+          },
+          {
+            "line": 632,
+            "text": "\"- All 137 blueprints have `provenance_tier='ai'` — **not** NCERT-Books-traceable in schema.\","
+          },
+          {
+            "line": 634,
+            "text": "\"- Future NCERT-derived generation requires provenance upgrade or new blueprints \""
+          },
+          {
+            "line": 748,
+            "text": "\"All 137 blueprints use provenance_tier='ai' — zero NCERT-Books-tier GENERATION_READY blueprints.\","
+          },
+          {
+            "line": 767,
+            "text": "\"with explicit NCERT provenance (or extend schema).\","
+          }
+        ]
+      },
+      {
+        "path": "apps/backend/scripts/bp_coverage_002_reconciliation.py",
+        "match_lines": [
+          {
+            "line": 366,
+            "text": "def classify_provenance(bp: dict, ncert_root: Path) -> dict:"
+          },
+          {
+            "line": 411,
+            "text": "reasons.append(\"provenance_tier=ai with no canonical NCERT Books path in constraints\")"
+          },
+          {
+            "line": 455,
+            "text": "if (bp.get(\"provenance_tier\") or \"\").lower() != \"ncert\":"
+          },
+          {
+            "line": 474,
+            "text": "\"audit gate requires provenance_tier=='ncert' OR StudyMaterial path flagged; \""
+          },
+          {
+            "line": 496,
+            "text": "if (bp.get(\"provenance_tier\") or \"\").lower() != \"ncert\":"
+          },
+          {
+            "line": 499,
+            "text": "\"BP-001 GENERATION_READY requires provenance_tier=='ncert', which is not a valid schema tier. \""
+          },
+          {
+            "line": 729,
+            "text": "if provenance_by_id[b[\"blueprint_id\"]][\"classification\"] == \"CANONICAL_NCERT_BACKED\""
+          },
+          {
+            "line": 884,
+            "text": "\"BP-001 GENERATION_READY requires `provenance_tier=='ncert'` which is **not** a valid tier \""
+          }
+        ]
+      },
+      {
+        "path": "docs/audits/bp_coverage_002_reconciliation_20260913.json",
+        "match_lines": [
+          {
+            "line": 4109,
+            "text": "\"provenance_tier=ai with no canonical NCERT Books path in constraints\""
+          },
+          {
+            "line": 4167,
+            "text": "\"provenance_tier=ai with no canonical NCERT Books path in constraints\""
+          },
+          {
+            "line": 4245,
+            "text": "\"provenance_tier=ai with no canonical NCERT Books path in constraints\""
+          },
+          {
+            "line": 4283,
+            "text": "\"provenance_tier=ai with no canonical NCERT Books path in constraints\""
+          },
+          {
+            "line": 4321,
+            "text": "\"provenance_tier=ai with no canonical NCERT Books path in constraints\""
+          },
+          {
+            "line": 4359,
+            "text": "\"provenance_tier=ai with no canonical NCERT Books path in constraints\""
+          },
+          {
+            "line": 4617,
+            "text": "\"provenance_tier=ai with no canonical NCERT Books path in constraints\""
+          },
+          {
+            "line": 4635,
+            "text": "\"provenance_tier=ai with no canonical NCERT Books path in constraints\""
+          }
+        ]
+      },
+      {
+        "path": "docs/audits/bp_coverage_002_reconciliation_20260913.md",
+        "match_lines": [
+          {
+            "line": 50,
+            "text": "- Schema note: allowed SOURCE_TIERS=`['authoritative', 'licensed', 'human', 'ai', 'derived']`; BP-001 GENERATION_READY requires `provenance_tier=='ncert'` which is **not** a valid tier → structural re"
+          },
+          {
+            "line": 138,
+            "text": "- For NCERT-derived 400 pilot: create NEW blueprints only after owner approval, bound to NCERT Books paths + PASSED KU concepts; do not rewrite legacy ai-tier provenance silently."
+          },
+          {
+            "line": 140,
+            "text": "- Decide whether audit GENERATION_READY should map to provenance_tier='authoritative' + canonical path (schema-aligned) instead of impossible 'ncert' tier."
+          }
+        ]
+      }
+    ],
+    "classification": "A. incorrect audit/test gate (BP-COVERAGE-001/002 readiness classifier) + B. outdated audit contract relative to FACTORY-P2 / CF-SOURCE-001. Not a production generation-service requirement.",
+    "production_gate_actual": "content_factory_generation_service.assert_blueprint_ncert_source: NCERT PDF path required only when blueprint_declares_ncert_source (ncert_derived / path keys / provenance_tier==authoritative). AI-tier blueprints skip NCERT path requirement."
+  },
+  "pydantic_probe": {
+    "ncert": {
+      "accepted": false,
+      "error": "1 validation error for QuestionBlueprintCreateRequest\nprovenance_tier\n  Value error, provenance_tier must be one of ('authoritative', 'licensed', 'human', 'ai', 'derived') [type=value_error, input_value='ncert', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.10/v/value_error"
+    },
+    "official": {
+      "accepted": false,
+      "error": "1 validation error for QuestionBlueprintCreateRequest\nprovenance_tier\n  Value error, provenance_tier must not claim official NTA/NCERT; use authoritative|licensed|human|ai|derived [type=value_error, input_value='official', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.10/v/value_error"
+    },
+    "official_source": {
+      "accepted": false,
+      "error": "1 validation error for QuestionBlueprintCreateRequest\nprovenance_tier\n  Value error, provenance_tier must not claim official NTA/NCERT; use authoritative|licensed|human|ai|derived [type=value_error, input_value='official_source', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.10/v/value_error"
+    },
+    "nta": {
+      "accepted": false,
+      "error": "1 validation error for QuestionBlueprintCreateRequest\nprovenance_tier\n  Value error, provenance_tier must not claim official NTA/NCERT; use authoritative|licensed|human|ai|derived [type=value_error, input_value='nta', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.10/v/value_error"
+    },
+    "ncert_official": {
+      "accepted": false,
+      "error": "1 validation error for QuestionBlueprintCreateRequest\nprovenance_tier\n  Value error, provenance_tier must not claim official NTA/NCERT; use authoritative|licensed|human|ai|derived [type=value_error, input_value='ncert_official', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.10/v/value_error"
+    },
+    "authoritative": {
+      "accepted": true,
+      "error": null
+    },
+    "ai": {
+      "accepted": true,
+      "error": null
+    }
+  },
+  "legacy_and_biomolecules": {
+    "live_blueprint_count": 137,
+    "provenance_class_counts_reverified": {
+      "LEGACY_SOURCE_StudyMaterial": 100,
+      "SOURCE_MISSING": 37,
+      "CANONICAL_NCERT_BACKED": 0
+    },
+    "legacy_treatment": {
+      "do_not_silently_convert_studymaterial_to_ncert": true,
+      "do_not_invent_provenance_for_source_missing": true,
+      "rationale": "CF-SOURCE-001 non-goals: does not rewrite existing question/blueprint provenance. Equivalent NCERT Books PDFs existing on disk do not rewrite historical StudyMaterial constraint paths. New NCERT-derived blueprints must be created explicitly with authoritative + NCERT Books path after owner approval."
+    },
+    "biomolecules_drift": {
+      "count": 5,
+      "all_subject_zoology_chapter_botany": true,
+      "blueprints": [
+        {
+          "blueprint_id": "0b1c8f98-35eb-43f7-bb8e-2398c4a46de5",
+          "blueprint_key": "production-seed-v1-2026-09-02-bp-zoology-03",
+          "subject_code": "ZOOLOGY",
+          "chapter_subject_code": "BOTANY",
+          "class_level": "11",
+          "concept_code": "enzyme-basics",
+          "concept_id": "688b4b23-a44a-47ca-b386-7605ec84faa7",
+          "provenance_tier": "ai",
+          "drift": true
+        },
+        {
+          "blueprint_id": "876a2f73-994b-4a7b-bc5d-252267f8d2a3",
+          "blueprint_key": "production-seed-v1-2026-09-02-bp-zoology-04",
+          "subject_code": "ZOOLOGY",
+          "chapter_subject_code": "BOTANY",
+          "class_level": "11",
+          "concept_code": "dna-rna",
+          "concept_id": "cabdac4c-949a-4298-8b22-5b2eb0acab37",
+          "provenance_tier": "ai",
+          "drift": true
+        },
+        {
+          "blueprint_id": "dafae464-f60d-443f-b526-3e0c93390929",
+          "blueprint_key": "production-seed-v2-2026-09-03-bp-zoology-06",
+          "subject_code": "ZOOLOGY",
+          "chapter_subject_code": "BOTANY",
+          "class_level": "11",
+          "concept_code": "biomolecule-classes",
+          "concept_id": "74858845-0941-4608-9e0d-127c3512909d",
+          "provenance_tier": "ai",
+          "drift": true
+        },
+        {
+          "blueprint_id": "04e93763-bc48-472e-adb3-4088d872e1c4",
+          "blueprint_key": "production-seed-v2-2026-09-03-bp-zoology-07",
+          "subject_code": "ZOOLOGY",
+          "chapter_subject_code": "BOTANY",
+          "class_level": "11",
+          "concept_code": "dna-rna",
+          "concept_id": "cabdac4c-949a-4298-8b22-5b2eb0acab37",
+          "provenance_tier": "ai",
+          "drift": true
+        },
+        {
+          "blueprint_id": "8a42a7e2-c76f-4b64-be74-8fb0e3b472b5",
+          "blueprint_key": "production-seed-v2-2026-09-03-bp-zoology-13",
+          "subject_code": "ZOOLOGY",
+          "chapter_subject_code": "BOTANY",
+          "class_level": "11",
+          "concept_code": "enzyme-basics",
+          "concept_id": "688b4b23-a44a-47ca-b386-7605ec84faa7",
+          "provenance_tier": "ai",
+          "drift": true
+        }
+      ],
+      "approved_safe_remediation": "Owner-authorized UPDATE subject_id ZOOLOGY→BOTANY for these 5 rows only; preserve chapter_id/topic_id/concept_id and all PUBLISHED/DRAFT questions/KUs. Not applied in this audit.",
+      "preserve_questions": {
+        "PUBLISHED": 5,
+        "DRAFT": 8
+      }
+    },
+    "bp002_reference": "docs\\audits\\bp_coverage_002_reconciliation_20260913.json"
+  },
+  "recommended_remediation": [
+    "Do NOT add provenance_tier='ncert' to the schema (would conflict with false-claim policy and Pydantic enum).",
+    "Represent future NCERT-derived blueprints as: provenance_tier='authoritative' + constraints.ncert_derived=true + constraints.ncert_source_path under NCERT Books (validated by assert_blueprint_ncert_source).",
+    "Update BP-COVERAGE audit GENERATION_READY gate to match production: authoritative + canonical path + PASSED KU policy — not provenance_tier=='ncert'.",
+    "Do not silently rewrite the 100 StudyMaterial-backed or 37 SOURCE_MISSING blueprints.",
+    "Owner-authorized Biomolecules subject_id ZOOLOGY→BOTANY metadata fix only (preserve concept/question FKs).",
+    "Do not create blueprints or generate MCQs until owner review of this contract audit."
+  ],
+  "unresolved_decisions": [
+    "When to authorize creation of NEW NCERT-derived blueprints (authoritative + NCERT Books path) for the 400 pilot — not a schema question.",
+    "When to authorize Biomolecules subject_id metadata fix (already specified; not applied here).",
+    "Whether to update BP-COVERAGE-* audit scripts' GENERATION_READY classifier in a follow-up (documentation/tooling only).",
+    "Optional future enhancement (not required for contract): blueprint.source_document_id / knowledge_unit_id columns — owner/engineering ADR if desired."
+  ],
+  "before": {
+    "status": {
+      "DRAFT": 5298,
+      "PUBLISHED": 1479,
+      "SUPERSEDED": 6,
+      "IN_REVIEW": 111
+    },
+    "unmapped_draft": 5024,
+    "chapters": 56,
+    "topics": 192,
+    "concepts": 318,
+    "knowledge_units": 202,
+    "question_blueprints": 137,
+    "content_batches": 11,
+    "generation_jobs": 204,
+    "generation_runs": 204,
+    "generation_candidates": 392
+  },
+  "after": {
+    "status": {
+      "DRAFT": 5298,
+      "PUBLISHED": 1479,
+      "SUPERSEDED": 6,
+      "IN_REVIEW": 111
+    },
+    "unmapped_draft": 5024,
+    "chapters": 56,
+    "topics": 192,
+    "concepts": 318,
+    "knowledge_units": 202,
+    "question_blueprints": 137,
+    "content_batches": 11,
+    "generation_jobs": 204,
+    "generation_runs": 204,
+    "generation_candidates": 392
+  },
+  "snapshot_identical": true,
+  "freeze_ok": true,
+  "tests": {
+    "passed": 74,
+    "failed": 0,
+    "exit_code": 0,
+    "command": "D:\\ravishori\\AI Neet Exam App\\apps\\backend\\.venv\\Scripts\\python.exe -m pytest app/modules/ingestion/tests/test_ncert_canonical_source.py tests/test_content_factory_p2.py app/modules/academic/tests/test_cf_c1_chemistry_class_12.py app/modules/academic/tests/test_chapter_class_level.py app/modules/academic/tests/test_physics_p0_taxonomy.py tests/test_cms_workflow.py tests/test_cms_publish_quality.py tests/test_phase32_content_readiness_safety.py tests/test_phase33_ecaep_publication_safety.py -q --tb=line",
+    "unavailable": [
+      "app/modules/cms/tests/test_question_blueprints.py",
+      "tests/test_blueprint_integrity.py",
+      "app/modules/academic/tests/test_cf_c2_biology.py",
+      "app/modules/academic/tests/test_cf_c3_gravitation.py",
+      "app/modules/academic/tests/test_cf_c4_biomolecules.py",
+      "app/modules/academic/tests/test_cf_c5_ku_backfill.py"
+    ],
+    "notes": [
+      "CF-SOURCE-001 covered by test_ncert_canonical_source.py (authoritative + NCERT path).",
+      "FACTORY-P2 provenance rejection covered by test_content_factory_p2.py.",
+      "Dedicated CF-C2–C5 modules unavailable under expected names."
+    ],
+    "tail": "app/modules/academic/tests/test_cf_c1_chemistry_class_12.py::test_all_nine_new_chem12_chapters_present_in_seed\n  app\\modules\\academic\\tests\\test_cf_c1_chemistry_class_12.py:76: PytestWarning: The test <Function test_all_nine_new_chem12_chapters_present_in_seed> is marked with '@pytest.mark.asyncio' but it is not an async function. Please remove the asyncio mark. If the test is not marked explicitly, check for global marks applied via 'pytestmark'.\n    def test_all_nine_new_chem12_chapters_present_in_seed():\n\napp/modules/academic/tests/test_cf_c1_chemistry_class_12.py::test_electrochemistry_seed_row_is_unchanged\n  app\\modules\\academic\\tests\\test_cf_c1_chemistry_class_12.py:84: PytestWarning: The test <Function test_electrochemistry_seed_row_is_unchanged> is marked with '@pytest.mark.asyncio' but it is not an async function. Please remove the asyncio mark. If the test is not marked explicitly, check for global marks applied via 'pytestmark'.\n    def test_electrochemistry_seed_row_is_unchanged():\n\napp/modules/academic/tests/test_cf_c1_chemistry_class_12.py::test_no_duplicate_chapter_slugs_across_all_chemistry\n  app\\modules\\academic\\tests\\test_cf_c1_chemistry_class_12.py:97: PytestWarning: The test <Function test_no_duplicate_chapter_slugs_across_all_chemistry> is marked with '@pytest.mark.asyncio' but it is not an async function. Please remove the asyncio mark. If the test is not marked explicitly, check for global marks applied via 'pytestmark'.\n    def test_no_duplicate_chapter_slugs_across_all_chemistry():\n\napp/modules/academic/tests/test_cf_c1_chemistry_class_12.py::test_topic_slugs_are_unique_within_chemistry\n  app\\modules\\academic\\tests\\test_cf_c1_chemistry_class_12.py:102: PytestWarning: The test <Function test_topic_slugs_are_unique_within_chemistry> is marked with '@pytest.mark.asyncio' but it is not an async function. Please remove the asyncio mark. If the test is not marked explicitly, check for global marks applied via 'pytestmark'.\n    def test_topic_slugs_are_unique_within_chemistry():\n\napp/modules/academic/tests/test_cf_c1_chemistry_class_12.py::test_concept_slugs_are_unique_within_chemistry\n  app\\modules\\academic\\tests\\test_cf_c1_chemistry_class_12.py:109: PytestWarning: The test <Function test_concept_slugs_are_unique_within_chemistry> is marked with '@pytest.mark.asyncio' but it is not an async function. Please remove the asyncio mark. If the test is not marked explicitly, check for global marks applied via 'pytestmark'.\n    def test_concept_slugs_are_unique_within_chemistry():\n\napp/modules/academic/tests/test_cf_c1_chemistry_class_12.py::test_every_new_chapter_has_source_grounded_topics_and_concepts\n  app\\modules\\academic\\tests\\test_cf_c1_chemistry_class_12.py:116: PytestWarning: The test <Function test_every_new_chapter_has_source_grounded_topics_and_concepts> is marked with '@pytest.mark.asyncio' but it is not an async function. Please remove the asyncio mark. If the test is not marked explicitly, check for global marks applied via 'pytestmark'.\n    def test_every_new_chapter_has_source_grounded_topics_and_concepts():\n\napp/modules/academic/tests/test_cf_c1_chemistry_class_12.py::test_physics_seed_is_unchanged_by_cf_c1\n  app\\modules\\academic\\tests\\test_cf_c1_chemistry_class_12.py:134: PytestWarning: The test <Function test_physics_seed_is_unchanged_by_cf_c1> is marked with '@pytest.mark.asyncio' but it is not an async function. Please remove the asyncio mark. If the test is not marked explicitly, check for global marks applied via 'pytestmark'.\n    def test_physics_seed_is_unchanged_by_cf_c1():\n\napp/modules/academic/tests/test_cf_c1_chemistry_class_12.py::test_botany_seed_is_unchanged_by_cf_c1\n  app\\modules\\academic\\tests\\test_cf_c1_chemistry_class_12.py:149: PytestWarning: The test <Function test_botany_seed_is_unchanged_by_cf_c1> is marked with '@pytest.mark.asyncio' but it is not an async function. Please remove the asyncio mark. If the test is not marked explicitly, check for global marks applied via 'pytestmark'.\n    def test_botany_seed_is_unchanged_by_cf_c1():\n\napp/modules/academic/tests/test_cf_c1_chemistry_class_12.py::test_zoology_seed_is_unchanged_by_cf_c1\n  app\\modules\\academic\\tests\\test_cf_c1_chemistry_class_12.py:160: PytestWarning: The test <Function test_zoology_seed_is_unchanged_by_cf_c1> is marked with '@pytest.mark.asyncio' but it is not an async function. Please remove the asyncio mark. If the test is not marked explicitly, check for global marks applied via 'pytestmark'.\n    def test_zoology_seed_is_unchanged_by_cf_c1():\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n74 passed, 15 warnings in 114.47s (0:01:54)\n\nsys:1: DeprecationWarning: builtin type swigvarlink has no __module__ attribute"
+  },
+  "files_inspected": [
+    "cms.question_blueprints (read-only)",
+    "information_schema / pg_constraint for blueprint columns",
+    "apps/backend/app/modules/cms/models/content_factory.py",
+    "apps/backend/app/modules/cms/models/content_factory_planning.py",
+    "apps/backend/app/modules/cms/schemas/content_factory_planning.py",
+    "apps/backend/app/modules/cms/services/content_factory_planning_service.py",
+    "apps/backend/app/modules/cms/services/content_factory_generation_service.py",
+    "apps/backend/app/modules/ingestion/services/ncert_canonical_source.py",
+    "apps/backend/app/modules/ingestion/tests/test_ncert_canonical_source.py",
+    "docs/architecture/ncert_canonical_source.md",
+    "docs/product/CONTENT_FACTORY_P2_IMPLEMENTATION.md",
+    "docs/product/CONTENT_FACTORY_DATA_MODEL.md",
+    "docs/product/CONTENT_FACTORY_ARCHITECTURE.md",
+    "docs/audits/bp_coverage_002_reconciliation_20260913.json"
+  ],
+  "files_changed": [
+    "docs/audits/provenance_contract_001_20260913.md",
+    "docs/audits/provenance_contract_001_20260913.json",
+    "apps/backend/scripts/provenance_contract_001_readonly.py"
+  ],
+  "confirmation": {
+    "db_mutated": false,
+    "blueprints_mutated": false,
+    "provenance_rewritten": false,
+    "questions_mutated": false,
+    "kus_mutated": false,
+    "ai_called": false,
+    "mcqs_generated": false,
+    "committed": false,
+    "pushed": false
+  }
+}

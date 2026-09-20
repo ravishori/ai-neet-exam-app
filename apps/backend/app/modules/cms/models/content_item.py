@@ -1,6 +1,6 @@
 import uuid
 
-from sqlalchemy import ARRAY, ForeignKey, String, Text
+from sqlalchemy import ARRAY, ForeignKey, Index, String, Text, text
 from sqlalchemy.dialects.postgresql import TSVECTOR, UUID
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
@@ -8,12 +8,39 @@ from app.core.database import Base
 from app.shared.mixins import AuditedBase
 
 # CONCEPT_NOTE | QUESTION | FLASHCARD | DIAGRAM | VIDEO_REF | FORMULA_SHEET
-# DRAFT | AI_CHECKED | IN_REVIEW | CHANGES_REQUESTED | APPROVED | PUBLISHED | ARCHIVED
+# DRAFT | AI_CHECKED | IN_REVIEW | CHANGES_REQUESTED | APPROVED | PUBLISHED | ARCHIVED | SUPERSEDED
+#
+# SUPERSEDED is a DRAFT-retirement terminal state (acquisition repair lineage).
+# ARCHIVED remains the published-content archival state and must not be reused
+# for DRAFT supersession.
+CONTENT_ITEM_STATUSES = (
+    "DRAFT",
+    "AI_CHECKED",
+    "IN_REVIEW",
+    "CHANGES_REQUESTED",
+    "APPROVED",
+    "PUBLISHED",
+    "ARCHIVED",
+    "SUPERSEDED",
+)
+STUDENT_VISIBLE_STATUSES = frozenset({"PUBLISHED"})
+ACTIVE_EDITORIAL_STATUSES = frozenset(
+    {"DRAFT", "AI_CHECKED", "IN_REVIEW", "CHANGES_REQUESTED", "APPROVED", "PUBLISHED"}
+)
 
 
 class ContentItem(Base, AuditedBase):
     __tablename__ = "content_items"
-    __table_args__ = {"schema": "cms"}
+    __table_args__ = (
+        Index(
+            "uq_cms_content_items_replaces_id",
+            "replaces_id",
+            unique=True,
+            postgresql_where=text("replaces_id IS NOT NULL"),
+        ),
+        Index("ix_cms_content_items_replaces_id", "replaces_id"),
+        {"schema": "cms"},
+    )
 
     content_type: Mapped[str] = mapped_column(String(30), nullable=False)
     concept_id: Mapped[uuid.UUID | None] = mapped_column(
@@ -29,6 +56,14 @@ class ContentItem(Base, AuditedBase):
     tags: Mapped[list[str]] = mapped_column(ARRAY(String), default=list, nullable=False)
     language: Mapped[str] = mapped_column(String(10), default="en", nullable=False)
     status: Mapped[str] = mapped_column(String(30), default="DRAFT", nullable=False)
+
+    # Replacement → original lineage for DRAFT supersession.
+    # Null for normal content. Unique when set (one replacement per original).
+    replaces_id: Mapped[uuid.UUID | None] = mapped_column(
+        UUID(as_uuid=True),
+        ForeignKey("cms.content_items.id", ondelete="SET NULL"),
+        nullable=True,
+    )
 
     # Search index (PR 3) — maintained by SearchRepository.reindex_item(),
     # called whenever a QUESTION is published. NULL for draft/unpublished

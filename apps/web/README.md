@@ -1,14 +1,32 @@
 # Trinetra web
 
-Next.js 15 (App Router) + TypeScript + Tailwind CSS 4 + shadcn/ui. Single
-app, route-grouped — see ADR-0008 for why there's no separate admin app.
+Next.js 15 (App Router) + TypeScript + Tailwind CSS + shadcn/ui + NEET AI
+Design System primitives. Single app, route-grouped — see ADR-0008 (no
+separate admin frontend).
 
-## Routes
+**Status:** Student and admin learning surfaces are substantially wired to
+the FastAPI backend. The public landing page copy is **stale** relative to
+SP0–SP9 (tracked in `docs/product/MARKETING_TRUTHFULNESS.md`). The product
+is under active development — not a finished content-complete NEET platform.
 
-- `(public)/` → `/` — landing shell
-- `(auth)/login` → `/login` — placeholder, wired in Sprint 1
-- `student/dashboard` → `/student/dashboard` — placeholder
-- `admin` → `/admin` — placeholder, gains the ECAEP editorial UI in Sprint 3
+## Primary routes (implemented)
+
+### Public / auth
+- `/` — landing (copy outdated; see marketing truthfulness doc)
+- `/login`, `/register`, `/forgot-password`, `/reset-password`, `/verify-email`
+
+### Student
+- `/student/dashboard`, `/student/subjects` … concept tree
+- `/student/questions`, `/student/flashcards`
+- `/student/practice`, `/student/mock-tests`, `/student/attempts`
+- `/student/analytics`, `/student/study-plan`, `/student/profile`, `/student/settings`
+
+### Admin (role-gated in layout; API enforces permissions)
+- `/admin` dashboard, `/admin/content`, `/admin/ingestion`, `/admin/knowledge-units`
+- `/admin/visual-assets`, `/admin/ai-review`, `/admin/search`, `/admin/users`
+- `/admin/coverage`, `/admin/analytics`, `/admin/audit-logs`
+
+Authoritative capability status: `docs/product/MASTER_FEATURE_AUDIT.md`.
 
 ## Local setup
 
@@ -18,7 +36,47 @@ cp .env.example .env.local
 npm run dev
 ```
 
-Open http://localhost:3000.
+Open http://localhost:3000. Backend should be on `NEXT_PUBLIC_API_URL`
+(default `http://localhost:8000`).
+
+## Tests
+
+```bash
+npm test
+```
+
+Vitest covers a small set of components/helpers. **No Playwright E2E suite**
+yet (product gap G-024).
+
+## Dev-server invariant (do NOT skip)
+
+**Never run `npm run build` while `npm run dev` is running in the same
+`apps/web` working tree.** Both write into `apps/web/.next/` and collide —
+the build wipes the dev server's on-disk CSS/JS chunks while the dev
+server keeps serving HTML that references them, producing an entirely
+unstyled app with 404s on `/_next/static/css/app/layout.css`.
+
+Correct order for a full validation pass:
+
+```bash
+# 1. Stop the running dev server first
+#    (Ctrl+C in the terminal running `npm run dev`)
+
+# 2. Production build
+npm run build
+
+# 3. Restart dev for browser work
+npm run dev
+```
+
+If you hit an unstyled app locally, the recovery is: stop the dev server,
+`rm -rf .next`, then `npm run dev` again. Source code needs no change —
+the failure is always a stale `.next/` cache.
+
+The static guard `src/app/layout.stylesheet.test.ts` catches the
+source-level failure modes that would also produce an unstyled app
+(missing `import "./globals.css"`, removed design tokens, empty
+`.next/static/css/` after build).
 
 ## Adding shadcn/ui components
 

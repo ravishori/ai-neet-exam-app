@@ -1,33 +1,83 @@
+"""Outbound email abstraction.
+
+Development: logs a non-secret notice and (only when not production) the
+reset/verify link for local Mailpit testing — tokens are never logged in
+production.
+
+Production: if SMTP_* settings are configured, sends via smtplib. If not,
+logs email_not_configured and returns without raising (callers already use
+enumeration-safe responses).
+"""
+
+from __future__ import annotations
+
+import smtplib
+from email.message import EmailMessage
+
 from app.core.config import get_settings
 from app.core.logging import get_logger
 
 logger = get_logger("email")
 
-# No SMTP wired up yet (Mailpit is available via docker-compose for when
-# it is — see infrastructure/docker/README.md). Until then, log the link
-# so registration/reset flows are fully testable end to end in dev.
-#
-# Never log the raw token in production: a password-reset or email-
-# verification token is equivalent to a login for that account, and
-# application logs are typically readable by more people/systems than the
-# email inbox it was meant to reach — logging it there just moves the
-# leak surface, it doesn't close it. Once real SMTP exists this whole
-# module is replaced; until then, production silently doesn't deliver
-# these emails (see docs/deploy/RUNBOOK.md), which is the safe failure
-# mode, not the raw-token log line.
+
+def _app_base_url() -> str:
+    return get_settings().web_app_url.rstrip("/")
+
+
+def _send(*, to: str, subject: str, body: str, kind: str) -> None:
+    settings = get_settings()
+    if settings.smtp_host and settings.smtp_from:
+        try:
+            msg = EmailMessage()
+            msg["Subject"] = subject
+            msg["From"] = settings.smtp_from
+            msg["To"] = to
+            msg.set_content(body)
+            with smtplib.SMTP(settings.smtp_host, settings.smtp_port, timeout=8) as smtp:
+                if settings.smtp_use_tls:
+                    smtp.starttls()
+                if settings.smtp_username:
+                    smtp.login(settings.smtp_username, settings.smtp_password)
+                smtp.send_message(msg)
+            logger.info("email_sent", kind=kind, to=to)
+            return
+        except Exception:
+            logger.error("email_send_failed", kind=kind, to=to, exc_info=True)
+            return
+
+    if settings.is_production:
+        logger.warning("email_not_configured", kind=kind, to=to)
+        return
+
+    # Dev-only: include link so flows are testable. Never do this in production.
+    logger.info("email_dev_preview", kind=kind, to=to, body=body)
 
 
 def send_verification_email(*, to: str, token: str) -> None:
-    if get_settings().is_production:
-        logger.warning("email_not_configured", kind="verification", to=to)
-        return
-    link = f"http://localhost:3000/verify-email?token={token}"
-    logger.info("email_verification_link", to=to, link=link)
+    link = f"{_app_base_url()}/verify-email?token={token}"
+    _send(
+        to=to,
+        subject="Verify your Trinetra account",
+        body=f"Verify your email by opening this link:\n\n{link}\n\nIf you did not register, ignore this message.",
+        kind="verification",
+    )
 
 
 def send_password_reset_email(*, to: str, token: str) -> None:
-    if get_settings().is_production:
-        logger.warning("email_not_configured", kind="password_reset", to=to)
+    link = f"{_app_base_url()}/reset-password?token={token}"
+    _send(
+        to=to,
+        subject="Reset your Trinetra password",
+        body=f"Reset your password by opening this link (expires soon):\n\n{link}\n\nIf you did not request a reset, ignore this message.",
+        kind="password_reset",
+    )
+
+
+def send_security_alert_email(*, subject: str, body: str) -> None:
+    """Ops alert — destination from settings.ops_alert_email; never includes secrets."""
+    settings = get_settings()
+    to = settings.ops_alert_email
+    if not to:
+        logger.warning("alert_email_not_configured", subject=subject)
         return
-    link = f"http://localhost:3000/reset-password?token={token}"
-    logger.info("password_reset_link", to=to, link=link)
+    _send(to=to, subject=subject, body=body, kind="security_alert")

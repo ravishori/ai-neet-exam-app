@@ -1,0 +1,274 @@
+{
+  "audit_metadata": {
+    "captured_at": "2026-09-03T06:10:00+00:00",
+    "audit_type": "PRODUCTION_SEED_V1_2Q_DEEP_RESOLUTION",
+    "mode": "READ_ONLY_ZERO_GENERATION_ZERO_PUBLICATION_ZERO_MUTATION",
+    "batch_key": "production-seed-v1-2026-09-02-batch",
+    "batch_id": "7437f9e0-edbd-4be8-bd2c-6ef700d71989",
+    "scope": "exactly_two_unresolved_items",
+    "independence": {
+      "limitation": "INDEPENDENCE LIMITATION",
+      "note": "Agent deep recalculation + StudyMaterial NCERT PDF search. Not independent human NCERT certification."
+    },
+    "prior_certification_artifact": "docs/audits/TALOS_PRODUCTION_SEED_V1_30_NCERT_CERTIFICATION_20260902.json",
+    "tests_run": {
+      "note": "No provider generation. Integrity via content_items/content_versions SELECT only."
+    }
+  },
+  "population": {
+    "expected": 2,
+    "audited": 2,
+    "item_ids": [
+      "a1f1d832-21a3-4fb6-86b8-fe07ed46ad18",
+      "54907eea-4fcd-4855-8477-268bafe03e82"
+    ],
+    "other_28_seed_items_audited": false,
+    "status_at_audit": {
+      "a1f1d832-21a3-4fb6-86b8-fe07ed46ad18": "DRAFT",
+      "54907eea-4fcd-4855-8477-268bafe03e82": "DRAFT"
+    }
+  },
+  "source_inventory": {
+    "authoritative_set": "StudyMaterial ncert-books-*.pdf / ncert-book-*.pdf",
+    "keph_pdfs": "SUPERSEDED_NOT_USED",
+    "files_inspected": [
+      "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-2.pdf",
+      "StudyMaterial/Chemistry/Class 11- Chemistry/ncert-books-class-11-chemistry-chapter-4.pdf",
+      "StudyMaterial/Chemistry (full ncert*.pdf keyword scan for XeF5/SF4/ICl3/ClF3/pentagonal)"
+    ],
+    "scan_result_summary": {
+      "XeF5_or_XeF5_minus_in_corpus": false,
+      "SF4_formula_string_in_chem_ncert": false,
+      "ICl3_formula_string_in_chem_ncert": false,
+      "ClF3_named_in_chem_ch4_exercises": true,
+      "see_saw_AB4E_in_chem_ch4_table_4_8": true,
+      "T_shape_AB3E2_in_chem_ch4_table_4_8": true,
+      "pentagonal_planar_in_chem_ncert": false,
+      "steric_number_7_AB5E2_table_in_chem_ch4": false
+    }
+  },
+  "items": [
+    {
+      "item_id": "a1f1d832-21a3-4fb6-86b8-fe07ed46ad18",
+      "previous_certification_status": "FAIL",
+      "subject": "Physics",
+      "class": "XI",
+      "chapter": "Kinematics",
+      "topic": "Motion in a Straight Line",
+      "concept": "Kinematic Equations",
+      "blueprint": "production-seed-v1-2026-09-02-bp-physics-02",
+      "full_stem": "A particle moving along a straight line with uniform acceleration covers a distance of $12\\text{ m}$ during the $3^{\\text{rd}}$ second of its motion and $20\\text{ m}$ during the $5^{\\text{th}}$ second of its motion. Assuming the particle started moving at $t = 0$, what is the total distance traveled by the particle in the first $4$ seconds?",
+      "stored_options": {
+        "A": "32 m",
+        "B": "48 m",
+        "C": "24 m",
+        "D": "40 m"
+      },
+      "stored_answer": "B",
+      "stored_explanation_summary": "Derives a=4 m/s², u=2 m/s correctly via s_n, then claims s=ut+½at²=8+32=48 m and keys B; incorrectly dismisses D=40 as a distractor.",
+      "independent_reasoning": {
+        "proposition": "Find displacement/distance in first 4 s under constant a, given distances in 3rd and 5th seconds.",
+        "governing_relations": [
+          "s_n = u + (a/2)(2n-1)",
+          "s = ut + (1/2)at^2"
+        ],
+        "from_s3": "12 = u + 5a/2",
+        "from_s5": "20 = u + 9a/2",
+        "subtract": "8 = 2a => a = 4 m/s^2",
+        "back_substitute": "12 = u + 10 => u = 2 m/s",
+        "s_at_4s": "s = (2)(4) + (1/2)(4)(16) = 8 + 32 = 40 m",
+        "cross_check_sum_sn": "s1+s2+s3+s4 = 4+8+12+16 = 40 m",
+        "units": "m, s, m/s, m/s^2 consistent"
+      },
+      "independent_answer": "D",
+      "answer_match": "MISMATCH",
+      "exactly_one_defensible_answer": "YES",
+      "option_analysis": {
+        "A": "incorrect — 32 equals ½at² alone (omits ut)",
+        "B": "incorrect as keyed — equals erroneous 8+32=48 arithmetic; not the physical result",
+        "C": "incorrect",
+        "D": "correct — 40 m"
+      },
+      "ncert_classification": "NCERT_DERIVED",
+      "ncert_source": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-2.pdf",
+      "ncert_section": "2.4 Kinematic equations for uniformly accelerated motion; summary kinematic equations (v=v0+at, x=v0 t + ½ a t²)",
+      "ncert_page": null,
+      "page_verified": false,
+      "pdf_page_index_hits": [
+        0,
+        4,
+        5,
+        9,
+        10
+      ],
+      "ncert_evidence": "Class XI Physics Ch.2 presents uniformly accelerated kinematic equations used here. Distance-in-nth-second formula is a standard derived application of those equations; printed page numbers not claimed.",
+      "explanation_assessment": "FAIL — u and a derivation correct; final arithmetic asserts 8+32=48 (false; 8+32=40). Explanation also mislabels correct option D as wrong.",
+      "original_fail_precise_reason": {
+        "reproduced": true,
+        "failure_type": [
+          "wrong_stored_answer",
+          "wrong_calculation_in_explanation",
+          "incorrect_explanation_of_distractors"
+        ],
+        "detail": "Independent solution yields 40 m (option D). Stored answer B (48 m) mismatches. Explanation contains arithmetic error claiming 8+32=48. Not an NCERT contradiction; concept is NCERT-derived."
+      },
+      "neet_relevance": "PASS — standard NEET kinematics numerical",
+      "provenance_assessment": {
+        "provider": "gemini",
+        "model": "gemini-3.6-flash",
+        "routing": "fixed:gemini",
+        "is_fallback": false,
+        "batch_key": "production-seed-v1-2026-09-02-batch",
+        "expected_ok": true
+      },
+      "final_certification_decision": "FAIL",
+      "failure_codes": [
+        "ANSWER_MISMATCH",
+        "EXPLANATION_ARITHMETIC_ERROR",
+        "SCIENTIFIC_VERIFICATION_FAIL",
+        "EXPLANATION_MISLABELS_CORRECT_OPTION"
+      ],
+      "required_next_action": "Do not publish/approve as-is. Separate remediation task must correct stored answer and explanation (or regenerate under factory rules). This audit must not edit the item."
+    },
+    {
+      "item_id": "54907eea-4fcd-4855-8477-268bafe03e82",
+      "previous_certification_status": "REQUIRES_HUMAN_REVIEW",
+      "subject": "Chemistry",
+      "class": "XI",
+      "chapter": "Chemical Bonding and Molecular Structure",
+      "topic": "Covalent Bonding and VSEPR Theory",
+      "concept": "VSEPR Theory",
+      "blueprint": "production-seed-v1-2026-09-02-bp-chemistry-01",
+      "full_stem": "Consider the chemical species $\\text{XeF}_5^-$, $\\text{SF}_4$, and $\\text{ICl}_3$. According to the VSEPR theory, which of the following correctly pairs each species with its molecular geometry (shape)?",
+      "stored_options": {
+        "A": "XeF5−: Pentagonal planar; SF4: See-saw; ICl3: T-shaped",
+        "B": "XeF5−: Pentagonal bipyramidal; SF4: Square planar; ICl3: Trigonal planar",
+        "C": "XeF5−: Square pyramidal; SF4: Tetrahedral; ICl3: Trigonal bipyramidal",
+        "D": "XeF5−: Pentagonal planar; SF4: Square planar; ICl3: T-shaped"
+      },
+      "stored_answer": "A",
+      "stored_explanation_summary": "XeF5− as AX5E2 → pentagonal planar; SF4 as AX4E → see-saw; ICl3 as AX3E2 → T-shaped.",
+      "independent_reasoning": {
+        "proposition": "Pair each of XeF5−, SF4, ICl3 with molecular shape under VSEPR.",
+        "XeF5_minus": "Xe valence 8 + 5 F + 1 charge = 14 e− → 7 pairs → 5 bp + 2 lp (AX5E2). Electron geometry pentagonal bipyramidal; lone pairs axial → molecular shape pentagonal planar.",
+        "SF4": "S 6 + 4 F = 10 e− → 5 pairs → 4 bp + 1 lp (AX4E) → see-saw.",
+        "ICl3": "I 7 + 3 Cl = 10 e− → 5 pairs → 3 bp + 2 lp (AX3E2) → T-shaped.",
+        "note_on_option_B_XeF5": "Pentagonal bipyramidal is the electron-pair geometry, not the molecular shape for AX5E2."
+      },
+      "independent_answer": "A",
+      "answer_match": "MATCH",
+      "exactly_one_defensible_answer": "YES",
+      "option_analysis": {
+        "A": "correct for all three shapes",
+        "B": "incorrect — confuses XeF5− molecular vs electron geometry; SF4 and ICl3 wrong",
+        "C": "incorrect",
+        "D": "incorrect — SF4 is not square planar (XeF4 is)"
+      },
+      "ncert_classification": "SCIENTIFICALLY_VALID_NOT_DIRECTLY_LOCATED_IN_NCERT",
+      "ncert_source": "StudyMaterial/Chemistry/Class 11- Chemistry/ncert-books-class-11-chemistry-chapter-4.pdf",
+      "ncert_section": "VSEPR theory; Tables 4.6–4.8 (AB2–AB6; AB4E see-saw; AB3E2 T-shape); ClF3 in exercises; XeF2 mentioned only as noble-gas compound example (not XeF5−)",
+      "ncert_page": null,
+      "page_verified": false,
+      "pdf_page_index_hits": {
+        "vsepr_tables_see_saw_t_shape": [
+          16,
+          17
+        ],
+        "ClF3_exercise": [
+          34
+        ],
+        "XeF2_mention": [
+          6
+        ],
+        "AB5_AB6_no_lone_pair_geometries": [
+          13
+        ]
+      },
+      "ncert_evidence": "SF4/ICl3 shapes follow NCERT AB4E see-saw and AB3E2 T-shape patterns (ClF3 named). Full corpus keyword scan found no XeF5/XeF5− and no pentagonal planar molecular example. Table 4.6 covers AB2–AB6 without heptacoordinate AX5E2. Therefore the XeF5− claim is chemically standard but not directly located in authoritative StudyMaterial NCERT PDFs.",
+      "explanation_assessment": "PASS chemically for stored answer A; terminology of electron vs molecular geometry for XeF5− is appropriate. NCERT-direct example support for XeF5− not established.",
+      "human_review_precise_reason": {
+        "reproduced": true,
+        "issue": "ENRICHMENT_BEYOND_LOCATED_NCERT_EXAMPLES",
+        "detail": "Scientific answer MATCH and unique. Remaining barrier is NCERT support for XeF5− pentagonal planar (material to every option), not answer wrongness. Requires human NCERT/syllabus authorization decision — do not auto-promote to CERTIFIED."
+      },
+      "neet_relevance": "PASS as advanced bonding practice; HUMAN_REVIEW for Class XI NCERT-aligned publication gate",
+      "provenance_assessment": {
+        "provider": "gemini",
+        "model": "gemini-3.6-flash",
+        "routing": "fixed:gemini",
+        "is_fallback": false,
+        "batch_key": "production-seed-v1-2026-09-02-batch",
+        "expected_ok": true
+      },
+      "final_certification_decision": "REQUIRES_HUMAN_REVIEW",
+      "failure_codes": [
+        "ENRICHMENT_BEYOND_LOCATED_NCERT_EXAMPLES",
+        "XEF5_NOT_FOUND_IN_STUDYMATERIAL_NCERT"
+      ],
+      "required_next_action": "Do not edit in this audit. Human NCERT/syllabus reviewer must decide whether XeF5− enrichment is acceptable for publication, or a separate remediation must replace the XeF5− example with an NCERT-located species."
+    }
+  ],
+  "aggregate_results": {
+    "answer_match": {
+      "MATCH": 1,
+      "MISMATCH": 1
+    },
+    "ncert_classification": {
+      "NCERT_DERIVED": 1,
+      "SCIENTIFICALLY_VALID_NOT_DIRECTLY_LOCATED_IN_NCERT": 1
+    },
+    "final_certification_decision": {
+      "FAIL": 1,
+      "REQUIRES_HUMAN_REVIEW": 1
+    },
+    "exactly_one_defensible_answer": {
+      "YES": 2,
+      "NO": 0
+    }
+  },
+  "integrity": {
+    "pre": {
+      "targets_changed_vs_prior_seed_export": [],
+      "seed_30_changed_vs_prior_export": [],
+      "seed_n": 30,
+      "seed_fp": "8420e875c0500f1c800730cb0d960e2ce55cff93787a898d0c3ccf58974852b0",
+      "question_status_counts": {
+        "DRAFT": 5279,
+        "IN_REVIEW": 11,
+        "PUBLISHED": 1049
+      }
+    },
+    "post": {
+      "captured_at": "2026-09-03T06:18:38.465952+00:00",
+      "seed_n": 30,
+      "seed_fp": "c95456d020e983a951152cb454b72849b409dac44090d52c51e63ce49dd17bd9",
+      "seed_fp_match_pre": false,
+      "seed_fp_mismatch_note": "Aggregate hash differs due to options JSON serialization between pre/post scripts; field-level compare of stem/options/answer/explanation/status vs prior seed export is empty (no content change).",
+      "changed_vs_prior_seed_export": [],
+      "targets_status": {
+        "a1f1d832-21a3-4fb6-86b8-fe07ed46ad18": "DRAFT",
+        "54907eea-4fcd-4855-8477-268bafe03e82": "DRAFT"
+      },
+      "question_status_counts": {
+        "DRAFT": 5279,
+        "IN_REVIEW": 11,
+        "PUBLISHED": 1049
+      },
+      "seed_content_changed": false
+    }
+  },
+  "publication_firewall": {
+    "approved_transitions": 0,
+    "published_transitions": 0,
+    "ecaep_transitions": 0,
+    "both_remain_draft": true
+  },
+  "limitations": [
+    "INDEPENDENCE LIMITATION — agent audit, not human NCERT certification",
+    "page_verified=false (PDF page indices recorded where searched; printed page numbers not certified)",
+    "keph###.pdf superseded; StudyMaterial ncert-books-* only",
+    "Other 28 seed items not re-scored in this deep pass"
+  ],
+  "publication_decision": "PUBLICATION BLOCKED",
+  "final_verdict": "RED — PUBLICATION BLOCKED"
+}

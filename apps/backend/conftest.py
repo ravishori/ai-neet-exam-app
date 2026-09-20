@@ -9,6 +9,8 @@ import os
 
 os.environ["DATABASE_URL"] = "postgresql+asyncpg://trinetra_app:trinetra_dev_pw@localhost:5432/trinetra_test_db"
 os.environ["DATABASE_URL_SYNC"] = "postgresql+psycopg://trinetra_app:trinetra_dev_pw@localhost:5432/trinetra_test_db"
+# Stable Fernet key for TOTP encryption tests (dev/test only — not production).
+os.environ.setdefault("ENCRYPTION_KEY", "uLCw_rsupBRTzp7bhuN_iuxiMiXgpxc6DujbFR_sXkM=")
 
 import uuid
 from collections.abc import AsyncGenerator
@@ -117,10 +119,26 @@ async def register_user():
 
     async def _register(ac: AsyncClient, *, role_codes: list[str] | None = None, db_session: AsyncSession | None = None):
         email = f"test-{uuid.uuid4().hex[:12]}@example.com"
-        password = "TestPassword!234"
+        # Registration now accepts the caller's chosen password. This
+        # literal satisfies validate_password_policy (12+ chars, upper,
+        # lower, digit, special) and is what downstream tests log in with.
+        password = "TestStrongPass!1"
+        # Unique 10-digit Indian mobile per fixture invocation. First digit
+        # 6-9 required by the normalizer.
+        import random
+
+        mobile10 = str(random.choice("6789")) + "".join(str(random.randint(0, 9)) for _ in range(9))
         resp = await ac.post(
             "/api/v1/auth/register",
-            json={"email": email, "password": password, "first_name": "Test"},
+            json={
+                "email": email,
+                "first_name": "Test",
+                "last_name": "User",
+                "mobile": mobile10,
+                "state_code": "KARNATAKA",
+                "city": "Bangalore",
+                "password": password,
+            },
         )
         assert resp.status_code == 201, resp.text
         user_id = resp.json()["data"]["id"]

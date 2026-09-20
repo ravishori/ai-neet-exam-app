@@ -1,7 +1,7 @@
 import uuid
 from datetime import datetime
 
-from sqlalchemy import func, select
+from sqlalchemy import Exists, func, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.modules.academic.models import Chapter, Concept, MicroCompetency, Subject, Topic
@@ -9,6 +9,21 @@ from app.modules.assessment.models import Attempt, AttemptAnswer
 from app.modules.cms.models import ContentItem
 from app.modules.cms.models.content_version_knowledge_unit import ContentVersionKnowledgeUnit
 from app.modules.learning.models import ConceptMastery, KnowledgeUnitMastery, MicroCompetencyMastery
+
+
+def _concept_has_published_questions() -> Exists:
+    """WAVE-P0-5 — recommendations/revision only target concepts students can practice."""
+    return (
+        select(ContentItem.id)
+        .where(
+            ContentItem.concept_id == Concept.id,
+            ContentItem.content_type == "QUESTION",
+            ContentItem.status == "PUBLISHED",
+            ContentItem.deleted_at.is_(None),
+        )
+        .correlate(Concept)
+        .exists()
+    )
 
 
 class MasteryRepository:
@@ -231,7 +246,11 @@ class MasteryRepository:
         result = await self.session.execute(
             select(Concept, ConceptMastery)
             .join(ConceptMastery, ConceptMastery.concept_id == Concept.id)
-            .where(ConceptMastery.user_id == user_id, ConceptMastery.next_review_at <= now)
+            .where(
+                ConceptMastery.user_id == user_id,
+                ConceptMastery.next_review_at <= now,
+                _concept_has_published_questions(),
+            )
             .order_by(ConceptMastery.next_review_at)
             .limit(limit)
         )
@@ -241,7 +260,11 @@ class MasteryRepository:
         result = await self.session.execute(
             select(Concept, ConceptMastery)
             .join(ConceptMastery, ConceptMastery.concept_id == Concept.id)
-            .where(ConceptMastery.user_id == user_id, ConceptMastery.mastery_level == "PRACTICING")
+            .where(
+                ConceptMastery.user_id == user_id,
+                ConceptMastery.mastery_level == "PRACTICING",
+                _concept_has_published_questions(),
+            )
             .order_by(ConceptMastery.mastery_score)
             .limit(limit)
         )
@@ -254,8 +277,23 @@ class MasteryRepository:
             .join(Topic, Topic.id == Concept.topic_id)
             .join(Chapter, Chapter.id == Topic.chapter_id)
             .join(Subject, Subject.id == Chapter.subject_id)
-            .where(Concept.id.not_in(attempted))
+            .where(Concept.id.not_in(attempted), _concept_has_published_questions())
             .order_by(Subject.display_order, Chapter.display_order, Topic.display_order, Concept.display_order)
             .limit(limit)
         )
         return list(result.scalars().all())
+
+    async def published_question_counts(self, concept_ids: list[uuid.UUID]) -> dict[uuid.UUID, int]:
+        if not concept_ids:
+            return {}
+        result = await self.session.execute(
+            select(ContentItem.concept_id, func.count())
+            .where(
+                ContentItem.concept_id.in_(concept_ids),
+                ContentItem.content_type == "QUESTION",
+                ContentItem.status == "PUBLISHED",
+                ContentItem.deleted_at.is_(None),
+            )
+            .group_by(ContentItem.concept_id)
+        )
+        return {row[0]: int(row[1]) for row in result.all() if row[0] is not None}

@@ -4,6 +4,7 @@ import pytest
 from sqlalchemy import select
 
 from conftest import csrf_headers
+from helpers_publishable_question import publishable_question_body
 
 pytestmark = pytest.mark.asyncio(loop_scope="session")
 
@@ -37,18 +38,12 @@ async def _publish_question(
             "title": "Micro-competency test question",
             "slug": f"mc-test-question-{slug_suffix}",
             "language": "en",
-            "body": {
-                "stem": "2 + 2 = ?",
-                "options": [
+            "body": publishable_question_body(stem=f"2 + 2 = ? ({slug_suffix})", correct_option=correct_option, explanation="Basic arithmetic.", options=[
                     {"label": "A", "text": "3"},
                     {"label": "B", "text": "4"},
                     {"label": "C", "text": "5"},
                     {"label": "D", "text": "22"},
-                ],
-                "correct_option": correct_option,
-                "explanation": "Basic arithmetic.",
-                "difficulty": "easy",
-            },
+                ],),
         },
         headers=csrf_headers(client),
     )

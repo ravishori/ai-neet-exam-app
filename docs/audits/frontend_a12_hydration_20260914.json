@@ -1,0 +1,45 @@
+{
+  "task": "FRONTEND-A12",
+  "title": "Hydration and runtime hard gate",
+  "verdict": "GREEN",
+  "date": "2026-09-14",
+  "root_cause": {
+    "quick_launch_hub": "Not the source. Measured SSR↔client parity for all 7 hover-lift links (href + className). No theme hooks, browser APIs, Date/random, or generated ids.",
+    "historical_overlay_attribution": "Prior audits/A6 stacks naming quick-launch-hub.tsx were misattribution of shell hydration noise onto a nearby dashboard subtree.",
+    "actual_class": "Base UI DropdownMenuTrigger ids (base-ui-_R_*) when menus SSR inside AppHeader / ThemeToggle / StudentBottomNav. Premium UI audit already recorded this on flashcards DropdownMenuTrigger.",
+    "fix_already_present": "A6–A9 introduced useMounted deferral so SSR emits zero base-ui-* ids; menus mount after hydration.",
+    "reproduction": {
+      "current_code": "No hydration console warnings or Next overlay copy (Playwright + Cursor browser; light/dark; 390/768/1280/1440).",
+      "ssr_base_ui_ids": [],
+      "qlh_href_match": true
+    }
+  },
+  "changes": [
+    "apps/web/src/components/ds/quick-launch-hub.tsx — data attributes + explicit aria-hidden; document determinism",
+    "apps/web/src/hooks/use-mounted.ts — keep mount guard (A12 comment)",
+    "apps/web/src/components/ds/quick-launch-hub.test.tsx — deterministic destinations regression",
+    "apps/web/src/components/app-header.hydration.test.tsx — no Base UI triggers pre-mount",
+    "apps/web/src/hooks/use-mounted.test.tsx — SSR false → client true",
+    "apps/web/scripts/a12-hydration-probe.mjs — live SSR/client probe"
+  ],
+  "tests": {
+    "vitest_focused": "19 passed (QLH, useMounted, AppHeader hydration, A6–A9 shell)",
+    "eslint_changed_files": "pass",
+    "typescript": "pre-existing error only: src/features/cms/ecaep-queue-filters.ts TS2345"
+  },
+  "runtime_verification": {
+    "initial_load": "pass",
+    "hard_refresh": "pass (probe)",
+    "light_dark": "pass",
+    "viewports": [390, 768, 1280, 1440],
+    "hydration_logs": [],
+    "browser_live": "QLH 7 links; mount-deferred controls disabled on first paint; no hydration overlay"
+  },
+  "pre_existing": [
+    "Backend :8000 often down → ERR_CONNECTION_REFUSED for API (not hydration)",
+    "ecaep-queue-filters.ts TS2345",
+    "next build fails on admin/ai-review named export EditorialReviewQueueInner (unrelated)",
+    "Unrelated dirty working tree left untouched"
+  ],
+  "commit": "not created (per task)"
+}

@@ -1,0 +1,54 @@
+{
+  "task": "FRONTEND-RUNTIME-003",
+  "title": "Restore production CSS/design-system rendering",
+  "verdict": "GREEN_WITH_PORT_NOTE",
+  "date": "2026-09-14",
+  "root_cause": {
+    "summary": "Stale/mixed Next.js runtime on :3000: HTML referenced development CSS path `/_next/static/css/app/layout.css` which returned 404. `.next` had been overwritten by a later `next dev` after a successful `next build`, so manifests pointed at missing app/layout.css while only hashed production CSS files existed on disk.",
+    "evidence": {
+      "html_stylesheet_href": "/_next/static/css/app/layout.css?v=...",
+      "css_http_status_before": 404,
+      "main_app_js_before": 404,
+      "rsc_build_mode_in_html": "development",
+      "disk_css_after_clean_build": [
+        "7cce990b3daa7e6d.css",
+        "bd5b56afac8c4fc3.css",
+        "df040096fa0b04cd.css"
+      ],
+      "after_fix_production_css_status": [200, 200],
+      "computed_styles_register": {
+        "bodyFont": "Plus Jakarta Sans",
+        "btnBg": "oklch(0.47 0.19 264)",
+        "btnRadius": "12px"
+      }
+    }
+  },
+  "code_changes": [],
+  "ops_actions": [
+    "Removed corrupted apps/web/.next",
+    "npm run build (clean production assets)",
+    "npm run start on 127.0.0.1:3001 (port 3000 held by unkillable PID 18240 Access Denied)"
+  ],
+  "port_blocker": {
+    "pid": 18240,
+    "port": 3000,
+    "issue": "Access denied when terminating; still serves broken/stale responses including CSS 404",
+    "user_action": "Kill PID 18240 in an elevated terminal, then: cd apps/web && npm run start -- -p 3000 -H 127.0.0.1"
+  },
+  "validation": {
+    "npm_run_build": "pass",
+    "production_start_3001": "pass",
+    "css_assets_200": true,
+    "a12_tests": "19/19 pass",
+    "auth_route_tests": "none present",
+    "eslint_changed_files": "n/a (no source changes)",
+    "backend_8000": "unrelated to CSS; do not conflate"
+  },
+  "preserved": [
+    "A6-A12",
+    "BUILD-001",
+    "BUILD-002",
+    "ECAEP/Practice/Mock/AuthZ/DB"
+  ],
+  "commit": "not created"
+}

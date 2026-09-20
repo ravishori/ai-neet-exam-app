@@ -1,0 +1,115 @@
+{
+  "schema_version": "ncert_fact_pack_v1",
+  "pack_id": "python-mcq-engine-008-kinetics-rate-law-retired-v1",
+  "facts": [
+    {
+      "schema_version": "ncert_fact_pack_v1",
+      "fact_id": "ncert-fact-v1-bbe13bb91d3757573671d3531c1912cd7c7c92e825153cf6400470f1f625fa99",
+      "subject": "CHEMISTRY",
+      "class_level": "12",
+      "chapter_id": "2f6b37d3-dbb7-4cf9-b7bd-54f5c222067b",
+      "chapter": "Chemical Kinetics",
+      "topic_id": "5831243f-a907-4bc8-8c17-c4342eaf1105",
+      "topic": "Rate Law and Order of Reaction",
+      "concept_id": "8c0aeb1d-1297-4a7a-9e5c-c7ca5a011118",
+      "concept_name": "Integrated Rate Equations",
+      "source_pdf": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 1\\lech1dd\\lech103.pdf",
+      "source_relative_path": "Class 12/Chemistry 1/lech1dd/lech103.pdf",
+      "ncert_reference": {
+        "reference_level": "SOURCE_TEXT_ONLY"
+      },
+      "evidence_text": "The equation like (3.4), which relates the rate of a reaction to concentration of reactants is called rate law or rate expression",
+      "fact_type": "DEFINITION",
+      "canonical_fact": "The equation like (3.4), which relates the rate of a reaction to concentration of reactants is called rate law or rate expression",
+      "allowed_transformations": [
+        "DEFINITION_IDENTIFICATION",
+        "OPTION_PERMUTATION"
+      ],
+      "allowed_distractors": [
+        {
+          "value": "rate law",
+          "source": "SAME_EVIDENCE",
+          "evidence_text": "The representation of rate of reaction in terms of concentration of the reactants is known as rate law"
+        },
+        {
+          "value": "differential rate equation",
+          "source": "SAME_EVIDENCE",
+          "evidence_text": "Above equation can also be written as Rate = k [A] x [B] y (3.4a) [ ] [ ] [ ] x y d R A B d k t − = (3.4b) This form of equation (3.4 b) is known as differential rate equation, where k is a proportionality constant called rate constant"
+        },
+        {
+          "value": "elementary reactions",
+          "source": "SAME_EVIDENCE",
+          "evidence_text": "The reactions taking place in one step are called elementary reactions"
+        }
+      ],
+      "syllabus_binding": {
+        "subject": "CHEMISTRY",
+        "unit_number": 8,
+        "unit_name": "CHEMICAL KINETICS",
+        "topic_id": "CHEMISTRY:U08:T01",
+        "topic": "Rate of a chemical reaction, factors affecting the rate of reactions: concentration, temperature, pressure, and catalyst; elementary and complex reactions, order and molecularity of reactions, rate law, rate constant and its units, differential and integral forms of zero and first-order reactions, their characteristics and half-lives, the effect of temperature on the rate of reactions, Arrhenius theory, activation energy and its calculation, collision theory of bimolecular gaseous reactions (no derivation).",
+        "syllabus_source": "D:\\ravishori\\AI Neet Exam App\\NEETSyllabus.txt",
+        "syllabus_sha256": "82a616e31ba75d6e5d6422537c8ef5a4ceafb7a7e3449109696b12839b100ceb"
+      },
+      "review_status": "REJECTED",
+      "provenance": {
+        "origin": "canonical_ncert",
+        "extraction_method": "deterministic_extraction",
+        "extracted_by": "PYTHON-MCQ-ENGINE-006",
+        "source_audit": "docs/audits/python_mcq_engine_006.json",
+        "notes": "Internal reviewed structured fact for deterministic MCQ evaluation; not an NCERT certification claim."
+      },
+      "review_record": {
+        "reviewed_by": "PYTHON-MCQ-ENGINE-008",
+        "reviewed_at": "2026-09-14T16:15:00+00:00",
+        "review_method": "ENGINE-007 NCERT_GROUNDING_FAILED investigation",
+        "notes": "Retired from MCQ_ELIGIBLE corpus. Grounding returns NCERT_AMBIGUOUS because distractor \"rate law\" is independently NCERT-defensible alongside keyed \"rate law or rate expression\". Concept binding Integrated Rate Equations is also misaligned with a rate-law definition fact."
+      },
+      "scope_review": {
+        "outcome": "UNSUPPORTED",
+        "reviewed_by": "PYTHON-MCQ-ENGINE-008",
+        "reviewed_at": "2026-09-14T16:15:00+00:00",
+        "review_method": "independent grounding reproduction + taxonomy review",
+        "syllabus_rationale": "Syllabus Unit 8 Chemical Kinetics includes rate law; syllabus scope alone is not the failure.",
+        "taxonomy_rationale": "Concept Integrated Rate Equations does not match a rate-law definition fact; distractor construction makes multiple options evidence-defensible.",
+        "source_audit": "docs/audits/python_mcq_engine_008.json"
+      },
+      "question_template": {
+        "question_type": "DEFINITION_IDENTIFICATION",
+        "transformation": "DEFINITION_IDENTIFICATION",
+        "stem": "According to NCERT, which term correctly completes the following statement: \"The equation like (3.4), which relates the rate of a reaction to concentration of reactants is called ____\"?",
+        "stem_evidence_quote": "The equation like (3.4), which relates the rate of a reaction to concentration of reactants is called rate law or rate expression",
+        "options": [
+          {
+            "key": "correct",
+            "text": "rate law or rate expression",
+            "evidence_quote": "The equation like (3.4), which relates the rate of a reaction to concentration of reactants is called rate law or rate expression",
+            "relation_to_stem": "ANSWERS_STEM"
+          },
+          {
+            "key": "d1",
+            "text": "rate law",
+            "evidence_quote": "The representation of rate of reaction in terms of concentration of the reactants is known as rate law",
+            "relation_to_stem": "DOES_NOT_ANSWER_STEM"
+          },
+          {
+            "key": "d2",
+            "text": "differential rate equation",
+            "evidence_quote": "Above equation can also be written as Rate = k [A] x [B] y (3.4a) [ ] [ ] [ ] x y d R A B d k t − = (3.4b) This form of equation (3.4 b) is known as differential rate equation, where k is a proportionality constant called rate constant",
+            "relation_to_stem": "DOES_NOT_ANSWER_STEM"
+          },
+          {
+            "key": "d3",
+            "text": "elementary reactions",
+            "evidence_quote": "The reactions taking place in one step are called elementary reactions",
+            "relation_to_stem": "DOES_NOT_ANSWER_STEM"
+          }
+        ],
+        "correct_key": "correct",
+        "explanation": "NCERT uses the cited wording for the term 'rate law or rate expression'.",
+        "explanation_evidence_quote": "The equation like (3.4), which relates the rate of a reaction to concentration of reactants is called rate law or rate expression",
+        "difficulty": "easy"
+      }
+    }
+  ]
+}

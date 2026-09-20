@@ -1,0 +1,111 @@
+{
+  "by_file": {
+    "NEET2015.pdf": 146,
+    "NEET2017.pdf": 54,
+    "NEET2021.pdf": 90,
+    "Neet2022.pdf": 93,
+    "NEET2026-11.pdf": 118,
+    "Neet2026-12.pdf": 96,
+    "RENeet2026.pdf": 144
+  },
+  "answer_status": {
+    "ANSWER_KNOWN": 53,
+    "ANSWER_PENDING": 665,
+    "ANSWER_CONFLICT": 23
+  },
+  "staging_status": {
+    "READY_FOR_REVIEW": 19,
+    "VISUAL_REVIEW_REQUIRED": 9,
+    "ANSWER_REVIEW_REQUIRED": 651,
+    "OCR_REVIEW_REQUIRED": 62
+  },
+  "duplicate_class": {
+    "UNIQUE": 736,
+    "POTENTIAL_DUPLICATE": 5
+  },
+  "ready_for_review": 19,
+  "conflict_examples": [
+    {
+      "file": "NEET2015.pdf",
+      "q": 84,
+      "answer": {
+        "value": null,
+        "source": null,
+        "status": "ANSWER_CONFLICT",
+        "source_page": null
+      }
+    },
+    {
+      "file": "NEET2015.pdf",
+      "q": 33,
+      "answer": {
+        "value": null,
+        "source": null,
+        "status": "ANSWER_CONFLICT",
+        "source_page": null
+      }
+    },
+    {
+      "file": "NEET2015.pdf",
+      "q": 90,
+      "answer": {
+        "value": null,
+        "source": null,
+        "status": "ANSWER_CONFLICT",
+        "source_page": null
+      }
+    },
+    {
+      "file": "NEET2015.pdf",
+      "q": 66,
+      "answer": {
+        "value": null,
+        "source": null,
+        "status": "ANSWER_CONFLICT",
+        "source_page": null
+      }
+    },
+    {
+      "file": "NEET2015.pdf",
+      "q": 67,
+      "answer": {
+        "value": null,
+        "source": null,
+        "status": "ANSWER_CONFLICT",
+        "source_page": null
+      }
+    },
+    {
+      "file": "NEET2015.pdf",
+      "q": 79,
+      "answer": {
+        "value": null,
+        "source": null,
+        "status": "ANSWER_CONFLICT",
+        "source_page": null
+      }
+    },
+    {
+      "file": "NEET2015.pdf",
+      "q": 82,
+      "answer": {
+        "value": null,
+        "source": null,
+        "status": "ANSWER_CONFLICT",
+        "source_page": null
+      }
+    },
+    {
+      "file": "NEET2015.pdf",
+      "q": 78,
+      "answer": {
+        "value": null,
+        "source": null,
+        "status": "ANSWER_CONFLICT",
+        "source_page": null
+      }
+    }
+  ],
+  "ocr_confidence_present": 741,
+  "ocr_confidence_avg": 78.13
+}

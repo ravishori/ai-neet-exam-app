@@ -1,0 +1,4644 @@
+{
+  "generated_at": "2026-09-13T10:24:22.372057+00:00",
+  "source_root": "D:\\ravishori\\AI Neet Exam App\\NCERT Books",
+  "final_status": "GREEN — BASELINE READY FOR OWNER APPROVAL",
+  "inventory_summary": {
+    "total_pdfs": 100,
+    "chapters": 79,
+    "titled_chapters": 79,
+    "supplemental": 21,
+    "readable": 100
+  },
+  "matrices": {
+    "Class 11/BIOLOGY": [
+      {
+        "class_level": "11",
+        "subject_code": "BIOLOGY",
+        "part_number": 1,
+        "filename_chapter": 1,
+        "kind": "CHAPTER",
+        "file_name": "kebo101.pdf",
+        "relative_path": "Class 11/Biology/kebo1dd/kebo101.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo101.pdf",
+        "checksum_sha256": "e6b49c5eb878864ef1bd714799588fbf2f55afb30d72cac25e08bc5eab7778fd",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 1,
+        "chapter_title": "U Nit 1",
+        "pdf_title": "Chapter 1: U Nit 1",
+        "rationalised": false,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Reprint 2026-27; 2026-27 family",
+        "page_count": 9,
+        "meta_title": "ch-1.pmd",
+        "preview": "Biology is the science of life forms and living processes. The living world\ncomprises an amazing diversity of living organisms. Early man could\neasily perceive the difference between inanimate matter and living\norganisms. Early man deified some of the inanimate matter (wind, sea,\nfire etc.) and some among the animals and plants. A common feature of\nall such forms of inanimate and animate objects w"
+      },
+      {
+        "class_level": "11",
+        "subject_code": "BIOLOGY",
+        "part_number": 1,
+        "filename_chapter": 2,
+        "kind": "CHAPTER",
+        "file_name": "kebo102.pdf",
+        "relative_path": "Class 11/Biology/kebo1dd/kebo102.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo102.pdf",
+        "checksum_sha256": "7952d430151a776694c6c58518c332d20ff76f9758ccf44d8b1a7fe29fef36c9",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 2,
+        "chapter_title": "B Iological C Lassification",
+        "pdf_title": "Chapter 2: B Iological C Lassification",
+        "rationalised": false,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Reprint 2026-27; 2026-27 family",
+        "page_count": 13,
+        "meta_title": "ch-2.pmd",
+        "preview": "10\nBIOLOGY\nSince the dawn of civilisation, there have been many attempts to classify\nliving organisms. It was done instinctively not using criteria that were\nscientific but borne out of a need to use organisms for our own use – for\nfood, shelter and clothing.  Aristotle was the earliest to attempt a more\nscientific basis for classification. He used simple morphological characters\nto classify plant"
+      },
+      {
+        "class_level": "11",
+        "subject_code": "BIOLOGY",
+        "part_number": 1,
+        "filename_chapter": 3,
+        "kind": "CHAPTER",
+        "file_name": "kebo103.pdf",
+        "relative_path": "Class 11/Biology/kebo1dd/kebo103.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo103.pdf",
+        "checksum_sha256": "fefd9d98cd6dc4155aa8b7706f0db887c8f2017dd9cef26bcb049a085c871e9b",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 3,
+        "chapter_title": "P Lant K Ingdom",
+        "pdf_title": "Chapter 3: P Lant K Ingdom",
+        "rationalised": false,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Reprint 2026-27; 2026-27 family",
+        "page_count": 14,
+        "meta_title": "ch-3.pmd",
+        "preview": "PLANT KINGDOM\n23\nIn the previous chapter, we looked at the broad classification of living\norganisms under the system proposed by Whittaker (1969) wherein he\nsuggested the Five Kingdom classification viz. Monera, Protista, Fungi,\nAnimalia and Plantae.  In this chapter, we will deal in detail with further\nclassification within Kingdom Plantae popularly known as the ‘plant\nkingdom’.\nWe must stress he"
+      },
+      {
+        "class_level": "11",
+        "subject_code": "BIOLOGY",
+        "part_number": 1,
+        "filename_chapter": 4,
+        "kind": "CHAPTER",
+        "file_name": "kebo104.pdf",
+        "relative_path": "Class 11/Biology/kebo1dd/kebo104.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo104.pdf",
+        "checksum_sha256": "5eed592711d3c76a97310f410ce9b8b98db904afcc4ab9b8a38f37022c96a78a",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 4,
+        "chapter_title": "Classification",
+        "pdf_title": "Chapter 4: Classification",
+        "rationalised": false,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Reprint 2026-27; 2026-27 family",
+        "page_count": 18,
+        "meta_title": "ch-4.pmd",
+        "preview": "ANIMAL KINGDOM\n37\n37\nWhen you look around, you will observe different animals with different\nstructures and forms.  As over a million species of animals have been\ndescribed till now, the need for classification becomes all the more\nimportant. The classification also helps in assigning a systematic position\nto newly described species.\n4.1\nBASIS OF CLASSIFICATION\nInspite of differences in structure "
+      },
+      {
+        "class_level": "11",
+        "subject_code": "BIOLOGY",
+        "part_number": 1,
+        "filename_chapter": 5,
+        "kind": "CHAPTER",
+        "file_name": "kebo105.pdf",
+        "relative_path": "Class 11/Biology/kebo1dd/kebo105.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo105.pdf",
+        "checksum_sha256": "2e9b46c03dda48adb6663a88ce49803e18fe87caba96aa4a173ad1cc9a6eea11",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 2,
+        "chapter_title": "U Nit 2",
+        "pdf_title": "Chapter 2: U Nit 2",
+        "rationalised": false,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Reprint 2026-27; 2026-27 family",
+        "page_count": 16,
+        "meta_title": "ch-5.pmd",
+        "preview": "UNIT 2\nThe description of the diverse forms of life on earth was made only by\nobservation – through naked eyes or later through magnifying lenses\nand microscopes. This description is mainly of gross structural features,\nboth external and internal. In addition, observable and perceivable\nliving phenomena were also recorded as part of this description. Before\nexperimental biology or more specificall"
+      },
+      {
+        "class_level": "11",
+        "subject_code": "BIOLOGY",
+        "part_number": 1,
+        "filename_chapter": 6,
+        "kind": "CHAPTER",
+        "file_name": "kebo106.pdf",
+        "relative_path": "Class 11/Biology/kebo1dd/kebo106.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo106.pdf",
+        "checksum_sha256": "b341d037ddeaebcf435cea4ca5050bee10fae452d9c20480d639ab2580fa5b66",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 6,
+        "chapter_title": "System",
+        "pdf_title": "Chapter 6: System",
+        "rationalised": false,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Reprint 2026-27; 2026-27 family",
+        "page_count": 8,
+        "meta_title": "ch-6.pmd",
+        "preview": "ANATOMY OF FLOWERING PLANTS\n71\nYou can very easily see the structural similarities and variations in the\nexternal morphology of the larger living organism, both plants and\nanimals. Similarly, if we were to study the internal structure, one also\nfinds several similarities as well as differences. This chapter introduces\nyou to the internal structure and functional organisation of higher plants.\nStud"
+      },
+      {
+        "class_level": "11",
+        "subject_code": "BIOLOGY",
+        "part_number": 1,
+        "filename_chapter": 7,
+        "kind": "CHAPTER",
+        "file_name": "kebo107.pdf",
+        "relative_path": "Class 11/Biology/kebo1dd/kebo107.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo107.pdf",
+        "checksum_sha256": "75fd54a68b18b84f22e659695e28e32ebdc3f1de8be50ea38bed778b9ebcef26",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 7,
+        "chapter_title": "Organ and Organ",
+        "pdf_title": "Chapter 7: Organ and Organ",
+        "rationalised": false,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Reprint 2026-27; 2026-27 family",
+        "page_count": 6,
+        "meta_title": "ch-7.pmd",
+        "preview": "STRUCTURAL ORGANISATION IN ANIMALS\n79\nIn the preceding chapters you came across a large variety of organisms,\nboth unicellular and multicellular, of the animal kingdom. In unicellular\norganisms, all functions like digestion, respiration and reproduction\nare performed by a single cell. In the complex body of multicellular\nanimals the same basic functions are carried out by different groups of\ncells"
+      },
+      {
+        "class_level": "11",
+        "subject_code": "BIOLOGY",
+        "part_number": 1,
+        "filename_chapter": 8,
+        "kind": "CHAPTER",
+        "file_name": "kebo108.pdf",
+        "relative_path": "Class 11/Biology/kebo1dd/kebo108.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo108.pdf",
+        "checksum_sha256": "6771c5ae1d6468e6585a5531d9a64cf06478d7ed05bb630eccd2b9a229ee2c28",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 3,
+        "chapter_title": "U Nit 3",
+        "pdf_title": "Chapter 3: U Nit 3",
+        "rationalised": false,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Reprint 2026-27; 2026-27 family",
+        "page_count": 19,
+        "meta_title": "ch-8.pmd",
+        "preview": "UNIT 3\nBiology is the study of living organisms. The detailed description of\ntheir form and appearance only brought out their diversity. It is the\ncell theory that emphasised the unity underlying this diversity of forms,\ni.e., the cellular organisation of all life forms. A description of cell\nstructure and cell growth by division is given in the chapters comprising\nthis unit. Cell theory also crea"
+      },
+      {
+        "class_level": "11",
+        "subject_code": "BIOLOGY",
+        "part_number": 1,
+        "filename_chapter": 9,
+        "kind": "CHAPTER",
+        "file_name": "kebo109.pdf",
+        "relative_path": "Class 11/Biology/kebo1dd/kebo109.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo109.pdf",
+        "checksum_sha256": "facdbbffa75e8355a1af5362a4e190826352f934bb4c0a6eb2dbb9ccffcf66f5",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 9,
+        "chapter_title": "How to Analyse",
+        "pdf_title": "Chapter 9: How to Analyse",
+        "rationalised": false,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Reprint 2026-27; 2026-27 family",
+        "page_count": 16,
+        "meta_title": "ch-9.pmd",
+        "preview": "104\nBIOLOGY\nThere is a wide diversity in living organisms in our biosphere. Now a\nquestion that arises in our minds is: Are all living organisms made of the\nsame chemicals, i.e., elements and compounds? You have learnt in\nchemistry how elemental analysis is performed. If we perform such an\nanalysis on a plant tissue, animal tissue or a microbial paste, we obtain a\nlist of elements like carbon, hyd"
+      },
+      {
+        "class_level": "11",
+        "subject_code": "BIOLOGY",
+        "part_number": 1,
+        "filename_chapter": 10,
+        "kind": "CHAPTER",
+        "file_name": "kebo110.pdf",
+        "relative_path": "Class 11/Biology/kebo1dd/kebo110.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo110.pdf",
+        "checksum_sha256": "1fbd61044264b30d19f075e4a9a15699b0d0f1d5c51cf094e4e9b18566bcb72c",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 10,
+        "chapter_title": "Mitosis",
+        "pdf_title": "Chapter 10: Mitosis",
+        "rationalised": false,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Reprint 2026-27; 2026-27 family",
+        "page_count": 11,
+        "meta_title": "Chapter 10.pmd",
+        "preview": "120\nBIOLOGY\nAre you aware that all organisms, even the largest, start their life from a\nsingle cell? You may wonder how a single cell then goes on to form such\nlarge organisms. Growth and reproduction are characteristics of cells,\nindeed of all living organisms. All cells reproduce by dividing into two,\nwith each parental cell giving rise to two daughter cells each time they\ndivide. These newly fo"
+      },
+      {
+        "class_level": "11",
+        "subject_code": "BIOLOGY",
+        "part_number": 1,
+        "filename_chapter": 11,
+        "kind": "CHAPTER",
+        "file_name": "kebo111.pdf",
+        "relative_path": "Class 11/Biology/kebo1dd/kebo111.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo111.pdf",
+        "checksum_sha256": "8302c09aa798d8fef6c4f01653caffbc09a3741d7b7c753f89201b1160f08090",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 4,
+        "chapter_title": "U Nit 4",
+        "pdf_title": "Chapter 4: U Nit 4",
+        "rationalised": false,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Reprint 2026-27; 2026-27 family",
+        "page_count": 22,
+        "meta_title": "ch-11.pmd",
+        "preview": "UNIT 4\nThe description of structure and variation of living organisms over a\nperiod of time, ended up as two, apparently irreconcilable perspectives\non biology. The two perspectives essentially rested on two levels of\norganisation of life forms and phenomena. One described at organismic\nand above level of organisation while the second described at cellular\nand molecular level of organisation. The "
+      },
+      {
+        "class_level": "11",
+        "subject_code": "BIOLOGY",
+        "part_number": 1,
+        "filename_chapter": 12,
+        "kind": "CHAPTER",
+        "file_name": "kebo112.pdf",
+        "relative_path": "Class 11/Biology/kebo1dd/kebo112.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo112.pdf",
+        "checksum_sha256": "56aa058033d3b61ba9036d076058f752e96c2730bf7ef34a5beb83a913a672c3",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 12,
+        "chapter_title": "Breathe?",
+        "pdf_title": "Chapter 12: Breathe?",
+        "rationalised": false,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Reprint 2026-27; 2026-27 family",
+        "page_count": 13,
+        "meta_title": "ch-12.pmd",
+        "preview": "RESPIRATION IN PLANTS\n153\nAll of us breathe to live, but why is breathing so essential to life? What\nhappens when we breathe? Also, do all living organisms, including plants\nand microbes, breathe? If so, how?\nAll living organisms need energy for carrying out daily life activities,\nbe it absorption, transport, movement, reproduction or even breathing.\nWhere does all this energy come from? We know w"
+      },
+      {
+        "class_level": "11",
+        "subject_code": "BIOLOGY",
+        "part_number": 1,
+        "filename_chapter": 13,
+        "kind": "CHAPTER",
+        "file_name": "kebo113.pdf",
+        "relative_path": "Class 11/Biology/kebo1dd/kebo113.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo113.pdf",
+        "checksum_sha256": "f7b576963c4a1f1208fdc7df9e974781d7492a7150bcfdc33f27b71112057d26",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 13,
+        "chapter_title": "Dedifferentiation",
+        "pdf_title": "Chapter 13: Dedifferentiation",
+        "rationalised": false,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Reprint 2026-27; 2026-27 family",
+        "page_count": 15,
+        "meta_title": "ch-13.pmd",
+        "preview": "166\nBIOLOGY\nYou have already studied the organisation of a flowering plant in Chapter\n5. Have you ever thought about where and how the structures like roots,\nstems, leaves, flowers, fruits and seeds arise and that too in an orderly\nsequence? You are, by now, aware of the terms seed, seedling, plantlet,\nmature plant. You have also seen that trees continue to increase in height\nor girth over a perio"
+      },
+      {
+        "class_level": "11",
+        "subject_code": "BIOLOGY",
+        "part_number": 1,
+        "filename_chapter": 14,
+        "kind": "CHAPTER",
+        "file_name": "kebo114.pdf",
+        "relative_path": "Class 11/Biology/kebo1dd/kebo114.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo114.pdf",
+        "checksum_sha256": "67cbf04d59739585ea139446ba30a097e5d7a8a58d39d30cff4154f55686d7e1",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 5,
+        "chapter_title": "U Nit 5",
+        "pdf_title": "Chapter 5: U Nit 5",
+        "rationalised": false,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Reprint 2026-27; 2026-27 family",
+        "page_count": 12,
+        "meta_title": "ch-14.pmd",
+        "preview": "UNIT 5\nThe reductionist  approach to study of life forms resulted in increasing\nuse of physico-chemical concepts and techniques. Majority of these\nstudies employed either surviving tissue model or straightaway cell-\nfree systems. An explosion of knowledge resulted in molecular biology.\nMolecular physiology became almost synonymous with biochemistry\nand biophysics. However, it is now being increasi"
+      },
+      {
+        "class_level": "11",
+        "subject_code": "BIOLOGY",
+        "part_number": 1,
+        "filename_chapter": 15,
+        "kind": "CHAPTER",
+        "file_name": "kebo115.pdf",
+        "relative_path": "Class 11/Biology/kebo1dd/kebo115.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo115.pdf",
+        "checksum_sha256": "02f8cd8f5755ea09466487d6829b7c6ef1bece4550c582d391d03a937d8a0907",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 15,
+        "chapter_title": "Fluid)",
+        "pdf_title": "Chapter 15: Fluid)",
+        "rationalised": false,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Reprint 2026-27; 2026-27 family",
+        "page_count": 12,
+        "meta_title": "ch-15.pmd",
+        "preview": "BODY FLUIDS AND CIRCULATION\n193\nYou have learnt that all living cells have to be provided with nutrients, O2\nand other essential substances. Also, the waste or harmful substances\nproduced, have to be removed continuously for healthy functioning of\ntissues. It is therefore, essential to have efficient mechanisms for the\nmovement of these substances to the cells and from the cells. Different\ngroups "
+      },
+      {
+        "class_level": "11",
+        "subject_code": "BIOLOGY",
+        "part_number": 1,
+        "filename_chapter": 16,
+        "kind": "CHAPTER",
+        "file_name": "kebo116.pdf",
+        "relative_path": "Class 11/Biology/kebo1dd/kebo116.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo116.pdf",
+        "checksum_sha256": "9d026ee91d3787c85ab1241c594463a8714e3a79b7515ead3e584a155c885cb3",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 16,
+        "chapter_title": "Excretory",
+        "pdf_title": "Chapter 16: Excretory",
+        "rationalised": false,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Reprint 2026-27; 2026-27 family",
+        "page_count": 12,
+        "meta_title": "ch-16.pmd",
+        "preview": "EXCRETORY PRODUCTS AND THEIR ELIMINATION\n205\nAnimals accumulate ammonia, urea, uric acid, carbon dioxide, water\nand ions like Na+, K+, Cl–, phosphate, sulphate, etc., either by metabolic\nactivities or by other means like excess ingestion. These substances have\nto be removed totally or partially. In this chapter, you will learn the\nmechanisms of elimination of these substances with special emphasis"
+      },
+      {
+        "class_level": "11",
+        "subject_code": "BIOLOGY",
+        "part_number": 1,
+        "filename_chapter": 17,
+        "kind": "CHAPTER",
+        "file_name": "kebo117.pdf",
+        "relative_path": "Class 11/Biology/kebo1dd/kebo117.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo117.pdf",
+        "checksum_sha256": "e30781cb81fcc69053eb2afb4c3db7716f0c503fefd9630fa4f78ffc5606c92f",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 17,
+        "chapter_title": "Movement",
+        "pdf_title": "Chapter 17: Movement",
+        "rationalised": false,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Reprint 2026-27; 2026-27 family",
+        "page_count": 13,
+        "meta_title": "ch-17.pmd",
+        "preview": "LOCOMOTION AND MOVEMENT\n217\nMovement is one of the  significant features of living beings. Animals and\nplants exhibit a wide range of movements. Streaming of protoplasm in\nthe unicellular organisms like Amoeba is a simple form of movement.\nMovement of cilia, flagella and tentacles are shown by many organisms.\nHuman beings can move limbs, jaws, eyelids, tongue, etc. Some of the\nmovements result in "
+      },
+      {
+        "class_level": "11",
+        "subject_code": "BIOLOGY",
+        "part_number": 1,
+        "filename_chapter": 18,
+        "kind": "CHAPTER",
+        "file_name": "kebo118.pdf",
+        "relative_path": "Class 11/Biology/kebo1dd/kebo118.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo118.pdf",
+        "checksum_sha256": "93aaeaa048937d768c9fbfd26479b2976fa007c59333e300ccbf105430be0469",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 18,
+        "chapter_title": "System",
+        "pdf_title": "Chapter 18: System",
+        "rationalised": false,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Reprint 2026-27; 2026-27 family",
+        "page_count": 9,
+        "meta_title": "ch-18.pmd",
+        "preview": "230\nBIOLOGY\nAs you know, the functions of the organs/organ systems in our body\nmust be coordinated to maintain homeostasis. Coordination is the\nprocess through which two or more organs interact and complement the\nfunctions of one another. For example, when we do physical exercises,\nthe energy demand is increased for maintaining an increased muscular\nactivity. The supply of oxygen is also increased"
+      },
+      {
+        "class_level": "11",
+        "subject_code": "BIOLOGY",
+        "part_number": 1,
+        "filename_chapter": 19,
+        "kind": "CHAPTER",
+        "file_name": "kebo119.pdf",
+        "relative_path": "Class 11/Biology/kebo1dd/kebo119.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo119.pdf",
+        "checksum_sha256": "36961d654230fb419a07a7dd8a9200416e0ef475aec409a90cc567843fce4eb6",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 19,
+        "chapter_title": "Glands and",
+        "pdf_title": "Chapter 19: Glands and",
+        "rationalised": false,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Reprint 2026-27; 2026-27 family",
+        "page_count": 14,
+        "meta_title": "ch-19.pmd",
+        "preview": "239\n239\nCHEMICAL COORDINATION AND INTEGRATION\nYou have already learnt that the neural system provides a\npoint-to-point rapid coordination among organs. The neural\ncoordination is fast but short-lived. As the nerve fibres do not innervate\nall cells of the body and the cellular functions need to be continuously\nregulated; a special kind of coordination and integration has to be\nprovided. This functi"
+      },
+      {
+        "class_level": "11",
+        "subject_code": "BIOLOGY",
+        "part_number": 1,
+        "filename_chapter": null,
+        "kind": "SUPPLEMENTAL",
+        "file_name": "kebo1ps.pdf",
+        "relative_path": "Class 11/Biology/kebo1dd/kebo1ps.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Biology\\kebo1dd\\kebo1ps.pdf",
+        "checksum_sha256": "87f5b38b6cc9e5bcd3ac9ec1001ae157734154929fe142d136fae97a632f74d2",
+        "readable": true,
+        "source_status": "supplemental",
+        "chapter_title": null,
+        "pdf_title": null,
+        "book_chapter_number": null,
+        "rationalised": null,
+        "reprint": null,
+        "version_label": null
+      }
+    ],
+    "Class 11/CHEMISTRY": [
+      {
+        "class_level": "11",
+        "subject_code": "CHEMISTRY",
+        "part_number": 1,
+        "filename_chapter": 1,
+        "kind": "CHAPTER",
+        "file_name": "kech101.pdf",
+        "relative_path": "Class 11/Chemistry/kech1dd/kech1dd/kech101.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Chemistry\\kech1dd\\kech1dd\\kech101.pdf",
+        "checksum_sha256": "36404b6804adf41c7d02abcf23286ab6db698f5fca495dfe46a9027b83920045",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 1,
+        "chapter_title": "Some Basic Concepts Of Chemistry",
+        "pdf_title": "Chapter 1: Some Basic Concepts Of Chemistry",
+        "rationalised": false,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Reprint 2026-27; 2026-27 family",
+        "page_count": 28,
+        "meta_title": null,
+        "preview": "UNIT 1\nSOME BASIC CONCEPTS OF CHEMISTRY\nScience can be viewed as a continuing human effort to \nsystematise knowledge for describing and understanding \nnature. You have learnt in your previous classes that we \ncome across diverse substances present in nature and \nchanges in them in daily life. Curd formation from milk, \nformation of vinegar from sugarcane juice on keeping \nfor prolonged time and ru"
+      },
+      {
+        "class_level": "11",
+        "subject_code": "CHEMISTRY",
+        "part_number": 1,
+        "filename_chapter": 2,
+        "kind": "CHAPTER",
+        "file_name": "kech102.pdf",
+        "relative_path": "Class 11/Chemistry/kech1dd/kech1dd/kech102.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Chemistry\\kech1dd\\kech1dd\\kech102.pdf",
+        "checksum_sha256": "068596155f1fd5e4056aef3d4ca7d63d2e1b6618e9eebac4ab285fded1f1ed6e",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 2,
+        "chapter_title": "structure of atom",
+        "pdf_title": "Chapter 2: structure of atom",
+        "rationalised": false,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Reprint 2026-27; 2026-27 family",
+        "page_count": 45,
+        "meta_title": null,
+        "preview": "The rich diversity of chemical behaviour of different \nelements can be traced to the differences in the internal \nstructure of atoms of these elements.\nUnit 2\nstructure of atom\nAfter studying this unit you will be \nable to\n•\t\nknow about the discovery of\nelectron, proton and neutron and\ntheir characteristics;\n•\t\ndescribe Thomson, Rutherford\nand Bohr atomic models;\n•\t\nunderstand the important featur"
+      },
+      {
+        "class_level": "11",
+        "subject_code": "CHEMISTRY",
+        "part_number": 1,
+        "filename_chapter": 3,
+        "kind": "CHAPTER",
+        "file_name": "kech103.pdf",
+        "relative_path": "Class 11/Chemistry/kech1dd/kech1dd/kech103.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Chemistry\\kech1dd\\kech1dd\\kech103.pdf",
+        "checksum_sha256": "e01e686a520667030de33f2b2bfd93d825f9f107acd3a82a4b29404f4cb2f1e1",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 3,
+        "chapter_title": "Classification of Elements and",
+        "pdf_title": "Chapter 3: Classification of Elements and",
+        "rationalised": false,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Reprint 2026-27; 2026-27 family",
+        "page_count": 26,
+        "meta_title": null,
+        "preview": "The Periodic Table is arguably the most important concept \nin chemistry, both in principle and in practice. It is the \neveryday support for students, it suggests new avenues \nof research to professionals, and it provides a succinct \norganization of the whole of chemistry. It is a remarkable \ndemonstration of the fact that the chemical elements are \nnot a random cluster of entities but instead disp"
+      },
+      {
+        "class_level": "11",
+        "subject_code": "CHEMISTRY",
+        "part_number": 1,
+        "filename_chapter": 4,
+        "kind": "CHAPTER",
+        "file_name": "kech104.pdf",
+        "relative_path": "Class 11/Chemistry/kech1dd/kech1dd/kech104.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Chemistry\\kech1dd\\kech1dd\\kech104.pdf",
+        "checksum_sha256": "4cf435255e6aa810c1e519420d6403cf552946948e3f27c40b5ed1a21d106992",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 4,
+        "chapter_title": "Chemical Bonding And",
+        "pdf_title": "Chapter 4: Chemical Bonding And",
+        "rationalised": false,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Reprint 2026-27; 2026-27 family",
+        "page_count": 36,
+        "meta_title": null,
+        "preview": "Scientists are constantly discovering new compounds, \norderly arranging the facts about them, trying to explain \nwith the existing knowledge, organising to modify the \nearlier views or evolve theories for explaining the newly \nobserved facts.\nUNIT 4\nAfter studying this Unit, you will be \nable to \n\nunderstand\n.|ssel\u0010/ewis\napproach to chemical bonding;\n\ne[Slain the oFtet rule and its\nlimitations\u000f "
+      },
+      {
+        "class_level": "11",
+        "subject_code": "CHEMISTRY",
+        "part_number": 1,
+        "filename_chapter": 5,
+        "kind": "CHAPTER",
+        "file_name": "kech105.pdf",
+        "relative_path": "Class 11/Chemistry/kech1dd/kech1dd/kech105.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Chemistry\\kech1dd\\kech1dd\\kech105.pdf",
+        "checksum_sha256": "e2b5d180e6f16f33f6d636a742ed6c23ce6a55636e5edb7f26207a8ed48ec5f8",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 5,
+        "chapter_title": "Thermodynamics",
+        "pdf_title": "Chapter 5: Thermodynamics",
+        "rationalised": false,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Reprint 2026-27; 2026-27 family",
+        "page_count": 32,
+        "meta_title": null,
+        "preview": "Thermodynamics\nIt is the only physical theory of universal content concerning \nwhich I am convinced that, within the framework of the \napplicability of its basic concepts, it will never be overthrown.\nAlbert Einstein\nChemical energy stored by molecules can be released as \nheat during chemical reactions when a fuel like methane, \ncooking gas or coal burns in air. The chemical energy may \nalso be us"
+      },
+      {
+        "class_level": "11",
+        "subject_code": "CHEMISTRY",
+        "part_number": 1,
+        "filename_chapter": 6,
+        "kind": "CHAPTER",
+        "file_name": "kech106.pdf",
+        "relative_path": "Class 11/Chemistry/kech1dd/kech1dd/kech106.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Chemistry\\kech1dd\\kech1dd\\kech106.pdf",
+        "checksum_sha256": "e4671fd2df7310063a18617ac0fe63eb714eae4d02a7d4a196f3adc809c9543b",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 6,
+        "chapter_title": "Equilibrium",
+        "pdf_title": "Chapter 6: Equilibrium",
+        "rationalised": false,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Reprint 2026-27; 2026-27 family",
+        "page_count": 53,
+        "meta_title": null,
+        "preview": "Unit 6\nEquilibrium\nChemical equilibria are important in numerous biological \nand environmental processes. For example, equilibria \ninvolving O2 molecules and the protein hemoglobin play \na crucial role in the transport and delivery of O2 from \nour lungs to our muscles. Similar equilibria involving CO \nmolecules and hemoglobin account for the toxicity of CO.\nWhen a liquid evaporates in a closed con"
+      },
+      {
+        "class_level": "11",
+        "subject_code": "CHEMISTRY",
+        "part_number": 1,
+        "filename_chapter": null,
+        "kind": "SUPPLEMENTAL",
+        "file_name": "kech1a1.pdf",
+        "relative_path": "Class 11/Chemistry/kech1dd/kech1dd/kech1a1.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Chemistry\\kech1dd\\kech1dd\\kech1a1.pdf",
+        "checksum_sha256": "ae025c86efc623abf7f63476da897435e14aed0764774c337c11239b56c5afa7",
+        "readable": true,
+        "source_status": "supplemental",
+        "chapter_title": null,
+        "pdf_title": null,
+        "book_chapter_number": null,
+        "rationalised": null,
+        "reprint": null,
+        "version_label": null
+      },
+      {
+        "class_level": "11",
+        "subject_code": "CHEMISTRY",
+        "part_number": 1,
+        "filename_chapter": null,
+        "kind": "SUPPLEMENTAL",
+        "file_name": "kech1an.pdf",
+        "relative_path": "Class 11/Chemistry/kech1dd/kech1dd/kech1an.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Chemistry\\kech1dd\\kech1dd\\kech1an.pdf",
+        "checksum_sha256": "2d2931a6b2bf5398616a7b8f2026d5d5726cc13aa34813fbdb71bb12545ea605",
+        "readable": true,
+        "source_status": "supplemental",
+        "chapter_title": null,
+        "pdf_title": null,
+        "book_chapter_number": null,
+        "rationalised": null,
+        "reprint": null,
+        "version_label": null
+      },
+      {
+        "class_level": "11",
+        "subject_code": "CHEMISTRY",
+        "part_number": 1,
+        "filename_chapter": null,
+        "kind": "SUPPLEMENTAL",
+        "file_name": "kech1ps.pdf",
+        "relative_path": "Class 11/Chemistry/kech1dd/kech1dd/kech1ps.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Chemistry\\kech1dd\\kech1dd\\kech1ps.pdf",
+        "checksum_sha256": "b79907421fdc31dc49646eb5b33a303c1d5228feb2bf9fd91f138bfde40e250b",
+        "readable": true,
+        "source_status": "supplemental",
+        "chapter_title": null,
+        "pdf_title": null,
+        "book_chapter_number": null,
+        "rationalised": null,
+        "reprint": null,
+        "version_label": null
+      },
+      {
+        "class_level": "11",
+        "subject_code": "CHEMISTRY",
+        "part_number": 2,
+        "filename_chapter": 1,
+        "kind": "CHAPTER",
+        "file_name": "kech201.pdf",
+        "relative_path": "Class 11/Chemistry/kech2dd/kech201.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Chemistry\\kech2dd\\kech201.pdf",
+        "checksum_sha256": "e80210c578356baacefe980fad8714b251affac3c7ef36b866a45469327c848a",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 7,
+        "chapter_title": "Redox Reactions",
+        "pdf_title": "Chapter 7: Redox Reactions",
+        "rationalised": false,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Reprint 2026-27; 2026-27 family",
+        "page_count": 21,
+        "meta_title": null,
+        "preview": "235\nREDOX REACTIONS\nChemistry deals with varieties of matter and change \nof one kind of matter into the other. Transformation of \nmatter from one kind into another occurs through the \nvarious types of reactions. One important category of such \nreactions is Redox Reactions. A number of phenomena, \nboth physical as well as biological, are concerned with \nredox reactions. These reactions find extensi"
+      },
+      {
+        "class_level": "11",
+        "subject_code": "CHEMISTRY",
+        "part_number": 2,
+        "filename_chapter": 2,
+        "kind": "CHAPTER",
+        "file_name": "kech202.pdf",
+        "relative_path": "Class 11/Chemistry/kech2dd/kech202.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Chemistry\\kech2dd\\kech202.pdf",
+        "checksum_sha256": "2508afbdbbd6c34ed1eb619fb096738b312e6bc87658dbcb014fbc9f70979b89",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 8,
+        "chapter_title": "Organic chemistry – sOme Basic",
+        "pdf_title": "Chapter 8: Organic chemistry – sOme Basic",
+        "rationalised": false,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Reprint 2026-27; 2026-27 family",
+        "page_count": 39,
+        "meta_title": null,
+        "preview": "\u0015\u0018\u0019\nchemistry\nOrganic chemistry – sOme Basic \nPrinciPles and techniques\naIWHU VWXG\\LQJ WKLV XQLW\u000f \\RX ZLOO \nEH DEOH WR \n\nX Q G H U V W D Q G  U H D V R Q V  I R U\nWHWUDYDOHQFH RI FDUERQ DQG\nVKDSHV RI RUJDQLF PROHFXOHV\u001e\n\nZULWH VWUXFWXUHV RI RUJDQLF\nPROHFXOHV LQ YDULRXV ZD\\V\u001e\n\nFODVVLI\\ WKH RUJDQLF FRPSRXQGV\u001e\n\nQDPH WKH FRPSRXQGV DFFRUGLQJ\nWR iupac V\\VWHP RI QRPHQFODWXUH \nDQG DOVR GHULYH WKHLU VWU"
+      },
+      {
+        "class_level": "11",
+        "subject_code": "CHEMISTRY",
+        "part_number": 2,
+        "filename_chapter": 3,
+        "kind": "CHAPTER",
+        "file_name": "kech203.pdf",
+        "relative_path": "Class 11/Chemistry/kech2dd/kech203.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Chemistry\\kech2dd\\kech203.pdf",
+        "checksum_sha256": "0afd5c294084a15d8c2d2be7d3b6bc09dd7a9a43d61691b29ff9791374a33046",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 9,
+        "chapter_title": "Hydrocarbons",
+        "pdf_title": "Chapter 9: Hydrocarbons",
+        "rationalised": false,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Reprint 2026-27; 2026-27 family",
+        "page_count": 33,
+        "meta_title": null,
+        "preview": "295\nHYDROCARBONS\nUNIT 9\nAfter studying this unit, you will be \nable to \n\nname hydrocarbons according to \nIUPAC system of nomenclature; \n\nrecognise and write structures \no f  i s o m e r s  o f  a l k a n e s , \nalkenes, alkynes and aromatic \nhydrocarbons;\n\nlearn about various methods of \npreparation of hydrocarbons;\n\ndistinguish between alkanes,\nalkenes, alkynes and aromatic \nhydrocarbons on t"
+      },
+      {
+        "class_level": "11",
+        "subject_code": "CHEMISTRY",
+        "part_number": 2,
+        "filename_chapter": null,
+        "kind": "SUPPLEMENTAL",
+        "file_name": "kech2an.pdf",
+        "relative_path": "Class 11/Chemistry/kech2dd/kech2an.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Chemistry\\kech2dd\\kech2an.pdf",
+        "checksum_sha256": "8bd920a6fc27eb542ed17ff110f2a81de42dba2b56961318abbbe65dfd78826c",
+        "readable": true,
+        "source_status": "supplemental",
+        "chapter_title": null,
+        "pdf_title": null,
+        "book_chapter_number": null,
+        "rationalised": null,
+        "reprint": null,
+        "version_label": null
+      },
+      {
+        "class_level": "11",
+        "subject_code": "CHEMISTRY",
+        "part_number": 2,
+        "filename_chapter": null,
+        "kind": "SUPPLEMENTAL",
+        "file_name": "kech2ps.pdf",
+        "relative_path": "Class 11/Chemistry/kech2dd/kech2ps.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Chemistry\\kech2dd\\kech2ps.pdf",
+        "checksum_sha256": "01938cca738e1717912a9aab686649cdfd984b0a96c48bb9f1ab6c665fcfb846",
+        "readable": true,
+        "source_status": "supplemental",
+        "chapter_title": null,
+        "pdf_title": null,
+        "book_chapter_number": null,
+        "rationalised": null,
+        "reprint": null,
+        "version_label": null
+      }
+    ],
+    "Class 11/PHYSICS": [
+      {
+        "class_level": "11",
+        "subject_code": "PHYSICS",
+        "part_number": 1,
+        "filename_chapter": 1,
+        "kind": "CHAPTER",
+        "file_name": "keph101.pdf",
+        "relative_path": "Class 11/Physics/keph1dd/keph1dd/keph101.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph1dd\\keph1dd\\keph101.pdf",
+        "checksum_sha256": "2685cb3e2582bc0b3eb48f121a3959a3ad7e93d87bcda03762e605f034fa8380",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 1,
+        "chapter_title": "Units And Measurement",
+        "pdf_title": "Chapter 1: Units And Measurement",
+        "rationalised": true,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Rationalised; Reprint 2026-27; 2026-27 family",
+        "page_count": 12,
+        "meta_title": "E:\\Textbook\\12 Rationalised Textbook\\11086 — Physics Part I\\1 Source Files\\11086 — Physics Part I\\Chapter 1\\Chapter 1.pmd",
+        "preview": "CHAPTER ONE\nUNITS AND MEASUREMENT\n1.1  INTRODUCTION\nMeasurement of any physical quantity involves comparison\nwith a certain basic, arbitrarily chosen, internationally\naccepted reference standard called unit. The result of a\nmeasurement of a physical quantity is expressed by a\nnumber (or numerical measure) accompanied by a unit.\nAlthough the number of physical quantities appears to be\nvery large, w"
+      },
+      {
+        "class_level": "11",
+        "subject_code": "PHYSICS",
+        "part_number": 1,
+        "filename_chapter": 2,
+        "kind": "CHAPTER",
+        "file_name": "keph102.pdf",
+        "relative_path": "Class 11/Physics/keph1dd/keph1dd/keph102.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph1dd\\keph1dd\\keph102.pdf",
+        "checksum_sha256": "cd0307176cef6d2ccf50a48f4342d82cec49d191f1869dc71da4ff5173846f27",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 2,
+        "chapter_title": "Motion In A Straight Line",
+        "pdf_title": "Chapter 2: Motion In A Straight Line",
+        "rationalised": true,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Rationalised; Reprint 2026-27; 2026-27 family",
+        "page_count": 14,
+        "meta_title": "E:\\Textbook\\12 Rationalised Textbook\\11086 — Physics Part I\\1 Source Files\\11086 — Physics Part I\\Chapter 2\\Chapter 2.pmd",
+        "preview": "CHAPTER TWO\nMOTION IN A STRAIGHT LINE\n2.1\nIntroduction\n2.2\nInstantaneous velocity and\nspeed\n2.3\nAcceleration\n2.4\nKinematic equations for\nuniformly accelerated motion\n2.5\nRelative velocity\nSummary\nPoints to ponder\nExercises\n2.1  INTRODUCTION\nMotion is common to everything in the universe. We walk,\nrun and ride a bicycle.  Even when we are sleeping, air moves\ninto and out of our lungs and blood flow"
+      },
+      {
+        "class_level": "11",
+        "subject_code": "PHYSICS",
+        "part_number": 1,
+        "filename_chapter": 3,
+        "kind": "CHAPTER",
+        "file_name": "keph103.pdf",
+        "relative_path": "Class 11/Physics/keph1dd/keph1dd/keph103.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph1dd\\keph1dd\\keph103.pdf",
+        "checksum_sha256": "7619da28a2e58c099426fe256a966383a8d7da6e23c69deee42b62481aecd355",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 3,
+        "chapter_title": "Motion In A Plane",
+        "pdf_title": "Chapter 3: Motion In A Plane",
+        "rationalised": true,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Rationalised; Reprint 2026-27; 2026-27 family",
+        "page_count": 22,
+        "meta_title": "E:\\Textbook\\12 Rationalised Textbook\\11086 — Physics Part I\\1 Source Files\\11086 — Physics Part I\\Chapter 3\\Chapter 3.pmd",
+        "preview": "CHAPTER THREE\nMOTION IN A PLANE\n3.1  INTRODUCTION\nIn the last chapter we developed the concepts of position,\ndisplacement, velocity and acceleration that are needed to\ndescribe the motion of an object along a straight line. We\nfound that the directional aspect of these quantities can be\ntaken care of by + and – signs, as in one dimension only two\ndirections are possible. But in order to describe m"
+      },
+      {
+        "class_level": "11",
+        "subject_code": "PHYSICS",
+        "part_number": 1,
+        "filename_chapter": 4,
+        "kind": "CHAPTER",
+        "file_name": "keph104.pdf",
+        "relative_path": "Class 11/Physics/keph1dd/keph1dd/keph104.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph1dd\\keph1dd\\keph104.pdf",
+        "checksum_sha256": "8a5df412b53d86040d73ec589ddc98ae23201c420973c7b910e1acca85d234ef",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 4,
+        "chapter_title": "Laws Of Motion",
+        "pdf_title": "Chapter 4: Laws Of Motion",
+        "rationalised": true,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Rationalised; Reprint 2026-27; 2026-27 family",
+        "page_count": 22,
+        "meta_title": "E:\\Textbook\\12 Rationalised Textbook\\11086 — Physics Part I\\1 Source Files\\11086 — Physics Part I\\Chapter 4\\Chapter_5.pmd",
+        "preview": "CHAPTER FOUR\nLAWS OF MOTION\n4.1  INTRODUCTION\nIn the preceding Chapter, our concern was to describe the\nmotion of a particle in space quantitatively. We saw that\nuniform motion needs the concept of velocity alone whereas\nnon-uniform motion requires the concept of acceleration in\naddition.  So far, we have not asked the question as to what\ngoverns the motion of bodies. In this chapter, we turn to t"
+      },
+      {
+        "class_level": "11",
+        "subject_code": "PHYSICS",
+        "part_number": 1,
+        "filename_chapter": 5,
+        "kind": "CHAPTER",
+        "file_name": "keph105.pdf",
+        "relative_path": "Class 11/Physics/keph1dd/keph1dd/keph105.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph1dd\\keph1dd\\keph105.pdf",
+        "checksum_sha256": "a6d4b72b0fc10230bd54393f86e58630ccd258d54269b60de226c68d0eaa937e",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 5,
+        "chapter_title": "Work, Energy And Power",
+        "pdf_title": "Chapter 5: Work, Energy And Power",
+        "rationalised": true,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Rationalised; Reprint 2026-27; 2026-27 family",
+        "page_count": 21,
+        "meta_title": "E:\\Textbook\\12 Rationalised Textbook\\11086 — Physics Part I\\1 Source Files\\11086 — Physics Part I\\Chapter 5\\Chapter 6.pmd",
+        "preview": "CHAPTER FIVE\nWORK, ENERGY AND POWER\n5.1  INTRODUCTION\nThe terms ‘work’, ‘energy’ and ‘power’ are frequently used\nin everyday language. A farmer ploughing the field, a\nconstruction worker carrying bricks, a student studying for\na competitive examination, an artist painting a beautiful\nlandscape, all are said to be working. In physics, however,\nthe word ‘Work’ covers a definite and precise meaning.\n"
+      },
+      {
+        "class_level": "11",
+        "subject_code": "PHYSICS",
+        "part_number": 1,
+        "filename_chapter": 6,
+        "kind": "CHAPTER",
+        "file_name": "keph106.pdf",
+        "relative_path": "Class 11/Physics/keph1dd/keph1dd/keph106.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph1dd\\keph1dd\\keph106.pdf",
+        "checksum_sha256": "88e0ad16f315b3510e40cdc20e6d70d7b5412bac1926fd505a6a1836464ca3bb",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 6,
+        "chapter_title": "Systems Of Particles And Rotational Motion",
+        "pdf_title": "Chapter 6: Systems Of Particles And Rotational Motion",
+        "rationalised": false,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Reprint 2026-27; 2026-27 family",
+        "page_count": 35,
+        "meta_title": null,
+        "preview": "CHAPTER SIX\nSYSTEMS OF PARTICLES AND ROTATIONAL MOTION\n6.1 INTRODUCTION\nIn the earlier chapters we primarily considered the motion\nof a single particle. (A particle is ideally represented as a\npoint mass having no size.)  We applied the results of our\nstudy even to the motion of bodies of finite size, assuming\nthat motion of such bodies can be described in terms of the\nmotion of a particle.\nAny re"
+      },
+      {
+        "class_level": "11",
+        "subject_code": "PHYSICS",
+        "part_number": 1,
+        "filename_chapter": 7,
+        "kind": "CHAPTER",
+        "file_name": "keph107.pdf",
+        "relative_path": "Class 11/Physics/keph1dd/keph1dd/keph107.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph1dd\\keph1dd\\keph107.pdf",
+        "checksum_sha256": "631fbe30827cd5faa745698fe337ca2cf829356aa8124f1abb4f3d82b44d499a",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 7,
+        "chapter_title": "Gravitation",
+        "pdf_title": "Chapter 7: Gravitation",
+        "rationalised": true,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Rationalised; Reprint 2026-27; 2026-27 family",
+        "page_count": 17,
+        "meta_title": "E:\\Textbook\\12 Rationalised Textbook\\11086 — Physics Part I\\1 Source Files\\11086 — Physics Part I\\Chapter 7\\CHAPTER-8.pmd",
+        "preview": "CHAPTER SEVEN\nGRAVITATION\n7.1 INTRODUCTION\nEarly in our lives, we become aware of the tendency of all\nmaterial objects to be attracted towards the Earth.  Anything\nthrown up falls down towards the earth, going uphill is lot\nmore tiring than going downhill, raindrops from the clouds\nabove fall towards the earth and  there are many other such\nphenomena.  Historically it was the Italian Physicist Gal"
+      },
+      {
+        "class_level": "11",
+        "subject_code": "PHYSICS",
+        "part_number": 1,
+        "filename_chapter": null,
+        "kind": "SUPPLEMENTAL",
+        "file_name": "keph1a1.pdf",
+        "relative_path": "Class 11/Physics/keph1dd/keph1dd/keph1a1.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph1dd\\keph1dd\\keph1a1.pdf",
+        "checksum_sha256": "7c9eafd1d63e60fdc2495a94102b935b88745aa33959dd5cc928290f5fad7ae2",
+        "readable": true,
+        "source_status": "supplemental",
+        "chapter_title": null,
+        "pdf_title": null,
+        "book_chapter_number": null,
+        "rationalised": null,
+        "reprint": null,
+        "version_label": null
+      },
+      {
+        "class_level": "11",
+        "subject_code": "PHYSICS",
+        "part_number": 1,
+        "filename_chapter": null,
+        "kind": "SUPPLEMENTAL",
+        "file_name": "keph1an.pdf",
+        "relative_path": "Class 11/Physics/keph1dd/keph1dd/keph1an.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph1dd\\keph1dd\\keph1an.pdf",
+        "checksum_sha256": "79be0d7adeccc1deb630abaea390880063cdb4f37a2308934e8f63695985fbbc",
+        "readable": true,
+        "source_status": "supplemental",
+        "chapter_title": null,
+        "pdf_title": null,
+        "book_chapter_number": null,
+        "rationalised": null,
+        "reprint": null,
+        "version_label": null
+      },
+      {
+        "class_level": "11",
+        "subject_code": "PHYSICS",
+        "part_number": 1,
+        "filename_chapter": null,
+        "kind": "SUPPLEMENTAL",
+        "file_name": "keph1ps.pdf",
+        "relative_path": "Class 11/Physics/keph1dd/keph1dd/keph1ps.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph1dd\\keph1dd\\keph1ps.pdf",
+        "checksum_sha256": "b06cce4e3d6c4c150869bd4f6221ed5aa86bb0ff1725e4effcd2615e85ff5782",
+        "readable": true,
+        "source_status": "supplemental",
+        "chapter_title": null,
+        "pdf_title": null,
+        "book_chapter_number": null,
+        "rationalised": null,
+        "reprint": null,
+        "version_label": null
+      },
+      {
+        "class_level": "11",
+        "subject_code": "PHYSICS",
+        "part_number": 2,
+        "filename_chapter": 1,
+        "kind": "CHAPTER",
+        "file_name": "keph201.pdf",
+        "relative_path": "Class 11/Physics/keph2dd/keph2dd/keph201.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph2dd\\keph2dd\\keph201.pdf",
+        "checksum_sha256": "54ef32e2d3eb1e47e87f9d8e6a49423b8b2cc77e4ac5efbc7c34670c49462de6",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 8,
+        "chapter_title": "Mechanical Properties Of Solids",
+        "pdf_title": "Chapter 8: Mechanical Properties Of Solids",
+        "rationalised": true,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Rationalised; Reprint 2026-27; 2026-27 family",
+        "page_count": 13,
+        "meta_title": "E:\\Textbook\\12 Rationalised Textbook\\11087 — Physics Part II\\1 Source Files\\11087 — Physics Part II\\1 Chapter-8\\Chapter 9.pmd",
+        "preview": "CHAPTER EIGHT\nMECHANICAL PROPERTIES OF SOLIDS\n8.1\nINTRODUCTION\nIn Chapter 6, we studied the rotation of the bodies and then\nrealised that the motion of a body depends on how mass is\ndistributed within the body.  We restricted ourselves to simpler\nsituations of rigid bodies.  A rigid body generally means a\nhard solid object having a definite shape and size.  But in\nreality,  bodies can be stretched"
+      },
+      {
+        "class_level": "11",
+        "subject_code": "PHYSICS",
+        "part_number": 2,
+        "filename_chapter": 2,
+        "kind": "CHAPTER",
+        "file_name": "keph202.pdf",
+        "relative_path": "Class 11/Physics/keph2dd/keph2dd/keph202.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph2dd\\keph2dd\\keph202.pdf",
+        "checksum_sha256": "3ff64c89dcbfaf99ecec307d753b0bd2d3f731f17e2f16875d74749840d223b6",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 9,
+        "chapter_title": "Mechanical Properties Of Fluids",
+        "pdf_title": "Chapter 9: Mechanical Properties Of Fluids",
+        "rationalised": true,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Rationalised; Reprint 2026-27; 2026-27 family",
+        "page_count": 22,
+        "meta_title": "E:\\Textbook\\12 Rationalised Textbook\\11087 — Physics Part II\\1 Source Files\\11087 — Physics Part II\\2 Chapter-9\\Chapter 10.pmd",
+        "preview": "CHAPTER NINE\nMECHANICAL PROPERTIES OF FLUIDS\n9.1 INTRODUCTION\nIn this chapter, we shall study  some common physical\nproperties of liquids and gases. Liquids and gases can  flow\nand are therefore, called  fluids.  It is this property that\ndistinguishes liquids and gases from solids in a basic way.\nFluids are everywhere around us. Earth has an envelop of\nair and two-thirds of its surface is covered "
+      },
+      {
+        "class_level": "11",
+        "subject_code": "PHYSICS",
+        "part_number": 2,
+        "filename_chapter": 3,
+        "kind": "CHAPTER",
+        "file_name": "keph203.pdf",
+        "relative_path": "Class 11/Physics/keph2dd/keph2dd/keph203.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph2dd\\keph2dd\\keph203.pdf",
+        "checksum_sha256": "b062894aea80298f8df2f83e34dc11f5f96577bfe08d0ad35e2e647a8446854e",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 10,
+        "chapter_title": "Thermal Properties Of Matter",
+        "pdf_title": "Chapter 10: Thermal Properties Of Matter",
+        "rationalised": true,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Rationalised; Reprint 2026-27; 2026-27 family",
+        "page_count": 24,
+        "meta_title": "E:\\Textbook\\12 Rationalised Textbook\\11087 — Physics Part II\\1 Source Files\\11087 — Physics Part II\\3 Chapter-10\\Chapter 10.pmd",
+        "preview": "CHAPTER TEN\nTHERMAL PROPERTIES OF MATTER\n10.1  INTRODUCTION\nWe all have common sense notions of heat and temperature.\nTemperature is a measure of ‘hotness’ of a body. A kettle\nwith boiling water is hotter than a box containing ice. In\nphysics, we need to define the notion of heat, temperature,\netc., more carefully. In this chapter, you will learn what heat\nis and how it is measured, and study the "
+      },
+      {
+        "class_level": "11",
+        "subject_code": "PHYSICS",
+        "part_number": 2,
+        "filename_chapter": 4,
+        "kind": "CHAPTER",
+        "file_name": "keph204.pdf",
+        "relative_path": "Class 11/Physics/keph2dd/keph2dd/keph204.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph2dd\\keph2dd\\keph204.pdf",
+        "checksum_sha256": "00462650d55bda8843f5fbf4eba1a7996faf13d04a8858fa04061b1309e090ba",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 11,
+        "chapter_title": "Thermodynamics",
+        "pdf_title": "Chapter 11: Thermodynamics",
+        "rationalised": true,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Rationalised; Reprint 2026-27; 2026-27 family",
+        "page_count": 18,
+        "meta_title": "E:\\Textbook\\12 Rationalised Textbook\\11087 — Physics Part II\\1 Source Files\\11087 — Physics Part II\\4 Chapter-11\\ch-12.pmd",
+        "preview": "CHAPTER ELEVEN\nTHERMODYNAMICS\n11.1  INTRODUCTION\nIn previous chapter we have studied thermal properties of\nmatter. In this chapter we shall study laws that govern\nthermal energy. We shall study the processes where work is\nconverted into heat and vice versa. In winter, when we rub\nour palms together, we feel warmer; here work done in rubbing\nproduces the  ‘heat’.  Conversely, in a steam engine, the"
+      },
+      {
+        "class_level": "11",
+        "subject_code": "PHYSICS",
+        "part_number": 2,
+        "filename_chapter": 5,
+        "kind": "CHAPTER",
+        "file_name": "keph205.pdf",
+        "relative_path": "Class 11/Physics/keph2dd/keph2dd/keph205.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph2dd\\keph2dd\\keph205.pdf",
+        "checksum_sha256": "198ca1df5f392ee6aaac7fa8541d65a3354345a79eeca05875c19247adc7ddd9",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 12,
+        "chapter_title": "Kinetic Theory",
+        "pdf_title": "Chapter 12: Kinetic Theory",
+        "rationalised": true,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Rationalised; Reprint 2026-27; 2026-27 family",
+        "page_count": 15,
+        "meta_title": "E:\\Textbook\\12 Rationalised Textbook\\11087 — Physics Part II\\1 Source Files\\11087 — Physics Part II\\5 Chapter-12\\ch-13.pmd",
+        "preview": "CHAPTER TWELVE\nKINETIC THEORY\n12.1 INTRODUCTION\nBoyle discovered the law named after him in 1661. Boyle,\nNewton and several others tried to explain the behaviour of\ngases by considering that gases are made up of tiny atomic\nparticles. The actual atomic theory got established more than\n150 years later. Kinetic theory explains the behaviour of gases\nbased on the idea that the gas  consists of rapidl"
+      },
+      {
+        "class_level": "11",
+        "subject_code": "PHYSICS",
+        "part_number": 2,
+        "filename_chapter": 6,
+        "kind": "CHAPTER",
+        "file_name": "keph206.pdf",
+        "relative_path": "Class 11/Physics/keph2dd/keph2dd/keph206.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph2dd\\keph2dd\\keph206.pdf",
+        "checksum_sha256": "adc85e61480ab919f13c6b0951a91d44315958b37bc5f6bfb3304fd256b1978d",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 13,
+        "chapter_title": "Oscillations",
+        "pdf_title": "Chapter 13: Oscillations",
+        "rationalised": true,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Rationalised; Reprint 2026-27; 2026-27 family",
+        "page_count": 19,
+        "meta_title": "E:\\Textbook\\12 Rationalised Textbook\\11087 — Physics Part II\\1 Source Files\\11087 — Physics Part II\\6 Chapter-13\\Chapter-13.pmd",
+        "preview": "CHAPTER THIRTEEN\nOSCILLATIONS\n13.1\nINTRODUCTION\nIn our daily life we come across various kinds of motions.\nYou have already learnt about some of them, e.g., rectilinear\nmotion and motion of a projectile. Both these motions are\nnon-repetitive. We have also learnt about uniform circular\nmotion and orbital motion of planets in the solar system. In\nthese cases, the motion is repeated after a certain i"
+      },
+      {
+        "class_level": "11",
+        "subject_code": "PHYSICS",
+        "part_number": 2,
+        "filename_chapter": 7,
+        "kind": "CHAPTER",
+        "file_name": "keph207.pdf",
+        "relative_path": "Class 11/Physics/keph2dd/keph2dd/keph207.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph2dd\\keph2dd\\keph207.pdf",
+        "checksum_sha256": "9f39d09b0556c3a59b89d6b979189f960e5c663af11cdd52d6c7af0cd2e7d1c9",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 14,
+        "chapter_title": "Waves",
+        "pdf_title": "Chapter 14: Waves",
+        "rationalised": true,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Rationalised; Reprint 2026-27; 2026-27 family",
+        "page_count": 22,
+        "meta_title": "E:\\Textbook\\12 Rationalised Textbook\\11087 — Physics Part II\\1 Source Files\\11087 — Physics Part II\\7 Chapter-14\\Chapter 15.pmd",
+        "preview": "CHAPTER FOURTEEN\nWAVES\n14.1\nINTRODUCTION\nIn the previous Chapter, we studied the motion of objects\noscillating in isolation. What happens in a system, which is\na collection of such objects? A material medium provides\nsuch an example. Here, elastic forces bind the constituents\nto each other and, therefore, the motion of one affects that of\nthe other. If you drop a little pebble in a pond of still w"
+      },
+      {
+        "class_level": "11",
+        "subject_code": "PHYSICS",
+        "part_number": 2,
+        "filename_chapter": null,
+        "kind": "SUPPLEMENTAL",
+        "file_name": "keph2an.pdf",
+        "relative_path": "Class 11/Physics/keph2dd/keph2dd/keph2an.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph2dd\\keph2dd\\keph2an.pdf",
+        "checksum_sha256": "abed24380ce644a461d13743c7a180cc53f3941976c7560e8d81cc781765709c",
+        "readable": true,
+        "source_status": "supplemental",
+        "chapter_title": null,
+        "pdf_title": null,
+        "book_chapter_number": null,
+        "rationalised": null,
+        "reprint": null,
+        "version_label": null
+      },
+      {
+        "class_level": "11",
+        "subject_code": "PHYSICS",
+        "part_number": 2,
+        "filename_chapter": null,
+        "kind": "SUPPLEMENTAL",
+        "file_name": "keph2ps.pdf",
+        "relative_path": "Class 11/Physics/keph2dd/keph2dd/keph2ps.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 11\\Physics\\keph2dd\\keph2dd\\keph2ps.pdf",
+        "checksum_sha256": "75b36508385f54afb66906cc52d871325802d156535c102b17c1e96842298482",
+        "readable": true,
+        "source_status": "supplemental",
+        "chapter_title": null,
+        "pdf_title": null,
+        "book_chapter_number": null,
+        "rationalised": null,
+        "reprint": null,
+        "version_label": null
+      }
+    ],
+    "Class 12/BIOLOGY": [
+      {
+        "class_level": "12",
+        "subject_code": "BIOLOGY",
+        "part_number": 1,
+        "filename_chapter": 1,
+        "kind": "CHAPTER",
+        "file_name": "lebo101.pdf",
+        "relative_path": "Class 12/Biology/lebo1dd/lebo101.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo101.pdf",
+        "checksum_sha256": "039bad8cf195a93b90fa7857eda95f39bdd4fd278b3c8bced235f3b6cd71c25c",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 1,
+        "chapter_title": "Sexual Reproduction in",
+        "pdf_title": "Chapter 1: Sexual Reproduction in",
+        "rationalised": false,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Reprint 2026-27; 2026-27 family",
+        "page_count": 25,
+        "meta_title": null,
+        "preview": "Biology in essence is the story of life on earth. While individual\norganisms die without fail, species continue to live through\nmillions of years unless threatened by natural or anthropogenic\nextinction. Reproduction becomes a vital process without\nwhich species cannot survive for long. Each individual leaves\nits progeny by asexual or sexual means. Sexual mode of\nreproduction enables creation of n"
+      },
+      {
+        "class_level": "12",
+        "subject_code": "BIOLOGY",
+        "part_number": 1,
+        "filename_chapter": 2,
+        "kind": "CHAPTER",
+        "file_name": "lebo102.pdf",
+        "relative_path": "Class 12/Biology/lebo1dd/lebo102.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo102.pdf",
+        "checksum_sha256": "af54d04d912114053befb30adf8e56580fe9ddb49c461160dba150a0d19a07a8",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 2,
+        "chapter_title": "Human Reproduction",
+        "pdf_title": "Chapter 2: Human Reproduction",
+        "rationalised": false,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Reprint 2026-27; 2026-27 family",
+        "page_count": 15,
+        "meta_title": "HUMAN REPRODUCTION.pmd",
+        "preview": "As you are aware, humans are sexually reproducing and\nviviparous. The reproductive events in humans include\nformation of gametes (gametogenesis), i.e., sperms in males\nand ovum in females, transfer of sperms into the female\ngenital tract (insemination) and fusion of male and female\ngametes (fertilisation) leading to formation of zygote. This\nis followed by formation and development of blastocyst\na"
+      },
+      {
+        "class_level": "12",
+        "subject_code": "BIOLOGY",
+        "part_number": 1,
+        "filename_chapter": 3,
+        "kind": "CHAPTER",
+        "file_name": "lebo103.pdf",
+        "relative_path": "Class 12/Biology/lebo1dd/lebo103.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo103.pdf",
+        "checksum_sha256": "ef03cc524d286eb3ffc225a00422ce28f3fe18ab8e622424f0b1c748b45bf9f3",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 3,
+        "chapter_title": "Reproductive Health",
+        "pdf_title": "Chapter 3: Reproductive Health",
+        "rationalised": false,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Reprint 2026-27; 2026-27 family",
+        "page_count": 10,
+        "meta_title": "Reproductive Health.pmd",
+        "preview": "You have learnt about human reproductive system and its\nfunctions in Chapter 2. Now, let’s discuss a closely related\ntopic – reproductive health. What do we understand by\nthis term?  The term simply refers to healthy reproductive\norgans with normal functions. However, it has a broader\nperspective and includes the emotional and social aspects\nof reproduction also. According to the World Health\nOrga"
+      },
+      {
+        "class_level": "12",
+        "subject_code": "BIOLOGY",
+        "part_number": 1,
+        "filename_chapter": 4,
+        "kind": "CHAPTER",
+        "file_name": "lebo104.pdf",
+        "relative_path": "Class 12/Biology/lebo1dd/lebo104.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo104.pdf",
+        "checksum_sha256": "d5f14fc2248860c029ab10aec2687165ed84d54917c10cd44057574f1c4bb456",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 4,
+        "chapter_title": "Principles of Inheritance",
+        "pdf_title": "Chapter 4: Principles of Inheritance",
+        "rationalised": false,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Reprint 2026-27; 2026-27 family",
+        "page_count": 28,
+        "meta_title": "Principles of Inheritance and Variation.pmd",
+        "preview": "The work of Mendel and others who followed him gave us an\nidea of inheritance patterns. However the nature of those ‘factors’\nwhich determine the phenotype was not very clear. As these\n‘factors’ represent the genetic basis of inheritance, understanding\nthe structure of genetic material and the structural basis of\ngenotype and phenotype conversion became the focus of\nattention in biology for the ne"
+      },
+      {
+        "class_level": "12",
+        "subject_code": "BIOLOGY",
+        "part_number": 1,
+        "filename_chapter": 5,
+        "kind": "CHAPTER",
+        "file_name": "lebo105.pdf",
+        "relative_path": "Class 12/Biology/lebo1dd/lebo105.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo105.pdf",
+        "checksum_sha256": "21d77cdaf37c11b26956bbdae0b9eff9700d723135ac55c1a2141b1caee8f017",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 5,
+        "chapter_title": "Molecular Basis Of",
+        "pdf_title": "Chapter 5: Molecular Basis Of",
+        "rationalised": false,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Reprint 2026-27; 2026-27 family",
+        "page_count": 31,
+        "meta_title": "Molecular Basis of Inhertance.pmd",
+        "preview": "CHAPTER 5\nMOLECULAR BASIS OF\nINHERITANCE\n5.1\nThe DNA\n5.2\nThe Search for Genetic\nMaterial\n5.3\nRNA World\n5.4\nReplication\n5.5\nTranscription\n5.6\nGenetic Code\n5.7\nTranslation\n5.8\nRegulation of Gene\nExpression\n5.9\nHuman Genome Project\n5.10 DNA Fingerprinting\nIn the previous chapter, you have learnt the inheritance\npatterns and the genetic basis of such patterns. At the\ntime of Mendel, the nature of thos"
+      },
+      {
+        "class_level": "12",
+        "subject_code": "BIOLOGY",
+        "part_number": 1,
+        "filename_chapter": 6,
+        "kind": "CHAPTER",
+        "file_name": "lebo106.pdf",
+        "relative_path": "Class 12/Biology/lebo1dd/lebo106.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo106.pdf",
+        "checksum_sha256": "d2a181994b3d2a060226f4bf1b45ad581c6da69a8dd2a01e448704d6ce868071",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 6,
+        "chapter_title": "Evolution",
+        "pdf_title": "Chapter 6: Evolution",
+        "rationalised": false,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Reprint 2026-27; 2026-27 family",
+        "page_count": 17,
+        "meta_title": "Evolution.pmd",
+        "preview": "110\nBIOLOGY\nEvolutionary Biology is the study of history of life forms\non earth. What exactly is evolution? To understand the\nchanges in flora and fauna that have occurred over millions\nof years on earth, we must have an understanding of the\ncontext of origin of life, i.e., evolution of earth, of stars and\nindeed of the universe itself. What follows is the longest of\nall the construed and conjectu"
+      },
+      {
+        "class_level": "12",
+        "subject_code": "BIOLOGY",
+        "part_number": 1,
+        "filename_chapter": 7,
+        "kind": "CHAPTER",
+        "file_name": "lebo107.pdf",
+        "relative_path": "Class 12/Biology/lebo1dd/lebo107.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo107.pdf",
+        "checksum_sha256": "afb1c7c2f7699e0572e09e9ee3279f4e61100ba0b117b3f34b9d1ac10bdeae75",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 7,
+        "chapter_title": "Human Health and Disease",
+        "pdf_title": "Chapter 7: Human Health and Disease",
+        "rationalised": false,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Reprint 2026-27; 2026-27 family",
+        "page_count": 22,
+        "meta_title": "Human Welfare.pmd",
+        "preview": "Chapter 7\nHuman Health and Disease\nChapter 8\nMicrobes in Human Welfare\nBiology is the youngest of the formalised disciplines of natural\nscience. Progress in physics and chemistry proceeded much\nfaster than in Biology. Applications of physics and chemistry in\nour daily life also have a higher visibility than those of biology.\nHowever, twentieth century and certainly twenty-first century\nhas demonst"
+      },
+      {
+        "class_level": "12",
+        "subject_code": "BIOLOGY",
+        "part_number": 1,
+        "filename_chapter": 8,
+        "kind": "CHAPTER",
+        "file_name": "lebo108.pdf",
+        "relative_path": "Class 12/Biology/lebo1dd/lebo108.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo108.pdf",
+        "checksum_sha256": "e96d234eab38ed70616c77101aedeaf4efa7d92ea8aececeb046d383061f63b7",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 8,
+        "chapter_title": "Microbes In Human Welfare",
+        "pdf_title": "Chapter 8: Microbes In Human Welfare",
+        "rationalised": false,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Reprint 2026-27; 2026-27 family",
+        "page_count": 12,
+        "meta_title": "MICROBES IN HUMAN WELFARE.pmd",
+        "preview": "Besides macroscopic plants and animals, microbes are\nthe major components of biological systems on this earth.\nYou have studied about the diversity of living organisms\nin Class XI. Do you remember which Kingdoms among\nthe living organisms contain micro-organisms? Which are\nthe ones that are only microscopic? Microbes are present\neverywhere – in soil, water, air, inside our bodies and that\nof other"
+      },
+      {
+        "class_level": "12",
+        "subject_code": "BIOLOGY",
+        "part_number": 1,
+        "filename_chapter": 9,
+        "kind": "CHAPTER",
+        "file_name": "lebo109.pdf",
+        "relative_path": "Class 12/Biology/lebo1dd/lebo109.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo109.pdf",
+        "checksum_sha256": "c30b908dca8e7166e9830ca48c376a4f0b21d63a8e05bf601a150da031c13122",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 9,
+        "chapter_title": "Biotechnology : Principles and",
+        "pdf_title": "Chapter 9: Biotechnology : Principles and",
+        "rationalised": false,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Reprint 2026-27; 2026-27 family",
+        "page_count": 16,
+        "meta_title": "Principles and Processes in Biotechnology.pmd",
+        "preview": "Ever since the days of Rene Descartes, the French philosopher,\nmathematician and biologist of seventeenth century, all human\nknowledge especially natural sciences were directed to develop\ntechnologies which add to the creature comforts of human\nlives, as also value to human life. The whole approach to\nunderstanding natural phenomena became anthropocentric.\nPhysics and chemistry gave rise to engine"
+      },
+      {
+        "class_level": "12",
+        "subject_code": "BIOLOGY",
+        "part_number": 1,
+        "filename_chapter": 10,
+        "kind": "CHAPTER",
+        "file_name": "lebo110.pdf",
+        "relative_path": "Class 12/Biology/lebo1dd/lebo110.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo110.pdf",
+        "checksum_sha256": "4da2923c699b97a1930ae6b1072bf75fb5b0429d724ead7ba06510f98730b826",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 10,
+        "chapter_title": "Biotechnology And Its",
+        "pdf_title": "Chapter 10: Biotechnology And Its",
+        "rationalised": false,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Reprint 2026-27; 2026-27 family",
+        "page_count": 11,
+        "meta_title": "Biotechnology and its Applications.pmd",
+        "preview": "Biotechnology, as you would have learnt from the\nprevious chapter, essentially deals with industrial scale\nproduction of biopharmaceuticals and biologicals using\ngenetically modified microbes, fungi, plants and animals.\nThe applications of biotechnology include therapeutics,\ndiagnostics, genetically modified crops for agriculture,\nprocessed food, bioremediation, waste treatment, and\nenergy product"
+      },
+      {
+        "class_level": "12",
+        "subject_code": "BIOLOGY",
+        "part_number": 1,
+        "filename_chapter": 11,
+        "kind": "CHAPTER",
+        "file_name": "lebo111.pdf",
+        "relative_path": "Class 12/Biology/lebo1dd/lebo111.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo111.pdf",
+        "checksum_sha256": "5b483a3ee69f88ae67b43daa8095e5e5ba6278bb1f288fb1cdcd3b02f461276f",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 11,
+        "chapter_title": "Organisms and Populations",
+        "pdf_title": "Chapter 11: Organisms and Populations",
+        "rationalised": false,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Reprint 2026-27; 2026-27 family",
+        "page_count": 17,
+        "meta_title": "Organisms and Populations.pmd",
+        "preview": "Diversity is not only a characteristic of living organisms but\nalso of content in biology textbooks. Biology is presented either\nas botany, zoology and microbiology or as classical and\nmodern. The latter is a euphemism for molecular aspects of\nbiology. Luckily we have many threads which weave the\ndifferent areas of biological information into a unifying\nprinciple. Ecology is one such thread which "
+      },
+      {
+        "class_level": "12",
+        "subject_code": "BIOLOGY",
+        "part_number": 1,
+        "filename_chapter": 12,
+        "kind": "CHAPTER",
+        "file_name": "lebo112.pdf",
+        "relative_path": "Class 12/Biology/lebo1dd/lebo112.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo112.pdf",
+        "checksum_sha256": "6d73b01f7ad5492d08a67b695ae8c05230631f20b1b40c791ab7435b39d0e59e",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 12,
+        "chapter_title": "Ecosystem",
+        "pdf_title": "Chapter 12: Ecosystem",
+        "rationalised": false,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Reprint 2026-27; 2026-27 family",
+        "page_count": 11,
+        "meta_title": "Ecosystem.pmd",
+        "preview": "An ecosystem can be visualised as a functional unit of\nnature, where living organisms interact among themselves\nand also with the surrounding physical environment.\nEcosystem varies greatly in size from a small pond to a\nlarge forest or a sea. Many ecologists regard the entire\nbiosphere as a global ecosystem, as a composite of all\nlocal ecosystems on Earth. Since this system is too much\nbig and com"
+      },
+      {
+        "class_level": "12",
+        "subject_code": "BIOLOGY",
+        "part_number": 1,
+        "filename_chapter": 13,
+        "kind": "CHAPTER",
+        "file_name": "lebo113.pdf",
+        "relative_path": "Class 12/Biology/lebo1dd/lebo113.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo113.pdf",
+        "checksum_sha256": "d4587f07dd122d19493a66fb2aae6f11ae02ef9124dea92634b524f078f20faa",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 13,
+        "chapter_title": "Biodiversity And",
+        "pdf_title": "Chapter 13: Biodiversity And",
+        "rationalised": false,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Reprint 2026-27; 2026-27 family",
+        "page_count": 13,
+        "meta_title": "BIODIVERSITY AND CONSERVATION.pmd",
+        "preview": "If an alien from a distant galaxy were to visit our planet\nEarth, the first thing that would amaze and baffle him\nwould most probably be the enormous diversity of life\nthat he would encounter. Even for humans, the rich variety\nof living organisms with which they share this planet never\nceases to astonish and fascinate us.  The common man\nwould find it hard to believe that there are more than\n20,00"
+      },
+      {
+        "class_level": "12",
+        "subject_code": "BIOLOGY",
+        "part_number": 1,
+        "filename_chapter": null,
+        "kind": "SUPPLEMENTAL",
+        "file_name": "lebo1ps.pdf",
+        "relative_path": "Class 12/Biology/lebo1dd/lebo1ps.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Biology\\lebo1dd\\lebo1ps.pdf",
+        "checksum_sha256": "22804a9f4df81466593bf0fec0ff9f521b12a55887e32fb46340e528728ac771",
+        "readable": true,
+        "source_status": "supplemental",
+        "chapter_title": null,
+        "pdf_title": null,
+        "book_chapter_number": null,
+        "rationalised": null,
+        "reprint": null,
+        "version_label": null
+      }
+    ],
+    "Class 12/CHEMISTRY": [
+      {
+        "class_level": "12",
+        "subject_code": "CHEMISTRY",
+        "part_number": 1,
+        "filename_chapter": 1,
+        "kind": "CHAPTER",
+        "file_name": "lech101.pdf",
+        "relative_path": "Class 12/Chemistry 1/lech1dd/lech101.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 1\\lech1dd\\lech101.pdf",
+        "checksum_sha256": "99d19dbb008280c361496c6e184be91b214d70fb40837749c692c8c52add341f",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 1,
+        "chapter_title": "Solutions",
+        "pdf_title": "Chapter 1: Solutions",
+        "rationalised": true,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Rationalised; Reprint 2026-27; 2026-27 family",
+        "page_count": 30,
+        "meta_title": "D:\\TEXTBOOKS\\RATIONALISED 20222-23\\Neha\\12085 — Chemistry Part_I\\1 Source Files\\2 Chapters\\Unit_1\\Unit_1.pmd",
+        "preview": "After studying this Unit, you will be\nable to\n·\ndescribe the formation of different\ntypes of solutions;\n·\nexpress concentration of solution\nin different units;\n·\nstate and explain Henry’s law and\nRaoult’s law;\n·\ndistinguish between ideal and\nnon-ideal solutions;\n·\nexplain deviations of real solutions\nfrom Raoult’s law;\n·\ndescribe colligative properties of\nsolutions and correlate these with\nmolar m"
+      },
+      {
+        "class_level": "12",
+        "subject_code": "CHEMISTRY",
+        "part_number": 1,
+        "filename_chapter": 2,
+        "kind": "CHAPTER",
+        "file_name": "lech102.pdf",
+        "relative_path": "Class 12/Chemistry 1/lech1dd/lech102.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 1\\lech1dd\\lech102.pdf",
+        "checksum_sha256": "ca0f380fbfe6a0a4363251a646aafe451fe99c5fc8dba1aa9317438d2bc8705a",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 2,
+        "chapter_title": "Electrochemistry",
+        "pdf_title": "Chapter 2: Electrochemistry",
+        "rationalised": true,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Rationalised; Reprint 2026-27; 2026-27 family",
+        "page_count": 30,
+        "meta_title": "D:\\TEXTBOOKS\\RATIONALISED 20222-23\\Neha\\12085 — Chemistry Part_I\\1 Source Files\\2 Chapters\\Unit_2\\Unit_2.pmd",
+        "preview": "Electrochemistry is the study of production of\nelectricity from energy released during spontaneous\nchemical reactions  and the use of electrical energy\nto bring about non-spontaneous chemical\ntransformations. The subject is of importance both\nfor theoretical and practical considerations. A large\nnumber of metals, sodium hydroxide, chlorine,\nfluorine and many other chemicals are produced by\nelectro"
+      },
+      {
+        "class_level": "12",
+        "subject_code": "CHEMISTRY",
+        "part_number": 1,
+        "filename_chapter": 3,
+        "kind": "CHAPTER",
+        "file_name": "lech103.pdf",
+        "relative_path": "Class 12/Chemistry 1/lech1dd/lech103.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 1\\lech1dd\\lech103.pdf",
+        "checksum_sha256": "7c822864c114aa805cc63b1e44a028d16d0d4704afc3ad304d4dc4054945f320",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 3,
+        "chapter_title": "Chemical Kinetics",
+        "pdf_title": "Chapter 3: Chemical Kinetics",
+        "rationalised": true,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Rationalised; Reprint 2026-27; 2026-27 family",
+        "page_count": 28,
+        "meta_title": "D:\\TEXTBOOKS\\RATIONALISED 20222-23\\Neha\\12085 — Chemistry Part_I\\1 Source Files\\2 Chapters\\Unit_3\\Unit 3.pmd",
+        "preview": "Chemistry, by its very nature, is concerned with change.\nSubstances with well defined properties are converted\nby chemical reactions into other substances with\ndifferent properties. For any chemical reaction, chemists\ntry to find out\n(a) the feasibility of a chemical reaction which can be\npredicted by thermodynamics ( as you know that a\nreaction with DG < 0, at constant temperature and\npressure is"
+      },
+      {
+        "class_level": "12",
+        "subject_code": "CHEMISTRY",
+        "part_number": 1,
+        "filename_chapter": 4,
+        "kind": "CHAPTER",
+        "file_name": "lech104.pdf",
+        "relative_path": "Class 12/Chemistry 1/lech1dd/lech104.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 1\\lech1dd\\lech104.pdf",
+        "checksum_sha256": "4f33bf2825d1d693b78ae52c13002f45bce3881a3934790eaf34133b6ccb8972",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 4,
+        "chapter_title": "The d - and f",
+        "pdf_title": "Chapter 4: The d - and f",
+        "rationalised": true,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Rationalised; Reprint 2026-27; 2026-27 family",
+        "page_count": 29,
+        "meta_title": "D:\\TEXTBOOKS\\RATIONALISED 20222-23\\Neha\\12085 — Chemistry Part_I\\1 Source Files\\2 Chapters\\Unit_4\\Unit_4.pmd",
+        "preview": "The d-block of the periodic table contains the elements\nof the groups 3-12 in which the d orbitals are\nprogressively filled in each of the four long periods.\nThe f-block consists of elements in which 4 f and 5 f\norbitals are progressively filled. They are placed in a\nseparate panel at the bottom of the periodic table. The\nnames transition metals and inner transition metals\nare often used to refer "
+      },
+      {
+        "class_level": "12",
+        "subject_code": "CHEMISTRY",
+        "part_number": 1,
+        "filename_chapter": 5,
+        "kind": "CHAPTER",
+        "file_name": "lech105.pdf",
+        "relative_path": "Class 12/Chemistry 1/lech1dd/lech105.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 1\\lech1dd\\lech105.pdf",
+        "checksum_sha256": "9cca0d995461bb4ba9e02dd4c40b9c3ba40fccfdc132f4a8a0959a82cea209b3",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 5,
+        "chapter_title": "Coordination",
+        "pdf_title": "Chapter 5: Coordination",
+        "rationalised": true,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Rationalised; Reprint 2026-27; 2026-27 family",
+        "page_count": 23,
+        "meta_title": "D:\\TEXTBOOKS\\RATIONALISED 20222-23\\Neha\\12085 — Chemistry Part_I\\1 Source Files\\2 Chapters\\Unit_5\\Unit -5.pmd",
+        "preview": "118\nChemistry\nIn the previous Unit we learnt that the transition metals\nform a large number of complex compounds in which\nthe metal atoms are bound to a number of anions or\nneutral molecules by sharing of electrons. In modern\nterminology such compounds are called coordination\ncompounds. The chemistry of coordination compounds\nis an important and challenging area of modern\ninorganic chemistry. New "
+      },
+      {
+        "class_level": "12",
+        "subject_code": "CHEMISTRY",
+        "part_number": 1,
+        "filename_chapter": null,
+        "kind": "SUPPLEMENTAL",
+        "file_name": "lech1a1.pdf",
+        "relative_path": "Class 12/Chemistry 1/lech1dd/lech1a1.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 1\\lech1dd\\lech1a1.pdf",
+        "checksum_sha256": "f6c8d6469430c6634d63c99bcd9a64375a1dbf4f468cc569f5d96ebf556ba8d4",
+        "readable": true,
+        "source_status": "supplemental",
+        "chapter_title": null,
+        "pdf_title": null,
+        "book_chapter_number": null,
+        "rationalised": null,
+        "reprint": null,
+        "version_label": null
+      },
+      {
+        "class_level": "12",
+        "subject_code": "CHEMISTRY",
+        "part_number": 1,
+        "filename_chapter": null,
+        "kind": "SUPPLEMENTAL",
+        "file_name": "lech1an.pdf",
+        "relative_path": "Class 12/Chemistry 1/lech1dd/lech1an.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 1\\lech1dd\\lech1an.pdf",
+        "checksum_sha256": "b3c1e256b4fca5e45f13b2dca59fd80e0ee4ffd85e4645d01e13a76f66b388ae",
+        "readable": true,
+        "source_status": "supplemental",
+        "chapter_title": null,
+        "pdf_title": null,
+        "book_chapter_number": null,
+        "rationalised": null,
+        "reprint": null,
+        "version_label": null
+      },
+      {
+        "class_level": "12",
+        "subject_code": "CHEMISTRY",
+        "part_number": 1,
+        "filename_chapter": null,
+        "kind": "SUPPLEMENTAL",
+        "file_name": "lech1ps.pdf",
+        "relative_path": "Class 12/Chemistry 1/lech1dd/lech1ps.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 1\\lech1dd\\lech1ps.pdf",
+        "checksum_sha256": "4ee7d6795559fc185f092a5f39431420d4f45aacddbe95dfa84d79056750b3d5",
+        "readable": true,
+        "source_status": "supplemental",
+        "chapter_title": null,
+        "pdf_title": null,
+        "book_chapter_number": null,
+        "rationalised": null,
+        "reprint": null,
+        "version_label": null
+      },
+      {
+        "class_level": "12",
+        "subject_code": "CHEMISTRY",
+        "part_number": 2,
+        "filename_chapter": 1,
+        "kind": "CHAPTER",
+        "file_name": "lech201.pdf",
+        "relative_path": "Class 12/Chemistry 2/lech2dd/lech201.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 2\\lech2dd\\lech201.pdf",
+        "checksum_sha256": "faca920f61f7ac668957201f3a8093d204f6364949f4e1ad733af6b01cc4cb17",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 6,
+        "chapter_title": "Haloalkanes and",
+        "pdf_title": "Chapter 6: Haloalkanes and",
+        "rationalised": true,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Rationalised; Reprint 2026-27; 2026-27 family",
+        "page_count": 34,
+        "meta_title": "D:\\TEXTBOOKS\\RATIONALISED 20222-23\\Neha\\12086 — Chemistry Part_II\\1 Source Files\\12086 — Chemistry Part_II\\Unit_6\\Unit_6.pmd",
+        "preview": "The replacement of hydrogen atom(s) in an aliphatic\nor aromatic hydrocarbon by halogen atom(s) results\nin the formation of alkyl halide (haloalkane) and aryl\nhalide (haloarene), respectively. Haloalkanes contain\nhalogen atom(s) attached to the sp3 hybridised carbon\natom of an alkyl group whereas haloarenes contain\nhalogen atom(s) attached to sp2 hybridised carbon\natom(s) of an aryl group. Many hal"
+      },
+      {
+        "class_level": "12",
+        "subject_code": "CHEMISTRY",
+        "part_number": 2,
+        "filename_chapter": 2,
+        "kind": "CHAPTER",
+        "file_name": "lech202.pdf",
+        "relative_path": "Class 12/Chemistry 2/lech2dd/lech202.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 2\\lech2dd\\lech202.pdf",
+        "checksum_sha256": "e7aedb4059f435db596bd76015684fa1186be8d6bee4ee4a6c3f2e81f58585be",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 7,
+        "chapter_title": "Alcohols,,,,, Phenols",
+        "pdf_title": "Chapter 7: Alcohols,,,,, Phenols",
+        "rationalised": true,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Rationalised; Reprint 2026-27; 2026-27 family",
+        "page_count": 34,
+        "meta_title": "D:\\TEXTBOOKS\\RATIONALISED 20222-23\\Neha\\12086 — Chemistry Part_II\\1 Source Files\\12086 — Chemistry Part_II\\Unit_7\\Unit_7.pmd",
+        "preview": "After studying this Unit, you will be\nable to\n•\nname \nalcohols, \nphenols \nand\nethers according to the IUPAC\nsystem of nomenclature;\n•\ndiscuss the reactions involved in\nthe preparation of alcohols from\nalkenes, aldehydes, ketones and\ncarboxylic acids;\n•\ndiscuss the reactions involved in\nthe preparation of phenols from\nhaloarenes, benzene sulphonic\nacids, \ndiazonium \nsalts \nand\ncumene;\n•\ndiscuss \nth"
+      },
+      {
+        "class_level": "12",
+        "subject_code": "CHEMISTRY",
+        "part_number": 2,
+        "filename_chapter": 3,
+        "kind": "CHAPTER",
+        "file_name": "lech203.pdf",
+        "relative_path": "Class 12/Chemistry 2/lech2dd/lech203.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 2\\lech2dd\\lech203.pdf",
+        "checksum_sha256": "23067221e09a8a61873f3a3a587a2ecb15d3104aeea00914dbc15111e772154e",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 8,
+        "chapter_title": "Aldehydes,,,,, KKKKKeeeeetones",
+        "pdf_title": "Chapter 8: Aldehydes,,,,, KKKKKeeeeetones",
+        "rationalised": true,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Rationalised; Reprint 2026-27; 2026-27 family",
+        "page_count": 32,
+        "meta_title": "D:\\TEXTBOOKS\\RATIONALISED 20222-23\\Neha\\12086 — Chemistry Part_II\\1 Source Files\\12086 — Chemistry Part_II\\Unit_8\\Unit_8.pmd",
+        "preview": "After studying this Unit, you will be\nable to\n•\nwrite the common  and IUPAC\nnames of aldehydes, ketones and\ncarboxylic acids;\n•\nwrite \nthe \nstructures \nof \nthe\ncompounds containing functional\ngroups namely carbonyl and\ncarboxyl groups;\n•\ndescribe the important methods\nof preparation and reactions of\nthese classes of compounds;\n•\ncorrelate physical properties and\nchemical reactions of aldehydes,\nke"
+      },
+      {
+        "class_level": "12",
+        "subject_code": "CHEMISTRY",
+        "part_number": 2,
+        "filename_chapter": 4,
+        "kind": "CHAPTER",
+        "file_name": "lech204.pdf",
+        "relative_path": "Class 12/Chemistry 2/lech2dd/lech204.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 2\\lech2dd\\lech204.pdf",
+        "checksum_sha256": "a267ffea998fb68174c2abc87f79a71e646e93460efa73bbe15796a995cea29a",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 9,
+        "chapter_title": "mines 9",
+        "pdf_title": "Chapter 9: mines 9",
+        "rationalised": true,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Rationalised; Reprint 2026-27; 2026-27 family",
+        "page_count": 22,
+        "meta_title": "D:\\TEXTBOOKS\\RATIONALISED 20222-23\\Neha\\12086 — Chemistry Part_II\\1 Source Files\\12086 — Chemistry Part_II\\Unit_9\\unit_9.pmd",
+        "preview": "Amines constitute an important class of organic\ncompounds derived by replacing one or more hydrogen\natoms of ammonia molecule by alkyl/aryl group(s). In\nnature, they occur among proteins, vitamins, alkaloids\nand hormones. Synthetic examples include polymers,\ndye stuffs and drugs. Two biologically active\ncompounds, namely adrenaline and ephedrine, both\ncontaining secondary amino group, are used to "
+      },
+      {
+        "class_level": "12",
+        "subject_code": "CHEMISTRY",
+        "part_number": 2,
+        "filename_chapter": 5,
+        "kind": "CHAPTER",
+        "file_name": "lech205.pdf",
+        "relative_path": "Class 12/Chemistry 2/lech2dd/lech205.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 2\\lech2dd\\lech205.pdf",
+        "checksum_sha256": "a6e215335dff95dfc4023bfbf1a994cbca7b35890ab75952a6cc1c390ba9c072",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 10,
+        "chapter_title": "Biomolecules",
+        "pdf_title": "Chapter 10: Biomolecules",
+        "rationalised": true,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Rationalised; Reprint 2026-27; 2026-27 family",
+        "page_count": 22,
+        "meta_title": "D:\\TEXTBOOKS\\RATIONALISED 20222-23\\Neha\\12086 — Chemistry Part_II\\1 Source Files\\12086 — Chemistry Part_II\\Unit_10\\Unit_10.pmd",
+        "preview": "A living system grows, sustains and reproduces itself.\nThe most amazing thing about a living system is that it\nis composed of non-living atoms and molecules. The\npursuit of knowledge of what goes on chemically within\na living system falls in the domain of biochemistry. Living\nsystems are made up of various complex biomolecules\nlike carbohydrates, proteins, nucleic acids, lipids, etc.\nProteins and "
+      },
+      {
+        "class_level": "12",
+        "subject_code": "CHEMISTRY",
+        "part_number": 2,
+        "filename_chapter": null,
+        "kind": "SUPPLEMENTAL",
+        "file_name": "lech2an.pdf",
+        "relative_path": "Class 12/Chemistry 2/lech2dd/lech2an.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 2\\lech2dd\\lech2an.pdf",
+        "checksum_sha256": "e6bc2fc93811b71b60ef94f3e7ef17170cd03186f257b992b0211d0529ef9ec3",
+        "readable": true,
+        "source_status": "supplemental",
+        "chapter_title": null,
+        "pdf_title": null,
+        "book_chapter_number": null,
+        "rationalised": null,
+        "reprint": null,
+        "version_label": null
+      },
+      {
+        "class_level": "12",
+        "subject_code": "CHEMISTRY",
+        "part_number": 2,
+        "filename_chapter": null,
+        "kind": "SUPPLEMENTAL",
+        "file_name": "lech2ps.pdf",
+        "relative_path": "Class 12/Chemistry 2/lech2dd/lech2ps.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Chemistry 2\\lech2dd\\lech2ps.pdf",
+        "checksum_sha256": "cced7943f47e78ef4abe798243021a46a02c39a5eff719b534cd153377fd9e58",
+        "readable": true,
+        "source_status": "supplemental",
+        "chapter_title": null,
+        "pdf_title": null,
+        "book_chapter_number": null,
+        "rationalised": null,
+        "reprint": null,
+        "version_label": null
+      }
+    ],
+    "Class 12/PHYSICS": [
+      {
+        "class_level": "12",
+        "subject_code": "PHYSICS",
+        "part_number": 1,
+        "filename_chapter": 1,
+        "kind": "CHAPTER",
+        "file_name": "leph101.pdf",
+        "relative_path": "Class 12/Physics/leph1dd/leph101.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Physics\\leph1dd\\leph101.pdf",
+        "checksum_sha256": "ebfbdf8057d7e855385b1720c1771a89d807cb45f5f3b7b79d530f1e8880209f",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 1,
+        "chapter_title": "Electric Charges",
+        "pdf_title": "Chapter 1: Electric Charges",
+        "rationalised": true,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Rationalised; Reprint 2026-27; 2026-27 family",
+        "page_count": 44,
+        "meta_title": "D:\\TEXTBOOKS\\RATIONALISED 20222-23\\Neha\\12089 — Physics Part-I\\1 Source Files\\Chapter-1\\Chapter-1.pmd",
+        "preview": "Chapter One\nELECTRIC CHARGES\nAND FIELDS\n1.1  INTRODUCTION\nAll of us have the experience of seeing a spark or hearing a crackle when\nwe take off our synthetic clothes or sweater, particularly in dry weather.\nHave you ever tried to find any explanation for this phenomenon? Another\ncommon example of electric discharge is the lightning that we see in the\nsky during thunderstorms. We also experience a "
+      },
+      {
+        "class_level": "12",
+        "subject_code": "PHYSICS",
+        "part_number": 1,
+        "filename_chapter": 2,
+        "kind": "CHAPTER",
+        "file_name": "leph102.pdf",
+        "relative_path": "Class 12/Physics/leph1dd/leph102.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Physics\\leph1dd\\leph102.pdf",
+        "checksum_sha256": "d69c4f007bde6809f6d9cd401ec8d7ccd3d775070408ccc5b4c37c444c8faf24",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 2,
+        "chapter_title": "Electrostatic",
+        "pdf_title": "Chapter 2: Electrostatic",
+        "rationalised": true,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Rationalised; Reprint 2026-27; 2026-27 family",
+        "page_count": 36,
+        "meta_title": "D:\\TEXTBOOKS\\RATIONALISED 20222-23\\Neha\\12089 — Physics Part-1\\1 Source Files\\Chapter-2\\Chapter-2.pmd",
+        "preview": "2.1  I\n2.1  I\n2.1  I\n2.1  I\n2.1  INTRODUCTION\nNTRODUCTION\nNTRODUCTION\nNTRODUCTION\nNTRODUCTION\nIn Chapters 5 and 7 (Class XI), the notion of potential energy was\nintroduced. When an external force does work in taking a body from a\npoint to another against a force like spring force or gravitational force,\nthat work gets stored as potential energy of the body. When the external\nforce is removed, the "
+      },
+      {
+        "class_level": "12",
+        "subject_code": "PHYSICS",
+        "part_number": 1,
+        "filename_chapter": 3,
+        "kind": "CHAPTER",
+        "file_name": "leph103.pdf",
+        "relative_path": "Class 12/Physics/leph1dd/leph103.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Physics\\leph1dd\\leph103.pdf",
+        "checksum_sha256": "a00ff04c376523c1e368ee80ef8338b615afceade4f5b293d5bb5849bb3cd894",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 3,
+        "chapter_title": "Current",
+        "pdf_title": "Chapter 3: Current",
+        "rationalised": true,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Rationalised; Reprint 2026-27; 2026-27 family",
+        "page_count": 26,
+        "meta_title": "D:\\TEXTBOOKS\\RATIONALISED 20222-23\\Neha\\12089 — Physics Part-1\\1 Source Files\\Chapter-3\\Chapter-3.pmd",
+        "preview": "3.1  INTRODUCTION\nIn Chapter 1, all charges whether free or bound, were considered to be at\nrest. Charges in motion constitute an electric current. Such currents occur\nnaturally in many situations. Lightning is one such phenomenon in\nwhich charges flow from the clouds to the earth through the atmosphere,\nsometimes with disastrous results. The flow of charges in lightning is not\nsteady, but in our "
+      },
+      {
+        "class_level": "12",
+        "subject_code": "PHYSICS",
+        "part_number": 1,
+        "filename_chapter": 4,
+        "kind": "CHAPTER",
+        "file_name": "leph104.pdf",
+        "relative_path": "Class 12/Physics/leph1dd/leph104.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Physics\\leph1dd\\leph104.pdf",
+        "checksum_sha256": "9bea19084fa95e103eb4b22a7c008248395c022e7adae04fe11a9228067b6746",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 4,
+        "chapter_title": "Moving Charges",
+        "pdf_title": "Chapter 4: Moving Charges",
+        "rationalised": true,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Rationalised; Reprint 2026-27; 2026-27 family",
+        "page_count": 29,
+        "meta_title": "D:\\TEXTBOOKS\\RATIONALISED 20222-23\\Neha\\12089 — Physics Part-1\\1 Source Files\\Chapter-4\\Chapter 4.pmd",
+        "preview": "4.1  INTRODUCTION\nBoth Electricity and Magnetism have been known for more than 2000\nyears. However, it was only about 200 years ago, in 1820, that it was\nrealised that they were intimately related. During a lecture demonstration\nin the summer of 1820, Danish physicist Hans Christian Oersted noticed\nthat a current in a straight wire caused a noticeable deflection in a nearby\nmagnetic compass needle"
+      },
+      {
+        "class_level": "12",
+        "subject_code": "PHYSICS",
+        "part_number": 1,
+        "filename_chapter": 5,
+        "kind": "CHAPTER",
+        "file_name": "leph105.pdf",
+        "relative_path": "Class 12/Physics/leph1dd/leph105.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Physics\\leph1dd\\leph105.pdf",
+        "checksum_sha256": "7ec2926362f9193efdb93c6e2e7b3cdc0909eeed29626c00f5afdcda84b6af80",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 5,
+        "chapter_title": "Magnetism And",
+        "pdf_title": "Chapter 5: Magnetism And",
+        "rationalised": true,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Rationalised; Reprint 2026-27; 2026-27 family",
+        "page_count": 18,
+        "meta_title": "D:\\TEXTBOOKS\\RATIONALISED 20222-23\\Neha\\12089 — Physics Part-1\\1 Source Files\\Chapter-5\\Chapter 5.pmd",
+        "preview": "Physics\n136\n5.1  INTRODUCTION\nMagnetic phenomena are universal in nature. Vast, distant galaxies, the\ntiny invisible atoms, humans and beasts all are permeated through and\nthrough with a host of magnetic fields from a variety of sources. The earth’s\nmagnetism predates human evolution. The word magnet is derived from\nthe name of an island in Greece called magnesia where magnetic ore\ndeposits were f"
+      },
+      {
+        "class_level": "12",
+        "subject_code": "PHYSICS",
+        "part_number": 1,
+        "filename_chapter": 6,
+        "kind": "CHAPTER",
+        "file_name": "leph106.pdf",
+        "relative_path": "Class 12/Physics/leph1dd/leph106.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Physics\\leph1dd\\leph106.pdf",
+        "checksum_sha256": "014dc9fb7804acee25838361b1a720e40e0c7ca0b0fb162adfc37706b9d1b932",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 6,
+        "chapter_title": "Electromagnetic",
+        "pdf_title": "Chapter 6: Electromagnetic",
+        "rationalised": true,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Rationalised; Reprint 2026-27; 2026-27 family",
+        "page_count": 23,
+        "meta_title": "D:\\TEXTBOOKS\\RATIONALISED 20222-23\\Neha\\12089 — Physics Part-1\\1 Source Files\\Chapter-6\\Chapter 6.pmd",
+        "preview": "Physics\n154\n6.1  INTRODUCTION\nElectricity and magnetism were considered separate and unrelated\nphenomena for a long time. In the early decades of the nineteenth century,\nexperiments on electric current by Oersted, Ampere and a few others\nestablished the fact that electricity and magnetism are inter-related. They\nfound that moving electric charges produce magnetic fields. For example,\nan electric c"
+      },
+      {
+        "class_level": "12",
+        "subject_code": "PHYSICS",
+        "part_number": 1,
+        "filename_chapter": 7,
+        "kind": "CHAPTER",
+        "file_name": "leph107.pdf",
+        "relative_path": "Class 12/Physics/leph1dd/leph107.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Physics\\leph1dd\\leph107.pdf",
+        "checksum_sha256": "0d5759d1dda452a9a553e68756d31b5a4e5df7177f4d82d678cb0d32fe3b818f",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 7,
+        "chapter_title": "Alternating",
+        "pdf_title": "Chapter 7: Alternating",
+        "rationalised": true,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Rationalised; Reprint 2026-27; 2026-27 family",
+        "page_count": 24,
+        "meta_title": "D:\\TEXTBOOKS\\RATIONALISED 20222-23\\Neha\\12089 — Physics Part-1\\1 Source Files\\Chapter-7\\Chapter 7.pmd",
+        "preview": "7.1  INTRODUCTION\nWe have so far considered direct current (dc) sources and circuits with dc\nsources. These currents do not change direction with time. But voltages\nand currents that vary with time are very common. The electric mains\nsupply in our homes and offices is a voltage that varies like a sine function\nwith time. Such a voltage is called alternating voltage (ac voltage) and\nthe current dri"
+      },
+      {
+        "class_level": "12",
+        "subject_code": "PHYSICS",
+        "part_number": 1,
+        "filename_chapter": 8,
+        "kind": "CHAPTER",
+        "file_name": "leph108.pdf",
+        "relative_path": "Class 12/Physics/leph1dd/leph108.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Physics\\leph1dd\\leph108.pdf",
+        "checksum_sha256": "3aa3a0d342659b5ce090a76d3406d5a74eed7653f2e2ba3479f83b6008b7aea8",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 8,
+        "chapter_title": "Electromagnetic",
+        "pdf_title": "Chapter 8: Electromagnetic",
+        "rationalised": true,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Rationalised; Reprint 2026-27; 2026-27 family",
+        "page_count": 14,
+        "meta_title": "D:\\TEXTBOOKS\\RATIONALISED 20222-23\\Neha\\12089 — Physics Part-I\\1 Source Files\\Chapter-8\\Chapter 8.pmd",
+        "preview": "Chapter Eight\nELECTROMAGNETIC\nWAVES\n8.1  INTRODUCTION\nIn Chapter 4, we learnt that an electric current produces magnetic field\nand that two current-carrying wires exert a magnetic force on each other.\nFurther, in Chapter 6, we have seen that a magnetic field changing with\ntime gives rise to an electric field. Is the converse also true? Does an\nelectric field changing with time give rise to a magne"
+      },
+      {
+        "class_level": "12",
+        "subject_code": "PHYSICS",
+        "part_number": 1,
+        "filename_chapter": null,
+        "kind": "SUPPLEMENTAL",
+        "file_name": "leph1an.pdf",
+        "relative_path": "Class 12/Physics/leph1dd/leph1an.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Physics\\leph1dd\\leph1an.pdf",
+        "checksum_sha256": "e6ced92f5d012352642d42b7bf68a6104d91b9f7eee437e4b6d7251c42bf707c",
+        "readable": true,
+        "source_status": "supplemental",
+        "chapter_title": null,
+        "pdf_title": null,
+        "book_chapter_number": null,
+        "rationalised": null,
+        "reprint": null,
+        "version_label": null
+      },
+      {
+        "class_level": "12",
+        "subject_code": "PHYSICS",
+        "part_number": 1,
+        "filename_chapter": null,
+        "kind": "SUPPLEMENTAL",
+        "file_name": "leph1ps.pdf",
+        "relative_path": "Class 12/Physics/leph1dd/leph1ps.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Physics\\leph1dd\\leph1ps.pdf",
+        "checksum_sha256": "66bceeb91660d27a8c280dd7087daa874ffe2745b2905ee517ac6cbc67d5273b",
+        "readable": true,
+        "source_status": "supplemental",
+        "chapter_title": null,
+        "pdf_title": null,
+        "book_chapter_number": null,
+        "rationalised": null,
+        "reprint": null,
+        "version_label": null
+      },
+      {
+        "class_level": "12",
+        "subject_code": "PHYSICS",
+        "part_number": 2,
+        "filename_chapter": 1,
+        "kind": "CHAPTER",
+        "file_name": "leph201.pdf",
+        "relative_path": "Class 12/Physics/leph2dd/leph201.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Physics\\leph2dd\\leph201.pdf",
+        "checksum_sha256": "5c9570cc9f45cbe8f8d62100ccecd3370f8d8085f57041764bd1940bf467d235",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 9,
+        "chapter_title": "Ray Optics",
+        "pdf_title": "Chapter 9: Ray Optics",
+        "rationalised": true,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Rationalised; Reprint 2026-27; 2026-27 family",
+        "page_count": 34,
+        "meta_title": "D:\\TEXTBOOKS\\RATIONALISED 20222-23\\Neha\\12090 — Physics Part-II\\1 Source Files\\Chapter-9\\Chapter-9.pmd",
+        "preview": "Chapter Nine\nRAY OPTICS\nAND OPTICAL\nINSTRUMENTS\n9.1  INTRODUCTION\nNature has endowed the human eye (retina) with the sensitivity to detect\nelectromagnetic waves within a small range of the electromagnetic\nspectrum. Electromagnetic radiation belonging to this region of the\nspectrum (wavelength of about 400 nm to 750 nm) is called light. It is\nmainly through light and the sense of vision that we kno"
+      },
+      {
+        "class_level": "12",
+        "subject_code": "PHYSICS",
+        "part_number": 2,
+        "filename_chapter": 2,
+        "kind": "CHAPTER",
+        "file_name": "leph202.pdf",
+        "relative_path": "Class 12/Physics/leph2dd/leph202.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Physics\\leph2dd\\leph202.pdf",
+        "checksum_sha256": "315c746f4733971ab171e0cb145810ef8b5648c2604745a4fb57769f2714c91e",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 10,
+        "chapter_title": "Wave Optics",
+        "pdf_title": "Chapter 10: Wave Optics",
+        "rationalised": true,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Rationalised; Reprint 2026-27; 2026-27 family",
+        "page_count": 19,
+        "meta_title": "D:\\TEXTBOOKS\\RATIONALISED 20222-23\\Neha\\12090 — Physics Part-II\\1 Source Files\\Chapter-10\\Chapter-10.pmd",
+        "preview": "255\nWave Optics\nChapter Ten\nWAVE OPTICS\n10.1  INTRODUCTION\nIn 1637 Descartes gave the corpuscular model of light and derived Snell’s\nlaw. It explained the laws of reflection and refraction of light at an interface.\nThe corpuscular model predicted that if the ray of light (on refraction)\nbends towards the normal then the speed of light would be greater in the\nsecond medium. This corpuscular model o"
+      },
+      {
+        "class_level": "12",
+        "subject_code": "PHYSICS",
+        "part_number": 2,
+        "filename_chapter": 3,
+        "kind": "CHAPTER",
+        "file_name": "leph203.pdf",
+        "relative_path": "Class 12/Physics/leph2dd/leph203.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Physics\\leph2dd\\leph203.pdf",
+        "checksum_sha256": "8b465f3a3fddc009ec98b9065014231740bd2f1c29aba6c142ceabfbb73bf764",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 11,
+        "chapter_title": "Dual Nature Of",
+        "pdf_title": "Chapter 11: Dual Nature Of",
+        "rationalised": true,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Rationalised; Reprint 2026-27; 2026-27 family",
+        "page_count": 16,
+        "meta_title": "D:\\TEXTBOOKS\\RATIONALISED 20222-23\\Neha\\12090 — Physics Part-II\\1 Source Files\\Chapter-11\\Chapter 11.pmd",
+        "preview": "Physics\n274\n11.1  INTRODUCTION\nThe Maxwell’s equations of electromagnetism and Hertz experiments on\nthe generation and detection of electromagnetic waves in 1887 strongly\nestablished the wave nature of light. Towards the same period at the end\nof 19th century, experimental investigations on conduction of electricity\n(electric discharge) through gases at low pressure in a discharge tube led\nto many"
+      },
+      {
+        "class_level": "12",
+        "subject_code": "PHYSICS",
+        "part_number": 2,
+        "filename_chapter": 4,
+        "kind": "CHAPTER",
+        "file_name": "leph204.pdf",
+        "relative_path": "Class 12/Physics/leph2dd/leph204.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Physics\\leph2dd\\leph204.pdf",
+        "checksum_sha256": "6ddc6d11f464a9370911bdf349b46c9ba422d0f3d73ec69392d4b538e59dc31b",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 12,
+        "chapter_title": "Atoms",
+        "pdf_title": "Chapter 12: Atoms",
+        "rationalised": true,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Rationalised; Reprint 2026-27; 2026-27 family",
+        "page_count": 16,
+        "meta_title": "D:\\TEXTBOOKS\\RATIONALISED 20222-23\\Neha\\12090 — Physics Part-II\\1 Source Files\\Chapter-12\\Chapter 12.pmd",
+        "preview": "Physics\n290\n12.1  INTRODUCTION\nBy the nineteenth century, enough evidence had accumulated in favour of\natomic hypothesis of matter. In 1897, the experiments on electric discharge\nthrough gases carried out by the English physicist J. J. Thomson (1856 –\n1940) revealed that atoms of different elements contain negatively charged\nconstituents (electrons) that are identical for all atoms. However, atoms"
+      },
+      {
+        "class_level": "12",
+        "subject_code": "PHYSICS",
+        "part_number": 2,
+        "filename_chapter": 5,
+        "kind": "CHAPTER",
+        "file_name": "leph205.pdf",
+        "relative_path": "Class 12/Physics/leph2dd/leph205.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Physics\\leph2dd\\leph205.pdf",
+        "checksum_sha256": "1f58e53087014ecb2da30275d3b240458e94c2a5d92a6910b64632261dad28b9",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 13,
+        "chapter_title": "Nuclei",
+        "pdf_title": "Chapter 13: Nuclei",
+        "rationalised": true,
+        "reprint": "Reprint 2026-27",
+        "version_label": "Rationalised; Reprint 2026-27; 2026-27 family",
+        "page_count": 17,
+        "meta_title": "D:\\TEXTBOOKS\\RATIONALISED 20222-23\\Neha\\12090 — Physics Part-II\\1 Source Files\\Chapter-13\\Chapter 13.pmd",
+        "preview": "Physics\n306\n13.1  INTRODUCTION\nIn the previous chapter, we have learnt that in every atom, the positive\ncharge and mass are densely concentrated at the centre of the atom\nforming its nucleus. The overall dimensions of a nucleus are much smaller\nthan those of an atom. Experiments on scattering of a-particles\ndemonstrated that the radius of a nucleus was smaller than the radius\nof an atom by a facto"
+      },
+      {
+        "class_level": "12",
+        "subject_code": "PHYSICS",
+        "part_number": 2,
+        "filename_chapter": 6,
+        "kind": "CHAPTER",
+        "file_name": "leph206.pdf",
+        "relative_path": "Class 12/Physics/leph2dd/leph206.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Physics\\leph2dd\\leph206.pdf",
+        "checksum_sha256": "a7e5dc3f4128097d6200a34fa6ad43260178db4d614eced95881f220cd8f7250",
+        "readable": true,
+        "source_status": "ok",
+        "book_chapter_number": 14,
+        "chapter_title": "Semiconductor",
+        "pdf_title": "Chapter 14: Semiconductor",
+        "rationalised": true,
+        "reprint": "Reprint 2025-26",
+        "version_label": "Rationalised; Reprint 2025-26",
+        "page_count": 21,
+        "meta_title": "D:\\TEXTBOOKS\\RATIONALISED 20222-23\\Neha\\12090 — Physics Part-II\\1 Source Files\\Chapter-14\\Chapter 14.pmd",
+        "preview": "14.1  INTRODUCTION\nDevices in which a controlled flow of electrons can be obtained are the\nbasic building blocks of all the electronic circuits. Before the discovery of\ntransistor in 1948, such devices were mostly vacuum tubes (also called\nvalves) like the vacuum diode which has two electrodes, viz., anode (often\ncalled plate) and cathode; triode which has three electrodes – cathode,\nplate and gri"
+      },
+      {
+        "class_level": "12",
+        "subject_code": "PHYSICS",
+        "part_number": 2,
+        "filename_chapter": null,
+        "kind": "SUPPLEMENTAL",
+        "file_name": "leph2an.pdf",
+        "relative_path": "Class 12/Physics/leph2dd/leph2an.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Physics\\leph2dd\\leph2an.pdf",
+        "checksum_sha256": "008ef2d5611383457689d9dcab545d35d2b3cfad73a783c9e2f257df18b5f804",
+        "readable": true,
+        "source_status": "supplemental",
+        "chapter_title": null,
+        "pdf_title": null,
+        "book_chapter_number": null,
+        "rationalised": null,
+        "reprint": null,
+        "version_label": null
+      },
+      {
+        "class_level": "12",
+        "subject_code": "PHYSICS",
+        "part_number": 2,
+        "filename_chapter": null,
+        "kind": "SUPPLEMENTAL",
+        "file_name": "leph2ps.pdf",
+        "relative_path": "Class 12/Physics/leph2dd/leph2ps.pdf",
+        "resolved_path": "D:\\ravishori\\AI Neet Exam App\\NCERT Books\\Class 12\\Physics\\leph2dd\\leph2ps.pdf",
+        "checksum_sha256": "ec55ddcdc76286a233424784c52294f4352ff41a1e34846f6b8182c0145ff247",
+        "readable": true,
+        "source_status": "supplemental",
+        "chapter_title": null,
+        "pdf_title": null,
+        "book_chapter_number": null,
+        "rationalised": null,
+        "reprint": null,
+        "version_label": null
+      }
+    ]
+  },
+  "comparison": {
+    "matched_count": 25,
+    "ncert_missing_in_db_count": 54,
+    "db_absent_from_ncert_count": 13,
+    "ncert_missing_in_db": [
+      {
+        "class": "11",
+        "subject": "BIOLOGY",
+        "part": 1,
+        "book_ch": 1,
+        "title": "U Nit 1",
+        "path": "Class 11/Biology/kebo1dd/kebo101.pdf"
+      },
+      {
+        "class": "11",
+        "subject": "BIOLOGY",
+        "part": 1,
+        "book_ch": 2,
+        "title": "B Iological C Lassification",
+        "path": "Class 11/Biology/kebo1dd/kebo102.pdf"
+      },
+      {
+        "class": "11",
+        "subject": "BIOLOGY",
+        "part": 1,
+        "book_ch": 3,
+        "title": "P Lant K Ingdom",
+        "path": "Class 11/Biology/kebo1dd/kebo103.pdf"
+      },
+      {
+        "class": "11",
+        "subject": "BIOLOGY",
+        "part": 1,
+        "book_ch": 2,
+        "title": "U Nit 2",
+        "path": "Class 11/Biology/kebo1dd/kebo105.pdf"
+      },
+      {
+        "class": "11",
+        "subject": "BIOLOGY",
+        "part": 1,
+        "book_ch": 6,
+        "title": "System",
+        "path": "Class 11/Biology/kebo1dd/kebo106.pdf"
+      },
+      {
+        "class": "11",
+        "subject": "BIOLOGY",
+        "part": 1,
+        "book_ch": 7,
+        "title": "Organ and Organ",
+        "path": "Class 11/Biology/kebo1dd/kebo107.pdf"
+      },
+      {
+        "class": "11",
+        "subject": "BIOLOGY",
+        "part": 1,
+        "book_ch": 3,
+        "title": "U Nit 3",
+        "path": "Class 11/Biology/kebo1dd/kebo108.pdf"
+      },
+      {
+        "class": "11",
+        "subject": "BIOLOGY",
+        "part": 1,
+        "book_ch": 9,
+        "title": "How to Analyse",
+        "path": "Class 11/Biology/kebo1dd/kebo109.pdf"
+      },
+      {
+        "class": "11",
+        "subject": "BIOLOGY",
+        "part": 1,
+        "book_ch": 10,
+        "title": "Mitosis",
+        "path": "Class 11/Biology/kebo1dd/kebo110.pdf"
+      },
+      {
+        "class": "11",
+        "subject": "BIOLOGY",
+        "part": 1,
+        "book_ch": 4,
+        "title": "U Nit 4",
+        "path": "Class 11/Biology/kebo1dd/kebo111.pdf"
+      },
+      {
+        "class": "11",
+        "subject": "BIOLOGY",
+        "part": 1,
+        "book_ch": 12,
+        "title": "Breathe?",
+        "path": "Class 11/Biology/kebo1dd/kebo112.pdf"
+      },
+      {
+        "class": "11",
+        "subject": "BIOLOGY",
+        "part": 1,
+        "book_ch": 13,
+        "title": "Dedifferentiation",
+        "path": "Class 11/Biology/kebo1dd/kebo113.pdf"
+      },
+      {
+        "class": "11",
+        "subject": "BIOLOGY",
+        "part": 1,
+        "book_ch": 5,
+        "title": "U Nit 5",
+        "path": "Class 11/Biology/kebo1dd/kebo114.pdf"
+      },
+      {
+        "class": "11",
+        "subject": "BIOLOGY",
+        "part": 1,
+        "book_ch": 16,
+        "title": "Excretory",
+        "path": "Class 11/Biology/kebo1dd/kebo116.pdf"
+      },
+      {
+        "class": "11",
+        "subject": "BIOLOGY",
+        "part": 1,
+        "book_ch": 17,
+        "title": "Movement",
+        "path": "Class 11/Biology/kebo1dd/kebo117.pdf"
+      },
+      {
+        "class": "11",
+        "subject": "BIOLOGY",
+        "part": 1,
+        "book_ch": 18,
+        "title": "System",
+        "path": "Class 11/Biology/kebo1dd/kebo118.pdf"
+      },
+      {
+        "class": "11",
+        "subject": "BIOLOGY",
+        "part": 1,
+        "book_ch": 19,
+        "title": "Glands and",
+        "path": "Class 11/Biology/kebo1dd/kebo119.pdf"
+      },
+      {
+        "class": "11",
+        "subject": "CHEMISTRY",
+        "part": 1,
+        "book_ch": 3,
+        "title": "Classification of Elements and",
+        "path": "Class 11/Chemistry/kech1dd/kech1dd/kech103.pdf"
+      },
+      {
+        "class": "11",
+        "subject": "CHEMISTRY",
+        "part": 2,
+        "book_ch": 9,
+        "title": "Hydrocarbons",
+        "path": "Class 11/Chemistry/kech2dd/kech203.pdf"
+      },
+      {
+        "class": "11",
+        "subject": "PHYSICS",
+        "part": 1,
+        "book_ch": 2,
+        "title": "Motion In A Straight Line",
+        "path": "Class 11/Physics/keph1dd/keph1dd/keph102.pdf"
+      },
+      {
+        "class": "11",
+        "subject": "PHYSICS",
+        "part": 1,
+        "book_ch": 3,
+        "title": "Motion In A Plane",
+        "path": "Class 11/Physics/keph1dd/keph1dd/keph103.pdf"
+      },
+      {
+        "class": "11",
+        "subject": "PHYSICS",
+        "part": 2,
+        "book_ch": 10,
+        "title": "Thermal Properties Of Matter",
+        "path": "Class 11/Physics/keph2dd/keph2dd/keph203.pdf"
+      },
+      {
+        "class": "11",
+        "subject": "PHYSICS",
+        "part": 2,
+        "book_ch": 13,
+        "title": "Oscillations",
+        "path": "Class 11/Physics/keph2dd/keph2dd/keph206.pdf"
+      },
+      {
+        "class": "11",
+        "subject": "PHYSICS",
+        "part": 2,
+        "book_ch": 14,
+        "title": "Waves",
+        "path": "Class 11/Physics/keph2dd/keph2dd/keph207.pdf"
+      },
+      {
+        "class": "12",
+        "subject": "BIOLOGY",
+        "part": 1,
+        "book_ch": 3,
+        "title": "Reproductive Health",
+        "path": "Class 12/Biology/lebo1dd/lebo103.pdf"
+      },
+      {
+        "class": "12",
+        "subject": "BIOLOGY",
+        "part": 1,
+        "book_ch": 4,
+        "title": "Principles of Inheritance",
+        "path": "Class 12/Biology/lebo1dd/lebo104.pdf"
+      },
+      {
+        "class": "12",
+        "subject": "BIOLOGY",
+        "part": 1,
+        "book_ch": 5,
+        "title": "Molecular Basis Of",
+        "path": "Class 12/Biology/lebo1dd/lebo105.pdf"
+      },
+      {
+        "class": "12",
+        "subject": "BIOLOGY",
+        "part": 1,
+        "book_ch": 6,
+        "title": "Evolution",
+        "path": "Class 12/Biology/lebo1dd/lebo106.pdf"
+      },
+      {
+        "class": "12",
+        "subject": "BIOLOGY",
+        "part": 1,
+        "book_ch": 7,
+        "title": "Human Health and Disease",
+        "path": "Class 12/Biology/lebo1dd/lebo107.pdf"
+      },
+      {
+        "class": "12",
+        "subject": "BIOLOGY",
+        "part": 1,
+        "book_ch": 8,
+        "title": "Microbes In Human Welfare",
+        "path": "Class 12/Biology/lebo1dd/lebo108.pdf"
+      },
+      {
+        "class": "12",
+        "subject": "BIOLOGY",
+        "part": 1,
+        "book_ch": 9,
+        "title": "Biotechnology : Principles and",
+        "path": "Class 12/Biology/lebo1dd/lebo109.pdf"
+      },
+      {
+        "class": "12",
+        "subject": "BIOLOGY",
+        "part": 1,
+        "book_ch": 10,
+        "title": "Biotechnology And Its",
+        "path": "Class 12/Biology/lebo1dd/lebo110.pdf"
+      },
+      {
+        "class": "12",
+        "subject": "BIOLOGY",
+        "part": 1,
+        "book_ch": 11,
+        "title": "Organisms and Populations",
+        "path": "Class 12/Biology/lebo1dd/lebo111.pdf"
+      },
+      {
+        "class": "12",
+        "subject": "BIOLOGY",
+        "part": 1,
+        "book_ch": 12,
+        "title": "Ecosystem",
+        "path": "Class 12/Biology/lebo1dd/lebo112.pdf"
+      },
+      {
+        "class": "12",
+        "subject": "BIOLOGY",
+        "part": 1,
+        "book_ch": 13,
+        "title": "Biodiversity And",
+        "path": "Class 12/Biology/lebo1dd/lebo113.pdf"
+      },
+      {
+        "class": "12",
+        "subject": "CHEMISTRY",
+        "part": 1,
+        "book_ch": 1,
+        "title": "Solutions",
+        "path": "Class 12/Chemistry 1/lech1dd/lech101.pdf"
+      },
+      {
+        "class": "12",
+        "subject": "CHEMISTRY",
+        "part": 1,
+        "book_ch": 3,
+        "title": "Chemical Kinetics",
+        "path": "Class 12/Chemistry 1/lech1dd/lech103.pdf"
+      },
+      {
+        "class": "12",
+        "subject": "CHEMISTRY",
+        "part": 1,
+        "book_ch": 4,
+        "title": "The d - and f",
+        "path": "Class 12/Chemistry 1/lech1dd/lech104.pdf"
+      },
+      {
+        "class": "12",
+        "subject": "CHEMISTRY",
+        "part": 1,
+        "book_ch": 5,
+        "title": "Coordination",
+        "path": "Class 12/Chemistry 1/lech1dd/lech105.pdf"
+      },
+      {
+        "class": "12",
+        "subject": "CHEMISTRY",
+        "part": 2,
+        "book_ch": 6,
+        "title": "Haloalkanes and",
+        "path": "Class 12/Chemistry 2/lech2dd/lech201.pdf"
+      },
+      {
+        "class": "12",
+        "subject": "CHEMISTRY",
+        "part": 2,
+        "book_ch": 7,
+        "title": "Alcohols,,,,, Phenols",
+        "path": "Class 12/Chemistry 2/lech2dd/lech202.pdf"
+      },
+      {
+        "class": "12",
+        "subject": "CHEMISTRY",
+        "part": 2,
+        "book_ch": 8,
+        "title": "Aldehydes,,,,, KKKKKeeeeetones",
+        "path": "Class 12/Chemistry 2/lech2dd/lech203.pdf"
+      },
+      {
+        "class": "12",
+        "subject": "CHEMISTRY",
+        "part": 2,
+        "book_ch": 9,
+        "title": "mines 9",
+        "path": "Class 12/Chemistry 2/lech2dd/lech204.pdf"
+      },
+      {
+        "class": "12",
+        "subject": "CHEMISTRY",
+        "part": 2,
+        "book_ch": 10,
+        "title": "Biomolecules",
+        "path": "Class 12/Chemistry 2/lech2dd/lech205.pdf"
+      },
+      {
+        "class": "12",
+        "subject": "PHYSICS",
+        "part": 1,
+        "book_ch": 1,
+        "title": "Electric Charges",
+        "path": "Class 12/Physics/leph1dd/leph101.pdf"
+      },
+      {
+        "class": "12",
+        "subject": "PHYSICS",
+        "part": 1,
+        "book_ch": 4,
+        "title": "Moving Charges",
+        "path": "Class 12/Physics/leph1dd/leph104.pdf"
+      },
+      {
+        "class": "12",
+        "subject": "PHYSICS",
+        "part": 1,
+        "book_ch": 5,
+        "title": "Magnetism And",
+        "path": "Class 12/Physics/leph1dd/leph105.pdf"
+      },
+      {
+        "class": "12",
+        "subject": "PHYSICS",
+        "part": 1,
+        "book_ch": 6,
+        "title": "Electromagnetic",
+        "path": "Class 12/Physics/leph1dd/leph106.pdf"
+      },
+      {
+        "class": "12",
+        "subject": "PHYSICS",
+        "part": 1,
+        "book_ch": 7,
+        "title": "Alternating",
+        "path": "Class 12/Physics/leph1dd/leph107.pdf"
+      },
+      {
+        "class": "12",
+        "subject": "PHYSICS",
+        "part": 1,
+        "book_ch": 8,
+        "title": "Electromagnetic",
+        "path": "Class 12/Physics/leph1dd/leph108.pdf"
+      },
+      {
+        "class": "12",
+        "subject": "PHYSICS",
+        "part": 2,
+        "book_ch": 11,
+        "title": "Dual Nature Of",
+        "path": "Class 12/Physics/leph2dd/leph203.pdf"
+      },
+      {
+        "class": "12",
+        "subject": "PHYSICS",
+        "part": 2,
+        "book_ch": 12,
+        "title": "Atoms",
+        "path": "Class 12/Physics/leph2dd/leph204.pdf"
+      },
+      {
+        "class": "12",
+        "subject": "PHYSICS",
+        "part": 2,
+        "book_ch": 13,
+        "title": "Nuclei",
+        "path": "Class 12/Physics/leph2dd/leph205.pdf"
+      },
+      {
+        "class": "12",
+        "subject": "PHYSICS",
+        "part": 2,
+        "book_ch": 14,
+        "title": "Semiconductor",
+        "path": "Class 12/Physics/leph2dd/leph206.pdf"
+      }
+    ],
+    "db_absent_from_ncert_corpus": [
+      {
+        "subject": "Botany",
+        "class_level": "11",
+        "code": "cell-unit-of-life",
+        "name": "Cell - The Unit of Life",
+        "topics": 3,
+        "concepts": 3,
+        "blueprints": 5,
+        "note": "DB chapter has no matched canonical NCERT chapter PDF title"
+      },
+      {
+        "subject": "Botany",
+        "class_level": "11",
+        "code": "morphology-flowering-plants",
+        "name": "Morphology of Flowering Plants",
+        "topics": 2,
+        "concepts": 2,
+        "blueprints": 2,
+        "note": "DB chapter has no matched canonical NCERT chapter PDF title"
+      },
+      {
+        "subject": "Botany",
+        "class_level": "11",
+        "code": "photosynthesis",
+        "name": "Photosynthesis in Higher Plants",
+        "topics": 3,
+        "concepts": 4,
+        "blueprints": 7,
+        "note": "DB chapter has no matched canonical NCERT chapter PDF title"
+      },
+      {
+        "subject": "Botany",
+        "class_level": "11",
+        "code": "plant-growth-development",
+        "name": "Plant Growth and Development",
+        "topics": 2,
+        "concepts": 2,
+        "blueprints": 2,
+        "note": "DB chapter has no matched canonical NCERT chapter PDF title"
+      },
+      {
+        "subject": "Botany",
+        "class_level": "11",
+        "code": "plant-kingdom",
+        "name": "Plant Kingdom",
+        "topics": 8,
+        "concepts": 22,
+        "blueprints": 2,
+        "note": "DB chapter has no matched canonical NCERT chapter PDF title"
+      },
+      {
+        "subject": "Botany",
+        "class_level": "11",
+        "code": "the-living-world",
+        "name": "The Living World",
+        "topics": 2,
+        "concepts": 9,
+        "blueprints": 2,
+        "note": "DB chapter has no matched canonical NCERT chapter PDF title"
+      },
+      {
+        "subject": "Physics",
+        "class_level": "11",
+        "code": "kinematics",
+        "name": "Kinematics",
+        "topics": 2,
+        "concepts": 6,
+        "blueprints": 6,
+        "note": "DB chapter has no matched canonical NCERT chapter PDF title"
+      },
+      {
+        "subject": "Physics",
+        "class_level": "11",
+        "code": "mechanical-properties-of-solids",
+        "name": "Mechanical Properties of Solids",
+        "topics": 2,
+        "concepts": 5,
+        "blueprints": 4,
+        "note": "DB chapter has no matched canonical NCERT chapter PDF title"
+      },
+      {
+        "subject": "Zoology",
+        "class_level": "11",
+        "code": "animal-kingdom",
+        "name": "Animal Kingdom",
+        "topics": 15,
+        "concepts": 32,
+        "blueprints": 4,
+        "note": "DB chapter has no matched canonical NCERT chapter PDF title"
+      },
+      {
+        "subject": "Zoology",
+        "class_level": "11",
+        "code": "breathing-exchange-of-gases",
+        "name": "Breathing and Exchange of Gases",
+        "topics": 3,
+        "concepts": 3,
+        "blueprints": 3,
+        "note": "DB chapter has no matched canonical NCERT chapter PDF title"
+      },
+      {
+        "subject": "Zoology",
+        "class_level": "11",
+        "code": "digestion-absorption",
+        "name": "Digestion and Absorption",
+        "topics": 0,
+        "concepts": 0,
+        "blueprints": 0,
+        "note": "DB chapter has no matched canonical NCERT chapter PDF title"
+      },
+      {
+        "subject": "Zoology",
+        "class_level": "11",
+        "code": "structural-organisation-animals",
+        "name": "Structural Organisation in Animals",
+        "topics": 2,
+        "concepts": 2,
+        "blueprints": 2,
+        "note": "DB chapter has no matched canonical NCERT chapter PDF title"
+      },
+      {
+        "subject": "Zoology",
+        "class_level": null,
+        "code": "biomolecules",
+        "name": "Biomolecules",
+        "topics": 3,
+        "concepts": 3,
+        "blueprints": 5,
+        "note": "DB chapter has no matched canonical NCERT chapter PDF title"
+      }
+    ],
+    "matched_sample": [
+      {
+        "ncert": {
+          "class": "11",
+          "subject": "BIOLOGY",
+          "part": 1,
+          "book_ch": 4,
+          "file_ch": 4,
+          "title": "Classification",
+          "path": "Class 11/Biology/kebo1dd/kebo104.pdf"
+        },
+        "db": {
+          "subject": "Botany",
+          "class_level": "11",
+          "code": "biological-classification",
+          "name": "Biological Classification",
+          "topics": 6,
+          "concepts": 9,
+          "blueprints": 0
+        },
+        "title_mismatch": true,
+        "class_mismatch": false
+      },
+      {
+        "ncert": {
+          "class": "11",
+          "subject": "BIOLOGY",
+          "part": 1,
+          "book_ch": 15,
+          "file_ch": 15,
+          "title": "Fluid)",
+          "path": "Class 11/Biology/kebo1dd/kebo115.pdf"
+        },
+        "db": {
+          "subject": "Zoology",
+          "class_level": "11",
+          "code": "body-fluids-circulation",
+          "name": "Body Fluids and Circulation",
+          "topics": 5,
+          "concepts": 5,
+          "blueprints": 7
+        },
+        "title_mismatch": true,
+        "class_mismatch": false
+      },
+      {
+        "ncert": {
+          "class": "11",
+          "subject": "CHEMISTRY",
+          "part": 1,
+          "book_ch": 1,
+          "file_ch": 1,
+          "title": "Some Basic Concepts Of Chemistry",
+          "path": "Class 11/Chemistry/kech1dd/kech1dd/kech101.pdf"
+        },
+        "db": {
+          "subject": "Chemistry",
+          "class_level": "11",
+          "code": "basic-concepts-chemistry",
+          "name": "Some Basic Concepts of Chemistry",
+          "topics": 5,
+          "concepts": 5,
+          "blueprints": 5
+        },
+        "title_mismatch": false,
+        "class_mismatch": false
+      },
+      {
+        "ncert": {
+          "class": "11",
+          "subject": "CHEMISTRY",
+          "part": 1,
+          "book_ch": 2,
+          "file_ch": 2,
+          "title": "structure of atom",
+          "path": "Class 11/Chemistry/kech1dd/kech1dd/kech102.pdf"
+        },
+        "db": {
+          "subject": "Chemistry",
+          "class_level": "11",
+          "code": "structure-of-atom",
+          "name": "Structure of Atom",
+          "topics": 5,
+          "concepts": 5,
+          "blueprints": 5
+        },
+        "title_mismatch": false,
+        "class_mismatch": false
+      },
+      {
+        "ncert": {
+          "class": "11",
+          "subject": "CHEMISTRY",
+          "part": 1,
+          "book_ch": 4,
+          "file_ch": 4,
+          "title": "Chemical Bonding And",
+          "path": "Class 11/Chemistry/kech1dd/kech1dd/kech104.pdf"
+        },
+        "db": {
+          "subject": "Chemistry",
+          "class_level": "11",
+          "code": "chemical-bonding",
+          "name": "Chemical Bonding and Molecular Structure",
+          "topics": 4,
+          "concepts": 4,
+          "blueprints": 10
+        },
+        "title_mismatch": true,
+        "class_mismatch": false
+      },
+      {
+        "ncert": {
+          "class": "11",
+          "subject": "CHEMISTRY",
+          "part": 1,
+          "book_ch": 5,
+          "file_ch": 5,
+          "title": "Thermodynamics",
+          "path": "Class 11/Chemistry/kech1dd/kech1dd/kech105.pdf"
+        },
+        "db": {
+          "subject": "Chemistry",
+          "class_level": "11",
+          "code": "thermodynamics-chemistry",
+          "name": "Thermodynamics",
+          "topics": 4,
+          "concepts": 4,
+          "blueprints": 4
+        },
+        "title_mismatch": false,
+        "class_mismatch": false
+      },
+      {
+        "ncert": {
+          "class": "11",
+          "subject": "CHEMISTRY",
+          "part": 1,
+          "book_ch": 6,
+          "file_ch": 6,
+          "title": "Equilibrium",
+          "path": "Class 11/Chemistry/kech1dd/kech1dd/kech106.pdf"
+        },
+        "db": {
+          "subject": "Chemistry",
+          "class_level": "11",
+          "code": "equilibrium",
+          "name": "Equilibrium",
+          "topics": 5,
+          "concepts": 5,
+          "blueprints": 9
+        },
+        "title_mismatch": false,
+        "class_mismatch": false
+      },
+      {
+        "ncert": {
+          "class": "11",
+          "subject": "CHEMISTRY",
+          "part": 2,
+          "book_ch": 7,
+          "file_ch": 1,
+          "title": "Redox Reactions",
+          "path": "Class 11/Chemistry/kech2dd/kech201.pdf"
+        },
+        "db": {
+          "subject": "Chemistry",
+          "class_level": "11",
+          "code": "redox-reactions",
+          "name": "Redox Reactions",
+          "topics": 4,
+          "concepts": 4,
+          "blueprints": 4
+        },
+        "title_mismatch": false,
+        "class_mismatch": false
+      },
+      {
+        "ncert": {
+          "class": "11",
+          "subject": "CHEMISTRY",
+          "part": 2,
+          "book_ch": 8,
+          "file_ch": 2,
+          "title": "Organic chemistry – sOme Basic",
+          "path": "Class 11/Chemistry/kech2dd/kech202.pdf"
+        },
+        "db": {
+          "subject": "Chemistry",
+          "class_level": "11",
+          "code": "organic-chemistry-basics",
+          "name": "Organic Chemistry - Basic Principles",
+          "topics": 4,
+          "concepts": 4,
+          "blueprints": 7
+        },
+        "title_mismatch": true,
+        "class_mismatch": false
+      },
+      {
+        "ncert": {
+          "class": "11",
+          "subject": "PHYSICS",
+          "part": 1,
+          "book_ch": 1,
+          "file_ch": 1,
+          "title": "Units And Measurement",
+          "path": "Class 11/Physics/keph1dd/keph1dd/keph101.pdf"
+        },
+        "db": {
+          "subject": "Physics",
+          "class_level": "11",
+          "code": "units-and-measurement",
+          "name": "Units and Measurement",
+          "topics": 3,
+          "concepts": 4,
+          "blueprints": 4
+        },
+        "title_mismatch": false,
+        "class_mismatch": false
+      },
+      {
+        "ncert": {
+          "class": "11",
+          "subject": "PHYSICS",
+          "part": 1,
+          "book_ch": 4,
+          "file_ch": 4,
+          "title": "Laws Of Motion",
+          "path": "Class 11/Physics/keph1dd/keph1dd/keph104.pdf"
+        },
+        "db": {
+          "subject": "Physics",
+          "class_level": "11",
+          "code": "laws-of-motion",
+          "name": "Laws of Motion",
+          "topics": 3,
+          "concepts": 4,
+          "blueprints": 4
+        },
+        "title_mismatch": false,
+        "class_mismatch": false
+      },
+      {
+        "ncert": {
+          "class": "11",
+          "subject": "PHYSICS",
+          "part": 1,
+          "book_ch": 5,
+          "file_ch": 5,
+          "title": "Work, Energy And Power",
+          "path": "Class 11/Physics/keph1dd/keph1dd/keph105.pdf"
+        },
+        "db": {
+          "subject": "Physics",
+          "class_level": "11",
+          "code": "work-energy-power",
+          "name": "Work, Energy and Power",
+          "topics": 3,
+          "concepts": 6,
+          "blueprints": 5
+        },
+        "title_mismatch": false,
+        "class_mismatch": false
+      },
+      {
+        "ncert": {
+          "class": "11",
+          "subject": "PHYSICS",
+          "part": 1,
+          "book_ch": 6,
+          "file_ch": 6,
+          "title": "Systems Of Particles And Rotational Motion",
+          "path": "Class 11/Physics/keph1dd/keph1dd/keph106.pdf"
+        },
+        "db": {
+          "subject": "Physics",
+          "class_level": "11",
+          "code": "systems-of-particles-rotational-motion",
+          "name": "Systems of Particles and Rotational Motion",
+          "topics": 3,
+          "concepts": 7,
+          "blueprints": 4
+        },
+        "title_mismatch": false,
+        "class_mismatch": false
+      },
+      {
+        "ncert": {
+          "class": "11",
+          "subject": "PHYSICS",
+          "part": 1,
+          "book_ch": 7,
+          "file_ch": 7,
+          "title": "Gravitation",
+          "path": "Class 11/Physics/keph1dd/keph1dd/keph107.pdf"
+        },
+        "db": {
+          "subject": "Physics",
+          "class_level": "11",
+          "code": "gravitation",
+          "name": "Gravitation",
+          "topics": 0,
+          "concepts": 0,
+          "blueprints": 0
+        },
+        "title_mismatch": false,
+        "class_mismatch": false
+      },
+      {
+        "ncert": {
+          "class": "11",
+          "subject": "PHYSICS",
+          "part": 2,
+          "book_ch": 8,
+          "file_ch": 1,
+          "title": "Mechanical Properties Of Solids",
+          "path": "Class 11/Physics/keph2dd/keph2dd/keph201.pdf"
+        },
+        "db": {
+          "subject": "Physics",
+          "class_level": "11",
+          "code": "mechanical-properties-of-fluids",
+          "name": "Mechanical Properties of Fluids",
+          "topics": 3,
+          "concepts": 5,
+          "blueprints": 4
+        },
+        "title_mismatch": true,
+        "class_mismatch": false
+      },
+      {
+        "ncert": {
+          "class": "11",
+          "subject": "PHYSICS",
+          "part": 2,
+          "book_ch": 9,
+          "file_ch": 2,
+          "title": "Mechanical Properties Of Fluids",
+          "path": "Class 11/Physics/keph2dd/keph2dd/keph202.pdf"
+        },
+        "db": {
+          "subject": "Physics",
+          "class_level": "11",
+          "code": "mechanical-properties-of-fluids",
+          "name": "Mechanical Properties of Fluids",
+          "topics": 3,
+          "concepts": 5,
+          "blueprints": 4
+        },
+        "title_mismatch": false,
+        "class_mismatch": false
+      },
+      {
+        "ncert": {
+          "class": "11",
+          "subject": "PHYSICS",
+          "part": 2,
+          "book_ch": 11,
+          "file_ch": 4,
+          "title": "Thermodynamics",
+          "path": "Class 11/Physics/keph2dd/keph2dd/keph204.pdf"
+        },
+        "db": {
+          "subject": "Physics",
+          "class_level": "11",
+          "code": "thermodynamics-physics",
+          "name": "Thermodynamics",
+          "topics": 3,
+          "concepts": 4,
+          "blueprints": 4
+        },
+        "title_mismatch": false,
+        "class_mismatch": false
+      },
+      {
+        "ncert": {
+          "class": "11",
+          "subject": "PHYSICS",
+          "part": 2,
+          "book_ch": 12,
+          "file_ch": 5,
+          "title": "Kinetic Theory",
+          "path": "Class 11/Physics/keph2dd/keph2dd/keph205.pdf"
+        },
+        "db": {
+          "subject": "Physics",
+          "class_level": "11",
+          "code": "kinetic-theory",
+          "name": "Kinetic Theory",
+          "topics": 2,
+          "concepts": 4,
+          "blueprints": 2
+        },
+        "title_mismatch": false,
+        "class_mismatch": false
+      },
+      {
+        "ncert": {
+          "class": "12",
+          "subject": "BIOLOGY",
+          "part": 1,
+          "book_ch": 1,
+          "file_ch": 1,
+          "title": "Sexual Reproduction in",
+          "path": "Class 12/Biology/lebo1dd/lebo101.pdf"
+        },
+        "db": {
+          "subject": "Botany",
+          "class_level": "12",
+          "code": "sexual-reproduction-flowering-plants",
+          "name": "Sexual Reproduction in Flowering Plants",
+          "topics": 1,
+          "concepts": 1,
+          "blueprints": 1
+        },
+        "title_mismatch": true,
+        "class_mismatch": false
+      },
+      {
+        "ncert": {
+          "class": "12",
+          "subject": "BIOLOGY",
+          "part": 1,
+          "book_ch": 2,
+          "file_ch": 2,
+          "title": "Human Reproduction",
+          "path": "Class 12/Biology/lebo1dd/lebo102.pdf"
+        },
+        "db": {
+          "subject": "Zoology",
+          "class_level": "12",
+          "code": "human-reproduction",
+          "name": "Human Reproduction",
+          "topics": 3,
+          "concepts": 3,
+          "blueprints": 0
+        },
+        "title_mismatch": false,
+        "class_mismatch": false
+      },
+      {
+        "ncert": {
+          "class": "12",
+          "subject": "CHEMISTRY",
+          "part": 1,
+          "book_ch": 2,
+          "file_ch": 2,
+          "title": "Electrochemistry",
+          "path": "Class 12/Chemistry 1/lech1dd/lech102.pdf"
+        },
+        "db": {
+          "subject": "Chemistry",
+          "class_level": "12",
+          "code": "electrochemistry",
+          "name": "Electrochemistry",
+          "topics": 3,
+          "concepts": 3,
+          "blueprints": 3
+        },
+        "title_mismatch": false,
+        "class_mismatch": false
+      },
+      {
+        "ncert": {
+          "class": "12",
+          "subject": "PHYSICS",
+          "part": 1,
+          "book_ch": 2,
+          "file_ch": 2,
+          "title": "Electrostatic",
+          "path": "Class 12/Physics/leph1dd/leph102.pdf"
+        },
+        "db": {
+          "subject": "Physics",
+          "class_level": "12",
+          "code": "electrostatics",
+          "name": "Electrostatics",
+          "topics": 3,
+          "concepts": 3,
+          "blueprints": 3
+        },
+        "title_mismatch": true,
+        "class_mismatch": false
+      },
+      {
+        "ncert": {
+          "class": "12",
+          "subject": "PHYSICS",
+          "part": 1,
+          "book_ch": 3,
+          "file_ch": 3,
+          "title": "Current",
+          "path": "Class 12/Physics/leph1dd/leph103.pdf"
+        },
+        "db": {
+          "subject": "Physics",
+          "class_level": "12",
+          "code": "current-electricity",
+          "name": "Current Electricity",
+          "topics": 3,
+          "concepts": 4,
+          "blueprints": 5
+        },
+        "title_mismatch": true,
+        "class_mismatch": false
+      },
+      {
+        "ncert": {
+          "class": "12",
+          "subject": "PHYSICS",
+          "part": 2,
+          "book_ch": 9,
+          "file_ch": 1,
+          "title": "Ray Optics",
+          "path": "Class 12/Physics/leph2dd/leph201.pdf"
+        },
+        "db": {
+          "subject": "Physics",
+          "class_level": "12",
+          "code": "optics",
+          "name": "Optics",
+          "topics": 3,
+          "concepts": 6,
+          "blueprints": 3
+        },
+        "title_mismatch": true,
+        "class_mismatch": false
+      },
+      {
+        "ncert": {
+          "class": "12",
+          "subject": "PHYSICS",
+          "part": 2,
+          "book_ch": 10,
+          "file_ch": 2,
+          "title": "Wave Optics",
+          "path": "Class 12/Physics/leph2dd/leph202.pdf"
+        },
+        "db": {
+          "subject": "Physics",
+          "class_level": "12",
+          "code": "optics",
+          "name": "Optics",
+          "topics": 3,
+          "concepts": 6,
+          "blueprints": 3
+        },
+        "title_mismatch": true,
+        "class_mismatch": false
+      }
+    ],
+    "matched": [
+      {
+        "ncert": {
+          "class": "11",
+          "subject": "BIOLOGY",
+          "part": 1,
+          "book_ch": 4,
+          "file_ch": 4,
+          "title": "Classification",
+          "path": "Class 11/Biology/kebo1dd/kebo104.pdf"
+        },
+        "db": {
+          "subject": "Botany",
+          "class_level": "11",
+          "code": "biological-classification",
+          "name": "Biological Classification",
+          "topics": 6,
+          "concepts": 9,
+          "blueprints": 0
+        },
+        "title_mismatch": true,
+        "class_mismatch": false
+      },
+      {
+        "ncert": {
+          "class": "11",
+          "subject": "BIOLOGY",
+          "part": 1,
+          "book_ch": 15,
+          "file_ch": 15,
+          "title": "Fluid)",
+          "path": "Class 11/Biology/kebo1dd/kebo115.pdf"
+        },
+        "db": {
+          "subject": "Zoology",
+          "class_level": "11",
+          "code": "body-fluids-circulation",
+          "name": "Body Fluids and Circulation",
+          "topics": 5,
+          "concepts": 5,
+          "blueprints": 7
+        },
+        "title_mismatch": true,
+        "class_mismatch": false
+      },
+      {
+        "ncert": {
+          "class": "11",
+          "subject": "CHEMISTRY",
+          "part": 1,
+          "book_ch": 1,
+          "file_ch": 1,
+          "title": "Some Basic Concepts Of Chemistry",
+          "path": "Class 11/Chemistry/kech1dd/kech1dd/kech101.pdf"
+        },
+        "db": {
+          "subject": "Chemistry",
+          "class_level": "11",
+          "code": "basic-concepts-chemistry",
+          "name": "Some Basic Concepts of Chemistry",
+          "topics": 5,
+          "concepts": 5,
+          "blueprints": 5
+        },
+        "title_mismatch": false,
+        "class_mismatch": false
+      },
+      {
+        "ncert": {
+          "class": "11",
+          "subject": "CHEMISTRY",
+          "part": 1,
+          "book_ch": 2,
+          "file_ch": 2,
+          "title": "structure of atom",
+          "path": "Class 11/Chemistry/kech1dd/kech1dd/kech102.pdf"
+        },
+        "db": {
+          "subject": "Chemistry",
+          "class_level": "11",
+          "code": "structure-of-atom",
+          "name": "Structure of Atom",
+          "topics": 5,
+          "concepts": 5,
+          "blueprints": 5
+        },
+        "title_mismatch": false,
+        "class_mismatch": false
+      },
+      {
+        "ncert": {
+          "class": "11",
+          "subject": "CHEMISTRY",
+          "part": 1,
+          "book_ch": 4,
+          "file_ch": 4,
+          "title": "Chemical Bonding And",
+          "path": "Class 11/Chemistry/kech1dd/kech1dd/kech104.pdf"
+        },
+        "db": {
+          "subject": "Chemistry",
+          "class_level": "11",
+          "code": "chemical-bonding",
+          "name": "Chemical Bonding and Molecular Structure",
+          "topics": 4,
+          "concepts": 4,
+          "blueprints": 10
+        },
+        "title_mismatch": true,
+        "class_mismatch": false
+      },
+      {
+        "ncert": {
+          "class": "11",
+          "subject": "CHEMISTRY",
+          "part": 1,
+          "book_ch": 5,
+          "file_ch": 5,
+          "title": "Thermodynamics",
+          "path": "Class 11/Chemistry/kech1dd/kech1dd/kech105.pdf"
+        },
+        "db": {
+          "subject": "Chemistry",
+          "class_level": "11",
+          "code": "thermodynamics-chemistry",
+          "name": "Thermodynamics",
+          "topics": 4,
+          "concepts": 4,
+          "blueprints": 4
+        },
+        "title_mismatch": false,
+        "class_mismatch": false
+      },
+      {
+        "ncert": {
+          "class": "11",
+          "subject": "CHEMISTRY",
+          "part": 1,
+          "book_ch": 6,
+          "file_ch": 6,
+          "title": "Equilibrium",
+          "path": "Class 11/Chemistry/kech1dd/kech1dd/kech106.pdf"
+        },
+        "db": {
+          "subject": "Chemistry",
+          "class_level": "11",
+          "code": "equilibrium",
+          "name": "Equilibrium",
+          "topics": 5,
+          "concepts": 5,
+          "blueprints": 9
+        },
+        "title_mismatch": false,
+        "class_mismatch": false
+      },
+      {
+        "ncert": {
+          "class": "11",
+          "subject": "CHEMISTRY",
+          "part": 2,
+          "book_ch": 7,
+          "file_ch": 1,
+          "title": "Redox Reactions",
+          "path": "Class 11/Chemistry/kech2dd/kech201.pdf"
+        },
+        "db": {
+          "subject": "Chemistry",
+          "class_level": "11",
+          "code": "redox-reactions",
+          "name": "Redox Reactions",
+          "topics": 4,
+          "concepts": 4,
+          "blueprints": 4
+        },
+        "title_mismatch": false,
+        "class_mismatch": false
+      },
+      {
+        "ncert": {
+          "class": "11",
+          "subject": "CHEMISTRY",
+          "part": 2,
+          "book_ch": 8,
+          "file_ch": 2,
+          "title": "Organic chemistry – sOme Basic",
+          "path": "Class 11/Chemistry/kech2dd/kech202.pdf"
+        },
+        "db": {
+          "subject": "Chemistry",
+          "class_level": "11",
+          "code": "organic-chemistry-basics",
+          "name": "Organic Chemistry - Basic Principles",
+          "topics": 4,
+          "concepts": 4,
+          "blueprints": 7
+        },
+        "title_mismatch": true,
+        "class_mismatch": false
+      },
+      {
+        "ncert": {
+          "class": "11",
+          "subject": "PHYSICS",
+          "part": 1,
+          "book_ch": 1,
+          "file_ch": 1,
+          "title": "Units And Measurement",
+          "path": "Class 11/Physics/keph1dd/keph1dd/keph101.pdf"
+        },
+        "db": {
+          "subject": "Physics",
+          "class_level": "11",
+          "code": "units-and-measurement",
+          "name": "Units and Measurement",
+          "topics": 3,
+          "concepts": 4,
+          "blueprints": 4
+        },
+        "title_mismatch": false,
+        "class_mismatch": false
+      },
+      {
+        "ncert": {
+          "class": "11",
+          "subject": "PHYSICS",
+          "part": 1,
+          "book_ch": 4,
+          "file_ch": 4,
+          "title": "Laws Of Motion",
+          "path": "Class 11/Physics/keph1dd/keph1dd/keph104.pdf"
+        },
+        "db": {
+          "subject": "Physics",
+          "class_level": "11",
+          "code": "laws-of-motion",
+          "name": "Laws of Motion",
+          "topics": 3,
+          "concepts": 4,
+          "blueprints": 4
+        },
+        "title_mismatch": false,
+        "class_mismatch": false
+      },
+      {
+        "ncert": {
+          "class": "11",
+          "subject": "PHYSICS",
+          "part": 1,
+          "book_ch": 5,
+          "file_ch": 5,
+          "title": "Work, Energy And Power",
+          "path": "Class 11/Physics/keph1dd/keph1dd/keph105.pdf"
+        },
+        "db": {
+          "subject": "Physics",
+          "class_level": "11",
+          "code": "work-energy-power",
+          "name": "Work, Energy and Power",
+          "topics": 3,
+          "concepts": 6,
+          "blueprints": 5
+        },
+        "title_mismatch": false,
+        "class_mismatch": false
+      },
+      {
+        "ncert": {
+          "class": "11",
+          "subject": "PHYSICS",
+          "part": 1,
+          "book_ch": 6,
+          "file_ch": 6,
+          "title": "Systems Of Particles And Rotational Motion",
+          "path": "Class 11/Physics/keph1dd/keph1dd/keph106.pdf"
+        },
+        "db": {
+          "subject": "Physics",
+          "class_level": "11",
+          "code": "systems-of-particles-rotational-motion",
+          "name": "Systems of Particles and Rotational Motion",
+          "topics": 3,
+          "concepts": 7,
+          "blueprints": 4
+        },
+        "title_mismatch": false,
+        "class_mismatch": false
+      },
+      {
+        "ncert": {
+          "class": "11",
+          "subject": "PHYSICS",
+          "part": 1,
+          "book_ch": 7,
+          "file_ch": 7,
+          "title": "Gravitation",
+          "path": "Class 11/Physics/keph1dd/keph1dd/keph107.pdf"
+        },
+        "db": {
+          "subject": "Physics",
+          "class_level": "11",
+          "code": "gravitation",
+          "name": "Gravitation",
+          "topics": 0,
+          "concepts": 0,
+          "blueprints": 0
+        },
+        "title_mismatch": false,
+        "class_mismatch": false
+      },
+      {
+        "ncert": {
+          "class": "11",
+          "subject": "PHYSICS",
+          "part": 2,
+          "book_ch": 8,
+          "file_ch": 1,
+          "title": "Mechanical Properties Of Solids",
+          "path": "Class 11/Physics/keph2dd/keph2dd/keph201.pdf"
+        },
+        "db": {
+          "subject": "Physics",
+          "class_level": "11",
+          "code": "mechanical-properties-of-fluids",
+          "name": "Mechanical Properties of Fluids",
+          "topics": 3,
+          "concepts": 5,
+          "blueprints": 4
+        },
+        "title_mismatch": true,
+        "class_mismatch": false
+      },
+      {
+        "ncert": {
+          "class": "11",
+          "subject": "PHYSICS",
+          "part": 2,
+          "book_ch": 9,
+          "file_ch": 2,
+          "title": "Mechanical Properties Of Fluids",
+          "path": "Class 11/Physics/keph2dd/keph2dd/keph202.pdf"
+        },
+        "db": {
+          "subject": "Physics",
+          "class_level": "11",
+          "code": "mechanical-properties-of-fluids",
+          "name": "Mechanical Properties of Fluids",
+          "topics": 3,
+          "concepts": 5,
+          "blueprints": 4
+        },
+        "title_mismatch": false,
+        "class_mismatch": false
+      },
+      {
+        "ncert": {
+          "class": "11",
+          "subject": "PHYSICS",
+          "part": 2,
+          "book_ch": 11,
+          "file_ch": 4,
+          "title": "Thermodynamics",
+          "path": "Class 11/Physics/keph2dd/keph2dd/keph204.pdf"
+        },
+        "db": {
+          "subject": "Physics",
+          "class_level": "11",
+          "code": "thermodynamics-physics",
+          "name": "Thermodynamics",
+          "topics": 3,
+          "concepts": 4,
+          "blueprints": 4
+        },
+        "title_mismatch": false,
+        "class_mismatch": false
+      },
+      {
+        "ncert": {
+          "class": "11",
+          "subject": "PHYSICS",
+          "part": 2,
+          "book_ch": 12,
+          "file_ch": 5,
+          "title": "Kinetic Theory",
+          "path": "Class 11/Physics/keph2dd/keph2dd/keph205.pdf"
+        },
+        "db": {
+          "subject": "Physics",
+          "class_level": "11",
+          "code": "kinetic-theory",
+          "name": "Kinetic Theory",
+          "topics": 2,
+          "concepts": 4,
+          "blueprints": 2
+        },
+        "title_mismatch": false,
+        "class_mismatch": false
+      },
+      {
+        "ncert": {
+          "class": "12",
+          "subject": "BIOLOGY",
+          "part": 1,
+          "book_ch": 1,
+          "file_ch": 1,
+          "title": "Sexual Reproduction in",
+          "path": "Class 12/Biology/lebo1dd/lebo101.pdf"
+        },
+        "db": {
+          "subject": "Botany",
+          "class_level": "12",
+          "code": "sexual-reproduction-flowering-plants",
+          "name": "Sexual Reproduction in Flowering Plants",
+          "topics": 1,
+          "concepts": 1,
+          "blueprints": 1
+        },
+        "title_mismatch": true,
+        "class_mismatch": false
+      },
+      {
+        "ncert": {
+          "class": "12",
+          "subject": "BIOLOGY",
+          "part": 1,
+          "book_ch": 2,
+          "file_ch": 2,
+          "title": "Human Reproduction",
+          "path": "Class 12/Biology/lebo1dd/lebo102.pdf"
+        },
+        "db": {
+          "subject": "Zoology",
+          "class_level": "12",
+          "code": "human-reproduction",
+          "name": "Human Reproduction",
+          "topics": 3,
+          "concepts": 3,
+          "blueprints": 0
+        },
+        "title_mismatch": false,
+        "class_mismatch": false
+      },
+      {
+        "ncert": {
+          "class": "12",
+          "subject": "CHEMISTRY",
+          "part": 1,
+          "book_ch": 2,
+          "file_ch": 2,
+          "title": "Electrochemistry",
+          "path": "Class 12/Chemistry 1/lech1dd/lech102.pdf"
+        },
+        "db": {
+          "subject": "Chemistry",
+          "class_level": "12",
+          "code": "electrochemistry",
+          "name": "Electrochemistry",
+          "topics": 3,
+          "concepts": 3,
+          "blueprints": 3
+        },
+        "title_mismatch": false,
+        "class_mismatch": false
+      },
+      {
+        "ncert": {
+          "class": "12",
+          "subject": "PHYSICS",
+          "part": 1,
+          "book_ch": 2,
+          "file_ch": 2,
+          "title": "Electrostatic",
+          "path": "Class 12/Physics/leph1dd/leph102.pdf"
+        },
+        "db": {
+          "subject": "Physics",
+          "class_level": "12",
+          "code": "electrostatics",
+          "name": "Electrostatics",
+          "topics": 3,
+          "concepts": 3,
+          "blueprints": 3
+        },
+        "title_mismatch": true,
+        "class_mismatch": false
+      },
+      {
+        "ncert": {
+          "class": "12",
+          "subject": "PHYSICS",
+          "part": 1,
+          "book_ch": 3,
+          "file_ch": 3,
+          "title": "Current",
+          "path": "Class 12/Physics/leph1dd/leph103.pdf"
+        },
+        "db": {
+          "subject": "Physics",
+          "class_level": "12",
+          "code": "current-electricity",
+          "name": "Current Electricity",
+          "topics": 3,
+          "concepts": 4,
+          "blueprints": 5
+        },
+        "title_mismatch": true,
+        "class_mismatch": false
+      },
+      {
+        "ncert": {
+          "class": "12",
+          "subject": "PHYSICS",
+          "part": 2,
+          "book_ch": 9,
+          "file_ch": 1,
+          "title": "Ray Optics",
+          "path": "Class 12/Physics/leph2dd/leph201.pdf"
+        },
+        "db": {
+          "subject": "Physics",
+          "class_level": "12",
+          "code": "optics",
+          "name": "Optics",
+          "topics": 3,
+          "concepts": 6,
+          "blueprints": 3
+        },
+        "title_mismatch": true,
+        "class_mismatch": false
+      },
+      {
+        "ncert": {
+          "class": "12",
+          "subject": "PHYSICS",
+          "part": 2,
+          "book_ch": 10,
+          "file_ch": 2,
+          "title": "Wave Optics",
+          "path": "Class 12/Physics/leph2dd/leph202.pdf"
+        },
+        "db": {
+          "subject": "Physics",
+          "class_level": "12",
+          "code": "optics",
+          "name": "Optics",
+          "topics": 3,
+          "concepts": 6,
+          "blueprints": 3
+        },
+        "title_mismatch": true,
+        "class_mismatch": false
+      }
+    ]
+  },
+  "chemistry": {
+    "xi_chapter_count": 9,
+    "xi_titles": [
+      {
+        "book_ch": 1,
+        "title": "Some Basic Concepts Of Chemistry",
+        "path": "Class 11/Chemistry/kech1dd/kech1dd/kech101.pdf"
+      },
+      {
+        "book_ch": 2,
+        "title": "structure of atom",
+        "path": "Class 11/Chemistry/kech1dd/kech1dd/kech102.pdf"
+      },
+      {
+        "book_ch": 3,
+        "title": "Classification of Elements and",
+        "path": "Class 11/Chemistry/kech1dd/kech1dd/kech103.pdf"
+      },
+      {
+        "book_ch": 4,
+        "title": "Chemical Bonding And",
+        "path": "Class 11/Chemistry/kech1dd/kech1dd/kech104.pdf"
+      },
+      {
+        "book_ch": 5,
+        "title": "Thermodynamics",
+        "path": "Class 11/Chemistry/kech1dd/kech1dd/kech105.pdf"
+      },
+      {
+        "book_ch": 6,
+        "title": "Equilibrium",
+        "path": "Class 11/Chemistry/kech1dd/kech1dd/kech106.pdf"
+      },
+      {
+        "book_ch": 7,
+        "title": "Redox Reactions",
+        "path": "Class 11/Chemistry/kech2dd/kech201.pdf"
+      },
+      {
+        "book_ch": 8,
+        "title": "Organic chemistry – sOme Basic",
+        "path": "Class 11/Chemistry/kech2dd/kech202.pdf"
+      },
+      {
+        "book_ch": 9,
+        "title": "Hydrocarbons",
+        "path": "Class 11/Chemistry/kech2dd/kech203.pdf"
+      }
+    ],
+    "xii_chapter_count": 10,
+    "xii_titles": [
+      {
+        "book_ch": 1,
+        "title": "Solutions",
+        "path": "Class 12/Chemistry 1/lech1dd/lech101.pdf"
+      },
+      {
+        "book_ch": 2,
+        "title": "Electrochemistry",
+        "path": "Class 12/Chemistry 1/lech1dd/lech102.pdf"
+      },
+      {
+        "book_ch": 3,
+        "title": "Chemical Kinetics",
+        "path": "Class 12/Chemistry 1/lech1dd/lech103.pdf"
+      },
+      {
+        "book_ch": 4,
+        "title": "The d - and f",
+        "path": "Class 12/Chemistry 1/lech1dd/lech104.pdf"
+      },
+      {
+        "book_ch": 5,
+        "title": "Coordination",
+        "path": "Class 12/Chemistry 1/lech1dd/lech105.pdf"
+      },
+      {
+        "book_ch": 6,
+        "title": "Haloalkanes and",
+        "path": "Class 12/Chemistry 2/lech2dd/lech201.pdf"
+      },
+      {
+        "book_ch": 7,
+        "title": "Alcohols,,,,, Phenols",
+        "path": "Class 12/Chemistry 2/lech2dd/lech202.pdf"
+      },
+      {
+        "book_ch": 8,
+        "title": "Aldehydes,,,,, KKKKKeeeeetones",
+        "path": "Class 12/Chemistry 2/lech2dd/lech203.pdf"
+      },
+      {
+        "book_ch": 9,
+        "title": "mines 9",
+        "path": "Class 12/Chemistry 2/lech2dd/lech204.pdf"
+      },
+      {
+        "book_ch": 10,
+        "title": "Biomolecules",
+        "path": "Class 12/Chemistry 2/lech2dd/lech205.pdf"
+      }
+    ],
+    "cf_c1_expected_titles": [
+      "Alcohols, Phenols and Ethers",
+      "Aldehydes, Ketones and Carboxylic Acids",
+      "Amines",
+      "Biomolecules",
+      "Chemical Kinetics",
+      "Coordination Compounds",
+      "Electrochemistry",
+      "Haloalkanes and Haloarenes",
+      "Solutions",
+      "The d- and f-Block Elements"
+    ],
+    "cf_c1_present_in_corpus": [
+      {
+        "expected": "Alcohols, Phenols and Ethers",
+        "pdf_title": "Alcohols,,,,, Phenols",
+        "path": "Class 12/Chemistry 2/lech2dd/lech202.pdf"
+      },
+      {
+        "expected": "Biomolecules",
+        "pdf_title": "Biomolecules",
+        "path": "Class 12/Chemistry 2/lech2dd/lech205.pdf"
+      },
+      {
+        "expected": "Chemical Kinetics",
+        "pdf_title": "Chemical Kinetics",
+        "path": "Class 12/Chemistry 1/lech1dd/lech103.pdf"
+      },
+      {
+        "expected": "Coordination Compounds",
+        "pdf_title": "Coordination",
+        "path": "Class 12/Chemistry 1/lech1dd/lech105.pdf"
+      },
+      {
+        "expected": "Electrochemistry",
+        "pdf_title": "Electrochemistry",
+        "path": "Class 12/Chemistry 1/lech1dd/lech102.pdf"
+      },
+      {
+        "expected": "Haloalkanes and Haloarenes",
+        "pdf_title": "Haloalkanes and",
+        "path": "Class 12/Chemistry 2/lech2dd/lech201.pdf"
+      },
+      {
+        "expected": "Solutions",
+        "pdf_title": "Solutions",
+        "path": "Class 12/Chemistry 1/lech1dd/lech101.pdf"
+      },
+      {
+        "expected": "The d- and f-Block Elements",
+        "pdf_title": "The d - and f",
+        "path": "Class 12/Chemistry 1/lech1dd/lech104.pdf"
+      }
+    ],
+    "cf_c1_absent_from_corpus": [
+      "Aldehydes, Ketones and Carboxylic Acids",
+      "Amines"
+    ],
+    "db_chem12_slugs": [
+      "electrochemistry"
+    ],
+    "electrochemistry_db": {
+      "subject": "Chemistry",
+      "class_level": "12",
+      "code": "electrochemistry",
+      "name": "Electrochemistry",
+      "id": "2157faff-d742-4913-beab-5d5333088bf5",
+      "topic_count": 3,
+      "concept_count": 3,
+      "blueprint_count": 3
+    },
+    "electrochemistry_pdf": {
+      "title": "Electrochemistry",
+      "path": "Class 12/Chemistry 1/lech1dd/lech102.pdf",
+      "book_ch": 2
+    }
+  },
+  "biology": {
+    "xi_titles": [
+      {
+        "book_ch": 1,
+        "title": "U Nit 1",
+        "path": "Class 11/Biology/kebo1dd/kebo101.pdf"
+      },
+      {
+        "book_ch": 2,
+        "title": "B Iological C Lassification",
+        "path": "Class 11/Biology/kebo1dd/kebo102.pdf"
+      },
+      {
+        "book_ch": 3,
+        "title": "P Lant K Ingdom",
+        "path": "Class 11/Biology/kebo1dd/kebo103.pdf"
+      },
+      {
+        "book_ch": 4,
+        "title": "Classification",
+        "path": "Class 11/Biology/kebo1dd/kebo104.pdf"
+      },
+      {
+        "book_ch": 2,
+        "title": "U Nit 2",
+        "path": "Class 11/Biology/kebo1dd/kebo105.pdf"
+      },
+      {
+        "book_ch": 6,
+        "title": "System",
+        "path": "Class 11/Biology/kebo1dd/kebo106.pdf"
+      },
+      {
+        "book_ch": 7,
+        "title": "Organ and Organ",
+        "path": "Class 11/Biology/kebo1dd/kebo107.pdf"
+      },
+      {
+        "book_ch": 3,
+        "title": "U Nit 3",
+        "path": "Class 11/Biology/kebo1dd/kebo108.pdf"
+      },
+      {
+        "book_ch": 9,
+        "title": "How to Analyse",
+        "path": "Class 11/Biology/kebo1dd/kebo109.pdf"
+      },
+      {
+        "book_ch": 10,
+        "title": "Mitosis",
+        "path": "Class 11/Biology/kebo1dd/kebo110.pdf"
+      },
+      {
+        "book_ch": 4,
+        "title": "U Nit 4",
+        "path": "Class 11/Biology/kebo1dd/kebo111.pdf"
+      },
+      {
+        "book_ch": 12,
+        "title": "Breathe?",
+        "path": "Class 11/Biology/kebo1dd/kebo112.pdf"
+      },
+      {
+        "book_ch": 13,
+        "title": "Dedifferentiation",
+        "path": "Class 11/Biology/kebo1dd/kebo113.pdf"
+      },
+      {
+        "book_ch": 5,
+        "title": "U Nit 5",
+        "path": "Class 11/Biology/kebo1dd/kebo114.pdf"
+      },
+      {
+        "book_ch": 15,
+        "title": "Fluid)",
+        "path": "Class 11/Biology/kebo1dd/kebo115.pdf"
+      },
+      {
+        "book_ch": 16,
+        "title": "Excretory",
+        "path": "Class 11/Biology/kebo1dd/kebo116.pdf"
+      },
+      {
+        "book_ch": 17,
+        "title": "Movement",
+        "path": "Class 11/Biology/kebo1dd/kebo117.pdf"
+      },
+      {
+        "book_ch": 18,
+        "title": "System",
+        "path": "Class 11/Biology/kebo1dd/kebo118.pdf"
+      },
+      {
+        "book_ch": 19,
+        "title": "Glands and",
+        "path": "Class 11/Biology/kebo1dd/kebo119.pdf"
+      }
+    ],
+    "xii_titles": [
+      {
+        "book_ch": 1,
+        "title": "Sexual Reproduction in",
+        "path": "Class 12/Biology/lebo1dd/lebo101.pdf"
+      },
+      {
+        "book_ch": 2,
+        "title": "Human Reproduction",
+        "path": "Class 12/Biology/lebo1dd/lebo102.pdf"
+      },
+      {
+        "book_ch": 3,
+        "title": "Reproductive Health",
+        "path": "Class 12/Biology/lebo1dd/lebo103.pdf"
+      },
+      {
+        "book_ch": 4,
+        "title": "Principles of Inheritance",
+        "path": "Class 12/Biology/lebo1dd/lebo104.pdf"
+      },
+      {
+        "book_ch": 5,
+        "title": "Molecular Basis Of",
+        "path": "Class 12/Biology/lebo1dd/lebo105.pdf"
+      },
+      {
+        "book_ch": 6,
+        "title": "Evolution",
+        "path": "Class 12/Biology/lebo1dd/lebo106.pdf"
+      },
+      {
+        "book_ch": 7,
+        "title": "Human Health and Disease",
+        "path": "Class 12/Biology/lebo1dd/lebo107.pdf"
+      },
+      {
+        "book_ch": 8,
+        "title": "Microbes In Human Welfare",
+        "path": "Class 12/Biology/lebo1dd/lebo108.pdf"
+      },
+      {
+        "book_ch": 9,
+        "title": "Biotechnology : Principles and",
+        "path": "Class 12/Biology/lebo1dd/lebo109.pdf"
+      },
+      {
+        "book_ch": 10,
+        "title": "Biotechnology And Its",
+        "path": "Class 12/Biology/lebo1dd/lebo110.pdf"
+      },
+      {
+        "book_ch": 11,
+        "title": "Organisms and Populations",
+        "path": "Class 12/Biology/lebo1dd/lebo111.pdf"
+      },
+      {
+        "book_ch": 12,
+        "title": "Ecosystem",
+        "path": "Class 12/Biology/lebo1dd/lebo112.pdf"
+      },
+      {
+        "book_ch": 13,
+        "title": "Biodiversity And",
+        "path": "Class 12/Biology/lebo1dd/lebo113.pdf"
+      }
+    ],
+    "db_biology_subjects": [
+      "Botany",
+      "Zoology"
+    ],
+    "db_biology_chapters": [
+      {
+        "subject": "Botany",
+        "class": "11",
+        "code": "biological-classification",
+        "name": "Biological Classification"
+      },
+      {
+        "subject": "Botany",
+        "class": "11",
+        "code": "cell-unit-of-life",
+        "name": "Cell - The Unit of Life"
+      },
+      {
+        "subject": "Botany",
+        "class": "11",
+        "code": "morphology-flowering-plants",
+        "name": "Morphology of Flowering Plants"
+      },
+      {
+        "subject": "Botany",
+        "class": "11",
+        "code": "photosynthesis",
+        "name": "Photosynthesis in Higher Plants"
+      },
+      {
+        "subject": "Botany",
+        "class": "11",
+        "code": "plant-growth-development",
+        "name": "Plant Growth and Development"
+      },
+      {
+        "subject": "Botany",
+        "class": "11",
+        "code": "plant-kingdom",
+        "name": "Plant Kingdom"
+      },
+      {
+        "subject": "Botany",
+        "class": "11",
+        "code": "the-living-world",
+        "name": "The Living World"
+      },
+      {
+        "subject": "Botany",
+        "class": "12",
+        "code": "sexual-reproduction-flowering-plants",
+        "name": "Sexual Reproduction in Flowering Plants"
+      },
+      {
+        "subject": "Zoology",
+        "class": "11",
+        "code": "animal-kingdom",
+        "name": "Animal Kingdom"
+      },
+      {
+        "subject": "Zoology",
+        "class": "11",
+        "code": "body-fluids-circulation",
+        "name": "Body Fluids and Circulation"
+      },
+      {
+        "subject": "Zoology",
+        "class": "11",
+        "code": "breathing-exchange-of-gases",
+        "name": "Breathing and Exchange of Gases"
+      },
+      {
+        "subject": "Zoology",
+        "class": "11",
+        "code": "digestion-absorption",
+        "name": "Digestion and Absorption"
+      },
+      {
+        "subject": "Zoology",
+        "class": "11",
+        "code": "structural-organisation-animals",
+        "name": "Structural Organisation in Animals"
+      },
+      {
+        "subject": "Zoology",
+        "class": "12",
+        "code": "human-reproduction",
+        "name": "Human Reproduction"
+      },
+      {
+        "subject": "Zoology",
+        "class": null,
+        "code": "biomolecules",
+        "name": "Biomolecules"
+      }
+    ],
+    "xii_ownership_decisions_required": [
+      {
+        "book_ch": 1,
+        "title": "Sexual Reproduction in",
+        "path": "Class 12/Biology/lebo1dd/lebo101.pdf",
+        "decision": "CURRICULUM-OWNER DECISION REQUIRED",
+        "reason": "NCERT Biology is a single book; project maps to BOTANY vs ZOOLOGY — ownership not inferred"
+      },
+      {
+        "book_ch": 2,
+        "title": "Human Reproduction",
+        "path": "Class 12/Biology/lebo1dd/lebo102.pdf",
+        "decision": "CURRICULUM-OWNER DECISION REQUIRED",
+        "reason": "NCERT Biology is a single book; project maps to BOTANY vs ZOOLOGY — ownership not inferred"
+      },
+      {
+        "book_ch": 3,
+        "title": "Reproductive Health",
+        "path": "Class 12/Biology/lebo1dd/lebo103.pdf",
+        "decision": "CURRICULUM-OWNER DECISION REQUIRED",
+        "reason": "NCERT Biology is a single book; project maps to BOTANY vs ZOOLOGY — ownership not inferred"
+      },
+      {
+        "book_ch": 4,
+        "title": "Principles of Inheritance",
+        "path": "Class 12/Biology/lebo1dd/lebo104.pdf",
+        "decision": "CURRICULUM-OWNER DECISION REQUIRED",
+        "reason": "NCERT Biology is a single book; project maps to BOTANY vs ZOOLOGY — ownership not inferred"
+      },
+      {
+        "book_ch": 5,
+        "title": "Molecular Basis Of",
+        "path": "Class 12/Biology/lebo1dd/lebo105.pdf",
+        "decision": "CURRICULUM-OWNER DECISION REQUIRED",
+        "reason": "NCERT Biology is a single book; project maps to BOTANY vs ZOOLOGY — ownership not inferred"
+      },
+      {
+        "book_ch": 6,
+        "title": "Evolution",
+        "path": "Class 12/Biology/lebo1dd/lebo106.pdf",
+        "decision": "CURRICULUM-OWNER DECISION REQUIRED",
+        "reason": "NCERT Biology is a single book; project maps to BOTANY vs ZOOLOGY — ownership not inferred"
+      },
+      {
+        "book_ch": 7,
+        "title": "Human Health and Disease",
+        "path": "Class 12/Biology/lebo1dd/lebo107.pdf",
+        "decision": "CURRICULUM-OWNER DECISION REQUIRED",
+        "reason": "NCERT Biology is a single book; project maps to BOTANY vs ZOOLOGY — ownership not inferred"
+      },
+      {
+        "book_ch": 8,
+        "title": "Microbes In Human Welfare",
+        "path": "Class 12/Biology/lebo1dd/lebo108.pdf",
+        "decision": "CURRICULUM-OWNER DECISION REQUIRED",
+        "reason": "NCERT Biology is a single book; project maps to BOTANY vs ZOOLOGY — ownership not inferred"
+      },
+      {
+        "book_ch": 9,
+        "title": "Biotechnology : Principles and",
+        "path": "Class 12/Biology/lebo1dd/lebo109.pdf",
+        "decision": "CURRICULUM-OWNER DECISION REQUIRED",
+        "reason": "NCERT Biology is a single book; project maps to BOTANY vs ZOOLOGY — ownership not inferred"
+      },
+      {
+        "book_ch": 10,
+        "title": "Biotechnology And Its",
+        "path": "Class 12/Biology/lebo1dd/lebo110.pdf",
+        "decision": "CURRICULUM-OWNER DECISION REQUIRED",
+        "reason": "NCERT Biology is a single book; project maps to BOTANY vs ZOOLOGY — ownership not inferred"
+      },
+      {
+        "book_ch": 11,
+        "title": "Organisms and Populations",
+        "path": "Class 12/Biology/lebo1dd/lebo111.pdf",
+        "decision": "CURRICULUM-OWNER DECISION REQUIRED",
+        "reason": "NCERT Biology is a single book; project maps to BOTANY vs ZOOLOGY — ownership not inferred"
+      },
+      {
+        "book_ch": 12,
+        "title": "Ecosystem",
+        "path": "Class 12/Biology/lebo1dd/lebo112.pdf",
+        "decision": "CURRICULUM-OWNER DECISION REQUIRED",
+        "reason": "NCERT Biology is a single book; project maps to BOTANY vs ZOOLOGY — ownership not inferred"
+      },
+      {
+        "book_ch": 13,
+        "title": "Biodiversity And",
+        "path": "Class 12/Biology/lebo1dd/lebo113.pdf",
+        "decision": "CURRICULUM-OWNER DECISION REQUIRED",
+        "reason": "NCERT Biology is a single book; project maps to BOTANY vs ZOOLOGY — ownership not inferred"
+      }
+    ]
+  },
+  "physics": {
+    "xi": [
+      {
+        "book_ch": 1,
+        "file_ch": 1,
+        "part": 1,
+        "title": "Units And Measurement",
+        "path": "Class 11/Physics/keph1dd/keph1dd/keph101.pdf"
+      },
+      {
+        "book_ch": 2,
+        "file_ch": 2,
+        "part": 1,
+        "title": "Motion In A Straight Line",
+        "path": "Class 11/Physics/keph1dd/keph1dd/keph102.pdf"
+      },
+      {
+        "book_ch": 3,
+        "file_ch": 3,
+        "part": 1,
+        "title": "Motion In A Plane",
+        "path": "Class 11/Physics/keph1dd/keph1dd/keph103.pdf"
+      },
+      {
+        "book_ch": 4,
+        "file_ch": 4,
+        "part": 1,
+        "title": "Laws Of Motion",
+        "path": "Class 11/Physics/keph1dd/keph1dd/keph104.pdf"
+      },
+      {
+        "book_ch": 5,
+        "file_ch": 5,
+        "part": 1,
+        "title": "Work, Energy And Power",
+        "path": "Class 11/Physics/keph1dd/keph1dd/keph105.pdf"
+      },
+      {
+        "book_ch": 6,
+        "file_ch": 6,
+        "part": 1,
+        "title": "Systems Of Particles And Rotational Motion",
+        "path": "Class 11/Physics/keph1dd/keph1dd/keph106.pdf"
+      },
+      {
+        "book_ch": 7,
+        "file_ch": 7,
+        "part": 1,
+        "title": "Gravitation",
+        "path": "Class 11/Physics/keph1dd/keph1dd/keph107.pdf"
+      },
+      {
+        "book_ch": 8,
+        "file_ch": 1,
+        "part": 2,
+        "title": "Mechanical Properties Of Solids",
+        "path": "Class 11/Physics/keph2dd/keph2dd/keph201.pdf"
+      },
+      {
+        "book_ch": 9,
+        "file_ch": 2,
+        "part": 2,
+        "title": "Mechanical Properties Of Fluids",
+        "path": "Class 11/Physics/keph2dd/keph2dd/keph202.pdf"
+      },
+      {
+        "book_ch": 10,
+        "file_ch": 3,
+        "part": 2,
+        "title": "Thermal Properties Of Matter",
+        "path": "Class 11/Physics/keph2dd/keph2dd/keph203.pdf"
+      },
+      {
+        "book_ch": 11,
+        "file_ch": 4,
+        "part": 2,
+        "title": "Thermodynamics",
+        "path": "Class 11/Physics/keph2dd/keph2dd/keph204.pdf"
+      },
+      {
+        "book_ch": 12,
+        "file_ch": 5,
+        "part": 2,
+        "title": "Kinetic Theory",
+        "path": "Class 11/Physics/keph2dd/keph2dd/keph205.pdf"
+      },
+      {
+        "book_ch": 13,
+        "file_ch": 6,
+        "part": 2,
+        "title": "Oscillations",
+        "path": "Class 11/Physics/keph2dd/keph2dd/keph206.pdf"
+      },
+      {
+        "book_ch": 14,
+        "file_ch": 7,
+        "part": 2,
+        "title": "Waves",
+        "path": "Class 11/Physics/keph2dd/keph2dd/keph207.pdf"
+      }
+    ],
+    "xii": [
+      {
+        "book_ch": 1,
+        "file_ch": 1,
+        "part": 1,
+        "title": "Electric Charges",
+        "path": "Class 12/Physics/leph1dd/leph101.pdf"
+      },
+      {
+        "book_ch": 2,
+        "file_ch": 2,
+        "part": 1,
+        "title": "Electrostatic",
+        "path": "Class 12/Physics/leph1dd/leph102.pdf"
+      },
+      {
+        "book_ch": 3,
+        "file_ch": 3,
+        "part": 1,
+        "title": "Current",
+        "path": "Class 12/Physics/leph1dd/leph103.pdf"
+      },
+      {
+        "book_ch": 4,
+        "file_ch": 4,
+        "part": 1,
+        "title": "Moving Charges",
+        "path": "Class 12/Physics/leph1dd/leph104.pdf"
+      },
+      {
+        "book_ch": 5,
+        "file_ch": 5,
+        "part": 1,
+        "title": "Magnetism And",
+        "path": "Class 12/Physics/leph1dd/leph105.pdf"
+      },
+      {
+        "book_ch": 6,
+        "file_ch": 6,
+        "part": 1,
+        "title": "Electromagnetic",
+        "path": "Class 12/Physics/leph1dd/leph106.pdf"
+      },
+      {
+        "book_ch": 7,
+        "file_ch": 7,
+        "part": 1,
+        "title": "Alternating",
+        "path": "Class 12/Physics/leph1dd/leph107.pdf"
+      },
+      {
+        "book_ch": 8,
+        "file_ch": 8,
+        "part": 1,
+        "title": "Electromagnetic",
+        "path": "Class 12/Physics/leph1dd/leph108.pdf"
+      },
+      {
+        "book_ch": 9,
+        "file_ch": 1,
+        "part": 2,
+        "title": "Ray Optics",
+        "path": "Class 12/Physics/leph2dd/leph201.pdf"
+      },
+      {
+        "book_ch": 10,
+        "file_ch": 2,
+        "part": 2,
+        "title": "Wave Optics",
+        "path": "Class 12/Physics/leph2dd/leph202.pdf"
+      },
+      {
+        "book_ch": 11,
+        "file_ch": 3,
+        "part": 2,
+        "title": "Dual Nature Of",
+        "path": "Class 12/Physics/leph2dd/leph203.pdf"
+      },
+      {
+        "book_ch": 12,
+        "file_ch": 4,
+        "part": 2,
+        "title": "Atoms",
+        "path": "Class 12/Physics/leph2dd/leph204.pdf"
+      },
+      {
+        "book_ch": 13,
+        "file_ch": 5,
+        "part": 2,
+        "title": "Nuclei",
+        "path": "Class 12/Physics/leph2dd/leph205.pdf"
+      },
+      {
+        "book_ch": 14,
+        "file_ch": 6,
+        "part": 2,
+        "title": "Semiconductor",
+        "path": "Class 12/Physics/leph2dd/leph206.pdf"
+      }
+    ],
+    "gravitation_in_corpus": [
+      {
+        "title": "Gravitation",
+        "path": "Class 11/Physics/keph1dd/keph1dd/keph107.pdf",
+        "class": "11",
+        "book_ch": 7
+      }
+    ],
+    "gravitation_in_db": [
+      {
+        "subject": "Physics",
+        "class_level": "11",
+        "code": "gravitation",
+        "name": "Gravitation",
+        "id": "d1f5f09d-037a-4e1d-abcb-1a760a4be031",
+        "topic_count": 0,
+        "concept_count": 0,
+        "blueprint_count": 0
+      }
+    ]
+  },
+  "safety_before": {
+    "status": {
+      "DRAFT": 5298,
+      "PUBLISHED": 1479,
+      "SUPERSEDED": 6,
+      "IN_REVIEW": 111
+    },
+    "unmapped_draft": 5024,
+    "chapters": 36,
+    "topics": 125,
+    "concepts": 192,
+    "knowledge_units": 73,
+    "question_blueprints": 137,
+    "content_batches": 11,
+    "generation_jobs": 204,
+    "generation_runs": 204,
+    "generation_candidates": 392
+  },
+  "safety_after": {
+    "status": {
+      "DRAFT": 5298,
+      "PUBLISHED": 1479,
+      "SUPERSEDED": 6,
+      "IN_REVIEW": 111
+    },
+    "unmapped_draft": 5024,
+    "chapters": 36,
+    "topics": 125,
+    "concepts": 192,
+    "knowledge_units": 73,
+    "question_blueprints": 137,
+    "content_batches": 11,
+    "generation_jobs": 204,
+    "generation_runs": 204,
+    "generation_candidates": 392
+  },
+  "safety_unchanged": true,
+  "ai_factory": {
+    "ai_calls": 0,
+    "mcqs_generated": 0,
+    "content_factory_runs": 0,
+    "generation_jobs_created": 0
+  },
+  "remaining_decisions": [
+    "Owner must explicitly APPROVE this rationalised 2026–27 corpus as the project curriculum baseline.",
+    "Class XII Biology BOTANY vs ZOOLOGY ownership for each chapter requires CURRICULUM-OWNER DECISION.",
+    "Confirm whether DB chapters absent from the corpus should be frozen for future NCERT generation.",
+    "CF-C1 titles absent from corpus (do not invent): Aldehydes, Ketones and Carboxylic Acids, Amines",
+    "Gravitation PDF is present — owner may approve taxonomy fill separately (no taxonomy change in this task)."
+  ]
+}

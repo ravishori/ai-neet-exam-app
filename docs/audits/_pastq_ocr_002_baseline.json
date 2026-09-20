@@ -1,0 +1,210 @@
+{
+  "before": {
+    "status": {
+      "DRAFT": 5444,
+      "PUBLISHED": 1479,
+      "SUPERSEDED": 6,
+      "IN_REVIEW": 111
+    },
+    "unmapped": 5034,
+    "pastq_pilot": 10
+  },
+  "summary": {
+    "files_discovered": 15,
+    "files_readable": 15,
+    "files_failed": 0,
+    "papers_detected": 14,
+    "papers_requiring_review": 2,
+    "questions_extracted": 1066,
+    "questions_valid": 783,
+    "questions_invalid": 283,
+    "questions_requiring_review": 1314,
+    "questions_ready_for_import": 20,
+    "answers_detected": 169,
+    "answer_conflicts": 0,
+    "visual_questions": 102,
+    "duplicates": {
+      "UNIQUE": 981,
+      "DUPLICATE_WITHIN_IMPORT": 85,
+      "POTENTIAL_DUPLICATE": 0,
+      "DUPLICATE_EXISTING": 0
+    },
+    "years_detected": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2026
+    ],
+    "subjects_detected": [],
+    "scanned_ocr_required_files": [
+      "NEET2015.pdf",
+      "NEET2017.pdf",
+      "NEET2021.pdf",
+      "Neet2022.pdf",
+      "NEET2026-11.pdf",
+      "Neet2026-12.pdf",
+      "RENeet2026.pdf"
+    ],
+    "pilot_candidates": {
+      "recent_ready": [
+        {
+          "file": "NEET2024.pdf",
+          "year": 2024,
+          "q": 92,
+          "staging_id": "895ae978-8f42-4316-8ca4-42940f7b4d63"
+        }
+      ],
+      "older_ready": [
+        {
+          "file": "NEET2018.pdf",
+          "year": 2018,
+          "q": 131,
+          "staging_id": "f06b751d-af8b-4e07-80b3-df91cec057ad"
+        }
+      ],
+      "with_answer": [
+        {
+          "file": "NEET2018.pdf",
+          "year": 2018,
+          "q": 131,
+          "staging_id": "f06b751d-af8b-4e07-80b3-df91cec057ad"
+        },
+        {
+          "file": "NEET2019.pdf",
+          "year": 2019,
+          "q": 22,
+          "staging_id": "7d0124b1-80ca-4296-a23e-63838fc864d5"
+        },
+        {
+          "file": "NEET2019.pdf",
+          "year": 2019,
+          "q": 32,
+          "staging_id": "4dc5716b-1798-4826-b82e-265e1711666e"
+        }
+      ],
+      "visual_flagged": [
+        {
+          "file": "NEET2016.pdf",
+          "q": 3,
+          "year": 2016
+        },
+        {
+          "file": "NEET2016.pdf",
+          "q": 4,
+          "year": 2016
+        },
+        {
+          "file": "NEET2016.pdf",
+          "q": 24,
+          "year": 2016
+        },
+        {
+          "file": "NEET2016.pdf",
+          "q": 25,
+          "year": 2016
+        },
+        {
+          "file": "NEET2016.pdf",
+          "q": 30,
+          "year": 2016
+        }
+      ],
+      "ocr_files": [
+        "NEET2015.pdf",
+        "NEET2017.pdf",
+        "NEET2021.pdf",
+        "Neet2022.pdf",
+        "NEET2026-11.pdf"
+      ]
+    }
+  },
+  "scanned_pdfs": [
+    {
+      "filename": "NEET2015.pdf",
+      "sha256": "ef0ea641c56c85b5246aa2bc597627ce03f3640086ca9e9e43c0c17d4573c724",
+      "page_count": 23,
+      "extraction_status": "SCANNED_OR_EMPTY_TEXT",
+      "extraction_method": "pymupdf_text",
+      "notes": [
+        "little_or_no_extractable_text"
+      ],
+      "sample_chars": 0,
+      "file_size": 2043904
+    },
+    {
+      "filename": "NEET2017.pdf",
+      "sha256": "9e5ff58f011ba593f850168cbed3e1be75c4e7b86d04c26a0d190adeb58b3492",
+      "page_count": 23,
+      "extraction_status": "SCANNED_OR_EMPTY_TEXT",
+      "extraction_method": "pymupdf_text",
+      "notes": [
+        "little_or_no_extractable_text"
+      ],
+      "sample_chars": 0,
+      "file_size": 2043904
+    },
+    {
+      "filename": "NEET2021.pdf",
+      "sha256": "932579eefec74d064b5dd77e1e85610788577eebe003882666df19da2db48101",
+      "page_count": 27,
+      "extraction_status": "SCANNED_OR_EMPTY_TEXT",
+      "extraction_method": "pymupdf_text",
+      "notes": [
+        "little_or_no_extractable_text"
+      ],
+      "sample_chars": 16,
+      "file_size": 15968991
+    },
+    {
+      "filename": "Neet2022.pdf",
+      "sha256": "9bc009bf77f5eb040b8a3c59db83db2b096501d0eca914a15b866aefeb7787a2",
+      "page_count": 26,
+      "extraction_status": "SCANNED_OR_EMPTY_TEXT",
+      "extraction_method": "pymupdf_text",
+      "notes": [
+        "little_or_no_extractable_text"
+      ],
+      "sample_chars": 16,
+      "file_size": 18693873
+    },
+    {
+      "filename": "NEET2026-11.pdf",
+      "sha256": "22ff188fa674e154675d45e5deb31e78967a65f5c23c8adfb6222262cbf0adb9",
+      "page_count": 30,
+      "extraction_status": "TEXT_EXTRACTABLE",
+      "extraction_method": "pymupdf_text",
+      "notes": [],
+      "sample_chars": 330,
+      "file_size": 8881355
+    },
+    {
+      "filename": "Neet2026-12.pdf",
+      "sha256": "c56a69fac47de039d10f45e6172cf556edf695e73080bca3e2133f3e8880dcfe",
+      "page_count": 31,
+      "extraction_status": "TEXT_EXTRACTABLE",
+      "extraction_method": "pymupdf_text",
+      "notes": [],
+      "sample_chars": 341,
+      "file_size": 1874161
+    },
+    {
+      "filename": "RENeet2026.pdf",
+      "sha256": "6a7b5ab1c06f114870bcc94e767c2cf2fcdfcc1c499c8b3d9fcfd6fbf2f69034",
+      "page_count": 22,
+      "extraction_status": "SCANNED_OR_EMPTY_TEXT",
+      "extraction_method": "pymupdf_text",
+      "notes": [
+        "little_or_no_extractable_text"
+      ],
+      "sample_chars": 0,
+      "file_size": 2043998
+    }
+  ]
+}

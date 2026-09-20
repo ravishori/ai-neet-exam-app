@@ -1,0 +1,455 @@
+{
+  "database": {
+    "database_url_async_hostpath": "localhost:5432/trinetra_db",
+    "database_url_sync_hostpath": "localhost:5432/trinetra_test_db",
+    "audit_target": "localhost:5432/trinetra_db",
+    "note": "Audit uses DATABASE_URL (live app DB). DATABASE_URL_SYNC may be a separate empty test database.",
+    "current_database": "trinetra_db"
+  },
+  "date": "2026-09-02T10:40:14.251336+00:00",
+  "read_only": true,
+  "definitions": {
+    "total": "cms.content_items content_type=QUESTION AND deleted_at IS NULL",
+    "published": "status='PUBLISHED' (matches assessment.published_question_ids_for_scope)",
+    "draft": "status='DRAFT' only \u2014 other non-published statuses listed separately",
+    "subject": "JOIN concept\u2192topic\u2192chapter\u2192subject; Biology executive = BOTANY+ZOOLOGY",
+    "class": "Priority: source_documents.class_level via latest_version KU/ingestion join; fallback ncert_reference Class 11/12; fallback relative_source_path regex. Conflicting if signals disagree.",
+    "diagram_based": "Linked ingestion.visual_assets on knowledge_unit (via content_version_knowledge_units or content_versions.knowledge_unit_id) with asset_type='diagram' and deleted_at IS NULL. No diagram_svg/diagram_description keys exist on QUESTION bodies.",
+    "graphic_based": "Any linked non-deleted visual_asset (image|diagram|table|equation|chemical_structure). Superset of diagram-based.",
+    "source_year": "body.pyq_year on latest_version; pilot_run_id / publisher from ingestion when joinable",
+    "duplicates": "duplicate slug groups; duplicate lower(trim(stem)) groups; intra-question duplicate option texts",
+    "version_body": "Inventory content metrics use latest_version_id; PUBLISHED live pointer = current_version_id"
+  },
+  "body_keys_observed": [
+    "bloom_level",
+    "correct_option",
+    "difficulty",
+    "explanation",
+    "options",
+    "pyq_year",
+    "stem"
+  ],
+  "totals": {
+    "total_questions": 175,
+    "soft_deleted_questions": 0,
+    "by_status": {
+      "DRAFT": 153,
+      "PUBLISHED": 11,
+      "IN_REVIEW": 11
+    },
+    "published": 11,
+    "draft": 153,
+    "other_non_published": {
+      "IN_REVIEW": 11
+    },
+    "other_non_published_sum": 11
+  },
+  "pointers": {
+    "latest_null": 0,
+    "current_null": 134,
+    "latest_ne_current": 142,
+    "published_current_null": 0,
+    "published_aligned": 11,
+    "published_current_ne_latest": 0
+  },
+  "content_types_non_deleted": {
+    "QUESTION": 175,
+    "FLASHCARD": 14,
+    "CONCEPT_NOTE": 13,
+    "FORMULA_SHEET": 8
+  },
+  "diagram_content_type_items": 0,
+  "subjects": {
+    "by_code": {
+      "PHYSICS": 73,
+      "CHEMISTRY": 53,
+      "ZOOLOGY": 27,
+      "BOTANY": 22
+    },
+    "detail": [
+      {
+        "subject_code": "PHYSICS",
+        "subject_name": "Physics",
+        "n": 73
+      },
+      {
+        "subject_code": "CHEMISTRY",
+        "subject_name": "Chemistry",
+        "n": 53
+      },
+      {
+        "subject_code": "ZOOLOGY",
+        "subject_name": "Zoology",
+        "n": 27
+      },
+      {
+        "subject_code": "BOTANY",
+        "subject_name": "Botany",
+        "n": 22
+      }
+    ],
+    "physics": 73,
+    "chemistry": 53,
+    "botany": 22,
+    "zoology": 27,
+    "biology_botany_plus_zoology": 49,
+    "subject_unmapped": 0,
+    "subject_x_status": [
+      {
+        "subject_code": "BOTANY",
+        "pub_bucket": "NON_PUBLISHED",
+        "n": 21
+      },
+      {
+        "subject_code": "BOTANY",
+        "pub_bucket": "PUBLISHED",
+        "n": 1
+      },
+      {
+        "subject_code": "CHEMISTRY",
+        "pub_bucket": "NON_PUBLISHED",
+        "n": 52
+      },
+      {
+        "subject_code": "CHEMISTRY",
+        "pub_bucket": "PUBLISHED",
+        "n": 1
+      },
+      {
+        "subject_code": "PHYSICS",
+        "pub_bucket": "NON_PUBLISHED",
+        "n": 67
+      },
+      {
+        "subject_code": "PHYSICS",
+        "pub_bucket": "PUBLISHED",
+        "n": 6
+      },
+      {
+        "subject_code": "ZOOLOGY",
+        "pub_bucket": "NON_PUBLISHED",
+        "n": 24
+      },
+      {
+        "subject_code": "ZOOLOGY",
+        "pub_bucket": "PUBLISHED",
+        "n": 3
+      }
+    ]
+  },
+  "class": {
+    "class_11": 40,
+    "class_12": 24,
+    "class_unknown": 111,
+    "class_conflicting": 0,
+    "confidence": "LOW CONFIDENCE \u2014 majority lack class_level / ncert / path signals",
+    "rule": "Priority: source_documents.class_level via latest_version KU/ingestion join; fallback ncert_reference Class 11/12; fallback relative_source_path regex. Conflicting if signals disagree."
+  },
+  "visuals": {
+    "graphic_based": 48,
+    "diagram_based": 45,
+    "both": 45,
+    "graphic_only": 3,
+    "diagram_only": 0,
+    "neither": 127
+  },
+  "source_year": {
+    "pyq_year_distribution": {
+      "null": 175
+    },
+    "with_pyq_year": 0,
+    "pilot_run_id_top": [
+      {
+        "pilot_run_id": "(none)",
+        "n": 111
+      },
+      {
+        "pilot_run_id": "phase-d-30-mcq-v1",
+        "n": 34
+      },
+      {
+        "pilot_run_id": "phase-d-30-mcq-authorized-20260825",
+        "n": 30
+      }
+    ],
+    "publisher_distribution": [
+      {
+        "publisher": "(none)",
+        "n": 111
+      },
+      {
+        "publisher": "NCERT",
+        "n": 64
+      }
+    ]
+  },
+  "chapter_topic": {
+    "chapters": [
+      {
+        "chapter_code": "current-electricity",
+        "chapter_name": "Current Electricity",
+        "n": 53
+      },
+      {
+        "chapter_code": "chemical-bonding",
+        "chapter_name": "Chemical Bonding and Molecular Structure",
+        "n": 33
+      },
+      {
+        "chapter_code": "photosynthesis",
+        "chapter_name": "Photosynthesis in Higher Plants",
+        "n": 12
+      },
+      {
+        "chapter_code": "electrostatics",
+        "chapter_name": "Electrostatics",
+        "n": 10
+      },
+      {
+        "chapter_code": "organic-chemistry-basics",
+        "chapter_name": "Organic Chemistry - Basic Principles",
+        "n": 10
+      },
+      {
+        "chapter_code": "cell-unit-of-life",
+        "chapter_name": "Cell - The Unit of Life",
+        "n": 10
+      },
+      {
+        "chapter_code": "optics",
+        "chapter_name": "Optics",
+        "n": 10
+      },
+      {
+        "chapter_code": "equilibrium",
+        "chapter_name": "Equilibrium",
+        "n": 10
+      },
+      {
+        "chapter_code": "biomolecules",
+        "chapter_name": "Biomolecules",
+        "n": 8
+      },
+      {
+        "chapter_code": "animal-kingdom",
+        "chapter_name": "Animal Kingdom",
+        "n": 8
+      },
+      {
+        "chapter_code": "human-reproduction",
+        "chapter_name": "Human Reproduction",
+        "n": 8
+      },
+      {
+        "chapter_code": "body-fluids-circulation",
+        "chapter_name": "Body Fluids and Circulation",
+        "n": 3
+      }
+    ],
+    "chapters_total_groups": 12,
+    "topics": [
+      {
+        "topic_code": "ohms-law",
+        "topic_name": "Electric Current and Ohm's Law",
+        "n": 33
+      },
+      {
+        "topic_code": "hybridization",
+        "topic_name": "Hybridization",
+        "n": 19
+      },
+      {
+        "topic_code": "resistance-resistivity",
+        "topic_name": "Resistance and Resistivity",
+        "n": 11
+      },
+      {
+        "topic_code": "kirchhoffs-laws",
+        "topic_name": "Kirchhoff's Laws",
+        "n": 9
+      },
+      {
+        "topic_code": "covalent-bonding-vsepr",
+        "topic_name": "Covalent Bonding and VSEPR Theory",
+        "n": 7
+      },
+      {
+        "topic_code": "ionic-bonding",
+        "topic_name": "Ionic Bonding",
+        "n": 7
+      },
+      {
+        "topic_code": "factors-affecting-photosynthesis",
+        "topic_name": "Factors Affecting Photosynthesis",
+        "n": 6
+      },
+      {
+        "topic_code": "electric-field-potential",
+        "topic_name": "Electric Field and Potential",
+        "n": 4
+      },
+      {
+        "topic_code": "electronic-effects",
+        "topic_name": "Electronic Effects",
+        "n": 4
+      },
+      {
+        "topic_code": "refraction-lenses",
+        "topic_name": "Refraction and Lenses",
+        "n": 4
+      },
+      {
+        "topic_code": "chemical-equilibrium",
+        "topic_name": "Chemical Equilibrium",
+        "n": 4
+      },
+      {
+        "topic_code": "cell-organelles",
+        "topic_name": "Cell Organelles",
+        "n": 4
+      },
+      {
+        "topic_code": "ionic-equilibrium",
+        "topic_name": "Ionic Equilibrium and pH",
+        "n": 4
+      },
+      {
+        "topic_code": "reproductive-systems",
+        "topic_name": "Male and Female Reproductive Systems",
+        "n": 3
+      },
+      {
+        "topic_code": "dark-reaction",
+        "topic_name": "Dark Reaction (Calvin Cycle)",
+        "n": 3
+      },
+      {
+        "topic_code": "classification-basis",
+        "topic_name": "Basis of Classification",
+        "n": 3
+      },
+      {
+        "topic_code": "wave-optics-basics",
+        "topic_name": "Wave Optics Basics",
+        "n": 3
+      },
+      {
+        "topic_code": "isomerism-intermediates",
+        "topic_name": "Isomerism and Intermediates",
+        "n": 3
+      },
+      {
+        "topic_code": "reflection-mirrors",
+        "topic_name": "Reflection and Mirrors",
+        "n": 3
+      },
+      {
+        "topic_code": "nucleic-acids",
+        "topic_name": "Nucleic Acids",
+        "n": 3
+      },
+      {
+        "topic_code": "membrane-cell-cycle",
+        "topic_name": "Membrane and Cell Cycle",
+        "n": 3
+      },
+      {
+        "topic_code": "chordata-basics",
+        "topic_name": "Chordata Basics",
+        "n": 3
+      },
+      {
+        "topic_code": "cell-theory-types",
+        "topic_name": "Cell Theory and Cell Types",
+        "n": 3
+      },
+      {
+        "topic_code": "capacitance",
+        "topic_name": "Capacitance",
+        "n": 3
+      },
+      {
+        "topic_code": "proteins-enzymes",
+        "topic_name": "Proteins and Enzymes",
+        "n": 3
+      }
+    ],
+    "topics_total_groups": 36,
+    "missing_concept_id": 0,
+    "concept_but_no_chapter": 0
+  },
+  "duplicates": {
+    "duplicate_slug_groups": 0,
+    "duplicate_stem_groups": 1,
+    "near_duplicate_stem_options_md5_groups": 1,
+    "questions_with_duplicate_option_texts": 0,
+    "slug_examples": [],
+    "stem_examples": [
+      {
+        "stem_norm": "[fallback mode \u2014 no anthropic_api_key configured] placeholder question stem.",
+        "n": 2,
+        "ids": [
+          "143c5687-091f-452e-899f-6b60895b8cec",
+          "b521811e-208e-4627-bc70-33718cda924f"
+        ]
+      }
+    ]
+  },
+  "missing_metadata": {
+    "missing_concept_id": 0,
+    "missing_micro_competency_id": 174,
+    "missing_stem": 0,
+    "missing_options": 0,
+    "missing_correct_option": 0,
+    "missing_explanation": 0,
+    "missing_difficulty": 0,
+    "missing_pyq_year": 175,
+    "invalid_abcd_option_set": 0,
+    "missing_subject_mapping": 0,
+    "missing_class_mapping": 111,
+    "published_current_version_null": 0
+  },
+  "non_production_appendix": {
+    "generation_candidates": 32,
+    "factory_review_items": 5,
+    "note": "NON-PRODUCTION \u2014 not included in Total MCQs"
+  },
+  "sanity_checks": {
+    "sum_by_status_eq_total": true,
+    "published_draft_other_eq_total": true,
+    "subject_mapped_unmapped_eq_total": true,
+    "class_parts_eq_total": true,
+    "graphic_subset": true,
+    "diagram_subset": true,
+    "practice_pool_published_match": true
+  },
+  "recommendation": {
+    "verdict": "CONDITIONAL",
+    "reasons": [
+      "Only 11 PUBLISHED questions in student practice pool (of 175).",
+      "153 remain DRAFT; 11 other non-published.",
+      "Do not load more until Class coverage / subject mapping gaps are understood for new packs.",
+      "No QUESTION body diagram_svg fields; graphic coverage depends on visual_asset linkage.",
+      "DATABASE_URL_SYNC points at a different (empty) DB \u2014 keep using live DATABASE_URL for inventory."
+    ]
+  },
+  "executive": {
+    "Total MCQs (QUESTION, not deleted)": 175,
+    "Published": 11,
+    "Draft": 153,
+    "Other statuses (sum)": 11,
+    "Physics": 73,
+    "Chemistry": 53,
+    "Biology (BOTANY+ZOOLOGY)": 49,
+    "Subject unmapped": 0,
+    "Class 11": 40,
+    "Class 12": 24,
+    "Class unknown": 111,
+    "Graphic-based": 48,
+    "Diagram-based": 45,
+    "With pyq_year": 0,
+    "Missing concept_id": 0,
+    "Duplicate stem groups": 1,
+    "Duplicate slug groups": 0
+  }
+}

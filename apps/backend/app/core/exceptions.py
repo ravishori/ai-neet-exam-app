@@ -1,5 +1,6 @@
 from fastapi import Request
 from fastapi.exceptions import RequestValidationError
+from sqlalchemy.exc import IntegrityError, OperationalError, SQLAlchemyError
 from starlette.exceptions import HTTPException as StarletteHTTPException
 
 from app.core.logging import get_logger
@@ -7,14 +8,27 @@ from app.shared.responses import envelope
 
 logger = get_logger("exceptions")
 
+STUDENT_INTERNAL_MESSAGE = "Something went wrong. Please try again."
+STUDENT_DB_MESSAGE = (
+    "We're temporarily unable to access your preparation data. Please try again in a moment."
+)
+
 
 class AppError(Exception):
     """Base for business errors. Every module-specific error inherits this."""
 
-    def __init__(self, message: str, *, code: str = "APP_ERROR", status_code: int = 400):
+    def __init__(
+        self,
+        message: str,
+        *,
+        code: str = "APP_ERROR",
+        status_code: int = 400,
+        error_id: str | None = None,
+    ):
         self.message = message
         self.code = code
         self.status_code = status_code
+        self.error_id = error_id
         super().__init__(message)
 
 
@@ -28,52 +42,197 @@ class PermissionDeniedError(AppError):
         super().__init__(message, code="PERMISSION_DENIED", status_code=403)
 
 
+def _new_error_id() -> str:
+    import uuid
+
+    return uuid.uuid4().hex[:12].upper()
+
+
+def _error_payload(*, code: str, message: str, field: str | None = None, error_id: str | None = None) -> dict:
+    payload: dict = {"code": code, "message": message}
+    if field:
+        payload["field"] = field
+    if error_id:
+        payload["errorId"] = error_id
+    return payload
+
+
 async def app_error_handler(request: Request, exc: AppError):
     trace_id = getattr(request.state, "trace_id", None)
+    error_id = exc.error_id or _new_error_id()
     return envelope(
         success=False,
-        errors=[{"code": exc.code, "message": exc.message}],
+        errors=[_error_payload(code=exc.code, message=exc.message, error_id=error_id)],
         trace_id=trace_id,
         status_code=exc.status_code,
+        meta={"errorId": error_id},
     )
 
 
 async def http_exception_handler(request: Request, exc: StarletteHTTPException):
     trace_id = getattr(request.state, "trace_id", None)
+    error_id = _new_error_id()
+    # Never forward raw server detail that might include internals — keep short.
+    message = str(exc.detail) if isinstance(exc.detail, str) else "Request failed"
+    code = "NOT_FOUND" if exc.status_code == 404 else "HTTP_ERROR"
+    if exc.status_code == 401:
+        code = "AUTHENTICATION_FAILED"
+    elif exc.status_code == 403:
+        code = "AUTHORIZATION_FAILED"
+    elif exc.status_code == 429:
+        code = "RATE_LIMITED"
     return envelope(
         success=False,
-        errors=[{"code": "HTTP_ERROR", "message": str(exc.detail)}],
+        errors=[_error_payload(code=code, message=message, error_id=error_id)],
         trace_id=trace_id,
         status_code=exc.status_code,
+        meta={"errorId": error_id},
     )
 
 
 async def validation_exception_handler(request: Request, exc: RequestValidationError):
     trace_id = getattr(request.state, "trace_id", None)
+    error_id = _new_error_id()
     errors = [
-        {"code": "VALIDATION_ERROR", "message": err["msg"], "field": ".".join(str(p) for p in err["loc"])}
+        _error_payload(
+            code="VALIDATION_ERROR",
+            message=err["msg"],
+            field=".".join(str(p) for p in err["loc"]),
+            error_id=error_id,
+        )
         for err in exc.errors()
     ]
-    return envelope(success=False, errors=errors, trace_id=trace_id, status_code=422)
+    return envelope(success=False, errors=errors, trace_id=trace_id, status_code=422, meta={"errorId": error_id})
+
+
+def map_integrity_error(exc: IntegrityError) -> AppError:
+    """Translate PostgreSQL/SQLAlchemy integrity failures into safe AppErrors."""
+    orig = str(getattr(exc, "orig", exc)).lower()
+    if "unique" in orig or "duplicate" in orig:
+        return AppError(
+            "This record already exists or conflicts with an existing value.",
+            code="CONFLICT",
+            status_code=409,
+        )
+    if "foreign key" in orig or "fk_" in orig:
+        return AppError(
+            "Related record is missing or cannot be modified.",
+            code="INVALID_REFERENCE",
+            status_code=400,
+        )
+    if "not-null" in orig or "null value" in orig:
+        return AppError(
+            "A required field was missing.",
+            code="VALIDATION_ERROR",
+            status_code=422,
+        )
+    return AppError(
+        "The request could not be completed due to a data constraint.",
+        code="DATA_CONSTRAINT",
+        status_code=400,
+    )
+
+
+async def sqlalchemy_exception_handler(request: Request, exc: SQLAlchemyError):
+    trace_id = getattr(request.state, "trace_id", None)
+    error_id = _new_error_id()
+
+    if isinstance(exc, IntegrityError):
+        mapped = map_integrity_error(exc)
+        logger.warning(
+            "db_integrity_error",
+            method=request.method,
+            path=request.url.path,
+            trace_id=trace_id,
+            error_id=error_id,
+            code=mapped.code,
+        )
+        return envelope(
+            success=False,
+            errors=[_error_payload(code=mapped.code, message=mapped.message, error_id=error_id)],
+            trace_id=trace_id,
+            status_code=mapped.status_code,
+            meta={"errorId": error_id, "requestId": trace_id},
+        )
+
+    is_operational = isinstance(exc, OperationalError)
+    status_code = 503 if is_operational else 500
+    code = "SERVICE_UNAVAILABLE" if is_operational else "INTERNAL_SERVER_ERROR"
+    student_message = f"{STUDENT_DB_MESSAGE} Reference: {trace_id or error_id}."
+
+    logger.error(
+        "db_error",
+        method=request.method,
+        path=request.url.path,
+        trace_id=trace_id,
+        error_id=error_id,
+        severity="fatal" if is_operational else "error",
+        exc_info=exc,
+    )
+
+    try:
+        from app.core.alerts import schedule_unexpected_incident
+
+        schedule_unexpected_incident(
+            method=request.method,
+            route=request.url.path,
+            status_code=status_code,
+            exc=exc,
+            request_id=trace_id,
+            error_id=error_id,
+            safe_message=STUDENT_DB_MESSAGE,
+            context={"exception_category": "database", "operational": is_operational},
+        )
+    except Exception:
+        logger.warning("critical_alert_failed", error_id=error_id, exc_info=True)
+
+    return envelope(
+        success=False,
+        errors=[_error_payload(code=code, message=student_message, error_id=error_id)],
+        trace_id=trace_id,
+        status_code=status_code,
+        meta={"errorId": error_id, "requestId": trace_id},
+    )
 
 
 async def unhandled_exception_handler(request: Request, exc: Exception):
     trace_id = getattr(request.state, "trace_id", None)
-    # The client only ever sees the generic message below — never leak
-    # exception details externally — but without this, an unhandled error
-    # is otherwise invisible server-side too, once a handler is registered
-    # for the base Exception class (Starlette's own default traceback
-    # logging is bypassed the moment a custom handler takes over).
+    error_id = _new_error_id()
     logger.error(
         "unhandled_exception",
         method=request.method,
         path=request.url.path,
         trace_id=trace_id,
+        error_id=error_id,
+        severity="error",
         exc_info=exc,
     )
+    try:
+        from app.core.alerts import schedule_unexpected_incident
+
+        schedule_unexpected_incident(
+            method=request.method,
+            route=request.url.path,
+            status_code=500,
+            exc=exc,
+            request_id=trace_id,
+            error_id=error_id,
+            safe_message=STUDENT_INTERNAL_MESSAGE,
+            context={"exception_category": "unhandled"},
+        )
+    except Exception:
+        logger.warning("critical_alert_failed", error_id=error_id, exc_info=True)
+
     return envelope(
         success=False,
-        errors=[{"code": "INTERNAL_ERROR", "message": "Something went wrong. Try again shortly."}],
+        errors=[
+            _error_payload(
+                code="INTERNAL_SERVER_ERROR",
+                message=f"{STUDENT_INTERNAL_MESSAGE} Reference: {trace_id or error_id}.",
+                error_id=error_id,
+            )
+        ],
         trace_id=trace_id,
         status_code=500,
+        meta={"errorId": error_id, "requestId": trace_id},
     )

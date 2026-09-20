@@ -18,6 +18,7 @@ import {
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
+import { SurfaceCard, SurfaceCardContent } from "@/components/ds";
 import { adminApi } from "@/features/admin/api";
 
 const MODULES = [
@@ -25,7 +26,7 @@ const MODULES = [
   { href: "/admin/knowledge-units", label: "Knowledge Units", description: "Structured facts extracted from PDFs", icon: Database },
   { href: "/admin/ingestion", label: "PDF Management", description: "Upload and track ingestion jobs", icon: Upload },
   { href: "/admin/visual-assets", label: "Visual Asset Review", description: "Approve or reject detected diagrams", icon: ImageIcon },
-  { href: "/admin/ai-review", label: "AI Review Queue", description: "Content flagged by the AI checker", icon: Sparkles },
+  { href: "/admin/ai-review", label: "Editorial Review", description: "Human ECAEP SME queue — AI assist only", icon: Sparkles },
   { href: "/admin/search", label: "Search Console", description: "Reindex and inspect search relevance", icon: FileSearch },
   { href: "/admin/audit-logs", label: "Audit Logs", description: "Every admin action, who and when", icon: ScrollText },
   { href: "/admin/users", label: "Users & Roles", description: "Accounts, roles, and permissions", icon: Users },
@@ -33,13 +34,13 @@ const MODULES = [
 
 function KpiTile({ label, value, hint }: { label: string; value: string | number; hint?: string }) {
   return (
-    <Card>
-      <CardContent className="flex flex-col gap-1 pt-6">
+    <SurfaceCard lift accent="none" className="p-0">
+      <SurfaceCardContent className="flex flex-col gap-1 pt-5">
         <span className="text-xs font-medium text-muted-foreground">{label}</span>
-        <span className="font-heading text-2xl font-semibold tabular-nums text-foreground">{value}</span>
+        <span className="font-heading font-mono text-2xl font-semibold tabular-nums text-foreground">{value}</span>
         {hint && <span className="text-xs text-muted-foreground">{hint}</span>}
-      </CardContent>
-    </Card>
+      </SurfaceCardContent>
+    </SurfaceCard>
   );
 }
 
@@ -53,11 +54,12 @@ export default function AdminDashboardPage() {
     .reduce((sum, [, count]) => sum + count, 0);
 
   return (
-    <main className="flex-1 px-4 py-8 sm:px-6">
+    <main className="flex-1 px-4 py-8 sm:px-6 animate-fade-slide-up">
       <div className="mx-auto flex max-w-6xl flex-col gap-8">
-        <div>
-          <h1 className="font-heading text-xl font-semibold">Admin Dashboard</h1>
-          <p className="text-sm text-muted-foreground">Content operations at a glance.</p>
+        <div className="space-y-1">
+          <p className="text-xs font-medium uppercase tracking-[0.14em] text-muted-foreground">Operations</p>
+          <h1 className="font-heading text-2xl font-bold tracking-tight">Admin Dashboard</h1>
+          <p className="text-sm text-muted-foreground">Content operations at a glance — ECAEP workflow unchanged.</p>
         </div>
 
         {isLoading ? (
@@ -77,7 +79,7 @@ export default function AdminDashboardPage() {
           </div>
         )}
 
-        <Card>
+        <Card className="surface-glass border-0">
           <CardHeader>
             <div className="flex items-center gap-2">
               <Activity className="size-4 text-primary" aria-hidden="true" />
@@ -101,14 +103,14 @@ export default function AdminDashboardPage() {
           <h2 className="mb-3 font-heading text-sm font-semibold text-muted-foreground">Modules</h2>
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {MODULES.map((mod) => (
-              <Link key={mod.href} href={mod.href}>
-                <Card className="h-full transition-colors hover:border-primary/50">
-                  <CardContent className="flex flex-col gap-2 pt-6">
+              <Link key={mod.href} href={mod.href} className="hover-lift block">
+                <SurfaceCard lift={false} accent="none" className="h-full">
+                  <SurfaceCardContent className="flex flex-col gap-2 pt-5">
                     <mod.icon className="size-5 text-primary" aria-hidden="true" />
                     <span className="text-sm font-medium text-foreground">{mod.label}</span>
                     <span className="text-xs text-muted-foreground">{mod.description}</span>
-                  </CardContent>
-                </Card>
+                  </SurfaceCardContent>
+                </SurfaceCard>
               </Link>
             ))}
           </div>

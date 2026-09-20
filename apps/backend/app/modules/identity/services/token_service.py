@@ -32,6 +32,25 @@ def decode_access_token(token: str) -> dict:
     return payload
 
 
+def create_mfa_pending_token(*, user_id: uuid.UUID) -> str:
+    """Short-lived token after password OK when TOTP is enabled — not a session."""
+    now = datetime.now(UTC)
+    payload = {
+        "sub": str(user_id),
+        "iat": now,
+        "exp": now + timedelta(minutes=5),
+        "type": "mfa_pending",
+    }
+    return jwt.encode(payload, settings.jwt_secret, algorithm=ALGORITHM)
+
+
+def decode_mfa_pending_token(token: str) -> dict:
+    payload = jwt.decode(token, settings.jwt_secret, algorithms=[ALGORITHM])
+    if payload.get("type") != "mfa_pending":
+        raise jwt.InvalidTokenError("Not an MFA pending token")
+    return payload
+
+
 def generate_refresh_token() -> tuple[str, str, datetime]:
     """Returns (plaintext_token, token_hash, expires_at). Only the hash is ever stored."""
     plaintext = secrets.token_urlsafe(48)

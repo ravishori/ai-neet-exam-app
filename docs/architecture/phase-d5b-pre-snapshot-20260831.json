@@ -1,0 +1,1664 @@
+{
+  "pilot_run_id": "phase-d-30-mcq-authorized-20260825",
+  "items": [
+    {
+      "content_item_id": "10d4d997-cb60-4450-99e8-47ed905c9775",
+      "status": "DRAFT",
+      "concept_id": "b48f10f4-e5e1-4740-a62f-c1bcaf3865fb",
+      "concept": "photorespiration",
+      "topic": "factors-affecting-photosynthesis",
+      "chapter": "photosynthesis",
+      "subject": "BOTANY",
+      "current_version_id": "cc8ff85b-9cbc-48bb-af14-4b68f9fd4cb0",
+      "latest_version_id": "cc8ff85b-9cbc-48bb-af14-4b68f9fd4cb0",
+      "content_version_id": "cc8ff85b-9cbc-48bb-af14-4b68f9fd4cb0",
+      "version_no": 1,
+      "workflow_state": "DRAFT",
+      "body": {
+        "stem": "In C3 plants, when O2 binds to RuBisCO instead of CO2, RuBP combines with O2 to form which of the following products?",
+        "options": [
+          {
+            "text": "One molecule of phosphoglycerate and one molecule of phosphoglycolate",
+            "label": "A"
+          },
+          {
+            "text": "Two molecules of phosphoglycerate",
+            "label": "B"
+          },
+          {
+            "text": "One molecule of oxaloacetate and one molecule of phosphoglycerate",
+            "label": "C"
+          },
+          {
+            "text": "Two molecules of phosphoglycolate",
+            "label": "D"
+          }
+        ],
+        "pyq_year": null,
+        "difficulty": "easy",
+        "bloom_level": "Remembering",
+        "explanation": "In the photorespiratory pathway in C3 plants, RuBP reacts with O2 (instead of CO2) at the active site of RuBisCO to produce one molecule of phosphoglycerate and one molecule of phosphoglycolate (a 2-carbon compound). This pathway does not produce sugars, ATP, or NADPH, but instead releases CO2 while consuming ATP.",
+        "correct_option": "A"
+      },
+      "body_hash": "34b978a16cddea4f6f485502b9f3fa7e955ce9a35c49825590f604f87d7183ca",
+      "stem_hash": "bd9f4af42dee6b14da1786d96ebbd08068c33a821da80c5ad7a99cba28c60ba4",
+      "answer": "A",
+      "difficulty": "easy",
+      "knowledge_unit_id": "f01e615a-6cba-4611-b0ec-2a0a23a482d8",
+      "knowledge_unit_version": 1,
+      "created_at": "2026-08-25 06:30:59.931668+05:30",
+      "updated_at": "2026-08-31 16:59:52.737141+05:30",
+      "created_by": "88914ce4-92d7-41c3-9187-0c1884f03cd0",
+      "in_flagged": false
+    },
+    {
+      "content_item_id": "23815930-822d-4740-8e2a-b21689307a37",
+      "status": "DRAFT",
+      "concept_id": "9071ef5d-b62f-4159-91b6-90436a7705e6",
+      "concept": "ohms-law-concept",
+      "topic": "ohms-law",
+      "chapter": "current-electricity",
+      "subject": "PHYSICS",
+      "current_version_id": "c8431ec4-43dc-485c-853d-dabcc6f1bddf",
+      "latest_version_id": "c8431ec4-43dc-485c-853d-dabcc6f1bddf",
+      "content_version_id": "c8431ec4-43dc-485c-853d-dabcc6f1bddf",
+      "version_no": 1,
+      "workflow_state": "DRAFT",
+      "body": {
+        "stem": "A student lists the following statements about limitations of Ohm's law:\n(I) In a diode, reversing the polarity of the applied voltage produces a current of equal magnitude but opposite direction.\n(II) GaAs exhibits a non-unique V-I relationship, meaning for a single value of current there can be more than one corresponding voltage.\n(III) Materials that deviate from Ohm's law have no practical utility and are avoided in circuit design.\n(IV) One deviation from Ohm's law is that V ceases to be proportional to I.\nWhich combination of statements is correct?",
+        "options": [
+          {
+            "text": "II and IV only",
+            "label": "A"
+          },
+          {
+            "text": "I, II, and IV only",
+            "label": "B"
+          },
+          {
+            "text": "I and III only",
+            "label": "C"
+          },
+          {
+            "text": "II, III, and IV only",
+            "label": "D"
+          }
+        ],
+        "pyq_year": null,
+        "difficulty": "hard",
+        "bloom_level": "Evaluating",
+        "explanation": "Statement I is incorrect: in a diode (a device violating Ohm's law due to sign-dependence), reversing V does NOT produce the same magnitude of current in the opposite direction. Statement II is correct: GaAs is explicitly identified as showing non-unique V-I relationships. Statement III is incorrect: the textbook states that materials not obeying Ohm's law are widely used in electronic circuits. Statement IV is correct: one deviation is that V ceases to be proportional to I. Hence only II and IV are correct.",
+        "correct_option": "A"
+      },
+      "body_hash": "7b1c5b90f95270b3cb7a9fc81212b4ee85ec55731cbe8489a5b4f86b86094f87",
+      "stem_hash": "e2912949577ff49658d618bf893f48d835b9ba31c4b1804676c74e56c872aa72",
+      "answer": "A",
+      "difficulty": "hard",
+      "knowledge_unit_id": "7c6b55dd-78d3-44de-9771-e8514acfb53e",
+      "knowledge_unit_version": 1,
+      "created_at": "2026-08-25 06:15:18.683464+05:30",
+      "updated_at": "2026-08-31 16:59:52.737141+05:30",
+      "created_by": "88914ce4-92d7-41c3-9187-0c1884f03cd0",
+      "in_flagged": false
+    },
+    {
+      "content_item_id": "2602f9da-13cc-42ba-b164-f02f1d7a040c",
+      "status": "DRAFT",
+      "concept_id": "ed907c24-7571-4672-8715-7aa19092ed88",
+      "concept": "c3-c4-pathway",
+      "topic": "dark-reaction",
+      "chapter": "photosynthesis",
+      "subject": "BOTANY",
+      "current_version_id": "88417c2f-8c66-4033-ae18-2406ac3cdc5a",
+      "latest_version_id": "88417c2f-8c66-4033-ae18-2406ac3cdc5a",
+      "content_version_id": "88417c2f-8c66-4033-ae18-2406ac3cdc5a",
+      "version_no": 1,
+      "workflow_state": "DRAFT",
+      "body": {
+        "stem": "In C4 plants, which enzyme is responsible for the primary fixation of CO2 in mesophyll cells, and what is the first stable product formed?",
+        "options": [
+          {
+            "text": "PEP carboxylase; oxaloacetic acid (OAA)",
+            "label": "A"
+          },
+          {
+            "text": "RuBisCO; 3-phosphoglycerate (3-PGA)",
+            "label": "B"
+          },
+          {
+            "text": "PEP carboxylase; 3-phosphoglycerate (3-PGA)",
+            "label": "C"
+          },
+          {
+            "text": "RuBisCO; oxaloacetic acid (OAA)",
+            "label": "D"
+          }
+        ],
+        "pyq_year": null,
+        "difficulty": "easy",
+        "bloom_level": "Remembering",
+        "explanation": "In C4 plants, the primary CO2 acceptor in mesophyll cells is the 3-carbon molecule phosphoenol pyruvate (PEP). The enzyme PEP carboxylase (PEPcase) catalyses the fixation of CO2 onto PEP, producing the 4-carbon compound oxaloacetic acid (OAA) as the first stable product. RuBisCO is absent from mesophyll cells in C4 plants and is instead confined to bundle sheath cells.",
+        "correct_option": "A"
+      },
+      "body_hash": "d181f0bf20a51ec772bcb93db080719f8dc7b0c5e87054558de94dd9bc9e397c",
+      "stem_hash": "bd9d9e5e99f47ccaa9083421c34739ca892c4a8255d8ccc808cc2b396b8a6bef",
+      "answer": "A",
+      "difficulty": "easy",
+      "knowledge_unit_id": "4eeff605-8330-47fc-bf11-71fcd680395a",
+      "knowledge_unit_version": 1,
+      "created_at": "2026-08-25 06:30:48.611361+05:30",
+      "updated_at": "2026-08-31 16:59:52.737141+05:30",
+      "created_by": "88914ce4-92d7-41c3-9187-0c1884f03cd0",
+      "in_flagged": false
+    },
+    {
+      "content_item_id": "26ed6b35-b181-4b5d-af5e-15cf0dd00245",
+      "status": "DRAFT",
+      "concept_id": "61e7ae09-2ca1-4b26-ba8c-fbc9d56b0f53",
+      "concept": "factors-affecting-resistance",
+      "topic": "resistance-resistivity",
+      "chapter": "current-electricity",
+      "subject": "PHYSICS",
+      "current_version_id": "05337fe3-d550-4b4d-be02-8086b4fcd11b",
+      "latest_version_id": "05337fe3-d550-4b4d-be02-8086b4fcd11b",
+      "content_version_id": "05337fe3-d550-4b4d-be02-8086b4fcd11b",
+      "version_no": 1,
+      "workflow_state": "DRAFT",
+      "body": {
+        "stem": "A student uses the formula ρT = ρ0 [1 + α(T − T0)] to calculate the resistivity of a metallic conductor at a temperature far below 0°C, and separately at a moderate temperature above T0. Based on the verified textbook facts, which of the following statements is most accurate?",
+        "options": [
+          {
+            "text": "The formula gives accurate results at both temperatures, as it is derived from fundamental quantum mechanical principles valid at all temperatures.",
+            "label": "A"
+          },
+          {
+            "text": "The formula is approximately valid near and moderately above T0, but deviates considerably from actual behaviour at temperatures much lower than 0°C.",
+            "label": "B"
+          },
+          {
+            "text": "The formula is more accurate at very low temperatures because α becomes negligible, making the term α(T − T0) vanishingly small.",
+            "label": "C"
+          },
+          {
+            "text": "The formula fails at moderate temperatures above T0 but remains accurate at temperatures well below 0°C because resistivity becomes nearly constant there.",
+            "label": "D"
+          }
+        ],
+        "pyq_year": null,
+        "difficulty": "hard",
+        "bloom_level": "Evaluating",
+        "explanation": "The textbook explicitly states that the linear relationship ρT = ρ0[1 + α(T − T0)] is valid only over a limited, not too large range of temperatures, and that it deviates considerably from a straight line at temperatures much lower than 0°C. Therefore, while the formula gives a reasonable approximation at moderate temperatures above T0, it cannot be reliably used at very low temperatures. Options A, C, and D contradict this stated limitation.",
+        "correct_option": "B"
+      },
+      "body_hash": "b0139b2fa996de42f5d9184de8108f7fb72cb81102593b644e986825dab95c38",
+      "stem_hash": "5a337404a71abb1bebb118cf5684ed9ed25e7d0bf34fc3f367b9c5b0fb94a56c",
+      "answer": "B",
+      "difficulty": "hard",
+      "knowledge_unit_id": "2196173d-59b5-4ae1-8580-37196eade297",
+      "knowledge_unit_version": 1,
+      "created_at": "2026-08-25 06:15:32.317086+05:30",
+      "updated_at": "2026-08-31 16:59:52.737141+05:30",
+      "created_by": "88914ce4-92d7-41c3-9187-0c1884f03cd0",
+      "in_flagged": false
+    },
+    {
+      "content_item_id": "2f165110-be0b-402e-aa6c-2b92c6593771",
+      "status": "DRAFT",
+      "concept_id": "8abc776c-8f7b-4cef-844b-46afa4fe9f66",
+      "concept": "sp-sp2-sp3",
+      "topic": "hybridization",
+      "chapter": "chemical-bonding",
+      "subject": "CHEMISTRY",
+      "current_version_id": "bd762a20-94ea-493c-a731-6f8130194bd7",
+      "latest_version_id": "bd762a20-94ea-493c-a731-6f8130194bd7",
+      "content_version_id": "bd762a20-94ea-493c-a731-6f8130194bd7",
+      "version_no": 1,
+      "workflow_state": "DRAFT",
+      "body": {
+        "stem": "The H–O–H bond angle in water (104.5°) is less than the H–N–H bond angle in ammonia (107°), which in turn is less than the ideal tetrahedral angle (109.5°). The best explanation for this progressive decrease, based on sp3 hybridisation and repulsion principles, is:",
+        "options": [
+          {
+            "text": "Water has two lone pairs on oxygen causing greater lone pair–bond pair repulsion than the single lone pair on nitrogen in ammonia, compressing the bond angle further.",
+            "label": "A"
+          },
+          {
+            "text": "Oxygen is more electronegative than nitrogen, so O–H bond pairs are held closer to oxygen, reducing repulsion and widening the bond angle.",
+            "label": "B"
+          },
+          {
+            "text": "Nitrogen has a smaller atomic radius than oxygen, causing greater bond pair–bond pair repulsion in NH3 and a smaller bond angle.",
+            "label": "C"
+          },
+          {
+            "text": "Water has stronger bond pair–bond pair repulsions than ammonia because hydrogen atoms in water are larger than in ammonia.",
+            "label": "D"
+          }
+        ],
+        "pyq_year": null,
+        "difficulty": "hard",
+        "bloom_level": "Analysing",
+        "explanation": "Both NH3 and H2O involve sp3 hybridisation at the central atom. In NH3, one sp3 orbital contains a lone pair, and lone pair–bond pair repulsion reduces the bond angle from 109.5° to 107°. In H2O, two sp3 orbitals contain lone pairs; the greater number of lone pairs leads to stronger lone pair–bond pair repulsions, compressing the bond angle further to 104.5°. This progressive decrease is directly explained by the increasing number of lone pairs increasing repulsion on the bond pairs.",
+        "correct_option": "A"
+      },
+      "body_hash": "aaa8cc57d523a099a21619e2ecafbe6b45221d15816c8aeb69db0843d64463a0",
+      "stem_hash": "873f3b72b32fad636571d4d2a3ec266b1edcb3f5361019c42fd506b007975f1b",
+      "answer": "A",
+      "difficulty": "hard",
+      "knowledge_unit_id": "cf56609d-ae8c-4bde-89f9-a1fbe2278b61",
+      "knowledge_unit_version": 1,
+      "created_at": "2026-08-25 06:22:12.539827+05:30",
+      "updated_at": "2026-08-31 16:59:52.737141+05:30",
+      "created_by": "88914ce4-92d7-41c3-9187-0c1884f03cd0",
+      "in_flagged": false
+    },
+    {
+      "content_item_id": "3493be87-e3a8-4e7b-a399-94cbdb349d6f",
+      "status": "DRAFT",
+      "concept_id": "9071ef5d-b62f-4159-91b6-90436a7705e6",
+      "concept": "ohms-law-concept",
+      "topic": "ohms-law",
+      "chapter": "current-electricity",
+      "subject": "PHYSICS",
+      "current_version_id": "7b07fe1b-5dd5-4de9-bc7e-1947bf9fe7d5",
+      "latest_version_id": "7b07fe1b-5dd5-4de9-bc7e-1947bf9fe7d5",
+      "content_version_id": "7b07fe1b-5dd5-4de9-bc7e-1947bf9fe7d5",
+      "version_no": 1,
+      "workflow_state": "DRAFT",
+      "body": {
+        "stem": "A copper wire of length l and cross-sectional area A has a resistance R. If the length of the wire is doubled and its cross-sectional area is halved, the new resistance of the wire will be:",
+        "options": [
+          {
+            "text": "4R",
+            "label": "A"
+          },
+          {
+            "text": "2R",
+            "label": "B"
+          },
+          {
+            "text": "R/2",
+            "label": "C"
+          },
+          {
+            "text": "R/4",
+            "label": "D"
+          }
+        ],
+        "pyq_year": null,
+        "difficulty": "medium",
+        "bloom_level": "Apply",
+        "explanation": "Using R = ρl/A, resistance is proportional to length and inversely proportional to cross-sectional area. Doubling the length doubles R (giving 2R), and halving the cross-sectional area again doubles R (giving another factor of 2). Therefore, the new resistance = ρ(2l)/(A/2) = 4ρl/A = 4R.",
+        "correct_option": "A"
+      },
+      "body_hash": "cc3195ca8370b3c5c048bc4370faeb9b6d57f99891fae73b553f3bb71c9badf9",
+      "stem_hash": "525cc21f6d6679536a0d9f230f5739fe954a80cf6e848947363b25ba12c5f995",
+      "answer": "A",
+      "difficulty": "medium",
+      "knowledge_unit_id": "fcff25f5-f369-4dde-b700-1a3a44b961eb",
+      "knowledge_unit_version": 1,
+      "created_at": "2026-08-25 06:16:02.858569+05:30",
+      "updated_at": "2026-08-31 16:59:52.737141+05:30",
+      "created_by": "88914ce4-92d7-41c3-9187-0c1884f03cd0",
+      "in_flagged": false
+    },
+    {
+      "content_item_id": "5d4ca5da-6f22-44b4-9c9c-2b93f3eb09ca",
+      "status": "DRAFT",
+      "concept_id": "9071ef5d-b62f-4159-91b6-90436a7705e6",
+      "concept": "ohms-law-concept",
+      "topic": "ohms-law",
+      "chapter": "current-electricity",
+      "subject": "PHYSICS",
+      "current_version_id": "1e676dbd-783d-4c11-97ee-9fcc93820b89",
+      "latest_version_id": "1e676dbd-783d-4c11-97ee-9fcc93820b89",
+      "content_version_id": "1e676dbd-783d-4c11-97ee-9fcc93820b89",
+      "version_no": 1,
+      "workflow_state": "DRAFT",
+      "body": {
+        "stem": "Which of the following correctly describes the V-I characteristic of a diode, in the context of limitations of Ohm's law?",
+        "options": [
+          {
+            "text": "The relation between V and I depends on the sign of V, so reversing V does not produce a current of the same magnitude in the opposite direction.",
+            "label": "A"
+          },
+          {
+            "text": "The relation between V and I is non-unique, meaning there is more than one value of V for the same current I.",
+            "label": "B"
+          },
+          {
+            "text": "V is strictly proportional to I for all values of applied voltage.",
+            "label": "C"
+          },
+          {
+            "text": "The device exhibits a perfectly linear V-I relationship regardless of the direction of applied voltage.",
+            "label": "D"
+          }
+        ],
+        "pyq_year": null,
+        "difficulty": "medium",
+        "bloom_level": "Understanding",
+        "explanation": "A diode is explicitly given as an example of a device where the V-I relationship depends on the sign of V. Reversing the direction of V does not produce a current of the same magnitude in the opposite direction, making it a deviation from Ohm's law based on sign-dependence. Non-unique V-I relationships are instead characteristic of GaAs, not diodes.",
+        "correct_option": "A"
+      },
+      "body_hash": "a0a77f33937f5e54cb66147cd409b888dbed990e697dd0f2b528a07f8a694ab4",
+      "stem_hash": "12b7df486136ba0094ee3bea47c5bd649f3ea072880f30e8e2387d9c74110b3c",
+      "answer": "A",
+      "difficulty": "medium",
+      "knowledge_unit_id": "7c6b55dd-78d3-44de-9771-e8514acfb53e",
+      "knowledge_unit_version": 1,
+      "created_at": "2026-08-25 06:16:13.92021+05:30",
+      "updated_at": "2026-08-31 16:59:52.737141+05:30",
+      "created_by": "88914ce4-92d7-41c3-9187-0c1884f03cd0",
+      "in_flagged": false
+    },
+    {
+      "content_item_id": "5dc99543-bec7-4dc3-a283-548fdb62ca9c",
+      "status": "DRAFT",
+      "concept_id": "ebc2133b-4b9a-46d9-9f5b-016384079d42",
+      "concept": "photophosphorylation",
+      "topic": "light-reaction",
+      "chapter": "photosynthesis",
+      "subject": "BOTANY",
+      "current_version_id": "3e9f7b16-a58b-4beb-8da9-2a072321eea8",
+      "latest_version_id": "3e9f7b16-a58b-4beb-8da9-2a072321eea8",
+      "content_version_id": "3e9f7b16-a58b-4beb-8da9-2a072321eea8",
+      "version_no": 1,
+      "workflow_state": "DRAFT",
+      "body": {
+        "stem": "Which of the following correctly distinguishes cyclic photophosphorylation from non-cyclic photophosphorylation?",
+        "options": [
+          {
+            "text": "Cyclic photophosphorylation produces only ATP, while non-cyclic photophosphorylation produces both ATP and NADPH + H⁺",
+            "label": "A"
+          },
+          {
+            "text": "Cyclic photophosphorylation produces both ATP and NADPH + H⁺, while non-cyclic produces only ATP",
+            "label": "B"
+          },
+          {
+            "text": "Cyclic photophosphorylation involves both PS I and PS II, while non-cyclic involves only PS I",
+            "label": "C"
+          },
+          {
+            "text": "Non-cyclic photophosphorylation occurs exclusively in stroma lamellae, while cyclic occurs in grana lamellae",
+            "label": "D"
+          }
+        ],
+        "pyq_year": null,
+        "difficulty": "easy",
+        "bloom_level": "Understanding",
+        "explanation": "In cyclic photophosphorylation, only PS I is functional and electrons cycle back through the electron transport chain to PS I, resulting in the synthesis of ATP only — not NADPH + H⁺. In non-cyclic photophosphorylation, both PS II and PS I work in series via the Z scheme, producing both ATP and NADPH + H⁺.",
+        "correct_option": "A"
+      },
+      "body_hash": "e8ee54493b4435fbc4801a5663227cbe1a43af019471bb33a78a7b12746b3d34",
+      "stem_hash": "4488535de7aa2aade47d7623ea3f580532d726a21e991eb7133ce139e7807342",
+      "answer": "A",
+      "difficulty": "easy",
+      "knowledge_unit_id": "55b46cfe-5d4b-49d0-b322-4ff6078c7495",
+      "knowledge_unit_version": 1,
+      "created_at": "2026-08-25 06:30:36.221425+05:30",
+      "updated_at": "2026-08-31 16:59:52.737141+05:30",
+      "created_by": "88914ce4-92d7-41c3-9187-0c1884f03cd0",
+      "in_flagged": false
+    },
+    {
+      "content_item_id": "62f4b1f1-57f6-4e6f-8188-5bfab13a14ad",
+      "status": "DRAFT",
+      "concept_id": "61e7ae09-2ca1-4b26-ba8c-fbc9d56b0f53",
+      "concept": "factors-affecting-resistance",
+      "topic": "resistance-resistivity",
+      "chapter": "current-electricity",
+      "subject": "PHYSICS",
+      "current_version_id": "d3713403-3527-46c4-b22d-c91d45e9e776",
+      "latest_version_id": "d3713403-3527-46c4-b22d-c91d45e9e776",
+      "content_version_id": "d3713403-3527-46c4-b22d-c91d45e9e776",
+      "version_no": 1,
+      "workflow_state": "DRAFT",
+      "body": {
+        "stem": "The temperature coefficient of resistivity (α) for metals is positive. Which of the following correctly explains this observation based on the microscopic model of conduction?",
+        "options": [
+          {
+            "text": "In metals, the number of free electrons (n) is nearly independent of temperature, so rising temperature decreases the average collision time (τ), thereby increasing resistivity.",
+            "label": "A"
+          },
+          {
+            "text": "In metals, both n and τ decrease with rising temperature, and the decrease in n dominates, causing resistivity to increase.",
+            "label": "B"
+          },
+          {
+            "text": "In metals, the number of free electrons (n) increases significantly with temperature, increasing the rate of collisions and raising resistivity.",
+            "label": "C"
+          },
+          {
+            "text": "In metals, rising temperature increases the average collision time (τ), which according to ρ = m/(ne²τ) increases resistivity.",
+            "label": "D"
+          }
+        ],
+        "pyq_year": null,
+        "difficulty": "easy",
+        "bloom_level": "Understanding",
+        "explanation": "According to ρ = m/(ne²τ), resistivity depends inversely on both n and τ. In metals, n is not appreciably dependent on temperature. As temperature rises, τ decreases (more frequent collisions), which causes ρ to increase. This gives metals a positive temperature coefficient of resistivity. Option B is wrong because n does not decrease appreciably; Option C is wrong because n does not increase significantly in metals; Option D is wrong because τ decreases, not increases, with rising temperature.",
+        "correct_option": "A"
+      },
+      "body_hash": "de8933a781d6ecbd5557b2a29ab607397468b936bf2b3eae83ea6b32e8940ec1",
+      "stem_hash": "f709961dc5f131ca3127bc30806f7db681bced492c8889ec42001c26999f6bc1",
+      "answer": "A",
+      "difficulty": "easy",
+      "knowledge_unit_id": "2196173d-59b5-4ae1-8580-37196eade297",
+      "knowledge_unit_version": 1,
+      "created_at": "2026-08-25 06:15:32.300814+05:30",
+      "updated_at": "2026-08-31 16:59:52.737141+05:30",
+      "created_by": "88914ce4-92d7-41c3-9187-0c1884f03cd0",
+      "in_flagged": false
+    },
+    {
+      "content_item_id": "7b80d6db-9c07-4b42-a92d-df74ab8428b3",
+      "status": "DRAFT",
+      "concept_id": "1237625c-0742-436b-b970-de5279fbca74",
+      "concept": "kcl-kvl",
+      "topic": "kirchhoffs-laws",
+      "chapter": "current-electricity",
+      "subject": "PHYSICS",
+      "current_version_id": "fef85035-402e-4c8d-9db4-024745bca160",
+      "latest_version_id": "fef85035-402e-4c8d-9db4-024745bca160",
+      "content_version_id": "fef85035-402e-4c8d-9db4-024745bca160",
+      "version_no": 1,
+      "workflow_state": "DRAFT",
+      "body": {
+        "stem": "In a circuit loop, a cell of EMF ε and internal resistance r has a current I flowing from its positive terminal P to its negative terminal N (i.e., opposite to the conventional internal current direction). Using Kirchhoff's Loop Rule and the correct expression for terminal potential difference in this scenario, which equation correctly represents the potential change across this cell as current moves from P to N, and what does this imply physically?",
+        "options": [
+          {
+            "text": "V(N) – V(P) = –ε – Ir, implying the cell is being charged (acts as a load) and potential drops by more than ε",
+            "label": "A"
+          },
+          {
+            "text": "V(N) – V(P) = ε – Ir, implying the cell is discharging and gains potential in the direction of current",
+            "label": "B"
+          },
+          {
+            "text": "V(N) – V(P) = –ε + Ir, implying the cell is discharging and the terminal voltage is reduced by internal resistance",
+            "label": "C"
+          },
+          {
+            "text": "V(N) – V(P) = ε + Ir, implying the cell always gains potential regardless of current direction",
+            "label": "D"
+          }
+        ],
+        "pyq_year": null,
+        "difficulty": "hard",
+        "bloom_level": "Analyze",
+        "explanation": "When current I flows from P (positive terminal) to N (negative terminal) through the cell, the potential difference is given by V(P) – V(N) = ε + Ir. Therefore, V(N) – V(P) = –ε – Ir. This scenario (current entering the positive terminal) corresponds to the cell being charged — it acts as a load rather than a source. The potential falls by (ε + Ir) in going from P to N, which is consistent with the Loop Rule requiring the algebraic sum of all potential changes around the loop to equal zero.",
+        "correct_option": "A"
+      },
+      "body_hash": "defe8dd4489e4502a5119d966f420582bddc560001073af1d772df93ede5cae4",
+      "stem_hash": "bad9dc39973f251c8615bf12f7015bf1563b1dca3c99836e90b86d1b407127d9",
+      "answer": "A",
+      "difficulty": "hard",
+      "knowledge_unit_id": "e5f8f04d-d353-4d6b-aa3c-c9baa12b488c",
+      "knowledge_unit_version": 1,
+      "created_at": "2026-08-25 06:15:53.294596+05:30",
+      "updated_at": "2026-08-31 16:59:52.737141+05:30",
+      "created_by": "88914ce4-92d7-41c3-9187-0c1884f03cd0",
+      "in_flagged": true
+    },
+    {
+      "content_item_id": "85fee888-47f6-408d-ab05-39b131233322",
+      "status": "DRAFT",
+      "concept_id": "b48f10f4-e5e1-4740-a62f-c1bcaf3865fb",
+      "concept": "photorespiration",
+      "topic": "factors-affecting-photosynthesis",
+      "chapter": "photosynthesis",
+      "subject": "BOTANY",
+      "current_version_id": "d4c89a95-b134-4c1b-bfc8-645679d14c74",
+      "latest_version_id": "d4c89a95-b134-4c1b-bfc8-645679d14c74",
+      "content_version_id": "d4c89a95-b134-4c1b-bfc8-645679d14c74",
+      "version_no": 1,
+      "workflow_state": "DRAFT",
+      "body": {
+        "stem": "In the photorespiratory pathway of C3 plants, RuBP reacts with O2 at the active site of RuBisCO to produce which of the following products?",
+        "options": [
+          {
+            "text": "One molecule of phosphoglycerate and one molecule of phosphoglycolate",
+            "label": "A"
+          },
+          {
+            "text": "Two molecules of phosphoglycerate",
+            "label": "B"
+          },
+          {
+            "text": "One molecule of phosphoglycerate and one molecule of ATP",
+            "label": "C"
+          },
+          {
+            "text": "Two molecules of phosphoglycolate and one molecule of NADPH",
+            "label": "D"
+          }
+        ],
+        "pyq_year": null,
+        "difficulty": "medium",
+        "bloom_level": "Remember",
+        "explanation": "When O2 binds to RuBisCO in C3 plants, RuBP combines with O2 instead of CO2, producing one molecule of phosphoglycerate and one molecule of phosphoglycolate (a 2-carbon compound). This pathway neither produces sugars, ATP, nor NADPH, but instead consumes ATP and releases CO2.",
+        "correct_option": "A"
+      },
+      "body_hash": "6cfb07b6eb0b6a1dfe9f6c756c36dd365b4c0d40391a9722eaa3f9b3df67f535",
+      "stem_hash": "083780bd4f37a865acbe29e17740bf7e3d72a9512c48e8b56b0cfca4cca4f821",
+      "answer": "A",
+      "difficulty": "medium",
+      "knowledge_unit_id": "f01e615a-6cba-4611-b0ec-2a0a23a482d8",
+      "knowledge_unit_version": 1,
+      "created_at": "2026-08-25 06:31:35.258715+05:30",
+      "updated_at": "2026-08-31 16:59:52.737141+05:30",
+      "created_by": "88914ce4-92d7-41c3-9187-0c1884f03cd0",
+      "in_flagged": true
+    },
+    {
+      "content_item_id": "863f1289-87a0-4253-b996-c0aff8c47988",
+      "status": "DRAFT",
+      "concept_id": "8abc776c-8f7b-4cef-844b-46afa4fe9f66",
+      "concept": "sp-sp2-sp3",
+      "topic": "hybridization",
+      "chapter": "chemical-bonding",
+      "subject": "CHEMISTRY",
+      "current_version_id": "e8c46c44-9cb3-48c8-96db-21ec8bcc527a",
+      "latest_version_id": "e8c46c44-9cb3-48c8-96db-21ec8bcc527a",
+      "content_version_id": "e8c46c44-9cb3-48c8-96db-21ec8bcc527a",
+      "version_no": 1,
+      "workflow_state": "DRAFT",
+      "body": {
+        "stem": "A student argues that hybridisation involving 3p, 3d, and 4s orbitals should be feasible because 3d orbitals have comparable energy to 4s and 4p orbitals. Why is this argument incorrect according to NCERT?",
+        "options": [
+          {
+            "text": "Because 3d orbitals can only hybridise with 3s and 3p orbitals, not with any 4th-shell orbitals",
+            "label": "A"
+          },
+          {
+            "text": "Because the energy difference between 3p and 4s orbitals is significant, ruling out their co-hybridisation, even though 3d is comparable in energy to both 3s/3p and 4s/4p",
+            "label": "B"
+          },
+          {
+            "text": "Because 4s orbitals are always lower in energy than 3d orbitals, so mixing 3p with 4s would produce unstable hybrids",
+            "label": "C"
+          },
+          {
+            "text": "Because hybridisation across different principal quantum number shells is never permitted in any element",
+            "label": "D"
+          }
+        ],
+        "pyq_year": null,
+        "difficulty": "hard",
+        "bloom_level": "Evaluate",
+        "explanation": "The NCERT text explicitly states that while 3d orbitals have comparable energy to both 3s/3p and 4s/4p orbitals (enabling sp3d or sp3d2 with 3s/3p/3d, and similar with 4s/4p/3d), hybridisation involving 3p, 3d, and 4s together is not possible because the energy difference between 3p and 4s is significant. The student's error is assuming that transitivity of comparable energies applies — just because 3d ≈ 3p and 3d ≈ 4s does not mean 3p ≈ 4s.",
+        "correct_option": "B"
+      },
+      "body_hash": "fc103b457c49bc0fc7ab976ab9ce5d445920d8190ae10181049fa60d86fa6d7c",
+      "stem_hash": "716dfce5fb34cc8f8bc48c928e09a60c32b183adaccce867e0beda869b83dfa2",
+      "answer": "B",
+      "difficulty": "hard",
+      "knowledge_unit_id": "fe335b26-62bf-4aee-948c-ff913eb3efaa",
+      "knowledge_unit_version": 1,
+      "created_at": "2026-08-25 06:22:33.014681+05:30",
+      "updated_at": "2026-08-31 16:59:52.737141+05:30",
+      "created_by": "88914ce4-92d7-41c3-9187-0c1884f03cd0",
+      "in_flagged": true
+    },
+    {
+      "content_item_id": "87f621ab-a1d8-4097-8152-573b6fa46914",
+      "status": "DRAFT",
+      "concept_id": "8b3a68e9-73e9-43ee-a917-2957af4b7c97",
+      "concept": "vsepr-theory",
+      "topic": "covalent-bonding-vsepr",
+      "chapter": "chemical-bonding",
+      "subject": "CHEMISTRY",
+      "current_version_id": "012ca4ee-911e-4e0a-aaa3-7fb112685f55",
+      "latest_version_id": "012ca4ee-911e-4e0a-aaa3-7fb112685f55",
+      "content_version_id": "012ca4ee-911e-4e0a-aaa3-7fb112685f55",
+      "version_no": 1,
+      "workflow_state": "DRAFT",
+      "body": {
+        "stem": "A student argues that VSEPR theory is sufficient for all purposes of studying molecular bonding because it successfully predicts molecular geometry. Which of the following statements BEST refutes this argument using the context of Valence Bond theory?",
+        "options": [
+          {
+            "text": "VSEPR theory incorrectly predicts the geometry of H2, whereas VB theory predicts a bond length of 74 pm and bond enthalpy of 435.8 kJ mol⁻¹",
+            "label": "A"
+          },
+          {
+            "text": "VSEPR theory has unlimited applications but VB theory is more mathematically elegant",
+            "label": "B"
+          },
+          {
+            "text": "VSEPR theory only predicts geometry without theoretical explanation and has limited applications, whereas VB theory explains bond formation in terms of a balance between attractive and repulsive forces leading to minimum potential energy",
+            "label": "C"
+          },
+          {
+            "text": "VSEPR theory correctly explains why repulsive forces between nuclei and electrons outweigh attractive forces in H2 formation",
+            "label": "D"
+          }
+        ],
+        "pyq_year": null,
+        "difficulty": "hard",
+        "bloom_level": "Evaluating",
+        "explanation": "VSEPR theory is limited because it predicts geometry of simple molecules but does not theoretically explain bond formation and has limited applications. VB theory, introduced by Heitler and London in 1927, provides a theoretical basis by showing that bond formation in H2 results from attractive forces (NA–eB, NB–eA) outweighing repulsive forces, leading to minimum energy at a bond length of 74 pm with a bond enthalpy of 435.8 kJ mol⁻¹. Option A is incorrect as VSEPR does not incorrectly predict H2 geometry; option D is factually inverted; option B is unsupported by the given facts.",
+        "correct_option": "C"
+      },
+      "body_hash": "e038a5ccec1c11da88f80150d9275fb177eb117d8392424c6765c30923532dac",
+      "stem_hash": "70612aaf584d2d463362932c8b461eff81aad33b648cd06923c9777de1020a32",
+      "answer": "C",
+      "difficulty": "hard",
+      "knowledge_unit_id": "e86cfd41-ae62-48f8-8011-6ee21650fa89",
+      "knowledge_unit_version": 1,
+      "created_at": "2026-08-25 06:21:52.051069+05:30",
+      "updated_at": "2026-08-31 16:59:52.737141+05:30",
+      "created_by": "88914ce4-92d7-41c3-9187-0c1884f03cd0",
+      "in_flagged": true
+    },
+    {
+      "content_item_id": "8a979c6a-d6af-4a0d-8099-05f5992b7f46",
+      "status": "DRAFT",
+      "concept_id": "ebc2133b-4b9a-46d9-9f5b-016384079d42",
+      "concept": "photophosphorylation",
+      "topic": "light-reaction",
+      "chapter": "photosynthesis",
+      "subject": "BOTANY",
+      "current_version_id": "9d6392ca-10c5-424a-8e26-5cb41a5a61b0",
+      "latest_version_id": "9d6392ca-10c5-424a-8e26-5cb41a5a61b0",
+      "content_version_id": "9d6392ca-10c5-424a-8e26-5cb41a5a61b0",
+      "version_no": 1,
+      "workflow_state": "DRAFT",
+      "body": {
+        "stem": "A researcher illuminates an isolated chloroplast preparation exclusively with light of wavelength 700 nm. Which of the following outcomes is most likely, and what structural feature explains it?",
+        "options": [
+          {
+            "text": "Both ATP and NADPH + H⁺ are produced, because PS II is activated by wavelengths beyond 680 nm",
+            "label": "A"
+          },
+          {
+            "text": "Only ATP is produced via cyclic photophosphorylation in stroma lamellae, because light beyond 680 nm cannot excite PS II and only PS I remains functional",
+            "label": "B"
+          },
+          {
+            "text": "Only NADPH + H⁺ is produced, because NADP reductase is exclusively active at wavelengths above 680 nm",
+            "label": "C"
+          },
+          {
+            "text": "Neither ATP nor NADPH + H⁺ is produced, because wavelengths beyond 680 nm are insufficient to drive any photophosphorylation",
+            "label": "D"
+          }
+        ],
+        "pyq_year": null,
+        "difficulty": "hard",
+        "bloom_level": "Analysis",
+        "explanation": "Light of wavelength 700 nm (beyond 680 nm) can only excite PS I, not PS II. When only PS I is functional, electrons cycle back through the electron transport chain to PS I (cyclic photophosphorylation), producing ATP but not NADPH + H⁺. This process is associated with stroma lamellae, whose membranes lack both PS II and NADP reductase enzyme, making cyclic photophosphorylation the only possible route.",
+        "correct_option": "B"
+      },
+      "body_hash": "c6819b11be1bb228938a3ab5fe3e2c6cb17bcc2b93b6f3d182c5c5fb54cb9900",
+      "stem_hash": "fe924a0ee41e4b2b6344ee5b5a5294d7d519ef52ff85b6794fa26272baa4319d",
+      "answer": "B",
+      "difficulty": "hard",
+      "knowledge_unit_id": "55b46cfe-5d4b-49d0-b322-4ff6078c7495",
+      "knowledge_unit_version": 1,
+      "created_at": "2026-08-25 06:30:36.257726+05:30",
+      "updated_at": "2026-08-31 16:59:52.737141+05:30",
+      "created_by": "88914ce4-92d7-41c3-9187-0c1884f03cd0",
+      "in_flagged": false
+    },
+    {
+      "content_item_id": "8c577dd2-4932-4676-8c7e-1f3e3b290485",
+      "status": "DRAFT",
+      "concept_id": "8abc776c-8f7b-4cef-844b-46afa4fe9f66",
+      "concept": "sp-sp2-sp3",
+      "topic": "hybridization",
+      "chapter": "chemical-bonding",
+      "subject": "CHEMISTRY",
+      "current_version_id": "4884678b-c57d-4004-989f-00e1fae34f5c",
+      "latest_version_id": "4884678b-c57d-4004-989f-00e1fae34f5c",
+      "content_version_id": "4884678b-c57d-4004-989f-00e1fae34f5c",
+      "version_no": 1,
+      "workflow_state": "DRAFT",
+      "body": {
+        "stem": "In PCl5, which of the following correctly describes the bond angles and relative bond lengths?",
+        "options": [
+          {
+            "text": "Equatorial P–Cl bonds make 120° with each other; axial P–Cl bonds are slightly longer and weaker than equatorial bonds",
+            "label": "A"
+          },
+          {
+            "text": "Axial P–Cl bonds make 120° with each other; equatorial P–Cl bonds are slightly longer and weaker than axial bonds",
+            "label": "B"
+          },
+          {
+            "text": "All P–Cl bonds are equivalent in length and strength, with bond angles of 90° and 120°",
+            "label": "C"
+          },
+          {
+            "text": "Equatorial P–Cl bonds make 90° with each other; axial P–Cl bonds are slightly shorter and stronger than equatorial bonds",
+            "label": "D"
+          }
+        ],
+        "pyq_year": null,
+        "difficulty": "easy",
+        "bloom_level": "Remember",
+        "explanation": "In PCl5, the three equatorial P–Cl bonds lie in a plane and subtend 120° angles with each other, while the two axial bonds make 90° with this equatorial plane. Axial bonds experience more repulsion from the three equatorial bond pairs, making them slightly longer and slightly weaker than equatorial bonds.",
+        "correct_option": "A"
+      },
+      "body_hash": "9a80998ab8e90ad7b97ca954911adf912ab2cb88d1ae4ca4b995a1ac12d2f297",
+      "stem_hash": "e6c4a53c4b4ea09ea4099068ee3439759760d2c2f3330d3a044b155fdea73365",
+      "answer": "A",
+      "difficulty": "easy",
+      "knowledge_unit_id": "fe335b26-62bf-4aee-948c-ff913eb3efaa",
+      "knowledge_unit_version": 1,
+      "created_at": "2026-08-25 06:22:32.999445+05:30",
+      "updated_at": "2026-08-31 16:59:52.737141+05:30",
+      "created_by": "88914ce4-92d7-41c3-9187-0c1884f03cd0",
+      "in_flagged": false
+    },
+    {
+      "content_item_id": "8d50e829-6540-44bc-882a-6b140a33da17",
+      "status": "DRAFT",
+      "concept_id": "b48f10f4-e5e1-4740-a62f-c1bcaf3865fb",
+      "concept": "photorespiration",
+      "topic": "factors-affecting-photosynthesis",
+      "chapter": "photosynthesis",
+      "subject": "BOTANY",
+      "current_version_id": "a614bc69-58be-4486-8468-01e40ced2548",
+      "latest_version_id": "a614bc69-58be-4486-8468-01e40ced2548",
+      "content_version_id": "a614bc69-58be-4486-8468-01e40ced2548",
+      "version_no": 1,
+      "workflow_state": "DRAFT",
+      "body": {
+        "stem": "A plant is provided with optimal light intensity and an abundant supply of CO2, yet its rate of photosynthesis remains very low. Which of the following best explains this observation, and which internal factor could additionally limit photosynthesis even if external conditions were made optimal?",
+        "options": [
+          {
+            "text": "Very low temperature is the external limiting factor as per Blackman's Law; internally, reduced amount of chlorophyll could further limit photosynthesis",
+            "label": "A"
+          },
+          {
+            "text": "High CO2 concentration is the limiting factor; internally, a large number of leaves would reduce the rate of photosynthesis",
+            "label": "B"
+          },
+          {
+            "text": "Excess light is inhibiting photosynthesis; internally, increased mesophyll cell number is the limiting internal factor",
+            "label": "C"
+          },
+          {
+            "text": "Water availability is always the primary limiting factor regardless of other conditions; internal CO2 concentration has no role",
+            "label": "D"
+          }
+        ],
+        "pyq_year": null,
+        "difficulty": "hard",
+        "bloom_level": "Analyze",
+        "explanation": "Blackman's Law of Limiting Factors explains that despite optimal light and CO2, a very low temperature can limit photosynthesis because temperature is the factor nearest to its minimal value. Additionally, internal factors such as the amount of chlorophyll are listed as internal determinants of photosynthesis; reduced chlorophyll would limit photosynthesis even if all external factors were made optimal.",
+        "correct_option": "A"
+      },
+      "body_hash": "a765eca979efbc9a3491b58888ac9b95be64341a831d9744cd78bd931533b494",
+      "stem_hash": "4309c70035ee26173de78c8c8eaacc5bccdf2da43c5432624e6862bc5edd4aec",
+      "answer": "A",
+      "difficulty": "hard",
+      "knowledge_unit_id": "6f938534-fbdb-4ce0-9ca0-140d717b3876",
+      "knowledge_unit_version": 1,
+      "created_at": "2026-08-25 06:31:11.027532+05:30",
+      "updated_at": "2026-08-31 16:59:52.737141+05:30",
+      "created_by": "88914ce4-92d7-41c3-9187-0c1884f03cd0",
+      "in_flagged": true
+    },
+    {
+      "content_item_id": "90d13ef4-c0bc-4534-9c7c-2ad725946d2c",
+      "status": "DRAFT",
+      "concept_id": "8abc776c-8f7b-4cef-844b-46afa4fe9f66",
+      "concept": "sp-sp2-sp3",
+      "topic": "hybridization",
+      "chapter": "chemical-bonding",
+      "subject": "CHEMISTRY",
+      "current_version_id": "6fe826f8-cec4-4106-8d3c-b6afedd8d69f",
+      "latest_version_id": "6fe826f8-cec4-4106-8d3c-b6afedd8d69f",
+      "content_version_id": "6fe826f8-cec4-4106-8d3c-b6afedd8d69f",
+      "version_no": 1,
+      "workflow_state": "DRAFT",
+      "body": {
+        "stem": "In a molecule like NH₃, the lone pair on nitrogen participates in sp³ hybridisation along with the three bond pairs. Which of the following statements best justifies why filled orbitals are included in hybridisation, and what consequence does this have on molecular geometry?",
+        "options": [
+          {
+            "text": "Filled orbitals participate because only half-filled orbitals can hybridise; the lone pair does not affect geometry.",
+            "label": "A"
+          },
+          {
+            "text": "Filled orbitals of the valence shell can participate in hybridisation; including the lone pair in sp³ hybridisation directs all four electron pairs in space to minimise repulsion, giving NH₃ a trigonal pyramidal geometry.",
+            "label": "B"
+          },
+          {
+            "text": "Filled orbitals participate only when the molecule is ionic; the resulting hybrid orbitals are unequal in energy.",
+            "label": "C"
+          },
+          {
+            "text": "Filled orbitals never participate in hybridisation; the geometry of NH₃ is determined solely by the three bond pairs arranged in a planar triangle.",
+            "label": "D"
+          }
+        ],
+        "pyq_year": null,
+        "difficulty": "hard",
+        "bloom_level": "Analysing",
+        "explanation": "The NCERT text explicitly states that it is not necessary that only half-filled orbitals participate in hybridisation — even filled orbitals of the valence shell can take part. In NH₃, the lone pair on nitrogen is included in sp³ hybridisation. Since hybrid orbitals are directed in space to minimise electron-pair repulsion, all four sp³ orbitals (three bonding + one lone pair) adopt a tetrahedral arrangement of electron pairs, resulting in a trigonal pyramidal molecular geometry. The hybrid orbitals formed are always equivalent in energy and shape.",
+        "correct_option": "B"
+      },
+      "body_hash": "391097abc83c54c90d171e65ecdd74bd2577ecfd060baee1b182a619c4dc06d9",
+      "stem_hash": "eb1edce0a3c933a4b2f46f71d6dec2d59ff990a35897579f6151ebf0c633b8ef",
+      "answer": "B",
+      "difficulty": "hard",
+      "knowledge_unit_id": "e5856110-1f8b-44f6-b465-b46af5618286",
+      "knowledge_unit_version": 1,
+      "created_at": "2026-08-25 06:22:01.867126+05:30",
+      "updated_at": "2026-08-31 16:59:52.737141+05:30",
+      "created_by": "88914ce4-92d7-41c3-9187-0c1884f03cd0",
+      "in_flagged": false
+    },
+    {
+      "content_item_id": "92dec49f-bb99-48bb-9b79-5f7e2ddb1fd2",
+      "status": "DRAFT",
+      "concept_id": "8abc776c-8f7b-4cef-844b-46afa4fe9f66",
+      "concept": "sp-sp2-sp3",
+      "topic": "hybridization",
+      "chapter": "chemical-bonding",
+      "subject": "CHEMISTRY",
+      "current_version_id": "c8caacd5-2f73-4e39-8d9b-6d9b91c2d5bb",
+      "latest_version_id": "c8caacd5-2f73-4e39-8d9b-6d9b91c2d5bb",
+      "content_version_id": "c8caacd5-2f73-4e39-8d9b-6d9b91c2d5bb",
+      "version_no": 1,
+      "workflow_state": "DRAFT",
+      "body": {
+        "stem": "In ethane (C₂H₆), the C–C bond is formed by which type of orbital overlap?",
+        "options": [
+          {
+            "text": "sp³–sp³ sigma bond overlap",
+            "label": "A"
+          },
+          {
+            "text": "sp²–sp² sigma bond overlap",
+            "label": "B"
+          },
+          {
+            "text": "sp–sp sigma bond overlap",
+            "label": "C"
+          },
+          {
+            "text": "sp³–sp³ pi bond overlap",
+            "label": "D"
+          }
+        ],
+        "pyq_year": null,
+        "difficulty": "easy",
+        "bloom_level": "Remember",
+        "explanation": "In ethane, both carbon atoms are sp³ hybridised. The C–C bond is formed by the axial (head-on) overlap of sp³ hybrid orbitals from each carbon, producing a sp³–sp³ sigma bond with a bond length of 154 pm.",
+        "correct_option": "A"
+      },
+      "body_hash": "7069f5e3c810fd7cc19ab39ee273f3777a16652ff58bd554cd2a151c0c053c6d",
+      "stem_hash": "5b37e6fa8b36916585585f0a81c39b2c80a0c011d7f198d1641582e100a587b7",
+      "answer": "A",
+      "difficulty": "easy",
+      "knowledge_unit_id": "ef11d9c0-9212-43b0-b194-aa6d46a538cc",
+      "knowledge_unit_version": 1,
+      "created_at": "2026-08-25 06:22:21.122071+05:30",
+      "updated_at": "2026-08-31 16:59:52.737141+05:30",
+      "created_by": "88914ce4-92d7-41c3-9187-0c1884f03cd0",
+      "in_flagged": false
+    },
+    {
+      "content_item_id": "9c80cb11-376a-4bfb-95a4-f3bbc5842075",
+      "status": "DRAFT",
+      "concept_id": "61e7ae09-2ca1-4b26-ba8c-fbc9d56b0f53",
+      "concept": "factors-affecting-resistance",
+      "topic": "resistance-resistivity",
+      "chapter": "current-electricity",
+      "subject": "PHYSICS",
+      "current_version_id": "e49deac6-0d3a-460f-8145-f0cd5389a091",
+      "latest_version_id": "e49deac6-0d3a-460f-8145-f0cd5389a091",
+      "content_version_id": "e49deac6-0d3a-460f-8145-f0cd5389a091",
+      "version_no": 1,
+      "workflow_state": "DRAFT",
+      "body": {
+        "stem": "The electromotive force (emf) of a cell is defined as the potential difference between its positive and negative electrodes when:",
+        "options": [
+          {
+            "text": "No current is flowing through the cell (open circuit)",
+            "label": "A"
+          },
+          {
+            "text": "Maximum current is flowing through the cell",
+            "label": "B"
+          },
+          {
+            "text": "The external resistance equals the internal resistance",
+            "label": "C"
+          },
+          {
+            "text": "The terminal voltage equals zero",
+            "label": "D"
+          }
+        ],
+        "pyq_year": null,
+        "difficulty": "easy",
+        "bloom_level": "Remember",
+        "explanation": "According to the textbook, the emf (e) is the potential difference between the positive and negative electrodes in an open circuit, i.e., when no current is flowing through the cell. It equals V+ + V–, where V+ and V– are the potential differences at each electrode-electrolyte interface.",
+        "correct_option": "A"
+      },
+      "body_hash": "b04b79436a4b838f593276ed2dc441b6bc2e27738a65670efdda1be28f05c734",
+      "stem_hash": "86a12d1b4f53b4170d5a471d630a049c27792dd8d403b3ee580a9debd988bef5",
+      "answer": "A",
+      "difficulty": "easy",
+      "knowledge_unit_id": "57fc6254-7211-45de-abab-db60e9d82d10",
+      "knowledge_unit_version": 1,
+      "created_at": "2026-08-25 06:15:41.281075+05:30",
+      "updated_at": "2026-08-31 16:59:52.737141+05:30",
+      "created_by": "88914ce4-92d7-41c3-9187-0c1884f03cd0",
+      "in_flagged": false
+    },
+    {
+      "content_item_id": "a42a3589-8070-40c2-9181-f76642b33a85",
+      "status": "DRAFT",
+      "concept_id": "e8ad87ae-b886-4314-b8cb-aa6024104895",
+      "concept": "drift-velocity",
+      "topic": "ohms-law",
+      "chapter": "current-electricity",
+      "subject": "PHYSICS",
+      "current_version_id": "8d39848a-8a60-47c8-8997-09a827fa3e6e",
+      "latest_version_id": "8d39848a-8a60-47c8-8997-09a827fa3e6e",
+      "content_version_id": "8d39848a-8a60-47c8-8997-09a827fa3e6e",
+      "version_no": 1,
+      "workflow_state": "DRAFT",
+      "body": {
+        "stem": "In a copper wire of cross-sectional area 1.0 × 10⁻⁷ m² carrying a current of 1.5 A, the drift speed of conduction electrons is approximately 1.1 × 10⁻³ m s⁻¹. This drift speed is approximately how many times smaller than the typical thermal speed of copper atoms at ordinary temperatures?",
+        "options": [
+          {
+            "text": "10⁻⁵ times",
+            "label": "A"
+          },
+          {
+            "text": "10⁻³ times",
+            "label": "B"
+          },
+          {
+            "text": "10⁻⁷ times",
+            "label": "C"
+          },
+          {
+            "text": "10⁻¹ times",
+            "label": "D"
+          }
+        ],
+        "pyq_year": null,
+        "difficulty": "medium",
+        "bloom_level": "Remember",
+        "explanation": "According to the textbook, the drift speed of conduction electrons in a copper wire carrying 1.5 A through a cross-sectional area of 1.0 × 10⁻⁷ m² is approximately 1.1 × 10⁻³ m s⁻¹, which is about 10⁻⁵ times the typical thermal speed of copper atoms at ordinary temperatures. This illustrates that drift speeds in typical conductors are extremely small compared to thermal speeds.",
+        "correct_option": "A"
+      },
+      "body_hash": "5f4eb3f680807ce0d1ac0f1e2cb1d3bb99ffa8a446b8693eb24187eb587f6d8c",
+      "stem_hash": "ffdd25a297ecc5c5c3e28bfb1d25f7076a9a4bcf0059ea852b570294a6fee6b7",
+      "answer": "A",
+      "difficulty": "medium",
+      "knowledge_unit_id": "4f40e57b-77ee-460b-a3e1-2719621c2c07",
+      "knowledge_unit_version": 1,
+      "created_at": "2026-08-25 06:16:07.776247+05:30",
+      "updated_at": "2026-08-31 16:59:52.737141+05:30",
+      "created_by": "88914ce4-92d7-41c3-9187-0c1884f03cd0",
+      "in_flagged": true
+    },
+    {
+      "content_item_id": "acbbdd83-8e13-4b3f-87cc-45cd00985ab4",
+      "status": "DRAFT",
+      "concept_id": "8abc776c-8f7b-4cef-844b-46afa4fe9f66",
+      "concept": "sp-sp2-sp3",
+      "topic": "hybridization",
+      "chapter": "chemical-bonding",
+      "subject": "CHEMISTRY",
+      "current_version_id": "62f38d7e-e9c5-4377-8167-fc09c301970b",
+      "latest_version_id": "62f38d7e-e9c5-4377-8167-fc09c301970b",
+      "content_version_id": "62f38d7e-e9c5-4377-8167-fc09c301970b",
+      "version_no": 1,
+      "workflow_state": "DRAFT",
+      "body": {
+        "stem": "Which type of hybridisation involves the mixing of one s-orbital and two p-orbitals, resulting in a trigonal planar arrangement with bond angles of 120°, as exemplified by BCl3?",
+        "options": [
+          {
+            "text": "sp2 hybridisation",
+            "label": "A"
+          },
+          {
+            "text": "sp hybridisation",
+            "label": "B"
+          },
+          {
+            "text": "sp3 hybridisation",
+            "label": "C"
+          },
+          {
+            "text": "sp3d hybridisation",
+            "label": "D"
+          }
+        ],
+        "pyq_year": null,
+        "difficulty": "easy",
+        "bloom_level": "Remembering",
+        "explanation": "sp2 hybridisation involves the mixing of one s and two p-orbitals to form three equivalent sp2 hybrid orbitals oriented in a trigonal planar arrangement with bond angles of 120°. BCl3 is the classic example given in the textbook for this type of hybridisation.",
+        "correct_option": "A"
+      },
+      "body_hash": "48ea01fb52373bbe7286af1634870bc3f074b00e23a5646df9a132a81cbe498f",
+      "stem_hash": "80cce24dce3575764f4fec0dd14e5c0bc7d207bf9dac4a8ef027dc0fb43c2a64",
+      "answer": "A",
+      "difficulty": "easy",
+      "knowledge_unit_id": "cf56609d-ae8c-4bde-89f9-a1fbe2278b61",
+      "knowledge_unit_version": 1,
+      "created_at": "2026-08-25 06:22:12.520351+05:30",
+      "updated_at": "2026-08-31 16:59:52.737141+05:30",
+      "created_by": "88914ce4-92d7-41c3-9187-0c1884f03cd0",
+      "in_flagged": false
+    },
+    {
+      "content_item_id": "ade9900b-1ab2-4a5d-aa29-a5f4a605366e",
+      "status": "DRAFT",
+      "concept_id": "1237625c-0742-436b-b970-de5279fbca74",
+      "concept": "kcl-kvl",
+      "topic": "kirchhoffs-laws",
+      "chapter": "current-electricity",
+      "subject": "PHYSICS",
+      "current_version_id": "32b58f53-daf9-4d68-9cc9-8bc4f766156b",
+      "latest_version_id": "32b58f53-daf9-4d68-9cc9-8bc4f766156b",
+      "content_version_id": "32b58f53-daf9-4d68-9cc9-8bc4f766156b",
+      "version_no": 1,
+      "workflow_state": "DRAFT",
+      "body": {
+        "stem": "A conductor carries a non-steady current. In a small interval Δt around time t, a net charge ΔQ flows across a cross-section. As Δt → 0, ΔQ → 0 but ΔQ/Δt → 2 A. Simultaneously, in a separate steady scenario, a net negative charge of 6 C flows in the forward direction and a net positive charge of 2 C flows in the forward direction over 2 s. Which of the following correctly compares the two currents and their directions?",
+        "options": [
+          {
+            "text": "The non-steady current is 2 A in the forward direction; the steady current is –2 A, implying it flows in the backward direction",
+            "label": "A"
+          },
+          {
+            "text": "The non-steady current is 0 A because ΔQ → 0; the steady current is –2 A in the forward direction",
+            "label": "B"
+          },
+          {
+            "text": "The non-steady current is 2 A in the forward direction; the steady current is 2 A also in the forward direction",
+            "label": "C"
+          },
+          {
+            "text": "The non-steady current is undefined since the current is non-steady; the steady current is –4 A in the backward direction",
+            "label": "D"
+          }
+        ],
+        "pyq_year": null,
+        "difficulty": "hard",
+        "bloom_level": "Analysis",
+        "explanation": "For the non-steady current, I(t) = lim(Δt→0) ΔQ/Δt = 2 A (positive, so forward direction). For the steady case, q = q+ – q– = 2 – 6 = –4 C, and I = q/t = –4/2 = –2 A. A negative value implies the current flows in the backward direction. Hence the non-steady current is 2 A forward and the steady current is –2 A (backward direction).",
+        "correct_option": "A"
+      },
+      "body_hash": "2cf0db77521ae33807ad1657364f48c1c09ac9f295f261003a995c28d162015b",
+      "stem_hash": "3f0d8db28e621f11c5068a9620aca0e90b532a980cf1ef6cbd18e90928503abf",
+      "answer": "A",
+      "difficulty": "hard",
+      "knowledge_unit_id": "11d6fb7f-13e3-425b-ae37-a0e2aa781f94",
+      "knowledge_unit_version": 1,
+      "created_at": "2026-08-25 06:14:47.257378+05:30",
+      "updated_at": "2026-08-31 16:59:52.737141+05:30",
+      "created_by": "88914ce4-92d7-41c3-9187-0c1884f03cd0",
+      "in_flagged": true
+    },
+    {
+      "content_item_id": "b33b47de-e94c-481b-a298-b64c67b5ec8d",
+      "status": "DRAFT",
+      "concept_id": "008fe3ee-1648-4bfb-93ce-7a0233013e75",
+      "concept": "lattice-energy",
+      "topic": "ionic-bonding",
+      "chapter": "chemical-bonding",
+      "subject": "CHEMISTRY",
+      "current_version_id": "071ef081-5ef5-4c54-8296-170897cfb777",
+      "latest_version_id": "071ef081-5ef5-4c54-8296-170897cfb777",
+      "content_version_id": "071ef081-5ef5-4c54-8296-170897cfb777",
+      "version_no": 1,
+      "workflow_state": "DRAFT",
+      "body": {
+        "stem": "A student attempts to calculate the lattice enthalpy of a solid ionic compound by summing only the attractive forces between oppositely charged ions and the repulsive forces between like-charged ions. Which of the following best explains why this approach is insufficient, and what additional consideration is required?",
+        "options": [
+          {
+            "text": "This approach is insufficient because it ignores the thermal energy of the ions; the kinetic energy of each ion at room temperature must be added to the calculation.",
+            "label": "A"
+          },
+          {
+            "text": "This approach is insufficient because the ionic solid is three-dimensional, so factors associated with crystal geometry must also be included in the calculation.",
+            "label": "B"
+          },
+          {
+            "text": "This approach is sufficient for small unit cells but becomes insufficient for large crystals because the number of ion pairs exceeds Avogadro's number.",
+            "label": "C"
+          },
+          {
+            "text": "This approach is insufficient because it ignores the covalent character of ionic bonds, which must be separately quantified for each ion pair.",
+            "label": "D"
+          }
+        ],
+        "pyq_year": null,
+        "difficulty": "hard",
+        "bloom_level": "Analyzing",
+        "explanation": "According to the textbook, it is not possible to calculate lattice enthalpy directly from the interaction of attractive and repulsive forces alone because the solid crystal is three-dimensional. Factors associated with the crystal geometry must also be included. The student's approach omits this geometric consideration, making it incomplete.",
+        "correct_option": "B"
+      },
+      "body_hash": "ab14ef78f5f377ae75b8106bff7493d3e49f35d1beec7c2547dfd9de88ad44ea",
+      "stem_hash": "2de8019ac6c7f30007e2744ccc7561c88c1ccb97c8c0b203e75ce1f7d2c1328d",
+      "answer": "B",
+      "difficulty": "hard",
+      "knowledge_unit_id": "1936007d-feb3-4521-befd-9e503d466739",
+      "knowledge_unit_version": 1,
+      "created_at": "2026-08-25 06:21:40.591977+05:30",
+      "updated_at": "2026-08-31 16:59:52.737141+05:30",
+      "created_by": "88914ce4-92d7-41c3-9187-0c1884f03cd0",
+      "in_flagged": false
+    },
+    {
+      "content_item_id": "b55bb380-cc1e-4094-8259-ffbf915134ef",
+      "status": "DRAFT",
+      "concept_id": "8abc776c-8f7b-4cef-844b-46afa4fe9f66",
+      "concept": "sp-sp2-sp3",
+      "topic": "hybridization",
+      "chapter": "chemical-bonding",
+      "subject": "CHEMISTRY",
+      "current_version_id": "52e9e9dd-b9bb-4c4a-86ca-5b8d5b97af8c",
+      "latest_version_id": "52e9e9dd-b9bb-4c4a-86ca-5b8d5b97af8c",
+      "content_version_id": "52e9e9dd-b9bb-4c4a-86ca-5b8d5b97af8c",
+      "version_no": 1,
+      "workflow_state": "DRAFT",
+      "body": {
+        "stem": "In ethyne (C₂H₂), each carbon undergoes sp hybridisation. Which of the following correctly describes the composition of the C≡C triple bond and the role of the unhybridised orbitals?",
+        "options": [
+          {
+            "text": "One sigma bond from sp–sp axial overlap and two pi bonds from sidewise overlap of two sets of unhybridised p orbitals (2py and 2px)",
+            "label": "A"
+          },
+          {
+            "text": "Two sigma bonds from sp–sp axial overlap and one pi bond from sidewise overlap of one set of unhybridised p orbitals",
+            "label": "B"
+          },
+          {
+            "text": "One sigma bond from sp³–sp³ axial overlap and two pi bonds from sidewise overlap of unhybridised p orbitals",
+            "label": "C"
+          },
+          {
+            "text": "One sigma bond from sp²–sp² axial overlap and two pi bonds from sidewise overlap of two sets of unhybridised p orbitals",
+            "label": "D"
+          }
+        ],
+        "pyq_year": null,
+        "difficulty": "hard",
+        "bloom_level": "Analyze",
+        "explanation": "In ethyne, each carbon undergoes sp hybridisation, leaving two unhybridised orbitals (2py and 2px) on each carbon. The C≡C triple bond consists of one sigma bond formed by axial overlap of the sp hybrid orbitals and two pi bonds formed by sidewise overlap of the two sets of unhybridised p orbitals. This distinguishes ethyne from ethene, which has only one pi bond formed from one set of unhybridised p orbitals.",
+        "correct_option": "A"
+      },
+      "body_hash": "8454bcb69551fdb57b8c745dff729f225a7bafa5bd1cc593be8a9c1624834b05",
+      "stem_hash": "4c9e07527bcf7b1d4ecb0e4ad92d80cddcfef3377e23d5d48f59bf5b7acd67f1",
+      "answer": "A",
+      "difficulty": "hard",
+      "knowledge_unit_id": "ef11d9c0-9212-43b0-b194-aa6d46a538cc",
+      "knowledge_unit_version": 1,
+      "created_at": "2026-08-25 06:22:21.137434+05:30",
+      "updated_at": "2026-08-31 16:59:52.737141+05:30",
+      "created_by": "88914ce4-92d7-41c3-9187-0c1884f03cd0",
+      "in_flagged": false
+    },
+    {
+      "content_item_id": "c7a54ae9-5044-44d3-bfa4-8a5bbc6c5ef2",
+      "status": "DRAFT",
+      "concept_id": "9071ef5d-b62f-4159-91b6-90436a7705e6",
+      "concept": "ohms-law-concept",
+      "topic": "ohms-law",
+      "chapter": "current-electricity",
+      "subject": "PHYSICS",
+      "current_version_id": "4117b472-cea2-469b-9f76-0c3be97c4760",
+      "latest_version_id": "4117b472-cea2-469b-9f76-0c3be97c4760",
+      "content_version_id": "4117b472-cea2-469b-9f76-0c3be97c4760",
+      "version_no": 1,
+      "workflow_state": "DRAFT",
+      "body": {
+        "stem": "According to Ohm's law, the SI unit of resistance is:",
+        "options": [
+          {
+            "text": "Ohm (Ω)",
+            "label": "A"
+          },
+          {
+            "text": "Siemens (S)",
+            "label": "B"
+          },
+          {
+            "text": "Ampere (A)",
+            "label": "C"
+          },
+          {
+            "text": "Volt per ampere squared (V/A²)",
+            "label": "D"
+          }
+        ],
+        "pyq_year": null,
+        "difficulty": "easy",
+        "bloom_level": "Remember",
+        "explanation": "The SI unit of resistance is the ohm, denoted by the symbol Ω. This is a direct fact stated in the textbook section on Ohm's law (V = RI, where R is the resistance measured in ohms).",
+        "correct_option": "A"
+      },
+      "body_hash": "1cf9331ef39869ab8bc6eff0f40e9af6da30534c6f53c0d73956a5287d040a62",
+      "stem_hash": "db83c337d430877f4caf3e356ee4809c32dd63bdea6d7cf662ee4356bf2eaa35",
+      "answer": "A",
+      "difficulty": "easy",
+      "knowledge_unit_id": "fcff25f5-f369-4dde-b700-1a3a44b961eb",
+      "knowledge_unit_version": 1,
+      "created_at": "2026-08-25 06:14:55.73424+05:30",
+      "updated_at": "2026-08-31 16:59:52.737141+05:30",
+      "created_by": "88914ce4-92d7-41c3-9187-0c1884f03cd0",
+      "in_flagged": true
+    },
+    {
+      "content_item_id": "c91a89ec-e071-495c-a6e1-3f2888e7233a",
+      "status": "DRAFT",
+      "concept_id": "008fe3ee-1648-4bfb-93ce-7a0233013e75",
+      "concept": "lattice-energy",
+      "topic": "ionic-bonding",
+      "chapter": "chemical-bonding",
+      "subject": "CHEMISTRY",
+      "current_version_id": "62817ce5-80e4-404d-a2a3-e69dcf046cf2",
+      "latest_version_id": "62817ce5-80e4-404d-a2a3-e69dcf046cf2",
+      "content_version_id": "62817ce5-80e4-404d-a2a3-e69dcf046cf2",
+      "version_no": 1,
+      "workflow_state": "DRAFT",
+      "body": {
+        "stem": "What is the lattice enthalpy of NaCl, and what does this value represent?",
+        "options": [
+          {
+            "text": "788 kJ mol-1; the energy required to separate one mole of solid NaCl into one mole of Na+(g) and one mole of Cl-(g) at an infinite distance",
+            "label": "A"
+          },
+          {
+            "text": "788 kJ mol-1; the energy released when one mole of Na+(g) and one mole of Cl-(g) combine to form solid NaCl",
+            "label": "B"
+          },
+          {
+            "text": "488 kJ mol-1; the energy required to separate one mole of solid NaCl into its constituent atoms in the gaseous state",
+            "label": "C"
+          },
+          {
+            "text": "788 kJ mol-1; the energy required to melt one mole of solid NaCl into a liquid",
+            "label": "D"
+          }
+        ],
+        "pyq_year": null,
+        "difficulty": "easy",
+        "bloom_level": "Remembering",
+        "explanation": "By definition, lattice enthalpy is the energy required to completely separate one mole of a solid ionic compound into its gaseous constituent ions. For NaCl, this value is 788 kJ mol-1, representing the energy needed to convert one mole of solid NaCl into one mole of Na+(g) and one mole of Cl-(g) separated to an infinite distance.",
+        "correct_option": "A"
+      },
+      "body_hash": "66393ab03e2027243ec0fb46c94d582962fe1a2681f16d1b8728bd9045e44b04",
+      "stem_hash": "eb63a0e3b0050b66e5019bb412fc9c16c439cd51813a90d2f481a8b754aecca5",
+      "answer": "A",
+      "difficulty": "easy",
+      "knowledge_unit_id": "1936007d-feb3-4521-befd-9e503d466739",
+      "knowledge_unit_version": 1,
+      "created_at": "2026-08-25 06:21:40.573945+05:30",
+      "updated_at": "2026-08-31 16:59:52.737141+05:30",
+      "created_by": "88914ce4-92d7-41c3-9187-0c1884f03cd0",
+      "in_flagged": false
+    },
+    {
+      "content_item_id": "e6b9fb1e-f022-4172-88c5-318213bc511b",
+      "status": "DRAFT",
+      "concept_id": "b48f10f4-e5e1-4740-a62f-c1bcaf3865fb",
+      "concept": "photorespiration",
+      "topic": "factors-affecting-photosynthesis",
+      "chapter": "photosynthesis",
+      "subject": "BOTANY",
+      "current_version_id": "f89eded3-f96a-4f98-ae81-bb4022353c48",
+      "latest_version_id": "f89eded3-f96a-4f98-ae81-bb4022353c48",
+      "content_version_id": "f89eded3-f96a-4f98-ae81-bb4022353c48",
+      "version_no": 1,
+      "workflow_state": "DRAFT",
+      "body": {
+        "stem": "According to Blackman's Law of Limiting Factors (1905), which of the following correctly defines the 'limiting factor' in a chemical process affected by multiple factors?",
+        "options": [
+          {
+            "text": "The factor that is nearest to its minimal value and directly controls the rate of the process",
+            "label": "A"
+          },
+          {
+            "text": "The factor present in the highest concentration that accelerates the process",
+            "label": "B"
+          },
+          {
+            "text": "The factor that remains constant while all other factors vary",
+            "label": "C"
+          },
+          {
+            "text": "The factor that is at its optimal level and sustains the maximum rate of the process",
+            "label": "D"
+          }
+        ],
+        "pyq_year": null,
+        "difficulty": "easy",
+        "bloom_level": "Remember",
+        "explanation": "Blackman's Law of Limiting Factors (1905) states that if a chemical process is affected by more than one factor, its rate will be determined by the factor nearest to its minimal value. This is the limiting factor — the one that directly affects the process if its quantity is changed.",
+        "correct_option": "A"
+      },
+      "body_hash": "c89c6214923614b400acc4313e7b99fc0149b48e42f3940f0f376d65bcb5b5a5",
+      "stem_hash": "dc3f931eb1a0f0d9f81d0c27dc366a99120dddd4a0819ecafb0e6e37a1cfa1d4",
+      "answer": "A",
+      "difficulty": "easy",
+      "knowledge_unit_id": "6f938534-fbdb-4ce0-9ca0-140d717b3876",
+      "knowledge_unit_version": 1,
+      "created_at": "2026-08-25 06:31:11.005994+05:30",
+      "updated_at": "2026-08-31 16:59:52.737141+05:30",
+      "created_by": "88914ce4-92d7-41c3-9187-0c1884f03cd0",
+      "in_flagged": true
+    },
+    {
+      "content_item_id": "f78dbbf2-1b1e-4fe7-87aa-263699cdd30f",
+      "status": "DRAFT",
+      "concept_id": "ed907c24-7571-4672-8715-7aa19092ed88",
+      "concept": "c3-c4-pathway",
+      "topic": "dark-reaction",
+      "chapter": "photosynthesis",
+      "subject": "BOTANY",
+      "current_version_id": "aeeeccaa-7501-43b2-84ea-8dbc29ba5d37",
+      "latest_version_id": "aeeeccaa-7501-43b2-84ea-8dbc29ba5d37",
+      "content_version_id": "aeeeccaa-7501-43b2-84ea-8dbc29ba5d37",
+      "version_no": 1,
+      "workflow_state": "DRAFT",
+      "body": {
+        "stem": "Which of the following correctly distinguishes the roles of mesophyll cells and bundle sheath cells in C4 plants?",
+        "options": [
+          {
+            "text": "Mesophyll cells fix CO2 using PEP carboxylase to form OAA, while bundle sheath cells receive C4 acids, release CO2, and carry out the Calvin cycle using RuBisCO",
+            "label": "A"
+          },
+          {
+            "text": "Mesophyll cells carry out the Calvin cycle using RuBisCO, while bundle sheath cells fix CO2 using PEP carboxylase to form OAA",
+            "label": "B"
+          },
+          {
+            "text": "Both mesophyll cells and bundle sheath cells fix CO2 using PEP carboxylase, but only mesophyll cells carry out the Calvin cycle",
+            "label": "C"
+          },
+          {
+            "text": "Mesophyll cells fix CO2 using RuBisCO, while bundle sheath cells transport C4 acids back to mesophyll cells for the Calvin cycle",
+            "label": "D"
+          }
+        ],
+        "pyq_year": null,
+        "difficulty": "medium",
+        "bloom_level": "Analysing",
+        "explanation": "In C4 plants, the primary CO2 fixation occurs in mesophyll cells using PEP carboxylase (PEPcase), which is absent in bundle sheath cells. The resulting C4 acids (such as OAA, malic acid, or aspartic acid) are transported to bundle sheath cells, where they are broken down to release CO2. This CO2 then enters the Calvin cycle, which is carried out by RuBisCO present in bundle sheath cells. RuBisCO is absent from mesophyll cells, and the Calvin pathway does not occur there.",
+        "correct_option": "A"
+      },
+      "body_hash": "0d3772353fc5f399bda570abfa6fa7e2d511d8f153a8a125b0876b86f977a6b2",
+      "stem_hash": "4517b40fbb5739deae00c4f2457872398b9669704f0a2951c8fcaf883692c10f",
+      "answer": "A",
+      "difficulty": "medium",
+      "knowledge_unit_id": "4eeff605-8330-47fc-bf11-71fcd680395a",
+      "knowledge_unit_version": 1,
+      "created_at": "2026-08-25 06:31:23.83588+05:30",
+      "updated_at": "2026-08-31 16:59:52.737141+05:30",
+      "created_by": "88914ce4-92d7-41c3-9187-0c1884f03cd0",
+      "in_flagged": false
+    },
+    {
+      "content_item_id": "f81153c3-b3d6-4a0c-a908-ffb9c032bd8c",
+      "status": "DRAFT",
+      "concept_id": "ed907c24-7571-4672-8715-7aa19092ed88",
+      "concept": "c3-c4-pathway",
+      "topic": "dark-reaction",
+      "chapter": "photosynthesis",
+      "subject": "BOTANY",
+      "current_version_id": "5d7991f3-4238-4c21-bcc3-0659a14cbfcf",
+      "latest_version_id": "5d7991f3-4238-4c21-bcc3-0659a14cbfcf",
+      "content_version_id": "5d7991f3-4238-4c21-bcc3-0659a14cbfcf",
+      "version_no": 1,
+      "workflow_state": "DRAFT",
+      "body": {
+        "stem": "A student examining a leaf cross-section observes large cells surrounding the vascular bundles. These cells have numerous chloroplasts, walls impervious to gaseous exchange, and no intercellular spaces. The student also notes that the surrounding mesophyll cells lack RuBisCO. Which of the following combinations correctly describes the enzyme distribution and site of Calvin cycle operation in this leaf?",
+        "options": [
+          {
+            "text": "Mesophyll cells contain PEPcase; bundle sheath cells contain RuBisCO; Calvin cycle occurs only in bundle sheath cells",
+            "label": "A"
+          },
+          {
+            "text": "Both mesophyll and bundle sheath cells contain RuBisCO; Calvin cycle occurs in all cells",
+            "label": "B"
+          },
+          {
+            "text": "Mesophyll cells contain RuBisCO; bundle sheath cells contain PEPcase; Calvin cycle occurs in mesophyll cells",
+            "label": "C"
+          },
+          {
+            "text": "Mesophyll cells contain PEPcase; bundle sheath cells contain PEPcase; Calvin cycle does not occur in this leaf",
+            "label": "D"
+          }
+        ],
+        "pyq_year": null,
+        "difficulty": "hard",
+        "bloom_level": "Analysing",
+        "explanation": "The described leaf has Kranz anatomy, characteristic of C4 plants. In C4 plants, mesophyll cells contain PEP carboxylase (PEPcase) but lack RuBisCO; they fix CO2 into 4-carbon acids (OAA, malic acid, or aspartic acid). These acids are transported to bundle sheath cells, which are rich in RuBisCO but lack PEPcase. CO2 is released in bundle sheath cells and enters the Calvin cycle, which in C4 plants operates exclusively in the bundle sheath cells, not in mesophyll cells.",
+        "correct_option": "A"
+      },
+      "body_hash": "1a544dc462453b32cdb2ce3fd73079ccc1c29233bcd0d1cae371aab1198d7561",
+      "stem_hash": "31d618c59a3763c5d5ef8dbe9c7344da668b0da1b57ed96634c28f728db63eca",
+      "answer": "A",
+      "difficulty": "hard",
+      "knowledge_unit_id": "4eeff605-8330-47fc-bf11-71fcd680395a",
+      "knowledge_unit_version": 1,
+      "created_at": "2026-08-25 06:30:48.621237+05:30",
+      "updated_at": "2026-08-31 16:59:52.737141+05:30",
+      "created_by": "88914ce4-92d7-41c3-9187-0c1884f03cd0",
+      "in_flagged": false
+    },
+    {
+      "content_item_id": "fc61e6e7-c1fd-4d2e-b009-283506e841ff",
+      "status": "DRAFT",
+      "concept_id": "b48f10f4-e5e1-4740-a62f-c1bcaf3865fb",
+      "concept": "photorespiration",
+      "topic": "factors-affecting-photosynthesis",
+      "chapter": "photosynthesis",
+      "subject": "BOTANY",
+      "current_version_id": "090900c3-0116-4929-b4ee-6d1ed64538e3",
+      "latest_version_id": "090900c3-0116-4929-b4ee-6d1ed64538e3",
+      "content_version_id": "090900c3-0116-4929-b4ee-6d1ed64538e3",
+      "version_no": 1,
+      "workflow_state": "DRAFT",
+      "body": {
+        "stem": "A researcher compares two crop plants — one a C3 species and one a C4 species — under conditions of high temperature and high light intensity. Which of the following best explains why the C4 plant shows greater productivity under these conditions?",
+        "options": [
+          {
+            "text": "C4 plants fix CO2 only in mesophyll cells, completely bypassing RuBisCO and its dual affinity for O2",
+            "label": "A"
+          },
+          {
+            "text": "C4 plants break down C4 acids in bundle sheath cells to release CO2, raising the CO2 concentration at the RuBisCO site so that its carboxylase activity dominates over its oxygenase activity, preventing photorespiration",
+            "label": "B"
+          },
+          {
+            "text": "C4 plants possess a modified form of RuBisCO that has no affinity for O2, so photorespiration cannot occur regardless of O2 levels",
+            "label": "C"
+          },
+          {
+            "text": "C4 plants synthesise additional ATP and NADPH during photorespiration, compensating for the CO2 lost and thus maintaining higher productivity",
+            "label": "D"
+          }
+        ],
+        "pyq_year": null,
+        "difficulty": "hard",
+        "bloom_level": "Analysing",
+        "explanation": "In C4 plants, C4 acids formed in mesophyll cells are transported to bundle sheath cells where they are broken down to release CO2. This raises the intracellular CO2 concentration at the RuBisCO site, ensuring that RuBisCO functions primarily as a carboxylase and minimising its oxygenase activity. As a result, photorespiration is suppressed, and unlike the C3 photorespiratory pathway (which consumes ATP and releases CO2 without producing sugars or NADPH), carbon is efficiently fixed into sugars — contributing to better productivity, higher yields, and tolerance to higher temperatures in C4 plants.",
+        "correct_option": "B"
+      },
+      "body_hash": "7067e4395ee6eddad33612c12ff6c911cd69bbf2a7f1d78cea306c2666545eaf",
+      "stem_hash": "b64c809cbce0e5102d104386585fd8bc11e4cd8530a50e7f73dd81acb37013fa",
+      "answer": "B",
+      "difficulty": "hard",
+      "knowledge_unit_id": "f01e615a-6cba-4611-b0ec-2a0a23a482d8",
+      "knowledge_unit_version": 1,
+      "created_at": "2026-08-25 06:30:59.941825+05:30",
+      "updated_at": "2026-08-31 16:59:52.737141+05:30",
+      "created_by": "88914ce4-92d7-41c3-9187-0c1884f03cd0",
+      "in_flagged": false
+    }
+  ],
+  "ku_relationships": [
+    {
+      "vid": "32b58f53-daf9-4d68-9cc9-8bc4f766156b",
+      "kuid": "11d6fb7f-13e3-425b-ae37-a0e2aa781f94",
+      "knowledge_unit_version": 1
+    },
+    {
+      "vid": "4117b472-cea2-469b-9f76-0c3be97c4760",
+      "kuid": "fcff25f5-f369-4dde-b700-1a3a44b961eb",
+      "knowledge_unit_version": 1
+    },
+    {
+      "vid": "c8431ec4-43dc-485c-853d-dabcc6f1bddf",
+      "kuid": "7c6b55dd-78d3-44de-9771-e8514acfb53e",
+      "knowledge_unit_version": 1
+    },
+    {
+      "vid": "d3713403-3527-46c4-b22d-c91d45e9e776",
+      "kuid": "2196173d-59b5-4ae1-8580-37196eade297",
+      "knowledge_unit_version": 1
+    },
+    {
+      "vid": "05337fe3-d550-4b4d-be02-8086b4fcd11b",
+      "kuid": "2196173d-59b5-4ae1-8580-37196eade297",
+      "knowledge_unit_version": 1
+    },
+    {
+      "vid": "e49deac6-0d3a-460f-8145-f0cd5389a091",
+      "kuid": "57fc6254-7211-45de-abab-db60e9d82d10",
+      "knowledge_unit_version": 1
+    },
+    {
+      "vid": "fef85035-402e-4c8d-9db4-024745bca160",
+      "kuid": "e5f8f04d-d353-4d6b-aa3c-c9baa12b488c",
+      "knowledge_unit_version": 1
+    },
+    {
+      "vid": "7b07fe1b-5dd5-4de9-bc7e-1947bf9fe7d5",
+      "kuid": "fcff25f5-f369-4dde-b700-1a3a44b961eb",
+      "knowledge_unit_version": 1
+    },
+    {
+      "vid": "8d39848a-8a60-47c8-8997-09a827fa3e6e",
+      "kuid": "4f40e57b-77ee-460b-a3e1-2719621c2c07",
+      "knowledge_unit_version": 1
+    },
+    {
+      "vid": "1e676dbd-783d-4c11-97ee-9fcc93820b89",
+      "kuid": "7c6b55dd-78d3-44de-9771-e8514acfb53e",
+      "knowledge_unit_version": 1
+    },
+    {
+      "vid": "62817ce5-80e4-404d-a2a3-e69dcf046cf2",
+      "kuid": "1936007d-feb3-4521-befd-9e503d466739",
+      "knowledge_unit_version": 1
+    },
+    {
+      "vid": "071ef081-5ef5-4c54-8296-170897cfb777",
+      "kuid": "1936007d-feb3-4521-befd-9e503d466739",
+      "knowledge_unit_version": 1
+    },
+    {
+      "vid": "012ca4ee-911e-4e0a-aaa3-7fb112685f55",
+      "kuid": "e86cfd41-ae62-48f8-8011-6ee21650fa89",
+      "knowledge_unit_version": 1
+    },
+    {
+      "vid": "6fe826f8-cec4-4106-8d3c-b6afedd8d69f",
+      "kuid": "e5856110-1f8b-44f6-b465-b46af5618286",
+      "knowledge_unit_version": 1
+    },
+    {
+      "vid": "62f38d7e-e9c5-4377-8167-fc09c301970b",
+      "kuid": "cf56609d-ae8c-4bde-89f9-a1fbe2278b61",
+      "knowledge_unit_version": 1
+    },
+    {
+      "vid": "bd762a20-94ea-493c-a731-6f8130194bd7",
+      "kuid": "cf56609d-ae8c-4bde-89f9-a1fbe2278b61",
+      "knowledge_unit_version": 1
+    },
+    {
+      "vid": "c8caacd5-2f73-4e39-8d9b-6d9b91c2d5bb",
+      "kuid": "ef11d9c0-9212-43b0-b194-aa6d46a538cc",
+      "knowledge_unit_version": 1
+    },
+    {
+      "vid": "52e9e9dd-b9bb-4c4a-86ca-5b8d5b97af8c",
+      "kuid": "ef11d9c0-9212-43b0-b194-aa6d46a538cc",
+      "knowledge_unit_version": 1
+    },
+    {
+      "vid": "4884678b-c57d-4004-989f-00e1fae34f5c",
+      "kuid": "fe335b26-62bf-4aee-948c-ff913eb3efaa",
+      "knowledge_unit_version": 1
+    },
+    {
+      "vid": "e8c46c44-9cb3-48c8-96db-21ec8bcc527a",
+      "kuid": "fe335b26-62bf-4aee-948c-ff913eb3efaa",
+      "knowledge_unit_version": 1
+    },
+    {
+      "vid": "3e9f7b16-a58b-4beb-8da9-2a072321eea8",
+      "kuid": "55b46cfe-5d4b-49d0-b322-4ff6078c7495",
+      "knowledge_unit_version": 1
+    },
+    {
+      "vid": "9d6392ca-10c5-424a-8e26-5cb41a5a61b0",
+      "kuid": "55b46cfe-5d4b-49d0-b322-4ff6078c7495",
+      "knowledge_unit_version": 1
+    },
+    {
+      "vid": "88417c2f-8c66-4033-ae18-2406ac3cdc5a",
+      "kuid": "4eeff605-8330-47fc-bf11-71fcd680395a",
+      "knowledge_unit_version": 1
+    },
+    {
+      "vid": "5d7991f3-4238-4c21-bcc3-0659a14cbfcf",
+      "kuid": "4eeff605-8330-47fc-bf11-71fcd680395a",
+      "knowledge_unit_version": 1
+    },
+    {
+      "vid": "cc8ff85b-9cbc-48bb-af14-4b68f9fd4cb0",
+      "kuid": "f01e615a-6cba-4611-b0ec-2a0a23a482d8",
+      "knowledge_unit_version": 1
+    },
+    {
+      "vid": "090900c3-0116-4929-b4ee-6d1ed64538e3",
+      "kuid": "f01e615a-6cba-4611-b0ec-2a0a23a482d8",
+      "knowledge_unit_version": 1
+    },
+    {
+      "vid": "f89eded3-f96a-4f98-ae81-bb4022353c48",
+      "kuid": "6f938534-fbdb-4ce0-9ca0-140d717b3876",
+      "knowledge_unit_version": 1
+    },
+    {
+      "vid": "a614bc69-58be-4486-8468-01e40ced2548",
+      "kuid": "6f938534-fbdb-4ce0-9ca0-140d717b3876",
+      "knowledge_unit_version": 1
+    },
+    {
+      "vid": "aeeeccaa-7501-43b2-84ea-8dbc29ba5d37",
+      "kuid": "4eeff605-8330-47fc-bf11-71fcd680395a",
+      "knowledge_unit_version": 1
+    },
+    {
+      "vid": "d4c89a95-b134-4c1b-bfc8-645679d14c74",
+      "kuid": "f01e615a-6cba-4611-b0ec-2a0a23a482d8",
+      "knowledge_unit_version": 1
+    }
+  ],
+  "global": {
+    "DRAFT": 78,
+    "PUBLISHED": 11,
+    "IN_REVIEW": 1
+  },
+  "limiting_factors_exists": [],
+  "topic_id": "4039d404-67cb-4e88-b924-ea873c5c91e7"
+}

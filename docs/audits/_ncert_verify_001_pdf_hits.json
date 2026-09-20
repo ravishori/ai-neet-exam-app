@@ -1,0 +1,1061 @@
+{
+  "keph205": {
+    "n_pages": 15,
+    "heading_sample": [
+      {
+        "page": 1,
+        "line": "12.1 INTRODUCTION"
+      },
+      {
+        "page": 1,
+        "line": "12.2 MOLECULAR NATURE OF MATTER"
+      },
+      {
+        "page": 1,
+        "line": "12.1"
+      },
+      {
+        "page": 1,
+        "line": "12.2"
+      },
+      {
+        "page": 1,
+        "line": "12.3"
+      },
+      {
+        "page": 1,
+        "line": "12.4"
+      },
+      {
+        "page": 1,
+        "line": "12.5"
+      },
+      {
+        "page": 1,
+        "line": "12.6"
+      },
+      {
+        "page": 1,
+        "line": "12.7"
+      },
+      {
+        "page": 3,
+        "line": "12.3   BEHAVIOUR OF GASES"
+      },
+      {
+        "page": 5,
+        "line": "12.1."
+      },
+      {
+        "page": 5,
+        "line": "20.2"
+      },
+      {
+        "page": 5,
+        "line": "0.947"
+      },
+      {
+        "page": 5,
+        "line": "32.0"
+      },
+      {
+        "page": 5,
+        "line": "12.4 KINETIC THEORY OF AN IDEAL GAS"
+      },
+      {
+        "page": 6,
+        "line": "12.4.1 Pressure of an Ideal Gas"
+      },
+      {
+        "page": 7,
+        "line": "12.4.2 Kinetic Interpretation of Temperature"
+      },
+      {
+        "page": 7,
+        "line": "4.65"
+      },
+      {
+        "page": 7,
+        "line": "6.02"
+      },
+      {
+        "page": 8,
+        "line": "39.9  =1.77"
+      },
+      {
+        "page": 9,
+        "line": "12.5  LAW OF EQUIPARTITION OF ENERGY"
+      },
+      {
+        "page": 10,
+        "line": "12.6  SPECIFIC HEAT CAPACITY"
+      },
+      {
+        "page": 10,
+        "line": "12.6.1 Monatomic Gases"
+      },
+      {
+        "page": 10,
+        "line": "12.6.2 Diatomic Gases"
+      },
+      {
+        "page": 10,
+        "line": "12.6.3 Polyatomic Gases"
+      },
+      {
+        "page": 11,
+        "line": "12.5"
+      },
+      {
+        "page": 11,
+        "line": "20.8"
+      },
+      {
+        "page": 11,
+        "line": "8.31"
+      },
+      {
+        "page": 11,
+        "line": "1.67"
+      },
+      {
+        "page": 11,
+        "line": "20.8"
+      },
+      {
+        "page": 11,
+        "line": "29.1"
+      },
+      {
+        "page": 11,
+        "line": "8.31"
+      },
+      {
+        "page": 11,
+        "line": "1.40"
+      },
+      {
+        "page": 11,
+        "line": "24.93"
+      },
+      {
+        "page": 11,
+        "line": "33.24"
+      },
+      {
+        "page": 11,
+        "line": "8.31"
+      },
+      {
+        "page": 11,
+        "line": "1.33"
+      },
+      {
+        "page": 11,
+        "line": "44.8 litres contains helium gas at standard"
+      },
+      {
+        "page": 11,
+        "line": "15.0 °C ? (R = 8.31 J mo1–1 K–1)."
+      },
+      {
+        "page": 11,
+        "line": "12.6.4   Specific Heat Capacity of Solids"
+      }
+    ],
+    "hit_pages": [
+      {
+        "page": 1,
+        "matched_terms": [
+          "temperature",
+          "equipartition"
+        ],
+        "excerpt": "CHAPTER TWELVE\nKINETIC THEORY\n12.1 INTRODUCTION\nBoyle discovered the law named after him in 1661. Boyle,\nNewton and several others tried to explain the behaviour of\ngases by considering that gases are made up of tiny atomic\nparticles. The actual atomic theory got established more than\n150 years later. Kinetic theory explains the behaviour of gases\nbased on the idea that the gas  consists of rapidly moving\natoms or molecules. This is possible as the inter-atomic forces,\nwhich are short range forces that are important for solids\nand liquids,  can be neglected for gases. The kinetic theory\nwas developed in the nineteenth century by Maxwell,\nBoltzmann and others. It has been remarkably successful. It\ngives a molecular interpretation of  pressure and temperature\nof a gas, and is consistent with gas laws and Avogadro’s\nhypothesis. It correctly explains specific heat capacities of\nmany gases. It also relates measurable properties of gases\nsuch as viscosity, conduction and diffusion with molecular\nparameters, yielding estimates of molecular sizes and masses.\nThis chapter gives an introduction to kinetic theory.\n12.2 MOLECULAR NATURE OF MATTER\nRichard Feynman, one of the great physicists of 20th century\nconsiders the discovery that “Matter is made up of atoms” to\nbe a very significant one. Humanity may suffer annihilation\n(due to nuclear catastrophe) or extinction (due to\nenvironmental disasters) if we do not act wisely. If that\nhappens, and all of scientific knowledge were to be destroyed\nthen Feynman would like the ‘Atomic Hypothesis’ to be\ncommunicated to the next generation of creatures in the\nuniverse. Atomic Hypothesis: All things are made of atoms -\nlittle particles that move around in perpetual motion,\nattracting each other when they are a little distance apart,\nbut repelling upon being squeezed into one another.\nSpeculation that matter may not be continuous, existed in\nmany places and cultures. Kanada in India and Democritus\n12.1\nIntroduction\n12.2\nMolecular nature of matter\n12.3\nBehaviour of gases\n12.4\nKinetic theory of an ideal gas\n12.5\nLaw of equipartition of energy\n12.6\nSpecific heat capacity\n12.7\nMean free path\nSummary\nPoints to ponder\nExercises\nReprint 2026-27\n"
+      },
+      {
+        "page": 2,
+        "matched_terms": [
+          "temperature",
+          "diatomic"
+        ],
+        "excerpt": "KINETIC THEORY\n245\nin Greece had suggested that matter may consist\nof indivisible constituents. The scientific ‘Atomic\nTheory’  is usually credited to John Dalton. He\nproposed the atomic  theory to explain the laws\nof definite and multiple proportions obeyed by\nelements when they combine into compounds.\nThe first law says that any given compound has,\na fixed proportion by mass of its constituents.\nThe second law says that when two elements\nform more than one compound, for a fixed mass\nof one element, the masses of the other elements\nare in ratio of small integers.\nTo explain the laws Dalton suggested, about\n200 years ago,  that the smallest constituents\nof an element are atoms. Atoms of one element\nare identical but differ from those of other\nelements.  A small number of atoms of each\nelement combine to form a molecule of the\ncompound. Gay Lussac’s law, also given in early\n19th century, states:  When gases combine\nchemically to yield another gas, their volumes\nare in the ratios of small integers.  Avogadro’s\nlaw  (or hypothesis) says: Equal volumes of all\ngases at equal temperature and pressure have\nthe same number of molecules.  Avogadro’s law,\nwhen combined with Dalton’s theory explains\nGay  Lussac’s law.  Since the elements are often\nin the form of molecules, Dalton’s atomic theory\ncan also be referred to as the molecular theory\nof matter. The theory is now well accepted by\nscientists. However even at the end of the\nnineteenth century there were famous scientists\nwho did not believe in atomic theory !\nFrom many observations, in recent times we\nnow know that  molecules (made up of one or\nmore atoms) constitute matter. Electron\nmicroscopes  and scanning tunnelling\nmicroscopes enable us to even see them. The\nsize of an atom is about an angstrom (10 -10   m).\nIn solids, which are tightly packed, atoms are\nspaced about a few  angstroms (2 Å) apart. In\nliquids the separation between atoms is also\nabout the same.  In liquids the atoms  are not\nas rigidly fixed as in solids, and can move\naround. This enables a liquid to flow.  In gases\nthe interatomic distances are in tens of\nangstroms.  The average distance a molecule\ncan travel without colliding is called the  mean\nfree path. The mean free path, in gases, is of\nthe order of thousands of angstroms. The atoms\nare much freer in gases and can travel long\ndistances without colliding. If they are not\nenclosed, gases disperse away. In solids and\nliquids the closeness makes the interatomic force\nimportant. The force "
+      },
+      {
+        "page": 3,
+        "matched_terms": [
+          "temperature"
+        ],
+        "excerpt": "246\nPHYSICS\n(\n)\n–1\n–1\nJ mol\nK\npV\nT\nµ\nis misleading. The gas is full of activity and the\nequilibrium is a dynamic one. In dynamic\nequilibrium, molecules collide and change their\nspeeds during the collision. Only the average\nproperties are constant.\nAtomic theory is not the end of our quest, but\nthe beginning. We now know that atoms are not\nindivisible or elementary. They consist of a\nnucleus and electrons. The nucleus itself is made\nup of protons and neutrons. The protons and\nneutrons are again made up of quarks. Even\nquarks may not be the end of the story. There\nmay be string like elementary entities. Nature\nalways has surprises for us, but the search for\ntruth is often enjoyable and the discoveries\nbeautiful. In this chapter, we shall limit ourselves\nto understanding the behaviour of gases (and a\nlittle bit of solids), as a collection of moving\nmolecules in incessant motion.\n12.3   BEHAVIOUR OF GASES\nProperties of gases are easier to understand than\nthose of solids and liquids. This is mainly\nbecause in a gas, molecules are far from each\nother and their mutual interactions are\nnegligible except when two molecules collide.\nGases at low pressures and high temperatures\nmuch above that at which they liquefy (or\nsolidify) approximately satisfy a simple relation\nbetween their pressure, temperature and volume\ngiven by (see Chapter 10)\nPV = KT\n(12.1)\nfor a given sample of the gas. Here T is the\ntemperature in kelvin or (absolute)  scale. K is  a\nconstant for the given sample but varies with\nthe volume of the gas. If we now  bring in  the\nidea of atoms or molecules, then K is proportional\nto the number of molecules, (say) N in the\nsample. We can write K = N k . Observation tells\nus that this k is same for all gases. It is called\nBoltzmann constant and is denoted by k\nB.\nAs \n1\n1\n2\n2\n1\n1\n2\n2\nP V\nP V\nN T\nN T\n=\n = constant = kB\n(12.2)\nif P, V and T are same, then N is also same for all\ngases. This is Avogadro’s hypothesis, that  the\nnumber of molecules per unit volume is\nthe same for all gases at a fixed temperature and\npressure. The number in 22.4 litres of any gas\nis 6.02 × 1023. This is known as Avogadro number\nand is denoted by NA. The mass of 22.4 litres of\nany gas is equal to its molecular weight in grams\nat S.T.P (standard temperature 273 K and\npressure 1 atm). This amount of substance is\ncalled a mole (see Chapter 1 for a more precise\ndefinition). Avogadro had guessed the equality of\nnumbers in equal volumes of gas at a fixed\ntemperature and pressure from chem"
+      },
+      {
+        "page": 4,
+        "matched_terms": [
+          "temperature"
+        ],
+        "excerpt": "KINETIC THEORY\n247\n⊳\nwhere ρ is the mass density of the gas.\nA gas that satisfies Eq. (12.3) exactly at all\npressures and temperatures is defined to be an\nideal gas. An ideal gas is a simple theoretical\nmodel of a gas. No real gas is truly ideal.\nFig. 12.1 shows departures from ideal gas\nbehaviour for a real gas at three different\ntemperatures. Notice that all curves approach\nthe ideal gas behaviour for low  pressures and\nhigh temperatures.\nAt low pressures or high temperatures the\nmolecules are far apart and molecular\ninteractions are negligible. Without interactions\nthe gas behaves like an ideal one.\nIf we fix µ and T in Eq. (12.3), we get\nPV = constant\n(12.6)\ni.e., keeping temperature constant, pressure of\na given mass of gas varies inversely with volume.\nThis is the famous Boyle’s law. Fig. 12.2  shows\ncomparison between experimental P-V curves\nand the theoretical curves predicted by Boyle’s\nlaw. Once again you see that the  agreement is\ngood at high temperatures and  low pressures.\nNext, if you fix P, Eq. (12.1) shows that V ∝  T i.e.,\nfor a fixed pressure, the volume of a gas is\nproportional to its absolute temperature T\n(Charles’ law). See Fig. 12.3.\nFig.12.2\nExperimental P-V curves (solid lines) for\nsteam at three temperatures compared with\nBoyle’s law (dotted lines). P is in units of 22\natm and V in units of 0.09 litres.\nFinally, consider a mixture of non-interacting\nideal  gases: µ\n1  moles of gas 1, µ\n2 moles of gas 2,\netc. in a vessel of volume V at temperature T and\npressure P. It is then found that the equation  of\nstate of the mixture is :\nPV = ( µ1 + µ2 +…  ) RT\n(12.7)\ni.e. \n1\n2\n...\nRT\nRT\nP\nV\nV\nµ\nµ\n=\n+\n+\n(12.8)\n= P1 + P2 + …\n(12.9)\nClearly P1 =    µ1 R T/V   is the pressure that\ngas 1 would  exert at the same conditions of\nvolume and  temperature if no other gases were\npresent. This is called the partial pressure of the\ngas. Thus, the total pressure of a mixture of ideal\ngases is the sum of partial pressures. This is\nDalton’s law of partial pressures.\nFig. 12.3 Experimental T-V curves (solid lines) for CO2\nat three pressures compared with Charles’\nlaw (dotted lines). T is in units of 300 K and\nV in units of 0.13 litres.\nWe next consider some examples which give\nus information about the volume occupied by\nthe molecules and the volume of a single\nmolecule.\nExample 12.1 The density of water is  1000\nkg m–3. The density of water vapour at 100 °C\nand 1 atm pressure is 0.6 kg m–3. The\nvolume of a molecule multiplied by the total\nnumber gives ,wha"
+      },
+      {
+        "page": 5,
+        "matched_terms": [
+          "temperature",
+          "monatomic",
+          "diatomic"
+        ],
+        "excerpt": "248\nPHYSICS\n⊳\n⊳\nAnswer For  a given mass of water molecules,\nthe density is less if volume is large. So the\nvolume of the vapour is  1000/0.6  = 1/(6 × 10 -4 )\ntimes larger.  If densities of bulk water and water\nmolecules are same, then the fraction of\nmolecular volume to the total volume in liquid\nstate is 1. As volume in vapour state has\nincreased, the fractional volume is less by the\nsame amount, i.e.  6×10-4.\n ⊳\nExample 12.2   Estimate the volume of a\nwater molecule using the data in Example\n12.1.\nAnswer In the liquid (or solid) phase, the\nmolecules of water are quite closely packed. The\ndensity of water molecule may therefore, be\nregarded as roughly equal to the density of bulk\nwater = 1000 kg m–3. To estimate the volume of\na water molecule, we need to know the mass of\na single water molecule. We know that 1 mole\nof water has a mass approximately equal to\n(2 + 16)g  = 18 g  =  0.018 kg.\nSince 1 mole   contains  about   6 × 1023\nmolecules   (Avogadro’s  number),   the mass of\na molecule of water is  (0.018)/(6 × 1023) kg  =\n3 × 10–26 kg. Therefore, a rough estimate of the\nvolume of a water  molecule is as follows :\nVolume of a water molecule\n= (3 × 10–26 kg)/ (1000 kg m–3)\n= 3 × 10–29 m3\n= (4/3) π  (Radius)3\nHence, Radius ≈ 2 ×10-10  m = 2 Å\n⊳\nExample 12.3   What is the average\ndistance between atoms (interatomic\ndistance) in water? Use the data given in\nExamples 12.1 and 12.2.\nAnswer :   A given mass of water in vapour state\nhas 1.67×103 times the volume of the same mass\nof water in liquid state (Ex. 12.1). This is also\nthe increase in the amount of volume available\nfor each molecule of water. When volume\nincreases by 103 times the radius increases by\nV1/3 or 10 times, i.e., 10 × 2 Å  = 20 Å. So the\naverage distance is 2 × 20 = 40  Å.\n    ⊳\nExample 12.4 A vessel contains two non-\nreactive gases : neon (monatomic) and\noxygen (diatomic). The ratio of their partial\npressures is 3:2. Estimate the ratio of  (i)\nnumber of molecules and (ii) mass density\nof neon and oxygen in the vessel. Atomic\nmass of Ne = 20.2 u, molecular mass of O2\n= 32.0 u.\nAnswer Partial pressure of a gas in a mixture is\nthe pressure it would have for the same volume\nand temperature if it alone occupied the vessel.\n(The total pressure of a mixture of non-reactive\ngases is the sum of partial pressures due to its\nconstituent gases.) Each gas (assumed ideal)\nobeys the gas law. Since V and T are common to\nthe two gases,  we  have  P1V = µ 1 RT and P2V =\nµ2 RT, i.e. (P1/P2) = (µ1 / µ2). Her"
+      },
+      {
+        "page": 7,
+        "matched_terms": [
+          "translational kinetic",
+          "temperature",
+          "root mean square",
+          "average kinetic",
+          "monatomic",
+          "diatomic"
+        ],
+        "excerpt": "250\nPHYSICS\n⊳\nmolecule with a different initial velocity which\nafter a collision acquires the velocity  (vx, vy, vz ).\nIf this were not so, the distribution of velocities\nwould not remain steady. In any case we are\nfinding \n2\nx\nv\n. Thus, on the whole, molecular\ncollisions (if they are not too frequent and the\ntime spent in a collision is negligible compared\nto time between collisions)  will not affect the\ncalculation above.\n12.4.2 Kinetic Interpretation of Temperature\nEquation (13.14) can be written as\nPV   =  (1/3) nV m \n2\nv\n(12.15a)\nPV   =   (2/3) N x ½ m \n2\nv\n(12.15b)\nwhere N (= nV) is the number of molecules in\nthe sample.\nThe quantity in the bracket is the average\ntranslational kinetic energy of the molecules in\nthe gas. Since the internal energy E of an ideal\ngas is purely kinetic*,\nE = N × (1/2) m \n2\nv\n(12.16)\nEquation (12.15) then gives :\nPV = (2/3) E\n(12.17)\nWe are now ready for a kinetic interpretation\nof temperature. Combining Eq. (12.17) with the\nideal gas Eq. (12.3), we get\nE = (3/2)  kB  NT                                             (12.18)\nor  E/ N = ½  m \n2\nv\n   =   (3/2) kBT\n(12.19)\ni.e., the average kinetic energy of a molecule is\nproportional to the absolute temperature of the\ngas; it is independent of pressure, volume or\nthe nature of the ideal gas. This is a fundamental\nresult relating temperature, a macroscopic\nmeasurable \nparameter \nof \na \ngas\n(a thermodynamic variable as it is called) to a\nmolecular quantity, namely the average kinetic\nenergy of a molecule. The two domains are\nconnected by the Boltzmann constant. We note\nin passing that Eq. (12.18) tells us that internal\nenergy of an ideal gas depends only on\ntemperature, not on pressure or volume. With\nthis interpretation of temperature, kinetic theory\nof an ideal gas is completely consistent with the\nideal gas equation and the various gas laws\nbased on it.\nFor a mixture of non-reactive ideal gases, the\ntotal pressure gets contribution from each gas\nin the mixture. Equation (12.14) becomes\nP = (1/3) [n1m1\n2\n1\nv\n + n2 m2 \n2\n2\nv\n+…  ]\n(12.20)\nIn equilibrium, the average kinetic energy of\nthe molecules of different gases will be equal.\nThat is,\n½  m1 \n2\n1\nv\n = ½ m2 \n2\n2\nv\n= (3/2) kB T\nso that\nP = (n1 + n2 +…  ) kB T\n(12.21)\nwhich is Dalton’s law of partial pressures.\nFrom Eq. (12.19), we can get an idea of the\ntypical speed of molecules in a gas. At a\ntemperature T = 300 K, the mean square speed\nof a molecule in nitrogen gas is :\n2\n–26\n26\n28\n4.65\n10\n6.02\n10\nN\nA\nM\nm\nN\n=\n=\n=\n×\n×\n kg.\n2"
+      },
+      {
+        "page": 8,
+        "matched_terms": [
+          "temperature"
+        ],
+        "excerpt": "KINETIC THEORY\n251\n⊳\n⊳\nof a molecule of the gas. Therefore,\n(\n)\n(\n)\n(\n)\n(\n)\n(\n)\n(\n)\n2\nCl\nCl\nAr\n2\nAr\nAr\nCl\nrms\nrms\nm\nM\nm\nM\n=\n=\nv\nv\n= 70.9\n39.9  =1.77\nwhere M denotes the molecular mass of the gas.\n(For argon, a molecule is just an atom of argon.)\nTaking square root of both sides,\n(\n)\n(\n)\nAr\nCl\nrms\nrms\nv\nv\n =  1.33\nYou should note that the composition of the\nmixture by mass is quite irrelevant to the above\ncalculation. Any other proportion by mass of\nargon and chlorine would give the same answers\nto (i) and (ii), provided the temperature remains\nunaltered.\n⊳\nExample 12.6   Uranium has two isotopes\nof masses 235 and 238 units. If both are\npresent in Uranium hexafluoride gas which\nwould have the  larger average speed ? If\natomic mass of fluorine is 19 units,\nestimate the percentage difference in\nspeeds at any temperature.\nAnswer  At a fixed temperature the average\nenergy  = ½ m <v2 > is constant. So  smaller the\nmass of the molecule, faster will be the speed.\nThe ratio of speeds is inversely proportional to\nthe square root of the ratio of the masses. The\nmasses are 349 and 352 units. So\nv349 / v352  =   ( 352/ 349)1/2 = 1.0044 .\nHence difference \nV\nV\n∆\n= 0.44 %.\n[235U is the isotope needed for nuclear fission.\nTo separate it from the more abundant isotope\n238U,  the mixture  is surrounded by a  porous\ncylinder. The porous cylinder must be thick and\nnarrow, so that the molecule wanders through\nindividually, colliding with the walls of the long\npore. The faster molecule will leak out more than\nthe slower one and so there is more of the lighter\nmolecule (enrichment) outside the porous\ncylinder (Fig. 12.5). The method is not very\nefficient and has to be repeated several times\nfor sufficient enrichment.].\n⊳\nWhen gases diffuse, their rate of diffusion is\ninversely proportional to square root of the\nmasses (see Exercise 12.12 ). Can you guess the\nexplanation from the above answer?\nFig. 12.5  Molecules going through a porous wall.\nExample 12.7  (a)  When a molecule (or an\nelastic ball) hits a ( massive) wall, it\nrebounds with the same speed. When a ball\nhits a massive bat held firmly, the same\nthing happens. However, when the bat is\nmoving towards the ball, the ball rebounds\nwith a different speed. Does the ball move\nfaster or slower? (Ch.5 will refresh your\nmemory on elastic collisions.)\n(b) When gas in a cylinder is compressed\nby pushing in a piston, its temperature\nrises. Guess at an explanation of this in\nterms of kinetic theory using (a) above.\n(c) What happens w"
+      },
+      {
+        "page": 9,
+        "matched_terms": [
+          "temperature",
+          "degrees of freedom",
+          "equipartition",
+          "monatomic",
+          "diatomic"
+        ],
+        "excerpt": "252\nPHYSICS\nYou  should be able to answer (b) (c) and (d)\nbased on the answer to (a).\n(Hint: Note the correspondence, pistonà bat,\ncylinder à wicket, molecule à ball.)         ⊳\n12.5  LAW OF EQUIPARTITION OF ENERGY\nThe kinetic energy of a single molecule is\n2\n2\n2\n1\n1\n1\n \n \n \n \n \n \n2\n2\n2\nt\nx\ny\nz\nmv\nmv\nmv\nε\n=\n+\n+\n(12.22)\nFor a gas in thermal equilibrium at\ntemperature T  the average value of energy\ndenoted by   <\ntε > is\n2\n2\n2\n1\n1\n1\n3\n2\n2\n2\n2\nt\nx\ny\nz\nB\nmv\nmv\nmv\nk T\nε\n=\n+\n+\n=\n(12.23)\nSince there is no preferred direction, Eq. (12.23)\nimplies\n2\n1\n1\n \n \n \n \n2\n2\nx\nB\nmv\nk T\n=\n ,\n2\n1\n1\n \n \n \n \n2\n2\ny\nB\nmv\nk T\n=\n,\n2\n1\n1\n \n \n \n \n2\n2\nz\nB\nmv\nk T\n=\n(12.24)\nA molecule free to move in space needs three\ncoordinates to specify its location. If it is\nconstrained to move in a plane it needs two; and\nif constrained to move along a line, it needs just\none coordinate to locate it. This can also be\nexpressed in another way. We say that it has\none degree of freedom for motion in a line, two\nfor motion in a plane and three for motion in\nspace. Motion of a body as a whole from one\npoint to another is called translation. Thus, a\nmolecule free to move in space has three\ntranslational degrees of freedom. Each\ntranslational degree of freedom contributes a\nterm that contains square of some variable of\nmotion, e.g., ½ mvx\n2  and similar terms in\nvy and vz. In, Eq. (12.24) we see that in thermal\nequilibrium, the average of each such term is\n½ kBT .\nMolecules of a monatomic gas like argon have\nonly translational degrees of freedom. But what\nabout a diatomic gas such as O2 or N2? A\nmolecule of O2 has three translational degrees\nof freedom. But in addition it can also rotate\nabout its centre of mass. Figure 12.6 shows the\ntwo independent axes of rotation 1 and 2, normal\nto the axis joining the two oxygen atoms about\nwhich the molecule can rotate*. The molecule\nthus has two rotational degrees of freedom, each\nof which contributes a term to the total energy\nconsisting of translational energy \ntε\n and\nrotational energy εr.\n2\n2\n2\n2\n2\n1\n1\n2\n2\n1\n1\n1\n1\n1\n2\n2\n2\n2\n2\nt\nr\nx\ny\nz\nmv\nmv\nmv\nI\nI\nε\nε\nω\nω\n+\n=\n+\n+\n+\n+\n(12.25)\n*\nRotation along the line joining the atoms has very small moment of inertia and does not come into play for\nquantum mechanical reasons. See end of section 12.6.\nFig. 12.6\nThe two independent axes of rotation of\na diatomic molecule\nwhere ω1 and ω2  are the angular speeds about\nthe axes 1 and 2 and I1, I2 are the corresponding\nmoments of inertia. Note that each rotational\ndegree of freedom "
+      }
+    ]
+  },
+  "lech205": {
+    "n_pages": 22,
+    "heading_sample": [
+      {
+        "page": 1,
+        "line": "10.1"
+      },
+      {
+        "page": 1,
+        "line": "10.1"
+      },
+      {
+        "page": 1,
+        "line": "10.1"
+      },
+      {
+        "page": 1,
+        "line": "10.1"
+      },
+      {
+        "page": 1,
+        "line": "10.1 Carbohydrates"
+      },
+      {
+        "page": 2,
+        "line": "10.1.1"
+      },
+      {
+        "page": 2,
+        "line": "10.1.2"
+      },
+      {
+        "page": 2,
+        "line": "10.1.2.1 Glucose"
+      },
+      {
+        "page": 6,
+        "line": "10.1.2.2 Fructose"
+      },
+      {
+        "page": 7,
+        "line": "10.1.3"
+      },
+      {
+        "page": 8,
+        "line": "10.1.4"
+      },
+      {
+        "page": 9,
+        "line": "10.1.5"
+      },
+      {
+        "page": 10,
+        "line": "10.5.1, Class XII) are present in nucleic acids. Carbohydrates are found"
+      },
+      {
+        "page": 10,
+        "line": "10.1"
+      },
+      {
+        "page": 10,
+        "line": "10.2"
+      },
+      {
+        "page": 10,
+        "line": "10.3"
+      },
+      {
+        "page": 10,
+        "line": "10.2.1 Amino"
+      },
+      {
+        "page": 10,
+        "line": "10.2"
+      },
+      {
+        "page": 10,
+        "line": "10.2"
+      },
+      {
+        "page": 10,
+        "line": "10.2"
+      },
+      {
+        "page": 10,
+        "line": "10.2"
+      },
+      {
+        "page": 10,
+        "line": "10.2"
+      },
+      {
+        "page": 11,
+        "line": "10.2.2"
+      },
+      {
+        "page": 12,
+        "line": "10.2.3 Structure"
+      },
+      {
+        "page": 14,
+        "line": "10.2.4"
+      },
+      {
+        "page": 15,
+        "line": "10.4"
+      },
+      {
+        "page": 15,
+        "line": "10.5"
+      },
+      {
+        "page": 15,
+        "line": "10.3.1 Mechanism"
+      },
+      {
+        "page": 15,
+        "line": "10.4 Vitamins"
+      },
+      {
+        "page": 15,
+        "line": "10.4 Vitamins"
+      },
+      {
+        "page": 15,
+        "line": "10.4 Vitamins"
+      },
+      {
+        "page": 15,
+        "line": "10.4 Vitamins"
+      },
+      {
+        "page": 15,
+        "line": "10.4 Vitamins"
+      },
+      {
+        "page": 15,
+        "line": "10.3 Enzymes"
+      },
+      {
+        "page": 15,
+        "line": "10.3 Enzymes"
+      },
+      {
+        "page": 15,
+        "line": "10.3 Enzymes"
+      },
+      {
+        "page": 15,
+        "line": "10.3 Enzymes"
+      },
+      {
+        "page": 15,
+        "line": "10.3 Enzymes"
+      },
+      {
+        "page": 16,
+        "line": "10.4.1"
+      },
+      {
+        "page": 17,
+        "line": "1111100000.5.5.5.5.5 Nucleic Acids"
+      }
+    ],
+    "hit_pages": [
+      {
+        "page": 12,
+        "matched_terms": [
+          "disulphide",
+          "peptide"
+        ],
+        "excerpt": "292\nChemistry\nAmino acids are usually colourless, crystalline solids. These are\nwater-soluble, high melting solids and behave like salts rather than\nsimple amines or carboxylic acids. This behaviour is due to the presence\nof both acidic (carboxyl group) and basic (amino\ngroup) groups in the same molecule. In aqueous\nsolution, the carboxyl group can lose a proton\nand amino group can accept a proton, giving rise\nto a dipolar ion known as zwitter ion. This is\nneutral but contains both positive and negative\ncharges.\nIn zwitter ionic form, amino acids show amphoteric behaviour as\nthey react both with acids and bases.\nExcept glycine, all other naturally occurring a-amino acids are\noptically active, since the a-carbon atom is asymmetric. These exist\nboth in ‘D’ and ‘L’ forms. Most naturally occurring amino acids have\nL-configuration. L-Aminoacids are represented by writing the –NH2 group\non left hand side.\nYou have already read that proteins are the polymers of a-amino acids\nand they are connected to each other by peptide bond or peptide\nlinkage. Chemically, peptide linkage is an amide formed between\n–COOH group and –NH2 group. The reaction between two molecules of\nsimilar or different amino acids, proceeds through\nthe combination of the amino group of one molecule\nwith the carboxyl group of the other. This results in\nthe elimination of a water molecule and formation of\na peptide bond –CO–NH–. The product of the reaction\nis called a dipeptide because it is made up of two\namino acids. For example, when carboxyl group of\nglycine combines with the amino group of alanine\nwe get a dipeptide, glycylalanine.\nIf a third amino acid combines to a dipeptide, the product is called a\ntripeptide. A tripeptide contains three amino acids linked by two peptide\nlinkages. Similarly when four, five or six amino acids are linked, the respective\nproducts are known as tetrapeptide, pentapeptide or hexapeptide,\nrespectively. When the number of such amino acids is more than ten, then\nthe products are called polypeptides. A polypeptide with more than hundred\namino acid residues, having molecular mass higher than 10,000u is called\na protein. However, the distinction between a polypeptide and a protein is\nnot very sharp. Polypeptides with fewer amino acids are likely to be called\nproteins if they ordinarily have a well defined conformation of a protein such\nas insulin which contains 51 amino acids.\nProteins can be classified into two types on the basis of their\nmolecular shape.\n(a) Fibrous "
+      },
+      {
+        "page": 13,
+        "matched_terms": [
+          "disulphide",
+          "secondary structure",
+          "primary structure",
+          "peptide"
+        ],
+        "excerpt": "293\nBiomolecules\nFig. 10.1: a-Helix\nstructure of proteins\nFig. 10.2: b-Pleated sheet structure of\nproteins\n(b) Globular proteins\nThis structure results when the chains of polypeptides coil around\nto give a spherical shape. These are usually soluble in water. Insulin\nand albumins are the common examples of globular proteins.\nStructure and shape of proteins can be studied at four different\nlevels, i.e., primary, secondary, tertiary and quaternary, each level\nbeing more complex than the previous one.\n(i) Primary structure of proteins: Proteins may have\none or more polypeptide chains. Each polypeptide in a\nprotein has amino acids linked with each other in a\nspecific sequence and it is this sequence of amino acids\nthat is said to be the primary structure of that protein.\nAny change in this primary structure i.e., the sequence\nof amino acids creates a different protein.\n(ii) Secondary structure of proteins: The secondary\nstructure of protein refers to the shape in which a long\npolypeptide chain can exist. They are found to exist in\ntwo different types of structures viz. a-helix and\nb-pleated sheet structure. These structures arise due\nto the regular folding of the backbone of the polypeptide\nchain due to hydrogen bonding between \n and\n–NH– groups of the peptide bond.\na-Helix is one of the most common ways in which\na polypeptide chain forms all possible hydrogen bonds\nby twisting into a right handed screw (helix) with the\n–NH group of each amino acid residue hydrogen bonded to the\nC   O of an adjacent turn of the helix as shown in Fig.10.1.\nIn b-pleated sheet structure all peptide chains are\nstretched out to nearly maximum extension and then\nlaid side by side which are held together by\nintermolecular hydrogen bonds. The structure resembles\nthe pleated folds of drapery and therefore is known as\nb-pleated sheet.\n(iii) Tertiary structure of proteins: The tertiary\nstructure of proteins represents overall folding of the\npolypeptide chains i.e., further folding of the secondary\nstructure. It gives rise to two major molecular shapes\nviz. fibrous and globular. The main forces which\nstabilise the 2° and 3° structures of proteins are\nhydrogen bonds, disulphide linkages, van der Waals\nand electrostatic forces of attraction.\n(iv) Quaternary structure of proteins: Some of the\nproteins are composed of two or more polypeptide\nchains referred to as sub-units. The spatial\narrangement of these subunits with respect to each\nother is known as quaternary structure.\nReprint 2026-27\n"
+      },
+      {
+        "page": 14,
+        "matched_terms": [
+          "denatur"
+        ],
+        "excerpt": "294\nChemistry\nFig. 10.3: Diagrammatic representation of protein structure (two sub-units\nof two types in quaternary structure)\nA diagrammatic representation of all these four structures is\ngiven in Figure 10.3 where each coloured ball represents an\namino acid.\nFig. 10.4:  Primary,\nsecondary, tertiary\nand quaternary\nstructures of\nhaemoglobin\nProtein found in a biological system with a unique three-dimensional\nstructure and biological activity is called a native protein. When a\nprotein in its native form, is subjected to physical change like change\nin temperature or chemical change like change in pH, the hydrogen\nbonds are disturbed. Due to this, globules unfold and helix get uncoiled\nand protein loses its biological activity. This is called denaturation of\n10.2.4\nDenaturation of\nProteins\nReprint 2026-27\n"
+      },
+      {
+        "page": 15,
+        "matched_terms": [
+          "primary structure",
+          "denatur"
+        ],
+        "excerpt": "295\nBiomolecules\nprotein. During denaturation secondary and tertiary structures are\ndestroyed but primary structure remains intact. The coagulation of\negg white on boiling is a common example of denaturation. Another\nexample is curdling of milk which is caused due to the formation of\nlactic acid by the bacteria present in milk.\nIntext Questions\nIntext Questions\nIntext Questions\nIntext Questions\nIntext Questions\n10.4\nThe melting points and solubility in water of amino acids are generally\nhigher than that of the corresponding halo acids. Explain.\n10.5\nWhere does the water present in the egg go after boiling the egg?\nLife is possible due to the coordination of various chemical reactions in\nliving organisms. An example is the digestion of food, absorption of\nappropriate molecules and ultimately production of energy. This process\ninvolves a sequence of reactions and all these reactions occur in the\nbody under very mild conditions. This occurs with the help of certain\nbiocatalysts called enzymes. Almost all the enzymes are globular\nproteins. Enzymes are very specific for a particular reaction and for a\nparticular substrate. They are generally named after the compound or\nclass of compounds upon which they work. For example, the enzyme\nthat catalyses hydrolysis of maltose into glucose is named as maltase.\n12\n22\n11\n6\n12\n6\nMaltase\nMaltose\nG lucose\nC H\nO\n2 C H O\n\nSometimes enzymes are also named after the reaction, where they\nare used. For example, the enzymes which catalyse the oxidation of\none substrate with simultaneous reduction of another substrate are\nnamed as oxidoreductase enzymes. The ending of the name of an\nenzyme is -ase.\nEnzymes are needed only in small quantities for the progress of a reaction.\nSimilar to the action of chemical catalysts, enzymes are said to reduce\nthe magnitude of activation energy. For example, activation energy for\nacid hydrolysis of sucrose is 6.22 kJ mol–1, while the activation energy is\nonly 2.15 kJ mol–1 when hydrolysed by the enzyme, sucrase. Mechanism\nfor the enzyme action has been discussed.\nIt has been observed that certain organic compounds are required in\nsmall amounts in our diet but their deficiency causes specific diseases.\nThese compounds are called vitamins. Most of the vitamins cannot be\nsynthesised in our body but plants can synthesise almost all of them,\nso they are considered as essential food factors. However, the bacteria\nof the gut can produce some of the vitamins required by us. All the\nvitamins are gener"
+      },
+      {
+        "page": 19,
+        "matched_terms": [
+          "secondary structure",
+          "primary structure"
+        ],
+        "excerpt": "299\nBiomolecules\nA simplified version of nucleic acid chain is as shown below.\nFig. 10.6:  Formation of a dinucleotide\nFig. 10.7: Double strand helix structure for DNA\nInformation regarding the sequence of nucleotides in the chain\nof a nucleic acid is called its primary structure. Nucleic acids\nhave a secondary structure also. James Watson and Francis Crick\ngave a double strand helix structure for DNA (Fig. 10.7). Two\nnucleic acid chains are wound about each other and held together\nby hydrogen bonds between pairs of bases. The two strands are\ncomplementary to each other because the hydrogen bonds are\nformed between specific pairs of bases. Adenine forms hydrogen\nbonds with thymine whereas cytosine forms hydrogen bonds\nwith guanine.\nIn secondary structure of RNA single stranded helics is present\nwhich sometimes foldsback on itself. RNA molecules are of three\ntypes and they perform different functions. They are named as\nmessenger RNA (m-RNA), ribosomal RNA (r-RNA) and transfer\nRNA (t-RNA).\nSugar\nPhosphate\nSugar\nPhosphate\nBase\nSugar\nBase\nn\nBase\nReprint 2026-27\n"
+      },
+      {
+        "page": 20,
+        "matched_terms": [
+          "peptide"
+        ],
+        "excerpt": "300\nChemistry\nHar Gobind Khorana\nDNA Fingerprinting\nIt is known that every individual has unique fingerprints. These occur at the tips of\nthe fingers and have been used for identification for a long time but these can be\naltered by surgery. A sequence of bases on DNA is also unique for a person and\ninformation regarding this is called DNA fingerprinting. It is same for every cell and\ncannot be altered by any known treatment. DNA fingerprinting is now used\n(i) in forensic laboratories for identification of criminals.\n(ii) to determine paternity of an individual.\n(iii) to identify the dead bodies in any accident by comparing the DNA’s of parents or\nchildren.\n(iv) to identify racial groups to rewrite biological evolution.\nDNA is the chemical basis of heredity and may be regarded as the reserve\nof genetic information. DNA is exclusively responsible for maintaining\nthe identity of different species of organisms over millions of years. A\nDNA molecule is capable of self duplication during cell division and\nidentical DNA strands are transferred to daughter cells. Another important\nfunction of nucleic acids is the protein synthesis in the cell. Actually, the\nproteins are synthesised by various RNA molecules in the cell but the\nmessage for the synthesis of a particular protein is present in DNA.\nHormones are molecules that act as intercellular messengers. These\nare produced by endocrine glands in the body and are poured directly\nin the blood stream which transports them to the site of action.\nIn terms of chemical nature, some of these are steroids, e.g., estrogens\nand androgens; some are poly peptides for example insulin and\nendorphins and some others are amino acid derivatives such as\nepinephrine and norepinephrine.\nHormones have several functions in the body. They help to maintain\nthe balance of biological activities in the body. The role of insulin in keeping\nthe blood glucose level within the narrow limit is an example of this\nfunction. Insulin is released in response to the rapid rise in blood glucose\nlevel. On the other hand hormone glucagon tends to increase the glucose\nlevel in the blood.  The two hormones together regulate the glucose level\nin the blood. Epinephrine and norepinephrine mediate responses to\nexternal stimuli. Growth hormones and sex hormones play role in growth\nand development. Thyroxine produced in the thyroid gland is an iodinated\nderivative of amino acid tyrosine. Abnormally low level of thyroxine leads\n10.5.3 Biological\nFunctions\nof Nuclei"
+      },
+      {
+        "page": 21,
+        "matched_terms": [
+          "denatur",
+          "peptide"
+        ],
+        "excerpt": "301\nBiomolecules\nto hypothyroidism which is characterised by lethargyness and obesity.\nIncreased level of thyroxine causes hyperthyroidism. Low level of iodine\nin the diet may lead to hypothyroidism and enlargement of the thyroid\ngland. This condition is largely being controlled by adding sodium iodide\nto commercial table salt (“Iodised” salt).\n  Steroid hormones are produced by adrenal cortex and gonads (testes\nin males and ovaries in females). Hormones released by the adrenal cortex\nplay very important role in the functions of the body. For example,\nglucocorticoids control the carbohydrate metabolism, modulate\ninflammatory reactions, and are involved in reactions to stress. The\nmineralocorticoids control the level of excretion of water and salt by the\nkidney. If adrenal cortex does not function properly then one of the results\nmay be Addison’s disease characterised by hypoglycemia, weakness and\nincreased susceptibility to stress. The disease is fatal unless it is treated by\nglucocorticoids and mineralocorticoids. Hormones released by gonads are\nresponsible for development of secondary sex characters. Testosterone is\nthe major sex hormone produced in males. It is responsible for development\nof secondary male characteristics (deep voice, facial hair, general physical\nconstitution) and estradiol is the main female sex hormone. It is responsible\nfor development of secondary female characteristics and participates in\nthe control of menstrual cycle. Progesterone is responsible for preparing\nthe uterus for implantation of fertilised egg.\nIntext Questions\nIntext Questions\nIntext Questions\nIntext Questions\nIntext Questions\n10.6\nWhy cannot vitamin C  be stored in our body?\n10.7\nWhat products would be formed when a nucleotide from DNA containing\nthymine is hydrolysed?\n10.8\nWhen RNA is hydrolysed, there is no relationship among the quantities of different\nbases obtained. What does this fact suggest about the structure of RNA?\nSummary\nSummary\nSummary\nSummary\nSummary\nCarbohydrates are optically active polyhydroxy aldehydes or ketones or molecules which\nprovide such units on hydrolysis. They are broadly classified into three groups —\nmonosaccharides, disaccharides and polysaccharides. Glucose, the most important\nsource of energy for mammals,  is obtained by the digestion of starch. Monosaccharides\nare held together by glycosidic linkages to form disaccharides or polysaccharides.\nProteins are the polymers of about twenty different aaaaa-amino acids which are\nlinked by p"
+      },
+      {
+        "page": 22,
+        "matched_terms": [
+          "secondary structure",
+          "primary structure",
+          "denatur",
+          "peptide"
+        ],
+        "excerpt": "302\nChemistry\nNucleic acids are the polymers of nucleotides which in turn consist of a base,\na pentose sugar and phosphate moiety. Nucleic acids are responsible for the transfer\nof characters from parents to offsprings. There are two types of nucleic acids —\nDNA and RNA. DNA contains a five carbon sugar molecule called 2-deoxyribose\nwhereas RNA contains ribose. Both DNA and RNA contain adenine, guanine and\ncytosine. The fourth base is thymine in DNA and uracil in RNA. The structure of\nDNA is a double strand whereas RNA is a single strand molecule. DNA is the\nchemical basis of heredity and have the coded message for proteins to be synthesised\nin the cell. There are three types of RNA — mRNA, rRNA and tRNA which actually\ncarry out the protein synthesis in the cell.\n10.1\nWhat are monosaccharides?\n10.2\nWhat are reducing sugars?\n10.3\nWrite two main functions of carbohydrates in plants.\n10.4\nClassify the following into monosaccharides and disaccharides.\nRibose, 2-deoxyribose, maltose, galactose, fructose and lactose.\n10.5\nWhat do you understand by the term glycosidic linkage?\n10.6\nWhat is glycogen? How is it different from starch?\n10.7\nWhat are the hydrolysis products of\n(i)\nsucrose and\n(ii)\nlactose?\n10.8\nWhat is the basic structural difference between starch and cellulose?\n10.9\nWhat happens when D-glucose is treated with the following reagents?\n(i)\nHI\n(ii)\nBromine water\n(iii)\nHNO3\n10.10 Enumerate the reactions of D-glucose which cannot be explained by its\nopen chain structure.\n10.11 What are essential and non-essential amino acids? Give two examples of\neach type.\n10.12 Define the following as related to proteins\n(i)\nPeptide linkage\n(ii)\nPrimary structure\n(iii)\nDenaturation.\n10.13 What are the common types of secondary structure of proteins?\n10.14 What type of bonding helps in stabilising the a-helix structure of proteins?\n10.15 Differentiate between globular and fibrous proteins.\n10.16 How do you explain the amphoteric behaviour of amino acids?\n10.17 What are enzymes?\n10.18 What is the effect of denaturation on the structure of proteins?\n10.19 How are vitamins classified? Name the vitamin responsible for the\ncoagulation of blood.\n10.20 Why are vitamin A and vitamin C essential to us? Give their important sources.\n10.21 What are nucleic acids? Mention their two important functions.\n10.22 What is the difference between a nucleoside and a nucleotide?\n10.23 The two strands in DNA are not identical but are complementary. Explain.\n10.24 Write the important structural"
+      }
+    ]
+  },
+  "lebo108": {
+    "n_pages": 12,
+    "heading_sample": [
+      {
+        "page": 1,
+        "line": "8.1"
+      },
+      {
+        "page": 1,
+        "line": "8.2"
+      },
+      {
+        "page": 1,
+        "line": "8.3"
+      },
+      {
+        "page": 1,
+        "line": "8.4"
+      },
+      {
+        "page": 1,
+        "line": "8.5"
+      },
+      {
+        "page": 1,
+        "line": "8.6"
+      },
+      {
+        "page": 3,
+        "line": "8.1 MICROBES IN HOUSEHOLD PRODUCTS"
+      },
+      {
+        "page": 3,
+        "line": "8.2"
+      },
+      {
+        "page": 4,
+        "line": "8.2.1 Fermented Beverages"
+      },
+      {
+        "page": 4,
+        "line": "8.2.2 Antibiotics"
+      },
+      {
+        "page": 5,
+        "line": "8.2.3 Chemicals, Enzymes and other Bioactive Molecules"
+      },
+      {
+        "page": 5,
+        "line": "8.3 MICROBES IN SEWAGE TREATMENT"
+      },
+      {
+        "page": 7,
+        "line": "8.4 MICROBES IN PRODUCTION OF BIOGAS"
+      },
+      {
+        "page": 8,
+        "line": "8.5 MICROBES AS BIOCONTROL AGENTS"
+      },
+      {
+        "page": 9,
+        "line": "8.6 MICROBES AS BIOFERTILISERS"
+      }
+    ],
+    "hit_pages": [
+      {
+        "page": 3,
+        "matched_terms": [
+          "Saccharomyces",
+          "antibiotic",
+          "fermentation"
+        ],
+        "excerpt": "151\nMICROBES IN HUMAN WELFARE\n In chapter 7, you have read that microbes cause a large number of\ndiseases in human beings. They also cause diseases in animals and plants.\nBut this should not make you think that all microbes are harmful; several\nmicrobes are useful to man in diverse ways. Some of the most important\ncontributions of microbes to human welfare are discussed in this chapter.\n8.1 MICROBES IN HOUSEHOLD PRODUCTS\nYou would be surprised to know that we use microbes or products\nderived from them everyday. A common example is the production of\ncurd from milk. Micro-organisms such as Lactobacillus and others\ncommonly called lactic acid bacteria (LAB) grow in milk and convert it\nto curd. During growth, the LAB produce acids that coagulate and\npartially digest the milk proteins. A small amount of curd added to the\nfresh milk as inoculum or starter contain millions of LAB, which at\nsuitable temperatures multiply, thus converting milk to curd, which\nalso improves its nutritional quality by increasing vitamin B12. In our\nstomach too, the LAB play very beneficial role in checking disease-\ncausing microbes.\nThe dough, which is used for making foods such as dosa and idli  is\nalso fermented by bacteria. The puffed-up appearance of dough is due to\nthe production of  CO2 gas.  Can you tell which metabolic pathway is\ntaking place resulting in the formation of CO2? Where do you think the\nbacteria for these fermentations come from?  Similarly the dough, which\nis used for making bread, is fermented using baker’s yeast\n(Saccharomyces cerevisiae). A number of traditional drinks and foods\nare also made by fermentation by the microbes. ‘Toddy’, a traditional\ndrink of some parts of southern India is made by fermenting sap from\npalms. Microbes are also used to ferment fish, soyabean and bamboo-\nshoots to make foods. Cheese, is one of the oldest food items in which\nmicrobes were used. Different varieties of cheese are known by their\ncharacteristic texture, flavour and taste, the specificity coming from the\nmicrobes used. For example, the large holes in ‘Swiss cheese’ are due to\nproduction of a large amount of CO2 by a bacterium named\nPropionibacterium sharmanii.  The ‘Roquefort cheese’ are ripened by\ngrowing a specific fungi on them, which gives them a particular flavour.\n8.2\nMICROBES IN INDUSTRIAL PRODUCTS\nEven in industry, microbes are used to synthesise a number of products\nvaluable to human beings. Beverages and antibiotics are some examples.\nProduction on an industrial"
+      },
+      {
+        "page": 4,
+        "matched_terms": [
+          "Saccharomyces",
+          "ethanol",
+          "antibiotic",
+          "fermentation"
+        ],
+        "excerpt": "152\nBIOLOGY\n8.2.1 Fermented Beverages\nMicrobes especially yeasts have been used from\ntime immemorial for the production of beverages\nlike wine, beer, whisky, brandy or rum. For this\npurpose the same yeast Saccharomyces\ncerevisiae used for bread-making and\ncommonly called brewer’s yeast, is used for\nfermenting malted cereals and fruit juices, to\nproduce ethanol. Do you recollect the metabolic\nreactions, which result in the production of\nethanol by yeast? Depending on the type of the\nraw material used for fermentation and the type\nof processing (with or without distillation)\ndifferent types of alcoholic drinks are obtained.\nWine and beer are produced without distillation\nwhereas whisky, brandy and rum are produced\nby distillation of the fermented broth. The\nphotograph of a fermentation plant is shown in\nFigure 8.5.\n8.2.2 Antibiotics\nAntibiotics produced by microbes are regarded\nas one of the most significant discoveries of the\ntwentieth century and have greatly contributed\ntowards the welfare of the human society. Anti is\na Greek word that means ‘against’, and bio means\n‘life’, together they mean ‘against life’ (in the\ncontext of disease causing organisms); whereas with reference to human\nbeings, they are ‘pro life’ and not against. Antibiotics are chemical\nsubstances, which are produced by some microbes and can kill or retard\nthe growth of other (disease-causing) microbes.\nYou are familiar with the commonly used antibiotic Penicillin. Do you\nknow that Penicillin was the first antibiotic to be discovered, and it was a\nchance discovery?  Alexander Fleming while working on Staphylococci\nbacteria, once observed a mould growing in one of his unwashed culture\nplates around which Staphylococci could not grow. He found out that it\nwas due to a chemical produced by the mould and he named it Penicillin\nafter the mould Penicillium notatum. However, its full potential as an\neffective antibiotic was established much later by Ernest Chain and\nHoward Florey. This antibiotic  was extensively used to treat American\nsoldiers wounded in World War II. Fleming, Chain and Florey were awarded\nthe Nobel Prize in 1945, for this discovery.\nFigure 8.5 Fermentation Plant\nFigure 8.4 Fermentors\nReprint 2026-27\n"
+      },
+      {
+        "page": 5,
+        "matched_terms": [
+          "Saccharomyces",
+          "ethanol",
+          "antibiotic",
+          "Acetobacter"
+        ],
+        "excerpt": "153\nMICROBES IN HUMAN WELFARE\nAfter Penicillin, other antibiotics were also purified from other\nmicrobes. Can you name some other antibiotics and find out their\nsources? Antibiotics have greatly improved our capacity to treat deadly\ndiseases such as plague, whooping cough (kali khansi), diphtheria (gal\nghotu) and leprosy (kusht rog), which used to kill millions all over the\nglobe. Today, we cannot imagine a world without antibiotics.\n8.2.3 Chemicals, Enzymes and other Bioactive Molecules\nMicrobes are also used for commercial and industrial production of\ncertain chemicals like organic acids, alcohols and enzymes. Examples of\nacid producers are Aspergillus niger (a fungus) of citric acid, Acetobacter\naceti (a bacterium) of acetic acid; Clostridium butylicum (a bacterium) of\nbutyric acid and Lactobacillus (a bacterium) of lactic acid.\nYeast (Saccharomyces cerevisiae) is used for commercial production\nof ethanol. Microbes are also used for production of enzymes. Lipases are\nused in detergent formulations and are helpful in removing oily stains\nfrom the laundry. You must have noticed that bottled fruit juices bought\nfrom the market are clearer as compared to those made at home. This is\nbecause the bottled juices are clarified by the use of pectinases and\nproteases. Streptokinase produced by the bacterium Streptococcus and\nmodified by genetic engineering is used as a ‘clot buster’ for removing\nclots from the blood vessels of patients who have undergone myocardial\ninfarction leading to heart attack.\nAnother bioactive molecule, cyclosporin A, that is used as an\nimmunosuppressive agent in organ-transplant patients, is produced by\nthe fungus Trichoderma polysporum. Statins produced by the yeast\nMonascus purpureus have been commercialised as blood-cholesterol\nlowering agents. It acts by competitively inhibiting the enzyme responsible\nfor synthesis of cholesterol.\n8.3 MICROBES IN SEWAGE TREATMENT\nWe know that large quantities of waste water are generated everyday in\ncities and towns. A major component of this waste water is human excreta.\nThis municipal waste-water is also called sewage. It contains large\namounts of organic matter and microbes. Many of which are pathogenic.\nHave you ever wondered where this huge quantity of sewage or urban\nwaste water is disposed off daily? This cannot be discharged into natural\nwater bodies like rivers and streams directly – you can understand why.\nBefore disposal, hence, sewage is treated in sewage treatment plants (STPs)\nto make it"
+      },
+      {
+        "page": 7,
+        "matched_terms": [
+          "fermentation"
+        ],
+        "excerpt": "155\nMICROBES IN HUMAN WELFARE\nYou can appreciate how microbes play a major\nrole in treating millions of gallons of waste water\neveryday across the globe. This methodology has\nbeen practiced for more than a century now, in\nalmost all parts of the world. Till date, no man-\nmade technology has been able to rival the\nmicrobial treatment of sewage.\nYou are aware that due to increasing\nurbanisation, sewage is being produced in much\nlarger quantities than ever before. However the\nnumber of sewage treatment plants has not\nincreased enough to treat such large quantities.\nSo the untreated sewage is often discharged directly into rivers leading to\ntheir pollution and increase in water-borne diseases.\nThe Ministry of Environment and Forests has initiated Ganga Action\nPlan and Yamuna Action Plan to save these major rivers of our country\nfrom pollution. Under these plans, it is proposed to build a large number\nof sewage treatment plants so that only treated sewage may be discharged\nin the rivers. A visit to a sewage treatment plant situated in any place\nnear you would be a very interesting and educating experience.\n8.4 MICROBES IN PRODUCTION OF BIOGAS\nBiogas is a mixture of gases (containing predominantly methane) produced\nby the microbial activity and which may be used as fuel. You have learnt\nthat microbes produce different types of gaseous end-products during\ngrowth and metabolism. The type of the gas produced depends upon the\nmicrobes and the organic substrates they utilise. In the examples cited in\nrelation to fermentation of dough, cheese making and production of\nbeverages, the main gas produced was CO2.. However, certain bacteria,\nwhich grow anaerobically on cellulosic material, produce large amount\nof methane along with CO2 and H2. These bacteria are collectively called\nmethanogens, and one such common bacterium is Methanobacterium.\nThese bacteria are commonly found in the anaerobic sludge during\nsewage treatment. These bacteria are also present in the rumen (a part of\nstomach) of cattle. A lot of cellulosic material present in the food of cattle\nis also present in the rumen. In rumen, these bacteria help in the\nbreakdown of cellulose and play an important role in the nutrition of\ncattle. Do you think we, human beings, are able to digest the celluose\npresent in our foods? Thus, the excreta (dung) of cattle, commonly called\ngobar, is rich in these bacteria. Dung can be used for generation of biogas,\ncommonly called gobar gas.\nThe biogas plant consists of a concre"
+      },
+      {
+        "page": 10,
+        "matched_terms": [
+          "Saccharomyces",
+          "antibiotic"
+        ],
+        "excerpt": "158\nBIOLOGY\ndemand of agricultural produce has contributed significantly to\nthis pollution. Of course,  we have now realised that there are problems\nassociated with the overuse of chemical fertilisers and there is a\nlarge pressure to switch to organic farming – the use of biofertilisers.\nBiofertilisers  are organisms that enrich the nutrient quality of the soil.\nThe main sources of biofertilisers are bacteria, fungi and cyanobacteria.\nYou have studied about the nodules on the roots of leguminous plants\nformed by the symbiotic association of Rhizobium. These bacteria fix\natmospheric nitrogen into organic forms, which is used by the plant as\nnutrient. Other bacteria can fix atmospheric nitrogen while free-living in\nthe soil (examples Azospirillum and Azotobacter), thus enriching the\nnitrogen content of the soil.\nFungi are also known to form symbiotic associations with plants\n(mycorrhiza). Many members of the genus Glomus  form mycorrhiza.\nThe fungal symbiont in these associations absorbs phosphorus from\nsoil and passes it to the plant. Plants having such associations show\nother benefits also, such as resistance to root-borne pathogens, tolerance\nto salinity and drought, and an overall increase in plant growth and\ndevelopment. Can you tell what advantage the fungus derives from\nthis association?\nCyanobacteria are autotrophic microbes widely distributed in aquatic\nand terrestrial environments many of which can fix atmospheric nitrogen,\ne.g. Anabaena, Nostoc, Oscillatoria, etc. In paddy fields, cyanobacteria\nserve as an important biofertiliser. Blue green algae also add organic matter\nto the soil and increase its fertility. Currently, in our country, a number\nof biofertilisers are available commercially in the market and farmers use\nthese regularly in their fields to replenish soil nutrients and to reduce\ndependence on chemical fertilisers.\nSUMMARY\nMicrobes are a very important component of life on earth. Not all\nmicrobes are pathogenic. Many microbes are very useful to human\nbeings. We use microbes and microbially derived products almost every\nday. Bacteria called lactic acid bacteria (LAB) grow in milk to convert it\ninto curd. The dough, which is used to make bread, is fermented by\nyeast called Saccharomyces cerevisiae. Certain dishes such as idli and\ndosa, are made from dough fermented by microbes. Bacteria and fungi\nare used to impart particular texture, taste and flavor to cheese. Microbes\nare used to produce industrial products like lactic acid, acetic ac"
+      },
+      {
+        "page": 11,
+        "matched_terms": [
+          "antibiotic"
+        ],
+        "excerpt": "159\nMICROBES IN HUMAN WELFARE\nEXERCISES\n1.\nBacteria cannot be seen with the naked eyes, but these can be seen\nwith the help of a microscope. If you have to carry a sample from your\nhome to your biology laboratory to demonstrate the presence of microbes\nwith the help of a microscope, which sample would you carry and why?\n2.\nGive examples to prove that microbes release gases during metabolism.\n3.\nIn which food would you find lactic acid bacteria? Mention some of\ntheir useful applications.\n4.\nName some traditional Indian foods made of wheat, rice and Bengal\ngram (or their products) which involve use of microbes.\n5.\nIn which way have microbes played a major role in controlling diseases\ncaused by harmful bacteria?\n6.\nName any two species of fungus, which are used in the production of\nthe antibiotics.\n7.\nWhat is sewage? In which way can sewage be harmful to us?\n8.\nWhat is the key difference between primary and secondary sewage\ntreatment?\n9.\nDo you think microbes can also be used as source of energy? If yes, how?\n10.\nMicrobes can be used to decrease the use of chemical fertilisers and\npesticides. Explain how this can be accomplished.\n11.\nThree water samples namely river water, untreated sewage water and\nsecondary effluent discharged from a sewage treatment plant were\nsubjected to BOD test. The samples were labelled A, B and C; but the\nlaboratory attendant did not note which was which.  The BOD values\nof the three samples A, B and C were recorded as 20mg/L, 8mg/L and\n400mg/L, respectively. Which sample of the water is most polluted?\nCan you assign the correct label to each assuming the river water is\nrelatively clean?\npneumonia. For more than a hundred years, microbes are being used\nto treat sewage (waste water) by the process of activated sludge formation\nand this helps in recycling of water in nature. Methanogens produce\nmethane (biogas) while degrading plant waste. Biogas produced by\nmicrobes is used as a source of energy in rural areas. Microbes can also\nbe used to kill harmful pests, a process called as biocontrol. The\nbiocontrol measures help us to avoid heavy use of toxic pesticides for\ncontrolling pests. There is a need these days to push for use of\nbiofertilisers in place of chemical fertilisers.  It is clear from the diverse\nuses human beings have put microbes to that they play an important\nrole in the welfare of human society.\nReprint 2026-27\n"
+      }
+    ]
+  },
+  "kebo104": {
+    "n_pages": 18,
+    "heading_sample": [
+      {
+        "page": 1,
+        "line": "4.1"
+      },
+      {
+        "page": 1,
+        "line": "4.1.1"
+      },
+      {
+        "page": 1,
+        "line": "4.1 Basis of"
+      },
+      {
+        "page": 1,
+        "line": "4.2 Classification of"
+      },
+      {
+        "page": 2,
+        "line": "4.1.2"
+      },
+      {
+        "page": 2,
+        "line": "4.1.3"
+      },
+      {
+        "page": 3,
+        "line": "4.1.4"
+      },
+      {
+        "page": 3,
+        "line": "4.1.5"
+      },
+      {
+        "page": 3,
+        "line": "4.1.6"
+      },
+      {
+        "page": 3,
+        "line": "4.2"
+      },
+      {
+        "page": 4,
+        "line": "4.2.1 Phylum – Porifera"
+      },
+      {
+        "page": 5,
+        "line": "4.2.2"
+      },
+      {
+        "page": 6,
+        "line": "4.2.3"
+      },
+      {
+        "page": 6,
+        "line": "4.2.4"
+      },
+      {
+        "page": 7,
+        "line": "4.2.5"
+      },
+      {
+        "page": 7,
+        "line": "4.2.6"
+      },
+      {
+        "page": 8,
+        "line": "4.2.7"
+      },
+      {
+        "page": 8,
+        "line": "4.2.8"
+      },
+      {
+        "page": 9,
+        "line": "4.2.9"
+      },
+      {
+        "page": 9,
+        "line": "4.14). All are marine with organ-system level of organisation."
+      },
+      {
+        "page": 9,
+        "line": "4.2.10"
+      },
+      {
+        "page": 9,
+        "line": "4.2.11"
+      },
+      {
+        "page": 11,
+        "line": "4.2.11.1"
+      },
+      {
+        "page": 11,
+        "line": "4.2.11.1"
+      },
+      {
+        "page": 11,
+        "line": "4.2.11.1"
+      },
+      {
+        "page": 11,
+        "line": "4.2.11.1"
+      },
+      {
+        "page": 11,
+        "line": "4.2.11.1"
+      },
+      {
+        "page": 11,
+        "line": "4.2.11.2"
+      },
+      {
+        "page": 11,
+        "line": "4.2.11.2"
+      },
+      {
+        "page": 11,
+        "line": "4.2.11.2"
+      },
+      {
+        "page": 11,
+        "line": "4.2.11.2"
+      },
+      {
+        "page": 11,
+        "line": "4.2.11.2"
+      },
+      {
+        "page": 12,
+        "line": "4.2.11.3"
+      },
+      {
+        "page": 12,
+        "line": "4.2.11.3"
+      },
+      {
+        "page": 12,
+        "line": "4.2.11.3"
+      },
+      {
+        "page": 12,
+        "line": "4.2.11.3"
+      },
+      {
+        "page": 12,
+        "line": "4.2.11.3"
+      },
+      {
+        "page": 12,
+        "line": "4.2.11.4"
+      },
+      {
+        "page": 12,
+        "line": "4.2.11.4"
+      },
+      {
+        "page": 12,
+        "line": "4.2.11.4"
+      }
+    ],
+    "hit_pages": [
+      {
+        "page": 1,
+        "matched_terms": [
+          "tissue level",
+          "sponge",
+          "organisation"
+        ],
+        "excerpt": "ANIMAL KINGDOM\n37\n37\nWhen you look around, you will observe different animals with different\nstructures and forms.  As over a million species of animals have been\ndescribed till now, the need for classification becomes all the more\nimportant. The classification also helps in assigning a systematic position\nto newly described species.\n4.1\nBASIS OF CLASSIFICATION\nInspite of differences in structure and form of different animals, there are\nfundamental features common to various individuals in relation to the\narrangement of cells, body symmetry, nature of coelom, patterns of\ndigestive, circulatory or reproductive systems. These features are used\nas the basis of animal classification and some of them are discussed here.\n4.1.1\nLevels of Organisation\nThough all members of Animalia are multicellular, all of them do not\nexhibit the same pattern of organisation of cells. For example, in sponges,\nthe cells are arranged as loose cell aggregates, i.e., they exhibit cellular\nlevel of organisation. Some division of labour (activities) occur among\nthe cells. In coelenterates, the arrangement of cells is more complex. Here\nthe cells performing the same function are arranged into tissues, hence is\ncalled tissue level of organisation. A still higher level of organisation, i.e.,\norgan level is exhibited by members of Platyhelminthes and other higher\nphyla where tissues are grouped together to form organs, each specialised\nfor a particular function. In animals like Annelids, Arthropods, Molluscs,\nANIMAL KINGDOM\nCHAPTER  4\n4.1 Basis of\nClassification\n4.2 Classification of\nAnimals\nReprint 2026-27\n"
+      },
+      {
+        "page": 2,
+        "matched_terms": [
+          "organ system",
+          "sponge",
+          "organisation"
+        ],
+        "excerpt": "38\nBIOLOGY\nEchinoderms and Chordates, organs have\nassociated to form functional systems, each\nsystem concerned with a specific physiological\nfunction. This pattern is called organ system\nlevel of organisation. Organ systems in different\ngroups of animals exhibit various patterns of\ncomplexities. For example, the digestive system\nin Platyhelminthes has only a single opening\nto the outside of the body that serves as both\nmouth and anus, and is hence called\nincomplete. A complete digestive system has\ntwo openings, mouth and anus. Similarly, the\ncirculatory system may be of two types:\n(i) open type in which the blood is pumped\nout of the heart and the cells and tissues are\ndirectly bathed in it and\n(ii) closed type in which the blood is circulated\nthrough a series of vessels of varying diameters\n(arteries, veins and capillaries).\n4.1.2\nSymmetry\nAnimals can be categorised on the basis of their\nsymmetry. Sponges are mostly  asymmetrical,\ni.e., any plane that passes through the centre\ndoes not divide them into equal halves. When\nany plane passing through the central axis of\nthe body divides the organism into two identical\nhalves, it is called radial symmetry.\nCoelenterates, ctenophores and echinoderms\nhave this kind of body plan (Figure 4.1a).\nAnimals like annelids, arthropods, etc., where\nthe body can be divided into identical left and\nright halves in only one plane, exhibit bilateral\nsymmetry (Figure 4.1b).\n4.1.3\nDiploblastic and Triploblastic\nOrganisation\nAnimals in which the cells are arranged in two\nembryonic layers, an external ectoderm and\nan internal endoderm, are called diploblastic\nanimals, e.g., coelenterates. An undifferentiated\nlayer, mesoglea, is present in between the\nectoderm and the endoderm (Figure 4.2a).\nFigure 4.2\nShowing germinal layers :\n(a) Diploblastic (b) Triploblastic\n(a)\n(b)\nEctoderm\nMesoglea\nEndoderm\nMesoderm\nFigure 4.1 (b) Bilateral symmetry\nFigure 4.1 (a)  Radial symmetry\nReprint 2026-27\n"
+      },
+      {
+        "page": 3,
+        "matched_terms": [
+          "earthworm"
+        ],
+        "excerpt": "ANIMAL KINGDOM\n39\n39\n4.1.4\nCoelom\nPresence or absence of a cavity between the body\nwall and the gut wall is very important in\nclassification. The body cavity, which is lined\nby mesoderm is called coelom. Animals\npossessing coelom are called coelomates, e.g.,\nannelids, molluscs, arthropods, echinoderms,\nhemichordates and chordates (Figure 4.3a). In\nsome animals, the body cavity is not lined by\nmesoderm, instead, the mesoderm is present as\nscattered pouches in between the ectoderm and\nendoderm. Such a body cavity is called\npseudocoelom and the animals possessing them\nare called pseudocoelomates, e.g.,\naschelminthes (Figure 4.3b). The animals in\nwhich the body cavity is absent are called\nacoelomates, e.g., platyhelminthes (Figure 4.3c).\nFigure 4.3 Diagrammatic sectional view of :\n(a) Coelomate (b) Pseudocoelomate\n(c) Acoelomate\nThose animals in which the developing embryo has a third germinal layer,\nmesoderm, in between the ectoderm and endoderm, are called\ntriploblastic animals (platyhelminthes to chordates, Figure 4.2b).\n4.1.5\nSegmentation\nIn some animals, the body is externally and internally divided into\nsegments with a serial repetition of at least some organs. For example, in\nearthworm, the body shows this pattern called metameric segmentation\nand the phenomenon is known as metamerism.\n4.1.6\nNotochord\nNotochord is a mesodermally derived rod-like structure formed on the\ndorsal side during embryonic development in some animals. Animals with\nnotochord are called chordates and those animals which do not form this\nstructure are called non-chordates, e.g., porifera to echinoderms.\n4.2\nCLASSIFICATION OF ANIMALS\nThe broad classification of Animalia, based on common fundamental\nfeatures as mentioned in the preceding sections, is given in Figure  4.4.\nReprint 2026-27\n"
+      },
+      {
+        "page": 4,
+        "matched_terms": [
+          "Sycon",
+          "sponge",
+          "organisation"
+        ],
+        "excerpt": "40\nBIOLOGY\nThe important characteristic features of the\ndifferent phyla are described.\n4.2.1 Phylum – Porifera\nMembers of this phylum are commonly known\nas sponges. They are generally marine and mostly\nasymmetrical animals (Figure 4.5). These are\nprimitive multicellular animals and have cellular\nlevel of organisation. Sponges have a water\ntransport or canal system. Water enters through\nminute pores (ostia) in the body wall into a central\ncavity, spongocoel, from where it goes out\nthrough the osculum. This pathway of water\ntransport is helpful in food gathering, respiratory\nexchange and removal of waste. Choanocytes\nor collar cells line the spongocoel and the canals.\nDigestion is intracellular. The body is supported\nby a skeleton made up of spicules or spongin\nfibres. Sexes are not separate (hermaphrodite),\ni.e., eggs and sperms are produced by the same\nindividual. Sponges reproduce asexually by\nfragmentation and sexually by formation of\ngametes. Fertilisation is internal and development\nis indirect having a larval stage which is\nmorphologically distinct from the adult.\n*Echinodermata exhibits radial or bilateral symmetry depending on the stage.\nFigure 4.4  Broad classification of Kingdom Animalia based on common fundamental features\n(a)\n(b)\n(c)\nFigure 4.5\nExamples of Porifera : (a) Sycon\n(b) Euspongia  (c) Spongilla\nReprint 2026-27\n"
+      },
+      {
+        "page": 5,
+        "matched_terms": [
+          "tissue level",
+          "Sycon",
+          "sponge",
+          "Hydra",
+          "organisation"
+        ],
+        "excerpt": "ANIMAL KINGDOM\n41\n41\ncnidoblasts or cnidocytes (which contain the stinging capsules or\nnematocysts) present on the tentacles and the body. Cnidoblasts are used\nfor anchorage, defense and for the capture of prey (Figure 4.7). Cnidarians\nexhibit tissue level of organisation and are diploblastic. They have a central\ngastro-vascular cavity with a single opening, mouth on hypostome.\nDigestion is extracellular and intracellular. Some of the cnidarians, e.g.,\ncorals have a skeleton composed of calcium carbonate. Cnidarians exhibit\ntwo basic body forms called polyp and medusa (Figure 4.6). The former\nis a sessile and cylindrical form like Hydra, Adamsia, etc. whereas, the\nlatter is umbrella-shaped and free-swimming like Aurelia or jelly fish.\nThose cnidarians which exist in both forms exhibit alternation of\ngenerations (Metagenesis), i.e., polyps produce medusae asexually and\nmedusae form the polyps sexually (e.g., Obelia).\nExamples: Physalia (Portuguese man-of-war), Adamsia (Sea anemone),\nPennatula (Sea-pen), Gorgonia (Sea-fan) and Meandrina (Brain coral).\nFigure 4.7\nDiagrammatic view of\nCnidoblast\nFigure 4.6\nExamples of  Coelenterata indicating outline of their body form :\n(a) Aurelia (Medusa) (b) Adamsia (Polyp)\n(b)\n(a)\nExamples: Sycon (Scypha), Spongilla (Fresh water sponge) and Euspongia\n(Bath sponge).\n4.2.2\nPhylum – Coelenterata (Cnidaria)\nThey are aquatic, mostly marine, sessile or free-swimming, radially\nsymmetrical animals (Figure 4.6). The name cnidaria is derived from the\nReprint 2026-27\n"
+      },
+      {
+        "page": 6,
+        "matched_terms": [
+          "tissue level",
+          "Planaria",
+          "organisation"
+        ],
+        "excerpt": "42\nBIOLOGY\n4.2.3\nPhylum – Ctenophora\nCtenophores, commonly known as sea walnuts or comb\njellies are exclusively marine, radially symmetrical, diploblastic\norganisms with tissue level of organisation. The body bears\neight external rows of ciliated comb plates, which help in\nlocomotion (Figure 4.8). Digestion is both extracellular and\nintracellular. Bioluminescence (the property of a living\norganism to emit light) is well-marked in ctenophores. Sexes\nare not separate. Reproduction takes place only by sexual\nmeans. Fertilisation is external with indirect development.\nExamples: Pleurobrachia and Ctenoplana.\n4.2.4\nPhylum – Platyhelminthes\nThey have dorso-ventrally flattened body, hence are called\nflatworms (Figure 4.9). These are mostly endoparasites found\nin animals including human beings. Flatworms are bilaterally\nsymmetrical, triploblastic and acoelomate animals with organ\nlevel of organisation. Hooks and suckers are present in the\nparasitic forms. Some of them absorb nutrients from the host\ndirectly through their body surface. Specialised cells called\nflame cells help in osmoregulation and excretion. Sexes are not\nseparate. Fertilisation is internal and development is through\nmany larval stages. Some members like Planaria possess high\nregeneration capacity.\nExamples: Taenia (Tapeworm), Fasciola (Liver fluke).\nFigure 4.8 Example of\nCtenophora\n(Pleurobrachia)\n(a)\n(b)\nFigure 4.9 Examples of Platyhelminthes : (a) Tape worm (b) Liver fluke\nReprint 2026-27\n"
+      },
+      {
+        "page": 7,
+        "matched_terms": [
+          "earthworm",
+          "organisation"
+        ],
+        "excerpt": "ANIMAL KINGDOM\n43\n43\n4.2.5\nPhylum – Aschelminthes\nThe body of the aschelminthes is circular in\ncross-section, hence, the name roundworms\n(Figure 4.10). They may be freeliving, aquatic\nand terrestrial or parasitic in plants and animals.\nRoundworms have organ-system level of body\norganisation. They are bilaterally symmetrical,\ntriploblastic and pseudocoelomate animals.\nAlimentary canal is complete with a well-\ndeveloped muscular pharynx. An excretory\ntube removes body wastes from the body cavity\nthrough the excretory pore. Sexes are separate\n(dioecious), i.e., males and females are distinct.\nOften females are longer than males. Fertilisation\nis internal and development may be direct (the\nyoung ones resemble the adult) or indirect.\nExamples : Ascaris (Roundworm), Wuchereria\n(Filaria worm), Ancylostoma (Hookworm).\n4.2.6\nPhylum – Annelida\nThey may be aquatic (marine and fresh water) or\nterrestrial; free-living, and sometimes parasitic.\nThey exhibit organ-system level of body\norganisation and bilateral symmetry. They are\ntriploblastic, metamerically segmented and\ncoelomate animals. Their body surface is\ndistinctly marked out into segments or\nmetameres and, hence, the phylum name\nAnnelida (Latin, annulus : little ring) (Figure 4.11).\nThey possess longitudinal and circular muscles\nwhich help in locomotion. Aquatic annelids like\nNereis possess lateral appendages, parapodia,\nwhich help in swimming. A closed circulatory\nsystem is present. Nephridia (sing. nephridium)\nhelp in osmoregulation and excretion. Neural\nsystem consists of paired ganglia (sing. ganglion)\nconnected by lateral nerves to a double ventral\nnerve cord. Nereis, an aquatic form, is dioecious,\nbut earthworms and leeches are monoecious.\nReproduction is sexual.\nExamples : Nereis, Pheretima (Earthworm) and\nHirudinaria (Blood sucking leech).\nFigure 4.11 Examples of Annelida : (a) Nereis\n(b) Hirudinaria\nMale\nFemale\nFigure 4.10 Example of\nAschelminthes:\nRoundworm\nReprint 2026-27\n"
+      },
+      {
+        "page": 8,
+        "matched_terms": [
+          "organisation"
+        ],
+        "excerpt": "44\nBIOLOGY\n4.2.7\nPhylum – Arthropoda\nThis is the largest phylum of Animalia which\nincludes insects. Over two-thirds of all named\nspecies on earth are arthropods (Figure 4.12).\nThey have organ-system level of organisation.\nThey are bilaterally symmetrical, triploblastic,\nsegmented and coelomate animals. The body\nof arthropods is covered by chitinous\nexoskeleton. The body consists of head, thorax\nand abdomen. They have jointed appendages\n(arthros-joint, poda-appendages). Respiratory\norgans are gills, book gills, book lungs or\ntracheal system. Circulatory system is of open\ntype. Sensory organs like antennae, eyes\n(compound and simple), statocysts or\nbalancing organs are present.  Excretion takes\nplace through malpighian tubules. They are\nmostly dioecious. Fertilisation is usually\ninternal. They are mostly oviparous.\nDevelopment may be direct or indirect.\nExamples: Economically important insects –\nApis (Honey bee), Bombyx (Silkworm), Laccifer\n(Lac insect)\nVectors – Anopheles, Culex and Aedes\n(Mosquitoes)\nGregarious pest – Locusta (Locust)\nLiving fossil – Limulus (King crab).\n4.2.8\nPhylum – Mollusca\nThis is the second largest animal phylum\n(Figure 4.13). Molluscs are terrestrial or aquatic\n(marine or fresh water) having an organ-system\nlevel of organisation. They are bilaterally\nsymmetrical, triploblastic and coelomate\nanimals. Body is covered by a calcareous shell\nand is unsegmented with a distinct head,\nmuscular foot and visceral hump. A soft and\nspongy layer of skin forms a mantle over the\nvisceral hump. The space between the hump\nand the mantle is called the mantle cavity in\nwhich feather like gills are present. They have\nrespiratory and excretory functions. The\nanterior head region has sensory tentacles. The\nmouth contains a file-like rasping organ for\nfeeding, called radula.\nFigure 4.12 Examples of Arthropoda :\n(a) Locust (b) Butterfly\n(c) Scorpion (d) Prawn\n (a)\n (c)\n (b)\n (d)\nFigure 4.13 Examples of Mollusca :\n(a) Pila  (b) Octopus\n(b)\n(a)\nReprint 2026-27\n"
+      }
+    ]
+  },
+  "keph105": {
+    "n_pages": 21,
+    "heading_sample": [
+      {
+        "page": 1,
+        "line": "5.1  INTRODUCTION"
+      },
+      {
+        "page": 1,
+        "line": "5.1.1 The Scalar Product"
+      },
+      {
+        "page": 1,
+        "line": "5.1"
+      },
+      {
+        "page": 1,
+        "line": "5.2"
+      },
+      {
+        "page": 1,
+        "line": "5.3"
+      },
+      {
+        "page": 1,
+        "line": "5.4"
+      },
+      {
+        "page": 1,
+        "line": "5.5"
+      },
+      {
+        "page": 1,
+        "line": "5.6"
+      },
+      {
+        "page": 1,
+        "line": "5.7"
+      },
+      {
+        "page": 1,
+        "line": "5.8"
+      },
+      {
+        "page": 1,
+        "line": "5.9"
+      },
+      {
+        "page": 1,
+        "line": "5.10 Power"
+      },
+      {
+        "page": 1,
+        "line": "5.11 Collisions"
+      },
+      {
+        "page": 3,
+        "line": "1.00 km.  It hits the ground with a speed of"
+      },
+      {
+        "page": 3,
+        "line": "50.0 m s-1.  (a) What is the work done by the"
+      },
+      {
+        "page": 3,
+        "line": "5.3  WORK"
+      },
+      {
+        "page": 3,
+        "line": "5.2 NOTIONS OF WORK AND KINETIC"
+      },
+      {
+        "page": 4,
+        "line": "5.4  KINETIC ENERGY"
+      },
+      {
+        "page": 5,
+        "line": "5.2 lists the kinetic energies for various"
+      },
+      {
+        "page": 5,
+        "line": "5.5  WORK DONE BY A VARIABLE FORCE"
+      },
+      {
+        "page": 6,
+        "line": "5.4.  At x  = 20 m, F  = 50 N (≠ 0).  We are given"
+      },
+      {
+        "page": 6,
+        "line": "5.6 THE WORK-ENERGY THEOREM FOR A"
+      },
+      {
+        "page": 7,
+        "line": "0.1"
+      },
+      {
+        "page": 7,
+        "line": "2.01"
+      },
+      {
+        "page": 7,
+        "line": "2.01"
+      },
+      {
+        "page": 7,
+        "line": "0.1"
+      },
+      {
+        "page": 7,
+        "line": "5.7  THE CONCEPT OF POTENTIAL ENERGY"
+      },
+      {
+        "page": 8,
+        "line": "5.8 THE CONSERVATION OF MECHANICAL"
+      },
+      {
+        "page": 10,
+        "line": "5.9  THE POTENTIAL ENERGY OF A SPRING"
+      },
+      {
+        "page": 11,
+        "line": "18.0 km/h on a smooth road and colliding"
+      },
+      {
+        "page": 13,
+        "line": "5.11  COLLISIONS"
+      },
+      {
+        "page": 13,
+        "line": "5.10  POWER"
+      },
+      {
+        "page": 14,
+        "line": "5.11.1  Elastic and  Inelastic Collisions"
+      },
+      {
+        "page": 14,
+        "line": "5.11.2  Collisions in One Dimension"
+      },
+      {
+        "page": 15,
+        "line": "5.11.3  Collisions in Two Dimensions"
+      },
+      {
+        "page": 18,
+        "line": "5.1"
+      },
+      {
+        "page": 18,
+        "line": "5.2"
+      },
+      {
+        "page": 18,
+        "line": "5.3"
+      },
+      {
+        "page": 19,
+        "line": "5.4"
+      },
+      {
+        "page": 19,
+        "line": "5.5"
+      }
+    ],
+    "hit_pages": [
+      {
+        "page": 1,
+        "matched_terms": [
+          "work-energy",
+          "kinetic energy",
+          "theorem"
+        ],
+        "excerpt": "CHAPTER FIVE\nWORK, ENERGY AND POWER\n5.1  INTRODUCTION\nThe terms ‘work’, ‘energy’ and ‘power’ are frequently used\nin everyday language. A farmer ploughing the field, a\nconstruction worker carrying bricks, a student studying for\na competitive examination, an artist painting a beautiful\nlandscape, all are said to be working. In physics, however,\nthe word ‘Work’ covers a definite and precise meaning.\nSomebody who has the capacity to work for 14-16 hours a\nday is said to have a large stamina or energy. We admire a\nlong distance runner for her stamina or energy. Energy is\nthus our capacity to do work. In Physics too, the term ‘energy’\nis related to work in this sense, but as said above the term\n‘work’ itself is defined much more precisely. The word ‘power’\nis used in everyday life with different shades of meaning. In\nkarate or boxing we talk of ‘powerful’ punches. These are\ndelivered at a great speed. This shade of meaning is close to\nthe meaning of the word ‘power’ used in physics. We shall\nfind that there is at best a loose correlation between the\nphysical definitions and the physiological pictures these\nterms generate in our minds. The aim of this chapter is to\ndevelop an understanding of these three physical quantities.\nBefore we proceed to this task, we need to develop a\nmathematical prerequisite, namely the scalar product of two\nvectors.\n5.1.1 The Scalar Product\nWe have learnt about vectors and their use in Chapter 3.\nPhysical quantities like displacement, velocity, acceleration,\nforce etc. are vectors. We have also learnt how vectors are\nadded or subtracted. We now need to know how vectors are\nmultiplied. There are two ways of multiplying vectors which\nwe shall come across : one way known as the scalar product\ngives a scalar from two vectors and the other known as the\nvector product produces a new vector from two vectors. We\nshall look at the vector product in Chapter 6. Here we take\nup the scalar product of two vectors. The scalar product or\ndot product of any two vectors A and B, denoted as A.B (read\n5.1\nIntroduction\n5.2\nNotions of work and kinetic\nenergy : The work-energy\ntheorem\n5.3\nWork\n5.4\nKinetic energy\n5.5\nWork done by a variable force\n5.6\nThe work-energy theorem for\na variable force\n5.7\nThe concept of potential\nenergy\n5.8\nThe conservation of\nmechanical energy\n5.9\nThe potential energy of a\nspring\n5.10 Power\n5.11 Collisions\nSummary\nPoints to ponder\nExercises\nReprint 2026-27\n"
+      },
+      {
+        "page": 3,
+        "matched_terms": [
+          "work-energy",
+          "kinetic energy",
+          "theorem"
+        ],
+        "excerpt": "WORK, ENERGY AND POWER\n73\n⊳\nto be proportional to the speed of the drop\nbut is otherwise undetermined.  Consider\na drop of mass 1.00 g falling from a height\n1.00 km.  It hits the ground with a speed of\n50.0 m s-1.  (a) What is the work done by the\ngravitational force ? What is the work done\nby the unknown resistive force?\nAnswer (a) The change in kinetic energy of the\ndrop is\n2\n1\n0\n2\nK\nm v\n∆\n=\n−\n= 1\n2\n10\n50\n50\n-3\n×\n×\n×\n= 1.25 J\nwhere we have assumed that the drop is initially\nat rest.\nAssuming that g is a constant with a value\n10 m/s2, the work done by the gravitational force\nis,\nWg = mgh\n      = 10-3 ×10 ×103\n      = 10.0 J\n(b) From the work-energy theorem\ng\nr\nK  \nW\nW\n∆\n=  \n+\nwhere Wr  is the work done by the resistive force\non the raindrop.  Thus\nWr  = ∆K − Wg\n     = 1.25 −10\n      = − 8.75 J\nis negative.\n⊳\n5.3  WORK\nAs seen earlier, work is related to force and the\ndisplacement over which it acts.  Consider a\nconstant force F acting on an object of mass m.\nThe object undergoes a displacement d in the\npositive x-direction as shown in Fig. 5.2.\nFig. 5.2\nAn object undergoes a displacement d\nunder the influence of the force F.\n5.2 NOTIONS OF WORK AND KINETIC\nENERGY: THE WORK-ENERGY THEOREM\nThe following relation for rectilinear motion under\nconstant acceleration a has been encountered\nin Chapter 3,\n      v2 − u2 = 2 as\n(5.2)\nwhere u and v  are the initial and final speeds\nand s the distance traversed.  Multiplying both\nsides by m/2, we have\n2\n2\n1\n1\n2\n2\nmv\nmu\nmas\nFs\n−\n=\n=\n(5.2a)\nwhere the last step follows from Newton’s Second\nLaw. We can generalise Eq. (5.2) to three\ndimensions by employing vectors\nv2 − u2 = 2 a.d\nHere a and d are acceleration and displacement\nvectors of the object respectively.\nOnce again multiplying both sides by m/2 , we obtain\n2\n2\n1\n1\n2\n2\nmv\nmu\nm \n−\n=\n=\na.d\nF.d\n(5.2b)\nThe above equation provides a motivation for\nthe definitions of work and kinetic energy. The\nleft side of the equation is the difference in the\nquantity ‘half the mass times the square of the\nspeed’ from its initial value to its final value. We\ncall each of these quantities the ‘kinetic energy’,\ndenoted by K. The right side is a product of the\ndisplacement and the component of the force\nalong the displacement.  This quantity is called\n‘work’ and is denoted by W.  Eq. (5.2b) is then\nKf −  Ki = W\n(5.3)\nwhere Ki  and Kf  are respectively the initial and\nfinal kinetic energies of the object. Work refers\nto the force and the displacement over which it\nacts. Work is done by a fo"
+      },
+      {
+        "page": 4,
+        "matched_terms": [
+          "kinetic energy",
+          "theorem",
+          "friction"
+        ],
+        "excerpt": "PHYSICS\n74\n⊳\nTable 5.1   Alternative Units of Work/Energy in J\nExample 5.3  A cyclist comes to a skidding\nstop in 10 m.  During this process, the force\non the cycle due to the road is 200 N and\nis directly opposed to the motion.  (a) How\nmuch work does the road do on the cycle ?\n(b) How much work does the cycle do on\nthe road ?\nAnswer  Work done on the cycle by the road is\nthe work done by the stopping (frictional) force\non the cycle due to the road.\n(a) The stopping force and the displacement make\nan angle of 180o  (p rad) with each other.\nThus, work done by the road,\nWr =  Fd cosq\n     =  200 ´ 10 ´ cos p\n      = – 2000 J\nIt is this negative work that brings the cycle\nto a halt in accordance with WE theorem.\n(b) From Newton’s Third Law an equal and\nopposite force acts on the road due to the\ncycle. Its magnitude is 200 N. However, the\nroad undergoes no displacement.  Thus,\nwork done by cycle on the road is zero.            ⊳\nThe lesson of Example 5.3 is that though the\nforce on a body A exerted by the body B is always\nequal and opposite to that on B by A (Newton’s\nThird Law); the work done on A by B is not\nnecessarily equal and opposite to the work done\non B by A.\n5.4  KINETIC ENERGY\nAs noted earlier, if an object of mass m has\nvelocity v, its kinetic energy K  is\n2\nK\nm \nmv\n\n\n\n\n\n\nv v\n.\n                       (5.5)\nKinetic energy is a scalar quantity. The kinetic\nenergy of an object is a measure of the work an\nThe work done by the force is defined to be\nthe product of component of the force in the\ndirection of the displacement and the\nmagnitude of this displacement.  Thus\nW = (F cos q )d = F.d\n(5.4)\nWe see that if there is no displacement, there\nis no work done even if the force is large.  Thus,\nwhen you push hard against a rigid brick wall,\nthe force you exert on the wall does no work.  Yet\nyour muscles are alternatively contracting and\nrelaxing and internal energy is being used up\nand you do get tired.  Thus, the meaning of work\nin physics is different from its usage in everyday\nlanguage.\nNo work is done if :\n(i)\nthe displacement is zero as seen in the\nexample above. A weightlifter holding a 150\nkg mass steadily on his shoulder for 30 s\ndoes no work on the load during this time.\n(ii) the force is zero.  A block moving on a smooth\nhorizontal table is not acted upon by a\nhorizontal force (since there is no friction), but\nmay undergo a large displacement.\n(iii) the force and displacement are mutually\nperpendicular. This is so since, for q = p/2\nrad (="
+      },
+      {
+        "page": 5,
+        "matched_terms": [
+          "kinetic energy"
+        ],
+        "excerpt": "WORK, ENERGY AND POWER\n75\n⊳\nobject can do by the virtue of its motion. This\nnotion has been intuitively known for a long time.\nThe kinetic energy of a fast flowing stream\nhas been used to grind corn. Sailing\nships employ the kinetic energy of the wind. Table\n5.2 lists the kinetic energies for various\nobjects.\nExample 5.4  In a ballistics demonstration\na police officer fires a bullet of mass 50.0 g\nwith speed 200 m s-1 (see Table 5.2) on soft\nplywood of thickness 2.00 cm.  The bullet\nemerges with only 10% of its initial kinetic\nenergy.  What is the emergent speed of the\nbullet ?\nAnswer  The initial kinetic energy of the bullet\nis mv2/2 = 1000 J.  It has a final kinetic energy\nof 0.1×1000 = 100 J.  If vf  is the emergent speed\nof the bullet,\n1\n2\n=\nmv f\n2\n100 J\nkg\n \n05\n.\n0\n \nJ\n \n100\n2 ×\n=\nf\nv\n                =  63.2 m s–1\nThe speed is reduced by approximately 68%\n(not 90%).                                                                      ⊳\n5.5  WORK DONE BY A VARIABLE FORCE\nA constant force is rare.  It is the variable force,\nwhich is more commonly encountered.  Fig. 5.3\nis a plot of a varying force in one dimension.\nIf the displacement ∆x is small, we can take\nthe force F (x)  as approximately constant and\nthe work done is then\n∆W =F (x) ∆x\nTable 5.2  Typical kinetic energies (K)\nThis is illustrated in Fig. 5.3(a).  Adding\nsuccessive rectangular areas in Fig. 5.3(a) we\nget the total work done as\n( )\n∑\n∆\n≅\nf\ni\nx\nx\nx\nx\nF\nW\n(5.6)\nwhere the summation is from the initial position\nxi  to the final position xf.\nIf the displacements are allowed to approach\nzero, then the number of terms in the sum\nincreases without limit, but the sum approaches\na definite value equal to the area under the curve\nin Fig. 5.3(b). Then the work done is\n          =\n( )\n∫F x\nx\nx\nx\ni\nf\nd\n(5.7)\nwhere ‘lim’ stands for the limit of the sum when\n∆x  tends to zero.  Thus, for a varying force\nthe work done can be expressed as a definite\nintegral of force over displacement (see also\nAppendix 3.1).\nlim\nW =\nx\n∆\n→\n( )\n∑\n∆\nf\ni\nx\nx\nx\nx\nF\n0\nFig. 5.3(a)\nReprint 2026-27\n"
+      },
+      {
+        "page": 6,
+        "matched_terms": [
+          "work-energy",
+          "kinetic energy",
+          "theorem",
+          "friction"
+        ],
+        "excerpt": "PHYSICS\n76\n⊳\nFig. 5.3 (a) The shaded rectangle represents the\nwork done by the varying force F(x), over\nthe small displacement ∆x,  ∆W = F(x) ∆x.\n(b) adding the areas of all the rectangles we\nfind that for ∆x → 0, the area under the curve\nis exactly equal to the work done by F(x).\nExample 5.5  A woman pushes a trunk on\na railway platform which has a rough\nsurface.  She applies a force of 100 N over a\ndistance of 10 m.  Thereafter, she gets\nprogressively tired and her applied force\nreduces linearly with distance to 50 N.  The\ntotal distance through which the trunk has\nbeen moved is 20 m.  Plot the force applied\nby the woman and the frictional force, which\nis 50 N versus displacement.  Calculate the\nwork done by the two forces over 20 m.\nAnswer\nFig. 5.4\nPlot of the force F applied by the woman and\nthe opposing frictional force f versus\ndisplacement.\nThe plot of the applied force is shown in Fig.\n5.4.  At x  = 20 m, F  = 50 N (≠ 0).  We are given\nthat the frictional force f is |f|= 50 N. It opposes\nmotion and acts in a direction opposite to F.  It\nis therefore, shown on the negative side of the\nforce axis.\nThe work done by the woman is\nWF → area of the rectangle ABCD + area of\nthe trapezium CEID\n(\n)\nWF =\n×\n+\n+\n×\n100\n10\n1\n2 100\n50\n10\n       = 1000 + 750\n      = 1750 J\nThe work done by the frictional force is\nWf → area of the rectangle AGHI\nWf  = (−50) × 20\n      = − 1000 J\nThe area on the negative side of the force axis\nhas a negative sign.\n⊳\n5.6 THE WORK-ENERGY THEOREM FOR A\nVARIABLE FORCE\nWe are now familiar with the concepts of work\nand kinetic energy to prove the work-energy\ntheorem for a variable force.  We confine\nourselves to one dimension. The time rate of\nchange of kinetic energy is\nd\nd\nd\nd\nK\nt\nt\nm v\n=\n\n\n\n\n1\n2\n2\n      \nd\nd\nv\nm\nv\nt\n=\n      \nv \nF\n=\n (from Newton’s Second Law)\n      \nd\nd\nx\nF\nt\n=\nThus\n             dK = Fdx\nIntegrating from the initial position  (x i ) to final\nposition ( x f ), we have\nd\nd\nK\nF x\nK\nK\nx\nx\ni\nf\ni\nf\n∫\n∫\n=\nwhere,  Ki  and K f  are the initial and final kinetic\nenergies corresponding to x i  and  x f.\nor\nK\nK\nF x\nf\ni\nx\nx\ni\nf\n−\n= ∫\nd\n (5.8a)\nFrom Eq. (5.7), it follows that\n           Kf −  Ki  = W\n(5.8b)\nThus, the WE theorem is proved for a variable\nforce.\nWhile the WE theorem is useful in a variety of\nproblems, it does not, in general, incorporate the\ncomplete dynamical information of Newton’s\nsecond law. It is an integral form of Newton’s\nsecond law. Newton’s second law is a relation\nbetween acceleration and force at any i"
+      },
+      {
+        "page": 7,
+        "matched_terms": [
+          "work-energy",
+          "kinetic energy",
+          "theorem"
+        ],
+        "excerpt": "WORK, ENERGY AND POWER\n77\n⊳\nnot available explicitly. Another observation is that\nNewton’s second law for two or three dimensions\nis in vector form whereas the work-energy\ntheorem is in scalar form. In the scalar form,\ninformation with respect to directions contained\nin Newton’s second law is not present.\nExample 5.6  A block of mass m  = 1 kg,\nmoving on a horizontal surface with speed\nvi = 2 m s–1 enters a rough patch ranging\nfrom x = 0.10 m to x = 2.01 m. The retarding\nforce Fr on the block in this range is inversely\nproportional  to x  over this range,\nF\nk\nx\nr = −\n for 0.1 < x < 2.01 m\n= 0 for x < 0.1m and x > 2.01 m\nwhere k = 0.5 J.  What is the final kinetic\nenergy and speed vf  of the block as it\ncrosses this patch ?\nAnswer  From Eq. (5.8a)\nK\nK\nk\nx\nx\nf\ni\n0.1\n2.01\n=\n+\n−\n(\n)\n∫\nd\n( )\n2.01\n0.1\n1\nln\n2\n2\ni\nmv\nk \nx\n=\n−\n(\n)\n1\nln 2.01/0.1\n2\n2\ni\nmv\nk \n \n=\n−\n= 2 − 0.5 ln (20.1)\n= 2 − 1.5  = 0.5 J\n1\ns\nm \n 1\n/\n2\n−\n=\n=\nm\nK\nv\nf\nf\nHere, note that ln is a symbol for the natural\nlogarithm to the base e and not the logarithm to\nthe base 10 [ln X = loge X = 2.303 log10 X].\n⊳\n5.7  THE CONCEPT OF POTENTIAL ENERGY\nThe word potential suggests possibility or\ncapacity for action. The term potential energy\nbrings to one’s mind ‘stored’ energy. A stretched\nbow-string possesses potential energy. When it\nis released, the arrow flies off at a great speed.\nThe earth’s crust is not uniform, but has\ndiscontinuities and dislocations that are called\nfault lines. These fault lines in the earth’s crust\nare like ‘compressed springs’. They possess a\nlarge amount of potential energy. An earthquake\nresults when these fault lines readjust. Thus,\npotential energy is the ‘stored energy’ by virtue\nof the position or configuration of a body. The\nbody left to itself releases this stored energy in\nthe form of kinetic energy. Let us make our notion\nof potential energy more concrete.\nThe gravitational force on a ball of mass m is\nmg . g may be treated as a constant near the earth\nsurface. By ‘near’ we imply that the height h  of\nthe ball above the earth’s surface is very small\ncompared to the earth’s radius RE (h <<RE) so that\nwe can ignore the variation of g near the earth’s\nsurface*. In what follows we have taken the\nupward direction to be positive. Let us raise the\nball up to a height h. The work done by the external\nagency against the gravitational force is mgh. This\nwork gets stored as potential energy.\nGravitational potential energy of an object, as a\nfunction of the height h, is denoted by V(h"
+      },
+      {
+        "page": 8,
+        "matched_terms": [
+          "kinetic energy",
+          "theorem",
+          "friction"
+        ],
+        "excerpt": "PHYSICS\n78\nenergy V(x) is defined if the force F(x) can be\nwritten as\n( )\nd\nd\nV\nF x\nx\n= −\nThis implies that\nF(x) x\nV\nV\nV\nx\nx\ni\nf\nV\nV\ni\nf\ni\nf\nd\nd\n∫\n∫\n= −\n=\n−\nThe work done by a conservative force such as\ngravity depends on the initial and final positions\nonly. In the previous chapter we have worked\non examples dealing with inclined planes. If an\nobject of mass m is released from rest, from the\ntop of a smooth (frictionless) inclined plane of\nheight \nh, its \nspeed \nat \nthe \nbottom\nis\ngh\n2\nirrespective of the angle of inclination.\nThus, at the bottom of the inclined plane it\nacquires a kinetic energy, mgh. If the work done\nor the kinetic energy did depend on other factors\nsuch as the velocity or the particular path taken\nby the object, the force would be called non-\nconservative.\nThe  dimensions  of  potential  energy are\n[ML2T –2] and the unit is joule (J), the same as\nkinetic energy or work. To reiterate, the change\nin potential energy, for a conservative force,\n∆V  is equal to the negative of the work done by\nthe force\n∆V = − F(x) ∆x\n(5.9)\nIn the example of the falling ball considered in\nthis section we saw how potential energy was\nconverted to kinetic energy. This hints at an\nimportant principle of conservation in mechanics,\nwhich we now proceed to examine.\n5.8 THE CONSERVATION OF MECHANICAL\nENERGY\nFor simplicity we demonstrate this important\nprinciple for one-dimensional motion. Suppose\nthat a body undergoes displacement ∆x under\nthe action of a conservative force F. Then from\nthe WE theorem we have,\n∆K =  F(x) ∆x\nIf the force is conservative, the potential energy\nfunction V(x) can be defined such that\n− ∆V  =  F(x) ∆x\nThe above equations imply that\n∆K + ∆V = 0\n∆(K + V ) = 0\n(5.10)\nwhich means that K + V, the sum of the kinetic\nand potential energies of the body is a constant.\nOver the whole path, xi to xf, this means that\nKi + V(xi ) = Kf  + V(xf)\n(5.11)\nThe quantity K +V(x), is called the total\nmechanical energy of the system.  Individually\nthe kinetic energy K  and the potential energy\nV(x) may vary from point to point,  but the sum\nis a constant. The aptness of the term\n‘conservative force’ is now clear.\nLet us consider some of  the definitions of a\nconservative force.\nl\nA force F(x) is conservative if it can be derived\nfrom a scalar quantity V(x) by the relation\ngiven by Eq. (5.9). The three-dimensional\ngeneralisation requires the use of a vector\nderivative, which is outside the scope of this\nbook.\nl\nThe work done by the conservative force\ndepends o"
+      },
+      {
+        "page": 11,
+        "matched_terms": [
+          "kinetic energy"
+        ],
+        "excerpt": "WORK, ENERGY AND POWER\n81\nFig. 5.8\nParabolic plots of the potential energy V and\nkinetic energy K of a block attached to a\nspring obeying Hooke’s law. The two plots\nare complementary, one decreasing as the\nother increases. The total mechanical\nenergy E = K + V remains constant.\n⊳\nexternal force F does work + kxc\n2 / 2. If the block\nis moved from an initial displacement xi  to a\nfinal displacement xf , the work done by the\nspring force Ws is\n  W\nk x x \nk x\nk x\ns\nx\nx\ni\nf\ni\nf\n= −\n=\n−\n∫\nd\n  \n  \n2\n2\n2\n2\n           (5.17)\nThus the work done by the spring force depends\nonly on the end points.  Specifically, if the block\nis pulled from xi  and allowed to return to xi ;\n      W\nk x x       \nk x\nk x  \ns\ni\ni\nx\nx\ni\ni\n= −\n=\n−\n∫\nd\n  \n  \n2\n2\n2\n2\n       = 0\n(5.18)\nThe work done by the spring force in a cyclic\nprocess is zero.  We have explicitly demonstrated\nthat the spring force (i) is position dependent\nonly as first stated by Hooke, (Fs = − kx); (ii)\ndoes work which only depends on the initial and\nfinal positions, e.g. Eq. (5.17).  Thus, the spring\nforce is a conservative force.\nWe define the potential energy V(x) of the spring\nto be zero when block and spring system is in the\nequilibrium position.  For an extension (or\ncompression) x  the above analysis suggests that\nV(x)\nkx 2\n=\n2\n(5.19)\nYou may easily verify that − dV/dx = −k x, the\nspring force.  If the block of mass m in Fig. 5.7 is\nextended to xm and released from rest, then its\ntotal mechanical energy at any arbitrary point x,\nwhere x lies between – xm  and + xm, will be given by\n2\n2\n2\nm\nv \nm\nx\n \nk\nx\n \nk\n2\n1\n2\n1\n2\n1\n+\n=\nwhere we have invoked the conservation of\nmechanical energy.  This suggests that the speed\nand the kinetic energy will be maximum at the\nequilibrium position, x = 0, i.e.,\n2\nm\n2\nm\nx\n \nk\n \n \nv \nm\n2\n1\n2\n1\n=\nwhere vm is the maximum speed.\nor\nm\nm\nx\n \nm\nk\nv\n=\nNote that k/m has the dimensions of [T-2] and\nour equation is dimensionally correct. The\nkinetic energy gets converted to potential energy\nand vice versa, however, the total mechanical\nenergy remains constant. This is graphically\ndepicted in Fig. 5.8.\nExample 5.8  To simulate car accidents, auto\nmanufacturers study the collisions of moving\ncars with mounted springs of different spring\nconstants.  Consider a typical simulation with\na car of mass 1000 kg moving with a speed\n18.0 km/h on a smooth road and colliding\nwith a horizontally mounted spring of spring\nconstant 5.25 × 103 N m–1. What is the\nmaximum compression of the spring ?\nAnswer   At maxim"
+      }
+    ]
+  }
+}

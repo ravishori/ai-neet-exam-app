@@ -1,0 +1,64 @@
+{
+  "captured_at": "2026-09-04T00:21:06.112Z",
+  "kind": "ACTUAL_BROWSER_E2E",
+  "web": "http://127.0.0.1:3000",
+  "api": "http://127.0.0.1:8000",
+  "pass": true,
+  "visited_count": 100,
+  "unique_question_count": 100,
+  "duplicate_question_count": 0,
+  "outside_allowlist_count": 0,
+  "failed_render_count": 0,
+  "failed_submission_count": 0,
+  "visual": {
+    "physics-05": {
+      "id": "9c51f8a1-bf72-4ca0-bcfd-e0aa5cb8ee53",
+      "index": 64,
+      "found": true,
+      "payload_has_diagram_svg": true,
+      "visible": true,
+      "img_natural_ok": true
+    },
+    "physics-21": {
+      "id": "1633f068-f0df-4ff5-ac0c-57be4417f29e",
+      "index": 61,
+      "found": true,
+      "payload_has_diagram_svg": true,
+      "visible": true,
+      "img_natural_ok": true
+    },
+    "zoology-12": {
+      "id": "ca0e7a05-38bb-4e12-a52d-4fd4c7a26b07",
+      "index": 31,
+      "found": true,
+      "payload_has_diagram_svg": true,
+      "visible": true,
+      "img_natural_ok": true
+    },
+    "mobile_physics_05": {
+      "visible": true,
+      "overflow_px": 0
+    }
+  },
+  "steps": [
+    {
+      "step": "practice_create",
+      "status": 201,
+      "scope_type": "SEED_V2",
+      "question_count": 100,
+      "sha": "a3a8242433b69e80b1754807949767318fa19c41699ecea42c4c246b035b3978"
+    }
+  ],
+  "console_errors": [],
+  "student_email": "seed-v2-full100-1788481266112@example.com",
+  "attempt_id": "3b2aa8f6-846a-483d-bdbc-08e36ac539c3",
+  "completion": {
+    "http": 200,
+    "status": "SUBMITTED",
+    "correct": 29,
+    "incorrect": 71,
+    "skipped": 0,
+    "score": 29,
+    "sum_counts": 100
+  }
+}
