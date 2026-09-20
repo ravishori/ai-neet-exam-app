@@ -3,14 +3,16 @@
 from __future__ import annotations
 
 import uuid
-from pathlib import Path
 
 from fastapi import APIRouter, BackgroundTasks, Depends, File, Query, Request, UploadFile
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.database import get_db
 from app.modules.cms.schemas.human_gold_sandbox import HumanGoldReviewSaveRequest, ImportConfirmRequest
-from app.modules.cms.services.human_gold_sandbox_service import HumanGoldSandboxService
+from app.modules.cms.services.human_gold_sandbox_service import (
+    HumanGoldSandboxService,
+    resolve_human_gold_repo_root,
+)
 from app.modules.identity.dependencies import get_current_user, require_permission, verify_csrf
 from app.modules.identity.models.user import User
 from app.modules.system.services.audit_service import request_context
@@ -18,7 +20,7 @@ from app.shared.responses import envelope
 
 router = APIRouter(tags=["cms-human-gold-sandbox"])
 
-REPO_ROOT = Path(__file__).resolve().parents[6]
+REPO_ROOT = resolve_human_gold_repo_root(__file__)
 
 
 def _svc(db: AsyncSession) -> HumanGoldSandboxService:
