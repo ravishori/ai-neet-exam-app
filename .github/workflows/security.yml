@@ -87,7 +87,7 @@ jobs:
 
     - name: Install Frontend Dependencies
 
-      working-directory: apps/frontend
+      working-directory: apps/web
 
       run: |
         if [ -f package-lock.json ]; then
@@ -129,7 +129,7 @@ jobs:
 
     - name: npm audit
 
-      working-directory: apps/frontend
+      working-directory: apps/web
 
       run: |
         npm audit --audit-level=high
@@ -151,7 +151,7 @@ jobs:
 
     - name: Trivy Filesystem Scan
 
-      uses: aquasecurity/trivy-action@0.28.0
+      uses: aquasecurity/trivy-action@v0.31.0
 
       with:
         scan-type: fs
