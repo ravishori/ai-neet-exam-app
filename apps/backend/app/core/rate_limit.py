@@ -86,3 +86,49 @@ def rate_limit_per_user(key_prefix: str, *, limit: int, window_seconds: int, fai
         )
 
     return dependency
+
+
+def rate_limit_by_mobile(key_prefix: str, *, limit: int, window_seconds: int, fail_closed: bool = False):
+    """Fixed-window limiter keyed on the request's normalized mobile number,
+    not the caller's IP.
+
+    Behind Railway's edge, ``request.client.host`` is the address of whichever
+    internal proxy instance happened to terminate that connection — it
+    rotates across requests from the same external caller, so the IP-keyed
+    ``rate_limit`` above never accumulates a meaningful count for OTP abuse
+    from a single phone number. Keying on the (normalized) target mobile
+    number instead gives a stable identity regardless of which edge IP the
+    request lands on, without weakening the existing IP-based layer, which
+    stays in place as an additional dependency on the same route.
+
+    The request body is read once via ``request.json()``; Starlette caches
+    the parsed body, so the route's own Pydantic body parameter still reads
+    the identical bytes — no double-consumption of the ASGI stream.
+
+    If the mobile can't be normalized (malformed input), falls back to the
+    IP-based key so those requests are still bounded rather than silently
+    exempt from this layer.
+    """
+    from app.core.exceptions import AppError as _AppError
+    from app.modules.identity.services.profile_validation import normalize_indian_mobile
+
+    async def dependency(request: Request) -> None:
+        try:
+            body = await request.json()
+            raw_mobile = str(body.get("mobile") or "")
+        except Exception:
+            raw_mobile = ""
+
+        try:
+            identity = f"mobile:{normalize_indian_mobile(raw_mobile)}"
+        except _AppError:
+            identity = f"ip:{_client_ip(request)}"
+
+        await _check(
+            f"ratelimit:{key_prefix}:{identity}",
+            limit=limit,
+            window_seconds=window_seconds,
+            fail_closed=fail_closed,
+        )
+
+    return dependency
