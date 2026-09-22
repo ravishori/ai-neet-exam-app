@@ -1,11 +1,31 @@
 """Integration tests against the real dev DB (read-only where possible).
-Uses a savepoint-rollback pattern so nothing persists."""
+Uses a savepoint-rollback pattern so nothing persists.
+
+Targets pyq_subject_classifier.config.DSN — a real local dev database
+(trinetra_db), distinct from the app's own trinetra_test_db and not present
+in CI. Mirrors the skip-if-unreachable pattern already used by
+tests/test_prod_5k_run_002_dry_run.py for the same reason: this suite should
+skip cleanly, not error, when that specific dev DB isn't attached."""
 
 import uuid
 
 import pytest
 
+from pyq_subject_classifier.config import DSN
 from pyq_subject_classifier.db import apply_classification, audit_table_exists, connect
+
+
+def _db_reachable() -> bool:
+    import psycopg
+
+    try:
+        with psycopg.connect(DSN, connect_timeout=2):
+            return True
+    except Exception:
+        return False
+
+
+pytestmark = pytest.mark.skipif(not _db_reachable(), reason="pyq_subject_classifier dev DB not reachable")
 
 
 @pytest.fixture

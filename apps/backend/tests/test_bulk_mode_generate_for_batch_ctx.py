@@ -16,10 +16,14 @@ from __future__ import annotations
 
 from unittest.mock import AsyncMock, MagicMock
 
+import pytest
+
 from app.modules.cms.services.content_factory_generation_service import (
     ContentFactoryGenerationService,
     GenerationStats,
 )
+
+pytestmark = pytest.mark.asyncio(loop_scope="session")
 
 
 def _make_service():

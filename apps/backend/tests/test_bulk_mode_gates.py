@@ -18,6 +18,8 @@ from app.modules.cms.services.content_factory_generation_service import (
 )
 from app.modules.cms.syllabus import load_neet_2026_registry
 
+pytestmark = pytest.mark.asyncio(loop_scope="session")
+
 REPO = Path(__file__).resolve().parents[3]
 SYLLABUS = REPO / "NEETSyllabus.txt"
 

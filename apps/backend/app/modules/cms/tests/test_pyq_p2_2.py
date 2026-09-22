@@ -20,9 +20,11 @@ from app.modules.cms.pyq.p2_2.providers import (
     build_user_prompt,
     parse_recovery_json,
 )
-from app.modules.cms.pyq.p2_2.schemas import AIRecoveryOutput, RECOVERY_PROMPT_CONTRACT, TriageResult
+from app.modules.cms.pyq.p2_2.schemas import RECOVERY_PROMPT_CONTRACT, AIRecoveryOutput, TriageResult
 from app.modules.cms.pyq.p2_2.triage import missing_fields, triage_record
 from app.modules.cms.pyq.p2_2.validation import validate_against_source
+
+pytestmark = pytest.mark.asyncio(loop_scope="session")
 
 ROOT = Path(__file__).resolve().parents[6]
 R3 = ROOT / "data/staging/pyq/2020-2025/p2_1e_full_r3"

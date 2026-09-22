@@ -27,6 +27,8 @@ from app.modules.cms.mcq.p2_3.r1.taxonomy import build_qa_failure_taxonomy, clas
 from app.modules.cms.mcq.p2_3.schemas import McqRecord
 from app.modules.cms.mcq.p2_3.validator import validation_cost_usd
 
+pytestmark = pytest.mark.asyncio(loop_scope="session")
+
 ROOT = Path(__file__).resolve().parents[6]
 
 
@@ -186,7 +188,7 @@ async def test_revalidation_without_regeneration():
 
 
 def test_idempotent_r1_snapshot(tmp_path: Path):
-    from app.modules.cms.mcq.p2_3.r1.pipeline import save_jsonl_dicts, load_jsonl_dicts
+    from app.modules.cms.mcq.p2_3.r1.pipeline import load_jsonl_dicts, save_jsonl_dicts
 
     p = tmp_path / "snap.jsonl"
     rows = [{"question_id": "a", "validation_status": "INCONCLUSIVE"}]
