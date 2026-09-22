@@ -196,7 +196,7 @@ async def test_alert_dedupe_skips_second_send(monkeypatch):
 
     sent: list[str] = []
 
-    def fake_send(*, subject, body):
+    async def fake_send(*, subject, body):
         sent.append(subject)
 
     redis = MagicMock()

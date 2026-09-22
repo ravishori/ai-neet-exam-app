@@ -47,7 +47,7 @@ async def test_alert_skipped_when_reporting_disabled(monkeypatch):
     monkeypatch.setattr(settings, "alert_email", "ravishori@gmail.com")
     sent = []
 
-    def fake_send(**kwargs):
+    async def fake_send(**kwargs):
         sent.append(kwargs)
 
     monkeypatch.setattr(alerts_mod, "send_security_alert_email", fake_send)

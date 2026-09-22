@@ -61,7 +61,7 @@ async def test_email_failure_does_not_raise(monkeypatch):
     monkeypatch.setattr(settings, "alert_email", "ravishori@gmail.com")
     monkeypatch.setattr(alerts_mod, "get_redis", lambda: None)
 
-    def boom(**kwargs):
+    async def boom(**kwargs):
         raise RuntimeError("SMTP down")
 
     monkeypatch.setattr(alerts_mod, "send_security_alert_email", boom)
@@ -93,7 +93,7 @@ async def test_alert_dedupe_limits_flood(monkeypatch):
 
     sent = []
 
-    def fake_send(*, subject, body):
+    async def fake_send(*, subject, body):
         sent.append(subject)
 
     redis = MagicMock()
