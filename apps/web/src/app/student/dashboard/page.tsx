@@ -7,6 +7,7 @@ import { ArrowRight, BookOpen, Loader2, Play, Target } from "lucide-react";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { EmptyState } from "@/components/ui/empty-state";
+import { GoPremiumCard } from "@/components/go-premium-card";
 import { ScoreTrendChart } from "@/components/score-trend-chart";
 import { Skeleton } from "@/components/ui/skeleton";
 import {
@@ -443,6 +444,8 @@ export default function StudentDashboardPage() {
           <MetricPill label="Sessions" value={String(submitted.length)} />
         </div>
       </section>
+
+      <GoPremiumCard />
 
       {emailUnverified ? (
         <p
