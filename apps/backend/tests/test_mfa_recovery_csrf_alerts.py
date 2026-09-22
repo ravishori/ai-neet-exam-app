@@ -169,6 +169,15 @@ async def test_normal_auth_failures_do_not_trigger_admin_alert(client, monkeypat
     validation_exception_handler — none of which call schedule_unexpected_incident.
     This asserts that end-to-end: no alert email attempt is made for any of them."""
     from app.core import alerts as alerts_mod
+    from app.main import app
+    from app.modules.identity.api.auth_router import get_twilio_verify
+    from app.modules.identity.services.twilio_verify_service import TwilioVerifyStub
+
+    # Stub Twilio so the wrong-OTP case below exercises the normal
+    # "wrong code" 401 path rather than the unrelated (and correctly
+    # separately-alerting) TWILIO_VERIFY_NOT_CONFIGURED 503 fail-closed
+    # path — this test's own dev/CI environment has no real Twilio config.
+    app.dependency_overrides[get_twilio_verify] = lambda: TwilioVerifyStub(seeded_code="123456")
 
     alert_calls: list[str] = []
 
@@ -208,10 +217,13 @@ async def test_normal_auth_failures_do_not_trigger_admin_alert(client, monkeypat
     assert not_found.status_code == 404
 
     # invalid mobile OTP verify -> 401
-    bad_otp = await client.post(
-        "/api/v1/auth/mobile/otp/verify", json={"mobile": "+919876500999", "code": "000000"}
-    )
-    assert bad_otp.status_code == 401
+    try:
+        bad_otp = await client.post(
+            "/api/v1/auth/mobile/otp/verify", json={"mobile": "+919876500999", "code": "000000"}
+        )
+        assert bad_otp.status_code == 401
+    finally:
+        app.dependency_overrides.pop(get_twilio_verify, None)
 
     # forbidden (CSRF) -> 403
     forbidden = await client.post("/api/v1/auth/totp/setup")
