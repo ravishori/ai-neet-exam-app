@@ -23,7 +23,7 @@ from app.modules.cms.services.content_workflow_service import ContentWorkflowSer
 from app.modules.cms.services.editorial_review_service import EditorialReviewService
 from app.modules.cms.services.review_pilot_service import build_pilot_report, record_pilot_event
 from app.modules.cms.services.review_queue_service import ReviewQueueService
-from app.modules.identity.dependencies import get_current_user, require_permission, verify_csrf
+from app.modules.identity.dependencies import get_current_user, require_active_access, require_permission, verify_csrf
 from app.modules.identity.models.user import User
 from app.modules.system.services.audit_service import AuditService, request_context
 from app.shared.responses import envelope
@@ -807,7 +807,10 @@ async def get_coverage(db: AsyncSession = Depends(get_db)):
     return envelope(success=True, data=await repo.coverage())
 
 
-@router.get("/questions", dependencies=[Depends(require_permission("questions.read"))])
+@router.get(
+    "/questions",
+    dependencies=[Depends(require_permission("questions.read")), Depends(require_active_access())],
+)
 async def browse_questions(
     scope_type: str | None = None,  # SUBJECT | CHAPTER | TOPIC | CONCEPT
     scope_id: uuid.UUID | None = None,
@@ -860,7 +863,10 @@ async def get_question(item_id: uuid.UUID, db: AsyncSession = Depends(get_db)):
     return envelope(success=True, data=_question_summary(item, names, visual_assets_by_ku))
 
 
-@router.get("/questions/{item_id}/related", dependencies=[Depends(require_permission("questions.read"))])
+@router.get(
+    "/questions/{item_id}/related",
+    dependencies=[Depends(require_permission("questions.read")), Depends(require_active_access())],
+)
 async def get_related_questions(item_id: uuid.UUID, db: AsyncSession = Depends(get_db)):
     """Other published questions on the same concept (PR 11) — the "Related
     Questions" panel shown after submitting an answer."""
@@ -904,7 +910,7 @@ async def report_question(
     return envelope(success=True, data={"reported": True}, status_code=201)
 
 
-@router.get("/flashcards", dependencies=[Depends(get_current_user)])
+@router.get("/flashcards", dependencies=[Depends(get_current_user), Depends(require_active_access())])
 async def browse_flashcards(
     scope_type: str | None = None,  # SUBJECT | CHAPTER | TOPIC | CONCEPT
     scope_id: uuid.UUID | None = None,
@@ -961,7 +967,10 @@ async def browse_flashcards(
     )
 
 
-@router.get("/concepts/{concept_id}/published", dependencies=[Depends(get_current_user)])
+@router.get(
+    "/concepts/{concept_id}/published",
+    dependencies=[Depends(get_current_user), Depends(require_active_access())],
+)
 async def get_published_content_for_concept(
     concept_id: uuid.UUID,
     language: str | None = None,

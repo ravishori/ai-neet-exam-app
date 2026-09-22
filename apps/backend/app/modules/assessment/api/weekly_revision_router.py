@@ -10,11 +10,17 @@ from app.modules.assessment.services.weekly_revision_service import (
     WeeklyRevisionService,
     public_view,
 )
-from app.modules.identity.dependencies import get_current_user, verify_csrf
+from app.modules.identity.dependencies import get_current_user, require_active_access, verify_csrf
 from app.modules.identity.models.user import User
 from app.shared.responses import envelope
 
-router = APIRouter(prefix="/api/v1/weekly-revisions", tags=["weekly-revisions"])
+# Premium: entirely student-facing (no admin routes in this router) —
+# active trial OR active entitlement required for both routes.
+router = APIRouter(
+    prefix="/api/v1/weekly-revisions",
+    tags=["weekly-revisions"],
+    dependencies=[Depends(require_active_access())],
+)
 
 
 @router.get("/current")

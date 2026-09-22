@@ -85,7 +85,7 @@ def require_active_access(product_code: str = "ALL_ACCESS"):
             raise AppError(
                 "This feature requires an active trial or subscription.",
                 code="NO_ACTIVE_ACCESS",
-                status_code=402,
+                status_code=403,
             )
         return user
 
