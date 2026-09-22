@@ -136,3 +136,79 @@ def test_bucket_key_never_contains_the_otp_code(fake_redis):
 
     for key in fake_redis._counts:
         assert "654321" not in key
+
+
+def test_send_and_verify_buckets_are_isolated_for_the_same_mobile(fake_redis):
+    """mobile_otp_send (limit=5) and mobile_otp_verify (limit=10) — the exact
+    key_prefix values and limits used in auth_router.py — must not share a
+    bucket for the same phone number. Exhausting one must not affect the
+    other, and each must still enforce its own configured limit."""
+    send_app = FastAPI()
+    send_app.add_exception_handler(AppError, app_error_handler)
+    send_limiter = rl.rate_limit_by_mobile("mobile_otp_send", limit=5, window_seconds=300, fail_closed=True)
+
+    @send_app.post("/otp/send", dependencies=[Depends(send_limiter)])
+    async def send(payload: Payload) -> dict:
+        return {"ok": True}
+
+    verify_app = FastAPI()
+    verify_app.add_exception_handler(AppError, app_error_handler)
+    verify_limiter = rl.rate_limit_by_mobile("mobile_otp_verify", limit=10, window_seconds=300, fail_closed=True)
+
+    @verify_app.post("/otp/verify", dependencies=[Depends(verify_limiter)])
+    async def verify(payload: Payload) -> dict:
+        return {"ok": True}
+
+    send_client = TestClient(send_app)
+    verify_client = TestClient(verify_app)
+    mobile = "+919987671916"
+
+    # Exhaust send's limit (5) for this mobile.
+    for i in range(5):
+        resp = send_client.post("/otp/send", json={"mobile": mobile})
+        assert resp.status_code == 200, f"send attempt {i + 1} should be allowed"
+    send_blocked = send_client.post("/otp/send", json={"mobile": mobile})
+    assert send_blocked.status_code == 429
+
+    # verify's bucket for the SAME mobile is untouched — still allows its
+    # own full 10, unaffected by send's exhausted bucket.
+    for i in range(10):
+        resp = verify_client.post("/otp/verify", json={"mobile": mobile, "code": "0"})
+        assert resp.status_code == 200, f"verify attempt {i + 1} should be allowed, got {resp.status_code}"
+    verify_blocked = verify_client.post("/otp/verify", json={"mobile": mobile, "code": "0"})
+    assert verify_blocked.status_code == 429
+
+    send_keys = [k for k in fake_redis._counts if "mobile_otp_send" in k]
+    verify_keys = [k for k in fake_redis._counts if "mobile_otp_verify" in k]
+    assert send_keys and verify_keys
+    assert set(send_keys).isdisjoint(verify_keys)
+
+
+def test_redis_failure_does_not_log_the_raw_mobile_number(monkeypatch):
+    """The HIGH finding from the PR #39 review: on a Redis outage, the
+    warning log must never contain the actual phone number — only a hashed
+    stand-in — while the real rate-limit key (used for INCR/EXPIRE/TTL,
+    not exercised on this fail-closed-without-Redis path) is untouched.
+
+    structlog (as configured in this app) writes directly, bypassing the
+    stdlib `logging` module entirely — pytest's `caplog` fixture hooks
+    stdlib handlers and would silently capture nothing here, making an
+    assertion against it vacuously true regardless of whether the fix is
+    applied. `structlog.testing.capture_logs()` is the correct tool: it
+    intercepts at the structlog processor chain itself.
+    """
+    import structlog
+
+    monkeypatch.setattr(rl, "get_redis", lambda: None)
+    app = _build_app(limit=10, window_seconds=300)
+    client = TestClient(app)
+
+    with structlog.testing.capture_logs() as captured:
+        resp = client.post("/otp/verify", json={"mobile": "+919987671916", "code": "0"})
+
+    assert resp.status_code == 429
+    assert captured, "expected at least one log event from the fail-closed path"
+    log_text = " ".join(str(event) for event in captured)
+    assert "9987671916" not in log_text
+    assert "+919987671916" not in log_text
+    assert "mobile:" in log_text, "expected a redacted mobile identifier to still be present"

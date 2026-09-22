@@ -25,11 +25,19 @@ def _client_ip(request: Request) -> str:
     return request.client.host if request.client else "unknown"
 
 
-async def _check(key: str, *, limit: int, window_seconds: int, fail_closed: bool) -> None:
+async def _check(key: str, *, limit: int, window_seconds: int, fail_closed: bool, log_key: str | None = None) -> None:
+    """``log_key`` is what appears in warning logs — defaults to ``key`` so
+    existing callers (IP/user-id keyed, not considered sensitive enough to
+    warrant a separate identifier) are unaffected. Callers whose key embeds
+    PII (e.g. a phone number) should pass a redacted ``log_key`` instead;
+    ``key`` itself is never touched, so the actual rate-limit bucket and its
+    collision-safety are unchanged."""
+    if log_key is None:
+        log_key = key
     redis_client = get_redis()
     if redis_client is None:
         if fail_closed:
-            logger.warning("rate_limit_redis_unavailable", key_prefix=key, fail_closed=True)
+            logger.warning("rate_limit_redis_unavailable", key_prefix=log_key, fail_closed=True)
             raise RateLimitExceeded(retry_after_seconds=window_seconds)
         return
 
@@ -44,9 +52,9 @@ async def _check(key: str, *, limit: int, window_seconds: int, fail_closed: bool
         raise
     except Exception:
         if fail_closed:
-            logger.warning("rate_limit_redis_error", key_prefix=key, fail_closed=True, exc_info=True)
+            logger.warning("rate_limit_redis_error", key_prefix=log_key, fail_closed=True, exc_info=True)
             raise RateLimitExceeded(retry_after_seconds=window_seconds)
-        logger.warning("rate_limit_fail_open", key_prefix=key)
+        logger.warning("rate_limit_fail_open", key_prefix=log_key)
         return
 
 
@@ -108,9 +116,17 @@ def rate_limit_by_mobile(key_prefix: str, *, limit: int, window_seconds: int, fa
     If the mobile can't be normalized (malformed input), falls back to the
     IP-based key so those requests are still bounded rather than silently
     exempt from this layer.
+
+    The Redis key itself still embeds the normalized mobile number (needed
+    for correct, collision-safe bucketing) — but on a Redis failure, `_check`
+    would otherwise log that key verbatim, putting a phone number in
+    cleartext logs. A hashed stand-in (same `hash_opaque_token` SHA-256
+    convention already used for recovery codes) is passed as `log_key` so
+    logs only ever see a non-reversible identifier, never the number.
     """
     from app.core.exceptions import AppError as _AppError
     from app.modules.identity.services.profile_validation import normalize_indian_mobile
+    from app.modules.identity.services.token_service import hash_opaque_token
 
     async def dependency(request: Request) -> None:
         try:
@@ -120,15 +136,20 @@ def rate_limit_by_mobile(key_prefix: str, *, limit: int, window_seconds: int, fa
             raw_mobile = ""
 
         try:
-            identity = f"mobile:{normalize_indian_mobile(raw_mobile)}"
+            mobile = normalize_indian_mobile(raw_mobile)
+            identity = f"mobile:{mobile}"
+            log_identity = f"mobile:{hash_opaque_token(mobile)[:12]}"
         except _AppError:
-            identity = f"ip:{_client_ip(request)}"
+            ip = _client_ip(request)
+            identity = f"ip:{ip}"
+            log_identity = identity
 
         await _check(
             f"ratelimit:{key_prefix}:{identity}",
             limit=limit,
             window_seconds=window_seconds,
             fail_closed=fail_closed,
+            log_key=f"ratelimit:{key_prefix}:{log_identity}",
         )
 
     return dependency
