@@ -44,6 +44,8 @@ from app.modules.cms.acquisition.mmf.validation_v2 import (
     validate_candidate_v2,
 )
 
+pytestmark = pytest.mark.asyncio(loop_scope="session")
+
 SHA = CH04_FIXTURE_SHA
 BATCH = DEFAULT_POC_BATCH_ID
 

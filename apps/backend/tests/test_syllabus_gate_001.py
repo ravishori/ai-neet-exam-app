@@ -8,6 +8,10 @@ from unittest.mock import AsyncMock, MagicMock, patch
 
 import pytest
 
+from app.modules.cms.services.content_factory_generation_service import (
+    ContentFactoryGenerationService,
+    GenerationStats,
+)
 from app.modules.cms.syllabus import (
     EXPECTED_UNIT_COUNTS,
     SyllabusParseError,
@@ -17,10 +21,8 @@ from app.modules.cms.syllabus import (
     parse_neet_syllabus_file,
     parse_neet_syllabus_text,
 )
-from app.modules.cms.services.content_factory_generation_service import (
-    ContentFactoryGenerationService,
-    GenerationStats,
-)
+
+pytestmark = pytest.mark.asyncio(loop_scope="session")
 
 REPO = Path(__file__).resolve().parents[3]
 SYLLABUS = REPO / "NEETSyllabus.txt"

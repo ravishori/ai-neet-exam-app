@@ -21,6 +21,8 @@ from app.modules.cms.services.ncert_generation_evidence import resolve_ncert_evi
 from app.modules.cms.syllabus import assert_blueprint_neet_syllabus_scope, load_neet_2026_registry
 from app.modules.ingestion.services.ncert_canonical_source import validate_ncert_generation_source
 
+pytestmark = pytest.mark.asyncio(loop_scope="session")
+
 REPO = Path(__file__).resolve().parents[3]
 REVIEW = REPO / "docs" / "audits" / "ncert_evidence_write_review_001.json"
 WRITE = REPO / "docs" / "audits" / "ncert_evidence_write_002.json"

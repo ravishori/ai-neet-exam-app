@@ -16,9 +16,11 @@ from app.modules.cms.pyq.p2_2.live_pilot import (
     estimate_preflight_cost,
     select_human_mcq_sample,
 )
-from app.modules.cms.pyq.p2_2.live_schemas import LiveMcqRecord
 from app.modules.cms.pyq.p2_2.live_recovery import _field_agreement
+from app.modules.cms.pyq.p2_2.live_schemas import LiveMcqRecord
 from app.modules.cms.pyq.p2_2.schemas import AIRecoveryOutput
+
+pytestmark = pytest.mark.asyncio(loop_scope="session")
 
 
 def test_budget_guard_stops():
@@ -164,7 +166,7 @@ async def test_malformed_provider_json_handling():
 
 
 def test_rate_limit_error_surface():
-    from app.modules.ai.gateway.base import ProviderError, PROVIDER_RATE_LIMITED
+    from app.modules.ai.gateway.base import PROVIDER_RATE_LIMITED, ProviderError
 
     err = ProviderError(PROVIDER_RATE_LIMITED, "rate limited", provider="gemini", retryable=True)
     assert err.retryable

@@ -39,6 +39,8 @@ from app.modules.cms.acquisition.mmf.semantic_dedupe import (
 )
 from app.modules.cms.acquisition.mmf.validation import validate_candidate_dict, validate_candidate_list
 
+pytestmark = pytest.mark.asyncio(loop_scope="session")
+
 SHA = CH04_FIXTURE_SHA
 BATCH = DEFAULT_POC_BATCH_ID
 
