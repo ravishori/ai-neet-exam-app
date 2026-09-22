@@ -4,6 +4,19 @@ from pyq_subject_classifier import config
 from pyq_subject_classifier.db import apply_classification, audit_table_exists, connect
 
 
+def _db_reachable() -> bool:
+    import psycopg
+
+    try:
+        with psycopg.connect(config.DSN, connect_timeout=2):
+            return True
+    except Exception:
+        return False
+
+
+pytestmark = pytest.mark.skipif(not _db_reachable(), reason="pyq_subject_classifier dev DB not reachable")
+
+
 @pytest.fixture
 def rw_conn():
     conn = connect(read_only=False)
