@@ -30,6 +30,8 @@ from app.modules.cms.api.content_factory_router import router as content_factory
 from app.modules.cms.api.human_gold_sandbox_router import router as human_gold_sandbox_router
 from app.modules.cms.api.content_factory_planning_router import router as content_factory_planning_router
 from app.modules.cms.api.search_router import router as search_router
+from app.modules.commerce.api.admin_commerce_router import router as admin_commerce_router
+from app.modules.commerce.api.commerce_router import public_router as commerce_public_router
 from app.modules.commerce.api.commerce_router import router as commerce_router
 from app.modules.identity.api.auth_router import router as auth_router
 from app.modules.identity.api.locations_router import router as locations_router
@@ -101,6 +103,8 @@ app.include_router(student_preference_router)
 app.include_router(admin_router)
 app.include_router(analytics_router)
 app.include_router(commerce_router)
+app.include_router(commerce_public_router)
+app.include_router(admin_commerce_router)
 app.include_router(ingestion_router)
 app.include_router(knowledge_router)
 

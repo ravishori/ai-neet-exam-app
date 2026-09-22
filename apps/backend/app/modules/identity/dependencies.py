@@ -67,6 +67,31 @@ def require_permission(permission_code: str):
     return _check
 
 
+def require_active_access(product_code: str = "ALL_ACCESS"):
+    """Backend authorization boundary for protected NEET features — trial OR
+    paid entitlement, checked server-side via AccessService on every request.
+    Frontend hiding buttons/routes is a UX convenience only; this dependency
+    is what actually blocks an unauthorized request. Apply to a router with:
+        dependencies=[Depends(require_active_access())]
+    """
+
+    async def _check(
+        user: User = Depends(get_current_user), db: AsyncSession = Depends(get_db)
+    ) -> User:
+        from app.modules.commerce.services.access_service import AccessService
+
+        access = AccessService(db)
+        if not await access.can_access(user.id, product_code):
+            raise AppError(
+                "This feature requires an active trial or subscription.",
+                code="NO_ACTIVE_ACCESS",
+                status_code=402,
+            )
+        return user
+
+    return _check
+
+
 def verify_csrf(request: Request) -> None:
     """Double-submit cookie check for cookie-authenticated mutating requests."""
     header_token = request.headers.get(CSRF_HEADER)
