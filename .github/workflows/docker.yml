@@ -129,10 +129,15 @@ jobs:
       # ----------------------------------------------------------------------
       # Scan Backend Image
       # ----------------------------------------------------------------------
+      # trivy-action@v0.31.0 pinned an old Trivy version (v0.63.0) whose
+      # setup-trivy install step fails outright (install.sh exits 1 before
+      # any scan runs, confirmed via direct log inspection — not a network
+      # flake). Bumped to the current release (v0.36.0), which resolves a
+      # current Trivy version through a working install path.
 
       - name: Scan Backend Image
 
-        uses: aquasecurity/trivy-action@v0.31.0
+        uses: aquasecurity/trivy-action@v0.36.0
 
         with:
           image-ref: backend:latest
@@ -146,7 +151,7 @@ jobs:
 
       - name: Scan Frontend Image
 
-        uses: aquasecurity/trivy-action@v0.31.0
+        uses: aquasecurity/trivy-action@v0.36.0
 
         with:
           image-ref: frontend:latest
