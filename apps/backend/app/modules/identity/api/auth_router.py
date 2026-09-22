@@ -4,7 +4,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from app.core.config import get_settings
 from app.core.database import get_db
 from app.core.exceptions import AppError
-from app.core.rate_limit import rate_limit, rate_limit_per_user
+from app.core.rate_limit import rate_limit, rate_limit_by_mobile, rate_limit_per_user
 from app.modules.identity.cookies import clear_auth_cookies, set_auth_cookies
 from app.modules.identity.dependencies import REFRESH_COOKIE, get_current_user, verify_csrf
 from app.modules.identity.models.user import User
@@ -376,7 +376,10 @@ async def totp_disable(
 
 @router.post(
     "/mobile/otp/send",
-    dependencies=[Depends(rate_limit("mobile_otp_send", limit=5, window_seconds=300, fail_closed=True))],
+    dependencies=[
+        Depends(rate_limit("mobile_otp_send", limit=5, window_seconds=300, fail_closed=True)),
+        Depends(rate_limit_by_mobile("mobile_otp_send", limit=5, window_seconds=300, fail_closed=True)),
+    ],
 )
 async def mobile_otp_send(
     payload: MobileOtpSendRequest,
@@ -417,7 +420,10 @@ async def mobile_otp_send(
 
 @router.post(
     "/mobile/otp/verify",
-    dependencies=[Depends(rate_limit("mobile_otp_verify", limit=10, window_seconds=300, fail_closed=True))],
+    dependencies=[
+        Depends(rate_limit("mobile_otp_verify", limit=10, window_seconds=300, fail_closed=True)),
+        Depends(rate_limit_by_mobile("mobile_otp_verify", limit=10, window_seconds=300, fail_closed=True)),
+    ],
 )
 async def mobile_otp_verify(
     payload: MobileOtpVerifyRequest,

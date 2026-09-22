@@ -18,7 +18,7 @@ def _bypass_rate_limit(monkeypatch):
     test_security_wave_c uses the same pattern to no-op the check."""
     from app.core import rate_limit as rl
 
-    async def no_limit(key: str, *, limit: int, window_seconds: int, fail_closed: bool) -> None:
+    async def no_limit(key: str, *, limit: int, window_seconds: int, fail_closed: bool, log_key: str | None = None) -> None:
         return None
 
     monkeypatch.setattr(rl, "_check", no_limit)
