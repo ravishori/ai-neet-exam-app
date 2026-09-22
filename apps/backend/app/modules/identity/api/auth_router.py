@@ -117,7 +117,19 @@ async def auth_methods():
                 and settings.twilio_auth_token
                 and settings.twilio_verify_service_sid
             ),
-            "emailOtp": bool(settings.smtp_host and settings.smtp_from),
+            # B8 fix: this used to check settings.smtp_host/smtp_from — the
+            # SMTP-era signal for "can we send email". Since PR #44 (Resend
+            # migration), SMTP is a dev-only fallback and the real production
+            # send path is EMAIL_PROVIDER/EMAIL_API_KEY/EMAIL_FROM (see
+            # email_service.py::_send). The old check reported whatever
+            # stale SMTP_* vars happened to still be set per-environment
+            # post-migration — which is exactly why staging and production
+            # disagreed despite running identical code: it was measuring
+            # legacy config debris, not actual email capability.
+            "emailOtp": bool(
+                (settings.email_provider == "resend" and settings.email_api_key and settings.email_from)
+                or (not settings.is_production and settings.smtp_host and settings.smtp_from)
+            ),
             "google": bool(getattr(settings, "google_oauth_client_id", "") and getattr(settings, "google_oauth_client_secret", "")),
             "microsoft": bool(getattr(settings, "microsoft_oauth_client_id", "") and getattr(settings, "microsoft_oauth_client_secret", "")),
         },
