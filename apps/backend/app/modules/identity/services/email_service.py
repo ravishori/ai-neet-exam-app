@@ -69,6 +69,34 @@ def _send_via_smtp_blocking(*, to: str, subject: str, body: str, settings: Setti
         smtp.send_message(msg)
 
 
+async def _notify_admin_of_email_failure(*, kind: str, reason: str) -> None:
+    """Fire admin-visible alert for a production email-delivery problem.
+
+    Never called for kind == "security_alert": that would recurse back into
+    _send() for another security_alert on every failed alert attempt. A
+    failure to send the alert itself is already handled safely (logged, not
+    retried) by maybe_send_critical_alert's own except block.
+    """
+    if kind == "security_alert":
+        return
+    from app.core.alerts import maybe_send_critical_alert
+
+    try:
+        await maybe_send_critical_alert(
+            subject=f"[NEET APP ERROR] Email delivery failure — {kind}",
+            body=(
+                "Outbound email delivery failed or is unconfigured in production.\n\n"
+                f"Kind: {kind}\nReason: {reason}\n\n"
+                "Check EMAIL_PROVIDER / EMAIL_API_KEY / EMAIL_FROM configuration. "
+                "Note: if the provider is down entirely, this alert email may also "
+                "fail to deliver — check application logs directly in that case."
+            ),
+            dedupe_key=f"email_delivery_failure:{kind}",
+        )
+    except Exception:
+        logger.warning("email_failure_alert_failed", kind=kind, exc_info=True)
+
+
 async def _send(*, to: str, subject: str, body: str, kind: str) -> None:
     settings = get_settings()
 
@@ -79,6 +107,7 @@ async def _send(*, to: str, subject: str, body: str, kind: str) -> None:
             return
         except Exception:
             logger.error("email_send_failed", kind=kind, to=to, provider="resend", exc_info=True)
+            await _notify_admin_of_email_failure(kind=kind, reason="resend_provider_failure")
             return
 
     # SMTP is a development-only fallback — never attempted in production
@@ -94,6 +123,7 @@ async def _send(*, to: str, subject: str, body: str, kind: str) -> None:
 
     if settings.is_production:
         logger.warning("email_not_configured", kind=kind, to=to)
+        await _notify_admin_of_email_failure(kind=kind, reason="provider_not_configured")
         return
 
     # Dev-only: include link so flows are testable. Never do this in production.
