@@ -2,6 +2,19 @@
 # application code. Installed in CI as: pip install -r requirements.txt -r requirements-dev.txt
 -r requirements.txt
 
+# Moved here from requirements.txt (B4 hardening, 2026-09-22): pytest/
+# pytest-asyncio are test-only tools, never imported by app/ runtime code
+# (verified: no non-test import anywhere in app/) — they had no reason to
+# ship inside the production Docker image, which only installs
+# requirements.txt. This alone removes PYSEC-2026-1845 (pytest CVE) from
+# the deployed artifact entirely, without needing to force a pytest 9.x +
+# pytest-asyncio 1.x bump (pytest-asyncio 0.25.x caps at pytest<9, and a
+# 1.x bump changes loop-scope semantics this suite's async fixtures rely on
+# precisely — see PR #40's loop-scope fix earlier this engagement; that
+# compatibility work was judged out of scope/unnecessary now that the CVE
+# has zero production relevance).
+pytest==8.3.4
+pytest-asyncio==0.25.3
 ruff==0.8.4
 pytest-cov==6.0.0
 pip-audit==2.7.3

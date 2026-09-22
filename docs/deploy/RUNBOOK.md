@@ -1,5 +1,12 @@
 # Deploy runbook — Hetzner + Coolify
 
+> **B2 correction (2026-09-22): this is not how the app is actually deployed.**
+> Production and staging both run on **Railway** with native GitHub-integration
+> auto-deploy, verified via `railway status --json`. For the real, verified
+> rollback procedure, see [`RAILWAY_ROLLBACK.md`](./RAILWAY_ROLLBACK.md). This
+> document is left in place as historical/aspirational reference only — per
+> its own next line, nothing in it was ever executed against a real server.
+
 Per ADR-0006. **Nothing in this document has been executed against a real
 server.** No Hetzner VPS, domain, or Coolify instance is reachable from
 the environment this was written in — there is no SSH access, no API
