@@ -157,7 +157,21 @@ class Settings(BaseSettings):
     # Public web origin used in email links (no trailing slash required)
     web_app_url: str = "http://localhost:3000"
 
-    # Optional SMTP — when unset, production logs email_not_configured
+    # Primary transactional email provider — an HTTPS API, not SMTP.
+    # Railway (and many PaaS hosts) block outbound SMTP-class ports
+    # (25/465/587) at the network layer; confirmed via production
+    # diagnostics (ENETUNREACH on all three, while HTTPS egress works).
+    # "" (unset) => provider path is skipped entirely; see SMTP/dev-preview
+    # fallback below. Only "resend" is implemented today.
+    email_provider: str = ""
+    email_api_key: str = ""
+    email_from: str = ""
+    email_from_name: str = ""
+
+    # Optional SMTP — development/local fallback ONLY. Never attempted in
+    # production (see email_service.py) — Railway production cannot reach
+    # outbound SMTP ports, and attempting it would reintroduce the ~8s
+    # per-request hang this config exists to avoid.
     smtp_host: str = ""
     smtp_port: int = 587
     smtp_username: str = ""

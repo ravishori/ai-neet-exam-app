@@ -229,27 +229,27 @@ async def test_reset_url_uses_configured_web_app_url(monkeypatch):
     get_settings.cache_clear()
 
     captured: dict[str, str] = {}
-    monkeypatch.setattr(
-        email_service,
-        "_send",
-        lambda *, to, subject, body, kind: captured.update(to=to, subject=subject, body=body, kind=kind),
-    )
 
-    email_service.send_password_reset_email(to="someone@example.com", token="abc123")
+    async def _fake_send(*, to, subject, body, kind):
+        captured.update(to=to, subject=subject, body=body, kind=kind)
+
+    monkeypatch.setattr(email_service, "_send", _fake_send)
+
+    await email_service.send_password_reset_email(to="someone@example.com", token="abc123")
 
     assert "https://neet.trinetralab.net/reset-password?token=abc123" in captured["body"]
     assert "localhost" not in captured["body"]
     get_settings.cache_clear()
 
 
-# --------------------------------------------------------------------------- SMTP failure handling
+# --------------------------------------------------------------------------- email delivery failure handling
 
 
-async def test_smtp_failure_does_not_break_forgot_password_response(client, monkeypatch):
+async def test_email_provider_failure_does_not_break_forgot_password_response(client, monkeypatch):
     from app.modules.identity.services import email_service
 
-    def _boom(**_kwargs):
-        raise ConnectionError("simulated SMTP outage")
+    async def _boom(**_kwargs):
+        raise ConnectionError("simulated provider outage")
 
     monkeypatch.setattr(email_service, "send_password_reset_email", _boom)
 
@@ -260,7 +260,9 @@ async def test_smtp_failure_does_not_break_forgot_password_response(client, monk
     assert "sent" in resp.json()["data"]["message"].lower() or "exists" in resp.json()["data"]["message"].lower()
 
 
-async def test_smtp_failure_is_logged_safely_no_credentials_leaked(monkeypatch):
+async def test_production_email_failure_is_logged_safely_no_credentials_leaked(monkeypatch):
+    """Production never attempts SMTP (see email_service.py) — this exercises
+    the HTTPS provider failure path, which is what production actually uses."""
     import structlog
 
     from app.core.config import Settings
@@ -271,21 +273,48 @@ async def test_smtp_failure_is_logged_safely_no_credentials_leaked(monkeypatch):
         jwt_secret="test-secret-not-real",
         encryption_key="uLCw_rsupBRTzp7bhuN_iuxiMiXgpxc6DujbFR_sXkM=",
         environment="production",
-        smtp_host="smtp.example.com",
-        smtp_from="noreply@example.com",
-        smtp_username="realuser@example.com",
-        smtp_password="super-secret-smtp-password",
+        email_provider="resend",
+        email_api_key="super-secret-resend-api-key",
+        email_from="noreply@example.com",
     )
     monkeypatch.setattr(email_service, "get_settings", lambda: fake_settings)
 
-    def _boom(host, port, timeout=8):
-        raise ConnectionError("simulated SMTP connection failure")
+    async def _boom(*, to, subject, body, settings):
+        raise ConnectionError("simulated provider connection failure")
 
-    monkeypatch.setattr(email_service.smtplib, "SMTP", _boom)
+    monkeypatch.setattr(email_service, "_send_via_resend", _boom)
 
     with structlog.testing.capture_logs() as captured:
-        email_service.send_password_reset_email(to="user@example.com", token="sometoken123")
+        await email_service.send_password_reset_email(to="user@example.com", token="sometoken123")
 
     log_text = " ".join(str(event) for event in captured)
-    assert "super-secret-smtp-password" not in log_text
+    assert "super-secret-resend-api-key" not in log_text
     assert any(event.get("event") == "email_send_failed" for event in captured)
+
+
+async def test_production_never_attempts_smtp_even_if_smtp_vars_are_set(monkeypatch):
+    """The whole point of this change: even if SMTP_* env vars are still
+    present on production, they must never be used there — only the HTTPS
+    provider (or the safe no-op) is attempted."""
+    from app.core.config import Settings
+    from app.modules.identity.services import email_service
+
+    fake_settings = Settings(
+        database_url="postgresql+asyncpg://x:x@localhost/x",
+        jwt_secret="test-secret-not-real",
+        encryption_key="uLCw_rsupBRTzp7bhuN_iuxiMiXgpxc6DujbFR_sXkM=",
+        environment="production",
+        smtp_host="smtp.gmail.com",
+        smtp_from="noreply@example.com",
+        # email_provider intentionally unset -> should hit the safe
+        # "email_not_configured" branch, never smtplib.
+    )
+    monkeypatch.setattr(email_service, "get_settings", lambda: fake_settings)
+
+    def _smtp_should_never_be_called(*_a, **_k):
+        raise AssertionError("SMTP must never be attempted in production")
+
+    monkeypatch.setattr(email_service.smtplib, "SMTP", _smtp_should_never_be_called)
+
+    # Must return promptly (no 8s SMTP-connect hang) and not raise.
+    await email_service.send_password_reset_email(to="user@example.com", token="sometoken123")

@@ -100,7 +100,7 @@ async def maybe_send_critical_alert(
             logger.warning("alert_dedupe_redis_error", dedupe_key=dedupe_key, exc_info=True)
 
     try:
-        send_security_alert_email(subject=subject, body=body)
+        await send_security_alert_email(subject=subject, body=body)
     except Exception:
         logger.error("alert_email_send_failed", dedupe_key=dedupe_key, exc_info=True)
         return False

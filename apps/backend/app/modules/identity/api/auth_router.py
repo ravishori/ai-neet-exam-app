@@ -137,7 +137,7 @@ async def register(payload: RegisterRequest, request: Request, db: AsyncSession 
         password=payload.password,
     )
     verification_token = await service.request_email_verification(user)
-    send_verification_email(to=user.email, token=verification_token)
+    await send_verification_email(to=user.email, token=verification_token)
 
     # Auto-login on registration — email verification is informational in
     # v1, not a login gate (no SMTP wired up yet, see email_service.py), so
@@ -241,7 +241,7 @@ async def forgot_password(payload: ForgotPasswordRequest, db: AsyncSession = Dep
     service = AuthService(db)
     token = await service.request_password_reset(payload.email)
     if token:
-        send_password_reset_email(to=payload.email, token=token)
+        await send_password_reset_email(to=payload.email, token=token)
     # Always return success — never reveal whether the email exists.
     return envelope(success=True, data={"message": "If that email exists, a reset link has been sent."})
 
