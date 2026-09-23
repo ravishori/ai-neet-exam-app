@@ -124,6 +124,11 @@ async def _row_canon_map(session: AsyncSession, *, where_sql: str, params: dict[
     """Map content_item id → canonical content string for diffing."""
     rows = (
         await session.execute(
+            # B608 false positive: where_sql is always one of 2 hardcoded
+            # SQL-fragment literals from this module's own call sites
+            # (collect_integrity_snapshot), containing only bind
+            # placeholders (:b, :f1, :f1_slug). Actual values are never
+            # interpolated here — they are passed via `params` below.
             text(
                 f"""
                 SELECT ci.id::text AS id,
@@ -138,7 +143,7 @@ async def _row_canon_map(session: AsyncSession, *, where_sql: str, params: dict[
                 WHERE ci.content_type = 'QUESTION'
                   AND ci.deleted_at IS NULL
                   AND ({where_sql})
-                """
+                """  # nosec B608
             ),
             params,
         )
