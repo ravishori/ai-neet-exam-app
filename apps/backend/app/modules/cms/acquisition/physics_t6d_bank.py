@@ -249,7 +249,7 @@ def build_bank() -> list[PilotCandidate]:
 
     # --- Kinematics / Motion in a Straight Line (heavy for TOPIC isolation) ---
     lin = L["kinematic-equations"]
-    for i, (u, a, t) in enumerate([(10, 2, 5), (0, 4, 3), (20, -2, 4), (5, 5, 2), (15, 1, 10), (8, 3, 4), (12, -4, 2), (0, 10, 2)]):
+    for _, (u, a, t) in enumerate([(10, 2, 5), (0, 4, 3), (20, -2, 4), (5, 5, 2), (15, 1, 10), (8, 3, 4), (12, -4, 2), (0, 10, 2)]):
         v = u + a * t
         s = u * t + 0.5 * a * t * t
         wrong = [v + 2, v - 3, -v if v else 1]
@@ -270,7 +270,7 @@ def build_bank() -> list[PilotCandidate]:
         )
 
     lin = L["instantaneous-velocity-acceleration"]
-    for i, (dx, dt) in enumerate([(12, 3), (20, 4), (15, 5), (8, 2)]):
+    for _, (dx, dt) in enumerate([(12, 3), (20, 4), (15, 5), (8, 2)]):
         v = dx / dt
         add(
             _cand(
@@ -289,7 +289,7 @@ def build_bank() -> list[PilotCandidate]:
         )
 
     lin = L["relative-velocity-1d"]
-    for i, (va, vb) in enumerate([(20, 5), (15, 10), (30, 10), (12, 4)]):
+    for _, (va, vb) in enumerate([(20, 5), (15, 10), (30, 10), (12, 4)]):
         vrel = va - vb
         add(
             _cand(
@@ -309,7 +309,7 @@ def build_bank() -> list[PilotCandidate]:
 
     # --- Motion in a Plane ---
     lin = L["projectile-motion"]
-    for i, (u, deg) in enumerate([(20, 30), (10, 45), (40, 30), (20, 45), (30, 60), (50, 45), (15, 30), (25, 45)]):
+    for _, (u, deg) in enumerate([(20, 30), (10, 45), (40, 30), (20, 45), (30, 60), (50, 45), (15, 30), (25, 45)]):
         th = math.radians(deg)
         R = (u * u * math.sin(2 * th)) / G
         # Prefer exact known cases
@@ -342,7 +342,7 @@ def build_bank() -> list[PilotCandidate]:
         )
 
     lin = L["vectors-in-plane-motion"]
-    for i, (ax, ay) in enumerate([(3, 4), (5, 12), (8, 6), (9, 12)]):
+    for _, (ax, ay) in enumerate([(3, 4), (5, 12), (8, 6), (9, 12)]):
         mag = math.hypot(ax, ay)
         add(
             _cand(
@@ -361,7 +361,7 @@ def build_bank() -> list[PilotCandidate]:
         )
 
     lin = L["uniform-circular-motion"]
-    for i, (v, r) in enumerate([(10, 5), (20, 10), (6, 2), (15, 5)]):
+    for _, (v, r) in enumerate([(10, 5), (20, 10), (6, 2), (15, 5)]):
         a = v * v / r
         add(
             _cand(

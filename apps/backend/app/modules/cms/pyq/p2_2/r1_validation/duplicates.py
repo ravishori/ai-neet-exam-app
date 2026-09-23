@@ -31,7 +31,7 @@ def classify_duplicates(
         if h in by_hash:
             dup = "EXACT_DUPLICATE"
         else:
-            for other_id, other_stem in stems_by_id.items():
+            for _, other_stem in stems_by_id.items():
                 if near_duplicate(stem, other_stem):
                     dup = "NEAR_DUPLICATE"
                     break

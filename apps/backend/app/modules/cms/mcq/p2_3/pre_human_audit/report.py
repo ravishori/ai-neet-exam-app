@@ -181,7 +181,7 @@ def write_outputs(
             )
 
     docs_dir.mkdir(parents=True, exist_ok=True)
-    for name, src in paths.items():
+    for _, src in paths.items():
         docs_dir.joinpath(src.name).write_bytes(src.read_bytes())
 
     return {k: str(v) for k, v in paths.items()}

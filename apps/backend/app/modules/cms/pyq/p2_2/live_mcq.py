@@ -291,7 +291,7 @@ async def run_mcq_track(
             if rec.status == "VALIDATED":
                 rec.status = "REJECTED"
             continue
-        for other_h, other_q in stem_hashes.items():
+        for _, other_q in stem_hashes.items():
             if near_duplicate(rec.question, other_q):
                 near_dup += 1
                 rec.errors.append("near_duplicate")

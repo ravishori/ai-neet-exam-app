@@ -753,7 +753,7 @@ class ContentFactorySamplingService:
         rng = random.Random(seed)
         buckets: dict[str, list[uuid.UUID]] = defaultdict(list)
         strata_meta: dict[str, int] = defaultdict(int)
-        for cand, qa, bp in green:
+        for cand, _, bp in green:
             difficulty = (bp.difficulty if bp else "unknown")
             family = str(bp.question_family_id) if bp else "unknown"
             subject = str(bp.subject_id) if bp else "unknown"

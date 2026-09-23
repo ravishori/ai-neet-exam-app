@@ -602,7 +602,7 @@ def detect_foreign_contamination(record: dict[str, Any]) -> dict[str, Any]:
         "confidence": None,
         "rejection_reason": None,
     }
-    for key_name, letter in zip(("option_a", "option_b", "option_c", "option_d"), "abcd"):
+    for key_name, _ in zip(("option_a", "option_b", "option_c", "option_d"), "abcd"):
         opt = record.get(key_name) or ""
         if not opt.strip():
             continue
@@ -1679,7 +1679,7 @@ def analyze_duplicates_p2_1e(records: list[dict[str, Any]]) -> dict[str, Any]:
     cross_paper_legitimate = 0
     truncated_boilerplate = 0
 
-    for h, group in by_hash.items():
+    for _, group in by_hash.items():
         if len(group) < 2:
             continue
         papers = {g.get("source_sha256") for g in group}

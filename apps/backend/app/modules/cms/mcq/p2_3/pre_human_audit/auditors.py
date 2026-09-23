@@ -50,7 +50,7 @@ def audit_options(row: dict[str, Any]) -> dict[str, Any]:
         issues.append("duplicate_options")
         quality, severity = "BAD", "CRITICAL"
     else:
-        for i, a in enumerate("ABCD"):
+        for _, a in enumerate("ABCD"):
             for b in "ABCD":
                 if a >= b:
                     continue

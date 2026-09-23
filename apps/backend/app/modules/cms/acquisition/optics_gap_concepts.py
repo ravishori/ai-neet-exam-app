@@ -86,7 +86,7 @@ async def ensure_optics_gap_concepts(session: AsyncSession) -> dict[str, Any]:
     optics_topics = BATCH_A_HIERARCHY["optics"]
     wanted: dict[str, tuple[str, str, str, str]] = {}
     # topic_code -> list of gap concepts defined there
-    for topic_code, topic_name, concepts in optics_topics:
+    for topic_code, _, concepts in optics_topics:
         for concept_order, (concept_code, concept_name, summary) in enumerate(concepts):
             if concept_code in OPTICS_GAP_CONCEPT_CODES:
                 wanted[concept_code] = (topic_code, concept_name, summary, concept_order)

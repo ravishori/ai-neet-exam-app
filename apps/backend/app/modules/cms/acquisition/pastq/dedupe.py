@@ -20,7 +20,7 @@ def classify_duplicates(records: list[dict[str, Any]]) -> dict[str, Any]:
         "POTENTIAL_DUPLICATE": 0,
         "DUPLICATE_EXISTING": 0,
     }
-    for h, idxs in by_norm.items():
+    for _, idxs in by_norm.items():
         if len(idxs) == 1:
             records[idxs[0]]["quality"]["duplicate_class"] = "UNIQUE"
             counts["UNIQUE"] += 1
