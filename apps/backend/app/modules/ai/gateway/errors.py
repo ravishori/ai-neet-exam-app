@@ -30,7 +30,7 @@ def classify_http_error(provider: str, status: int | None, body: str = "", exc: 
         return ProviderError(PROVIDER_BLOCKED, "Provider billing/credits blocked", provider=provider, retryable=False)
     if status == 429 or "rate limit" in text or ("quota" in text and "exceed" in text):
         return ProviderError(PROVIDER_RATE_LIMITED, "Provider rate limited", provider=provider, retryable=True)
-    if isinstance(exc, (httpx.TimeoutException, TimeoutError)) or "timeout" in text:
+    if isinstance(exc, httpx.TimeoutException | TimeoutError) or "timeout" in text:
         return ProviderError(PROVIDER_TIMEOUT, "Provider request timed out", provider=provider, retryable=True)
     if status == 400 or "invalid" in text:
         return ProviderError(PROVIDER_INVALID_RESPONSE, "Provider rejected request or returned invalid payload", provider=provider)
