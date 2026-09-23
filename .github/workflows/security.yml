@@ -173,9 +173,7 @@ jobs:
         fi
 
         FOUND_IDS=$(jq -r '
-          [.vulnerabilities[].via[]? | select(type=="object") | (.url // "")]
-          | map(capture("(?<id>GHSA-[a-zA-Z0-9-]+)")?.id // empty)
-          | map(select(. != ""))
+          [.vulnerabilities[].via[]? | select(type=="object") | (.url // "") | scan("GHSA-[a-zA-Z0-9-]+")]
           | unique
           | .[]
         ' npm-audit.json)
