@@ -11,7 +11,7 @@ import asyncio
 import hashlib
 import json
 import uuid
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
@@ -355,7 +355,7 @@ async def _main() -> int:
 
         meta = {
             "database": dbname,
-            "committed_at": datetime.now(timezone.utc).isoformat(),
+            "committed_at": datetime.now(UTC).isoformat(),
             "transaction": transaction,
             "rollback": rollback,
             "actor_id": str(user.id),

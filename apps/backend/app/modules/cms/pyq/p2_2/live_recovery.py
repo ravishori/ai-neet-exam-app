@@ -2,16 +2,14 @@
 
 from __future__ import annotations
 
-import asyncio
-import json
 from typing import Any
 
 from app.modules.cms.pyq.p2_2.budget import BudgetGuard
 from app.modules.cms.pyq.p2_2.cache import RecoveryCache
 from app.modules.cms.pyq.p2_2.consensus import compare_providers
 from app.modules.cms.pyq.p2_2.deterministic import attempt_deterministic_recovery
-from app.modules.cms.pyq.p2_2.evidence import build_evidence_package, canonical_hash
-from app.modules.cms.pyq.p2_2.providers import AIRecoveryProvider, GatewayRecoveryProvider
+from app.modules.cms.pyq.p2_2.evidence import canonical_hash
+from app.modules.cms.pyq.p2_2.providers import AIRecoveryProvider
 from app.modules.cms.pyq.p2_2.schemas import AIRecoveryOutput, TriageResult
 from app.modules.cms.pyq.p2_2.validation import validate_against_source
 

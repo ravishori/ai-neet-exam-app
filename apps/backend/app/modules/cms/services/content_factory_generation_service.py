@@ -22,13 +22,12 @@ from sqlalchemy.exc import IntegrityError
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
 
+# ContentVersion FK → knowledge.knowledge_units requires the target table on metadata.
+import app.modules.knowledge.models  # noqa: F401
 from app.core.config import get_settings
 from app.core.exceptions import AppError, NotFoundError
 from app.core.logging import get_logger
 from app.modules.academic.models import Chapter, Concept, Topic
-from app.modules.ingestion.services.ncert_canonical_source import (
-    assert_blueprint_ncert_source,
-)
 from app.modules.ai.gateway.base import (
     PROVIDER_AUTH_FAILED,
     PROVIDER_BLOCKED,
@@ -43,9 +42,6 @@ from app.modules.cms.models.content_factory_planning import QuestionBlueprint
 from app.modules.cms.models.content_item import ContentItem
 from app.modules.cms.models.content_version import ContentVersion
 from app.modules.cms.models.generation_candidate import GenerationCandidate
-
-# ContentVersion FK → knowledge.knowledge_units requires the target table on metadata.
-import app.modules.knowledge.models  # noqa: F401
 from app.modules.cms.prompts.factory_mcq import (
     AGENT_TYPE,
     GENERATOR_VERSION,
@@ -77,13 +73,16 @@ from app.modules.cms.services.mcq_llm_provider import (
     report_error_alias,
 )
 from app.modules.cms.services.ncert_claim_grounding import validate_ncert_claim_grounding
-from app.modules.cms.services.retrieval_leakage_filter import detect_retrieval_leakage
 from app.modules.cms.services.ncert_generation_evidence import (
     NcertEvidencePack,
     parse_ku_id,
     resolve_ncert_evidence_pack,
 )
+from app.modules.cms.services.retrieval_leakage_filter import detect_retrieval_leakage
 from app.modules.cms.syllabus import assert_blueprint_neet_syllabus_scope
+from app.modules.ingestion.services.ncert_canonical_source import (
+    assert_blueprint_ncert_source,
+)
 from app.modules.knowledge.models.knowledge_unit import KnowledgeUnit
 from app.modules.system.models.audit_log import AuditLog
 from app.modules.system.repositories.audit_repository import AuditRepository

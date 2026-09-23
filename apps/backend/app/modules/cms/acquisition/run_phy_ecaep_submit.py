@@ -9,7 +9,7 @@ import asyncio
 import hashlib
 import json
 import uuid
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
@@ -257,7 +257,7 @@ async def _main() -> int:
                         "id": str(item_id),
                         "previous_status": before["status"],
                         "new_status": after["status"],
-                        "timestamp": datetime.now(timezone.utc).isoformat(),
+                        "timestamp": datetime.now(UTC).isoformat(),
                         "actor_id": str(user.id),
                         "validation": "PASS",
                         "audit_id": str(audit.id),
@@ -318,7 +318,7 @@ def _write_doc(data: dict) -> None:
     a("# PHY-01–PHY-10 ECAEP Lifecycle Audit — WAVE-P0-12")
     a("")
     a(f"**Database:** `{data['database']}`  ")
-    a(f"**Generated:** `{datetime.now(timezone.utc).isoformat()}`  ")
+    a(f"**Generated:** `{datetime.now(UTC).isoformat()}`  ")
     a(f"**Stopped at:** `{data.get('stopped')}`  ")
     a("")
     a("**Human action required:** Yes — approve / request_changes / publish must be performed by authorized humans. This wave does **not** simulate approval or publication.")

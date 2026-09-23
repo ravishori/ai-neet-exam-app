@@ -12,9 +12,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
 
-from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
-from sqlalchemy.orm import selectinload
 
 from app.core.logging import get_logger
 from app.modules.cms.acquisition.gemini_jsonl_draft_importer import (
@@ -32,7 +30,6 @@ from app.modules.cms.acquisition.gemini_jsonl_draft_importer import (
     load_jsonl,
     validate_gemini_record,
 )
-from app.modules.cms.models import ContentItem
 
 logger = get_logger("cms.acquisition.gemini_jsonl.supersede")
 

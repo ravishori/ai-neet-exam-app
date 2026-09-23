@@ -31,7 +31,7 @@ from app.modules.cms.acquisition.physics_t6f2_constants import (
     LEGACY_FINGERPRINT_EXPECTED,
     T6D_BATCH_ID,
 )
-from app.modules.cms.models import ContentItem, ContentVersion
+from app.modules.cms.models import ContentItem
 from app.modules.cms.services.content_workflow_service import ContentWorkflowService
 from app.modules.cms.services.publication_gates import evaluate_question_publication_gates
 

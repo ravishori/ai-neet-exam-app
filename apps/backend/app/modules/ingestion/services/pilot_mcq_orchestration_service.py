@@ -24,7 +24,6 @@ from app.modules.ingestion.services.chapter_content_preflight import (
 )
 from app.modules.ingestion.services.ingestion_pipeline_service import IngestionPipelineService
 from app.modules.ingestion.services.source_document_resolver import resolve_source_document_path, verify_source_checksum
-from app.modules.ingestion.services.study_material_academic_registry import PILOT_SOURCE_RELATIVE_PATHS
 from app.modules.knowledge.models import KnowledgeUnit
 
 logger = get_logger("ingestion.pilot")

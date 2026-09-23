@@ -8,6 +8,8 @@ prove the pipeline; the rest exist as chapters only, ready for Sprint 3's
 ECAEP content authoring to fill in.
 """
 
+from datetime import UTC
+
 from sqlalchemy import select, text
 from sqlalchemy.ext.asyncio import AsyncSession
 
@@ -589,7 +591,7 @@ async def seed_academic(session: AsyncSession) -> None:
             logger.info("biomolecules_ownership_reconciled", from_subject="ZOOLOGY", to_subject="BOTANY")
         elif zoo_bio and bot_bio and zoo_bio.id != bot_bio.id:
             # Prefer the row that already has content; soft-delete the empty stub.
-            from datetime import datetime, timezone
+            from datetime import datetime
 
             zoo_q = (
                 await session.execute(
@@ -617,7 +619,7 @@ async def seed_academic(session: AsyncSession) -> None:
                     {"cid": bot_bio.id},
                 )
             ).scalar_one()
-            now = datetime.now(timezone.utc)
+            now = datetime.now(UTC)
             if zoo_q == 0 and bot_q >= 0:
                 zoo_bio.deleted_at = now
                 bot_bio.class_level = "11"

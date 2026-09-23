@@ -33,7 +33,7 @@ class WeeklyAssessmentCreateRequest(BaseModel):
     blueprint: list[WeeklyBlueprintRow] = Field(min_length=1, max_length=MAX_BLUEPRINT_ROWS)
 
     @model_validator(mode="after")
-    def _validate(self) -> "WeeklyAssessmentCreateRequest":
+    def _validate(self) -> WeeklyAssessmentCreateRequest:
         if self.ends_at <= self.starts_at:
             raise ValueError("ends_at must be after starts_at")
         total = sum(row.question_count for row in self.blueprint)

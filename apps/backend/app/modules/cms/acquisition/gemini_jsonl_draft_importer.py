@@ -1072,10 +1072,10 @@ async def async_main(argv: list[str] | None = None) -> int:
         print(f"ERROR: input not found: {args.input}", file=sys.stderr)
         return 2
 
-    from app.core.database import AsyncSessionLocal
     import app.modules.academic.models  # noqa: F401
     import app.modules.cms.models  # noqa: F401
     import app.modules.knowledge.models  # noqa: F401
+    from app.core.database import AsyncSessionLocal
 
     async with AsyncSessionLocal() as session:
         author_id = await _resolve_author_id(session)

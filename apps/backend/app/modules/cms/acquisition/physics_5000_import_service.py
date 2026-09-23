@@ -14,7 +14,6 @@ import sqlite3
 import uuid
 import xml.etree.ElementTree as ET
 from dataclasses import dataclass, field
-from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any, Literal
 
@@ -25,16 +24,13 @@ from sqlalchemy.orm import selectinload
 from app.core.exceptions import AppError
 from app.core.logging import get_logger
 from app.modules.cms.acquisition.physics_5000_mapping import (
-    BATCH_ID,
-    LEGACY_SOURCE_REF,
     MODEL_USED,
     PROMPT_VERSION,
     build_provenance_tags,
+    diagram_sha256,
     legacy_slug,
     legacy_to_question_body,
     stem_hash,
-    diagram_sha256,
-    LEGACY_CHAPTER_MAP,
 )
 from app.modules.cms.models import ContentItem
 from app.modules.cms.schemas.content_bodies import assert_body_publishable

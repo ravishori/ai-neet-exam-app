@@ -25,7 +25,6 @@ from __future__ import annotations
 import math
 from dataclasses import dataclass
 
-
 TOTAL_TOLERANCE_PCT = 0.01
 """How far the sum of weightages may drift from 100 before we reject."""
 

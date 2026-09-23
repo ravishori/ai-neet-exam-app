@@ -7,8 +7,9 @@ from __future__ import annotations
 
 import hashlib
 import random
+from collections.abc import Sequence
 from dataclasses import dataclass, field
-from typing import Any, Literal, Sequence
+from typing import Any, Literal
 
 SelectionBucket = Literal[
     "VERY_HIGH_SIMILARITY",
@@ -35,7 +36,7 @@ class PairKey:
     b: str
 
     @staticmethod
-    def of(x: str, y: str) -> "PairKey":
+    def of(x: str, y: str) -> PairKey:
         return PairKey(x, y) if x < y else PairKey(y, x)
 
 

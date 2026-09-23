@@ -3,8 +3,9 @@
 from __future__ import annotations
 
 from collections import defaultdict
+from collections.abc import Sequence
 from dataclasses import dataclass, field
-from typing import Any, Literal, Sequence
+from typing import Any, Literal
 
 from app.modules.cms.acquisition.mmf.normalize import candidate_fingerprint
 from app.modules.cms.acquisition.mmf.semantic_dedupe import cosine_similarity

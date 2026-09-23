@@ -9,7 +9,7 @@ from __future__ import annotations
 import asyncio
 from collections.abc import Awaitable, Callable
 from dataclasses import dataclass
-from typing import Any, TypeVar
+from typing import TypeVar
 
 from app.modules.cms.acquisition.mmf.contract_v2 import PROVIDER_CAPS, TOTAL_CAP
 from app.modules.cms.acquisition.mmf.reliability import (

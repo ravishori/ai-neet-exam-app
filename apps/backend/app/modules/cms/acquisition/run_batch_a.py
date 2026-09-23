@@ -10,21 +10,19 @@ from __future__ import annotations
 
 import asyncio
 import json
-import sys
 from pathlib import Path
 
 from sqlalchemy import select, text
 from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker, create_async_engine
 
-from app.modules.cms.acquisition.batch_a_acquisition_service import BatchAAcquisitionService
-from app.modules.identity.models.user import User
+import app.modules.academic.models  # noqa: F401
+import app.modules.cms.models  # noqa: F401
 
 # Ensure FK metadata for content_versions.knowledge_unit_id is registered.
 import app.modules.knowledge.models  # noqa: F401
-import app.modules.academic.models  # noqa: F401
-import app.modules.cms.models  # noqa: F401
 import app.modules.system.models  # noqa: F401
-
+from app.modules.cms.acquisition.batch_a_acquisition_service import BatchAAcquisitionService
+from app.modules.identity.models.user import User
 
 ALLOWED_DB_NAMES = {"trinetra_db"}
 

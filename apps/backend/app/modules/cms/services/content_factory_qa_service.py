@@ -8,7 +8,7 @@ from collections import defaultdict
 from datetime import UTC, datetime
 from typing import Any
 
-from sqlalchemy import func, select, update
+from sqlalchemy import func, select
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
 
@@ -16,7 +16,6 @@ from app.core.config import get_settings
 from app.core.exceptions import AppError, NotFoundError
 from app.core.logging import get_logger
 from app.modules.academic.models import Chapter, Concept, Topic
-from app.modules.cms.models.content_factory import ContentBatch
 from app.modules.cms.models.content_factory_planning import QuestionBlueprint
 from app.modules.cms.models.content_item import ContentItem
 from app.modules.cms.models.content_version import ContentVersion
@@ -24,7 +23,11 @@ from app.modules.cms.models.factory_qa import QA_VERSION_V1, QAResult, ReviewSam
 from app.modules.cms.models.generation_candidate import GenerationCandidate
 from app.modules.cms.repositories.content_factory_planning_repository import ContentFactoryPlanningRepository
 from app.modules.cms.repositories.content_factory_repository import ContentFactoryRepository
-from app.modules.cms.schemas.content_factory import GenerationJobCreateRequest, GenerationRunCompleteRequest, GenerationRunCreateRequest
+from app.modules.cms.schemas.content_factory import (
+    GenerationJobCreateRequest,
+    GenerationRunCompleteRequest,
+    GenerationRunCreateRequest,
+)
 from app.modules.cms.services.content_factory_service import ContentFactoryService
 from app.modules.cms.services.factory_candidate_validation import stem_hash
 from app.modules.cms.services.factory_dedupe_service import FactoryDedupeService

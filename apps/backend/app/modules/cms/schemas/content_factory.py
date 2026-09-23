@@ -27,7 +27,7 @@ class ContentBatchCreateRequest(BaseModel):
     source_tier: str = "human"
     target_count: int = Field(ge=0, le=100_000, default=0)
     # Optional initial job created in the same transaction.
-    initial_job: "InitialJobRequest | None" = None
+    initial_job: InitialJobRequest | None = None
 
     @field_validator("batch_key")
     @classmethod

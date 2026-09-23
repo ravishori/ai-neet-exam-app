@@ -61,14 +61,13 @@ def main(argv: list[str] | None = None) -> int:
 async def _import_async(args, result: dict) -> int:
     from sqlalchemy import select
 
+    # ContentVersion FK → knowledge.knowledge_units requires metadata registration.
+    import app.modules.knowledge.models  # noqa: F401
     from app.core.database import AsyncSessionLocal
     from app.modules.cms.acquisition.pastq.dedupe import mark_existing_cms_duplicates
     from app.modules.cms.acquisition.pastq.importer import import_pastq_records, load_existing_stem_hashes
     from app.modules.cms.services.factory_candidate_validation import stem_hash
     from app.modules.identity.models.user import User
-
-    # ContentVersion FK → knowledge.knowledge_units requires metadata registration.
-    import app.modules.knowledge.models  # noqa: F401
 
     records = list(result["records"])
     if args.pilot:

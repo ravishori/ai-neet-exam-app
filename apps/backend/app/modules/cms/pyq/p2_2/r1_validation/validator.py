@@ -7,7 +7,7 @@ import re
 from typing import Any
 
 from app.core.config import Settings, get_settings
-from app.modules.ai.gateway.base import AIProvider, GenerateRequest, ProviderError
+from app.modules.ai.gateway.base import AIProvider, GenerateRequest
 from app.modules.ai.gateway.openai_provider import OpenAIProvider
 from app.modules.ai.gateway.pricing import estimate_cost
 from app.modules.ai.gateway.registry import build_registry_from_settings

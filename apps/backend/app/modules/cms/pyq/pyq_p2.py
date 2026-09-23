@@ -16,9 +16,8 @@ from typing import Any
 import fitz
 
 from app.modules.cms.pyq.pyq_extraction import (
-    AnswerStatus,
-    OPTION_START_RE,
     QUESTION_START_RE,
+    AnswerStatus,
     ValidationStatus,
     authoritative_answers,
     build_tagged_corpus,

@@ -14,7 +14,6 @@ from app.modules.cms.mcq.p2_3.duplicates import near_duplicate
 from app.modules.cms.mcq.p2_3.pre_human_audit.numerical import audit_numerical
 from app.modules.cms.mcq.p2_3.pre_human_audit.schemas import empty_audit_record
 from app.modules.cms.services.factory_candidate_validation import normalize_stem, stem_hash
-from app.core.config import get_settings
 
 _AR_PATTERNS = (
     re.compile(r"assertion\s*[aA]?\s*:?\s*(.+?)(?:reason\s*[rR]|$)", re.I | re.S),

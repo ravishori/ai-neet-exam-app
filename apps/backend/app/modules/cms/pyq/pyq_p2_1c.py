@@ -2,11 +2,10 @@
 
 from __future__ import annotations
 
-import hashlib
 import json
 import re
 import zipfile
-from collections import Counter, defaultdict
+from collections import Counter
 from dataclasses import asdict, dataclass, field
 from datetime import UTC, datetime
 from pathlib import Path
@@ -14,6 +13,7 @@ from typing import Any
 
 import fitz
 
+from app.modules.cms.pyq.pyq_discovery import normalized_question_hash
 from app.modules.cms.pyq.pyq_extraction import (
     AnswerStatus,
     ValidationStatus,
@@ -21,7 +21,6 @@ from app.modules.cms.pyq.pyq_extraction import (
     question_hash,
     segment_questions_from_text,
 )
-from app.modules.cms.pyq.pyq_discovery import normalized_question_hash
 from app.modules.cms.pyq.pyq_geometry import (
     COLUMN_MARKER_RE,
     LAYOUT_MARKER_RE,
@@ -30,11 +29,11 @@ from app.modules.cms.pyq.pyq_geometry import (
     detect_cross_column_contamination,
     run_automated_quality_checks,
 )
-from app.modules.cms.pyq.pyq_ocr import OCR_FAILED, OCR_LOW_CONFIDENCE, OCR_SUCCESS, NEEDS_REVIEW
+from app.modules.cms.pyq.pyq_ocr import NEEDS_REVIEW, OCR_FAILED, OCR_LOW_CONFIDENCE, OCR_SUCCESS
 from app.modules.cms.pyq.pyq_p2_1 import _entry_from_paper_meta, select_scanned_paper_dirs, sha256_file
 from app.modules.cms.pyq.pyq_p2_1b import (
-    INSTRUCTION_MARKERS,
     DIAGRAM_CUES,
+    INSTRUCTION_MARKERS,
     annotate_rough_work_pages,
     canonical_questions_hash,
     deterministic_staging_id,

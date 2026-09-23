@@ -5,7 +5,7 @@ from __future__ import annotations
 import re
 from typing import Any
 
-from app.modules.cms.pyq.p2_2.schemas import TriageCategory, TriageResult
+from app.modules.cms.pyq.p2_2.schemas import TriageResult
 
 DIAGRAM_CUES = ("figure", "shown in", "diagram", "circuit is", "as shown", "graph", "plot")
 CHEM_PATTERN = re.compile(r"(CH[,\d]|COOH|NH[,\d]|\[|\]|→|⇌)", re.I)

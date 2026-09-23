@@ -26,9 +26,9 @@ from app.modules.assessment.api.assessment_router import router as assessment_ro
 from app.modules.assessment.api.weekly_assessment_router import router as weekly_assessment_router
 from app.modules.assessment.api.weekly_revision_router import router as weekly_revision_router
 from app.modules.cms.api.cms_router import router as cms_router
+from app.modules.cms.api.content_factory_planning_router import router as content_factory_planning_router
 from app.modules.cms.api.content_factory_router import router as content_factory_router
 from app.modules.cms.api.human_gold_sandbox_router import router as human_gold_sandbox_router
-from app.modules.cms.api.content_factory_planning_router import router as content_factory_planning_router
 from app.modules.cms.api.search_router import router as search_router
 from app.modules.commerce.api.commerce_router import router as commerce_router
 from app.modules.identity.api.auth_router import router as auth_router

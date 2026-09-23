@@ -37,7 +37,7 @@ class WeeklyAssessment(Base, AuditedBase):
     difficulty_distribution: Mapped[dict | None] = mapped_column(JSONB, nullable=True)
     published: Mapped[bool] = mapped_column(Boolean, default=False, nullable=False)
 
-    blueprints: Mapped[list["WeeklyAssessmentBlueprint"]] = relationship(
+    blueprints: Mapped[list[WeeklyAssessmentBlueprint]] = relationship(
         back_populates="weekly_assessment",
         order_by="WeeklyAssessmentBlueprint.order_no",
         cascade="all, delete-orphan",

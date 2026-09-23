@@ -8,8 +8,9 @@ from __future__ import annotations
 
 import math
 from abc import ABC, abstractmethod
+from collections.abc import Sequence
 from dataclasses import dataclass, field
-from typing import Any, Literal, Sequence
+from typing import Any, Literal
 
 from app.modules.cms.acquisition.mmf.normalize import normalize_text
 from app.modules.cms.acquisition.mmf.schemas import CandidateRecord, CandidateStatus

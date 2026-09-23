@@ -102,7 +102,7 @@ class ContentBatch(Base, AuditedBase):
     qa_pass_count: Mapped[int] = mapped_column(Integer, nullable=False, default=0)
     status: Mapped[str] = mapped_column(String(30), nullable=False, default="CREATED")
 
-    jobs: Mapped[list["GenerationJob"]] = relationship(
+    jobs: Mapped[list[GenerationJob]] = relationship(
         back_populates="batch",
         cascade="all, delete-orphan",
         order_by="GenerationJob.created_at",
@@ -143,7 +143,7 @@ class GenerationJob(Base, AuditedBase):
     blueprint_version: Mapped[int | None] = mapped_column(Integer, nullable=True)
 
     batch: Mapped[ContentBatch] = relationship(back_populates="jobs")
-    runs: Mapped[list["GenerationRun"]] = relationship(
+    runs: Mapped[list[GenerationRun]] = relationship(
         back_populates="job",
         cascade="all, delete-orphan",
         order_by="GenerationRun.attempt_number",

@@ -11,10 +11,8 @@ from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
-import fitz
-
 from app.core.config import get_settings
-from app.modules.cms.mcq.p2_3.pipeline import _load_ncert_excerpt, load_records, p2_2_mcq_path
+from app.modules.cms.mcq.p2_3.pipeline import _load_ncert_excerpt
 from app.modules.cms.mcq.p2_3.provider_routing import (
     cross_validator_for,
     is_same_provider_validation,
@@ -71,8 +69,9 @@ def record_to_dict(rec: McqRecord) -> dict[str, Any]:
 
 
 def dict_to_record(d: dict[str, Any]) -> McqRecord:
-    from app.modules.cms.mcq.p2_3.pipeline import load_records
     import tempfile
+
+    from app.modules.cms.mcq.p2_3.pipeline import load_records
 
     tmp = Path(tempfile.mkdtemp()) / "one.jsonl"
     tmp.write_text(json.dumps(d) + "\n", encoding="utf-8")
@@ -208,7 +207,7 @@ def write_r1_reports(
         f"- Independent validation: **{es.get('independently_validated')}/{es.get('qa_pass')}** ({es.get('independent_validation_rate')})",
         f"- AI READY: **{es.get('ready')}** (rate {es.get('ai_ready_rate')} of QA PASS)",
         f"- Previously blocked revalidated: **{report.get('revalidated_count', 0)}**",
-        f"- Production DB writes: **0**",
+        "- Production DB writes: **0**",
         "",
         "## Cost",
         f"- R1 validation: **₹{cost_a.get('r1_validation_cost_inr')}**",

@@ -29,7 +29,6 @@ from app.modules.cms.acquisition.physics_t6d_constants import (
 from app.modules.cms.services.numerical_validation import classify_and_verify
 from app.modules.cms.services.publication_gates import build_section_ncert_evidence
 
-
 Difficulty = Literal["easy", "medium", "hard"]
 G = 10.0  # m/s² — NEET-friendly convention used consistently in numericals
 

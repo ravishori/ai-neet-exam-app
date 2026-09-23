@@ -6,7 +6,8 @@ Never logs or returns secrets. Does not route through chat/completions.
 
 from __future__ import annotations
 
-from typing import Any, Sequence
+from collections.abc import Sequence
+from typing import Any
 
 import httpx
 

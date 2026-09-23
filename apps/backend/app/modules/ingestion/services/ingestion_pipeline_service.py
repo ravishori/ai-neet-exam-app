@@ -31,8 +31,8 @@ from app.modules.ingestion.services.pdf_extraction_service import (
 from app.modules.ingestion.services.source_document_resolver import resolve_source_document_path, verify_source_checksum
 from app.modules.ingestion.services.visual_asset_detection_service import crop_and_store, detect_visual_assets
 from app.modules.knowledge.models import KnowledgeUnit
-from app.modules.knowledge.services.knowledge_rendering import render_facts_for_prompt
 from app.modules.knowledge.services.deterministic_structuring_service import DeterministicStructuringService
+from app.modules.knowledge.services.knowledge_rendering import render_facts_for_prompt
 from app.modules.knowledge.services.knowledge_structuring_service import KnowledgeStructuringService
 
 logger = get_logger("ingestion")

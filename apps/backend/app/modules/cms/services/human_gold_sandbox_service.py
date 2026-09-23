@@ -18,11 +18,13 @@ from app.core.exceptions import AppError, NotFoundError
 from app.core.logging import get_logger
 from app.modules.cms.mcq.p2_3.human_gold_gate.human_review import (
     human_review_status as gate_human_status,
+)
+from app.modules.cms.mcq.p2_3.human_gold_gate.human_review import (
     is_incomplete_human_value,
 )
 from app.modules.cms.mcq.p2_3.human_gold_gate.loader import protected_artifact_checksums, verify_protected_artifacts
-from app.modules.cms.mcq.p2_3.human_gold_gate.pipeline import report_human_gold, validate_human_gold
-from app.modules.cms.mcq.p2_3.human_gold_gate.schemas import HUMAN_REVIEW_REQUIRED_FIELDS, REVIEW_CSV_COLUMNS
+from app.modules.cms.mcq.p2_3.human_gold_gate.pipeline import report_human_gold
+from app.modules.cms.mcq.p2_3.human_gold_gate.schemas import REVIEW_CSV_COLUMNS
 from app.modules.cms.mcq.p2_3.pre_human_audit.auditors import audit_one_row
 from app.modules.cms.mcq.p2_3.pre_human_audit.schemas import PRIORITY_RANK
 from app.modules.cms.models.review_sandbox import (
@@ -33,7 +35,12 @@ from app.modules.cms.models.review_sandbox import (
     ReviewSandboxSession,
     ReviewSandboxUpload,
 )
-from app.modules.cms.services.human_gold_sandbox_csv import escape_csv_formula, parse_csv, sanitize_filename, sha256_bytes, validate_upload
+from app.modules.cms.services.human_gold_sandbox_csv import (
+    escape_csv_formula,
+    parse_csv,
+    sanitize_filename,
+    validate_upload,
+)
 
 logger = get_logger("human_gold_sandbox")
 
