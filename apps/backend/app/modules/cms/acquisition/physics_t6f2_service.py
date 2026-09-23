@@ -157,7 +157,6 @@ class PhysicsT6F2PublishService:
             gate_ok = report.passed and not any(r.startswith("batch:") for r in report.reasons)
             if gate_ok:
                 eligible_ids.append(str(item.id))
-                opts = body.get("options") or []
                 correct = body.get("correct_option")
                 if correct:
                     pos[str(correct)] += 1

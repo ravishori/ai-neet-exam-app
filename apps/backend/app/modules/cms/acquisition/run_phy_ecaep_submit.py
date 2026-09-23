@@ -276,7 +276,6 @@ async def _main() -> int:
         batch_after = await count_batch_a_by_status(session)
 
         # Metrics for PHY pilot only
-        phy_ids = {e["id"] for e in PHY_SME_EDITS}
         phy_status: dict[str, int] = {}
         for edit in PHY_SME_EDITS:
             fp = await fingerprint(session, edit["id"])

@@ -406,7 +406,6 @@ def _pilot_stats(records: list[RecoveryRecord]) -> dict[str, Any]:
             stats["human_review"] += 1
         if r.verification_status == "FAILED":
             stats["false_recovery"] += 1
-    total = len(records) or 1
     unanimous = sum(1 for r in records if r.consensus == "UNANIMOUS")
     with_consensus = sum(1 for r in records if r.consensus in ("UNANIMOUS", "MAJORITY", "DISAGREEMENT"))
     agreement_pct = round(100.0 * unanimous / with_consensus, 1) if with_consensus else 0.0

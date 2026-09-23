@@ -2170,7 +2170,6 @@ def run_p2_1e_r3_from_r2_words(
         r2_corpus=r2_corpus,
         page_states=page_states,
     )
-    corpus1 = r2_corpus
     diagnostics1 = r2_manifest.get("page_geometry_diagnostics") or []
 
     wh1 = canonical_words_hash(words_records)

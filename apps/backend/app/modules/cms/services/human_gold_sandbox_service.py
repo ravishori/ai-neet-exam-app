@@ -185,7 +185,6 @@ class HumanGoldSandboxService:
         await self.session.flush()
         upload.session_id = sess.id
 
-        sample_stems = {r["question_id"]: r["question"] for r in rows}
         for row in rows:
             q = ReviewSandboxQuestion(
                 session_id=sess.id,

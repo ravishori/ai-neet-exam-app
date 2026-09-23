@@ -249,7 +249,6 @@ def revalidate_missing_options(
 
                 full_text = build_tagged_corpus(extract_pages(zf.read(meta["source_file"])))
             elif sha in ocr_by_sha:
-                pages = ocr_by_sha[sha].get("pages") or []
                 # Load raw text from companion pages file if present
                 text_path = paper_dir / "ocr.pages.p2_1.jsonl"
                 if text_path.exists():
