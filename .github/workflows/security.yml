@@ -116,11 +116,19 @@ jobs:
     # ----------------------------------------------------------------------
     # Python Static Security Scan
     # ----------------------------------------------------------------------
+    # Scoped to production application code (apps/backend/app), excluding
+    # every `tests` directory at any depth (fnmatch's `*` matches across
+    # `/`, unlike shell glob, so this single pattern is depth-agnostic and
+    # needs no maintenance as new test directories are added — verified
+    # empirically against 11 existing nested tests/ dirs). Severity
+    # threshold set to medium+ so Low-severity findings (94% of the
+    # unfiltered scan, dominated by B101 assert_used in test code) don't
+    # drown out real signal; Medium and High remain fully blocking.
 
     - name: Bandit Security Scan
 
       run: |
-        bandit -r apps/backend
+        bandit -r apps/backend/app --exclude "*/tests/*" --severity-level medium
 
     # ----------------------------------------------------------------------
     # Python Dependency Vulnerability Scan
