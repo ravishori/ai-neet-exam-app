@@ -61,15 +61,12 @@ def _probe_pdf(path: Path) -> tuple[int | None, bool, str, int, bool, list[str]]
                     image_hint = True
             if chars < 80 and image_hint:
                 status = "SCANNED_OR_EMPTY_TEXT"
-                method = "pymupdf_text+ocr_required"
                 notes.append("little_or_no_extractable_text")
             elif chars < 80:
                 status = "LOW_TEXT"
-                method = "pymupdf_text"
                 notes.append("low_text_density")
             else:
                 status = "TEXT_EXTRACTABLE"
-                method = "pymupdf_text"
             return n, True, status, chars, image_hint, notes
         finally:
             doc.close()
