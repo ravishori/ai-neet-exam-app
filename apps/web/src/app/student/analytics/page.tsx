@@ -211,7 +211,7 @@ export default function StudentAnalyticsPage() {
           </div>
           <Link
             href="/student/study-plan"
-            className="inline-flex h-9 items-center justify-center rounded-lg ai-gradient px-4 text-sm font-medium text-white shadow-md"
+            className="inline-flex h-9 items-center justify-center rounded-lg ai-gradient ai-gradient-text px-4 text-sm font-medium text-white shadow-md"
           >
             Open study coach
           </Link>

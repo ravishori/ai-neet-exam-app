@@ -408,7 +408,7 @@ export function QuestionPanel({
       )}
 
       {isSubmitted && (
-        <div className="flex flex-col gap-4 border-t border-border/50 pt-4">
+        <div className="flex flex-col gap-4 border-t border-border/50 pt-4 motion-safe:animate-fade-in">
           <div className="flex flex-wrap items-center gap-3 text-sm">
             <Badge variant={question.is_correct ? "secondary" : "destructive"}>
               {question.is_correct === null ? "Skipped" : question.is_correct ? "Correct" : "Incorrect"}
