@@ -22,6 +22,7 @@ import {
 } from "@/components/ds";
 import { assessmentApi } from "@/features/assessment/api";
 import { isNoQuestionsAvailable } from "@/features/assessment/thin-content";
+import { AccessGate } from "@/features/commerce/access-gate";
 import {
   PRACTICE_ARENA_START_TEST_ID,
   practiceStartMessage,
@@ -138,6 +139,7 @@ export default function PracticePage() {
     : "Any published question (full pool)";
 
   return (
+    <AccessGate>
     <StudentPage width="lg" className="gap-7 lg:gap-9">
       {/* Hero — one dominant start action */}
       <section className="page-atmosphere relative overflow-hidden rounded-3xl border border-border/50 px-4 py-5 sm:px-8 sm:py-8">
@@ -384,5 +386,6 @@ export default function PracticePage() {
         </SurfaceCard>
       </section>
     </StudentPage>
+    </AccessGate>
   );
 }

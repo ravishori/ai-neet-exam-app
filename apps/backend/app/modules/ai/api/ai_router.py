@@ -13,11 +13,16 @@ from app.modules.ai.services.question_generator_service import QuestionGenerator
 from app.modules.ai.services.study_planner_service import StudyPlannerService
 from app.modules.ai.services.tutor_service import TutorService
 from app.modules.cms.models import ContentItem
-from app.modules.identity.dependencies import get_current_user, require_permission, verify_csrf
+from app.modules.identity.dependencies import get_current_user, require_active_access, require_permission, verify_csrf
 from app.modules.identity.models.user import User
 from app.shared.responses import envelope
 
-router = APIRouter(prefix="/api/v1/ai", tags=["ai"], dependencies=[Depends(get_current_user)])
+# Premium: AI Tutor/Planner/Question Generator — active trial OR active
+# entitlement required (the ai.use permission alone was previously granted
+# to every STUDENT role by default, with no trial/paid gate on top of it).
+router = APIRouter(
+    prefix="/api/v1/ai", tags=["ai"], dependencies=[Depends(get_current_user), Depends(require_active_access())]
+)
 
 
 def _content_item(item: ContentItem) -> dict:

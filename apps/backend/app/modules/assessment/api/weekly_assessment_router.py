@@ -22,10 +22,9 @@ from app.modules.assessment.services.weekly_assessment_service import (
     WeeklyAssessmentService,
     public_view_admin,
 )
-from app.modules.identity.dependencies import get_current_user, verify_csrf
+from app.modules.identity.dependencies import get_current_user, require_active_access, verify_csrf
 from app.modules.identity.models.user import User
 from app.shared.responses import envelope
-
 
 router = APIRouter(prefix="/api/v1/weekly-assessments", tags=["weekly-assessments"])
 
@@ -98,8 +97,11 @@ async def list_weekly_admin(
 
 
 # ------------------------------------------------------------ student routes
+# Premium: taking a weekly assessment requires active trial OR entitlement.
+# (Admin CRUD/publish routes above are unaffected — access-controlled by
+# _require_admin, not by trial/entitlement status.)
 
-@router.get("")
+@router.get("", dependencies=[Depends(require_active_access())])
 async def list_weekly_student(
     user: User = Depends(get_current_user),
     db: AsyncSession = Depends(get_db),
@@ -109,7 +111,7 @@ async def list_weekly_student(
     return envelope(success=True, data=rows)
 
 
-@router.post("/{weekly_id}/attempts", dependencies=[Depends(verify_csrf)])
+@router.post("/{weekly_id}/attempts", dependencies=[Depends(verify_csrf), Depends(require_active_access())])
 async def start_weekly_attempt(
     weekly_id: uuid.UUID,
     user: User = Depends(get_current_user),

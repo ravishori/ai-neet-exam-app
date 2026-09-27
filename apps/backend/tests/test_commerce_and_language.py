@@ -38,7 +38,14 @@ async def test_order_creation_without_razorpay_keys_never_fakes_success(client):
     assert order.json()["data"] is None
 
 
-async def test_commerce_status_defaults_to_not_premium(client):
+async def test_commerce_status_defaults_to_trial_not_paid(client):
+    """`is_premium` (a payment-status-as-authorization field) no longer
+    exists — CommerceService.get_status now reads through AccessService,
+    the dedicated entitlement-based authorization model. A freshly
+    registered student is NOT paid/premium, but per the new trial system
+    DOES have access (TRIAL_ACTIVE, has_access=True) — this is a real,
+    intentional behavior change from the old "no access until payment"
+    default, not a bug: see the trial requirements in the commerce module."""
     await client.post(
         "/api/v1/auth/register",
         json={
@@ -54,7 +61,10 @@ async def test_commerce_status_defaults_to_not_premium(client):
 
     resp = await client.get("/api/v1/commerce/status")
     assert resp.status_code == 200
-    assert resp.json()["data"]["is_premium"] is False
+    data = resp.json()["data"]
+    assert data["state"] == "TRIAL_ACTIVE"
+    assert data["has_access"] is True
+    assert data["entitlement_expires_at"] is None  # not a paid entitlement
 
 
 async def test_language_falls_back_to_english_with_flag_when_untranslated(client, db_session, register_user):

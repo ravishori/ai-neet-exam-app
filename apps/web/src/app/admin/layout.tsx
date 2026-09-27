@@ -34,6 +34,7 @@ const ADMIN_MORE_SECTIONS: NavSection[] = [
       { href: "/admin/users", label: "Users" },
       { href: "/admin/coverage", label: "Coverage" },
       { href: "/admin/analytics", label: "Analytics" },
+      { href: "/admin/commerce", label: "Commerce" },
     ],
   },
 ];

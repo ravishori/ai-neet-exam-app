@@ -139,6 +139,18 @@ async def register(payload: RegisterRequest, request: Request, db: AsyncSession 
     verification_token = await service.request_email_verification(user)
     await send_verification_email(to=user.email, token=verification_token)
 
+    # Grant the one-time 15-day trial now. Registration is this app's actual
+    # "student becomes eligible" moment today — login is NOT gated on email
+    # verification (see the comment below), so there is no later "verified"
+    # event to hook instead. ensure_trial is idempotent (unique partial index
+    # on entitlements(student_id, product_id) WHERE source_type='TRIAL'), so
+    # this is safe even if register() were ever called twice for the same
+    # user_id (it isn't, today — email is unique — but the guarantee is at
+    # the DB level, not just this call site).
+    from app.modules.commerce.services.trial_service import TrialService
+
+    await TrialService(db).ensure_trial(student_id=user.id, product_code="ALL_ACCESS")
+
     # Auto-login on registration — email verification is informational in
     # v1, not a login gate (no SMTP wired up yet, see email_service.py), so
     # gating login on it here would just lock every new user out.

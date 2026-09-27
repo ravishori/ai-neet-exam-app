@@ -10,12 +10,19 @@ from app.modules.assessment.repositories.assessment_repository import Assessment
 from app.modules.assessment.schemas.assessment import AnswerRequest, GenerateRequest
 from app.modules.assessment.services.assessment_service import AssessmentService, get_content_body
 from app.modules.cms.repositories.cms_repository import CmsRepository
-from app.modules.identity.dependencies import get_current_user, verify_csrf
+from app.modules.identity.dependencies import get_current_user, require_active_access, verify_csrf
 from app.modules.identity.models.user import User
 from app.modules.learning.repositories.question_repository import QuestionRepository
 from app.shared.responses import envelope
 
-router = APIRouter(prefix="/api/v1", tags=["assessment"], dependencies=[Depends(get_current_user)])
+# Premium: practice/mock/full-mock assessments and attempts are the core
+# paid/trial-gated student feature — active trial OR active entitlement
+# required for every route in this router.
+router = APIRouter(
+    prefix="/api/v1",
+    tags=["assessment"],
+    dependencies=[Depends(get_current_user), Depends(require_active_access())],
+)
 
 
 def _assessment(a: Assessment) -> dict:

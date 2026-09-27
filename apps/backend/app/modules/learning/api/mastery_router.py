@@ -4,13 +4,19 @@ from fastapi import APIRouter, Depends
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.database import get_db
-from app.modules.identity.dependencies import get_current_user
+from app.modules.identity.dependencies import get_current_user, require_active_access
 from app.modules.identity.models.user import User
 from app.modules.learning.services.mastery_service import MasteryService
 from app.modules.learning.services.recommendation_service import RecommendationService
 from app.shared.responses import envelope
 
-router = APIRouter(prefix="/api/v1/learning", tags=["learning"], dependencies=[Depends(get_current_user)])
+# Premium: mastery tracking, due revision, and personalized recommendations
+# are premium learning features — active trial OR active entitlement required.
+router = APIRouter(
+    prefix="/api/v1/learning",
+    tags=["learning"],
+    dependencies=[Depends(get_current_user), Depends(require_active_access())],
+)
 
 
 @router.get("/mastery/concepts/{concept_id}")

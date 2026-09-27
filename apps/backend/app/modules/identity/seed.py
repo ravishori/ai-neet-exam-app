@@ -49,6 +49,7 @@ PERMISSIONS = [
         "without the EVALUATOR LLM call (TRUSTED-FACTORY-SUBMIT-001; never "
         "bypasses review()/publish())",
     ),
+    ("commerce.manage", "View orders/payments, verify/reject payments, view founding-offer status"),
 ]
 
 ROLE_PERMISSIONS = {
@@ -61,7 +62,7 @@ ROLE_PERMISSIONS = {
         "content.force_edit_published",
         "knowledge.manage", "visual_assets.review", "search.admin", "audit.view",
         "content.factory.view", "content.factory.create", "content.factory.execute", "content.factory.certify",
-        "content.factory.trusted_submit",
+        "content.factory.trusted_submit", "commerce.manage",
     ],
     "CONTENT_MANAGER": [
         "questions.read", "questions.create", "questions.update",

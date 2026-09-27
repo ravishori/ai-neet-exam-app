@@ -21,6 +21,11 @@ class OrderRepository:
         return result.scalar_one_or_none()
 
     async def has_paid_order(self, user_id: uuid.UUID) -> bool:
+        """Deprecated as an authorization mechanism — payment records are
+        financial history, not access records. Use
+        AccessService.can_access() instead. Kept only in case admin
+        reporting/reconciliation code wants "has this user ever paid" as a
+        distinct question from "does this user currently have access"."""
         result = await self.session.execute(
             select(Order.id).where(Order.user_id == user_id, Order.status == "PAID").limit(1)
         )
@@ -30,4 +35,17 @@ class OrderRepository:
         result = await self.session.execute(
             select(Order).where(Order.user_id == user_id).order_by(Order.created_at.desc())
         )
+        return list(result.scalars().all())
+
+    async def list_pending_admin(self, *, limit: int = 100) -> list[Order]:
+        result = await self.session.execute(
+            select(Order)
+            .where(Order.status.in_(["PAYMENT_PENDING", "CREATED"]))
+            .order_by(Order.created_at.desc())
+            .limit(limit)
+        )
+        return list(result.scalars().all())
+
+    async def list_all_admin(self, *, limit: int = 200) -> list[Order]:
+        result = await self.session.execute(select(Order).order_by(Order.created_at.desc()).limit(limit))
         return list(result.scalars().all())
