@@ -41,7 +41,7 @@ from collections import defaultdict
 from dataclasses import dataclass, field
 from typing import Any
 
-from sqlalchemy import text
+from sqlalchemy import bindparam, text
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.logging import get_logger
@@ -51,6 +51,15 @@ logger = get_logger("pyq.resolver")
 
 BATCH_SIZE = 500
 OPTION_LABELS = ("A", "B", "C", "D")
+# Bumped whenever the grounding algorithm itself changes (not on every code
+# tweak) — recorded on every answer_assertions row so a later re-resolution
+# pass can tell which build produced a given VERIFIED/DISPUTED assertion.
+RESOLVER_VERSION = "pyq-resolver-v1"
+# Stage 2 is a second pass over Stage 1's own leftovers, tagged separately
+# in evidence provenance so a later audit can tell which pass produced a
+# given assertion — the algorithm itself is documented on
+# resolve_stage2_batch().
+RESOLVER_VERSION_STAGE2 = "pyq-resolver-v1-stage2"
 
 
 @dataclass
@@ -94,6 +103,11 @@ class ResolveReport:
     unresolved_no_option_grounded: int = 0
     conflicts: int = 0
     assertions_inserted: int = 0
+    # Stage 2 — second pass over this same batch's Stage-1 leftovers only
+    # (never a separate/larger scan); see resolve_stage2_batch().
+    stage2_answered: int = 0
+    stage2_conflicts: int = 0
+    stage2_unresolved: int = 0
 
 
 def _match_units(idx: KnowledgeUnitIndex, stem: str) -> list[str]:
@@ -108,6 +122,15 @@ def _match_units(idx: KnowledgeUnitIndex, stem: str) -> list[str]:
 def _option_text(rec_options: dict[str, Any], label: str) -> str:
     val = rec_options.get(label)
     return val if isinstance(val, str) else ""
+
+
+def _build_explanation(*, option_label: str, option_text: str, best_summary: str) -> str:
+    """Concise, deterministic explanation built only from the same grounding
+    evidence already used to select this option — never phrased by an LLM."""
+    summary = (best_summary or "").strip()
+    if len(summary) > 220:
+        summary = summary[:217].rstrip() + "..."
+    return f"Option {option_label} ({option_text.strip()}) is supported by NCERT source material: {summary}"
 
 
 async def resolve_batch(
@@ -149,22 +172,30 @@ async def resolve_batch(
             + "; ".join(idx.unit_summary[u][:150] for u in matched_units[:3])
         )
 
+        best_summary = idx.unit_summary[matched_units[0]] if matched_units else ""
+
         if len(grounded_options) == 1:
             report.answered += 1
             if apply:
+                label = grounded_options[0]
                 await session.execute(
                     text(
                         "INSERT INTO pyq.answer_assertions "
-                        "(id, question_id, asserted_option, assertion_source, verification_status, evidence_note) "
-                        "VALUES (:id, :qid, :opt, :src, 'VERIFIED', :note) "
+                        "(id, question_id, asserted_option, assertion_source, verification_status, "
+                        "evidence_note, resolver_version, explanation) "
+                        "VALUES (:id, :qid, :opt, :src, 'VERIFIED', :note, :rver, :expl) "
                         "ON CONFLICT (question_id, assertion_source) DO NOTHING"
                     ),
                     {
                         "id": uuid.uuid4(),
                         "qid": question_id,
-                        "opt": grounded_options[0],
+                        "opt": label,
                         "src": f"knowledge_units:{source_id_str}",
                         "note": evidence_note,
+                        "rver": RESOLVER_VERSION,
+                        "expl": _build_explanation(
+                            option_label=label, option_text=_option_text(options, label), best_summary=best_summary
+                        ),
                     },
                 )
                 await session.execute(
@@ -178,8 +209,9 @@ async def resolve_batch(
                     await session.execute(
                         text(
                             "INSERT INTO pyq.answer_assertions "
-                            "(id, question_id, asserted_option, assertion_source, verification_status, evidence_note) "
-                            "VALUES (:id, :qid, :opt, :src, 'DISPUTED', :note) "
+                            "(id, question_id, asserted_option, assertion_source, verification_status, "
+                            "evidence_note, resolver_version, explanation) "
+                            "VALUES (:id, :qid, :opt, :src, 'DISPUTED', :note, :rver, :expl) "
                             "ON CONFLICT (question_id, assertion_source) DO NOTHING"
                         ),
                         {
@@ -188,6 +220,10 @@ async def resolve_batch(
                             "opt": label,
                             "src": f"knowledge_units:{source_id_str}:option_{label}",
                             "note": evidence_note,
+                            "rver": RESOLVER_VERSION,
+                            "expl": _build_explanation(
+                                option_label=label, option_text=_option_text(options, label), best_summary=best_summary
+                            ),
                         },
                     )
                 await session.execute(
@@ -197,6 +233,247 @@ async def resolve_batch(
 
         if apply:
             report.assertions_inserted += 1 if len(grounded_options) == 1 else len(grounded_options)
+
+
+EVIDENCE_UNIT_CAP = 8  # keeps the Stage 2 prompt bounded regardless of corpus size
+
+
+def _stage2_default_gateway(session: AsyncSession) -> Any:
+    """Stage 2 must use Gemini explicitly, never the global AIGateway
+    router — FACTORY_PROVIDER governs unrelated Content Factory features
+    and must not be touched or relied on here. Injecting a provider
+    instance directly makes AIGateway.generate() bypass the router
+    entirely (see ai_gateway.py: `if self._injected is not None`)."""
+    from app.core.config import get_settings
+    from app.modules.ai.gateway.ai_gateway import AIGateway
+    from app.modules.ai.gateway.gemini_provider import GeminiProvider
+
+    settings = get_settings()
+    provider = GeminiProvider(api_key=settings.gemini_api_key, model=settings.gemini_model)
+    return AIGateway(session, provider=provider)
+
+
+async def resolve_stage2_batch(
+    session: AsyncSession,
+    idx: KnowledgeUnitIndex,
+    rows: list[tuple],
+    report: ResolveReport,
+    *,
+    apply: bool,
+    ai_gateway: Any | None = None,
+) -> None:
+    """Second pass over questions Stage 1 left ANSWER_PENDING within this
+    same batch (never a separate/larger scan, and never touches a question
+    Stage 1 already resolved).
+
+    The PYQ corpus is treated as trusted, source-derived content (approved
+    NEET syllabus papers), not arbitrary/unknown-provenance MCQs — so
+    Stage 2's job is never "is this question legitimate," only "which
+    option, if any, does the indexed NCERT corpus actually support,"
+    judged semantically rather than by literal wording match (unlike
+    Stage 1's mechanical word-overlap check, which is unchanged and still
+    runs first).
+
+    Retrieval is still restricted to the SAME indexed knowledge.
+    knowledge_units corpus Stage 1 uses (candidate units are found by
+    shared vocabulary with the stem+options, then capped and passed to the
+    model as the ONLY material it may reason over) — no web search, no
+    general knowledge, and a question with literally zero shared
+    vocabulary with the corpus never reaches the model at all (there is
+    nothing to synthesize from, so it's left ANSWER_PENDING without
+    spending a call). The model is instructed to answer only from the
+    given excerpts and to return an explicit empty list when the excerpts
+    are insufficient — it is never asked to guess, and a provider error,
+    fallback response, or unparseable/invalid response is always treated
+    as unresolved, never as an answer.
+
+    Same safety semantics as Stage 1: no options supported by the
+    evidence -> stays ANSWER_PENDING; exactly one supported ->
+    ANSWER_VERIFIED; more than one (or contradictory evidence) ->
+    ANSWER_CONFLICT.
+    """
+    from app.modules.ai.gateway.base import ProviderError
+    from app.modules.ai.prompts import pyq_resolver as prompts
+    from app.modules.ai.services.json_utils import parse_json_response
+
+    gateway = ai_gateway if ai_gateway is not None else _stage2_default_gateway(session)
+
+    for question_id, raw_stem, raw_options in rows:
+        options = raw_options if isinstance(raw_options, dict) else (json.loads(raw_options) if raw_options else {})
+        stem = raw_stem or ""
+        option_texts = {label: _option_text(options, label) for label in OPTION_LABELS if _option_text(options, label).strip()}
+
+        option_words: set[str] = set()
+        for opt_text in option_texts.values():
+            option_words |= _significant_words(opt_text)
+        candidate_units = sorted(idx.candidates_for(_significant_words(stem) | option_words))
+
+        if not candidate_units or not option_texts:
+            # Genuinely no retrieved evidence at all — never invoke the
+            # model with nothing to synthesize from.
+            report.stage2_unresolved += 1
+            continue
+
+        evidence_units = candidate_units[:EVIDENCE_UNIT_CAP]
+        evidence = "\n---\n".join(idx.unit_text[u] for u in evidence_units)
+        user_prompt = prompts.build_user_prompt(stem=stem, options=option_texts, evidence=evidence)
+
+        try:
+            response = await gateway.generate(
+                agent_type="PYQ_ANSWER_RESOLVER",
+                system_prompt=prompts.SYSTEM_PROMPT,
+                user_prompt=user_prompt,
+                max_tokens=400,
+                require_json=True,
+            )
+        except ProviderError:
+            logger.warning("pyq_stage2_provider_error", question_id=str(question_id))
+            report.stage2_unresolved += 1
+            continue
+
+        if response.is_fallback:
+            # A fallback stub response is never real evidence-derived
+            # synthesis — treat exactly like a provider failure.
+            report.stage2_unresolved += 1
+            continue
+
+        try:
+            parsed = parse_json_response(response.text)
+            raw_supported = parsed.get("supported_options", [])
+            if not isinstance(raw_supported, list):
+                raise ValueError("supported_options must be a list")
+            supported_options = sorted({label for label in raw_supported if label in option_texts})
+            reasoning = str(parsed.get("reasoning") or "").strip()
+        except (ValueError, AttributeError, TypeError, KeyError):
+            logger.warning("pyq_stage2_bad_response", question_id=str(question_id), raw=response.text[:200])
+            report.stage2_unresolved += 1
+            continue
+
+        if not supported_options:
+            report.stage2_unresolved += 1
+            continue
+
+        evidence_note = (
+            f"stage2_ai_knowledge_units={','.join(evidence_units)}; model={response.model}; reasoning={reasoning[:300]}"
+        )
+        explanation = reasoning or "Supported by the indexed NCERT source excerpts (no further detail returned)."
+
+        if len(supported_options) == 1:
+            label = supported_options[0]
+            report.stage2_answered += 1
+            if apply:
+                await session.execute(
+                    text(
+                        "INSERT INTO pyq.answer_assertions "
+                        "(id, question_id, asserted_option, assertion_source, verification_status, "
+                        "evidence_note, resolver_version, explanation) "
+                        "VALUES (:id, :qid, :opt, :src, 'VERIFIED', :note, :rver, :expl) "
+                        "ON CONFLICT (question_id, assertion_source) DO NOTHING"
+                    ),
+                    {
+                        "id": uuid.uuid4(), "qid": question_id, "opt": label,
+                        "src": f"knowledge_units_stage2_ai:{hashlib.sha256(','.join(evidence_units).encode()).hexdigest()[:16]}",
+                        "note": evidence_note, "rver": RESOLVER_VERSION_STAGE2, "expl": explanation,
+                    },
+                )
+                await session.execute(
+                    text("UPDATE pyq.questions SET state = 'ANSWER_VERIFIED', updated_at = now() WHERE id = :id"),
+                    {"id": question_id},
+                )
+        else:
+            report.stage2_conflicts += 1
+            if apply:
+                for label in supported_options:
+                    await session.execute(
+                        text(
+                            "INSERT INTO pyq.answer_assertions "
+                            "(id, question_id, asserted_option, assertion_source, verification_status, "
+                            "evidence_note, resolver_version, explanation) "
+                            "VALUES (:id, :qid, :opt, :src, 'DISPUTED', :note, :rver, :expl) "
+                            "ON CONFLICT (question_id, assertion_source) DO NOTHING"
+                        ),
+                        {
+                            "id": uuid.uuid4(), "qid": question_id, "opt": label,
+                            "src": (
+                                f"knowledge_units_stage2_ai:"
+                                f"{hashlib.sha256(','.join(evidence_units).encode()).hexdigest()[:16]}:option_{label}"
+                            ),
+                            "note": evidence_note, "rver": RESOLVER_VERSION_STAGE2, "expl": explanation,
+                        },
+                    )
+                await session.execute(
+                    text("UPDATE pyq.questions SET state = 'ANSWER_CONFLICT', updated_at = now() WHERE id = :id"),
+                    {"id": question_id},
+                )
+
+        if apply:
+            report.assertions_inserted += 1 if len(supported_options) == 1 else len(supported_options)
+
+
+async def resolve_up_to(
+    session: AsyncSession, idx: KnowledgeUnitIndex, *, max_total: int, apply: bool, ai_gateway: Any | None = None
+) -> ResolveReport:
+    """Bounded variant of run()'s loop, for the scheduled background worker:
+    processes at most `max_total` oldest ANSWER_PENDING rows (created_at ASC,
+    id ASC as tiebreak), using the same idempotent resolve_batch() as the
+    manual CLI (Stage 1, unchanged). Whatever Stage 1 leaves ANSWER_PENDING
+    within that SAME page — never a separate/additional scan beyond
+    max_total — is then retried once by resolve_stage2_batch() (Stage 2).
+    Caller owns the session/commit — see pyq_resolver_worker.py.
+
+    Stage 2 only runs when apply=True: it decides what Stage 1 actually
+    left pending by re-reading real committed state, which a dry-run
+    (apply=False, rolled back) cannot produce — dry-run reporting therefore
+    reflects Stage 1 only.
+    """
+    report = ResolveReport()
+    cursor: tuple[Any, uuid.UUID] | None = None
+    remaining = max_total
+    while remaining > 0:
+        lim = min(BATCH_SIZE, remaining)
+        if cursor is None:
+            rows = (
+                await session.execute(
+                    text(
+                        "SELECT id, raw_stem, raw_options, created_at FROM pyq.questions "
+                        "WHERE state = 'ANSWER_PENDING' ORDER BY created_at ASC, id ASC LIMIT :lim"
+                    ),
+                    {"lim": lim},
+                )
+            ).all()
+        else:
+            rows = (
+                await session.execute(
+                    text(
+                        "SELECT id, raw_stem, raw_options, created_at FROM pyq.questions "
+                        "WHERE state = 'ANSWER_PENDING' AND (created_at, id) > (:c_at, :c_id) "
+                        "ORDER BY created_at ASC, id ASC LIMIT :lim"
+                    ),
+                    {"c_at": cursor[0], "c_id": cursor[1], "lim": lim},
+                )
+            ).all()
+        if not rows:
+            break
+        cursor = (rows[-1][3], rows[-1][0])
+        remaining -= len(rows)
+        page_rows = [(r[0], r[1], r[2]) for r in rows]
+        await resolve_batch(session, idx, page_rows, report, apply=apply)
+        if apply:
+            await session.commit()
+            page_ids = [r[0] for r in rows]
+            still_pending_stmt = text(
+                "SELECT id FROM pyq.questions WHERE id IN :ids AND state = 'ANSWER_PENDING'"
+            ).bindparams(bindparam("ids", expanding=True))
+            still_pending = {
+                row[0] for row in (await session.execute(still_pending_stmt, {"ids": page_ids})).all()
+            }
+            if still_pending:
+                stage2_rows = [r for r in page_rows if r[0] in still_pending]
+                await resolve_stage2_batch(session, idx, stage2_rows, report, apply=True, ai_gateway=ai_gateway)
+                await session.commit()
+        else:
+            await session.rollback()
+    return report
 
 
 async def run(apply: bool) -> ResolveReport:
