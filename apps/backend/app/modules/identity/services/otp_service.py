@@ -60,7 +60,9 @@ class OtpService:
         await self.session.commit()
 
         # Never log plaintext OTP. Email body includes it only for delivery.
-        _send(
+        # `_send` is async — must be awaited or the send never actually
+        # happens (a bare call just creates and discards the coroutine).
+        await _send(
             to=email_norm,
             subject="Your Trinetra verification code",
             body=f"Your verification code is: {plaintext}\n\nIt expires in {OTP_TTL_MINUTES} minutes.\n",
