@@ -99,11 +99,19 @@ jobs:
     # ----------------------------------------------------------------------
     # Python Dependency Audit
     # ----------------------------------------------------------------------
+    # Scoped to the application's declared requirements.txt (not a bare
+    # `pip-audit` of the whole CI environment) — a bare audit also flags
+    # nltk, which is not an application dependency at all but a transitive
+    # dependency of the `safety` scanner installed two steps above (safety
+    # requires nltk>=3.9). Scoping to requirements.txt audits exactly what
+    # the application ships, which is the coverage this check exists for.
 
     - name: pip-audit
 
+      working-directory: apps/backend
+
       run: |
-        pip-audit
+        pip-audit -r requirements.txt
 
     # ----------------------------------------------------------------------
     # Python Static Security Scan
@@ -151,7 +159,7 @@ jobs:
 
     - name: Trivy Filesystem Scan
 
-      uses: aquasecurity/trivy-action@v0.31.0
+      uses: aquasecurity/trivy-action@v0.36.0
 
       with:
         scan-type: fs
