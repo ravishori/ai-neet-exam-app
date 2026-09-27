@@ -1,3 +1,4 @@
+import asyncio
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
@@ -26,10 +27,12 @@ from app.modules.assessment.api.assessment_router import router as assessment_ro
 from app.modules.assessment.api.weekly_assessment_router import router as weekly_assessment_router
 from app.modules.assessment.api.weekly_revision_router import router as weekly_revision_router
 from app.modules.cms.api.cms_router import router as cms_router
+from app.modules.cms.api.content_factory_planning_router import router as content_factory_planning_router
 from app.modules.cms.api.content_factory_router import router as content_factory_router
 from app.modules.cms.api.human_gold_sandbox_router import router as human_gold_sandbox_router
-from app.modules.cms.api.content_factory_planning_router import router as content_factory_planning_router
 from app.modules.cms.api.search_router import router as search_router
+from app.modules.cms.pyq.api.gemini_backfill_router import router as pyq_gemini_backfill_router
+from app.modules.cms.pyq.pyq_resolver_worker import run_worker_loop as run_pyq_resolver_worker_loop
 from app.modules.commerce.api.commerce_router import router as commerce_router
 from app.modules.identity.api.auth_router import router as auth_router
 from app.modules.identity.api.locations_router import router as locations_router
@@ -52,8 +55,17 @@ logger = get_logger("startup")
 async def lifespan(app: FastAPI):
     logger.info("starting_up", environment=settings.environment)
     init_redis()
+    pyq_resolver_task: asyncio.Task | None = None
+    if settings.pyq_resolver_worker_enabled:
+        pyq_resolver_task = asyncio.create_task(run_pyq_resolver_worker_loop())
     yield
     logger.info("shutting_down")
+    if pyq_resolver_task is not None:
+        pyq_resolver_task.cancel()
+        try:
+            await pyq_resolver_task
+        except asyncio.CancelledError:
+            pass
     await close_redis()
     await engine.dispose()
 
@@ -103,6 +115,7 @@ app.include_router(analytics_router)
 app.include_router(commerce_router)
 app.include_router(ingestion_router)
 app.include_router(knowledge_router)
+app.include_router(pyq_gemini_backfill_router)
 
 
 @app.get("/health")

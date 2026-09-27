@@ -205,6 +205,22 @@ class Settings(BaseSettings):
     twilio_auth_token: str = ""
     twilio_verify_service_sid: str = ""
 
+    # PYQ background answer-resolution worker (FACTORY-PYQ-P5) — runs
+    # scripts/resolve_pyq_answers.py's deterministic NCERT-grounded resolver
+    # on a schedule instead of only via manual CLI invocation.
+    pyq_resolver_worker_enabled: bool = True
+    pyq_resolver_batch_size: int = 1000
+    pyq_resolver_interval_hours: float = 5.0
+
+    # One-time Gemini backfill (pyq_gemini_backfill.py) — separate from the
+    # ongoing worker above. Empty => auto-select at job start: try the
+    # cheaper candidate below with one minimal non-PYQ call, fall back to
+    # gemini_model if unavailable. Set explicitly to skip auto-selection.
+    pyq_gemini_backfill_model: str = ""
+    pyq_gemini_backfill_preferred_model: str = "gemini-2.5-flash-lite"
+    pyq_gemini_backfill_concurrency: int = 5
+    pyq_gemini_backfill_max_retries: int = 5
+
     # Ingestion pipeline (ADR-0022) — files must resolve inside this directory;
     # rejected otherwise. Defaults to <repo root>/StudyMaterial in a local
     # checkout, /data/studymaterial in the Docker image — see _default_data_dir.
