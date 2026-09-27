@@ -88,6 +88,15 @@ class Settings(BaseSettings):
 
     cors_origins: str = "http://localhost:3000,http://127.0.0.1:3000,http://localhost:3001,http://127.0.0.1:3001"
 
+    # Auth cookies' Domain attribute. Empty (dev default) scopes cookies to
+    # the exact host that set them. When the web app and API live on
+    # different subdomains of the same parent (e.g. neet.example.com and
+    # api.neet.example.com), this must be set to the shared parent
+    # (".example.com") or the browser never sends the cookie to the web
+    # app's own origin — login succeeds on the backend but the frontend
+    # can never see the session.
+    cookie_domain: str = ""
+
     # Language processing (ADR-0027) — adding a third language is a config
     # change here plus whatever new detection/normalization rules it needs
     # in LanguageService, not a schema or architecture change.
