@@ -17,7 +17,6 @@ from pydantic import BaseModel, Field, field_validator, model_validator
 
 from app.modules.cms.schemas.question_evidence import NcertEvidence, NumericalEvidence, ProvenanceBlock
 
-
 NEET_OPTION_LABELS = ("A", "B", "C", "D")
 
 

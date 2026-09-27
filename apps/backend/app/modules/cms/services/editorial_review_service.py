@@ -992,9 +992,10 @@ class EditorialReviewService:
 
     async def _factory_qa_packet(self, content_item_id: uuid.UUID) -> dict:
         """Minimal FACTORY-P4/P5 evidence for editorial packet — never certifies science."""
+        from sqlalchemy import select
+
         from app.modules.cms.models.factory_qa import FactoryReviewItem
         from app.modules.cms.services.content_factory_qa_service import ContentFactoryQAService
-        from sqlalchemy import select
 
         qa = await ContentFactoryQAService(self.session).get_latest_for_item(content_item_id)
         fri = (
@@ -1070,8 +1071,9 @@ class EditorialReviewService:
 
         Never mutates, never publishes, never loads the unmapped 5k backlog.
         """
-        from app.modules.academic.models import Chapter, Concept, Subject, Topic
         from collections import Counter
+
+        from app.modules.academic.models import Chapter, Concept, Subject, Topic
 
         allowed = {"Chemistry", "Zoology", "Physics", "Botany"}
         if subject_name not in allowed:

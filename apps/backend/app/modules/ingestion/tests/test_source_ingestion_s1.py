@@ -17,9 +17,9 @@ from app.modules.ingestion.services.ingestion_pipeline_service import (
     S1_SOURCE_INGESTION_RUN_ID,
     IngestionPipelineService,
 )
+from app.modules.ingestion.services.pdf_extraction_service import compute_checksum
 from app.modules.ingestion.services.source_ingestion_orchestration_service import classify_failed_ku
 from app.modules.ingestion.services.study_material_discovery_service import StudyMaterialDiscoveryService
-from app.modules.ingestion.services.pdf_extraction_service import compute_checksum
 from app.modules.knowledge.services.deterministic_structuring_service import extract_facts_from_section_text
 
 pytestmark = pytest.mark.asyncio(loop_scope="session")

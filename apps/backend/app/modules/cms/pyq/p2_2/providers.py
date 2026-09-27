@@ -8,7 +8,7 @@ from abc import ABC, abstractmethod
 from datetime import UTC, datetime
 from typing import Any
 
-from app.modules.cms.pyq.p2_2.schemas import AIRecoveryOutput, RECOVERY_PROMPT_CONTRACT, ProviderAttempt
+from app.modules.cms.pyq.p2_2.schemas import RECOVERY_PROMPT_CONTRACT, AIRecoveryOutput, ProviderAttempt
 
 RECOVERY_JSON_SCHEMA = {
     "status": "RECOVERED|NOT_RECOVERABLE|INCONCLUSIVE",

@@ -9,7 +9,6 @@ from abc import ABC, abstractmethod
 from dataclasses import dataclass, field
 from typing import Any
 
-
 # Normalized provider error codes (factory + gateway)
 PROVIDER_BLOCKED = "PROVIDER_BLOCKED"
 PROVIDER_AUTH_FAILED = "PROVIDER_AUTH_FAILED"

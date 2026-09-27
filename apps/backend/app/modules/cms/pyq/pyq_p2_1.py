@@ -10,7 +10,7 @@ from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
-from app.modules.cms.pyq.pyq_discovery import FileClassification, ZipFileEntry, sha256_bytes
+from app.modules.cms.pyq.pyq_discovery import FileClassification, ZipFileEntry, normalized_question_hash, sha256_bytes
 from app.modules.cms.pyq.pyq_extraction import (
     AnswerStatus,
     ValidationStatus,
@@ -18,12 +18,7 @@ from app.modules.cms.pyq.pyq_extraction import (
     question_hash,
     segment_questions_from_text,
 )
-from app.modules.cms.pyq.pyq_discovery import normalized_question_hash
 from app.modules.cms.pyq.pyq_ocr import (
-    OCR_FAILED,
-    OCR_LOW_CONFIDENCE,
-    OCR_SUCCESS,
-    NEEDS_REVIEW,
     build_ocr_corpus,
     discover_tesseract,
     ocr_paper_to_dict,
@@ -33,7 +28,6 @@ from app.modules.cms.pyq.pyq_p2 import (
     NEET_2022_STATUS,
     attempt_missing_options_recovery,
     has_missing_options,
-    load_p1_questions,
 )
 
 
@@ -255,7 +249,6 @@ def revalidate_missing_options(
 
                 full_text = build_tagged_corpus(extract_pages(zf.read(meta["source_file"])))
             elif sha in ocr_by_sha:
-                pages = ocr_by_sha[sha].get("pages") or []
                 # Load raw text from companion pages file if present
                 text_path = paper_dir / "ocr.pages.p2_1.jsonl"
                 if text_path.exists():
@@ -466,7 +459,7 @@ def run_p21(
             )
             if was_skipped:
                 skipped += 1
-                print(f"  skipped (idempotent cache)", flush=True)
+                print("  skipped (idempotent cache)", flush=True)
             else:
                 print(
                     f"  pages={ocr_dict.get('pages_processed')} "

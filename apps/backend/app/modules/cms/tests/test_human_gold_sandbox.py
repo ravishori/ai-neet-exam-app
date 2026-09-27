@@ -15,6 +15,7 @@ from app.modules.cms.services.human_gold_sandbox_csv import (
     validate_upload,
 )
 
+
 def _sample_csv(rows: list[dict[str, str]]) -> bytes:
     buf = io.StringIO()
     fieldnames = list(rows[0].keys()) if rows else ["question_id"]

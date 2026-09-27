@@ -123,9 +123,9 @@ def test_every_new_chapter_has_source_grounded_topics_and_concepts():
         if code == "electrochemistry":
             continue  # not part of CF-C1
         assert topics, f"CF-C1 chapter {code!r} has no topics"
-        for tcode, tname, concepts in topics:
+        for tcode, _tname, concepts in topics:
             assert concepts, f"{code}/{tcode} has no concepts"
-            for ccode, cname, summary in concepts:
+            for ccode, _cname, summary in concepts:
                 assert "NCERT XII Ch" in summary, (
                     f"{code}/{tcode}/{ccode} summary lacks NCERT XII provenance: {summary!r}"
                 )

@@ -16,7 +16,6 @@ from app.core.exceptions import AppError
 from app.modules.academic.models import Concept, Subject, Topic
 from app.modules.learning.models import StudentScopePreference
 
-
 ALLOWED_SCOPES = frozenset({"SUBJECT", "TOPIC", "CONCEPT"})
 ALLOWED_PREFERENCES = frozenset({"STRONG", "NEUTRAL", "WEAK"})
 

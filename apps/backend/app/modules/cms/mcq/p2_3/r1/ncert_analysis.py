@@ -40,14 +40,6 @@ def _infer_root_cause(rec: dict[str, Any], *, excerpt_len: int) -> str:
 
 def build_ncert_failure_analysis(records: list[dict[str, Any]], *, study_root: Path) -> dict[str, Any]:
     """Analyze REJECTED / unsupported-NCERT generation failures (expected ~46)."""
-    rejected = [
-        r
-        for r in records
-        if r.get("generation_status") == "REJECTED"
-        or "NOT_NCERT_SUPPORTED" in (r.get("errors") or [])
-        or (r.get("source_support") or "").upper() not in ("", "NCERT-SUPPORTED")
-        and r.get("generation_status") == "GENERATED"
-    ]
     # Focus on explicit model REJECTED cohort
     cohort = [r for r in records if r.get("generation_status") == "REJECTED"]
     cases: list[dict[str, Any]] = []

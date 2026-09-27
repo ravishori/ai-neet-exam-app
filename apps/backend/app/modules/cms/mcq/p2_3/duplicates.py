@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 from difflib import SequenceMatcher
-from typing import Any
 
 from app.modules.cms.mcq.p2_3.schemas import DuplicateStatus, McqRecord
 from app.modules.cms.services.factory_candidate_validation import normalize_stem, stem_hash
