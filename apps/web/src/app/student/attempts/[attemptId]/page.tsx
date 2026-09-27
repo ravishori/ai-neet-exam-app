@@ -463,16 +463,18 @@ export default function AttemptRunnerPage() {
           </div>
 
           <SurfaceCard accent="none" glass={!isTimedExam} lift={false} className="border-border/60">
-            <SurfaceCardContent className="pt-5 sm:pt-6">
-              <QuestionPanel
-                question={displayedQuestion}
-                index={currentIndex}
-                total={questions.length}
-                isSubmitted={isSubmitted}
-                onSelectOption={(label) => commitAnswer({ selected_option: label })}
-                onSetConfidence={(confidence) => commitAnswer({ confidence })}
-                onToggleMarkForReview={() => commitAnswer({ marked_for_review: !displayedQuestion.marked_for_review })}
-              />
+            <SurfaceCardContent className="pt-5 sm:pt-6" key={currentIndex}>
+              <div className="motion-safe:animate-fade-in">
+                <QuestionPanel
+                  question={displayedQuestion}
+                  index={currentIndex}
+                  total={questions.length}
+                  isSubmitted={isSubmitted}
+                  onSelectOption={(label) => commitAnswer({ selected_option: label })}
+                  onSetConfidence={(confidence) => commitAnswer({ confidence })}
+                  onToggleMarkForReview={() => commitAnswer({ marked_for_review: !displayedQuestion.marked_for_review })}
+                />
+              </div>
             </SurfaceCardContent>
           </SurfaceCard>
 
