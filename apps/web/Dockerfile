@@ -13,6 +13,10 @@ RUN npm run build
 
 FROM node:22-slim AS runner
 WORKDIR /app
+# Picks up OS-package security patches published since the node:22-slim base
+# layer was built (B3 hardening) — the base image itself is unpinned to a
+# digest, so this doesn't fight any existing pin.
+RUN apt-get update && apt-get upgrade -y && rm -rf /var/lib/apt/lists/*
 ENV NODE_ENV=production
 COPY --from=builder /app/public ./public
 COPY --from=builder /app/.next ./.next
