@@ -94,7 +94,7 @@ async def test_otp_request_and_verify(client, db_session, monkeypatch):
 
     captured: dict[str, str] = {}
 
-    def capture_send(*, to, subject, body, kind):
+    async def capture_send(*, to, subject, body, kind):
         captured["body"] = body
         captured["to"] = to
         captured["kind"] = kind

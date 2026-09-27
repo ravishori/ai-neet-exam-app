@@ -4,6 +4,7 @@ sensitive_action, login_stepup) which only return {"verified": true}."""
 
 import re
 import uuid
+from unittest.mock import AsyncMock
 
 import pyotp
 import pytest
@@ -49,7 +50,7 @@ async def _register(client, email: str) -> None:
 async def _capture_code(client, email: str, monkeypatch, purpose: str) -> str:
     captured: dict[str, str] = {}
 
-    def capture_send(*, to, subject, body, kind):
+    async def capture_send(*, to, subject, body, kind):
         captured["body"] = body
 
     monkeypatch.setattr("app.modules.identity.services.otp_service._send", capture_send)
@@ -59,6 +60,29 @@ async def _capture_code(client, email: str, monkeypatch, purpose: str) -> str:
     match = re.search(r"\b(\d{6})\b", captured["body"])
     assert match
     return match.group(1)
+
+
+async def test_otp_request_actually_awaits_send(client, db_session, monkeypatch):
+    """Regression test: OtpService.request_email_otp must `await` the
+    outbound send. A bare (un-awaited) call to an async `_send` silently
+    creates and discards a coroutine — the function body never runs, no
+    email is ever sent, and no error surfaces anywhere, while the API still
+    returns 200. AsyncMock distinguishes "called" from "awaited": call_count
+    increments even for a bare, non-awaited call, but await_count only
+    increments if the coroutine was actually awaited — which is exactly the
+    distinction this bug hides from a plain synchronous mock."""
+    email = _email()
+    mock_send = AsyncMock()
+    monkeypatch.setattr("app.modules.identity.services.otp_service._send", mock_send)
+
+    resp = await client.post("/api/v1/auth/otp/request", json={"email": email, "purpose": "email_login"})
+    assert resp.status_code == 200, resp.text
+
+    assert mock_send.call_count == 1
+    assert mock_send.await_count == 1, (
+        "_send was called but never awaited — the OTP email would never "
+        "actually be sent in production despite the API reporting success."
+    )
 
 
 async def test_email_otp_login_issues_session(client, db_session, monkeypatch):
@@ -112,7 +136,7 @@ async def test_email_otp_login_unknown_email_generic_error(client, db_session, m
     email = _email()
     captured: dict[str, str] = {}
 
-    def capture_send(*, to, subject, body, kind):
+    async def capture_send(*, to, subject, body, kind):
         captured["body"] = body
 
     monkeypatch.setattr("app.modules.identity.services.otp_service._send", capture_send)
