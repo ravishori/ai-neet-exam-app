@@ -6,7 +6,11 @@ produced it (resolver_version) and a concise, evidence-derived explanation
 (explanation) alongside the existing evidence_note provenance blob.
 
 Revision ID: c6cfdf360a4b
-Revises: d3e4f5a6b7c8
+Revises: c1d2e3f4b5a6
+
+NOTE: chained onto c1d2e3f4b5a6, not the (still uncommitted, unrelated)
+d3e4f5a6b7c8 PYQ-conflict-review migration — this migration must not
+depend on work that isn't committed to this branch.
 """
 
 from __future__ import annotations
@@ -16,7 +20,7 @@ import sqlalchemy as sa
 from alembic import op
 
 revision = "c6cfdf360a4b"
-down_revision = "d3e4f5a6b7c8"
+down_revision = "c1d2e3f4b5a6"
 branch_labels = None
 depends_on = None
 
