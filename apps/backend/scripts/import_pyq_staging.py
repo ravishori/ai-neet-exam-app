@@ -45,7 +45,37 @@ AUTHORITY_TYPE = "OFFICIAL_NEET_PAPER"
 ZIP_SHA256 = "4b5925fd554e6f3e37c446904c9b71719fc681994059c21d0f51813c610eda4a"
 PIPELINE_STAGE = "p2_canonical_plus_p2_1e_full_r3"
 
-REPO_ROOT = Path(__file__).resolve().parents[3]
+
+def _resolve_repo_root(file_path: str | Path = __file__) -> Path:
+    """<repo root> in a local checkout (this file, apps/backend/scripts/
+    import_pyq_staging.py, has 3 directories above the repo root —
+    parents[3] is that root). The Docker image flattens that — COPY . .
+    puts this file at /app/scripts/import_pyq_staging.py, only 2
+    directories above /, so parents[3] doesn't exist there and raises
+    IndexError at import time, before any import logic can run.
+
+    In that flattened case, COPY . . puts the repo root itself at /app
+    (this file's grandparent), not at "/" — so the container-aware
+    fallback below returns /app when /app appears in the ancestor chain,
+    which is what actually holds data/staging/pyq/2020-2025 on a deployed
+    image. Path("/") remains the last-resort fallback for any other
+    unexpectedly flattened layout that isn't rooted at /app.
+
+    `file_path` defaults to this module's own __file__ at import time;
+    accepting it as a parameter only exists so tests can exercise both the
+    local-checkout and flattened-Docker branches without needing two real
+    directory trees on disk.
+    """
+    parents = Path(file_path).resolve().parents
+    if len(parents) > 3:
+        return parents[3]
+    docker_app_root = Path("/app").resolve()
+    if docker_app_root in parents:
+        return docker_app_root
+    return Path("/")
+
+
+REPO_ROOT = _resolve_repo_root()
 STAGING_ROOT = REPO_ROOT / "data" / "staging" / "pyq" / "2020-2025"
 PAPERS_DIR = STAGING_ROOT / "papers"
 R3_FILE = STAGING_ROOT / "p2_1e_full_r3" / "questions.p2_1e_full.jsonl"
