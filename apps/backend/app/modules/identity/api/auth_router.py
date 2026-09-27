@@ -267,6 +267,24 @@ async def verify_email(payload: VerifyEmailRequest, db: AsyncSession = Depends(g
 
 
 @router.post(
+    "/verify-email/resend",
+    dependencies=[
+        Depends(verify_csrf),
+        Depends(rate_limit_per_user("verify_email_resend", limit=3, window_seconds=300, fail_closed=True)),
+    ],
+)
+async def resend_verification_email(user: User = Depends(get_current_user), db: AsyncSession = Depends(get_db)):
+    if not user.email_verified:
+        service = AuthService(db)
+        token = await service.request_email_verification(user)
+        await send_verification_email(to=user.email, token=token)
+    # Same generic response whether the account was already verified or not
+    # — an authenticated caller could infer their own status either way, but
+    # the response shape itself should never be the signal.
+    return envelope(success=True, data={"message": "If your email isn't verified yet, a new link has been sent."})
+
+
+@router.post(
     "/change-password",
     dependencies=[Depends(verify_csrf), Depends(rate_limit_per_user("change_password", limit=5, window_seconds=300))],
 )

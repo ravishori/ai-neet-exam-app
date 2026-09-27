@@ -66,6 +66,8 @@ export const authApi = {
     apiClient.post<{ message: string }>("/api/v1/auth/reset-password", data),
   verifyEmail: (data: { token: string }) =>
     apiClient.post<MeResponse>("/api/v1/auth/verify-email", data),
+  resendVerificationEmail: () =>
+    apiClient.post<{ message: string }>("/api/v1/auth/verify-email/resend"),
   mfaVerify: (data: { mfa_token: string; code: string }) =>
     apiClient.post<MeResponse>("/api/v1/auth/mfa/verify", data),
   mobileOtpSend: (data: { mobile: string }) =>

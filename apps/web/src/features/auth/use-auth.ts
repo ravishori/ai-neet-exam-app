@@ -69,6 +69,10 @@ export function useEmailOtpVerify() {
   });
 }
 
+export function useResendVerificationEmail() {
+  return useMutation({ mutationFn: authApi.resendVerificationEmail });
+}
+
 export function useRegister() {
   const queryClient = useQueryClient();
   return useMutation({

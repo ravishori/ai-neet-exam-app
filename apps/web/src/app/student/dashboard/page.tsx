@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { useQuery } from "@tanstack/react-query";
 import { ArrowRight, BookOpen, Loader2, Play, Target } from "lucide-react";
@@ -9,6 +10,7 @@ import { Button, buttonVariants } from "@/components/ui/button";
 import { EmptyState } from "@/components/ui/empty-state";
 import { ScoreTrendChart } from "@/components/score-trend-chart";
 import { Skeleton } from "@/components/ui/skeleton";
+import { ApiError } from "@/lib/api-client";
 import {
   PageHeader,
   QuickLaunchHub,
@@ -27,7 +29,7 @@ import {
   resolveSubjectTheme,
   SUBJECT_THEME_CLASSES,
 } from "@/components/ds";
-import { useMe } from "@/features/auth/use-auth";
+import { useMe, useResendVerificationEmail } from "@/features/auth/use-auth";
 import { assessmentApi } from "@/features/assessment/api";
 import { computeScoreTrend } from "@/features/assessment/analytics";
 import { isNoQuestionsAvailable } from "@/features/assessment/thin-content";
@@ -340,6 +342,43 @@ function SubjectMasteryRow({
   );
 }
 
+function EmailVerificationBanner() {
+  const resend = useResendVerificationEmail();
+  const [sent, setSent] = useState(false);
+
+  return (
+    <p
+      className="flex flex-wrap items-center gap-x-2 gap-y-1 px-0.5 text-xs text-muted-foreground"
+      role="status"
+    >
+      <span className="rounded-md border border-warning/30 bg-warning/10 px-2 py-0.5 font-medium text-warning-foreground">
+        Email not verified
+      </span>
+      {sent ? (
+        <span>Verification email sent. Please check your inbox.</span>
+      ) : (
+        <span>
+          You can keep practicing —{" "}
+          <button
+            type="button"
+            disabled={resend.isPending}
+            onClick={() => resend.mutate(undefined, { onSuccess: () => setSent(true) })}
+            className="font-medium text-foreground underline-offset-2 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50 disabled:opacity-60"
+          >
+            {resend.isPending ? "Sending…" : "resend verification email"}
+          </button>{" "}
+          or use your account menu.
+          {resend.isError && (
+            <span className="ml-1 text-destructive">
+              {resend.error instanceof ApiError ? resend.error.message : "Couldn't send the email. Try again."}
+            </span>
+          )}
+        </span>
+      )}
+    </p>
+  );
+}
+
 export default function StudentDashboardPage() {
   const { data: user, isLoading } = useMe();
   const overviewQuery = useQuery({
@@ -444,26 +483,7 @@ export default function StudentDashboardPage() {
         </div>
       </section>
 
-      {emailUnverified ? (
-        <p
-          className="flex flex-wrap items-center gap-x-2 gap-y-1 px-0.5 text-xs text-muted-foreground"
-          role="status"
-        >
-          <span className="rounded-md border border-warning/30 bg-warning/10 px-2 py-0.5 font-medium text-warning-foreground">
-            Email not verified
-          </span>
-          <span>
-            You can keep practicing —{" "}
-            <Link
-              href="/verify-email"
-              className="font-medium text-foreground underline-offset-2 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50"
-            >
-              verify your email
-            </Link>{" "}
-            or use your account menu.
-          </span>
-        </p>
-      ) : null}
+      {emailUnverified ? <EmailVerificationBanner /> : null}
 
       {/* Priorities */}
       <section className="space-y-4">
