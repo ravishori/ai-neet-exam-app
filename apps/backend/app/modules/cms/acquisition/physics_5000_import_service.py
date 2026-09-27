@@ -12,7 +12,7 @@ import random
 import re
 import sqlite3
 import uuid
-import xml.etree.ElementTree as ET
+import defusedxml.ElementTree as ET
 from dataclasses import dataclass, field
 from datetime import UTC, datetime
 from pathlib import Path

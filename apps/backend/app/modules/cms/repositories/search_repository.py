@@ -150,6 +150,12 @@ class SearchRepository:
         )
         params["query"] = query
 
+        # B608 false positive: {clause} is built by _common_filters/_scope_filter
+        # entirely from hardcoded SQL-fragment literals selected via a closed
+        # allowlist dict keyed by scope_type (SUBJECT/CHAPTER/TOPIC/CONCEPT);
+        # {_RESULT_COLUMNS}/{_RESULT_JOIN} are module-level constants. Every
+        # actual data value (query, scope_id, content_type, difficulty,
+        # pyq_year, limit, offset) is bound via `params`, never interpolated.
         sql = f"""
             SELECT
                 {_RESULT_COLUMNS},
@@ -176,7 +182,7 @@ class SearchRepository:
             {clause}
             ORDER BY rank DESC, ci.created_at DESC
             LIMIT :limit OFFSET :offset
-        """
+        """  # nosec B608
         count_sql = f"""
             SELECT count(*) {_RESULT_JOIN}
             WHERE ci.search_vector @@ websearch_to_tsquery('english', :query)
@@ -226,6 +232,11 @@ class SearchRepository:
         )
         params["query"] = query
 
+        # B608 false positive: same pattern as search_fulltext above —
+        # {clause} is hardcoded/allowlisted, {_RESULT_COLUMNS}/{_RESULT_JOIN}
+        # are module-level constants, and all real data (query, scope_id,
+        # content_type, difficulty, pyq_year, limit, offset) is bound via
+        # `params`, never interpolated into this string.
         sql = f"""
             SELECT
                 {_RESULT_COLUMNS},
@@ -243,7 +254,7 @@ class SearchRepository:
             {clause}
             ORDER BY rank DESC, ci.created_at DESC
             LIMIT :limit OFFSET :offset
-        """
+        """  # nosec B608
         count_sql = f"""
             SELECT count(*) {_RESULT_JOIN}
             WHERE :query <% coalesce(ci.search_text, '')

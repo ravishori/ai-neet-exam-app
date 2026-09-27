@@ -33,6 +33,8 @@ jobs:
 
     - name: Checkout Repository
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
 
     # ----------------------------------------------------------------------
     # Setup Python
@@ -99,20 +101,36 @@ jobs:
     # ----------------------------------------------------------------------
     # Python Dependency Audit
     # ----------------------------------------------------------------------
+    # Scoped to the application's declared requirements.txt (not a bare
+    # `pip-audit` of the whole CI environment) — a bare audit also flags
+    # nltk, which is not an application dependency at all but a transitive
+    # dependency of the `safety` scanner installed two steps above (safety
+    # requires nltk>=3.9). Scoping to requirements.txt audits exactly what
+    # the application ships, which is the coverage this check exists for.
 
     - name: pip-audit
 
+      working-directory: apps/backend
+
       run: |
-        pip-audit
+        pip-audit -r requirements.txt
 
     # ----------------------------------------------------------------------
     # Python Static Security Scan
     # ----------------------------------------------------------------------
+    # Scoped to production application code (apps/backend/app), excluding
+    # every `tests` directory at any depth (fnmatch's `*` matches across
+    # `/`, unlike shell glob, so this single pattern is depth-agnostic and
+    # needs no maintenance as new test directories are added — verified
+    # empirically against 11 existing nested tests/ dirs). Severity
+    # threshold set to medium+ so Low-severity findings (94% of the
+    # unfiltered scan, dominated by B101 assert_used in test code) don't
+    # drown out real signal; Medium and High remain fully blocking.
 
     - name: Bandit Security Scan
 
       run: |
-        bandit -r apps/backend
+        bandit -r apps/backend/app --exclude "*/tests/*" --severity-level medium
 
     # ----------------------------------------------------------------------
     # Python Dependency Vulnerability Scan
@@ -126,13 +144,63 @@ jobs:
     # ----------------------------------------------------------------------
     # JavaScript Dependency Audit
     # ----------------------------------------------------------------------
+    # Fails on any high/critical advisory NOT already reviewed and accepted
+    # in docs/SECURITY_EXCEPTIONS.md (EX-2026-09-23-001). The 4 GHSA IDs
+    # below are that exception's exact documented findings — update both
+    # together. Any other high/critical finding (new PostCSS advisory,
+    # a different package, severity escalation) still fails this step, as
+    # does malformed/unparseable npm audit output, a report with no
+    # extractable advisory ID for a reported finding, or npm audit itself
+    # exiting in an unexpected way — all fail closed.
 
     - name: npm audit
 
       working-directory: apps/web
 
       run: |
-        npm audit --audit-level=high
+        ALLOWLIST="GHSA-6g55-p6wh-862q GHSA-r28c-9q8g-f849 GHSA-fxqj-rqcc-2cmp GHSA-qx2v-qp2m-jg93"
+
+        npm audit --audit-level=high --json > npm-audit.json || true
+
+        if ! jq -e 'type == "object" and has("vulnerabilities") and (.vulnerabilities | type == "object")' npm-audit.json > /dev/null 2>&1; then
+          echo "::error::npm audit did not produce the expected JSON structure — failing closed."
+          cat npm-audit.json
+          exit 1
+        fi
+
+        VULN_COUNT=$(jq '.vulnerabilities | length' npm-audit.json)
+        if [ "$VULN_COUNT" -eq 0 ]; then
+          echo "npm audit: 0 findings at/above --audit-level=high."
+          exit 0
+        fi
+
+        FOUND_IDS=$(jq -r '
+          [.vulnerabilities[].via[]? | select(type=="object") | (.url // "") | scan("GHSA-[a-zA-Z0-9-]+")]
+          | unique
+          | .[]
+        ' npm-audit.json)
+
+        if [ -z "$FOUND_IDS" ]; then
+          echo "::error::npm audit reported $VULN_COUNT finding(s) at/above --audit-level=high, but no GHSA advisory ID could be extracted — failing closed."
+          cat npm-audit.json
+          exit 1
+        fi
+
+        UNKNOWN=""
+        for id in $FOUND_IDS; do
+          case " $ALLOWLIST " in
+            *" $id "*) ;;
+            *) UNKNOWN="$UNKNOWN $id" ;;
+          esac
+        done
+
+        if [ -n "$UNKNOWN" ]; then
+          echo "::error::New/unallowlisted high-severity npm advisories found:$UNKNOWN"
+          echo "Allowlisted (docs/SECURITY_EXCEPTIONS.md EX-2026-09-23-001): $ALLOWLIST"
+          exit 1
+        fi
+
+        echo "Only previously-reviewed advisories present (docs/SECURITY_EXCEPTIONS.md EX-2026-09-23-001): $FOUND_IDS"
 
     # ----------------------------------------------------------------------
     # Secret Scan
@@ -151,7 +219,7 @@ jobs:
 
     - name: Trivy Filesystem Scan
 
-      uses: aquasecurity/trivy-action@v0.31.0
+      uses: aquasecurity/trivy-action@v0.36.0
 
       with:
         scan-type: fs

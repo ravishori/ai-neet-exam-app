@@ -2,7 +2,10 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-RUN apt-get update && apt-get install -y --no-install-recommends \
+# upgrade picks up OS-package security patches published since the
+# python:3.11-slim base layer was built (B3 hardening) — safe, no version
+# pins broken, since we don't pin OS package versions anywhere below.
+RUN apt-get update && apt-get upgrade -y && apt-get install -y --no-install-recommends \
     libpq-dev gcc \
     && rm -rf /var/lib/apt/lists/*
 
