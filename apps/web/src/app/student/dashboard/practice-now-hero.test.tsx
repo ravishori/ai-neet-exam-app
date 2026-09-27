@@ -30,8 +30,15 @@ const meState = {
   isLoading: false,
 };
 
+const resendVerificationEmail = vi.fn();
 vi.mock("@/features/auth/use-auth", () => ({
   useMe: () => meState,
+  useResendVerificationEmail: () => ({
+    mutate: resendVerificationEmail,
+    isPending: false,
+    isError: false,
+    error: null,
+  }),
 }));
 
 const queryDataByKey: Record<string, unknown> = {};
@@ -150,10 +157,10 @@ describe("dashboard Practice Now hero CTA", () => {
     meState.data.email_verified = false;
     renderDashboard();
     expect(screen.getByText(/email not verified/i)).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: /verify your email/i })).toHaveAttribute(
-      "href",
-      "/verify-email",
-    );
+    // No token exists yet for an unrequested verification — the banner must
+    // trigger a resend action, not link straight to /verify-email (that
+    // page would just show "Missing verification token").
+    expect(screen.getByRole("button", { name: /resend verification email/i })).toBeInTheDocument();
     expect(screen.queryByRole("button", { name: /continue practice/i })).toBeInTheDocument();
   });
 });
