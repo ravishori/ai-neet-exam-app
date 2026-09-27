@@ -103,6 +103,9 @@ async def test_resend_token_is_not_returned_in_api_response(client, db_session, 
 
 
 async def test_resend_rate_limited_after_repeated_requests(client, db_session, monkeypatch):
+    email = _email()
+    await _register(client, email)  # uses the no_limit bypass from the autouse fixture above
+
     from app.core import rate_limit as rl
 
     async def deny(*_a, **_k):
@@ -110,10 +113,9 @@ async def test_resend_rate_limited_after_repeated_requests(client, db_session, m
 
         raise AppError("Too many requests", code="RATE_LIMITED", status_code=429)
 
+    # Only the resend call itself should be denied — register() already
+    # happened above under the autouse no-limit bypass.
     monkeypatch.setattr(rl, "_check", deny)
-
-    email = _email()
-    await _register(client, email)
 
     async def capture_send(*, to, subject, body, kind):
         return None
