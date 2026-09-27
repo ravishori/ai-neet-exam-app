@@ -18,7 +18,31 @@ from app.shared.responses import envelope
 
 router = APIRouter(tags=["cms-human-gold-sandbox"])
 
-REPO_ROOT = Path(__file__).resolve().parents[6]
+
+def _resolve_repo_root(file_path: str | Path = __file__) -> Path:
+    """<repo root> in a local checkout (this file, apps/backend/app/modules/
+    cms/api/human_gold_sandbox_router.py, has 6 directories above the repo
+    root — parents[6] is that root). The Docker image flattens that — COPY
+    . . puts this file at /app/app/modules/cms/api/human_gold_sandbox_
+    router.py, only 5 directories above /, so parents[6] doesn't exist there
+    and raises IndexError at import time, before any route can run.
+
+    Same fallback shape as scripts/import_pyq_staging.py's
+    _resolve_repo_root(): COPY . . puts the repo root itself at /app (this
+    file's ancestor), so the container-aware fallback below returns /app
+    when /app appears in the ancestor chain. Path("/") remains the
+    last-resort fallback for any other unexpectedly flattened layout.
+    """
+    parents = Path(file_path).resolve().parents
+    if len(parents) > 6:
+        return parents[6]
+    docker_app_root = Path("/app").resolve()
+    if docker_app_root in parents:
+        return docker_app_root
+    return Path("/")
+
+
+REPO_ROOT = _resolve_repo_root()
 
 
 def _svc(db: AsyncSession) -> HumanGoldSandboxService:
