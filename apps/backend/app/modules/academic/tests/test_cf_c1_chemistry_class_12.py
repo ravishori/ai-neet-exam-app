@@ -68,7 +68,7 @@ def test_seed_shape_all_chemistry_chapters_are_5_tuples():
         code, name, weightage, class_level, topics = ch
         assert isinstance(code, str) and code
         assert isinstance(name, str) and name
-        assert weightage is None or isinstance(weightage, (int, float))
+        assert weightage is None or isinstance(weightage, int | float)
         assert class_level in ("11", "12"), (code, class_level)
         assert isinstance(topics, list)
 

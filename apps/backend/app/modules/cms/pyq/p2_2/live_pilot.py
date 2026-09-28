@@ -189,7 +189,7 @@ def provider_comparison_recovery(rows: list[dict[str, Any]]) -> dict[str, Any]:
     for row in rows:
         fa = row.get("field_agreement") or {}
         overall = fa.get("overall")
-        if isinstance(overall, (int, float)):
+        if isinstance(overall, int | float):
             agreements.append(float(overall))
     return {
         "mean_field_agreement": round(sum(agreements) / len(agreements), 3) if agreements else 0.0,
