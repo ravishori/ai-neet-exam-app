@@ -173,6 +173,7 @@ jobs:
 
         with:
           sarif_file: backend-trivy.sarif
+          category: trivy-backend
 
       # ----------------------------------------------------------------------
       # Upload Frontend Security Report
@@ -184,6 +185,7 @@ jobs:
 
         with:
           sarif_file: frontend-trivy.sarif
+          category: trivy-frontend
 
       # ----------------------------------------------------------------------
       # Push Backend Image

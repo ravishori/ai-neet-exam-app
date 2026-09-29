@@ -112,7 +112,7 @@ jobs:
     - name: Bandit Security Scan
 
       run: |
-        bandit -r apps/backend
+        bandit -r apps/backend --exclude apps/backend/tests --exclude "*/tests/*"
 
     # ----------------------------------------------------------------------
     # Python Dependency Vulnerability Scan
