@@ -17,6 +17,8 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Literal
 
+from defusedxml import ElementTree as DefusedET
+from defusedxml.common import DefusedXmlException
 from sqlalchemy import select, text
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
@@ -110,8 +112,8 @@ def classify_diagram(record: dict[str, Any]) -> tuple[DiagramClass, str | None]:
     if not SVG_OPEN.search(svg) or not SVG_CLOSE.search(svg):
         return "INVALID_IMAGE", diagram_sha256(svg)
     try:
-        ET.fromstring(svg)
-    except ET.ParseError:
+        DefusedET.fromstring(svg)
+    except (ET.ParseError, DefusedXmlException):
         return "INVALID_IMAGE", diagram_sha256(svg)
     return "VALID_DIAGRAM", diagram_sha256(svg)
 

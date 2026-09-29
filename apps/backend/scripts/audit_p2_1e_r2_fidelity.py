@@ -7,6 +7,7 @@ import csv
 import hashlib
 import json
 import re
+import shlex
 import subprocess
 import sys
 from collections import Counter
@@ -294,7 +295,7 @@ def main() -> None:
     q20_hits = [r for r in recs if r.get("source_sha256") == HR_SHA and r.get("question_number") == 20]
 
     test_cmd = "python -m pytest app/modules/cms/tests/ -q --confcutdir=app/modules/cms/tests"
-    proc = subprocess.run(test_cmd, shell=True, cwd=ROOT / "apps/backend", capture_output=True, text=True)
+    proc = subprocess.run(shlex.split(test_cmd), cwd=ROOT / "apps/backend", capture_output=True, text=True)
     test_out = (proc.stdout + proc.stderr).strip()
     passed = int(re.search(r"(\d+) passed", test_out).group(1)) if re.search(r"(\d+) passed", test_out) else None
     failed = int(m.group(1)) if (m := re.search(r"(\d+) failed", test_out)) else 0

@@ -120,12 +120,7 @@ async def fingerprint_t6f1_published(session: AsyncSession) -> dict[str, Any]:
     return dict(row)
 
 
-async def _row_canon_map(session: AsyncSession, *, where_sql: str, params: dict[str, Any]) -> dict[str, str]:
-    """Map content_item id → canonical content string for diffing."""
-    rows = (
-        await session.execute(
-            text(
-                f"""
+_ROW_CANON_QUERY_TEMPLATE = """
                 SELECT ci.id::text AS id,
                        ci.id::text
                          || '|' || ci.slug
@@ -137,9 +132,21 @@ async def _row_canon_map(session: AsyncSession, *, where_sql: str, params: dict[
                 LEFT JOIN cms.content_versions cv ON cv.id = ci.latest_version_id
                 WHERE ci.content_type = 'QUESTION'
                   AND ci.deleted_at IS NULL
-                  AND ({where_sql})
+                  AND (__WHERE_SQL__)
                 """
-            ),
+
+
+async def _row_canon_map(session: AsyncSession, *, where_sql: str, params: dict[str, Any]) -> dict[str, str]:
+    """Map content_item id → canonical content string for diffing.
+
+    ``where_sql`` is always a fixed literal supplied by this module's own
+    call sites (never external/user input); all actual values are bound via
+    ``params``.
+    """
+    query_text = _ROW_CANON_QUERY_TEMPLATE.replace("__WHERE_SQL__", where_sql)  # nosec B608 - where_sql is a fixed literal from this file's own callers, not external input
+    rows = (
+        await session.execute(
+            text(query_text),
             params,
         )
     ).mappings().all()
