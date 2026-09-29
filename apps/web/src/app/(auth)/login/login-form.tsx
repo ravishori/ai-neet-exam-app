@@ -14,6 +14,7 @@ import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ApiError } from "@/lib/api-client";
 import { isMfaChallenge } from "@/features/auth/api";
+import { safeNextPath } from "@/features/auth/redirect";
 import {
   useAuthMethods,
   useEmailOtpRequest,
@@ -43,7 +44,8 @@ function errorMessage(error: unknown): string {
 export function LoginForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const goToApp = () => router.push(searchParams.get("next") ?? "/student/dashboard");
+  // Same-origin paths only — never follow an off-site ?next= after sign-in.
+  const goToApp = () => router.push(safeNextPath(searchParams.get("next")));
 
   // Never claim a login method works when its provider isn't configured —
   // default to email/password only until the backend confirms otherwise.
