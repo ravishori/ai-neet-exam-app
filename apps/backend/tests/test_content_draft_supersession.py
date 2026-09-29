@@ -157,6 +157,7 @@ async def test_update_draft_accepts_tags(db_session, register_user, client):
     assert updated.latest_version_id != before_vid
 
 
+@pytest.mark.skipif(not BIO_LINEAGE.is_file(), reason="replacement lineage JSON missing")
 def test_load_biology_replacement_lineage():
     assert BIO_LINEAGE.is_file()
     lineage = load_replacement_lineage(BIO_LINEAGE)

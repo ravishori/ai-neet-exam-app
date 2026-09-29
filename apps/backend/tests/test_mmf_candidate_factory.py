@@ -18,6 +18,7 @@ from app.modules.cms.acquisition.mmf.adapters import (
     build_adapters,
 )
 from app.modules.cms.acquisition.mmf.config import (
+    CH04_FIXTURE_REL,
     CH04_FIXTURE_SHA,
     DEFAULT_POC_BATCH_ID,
     build_planned_batch,
@@ -31,7 +32,7 @@ from app.modules.cms.acquisition.mmf.normalize import (
     candidate_fingerprint,
     normalize_text,
 )
-from app.modules.cms.acquisition.mmf.pipeline import run_dry_run
+from app.modules.cms.acquisition.mmf.pipeline import repo_root_from_backend, run_dry_run
 from app.modules.cms.acquisition.mmf.schemas import CandidateRecord, DifficultyTargets, GenerationBatch
 from app.modules.cms.acquisition.mmf.semantic_dedupe import (
     StubSemanticDuplicateDetector,
@@ -242,6 +243,10 @@ def test_allocation_and_batch_creation():
 
 
 @pytest.mark.asyncio
+@pytest.mark.skipif(
+    not (repo_root_from_backend() / CH04_FIXTURE_REL).exists(),
+    reason="questions_repaired_final.jsonl batch fixture not present",
+)
 async def test_dry_run_no_contentitem_mutation():
     """Dry-run without DB session still validates pipeline; no CMS writes."""
     result = await run_dry_run(session=None, write_artifacts=False)

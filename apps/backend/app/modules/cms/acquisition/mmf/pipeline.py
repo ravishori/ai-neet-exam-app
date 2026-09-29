@@ -18,7 +18,6 @@ from app.modules.cms.acquisition.mmf.config import (
     build_planned_batch,
     load_allocation_config,
     provider_status_from_settings,
-    redact_secrets,
 )
 from app.modules.cms.acquisition.mmf.guards import (
     GuardError,
@@ -28,7 +27,7 @@ from app.modules.cms.acquisition.mmf.guards import (
     assert_source_sha,
 )
 from app.modules.cms.acquisition.mmf.normalize import apply_exact_deduplication, candidate_fingerprint
-from app.modules.cms.acquisition.mmf.schemas import CandidateRecord, CandidateStatus
+from app.modules.cms.acquisition.mmf.schemas import CandidateStatus
 from app.modules.cms.acquisition.mmf.semantic_dedupe import StubSemanticDuplicateDetector
 from app.modules.cms.acquisition.mmf.validation import validate_candidate_dict, validate_candidate_list
 from app.modules.cms.models import ContentItem

@@ -4,19 +4,19 @@ from __future__ import annotations
 
 from pathlib import Path
 
+from app.modules.cms.pyq.pyq_geometry import PageLayout
 from app.modules.cms.pyq.pyq_ocr import OcrWordRecord, parse_tesseract_tsv_words
+from app.modules.cms.pyq.pyq_p2_1c import evaluate_hr_regression
 from app.modules.cms.pyq.pyq_p2_1e import (
     HR_SHA,
+    _heal_pipe_split_question_markers,
+    detect_layout_from_words,
     find_valid_question_starts,
     is_valid_question_marker,
-    detect_layout_from_words,
-    split_words_into_columns,
-    segment_column_text,
     parse_options_bounded,
-    _heal_pipe_split_question_markers,
+    segment_column_text,
+    split_words_into_columns,
 )
-from app.modules.cms.pyq.pyq_geometry import PageLayout
-from app.modules.cms.pyq.pyq_p2_1c import evaluate_hr_regression
 
 
 def test_parse_tesseract_tsv_words_persists_bbox(tmp_path: Path):

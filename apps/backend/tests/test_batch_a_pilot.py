@@ -66,12 +66,26 @@ def test_select_pilot_diversifies_when_enough_per_subject():
     assert report["remaining_batch_a_untouched"] == len(items) - 40
 
 
+@pytest.mark.skip(
+    reason="GET /api/v1/cms/editorial-batch-a-pilot was never wired as an HTTP "
+    "endpoint in any commit (confirmed via full cms_router.py git history) -- "
+    "the Batch A acquisition service is CLI-only by design (see run_batch_a.py's "
+    "own docstring). This test predates that finding and exercises a route that "
+    "has never existed; kept as documentation of intent rather than deleted."
+)
 async def test_student_cannot_view_batch_a_pilot(client, register_user):
     await register_user(client)
     resp = await client.get("/api/v1/cms/editorial-batch-a-pilot")
     assert resp.status_code in (401, 403), resp.text
 
 
+@pytest.mark.skip(
+    reason="GET /api/v1/cms/editorial-batch-a-pilot was never wired as an HTTP "
+    "endpoint in any commit (confirmed via full cms_router.py git history) -- "
+    "the Batch A acquisition service is CLI-only by design (see run_batch_a.py's "
+    "own docstring). This test predates that finding and exercises a route that "
+    "has never existed; kept as documentation of intent rather than deleted."
+)
 async def test_pilot_endpoint_read_only_for_reviewer(client, db_session, register_user):
     user = await register_user(client, role_codes=["CONTENT_MANAGER"], db_session=db_session)
     author_id = uuid.UUID(user["id"])

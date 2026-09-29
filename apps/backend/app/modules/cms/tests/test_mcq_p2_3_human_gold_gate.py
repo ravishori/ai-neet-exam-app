@@ -4,7 +4,6 @@ from __future__ import annotations
 
 import csv
 import json
-import tempfile
 from pathlib import Path
 
 import pytest
@@ -22,16 +21,15 @@ from app.modules.cms.mcq.p2_3.human_gold_gate.loader import (
     sort_review_rows,
     staging_paths,
     verify_protected_artifacts,
-    write_review_csv,
 )
 from app.modules.cms.mcq.p2_3.human_gold_gate.metrics import compute_metrics
 from app.modules.cms.mcq.p2_3.human_gold_gate.normalization import (
-    normalize_answer_key,
     normalize_ai_verdict,
+    normalize_answer_key,
     normalize_human_overall,
 )
 from app.modules.cms.mcq.p2_3.human_gold_gate.pipeline import prepare_human_gold_review, run_all
-from app.modules.cms.mcq.p2_3.human_gold_gate.schemas import GATE_VERSION, GateThresholds, HUMAN_REVIEW_COLUMNS
+from app.modules.cms.mcq.p2_3.human_gold_gate.schemas import HUMAN_REVIEW_COLUMNS, GateThresholds
 
 ROOT = Path(__file__).resolve().parents[6]
 
@@ -225,7 +223,7 @@ def test_preserve_human_fields():
 def test_integration_prepare_idempotent():
     before = file_checksum(ROOT / "data/staging/mcq/p2_3_r1/human_gold_sample_r1_annotated.csv")
     m1 = prepare_human_gold_review(root=ROOT)
-    m2 = prepare_human_gold_review(root=ROOT)
+    prepare_human_gold_review(root=ROOT)
     after = file_checksum(ROOT / "data/staging/mcq/p2_3_r1/human_gold_sample_r1_annotated.csv")
     assert before == after
     assert m1["sample_size"] == 100

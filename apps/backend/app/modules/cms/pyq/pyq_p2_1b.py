@@ -19,12 +19,11 @@ from app.modules.cms.pyq.pyq_extraction import (
     ValidationStatus,
 )
 from app.modules.cms.pyq.pyq_ocr import (
+    NEEDS_REVIEW,
     OCR_FAILED,
     OCR_LOW_CONFIDENCE,
     OCR_SUCCESS,
-    NEEDS_REVIEW,
 )
-from app.modules.cms.pyq.pyq_p2 import NEET_2022_STATUS
 from app.modules.cms.pyq.pyq_p2_1 import (
     extract_questions_from_ocr,
     select_scanned_paper_dirs,

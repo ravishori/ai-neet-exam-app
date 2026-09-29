@@ -29,6 +29,10 @@ ROOT = Path(__file__).resolve().parents[3]
 BACKEND = Path(__file__).resolve().parents[1]
 SYLLABUS = ROOT / "NEETSyllabus.txt"
 PACK = Path(__file__).parent / "fixtures/python_mcq_engine_006_reviewed_100.json"
+
+pytestmark = pytest.mark.skipif(
+    not (ROOT / "NCERT Books").exists(), reason="NCERT Books corpus not present"
+)
 AUDIT = ROOT / "docs/audits/python_mcq_engine_007.json"
 SEED = 20260914
 SCRIPTS = BACKEND / "scripts"

@@ -119,7 +119,7 @@ def build_provenance_tags(record: dict[str, Any], *, diagram_status: str, diagra
     tags = [
         BATCH_ID,
         f"legacy_id:{record['id']}",
-        f"source:algorithmic",
+        "source:algorithmic",
         f"legacy_chapter_id:{chapter_id}",
         f"legacy_chapter_title:{record['chapter_title']}",
         f"legacy_topic:{record['topic']}",

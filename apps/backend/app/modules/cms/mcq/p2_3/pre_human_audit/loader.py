@@ -9,7 +9,6 @@ from pathlib import Path
 from typing import Any
 
 from app.modules.cms.mcq.p2_3.pre_human_audit.schemas import GOLD_SAMPLE_SIZE, HUMAN_REVIEW_COLUMNS
-from app.modules.cms.services.factory_candidate_validation import normalize_stem
 
 
 def staging_paths(root: Path) -> dict[str, Path]:

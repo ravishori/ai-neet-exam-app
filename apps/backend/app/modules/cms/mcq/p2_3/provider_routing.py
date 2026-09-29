@@ -2,8 +2,6 @@
 
 from __future__ import annotations
 
-from typing import Any
-
 from app.core.config import Settings, get_settings
 from app.modules.ai.gateway.base import AIProvider
 from app.modules.ai.gateway.gemini_provider import GeminiProvider

@@ -18,6 +18,7 @@ from app.modules.cms.acquisition.physics_acquisition_common import (
     physics_stem_hashes_for_dedupe,
 )
 from app.modules.cms.acquisition.physics_t6d_bank import PilotCandidate
+from app.modules.cms.acquisition.physics_t6d_service import actor_user, resolve_concept_ids
 from app.modules.cms.acquisition.physics_t6d_throughput import ThroughputMeter
 from app.modules.cms.acquisition.physics_t6f1_constants import (
     BATCH_ID,
@@ -25,12 +26,10 @@ from app.modules.cms.acquisition.physics_t6f1_constants import (
     MODEL_USED,
     PROMPT_VERSION,
     TARGET_CANDIDATES,
-    pilot_slug,
 )
 from app.modules.cms.acquisition.physics_t6f1_gates import audit_bank
 from app.modules.cms.models import ContentItem
 from app.modules.cms.services.content_workflow_service import ContentWorkflowService
-from app.modules.cms.acquisition.physics_t6d_service import resolve_concept_ids, actor_user
 
 logger = get_logger("cms.acquisition.physics_t6f1")
 

@@ -31,7 +31,7 @@ from app.modules.cms.acquisition.physics_t6f2_constants import (
     LEGACY_FINGERPRINT_EXPECTED,
     T6D_BATCH_ID,
 )
-from app.modules.cms.models import ContentItem, ContentVersion
+from app.modules.cms.models import ContentItem
 from app.modules.cms.services.content_workflow_service import ContentWorkflowService
 from app.modules.cms.services.publication_gates import evaluate_question_publication_gates
 
@@ -157,7 +157,6 @@ class PhysicsT6F2PublishService:
             gate_ok = report.passed and not any(r.startswith("batch:") for r in report.reasons)
             if gate_ok:
                 eligible_ids.append(str(item.id))
-                opts = body.get("options") or []
                 correct = body.get("correct_option")
                 if correct:
                     pos[str(correct)] += 1

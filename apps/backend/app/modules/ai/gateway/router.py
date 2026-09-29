@@ -16,7 +16,6 @@ from app.modules.ai.gateway.base import (
 from app.modules.ai.gateway.pricing import estimate_cost
 from app.modules.ai.gateway.registry import ProviderRegistry
 
-
 MODE_FIXED = "fixed"
 MODE_FIXED_MODEL = "fixed_model"
 MODE_FALLBACK_CHAIN = "fallback_chain"

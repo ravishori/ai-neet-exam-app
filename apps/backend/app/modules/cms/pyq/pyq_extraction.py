@@ -17,11 +17,7 @@ import fitz
 from app.modules.cms.pyq.pyq_discovery import (
     MATH_MARKERS,
     ZipFileEntry,
-    classify_entry,
-    extract_year,
     normalized_question_hash,
-    probe_pdf_bytes,
-    sha256_bytes,
 )
 
 PAGE_MARKER_RE = re.compile(r"<<<PAGE:(\d+)>>>")
