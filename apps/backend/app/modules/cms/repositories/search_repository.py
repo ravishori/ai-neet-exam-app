@@ -78,6 +78,65 @@ _RESULT_COLUMNS = """
     subject.id AS subject_id_j, subject.name AS subject_name
 """
 
+_SEARCH_FULLTEXT_QUERY_TEMPLATE = """
+    SELECT
+        {result_columns},
+        ts_rank(ci.search_vector, websearch_to_tsquery('english', :query)) AS rank,
+        ts_headline(
+            'english', coalesce(cv.body ->> 'stem', ''), websearch_to_tsquery('english', :query),
+            'MaxFragments=1, MaxWords=25, MinWords=5, StartSel=<mark>, StopSel=</mark>, HighlightAll=true'
+        ) AS stem_snippet,
+        ts_headline(
+            'english', coalesce(ci.search_text, ''), websearch_to_tsquery('english', :query),
+            'MaxFragments=1, MaxWords=25, MinWords=5, StartSel=<mark>, StopSel=</mark>'
+        ) AS full_snippet,
+        to_tsvector('english', coalesce(cv.body ->> 'stem', '')) @@ websearch_to_tsquery('english', :query) AS matched_stem,
+        to_tsvector('english', coalesce((SELECT string_agg(opt ->> 'text', ' ') FROM jsonb_array_elements(cv.body -> 'options') AS opt), ''))
+            @@ websearch_to_tsquery('english', :query) AS matched_options,
+        to_tsvector('english', coalesce(cv.body ->> 'explanation', '')) @@ websearch_to_tsquery('english', :query) AS matched_explanation,
+        to_tsvector('english', coalesce(concept.name, '')) @@ websearch_to_tsquery('english', :query) AS matched_concept,
+        to_tsvector('english', coalesce(topic.name, '')) @@ websearch_to_tsquery('english', :query) AS matched_topic,
+        to_tsvector('english', coalesce(chapter.name, '')) @@ websearch_to_tsquery('english', :query) AS matched_chapter,
+        to_tsvector('english', coalesce(subject.name, '')) @@ websearch_to_tsquery('english', :query) AS matched_subject,
+        to_tsvector('english', coalesce(ku.summary, '')) @@ websearch_to_tsquery('english', :query) AS matched_knowledge_unit
+    {result_join}
+    WHERE ci.search_vector @@ websearch_to_tsquery('english', :query)
+    {clause}
+    ORDER BY rank DESC, ci.created_at DESC
+    LIMIT :limit OFFSET :offset
+"""
+
+_SEARCH_FULLTEXT_COUNT_TEMPLATE = """
+    SELECT count(*) {result_join}
+    WHERE ci.search_vector @@ websearch_to_tsquery('english', :query)
+    {clause}
+"""
+
+_SEARCH_FUZZY_QUERY_TEMPLATE = """
+    SELECT
+        {result_columns},
+        word_similarity(:query, coalesce(ci.search_text, '')) AS rank,
+        (:query <% coalesce(cv.body ->> 'stem', '')) AS matched_stem,
+        (:query <% coalesce((SELECT string_agg(opt ->> 'text', ' ') FROM jsonb_array_elements(cv.body -> 'options') AS opt), '')) AS matched_options,
+        (:query <% coalesce(cv.body ->> 'explanation', '')) AS matched_explanation,
+        (:query <% coalesce(concept.name, '')) AS matched_concept,
+        (:query <% coalesce(topic.name, '')) AS matched_topic,
+        (:query <% coalesce(chapter.name, '')) AS matched_chapter,
+        (:query <% coalesce(subject.name, '')) AS matched_subject,
+        (:query <% coalesce(ku.summary, '')) AS matched_knowledge_unit
+    {result_join}
+    WHERE :query <% coalesce(ci.search_text, '')
+    {clause}
+    ORDER BY rank DESC, ci.created_at DESC
+    LIMIT :limit OFFSET :offset
+"""
+
+_SEARCH_FUZZY_COUNT_TEMPLATE = """
+    SELECT count(*) {result_join}
+    WHERE :query <% coalesce(ci.search_text, '')
+    {clause}
+"""
+
 
 def _scope_filter(scope_type: str | None, scope_id: uuid.UUID | None) -> tuple[str, dict]:
     if not scope_type or not scope_id:
@@ -150,38 +209,8 @@ class SearchRepository:
         )
         params["query"] = query
 
-        sql = f"""
-            SELECT
-                {_RESULT_COLUMNS},
-                ts_rank(ci.search_vector, websearch_to_tsquery('english', :query)) AS rank,
-                ts_headline(
-                    'english', coalesce(cv.body ->> 'stem', ''), websearch_to_tsquery('english', :query),
-                    'MaxFragments=1, MaxWords=25, MinWords=5, StartSel=<mark>, StopSel=</mark>, HighlightAll=true'
-                ) AS stem_snippet,
-                ts_headline(
-                    'english', coalesce(ci.search_text, ''), websearch_to_tsquery('english', :query),
-                    'MaxFragments=1, MaxWords=25, MinWords=5, StartSel=<mark>, StopSel=</mark>'
-                ) AS full_snippet,
-                to_tsvector('english', coalesce(cv.body ->> 'stem', '')) @@ websearch_to_tsquery('english', :query) AS matched_stem,
-                to_tsvector('english', coalesce((SELECT string_agg(opt ->> 'text', ' ') FROM jsonb_array_elements(cv.body -> 'options') AS opt), ''))
-                    @@ websearch_to_tsquery('english', :query) AS matched_options,
-                to_tsvector('english', coalesce(cv.body ->> 'explanation', '')) @@ websearch_to_tsquery('english', :query) AS matched_explanation,
-                to_tsvector('english', coalesce(concept.name, '')) @@ websearch_to_tsquery('english', :query) AS matched_concept,
-                to_tsvector('english', coalesce(topic.name, '')) @@ websearch_to_tsquery('english', :query) AS matched_topic,
-                to_tsvector('english', coalesce(chapter.name, '')) @@ websearch_to_tsquery('english', :query) AS matched_chapter,
-                to_tsvector('english', coalesce(subject.name, '')) @@ websearch_to_tsquery('english', :query) AS matched_subject,
-                to_tsvector('english', coalesce(ku.summary, '')) @@ websearch_to_tsquery('english', :query) AS matched_knowledge_unit
-            {_RESULT_JOIN}
-            WHERE ci.search_vector @@ websearch_to_tsquery('english', :query)
-            {clause}
-            ORDER BY rank DESC, ci.created_at DESC
-            LIMIT :limit OFFSET :offset
-        """
-        count_sql = f"""
-            SELECT count(*) {_RESULT_JOIN}
-            WHERE ci.search_vector @@ websearch_to_tsquery('english', :query)
-            {clause}
-        """
+        sql = _SEARCH_FULLTEXT_QUERY_TEMPLATE.format(result_columns=_RESULT_COLUMNS, result_join=_RESULT_JOIN, clause=clause)  # nosec B608 - result_columns/result_join are fixed module constants; clause is built from a hardcoded column whitelist in _scope_filter, never from external input
+        count_sql = _SEARCH_FULLTEXT_COUNT_TEMPLATE.format(result_join=_RESULT_JOIN, clause=clause)  # nosec B608 - same as above
 
         count_params = dict(params)
         params["limit"] = limit
@@ -226,29 +255,8 @@ class SearchRepository:
         )
         params["query"] = query
 
-        sql = f"""
-            SELECT
-                {_RESULT_COLUMNS},
-                word_similarity(:query, coalesce(ci.search_text, '')) AS rank,
-                (:query <% coalesce(cv.body ->> 'stem', '')) AS matched_stem,
-                (:query <% coalesce((SELECT string_agg(opt ->> 'text', ' ') FROM jsonb_array_elements(cv.body -> 'options') AS opt), '')) AS matched_options,
-                (:query <% coalesce(cv.body ->> 'explanation', '')) AS matched_explanation,
-                (:query <% coalesce(concept.name, '')) AS matched_concept,
-                (:query <% coalesce(topic.name, '')) AS matched_topic,
-                (:query <% coalesce(chapter.name, '')) AS matched_chapter,
-                (:query <% coalesce(subject.name, '')) AS matched_subject,
-                (:query <% coalesce(ku.summary, '')) AS matched_knowledge_unit
-            {_RESULT_JOIN}
-            WHERE :query <% coalesce(ci.search_text, '')
-            {clause}
-            ORDER BY rank DESC, ci.created_at DESC
-            LIMIT :limit OFFSET :offset
-        """
-        count_sql = f"""
-            SELECT count(*) {_RESULT_JOIN}
-            WHERE :query <% coalesce(ci.search_text, '')
-            {clause}
-        """
+        sql = _SEARCH_FUZZY_QUERY_TEMPLATE.format(result_columns=_RESULT_COLUMNS, result_join=_RESULT_JOIN, clause=clause)  # nosec B608 - result_columns/result_join are fixed module constants; clause is built from a hardcoded column whitelist in _scope_filter, never from external input
+        count_sql = _SEARCH_FUZZY_COUNT_TEMPLATE.format(result_join=_RESULT_JOIN, clause=clause)  # nosec B608 - same as above
 
         count_params = dict(params)
         params["limit"] = limit

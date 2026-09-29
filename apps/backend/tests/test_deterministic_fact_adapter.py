@@ -29,6 +29,10 @@ ROOT = Path(__file__).resolve().parents[3]
 SYLLABUS = ROOT / "NEETSyllabus.txt"
 PACK = Path(__file__).parent / "fixtures/python_mcq_engine_004_biomolecules.json"
 
+pytestmark = pytest.mark.skipif(
+    not get_ncert_source_root().exists(), reason="NCERT Books corpus not present"
+)
+
 
 def _taxonomy() -> TaxonomyBinding:
     return TaxonomyBinding(

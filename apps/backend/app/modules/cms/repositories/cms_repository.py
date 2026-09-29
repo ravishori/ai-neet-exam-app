@@ -5,6 +5,8 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
 
 from app.modules.cms.models import ContentItem, ContentReport, ContentReview, ContentVersion, ContentVersionKnowledgeUnit
+from app.modules.ingestion.models import IngestionJob, IngestionSection
+from app.modules.knowledge.models import KnowledgeUnit
 
 
 class CmsRepository:
@@ -63,6 +65,7 @@ class CmsRepository:
         status: str | None = None,
         search: str | None = None,
         created_by: uuid.UUID | None = None,
+        pilot_run_id: str | None = None,
         limit: int = 20,
         offset: int = 0,
     ) -> tuple[list[ContentItem], int]:
@@ -71,7 +74,16 @@ class CmsRepository:
         method rather than changing list_items' return shape and breaking
         its other callers (browse/publish endpoints, seed.py). created_by
         replaces the old Python-side `mine` post-filter so pagination stays
-        correct (filtering after LIMIT/OFFSET would silently shrink pages)."""
+        correct (filtering after LIMIT/OFFSET would silently shrink pages).
+
+        pilot_run_id (optional provenance filter, see
+        tests/test_cms_pilot_run_filter.py) traces:
+        ContentItem -> ContentVersion -> ContentVersionKnowledgeUnit
+        -> KnowledgeUnit -> IngestionSection -> IngestionJob.pilot_run_id.
+        Applied as a correlated EXISTS subquery rather than a JOIN so a
+        content item with multiple knowledge-unit refs is never returned
+        more than once and the plain COUNT(*) in count_query stays correct
+        without needing a separate DISTINCT/GROUP BY."""
         base = select(ContentItem)
         count_query = select(func.count(ContentItem.id))
 
@@ -90,6 +102,22 @@ class CmsRepository:
         if created_by:
             base = base.where(ContentItem.created_by == created_by)
             count_query = count_query.where(ContentItem.created_by == created_by)
+        if pilot_run_id:
+            provenance_exists = (
+                select(IngestionJob.id)
+                .join(IngestionSection, IngestionSection.job_id == IngestionJob.id)
+                .join(KnowledgeUnit, KnowledgeUnit.source_section_id == IngestionSection.id)
+                .join(
+                    ContentVersionKnowledgeUnit,
+                    ContentVersionKnowledgeUnit.knowledge_unit_id == KnowledgeUnit.id,
+                )
+                .join(ContentVersion, ContentVersion.id == ContentVersionKnowledgeUnit.content_version_id)
+                .where(ContentVersion.content_item_id == ContentItem.id)
+                .where(IngestionJob.pilot_run_id == pilot_run_id)
+                .exists()
+            )
+            base = base.where(provenance_exists)
+            count_query = count_query.where(provenance_exists)
 
         total = (await self.session.execute(count_query)).scalar_one()
         base = base.options(selectinload(ContentItem.versions)).order_by(ContentItem.created_at.desc()).limit(limit).offset(offset)

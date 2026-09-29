@@ -30,6 +30,9 @@ def _real_pdf_path() -> str:
     return str(path)
 
 
+@pytest.mark.skipif(
+    not Path(get_settings().study_material_dir).exists(), reason="StudyMaterial pilot PDFs not present"
+)
 async def test_real_english_pdf_sections_are_detected_as_english(db_session):
     chapter = (
         await db_session.execute(select(Chapter).where(Chapter.code == "current-electricity"))

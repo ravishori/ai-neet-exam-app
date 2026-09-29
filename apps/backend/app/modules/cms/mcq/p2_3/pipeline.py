@@ -5,7 +5,6 @@ from __future__ import annotations
 import asyncio
 import json
 import uuid
-from collections import Counter
 from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
@@ -15,8 +14,8 @@ import fitz
 from app.core.config import get_settings
 from app.modules.cms.mcq.p2_3.duplicates import classify_duplicates
 from app.modules.cms.mcq.p2_3.generator import generate_one
-from app.modules.cms.mcq.p2_3.provider_routing import resolve_generation_providers
 from app.modules.cms.mcq.p2_3.plan import build_generation_plan, inventory_from_study_dir
+from app.modules.cms.mcq.p2_3.provider_routing import resolve_generation_providers
 from app.modules.cms.mcq.p2_3.qa import automated_qa
 from app.modules.cms.mcq.p2_3.report import build_pilot_report, write_pilot_report
 from app.modules.cms.mcq.p2_3.safeguard import (
@@ -26,7 +25,7 @@ from app.modules.cms.mcq.p2_3.safeguard import (
     verify_p2_2_population,
 )
 from app.modules.cms.mcq.p2_3.sampling import GOLD_SAMPLE_SIZE, GOLD_SEED, select_gold_sample, write_human_gold_csv
-from app.modules.cms.mcq.p2_3.schemas import McqRecord, RUN_PHASE
+from app.modules.cms.mcq.p2_3.schemas import RUN_PHASE, McqRecord
 from app.modules.cms.mcq.p2_3.validator import resolve_independent_validator_for, validate_record
 from app.modules.cms.pyq.p2_2.budget import BudgetExceededError, BudgetGuard
 from app.modules.cms.pyq.p2_2.cache import RecoveryCache

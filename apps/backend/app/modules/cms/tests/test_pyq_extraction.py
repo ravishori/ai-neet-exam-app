@@ -4,11 +4,9 @@ from __future__ import annotations
 
 import io
 import json
-import zipfile
 from pathlib import Path
 
 import fitz
-import pytest
 
 from app.modules.cms.pyq.pyq_discovery import (
     FileClassification,
@@ -223,7 +221,7 @@ Section - A (Physics)
 1. Incomplete?
 (1) only one
 """
-    result = extract_paper(entry, _pdf_bytes(text.replace("<<<PAGE:2>>>", "")))
+    extract_paper(entry, _pdf_bytes(text.replace("<<<PAGE:2>>>", "")))
     # Re-run with tagged corpus path via direct validation helper
     questions = segment_questions_from_text(
         text,

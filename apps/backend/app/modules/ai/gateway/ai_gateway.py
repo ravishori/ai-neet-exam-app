@@ -10,8 +10,8 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from app.core.config import get_settings
 from app.core.logging import get_logger
 from app.modules.ai.gateway.base import AIProvider, AIResponse, GenerateRequest, ProviderError
-from app.modules.ai.gateway.pricing import estimate_cost
 from app.modules.ai.gateway.fallback_provider import FallbackProvider
+from app.modules.ai.gateway.pricing import estimate_cost
 from app.modules.ai.gateway.registry import ProviderRegistry, build_registry_from_settings, resolve_default_provider
 from app.modules.ai.gateway.router import ProviderRouter, RoutingPolicy, parse_routing_policy
 from app.modules.ai.models import AIRequestLog

@@ -10,7 +10,7 @@ import re
 from dataclasses import dataclass, field
 from typing import Any
 
-from app.modules.cms.services.factory_candidate_validation import normalize_stem, stem_hash, validate_candidate_body
+from app.modules.cms.services.factory_candidate_validation import normalize_stem, validate_candidate_body
 
 QA_VERSION = "factory_qa_v1"
 SEMANTIC_DEDUPE_NOT_AVAILABLE = "SEMANTIC_DEDUPE_NOT_AVAILABLE"

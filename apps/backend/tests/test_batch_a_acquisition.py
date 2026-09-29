@@ -55,6 +55,14 @@ def test_catalog_bodies_structurally_valid():
         assert_body_publishable("QUESTION", body)
 
 
+@pytest.mark.skip(
+    reason="POST /api/v1/cms/acquisition/batch-a was never wired as an HTTP endpoint in any commit "
+    "(confirmed via full cms_router.py git history) -- run_batch_a.py is CLI-only "
+    "by design (see its own docstring: dev-only, invoked via `python -m "
+    "app.modules.cms.acquisition.run_batch_a`). This test predates that finding "
+    "and exercises a route that has never existed; kept as documentation of "
+    "intent rather than deleted."
+)
 async def test_student_cannot_run_batch_a(client, register_user):
     await register_user(client)
     resp = await client.post("/api/v1/cms/acquisition/batch-a", headers=csrf_headers(client))
@@ -121,6 +129,14 @@ async def test_batch_a_rejects_invalid_body(client, db_session, register_user):
     assert report["rejected"] == 1
 
 
+@pytest.mark.skip(
+    reason="POST /api/v1/cms/acquisition/batch-a was never wired as an HTTP endpoint in any commit "
+    "(confirmed via full cms_router.py git history) -- run_batch_a.py is CLI-only "
+    "by design (see its own docstring: dev-only, invoked via `python -m "
+    "app.modules.cms.acquisition.run_batch_a`). This test predates that finding "
+    "and exercises a route that has never existed; kept as documentation of "
+    "intent rather than deleted."
+)
 async def test_batch_a_api_endpoint(client, db_session, register_user):
     await register_user(client, role_codes=["CONTENT_MANAGER"], db_session=db_session)
     # Smoke: endpoint authorized; may create remaining catalog items on shared test DB.

@@ -2,9 +2,6 @@
 
 from __future__ import annotations
 
-import json
-from pathlib import Path
-
 from app.modules.cms.pyq.pyq_p2_1b import (
     annotate_rough_work_pages,
     build_corpus_excluding_rough_work,

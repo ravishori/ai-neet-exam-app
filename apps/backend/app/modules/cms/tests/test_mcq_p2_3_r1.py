@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import json
-import tempfile
 from pathlib import Path
 from unittest.mock import AsyncMock, MagicMock, patch
 
@@ -14,7 +13,6 @@ from app.modules.cms.mcq.p2_3.provider_routing import (
     assert_cross_provider,
     cross_validator_for,
     is_same_provider_validation,
-    resolve_validator_bundle,
 )
 from app.modules.cms.mcq.p2_3.r1.pipeline import (
     build_r1_row,
@@ -23,7 +21,7 @@ from app.modules.cms.mcq.p2_3.r1.pipeline import (
     is_same_provider_blocked,
     r1_staging_paths,
 )
-from app.modules.cms.mcq.p2_3.r1.taxonomy import build_qa_failure_taxonomy, classify_qa_failure
+from app.modules.cms.mcq.p2_3.r1.taxonomy import classify_qa_failure
 from app.modules.cms.mcq.p2_3.schemas import McqRecord
 from app.modules.cms.mcq.p2_3.validator import validation_cost_usd
 

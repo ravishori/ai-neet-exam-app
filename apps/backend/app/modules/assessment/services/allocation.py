@@ -25,7 +25,6 @@ from __future__ import annotations
 import math
 from dataclasses import dataclass
 
-
 TOTAL_TOLERANCE_PCT = 0.01
 """How far the sum of weightages may drift from 100 before we reject."""
 
@@ -108,7 +107,7 @@ def _validate_weightages(weightages: dict[str, float]) -> None:
         if key in seen:
             raise WeightageError(f"duplicate weightage key: {key!r}")
         seen.add(key)
-        if isinstance(value, bool) or not isinstance(value, (int, float)):
+        if isinstance(value, bool) or not isinstance(value, int | float):
             raise WeightageError(f"weightage[{key!r}] must be numeric")
         v = float(value)
         if math.isnan(v) or math.isinf(v):

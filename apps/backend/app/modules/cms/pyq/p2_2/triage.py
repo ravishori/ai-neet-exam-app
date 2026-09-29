@@ -5,7 +5,7 @@ from __future__ import annotations
 import re
 from typing import Any
 
-from app.modules.cms.pyq.p2_2.schemas import TriageCategory, TriageResult
+from app.modules.cms.pyq.p2_2.schemas import TriageResult
 
 DIAGRAM_CUES = ("figure", "shown in", "diagram", "circuit is", "as shown", "graph", "plot")
 CHEM_PATTERN = re.compile(r"(CH[,\d]|COOH|NH[,\d]|\[|\]|→|⇌)", re.I)
@@ -20,7 +20,7 @@ def missing_fields(record: dict[str, Any]) -> list[str]:
     out: list[str] = []
     if not (record.get("stem") or "").strip():
         out.append("stem")
-    for key, label in zip(("option_a", "option_b", "option_c", "option_d"), ("1", "2", "3", "4")):
+    for key, label in zip(("option_a", "option_b", "option_c", "option_d"), ("1", "2", "3", "4"), strict=False):
         if not (record.get(key) or "").strip():
             out.append(f"option_{label}")
     return out

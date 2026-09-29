@@ -1,5 +1,10 @@
+import pytest
+
+from pyq_subject_classifier.config import NCERT_ROOT
 from pyq_subject_classifier.ncert_manifest import load_or_build_manifest
 from pyq_subject_classifier.phase2_index import build_phase2_index
+
+pytestmark = pytest.mark.skipif(not NCERT_ROOT.exists(), reason="NCERT Books corpus not present")
 
 
 def test_phase2_index_reuses_cached_page_text_not_pdfs(monkeypatch):

@@ -8,6 +8,8 @@ prove the pipeline; the rest exist as chapters only, ready for Sprint 3's
 ECAEP content authoring to fill in.
 """
 
+from datetime import UTC
+
 from sqlalchemy import select, text
 from sqlalchemy.ext.asyncio import AsyncSession
 
@@ -544,6 +546,18 @@ SUBJECTS = [
     ("ZOOLOGY", "Zoology", ZOOLOGY_CHAPTERS),
 ]
 
+# Official NEET blueprint split — Physics 25% + Chemistry 25% + Biology 50%
+# (Biology further split 25/25 between Botany and Zoology for this project's
+# subject taxonomy). Subject.neet_weightage_percent is nullable so any other
+# exam-board/custom subject is never forced to declare one — see
+# tests/test_subject_neet_weightage.py.
+SUBJECT_NEET_WEIGHTAGE_PERCENT = {
+    "PHYSICS": 25.0,
+    "CHEMISTRY": 25.0,
+    "BOTANY": 25.0,
+    "ZOOLOGY": 25.0,
+}
+
 
 async def seed_academic(session: AsyncSession) -> None:
     result = await session.execute(select(Exam).where(Exam.code == "NEET"))
@@ -589,7 +603,7 @@ async def seed_academic(session: AsyncSession) -> None:
             logger.info("biomolecules_ownership_reconciled", from_subject="ZOOLOGY", to_subject="BOTANY")
         elif zoo_bio and bot_bio and zoo_bio.id != bot_bio.id:
             # Prefer the row that already has content; soft-delete the empty stub.
-            from datetime import datetime, timezone
+            from datetime import datetime
 
             zoo_q = (
                 await session.execute(
@@ -617,7 +631,7 @@ async def seed_academic(session: AsyncSession) -> None:
                     {"cid": bot_bio.id},
                 )
             ).scalar_one()
-            now = datetime.now(timezone.utc)
+            now = datetime.now(UTC)
             if zoo_q == 0 and bot_q >= 0:
                 zoo_bio.deleted_at = now
                 bot_bio.class_level = "11"
@@ -644,10 +658,19 @@ async def seed_academic(session: AsyncSession) -> None:
         )
         subject = result.scalar_one_or_none()
         if not subject:
-            subject = Subject(exam_id=exam.id, code=subject_code, name=subject_name, display_order=subject_order)
+            subject = Subject(
+                exam_id=exam.id,
+                code=subject_code,
+                name=subject_name,
+                display_order=subject_order,
+                neet_weightage_percent=SUBJECT_NEET_WEIGHTAGE_PERCENT.get(subject_code),
+            )
             session.add(subject)
             await session.flush()
             logger.info("subject_seeded", code=subject_code)
+        elif subject.neet_weightage_percent is None and subject_code in SUBJECT_NEET_WEIGHTAGE_PERCENT:
+            # Backfill for a subject row seeded before this column existed.
+            subject.neet_weightage_percent = SUBJECT_NEET_WEIGHTAGE_PERCENT[subject_code]
 
         for chapter_order, (chapter_code, chapter_name, weightage, class_level, topics) in enumerate(chapters):
             result = await session.execute(

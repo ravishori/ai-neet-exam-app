@@ -14,10 +14,11 @@ import sqlite3
 import uuid
 import xml.etree.ElementTree as ET
 from dataclasses import dataclass, field
-from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any, Literal
 
+from defusedxml import ElementTree as DefusedET
+from defusedxml.common import DefusedXmlException
 from sqlalchemy import select, text
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
@@ -25,16 +26,13 @@ from sqlalchemy.orm import selectinload
 from app.core.exceptions import AppError
 from app.core.logging import get_logger
 from app.modules.cms.acquisition.physics_5000_mapping import (
-    BATCH_ID,
-    LEGACY_SOURCE_REF,
     MODEL_USED,
     PROMPT_VERSION,
     build_provenance_tags,
+    diagram_sha256,
     legacy_slug,
     legacy_to_question_body,
     stem_hash,
-    diagram_sha256,
-    LEGACY_CHAPTER_MAP,
 )
 from app.modules.cms.models import ContentItem
 from app.modules.cms.schemas.content_bodies import assert_body_publishable
@@ -114,8 +112,8 @@ def classify_diagram(record: dict[str, Any]) -> tuple[DiagramClass, str | None]:
     if not SVG_OPEN.search(svg) or not SVG_CLOSE.search(svg):
         return "INVALID_IMAGE", diagram_sha256(svg)
     try:
-        ET.fromstring(svg)
-    except ET.ParseError:
+        DefusedET.fromstring(svg)
+    except (ET.ParseError, DefusedXmlException):
         return "INVALID_IMAGE", diagram_sha256(svg)
     return "VALID_DIAGRAM", diagram_sha256(svg)
 

@@ -22,11 +22,10 @@ from __future__ import annotations
 import random
 import uuid
 from dataclasses import dataclass
-from datetime import UTC, date, datetime, timedelta
+from datetime import UTC, datetime, timedelta
 
 from sqlalchemy import and_, func, select
 from sqlalchemy.ext.asyncio import AsyncSession
-from sqlalchemy.orm import selectinload
 
 from app.core.exceptions import AppError
 from app.core.logging import get_logger
@@ -38,7 +37,6 @@ from app.modules.assessment.models import (
     AttemptAnswer,
     WeeklyRevisionRecommendation,
 )
-from app.modules.assessment.repositories.assessment_repository import sample_question_ids
 from app.modules.cms.models import ContentItem
 from app.modules.learning.models.concept_mastery import ConceptMastery
 
