@@ -230,8 +230,8 @@ async def test_reset_url_uses_configured_web_app_url(monkeypatch):
 
     captured: dict[str, str] = {}
 
-    async def _fake_send(*, to, subject, body, kind):
-        captured.update(to=to, subject=subject, body=body, kind=kind)
+    async def _fake_send(*, to, subject, html, text, kind):
+        captured.update(to=to, subject=subject, body=text, kind=kind)
 
     monkeypatch.setattr(email_service, "_send", _fake_send)
 

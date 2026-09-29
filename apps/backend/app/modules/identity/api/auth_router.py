@@ -4,7 +4,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from app.core.config import get_settings
 from app.core.database import get_db
 from app.core.exceptions import AppError
-from app.core.rate_limit import rate_limit, rate_limit_per_user
+from app.core.rate_limit import rate_limit, rate_limit_by_mobile, rate_limit_per_user
 from app.modules.identity.cookies import clear_auth_cookies, set_auth_cookies
 from app.modules.identity.dependencies import REFRESH_COOKIE, get_current_user, verify_csrf
 from app.modules.identity.models.user import User
@@ -273,31 +273,20 @@ async def verify_email(payload: VerifyEmailRequest, db: AsyncSession = Depends(g
 
 @router.post(
     "/verify-email/resend",
-    dependencies=[Depends(rate_limit("verify_email_resend", limit=5, window_seconds=300, fail_closed=True))],
+    dependencies=[
+        Depends(verify_csrf),
+        Depends(rate_limit_per_user("verify_email_resend", limit=3, window_seconds=300, fail_closed=True)),
+    ],
 )
-async def resend_verification_email(payload: ForgotPasswordRequest, db: AsyncSession = Depends(get_db)):
-    """Reuses ForgotPasswordRequest (just an email) and the same
-    non-enumerating response pattern as forgot_password — never reveals
-    whether the address exists or is already verified.
-
-    Layered protection, deliberately not expanded beyond what already exists:
-    - Server-side: the IP-keyed rate_limit above (5/300s, fail_closed) — real
-      protection, cannot be bypassed by the client.
-    - Client-side: a cooldown timer in the frontend (apps/web .../verify-email
-      page) — UX only, purely advisory.
-    - NOT implemented: a per-email/per-account cooldown (like OtpChallenge's
-      RESEND_COOLDOWN_SECONDS) — there is no persistence table for email-
-      verification tokens to hang a per-address cooldown off of, and adding
-      one would be a new persistence system this task didn't authorize.
-      Documented gap, not a silent one: a single IP can still request resends
-      for many different email addresses within the rate-limit window.
-    """
-    service = AuthService(db)
-    user = await service.users.get_by_email(payload.email.lower().strip())
-    if user and not user.email_verified:
+async def resend_verification_email(user: User = Depends(get_current_user), db: AsyncSession = Depends(get_db)):
+    if not user.email_verified:
+        service = AuthService(db)
         token = await service.request_email_verification(user)
         await send_verification_email(to=user.email, token=token)
-    return envelope(success=True, data={"message": "If that email exists and is unverified, a new link has been sent."})
+    # Same generic response whether the account was already verified or not
+    # — an authenticated caller could infer their own status either way, but
+    # the response shape itself should never be the signal.
+    return envelope(success=True, data={"message": "If your email isn't verified yet, a new link has been sent."})
 
 
 @router.post(
@@ -410,7 +399,10 @@ async def totp_disable(
 
 @router.post(
     "/mobile/otp/send",
-    dependencies=[Depends(rate_limit("mobile_otp_send", limit=5, window_seconds=300, fail_closed=True))],
+    dependencies=[
+        Depends(rate_limit("mobile_otp_send", limit=5, window_seconds=300, fail_closed=True)),
+        Depends(rate_limit_by_mobile("mobile_otp_send", limit=5, window_seconds=300, fail_closed=True)),
+    ],
 )
 async def mobile_otp_send(
     payload: MobileOtpSendRequest,
@@ -451,7 +443,10 @@ async def mobile_otp_send(
 
 @router.post(
     "/mobile/otp/verify",
-    dependencies=[Depends(rate_limit("mobile_otp_verify", limit=10, window_seconds=300, fail_closed=True))],
+    dependencies=[
+        Depends(rate_limit("mobile_otp_verify", limit=10, window_seconds=300, fail_closed=True)),
+        Depends(rate_limit_by_mobile("mobile_otp_verify", limit=10, window_seconds=300, fail_closed=True)),
+    ],
 )
 async def mobile_otp_verify(
     payload: MobileOtpVerifyRequest,
