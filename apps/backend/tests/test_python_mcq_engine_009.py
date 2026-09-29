@@ -5,6 +5,8 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
+import pytest
+
 from app.modules.cms.services.deterministic_fact_pack_loader import (
     load_deterministic_fact_pack,
 )
@@ -33,6 +35,7 @@ def test_available_eligible_facts_below_1000_triggers_stop():
     assert audit["verified_yield"] is None
 
 
+@pytest.mark.skipif(not (ROOT / "NCERT Books").exists(), reason="NCERT Books corpus not present")
 def test_engine008_retired_fact_remains_rejected_and_excluded():
     retired = load_deterministic_fact_pack(PACK_008, minimum_review_status="REJECTED")
     assert len(retired.facts) == 1
@@ -43,6 +46,7 @@ def test_engine008_retired_fact_remains_rejected_and_excluded():
     assert audit["engine_008_retired_fact"]["excluded_from_eligible_corpus"] is True
 
 
+@pytest.mark.skipif(not (ROOT / "NCERT Books").exists(), reason="NCERT Books corpus not present")
 def test_engine006_fixture_not_modified_for_scale_attempt():
     audit = json.loads(AUDIT_009.read_text(encoding="utf-8"))
     assert audit["engine_006_fixture_modified"] is False

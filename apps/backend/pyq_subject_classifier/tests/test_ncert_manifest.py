@@ -1,10 +1,14 @@
+import pytest
+
 from pyq_subject_classifier.config import NCERT_ROOT
 
 
+@pytest.mark.skipif(not NCERT_ROOT.exists(), reason="NCERT Books corpus not present")
 def test_ncert_root_exists():
     assert NCERT_ROOT.exists(), f"NCERT_ROOT not found: {NCERT_ROOT}"
 
 
+@pytest.mark.skipif(not NCERT_ROOT.exists(), reason="NCERT Books corpus not present")
 def test_ncert_root_has_pdfs():
     pdfs = list(NCERT_ROOT.rglob("*.pdf"))
     assert len(pdfs) > 0

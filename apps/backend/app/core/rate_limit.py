@@ -53,7 +53,10 @@ async def _check(key: str, *, limit: int, window_seconds: int, fail_closed: bool
     except Exception:
         if fail_closed:
             logger.warning("rate_limit_redis_error", key_prefix=log_key, fail_closed=True, exc_info=True)
-            raise RateLimitExceeded(retry_after_seconds=window_seconds)
+            # The original Redis error is already fully logged above (exc_info=True);
+            # deliberately not chaining it here so the raw infra exception/traceback
+            # doesn't propagate into whatever handles RateLimitExceeded downstream.
+            raise RateLimitExceeded(retry_after_seconds=window_seconds) from None
         logger.warning("rate_limit_fail_open", key_prefix=log_key)
         return
 

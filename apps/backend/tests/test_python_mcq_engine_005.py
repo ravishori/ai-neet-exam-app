@@ -31,6 +31,10 @@ from app.modules.ingestion.services.ncert_canonical_source import (
 ROOT = Path(__file__).resolve().parents[3]
 BACKEND = Path(__file__).resolve().parents[1]
 SYLLABUS = ROOT / "NEETSyllabus.txt"
+
+pytestmark = pytest.mark.skipif(
+    not (ROOT / "NCERT Books").exists(), reason="NCERT Books corpus not present"
+)
 PACK = Path(__file__).parent / "fixtures/python_mcq_engine_005_eval_100.json"
 SEED = 20260914
 SCRIPTS = BACKEND / "scripts"
@@ -303,6 +307,7 @@ def test_independent_verification_pass_for_generated(loaded_pack):
     assert classifications == ["PASS"] * 5
 
 
+@pytest.mark.skipif(not (ROOT / "NCERT Books").exists(), reason="NCERT Books corpus not present")
 def test_read_only_db_behavior_snapshot_stable():
     settings = get_settings()
     engine = create_engine(settings.database_url_sync)

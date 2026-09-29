@@ -6,6 +6,8 @@ import json
 from collections import Counter
 from pathlib import Path
 
+import pytest
+
 from app.modules.cms.services.deterministic_fact_adapter import (
     DeterministicFactToQuestionAdapter,
 )
@@ -16,6 +18,8 @@ from app.modules.cms.services.fact_quality_gate import TaxonomyBinding
 
 ROOT = Path(__file__).resolve().parents[3]
 SYLLABUS = ROOT / "NEETSyllabus.txt"
+
+pytestmark = pytest.mark.skipif(not (ROOT / "NCERT Books").exists(), reason="NCERT Books corpus not present")
 PACK_006 = Path(__file__).parent / "fixtures/python_mcq_engine_006_reviewed_100.json"
 PACK_010 = Path(__file__).parent / "fixtures/python_mcq_engine_010_reviewed_corpus.json"
 AUDIT_010 = ROOT / "docs/audits/python_mcq_engine_010.json"

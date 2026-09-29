@@ -70,7 +70,14 @@ def _resolve_inside_root(root: Path, candidate: Path | str) -> Path:
     ``.../NCERT Books2/...`` cannot pass against ``.../NCERT Books``.
     """
     root_resolved = root.resolve()
-    raw = Path(candidate)
+    # A Windows-style path (backslash separators) handed to pathlib on a
+    # POSIX host is not split into parts — the backslashes are literal
+    # filename characters — so normalize separators before building `raw`.
+    # Drive-letter detection below still runs against the original
+    # `candidate` string, since PureWindowsPath parses "C:" regardless of
+    # which slash style follows it.
+    normalized = candidate.replace("\\", "/") if isinstance(candidate, str) else candidate
+    raw = Path(normalized)
 
     if raw.is_absolute():
         resolved = raw.resolve()
@@ -81,7 +88,7 @@ def _resolve_inside_root(root: Path, candidate: Path | str) -> Path:
                 code=NCERT_SOURCE_NOT_ALLOWED,
             )
         # Reject explicit traversal segments before join/resolve.
-        parts = Path(str(candidate).replace("\\", "/")).parts
+        parts = Path(normalized).parts
         if ".." in parts:
             raise NcertSourceError(
                 "path traversal is not allowed",

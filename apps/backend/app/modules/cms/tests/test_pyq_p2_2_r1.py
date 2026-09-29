@@ -8,7 +8,11 @@ from pathlib import Path
 import pytest
 
 from app.modules.cms.pyq.p2_2.r1_validation.duplicates import classify_duplicates, near_duplicate
-from app.modules.cms.pyq.p2_2.r1_validation.loader import EXPECTED_STRUCTURAL, is_structurally_valid, load_gemini_structural_candidates
+from app.modules.cms.pyq.p2_2.r1_validation.loader import (
+    EXPECTED_STRUCTURAL,
+    is_structurally_valid,
+    load_gemini_structural_candidates,
+)
 from app.modules.cms.pyq.p2_2.r1_validation.pipeline import classify_quality, select_human_sample
 from app.modules.cms.pyq.p2_2.r1_validation.validator import parse_validator_json
 

@@ -7,8 +7,7 @@ Never uses legacy or T6-D content as templates.
 from __future__ import annotations
 
 import math
-from dataclasses import dataclass
-from typing import Any, Callable, Literal
+from typing import Any, Literal
 
 from app.modules.cms.acquisition.physics_t6d_bank import (
     ConceptLineage,
@@ -18,7 +17,6 @@ from app.modules.cms.acquisition.physics_t6d_bank import (
     _cand,
     _opts,
     _round_nice,
-    concept_lineages,
     lineage_by_concept,
 )
 from app.modules.cms.acquisition.physics_t6f1_constants import (

@@ -4,7 +4,6 @@ from __future__ import annotations
 
 import re
 from dataclasses import dataclass, field
-from pathlib import Path
 
 # Documented deterministic filename year pattern (case-insensitive).
 # Examples: NEET2015.pdf, Neet2022.pdf, NEET2026-11.pdf, RENeet2026.pdf

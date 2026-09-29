@@ -72,7 +72,7 @@ TARGET_SLOT_IDS = ("physics-05", "physics-21", "zoology-12", "zoology-15")
 
 
 def _md5_body(body: dict | None) -> str:
-    return hashlib.md5(json.dumps(body or {}, sort_keys=True, ensure_ascii=False).encode()).hexdigest()
+    return hashlib.md5(json.dumps(body or {}, sort_keys=True, ensure_ascii=False).encode(), usedforsecurity=False).hexdigest()
 
 
 def _sha_blob(parts: list[str]) -> str:

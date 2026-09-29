@@ -4,11 +4,9 @@ from __future__ import annotations
 
 import io
 import json
-import zipfile
 from pathlib import Path
 
 import fitz
-import pytest
 
 from app.modules.cms.pyq.pyq_extraction import AnswerStatus, ValidationStatus
 from app.modules.cms.pyq.pyq_ocr import process_scanned_pdf

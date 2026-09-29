@@ -36,6 +36,7 @@ def test_bank_size_and_structure():
         assert c.body().get("ncert_evidence", {}).get("verification_level") == "SECTION_VERIFIED"
 
 
+@pytest.mark.skipif(not (REPO_ROOT / "StudyMaterial").exists(), reason="StudyMaterial pilot PDFs not present")
 def test_bank_gates_against_repo_pdfs():
     audit = audit_bank(set(), repo_root=REPO_ROOT)
     assert audit["candidates"] == len(build_bank())
@@ -78,6 +79,7 @@ async def test_legacy_invariant_untouched_by_dry_logic(db_session):
     assert LEGACY_BATCH
 
 
+@pytest.mark.skipif(not (REPO_ROOT / "StudyMaterial").exists(), reason="StudyMaterial pilot PDFs not present")
 async def test_pilot_apply_publish_idempotent_and_practice_scopes(client, db_session, register_user):
     """Uses trinetra_test_db with rollback — safe fixtures."""
     await register_user(client, role_codes=["CONTENT_MANAGER"], db_session=db_session)

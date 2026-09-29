@@ -31,6 +31,9 @@ def _real_pdf_path() -> str:
     return str(path)
 
 
+@pytest.mark.skipif(
+    not Path(get_settings().study_material_dir).exists(), reason="StudyMaterial pilot PDFs not present"
+)
 async def test_asset_detection_against_real_pdf_creates_rows_and_updates_counters(db_session):
     chapter = (
         await db_session.execute(select(Chapter).where(Chapter.code == "current-electricity"))
@@ -63,6 +66,9 @@ async def test_asset_detection_against_real_pdf_creates_rows_and_updates_counter
         assert row.content_hash is not None and len(row.content_hash) == 64
 
 
+@pytest.mark.skipif(
+    not Path(get_settings().study_material_dir).exists(), reason="StudyMaterial pilot PDFs not present"
+)
 async def test_asset_detection_does_not_change_existing_pipeline_counters(db_session):
     """Non-interference check, same discipline as ADR-0024's PR 1: running
     asset detection must not touch any counter that predates it."""
