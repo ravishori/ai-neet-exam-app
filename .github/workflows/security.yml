@@ -103,7 +103,7 @@ jobs:
     - name: pip-audit
 
       run: |
-        pip-audit
+        pip-audit -r apps/backend/requirements.txt -r apps/backend/requirements-dev.txt
 
     # ----------------------------------------------------------------------
     # Python Static Security Scan
@@ -151,7 +151,7 @@ jobs:
 
     - name: Trivy Filesystem Scan
 
-      uses: aquasecurity/trivy-action@v0.31.0
+      uses: aquasecurity/trivy-action@v0.36.0
 
       with:
         scan-type: fs

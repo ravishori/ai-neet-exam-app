@@ -31,6 +31,10 @@ from app.modules.ingestion.services.ncert_canonical_source import (
 ROOT = Path(__file__).resolve().parents[3]
 BACKEND = Path(__file__).resolve().parents[1]
 SYLLABUS = ROOT / "NEETSyllabus.txt"
+
+pytestmark = pytest.mark.skipif(
+    not (ROOT / "NCERT Books").exists(), reason="NCERT Books corpus not present"
+)
 PACK = Path(__file__).parent / "fixtures/python_mcq_engine_005_eval_100.json"
 SEED = 20260914
 SCRIPTS = BACKEND / "scripts"
