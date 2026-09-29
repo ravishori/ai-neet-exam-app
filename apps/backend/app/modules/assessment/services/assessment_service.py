@@ -338,14 +338,23 @@ class AssessmentService:
         items_by_id = {i.id: i for i in await self.repo.get_content_items(question_ids)}
         answers_by_question = {a.content_item_id: a for a in attempt.answers}
 
-        correct = incorrect = skipped = 0
+        correct = incorrect = skipped = pending_answer = 0
         for content_item_id in question_ids:
             answer = answers_by_question.get(content_item_id)
             if not answer or not answer.selected_option:
                 skipped += 1
                 continue
             body = get_content_body(items_by_id[content_item_id])
-            is_correct = answer.selected_option == body.get("correct_option")
+            correct_option = body.get("correct_option")
+            if not correct_option:
+                # PYQ with ANSWER_PENDING/no verified answer yet — the
+                # student's selection is recorded, but correctness is
+                # genuinely unknown, never "wrong": leave is_correct NULL
+                # and exclude from the scored correct/incorrect tally.
+                answer.is_correct = None
+                pending_answer += 1
+                continue
+            is_correct = answer.selected_option == correct_option
             answer.is_correct = is_correct
             if is_correct:
                 correct += 1
@@ -361,7 +370,7 @@ class AssessmentService:
         attempt.incorrect_count = incorrect
         attempt.skipped_count = skipped
         await self.repo.commit()
-        logger.info("attempt_submitted", attempt_id=str(attempt_id), score=score)
+        logger.info("attempt_submitted", attempt_id=str(attempt_id), score=score, pending_answer=pending_answer)
 
         await MasteryService(self.session).recompute_for_content_items(user_id, question_ids)
 
