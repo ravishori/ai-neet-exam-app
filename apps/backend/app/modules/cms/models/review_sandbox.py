@@ -35,7 +35,7 @@ class ReviewSandboxSession(Base):
     deleted_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
     version: Mapped[int] = mapped_column(Integer, default=1, nullable=False)
 
-    questions: Mapped[list["ReviewSandboxQuestion"]] = relationship(back_populates="session", cascade="all, delete-orphan")
+    questions: Mapped[list[ReviewSandboxQuestion]] = relationship(back_populates="session", cascade="all, delete-orphan")
 
 
 class ReviewSandboxUpload(Base):
@@ -86,9 +86,9 @@ class ReviewSandboxQuestion(Base):
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
     updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now())
 
-    session: Mapped["ReviewSandboxSession"] = relationship(back_populates="questions")
-    human_review: Mapped["ReviewSandboxHumanReview | None"] = relationship(back_populates="question", uselist=False, cascade="all, delete-orphan")
-    ai_review: Mapped["ReviewSandboxAiReview | None"] = relationship(back_populates="question", uselist=False, cascade="all, delete-orphan")
+    session: Mapped[ReviewSandboxSession] = relationship(back_populates="questions")
+    human_review: Mapped[ReviewSandboxHumanReview | None] = relationship(back_populates="question", uselist=False, cascade="all, delete-orphan")
+    ai_review: Mapped[ReviewSandboxAiReview | None] = relationship(back_populates="question", uselist=False, cascade="all, delete-orphan")
 
 
 class ReviewSandboxHumanReview(Base):
@@ -118,7 +118,7 @@ class ReviewSandboxHumanReview(Base):
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
     updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now())
 
-    question: Mapped["ReviewSandboxQuestion"] = relationship(back_populates="human_review")
+    question: Mapped[ReviewSandboxQuestion] = relationship(back_populates="human_review")
 
 
 class ReviewSandboxAiReview(Base):
@@ -150,7 +150,7 @@ class ReviewSandboxAiReview(Base):
     check_status: Mapped[str] = mapped_column(String(20), default="PENDING", nullable=False)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
 
-    question: Mapped["ReviewSandboxQuestion"] = relationship(back_populates="ai_review")
+    question: Mapped[ReviewSandboxQuestion] = relationship(back_populates="ai_review")
 
 
 class ReviewSandboxAuditEvent(Base):

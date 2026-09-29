@@ -19,7 +19,6 @@ from app.modules.learning.services.student_preference_service import (
 )
 from app.shared.responses import envelope
 
-
 router = APIRouter(prefix="/api/v1/preferences", tags=["preferences"])
 
 

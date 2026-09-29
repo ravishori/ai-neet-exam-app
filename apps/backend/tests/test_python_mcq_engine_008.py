@@ -73,6 +73,7 @@ def _engine006_fact():
     return next(fact for fact in loaded.facts if fact.fact_id == FACT_ID)
 
 
+@pytest.mark.skipif(not (ROOT / "NCERT Books").exists(), reason="NCERT Books corpus not present")
 def test_engine006_fixture_unchanged_sha_matches_007_audit():
     digest = hashlib.sha256(PACK_006.read_bytes()).hexdigest()
     audit = json.loads(AUDIT_007.read_text(encoding="utf-8"))
@@ -82,6 +83,7 @@ def test_engine006_fixture_unchanged_sha_matches_007_audit():
     assert FACT_ID in {fact.fact_id for fact in loaded.facts}
 
 
+@pytest.mark.skipif(not (ROOT / "NCERT Books").exists(), reason="NCERT Books corpus not present")
 def test_original_fact_fails_grounding_as_ncert_ambiguous():
     fact = _engine006_fact()
     assert fact.concept_name == "Integrated Rate Equations"
@@ -141,6 +143,7 @@ def test_original_fact_fails_grounding_as_ncert_ambiguous():
     assert "NCERT_AMBIGUOUS" in result.skipped[0].details
 
 
+@pytest.mark.skipif(not (ROOT / "NCERT Books").exists(), reason="NCERT Books corpus not present")
 def test_retired_disposition_is_rejected_not_mcq_eligible():
     loaded = load_deterministic_fact_pack(
         PACK_008,
@@ -179,6 +182,7 @@ def test_engine007_verified_yield_record_unchanged():
     assert metrics["generation_skip_reason_counts"]["NCERT_GROUNDING_FAILED"] == 1
 
 
+@pytest.mark.skipif(not (ROOT / "NCERT Books").exists(), reason="NCERT Books corpus not present")
 def test_read_only_db_unchanged():
     settings = get_settings()
     engine = create_engine(settings.database_url_sync)

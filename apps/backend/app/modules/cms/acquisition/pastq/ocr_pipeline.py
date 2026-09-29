@@ -25,7 +25,6 @@ from app.modules.cms.acquisition.pastq.validate import (
 from app.modules.cms.pyq.pyq_discovery import FileClassification, ZipFileEntry, sha256_bytes, sha256_file
 from app.modules.cms.pyq.pyq_extraction import (
     AnswerStatus,
-    ValidationStatus,
     authoritative_answers,
     mark_within_paper_duplicates,
     normalize_ocr_corpus,

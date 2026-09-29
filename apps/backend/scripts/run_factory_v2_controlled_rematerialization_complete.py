@@ -80,7 +80,7 @@ REMAINING = ("physics-21", "zoology-12", "zoology-15")
 
 
 def _md5_body(body: dict | None) -> str:
-    return hashlib.md5(json.dumps(body or {}, sort_keys=True, ensure_ascii=False).encode()).hexdigest()
+    return hashlib.md5(json.dumps(body or {}, sort_keys=True, ensure_ascii=False).encode(), usedforsecurity=False).hexdigest()
 
 
 async def fingerprint_items(session: AsyncSession, item_ids: list[str]) -> dict:

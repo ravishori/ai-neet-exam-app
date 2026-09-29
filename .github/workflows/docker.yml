@@ -83,9 +83,18 @@ jobs:
           docker rm -f backend-smoke 2>/dev/null || true
           trap 'docker rm -f backend-smoke 2>/dev/null || true' EXIT
 
+          # This smoke test only proves the image boots and /health responds
+          # (DATABASE_URL above is a placeholder, never a real connection) —
+          # it never exercises the DB or the background pyq_resolver_worker.
+          # That worker defaults to enabled and requires Redis at startup;
+          # with no Redis service in this job, it logs a continuous
+          # ConnectionRefusedError. Disabling it here matches what this test
+          # actually validates — it does not change the application's real
+          # production default.
           docker run -d --name backend-smoke -p 8000:8000 \
             -e DATABASE_URL="postgresql+asyncpg://placeholder:placeholder@localhost:5432/placeholder" \
             -e JWT_SECRET="ci-smoke-test-placeholder-not-a-real-secret" \
+            -e PYQ_RESOLVER_WORKER_ENABLED="false" \
             backend:latest
 
           healthy=""
@@ -132,7 +141,7 @@ jobs:
 
       - name: Scan Backend Image
 
-        uses: aquasecurity/trivy-action@v0.31.0
+        uses: aquasecurity/trivy-action@v0.36.0
 
         with:
           image-ref: backend:latest
@@ -146,7 +155,7 @@ jobs:
 
       - name: Scan Frontend Image
 
-        uses: aquasecurity/trivy-action@v0.31.0
+        uses: aquasecurity/trivy-action@v0.36.0
 
         with:
           image-ref: frontend:latest
@@ -164,6 +173,7 @@ jobs:
 
         with:
           sarif_file: backend-trivy.sarif
+          category: trivy-backend
 
       # ----------------------------------------------------------------------
       # Upload Frontend Security Report
@@ -175,6 +185,7 @@ jobs:
 
         with:
           sarif_file: frontend-trivy.sarif
+          category: trivy-frontend
 
       # ----------------------------------------------------------------------
       # Push Backend Image

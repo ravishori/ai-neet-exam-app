@@ -176,8 +176,9 @@ async def login(payload: LoginRequest, request: Request, db: AsyncSession = Depe
     dependencies=[Depends(rate_limit("mfa_verify", limit=10, window_seconds=60, fail_closed=True))],
 )
 async def mfa_verify(payload: MfaVerifyRequest, request: Request, db: AsyncSession = Depends(get_db)):
-    import jwt
     import uuid
+
+    import jwt
 
     try:
         claims = decode_mfa_pending_token(payload.mfa_token)

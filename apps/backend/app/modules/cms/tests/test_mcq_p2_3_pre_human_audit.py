@@ -2,9 +2,6 @@
 
 from __future__ import annotations
 
-import csv
-import json
-import tempfile
 from pathlib import Path
 
 import pytest
@@ -26,8 +23,8 @@ from app.modules.cms.mcq.p2_3.pre_human_audit.loader import (
 )
 from app.modules.cms.mcq.p2_3.pre_human_audit.numerical import audit_numerical
 from app.modules.cms.mcq.p2_3.pre_human_audit.pipeline import run_pre_human_audit
-from app.modules.cms.mcq.p2_3.pre_human_audit.schemas import empty_audit_record
 from app.modules.cms.mcq.p2_3.pre_human_audit.report import build_summary
+from app.modules.cms.mcq.p2_3.pre_human_audit.schemas import empty_audit_record
 
 ROOT = Path(__file__).resolve().parents[6]
 GOLD = ROOT / "data/staging/mcq/p2_3/human_gold_sample.csv"

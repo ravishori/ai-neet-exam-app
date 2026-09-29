@@ -17,10 +17,8 @@ from app.modules.cms.pyq.pyq_extraction import (
     OPTION_START_RE,
     AnswerStatus,
     ValidationStatus,
-    ZipFileEntry,
     mark_within_paper_duplicates,
     normalized_question_hash,
-    parse_options,
     question_hash,
 )
 from app.modules.cms.pyq.pyq_geometry import (
@@ -28,23 +26,23 @@ from app.modules.cms.pyq.pyq_geometry import (
     detect_cross_column_contamination,
     is_instruction_page,
 )
+from app.modules.cms.pyq.pyq_ocr import (
+    NEEDS_REVIEW,
+    OCR_FAILED,
+    OCR_LOW_CONFIDENCE,
+    OCR_SUCCESS,
+    OcrWordRecord,
+    discover_tesseract,
+    ocr_page_with_words,
+)
+from app.modules.cms.pyq.pyq_p2_1 import select_scanned_paper_dirs
+from app.modules.cms.pyq.pyq_p2_1b import deterministic_staging_id
 from app.modules.cms.pyq.pyq_p2_1c import (
     HR_REGRESSION_TARGETS,
     analyze_fragments,
     classify_quality_p2_1c,
     evaluate_hr_regression,
 )
-from app.modules.cms.pyq.pyq_ocr import (
-    OCR_FAILED,
-    OCR_LOW_CONFIDENCE,
-    OCR_SUCCESS,
-    NEEDS_REVIEW,
-    OcrWordRecord,
-    discover_tesseract,
-    ocr_page_with_words,
-)
-from app.modules.cms.pyq.pyq_p2_1b import deterministic_staging_id
-from app.modules.cms.pyq.pyq_p2_1 import select_scanned_paper_dirs
 
 HR_SHA = "00d8cababe821fcfc73db558ed7355083c52de1d3e78a073d59efa6e7c0c8fb5"
 P2_1E_DPI = 200  # match existing P2.1 staging provenance
@@ -604,7 +602,7 @@ def detect_foreign_contamination(record: dict[str, Any]) -> dict[str, Any]:
         "confidence": None,
         "rejection_reason": None,
     }
-    for key_name, letter in zip(("option_a", "option_b", "option_c", "option_d"), "abcd"):
+    for key_name, _letter in zip(("option_a", "option_b", "option_c", "option_d"), "abcd", strict=False):
         opt = record.get(key_name) or ""
         if not opt.strip():
             continue
@@ -1092,7 +1090,7 @@ def segment_bbox_corpus(
 
     qs = [_Q(r) for r in all_records]
     mark_within_paper_duplicates(qs)  # type: ignore[arg-type]
-    for q, r in zip(qs, all_records):
+    for q, r in zip(qs, all_records, strict=False):
         r["duplicate_within_paper"] = q.duplicate_within_paper
     return all_records
 
@@ -1681,7 +1679,7 @@ def analyze_duplicates_p2_1e(records: list[dict[str, Any]]) -> dict[str, Any]:
     cross_paper_legitimate = 0
     truncated_boilerplate = 0
 
-    for h, group in by_hash.items():
+    for _h, group in by_hash.items():
         if len(group) < 2:
             continue
         papers = {g.get("source_sha256") for g in group}
@@ -1690,7 +1688,7 @@ def analyze_duplicates_p2_1e(records: list[dict[str, Any]]) -> dict[str, Any]:
             cross_paper_legitimate += len(group) - 1
         elif len(stems) == 1:
             ocr_equivalent += len(group) - 1
-        elif any(len((g.get("stem") or "")) < 25 for g in group):
+        elif any(len(g.get("stem") or "") < 25 for g in group):
             truncated_boilerplate += len(group) - 1
 
     return {
@@ -1739,7 +1737,7 @@ def build_p2_1e_full_samples(
     complex_opts = [
         r
         for r in records
-        if sum(1 for k in ("option_a", "option_b", "option_c", "option_d") if len((r.get(k) or "")) > 40) >= 2
+        if sum(1 for k in ("option_a", "option_b", "option_c", "option_d") if len(r.get(k) or "") > 40) >= 2
     ]
     hr_mandatory: list[dict[str, Any]] = []
     for target in HR_REGRESSION_TARGETS:
@@ -2172,7 +2170,6 @@ def run_p2_1e_r3_from_r2_words(
         r2_corpus=r2_corpus,
         page_states=page_states,
     )
-    corpus1 = r2_corpus
     diagnostics1 = r2_manifest.get("page_geometry_diagnostics") or []
 
     wh1 = canonical_words_hash(words_records)

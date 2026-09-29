@@ -237,6 +237,7 @@ async def list_content_items(
     status: str | None = None,
     search: str | None = None,
     mine: bool = False,
+    pilot_run_id: str | None = None,
     limit: int = Query(default=20, ge=1, le=100),
     offset: int = Query(default=0, ge=0),
     user: User = Depends(get_current_user),
@@ -249,6 +250,7 @@ async def list_content_items(
         status=status,
         search=search,
         created_by=user.id if mine else None,
+        pilot_run_id=pilot_run_id,
         limit=limit,
         offset=offset,
     )

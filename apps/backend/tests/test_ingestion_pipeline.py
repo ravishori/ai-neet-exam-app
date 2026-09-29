@@ -36,6 +36,9 @@ def _real_pdf_path() -> str:
     return str(path)
 
 
+@pytest.mark.skipif(
+    not Path(get_settings().study_material_dir).exists(), reason="StudyMaterial pilot PDFs not present"
+)
 async def test_start_job_requires_content_create_permission(client, db_session, register_user):
     await register_user(client)  # default STUDENT role — no content.create
 
@@ -74,6 +77,9 @@ async def test_start_job_rejects_missing_file(client, db_session, register_user,
     assert resp.status_code == 404
 
 
+@pytest.mark.skipif(
+    not Path(get_settings().study_material_dir).exists(), reason="StudyMaterial pilot PDFs not present"
+)
 async def test_start_job_rejects_unknown_chapter(client, db_session, register_user, monkeypatch):
     monkeypatch.setattr("app.modules.ingestion.api.ingestion_router._run_pipeline_in_background", _noop_background)
     await register_user(client, role_codes=["CONTENT_MANAGER"], db_session=db_session)
@@ -86,6 +92,9 @@ async def test_start_job_rejects_unknown_chapter(client, db_session, register_us
     assert resp.status_code == 404
 
 
+@pytest.mark.skipif(
+    not Path(get_settings().study_material_dir).exists(), reason="StudyMaterial pilot PDFs not present"
+)
 async def test_start_job_creates_pending_job_against_real_pdf(client, db_session, register_user, monkeypatch):
     monkeypatch.setattr("app.modules.ingestion.api.ingestion_router._run_pipeline_in_background", _noop_background)
     await register_user(client, role_codes=["CONTENT_MANAGER"], db_session=db_session)
@@ -189,6 +198,9 @@ async def test_upload_rejects_unknown_chapter(client, db_session, register_user,
         f.unlink()
 
 
+@pytest.mark.skipif(
+    not Path(get_settings().study_material_dir).exists(), reason="StudyMaterial pilot PDFs not present"
+)
 async def test_start_job_reuses_completed_job_for_unchanged_checksum(client, db_session, register_user, monkeypatch):
     """A file already processed to COMPLETED must not be reprocessed —
     ADR-0022's "process files only once." Seeds a COMPLETED job directly

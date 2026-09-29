@@ -4,11 +4,9 @@ from __future__ import annotations
 
 import json
 import uuid
-from typing import Any
 
 from app.modules.ai.gateway.base import AIProvider, GenerateRequest, ProviderError
 from app.modules.ai.gateway.pricing import estimate_cost
-from app.modules.cms.mcq.p2_3.provider_routing import resolve_generation_providers
 from app.modules.cms.mcq.p2_3.schemas import P2_3_GENERATION_PROMPT, GenerationSlot, McqRecord
 from app.modules.cms.pyq.p2_2.budget import BudgetGuard
 from app.modules.cms.pyq.p2_2.live_mcq import _parse_json

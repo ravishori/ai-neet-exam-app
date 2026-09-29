@@ -88,6 +88,7 @@ async def test_f1_dry_run_legacy_safe(db_session):
 
 
 @pytestmark_async
+@pytest.mark.skipif(not (REPO_ROOT / "StudyMaterial").exists(), reason="StudyMaterial pilot PDFs not present")
 async def test_f1_apply_staging_no_publish(client, db_session, register_user):
     await register_user(client, role_codes=["CONTENT_MANAGER"], db_session=db_session)
 
