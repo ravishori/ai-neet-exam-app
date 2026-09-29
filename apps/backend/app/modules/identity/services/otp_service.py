@@ -11,7 +11,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from app.core.exceptions import AppError
 from app.core.logging import get_logger
 from app.modules.identity.models.otp import OtpChallenge
-from app.modules.identity.services.email_service import _send
+from app.modules.identity.services.email_service import send_email_verification_otp_email, send_login_otp_email
 from app.modules.identity.services.token_service import hash_opaque_token
 
 logger = get_logger("otp")
@@ -19,6 +19,12 @@ logger = get_logger("otp")
 OTP_TTL_MINUTES = 10
 OTP_LENGTH = 6
 RESEND_COOLDOWN_SECONDS = 60
+
+# email_login is the only purpose that establishes a session (see
+# auth_router._LOGIN_OTP_PURPOSES) — it gets the LOGIN_OTP template/subject.
+# Everything else (email_verify, login_stepup, sensitive_action) is "prove
+# you control this mailbox for one action" and gets EMAIL_VERIFICATION_OTP.
+_LOGIN_OTP_PURPOSES = frozenset({"email_login"})
 
 
 def _generate_otp() -> str:
@@ -60,14 +66,10 @@ class OtpService:
         await self.session.commit()
 
         # Never log plaintext OTP. Email body includes it only for delivery.
-        # `_send` is async — must be awaited or the send never actually
-        # happens (a bare call just creates and discards the coroutine).
-        await _send(
-            to=email_norm,
-            subject="Your Trinetra verification code",
-            body=f"Your verification code is: {plaintext}\n\nIt expires in {OTP_TTL_MINUTES} minutes.\n",
-            kind="otp",
-        )
+        if purpose in _LOGIN_OTP_PURPOSES:
+            await send_login_otp_email(to=email_norm, code=plaintext)
+        else:
+            await send_email_verification_otp_email(to=email_norm, code=plaintext)
         logger.info("otp_requested", purpose=purpose, channel="email", destination=email_norm)
 
     async def verify_email_otp(self, *, email: str, purpose: str, code: str) -> bool:

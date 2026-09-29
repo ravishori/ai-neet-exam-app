@@ -94,12 +94,16 @@ async def test_otp_request_and_verify(client, db_session, monkeypatch):
 
     captured: dict[str, str] = {}
 
-    async def capture_send(*, to, subject, body, kind):
-        captured["body"] = body
+    async def capture_send(*, to, code):
+        captured["code"] = code
         captured["to"] = to
-        captured["kind"] = kind
 
-    monkeypatch.setattr("app.modules.identity.services.otp_service._send", capture_send)
+    # purpose="email_verify" is not a login purpose, so OtpService routes it
+    # through send_email_verification_otp_email (see
+    # OtpService._LOGIN_OTP_PURPOSES) rather than send_login_otp_email.
+    monkeypatch.setattr(
+        "app.modules.identity.services.otp_service.send_email_verification_otp_email", capture_send
+    )
 
     from app.core import rate_limit as rl
 
@@ -114,12 +118,7 @@ async def test_otp_request_and_verify(client, db_session, monkeypatch):
     )
     assert resp.status_code == 200, resp.text
     assert "code" not in resp.json()["data"]
-    assert captured.get("kind") == "otp"
-    import re
-
-    match = re.search(r"\b(\d{6})\b", captured["body"])
-    assert match
-    code = match.group(1)
+    code = captured["code"]
 
     row = (
         await db_session.execute(
