@@ -11,6 +11,7 @@ from app.modules.identity.models.user import User
 from app.modules.identity.repositories.refresh_token_repository import RefreshTokenRepository
 from app.modules.identity.repositories.role_repository import RoleRepository
 from app.modules.identity.repositories.user_repository import UserRepository
+from app.modules.identity.services.email_service import send_password_changed_email
 from app.modules.identity.services.password_service import (
     hash_password,
     validate_password_policy,
@@ -23,6 +24,10 @@ from app.modules.identity.services.token_service import (
     generate_verification_token,
     hash_opaque_token,
 )
+
+
+def _format_when(dt: datetime) -> str:
+    return dt.strftime("%d %b %Y, %H:%M UTC")
 
 logger = get_logger("auth")
 
@@ -153,6 +158,11 @@ class AuthService:
 
         await self._record_login_attempt(user.id, email, True, None, ip_address, user_agent)
         logger.info("user_logged_in", user_id=str(user.id))
+        # NEW_LOGIN_ALERT is deliberately NOT sent here: no known-device or
+        # anomaly detection exists in this codebase, so firing it on every
+        # password login would be noise, not a security signal. The template
+        # and email_service.send_new_login_alert_email are ready for when
+        # real new/unrecognized-login detection is built.
         return user
 
     async def _record_login_attempt(
@@ -280,6 +290,10 @@ class AuthService:
         await self.tokens.revoke_all_for_user(user.id)
         await self.session.commit()
         logger.info("password_reset", user_id=str(user.id))
+        try:
+            await send_password_changed_email(to=user.email, when_text=_format_when(datetime.now(UTC)))
+        except Exception:
+            logger.error("password_changed_email_send_failed", user_id=str(user.id), exc_info=True)
 
     async def change_password(self, user: User, current_password: str, new_password: str) -> None:
         from app.modules.identity.services.password_service import verify_password
@@ -297,6 +311,10 @@ class AuthService:
         await self.tokens.revoke_all_for_user(user.id)
         await self.session.commit()
         logger.info("password_changed", user_id=str(user.id))
+        try:
+            await send_password_changed_email(to=user.email, when_text=_format_when(datetime.now(UTC)))
+        except Exception:
+            logger.error("password_changed_email_send_failed", user_id=str(user.id), exc_info=True)
 
     async def authenticate_by_mobile_e164(
         self,

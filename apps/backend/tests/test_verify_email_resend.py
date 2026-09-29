@@ -52,9 +52,9 @@ async def test_authenticated_unverified_user_can_request_resend(client, db_sessi
 
     captured: dict[str, str] = {}
 
-    async def capture_send(*, to, subject, body, kind):
+    async def capture_send(*, to, subject, html, text, kind):
         captured["to"] = to
-        captured["body"] = body
+        captured["body"] = text
         captured["kind"] = kind
 
     monkeypatch.setattr("app.modules.identity.services.email_service._send", capture_send)
@@ -73,8 +73,8 @@ async def test_resend_sends_email_with_verify_link_containing_token(client, db_s
 
     captured: dict[str, str] = {}
 
-    async def capture_send(*, to, subject, body, kind):
-        captured["body"] = body
+    async def capture_send(*, to, subject, html, text, kind):
+        captured["body"] = text
 
     monkeypatch.setattr("app.modules.identity.services.email_service._send", capture_send)
 
@@ -91,7 +91,7 @@ async def test_resend_token_is_not_returned_in_api_response(client, db_session, 
     email = _email()
     await _register(client, email)
 
-    async def capture_send(*, to, subject, body, kind):
+    async def capture_send(*, to, subject, html, text, kind):
         return None
 
     monkeypatch.setattr("app.modules.identity.services.email_service._send", capture_send)
@@ -117,7 +117,7 @@ async def test_resend_rate_limited_after_repeated_requests(client, db_session, m
     # happened above under the autouse no-limit bypass.
     monkeypatch.setattr(rl, "_check", deny)
 
-    async def capture_send(*, to, subject, body, kind):
+    async def capture_send(*, to, subject, html, text, kind):
         return None
 
     monkeypatch.setattr("app.modules.identity.services.email_service._send", capture_send)
@@ -147,7 +147,7 @@ async def test_resend_survives_email_provider_failure(client, db_session, monkey
     email = _email()
     await _register(client, email)
 
-    async def failing_send(*, to, subject, body, kind):
+    async def failing_send(*, to, subject, html, text, kind):
         raise RuntimeError("provider unreachable")
 
     # _send() itself always catches provider failures (see email_service.py) —
@@ -155,7 +155,7 @@ async def test_resend_survives_email_provider_failure(client, db_session, monkey
     # of the catch, by patching at the public function boundary instead.
     async def send_verification_email_swallows(*, to, token):
         try:
-            await failing_send(to=to, subject="x", body="x", kind="verification")
+            await failing_send(to=to, subject="x", html="x", text="x", kind="verification")
         except RuntimeError:
             pass
 
@@ -175,8 +175,8 @@ async def test_existing_verify_email_flow_still_works(client, db_session, monkey
 
     captured: dict[str, str] = {}
 
-    async def capture_send(*, to, subject, body, kind):
-        captured["body"] = body
+    async def capture_send(*, to, subject, html, text, kind):
+        captured["body"] = text
 
     monkeypatch.setattr("app.modules.identity.services.email_service._send", capture_send)
 

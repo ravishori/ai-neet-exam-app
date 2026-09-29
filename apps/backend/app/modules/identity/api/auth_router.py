@@ -25,7 +25,11 @@ from app.modules.identity.schemas.auth import (
     VerifyEmailRequest,
 )
 from app.modules.identity.services.auth_service import AuthService
-from app.modules.identity.services.email_service import send_password_reset_email, send_verification_email
+from app.modules.identity.services.email_service import (
+    send_password_reset_email,
+    send_verification_email,
+    send_welcome_email,
+)
 from app.modules.identity.services.otp_service import OtpService
 from app.modules.identity.services.password_service import PASSWORD_MAX_AGE_DAYS
 from app.modules.identity.services.profile_validation import normalize_indian_mobile
@@ -138,6 +142,7 @@ async def register(payload: RegisterRequest, request: Request, db: AsyncSession 
     )
     verification_token = await service.request_email_verification(user)
     await send_verification_email(to=user.email, token=verification_token)
+    await send_welcome_email(to=user.email, first_name=user.first_name, email_verified=user.email_verified)
 
     # Auto-login on registration — email verification is informational in
     # v1, not a login gate (no SMTP wired up yet, see email_service.py), so

@@ -2,7 +2,6 @@
 session (cookies), unlike the informational purposes (email_verify,
 sensitive_action, login_stepup) which only return {"verified": true}."""
 
-import re
 import uuid
 from unittest.mock import AsyncMock
 
@@ -48,18 +47,20 @@ async def _register(client, email: str) -> None:
 
 
 async def _capture_code(client, email: str, monkeypatch, purpose: str) -> str:
+    """otp_service picks send_login_otp_email vs send_email_verification_otp_email
+    based on purpose (see OtpService._LOGIN_OTP_PURPOSES) — patch both so this
+    helper works regardless of which purpose the caller passes."""
     captured: dict[str, str] = {}
 
-    async def capture_send(*, to, subject, body, kind):
-        captured["body"] = body
+    async def capture_send(*, to, code):
+        captured["code"] = code
 
-    monkeypatch.setattr("app.modules.identity.services.otp_service._send", capture_send)
+    monkeypatch.setattr("app.modules.identity.services.otp_service.send_login_otp_email", capture_send)
+    monkeypatch.setattr("app.modules.identity.services.otp_service.send_email_verification_otp_email", capture_send)
 
     resp = await client.post("/api/v1/auth/otp/request", json={"email": email, "purpose": purpose})
     assert resp.status_code == 200, resp.text
-    match = re.search(r"\b(\d{6})\b", captured["body"])
-    assert match
-    return match.group(1)
+    return captured["code"]
 
 
 async def test_otp_request_actually_awaits_send(client, db_session, monkeypatch):
@@ -73,7 +74,7 @@ async def test_otp_request_actually_awaits_send(client, db_session, monkeypatch)
     distinction this bug hides from a plain synchronous mock."""
     email = _email()
     mock_send = AsyncMock()
-    monkeypatch.setattr("app.modules.identity.services.otp_service._send", mock_send)
+    monkeypatch.setattr("app.modules.identity.services.otp_service.send_login_otp_email", mock_send)
 
     resp = await client.post("/api/v1/auth/otp/request", json={"email": email, "purpose": "email_login"})
     assert resp.status_code == 200, resp.text
@@ -136,10 +137,10 @@ async def test_email_otp_login_unknown_email_generic_error(client, db_session, m
     email = _email()
     captured: dict[str, str] = {}
 
-    async def capture_send(*, to, subject, body, kind):
-        captured["body"] = body
+    async def capture_send(*, to, code):
+        captured["code"] = code
 
-    monkeypatch.setattr("app.modules.identity.services.otp_service._send", capture_send)
+    monkeypatch.setattr("app.modules.identity.services.otp_service.send_login_otp_email", capture_send)
     from app.core import rate_limit as rl
 
     async def no_limit(*_a, **_k):
@@ -149,9 +150,7 @@ async def test_email_otp_login_unknown_email_generic_error(client, db_session, m
 
     resp = await client.post("/api/v1/auth/otp/request", json={"email": email, "purpose": "email_login"})
     assert resp.status_code == 200
-    match = re.search(r"\b(\d{6})\b", captured["body"])
-    assert match
-    code = match.group(1)
+    code = captured["code"]
 
     verify = await client.post("/api/v1/auth/otp/verify", json={"email": email, "purpose": "email_login", "code": code})
     assert verify.status_code == 400
