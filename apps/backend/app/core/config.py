@@ -175,7 +175,7 @@ class Settings(BaseSettings):
     email_provider: str = ""
     email_api_key: str = ""
     email_from: str = ""
-    email_from_name: str = ""
+    email_from_name: str = "NEET Preparation"
 
     # Optional SMTP — development/local fallback ONLY. Never attempted in
     # production (see email_service.py) — Railway production cannot reach
@@ -187,6 +187,10 @@ class Settings(BaseSettings):
     smtp_password: str = ""
     smtp_from: str = ""
     smtp_use_tls: bool = True
+    # Public-facing student support/contact address — an existing forwarding
+    # alias onto the real mailbox, not a separate inbox. Used as Reply-To
+    # and in the footer; never exposes the real underlying mailbox.
+    support_email: str = "support@trinetralab.net"
 
     # Ops alert destination (Wave C critical alerts / unexpected errors)
     # Prefer ALERT_EMAIL; ERROR_REPORT_EMAIL is accepted as an alias via env.

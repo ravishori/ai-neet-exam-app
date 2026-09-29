@@ -11,10 +11,26 @@ os.environ["DATABASE_URL"] = "postgresql+asyncpg://trinetra_app:trinetra_dev_pw@
 os.environ["DATABASE_URL_SYNC"] = "postgresql+psycopg://trinetra_app:trinetra_dev_pw@localhost:5432/trinetra_test_db"
 # Stable Fernet key for TOTP encryption tests (dev/test only — not production).
 os.environ.setdefault("ENCRYPTION_KEY", "uLCw_rsupBRTzp7bhuN_iuxiMiXgpxc6DujbFR_sXkM=")
+# Never reach real email/SMS providers from tests, even when a developer's
+# backend/.env holds real SMTP (e.g. Gmail) or Twilio credentials: register /
+# forgot-password tests call the real senders. Environment variables override
+# .env in pydantic-settings; tests that need a provider stub it explicitly.
+for _provider_setting in (
+    "SMTP_HOST",
+    "SMTP_USERNAME",
+    "SMTP_PASSWORD",
+    "SMTP_FROM",
+    "TWILIO_ACCOUNT_SID",
+    "TWILIO_AUTH_TOKEN",
+    "TWILIO_VERIFY_SERVICE_SID",
+):
+    os.environ[_provider_setting] = ""
 
+import smtplib  # noqa: E402
 import uuid
 from collections.abc import AsyncGenerator
 
+import pytest  # noqa: E402
 import pytest_asyncio
 from httpx import ASGITransport, AsyncClient
 from sqlalchemy import event
@@ -28,6 +44,30 @@ get_settings.cache_clear()
 from app.main import app  # noqa: E402
 from app.modules.academic.seed import seed_academic  # noqa: E402
 from app.modules.identity.seed import seed_identity  # noqa: E402
+
+
+class RealSmtpAttemptedError(RuntimeError):
+    """Raised instead of ever opening a real SMTP socket during tests.
+
+    Belt-and-suspenders on top of the SMTP_* env-scrubbing above: that
+    scrubbing relies on every code path correctly checking settings.smtp_host
+    before connecting. This fixture makes it structurally impossible for ANY
+    test, debug script, or verification helper run under pytest to reach a
+    real mail server, even if a future code change, a monkeypatch mistake,
+    or a stray real .env value slips past the env-scrubbing above.
+    """
+
+
+@pytest.fixture(autouse=True)
+def _block_real_smtp(monkeypatch):
+    def _refuse(*_args, **_kwargs):
+        raise RealSmtpAttemptedError(
+            "smtplib.SMTP() was instantiated during a test run — this must never "
+            "happen. Mock/stub the send function instead of letting it reach smtplib."
+        )
+
+    monkeypatch.setattr(smtplib, "SMTP", _refuse)
+    monkeypatch.setattr(smtplib, "SMTP_SSL", _refuse)
 
 TEST_DATABASE_URL = "postgresql+asyncpg://trinetra_app:trinetra_dev_pw@localhost:5432/trinetra_test_db"
 
