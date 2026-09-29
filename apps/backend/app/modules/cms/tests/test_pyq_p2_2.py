@@ -180,6 +180,9 @@ def test_original_status_immutability_in_triage():
     assert tr.original_status == "PARTIAL"
 
 
+@pytest.mark.skipif(
+    not (R3 / "questions.p2_1e_full.jsonl").exists(), reason="p2_1e_full_r3 staging data not present"
+)
 def test_r3_immutability_paths():
     assert (R3 / "questions.p2_1e_full.jsonl").exists()
     recovery_root = ROOT / "data/staging/pyq/2020-2025/p2_2_ai_recovery"

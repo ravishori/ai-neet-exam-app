@@ -21,6 +21,7 @@ async def test_register_then_me_reflects_new_user(client):
             "mobile": "9876500901",
             "state_code": "KARNATAKA",
             "city": "Bangalore",
+            "password": "TestStrongPass!1",
         },
     )
     assert resp.status_code == 201, resp.text

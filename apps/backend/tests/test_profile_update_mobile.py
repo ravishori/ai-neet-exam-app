@@ -17,6 +17,7 @@ def _payload(email: str, mobile: str) -> dict:
         "mobile": mobile,
         "state_code": "KARNATAKA",
         "city": "Bangalore",
+        "password": "TestStrongPass!1",
     }
 
 

@@ -96,7 +96,7 @@ async def _seed_pilot_draft_questions(
                 ],
                 "correct_option": "A",
                 "explanation": "Fixture explanation grounded in section text.",
-                "difficulty": "MEDIUM",
+                "difficulty": "medium",
             },
             author_id=author_id,
             knowledge_unit_refs=[(unit.id, 1)],

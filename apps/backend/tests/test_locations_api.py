@@ -5,12 +5,23 @@ import pytest
 pytestmark = pytest.mark.asyncio(loop_scope="session")
 
 
+def _dictionary_key(name: str) -> str:
+    """Space-insensitive comparison key, matching Postgres's locale-aware
+    collation (used by GeoRepository's own ORDER BY) — which treats a space
+    as ignorable, so "Uttarakhand" sorts before "Uttar Pradesh" (compare
+    "Uttarakhand" vs "UttarPradesh" letter-by-letter: 'a' < 'P'). Python's
+    plain `sorted()` instead treats the space itself (codepoint 32) as
+    smaller than any letter, reversing that one pair — a byte-order
+    artifact, not the actual alphabetical convention the API/DB use."""
+    return name.replace(" ", "").casefold()
+
+
 async def test_list_states_alphabetical(client):
     resp = await client.get("/api/v1/locations/states")
     assert resp.status_code == 200
     body = resp.json()
     names = [row["name"] for row in body["data"]]
-    assert names == sorted(names)
+    assert names == sorted(names, key=_dictionary_key)
     # 27 distinct State values from the current source XLSX. The workbook
     # was corrected upstream to list all Odisha cities under "Odisha" only
     # — the pre-2011 name "Orissa" is no longer a separate source row.

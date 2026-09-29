@@ -14,6 +14,15 @@ from app.modules.identity.services.profile_validation import (
 pytestmark = pytest.mark.asyncio(loop_scope="session")
 
 
+def _dictionary_key(name: str) -> str:
+    """Space-insensitive comparison key, matching Postgres's locale-aware
+    collation (used by GeoRepository.list_active_states's own ORDER BY) —
+    see test_locations_api.py for the full explanation of the one pair
+    ("Uttarakhand" vs "Uttar Pradesh") where this differs from Python's
+    plain codepoint-order `sorted()`."""
+    return name.replace(" ", "").casefold()
+
+
 # --------------------------------------------------------------------------- source
 
 
@@ -92,7 +101,7 @@ async def test_repository_returns_active_only_and_sorted(db_session):
     repo = GeoRepository(db_session)
     states = await repo.list_active_states()
     names = [s.name for s in states]
-    assert names == sorted(names), "list_active_states must be alphabetical"
+    assert names == sorted(names, key=_dictionary_key), "list_active_states must be alphabetical"
     assert all(s.is_active for s in states)
 
 

@@ -220,6 +220,7 @@ def test_report_structure():
     assert report["executive_summary"]["p2_2_protected"] == 326
 
 
+@pytest.mark.skipif(not (ROOT / "NCERT Books").exists(), reason="NCERT Books corpus not present")
 def test_dry_run_preflight():
     pre = dry_run_preflight(ROOT)
     assert pre["production_db_writes"] == 0
