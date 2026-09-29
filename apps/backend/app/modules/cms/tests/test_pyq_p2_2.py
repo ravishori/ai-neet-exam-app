@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-import asyncio
 import json
 from pathlib import Path
 from unittest.mock import AsyncMock
@@ -12,7 +11,7 @@ import pytest
 from app.modules.cms.pyq.p2_2.cache import RecoveryCache
 from app.modules.cms.pyq.p2_2.consensus import compare_providers
 from app.modules.cms.pyq.p2_2.deterministic import attempt_deterministic_recovery
-from app.modules.cms.pyq.p2_2.evidence import build_evidence_package, canonical_hash, check_source_availability
+from app.modules.cms.pyq.p2_2.evidence import build_evidence_package, check_source_availability
 from app.modules.cms.pyq.p2_2.pipeline import select_pilot_cohort
 from app.modules.cms.pyq.p2_2.providers import (
     DryRunRecoveryProvider,

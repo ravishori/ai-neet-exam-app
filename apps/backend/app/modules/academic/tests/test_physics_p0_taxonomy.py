@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 import pytest
-from sqlalchemy import select, text
+from sqlalchemy import select
 
 from app.modules.academic.models import Chapter, Concept, Subject, Topic
 from app.modules.academic.physics_p0_manifest import (

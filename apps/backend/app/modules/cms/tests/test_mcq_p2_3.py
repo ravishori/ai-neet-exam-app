@@ -2,13 +2,13 @@
 
 from __future__ import annotations
 
-import json
 from pathlib import Path
 
 import pytest
 
-from app.modules.cms.mcq.p2_3.duplicates import classify_duplicates, near_duplicate
-from app.modules.cms.mcq.p2_3.plan import build_generation_plan, build_concept_inventory
+from app.modules.cms.mcq.p2_3.duplicates import classify_duplicates
+from app.modules.cms.mcq.p2_3.pipeline import dry_run_preflight, load_records, save_records, staging_paths
+from app.modules.cms.mcq.p2_3.plan import build_concept_inventory, build_generation_plan
 from app.modules.cms.mcq.p2_3.qa import automated_qa, map_validator_to_status
 from app.modules.cms.mcq.p2_3.report import build_pilot_report
 from app.modules.cms.mcq.p2_3.safeguard import (
@@ -18,9 +18,8 @@ from app.modules.cms.mcq.p2_3.safeguard import (
     verify_p2_2_population,
 )
 from app.modules.cms.mcq.p2_3.sampling import GOLD_SAMPLE_SIZE, GOLD_SEED, select_gold_sample
-from app.modules.cms.mcq.p2_3.schemas import ConceptSlot, GenerationSlot, McqRecord
-from app.modules.cms.mcq.p2_3.pipeline import dry_run_preflight, load_records, save_records, staging_paths
-from app.modules.cms.pyq.p2_2.budget import BudgetGuard, BudgetExceededError
+from app.modules.cms.mcq.p2_3.schemas import ConceptSlot, McqRecord
+from app.modules.cms.pyq.p2_2.budget import BudgetExceededError, BudgetGuard
 from app.modules.cms.pyq.p2_2.ncert_sources import NcertPageSource
 
 ROOT = Path(__file__).resolve().parents[6]

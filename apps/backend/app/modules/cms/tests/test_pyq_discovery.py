@@ -7,7 +7,6 @@ import zipfile
 from pathlib import Path
 
 import fitz
-import pytest
 
 from app.modules.cms.pyq.pyq_discovery import (
     FileClassification,

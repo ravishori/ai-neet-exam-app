@@ -3,18 +3,16 @@
 from __future__ import annotations
 
 import io
-import json
-from pathlib import Path
 
 import fitz
 
 from app.modules.cms.pyq.pyq_geometry import (
     PageGeometry,
+    PageLayout,
     detect_cross_column_contamination,
     detect_page_layout,
     split_page_columns,
 )
-from app.modules.cms.pyq.pyq_geometry import PageLayout
 from app.modules.cms.pyq.pyq_p2_1c import (
     HR_REGRESSION_TARGETS,
     evaluate_hr_regression,
