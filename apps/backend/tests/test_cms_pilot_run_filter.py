@@ -106,17 +106,47 @@ async def _seed_pilot_draft_questions(
 
 
 async def test_pilot_run_id_omitted_unchanged_behavior(client, db_session, register_user):
+    """Omitting pilot_run_id must behave exactly as before this filter
+    existed — including for content items with NO ingestion/KU lineage at
+    all (e.g. authored directly via the create endpoint), since the new
+    EXISTS clause is only ever applied when pilot_run_id is provided."""
     await register_user(client, role_codes=["CONTENT_MANAGER"], db_session=db_session)
+    concept_id = await _any_concept_id(db_session)
+    from app.modules.cms.services.content_workflow_service import ContentWorkflowService
+
+    plain_item = await ContentWorkflowService(db_session).create_item(
+        content_type="QUESTION",
+        concept_id=concept_id,
+        title="No-lineage Q",
+        slug=f"no-lineage-{uuid.uuid4().hex[:10]}",
+        tags=["no-lineage-test"],
+        language="en",
+        body=publishable_question_body(),
+        author_id=await _author_id(db_session),
+    )
+
     before = await client.get("/api/v1/cms/content-items", params={"limit": 5, "offset": 0})
     assert before.status_code == 200, before.text
     assert "total" in before.json()["meta"]
     assert len(before.json()["data"]) <= 5
+    assert str(plain_item.id) in {row["id"] for row in before.json()["data"]}
 
 
 async def test_authorized_pilot_returns_exactly_30(client, db_session, register_user):
     await register_user(client, role_codes=["CONTENT_MANAGER"], db_session=db_session)
     concept_id = await _any_concept_id(db_session)
     author_id = await _author_id(db_session)
+    # Decoy under an unrelated run, seeded first, so a real filter is the
+    # only way this test can pass — an unfiltered/ignored-param query would
+    # return the decoy alongside the authorized items.
+    decoy = await _seed_pilot_draft_questions(
+        db_session,
+        pilot_run_id=f"decoy-{uuid.uuid4().hex[:8]}",
+        count=2,
+        concept_id=concept_id,
+        author_id=author_id,
+        title_prefix="Decoy Q",
+    )
     seeded = await _seed_pilot_draft_questions(
         db_session,
         pilot_run_id=AUTHORIZED_RUN,
@@ -137,12 +167,21 @@ async def test_authorized_pilot_returns_exactly_30(client, db_session, register_
     assert len(body["data"]) == AUTHORIZED_COUNT
     returned = {row["id"] for row in body["data"]}
     assert returned == set(seeded)
+    assert returned.isdisjoint(decoy)
 
 
 async def test_historical_pilot_returns_historical_only(client, db_session, register_user):
     await register_user(client, role_codes=["CONTENT_MANAGER"], db_session=db_session)
     concept_id = await _any_concept_id(db_session)
     author_id = await _author_id(db_session)
+    decoy = await _seed_pilot_draft_questions(
+        db_session,
+        pilot_run_id=f"decoy-{uuid.uuid4().hex[:8]}",
+        count=2,
+        concept_id=concept_id,
+        author_id=author_id,
+        title_prefix="Decoy Q",
+    )
     historical = await _seed_pilot_draft_questions(
         db_session,
         pilot_run_id=HISTORICAL_RUN,
@@ -159,7 +198,9 @@ async def test_historical_pilot_returns_historical_only(client, db_session, regi
     assert resp.status_code == 200, resp.text
     body = resp.json()
     assert body["meta"]["total"] == HISTORICAL_COUNT
-    assert {row["id"] for row in body["data"]} == set(historical)
+    returned = {row["id"] for row in body["data"]}
+    assert returned == set(historical)
+    assert returned.isdisjoint(decoy)
 
 
 async def test_authorized_and_historical_never_mix(client, db_session, register_user):
@@ -209,6 +250,14 @@ async def test_draft_question_authorized_pilot_exactly_30(client, db_session, re
     await register_user(client, role_codes=["CONTENT_MANAGER"], db_session=db_session)
     concept_id = await _any_concept_id(db_session)
     author_id = await _author_id(db_session)
+    decoy = await _seed_pilot_draft_questions(
+        db_session,
+        pilot_run_id=f"decoy-{uuid.uuid4().hex[:8]}",
+        count=2,
+        concept_id=concept_id,
+        author_id=author_id,
+        title_prefix="Decoy Q",
+    )
     seeded = await _seed_pilot_draft_questions(
         db_session,
         pilot_run_id=AUTHORIZED_RUN,
@@ -234,7 +283,9 @@ async def test_draft_question_authorized_pilot_exactly_30(client, db_session, re
     assert len(body["data"]) == AUTHORIZED_COUNT
     assert all(row["status"] == "DRAFT" for row in body["data"])
     assert all(row["content_type"] == "QUESTION" for row in body["data"])
-    assert {row["id"] for row in body["data"]} == set(seeded)
+    returned = {row["id"] for row in body["data"]}
+    assert returned == set(seeded)
+    assert returned.isdisjoint(decoy)
 
 
 async def test_status_and_content_type_still_work_with_pilot_filter(client, db_session, register_user):
@@ -275,6 +326,14 @@ async def test_pilot_filter_pagination_counts(client, db_session, register_user)
     concept_id = await _any_concept_id(db_session)
     author_id = await _author_id(db_session)
     run_id = f"page-{uuid.uuid4().hex[:8]}"
+    decoy = await _seed_pilot_draft_questions(
+        db_session,
+        pilot_run_id=f"decoy-{uuid.uuid4().hex[:8]}",
+        count=3,
+        concept_id=concept_id,
+        author_id=author_id,
+        title_prefix="Decoy Q",
+    )
     seeded = await _seed_pilot_draft_questions(
         db_session,
         pilot_run_id=run_id,
@@ -308,6 +367,7 @@ async def test_pilot_filter_pagination_counts(client, db_session, register_user)
         | {r["id"] for r in page3.json()["data"]}
     )
     assert all_ids == set(seeded)
+    assert all_ids.isdisjoint(decoy)
 
 
 async def test_pilot_filter_requires_content_create_permission(client, db_session, register_user):
