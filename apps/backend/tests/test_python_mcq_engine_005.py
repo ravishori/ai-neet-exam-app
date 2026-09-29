@@ -303,6 +303,7 @@ def test_independent_verification_pass_for_generated(loaded_pack):
     assert classifications == ["PASS"] * 5
 
 
+@pytest.mark.skipif(not (ROOT / "NCERT Books").exists(), reason="NCERT Books corpus not present")
 def test_read_only_db_behavior_snapshot_stable():
     settings = get_settings()
     engine = create_engine(settings.database_url_sync)

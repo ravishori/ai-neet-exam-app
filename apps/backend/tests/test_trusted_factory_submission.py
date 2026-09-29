@@ -32,6 +32,7 @@ from app.modules.ai.gateway.base import AIResponse
 from app.modules.cms.services.content_factory_generation_service import ContentFactoryGenerationService
 from app.modules.cms.services.content_workflow_service import ContentWorkflowService
 from app.modules.cms.services.trusted_factory_submission import evaluate_trusted_factory_submission
+from app.modules.ingestion.services.ncert_canonical_source import get_ncert_source_root
 from conftest import csrf_headers
 from tests.test_content_factory_p3 import ScriptedProvider, _concept_chain
 
@@ -190,6 +191,15 @@ class _CountingEvaluate:
 
 @pytest.fixture
 def counting_evaluate(monkeypatch):
+    # Every test using this fixture eventually creates a candidate carrying
+    # _VALID_EVIDENCE, whose source_pdf_relpath is resolved against the real
+    # NCERT Books corpus (assert_blueprint_ncert_source) — never available in
+    # CI. Skip here, once, rather than duplicating this check across the 23
+    # tests (in this file and test_review_queue.py, which imports this same
+    # fixture) that all depend on it transitively.
+    _evidence_pdf = get_ncert_source_root() / _VALID_EVIDENCE["source_pdf_relpath"]
+    if not _evidence_pdf.exists():
+        pytest.skip(f"NCERT source PDF not present: {_evidence_pdf}")
     counter = _CountingEvaluate()
     from app.modules.ai.services.evaluator_service import EvaluatorService
 

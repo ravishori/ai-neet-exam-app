@@ -206,6 +206,7 @@ def test_duplicate_canonical_identity_detection(loaded):
     assert compute_stable_fact_id(twin) == first.fact_id
 
 
+@pytest.mark.skipif(not (ROOT / "NCERT Books").exists(), reason="NCERT Books corpus not present")
 def test_read_only_db_unchanged_after_pack_load():
     settings = get_settings()
     engine = create_engine(settings.database_url_sync)
