@@ -11,6 +11,7 @@ from app.modules.identity.models.user import User
 from app.modules.identity.repositories.role_repository import RoleRepository
 from app.modules.identity.repositories.user_repository import UserRepository
 from app.modules.identity.schemas.user import AdminUserUpdateRequest, UserCreateRequest, UserResponse, UserUpdateRequest
+from app.modules.identity.services.email_service import send_mobile_changed_email
 from app.modules.identity.services.password_service import hash_password, validate_password_policy
 from app.modules.system.services.audit_service import AuditService, request_context
 from app.shared.responses import envelope
@@ -86,6 +87,7 @@ async def update_me(
         user.state_code = location.state.code
         user.city_name = location.city.name
 
+    mobile_changed = False
     if new_mobile is not None:
         mobile_e164 = normalize_indian_mobile(new_mobile)
         if mobile_e164 != user.mobile_e164:
@@ -97,12 +99,30 @@ async def update_me(
                     status_code=409,
                 )
             user.mobile_e164 = mobile_e164
+            mobile_changed = True
 
     # Remaining fields (first_name, last_name, display_name, phone, language,
     # timezone) — legacy passthrough behavior preserved.
     for field, value in data.items():
         setattr(user, field, value)
     await db.commit()
+
+    if mobile_changed:
+        from datetime import UTC, datetime
+
+        # Best-effort — a notification failure must never block the update.
+        try:
+            masked = f"{'*' * max(len(user.mobile_e164) - 4, 0)}{user.mobile_e164[-4:]}"
+            await send_mobile_changed_email(
+                to=user.email,
+                new_mobile_masked=masked,
+                when_text=datetime.now(UTC).strftime("%d %b %Y, %H:%M UTC"),
+            )
+        except Exception:
+            from app.core.logging import get_logger
+
+            get_logger("identity.users").error("mobile_changed_email_send_failed", user_id=str(user.id), exc_info=True)
+
     return envelope(success=True, data=_to_response(user))
 
 

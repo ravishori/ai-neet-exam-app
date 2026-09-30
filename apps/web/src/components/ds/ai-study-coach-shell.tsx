@@ -80,7 +80,7 @@ export function AiStudyCoachShell({ className }: { className?: string }) {
         type="button"
         onClick={() => setOpen(true)}
         className={cn(
-          "fixed bottom-20 right-4 z-40 flex min-h-11 items-center gap-2 rounded-full ai-gradient px-4 py-2.5 text-sm font-medium text-white shadow-lg outline-none focus-visible:ring-2 focus-visible:ring-ring/50 sm:bottom-6 sm:right-5 lg:bottom-6",
+          "fixed bottom-20 right-4 z-40 flex min-h-11 items-center gap-2 rounded-full ai-gradient ai-gradient-text px-4 py-2.5 text-sm font-medium text-white shadow-lg outline-none focus-visible:ring-2 focus-visible:ring-ring/50 sm:bottom-6 sm:right-5 lg:bottom-6",
           className,
         )}
         aria-label="Open AI Study Coach"
@@ -90,12 +90,15 @@ export function AiStudyCoachShell({ className }: { className?: string }) {
       </button>
 
       {open && (
-        <div className="fixed inset-0 z-50 flex justify-end bg-black/30 p-3 backdrop-blur-sm sm:p-4" ref={dialogRef}>
+        <div
+          className="fixed inset-0 z-50 flex justify-end bg-black/30 p-3 backdrop-blur-sm motion-safe:animate-in motion-safe:fade-in-0 motion-safe:duration-200 sm:p-4"
+          ref={dialogRef}
+        >
           <SurfaceCard
             glass
             lift={false}
             accent="none"
-            className="flex h-full w-full max-w-md flex-col overflow-hidden"
+            className="flex h-full w-full max-w-md flex-col overflow-hidden motion-safe:animate-in motion-safe:fade-in-0 motion-safe:slide-in-from-right-8 motion-safe:duration-300 motion-safe:ease-[var(--ease-out-smooth)]"
             role="dialog"
             aria-modal="true"
             aria-label="AI Study Coach"

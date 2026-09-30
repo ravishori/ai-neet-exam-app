@@ -81,7 +81,7 @@ export function ConceptPracticeQuestion({ id, title = "Practice question", body 
             {!selected && <p className="text-caption">Select an option to continue.</p>}
           </div>
         ) : (
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-2 motion-safe:animate-fade-in">
             <p className={cn("text-sm font-medium", isCorrect ? "text-success" : "text-destructive")}>
               {isCorrect ? "Correct." : `Incorrect. The right answer is ${correct}.`}
             </p>
