@@ -209,6 +209,23 @@ class Settings(BaseSettings):
     twilio_auth_token: str = ""
     twilio_verify_service_sid: str = ""
 
+    # WhatsApp bot (M1 foundation — ADR-WHATSAPP-PROVIDER-ABSTRACTION).
+    # ``whatsapp_provider`` selects the active provider adapter; only
+    # "twilio" exists today. Twilio-specific credentials are deliberately
+    # namespaced separately from twilio_account_sid/twilio_auth_token above
+    # (Twilio Verify, a different Twilio product — OTP delivery, not
+    # messaging) even though an operator may point both at the same Twilio
+    # account in practice: Verify and WhatsApp Messaging are billed,
+    # rotated, and can be moved to separate Twilio (sub)accounts
+    # independently, and sharing one field would silently couple them.
+    # Never commit real values. Unset => the webhook fails closed (rejects
+    # signature validation) rather than silently accepting unverified
+    # requests.
+    whatsapp_provider: str = "twilio"
+    whatsapp_twilio_account_sid: str = ""
+    whatsapp_twilio_auth_token: str = ""
+    whatsapp_twilio_whatsapp_from: str = ""  # E.164, the Twilio WhatsApp-enabled sender
+
     # PYQ background answer-resolution worker (FACTORY-PYQ-P5) — runs
     # scripts/resolve_pyq_answers.py's deterministic NCERT-grounded resolver
     # on a schedule instead of only via manual CLI invocation.

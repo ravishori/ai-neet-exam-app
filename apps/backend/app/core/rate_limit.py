@@ -17,6 +17,16 @@ class RateLimitExceeded(AppError):
         self.retry_after_seconds = retry_after_seconds
 
 
+async def check_rate_limit(key: str, *, limit: int, window_seconds: int, fail_closed: bool = False) -> None:
+    """Public entry point to the same Redis-backed fixed-window limiter
+    used by the ``rate_limit``/``rate_limit_per_user``/``rate_limit_by_mobile``
+    FastAPI dependencies below, for callers that aren't a route dependency
+    (e.g. a webhook service rate-limiting per external identity rather
+    than per authenticated user). Raises RateLimitExceeded exactly like
+    those dependencies do; same fail-open/fail-closed semantics."""
+    await _check(key, limit=limit, window_seconds=window_seconds, fail_closed=fail_closed)
+
+
 def _client_ip(request: Request) -> str:
     """Prefer direct ASGI client host. If TRUST_PROXY_HEADERS is ever enabled
     via settings, X-Forwarded-For could be consulted — left off by default to
