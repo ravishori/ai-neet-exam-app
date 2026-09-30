@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import uuid
 from datetime import UTC, datetime
+from urllib.parse import urlsplit
 
 import httpx
 import pydantic
@@ -20,7 +21,11 @@ from app.core.rate_limit import RateLimitExceeded
 from app.modules.whatsapp.providers.twilio import client as twilio_client_module
 from app.modules.whatsapp.providers.twilio.client import TwilioWhatsAppProvider
 from app.modules.whatsapp.providers.twilio.schemas import TwilioInboundForm, add_whatsapp_prefix, strip_whatsapp_prefix
-from app.modules.whatsapp.providers.twilio.webhook import compute_twilio_signature, validate_twilio_signature
+from app.modules.whatsapp.providers.twilio.webhook import (
+    _canonical_request_url,
+    compute_twilio_signature,
+    validate_twilio_signature,
+)
 from app.modules.whatsapp.repositories.whatsapp_repository import WhatsAppRepository
 from app.modules.whatsapp.schemas.webhook import CanonicalInboundMessage, ProviderSendResult
 from app.modules.whatsapp.services.whatsapp_sender import WhatsAppSender
@@ -294,6 +299,99 @@ async def test_validate_twilio_signature_rejects_malformed_form(monkeypatch):
             raise ValueError("malformed body")
 
     assert await validate_twilio_signature(_BrokenFormRequest(), auth_token=_AUTH_TOKEN) is False
+
+
+# ---------------------------------------------------------------------------
+# Twilio adapter — F-01: reverse-proxy scheme/host canonicalization
+# ---------------------------------------------------------------------------
+
+
+class _ForwardedRequest:
+    """Like _SignedRequest, but with a Starlette-URL-shaped ``url`` (has
+    .path/.query, like the real thing behind a proxy) and support for
+    X-Forwarded-Proto/X-Forwarded-Host headers."""
+
+    class _Url:
+        def __init__(self, raw: str):
+            self._raw = raw
+            parts = urlsplit(raw)
+            self.path = parts.path
+            self.query = parts.query
+
+        def __str__(self):
+            return self._raw
+
+    def __init__(self, url: str, form: dict[str, str], signature: str | None, headers: dict[str, str] | None = None):
+        self.url = self._Url(url)
+        self._form = form
+        self.headers = {**(headers or {})}
+        if signature:
+            self.headers["X-Twilio-Signature"] = signature
+
+    async def form(self):
+        class _Form:
+            def __init__(self, data):
+                self._data = data
+
+            def multi_items(self):
+                return list(self._data.items())
+
+        return _Form(self._form)
+
+
+_EXTERNAL_URL = "https://api.neet.trinetralab.net/api/v1/whatsapp/webhook"
+_INTERNAL_URL = "http://internal-service/api/v1/whatsapp/webhook"
+_FORM = {"MessageSid": "SM123", "From": "whatsapp:+919999999999", "To": "whatsapp:+911111111111", "Body": "hi"}
+
+
+async def test_canonical_request_url_uses_request_url_when_no_forwarded_headers():
+    """Direct HTTPS, no proxy in front — identical to pre-fix behavior."""
+    request = _ForwardedRequest(_EXTERNAL_URL, _FORM, None)
+    assert _canonical_request_url(request) == "https://api.neet.trinetralab.net/api/v1/whatsapp/webhook"
+
+
+async def test_canonical_request_url_prefers_forwarded_headers():
+    """Reverse-proxy case: request.url reports internal HTTP, but
+    X-Forwarded-Proto/Host carry what Twilio actually called."""
+    request = _ForwardedRequest(
+        _INTERNAL_URL,
+        _FORM,
+        None,
+        headers={"x-forwarded-proto": "https", "x-forwarded-host": "api.neet.trinetralab.net"},
+    )
+    assert _canonical_request_url(request) == "https://api.neet.trinetralab.net/api/v1/whatsapp/webhook"
+
+
+async def test_validate_twilio_signature_accepts_valid_signature_behind_reverse_proxy():
+    """The signature Twilio computed against the externally-visible HTTPS
+    URL must validate even though request.url itself is internal HTTP —
+    this is the exact scenario F-01 flagged as broken."""
+    sig = await compute_twilio_signature(_EXTERNAL_URL, _FORM, _AUTH_TOKEN)
+    request = _ForwardedRequest(
+        _INTERNAL_URL,
+        _FORM,
+        sig,
+        headers={"x-forwarded-proto": "https", "x-forwarded-host": "api.neet.trinetralab.net"},
+    )
+    assert await validate_twilio_signature(request, auth_token=_AUTH_TOKEN) is True
+
+
+async def test_validate_twilio_signature_rejects_signature_for_wrong_external_url():
+    """A signature computed against a different (attacker-claimed) external
+    URL must not validate just because forwarded headers are present."""
+    sig = await compute_twilio_signature("https://evil.example.com/api/v1/whatsapp/webhook", _FORM, _AUTH_TOKEN)
+    request = _ForwardedRequest(
+        _INTERNAL_URL,
+        _FORM,
+        sig,
+        headers={"x-forwarded-proto": "https", "x-forwarded-host": "api.neet.trinetralab.net"},
+    )
+    assert await validate_twilio_signature(request, auth_token=_AUTH_TOKEN) is False
+
+
+async def test_validate_twilio_signature_direct_https_still_rejects_missing_signature():
+    request = _ForwardedRequest(_EXTERNAL_URL, _FORM, None)
+    assert await validate_twilio_signature(request, auth_token=_AUTH_TOKEN) is False
 
 
 # ---------------------------------------------------------------------------

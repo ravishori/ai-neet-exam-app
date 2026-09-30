@@ -9,13 +9,18 @@ directly (no vendor SDK dependency), matching the existing
 twilio_verify_service.py convention of using httpx/stdlib rather than
 the Twilio Python SDK.
 
-Caveat (not addressed in M1, noted for later hardening per the
-integration spec's "comprehensive observability is a later phase"):
-Twilio requires the EXACT URL it was configured to call. Behind a
-reverse proxy that terminates TLS and forwards plain HTTP internally,
-``request.url`` can report the wrong scheme, causing legitimate
-signatures to fail validation. Production deployment must confirm the
-app sees (or is told) the correct externally-visible URL.
+F-01 fix: Twilio requires the EXACT URL it was configured to call. Behind
+a TLS-terminating reverse proxy, ``request.url`` can report the internal
+scheme/host (e.g. plain HTTP) instead of the externally-visible HTTPS URL
+Twilio actually signed, causing legitimate signatures to fail validation.
+``_canonical_request_url`` rebuilds that externally-visible URL from
+``X-Forwarded-Proto``/``X-Forwarded-Host`` when present, falling back to
+``request.url`` otherwise. Trusting these headers here does not weaken
+the signature check: they only choose which URL string gets hashed, and
+an attacker who can set them still cannot produce a valid HMAC without
+the secret Twilio auth token, so a forged header can only cause a
+legitimate signature to mismatch (fail closed) — never a fake one to
+match.
 """
 
 from __future__ import annotations
@@ -23,6 +28,7 @@ from __future__ import annotations
 import base64
 import hashlib
 import hmac
+from urllib.parse import urlsplit
 
 from starlette.requests import Request
 
@@ -35,6 +41,31 @@ async def compute_twilio_signature(url: str, form_params: dict[str, str], auth_t
         data += key + form_params[key]
     digest = hmac.new(auth_token.encode("utf-8"), data.encode("utf-8"), hashlib.sha1).digest()
     return base64.b64encode(digest).decode("utf-8")
+
+
+def _canonical_request_url(request: Request) -> str:
+    """The URL Twilio actually signed: externally-visible scheme/host from
+    the reverse proxy's forwarded headers when present, else ``request.url``
+    unchanged (identical to pre-fix behavior when no proxy is involved)."""
+    forwarded_proto = request.headers.get("x-forwarded-proto")
+    forwarded_host = request.headers.get("x-forwarded-host")
+    if not forwarded_proto or not forwarded_host:
+        return str(request.url)
+
+    scheme = forwarded_proto.split(",")[0].strip()
+    host = forwarded_host.split(",")[0].strip()
+
+    url = request.url
+    path = getattr(url, "path", None)
+    query = getattr(url, "query", None)
+    if path is None:
+        parts = urlsplit(str(url))
+        path, query = parts.path, parts.query
+
+    canonical = f"{scheme}://{host}{path}"
+    if query:
+        canonical += f"?{query}"
+    return canonical
 
 
 async def validate_twilio_signature(request: Request, *, auth_token: str) -> bool:
@@ -55,5 +86,5 @@ async def validate_twilio_signature(request: Request, *, auth_token: str) -> boo
     except Exception:
         return False
 
-    expected = await compute_twilio_signature(str(request.url), form_params, auth_token)
+    expected = await compute_twilio_signature(_canonical_request_url(request), form_params, auth_token)
     return hmac.compare_digest(expected, signature)
