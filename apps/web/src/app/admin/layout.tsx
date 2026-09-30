@@ -32,6 +32,8 @@ const ADMIN_MORE_SECTIONS: NavSection[] = [
       { href: "/admin/search", label: "Search Console" },
       { href: "/admin/audit-logs", label: "Audit Logs" },
       { href: "/admin/users", label: "Users" },
+      { href: "/admin/students", label: "Students" },
+      { href: "/admin/roles", label: "Roles" },
       { href: "/admin/coverage", label: "Coverage" },
       { href: "/admin/analytics", label: "Analytics" },
     ],
