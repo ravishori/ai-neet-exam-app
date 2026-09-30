@@ -7,6 +7,9 @@ export type UserProfile = {
   last_name: string | null;
   display_name: string | null;
   phone: string | null;
+  mobile_e164: string | null;
+  state_code: string | null;
+  city_name: string | null;
   status: string;
   email_verified: boolean;
   roles: string[];
@@ -51,6 +54,7 @@ export type BulkUserActionResult = { id: string; success: boolean; error?: strin
 export const usersApi = {
   me: () => apiClient.get<UserProfile>("/api/v1/users/me"),
   updateMe: (data: UserUpdateInput) => apiClient.patch<UserProfile>("/api/v1/users/me", data),
+  get: (userId: string) => apiClient.get<UserProfile>(`/api/v1/users/${userId}`),
   list: async (params: UserListParams = {}): Promise<UserListResult> => {
     const query = new URLSearchParams();
     if (params.search) query.set("search", params.search);

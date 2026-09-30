@@ -13,7 +13,8 @@ import { Label } from "@/components/ui/label";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ApiError } from "@/lib/api-client";
-import { rolesApi, type Role } from "@/features/roles/api";
+import { rolesApi } from "@/features/roles/api";
+import { RolesTab } from "@/features/roles/roles-tab";
 import { usersApi, type UserProfile } from "@/features/users/api";
 
 const STATUS_OPTIONS = ["active", "suspended"];
@@ -290,75 +291,6 @@ function UsersTab() {
           </Button>
         </div>
       )}
-    </div>
-  );
-}
-
-function RolePermissionEditor({ role, allPermissions }: { role: Role; allPermissions: string[] }) {
-  const queryClient = useQueryClient();
-  const [codes, setCodes] = useState<string[]>(role.permission_codes);
-  const isSuperAdmin = role.code === "SUPER_ADMIN";
-
-  const save = useMutation({
-    mutationFn: () => rolesApi.updatePermissions(role.id, codes),
-    onSuccess: () => queryClient.invalidateQueries({ queryKey: ["roles", "list"] }),
-  });
-
-  const dirty = codes.slice().sort().join(",") !== role.permission_codes.slice().sort().join(",");
-
-  return (
-    <Card>
-      <CardHeader>
-        <CardTitle className="text-base">{role.name}</CardTitle>
-        <CardDescription>{role.description ?? role.code}</CardDescription>
-      </CardHeader>
-      <CardContent className="flex flex-col gap-3">
-        {isSuperAdmin ? (
-          <p className="text-xs text-muted-foreground">SUPER_ADMIN bypasses permission checks entirely — nothing to edit here.</p>
-        ) : (
-          <>
-            {save.isError && (
-              <Alert variant="destructive">
-                <AlertDescription>{save.error instanceof ApiError ? save.error.message : "Something went wrong"}</AlertDescription>
-              </Alert>
-            )}
-            <div className="grid grid-cols-2 gap-1.5 sm:grid-cols-3">
-              {allPermissions.map((code) => (
-                <label key={code} className="flex items-center gap-1.5 text-xs">
-                  <input
-                    type="checkbox"
-                    checked={codes.includes(code)}
-                    onChange={() => setCodes((prev) => (prev.includes(code) ? prev.filter((c) => c !== code) : [...prev, code]))}
-                  />
-                  {code}
-                </label>
-              ))}
-            </div>
-            <Button size="sm" className="w-fit" disabled={!dirty || save.isPending} onClick={() => save.mutate()}>
-              {save.isPending ? "Saving…" : "Save permissions"}
-            </Button>
-          </>
-        )}
-      </CardContent>
-    </Card>
-  );
-}
-
-function RolesTab() {
-  const { data: roles, isLoading } = useQuery({ queryKey: ["roles", "list"], queryFn: rolesApi.list });
-  const { data: permissions } = useQuery({ queryKey: ["roles", "permissions"], queryFn: rolesApi.listPermissions });
-
-  const allPermissionCodes = permissions?.map((p) => p.code) ?? [];
-
-  if (isLoading) {
-    return <Skeleton className="h-96 w-full" aria-busy="true" aria-live="polite" />;
-  }
-
-  return (
-    <div className="grid gap-3">
-      {roles?.map((role) => (
-        <RolePermissionEditor key={role.id} role={role} allPermissions={allPermissionCodes} />
-      ))}
     </div>
   );
 }
