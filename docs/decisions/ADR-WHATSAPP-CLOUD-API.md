@@ -1,8 +1,19 @@
 # ADR: Direct Meta WhatsApp Cloud API
 
-Status: ACCEPTED
-Date: 2026-09-30
+Status: SUPERSEDED by ADR-WHATSAPP-PROVIDER-ABSTRACTION.md
+Date: 2026-09-30 (superseded same day, before implementation began)
 Decision: Use Meta WhatsApp Business Platform Cloud API directly.
+
+> **Superseded.** This ADR's "no intermediary" reasoning is preserved
+> below for historical context, but the provider decision it made — Meta
+> Cloud API as the first (and, as originally written, only) integration
+> — has been superseded by
+> [ADR-WHATSAPP-PROVIDER-ABSTRACTION.md](./ADR-WHATSAPP-PROVIDER-ABSTRACTION.md),
+> which makes Twilio the initial provider behind a provider-adapter
+> boundary, with Meta (and others) as a future adapter rather than the
+> baseline. The security/idempotency/rate-limiting/architecture-ownership
+> principles below are still current and still apply — only "which
+> provider, and how tightly is the codebase coupled to it" changed.
 
 ## Context
 Trinetra NEET Prep needs a WhatsApp learning channel.

@@ -10,6 +10,16 @@ Provide a WhatsApp-based learning interface for Trinetra NEET Prep.
 WhatsApp is a channel/interface only. Existing Trinetra learning, assessment,
 content, mastery and AI services remain the source of truth.
 
+This document deliberately makes no reference to a specific WhatsApp
+messaging provider (Twilio, Meta Cloud API, or otherwise) — the product
+requirement is "a WhatsApp channel," not any particular provider's
+integration. Which provider carries that channel is an implementation
+choice, currently Twilio, made and revisited independently in
+[docs/architecture/WHATSAPP_BOT_ARCHITECTURE.md](../architecture/WHATSAPP_BOT_ARCHITECTURE.md)
+and
+[ADR-WHATSAPP-PROVIDER-ABSTRACTION.md](../decisions/ADR-WHATSAPP-PROVIDER-ABSTRACTION.md),
+and must never change anything in this document.
+
 ## 2. MVP Goal
 Student can:
 1. Start a WhatsApp conversation.
