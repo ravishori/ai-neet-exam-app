@@ -44,7 +44,7 @@ const ADMIN_ROLE = {
   code: "ADMIN",
   name: "Admin",
   description: "Standard admin",
-  permission_codes: ["users.manage"],
+  permission_codes: ["users.manage", "reports.view"],
 };
 
 describe("Admin Roles page", () => {
@@ -69,15 +69,29 @@ describe("Admin Roles page", () => {
     expect(await screen.findByText(/don't have the/i)).toBeInTheDocument();
   });
 
-  it("saves updated permissions for a non-immutable role", async () => {
+  it("shows the Capability View by default with grouped, human-readable labels", async () => {
+    renderPage();
+    await screen.findByText("Admin");
+    expect(screen.getByText("Manage user accounts and roles")).toBeInTheDocument();
+    expect(screen.getByText("View student/performance reports")).toBeInTheDocument();
+    expect(screen.getByText("not yet enforced")).toBeInTheDocument();
+    // technical checkboxes are hidden until expanded
+    expect(screen.queryByRole("checkbox", { name: "content.edit" })).not.toBeInTheDocument();
+  });
+
+  it("expands Technical Permissions and saves updated permissions for a non-immutable role", async () => {
     updatePermissions.mockResolvedValue(ADMIN_ROLE);
     const user = userEvent.setup();
     renderPage();
     await screen.findByText("Admin");
+    await user.click(screen.getByRole("button", { name: "Show technical permissions" }));
     await user.click(screen.getByRole("checkbox", { name: "content.edit" }));
     await user.click(screen.getByRole("button", { name: "Save permissions" }));
     await waitFor(() =>
-      expect(updatePermissions).toHaveBeenCalledWith("r2", expect.arrayContaining(["users.manage", "content.edit"])),
+      expect(updatePermissions).toHaveBeenCalledWith(
+        "r2",
+        expect.arrayContaining(["users.manage", "reports.view", "content.edit"]),
+      ),
     );
   });
 });
