@@ -7,6 +7,7 @@ safely, idempotently on record."
 
 from __future__ import annotations
 
+import uuid
 from dataclasses import dataclass
 
 from starlette.requests import Request
@@ -41,6 +42,14 @@ class WebhookValidationError(Exception):
 class WebhookProcessResult:
     accepted: bool
     duplicate: bool = False
+    # Additive, M2-A-only fields — surface already-computed data for a
+    # downstream, out-of-process consumer (see whatsapp_webhook_router.py's
+    # BackgroundTasks dispatch) without adding any linking logic here.
+    # Populated only on the newly-persisted, non-duplicate, non-rate-
+    # limited path — a redelivered/duplicate webhook must never re-trigger
+    # downstream processing.
+    whatsapp_identity_id: uuid.UUID | None = None
+    message_text: str | None = None
 
 
 class WhatsAppWebhookService:
@@ -105,4 +114,4 @@ class WhatsAppWebhookService:
         )
         # M1 foundation ends here — no intent resolution/reply is sent yet;
         # that belongs to a later milestone's orchestrator.
-        return WebhookProcessResult(accepted=True, duplicate=False)
+        return WebhookProcessResult(accepted=True, duplicate=False, whatsapp_identity_id=identity.id, message_text=canonical.text)
