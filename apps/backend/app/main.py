@@ -44,6 +44,7 @@ from app.modules.learning.api.mastery_router import router as mastery_router
 from app.modules.learning.api.question_interaction_router import router as question_interaction_router
 from app.modules.learning.api.student_preference_router import router as student_preference_router
 from app.modules.system.api.admin_router import router as admin_router
+from app.modules.whatsapp.api.whatsapp_link_router import router as whatsapp_link_router
 from app.modules.whatsapp.api.whatsapp_webhook_router import router as whatsapp_webhook_router
 from app.shared.responses import envelope
 
@@ -118,6 +119,7 @@ app.include_router(ingestion_router)
 app.include_router(knowledge_router)
 app.include_router(pyq_gemini_backfill_router)
 app.include_router(whatsapp_webhook_router)
+app.include_router(whatsapp_link_router)
 
 
 @app.get("/health")
