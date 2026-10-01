@@ -17,8 +17,9 @@ import pytest
 import redis.asyncio as redis_asyncio
 import structlog
 from httpx import AsyncClient
-from sqlalchemy import select
-from sqlalchemy.ext.asyncio import AsyncSession
+from sqlalchemy import delete, select
+from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine
+from sqlalchemy.pool import NullPool
 
 from app.core import rate_limit as rl
 from app.core.config import get_settings
@@ -33,6 +34,7 @@ from app.modules.whatsapp.services.whatsapp_link_code_service import (
     WhatsAppLinkCodeService,
     looks_like_link_code,
 )
+from conftest import TEST_DATABASE_URL
 
 pytestmark = pytest.mark.asyncio(loop_scope="session")
 
@@ -507,44 +509,20 @@ async def test_end_to_end_inbound_webhook_triggers_background_link(client: Async
 # ---------------------------------------------------------------------------
 
 
-async def test_two_different_valid_codes_concurrently_resolve_to_one_winner(db_session):
-    """The exact cross-user race the atomic-link fix closes: two
-    different valid codes, for two different users, both targeting the
-    same still-unlinked identity at once. Exactly one may win; the other
-    must see CONFLICT, and its own code must remain unconsumed (per the
-    existing 'CONFLICT never burns the code' property)."""
-    user_a = _make_user(email="race_a@example.com")
-    user_b = _make_user(email="race_b@example.com")
-    db_session.add_all([user_a, user_b])
-    await db_session.flush()
-
-    service = WhatsAppLinkCodeService(db_session)
-    code_a = await service.generate_code(user_id=user_a.id)
-    code_b = await service.generate_code(user_id=user_b.id)
-
-    identity = _make_identity(phone_e164="+919876520001")
-    db_session.add(identity)
-    await db_session.flush()
-
-    results = await asyncio.gather(
-        service.verify_and_link(plaintext_code=code_a.plaintext_code, identity=identity),
-        service.verify_and_link(plaintext_code=code_b.plaintext_code, identity=identity),
-    )
-
-    outcomes = [r.outcome for r in results]
-    assert outcomes.count(LinkOutcome.LINKED) == 1
-    assert LinkOutcome.CONFLICT in outcomes
-
-    # Final DB state matches whichever one actually won — never a mix.
-    winner = next(r for r in results if r.outcome == LinkOutcome.LINKED)
-    assert identity.user_id == winner.user_id
-
-    # Re-fetch the loser's own code row directly by its known owner to confirm it was never consumed.
-    loser_user_id = user_b.id if winner.user_id == user_a.id else user_a.id
-    loser_code_row = (
-        await db_session.execute(select(WhatsAppLinkCode).where(WhatsAppLinkCode.user_id == loser_user_id))
-    ).scalar_one()
-    assert loser_code_row.consumed_at is None
+# NOTE: a prior revision of this test exercised "two different valid
+# codes, same identity" concurrency via a SHARED db_session +
+# asyncio.gather, matching the pattern used elsewhere in this file. Once
+# verify_and_link started using SELECT ... FOR UPDATE, that pattern
+# stopped being meaningful: a single transaction never blocks itself on
+# its own row lock, so two "concurrent" calls sharing one session/
+# transaction can both proceed as if unlocked, both observing
+# current_user_id=None and both linking. This is a property of the test
+# harness, not a reintroduction of the race — the real fix is proven by
+# test_same_code_redeemed_by_two_identities_under_independent_transactions
+# and test_conflict_under_independent_transactions_never_burns_the_code
+# below, which use genuinely separate PostgreSQL sessions/transactions.
+# This test has been removed rather than kept in a now-misleading,
+# premise-invalid form.
 
 
 async def test_duplicate_inbound_webhook_does_not_dispatch_verification_again(client: AsyncClient, db_session, monkeypatch):
@@ -730,3 +708,266 @@ async def test_unlink_invalidates_pending_codes_for_that_user(db_session):
 
     all_codes = (await db_session.execute(select(WhatsAppLinkCode).where(WhatsAppLinkCode.user_id == user.id))).scalars().all()
     assert all(c.consumed_at is not None for c in all_codes)
+
+
+# ---------------------------------------------------------------------------
+# Single-use-code concurrency fix: regression tests using genuinely
+# independent PostgreSQL sessions/transactions (not the shared-session
+# asyncio.gather pattern used elsewhere in this file, which only proves
+# correctness under interleaving on one connection). These tests use
+# their own engine/connections against the same test database, each
+# verify_and_link call committing its own real transaction, so Postgres's
+# actual row-level locking is exercised end to end.
+# ---------------------------------------------------------------------------
+
+
+@pytest.fixture
+async def independent_sessions():
+    """Three independent AsyncSession objects, each on its own connection
+    to the real test database (no shared SAVEPOINT, no shared connection)
+    — one for setup+verification, two for the concurrent calls under
+    test. Callers are responsible for committing their own writes and for
+    cleaning up any rows they create, since nothing here is auto-rolled-
+    back the way the db_session fixture's SAVEPOINT is."""
+    engine = create_async_engine(TEST_DATABASE_URL, poolclass=NullPool)
+    setup_session = AsyncSession(bind=engine, expire_on_commit=False)
+    session_a = AsyncSession(bind=engine, expire_on_commit=False)
+    session_b = AsyncSession(bind=engine, expire_on_commit=False)
+    try:
+        yield setup_session, session_a, session_b
+    finally:
+        await setup_session.close()
+        await session_a.close()
+        await session_b.close()
+        await engine.dispose()
+
+
+async def test_same_code_redeemed_by_two_identities_under_independent_transactions(independent_sessions):
+    """The exact defect this fix closes: verify_and_link previously
+    atomically linked an identity BEFORE checking whether the code it was
+    using had itself already been claimed by a concurrent call for a
+    DIFFERENT identity. Two genuinely separate PostgreSQL
+    sessions/transactions redeem the SAME code against two DIFFERENT
+    WhatsApp identities at the same time — exactly one identity may end
+    up linked, and the code must be consumed exactly once."""
+    setup_session, session_a, session_b = independent_sessions
+
+    user = _make_user(email=f"indep_race_{uuid.uuid4().hex[:8]}@example.com")
+    setup_session.add(user)
+    await setup_session.flush()
+
+    setup_service = WhatsAppLinkCodeService(setup_session)
+    generated = await setup_service.generate_code(user_id=user.id)
+
+    identity_a = _make_identity(phone_e164=f"+9198{uuid.uuid4().int % 10**8:08d}")
+    identity_b = _make_identity(phone_e164=f"+9198{uuid.uuid4().int % 10**8:08d}")
+    setup_session.add_all([identity_a, identity_b])
+    await setup_session.commit()  # must be genuinely committed — session_a/session_b are separate connections
+
+    try:
+        service_a = WhatsAppLinkCodeService(session_a)
+        service_b = WhatsAppLinkCodeService(session_b)
+
+        # Re-load the identity rows fresh in each independent session —
+        # the ORM objects created above belong to setup_session.
+        identity_a_in_a = (
+            await session_a.execute(select(WhatsAppIdentity).where(WhatsAppIdentity.id == identity_a.id))
+        ).scalar_one()
+        identity_b_in_b = (
+            await session_b.execute(select(WhatsAppIdentity).where(WhatsAppIdentity.id == identity_b.id))
+        ).scalar_one()
+
+        async def _redeem_a():
+            result = await service_a.verify_and_link(plaintext_code=generated.plaintext_code, identity=identity_a_in_a)
+            await session_a.commit()
+            return result
+
+        async def _redeem_b():
+            result = await service_b.verify_and_link(plaintext_code=generated.plaintext_code, identity=identity_b_in_b)
+            await session_b.commit()
+            return result
+
+        results = await asyncio.gather(_redeem_a(), _redeem_b())
+
+        outcomes = [r.outcome for r in results]
+        assert outcomes.count(LinkOutcome.LINKED) == 1
+        assert LinkOutcome.INVALID_CODE in outcomes
+
+        # Verify final state via a fresh read.
+        linked_count = (
+            (
+                await setup_session.execute(
+                    select(WhatsAppIdentity).where(
+                        WhatsAppIdentity.id.in_([identity_a.id, identity_b.id]), WhatsAppIdentity.user_id == user.id
+                    )
+                )
+            )
+            .scalars()
+            .all()
+        )
+        assert len(linked_count) == 1
+
+        code_row = (await setup_session.execute(select(WhatsAppLinkCode).where(WhatsAppLinkCode.user_id == user.id))).scalar_one()
+        assert code_row.consumed_at is not None
+        assert code_row.whatsapp_identity_id == linked_count[0].id
+    finally:
+        # Manual cleanup — this test commits real rows to the shared test
+        # database outside the db_session fixture's auto-rollback.
+        await setup_session.execute(delete(WhatsAppLinkCode).where(WhatsAppLinkCode.user_id == user.id))
+        await setup_session.execute(delete(WhatsAppIdentity).where(WhatsAppIdentity.id.in_([identity_a.id, identity_b.id])))
+        await setup_session.execute(delete(User).where(User.id == user.id))
+        await setup_session.commit()
+
+
+async def test_conflict_under_independent_transactions_never_burns_the_code(independent_sessions):
+    """A code redeemed against an identity already linked to a different
+    user (CONFLICT) must leave the code fully valid for a later,
+    legitimate redemption — proven here across two genuinely independent
+    transactions, not a shared session."""
+    setup_session, session_a, session_b = independent_sessions
+
+    user_a = _make_user(email=f"indep_conflict_a_{uuid.uuid4().hex[:8]}@example.com")
+    user_b = _make_user(email=f"indep_conflict_b_{uuid.uuid4().hex[:8]}@example.com")
+    setup_session.add_all([user_a, user_b])
+    await setup_session.flush()
+
+    setup_service = WhatsAppLinkCodeService(setup_session)
+    code_for_b = await setup_service.generate_code(user_id=user_b.id)
+
+    identity = _make_identity(phone_e164=f"+9198{uuid.uuid4().int % 10**8:08d}", user_id=user_a.id)
+    setup_session.add(identity)
+    await setup_session.commit()
+
+    try:
+        service_a = WhatsAppLinkCodeService(session_a)
+        identity_in_a = (await session_a.execute(select(WhatsAppIdentity).where(WhatsAppIdentity.id == identity.id))).scalar_one()
+
+        result = await service_a.verify_and_link(plaintext_code=code_for_b.plaintext_code, identity=identity_in_a)
+        await session_a.commit()
+
+        assert result.outcome == LinkOutcome.CONFLICT
+
+        code_row = (
+            await setup_session.execute(select(WhatsAppLinkCode).where(WhatsAppLinkCode.user_id == user_b.id))
+        ).scalar_one()
+        assert code_row.consumed_at is None
+    finally:
+        await setup_session.execute(delete(WhatsAppLinkCode).where(WhatsAppLinkCode.user_id == user_b.id))
+        await setup_session.execute(delete(WhatsAppIdentity).where(WhatsAppIdentity.id == identity.id))
+        await setup_session.execute(delete(User).where(User.id.in_([user_a.id, user_b.id])))
+        await setup_session.commit()
+
+
+async def test_two_different_codes_same_identity_under_independent_transactions(independent_sessions):
+    """The original identity-row race (two different valid codes, for two
+    different users, both targeting the same still-unlinked identity) —
+    re-proven with genuinely independent PostgreSQL sessions/transactions
+    rather than a shared session, since SELECT ... FOR UPDATE does not
+    serialize a single transaction against itself."""
+    setup_session, session_a, session_b = independent_sessions
+
+    user_a = _make_user(email=f"indep_two_codes_a_{uuid.uuid4().hex[:8]}@example.com")
+    user_b = _make_user(email=f"indep_two_codes_b_{uuid.uuid4().hex[:8]}@example.com")
+    setup_session.add_all([user_a, user_b])
+    await setup_session.flush()
+
+    setup_service = WhatsAppLinkCodeService(setup_session)
+    code_a = await setup_service.generate_code(user_id=user_a.id)
+    code_b = await setup_service.generate_code(user_id=user_b.id)
+
+    identity = _make_identity(phone_e164=f"+9198{uuid.uuid4().int % 10**8:08d}")
+    setup_session.add(identity)
+    await setup_session.commit()
+
+    try:
+        service_a = WhatsAppLinkCodeService(session_a)
+        service_b = WhatsAppLinkCodeService(session_b)
+
+        identity_in_a = (await session_a.execute(select(WhatsAppIdentity).where(WhatsAppIdentity.id == identity.id))).scalar_one()
+        identity_in_b = (await session_b.execute(select(WhatsAppIdentity).where(WhatsAppIdentity.id == identity.id))).scalar_one()
+
+        async def _redeem_a():
+            result = await service_a.verify_and_link(plaintext_code=code_a.plaintext_code, identity=identity_in_a)
+            await session_a.commit()
+            return result
+
+        async def _redeem_b():
+            result = await service_b.verify_and_link(plaintext_code=code_b.plaintext_code, identity=identity_in_b)
+            await session_b.commit()
+            return result
+
+        results = await asyncio.gather(_redeem_a(), _redeem_b())
+
+        outcomes = [r.outcome for r in results]
+        assert outcomes.count(LinkOutcome.LINKED) == 1
+        assert LinkOutcome.CONFLICT in outcomes
+
+        winner = next(r for r in results if r.outcome == LinkOutcome.LINKED)
+        # Column-only select (not the full entity) to avoid setup_session's
+        # identity map returning its stale cached `identity` object.
+        final_user_id = (
+            await setup_session.execute(select(WhatsAppIdentity.user_id).where(WhatsAppIdentity.id == identity.id))
+        ).scalar_one()
+        assert final_user_id == winner.user_id
+
+        loser_user_id = user_b.id if winner.user_id == user_a.id else user_a.id
+        loser_code_row = (
+            await setup_session.execute(select(WhatsAppLinkCode).where(WhatsAppLinkCode.user_id == loser_user_id))
+        ).scalar_one()
+        assert loser_code_row.consumed_at is None
+    finally:
+        await setup_session.execute(delete(WhatsAppLinkCode).where(WhatsAppLinkCode.user_id.in_([user_a.id, user_b.id])))
+        await setup_session.execute(delete(WhatsAppIdentity).where(WhatsAppIdentity.id == identity.id))
+        await setup_session.execute(delete(User).where(User.id.in_([user_a.id, user_b.id])))
+        await setup_session.commit()
+
+
+async def test_failure_mid_link_rolls_back_without_burning_the_code(db_session, monkeypatch):
+    """An exception after the code is consumed but before the identity
+    link's own write completes must roll back the *entire* transaction —
+    the code must not end up permanently burned for a link that never
+    actually took effect. Exercised through the real background
+    dispatcher, whose `async with AsyncSessionLocal() as session:` block
+    is what performs this rollback on an uncaught exception."""
+
+    def _test_session_factory():
+        return AsyncSession(bind=db_session.bind, expire_on_commit=False)
+
+    monkeypatch.setattr(link_code_module, "AsyncSessionLocal", _test_session_factory)
+
+    user = _make_user(email="rollback_test@example.com")
+    db_session.add(user)
+    await db_session.flush()
+
+    service = WhatsAppLinkCodeService(db_session)
+    generated = await service.generate_code(user_id=user.id)
+
+    identity = _make_identity(phone_e164="+919876520006")
+    db_session.add(identity)
+    await db_session.flush()
+
+    async def _boom(*args, **kwargs):
+        raise RuntimeError("simulated failure after code consumption, before link completes")
+
+    # Patch _try_atomic_link (called immediately after try_consume succeeds)
+    # to blow up mid-transaction.
+    monkeypatch.setattr(link_code_module.WhatsAppLinkCodeService, "_try_atomic_link", _boom)
+
+    # Must not raise out of the dispatcher — it catches and logs.
+    await link_code_module.dispatch_link_code_verification_in_background(identity.id, generated.plaintext_code)
+
+    # The failed transaction must have rolled back entirely: the code is
+    # NOT consumed, and the identity is NOT linked.
+    code_row = (await db_session.execute(select(WhatsAppLinkCode).where(WhatsAppLinkCode.user_id == user.id))).scalar_one()
+    assert code_row.consumed_at is None
+
+    identity_user_id = (
+        await db_session.execute(select(WhatsAppIdentity.user_id).where(WhatsAppIdentity.id == identity.id))
+    ).scalar_one()
+    assert identity_user_id is None
+
+    # And the code remains genuinely valid — a subsequent, un-patched
+    # verification attempt succeeds normally.
+    monkeypatch.undo()
+    result = await service.verify_and_link(plaintext_code=generated.plaintext_code, identity=identity)
+    assert result.outcome == LinkOutcome.LINKED

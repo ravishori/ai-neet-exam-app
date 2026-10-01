@@ -34,12 +34,12 @@ expiry, one-time use, unlinking and blocked identity handling.").
    opens its own database session, and calls
    WhatsAppLinkCodeService.verify_and_link.
 8. On a valid, unexpired, unconsumed, phone-rate-limit-respecting match:
-   the identity link is attempted atomically (UPDATE ... WHERE user_id IS
-   NULL ... RETURNING) and, if won, the code is atomically consumed
-   (UPDATE ... WHERE consumed_at IS NULL ... RETURNING) — resolving to
-   LINKED, ALREADY_LINKED (identity already correctly linked), or
-   CONFLICT (identity linked to a different user; never overwritten).
-   See "Concurrency" below for the exact mechanics.
+   the matched code row and the target identity row are both locked
+   (SELECT ... FOR UPDATE) for the remainder of the decision, the code is
+   consumed, and the identity is linked — together, within that locked
+   section — resolving to LINKED, ALREADY_LINKED (identity already
+   correctly linked), or CONFLICT (identity linked to a different user;
+   never overwritten). See "Concurrency" below for the exact mechanics.
 ```
 
 ## Integration point
@@ -75,7 +75,8 @@ sent, the dispatched task can structurally never affect that response.
 | Code entropy | 8 chars from a 32-symbol alphabet (`secrets.choice`), ≈40 bits |
 | Hashed storage only | `code_hash` (SHA-256 via the existing `hash_opaque_token`); plaintext never persisted or logged |
 | Expiry | 10 minutes (`CODE_TTL_MINUTES`) |
-| Single-use | Atomic `UPDATE ... WHERE consumed_at IS NULL ... RETURNING` (see "Concurrency" below) |
+| Single-use | Enforced via paired `SELECT ... FOR UPDATE` row locks on the code and target identity, held for the full decision — one valid code can establish exactly one identity link, even under genuine concurrent transactions (see "Concurrency" below) |
+| Rollback safety | The code-consumption and identity-linking writes happen inside one transaction, committed once by the caller; an exception anywhere in between rolls back both together — never a partial state where the code is burned but no identity was linked. Proven by `test_failure_mid_link_rolls_back_without_burning_the_code`. |
 | Verification throttling | Rate-limited **per WhatsApp phone number** — `check_rate_limit("ratelimit:whatsapp_link_verify:{phone_e164}", limit=5, window_seconds=300, fail_closed=False)`, the same primitive M1's own webhook already uses for inbound-message throttling. This replaced an earlier revision that incremented every active code's attempt counter on any unmatched guess, which could let one phone lock out an unrelated user's pending code — see "Attempt-attribution fix" below |
 | Per-code attempts/max_attempts | Still present on `whatsapp.link_codes` and still checked in `find_candidates_for_verification` (`attempts < max_attempts`), but — because there is no session binding an unauthenticated guess to one specific code — this counter is **not incremented** by the current implementation; the phone-scoped rate limit above is the active throttle. The column remains as a structural ceiling for a future per-code attribution mechanism, not a currently-enforced-by-increment control. Documented here explicitly so this isn't overclaimed. |
 | Replay rejected | A consumed code is excluded from `find_candidates_for_verification` |
@@ -105,65 +106,101 @@ its own rate limit has zero effect on phone B's independent code.
 
 ## Concurrency
 
-Two separate state transitions are each made atomic by a conditional SQL
-`UPDATE ... RETURNING` rather than a plain read-then-write:
+### History: two successive fixes
 
-**Code consumption:**
+**Fix 1 (identity-row race):** an early revision set `WhatsAppIdentity.user_id`
+as a plain ORM attribute assignment decided from an in-memory read — two
+concurrent `verify_and_link` calls for the same still-unlinked identity
+(two different valid codes belonging to two different users, both
+targeting the same phone number at once) could both observe "unlinked"
+and both attempt to claim it. This was first closed with a conditional
+`UPDATE whatsapp.identities SET user_id = :user_id WHERE id = :identity_id
+AND user_id IS NULL RETURNING id`, attempted *before* consuming the
+matched code so a losing call never burned its code.
+
+**Fix 2 (single-use-code race, this revision):** that first fix was
+per-identity only. It did not prevent the *same code* from being
+redeemed via two *different* WhatsApp identities concurrently: each
+identity's atomic link check only looked at its own row, so both could
+independently win their own identity-link *before* either checked
+whether the code itself had already been claimed — `try_consume`'s
+boolean result was discarded entirely. One valid code could therefore
+link two different WhatsApp identities, a single-use-code violation.
+
+### Current mechanism: paired row locks, not independent compare-and-swaps
+
+`verify_and_link` now locks **both** the matched code row and the target
+identity row with `SELECT ... FOR UPDATE`, in a fixed order (identity,
+then code) used consistently by every caller of this pattern, including
+`unlink`. All of the decision (blocked/expiry/already-linked/conflict)
+and both writes (consuming the code, linking the identity) happen inside
+that single locked section of one transaction, which only commits once,
+in the caller (`dispatch_link_code_verification_in_background` or the
+HTTP router):
 
 ```sql
-UPDATE whatsapp.link_codes
-SET consumed_at = now(), whatsapp_identity_id = :identity_id
-WHERE id = :code_id AND consumed_at IS NULL
-RETURNING id
+-- lock order: identity first, then the matched code
+SELECT id FROM whatsapp.identities WHERE id = :identity_id FOR UPDATE;
+SELECT * FROM whatsapp.link_codes WHERE id = :code_id FOR UPDATE;
+-- re-validate code + identity state under lock, then:
+UPDATE whatsapp.link_codes SET consumed_at = now(), whatsapp_identity_id = :identity_id
+  WHERE id = :code_id AND consumed_at IS NULL;
+UPDATE whatsapp.identities SET user_id = :user_id WHERE id = :identity_id AND user_id IS NULL;
 ```
 
-Two simultaneous verification attempts for the same code can never both
-succeed — the `WHERE consumed_at IS NULL` guard means only one `UPDATE`
-affects a row; the loser sees zero rows returned and treats it as
-`INVALID_CODE` (or, if the identity is already correctly linked by the
-winner, `ALREADY_LINKED`). Proven by
-`test_concurrent_double_verification_links_exactly_once`.
+A consistent lock order (identity always before code) across every call
+site is what makes this deadlock-free regardless of which identity/code
+pair is involved — see `verify_and_link`'s and `unlink`'s docstrings for
+the full reasoning.
 
-**Identity linking** (`WhatsAppLinkCodeService._try_atomic_link`):
+This closes both races at once:
+- **Two different codes, same identity** — the identity-row lock means
+  whichever call acquires it first fully decides and writes before the
+  other can even read the identity's state.
+- **Same code, two different identities** — the code-row lock means only
+  the call that locks the code first may consume it; the loser
+  re-validates the code's state under its own lock afterward and
+  correctly finds it already consumed, never linking.
 
-```sql
-UPDATE whatsapp.identities
-SET user_id = :user_id
-WHERE id = :identity_id AND user_id IS NULL
-RETURNING id
-```
+A `CONFLICT` outcome never mutates either row — the code remains fully
+valid for the same user to redeem against a different identity (or the
+same one, after an unlink).
 
-An earlier revision set `WhatsAppIdentity.user_id` as a plain ORM
-attribute assignment, decided from an in-memory read — two concurrent
-`verify_and_link` calls for the same still-unlinked identity (e.g. two
-different valid codes belonging to two different users, both targeting
-the same phone number at once) could both observe "unlinked" and both
-attempt to claim it, with whichever committed last silently winning. The
-atomic conditional `UPDATE` above closes that window: `verify_and_link`
-attempts this update *before* consuming the matched code (so a losing
-call never burns its code), and if it loses, re-reads the identity's
-now-current `user_id` to resolve `ALREADY_LINKED` (same user) or
-`CONFLICT` (different user) rather than assuming either. Proven by
-`test_two_different_valid_codes_concurrently_resolve_to_one_winner`,
-which asserts exactly one `LINKED` outcome, a `CONFLICT` for the other,
-and that the losing call's own code remains unconsumed.
+### Test coverage
 
-**Test limitation:** both concurrency tests above drive their "concurrent"
-`verify_and_link` calls via `asyncio.gather` against a single shared
-`db_session` — i.e. one underlying database connection/transaction, not
-two genuinely separate Postgres transactions racing against each other.
-This proves the WHERE-guarded update logic is correct when two calls are
-interleaved on one connection, which is necessary but not sufficient to
-demonstrate behavior under true cross-transaction row-lock contention (the
-scenario that actually occurs in production, where each
-`dispatch_link_code_verification_in_background` call opens its own
-independent `AsyncSessionLocal()`). The atomic `UPDATE ... WHERE ...
-RETURNING` pattern itself is standard, well-established SQL semantics —
-the same pattern this codebase already relies on elsewhere (M1's own
-`WhatsAppRepository.get_or_create_identity`) — so this is a gap in test
-depth, not a known or suspected defect in the fix. No test in this suite
-claims to have verified true cross-transaction concurrency, and this
-document does not claim that either.
+Three tests use genuinely independent PostgreSQL sessions/transactions
+(separate `AsyncSession` objects, each on its own connection to the test
+database, each committing its own transaction) — not the shared-session
+`asyncio.gather` pattern used for simpler single-row tests elsewhere in
+this file:
+
+- `test_same_code_redeemed_by_two_identities_under_independent_transactions`
+  — the exact Fix 2 scenario: one code, two different identities, two
+  real concurrent transactions. Asserts exactly one `LINKED`, the other
+  `INVALID_CODE`, and that the code is consumed exactly once.
+- `test_two_different_codes_same_identity_under_independent_transactions`
+  — the Fix 1 scenario, re-proven under genuine transaction concurrency
+  (its predecessor, which used a shared session, was removed — see
+  inline comment in the test file explaining why `SELECT ... FOR UPDATE`
+  cannot meaningfully be exercised by two calls sharing one transaction,
+  since a transaction never blocks on its own lock).
+- `test_conflict_under_independent_transactions_never_burns_the_code` —
+  confirms a `CONFLICT` under real cross-transaction contention leaves
+  the code fully unconsumed.
+
+Additionally, `test_failure_mid_link_rolls_back_without_burning_the_code`
+proves rollback safety: an exception injected between code consumption
+and identity linking (via the real `dispatch_link_code_verification_in_background`
+path, whose own `async with AsyncSessionLocal()` block performs the
+rollback) leaves *both* the code unconsumed and the identity unlinked —
+confirming the two writes are never partially applied — and that the
+code remains genuinely redeemable afterward.
+
+One remaining same-transaction `asyncio.gather` test,
+`test_concurrent_double_verification_links_exactly_once` (same code,
+same identity, shared session), exercises statement-interleaving
+correctness but is not a substitute for genuine cross-transaction proof
+— the three independent-session tests above are what establishes that.
 
 ## M1 boundary
 

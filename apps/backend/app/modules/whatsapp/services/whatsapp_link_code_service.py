@@ -35,6 +35,7 @@ from app.core.rate_limit import RateLimitExceeded, check_rate_limit
 from app.modules.identity.repositories.user_repository import UserRepository
 from app.modules.identity.services.token_service import hash_opaque_token
 from app.modules.whatsapp.models.whatsapp_identity import WhatsAppIdentity
+from app.modules.whatsapp.models.whatsapp_link_code import WhatsAppLinkCode
 from app.modules.whatsapp.repositories.whatsapp_link_code_repository import WhatsAppLinkCodeRepository
 
 logger = get_logger("whatsapp.link_code")
@@ -191,12 +192,38 @@ class WhatsAppLinkCodeService:
             logger.info("whatsapp_link_code_failed", reason="user_gone", whatsapp_identity_id=str(identity.id))
             return VerifyResult(outcome=LinkOutcome.INVALID_CODE)
 
-        # Resolve against freshly-committed state, not the possibly-stale
-        # in-memory `identity.user_id` — two concurrent verify_and_link
-        # calls (e.g. two different valid codes for two different users,
-        # both targeting the same still-unlinked identity) must never both
-        # conclude "unlinked" and both attempt to set it. See
-        # _try_atomic_link's docstring for how this is made race-safe.
+        # Pessimistically lock BOTH the identity row and the matched code
+        # row for the rest of this decision, in a fixed order (identity,
+        # then code) used by every caller of this method (and by unlink) —
+        # a consistent lock order across all call sites is what makes this
+        # deadlock-free regardless of which identity/code pair is involved.
+        #
+        # This closes two distinct races:
+        # 1. Two different valid codes, for two different users, both
+        #    targeting the same still-unlinked identity (handled by the
+        #    identity-row lock: whichever call acquires it first fully
+        #    decides and writes before the other can even read it).
+        # 2. The SAME code redeemed via two different WhatsApp identities
+        #    concurrently (handled by the code-row lock: only the call
+        #    that locks the code row first may consume it, and the other
+        #    re-validates the code's state under its own lock afterward
+        #    and correctly sees it already consumed — it was previously
+        #    possible for both identities to link before either checked
+        #    whether the code was actually still claimable, since the two
+        #    atomic UPDATEs were on different, independently-guarded rows
+        #    with no coordination between them).
+        await self._session.execute(select(WhatsAppIdentity.id).where(WhatsAppIdentity.id == identity.id).with_for_update())
+        locked_code = (
+            await self._session.execute(select(WhatsAppLinkCode).where(WhatsAppLinkCode.id == matched.id).with_for_update())
+        ).scalar_one_or_none()
+
+        # Re-validate the code under lock — another transaction may have
+        # consumed or (less plausibly, given the short TTL) it may have
+        # expired since our initial, unlocked candidate scan above.
+        if locked_code is None or locked_code.consumed_at is not None or locked_code.expires_at <= datetime.now(UTC):
+            logger.info("whatsapp_link_code_failed", reason="code_no_longer_valid", whatsapp_identity_id=str(identity.id))
+            return VerifyResult(outcome=LinkOutcome.INVALID_CODE)
+
         current_user_id = await self._get_current_identity_user_id(identity.id)
 
         if current_user_id is not None:
@@ -211,37 +238,28 @@ class WhatsAppLinkCodeService:
             # Linked to someone else — never overwrite. Do not consume or
             # penalize the code: the code itself was objectively correct,
             # the conflict is about the identity's existing link, not a
-            # guessing attack.
+            # guessing attack. Nothing was mutated, so this costs the code
+            # nothing — it remains redeemable against a different identity
+            # (or the same one, after an unlink).
             logger.warning(
                 "whatsapp_link_code_conflict", whatsapp_identity_id=str(identity.id), existing_user_id=str(current_user_id)
             )
             return VerifyResult(outcome=LinkOutcome.CONFLICT, user_id=current_user_id)
 
-        # Attempt the atomic link BEFORE consuming the code: if we lose
-        # this race, the code must not be burned for nothing.
-        linked = await self._try_atomic_link(identity.id, user.id)
-        if not linked:
-            # Someone else linked this identity between our read above and
-            # this UPDATE (Postgres's row-level lock serializes concurrent
-            # UPDATEs on the same row, so this reflects real committed
-            # state, not a stale read). Re-resolve rather than assume.
-            current_user_id = await self._get_current_identity_user_id(identity.id)
-            if current_user_id == user.id:
-                await self._codes.try_consume(matched.id, whatsapp_identity_id=identity.id)
-                identity.user_id = current_user_id
-                logger.info("whatsapp_link_code_already_linked", whatsapp_identity_id=str(identity.id), user_id=str(user.id))
-                return VerifyResult(outcome=LinkOutcome.ALREADY_LINKED, user_id=user.id)
-            logger.warning(
-                "whatsapp_link_code_conflict", whatsapp_identity_id=str(identity.id), existing_user_id=str(current_user_id)
-            )
-            return VerifyResult(outcome=LinkOutcome.CONFLICT, user_id=current_user_id)
+        # Neither the code nor the identity has been claimed by anyone
+        # else — both rows are still exclusively locked by this
+        # transaction, so consuming the code and linking the identity here
+        # together is safe from any further concurrent interference until
+        # this transaction commits.
+        consumed = await self._codes.try_consume(matched.id, whatsapp_identity_id=identity.id)
+        if not consumed:
+            # Should be unreachable given the lock and the fresh
+            # re-validation above, but never link on an unconfirmed
+            # consumption.
+            logger.warning("whatsapp_link_code_failed", reason="consume_failed_under_lock", whatsapp_identity_id=str(identity.id))
+            return VerifyResult(outcome=LinkOutcome.INVALID_CODE)
 
-        # We atomically won the identity link. Consume the code — if this
-        # specific call loses a concurrent race for the SAME code (e.g. a
-        # duplicate webhook delivery processed by two overlapping
-        # background tasks), the identity link itself is still genuinely
-        # established (by us), so this remains a true LINKED outcome.
-        await self._codes.try_consume(matched.id, whatsapp_identity_id=identity.id)
+        await self._try_atomic_link(identity.id, user.id)
         identity.user_id = user.id
         logger.info("whatsapp_link_code_linked", whatsapp_identity_id=str(identity.id), user_id=str(user.id))
         return VerifyResult(outcome=LinkOutcome.LINKED, user_id=user.id)
@@ -272,14 +290,23 @@ class WhatsAppLinkCodeService:
         this via the existing role system, never decided here), may
         unlink. Returns False without raising if neither condition holds —
         the router turns that into a 403/404 as it sees fit; this service
-        layer stays a plain yes/no."""
-        if identity.user_id != requesting_user_id and not is_admin:
+        layer stays a plain yes/no.
+
+        Locks the identity row (same lock order as verify_and_link's
+        identity-then-code locking) before deciding, so a concurrent
+        verify_and_link for this identity can never interleave with an
+        unlink — whichever call acquires the identity lock first fully
+        completes before the other proceeds."""
+        await self._session.execute(select(WhatsAppIdentity.id).where(WhatsAppIdentity.id == identity.id).with_for_update())
+        current_user_id = await self._get_current_identity_user_id(identity.id)
+
+        if current_user_id != requesting_user_id and not is_admin:
             logger.warning(
                 "whatsapp_link_unlink_denied", whatsapp_identity_id=str(identity.id), requesting_user_id=str(requesting_user_id)
             )
             return False
 
-        if identity.user_id is None:
+        if current_user_id is None:
             # Nothing to unlink — idempotent no-op, not an error.
             return True
 
@@ -287,8 +314,7 @@ class WhatsAppLinkCodeService:
         # transaction as the unlink itself, so a stale, not-yet-expired
         # code generated before the unlink can never relink this (or any)
         # identity afterward.
-        linked_user_id = identity.user_id
-        await self._codes.invalidate_pending_for_user(linked_user_id)
+        await self._codes.invalidate_pending_for_user(current_user_id)
 
         identity.user_id = None
         logger.info("whatsapp_identity_unlinked", whatsapp_identity_id=str(identity.id))
