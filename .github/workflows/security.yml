@@ -33,6 +33,14 @@ jobs:
 
     - name: Checkout Repository
       uses: actions/checkout@v4
+      with:
+        # gitleaks-action resolves a commit-range `git log <base>^..<head>`
+        # to scan — the default shallow checkout (fetch-depth: 1, a single
+        # commit with no ancestry) can't resolve that range, producing
+        # "unknown revision" and a hard failure on every run regardless of
+        # whether any secret is actually present. Full history is required
+        # for the range to resolve.
+        fetch-depth: 0
 
     # ----------------------------------------------------------------------
     # Setup Python
