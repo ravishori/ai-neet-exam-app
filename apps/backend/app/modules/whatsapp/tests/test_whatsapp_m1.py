@@ -579,9 +579,12 @@ async def test_post_webhook_valid_signature_persists_message(client: AsyncClient
         headers={"X-Twilio-Signature": sig},
     )
     assert resp.status_code == 200
-    body = resp.json()
-    assert body["status"] == "accepted"
-    assert body["duplicate"] is False
+    # Twilio's messaging webhook logs error 12300 ("Invalid Content-Type")
+    # for any 2xx response it can't parse as TwiML — an empty <Response/>
+    # is TwiML's documented no-reply acknowledgment, matching M1's
+    # intentional no-auto-reply design.
+    assert resp.headers["content-type"].startswith("text/xml")
+    assert resp.text == '<?xml version="1.0" encoding="UTF-8"?><Response></Response>'
     _clear_settings_cache()
 
 
@@ -627,7 +630,7 @@ async def test_post_webhook_malformed_payload_rejected_safely(client: AsyncClien
     _clear_settings_cache()
 
 
-async def test_post_webhook_duplicate_delivery_is_idempotent(client: AsyncClient, monkeypatch):
+async def test_post_webhook_duplicate_delivery_is_idempotent(client: AsyncClient, db_session, monkeypatch):
     _set_twilio_env(monkeypatch)
     form = {
         "MessageSid": "SM_api_dup_1",
@@ -640,10 +643,24 @@ async def test_post_webhook_duplicate_delivery_is_idempotent(client: AsyncClient
     first = await client.post("/api/v1/whatsapp/webhook", data=form, headers={"X-Twilio-Signature": sig})
     second = await client.post("/api/v1/whatsapp/webhook", data=form, headers={"X-Twilio-Signature": sig})
 
+    # Both deliveries get the identical safe TwiML acknowledgment — the
+    # duplicate is silently absorbed, never surfaced as an error to Twilio.
     assert first.status_code == 200
     assert second.status_code == 200
-    assert first.json()["duplicate"] is False
-    assert second.json()["duplicate"] is True
+    assert first.text == second.text == '<?xml version="1.0" encoding="UTF-8"?><Response></Response>'
+
+    from sqlalchemy import func, select
+
+    from app.modules.whatsapp.models.whatsapp_message import WhatsAppMessage
+
+    count = (
+        await db_session.execute(
+            select(func.count()).where(
+                WhatsAppMessage.provider == "twilio", WhatsAppMessage.provider_message_id == "SM_api_dup_1"
+            )
+        )
+    ).scalar_one()
+    assert count == 1
     _clear_settings_cache()
 
 

@@ -15,7 +15,7 @@ hub.challenge) is explicitly not implemented.
 from __future__ import annotations
 
 from fastapi import APIRouter, Depends, Request
-from fastapi.responses import JSONResponse, PlainTextResponse
+from fastapi.responses import JSONResponse, PlainTextResponse, Response
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.database import get_db
@@ -36,8 +36,11 @@ async def whatsapp_webhook_verify() -> PlainTextResponse:
     return PlainTextResponse("OK", status_code=200)
 
 
+_EMPTY_TWIML = '<?xml version="1.0" encoding="UTF-8"?><Response></Response>'
+
+
 @router.post("/webhook")
-async def whatsapp_webhook_receive(request: Request, db: AsyncSession = Depends(get_db)) -> JSONResponse:
+async def whatsapp_webhook_receive(request: Request, db: AsyncSession = Depends(get_db)) -> Response:
     raw_body = await request.body()
 
     provider = get_whatsapp_provider()
@@ -45,7 +48,7 @@ async def whatsapp_webhook_receive(request: Request, db: AsyncSession = Depends(
     service = WhatsAppWebhookService(provider=provider, repository=repository)
 
     try:
-        result = await service.handle_inbound(request, raw_body)
+        await service.handle_inbound(request, raw_body)
     except WebhookValidationError:
         # Never expose *why* validation failed (signature detail, provider
         # internals) — a bare 403 is all an unauthenticated caller gets.
@@ -53,8 +56,9 @@ async def whatsapp_webhook_receive(request: Request, db: AsyncSession = Depends(
 
     await db.commit()
 
-    # Twilio (and most providers) only need a fast 2xx acknowledgment —
-    # this is not the application's own response envelope, since the
-    # caller is the provider's webhook delivery system, not a Trinetra
-    # API consumer.
-    return JSONResponse(status_code=200, content={"status": "accepted", "duplicate": result.duplicate})
+    # Twilio's messaging webhook parses the response body as TwiML and
+    # logs error 12300 ("Invalid Content-Type") for anything else, even
+    # on a 2xx status — an empty <Response/> is TwiML's documented way to
+    # acknowledge receipt while sending no reply, matching M1's
+    # intentional no-auto-reply design.
+    return Response(content=_EMPTY_TWIML, status_code=200, media_type="text/xml")
