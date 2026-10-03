@@ -233,6 +233,17 @@ class Settings(BaseSettings):
     pyq_resolver_batch_size: int = 1000
     pyq_resolver_interval_hours: float = 5.0
 
+    # Relaxed NCERT retrieval-context enablement (scripts/pyq_retrieval_enablement.py)
+    # — feature-flagged, off by default. Governs ONLY which NCERT knowledge
+    # units are attached as retrieval context (pyq.questions.retrieval_match_tier)
+    # for the project owner's accepted 8,159-question candidate pool; never
+    # auto-verifies an answer and never feeds into resolve_batch()'s strict
+    # 0.5-threshold Stage-1 answer-grounding logic, which is unchanged.
+    # See docs/quality/pyq-8159-ncert-retrieval-enablement-2026-10-01.md.
+    pyq_relaxed_retrieval_enabled: bool = False
+    pyq_relaxed_retrieval_threshold: float = 0.25
+    pyq_relaxed_retrieval_subject_constrained: bool = True
+
     # One-time Gemini backfill (pyq_gemini_backfill.py) — separate from the
     # ongoing worker above. Empty => auto-select at job start: try the
     # cheaper candidate below with one minimal non-PYQ call, fall back to

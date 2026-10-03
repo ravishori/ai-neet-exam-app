@@ -67,6 +67,7 @@ class KnowledgeUnitIndex:
     unit_ids: list[str] = field(default_factory=list)
     unit_text: dict[str, str] = field(default_factory=dict)
     unit_summary: dict[str, str] = field(default_factory=dict)
+    unit_subject: dict[str, str | None] = field(default_factory=dict)
     word_to_units: dict[str, set[str]] = field(default_factory=lambda: defaultdict(set))
 
     def candidates_for(self, words: set[str]) -> set[str]:
@@ -77,19 +78,38 @@ class KnowledgeUnitIndex:
 
 
 async def _load_ku_index(session: AsyncSession) -> KnowledgeUnitIndex:
+    # validation_status = 'PASSED' only: a FAILED unit (in this corpus,
+    # always a flagged duplicate of a PASSED unit — see
+    # docs/quality/ncert-retrieval-coverage-forensic-audit-2026-10-01.md
+    # Section 9) must never be treated as authoritative source evidence.
+    # Directly measured across the whole pending corpus before this fix:
+    # including FAILED units changed zero Stage-1 Strict-threshold
+    # coverage outcomes (delta=0), so this is a no-regression correctness
+    # fix, not a behavior change for any currently-answered question.
     rows = (
         await session.execute(
-            text("SELECT id, summary, structured_facts FROM knowledge.knowledge_units WHERE deleted_at IS NULL")
+            text(
+                """
+                SELECT ku.id, ku.summary, ku.structured_facts, s.code AS subject_code
+                FROM knowledge.knowledge_units ku
+                LEFT JOIN academic.concepts co ON co.id = ku.concept_id
+                LEFT JOIN academic.topics t ON t.id = co.topic_id
+                LEFT JOIN academic.chapters c ON c.id = t.chapter_id
+                LEFT JOIN academic.subjects s ON s.id = c.subject_id
+                WHERE ku.deleted_at IS NULL AND ku.validation_status = 'PASSED'
+                """
+            )
         )
     ).all()
     idx = KnowledgeUnitIndex()
-    for ku_id, summary, facts in rows:
+    for ku_id, summary, facts, subject_code in rows:
         ku_id_s = str(ku_id)
         facts_list = facts if isinstance(facts, list) else (json.loads(facts) if facts else [])
         combined = " ".join([summary or "", *[str(f) for f in facts_list]])
         idx.unit_ids.append(ku_id_s)
         idx.unit_text[ku_id_s] = combined
         idx.unit_summary[ku_id_s] = summary or ""
+        idx.unit_subject[ku_id_s] = subject_code
         for w in _significant_words(combined):
             idx.word_to_units[w].add(ku_id_s)
     return idx
@@ -111,12 +131,88 @@ class ResolveReport:
 
 
 def _match_units(idx: KnowledgeUnitIndex, stem: str) -> list[str]:
+    """Stage-1 STRICT matching (OVERLAP_THRESHOLD, currently 0.5) — the only
+    matching function ever used to decide ANSWER_VERIFIED/ANSWER_CONFLICT.
+    Unchanged by the relaxed-retrieval-context feature below."""
     stem_words = _significant_words(stem)
     if not stem_words:
         return []
     candidates = idx.candidates_for(stem_words)
     matched = [uid for uid in candidates if is_fact_grounded(stem, idx.unit_text[uid])]
     return matched
+
+
+def _coarse_subject(code: str | None) -> str:
+    if not code:
+        return ""
+    c = code.upper()
+    if "PHYSIC" in c:
+        return "PHYSICS"
+    if "CHEM" in c:
+        return "CHEMISTRY"
+    if "BOT" in c:
+        return "BOTANY"
+    if "ZOO" in c:
+        return "ZOOLOGY"
+    if "BIO" in c:
+        return "BIOLOGY"
+    return c
+
+
+def compute_retrieval_tier(
+    idx: KnowledgeUnitIndex,
+    stem: str,
+    question_subject: str | None,
+    *,
+    relaxed_enabled: bool,
+    relaxed_threshold: float,
+    subject_constrained: bool,
+) -> tuple[str, list[str]]:
+    """Retrieval-CONTEXT tier only — never used to auto-verify an answer or
+    fed into resolve_batch()'s strict Stage-1 grounding decision, which is
+    unchanged (see _match_units above). Returns (tier, matched_unit_ids)
+    where tier is one of 'STRICT_MATCH', 'RELAXED_MATCH', 'NONE'.
+
+    'STRICT_MATCH' reuses _match_units unmodified -- if a question already
+    clears the existing 0.5 threshold, the relaxed path is never needed and
+    is not consulted (preserves the original threshold as the primary,
+    unconditional result; relaxed is strictly additive).
+
+    'RELAXED_MATCH' is only ever returned when relaxed_enabled is True
+    (feature-flagged, see app.core.config.Settings.pyq_relaxed_retrieval_enabled)
+    and a match clears relaxed_threshold against the SAME validated
+    (PASSED-only) knowledge-unit index. When subject_constrained is True and
+    the question carries a reliable subject label, candidate units are
+    filtered to units whose chapter-derived subject matches the question's
+    own subject (coarse-normalized) BEFORE scoring -- this is the
+    cross-subject-match safeguard, not a post-hoc filter on scores alone.
+    This NEVER establishes semantic relevance or answer correctness by
+    itself (see docs/quality/ncert-retrieval-relevance-validation-2026-10-01.md);
+    it only marks that a candidate NCERT passage is available as retrieval
+    context for this question.
+    """
+    strict_matches = _match_units(idx, stem)
+    if strict_matches:
+        return "STRICT_MATCH", strict_matches
+
+    if not relaxed_enabled:
+        return "NONE", []
+
+    stem_words = _significant_words(stem)
+    if not stem_words:
+        return "NONE", []
+
+    candidates = idx.candidates_for(stem_words)
+    q_subject = _coarse_subject(question_subject)
+    if subject_constrained and q_subject:
+        candidates = {uid for uid in candidates if _coarse_subject(idx.unit_subject.get(uid)) == q_subject}
+
+    relaxed_matches = [
+        uid for uid in candidates if is_fact_grounded(stem, idx.unit_text[uid], threshold=relaxed_threshold)
+    ]
+    if relaxed_matches:
+        return "RELAXED_MATCH", relaxed_matches
+    return "NONE", []
 
 
 def _option_text(rec_options: dict[str, Any], label: str) -> str:
@@ -261,6 +357,7 @@ async def resolve_stage2_batch(
     *,
     apply: bool,
     ai_gateway: Any | None = None,
+    run_id: str | None = None,
 ) -> None:
     """Second pass over questions Stage 1 left ANSWER_PENDING within this
     same batch (never a separate/larger scan, and never touches a question
@@ -353,8 +450,10 @@ async def resolve_stage2_batch(
             report.stage2_unresolved += 1
             continue
 
+        run_tag = f"run={run_id}; " if run_id else ""
         evidence_note = (
-            f"stage2_ai_knowledge_units={','.join(evidence_units)}; model={response.model}; reasoning={reasoning[:300]}"
+            f"{run_tag}stage2_ai_knowledge_units={','.join(evidence_units)}; "
+            f"model={response.model}; reasoning={reasoning[:300]}"
         )
         explanation = reasoning or "Supported by the indexed NCERT source excerpts (no further detail returned)."
 
@@ -362,12 +461,17 @@ async def resolve_stage2_batch(
             label = supported_options[0]
             report.stage2_answered += 1
             if apply:
+                # AI_RESOLVED (not VERIFIED): this is a one-pass Gemini
+                # answer with no second AI verification pass and no routine
+                # manual QC — it must never be represented as equivalent to
+                # Stage 1's independent, deterministic NCERT-grounding
+                # verification. See docs/quality/pyq-gemini-one-pass-resolution-*.md.
                 await session.execute(
                     text(
                         "INSERT INTO pyq.answer_assertions "
                         "(id, question_id, asserted_option, assertion_source, verification_status, "
                         "evidence_note, resolver_version, explanation) "
-                        "VALUES (:id, :qid, :opt, :src, 'VERIFIED', :note, :rver, :expl) "
+                        "VALUES (:id, :qid, :opt, :src, 'AI_RESOLVED', :note, :rver, :expl) "
                         "ON CONFLICT (question_id, assertion_source) DO NOTHING"
                     ),
                     {
@@ -411,7 +515,13 @@ async def resolve_stage2_batch(
 
 
 async def resolve_up_to(
-    session: AsyncSession, idx: KnowledgeUnitIndex, *, max_total: int, apply: bool, ai_gateway: Any | None = None
+    session: AsyncSession,
+    idx: KnowledgeUnitIndex,
+    *,
+    max_total: int,
+    apply: bool,
+    ai_gateway: Any | None = None,
+    run_id: str | None = None,
 ) -> ResolveReport:
     """Bounded variant of run()'s loop, for the scheduled background worker:
     processes at most `max_total` oldest ANSWER_PENDING rows (created_at ASC,
@@ -469,7 +579,9 @@ async def resolve_up_to(
             }
             if still_pending:
                 stage2_rows = [r for r in page_rows if r[0] in still_pending]
-                await resolve_stage2_batch(session, idx, stage2_rows, report, apply=True, ai_gateway=ai_gateway)
+                await resolve_stage2_batch(
+                    session, idx, stage2_rows, report, apply=True, ai_gateway=ai_gateway, run_id=run_id
+                )
                 await session.commit()
         else:
             await session.rollback()
@@ -519,9 +631,36 @@ async def run(apply: bool) -> ResolveReport:
 
 
 async def main() -> int:
-    parser = argparse.ArgumentParser(description="Deterministic PYQ answer resolver (no LLM)")
+    parser = argparse.ArgumentParser(description="PYQ answer resolver (deterministic Stage 1, optional one-pass Gemini Stage 2)")
     parser.add_argument("--apply", action="store_true", help="Persist writes (default: dry-run)")
+    parser.add_argument(
+        "--max-total",
+        type=int,
+        default=None,
+        help="Bound the run to at most this many oldest ANSWER_PENDING rows and enable Stage 2 "
+        "(one-pass Gemini) for whatever Stage 1 leaves pending within that same bound. "
+        "Omit to run the unbounded, Stage-1-only (no LLM, no cost) sweep via run().",
+    )
+    parser.add_argument(
+        "--run-id",
+        default=None,
+        help="Tag embedded in Stage 2 evidence_note for this run (default: UTC timestamp).",
+    )
     args = parser.parse_args()
+
+    if args.max_total is not None:
+        import datetime
+
+        from app.core.database import AsyncSessionLocal
+
+        run_id = args.run_id or datetime.datetime.now(datetime.UTC).strftime("%Y%m%dT%H%M%SZ")
+        async with AsyncSessionLocal() as session:
+            idx = await _load_ku_index(session)
+            logger.info("pyq_resolver_index_loaded", knowledge_units=len(idx.unit_ids))
+            report = await resolve_up_to(session, idx, max_total=args.max_total, apply=args.apply, run_id=run_id)
+        print("APPLY" if args.apply else "DRY RUN (no writes persisted)", f"run_id={run_id}")
+        print(json.dumps(report.__dict__, indent=2))
+        return 0
 
     report = await run(apply=args.apply)
     print("APPLY" if args.apply else "DRY RUN (no writes persisted)")

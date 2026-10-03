@@ -248,6 +248,24 @@ async def test_report_question_rejects_unknown_reason(client, db_session, regist
     assert report.json()["errors"][0]["code"] == "INVALID_REASON"
 
 
+@pytest.mark.parametrize("reason", ["WRONG_EXPLANATION", "BAD_OPTIONS", "MISSING_INFO"])
+async def test_report_question_accepts_extended_quality_reasons(client, db_session, register_user, reason):
+    """PYQ one-pass-resolution feedback categories (docs/quality/pyq-gemini-
+    one-pass-resolution-*.md) reuse this same existing report endpoint —
+    no parallel reporting mechanism was built."""
+    await register_user(client, role_codes=["CONTENT_MANAGER"], db_session=db_session)
+    concept_id = await _any_concept_id(db_session)
+    question_id = await _publish_question(client, concept_id)
+
+    report = await client.post(
+        f"/api/v1/cms/questions/{question_id}/report",
+        json={"reason": reason, "comment": "test"},
+        headers=csrf_headers(client),
+    )
+    assert report.status_code == 201, report.text
+    assert report.json()["data"]["reported"] is True
+
+
 async def test_related_questions_scoped_to_concept_and_excludes_self(client, db_session, register_user):
     await register_user(client, role_codes=["CONTENT_MANAGER"], db_session=db_session)
     concept_id = await _any_concept_id(db_session)

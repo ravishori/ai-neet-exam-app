@@ -100,7 +100,7 @@ async def _seed_knowledge_unit(db_session, *, concept_id: uuid.UUID, section_id:
             "INSERT INTO knowledge.knowledge_units "
             "(id, version, content_hash, structured_facts, summary, source_section_id, concept_id, "
             "extraction_confidence, validation_status) "
-            "VALUES (:i, 1, :hash, :facts, :summary, :sid, :cid, 0.9, 'VALIDATED')"
+            "VALUES (:i, 1, :hash, :facts, :summary, :sid, :cid, 0.9, 'PASSED')"
         ),
         {
             "i": ku_id,
@@ -481,6 +481,71 @@ async def test_stage2_semantic_synthesis_verifies_despite_wording_difference(db_
     assert assertion.asserted_option == "A"
     assert assertion.resolver_version == RESOLVER_VERSION_STAGE2
     assert "aerobic respiration" in assertion.explanation
+    # One-pass Gemini answers are tagged AI_RESOLVED, never VERIFIED — they
+    # must not be represented as independently NCERT-verified (Stage 1's
+    # deterministic grounding check is the only path that writes VERIFIED).
+    assert assertion.verification_status == "AI_RESOLVED"
+
+
+async def test_stage2_run_id_recorded_in_evidence_note(db_session) -> None:
+    """A processing-run identifier (docs/quality/pyq-gemini-one-pass-resolution-*.md
+    provenance requirement) is embedded in evidence_note when the caller
+    supplies one — no schema change needed since this is free-text
+    provenance, not a new queryable column."""
+    concept_id = await _seed_academic_chain(db_session)
+    section_id = await _seed_ingestion_section(db_session)
+    stem, summary = _seed_stage1_dead_end_question_kwargs()
+    await _seed_knowledge_unit(db_session, concept_id=concept_id, section_id=section_id, summary=summary)
+    source_file_id = await _seed_source_file(db_session)
+    qid = await _seed_question(
+        db_session, source_file_id=source_file_id, question_number=1, stem=stem,
+        options={"A": "Mitochondria", "B": "Ribosome", "C": "Golgi apparatus", "D": "Lysosome"},
+    )
+    await db_session.commit()
+
+    idx = await _load_ku_index(db_session)
+    fake_gateway = _FakeAIGateway(
+        json.dumps({"supported_options": ["A"], "reasoning": "site of aerobic respiration"})
+    )
+    await resolve_up_to(db_session, idx, max_total=10, apply=True, ai_gateway=fake_gateway, run_id="pilot-2026-10-01-001")
+
+    evidence_note = (
+        await db_session.execute(
+            text("SELECT evidence_note FROM pyq.answer_assertions WHERE question_id = :i"), {"i": qid}
+        )
+    ).scalar_one()
+    assert "run=pilot-2026-10-01-001" in evidence_note
+
+
+async def test_stage2_conflict_assertions_remain_disputed_not_ai_resolved(db_session) -> None:
+    """Multi-option-supported Stage 2 outcomes stay DISPUTED — AI_RESOLVED
+    is reserved for the single-clean-answer case only."""
+    concept_id = await _seed_academic_chain(db_session)
+    section_id = await _seed_ingestion_section(db_session)
+    stem, summary = _seed_stage1_dead_end_question_kwargs()
+    await _seed_knowledge_unit(db_session, concept_id=concept_id, section_id=section_id, summary=summary)
+    source_file_id = await _seed_source_file(db_session)
+    qid = await _seed_question(
+        db_session, source_file_id=source_file_id, question_number=1, stem=stem,
+        options={"A": "Mitochondria", "B": "Ribosome", "C": "Golgi apparatus", "D": "Lysosome"},
+    )
+    await db_session.commit()
+
+    idx = await _load_ku_index(db_session)
+    fake_gateway = _FakeAIGateway(
+        json.dumps({"supported_options": ["A", "B"], "reasoning": "ambiguous evidence"})
+    )
+    await resolve_up_to(db_session, idx, max_total=10, apply=True, ai_gateway=fake_gateway)
+
+    statuses = {
+        row[0]
+        for row in (
+            await db_session.execute(
+                text("SELECT verification_status FROM pyq.answer_assertions WHERE question_id = :i"), {"i": qid}
+            )
+        ).all()
+    }
+    assert statuses == {"DISPUTED"}
 
 
 async def test_stage2_unsupported_answer_stays_pending(db_session):

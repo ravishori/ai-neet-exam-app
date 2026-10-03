@@ -25,40 +25,63 @@ def _write_pdf(path: Path, label: str) -> None:
 
 
 async def test_physics_registry_maps_current_electricity():
+    # chapter_code corrected 2026-10-01 to match the rebaselined academic.chapters
+    # seed (curriculum_baseline_rationalised_2026_27) — see
+    # study_material_academic_registry.py's module docstring.
     ref = lookup_explicit_mapping(source_subject_code="PHYSICS", class_level="12", ncert_chapter_number=3)
     assert ref is not None
     assert ref.academic_subject_code == "PHYSICS"
-    assert ref.chapter_code == "current-electricity"
+    assert ref.chapter_code == "PHYSICS-U12"
 
 
 async def test_chemistry_registry_maps_chemical_bonding():
     ref = lookup_explicit_mapping(source_subject_code="CHEMISTRY", class_level="11", ncert_chapter_number=4)
     assert ref is not None
-    assert ref.chapter_code == "chemical-bonding"
+    assert ref.chapter_code == "CHEMISTRY-U03"
 
 
 async def test_biology_registry_maps_photosynthesis_from_chapter_11():
+    # RESOLVED 2026-10-01 (docs/quality/ncert-manual-mapping-expansion-2026-10-01.md):
+    # direct page evidence confirms Ch11 = Photosynthesis, under the broad
+    # BIOLOGY-U04 unit (Class 11 Biology taxonomy is unit-level, not
+    # per-chapter, in the current seed).
     ref = lookup_explicit_mapping(source_subject_code="BIOLOGY", class_level="11", ncert_chapter_number=11)
     assert ref is not None
-    assert ref.academic_subject_code == "BOTANY"
-    assert ref.chapter_code == "photosynthesis"
+    # BIOLOGY-U04 belongs to subject BIOLOGY in the live seed (not the
+    # finer BOTANY/ZOOLOGY split, which only exists for the Class-12
+    # XII-BIO-* chapter-exact codes).
+    assert ref.academic_subject_code == "BIOLOGY"
+    assert ref.chapter_code == "BIOLOGY-U04"
 
 
-async def test_biology_chapter_13_is_not_mapped_to_photosynthesis():
-    """Corpus chapter-13.pdf is Plant Growth — must not map to photosynthesis."""
+async def test_biology_chapter_13_maps_to_same_broad_unit_as_chapter_11():
+    """Corpus chapter-13.pdf is Plant Growth and Development — a different
+    NCERT chapter than Ch11 (Photosynthesis), but both are directly confirmed
+    (Unit-4 divider page) to belong to the same broad BIOLOGY-U04 unit under
+    this seed's unit-level-only Class 11 Biology taxonomy. This is not a
+    guess: the taxonomy genuinely has no finer granularity to distinguish
+    them at this class level (see BOTANY/ZOOLOGY's XII-BIO-* codes for the
+    finer, chapter-exact alternative available at Class 12 only)."""
     ref = lookup_explicit_mapping(source_subject_code="BIOLOGY", class_level="11", ncert_chapter_number=13)
-    assert ref is None
+    assert ref is not None
+    assert ref.chapter_code == "BIOLOGY-U04"
 
 
 async def test_biology_registry_maps_zoology_explicitly():
+    # RESOLVED 2026-10-01: Ch18 is directly confirmed as "Neural Control and
+    # Coordination" (not Body Fluids — that's Ch15), but both share the same
+    # broad BIOLOGY-U05 unit, so the mapping target is still correct.
     ref = lookup_explicit_mapping(source_subject_code="BIOLOGY", class_level="11", ncert_chapter_number=18)
     assert ref is not None
-    assert ref.academic_subject_code == "ZOOLOGY"
-    assert ref.chapter_code == "body-fluids-circulation"
+    assert ref.academic_subject_code == "BIOLOGY"
+    assert ref.chapter_code == "BIOLOGY-U05"
 
 
 async def test_unknown_biology_chapter_has_no_registry_entry():
-    ref = lookup_explicit_mapping(source_subject_code="BIOLOGY", class_level="11", ncert_chapter_number=1)
+    # Ch1 is now a real, mapped entry (BIOLOGY-U01) — use a chapter number
+    # that genuinely doesn't exist in any NCERT Biology book to test the
+    # "no registry entry" case.
+    ref = lookup_explicit_mapping(source_subject_code="BIOLOGY", class_level="11", ncert_chapter_number=99)
     assert ref is None
 
 
@@ -108,17 +131,17 @@ async def test_sync_maps_pilot_physics_source(db_session):
     await db_session.commit()
 
     assert mapping.mapping_status == "MAPPED"
-    assert mapping.chapter_code == "current-electricity"
+    assert mapping.chapter_code == "PHYSICS-U12"
     assert mapping.academic_subject_code == "PHYSICS"
     assert mapping.pilot_ready is True
 
-    chapter = await repo.get_chapter_for_subject(subject_code="PHYSICS", chapter_code="current-electricity")
+    chapter = await repo.get_chapter_for_subject(subject_code="PHYSICS", chapter_code="PHYSICS-U12")
     assert chapter is not None
     topic_count = (await db_session.execute(select(func.count(Topic.id)).where(Topic.chapter_id == chapter.id))).scalar_one()
     assert topic_count > 0
 
 
-async def test_sync_maps_biology_chapter_11_to_photosynthesis_pilot_ready(db_session):
+async def test_sync_maps_biology_chapter_11_to_biology_u04(db_session):
     bio = (
         await db_session.execute(
             select(SourceDocument).where(
@@ -134,14 +157,20 @@ async def test_sync_maps_biology_chapter_11_to_photosynthesis_pilot_ready(db_ses
     await db_session.commit()
 
     assert mapping.mapping_status == "MAPPED"
-    assert mapping.academic_subject_code == "BOTANY"
-    assert mapping.chapter_code == "photosynthesis"
+    assert mapping.academic_subject_code == "BIOLOGY"
+    assert mapping.chapter_code == "BIOLOGY-U04"
     assert mapping.ncert_chapter_number == 11
-    assert mapping.pilot_ready is True
+    # BIOLOGY-U04 is not in PILOT_CHAPTER_CODES / CHAPTER_CONTENT_MARKERS
+    # (not extended this round — see registry module docstring), so
+    # pilot_ready is correctly False despite mapping_status == MAPPED.
+    assert mapping.pilot_ready is False
 
 
-async def test_sync_unmaps_biology_chapter_13_plant_growth(db_session):
-    """Previous incorrect photosynthesis mapping must be cleared on sync."""
+async def test_sync_maps_biology_chapter_13_to_same_unit_as_chapter_11(db_session):
+    """Ch13 (Plant Growth and Development) is a different NCERT chapter than
+    Ch11 (Photosynthesis) but both correctly map to the same broad
+    BIOLOGY-U04 unit — this seed's Class 11 Biology taxonomy has no finer
+    granularity, confirmed directly, not guessed."""
     bio = (
         await db_session.execute(
             select(SourceDocument).where(
@@ -156,8 +185,8 @@ async def test_sync_unmaps_biology_chapter_13_plant_growth(db_session):
     mapping, _ = await SourceAcademicMappingService(db_session).upsert_mapping_for_source(bio)
     await db_session.commit()
 
-    assert mapping.mapping_status == "UNMAPPED"
-    assert mapping.chapter_code is None
+    assert mapping.mapping_status == "MAPPED"
+    assert mapping.chapter_code == "BIOLOGY-U04"
     assert mapping.pilot_ready is False
 
 

@@ -37,16 +37,26 @@ def _significant_words(text: str) -> set[str]:
     return {w for w in words if len(w) >= MIN_SIGNIFICANT_WORD_LENGTH and w not in _STOPWORDS}
 
 
-def is_fact_grounded(fact: str, source_text: str) -> bool:
+def is_fact_grounded(fact: str, source_text: str, *, threshold: float = OVERLAP_THRESHOLD) -> bool:
     """A fact with no substantive words at all (e.g. a bare symbol) passes
     trivially — there's nothing for this check to meaningfully evaluate,
-    and rejecting it would be a false positive this gate shouldn't produce."""
+    and rejecting it would be a false positive this gate shouldn't produce.
+
+    `threshold` defaults to the hard-gate OVERLAP_THRESHOLD used everywhere
+    this function is already called (ingestion-time grounding, Stage-1 PYQ
+    answer verification) — passing it is additive and never changes any
+    existing caller's behavior. It exists solely so a feature-flagged,
+    separately-reported retrieval-context diagnostic (see
+    scripts/pyq_retrieval_enablement.py) can evaluate a relaxed threshold
+    without a second, duplicated implementation of this check — that
+    diagnostic never feeds a relaxed-threshold result into an answer
+    grounding/verification decision."""
     fact_words = _significant_words(fact)
     if not fact_words:
         return True
     source_words = _significant_words(source_text)
     overlap_ratio = len(fact_words & source_words) / len(fact_words)
-    return overlap_ratio >= OVERLAP_THRESHOLD
+    return overlap_ratio >= threshold
 
 
 def check_grounding(structured_facts: list[str], source_text: str) -> tuple[bool, str | None]:

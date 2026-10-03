@@ -18,9 +18,15 @@ from app.modules.ingestion.services.pdf_extraction_service import extract_pages
 _CONTENT_PREVIEW_PAGES = 8
 
 # Academic chapter_code → distinctive phrases that must appear in the PDF body.
+# chapter_code keys below were renamed 2026-10-01 to match the rebaselined
+# academic.chapters seed (see study_material_academic_registry.py's module
+# docstring) — marker phrases themselves are unchanged (they describe PDF
+# content, not chapter naming). The two BLOCKED Biology entries are kept
+# under their original stale keys deliberately, since no current chapter_code
+# has been approved for them yet.
 CHAPTER_CONTENT_MARKERS: dict[str, tuple[str, ...]] = {
-    "current-electricity": ("ELECTRIC CURRENT", "CURRENT ELECTRICITY"),
-    "chemical-bonding": ("CHEMICAL BOND", "ELECTROVALENT", "OCTET RULE"),
+    "PHYSICS-U12": ("ELECTRIC CURRENT", "CURRENT ELECTRICITY"),
+    "CHEMISTRY-U03": ("CHEMICAL BOND", "ELECTROVALENT", "OCTET RULE"),
     "photosynthesis": ("PHOTOSYNTHESIS IN HIGHER PLANTS",),
     "body-fluids-circulation": ("BODY FLUIDS AND CIRCULATION", "BLOOD", "CIRCULATORY SYSTEM"),
 }

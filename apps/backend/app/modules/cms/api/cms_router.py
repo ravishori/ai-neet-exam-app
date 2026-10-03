@@ -30,7 +30,18 @@ from app.shared.responses import envelope
 
 router = APIRouter(prefix="/api/v1/cms", tags=["cms"])
 
-REPORT_REASONS = {"WRONG_ANSWER", "UNCLEAR", "TYPO", "OFFENSIVE", "OTHER"}
+# Extended for PYQ question-quality feedback (docs/quality/pyq-gemini-one-pass-resolution-*.md):
+# WRONG_EXPLANATION / BAD_OPTIONS / MISSING_INFO added alongside the original five.
+REPORT_REASONS = {
+    "WRONG_ANSWER",
+    "WRONG_EXPLANATION",
+    "UNCLEAR",
+    "BAD_OPTIONS",
+    "MISSING_INFO",
+    "TYPO",
+    "OFFENSIVE",
+    "OTHER",
+}
 
 
 def _version(v: ContentVersion | None) -> dict | None:

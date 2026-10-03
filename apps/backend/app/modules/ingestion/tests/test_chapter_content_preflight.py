@@ -59,5 +59,7 @@ def test_real_corpus_physics_and_chemistry_still_match():
     chemistry = root / "Chemistry/Class 11- Chemistry/ncert-books-class-11-chemistry-chapter-4.pdf"
     if not physics.is_file() or not chemistry.is_file():
         pytest.skip("corpus PDFs missing")
-    assert pdf_content_matches_chapter(physics, "current-electricity") is True
-    assert pdf_content_matches_chapter(chemistry, "chemical-bonding") is True
+    # chapter_code keys corrected 2026-10-01 — see CHAPTER_CONTENT_MARKERS'
+    # module comment and study_material_academic_registry.py's docstring.
+    assert pdf_content_matches_chapter(physics, "PHYSICS-U12") is True
+    assert pdf_content_matches_chapter(chemistry, "CHEMISTRY-U03") is True
