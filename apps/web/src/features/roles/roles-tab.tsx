@@ -4,12 +4,45 @@ import { useState } from "react";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 
 import { Alert, AlertDescription } from "@/components/ui/alert";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { ApiError } from "@/lib/api-client";
 
 import { rolesApi, type Role } from "./api";
+import { groupPermissions } from "./capability-labels";
+
+/** Read-only, grouped human-readable view of a role's granted capabilities. */
+function CapabilityView({ role }: { role: Role }) {
+  const groups = groupPermissions(role.permission_codes);
+
+  if (groups.length === 0) {
+    return <p className="text-xs text-muted-foreground">No capabilities granted.</p>;
+  }
+
+  return (
+    <div className="flex flex-col gap-3">
+      {groups.map(({ group, features }) => (
+        <div key={group} className="flex flex-col gap-1">
+          <p className="text-xs font-medium text-muted-foreground">{group}</p>
+          <ul className="flex flex-col gap-0.5">
+            {features.map(({ code, label }) => (
+              <li key={code} className="flex items-center gap-1.5 text-sm">
+                <span>{label.feature}</span>
+                {!label.enforced && (
+                  <Badge variant="outline" className="text-[10px]">
+                    not yet enforced
+                  </Badge>
+                )}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  );
+}
 
 /**
  * Shared between /admin/users (Roles & Permissions tab) and the dedicated
@@ -19,6 +52,7 @@ import { rolesApi, type Role } from "./api";
 function RolePermissionEditor({ role, allPermissions }: { role: Role; allPermissions: string[] }) {
   const queryClient = useQueryClient();
   const [codes, setCodes] = useState<string[]>(role.permission_codes);
+  const [showTechnical, setShowTechnical] = useState(false);
   const isSuperAdmin = role.code === "SUPER_ADMIN";
 
   const save = useMutation({
@@ -39,26 +73,42 @@ function RolePermissionEditor({ role, allPermissions }: { role: Role; allPermiss
           <p className="text-xs text-muted-foreground">SUPER_ADMIN bypasses permission checks entirely — nothing to edit here.</p>
         ) : (
           <>
-            {save.isError && (
-              <Alert variant="destructive">
-                <AlertDescription>{save.error instanceof ApiError ? save.error.message : "Something went wrong"}</AlertDescription>
-              </Alert>
-            )}
-            <div className="grid grid-cols-2 gap-1.5 sm:grid-cols-3">
-              {allPermissions.map((code) => (
-                <label key={code} className="flex items-center gap-1.5 text-xs">
-                  <input
-                    type="checkbox"
-                    checked={codes.includes(code)}
-                    onChange={() => setCodes((prev) => (prev.includes(code) ? prev.filter((c) => c !== code) : [...prev, code]))}
-                  />
-                  {code}
-                </label>
-              ))}
-            </div>
-            <Button size="sm" className="w-fit" disabled={!dirty || save.isPending} onClick={() => save.mutate()}>
-              {save.isPending ? "Saving…" : "Save permissions"}
+            <CapabilityView role={role} />
+
+            <Button
+              size="sm"
+              variant="ghost"
+              className="w-fit px-0 text-xs text-muted-foreground underline-offset-4 hover:underline"
+              onClick={() => setShowTechnical((prev) => !prev)}
+              aria-expanded={showTechnical}
+            >
+              {showTechnical ? "Hide technical permissions" : "Show technical permissions"}
             </Button>
+
+            {showTechnical && (
+              <>
+                {save.isError && (
+                  <Alert variant="destructive">
+                    <AlertDescription>{save.error instanceof ApiError ? save.error.message : "Something went wrong"}</AlertDescription>
+                  </Alert>
+                )}
+                <div className="grid grid-cols-2 gap-1.5 sm:grid-cols-3">
+                  {allPermissions.map((code) => (
+                    <label key={code} className="flex items-center gap-1.5 text-xs">
+                      <input
+                        type="checkbox"
+                        checked={codes.includes(code)}
+                        onChange={() => setCodes((prev) => (prev.includes(code) ? prev.filter((c) => c !== code) : [...prev, code]))}
+                      />
+                      {code}
+                    </label>
+                  ))}
+                </div>
+                <Button size="sm" className="w-fit" disabled={!dirty || save.isPending} onClick={() => save.mutate()}>
+                  {save.isPending ? "Saving…" : "Save permissions"}
+                </Button>
+              </>
+            )}
           </>
         )}
       </CardContent>
