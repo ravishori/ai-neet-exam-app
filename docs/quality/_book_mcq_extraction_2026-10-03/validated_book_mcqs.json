@@ -154,6 +154,28 @@
     "taxonomy_chapter_confidence": 0.054
   },
   {
+    "question_number": 10,
+    "subject": "Chemistry",
+    "chapter_context": "Choose the correct answer from the options given below: | (Spontaneity, Entropy, Gibbs Energy Change and Equilibrium",
+    "stem": "In which of the following processes entropy increases? A. A liquid evaporates to vapour B.  Temperature of a crystalline solid lowered from 130K to 0 K. C. 2 NaHCO3(s) → Na2CO3(s) + CO2(g) + H2O(g) D. Cl2(g) → 2 Cl(g) Choose the correct answer from the options given below:",
+    "options": {
+      "A": "A, C and D",
+      "B": "C and D",
+      "C": "A and C",
+      "D": "A, B and D"
+    },
+    "requires_figure": false,
+    "source_file": "NEET 2024 Paper - Chemistry.pdf",
+    "classification": "near_duplicate_high_confidence",
+    "best_match_existing_id": "10f41127-51d3-4320-bb36-7a30f8599e5f",
+    "match_similarity": 0.857,
+    "within_batch_duplicate": false,
+    "inherited_answer": null,
+    "inherited_answer_source": null,
+    "taxonomy_chapter": "",
+    "taxonomy_chapter_confidence": 0.034
+  },
+  {
     "question_number": 11,
     "subject": "Chemistry",
     "chapter_context": "(Law of Chemical Equilibrium, Equilibrium Const. | and Its Application)",
@@ -418,6 +440,28 @@
     "taxonomy_chapter_confidence": 0.029
   },
   {
+    "question_number": 26,
+    "subject": "Chemistry",
+    "chapter_context": "(Transition Elements (d-Block)) | that of Cr3+/Cr2+ or Fe3+/Fe2+ due to change of",
+    "stem": "‘Spin only’ magnetic moment is same for which of the following ions? A. Ti3+ B. Cr2+ C. Mn2+ D. Fe2+ E. Sc3+ Choose the most appropriate answer from the options given below:",
+    "options": {
+      "A": "B and C only",
+      "B": "A and D only",
+      "C": "B and D only",
+      "D": "A and E only"
+    },
+    "requires_figure": false,
+    "source_file": "NEET 2024 Paper - Chemistry.pdf",
+    "classification": "unique",
+    "best_match_existing_id": "",
+    "match_similarity": 0.429,
+    "within_batch_duplicate": false,
+    "inherited_answer": null,
+    "inherited_answer_source": null,
+    "taxonomy_chapter": "",
+    "taxonomy_chapter_confidence": 0.03
+  },
+  {
     "question_number": 27,
     "subject": "Chemistry",
     "chapter_context": "Coordination Compounds | (Nomenclature & Isomerism in Coordination Compounds)",
@@ -504,6 +548,28 @@
     "inherited_answer_source": null,
     "taxonomy_chapter": "",
     "taxonomy_chapter_confidence": 0.049
+  },
+  {
+    "question_number": 35,
+    "subject": "Chemistry",
+    "chapter_context": "Biomolecules | (Carbohydrates)",
+    "stem": "The reagents with which glucose does not react to give the corresponding tests/products are A. Tollen’s reagent B. Schiff’s reagent C. HCN D. NH2OH E. NaHSO3 Choose the correct options from the given below:",
+    "options": {
+      "A": "B and E",
+      "B": "E and D",
+      "C": "B and C",
+      "D": "A and D"
+    },
+    "requires_figure": false,
+    "source_file": "NEET 2024 Paper - Chemistry.pdf",
+    "classification": "near_duplicate_high_confidence",
+    "best_match_existing_id": "57263f9f-8634-4f34-ab1b-091a2e74b737",
+    "match_similarity": 1.0,
+    "within_batch_duplicate": false,
+    "inherited_answer": "A",
+    "inherited_answer_source": "inherited_from_verified_pyq:57263f9f-8634-4f34-ab1b-091a2e74b737:similarity=1.00",
+    "taxonomy_chapter": "",
+    "taxonomy_chapter_confidence": 0.019
   },
   {
     "question_number": 36,
@@ -746,6 +812,28 @@
     "inherited_answer_source": null,
     "taxonomy_chapter": "UNIT 20: Principles Related to Practical Chemistry",
     "taxonomy_chapter_confidence": 0.081
+  },
+  {
+    "question_number": 50,
+    "subject": "Chemistry",
+    "chapter_context": "to prevent hydrolysis of Fe2+ ion? | (Qualitative Analysis of Inorganic Salts)",
+    "stem": "Given below are certain cations. Using inorganic qualitative analysis, arrange them in increasing group number from 0 to VI. A. Al3+ B. Cu2+ C. Ba2+ D. Co2+ E. Mg2+ Choose the correct answer from the options given below:",
+    "options": {
+      "A": "E, C, D, B, A",
+      "B": "E, A, B, C, D",
+      "C": "B, A, D, C, E",
+      "D": "B, C, A, D, E"
+    },
+    "requires_figure": false,
+    "source_file": "NEET 2024 Paper - Chemistry.pdf",
+    "classification": "near_duplicate_high_confidence",
+    "best_match_existing_id": "bb4cf60b-ecaf-4fe0-bbbc-0b28e5513195",
+    "match_similarity": 1.0,
+    "within_batch_duplicate": false,
+    "inherited_answer": "D",
+    "inherited_answer_source": "inherited_from_verified_pyq:bb4cf60b-ecaf-4fe0-bbbc-0b28e5513195:similarity=1.00",
+    "taxonomy_chapter": "",
+    "taxonomy_chapter_confidence": 0.065
   },
   {
     "question_number": 1,
@@ -1210,6 +1298,28 @@
     "taxonomy_chapter_confidence": 0.024
   },
   {
+    "question_number": 33,
+    "subject": "Physics",
+    "chapter_context": "Semiconductor Electronics | (Optoelectronic Devices)",
+    "stem": "Consider the following statement A and B and identify the correct answer: (III) (II) (IV) V (I) I A.  For a solar-cell, the I-V characteristics lies in the IV quadrant of the given graph. B.  In a reverse biased pn junction diode, the. current measured in (A), is due to majority charge carriers.",
+    "options": {
+      "A": "Both A and B are correct.",
+      "B": "Both A and B are incorrect.",
+      "C": "A is correct but B is incorrect.",
+      "D": "A is incorrect but B is correct."
+    },
+    "requires_figure": false,
+    "source_file": "NEET 2024 Paper - Physics.pdf",
+    "classification": "near_duplicate_high_confidence",
+    "best_match_existing_id": "cb45e45b-c473-4af5-83b5-d0a40b6f39f1",
+    "match_similarity": 0.875,
+    "within_batch_duplicate": false,
+    "inherited_answer": null,
+    "inherited_answer_source": null,
+    "taxonomy_chapter": "UNIT 19: Electronic Devices",
+    "taxonomy_chapter_confidence": 0.143
+  },
+  {
     "question_number": 35,
     "subject": "Physics",
     "chapter_context": "A B | A",
@@ -1301,23 +1411,23 @@
     "question_number": 42,
     "subject": "Physics",
     "chapter_context": "d. | 2",
-    "stem": "If the plate of a parallel plate capacitor connected to a battery are moved close to each other, then",
+    "stem": "If the plate of a parallel plate capacitor connected to a battery are moved close to each other, then A. the charge stored in it. increases. B. the energy stored in it. decreases. C. its capacitance increases. D. the ratio of charge to its potential remains the same. E. the product of charge and voltage increases. Choose the most appropriate answer from the given below:",
     "options": {
-      "A": "the charge stored in it. increases.",
-      "B": "the energy stored in it. decreases.",
-      "C": "its capacitance increases.",
-      "D": "the ratio of charge to its potential remains the same."
+      "A": "B. D and E only",
+      "B": "A, B and C only",
+      "C": "A, B and E only",
+      "D": "A, C and E only"
     },
     "requires_figure": false,
     "source_file": "NEET 2024 Paper - Physics.pdf",
-    "classification": "unique",
-    "best_match_existing_id": "",
-    "match_similarity": 0.28,
+    "classification": "near_duplicate_high_confidence",
+    "best_match_existing_id": "bdfbbcff-6ae0-4d8d-869f-766f1cf3c544",
+    "match_similarity": 0.92,
     "within_batch_duplicate": false,
-    "inherited_answer": null,
-    "inherited_answer_source": null,
-    "taxonomy_chapter": "",
-    "taxonomy_chapter_confidence": 0.053
+    "inherited_answer": "D",
+    "inherited_answer_source": "inherited_from_verified_pyq:bdfbbcff-6ae0-4d8d-869f-766f1cf3c544:similarity=0.92",
+    "taxonomy_chapter": "UNIT 11: Electrostatics",
+    "taxonomy_chapter_confidence": 0.118
   },
   {
     "question_number": 44,
@@ -1340,6 +1450,28 @@
     "inherited_answer_source": null,
     "taxonomy_chapter": "",
     "taxonomy_chapter_confidence": 0.068
+  },
+  {
+    "question_number": 46,
+    "subject": "Physics",
+    "chapter_context": "(Magnetic Dipole Moment, and Force Between | Magnetic Poles 60)",
+    "stem": "A sheet is place on a horizontal surface in front of a strong magnetic pole. A force is needed to: A. hold the sheet there if it is magnetic. B. hold the sheet there if it is non-magnetic. C. move the sheet away from the pole with uniform velocity if it is conducting. D. move the sheet away from the pole with uniform velocity if it is both, non-conducting and non-polar. Choose the correct statement(s) from the options given below:",
+    "options": {
+      "A": "A, C and D only",
+      "B": "C only",
+      "C": "B and D only",
+      "D": "A and C only"
+    },
+    "requires_figure": false,
+    "source_file": "NEET 2024 Paper - Physics.pdf",
+    "classification": "near_duplicate_high_confidence",
+    "best_match_existing_id": "d905fba4-77d8-4c4a-8593-0116b4abe55f",
+    "match_similarity": 0.917,
+    "within_batch_duplicate": false,
+    "inherited_answer": "B",
+    "inherited_answer_source": "inherited_from_verified_pyq:d905fba4-77d8-4c4a-8593-0116b4abe55f:similarity=0.92",
+    "taxonomy_chapter": "",
+    "taxonomy_chapter_confidence": 0.042
   },
   {
     "question_number": 47,
@@ -1697,23 +1829,23 @@
     "question_number": 15,
     "subject": "Botany",
     "chapter_context": "Photosynthesis in Higher Plants | (Where are ATP & NADPH Used?)",
-    "stem": "Which of the following are required for the dark reaction of photosynthesis?",
+    "stem": "Which of the following are required for the dark reaction of photosynthesis? A. Light B. Chlorophyll C. CO2 D. ATP E. NADPH Choose the correct answer from the options given below:",
     "options": {
-      "A": "Light",
-      "B": "Chlorophyll",
-      "C": "CO2",
-      "D": "ATP"
+      "A": "C, D and E only",
+      "B": "D and E only",
+      "C": "A, B and C only",
+      "D": "B, C and D only"
     },
     "requires_figure": false,
     "source_file": "NEET 2024 Paper-Botany.pdf",
-    "classification": "unique",
-    "best_match_existing_id": "",
-    "match_similarity": 0.385,
+    "classification": "near_duplicate_high_confidence",
+    "best_match_existing_id": "92823210-4a55-4c43-b952-f13b858e79b8",
+    "match_similarity": 0.867,
     "within_batch_duplicate": false,
     "inherited_answer": null,
     "inherited_answer_source": null,
     "taxonomy_chapter": "",
-    "taxonomy_chapter_confidence": 0.016
+    "taxonomy_chapter_confidence": 0.014
   },
   {
     "question_number": 16,
@@ -1774,6 +1906,28 @@
     "source_file": "NEET 2024 Paper-Botany.pdf",
     "classification": "exact_duplicate",
     "best_match_existing_id": "1185c2aa-6977-4c02-ae4d-033d412c93ba",
+    "match_similarity": 1.0,
+    "within_batch_duplicate": false,
+    "inherited_answer": null,
+    "inherited_answer_source": null,
+    "taxonomy_chapter": "",
+    "taxonomy_chapter_confidence": 0.015
+  },
+  {
+    "question_number": 19,
+    "subject": "Botany",
+    "chapter_context": "Sexual Reproduction in Flowering Plants | (Flowering and Pre-fertilisation)",
+    "stem": "Identify the set of correct statements: A.  The flowers of Vallisneria are colourful and produce nectar. B.  The flowers of waterlily are not pollinated by water. C.  In most of water-pollinated species, the pollen grains are protected from wetting. D.  Pollen grains of some hydrophytes are long and ribbon like. E.  In some hydrophytes, the pollen grains are carried passively inside water. Choose the correct answer from the options given below:",
+    "options": {
+      "A": "A, C, D and E only",
+      "B": "B, C, D and E only",
+      "C": "C, D and E only",
+      "D": "A, B, C and D only"
+    },
+    "requires_figure": false,
+    "source_file": "NEET 2024 Paper-Botany.pdf",
+    "classification": "exact_duplicate",
+    "best_match_existing_id": "7193c418-d013-49a4-93aa-21b7127cdd0e",
     "match_similarity": 1.0,
     "within_batch_duplicate": false,
     "inherited_answer": null,
@@ -1846,6 +2000,28 @@
     "inherited_answer_source": null,
     "taxonomy_chapter": "",
     "taxonomy_chapter_confidence": 0.025
+  },
+  {
+    "question_number": 23,
+    "subject": "Botany",
+    "chapter_context": "Test cross | Choose the correct answer from the options given below:",
+    "stem": "Which one of the following can be explained on the basis of Mendel's Law of Dominance? A.  Out of one pair of factors one is dominant and the other is recessive. B.  Alleles do not show any expression and both the characters appears as such in F2 generation. C.  Factors occur in pairs in normal diploid plants. D.  The discrete unit controlling a particular character is called factor. E.  The expression of only one of the parental characters is found in a monohybrid cross. Choose the correct answer from the options given below:",
+    "options": {
+      "A": "B, C and D only",
+      "B": "A, B, C, D and E",
+      "C": "A, B and C only",
+      "D": "A, C, D and E only"
+    },
+    "requires_figure": false,
+    "source_file": "NEET 2024 Paper-Botany.pdf",
+    "classification": "near_duplicate_high_confidence",
+    "best_match_existing_id": "f0f77bfe-181f-4ea9-a012-5ce30e8dad77",
+    "match_similarity": 0.947,
+    "within_batch_duplicate": false,
+    "inherited_answer": null,
+    "inherited_answer_source": null,
+    "taxonomy_chapter": "",
+    "taxonomy_chapter_confidence": 0.034
   },
   {
     "question_number": 24,
@@ -1936,6 +2112,28 @@
     "taxonomy_chapter_confidence": 0.03
   },
   {
+    "question_number": 28,
+    "subject": "Botany",
+    "chapter_context": "called recognition sequence and it consists of: | (Principles of Biotechnology)",
+    "stem": "What is the fate of a piece of DNA carrying a gene of interest which is transferred into an alien organism? A.  The piece of DNA would be able to multiply, itself independently in the progeny cells of the organism. B. It may get integrated into the genome of recipient. C. It may multiply and be inherited along with the host DNA. D. The alien piece of DNA is not an integral part of chromosome. E. It shows ability to replicate. Choose the correct answer from the options given below:",
+    "options": {
+      "A": "B and C only",
+      "B": "A and E only",
+      "C": "A and B only",
+      "D": "D and E only"
+    },
+    "requires_figure": false,
+    "source_file": "NEET 2024 Paper-Botany.pdf",
+    "classification": "near_duplicate_high_confidence",
+    "best_match_existing_id": "3bfa0bd7-70c9-439c-8682-624afb8c00a7",
+    "match_similarity": 1.0,
+    "within_batch_duplicate": false,
+    "inherited_answer": "D",
+    "inherited_answer_source": "inherited_from_verified_pyq:3bfa0bd7-70c9-439c-8682-624afb8c00a7:similarity=1.00",
+    "taxonomy_chapter": "",
+    "taxonomy_chapter_confidence": 0.027
+  },
+  {
     "question_number": 29,
     "subject": "Botany",
     "chapter_context": "Biotechnology and Its Applications | (Biotechnological Applications in Agriculture)",
@@ -1956,6 +2154,28 @@
     "inherited_answer_source": null,
     "taxonomy_chapter": "",
     "taxonomy_chapter_confidence": 0.032
+  },
+  {
+    "question_number": 30,
+    "subject": "Botany",
+    "chapter_context": "(Biotechnological Applications in Agriculture) | plant is called:",
+    "stem": "Given below are two statements: Statement I: Bt toxins are insect group specific and coded by a gene cry IAc. Statement II: Bt toxin exists as inactive protoxin in B. thuringiensis. However, after ingestion by the insect the inactive protoxin gets converted into active form due to acidic pH of the insect gut. In the light of the above statements, choose the correct answer from the options given below:",
+    "options": {
+      "A": "Statement I is true but Statement II is false",
+      "B": "Statement I is false but Statement II is true",
+      "C": "Both Statement I and statement II arc true",
+      "D": "Both Statement I and Statement II are false"
+    },
+    "requires_figure": false,
+    "source_file": "NEET 2024 Paper-Botany.pdf",
+    "classification": "near_duplicate_high_confidence",
+    "best_match_existing_id": "29350522-0469-4072-9822-190a97d2254f",
+    "match_similarity": 1.0,
+    "within_batch_duplicate": false,
+    "inherited_answer": "A",
+    "inherited_answer_source": "inherited_from_verified_pyq:29350522-0469-4072-9822-190a97d2254f:similarity=1.00",
+    "taxonomy_chapter": "",
+    "taxonomy_chapter_confidence": 0.019
   },
   {
     "question_number": 31,
@@ -2002,26 +2222,48 @@
     "taxonomy_chapter_confidence": 0.019
   },
   {
-    "question_number": 34,
+    "question_number": 33,
     "subject": "Botany",
-    "chapter_context": "Choose the correct answer from the options given below: | (Importance & Loss of Biodiversity)",
-    "stem": "These are regarded as major causes of biodiversity loss:",
+    "chapter_context": "called; | (Biodiversity & Patterns of Biodiversity)",
+    "stem": "Tropical regions show greatest level of species richness because A.  Tropical latitudes have remained relatively undisturbed for millions of years, hence more time was available for species diversification. B. Tropical environments are more seasonal. C. More solar energy is available in tropics. D. Constant environments promote niche specialization. E. Tropical environments are constant and predictable. Choose the correct answer from the options given below:",
     "options": {
-      "A": "Over exploitation",
-      "B": "Co-extinction",
-      "C": "Mutation",
-      "D": "Habitat loss and fragmentation"
+      "A": "A, B and E only",
+      "B": "A, B and D only",
+      "C": "A, C, D and E only",
+      "D": "A and B only"
     },
     "requires_figure": false,
     "source_file": "NEET 2024 Paper-Botany.pdf",
-    "classification": "unique",
-    "best_match_existing_id": "",
-    "match_similarity": 0.357,
+    "classification": "near_duplicate_high_confidence",
+    "best_match_existing_id": "d09cc384-1908-4b05-b572-30c248763a76",
+    "match_similarity": 0.917,
+    "within_batch_duplicate": false,
+    "inherited_answer": "C",
+    "inherited_answer_source": "inherited_from_verified_pyq:d09cc384-1908-4b05-b572-30c248763a76:similarity=0.92",
+    "taxonomy_chapter": "",
+    "taxonomy_chapter_confidence": 0.028
+  },
+  {
+    "question_number": 34,
+    "subject": "Botany",
+    "chapter_context": "Choose the correct answer from the options given below: | (Importance & Loss of Biodiversity)",
+    "stem": "These are regarded as major causes of biodiversity loss: A. Over exploitation B. Co-extinction C. Mutation D. Habitat loss and fragmentation E. Migration Choose the correct option:",
+    "options": {
+      "A": "A, B and E only",
+      "B": "A, B and D only",
+      "C": "A, C and D only",
+      "D": "A, B, C and D only"
+    },
+    "requires_figure": false,
+    "source_file": "NEET 2024 Paper-Botany.pdf",
+    "classification": "exact_duplicate",
+    "best_match_existing_id": "75049290-84c0-453b-9d0d-b6ff3e39f1a4",
+    "match_similarity": 1.0,
     "within_batch_duplicate": false,
     "inherited_answer": null,
     "inherited_answer_source": null,
     "taxonomy_chapter": "",
-    "taxonomy_chapter_confidence": 0.047
+    "taxonomy_chapter_confidence": 0.056
   },
   {
     "question_number": 35,
@@ -2044,6 +2286,28 @@
     "inherited_answer_source": null,
     "taxonomy_chapter": "",
     "taxonomy_chapter_confidence": 0.023
+  },
+  {
+    "question_number": 36,
+    "subject": "Botany",
+    "chapter_context": "Plant Kingdom | (Algae)",
+    "stem": "Read the following statements and choose the set of correct statements. In the members of Phaeophyceae, A.  Asexual reproduction occurs usually by biflagellate zoospores. B. Sexual reproduction is by oogamous method only. C.  Stored food is in the form of carbohydrates which is either mannitol or laminarin. D.  The major pigments found are chlorophyll a, c and carotenoids and xanthophyll. E.  Vegetative cells have a cellulosic wall, usually covered on the outside by gelatinous coating of algin. Choose the correct answer from the options given below:",
+    "options": {
+      "A": "A, C, D and E only",
+      "B": "A, B, C and E only",
+      "C": "A, B, C and C only",
+      "D": "B, C, D and E only"
+    },
+    "requires_figure": false,
+    "source_file": "NEET 2024 Paper-Botany.pdf",
+    "classification": "exact_duplicate",
+    "best_match_existing_id": "20e1a5f1-4a0d-42c1-a808-a757988ce85a",
+    "match_similarity": 1.0,
+    "within_batch_duplicate": false,
+    "inherited_answer": null,
+    "inherited_answer_source": null,
+    "taxonomy_chapter": "",
+    "taxonomy_chapter_confidence": 0.031
   },
   {
     "question_number": 37,
@@ -2269,18 +2533,18 @@
     "question_number": 51,
     "subject": "Botany",
     "chapter_context": "Animal Kingdom | (Basis of Classification)",
-    "stem": "Consider the following statements:",
+    "stem": "Consider the following statements: A. Annelids are true coelomates B. Poriferans are pseudocoelomates C. Aschelminthes are acoelomates D. Platyhelminthes are pseudocoelomates Choose the correct answer from the options given below :",
     "options": {
-      "A": "Annelids are true coelomates",
-      "B": "Poriferans are pseudocoelomates",
-      "C": "Aschelminthes are acoelomates",
-      "D": "Platyhelminthes are pseudocoelomates"
+      "A": "C only",
+      "B": "D only",
+      "C": "B only",
+      "D": "A only"
     },
     "requires_figure": false,
     "source_file": "NEET 2024 Paper-Botany.pdf",
-    "classification": "unique",
-    "best_match_existing_id": "",
-    "match_similarity": 0.5,
+    "classification": "exact_duplicate",
+    "best_match_existing_id": "bbbbef8b-a6b4-41f8-99c7-40b23ee637c5",
+    "match_similarity": 1.0,
     "within_batch_duplicate": false,
     "inherited_answer": null,
     "inherited_answer_source": null,
@@ -2401,23 +2665,23 @@
     "question_number": 58,
     "subject": "Botany",
     "chapter_context": "Cell Cycle and Cell Division | (Cell Cycle)",
-    "stem": "Following are the stages of cell division :",
+    "stem": "Following are the stages of cell division : A. Gap 2 phase B. Cytokinesis C. Synthesis phase D. Karyokinesis E. Gap 1 phase Choose the correct sequence of stages from the options given below :",
     "options": {
-      "A": "Gap 2 phase",
-      "B": "Cytokinesis",
-      "C": "Synthesis phase",
-      "D": "Karyokinesis"
+      "A": "B-D-E-A-C",
+      "B": "E-C-A-D-B",
+      "C": "C-E-D-A-B",
+      "D": "E-B-D-A-C"
     },
     "requires_figure": false,
     "source_file": "NEET 2024 Paper-Botany.pdf",
-    "classification": "unique",
-    "best_match_existing_id": "",
-    "match_similarity": 0.429,
+    "classification": "near_duplicate_high_confidence",
+    "best_match_existing_id": "39d2ed60-269b-4671-9257-b367929a6213",
+    "match_similarity": 1.0,
     "within_batch_duplicate": false,
     "inherited_answer": null,
     "inherited_answer_source": null,
     "taxonomy_chapter": "",
-    "taxonomy_chapter_confidence": 0.033
+    "taxonomy_chapter_confidence": 0.029
   },
   {
     "question_number": 59,
@@ -2467,23 +2731,23 @@
     "question_number": 62,
     "subject": "Botany",
     "chapter_context": "Body Fluids and Circulation | (Circulatory Pathways)",
-    "stem": "Following are the stages of pathway for conduction of an action potential through the heart:",
+    "stem": "Following are the stages of pathway for conduction of an action potential through the heart: A. AV bundle B. Purkinje fibres C. AV node D. Bundle branches E. SA node Choose the correct sequence of pathway from the options given below:",
     "options": {
-      "A": "AV bundle",
-      "B": "Purkinje fibres",
-      "C": "AV node",
-      "D": "Bundle branches"
+      "A": "B-D-E-C-A",
+      "B": "E-A-D-B-C",
+      "C": "E-C-A-D-B",
+      "D": "A-E-C-B-D"
     },
     "requires_figure": false,
     "source_file": "NEET 2024 Paper-Botany.pdf",
-    "classification": "unique",
-    "best_match_existing_id": "",
-    "match_similarity": 0.368,
+    "classification": "exact_duplicate",
+    "best_match_existing_id": "afc77f74-5a39-41ab-90b5-1859561a1993",
+    "match_similarity": 1.0,
     "within_batch_duplicate": false,
     "inherited_answer": null,
     "inherited_answer_source": null,
     "taxonomy_chapter": "",
-    "taxonomy_chapter_confidence": 0.024
+    "taxonomy_chapter_confidence": 0.022
   },
   {
     "question_number": 63,
@@ -2533,23 +2797,23 @@
     "question_number": 65,
     "subject": "Botany",
     "chapter_context": "(Disorders of Muscular and Skeletal System)",
-    "stem": "Which of the following are Autoimmune disorders?",
+    "stem": "Which of the following are Autoimmune disorders? A. Myasthenia gravis B. Rheumatoid arthritis C. Gout D. Muscular dystrophy E. Systemic Lupus Erythematosus (SLE) Choose the most appropriate answer from the options given below:",
     "options": {
-      "A": "Myasthenia gravis",
-      "B": "Rheumatoid arthritis",
-      "C": "Gout",
-      "D": "Muscular dystrophy"
+      "A": "B, C & E only",
+      "B": "C, D & E only",
+      "C": "A, B & D only",
+      "D": "A, B & E only"
     },
     "requires_figure": false,
     "source_file": "NEET 2024 Paper-Botany.pdf",
-    "classification": "unique",
-    "best_match_existing_id": "",
-    "match_similarity": 0.25,
+    "classification": "near_duplicate_high_confidence",
+    "best_match_existing_id": "8236bd98-cc33-42d6-9163-11a0de2cc7ba",
+    "match_similarity": 1.0,
     "within_batch_duplicate": false,
-    "inherited_answer": null,
-    "inherited_answer_source": null,
+    "inherited_answer": "A",
+    "inherited_answer_source": "inherited_from_verified_pyq:8236bd98-cc33-42d6-9163-11a0de2cc7ba:similarity=1.00",
     "taxonomy_chapter": "",
-    "taxonomy_chapter_confidence": 0.012
+    "taxonomy_chapter_confidence": 0.052
   },
   {
     "question_number": 66,
@@ -2775,23 +3039,23 @@
     "question_number": 78,
     "subject": "Botany",
     "chapter_context": "Weinberg equilibrium? | (Human Evolution)",
-    "stem": "Given below are some stages of human evolution. Arrange them in  correct sequence. (Past to Recent)",
+    "stem": "Given below are some stages of human evolution. Arrange them in  correct sequence. (Past to Recent) A. Homo habilis B. Homo sapiens C. Homo neanderthalensis D. Homo erectus Choose the correct sequence of human evolution from the options given below:",
     "options": {
-      "A": "Homo habilis",
-      "B": "Homo sapiens",
-      "C": "Homo neanderthalensis",
-      "D": "Homo erectus"
+      "A": "C-B-D-A",
+      "B": "A-D-C-B",
+      "C": "D-A-C-B",
+      "D": "B-A-D-C"
     },
     "requires_figure": false,
     "source_file": "NEET 2024 Paper-Botany.pdf",
-    "classification": "near_duplicate_uncertain",
-    "best_match_existing_id": "71f53f97-8245-40a4-8311-ef8ffd2f6238",
-    "match_similarity": 0.625,
+    "classification": "exact_duplicate",
+    "best_match_existing_id": "597df891-aa53-4944-9d56-6d3fc431882a",
+    "match_similarity": 1.0,
     "within_batch_duplicate": false,
     "inherited_answer": null,
     "inherited_answer_source": null,
     "taxonomy_chapter": "",
-    "taxonomy_chapter_confidence": 0.029
+    "taxonomy_chapter_confidence": 0.024
   },
   {
     "question_number": 79,
@@ -2907,23 +3171,23 @@
     "question_number": 86,
     "subject": "Botany",
     "chapter_context": "Animal Kingdom | (Hemichordata and Chordata)",
-    "stem": "The following are the statements about non-chordates:",
+    "stem": "The following are the statements about non-chordates: A. Pharynx is perforated by gill slits. B. Notochord is absent. C. Central nervous system is dorsal. D. Heart is dorsal if present. E. Post anal tail is absent. Choose the most appropriate answer from the options given below:",
     "options": {
-      "A": "Pharynx is perforated by gill slits.",
-      "B": "Notochord is absent.",
-      "C": "Central nervous system is dorsal.",
-      "D": "Heart is dorsal if present."
+      "A": "B, D & E only",
+      "B": "B, C & D only",
+      "C": "A & C only",
+      "D": "A, B & D only"
     },
     "requires_figure": false,
     "source_file": "NEET 2024 Paper-Botany.pdf",
-    "classification": "unique",
-    "best_match_existing_id": "",
-    "match_similarity": 0.5,
+    "classification": "near_duplicate_high_confidence",
+    "best_match_existing_id": "d65c3466-35fa-4c29-ad43-18a976b6303e",
+    "match_similarity": 0.923,
     "within_batch_duplicate": false,
-    "inherited_answer": null,
-    "inherited_answer_source": null,
+    "inherited_answer": "D",
+    "inherited_answer_source": "inherited_from_verified_pyq:d65c3466-35fa-4c29-ad43-18a976b6303e:similarity=0.92",
     "taxonomy_chapter": "",
-    "taxonomy_chapter_confidence": 0.0
+    "taxonomy_chapter_confidence": 0.036
   },
   {
     "question_number": 87,
@@ -2995,23 +3259,23 @@
     "question_number": 90,
     "subject": "Botany",
     "chapter_context": "Biomolecules | (Enzymes)",
-    "stem": "Regarding catalytic cycle of an enzyme action select the correct sequential steps :",
+    "stem": "Regarding catalytic cycle of an enzyme action select the correct sequential steps : A. Substrate enzyme complex formation. B. Free enzyme ready to bind with another substrate. C. Release of products. D. Chemical bonds of the substrate broken. E. Substrate binding to active site. Choose the correct answer from the options given below :",
     "options": {
-      "A": "Substrate enzyme complex formation.",
-      "B": "Free enzyme ready to bind with another substrate.",
-      "C": "Release of products.",
-      "D": "Chemical bonds of the substrate broken."
+      "A": "B, A, C, D, E",
+      "B": "E, D, C, B, A",
+      "C": "E, A, D, C, B",
+      "D": "A, E, B, D, C"
     },
     "requires_figure": false,
     "source_file": "NEET 2024 Paper-Botany.pdf",
-    "classification": "unique",
-    "best_match_existing_id": "",
-    "match_similarity": 0.31,
+    "classification": "exact_duplicate",
+    "best_match_existing_id": "5b4049f2-e046-4e62-8181-af49638fa13c",
+    "match_similarity": 1.0,
     "within_batch_duplicate": false,
     "inherited_answer": null,
     "inherited_answer_source": null,
     "taxonomy_chapter": "",
-    "taxonomy_chapter_confidence": 0.046
+    "taxonomy_chapter_confidence": 0.048
   },
   {
     "question_number": 91,
@@ -3105,23 +3369,23 @@
     "question_number": 96,
     "subject": "Botany",
     "chapter_context": "Principles of Inheritance and Variation | (Mendal’s Laws of Inheritance And Inheritance of One Gene)",
-    "stem": "As per ABO blood grouping system, the blood group of father is B+, mother is A+ and child is O+ . Their respective genotype can be",
+    "stem": "As per ABO blood grouping system, the blood group of father is B+, mother is A+ and child is O+ . Their respective genotype can be A. IBi /IAi /ii B. IBIB/IAIA/ii C. IAIB/iIA/IBi D. IAi/IBi/IAi E. iIB/iIA/IAIB Choose the most appropriate answer from the options given below:",
     "options": {
-      "A": "IBi /IAi /ii",
-      "B": "IBIB/IAIA/ii",
-      "C": "IAIB/iIA/IBi",
-      "D": "IAi/IBi/IAi"
+      "A": "C & B only",
+      "B": "D & E only",
+      "C": "A only",
+      "D": "B only"
     },
     "requires_figure": false,
     "source_file": "NEET 2024 Paper-Botany.pdf",
-    "classification": "unique",
-    "best_match_existing_id": "",
-    "match_similarity": 0.529,
+    "classification": "near_duplicate_uncertain",
+    "best_match_existing_id": "b0673d82-4272-492a-ac2a-f08693251557",
+    "match_similarity": 0.8,
     "within_batch_duplicate": false,
     "inherited_answer": null,
     "inherited_answer_source": null,
     "taxonomy_chapter": "",
-    "taxonomy_chapter_confidence": 0.024
+    "taxonomy_chapter_confidence": 0.02
   },
   {
     "question_number": 97,
@@ -3210,49 +3474,5 @@
     "inherited_answer_source": "inherited_from_verified_pyq:3c5e780c-2ce8-4925-a028-025f62708fe3:similarity=0.94",
     "taxonomy_chapter": "",
     "taxonomy_chapter_confidence": 0.014
-  },
-  {
-    "question_number": 8,
-    "subject": "Botany",
-    "chapter_context": "",
-    "stem": "(b) Parenchyma and collenchyma are living tissue. Gymnosperms lack vessels in their xylem but in flowering plants, tracheids and vessels are the main water transporting elements. 9. (c)",
-    "options": {
-      "A": "Nucleolus - site for active ribosomal RNA synthesis.",
-      "B": "Centriole - organisation like cartwheel",
-      "C": "Leucoplasts - for storing nutrients",
-      "D": "Golgi apparatus- site for formation of glycolipid"
-    },
-    "requires_figure": false,
-    "source_file": "NEET 2024 Paper-Botany.pdf",
-    "classification": "unique",
-    "best_match_existing_id": "",
-    "match_similarity": 0.276,
-    "within_batch_duplicate": false,
-    "inherited_answer": null,
-    "inherited_answer_source": null,
-    "taxonomy_chapter": "",
-    "taxonomy_chapter_confidence": 0.038
-  },
-  {
-    "question_number": 96,
-    "subject": "Botany",
-    "chapter_context": "and stimulates secretion of some factors which help in the | process of spermiogenesis.",
-    "stem": "(c) If a child has blood group O+ (ii) so according to that both the parents should have at least one recessive allele (i). So the correct answer is father (IBi) and the mother is (IAi). 97. (b)",
-    "options": {
-      "A": "RNA Polymerase III - SnRNAs, tRNA",
-      "B": "Termination of transcription - Rho factor",
-      "C": "Splicing of exons - snRNPs",
-      "D": "TATA box - Promoter"
-    },
-    "requires_figure": false,
-    "source_file": "NEET 2024 Paper-Botany.pdf",
-    "classification": "unique",
-    "best_match_existing_id": "",
-    "match_similarity": 0.261,
-    "within_batch_duplicate": false,
-    "inherited_answer": null,
-    "inherited_answer_source": null,
-    "taxonomy_chapter": "",
-    "taxonomy_chapter_confidence": 0.011
   }
 ]

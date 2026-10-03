@@ -60,7 +60,7 @@ def load_taxonomy_chapters() -> dict[str, list[tuple[str, set]]]:
 async def main():
     with open(f"{EVIDENCE_DIR}/extracted_book_mcqs.json", encoding="utf-8") as f:
         extracted = json.load(f)
-    assert len(extracted) == 148
+    assert len(extracted) == 158
 
     taxonomy = load_taxonomy_chapters()
     subj_map = {"Chemistry": "CHEMISTRY", "Physics": "PHYSICS", "Botany": "BIOLOGY"}

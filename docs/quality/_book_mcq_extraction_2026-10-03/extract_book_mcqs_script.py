@@ -12,12 +12,17 @@ FILES = {
     "Botany": r"D:\ravishori\AI Neet Exam App\PYExamPapers\2024\NEET 2024 Paper-Botany.pdf",
 }
 
-# A question starts with a line that is just a number (the extracted layout
-# puts the question number alone on its own line), followed by stem text,
-# then 4 lines each starting with "a.", "b.", "c.", "d." (case-insensitive,
-# allowing a trailing space or different punctuation the source used).
+# A question starts with a number+period+stem on one line. The 4 real
+# answer options are always lowercase "a./b./c./d." in these source files;
+# statement-based/assertion stems use UPPERCASE "A./B./C./D." for their
+# enumerated statements (confirmed by direct source inspection -- Botany Q51:
+# "A. Annelids are true coelomates" ... "Choose the correct answer...  a. C
+# only"). The original version of this regex was case-insensitive and
+# therefore stopped stem-collection at the fake uppercase "options",
+# truncating the real stem and options entirely. Fixed: options are
+# lowercase-only now; uppercase A-D lines are correctly kept as stem content.
 Q_NUM_RE = re.compile(r"^\s*(\d{1,3})\.\s+(\S.*)$")
-OPT_RE = re.compile(r"^\s*([a-dA-D])\.\s+(.+)$")
+OPT_RE = re.compile(r"^\s*([a-d])\.\s+(.+)$")
 
 
 def parse_file(path: str, subject: str) -> list[dict]:

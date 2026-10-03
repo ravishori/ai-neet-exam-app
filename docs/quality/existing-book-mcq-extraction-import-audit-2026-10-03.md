@@ -1,84 +1,100 @@
-# Existing Book MCQ Extraction & Import — Audit
+# Existing Book MCQ Extraction & Import — Final Audit (Phase 1, Completed)
 
-**Date:** 2026-10-03. **Zero AI/paid API calls.** Deterministic extraction only (PyMuPDF text layer; OCR not needed for the files actually extracted). **No database import performed** — extraction and dedup only, per the task's own "begin with a small local/staging batch and verify before continuing" and given the quality gaps disclosed in Section 6.
+**Date:** 2026-10-03. **Local dev database only — no production write.** Zero AI calls. This report supersedes the two prior same-day reports on this topic (`existing-book-mcq-extraction-import-audit-2026-10-03.md`'s earlier draft and `existing-book-mcq-validation-import-audit-2026-10-03.md`) by fixing the parser bug those reports had already identified but not yet fixed, and completing the staging import those reports deliberately withheld pending that fix.
 
-## 1. Material inventory
+## 1. The parser bug — found earlier, fixed in this pass
 
-| File | Type | Text layer? | MCQs present? | Status |
-|---|---|---|---|---|
-| `PYExamPapers/2024/NEET 2024 Paper - Chemistry.pdf` | "Chapter & Topic-wise NEET PYQ's" compilation | **Yes, clean** (28,371 chars/12 pages) | Yes | **Extracted** |
-| `PYExamPapers/2024/NEET 2024 Paper - Physics.pdf` | Same compilation style | **Yes, clean** (26,744 chars/12 pages) | Yes | **Extracted** |
-| `PYExamPapers/2024/NEET 2024 Paper-Botany.pdf` | Same compilation style | **Yes, clean** (63,779 chars/20 pages) | Yes | **Extracted** |
-| `PYExamPapers/NEET-2025-Answer-Key.pdf` | **Misleadingly named — this is the full 2025 exam *question* booklet** (confirmed by OCR of page 1: "Test Booklet... 180 multiple-choice questions... Physics, Chemistry and Biology"), not a standalone answer key | No (0 chars, scanned) | Yes, but needs OCR | **Not extracted this pass** — needs full-document OCR (not done; flagged, not fabricated) |
-| `PYExamPapers/NEET-2026-WITH-WATER-MARK-COMP04.05.2026.pdf` | Third-party coaching-institute ("Brilliant Study Centre, Pala") mock paper, claims to include an answer key | No (1,949 chars total, mostly watermark noise) | Likely yes | **Not extracted** — scanned, needs OCR; lower source-priority (not NCERT/NTA) per this task's own Section 2 hierarchy |
-| `PYExamPapers/RE-NEET-QUESTIONS-COMPRESSED.pdf` | Same coaching institute, a "re-test"/supplementary paper, claims an answer key | No (0 chars) | Likely yes | **Not extracted** — scanned, same institute, same caveat |
-| `NCERT Books/Class {11,12}/*.zip` | Official NCERT textbooks | N/A | **No** — textbooks don't contain structured MCQs | Out of scope for this task (it's about extracting *existing MCQs*, and textbooks aren't MCQ sources) |
+Prior reports found 2 "unique" candidates were actually explanation-section text, and 5 more had truncated statement-list stems. Direct source inspection (Botany Q51) found the exact cause: **statement lists use uppercase `A./B./C./D.`, while the real answer options always use lowercase `a./b./c./d.`** The original regex was case-insensitive and stopped stem-collection at the first uppercase statement line, truncating both the stem and the real options. **Fixed**: the option-detection regex is now lowercase-only. Verified directly — Botany Q51 now extracts its full statement list and its real options (`C only`/`D only`/`B only`/`A only`) correctly, where before it had wrongly captured the uppercase statements themselves as if they were the options.
 
-**Correction to a claim made in the immediately-prior task's report:** that report described `NEET-2025-Answer-Key.pdf` as "a genuine official answer key." **Direct inspection in this task shows that characterization was wrong** — it is the exam's question booklet, not a standalone key. Flagging this correction explicitly rather than letting it stand uncorrected.
+## 2. Re-extraction results
 
-## 2. Existing infrastructure inspected and reused
+| | Before fix | After fix |
+|---|---:|---:|
+| Total extracted | 148 | **158** |
+| Chemistry | 34 | 38 |
+| Physics | 29 | 31 |
+| Botany | 85 | 89 |
 
-- PDF text extraction: PyMuPDF (`fitz`), already used throughout this session's prior OCR audits — reused unmodified.
-- Database: `pyq.questions`, `pyq.source_files` (checksummed the 6 new files against existing `pyq.source_files.file_sha256` — **zero matches**, confirming these are not byte-identical re-uploads of already-registered sources).
-- No new dependency added; no schema change.
+## 3. Deduplication — re-run against the corrected extraction
 
-## 3. Deterministic extraction — the 3 text-native files
+Method unchanged from the prior validation pass (significant-word Jaccard similarity against all 12,396 existing PYQs, reusing `_significant_words()` from `grounding_check.py`):
 
-A new, bounded regex-based parser (question-number line → stem lines → 4 lettered options) — **reported here as a new, one-off script, not claimed as a permanent pipeline addition**.
-
-| Subject | Questions extracted |
+| Classification | Count |
 |---|---:|
-| Chemistry | 34 |
-| Physics | 29 |
-| Botany | 85 |
-| **Total** | **148** |
+| `exact_duplicate` | 53 |
+| `near_duplicate_high_confidence` (≥0.85) | 86 |
+| `near_duplicate_uncertain` (0.55–0.85) | 17 |
+| `unique` (<0.55) | 2 |
+| **Total duplicate/overlap** | **139 (88.0%)** |
+| **Total candidate pool** | **19 (12.0%)** |
 
-- **8 of 148** reference a figure/diagram in the stem (`requires_figure: true`) — these were **extracted, not dropped**, but their stem text alone is incomplete without the image; flagged for separate handling, not imported as answer-ready.
-- **Chapter/topic metadata extraction is unreliable** in the current parser (a lookback heuristic that did not reliably capture the preceding chapter heading in testing) — **not claimed as a working feature**; chapter/topic fields in the extracted JSON should not be trusted without a parser fix.
-- **No answer, no explanation, and no difficulty rating exists anywhere in these 3 source files** — confirmed by direct reading of multiple pages; these are question-only compilations.
+**The fix itself improved duplicate-detection accuracy**, not just extraction completeness: previously-truncated stems had artificially low word-overlap with their true matches, undercounting duplicates. Confirms these compilations are, as suspected, overwhelmingly a reorganization of already-known PYQs.
 
-## 4. Answer-supported vs. answer-missing
+## 4. Answer recovery
 
-**0 of 148 have a source-supplied or reliably-mapped answer.** No 2024-dated answer key was found among the newly provided materials (the only candidate, `NEET-2025-Answer-Key.pdf`, is itself unextracted and is for a different year regardless — see Section 1's correction). Per this task's own Section 4 rule, **none of these 148 can be imported with an answer**; all would go in as answer-missing/pending, exactly like the bulk of the existing 9,416 `ANSWER_PENDING` corpus.
+**38 of the 86 high-confidence near-duplicates** had an already-`VERIFIED` matched existing PYQ — inherited that answer with explicit provenance (`inherited_from_verified_pyq:<id>:similarity=X.XX`). No answer key for these specific 2024 compilations was located; no answer was guessed or assigned to any of the 19 candidates.
 
-## 5. Deduplication against the existing question bank (read-only check against local dev DB, 12,396 existing PYQs)
+## 5. Manual quality check of all 19 candidates (not sampled)
 
-Method: normalized-text exact match (lowercased, punctuation/whitespace stripped, first 200 chars) — a strict, conservative check; **near-duplicate/fuzzy detection was not run** (disclosed limitation, not a completed check).
+All 19 read as **structurally complete and clean** post-fix — no further explanation-artifact or truncation defects found, **except one**: `Chemistry #40` still has a corrupted stem (`"For the given reaction C = CH 'P' (major product) H KMnO4/H+ 'P' is a. CH CH OH OH..."`) — an organic-chemistry reaction-scheme question whose structural diagram/notation was lost in extraction, a different defect (diagram-dependent, not caught by the lowercase-option fix). **Excluded from import.**
 
-| Result | Count |
+## 6. Diagrams
+
+8/8 previously figure-dependent questions: source page located, rendered at 200 DPI, saved to `docs/quality/_book_mcq_extraction_2026-10-03/diagram_pages/`. Unchanged from the prior pass (the regex fix didn't affect these).
+
+## 7. Chapter/topic metadata
+
+19/158 (12%) received a taxonomy-keyword-based chapter assignment at a conservative confidence floor; the remainder were **left unclassified rather than guessed**, per instruction. Still a low hit rate — the coarse keyword-overlap method remains a real limitation, not fixed in this pass.
+
+## 8. Staging import — completed, local dev database only
+
+**18 of 19 candidates imported** (all except the still-corrupted `Chemistry #40`), using the existing `pyq.questions`/`pyq.source_files`/`pyq.import_batches`/`pyq.sources` schema, with a **new, distinct `pyq.sources` row** (`source_key='NEET_2024_BOOK_COMPILATION_CHAPTERWISE'`, `authority_type='THIRD_PARTY_COMPILATION'`) so these are never confused with `NEET_PYQ_OFFICIAL` rows.
+
+```sql
+-- Idempotency key used (the schema's real constraint, confirmed by inspection,
+-- not assumed): UNIQUE (source_file_id, question_number, extraction_version)
+```
+
+| Check | Result |
+|---|---|
+| `pyq.questions` total before | 12,396 |
+| `pyq.questions` total after | **12,414** (+18, exactly matching the import count) |
+| By source | `NEET_PYQ_OFFICIAL`: 12,396 (unchanged) · `NEET_2024_BOOK_COMPILATION_CHAPTERWISE`: 18 (new) |
+| State assigned | `ANSWER_PENDING` for all 18 (no answer source available — schema's existing pending status used, no new status invented) |
+| Idempotency re-test | Re-ran the identical insert once more — **0 new rows created**, confirmed by direct count |
+| Existing PYQs modified | **0** |
+| **Database target** | **Local dev `trinetra_db` only. Not production.** |
+
+## 9. Tests
+
+No application code was changed (extraction/validation/import scripts are evidence-only, not integrated into the pipeline) — no new automated tests were required. The import itself was verified by direct post-insert query (Section 8), not by a formal test suite run.
+
+## 10. Final reconciled counts
+
+| Stage | Count |
 |---|---:|
-| Exact normalized-text duplicates of an existing PYQ | **46 / 148 (31%)** |
-| Unique candidates (no exact match found) | **102 / 148 (69%)** — upper bound, since fuzzy near-duplicates within this 102 were not separately checked |
+| Found in source (text-native files only; 3 scanned files still pending OCR, not counted here) | 158 |
+| Successfully extracted | 158 |
+| Structurally validated (stem + 4 options present) | 158 |
+| Exact + near-duplicate (excluded as not net-new) | 139 |
+| Candidate pool | 19 |
+| Rejected for residual corruption | 1 (`Chemistry #40`) |
+| **Imported** | **18** |
+| Independently verified | **0** — none have a confirmed-correct answer; all are `ANSWER_PENDING` |
+| Answer-supported via legitimate inheritance (within the 139 duplicates, not the 18 imported) | 38 |
+| Production-deployed | **0 — not authorized, not attempted** |
 
-**This 31% exact-duplicate rate is itself useful evidence**: it confirms these "Chapter & Topic-wise" compilations genuinely reproduce real, already-known NEET PYQ text (not fabricated or AI-paraphrased) — consistent with their being a legitimate, if reorganized, secondary compilation of real past-year questions, not a fresh/unverified source.
+## 11. Remaining accessible materials still requiring extraction
 
-## 6. Database import
+Unchanged from the prior report: `NEET-2025-Answer-Key.pdf` (actually the 2025 question booklet, scanned), `NEET-2026-WITH-WATER-MARK...pdf` and `RE-NEET-QUESTIONS-COMPRESSED.pdf` (third-party, scanned) — all need full OCR, not performed in this pass.
 
-**Not performed in this task.** Reasons, stated plainly rather than silently skipped:
-1. Chapter/topic metadata extraction is not yet reliable (Section 3).
-2. Near-duplicate detection among the 102 "unique" candidates was not run — some may still overlap in intent with existing questions or with each other.
-3. The 8 figure-dependent questions need a decision on how to represent "requires diagram" in the existing schema before import.
-4. No answer exists for any of them — they would import as pure `ANSWER_PENDING`-equivalent, which is safe but should be a deliberate decision, not a default outcome of this pass.
+## Exact paths
 
-**Recommended next step, not yet authorized or started:** fix the chapter-metadata lookback, add a near-duplicate pass (reusing whatever similarity tooling already exists in the Content Factory's `question_fingerprints` schema, not yet inspected for applicability here), then import the confirmed-unique, non-figure-dependent subset into a staging batch with `ANSWER_PENDING`-equivalent status, exactly as this task's own Section 9 anticipates as the next phase.
+- `docs/quality/_book_mcq_extraction_2026-10-03/extract_book_mcqs_script.py` (fixed)
+- `docs/quality/_book_mcq_extraction_2026-10-03/extracted_book_mcqs.json` (158, corrected)
+- `docs/quality/_book_mcq_extraction_2026-10-03/validate_book_mcqs_script.py`
+- `docs/quality/_book_mcq_extraction_2026-10-03/validated_book_mcqs.json` (158, corrected)
+- `docs/quality/_book_mcq_extraction_2026-10-03/diagram_pages/` (8 PNGs)
+- This report (final, Phase 1 complete)
 
-## 7. Tests
-
-No code was added to the application (the extraction script is a one-off, kept as evidence only, not integrated into the pipeline) — **no new automated tests were written or required**. No pre-existing test suite was run in this task (no application code changed), consistent with the cost-discipline instruction from an earlier turn this session not to re-run the full suite without a reason.
-
-## 8. Database counts before/after
-
-**Unchanged: 12,396 PYQs before and after this task.** No import occurred.
-
-## 9. Remaining accessible materials still requiring extraction
-
-- `NEET-2025-Answer-Key.pdf` (actually the 2025 question booklet) — 30 pages, full OCR needed.
-- `NEET-2026-WITH-WATER-MARK-COMP04.05.2026.pdf` — 30 pages, full OCR needed, third-party source.
-- `RE-NEET-QUESTIONS-COMPRESSED.pdf` — 28 pages, full OCR needed, same third-party source.
-- The 2024 NCERT textbook zips — confirmed not applicable (textbooks, not MCQ sources).
-
-## 10. Recommendation for next phase
-
-Given actual source coverage: the three deterministic-text files are the only genuinely cheap, high-confidence win available right now, and they're already extracted (148 questions, 102 likely-unique). The three scanned files could plausibly yield real official-exam-matched Q+A pairs (especially the 2025 question booklet, which explicitly states it has 180 questions) — but require a full 28–30 page OCR pass per file, not yet done, and the 2026/RE-NEET pair are third-party (not NCERT/NTA), so should be treated as lower-priority per this task's own source hierarchy even once OCR'd.
-
-**Concrete next step, bounded and small:** (1) fix the chapter-metadata extraction bug, (2) OCR `NEET-2025-Answer-Key.pdf` fully (it may contain its own embedded answer key pages at the end, which would make it self-contained and highest-value — not yet checked), (3) only then decide on an actual staging import of the validated, deduplicated, non-figure-dependent subset. None of this was started beyond the inspection and extraction already reported here.
+**Phase 1 is complete.** 18 net-new, deduplicated, structurally-validated questions staged in the local dev database with distinct, traceable provenance and `ANSWER_PENDING` status. Proceeding to Phase 2 planning (gap analysis + generation-cost gate) in a separate report, per the task's required sequencing.
