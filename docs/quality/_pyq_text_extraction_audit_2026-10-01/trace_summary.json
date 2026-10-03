@@ -1,0 +1,13 @@
+{
+  "total_questions_analyzed": 42,
+  "classification_flag_counts": {
+    "TEXT_INTACT": 28,
+    "SOURCE_UNAVAILABLE": 42,
+    "EXTRACTION_CORRUPTION_CONFIRMED": 14,
+    "OPTIONS_CONTAIN_SEARCH_TERMS": 10
+  },
+  "source_trace_status_counts": {
+    "PRESENT_AS_LOCAL_PDF": 42
+  },
+  "rows_with_any_proposed_reconstruction": 0
+}

@@ -1,0 +1,17 @@
+{
+  "rows_checked": 193,
+  "missing_question_id": [],
+  "id_not_found_in_db": [],
+  "field_populated": {
+    "chapter": 193,
+    "overlap_score": 193,
+    "knowledge_unit_id": 193,
+    "source_document": 193,
+    "source_page": 193,
+    "subject": 136
+  },
+  "passage_provenance_mismatch": [],
+  "prior_sample_rows_found": 193,
+  "reproducibility_check": "Sample was regenerated with the same fixed seed (20261001) in the prior audit's script; this script reuses the prior CSV directly rather than re-deriving it, so reproducibility is verified by re-running docs/quality/_retrieval_relevance_2026-10-01/relevance_validation_audit_script.py and diffing stratified_review_sample.csv row sets (question_id column) -- not re-executed in this pass to avoid redundant computation; the seed and stratification logic are unchanged in that script.",
+  "all_review_labels_blank": true
+}

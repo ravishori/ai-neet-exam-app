@@ -1,0 +1,30 @@
+Production DB access attempts — 2026-10-01 reconciliation audit
+Safe metadata only. No credentials, connection strings, or secret values below.
+
+Attempt 1 (this audit, ~2026-10-01T15:0x UTC):
+  Command: railway run --service ai-neet-exam-app -- psql "$DATABASE_URL" -c "SELECT current_database(), inet_server_addr()::text, version();"
+  Result: hung with zero stdout/stderr for >4 minutes; process tree showed multiple spawned node.exe (railway CLI) processes accumulating with no output.
+  Terminated manually (taskkill) after exceeding a reasonable wait.
+  Exit code when the wrapper finally reported: 1 (no error text was ever produced before termination).
+
+Attempt 2 (earlier in this session, prior to this audit — background task id bw570ba0e):
+  Command: railway run --service ai-neet-exam-app -- psql "$DATABASE_URL" -t -c "SELECT version_num FROM alembic_version;"
+  Result: same symptom — hung with no output, eventually reported exit code 1.
+
+Control test (same command family, confirms railway run itself works):
+  Command: railway run --service ai-neet-exam-app -- echo "railway-run-test-ok"
+  Result: SUCCESS, instant return, exit code 0, output "railway-run-test-ok".
+
+Supporting evidence — Railway variable NAMES only (no values) on the ai-neet-exam-app service:
+  DATABASE_URL        (present)
+  RAILWAY_PRIVATE_DOMAIN (present)
+  DATABASE_PUBLIC_URL  -- NOT present (confirmed absent in an earlier audit this session and reconfirmed here)
+
+Conclusion: `railway run -- <cmd>` executes <cmd> on this LOCAL machine with Railway's environment variables injected — it does not proxy network traffic through Railway's private network. Since only a private-network DATABASE_URL exists (no public endpoint), a psql client running locally cannot reach it; the connection attempt hangs on an unroutable/firewalled TCP destination rather than failing fast. This is consistent, reproducible behavior across two independent attempts spanning this session, with a clean control test proving the tooling itself is otherwise functional.
+
+Methods not attempted, with reason:
+  - `railway connect` — Railway's interactive DB-connect flow; not scriptable non-interactively within this session's tooling, and was not pursued given the time already invested in the two direct-command attempts.
+  - Direct TCP connection to any public host — no public database endpoint variable exists (DATABASE_PUBLIC_URL absent), so there is no public address to attempt.
+  - Deploying a one-off diagnostic job that runs on Railway's own network — out of scope for a read-only audit; would constitute a deployment action.
+
+Per the audit's own Phase A instruction ("If production target is ambiguous, credentials are unavailable, or read-only guarantees cannot be established, do not guess. Complete only the safe local audit and document why production comparison could not run."), production querying was stopped here.

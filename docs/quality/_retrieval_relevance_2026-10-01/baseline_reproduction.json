@@ -1,0 +1,17 @@
+{
+  "total_pending": 9944,
+  "total_units_in_index": 1112,
+  "passed_units": 986,
+  "failed_units": 126,
+  "current_covered_strict_0_50_all_units": 3868,
+  "passed_only_covered_strict_0_50": 3868,
+  "delta_current_minus_passed_only": 0,
+  "relaxed_covered_0_25_all_units": 8159,
+  "newly_covered_count_0_25_not_0_50": 4291,
+  "zero_overlap_count": 155,
+  "reproduces_prior_audit_3868": true,
+  "reproduces_prior_audit_8159_passed_relaxed": true,
+  "questions_covered_only_by_failed_units_count": 0,
+  "total_question_x_failed_unit_match_pairs": 6788,
+  "relaxed_covered_0_25_passed_only": 8159
+}

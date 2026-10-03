@@ -1,0 +1,4254 @@
+question_id,year,paper_or_set,subject,question_number,original_extracted_text,original_options,source_filename,source_page,matching_method,matching_evidence_score,ocr_output_excerpt,proposed_reconstruction,uncertain_segments,classification,confidence,rationale,human_review_status
+cb5b50e5-9dd7-4cac-9518-d3ef2fd9c09b,2023,Paper-20231108005448,,1,ol a1 p-4 ol,"A: 3x10"" °C | B: 3x10"" °C | C: 3x103 °C""! | D: : 3x10-2 °c""!",Paper_20231108005448.pdf,6,token_overlap_only,2,"Physics : Section-B (Q. No. 36 to 50)
+
+36
+
+37
+
+38
+
+The radius of inner most orbit of hydrogen | 39
+
+atom is 5.3x10-!! m. What is the radius of
+third allowed orbit of hydrogen atom?
+
+(1) 4.77A (2) 0.53A
+
+(3) 1.06A (4) 159A
+
+An electric dipole is placed as shown in the
+
+figure.
+40
+5 cm P
+
+0
+o—_____+___-e e
+-q<.——> <> +9
+3 cm 3 cm
+
+The electric potential (in 102 V) at point P
+due to the dipole is (€g= permittivity of free
+
+space and Te =k):
+
+The x-t graph of a particle performing simple
+harmonic motion is shown in the figure. The
+acceleration of the particle at ¢=2 sis:
+
+42
+
+2 2
+Tl 2 Tv 2
+2 2
+Tl 2 Tv 2
+(3) -yzms (4) iems
+
+G2_English | 6
+
+10 resistors, each of resistance R are
+connected in series to a battery of emf EF
+and negligible internal resistance. Then those
+are connected in parallel to the same battery,
+the current is increased n times. The value
+
+of nis:
+(1) 1000 (2) 10
+(3) 100 (4) 1
+
+A horizontal bridge is built across a river.
+A student standing on the bridge throws a
+small ball vertically upwards with a velocity
+
+4m st, The ball strikes the water surface
+
+after 4s. The height of bridge above water
+
+surface is (Take g=10m s7) :
+(1) 68m
+(3) 60m
+
+(2) 56m
+(4) 64m
+
+The resistance of platinum wire at 0°C is
+2Q and 6.8Q at 80°C. The temperature
+
+coefficient of resistance of the wire is:
+(1) 3x10-! °c-l (2): 3x10-4 °C!
+(3) 3x103 °c! (4) 3x10-2 °C!
+
+A wire carrying a current / along the positive
+x-axis has length L. It is kept in a magnetic
+
+field B =(2i+ 37-4k) T. The magnitude of
+
+the magnetic force acting on the wire is:
+
+(1) Wu (2) 31L
+
+(3) V5 IL (4) SIL
+
+| Contd...
+",,,SOURCE_MISMATCH,LOW,Only generic token overlap (score=2) was available; the question number '1' could not be independently confirmed on page 6. This page match should be treated as unreliable.,PENDING
+06de2796-b781-4574-9ebf-3c399079e888,2023,Paper-20231108005448,,9,"2p, <(z 2p, ="" 2p, )<o 2p,","A:  | B:  | C: ols<o"" Is<o2s<o"" 2s<o 2p, <
+(2p, ="" 2p,)<(x°2p, =1""2py}<o"" 2p, | D: ois<o* Is<o2s<o° 2s<o2p, <
+o” 2p, < (n2p, =n 2p, ) < (x* 2p, =n"" 2p,",Paper_20231108005448.pdf,9,token_overlap_only,8,"61
+
+62
+
+63
+
+64
+
+For a certain reaction, the rate = k[A] [B].
+
+when the initial concentration of A is tripled
+keeping concentration of B constant, the
+initial rate would
+
+(1) increase by a factor of three.
+
+(2) decrease by a factor of nine.
+
+(3) increase by a factor of six.
+
+(4) increase by a factor of nine.
+
+The element expected to form largest ion to
+achieve the nearest noble gas configuration
+is:
+
+(1) Na
+(3) F
+
+(2) O
+(4) N
+
+Which one is an example of heterogenous
+
+catalysis?
+
+(1) Combination between dinitrogen and
+dihydrogen to form ammonia in the
+presence of finely divided iron.
+
+(2) Oxidation of sulphur dioxide into sulphur
+trioxide in the presence of oxides of
+nitrogen.
+
+(3) Hydrolysis of sugar catalysed by Ht
+ions.
+
+(4) Decomposition of ozone in presence of
+nitrogen monoxide.
+
+The correct order of energies of molecular
+orbitals of N, molecule, is :
+
+(1) ols<o Is<o2s<o° 2s <(n2p, =n 2p,)<
+
+(x*2p, =1 2p, J <o2p,< o 2p,
+
+(2) ols<o Is<o2s<o° 2s <(n2p, =n 2p,)<
+
+6 2p, < (x"" 2p, =n 2p, | <o 2p,
+
+* *
+(3) ols<o Is<o2s<o 2s<o 2p, <
+
+(2p, =T 2py ) < (x"" 2p, = T 2py <o 2p,
+
+* *
+(4) ols<o"" Is<o2s<o° 2s<o2p, <
+
+o 2p, < (x2p, =T 2p, )< (x"" 2p, = ial 2p, |
+
+G2_English |
+
+65
+
+66
+
+67
+
+Identify the product in the following reaction:
++ —
+N2Cl
+
+(i) Cu Bry /HBr
+(ii) Mg/dry ether
+
+(ii) HO > Product
+2
+
+>
+
+OH
+
+OH
+(1) (2) C)
+
+Br
+MgBr
+
+Which amongst the following molecules on
+polymerization produces neoprene?
+
+(1) H,C=C-CH=CH,
+
+(3)
+
+©
+
+(2) H,C=CH-CH=CH,
+
+Cl
+
+|
+3) H,C=C-CH=CH,
+
+(4) H,C=CH-C=CH
+Complete the following reaction :
+
+OH
+OQ —HEN
+CN
+
+[A] [B]
+
+",,,PARTIALLY_RECOVERABLE,LOW,Only generic token overlap (score=8) was available; the question number '9' could not be independently confirmed on page 9. This page match should be treated as unreliable.,PENDING
+01a52aaa-6010-4ad8-8723-0218714b7509,2023,Paper-20231108010819,,3,wel 2| 1 ti d fi,"A:  | B:  | C: Gr|'—Z| pointed away from page
+Hoi 2 . . | D: Zpl|!—Z| pointed into the page
+10",Paper_20231108010819.pdf,7,number_token + token_overlap>=3,17,"44 Calculate the maximum acceleration of a | 48
+moving car so that a body lying on the floor
+of the car remains stationary. The coefficient
+
+of static friction between the body and the
+floor is 0.15 (g=10ms-%).
+
+(1) 12ms2
+
+(3) 1.5m 32
+
+(2) 150m s?
+(4) som 5?
+
+45 The radius of inner most orbit of hydrogen
+
+atom is 5.3x10-!! m. What is the radius of
+third allowed orbit of hydrogen atom?
+
+(1) 0.53A (2) 1.06 A
+
+(3) 159A (4) 4.77A
+
+46 A bullet from a gun is fired on a rectangular
+wooden block with velocity u. When bullet
+travels 24 cm through the block along its
+length horizontally, velocity of bullet | 49
+
+Uu
+becomes 3
+
+the block in the same direction before
+
+coming to rest exactly at the other end of
+the block. The total length of the block is :
+
+(1) 27 cm (2) 24 cm
+(3) 28 cm (4) 30 cm
+
+Then it further penetrates into
+
+47 The x-t graph of a particle performing simple | 59
+harmonic motion is shown in the figure. The
+acceleration of the particle at ¢=2 s is:
+
+(3) <ms” (4) -i ms?
+
+E4 English | 7
+
+A very long conducting wire is bent in a
+semi-circular shape from A to B as shown in
+figure. The magnetic field at point P for
+steady current configuration is given by:
+
+i>
+----- A
+R
+P
+
+i<
+~---- B
+qd) + pointed into the page
+(2) —~— pointed away from the page
+
+Hof], 2
+(3) ZR l-— pointed away from page
+
+Holl _2 . .
+(4) Zp\i-Z| pointed into the page
+
+10 resistors, each of resistance R are
+connected in series to a battery of emf FE
+and negligible internal resistance. Then those
+are connected in parallel to the same battery,
+the current is increased n times. The value
+of nis:
+
+(1) 10
+(3) 1
+
+(2) 100
+(4) 1000
+
+In the figure shown here, what is the
+equivalent focal length of the combination
+of lenses (Assume that all layers are thin)?
+
+ny, =1.6
+(1) 40 cm (2) —40 cm
+(3) —100 cm (4) —50 cm
+| ",,,PARTIALLY_RECOVERABLE,MEDIUM,"No section-header range was detected to confirm this page, but question number '3' appears as a standalone token on page 7, and 7 stem/option vocabulary words also overlap -- two independent weak signals, not one.",PENDING
+b74a768f-e21b-47fd-ac1d-dbcbe96e52c9,2023,Paper-20231108010819,,50,"mH 3 «102 41 \n 7 our \n 320 V, 50 Hz",A: 10¥2 a | B: 159 | C: 5¥5Q | D: 252,Paper_20231108010819.pdf,6,number_token + token_overlap>=3,17,"Physics : Section-B (Q. No. 36 to 50)
+
+36
+
+37
+
+38
+
+39
+
+The resistance of platinum wire at 0°C is | 40
+2Q and 68Q at 80°C. The temperature
+coefficient of resistance of the wire is :
+
+(1) 3x104°C! (2) 3x103 °C!
+
+(3) 3x102 °c! (4) 3x10-1 ec
+
+The net impedance of circuit (as shown in
+figure) will be :
+
+WIA
+
+100 41
+
+30 mH 3
+1 10
+
+— uF
+Tt
+
+©
+
+220 V, 50 Hz
+
+(1) 10¥22
+(3) sv¥5Q
+
+(2) 150
+(4) 250
+
+A horizontal bridge is built across a river. ry)
+A student standing on the bridge throws a
+small ball vertically upwards with a velocity
+
+4m st, The ball strikes the water surface
+
+after 4s. The height of bridge above water
+
+surface is (Take g=10m s?) :
+(1) 56m (2) 60m
+(3) 64m (4) 68m
+
+43
+An electric dipole is placed as shown in the
+figure.
+
+5cm
+0
+
++
+san < >+q
+
+The electric potential (in 102 V) at point P
+due to the dipole is (€ = permittivity of free
+
+3 cm
+
+space and =K):
+
+4n Eq
+
+Co] Nn
+
+Jak
+Jak
+
+@ [
+
+Lo] 00
+
+onl
+
+E4 English | 6
+
+A wire carrying a current / along the positive
+x-axis has length L. It is kept in a magnetic
+
+- A A A .
+field B =(2i+3j-4k) T. The magnitude of
+the magnetic force acting on the wire is :
+
+(1) 31L (2) V5 iL
+(3) SIL (4) VBIL
+
+Two thin lenses are of same focal lengths
+(f), but one is convex and the other one is
+concave. When they are placed in contact
+with each other, the equivalent focal length
+of the combination will be:
+
+(1) Zero (2) f/4
+(3) f/2 (4) Infinite
+
+A satellite is orbiting just above the surface
+of the earth with period T. If d is the density
+of the earth and G is the universal constant
+
+of gravitation, the quantity = represents :
+
+(1) T
+3) Tr
+
+(2) 7°
+(4) vr
+
+For the following logic circuit, the truth table
+is:
+
+A
+Y
+
+B
+
+(1) 4 BY (2) 4 BY
+0 0 1 0 0 0
+0 1 #1 0 1 ti
+1 0O 1 1 O 1
+1 1 0 1 1 1
+
+(3) 4 BY (4) 4 BY
+0 0 1 0 0 O
+0 1 0 0 1 O
+1 0 1 1 0 0O
+1 1 0 1",,,PARTIALLY_RECOVERABLE,MEDIUM,"No section-header range was detected to confirm this page, but question number '50' appears as a standalone token on page 6, and 7 stem/option vocabulary words also overlap -- two independent weak signals, not one.",PENDING
+01f2e940-1f57-498c-825b-0733935a8403,2023,Paper-20231108010819,,6,"2p, <(x""2p, = x 2p, ) <o"" 2p,","A:  | B: ols<o"" Is<o2s<o"" 2s<o 2p, <
+* * *
+(72, = 2p,)<(x PR =m 2r,)<o Pr | C: oIs<o"" Is<o2s<o"" 2s<o2p, <
+7 . .
+o 2p, <(72p, = 2p, <(x 2Py = 2py) | D: ols<o"" Is<028<0"" 2s <(12p, = 2p, )<",Paper_20231108010819.pdf,10,token_overlap_only,6,"63
+
+64
+
+65
+
+Which one is an example of heterogenous
+
+catalysis?
+
+(1) Oxidation of sulphur dioxide into sulphur
+trioxide in the presence of oxides of
+nitrogen.
+
+(2) Hydrolysis of sugar catalysed by Ht
+ions.
+
+(3) Decomposition of ozone in presence of
+nitrogen monoxide.
+
+(4) Combination between dinitrogen and
+dihydrogen to form ammonia in the
+presence of finely divided iron.
+
+Given below are two statements : one is
+
+labelled as Assertion A and the other is
+
+labelled as Reason R :
+
+Assertion A : Metallic sodium dissolves in
+
+liquid ammonia giving a deep blue solution,
+
+which is paramagnetic.
+
+Reasons R : The deep blue solution is due
+
+to the formation of amide.
+
+In the light of the above statements, choose
+
+the correct answer from the options given
+
+below :
+
+(1) Both A and R are true and R is the
+correct explanation of A.
+
+(2) Both A and R are true but R is NOT
+the correct explanation of A.
+
+(3) A is true but R is false.
+
+(4) A is false but R is true.
+
+Intermolecular forces are forces of attraction
+and repulsion between interacting particles
+that will include :
+
+A. dipole - dipole forces.
+
+B. dipole - induced dipole forces.
+
+C. hydrogen bonding.
+
+D. covalent bonding.
+
+E. dispersion forces.
+
+Choose the most appropriate answer from
+the options given below :
+
+(1) B, C, D, E are correct.
+
+(2) A, B, C, D are correct.
+
+(3) A, B, C, E are correct.
+
+(4) A, C, D, E are correct.
+
+E4 English |
+
+10
+
+66
+
+67
+
+68
+
+The number of o bonds, 7 bonds and lone
+
+pair of electrons in pyridine, respectively are:
+(1) 11, 2, 0 (2) 12, 3,0
+(3) 11,3, 1 (4) 12, 2,1
+
+A compound is formed by two elements
+A and B. The element B forms cubic close
+packed structure and atoms of A occupy
+1/3 of tetrahedral voids. If the formula of
+the compound is A,B, then the value of
+
+x +y 1s in option
+qd) 5 (2) 4
+(3) 3 (4) ",,,PARTIALLY_RECOVERABLE,LOW,Only generic token overlap (score=6) was available; the question number '6' could not be independently confirmed on page 10. This page match should be treated as unreliable.,PENDING
+5136087a-c2b9-40e7-9511-5be639450f45,2023,Paper-20231108010819,,11,hat is th le of RNA pol Il i \n 6,A:  | B:  | C:  | D: ,Paper_20231108010819.pdf,5,token_overlap_only,3,"26
+
+27
+
+28
+
+29
+
+30
+
+31
+
+A bullet is fired from a gun at the speed of
+280ms! in the direction 30° above the
+horizontal. The maximum height attained by
+
+the bullet is (2 =9,.8ms~~, sin 30° = 0.5)
+
+(1) 2800 m (2) 2000 m
+(3) 1000 m (4) 3000 m
+
+Resistance of a carbon resistor determined
+
+from colour codes is (22000 + 5%) Q. The
+
+colour of third band must be :
+(1) Red (2) Green
+(3) Orange (4) Yellow
+
+If the galvanometer G does not show any
+deflection in the circuit shown, the value of
+R is given by :
+
+400 Q
+
+(1) 2002
+(3) 1002
+
+(2) 500
+(4) 4002
+
+An electric dipole is placed at an angle of
+30° with an electric field of intensity
+
+2x10°NC°!. It experiences a torque equal to
+4 Nm. Calculate the magnitude of charge
+
+on the dipole, if the dipole length is 2 cm.
+(1) 8 mC (2) 6 mC
+(3) 4 mC (4) 2 mC
+
+The net magnetic flux through any closed
+surface is :
+(1) Zero
+
+(3) Infinity
+
+(2) Positive
+(4) Negative
+
+The half life of a radioactive substance is
+20 minutes. In how much time, the activity
+
+1 \th oye
+of substance drops to (i) of its initial
+
+value?
+(1) 20 minutes
+(3) 60 minutes
+
+(2) 40 minutes
+(4) 80 minutes
+
+E4 English |
+
+32
+
+33
+
+34
+
+35
+
+Light travels a distance x in time f in air
+
+and 10x in time ty in another denser
+
+medium. What is the critical angle for this
+medium?
+
+. ft _ _1{ 10¢
+(1) sin (2) (2) sin (<2
+
+- t _ _1{10¢
+
+In a series LCR circuit, the inductance L is
+10 mH, capacitance C is 1 uF and resistance
+
+R is 100Q. The frequency at which resonance
+
+occurs is :
+(1) 15.9 rad/s (2) 15.9 kHz
+(3) 1.59 rad/s (4) 1.59 kHz
+
+The amount of energy required to form a soap
+bubble of radius 2 cm from a soap solution
+
+is nearly : (surface tension of soap solution
+= 0.03 N nr!)
+
+(1) 30.16x10-4J
+(3) 3.01x10-4J
+
+(2) 5.06x10-4J
+(4) 50.1x10-4J
+
+The equivalent capacitance of the system
+shown in th",,,PARTIALLY_RECOVERABLE,LOW,Only generic token overlap (score=3) was available; the question number '11' could not be independently confirmed on page 5. This page match should be treated as unreliable.,PENDING
+d92e91b3-36c0-452b-863d-f9927f97478d,2023,Paper-20231108010819,,1,Bi hs I and S i,"A: Both Statement I and Statement
+are true. | B: Both Statement I and Statement IT
+are false. | C: Statement I is true but Statement II
+is false. | D: Statement I is false but Statement II",Paper_20231108010819.pdf,4,number_token + token_overlap>=3,20,"20
+
+21
+
+22
+
+23
+
+A 12 V, 60 W lamp is connected to the
+secondary of a step down transformer, whose
+primary is connected to ac mains of 220 V.
+Assuming the transformer to be ideal, what
+is the current in the primary winding?
+
+(1) 027A (2) 2.7A
+(3) 3.7A (4) 0.37A
+
+> >
+If fe -dS =0 over a surface, then :
+S
+
+(1) the number of flux lines entering the
+surface must be equal to the number of
+flux lines leaving it.
+
+(2) the magnitude of electric field on the
+surface is constant.
+
+(3) all the charges must necessarily be
+inside the surface.
+
+(4) the electric field inside the surface is
+necessarily uniform.
+
+The ratio of radius of gyration of a solid
+sphere of mass M and radius R about its
+own axis to the radius of gyration of the
+thin hollow sphere of same mass and radius
+about its axis is :
+
+(1) 3:5
+(3) 2:5
+
+(2) 5:3
+(4) 5:2
+
+A Carnot engine has an efficiency of 50%
+when its source is at a temperature 327° C.
+The temperature of the sink is :
+
+(1) 27°C (2) 15°C
+(3) 100°C (4) 200° C
+
+E4 English |
+
+24
+
+25
+
+Given below are two statements:
+
+Statement I : Photovoltaic devices can
+convert optical radiation into electricity.
+
+Statement II : Zener diode is designed to
+operate under reverse bias in breakdown
+region.
+
+In the light of the above statements, choose
+the most appropriate answer from the
+options given below :
+
+(1) Both Statement I and Statement II
+are correct.
+
+(2) Both Statement I and Statement II
+are incorrect.
+
+(3) Statement I is correct but
+Statement II is incorrect.
+
+(4) Statement I is incorrect but
+Statement II is correct.
+
+For Young’s double slit experiment, two
+statements are given below:
+
+Statement I : If screen is moved away from
+the plane of slits, angular separation of the
+fringes remains constant.
+
+Statement II : If the monochromatic source
+is replaced by another monoc",,,PARTIALLY_RECOVERABLE,MEDIUM,"No section-header range was detected to confirm this page, but question number '1' appears as a standalone token on page 4, and 10 stem/option vocabulary words also overlap -- two independent weak signals, not one.",PENDING
+b8ac7a6d-c1a3-4e90-8120-deaf281e9415,2024,Paper-20250124132822,,6,n IL 5 ‘ ‘ av \n ee,"A:  | B:  | C:  | D: AcIl, B-IV, C-IIl, D-I
+107",Paper_20250124132822.pdf,3,number_token + token_overlap>=3,13,"10
+
+11
+
+The mass of a planet is = th that of the earth and
+
+its diameter is half that of the earth. The
+acceleration due to gravity on that planet is :
+
+(1) 4.9ms2 (2) 3.92ms2
+
+(3) 19.6ms2 (4) 9.8ms2
+
+In a uniform magnetic field of 0.049 T, amagnetic
+needle performs 20 complete oscillations in
+5 seconds as shown. The moment of inertia of the
+needle is 9.8 x 10° kg m2. If the magnitude of
+magnetic moment of the needle is x x 10-5 Am2;
+then the value of ‘x’ is:
+
+(1) 1280 x2
+
+3) 5x?
+
+(2)
+
+(4) 128 x7
+
+If c is the velocity of light in free space, the correct
+statements about photon among the following
+are :
+
+A. The energy of a photon is E=hyv.
+B. The velocity of a photon is c.
+
+C. The momentum ofa photon, p= fy
+
+Cc
+
+D. Ina photon-electron collision, both total
+energy and total momentum are conserved.
+
+E. Photon possesses positive charge.
+
+Choose the correct answer from the options given
+
+below :
+
+(1) A, Cand D only
+
+(2) A,B, D and E only
+
+(3) AandB only
+
+(4) A,B, C and D only
+
+The maximum elongation of a steel wire of 1 m
+length if the elastic limit of steel and its Young’s
+modulus, respectively, are 8 x 108 N m~ and
+2x10! N m®%, is:
+(1) 40mm
+
+(3) 4mm
+
+(2) 8mm
+(4) 0.4mm
+
+T1_English |
+
+12
+
+13
+
+14
+
+15
+
+(Spectral Lines of
+
+A logic circuit provides the output Y as per the
+following truth table :
+
+—-— FF Oo CO]
+
+B
+0
+]
+0
+1
+
+oro rly
+
+The expression for the output Y is :
+(1) B (2) B
+3) AB+A (4) AB+A
+
+The moment of inertia of a thin rod about an axis
+
+passing through its mid point and perpendicular
+to the rod is 2400 g cm2. The length of the 400 g
+rod is nearly :
+
+(1) 20.7cm
+(3) 8.5 cm
+
+(2) 72.0cm
+(4) 17.5 cm
+
+In a vernier calipers, (V + 1) divisions of vernier
+scale coincide with N divisions of main scale. If
+1 MSD represents 0.1 mm, the vernier constant
+(in cm) is:
+
+(1) 100N (2)
+
+1",,,PARTIALLY_RECOVERABLE,MEDIUM,"No section-header range was detected to confirm this page, but question number '6' appears as a standalone token on page 3, and 3 stem/option vocabulary words also overlap -- two independent weak signals, not one.",PENDING
+4c471a4e-9259-4d83-9788-5bad853c813a,2024,Paper-20250124132822,,4,“CO ; B= i@) \n H3C H3C \n 87,A:  | B:  | C:  | D: ,Paper_20250124132822.pdf,13,token_overlap_only,2,"83
+
+84
+
+85
+
+Among Group 16 elements, which one does NOT
+
+show —2 oxidation state?
+(1) Te (2) Po
+(3) O (4) Se
+
+In which of the following processes entropy
+
+increases?
+A. A liquid evaporates to vapour.
+
+B. Temperature of a crystalline solid lowered
+from 130 K to 0 K.
+
+D. Cly)>2 Che)
+
+Choose the correct answer from the options given
+
+below:
+(1) A, Cand D (2) CandD
+(3) AandC (4) A,BandD
+
+Match List I with List II.
+List I List II
+(Conversion) (Number of
+
+Faraday required)
+
+A. 1 mol of H,O to O, I 3F
+
+B. 1molof MnO, to Il. 2F
+
+Mn2+
+
+C. 1.5 mol of Ca from I. 1F
+molten CaCl,
+
+D. 1 molofFeOtoFe,03; IV. 5F
+
+Choose the correct answer from the options given
+
+below:
+
+(1) A-II, B-III, C-I, D-IV
+(2) A-IIl, B-IV, C-II, D-I
+(3) A-Il, B-IV, C-I, D-II
+(4) A-IIL, B-IV, C-I, D-II
+
+T1_English |
+
+13
+
+Chemistry : Section-B (Q. No. 86 to 100)
+
+86
+
+87
+
+88
+
+Major products A and B formed in the following
+reaction sequence, are
+
+ott PBr., alc. KOH
+A
+(maior) (major)
+course
+names
+H3C
+Taemtane
+H3C
+aomtae
+
+Consider the following reaction in a sealed vessel
+at equilibrium with concentrations of
+
+N, = 3.0 x 10-3 M, O, = 4.2 x 10-3 M and
+NO = 2.8 x 10-3 M.
+
+2NO (9) = No (2) * Pr(e)
+
+If 0.1 mol L~! of NO) is taken in a closed vessel,
+
++O
+
+what will be degree of dissociation («) of NO;g)
+at equilibrium?
+
+(1) 0.8889 (2) 0.717
+
+(3) 0.00889 (4) 0.0889
+
+The products A and B obtained in the following
+reactions, respectively, are
+
+3ROH + PCl,>3RCI+A
+ROH + PCI; >RCI + HCI+B
+(1) HPO, and POCI,
+
+(2) H3PO3 and POCI;
+
+(3) POCI, and HPO;
+
+(4) POCI, and H;PO,
+
+| Contd...
+",,,SOURCE_MISMATCH,LOW,Only generic token overlap (score=2) was available; the question number '4' could not be independently confirmed on page 13. This page match should be treated as unreliable.,PENDING
+77c3299a-fb7d-4e66-89ab-618502569c2f,2023,Paper-20231108005054,,1,eo mnt 300 3,A:  | B:  | C: 1985 | D: 1992,Paper_20231108005054.pdf,17,token_overlap_only,2,"Botany : Section-A (Q. No. 101 to 135)
+
+101
+
+102
+
+103
+
+104
+
+105
+
+Given below are two statements : One is
+
+labelled as Assertion A and the other is
+
+labelled as Reason R :
+
+Assertion A : Late wood has fewer xylary
+
+elements with narrow vessels.
+
+Reason R : Cambium is less active in
+
+winters.
+
+In the light of the above statements, choose
+
+the correct answer from the options given
+
+below :
+
+(1) A is true but R is false.
+
+(2) A is false but R is true.
+
+(3) Both A and R are true and R is the
+correct explanation of A.
+
+(4) Both A and R are true but R is NOT
+
+the correct explanation of A.
+
+The historic Convention on Biological
+Diversity, “The Earth Summit’ was held in
+Rio de Janeiro in the year :
+
+(1) 1986 (2) 2002
+
+(3) 1985 (4) 1992
+
+In the equation
+
+GPP — R=NPP
+GPP is Gross Primary Productivity
+NPP is Net Primary Productivity
+
+R here is .
+
+(1) Respiratory loss
+
+(2) Reproductive allocation
+
+(3) Photosynthetically active radiation
+(4) Respiratory quotient
+
+What is the function of tassels in the corn
+cob?
+
+(1) To disperse pollen grains
+
+(2) To protect seeds
+
+(3) To attract insects
+
+(4) To trap pollen grains
+
+What is the role of RNA polymerase III in
+
+the process of transcription in Eukaryotes?
+
+(1) Transcription of precursor of mRNA
+
+(2) Transcription of only snRNAs
+
+(3) Transcription of rRNAs (28S, 18S and
+5.8S)
+
+(4) Transcription of tRNA, 5 srRNA and
+
+snRNA
+
+H1_ English |
+
+17
+
+106
+
+107
+
+108
+
+109
+
+110
+
+Upon exposure to UV radiation, DNA
+stained with ethidium bromide will show
+(1) Bright yellow colour
+
+(2) Bright orange colour
+
+(3) Bright red colour
+
+(4) Bright blue colour
+
+The thickness of ozone in a column of air in
+the atmosphere is measured in terms of :
+(1) Decameter (2) Kilobase
+
+(3) Dobson units (4) Decibels
+
+The phenomenon of pleiotropism refers to
+(1) a single gene aff",,,SOURCE_MISMATCH,LOW,Only generic token overlap (score=2) was available; the question number '1' could not be independently confirmed on page 17. This page match should be treated as unreliable.,PENDING
+3d80c3e3-51c7-42d8-ae14-82197870776e,2023,Paper-20231108005054,,4,and oe “a d ori,"A:  | B:  | C:  | D: Antipodals, synergids, and primary
+endosperm nucleus
+130",Paper_20231108005054.pdf,19,number_token + token_overlap>=3,17,"123
+
+124
+
+125
+
+126
+
+127
+
+Cellulose does not form blue colour with
+Iodine because
+(1)
+
+It does not contain complex helices and
+hence cannot hold iodine molecules.
+
+It breakes down when iodine reacts with
+it.
+
+(2)
+(3) It is a disaccharide.
+(4)
+
+It is a helical molecule.
+
+In gene gun method used to introduce alien
+DNA into host cells, microparticles of
+metal are used.
+
+(1) Tungsten or gold
+(2) Silver
+
+(3) Copper
+
+(4) Zinc
+
+Identify the pair of heterosporous
+pteridophytes among the following :
+
+(1) Psilotum and Salvinia
+
+(2) Equisetum and Salvinia
+
+(3) Lycopodium and Selaginella
+(4) Selaginella and Salvinia
+
+Unequivocal proof that DNA is the genetic
+material was first proposed by
+
+(1) Avery, Macleoid and McCarthy
+(2) Wilkins and Franklin
+
+(3) Frederick Griffith
+
+(4) Alfred Hershey and Martha Chase
+
+How many ATP and NADPH, are required
+for the synthesis of one molecule of Glucose
+during Calvin cycle?
+
+(1) 12 ATP and 16 NADPH,
+(2) 18 ATP and 16 NADPH,
+(3) 12 ATP and 12 NADPH,
+(4) 18 ATP and 12 NADPH,
+
+H1_ English |
+
+19
+
+128
+
+129
+
+130
+
+Identify the correct statements :
+
+A. Detrivores perform fragmentation.
+
+B. The humus is further degraded by some
+microbes during mineralization.
+
+C. Water soluble inorganic nutrients go
+down into the soil and get precipitated
+by a process called leaching.
+
+D. The detritus food chain begins with
+living organisms.
+
+E. Earthworms break down detritus into
+
+smaller particles by a process called
+catabolism.
+Choose the correct answer from the options
+given below :
+(1) C, D, E only (2) D, E, A only
+(3) A, B, C only (4) B, C, D only
+
+In angiosperm, the haploid, diploid and
+
+triploid structures of a fertilized embryo sac
+
+sequentially are :
+
+(1) Synergids, Zygote and Primary
+endosperm nucleus
+
+(2) Synergids, antipodals and Polar nuclei
+
+(3) Synergids, Pr",,,PARTIALLY_RECOVERABLE,MEDIUM,"No section-header range was detected to confirm this page, but question number '4' appears as a standalone token on page 19, and 7 stem/option vocabulary words also overlap -- two independent weak signals, not one.",PENDING
+12b4217b-2bd0-45d7-b443-0bfa720108f3,2023,Paper-20231108005837,,3,"| b 4 - 1 10t, \n (G3) sin lay","A:  | B:  | C:  | D: sin |
+12",Paper_20231108005837.pdf,3,number_token + token_overlap>=3,13,"10
+
+11
+
+12
+
+For Young’s double slit experiment, two | 13
+statements are given below:
+
+Statement I : If screen is moved away from
+the plane of slits, angular separation of the
+fringes remains constant.
+
+Statement II : If the monochromatic source
+is replaced by another monochromatic source
+of larger wavelength, the angular separation
+of fringes decreases.
+
+In the light of the above statements, choose
+the correct answer from the options given
+below:
+
+(1) Statement I is true but Statement II
+is false.
+
+(2) Statement I is false but Statement II | 14
+is true.
+
+(3) Both Statement I and Statement II
+are true.
+
+(4) Both Statement I and Statement II
+are false.
+
+Light travels a distance x in time f in air
+
+and 10x in time ty in another denser
+
+medium. What is the critical angle for this
+medium? 15
+
+- t . if 10¢
+(1) sin ats] (2) sin (4)
+
+. ft . _1f 10t
+
+An ac source is connected to a capacitor C. | 16
+Due to decrease in its operating frequency :
+
+(1) displacement current decreases.
+(2) capacitive reactance remains constant
+(3) capacitive reactance decreases.
+
+(4) displacement current increases.
+
+H2_English | 3
+
+The equivalent capacitance of the system
+shown in the following circuit is :
+
+3 uF
+3 uF
+A -— B
+3 uF
+(2) 9 uF
+
+(4) 3 uF
+
+(1) 6uF
+
+(3) 2 uF
+
+In a plane electromagnetic wave travelling in
+free space, the electric field component
+oscillates sinusoidally at a frequency of
+
+2.0x10!9Hz and amplitude 48 vm. Then the
+
+amplitude of oscillating magnetic field is :
+(Speed of light in free space = 3 x 108 m s~!)
+
+(1) 1.6x107’T (2) 1.6x10~°T
+
+(3) 1.6x10-°T (4) 1.6x10%T
+
+In hydrogen spectrum, the shortest
+wavelength in the Balmer series is 1. The
+shortest wavelength in the Bracket series is :
+
+(1) 92 (2) 16%
+
+(3) 2a (4) 4a
+
+A metal wire has mass (0.4 + 0.002) g, radius
+
+(0.340.001) mm and ",,,PARTIALLY_RECOVERABLE,MEDIUM,"No section-header range was detected to confirm this page, but question number '3' appears as a standalone token on page 3, and 3 stem/option vocabulary words also overlap -- two independent weak signals, not one.",PENDING
+c9195714-b404-4fb7-b029-63beba9daadf,2023,Paper-20231108005837,,4,¢ rj ina & hi,A:  | B:  | C:  | D: Corpora quadrigemina ippocampus,Paper_20231108005837.pdf,30,token_overlap_only,2,"195
+
+196
+
+197
+
+Which of the following statements are
+correct?
+
+A. An excessive loss of body fluid from
+
+the body switches off osmoreceptors.
+
+B. ADH facilitates water reabsorption to
+prevent diuresis.
+C. ANF causes vasodilation.
+ADH causes increase in blood pressure.
+E. ADH is responsible for decrease in
+
+GFR.
+
+Choose the correct answer from the options
+given below:
+
+(1) A, B and E only
+(2) C, D and E only
+(3) A and B only
+
+(4) B, C and D only
+
+Which of the following is characteristic
+feature of cockroach regarding sexual
+dimorphism ?
+
+(1) Presence of sclerites
+(2) Presence of anal cerci
+(3) Dark brown body colour and anal cerci
+
+(4) Presence of anal styles
+
+The parts of human brain that helps in
+regulation of sexual behaviour, expression
+of excitement, pleasure, rage, fear etc. are :
+
+(1) Brain stem & epithalamus
+
+(2) Corpus callosum and thalamus
+
+(3) Limbic system & hypothalamus
+
+(4) Corpora quadrigemina & hippocampus
+
+H2_English |
+
+30
+
+198
+
+199
+
+200
+
+Which one of the following is the sequence
+on corresponding coding strand, if the
+sequence on mRNA formed is as follows
+
+5’ AUCGAUCGAUCGAUCGAUCG
+AUCG AUCG 3’?
+
+(1) 5’ ATCGATCGATCGATCGATCG
+ATCGATCG 3°
+
+3’ ATCGATCGATCGATCGATCG
+ATCGATCG 5’
+
+5’ UAGCUAGCUAGCUAGCUA
+GCUAGC UAGC 3°
+
+3’ UAGCUAGCUAGCUAGCUA
+GCUAGCUAGC 3°’
+
+(2)
+
+(3)
+
+(4)
+
+Which of the following statements are
+correct ?
+
+A. Basophils are most abundant cells of
+the total WBCs
+
+B. Basophils secrete histamine, serotonin
+and heparin
+
+C. Basophils are involved in inflammatory
+response
+
+D. Basophils have kidney shaped nucleus
+
+E. Basophils are agranulocytes
+
+Choose the correct answer from the options
+given below:
+
+(1) Band C only (2) A and B only
+(3) D and E only (4) C and E only
+
+Which one of the following is NOT an
+advantage of inbreeding?
+
+(1) Elimination of less desira",,,SOURCE_MISMATCH,LOW,Only generic token overlap (score=2) was available; the question number '4' could not be independently confirmed on page 30. This page match should be treated as unreliable.,PENDING
+c491cac1-ac69-441d-be6b-bacd9cae5517,2023,Paper-20231108005008,,4,10V 5V 10 ; \n E \n D C \n 70,A: 1.5 A from B to A through E | B: 0.2 A from B to A through E | C: 0.5 A from A to B through E | D: 2 A from A to B through E,Paper_20231108005008.pdf,5,number_token + token_overlap>=3,15,"28
+
+29
+
+30
+
+31
+
+32
+
+The potential energy of a long spring when
+stretched by 2 cm is U. If the spring is
+stretched by 8 cm, potential energy stored
+in it will be :
+(1) 16U
+
+(3) 4U
+
+(2) 2U
+(4) 8U
+
+In hydrogen spectrum, the shortest
+wavelength in the Balmer series is 1. The
+shortest wavelength in the Bracket series is :
+
+(1) 16% (2) 2a
+(3) 4a (4) 9a
+
+The equivalent capacitance of the system
+shown in the following circuit is :
+
+3 uF
+3 uF
+A -— ——e B
+3 uF
+(1) 9 uF (2) 2 uF
+(3) 3 pF (4) 6 uF
+
+A metal wire has mass (0.4 + 0.002) g, radius
+
+(0.340.001) mm and length (540.02) cm.
+
+The maximum possible percentage error in
+the measurement of density will nearly be:
+
+(1) 1.4% (2) 1.2%
+(3) 1.3% (4) 1.6%
+
+The venturi-meter works on:
+
+(1) The principle of perpendicular axes
+(2) Huygen’s principle
+
+(3) Bernoulli’s principle
+
+(4) The principle of parallel axes
+
+G1 _ English |
+
+33
+
+34
+
+35
+
+The half life of a radioactive substance is
+20 minutes. In how much time, the activity
+
+1 \h e.g
+of substance drops to (3) of its initial
+
+value?
+(1) 80 minutes (2) 20 minutes
+(3) 40 minutes (4) 60 minutes
+
+The magnetic energy stored in an inductor
+
+of inductance 4 wH carrying a current of 2A
+is :
+
+(1) 8pJ (2) 4uJ
+(3) 4mJ (4) 8mJ
+
+The magnitude and direction of the current
+
+in the following circuit is
+
+27Q WV 5V 10
+
+A || B
+
+E
+
+7Q
+
+(1) 1.5 A from B to A through E
+(2) 0.2 A from B to A through EF
+
+(3) 0.5 A from A to B through E
+
+(4) 2 A from 4 to B through E
+
+| Contd...
+",,,PARTIALLY_RECOVERABLE,MEDIUM,"No section-header range was detected to confirm this page, but question number '4' appears as a standalone token on page 5, and 5 stem/option vocabulary words also overlap -- two independent weak signals, not one.",PENDING
+de50662f-d9c1-4807-a65f-43df6d2294d3,2023,Paper-20231108005008,,5,"2p, <(r""2p, = x""2p, )<o"" 2p, \n . .","A:  | B:  | C: ols<o"" Is<o2s<o"" 2s<o 2p, <
+(x2, = 2p,)<(x""2p, _ n*2p,)<o"" 2p, | D: ois<o* Is<o2s<o"" 2s<o2p, <
+. . .
+o 2p, <(n2p, =n 2p, )<(z 2p, =m 2p, }
+76",Paper_20231108005008.pdf,12,number_token + token_overlap>=3,18,"75 The correct order of energies of molecular
+orbitals of N, molecule, is :
+
+* *
+(1) ols<o Is<o2s<o 2s <(n2p, =n 2p, )<
+* * *
+(x 2p, =% 2p, )<o 2p, < o 2p,
+* *
+(2) ols<o Is<o2s<o 2s <(n2p, =n 2p, |<
+* * *
+5 2p, <(x 2p, =m 2p, )<o 2p,
+(3) ols<o Is<o2s<o 2s<o2p, <
+(x2p, =T 2p, )<(x""2p, =n""2p,)<o"" 2p,
+(4) ols<o"" Is<o2s<o° 2s<o2p, <
+
+o 2p,< (x2p, =n 2p, )< (x*2p, = n*2p, )
+
+76 Homoleptic complex from the following
+complexes is :
+
+(1) Triamminetriaquachromium (III)
+chloride
+
+(2) Potassium trioxalatoaluminate (III)
+
+(3) Diamminechloridonitrito - N -
+platinum (II)
+
+(4) Pentaamminecarbonatocobalt (III)
+chloride
+
+77 Intermolecular forces are forces of attraction
+and repulsion between interacting particles
+that will include :
+
+dipole - dipole forces.
+
+dipole - induced dipole forces.
+hydrogen bonding.
+
+covalent bonding.
+
+MUA >
+
+dispersion forces.
+
+Choose the most appropriate answer from
+the options given below :
+
+(1) A, C, D, E are correct.
+(2) B, C, D, E are correct.
+(3) A, B, C, D are correct.
+(4) A, B, C, E are correct.
+
+G1 _ English |
+
+12
+
+78
+
+79
+
+Select the correct statements from the
+following :
+
+A. Atoms of all elements are composed of
+two fundamental particles.
+
+B. The mass of the electron is
+9.10939 x 10-7! kg,
+
+C. All the isotopes of a given element show
+same chemical properties.
+
+D. Protons and electrons are collectively
+known as nucleons.
+
+E. Dalton’s atomic theory, regarded the
+atom as an ultimate particle of matter.
+
+Choose the correct answer from the options
+given below :
+
+(1) B, C and E only
+(2) A, B and C only
+(3) C, D and E only
+(4) A and E only
+
+Consider the following reaction and identify
+the product (P).
+
+CH; -CH-CH-CH,
+
+| | HB
+CH, OH ——"" + Product (P)
+
+3 — Methylbutan- 2 —ol
+
+CH
+
+|
+(1) CH, ~C-CH, Br
+CH;
+
+3
+
+Br
+|
+
+(2) CH, ene — CH,
+CH,
+
+(3) CH,CH=CH-CH,
+(4) CH",,,PARTIALLY_RECOVERABLE,MEDIUM,"No section-header range was detected to confirm this page, but question number '5' appears as a standalone token on page 12, and 8 stem/option vocabulary words also overlap -- two independent weak signals, not one.",PENDING
+2e1442b6-32f8-46ed-beb5-bc864ee35217,2025,NEET-2025-EN-46,,1,"(Li2+) =17.6 pm \n E,(He*) = -8.72*10-18 J; \n r,(He*) = 26.4 pm",A:  | B:  | C:  | D: ,NEET_2025_EN_46_NTA.pdf.pdf,14,number_token + token_overlap>=3,18,"71
+
+72
+
+Match List - I with List - I
+
+List-I List-I
+A. Haber process I. Fe catalyst
+B. Wacker oxidation II. PdCl,
+C. Wilkinson catalyst III. [(PPh3),RhC1]
+D. Ziegler catalyst IV. TiCl, with
+Al(CH3),
+
+Choose the correct answer from the options
+given below :
+
+(1) A-IL, B-IIL, C-L, D-IV
+(2) A-l, B-II, C-IIL, D-IV
+(3) A-I, B-IV, C-III, D-II
+(4) A-I, B-II, C-IV, D-III
+
+Energy and radius of first Bohr orbit of
+He* and Li?* are
+
+[Given R,, = 2.18 x 10-18 J, ay = 52.9 pm]
+(1) E,(Li#*) = -8.72«10718 J;
+r,(Li2*) = 26.4 pm
+
+E, (He*) = -19.62x 10718 J;
+r,(He*) = 17.6 pm
+
+E, (Li2*) = -19.62«10-!6 J;
+r,(Li2*) = 17.6 pm
+
+E,(He*) = -8.72«107!¢ J;
+r,(He*) = 26.4 pm
+E,(Li2*) = -8.72x107!6 J;
+r,(Li2*) = 17.6 pm
+E,(He*) = -19.62x 10-16 J;
+r,(He*) = 17.6 pm
+
+E, (Li2*) = -19.62« 10718 J;
+r,(Li2*) = 17.6 pm
+E,(He*) = -8.72107!8 J;
+r,(He*) = 26.4 pm
+
+(2)
+
+(3)
+
+(4)
+
+46_English |
+
+14
+
+73
+
+74
+
+75
+
+76
+
+Given below are two statements : one is
+labelled as Assertion (A) and the other is
+labelled as Reason (R).
+
+Assertion (A) : ~~\_~™ I undergoes S,;2
+reaction faster than ~\_~™ CI.
+
+Reason (R) : Iodine is a better leaving group
+because of its large size.
+
+In the light of the above statements, choose the
+correct answer from the options given below:
+
+(1) Both A and R are true but R is not the
+correct explanation of A
+
+A is true but R is false
+A is false but R is true
+
+Both A and R are true and R is the correct
+explanation of A
+
+(2)
+(3)
+(4)
+
+If the half-life (t,,,) for a first order reaction
+is | minute, then the time required for 99.9%
+completion of the reaction is closest to :
+
+(2) 5 minutes
+(4) 2 minutes
+
+(1) 4 minutes
+(3) 10 minutes
+
+Which of the following aqueous solution will
+exhibit highest boiling point?
+
+(1) 0.01M KNO,
+(2) 0.01M Na,SO,
+(3) 0.015M CcH, 50,
+(4) 0.01M Urea
+
+Higher yield of NO in
+
+N",,,PARTIALLY_RECOVERABLE,MEDIUM,"No section-header range was detected to confirm this page, but question number '1' appears as a standalone token on page 14, and 8 stem/option vocabulary words also overlap -- two independent weak signals, not one.",PENDING
+a4cf0fa3-2460-4f86-a5dc-047880f63f85,2023,Paper-20231108010906,,5,"2p, <(r 2Py =m 2p, <o 2p, \n 5 . .","A:  | B:  | C: als<o"" Is<o2s<o"" 2s<o 2p, <
+. . .
+(72, = m2py)<(x 2p. =m 2p, ) <o 2p,
+. . | D: als<o"" Is<o2s<o"" 2s<o 2p, <
+. . .
+o 2p, <(r2p, =n 2p, )<(x 2p, =m 2p,
+. .
+56",Paper_20231108010906.pdf,8,number_token + token_overlap>=3,16,"Chemistry : Section-A (Q. No. 51 to 85)
+
+51
+
+52
+
+53
+
+54
+
+The right option for the mass of CO,
+produced by heating 20g of 20% pure
+limestone is (Atomic mass of Ca = 40)
+
+| Caco, 2008 Ca0+ co, |
+(1) 1.32g (2) 1.12¢
+(3) 1.768 (4) 2.649
+
+Some tranquilizers are listed below. Which
+
+one from the following belongs to
+
+barbiturates?
+
+(1) Veronal
+
+(2) Chlordiazepoxide
+
+(3) Meprobamate
+
+(4) Valium
+
+Given below are two statements : one is
+
+labelled as Assertion A and the other is
+
+labelled as Reason R :
+
+Assertion A : Helium is used to dilute
+
+oxygen in diving apparatus.
+
+Reasons R : Helium has high solubility
+
+in Op.
+
+In the light of the above statements, choose
+
+the correct answer from the options given
+
+below :
+
+(1) A is false but R is true.
+
+(2) Both A and R are true and R is the
+correct explanation of A.
+
+(3) Both A and R are true and R is NOT
+the correct explanation of A.
+
+(4) A is true but R is false.
+
+Given below are two statements : one is
+
+labelled as Assertion A and the other is
+
+labelled as Reason R :
+
+Assertion A : Metallic sodium dissolves in
+
+liquid ammonia giving a deep blue solution,
+
+which is paramagnetic.
+
+Reasons R : The deep blue solution is due
+
+to the formation of amide.
+
+In the light of the above statements, choose
+
+the correct answer from the options given
+
+below :
+
+(1) A is false but R is true.
+
+(2) Both A and R are true and R is the
+correct explanation of A.
+
+(3) Both A and R are true but R is NOT
+the correct explanation of A.
+
+(4) A is true but R is false.
+
+G4 _ English |
+
+55
+
+56
+
+57
+
+The correct order of energies of molecular
+orbitals of N5 molecule, is :
+
+(1) ols<o Is<o2s<o° 2s <(n2p, =7 2p, }<
+
+(x""2p, = x"" 2p, | <o2p,< o 2p,
+
+(2) ols<o Is<o2s<o 2s <(n2p, = 2 2p, )<
+
+0 2p, < (x*2p, =n 2p, | <o"" 2p,
+
+* *
+(3) ols<o Is<o2s<o° 2s<o 2p, <
+
+(2p, =1 2Py ) < ",,,PARTIALLY_RECOVERABLE,MEDIUM,"No section-header range was detected to confirm this page, but question number '5' appears as a standalone token on page 8, and 6 stem/option vocabulary words also overlap -- two independent weak signals, not one.",PENDING
+25bbf62d-a741-407d-81d3-33ec6d435fce,2023,Paper-20231108011659,,1,-6 2) 1.6«10-°T,"A: Lex10""T 2) 1.6 | B:  | C: 1.6x10-°T | D: 1.6x10-7T",Paper_20231108011659.pdf,5,token_overlap_only,2,"27
+
+28
+
+29
+
+30
+
+For Young’s double slit experiment, two
+
+statements are given below:
+
+Statement I : If screen is moved away from
+
+the plane of slits, angular separation of the
+
+fringes remains constant.
+
+Statement II : If the monochromatic source
+
+is replaced by another monochromatic source
+
+of larger wavelength, the angular separation
+
+of fringes decreases.
+
+In the light of the above statements, choose
+
+the correct answer from the options given
+
+below:
+
+(1) Statement I is false but Statement II
+is true.
+
+(2) Both Statement I and Statement II
+are true.
+
+(3) Both Statement I and Statement II
+are false.
+
+(4) Statement I is true but Statement II
+is false.
+
+The magnitude and direction of the current
+in the following circuit is
+
+20 10V 5V 10
+
+A L— B
+
+E
+
+D C
+70
+
+(1) 1.5 A from B to 4 through EF
+
+(2) 0.2 A from B to A through EF
+
+(3) 0.5 A from A to B through E
+
+(4) 5 A from A to B through E
+
+The ratio of radius of gyration of a solid
+sphere of mass M and radius R about its
+own axis to the radius of gyration of the
+thin hollow sphere of same mass and radius
+
+about its axis is:
+(1) 5:2 (2) 3:5
+(3) 5:3 (4) 2:5
+
+A 12 V, 60 W lamp is connected to the
+secondary of a step down transformer, whose
+primary is connected to ac mains of 220 V.
+Assuming the transformer to be ideal, what
+
+is the current in the primary winding?
+(1) 0.37A (2) 0.27A
+(3) 2.7A (4) 3.7A
+
+G5 _ English |
+
+31
+
+32
+
+33
+
+34
+
+35
+
+Light travels a distance x in time 4 in air
+
+and 10x in time ty in another denser
+
+medium. What is the critical angle for this
+medium?
+
+. _1{ 104 . -ift
+(1) sin (44) (2) sin (2)
+
+Let a wire be suspended from the ceiling
+(rigid support) and stretched by a weight W
+attached at its free end. The longitudinal
+stress at any point of cross-sectional area A
+of the wire is :
+
+(1) Zero
+(3) W/A
+
+(2) 2W/A",,,SOURCE_MISMATCH,LOW,Only generic token overlap (score=2) was available; the question number '1' could not be independently confirmed on page 5. This page match should be treated as unreliable.,PENDING
+9474a352-a516-45d7-b383-da6789b8faa1,2023,Paper-20231108011659,,6,"2p, <(x 2p, =m 2p, )<o 2p,","A:  | B:  | C: ols<o"" Is<o2s<o"" 2s<o 2p, <
+(2p, =n 2p, ) < (x"" 2p,= 2p, ) <o° 2p, | D: ois<o* Is<o2s<o* 2s<o2p, <
+* * *
+o 2p, <(72p, == 2py)<(z 2p, =m 2p, }
+54",Paper_20231108011659.pdf,8,number_token + token_overlap>=3,18,"Chemistry : Section-A (Q. No. 51 to 85)
+
+51 In Lassaigne’s extract of an organic | 55
+compound, both nitrogen and sulphur are
+present, which gives blood red colour with
+Fe3* due to the formation of -
+
+(1) [Fe(scn) |""
+
+(2) Fe,[Fe(CN), |, -xH,0
+(3) NaSCN
+
+(4) | Fe(CN), Nos |""
+
+52 Amongst the following, the total number of
+species NOT having eight electrons around
+central atom in its outer most shell, is
+
+NH,, AICl,, BeCl,, CCl,, PCI, :
+
+(1) 1 (2) 3
+(3) 2 (4) 4
+
+53 The correct order of energies of molecular
+orbitals of N, molecule, is :
+
+(1) ols<o Is<o2s<o 2s <(n2p, =n 2p, )<
+
+(x*2p, =n""2p,)<o2p, <o 2p, 56
+(2) ols<o Is<o2s<o° 2s <(n2p, =7 2p, }<
+
+6 2p, <(x""2p, =n"" 2p, | <o 2p,
+(3) ols<o Is<o2s<o 2s<o2p, <
+
+(x2p, = 2p, )<(x*2p, =n""2p,)<o 2p,
+(4) ols<o"" Is<o2s<o° 2s<o 2p, <
+
+o 2p, < (x2p, =7 2Py ) < (x*2p, = n""2p, )
+
+54 Which one is an example of heterogenous
+catalysis?
+
+(1) Combination between dinitrogen and
+dihydrogen to form ammonia in the
+presence of finely divided iron.
+
+(2) Oxidation of sulphur dioxide into sulphur
+trioxide in the presence of oxides of
+nitrogen.
+
+(3) Hydrolysis of sugar catalysed by Ht
+ions.
+
+(4) Decomposition of ozone in presence of
+nitrogen monoxide.
+
+G5 _ English | 8
+
+Given below are two statements :
+Statement I : A unit formed by the
+
+attachment of a base to 1' position of sugar
+
+is known as nucleoside
+
+Statement II : When nucleoside is linked
+
+to phosphorous acid at 5'-position of sugar
+moiety, we get nucleotide.
+
+In the light of the above statements, choose
+the correct answer from the options given
+below :
+
+(1) Statement I is false but Statement II
+is true.
+
+(2) Both Statement I and Statement II
+are true.
+
+(3) Both Statement I and Statement II
+are false.
+
+(4) Statement I is true but Statement I
+is false.
+
+Consider the following reaction and ident",,,PARTIALLY_RECOVERABLE,MEDIUM,"No section-header range was detected to confirm this page, but question number '6' appears as a standalone token on page 8, and 8 stem/option vocabulary words also overlap -- two independent weak signals, not one.",PENDING
+c4fb7507-469d-48e6-addd-880b464552ba,2023,Paper-20231108011040,,6,"2p, <(x""2p, = x 2p, ) <6"" 2p,","A:  | B:  | C:  | D: ols<o* Is<o2s<o"" 2s<o 2p, <
+2
+. . .
+(=2p, ~ n2p,)<(x 2px = 2p,)< o 2p,",Paper_20231108011040.pdf,10,token_overlap_only,6,"61
+
+62
+
+63
+
+Identify the product in the following reaction:
++ —
+N2Cl
+
+(i) CuyBry /HBr
+
+(ii) Mg/dry ether Product
+
+(iii) HO
+MgBr OH
+(1) CO) (2) OQ 65
+Br
+OH
+3) CO) (4) O
+
+Some tranquilizers are listed below. Which
+one from the following belongs to
+barbiturates?
+
+(1) Valium
+
+(2) Veronal
+
+(3) Chlordiazepoxide
+
+(4) Meprobamate
+
+Given below are two statements :
+Statement I : A unit formed by the
+
+attachment of a base to 1' position of sugar
+
+is known as nucleoside
+Statement II : When nucleoside is linked
+
+to phosphorous acid at 5'-position of sugar
+
+moiety, we get nucleotide.
+
+In the light of the above statements, choose
+
+the correct answer from the options given
+
+below :
+
+(1) Statement I is true but Statement II
+is false.
+
+(2) Statement I is false but Statement II
+is true.
+
+(3) Both Statement I and Statement IT
+
+are true.
+
+(4) Both Statement I and Statement II
+
+are false.
+
+H4 English |
+
+10
+
+64
+
+66
+
+The number of o bonds, zt bonds and lone
+pair of electrons in pyridine, respectively are:
+
+(1) 11, 3,1
+(2) 12, 2,1
+(3) 11, 2, 0
+(4) 12, 3,0
+
+Which of the following reactions will NOT
+give primary amine as the product?
+
+(1) CH,NC (i) LiAIHy
+
+(iy H,0@ Product
+
+_ G)LIAINg Product
+
+(2) CH,CONH, —Firoe
+
+Br, / KOH
+
+(3) CH, CONH, —~*———> Product
+
+(4) CH,CN (i) LiAIHy
+
+(iy H,0@ Product
+
+The correct order of energies of molecular
+orbitals of N5 molecule, is :
+
+(1) ols<o"" Is<o2s<o° 2s<o2p, <
+
+o 2p,< (x2p, =1 2p, ) < (x""2p, = n*2p, )
+
+(2) ols<o Is<o2s<o° 2s <(n2p, =7 2p, }<
+
+(x*2p, =1 2p, | <o2p,< o 2p,
+
+(3) ols<o Is<o2s<o° 2s <(n2p, =n 2p,)<
+
+0 2p, < (x"" 2p, = t 2p, | <o 2p,
+
+* *
+(4) ols<o Is<o2s<o 2s<o 2p, <
+
+(x2p, =7 2p, ) < (x*2p, = x"" 2p, ) <o- 2p,
+
+| Contd...
+",,,PARTIALLY_RECOVERABLE,LOW,Only generic token overlap (score=6) was available; the question number '6' could not be independently confirmed on page 10. This page match should be treated as unreliable.,PENDING
+bf2bd7c5-13e3-4d5b-b338-23acc5ff5314,2023,Paper-20231108011040,,1,"2: 2: 2p, =m2 \n . . . \n (x 2p, =a 2p, )<o 2p, < oO 2p, \n (6)) 6 Is<o"" Is<o2s<o"" 2s<(n2p, = 2p, )< \n y \n 6",A:  | B:  | C:  | D: ,Paper_20231108011040.pdf,10,number_token + token_overlap>=3,15,"61
+
+62
+
+63
+
+Identify the product in the following reaction:
++ —
+N2Cl
+
+(i) CuyBry /HBr
+
+(ii) Mg/dry ether Product
+
+(iii) HO
+MgBr OH
+(1) CO) (2) OQ 65
+Br
+OH
+3) CO) (4) O
+
+Some tranquilizers are listed below. Which
+one from the following belongs to
+barbiturates?
+
+(1) Valium
+
+(2) Veronal
+
+(3) Chlordiazepoxide
+
+(4) Meprobamate
+
+Given below are two statements :
+Statement I : A unit formed by the
+
+attachment of a base to 1' position of sugar
+
+is known as nucleoside
+Statement II : When nucleoside is linked
+
+to phosphorous acid at 5'-position of sugar
+
+moiety, we get nucleotide.
+
+In the light of the above statements, choose
+
+the correct answer from the options given
+
+below :
+
+(1) Statement I is true but Statement II
+is false.
+
+(2) Statement I is false but Statement II
+is true.
+
+(3) Both Statement I and Statement IT
+
+are true.
+
+(4) Both Statement I and Statement II
+
+are false.
+
+H4 English |
+
+10
+
+64
+
+66
+
+The number of o bonds, zt bonds and lone
+pair of electrons in pyridine, respectively are:
+
+(1) 11, 3,1
+(2) 12, 2,1
+(3) 11, 2, 0
+(4) 12, 3,0
+
+Which of the following reactions will NOT
+give primary amine as the product?
+
+(1) CH,NC (i) LiAIHy
+
+(iy H,0@ Product
+
+_ G)LIAINg Product
+
+(2) CH,CONH, —Firoe
+
+Br, / KOH
+
+(3) CH, CONH, —~*———> Product
+
+(4) CH,CN (i) LiAIHy
+
+(iy H,0@ Product
+
+The correct order of energies of molecular
+orbitals of N5 molecule, is :
+
+(1) ols<o"" Is<o2s<o° 2s<o2p, <
+
+o 2p,< (x2p, =1 2p, ) < (x""2p, = n*2p, )
+
+(2) ols<o Is<o2s<o° 2s <(n2p, =7 2p, }<
+
+(x*2p, =1 2p, | <o2p,< o 2p,
+
+(3) ols<o Is<o2s<o° 2s <(n2p, =n 2p,)<
+
+0 2p, < (x"" 2p, = t 2p, | <o 2p,
+
+* *
+(4) ols<o Is<o2s<o 2s<o 2p, <
+
+(x2p, =7 2p, ) < (x*2p, = x"" 2p, ) <o- 2p,
+
+| Contd...
+",,,PARTIALLY_RECOVERABLE,MEDIUM,"No section-header range was detected to confirm this page, but question number '1' appears as a standalone token on page 10, and 5 stem/option vocabulary words also overlap -- two independent weak signals, not one.",PENDING
+6a67e7ca-1dd2-4853-9d58-1b63fde9369f,2023,Paper-20231108010211,,6,"2p, <(x*2p, =n"" 2p, )<o"" 2p,",A:  | B:  | C:  | D: ,Paper_20231108010211.pdf,11,token_overlap_only,1,"69
+
+70
+
+71
+
+Given below are two statements : one is | 72
+labelled as Assertion A and the other is
+labelled as Reason R :
+
+Assertion A : In equation AG =-nFE,,,,
+value of A.G depends on n.
+
+Reasons R : E,.1
+
+and AG is an extensive property.
+
+is an intensive property
+
+In the light of the above statements, choose
+the correct answer from the options given
+below :
+
+(1) Both A and R are true and R is NOT
+the correct explanation of A.
+
+(2) A is true but R is false.
+(3) A is false but R is true.
+
+(4) Both A and R are true and R is the
+correct explanation of A.
+
+73
+
+Amongst the following, the total number of
+species NOT having eight electrons around
+central atom in its outer most shell, is
+
+NH,, AICl,, BeCl,, CCl,, PCI, :
+
+(I) 2 (2) 4
+(3) 1 (4) 3
+
+74
+
+The correct order of energies of molecular
+orbitals of N, molecule, is :
+
+* *
+(1) ols<o"" Is<o2s<o 2s<o 2p, <
+
+(x2p, =n 2p, ) < (x"" 2p, = 2p, <o 2p,
+
+(2) ols<o"" Is<o2s<o 2s<o2p, <
+
+o 2p, < (2p, =T 2py ) < (x"" 2p, = t 2p, |
+
+(3) ols<o Is<o2s<o° 2s <(n2p, =n 2p,)<
+
+(x""2p, =x 2p, | <o2p,< o 2p,
+
+(4) ols<o Is<o2s<o 2s <(n2p, = 2 2p, )<
+
+0 2p, < (x*2p, =n 2p, | <o"" 2p,
+
+F3_English | 11
+
+A compound is formed by two elements
+A and B. The element B forms cubic close
+packed structure and atoms of A occupy
+1/3 of tetrahedral voids. If the formula of
+the compound is A,B, then the value of
+x+y is in option
+
+(1) 4
+(3) 2
+
+(2) 3
+(4) 5
+
+The stability of Cu2* is more than Cu” salts
+in aqueous solution due to -
+
+(1) enthalpy of atomization.
+(2) hydration energy.
+(3) second ionisation enthalpy.
+
+(4) first ionisation enthalpy.
+
+Identify the product in the following reaction:
+
++
+N2Cl
+
+(i) CuyBry /HBr
+(ii) Mg/dry ether
+
+(iii) HO
+
+> Product
+
+MegBr
+
+(1)
+
+OH
+(3) O (4)
+Br
+
+(2)
+
+Q
+Z
+
+| Contd...
+",,,SOURCE_MISMATCH,LOW,Only generic token overlap (score=1) was available; the question number '6' could not be independently confirmed on page 11. This page match should be treated as unreliable.,PENDING
+13f4d365-c090-4519-bdd0-f1faa9be2325,2023,Paper-20231108010211,,2,§ ids. Z do Pri,"A:  | B: Synergids, Zygote an rimary
+endosperm nucleus | C: Synergids, antipodals and Polar nuclei
+: : | D: Synergids, Primary endosperm nucleus
+and zygote
+132",Paper_20231108010211.pdf,20,number_token + token_overlap>=3,20,"130
+
+131
+
+132
+
+133
+
+134
+
+135
+
+What is the function of tassels in the corn
+cob?
+
+(1) To trap pollen grains
+
+(2) To disperse pollen grains
+
+(3) To protect seeds
+
+(4) To attract insects
+
+In angiosperm, the haploid, diploid and
+triploid structures of a fertilized embryo sac
+sequentially are :
+
+(1) Antipodals, synergids, and primary
+endosperm nucleus
+
+Synergids, Zygote and Primary
+endosperm nucleus
+
+Synergids, antipodals and Polar nuclei
+
+Synergids, Primary endosperm nucleus
+and zygote
+
+(2)
+
+(3)
+(4)
+
+Which hormone promotes internode/petiole
+elongation in deep water rice?
+
+(1) Kinetin (2) Ethylene
+(3) 2, 4-D (4) GA,
+
+Which of the following stages of meiosis
+involves division of centromere?
+
+(1) Metaphase II (2) Anaphase II
+(3) Telophase (4) Metaphase I
+
+Unequivocal proof that DNA is the genetic
+material was first proposed by
+
+(1) Alfred Hershey and Martha Chase
+(2) Avery, Macleoid and McCarthy
+(3) Wilkins and Franklin
+
+(4) Frederick Griffith
+
+Cellulose does not form blue colour with
+Iodine because
+
+(1) It is a helical molecule.
+
+(2) It does not contain complex helices and
+hence cannot hold iodine molecules.
+
+It breakes down when iodine reacts with
+it.
+
+It is a disaccharide.
+
+(3)
+(4)
+
+F3_English |
+
+20
+
+Botany : Section-B (Q. No. 136 to 150)
+
+136
+
+137
+
+138
+
+139
+
+Match List I with List II :
+
+List I List II
+A. Oxidative I. Citrate
+decarboxylation synthase
+B. Glycolysis Il. Pyruvate
+dehydrogenase
+C. Oxidative III. Electron
+phosphorylation transport system
+D. Tricarboxylic IV. EMP pathway
+acid cycle
+
+Choose the correct answer from the options
+given below :
+
+(1) A-II, B-IV, C-I, D-II
+
+(2) A-III, B-I, C-II, D-IV
+
+(3) A-II, B-IV, C-IH, D-I
+
+(4) A-III, B-IV, C-II, D-I
+
+Which of the following combinations is
+required for chemiosmosis?
+(1) membrane, proton pump,
+proton gradient, NADP syn",,,PARTIALLY_RECOVERABLE,MEDIUM,"No section-header range was detected to confirm this page, but question number '2' appears as a standalone token on page 20, and 10 stem/option vocabulary words also overlap -- two independent weak signals, not one.",PENDING
+15980905-eefd-46c9-bcd0-4eb1c0bbc773,2025,NEET-2025-EN-47,,3,1 B=-1 1 5 5,"A:  | B:  | C: 2 2 y 2 2
+a=-~—,0=-—,p=-ly=-—,5==
+1 1 ] 7 | D: a=-5,0=-5,B=-bLy=5.8=5",NEET_2025_EN_47_NTA.pdf.pdf,,,0,,,,UNRESOLVED,,no candidate page found by any method,PENDING
+3a3f3f14-beca-491b-84ae-02a3f7dabcdd,2023,Paper-20231108005158,,6,"2p, <(n""2p, = x 2p,)<o"" 2p, 70","A:  | B: ols<o"" Is<o2s<o"" 2s<o 2p, <
+Zz
+. . .
+(72, =T 2p,)<(x 2Px = 2p,)<o °P, | C: ois<o* Is<o2s<o"" 2s<o2p, <
+o 2p, <(2p, = 2p, )< (*2p, = x"" 2p, ) | D: ols<o* Is<o2s<o"" 2s <(n2p, =n 2p,)<
+(x""2p, = x 2p,)<o 2p, < o 2p,",Paper_20231108005158.pdf,10,token_overlap_only,8,"65
+
+66
+
+67
+
+68
+
+Taking stability as the factor, which one of | 69
+
+the following correct
+relationship?
+(1) TICl, > TIC] (2) Inl, > Inl
+
+(3) AICI> AICI, (4) TI > TH,
+
+represents
+
+Which one is an example of heterogenous
+
+catalysis?
+
+(1) Oxidation of sulphur dioxide into sulphur
+trioxide in the presence of oxides of
+nitrogen.
+
+(2) Hydrolysis of sugar catalysed by Ht
+
+ions.
+
+(3) Decomposition of ozone in presence of
+
+nitrogen monoxide.
+
+Combination between dinitrogen and
+dihydrogen to form ammonia in the
+presence of finely divided iron.
+
+(4)
+
+The number of o bonds, 7 bonds and lone
+pair of electrons in pyridine, respectively are:
+
+(1) 11, 2, 0 (2) 12, 3,0
+(3) 11, 3,1 (4) 12,2, 1
+
+The correct order of energies of molecular
+orbitals of N, molecule, is :
+
+* *
+(1) oIls<o Is<o2s<o 2s <(n2p, = 2 2p, )<
+
+0 2p, < (x*2p, =n 2p, | <o"" 2p,
+
+* *
+(2) ols<o Is<o2s<o 2s<o 2p, <
+
+(x2p, =T 2py ) < (x"" 2p, = 1 2py <o 2p,
+
+(3) ols<o Is<o2s<o° 2s<o 2p, <
+
+o 2p,< (x2p, =n 2p, ) < (x*2p, = n*2p, )
+
+(4) ols<o Is<o2s<o 2s <(n2p, =n 2p, )<
+
+(x*2p, =1 2p, J <o2p,< o 2p,
+
+E2_English |
+
+10
+
+70
+
+Given below are two statements : one is
+
+labelled as Assertion A and the other is
+
+labelled as Reason R :
+
+Assertion A : Helium is used to dilute
+
+oxygen in diving apparatus.
+
+Reasons R : Helium has high solubility
+in Oo.
+
+In the light of the above statements, choose
+the correct answer from the options given
+
+below :
+
+(1) Both A and R are true and R is the
+
+correct explanation of A.
+
+(2) Both A and R are true and R is NOT
+
+the correct explanation of A.
+
+(3) A is true but R is false.
+
+(4) A is false but R is true.
+
+For a certain reaction, the rate = k[A] [B].
+
+when the initial concentration of A is tripled
+keeping concentration of B constant, the
+
+initial rate would
+
+(1) decrease by a factor of nine.
+(2) increas",,,PARTIALLY_RECOVERABLE,LOW,Only generic token overlap (score=8) was available; the question number '6' could not be independently confirmed on page 10. This page match should be treated as unreliable.,PENDING
+137da9f4-c364-4484-b599-e7908fc898c2,2023,Paper-20231108004734,,6,"2p, <(x*2p, = x"" 2p, } <o"" 2p,","A:  | B: ols<o"" Is<o2s<o"" 2s<o 2p, <
+(n2p, =n 2p, )< (x*2p, _ ""2p, )< o* 2p,
+‘ | C: ols<o"" Is<o2s<o"" 2s<o2p, <
+. . .
+o 2p, <(72p, =n 2p, )<(z 2p, =7 2p,
+* * | D: ols<o Is<o2s<o 2s< (72p, =%2Py <
+(x""2p, _ x"" 2p, <0 2p, < o* 2p,
+66",Paper_20231108004734.pdf,10,token_overlap_only,9,"63 The relation between n,,, (n,, = the number | 67 _ Intermolecular forces are forces of attraction
+of permissible values of magnetic quantum and repulsion between interacting particles
+number (m)) for a given value of azimuthal that will include :
+
+quantum number (/), is ; ;
+A. dipole - dipole forces.
+
+n,7!
+
+5 dipole - induced dipole forces.
+
+(1) [=
+
+(2) J=2n,, +1
+hydrogen bonding.
+
+B.
+C.
+—972 =
+3) ny=2lt+l G4) nyal+2 D. covalent bonding.
+E.
+
+dispersion forces.
+
+64 Amongst the following, the total number of
+
+species NOT having eight electrons around
+central atom in its outer most shell, is
+
+NH,, AICl,, BeCl,, CCl,, PCI, :
+
+(1) 3 (2) 2
+(3) 4 (4) 1 (3) A, B, C, E are correct.
+
+(4) A, C, D, E are correct.
+
+Choose the most appropriate answer from
+the options given below :
+
+(1) B, C, D, E are correct.
+(2) A, B, C, D are correct.
+
+65 The correct order of energies of molecular
+
+orbitals of Ny molecule, is : 68 Which of the following statements are NOT
+
+* * _ correct?
+(1) ols<o Is<o2s<o 2s <(n2p, = 2 2p,)<
+
+A. Hydrogen is used to reduce heavy metal
+0 2p, < (x"" 2p, ="" 2p, | <o"" 2p, oxides to metals.
+
+B. Heavy water is used to study reaction
+
+(2) ols<o' Is<o2s<o 2s<o 2p, < mechanism.
+
+(n2p, =n 2p, < (x"" 2p, =n"" 2p, <o"" 2p, C. Hydrogen is used to make saturated fats
+
+from oils.
+(3) ols<o° Is<o2s<o' 2s<o 2p, < D. The H-H bond dissociation enthalpy is
+. . . lowest as compared to a single bond
+S 2p, <(n2p, =n 2py)<(x 2p, =1 2p, J between two atoms of any element.
+
+E. Hydrogen reduces oxides of metals that
+
+ols<o* Is<o2s<o 2s<(n2p. =22 < . .
+(4) | Px Py) are more active than iron.
+
+Choose the most appropriate answer from
+the options given below :
+
+(1) B, C, D, E only
+
+(x*2p, = 2p, J <o2p,< o 2p,
+
+66 The number of o bonds, 2 bonds and lone
+
+pair of electrons in pyridine, respectively",,,PARTIALLY_RECOVERABLE,LOW,Only generic token overlap (score=9) was available; the question number '6' could not be independently confirmed on page 10. This page match should be treated as unreliable.,PENDING
+ff08f003-1e2a-4630-a4cb-4b34d841ab9e,2023,Paper-20231108012938,,3,ii) H30* [A] 4 [5] \n ot \n ar [(] Was ner? [PI \n HB,"A: CyHyo | B: HC=C® Na* | C: CY
+oT | D: ",Paper_20231108012938.pdf,14,number_token + token_overlap>=3,14,"90 = Match List - I with List - II : 92
+List - I (Oxoacids List - II (Bonds)
+
+of Sulphur)
+
+Two S-OH, Four S=O,
+
+One S-O-S
+
+II. Two S-OH, One S=O
+
+III. Two S-OH, Four S=O, 93
+
+One S-O-O-S
+
+A. Peroxodisul- I.
+phuric acid
+
+B. Sulphuric acid
+
+C. Pyrosulphuric
+acid
+
+D. Sulphurous acid IV. Two S-OH, Two S=O
+
+Choose the correct answer from the options
+given below :
+
+(1) A-I, B-L, C-IV, D-II
+(2) A-II, B-IV, C-IH, D-I
+(3) A-I, B-IL, C-IL, D-IV
+(4) A-IU, B-IV, C-L, D-II
+
+91 = Identify the final product [D] obtained in
+the following sequence of reactions.
+
+CH,CHO hoe? [A] 72°45 [B] 01
+
+HBr 5 [c] >[D]
+
+Na/dry ether
+(1) CyHyo
+
+(2) HC=C® Nat
+
+(3)
+
+(4)
+
+cr
+
+H6_English | 14
+
+Which complex compound is most stable?
+
+(1)
+
+| CoCl, (en), | NO,
+
+(2) | Co(NH,), | -(80,),
+(3) |Co(NH,), (H,0)Br |(No,),
+(4) [Co(NH,),(NO5), |
+
+Consider the following compounds/species:
+
+il.
+
+iii. iv.
+
+vi.
+
+The number of compounds/species which
+obey Huckel’s rule is
+(1) 2 (2) 5
+(3) 4 (4) 6
+
+Oper
+
+Vii.
+
+olaare
+
+Consider the following reaction :
+
+Identify products A and B.
+
+(1) nC S-cuganas-€_\-on
+(2) w€ \-cranao-€
+
+(3) m€S-crmas-(\-on
+(4) w€ \-cronaas-C V1
+
+| Contd...
+",,,PARTIALLY_RECOVERABLE,MEDIUM,"No section-header range was detected to confirm this page, but question number '3' appears as a standalone token on page 14, and 4 stem/option vocabulary words also overlap -- two independent weak signals, not one.",PENDING
+abd4ab39-be35-4f64-9045-3c5cb73a94ec,2023,Paper-20231108011342,,1,"2: 2: 2p, =m2 \n (x""2p, =x° 2p, <o2p, < 6” 2p,","A:  | B:  | C:  | D: ols<o"" Is<o2s<o"" 2s <(n2p, =n 2p, )<
+. . .
+5",Paper_20231108011342.pdf,9,number_token + token_overlap>=3,17,"57
+
+58
+
+59
+
+60
+
+61
+
+For a certain reaction, the rate = k[A] [B].
+
+when the initial concentration of A is tripled
+keeping concentration of B constant, the
+initial rate would
+
+(1) increase by a factor of six.
+
+(2) increase by a factor of nine.
+
+(3) increase by a factor of three.
+
+(4) decrease by a factor of nine.
+
+Taking stability as the factor, which one of
+
+the following correct
+
+relationship?
+(1) Inl, > Inl
+(3) TI > TI,
+
+represents
+
+(2) AICI > AICI,
+(4) TICI, > TICI
+
+Amongst the given options which of the
+following molecules /ion acts as a Lewis
+acid?
+
+(1) H,O
+(3) OH-
+
+(2) BP;
+(4) NH,
+
+The number of o bonds, 7 bonds and lone
+
+pair of electrons in pyridine, respectively are:
+(1) 12, 3, 0 (2) 11, 3, 1
+(3) 12,2, 1 (4) 11, 2, 0
+
+The correct order of energies of molecular
+orbitals of N, molecule, is :
+
+(1) ols<o"" Is<o2s<o 2s<o 2p, <
+(x2p, =n 2p,)<(x""2p, =n""2p,)<o"" 2p,
+(2) ols<o"" Is<o2s<o° 2s<o 2p, <
+* * *
+o 2p, <(n2p, = 2p, }<(z 2p, =m 2p, J
+(3) ols<o Is<o2s<o° 2s <(n2p, =7 2p, )<
+(x""2p, =n"" 2p, | <o2p,< o 2p,
+(4) ols<o"" Is<o2s<o"" 2s <(n2p, = 2 2p, )<
+
+0 2p, < (x"" 2p, = T 2p, J <o 2p,
+
+F5_English |
+
+62
+
+63
+
+Consider the following reaction and identify
+the product (P).
+
+CH, -CH~CH-CH,
+| |
+CH; OH
+
+3 — Methylbutan- 2 —ol
+
+HBr, product (P)
+
+(1) CH,CH=CH-CH,
+
+(2) CH, - yu - yu —CH,
+CH, Br
+
+T°
+(3) CH,-C-CH, Br
+
+CH,
+
+Br
+|
+
+(4) CH, ene — CH,
+CH,
+
+Given below are two statements : one is
+labelled as Assertion A and the other is
+labelled as Reason R :
+
+Assertion A : In equation AG =~nFE,,,;
+
+value of A.G depends on n.
+
+Reasons R : E,,;, is an intensive property
+
+and AG is an extensive property.
+
+In the light of the above statements, choose
+the correct answer from the options given
+below :
+
+(1) Both A and R are true and R is NOT
+the correct explanation of A.
+
+A is true but R is false.
+",,,PARTIALLY_RECOVERABLE,MEDIUM,"No section-header range was detected to confirm this page, but question number '1' appears as a standalone token on page 9, and 7 stem/option vocabulary words also overlap -- two independent weak signals, not one.",PENDING
+ba6e1b64-62d8-4be7-bbfd-42d4a8bda26d,2023,Paper-20231108011342,,5,"2p, <(x 2p, =1 2p, )<o 2p,",A:  | B:  | C:  | D: ,Paper_20231108011342.pdf,9,token_overlap_only,1,"57
+
+58
+
+59
+
+60
+
+61
+
+For a certain reaction, the rate = k[A] [B].
+
+when the initial concentration of A is tripled
+keeping concentration of B constant, the
+initial rate would
+
+(1) increase by a factor of six.
+
+(2) increase by a factor of nine.
+
+(3) increase by a factor of three.
+
+(4) decrease by a factor of nine.
+
+Taking stability as the factor, which one of
+
+the following correct
+
+relationship?
+(1) Inl, > Inl
+(3) TI > TI,
+
+represents
+
+(2) AICI > AICI,
+(4) TICI, > TICI
+
+Amongst the given options which of the
+following molecules /ion acts as a Lewis
+acid?
+
+(1) H,O
+(3) OH-
+
+(2) BP;
+(4) NH,
+
+The number of o bonds, 7 bonds and lone
+
+pair of electrons in pyridine, respectively are:
+(1) 12, 3, 0 (2) 11, 3, 1
+(3) 12,2, 1 (4) 11, 2, 0
+
+The correct order of energies of molecular
+orbitals of N, molecule, is :
+
+(1) ols<o"" Is<o2s<o 2s<o 2p, <
+(x2p, =n 2p,)<(x""2p, =n""2p,)<o"" 2p,
+(2) ols<o"" Is<o2s<o° 2s<o 2p, <
+* * *
+o 2p, <(n2p, = 2p, }<(z 2p, =m 2p, J
+(3) ols<o Is<o2s<o° 2s <(n2p, =7 2p, )<
+(x""2p, =n"" 2p, | <o2p,< o 2p,
+(4) ols<o"" Is<o2s<o"" 2s <(n2p, = 2 2p, )<
+
+0 2p, < (x"" 2p, = T 2p, J <o 2p,
+
+F5_English |
+
+62
+
+63
+
+Consider the following reaction and identify
+the product (P).
+
+CH, -CH~CH-CH,
+| |
+CH; OH
+
+3 — Methylbutan- 2 —ol
+
+HBr, product (P)
+
+(1) CH,CH=CH-CH,
+
+(2) CH, - yu - yu —CH,
+CH, Br
+
+T°
+(3) CH,-C-CH, Br
+
+CH,
+
+Br
+|
+
+(4) CH, ene — CH,
+CH,
+
+Given below are two statements : one is
+labelled as Assertion A and the other is
+labelled as Reason R :
+
+Assertion A : In equation AG =~nFE,,,;
+
+value of A.G depends on n.
+
+Reasons R : E,,;, is an intensive property
+
+and AG is an extensive property.
+
+In the light of the above statements, choose
+the correct answer from the options given
+below :
+
+(1) Both A and R are true and R is NOT
+the correct explanation of A.
+
+A is true but R is false.
+",,,SOURCE_MISMATCH,LOW,Only generic token overlap (score=1) was available; the question number '5' could not be independently confirmed on page 9. This page match should be treated as unreliable.,PENDING
+13bf8afd-62b4-4361-a5fd-eb4f5a821f0e,2023,Paper-20231108011342,,3,"L BAL. CL D-Iv \n G) Ac, BAL, Ci, D-","A:  | B:  | C:  | D: AUlIl, B-l, C-IV, D-II
+;
+172",Paper_20231108011342.pdf,26,number_token + token_overlap>=3,13,"171
+
+Match List I with List II.
+List I List I
+A. P-wave I. Beginning of systole
+B. Q- wave II. Repolarisation of
+ventricles
+
+C. QRS complex III. Depolarisation of atria
+D. T-wave IV. Depolarisation of
+ventricles
+
+Choose the correct answer from the options
+given below:
+
+(1) A-IV, B-IIL, C-II, D-I
+(2) A-II, B-IV, C-L, D-II
+(3) A-I, B-II, C-IIl, D-IV
+(4) A-IIl, B-I, C-IV, D-II
+
+172 Match List I with List II.
+
+List I List IT
+(Interacting (Name of
+species) Interaction)
+A. ALeopard and a I. Competition
+Lion in a forest/
+grassland
+B. A Cuckoo laying Il. Brood
+egg ina Crow’s nest parasitism
+C. Fungi androotofa III. Mutualism
+higher plant in
+Mycorrtizae
+D. Acattle egret and IV. Commensalism
+a Cattle ina field
+
+Choose the correct answer from the options
+given below:
+
+(1) A-L, B-Il, C-IV, D-III
+(2) A-IIl, B-IV, C-I, D-II
+(3) A-IL, B-III, C-I, D-IV
+(4) A-I, B-II, C-III, D-IV
+
+F5_English |
+
+26
+
+173
+
+174
+
+175
+
+176
+
+Which one of the following symbols
+represents mating between relatives in
+human pedigree analysis?
+
+Which of the following statements is correct?
+
+(1) Biomagnification refers to increase in
+concentration of the toxicant at
+
+successive trophic levels.
+
+(2)
+
+Presence of large amount of nutrients
+in water restricts ‘Algal Bloom’
+
+(3)
+(4)
+
+Algal Bloom decreases fish mortality
+
+Eutrophication refers to increase in
+domestic sewage and waste water in
+lakes.
+
+Which of the following is not a cloning
+vector?
+
+(1) YAC (2) pBR322
+(3) Probe (4) BAC
+Match List I with List II.
+List I List II
+A. Vasectomy I. Oral method
+B. Coitus II. Barrier method
+interruptus
+C. Cervical caps III. Surgical method
+D. Saheli IV. Natural method
+Choose the correct answer from the options
+given below:
+(1) A-II, B-IV, C-II, D-I
+(2) A-II, B-III, C-I, D-IV
+(3) A-IV, B-II, C-I, D-III
+(4) A-III, B-I, C-IV, D-II
+| ",,,PARTIALLY_RECOVERABLE,MEDIUM,"No section-header range was detected to confirm this page, but question number '3' appears as a standalone token on page 26, and 3 stem/option vocabulary words also overlap -- two independent weak signals, not one.",PENDING
+030dc7b8-c176-4c2f-9116-a633816cd219,2024,Paper-20250124133115,,100,kPa - -- 43 1b \n 100cm> 400 cm? \n v—,A: -907 | B: -60/ | C: 9a | D: 307,Paper_20250124133115.pdf,3,number_token + token_overlap>=3,16,"The maximum elongation of a steel wire of 1 m
+length if the elastic limit of steel and its Young’s
+modulus, respectively, are 8 x 108 N m-~ and
+2x10UN m2, is:
+(1) 40mm
+
+(3) 4mm
+
+(2) 8mm
+(4) 0.4mm
+
+Two bodies A and B of same mass undergo
+completely inelastic one dimensional collision.
+The body A moves with velocity v, while body B
+is at rest before collision. The velocity of the
+system after collision is v. The ratio v, : v is:
+(1) 4:1 (2) 1:4
+
+(3) 1:2 (4) 2:1
+
+In a vernier calipers, (V + 1) divisions of vernier
+scale coincide with N divisions of main scale. If
+1 MSD represents 0.1 mm, the vernier constant
+(in cm) is:
+
+(1) 100N (2) 10(N+1)
+
+i
+©) Tow Too +1)
+
+A thermodynamic system is taken through the
+cycle abcda. The work done by the gas along the
+path bc is :
+
+P
+
+t d c
+
+- “ft 4
+100 kPaf - - - +g b
+
+100cm?  400em?”
+Vv
+(1) -907 (2) 60
+(3) zero (4) 30/7
+
+A wheel of a bullock cart is rolling on a level
+road as shown in the figure below. If its linear
+speed is v in the direction shown, which one of
+the following options is correct (P and Q are any
+highest and lowest points on the wheel,
+respectively)?
+
+P
+v
+—
+Q
+(1) Both the points P and QO move with equal
+speed.
+
+(2) Point P has zero speed.
+(3) Point P moves slower than point Q.
+(4) Point P moves faster than point Q.
+
+T6_Hindi+English |
+
+1 At orang & Rete ch Oe Hl Reet HT Weare STAT TAT
+sao Weare Ate BAT: 8 x 108 N m? aa
+2x10! N m2 dt ga ae Ot rag 4 ofa 8:
+
+(1) 40mm (2) 8mm
+
+(3) 4mm (4) 0.4mm
+
+aM Saar & cl fies Ag B yaa area Ua
+feria dag ord ti dag a oe fos Aa vy, & aa
+ata wate fies B ferry 4 31 dae & aga Pras
+Hl MT vy Sl AGFA vs V> B:
+
+(1) 4:1 (2) 1:4
+
+(3) 12 (4) 2:1
+
+Um aMat aed FY atae aM & (N+ 1) Get oT
+a Fe Ta & Nari & aM & aear 1 ale Fer
+TAM & Up UM ot Ar 0.1 At et at ahtax Praia
+(At A) @:
+(1) 100N (2) 10(N+1)
+
+] 1
+
+©)",,,PARTIALLY_RECOVERABLE,MEDIUM,"No section-header range was detected to confirm this page, but question number '100' appears as a standalone token on page 3, and 6 stem/option vocabulary words also overlap -- two independent weak signals, not one.",PENDING
+1f50c77b-0e70-49dc-ae54-25beda0fc723,2024,Paper-20250124133115,,63,"g mol""!, 1F = 96487 C)","A: 31.52 | B: 0.0315 g
+G) 3.15¢ | C:  | D: 0.315 g
+| g7 ua afte X FAH 32%, BH 20% aire sre whisra C
+& laa X ar Gergana: 3:
+(Remmren?: van A = 64: B=40;C=32u)",Paper_20250124133115.pdf,21,number_token + token_overlap>=3,24,"Chemistry : Section-B (Q. No. 86 to 100)
+
+86
+
+87
+
+88
+
+89
+
+90
+
+91
+
+Mass in grams of copper deposited by passing
+9.6487 A current through a voltmeter containing
+copper sulphate solution for 100 seconds is:
+(Given : Molar mass of Cu : 63 g mol"",
+
+IF = 96487 C)
+
+(1) 31.5¢ (2) 0.0315 g
+
+(3) 3.15 ¢g (4) 0.315 g
+
+Acompound X contains 32% of A, 20% of B and
+remaining percentage of C. Then, the empirical
+formula of X is :
+
+(Given atomic masses of A= 64; B= 40; C =32 u)
+(1) AB,C, (2) ABC,
+
+(3) A,BC; (4) ABC,
+
+Consider the following reaction in a sealed vessel
+
+at equilibrium with concentrations of
+
+N, =3.0 x 10-3. M, O, = 4.2 x 10-3 M and
+
+NO = 2.8 x 10-3 M.
+
+2NO,,=N,,,+0
+(g) 2(g)  2(g)
+
+If 0.1 mol L~! of NO) is taken in a closed vessel,
+
+what will be degree of dissociation (a) of NOw)
+at equilibrium?
+
+(1) 0.8889 (2) 0.717
+
+(3) 0.00889 (4) 0.0889
+
+The work done during reversible isothermal
+expansion of one mole of hydrogen gas at 25°C
+from pressure of 20 atmosphere to 10 atmosphere
+is:
+
+(Given R = 2.0 cal K~! mol!)
+
+(1) 413.14 calories (2) 100 calories
+
+(3) Ocalorie (4) — 413.14 calories
+
+The products A and B obtained in the following
+reactions, respectively, are
+
+3ROH + PCI, >3RCI+A
+
+ROH + PCI; >RCI + HCI +B
+
+(2) HPO; and POC],
+
+(3) POCI, and H3PO3
+
+(4) POCI, and H,PO,
+
+Given below are two statements :
+
+3+
+Statement I : |Co(NH;) | is a homoleptic
+
++
+complex whereas |Co(NH,), Cl, | is a
+heteroleptic complex.
+
+3+
+Statement IT : Complex |Co(NH, )e | has only
+
++
+one kind of ligands but |Co(NH,), cl, | has
+
+more than one kind of ligands.
+
+In the light of the above statements, choose the
+correct answer from the options given below:
+(1) Statement I is true but Statement II is false.
+(2) Statement I is false but Statement II is true.
+(3) Both Statement I and Statement II are true.
+(4) B",,,PARTIALLY_RECOVERABLE,MEDIUM,"No section-header range was detected to confirm this page, but question number '63' appears as a standalone token on page 21, and 14 stem/option vocabulary words also overlap -- two independent weak signals, not one.",PENDING
+868b96ec-6d5a-4e8c-85dd-1d9989552b07,2024,Paper-20250124133115,,10,"he A: fui - - . a \n mt te Ion : "" \n 11.",A:  | B:  | C:  | D: ,Paper_20250124133115.pdf,3,number_token + token_overlap>=3,13,"The maximum elongation of a steel wire of 1 m
+length if the elastic limit of steel and its Young’s
+modulus, respectively, are 8 x 108 N m-~ and
+2x10UN m2, is:
+(1) 40mm
+
+(3) 4mm
+
+(2) 8mm
+(4) 0.4mm
+
+Two bodies A and B of same mass undergo
+completely inelastic one dimensional collision.
+The body A moves with velocity v, while body B
+is at rest before collision. The velocity of the
+system after collision is v. The ratio v, : v is:
+(1) 4:1 (2) 1:4
+
+(3) 1:2 (4) 2:1
+
+In a vernier calipers, (V + 1) divisions of vernier
+scale coincide with N divisions of main scale. If
+1 MSD represents 0.1 mm, the vernier constant
+(in cm) is:
+
+(1) 100N (2) 10(N+1)
+
+i
+©) Tow Too +1)
+
+A thermodynamic system is taken through the
+cycle abcda. The work done by the gas along the
+path bc is :
+
+P
+
+t d c
+
+- “ft 4
+100 kPaf - - - +g b
+
+100cm?  400em?”
+Vv
+(1) -907 (2) 60
+(3) zero (4) 30/7
+
+A wheel of a bullock cart is rolling on a level
+road as shown in the figure below. If its linear
+speed is v in the direction shown, which one of
+the following options is correct (P and Q are any
+highest and lowest points on the wheel,
+respectively)?
+
+P
+v
+—
+Q
+(1) Both the points P and QO move with equal
+speed.
+
+(2) Point P has zero speed.
+(3) Point P moves slower than point Q.
+(4) Point P moves faster than point Q.
+
+T6_Hindi+English |
+
+1 At orang & Rete ch Oe Hl Reet HT Weare STAT TAT
+sao Weare Ate BAT: 8 x 108 N m? aa
+2x10! N m2 dt ga ae Ot rag 4 ofa 8:
+
+(1) 40mm (2) 8mm
+
+(3) 4mm (4) 0.4mm
+
+aM Saar & cl fies Ag B yaa area Ua
+feria dag ord ti dag a oe fos Aa vy, & aa
+ata wate fies B ferry 4 31 dae & aga Pras
+Hl MT vy Sl AGFA vs V> B:
+
+(1) 4:1 (2) 1:4
+
+(3) 12 (4) 2:1
+
+Um aMat aed FY atae aM & (N+ 1) Get oT
+a Fe Ta & Nari & aM & aear 1 ale Fer
+TAM & Up UM ot Ar 0.1 At et at ahtax Praia
+(At A) @:
+(1) 100N (2) 10(N+1)
+
+] 1
+
+©)",,,PARTIALLY_RECOVERABLE,MEDIUM,"No section-header range was detected to confirm this page, but question number '10' appears as a standalone token on page 3, and 3 stem/option vocabulary words also overlap -- two independent weak signals, not one.",PENDING
+a13449f8-ace8-4735-99d8-a3f11049109c,2024,Paper-20250124133206,,2,"10! N m™®, is:",A: 0.4mm | B: 40mm | C: 8mm | D: 4mm,Paper_20250124133206.pdf,3,number_token + token_overlap>=3,15,"10
+
+A thin flat circular disc of radius 4.5 cm is placed
+gently over the surface of water. If surface tension
+of water is 0.07 Nm~!, then the excess force
+required to take it away from the surface is :
+
+(1) 198N (2) 1.98 mN
+(3) 99N (4) 19.8mN
+
+Given below are two statements: one is labelled
+as Assertion A and the other is labelled as
+Reason R.
+
+Assertion A : The potential (V’) at any axial point,
+
+at 2 m distance(r) from the centre of the dipole
+
+»
+of dipole moment vector P of magnitude,
+
+4x 106Cm, is +9x10°V.
+
+| 9
+(Take dng SI units)
+
+2P
+Reason R : V =4+———>
+
+7 where r is the
+4negr
+
+distance of any axial point, situated at 2 m from
+the centre of the dipole.
+
+In the light of the above statements, choose the
+correct answer from the options given below:
+
+(1) Both A and R are true and R is NOT the
+correct explanation of A.
+
+(2) A is true but R is false.
+(3) A is false but R is true.
+
+(4) Both A and R are true and R is the correct
+explanation of A.
+
+In a uniform magnetic field of 0.049 T, amagnetic
+needle performs 20 complete oscillations in
+5 seconds as shown. The moment of inertia of the
+needle is 9.8 x 10° kg m2. If the magnitude of
+magnetic moment of the needle is x x 10> Am2;
+then the value of ‘x’ is :
+
+(1)
+
+(3) 1280 x2
+
+R1_English |
+
+11
+
+12
+
+13
+
+14
+
+If the monochromatic source in Young’s double
+
+slit experiment is replaced by white light, then
+
+(1) there will be a central dark fringe surrounded
+by a few coloured fringes.
+
+(2) there will be a central bright white fringe
+surrounded by a few coloured fringes.
+
+(3) all bright fringes will be of equal width.
+
+(4) interference pattern will disappear.
+
+Given below are two statements :
+
+Statement I : Atoms are electrically neutral as
+
+they contain equal number of positive and
+
+negative charges.
+
+Statement II : Atoms of each e",,,PARTIALLY_RECOVERABLE,MEDIUM,"No section-header range was detected to confirm this page, but question number '2' appears as a standalone token on page 3, and 5 stem/option vocabulary words also overlap -- two independent weak signals, not one.",PENDING
+65ee6efe-0a4a-4bb8-986d-c37b71f5fa4f,2023,Paper-20231108005321,,8,Atl BL Cw hn,"A:  | B:  | C:  | D: A-Il, B-IV, C-L, D-III
+:
+143",Paper_20231108005321.pdf,15,number_token + token_overlap>=3,13,"90
+
+91
+
+92
+
+Which complex compound is most stable?
+
+(1) | Co(NH), (NO5), |
+(2) [CoCl, (en), | NO,
+(3) [Co(NH), | (S0,),
+(4) /Co(NH,), (H,0)Br](NO,),
+
+On balancing the given redox reaction,
+
+a Cr,07 +b SO; (aq) +cH™ (aq) >
+
+2a Cr** (aq) + b SO7 (aq) +5 H,0(¢)
+
+the coefficients a, b and c are found to be,
+respectively -
+
+(1) 3, 8,1
+(3) 8, 1, 3
+
+(2) 1,83
+(4) 1, 3,8
+
+Given below are two statements :
+
+Statement I : The nutrient deficient water
+bodies lead to eutrophication.
+
+Statement II : Eutrophication leads to
+
+decrease in the level of oxygen in the water
+bodies.
+
+In the light of the above statements, choose
+the correct answer from the options given
+below :
+
+(1) Both Statement I and Statement II
+
+are false.
+
+Statement I is correct but
+Statement II is false.
+
+(2)
+
+Statement I is incorrect but
+Statement II is true.
+
+Both Statement I and Statement II
+are true.
+
+(3)
+
+(4)
+
+F2_English |
+
+15
+
+93
+
+94
+
+95
+
+What fraction of one edge centred octahedral
+void lies in one unit cell of fcc?
+
+On, Q) 4
+
+> (4) 4
+
+Match List - I with List - II :
+List - I (Oxoacids List - II (Bonds)
+
+of Sulphur)
+
+A. Peroxodisul- I. TwoS-OH, FourS=O,
+phuric acid One S-O-S
+B. Sulphuricacid II. Two S-OH, One S=O
+C. Pyrosulphuric — III. TwoS-OH, Four S=O,
+acid One S-O-O-S
+
+D. Sulphurous acid IV. Two S-OH, Two S=O
+
+Choose the correct answer from the options
+given below :
+
+(1) A-IU, B-IV, C-I, D-II
+(2) A-I, B-HIL, C-IV, D-II
+(3) A-IIl, B-IV, C-II, D-I
+
+(4) A-I, B-II, C-Il, D-IV
+
+Pumice stone is an example of -
+(1) gel (2) solid sol
+(3) foam (4) sol
+
+| Contd...
+",,,PARTIALLY_RECOVERABLE,MEDIUM,"No section-header range was detected to confirm this page, but question number '8' appears as a standalone token on page 15, and 3 stem/option vocabulary words also overlap -- two independent weak signals, not one.",PENDING
+1e9839b1-a151-4f5f-84a7-f4ab0a224b87,2023,Paper-20231108005321,,5,AIL BAL CW. DI,"A:  | B:  | C:  | D: A-II, B-IIL, C-IV, D-I",Paper_20231108005321.pdf,12,number_token + token_overlap>=3,13,"77
+
+Which amongst the following options is
+correct graphical representation of Boyle’s
+
+Law?
+1;
+T
+P
+(1) T,>T,>T,
+; >
+vy—_
+T 13> 1,77,
+P
+(2) T;
+T,
+qT
+; >
+V
+
+T 13> 7,77,
+P
+(4)
+q
+T
+2
+T3
+vV—
+
+F2_English |
+
+78
+
+79
+
+80
+
+Weight (g) of two moles of the organic
+compound, which is obtained by heating
+sodium ethanoate with sodium hydroxide in
+presence of calcium oxide is :
+
+(1) 32 (2) 30
+(3) 18 (4) 16
+
+Match List - I with List - II :
+
+List - I List - II
+
+A. Coke I. Carbon atoms are
+sp> hybridised.
+
+B. Diamond II. Used as a dry
+lubricant
+
+C. Fullerene II. Used asa
+reducing agent
+
+D. Graphite IV. Cage like
+molecules
+
+Choose the correct answer from the options
+given below :
+
+(1) A-IV, B-I, C-IL, D-III
+(2) A-IIl, B-I, C-IV, D-II
+(3) A-IIl, B-IV, C-I, D-II
+(4) A-IL, B-IV, C-I, D-III
+
+The correct order of energies of molecular
+orbitals of N5 molecule, is :
+
+* *
+(1) ols<o"" Is<o2s<o 2s<o 2p, <
+
+(x2p, =1 2p, ) < (x*2p, = x"" 2p, ) <o 2p,
+
+(2) ols<o Is<o2s<o 2s<o2p, <
+
+o 2p, < (x2p, =7 2Py ) < (x* 2p, = x"" 2p, |
+
+(3) ols<o Is<o2s<o 2s <(n2p, =n 2p, )<
+
+(x*2p, = 2p, | <o2p,< o 2p,
+
+* *
+(4) ols<o Is<o2s<o 2s <(n2p, = 2 2p, )<
+
+0 2p, < (x"" 2p, = X 2p, J <o 2p,
+
+| Contd...
+",,,PARTIALLY_RECOVERABLE,MEDIUM,"No section-header range was detected to confirm this page, but question number '5' appears as a standalone token on page 12, and 3 stem/option vocabulary words also overlap -- two independent weak signals, not one.",PENDING
+e05f582f-950c-4228-94e2-577bba6ce968,2023,Paper-20231108011242,,5,"2p, < (x""2p, =0 2Py ) <6"" 2p, \n . *","A:  | B: Gis<o' Is<o2s<o° 2s<o 2p, <
+(72p, =n2p,)<(x 2Py =™ 2py}<o 2P, | C: ols<o* Ils<o2s<o"" 2s<o2p, <
+o 2p, <(72p, =n 2py)<(x 2p, = 2,) | D: ols <o* Ils<o2s<o"" 2s< (x2, =n2p, ) e
+(x 2p, =™ 2py ) <o2p,< © 2p,",Paper_20231108011242.pdf,11,token_overlap_only,7,"69
+
+70
+
+71
+
+Given below are two statements : one is
+labelled as Assertion A and the other is
+labelled as Reason R :
+
+Assertion A : Metallic sodium dissolves in
+liquid ammonia giving a deep blue solution,
+which is paramagnetic.
+
+Reasons R : The deep blue solution is due
+to the formation of amide.
+
+In the light of the above statements, choose
+the correct answer from the options given
+below :
+
+(1) Both A and R are true and R is the
+correct explanation of A.
+
+(2) Both A and R are true but R is NOT
+the correct explanation of A.
+
+(3) A is true but R is false.
+(4) A is false but R is true.
+
+Weight (g) of two moles of the organic
+compound, which is obtained by heating
+sodium ethanoate with sodium hydroxide in
+presence of calcium oxide is :
+
+(1) 16 (2) 32
+(3) 30 (4) 18
+
+The correct order of energies of molecular
+orbitals of N, molecule, is :
+
+(1) ols<o"" Is<o2s<o"" 2s <(n2p, = 2 2p, )<
+0 2p, <(x""2p, =n"" 2p, | <o"" 2p,
+(2) ols<o Is<o2s<o 2s<o2p, <
+(x2p, =1 2p, )<(x""2p, =n""2p,)<o"" 2p,
+(3) ols<o"" Is<o2s<o° 2s<o 2p, <
+o 2p, <(n2p, =n 2p, )<(x*2p, =n"" 2p, )
+(4) ols<o Is<o2s<o° 2s <(n2p, =n 2p, }<
+
+(x*2p, =1 2p, J <o2p,< o 2p,
+
+ES_English |
+
+11
+
+72
+
+73
+
+74
+
+Amongst the following, the total number of
+species NOT having eight electrons around
+
+central atom in its outer most shell, is
+
+NH,, AICI,, BeCl,, CCl, PCI, :
+
+(1) 3
+(3) 4
+
+(2) 2
+(4) 1
+
+Which one is an example of heterogenous
+
+catalysis?
+
+(1) Oxidation of sulphur dioxide into sulphur
+trioxide in the presence of oxides of
+
+nitrogen.
+
+(2) Hydrolysis of sugar catalysed by Ht
+
+ions.
+
+(3)
+
+Decomposition of ozone in presence of
+
+nitrogen monoxide.
+
+(4) Combination between dinitrogen and
+dihydrogen to form ammonia in the
+
+presence of finely divided iron.
+
+Which one of the following statements is
+correct?
+
+(1) The daily requirement of Mg and ",,,PARTIALLY_RECOVERABLE,LOW,Only generic token overlap (score=7) was available; the question number '5' could not be independently confirmed on page 11. This page match should be treated as unreliable.,PENDING
+66dadabe-df6f-4a8b-9da6-07b19f945678,2023,Paper-20231108011242,,8,ATL BA. Ch bd,"A:  | B:  | C:  | D: A-II, B-III, C-I, D-IV
+160",Paper_20231108011242.pdf,8,number_token + token_overlap>=3,14,"Chemistry : Section-A (Q. No. 51 to 85)
+
+51
+
+52
+
+53
+
+Which of the following statements are NOT | 54
+
+correct?
+
+A. Hydrogen is used to reduce heavy metal
+oxides to metals.
+
+B. Heavy water is used to study reaction
+mechanism.
+
+C. Hydrogen is used to make saturated fats
+from oils.
+
+D. The H-H bond dissociation enthalpy is
+lowest as compared to a single bond
+between two atoms of any element.
+
+E. Hydrogen reduces oxides of metals that
+are more active than iron.
+
+Choose the most appropriate answer from
+
+the options given below :
+
+(1) B, C, D, E only
+
+(2) B, D only
+
+(3) D, E only
+
+(4) A, B, C only
+
+The given compound 3S
+
+CH =CH- cH ~CH, CH,
+X
+
+is an example of
+(1) benzylic halide
+(2) aryl halide
+
+(3) allylic halide
+(4) vinylic halide
+
+Match List - I with List - II:
+
+List - I List - II
+
+A. Coke I. Carbon atoms are
+sp> hybridised.
+
+B. Diamond II. Used as a dry
+lubricant
+
+C. Fullerene Ill. Used asa
+reducing agent
+
+D. Graphite IV. Cage like
+molecules
+
+Choose the correct answer from the options
+given below :
+
+(1) A-II, B-IV, C-I, D-III
+
+(2) A-IV, B-L, C-IL, D-III
+
+(3) A-IIL, B-I, C-IV, D-II
+
+(4) A-IIL, B-IV, C-I, D-II
+
+ES_English | 8
+
+In Lassaigne’s extract of an organic
+compound, both nitrogen and sulphur are
+present, which gives blood red colour with
+
+Fe3+ due to the formation of -
+
+(1) Fe,|Fe(CN), | -xH,O
+
+3
+
+(2) NaSCN
+
+(3) | Fe(CN)
+
+(4) [Fe(scn) |""
+
+Given below are two statements : one is
+
+labelled as Assertion A and the other is
+
+labelled as Reason R :
+
+Assertion A : A reaction can have zero
+
+activation energy.
+
+Reasons R : The minimum extra amount of
+energy absorbed by reactant molecules so
+that their energy becomes equal to threshold
+
+value, is called activation energy.
+
+In the light of the above statements, choose
+the correct answer from the options given
+
+below :
+
+(1) Both",,,PARTIALLY_RECOVERABLE,MEDIUM,"No section-header range was detected to confirm this page, but question number '8' appears as a standalone token on page 8, and 4 stem/option vocabulary words also overlap -- two independent weak signals, not one.",PENDING
+329b6c67-5e51-4c05-b7d0-00574f8aed2a,2023,Paper-20231108011242,,2,Gi bel t tat t \n 1,A:  | B:  | C:  | D: ,Paper_20231108011242.pdf,,,0,,,,UNRESOLVED,,no candidate page found by any method,PENDING
+f5ebfe43-c6b7-4b90-a403-eead64f2d26f,2023,Paper-20231108010507,,4,= Which 1 i le?,"A: [ CoCl, (en), | NOs | B: [Co( NH), (SO), | C: [Co(NH,), (H,0)Br |(No,), | D: [co(NH,), (NO),",Paper_20231108010507.pdf,15,number_token + token_overlap>=3,18,"91 Consider the following compounds/species: | 93 Identify the major product obtained in the
+following reaction :
+
+il.
+
+_.
+
+, +2[ Ag(NH,), | +
+
++.
+
+®
+
+iil.
+ai
+Vil.
+
+”
+
+The number of compounds/species which
+
+3 -on_45 major product
+
+©
+
+,
+
+COO
+
+obey Huckel’s rule is OH
+
+(1) 2 (2) 5 (2)
+(3) 4 (4) 6 COO-
+
+%.
+
+92 Consider the following reaction : OH
+
+HI (3)
+
+Identify products A and B.
+
+OH
+
+ones
+
+Oram Ora] *
+
+(1) A= CH,I and B = OH OH
+
+Q) A- (cn, and B= ( \. 94 Which complex compound is most stable?
+(1) [CoCl, (en), | NO,
+
+(3) A= ( \ CH, and B= ¢ \ OH (2) Co(NH,), | (SO,),
+G3) Co(NH;), (H,0)Br |(No,),
+
+«) € \-anonaav-€ 1 :
+(4) | Co(NH,), (No,), |
+
+H3_English | 15 [| Contd...
+",,,PARTIALLY_RECOVERABLE,MEDIUM,"No section-header range was detected to confirm this page, but question number '4' appears as a standalone token on page 15, and 8 stem/option vocabulary words also overlap -- two independent weak signals, not one.",PENDING
+3c3a3410-1e2b-41a6-908f-6eb971f11a66,2023,Paper-20231108011127,,6,"2p, <(n*2p, =n"" 2p, }<o* 2p","A:  | B:  | C:  | D: cls<o"" Is<o2s<o"" 2s<o 2p, <
+(72, =n 2p, ) < (x° 2p, =n 2p, <o"" 2p,",Paper_20231108011127.pdf,13,number_token + token_overlap>=3,14,"84 Which amongst the following options is 85
+
+; ; . The correct order of energies of molecular
+correct graphical representation of Boyle’s
+
+Law? orbitals of N, molecule, is :
+T,>T,>T
+
+T ! (1) ols<o"" Is<o2s<o 2s<o2p, <
+
+P
+T; oO 2p, <(n2p, = 2p, }<(x 2p, =% 2p, |
+qT
+
+; >
+Vv
+
+(2) ols<o' Is<o2s<o 2s <(n2p, = 2p, )<
+
+(x*2p, = n*2p,)< 6 2p, < o 2p,
+
+(3) ols<o Is<o2s<o 2s<(n2p, = ""2p, }<
+
+6 2p, < (x"" 2p, =n 2p, <o 2p,
+
+i) T;>T,>T,
+P
+(3)
+qT
+bb (4) ols<o"" Is<o2s<o° 2s<o 2p, <
+3
+v—
+(2p, =T 2py ) < (x*2p, = x 2p, | <o 2p,
+T
+3 T,
+t '
+P
+(4) 1217,
+
+H5_ English |} 13 | Contd...
+",,,PARTIALLY_RECOVERABLE,MEDIUM,"No section-header range was detected to confirm this page, but question number '6' appears as a standalone token on page 13, and 4 stem/option vocabulary words also overlap -- two independent weak signals, not one.",PENDING
+a57c6b04-7b2b-4fa0-92ca-256eaccefe94,2023,Paper-20231108010032,,6,"2p, < (x""2p, - x 2p, ) <o* 2p,","A:  | B: ols<o"" Is<o2s<o"" 2s<o 2p, <
+(2p, =n 2p, )<(x""2p, =n"" 2p, )<o” 2p, | C: ols<o"" Is<o2s<o"" 2s<o2p, <
+5° 2p, <(n2p, = 2 2p, )<(x°2p, =2""2p,) | D: ols<o"" Is<628<o"" 2s<(n2p, =n 2p, )<
+(x*2p, =2°2p,)<o 2p, < o 2p,",Paper_20231108010032.pdf,8,token_overlap_only,7,"Chemistry : Section-A (Q. No. 51 to 85)
+
+51
+
+52
+
+53
+
+The given compound
+
+CH=CH - cH ~CH, CH,
+Xx
+
+is an example of
+(1) benzylic halide
+(2) aryl halide
+
+(3) allylic halide
+(4) vinylic halide
+
+Intermolecular forces are forces of attraction
+and repulsion between interacting particles
+that will include :
+
+A. dipole - dipole forces.
+dipole - induced dipole forces.
+hydrogen bonding.
+
+covalent bonding.
+
+mua
+
+dispersion forces.
+
+Choose the most appropriate answer from
+the options given below :
+
+(1) B, C, D, E are correct.
+(2) A, B, C, D are correct.
+(3) A, B, C, E are correct.
+(4) A, C, D, E are correct.
+
+Which amongst the following molecules on
+polymerization produces neoprene?
+
+(1) H,C=CH-CH=CH,
+
+Cl
+
+|
+(2) H,C=C-CH=CH,
+
+(3) H,C=CH-C=CH
+CH,
+
+|
+(4) H,C=C-CH=CH,
+
+E3_English |
+
+54
+
+55
+
+Identify product (A) in the following
+reaction:
+
+Ay y
+
+Zn— oe
+~ cone. HCl ”
+
+(A) +2H,0
+
+CH,OH
+
+CH,
+
+ae
+
+The correct order of energies of molecular
+orbitals of N5 molecule, is :
+
+* *
+(1) ols<o Is<o2s<o 2s <(n2p, =n 2p, }<
+0 2p, <(x*2p, =n 2p, | <o"" 2p,
+(2) ols<o"" Is<o2s<o"" 2s<o 2p, <
+(x2p, =n 2p,)<(n""2p, =n""2p,)<o"" 2p,
+(3) ols<o Is<o2s<o 2s<o2p, <
+* * *
+o 2p, <(72p, =n 2p,)<(z 2p, =% 2p, J
+* *
+(4) ols<o Is<o2s<o 2s <(n2p, =7 2p, }<
+(x*2p, =n"" 2p, ) <o2p,< o 2p,
+
+| Contd...
+",,,PARTIALLY_RECOVERABLE,LOW,Only generic token overlap (score=7) was available; the question number '6' could not be independently confirmed on page 8. This page match should be treated as unreliable.,PENDING

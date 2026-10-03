@@ -1,0 +1,68 @@
+{
+  "note": "subject_chapter_constrained figure above equals subject_constrained because pyq.questions carries no chapter/topic label to constrain against (class_level and concept_id are 100% NULL, confirmed in the original 2026-10-01 pyq-coverage-audit.md) -- true chapter-constrained retrieval cannot be run against question metadata that does not exist. This is reported honestly rather than fabricating a chapter filter from the matched unit's own chapter (which would be circular).",
+  "total_pending_with_nonempty_stem": null,
+  "labeled_question_count": 4346,
+  "unrestricted_relaxed_covered_full_population": 8159,
+  "subject_constrained_relaxed_covered_labeled_only": 2449,
+  "subject_chapter_constrained_relaxed_covered_labeled_only": 2449,
+  "false_negative_candidates_from_subject_constraint": 1261,
+  "interpretation": "Among the 2,026 subject-labeled pending questions, constraining retrieval to only same-subject knowledge units removes matches that the unrestricted matcher found. This number of removed matches is reported as false_negative_candidates -- it is a risk/benefit tradeoff count, not a claim that the removed matches were correct or incorrect (that requires human review).",
+  "cross_subject_by_pair": {
+    "Zoology->CHEMISTRY": 213,
+    "Botany->CHEMISTRY": 148,
+    "Chemistry->BIOLOGY": 141,
+    "Physics->CHEMISTRY": 138,
+    "Chemistry->PHYSICS": 118,
+    "Botany->CORE_BIOLOGY": 110,
+    "Zoology->BIOLOGY": 87,
+    "Botany->PHYSICS": 47,
+    "Zoology->PHYSICS": 41,
+    "Botany->BIOLOGY": 40,
+    "Zoology->BOTANY": 22,
+    "Zoology->CORE_BIOLOGY": 18
+  },
+  "cross_subject_by_chapter_top20": {
+    "CHEMISTRY-U03": 163,
+    "BIOLOGY-U03": 134,
+    "BIOLOGY-U05": 114,
+    "CHEMISTRY-U08": 69,
+    "XII-BIO-09": 66,
+    "CHEMISTRY-U02": 47,
+    "PHYSICS-U08": 47,
+    "CHEMISTRY-U07": 46,
+    "CHEMISTRY-U15": 45,
+    "PHYSICS-U16": 44,
+    "PHYSICS-U15": 40,
+    "CHEMISTRY-U09": 24,
+    "CHEMISTRY-U17": 24,
+    "PHYSICS-U07": 24,
+    "PHYSICS-U09": 24,
+    "PHYSICS-U17": 24,
+    "XII-BIO-13": 23,
+    "XII-BIO-01": 22,
+    "CHEMISTRY-U06": 21,
+    "XII-BIO-10": 21
+  },
+  "cross_subject_by_score_band": {
+    "0.45-0.49": 43,
+    "0.40-0.44": 361,
+    "0.35-0.39": 177,
+    "0.30-0.34": 342,
+    "0.25-0.29": 200
+  },
+  "cross_subject_by_ku_validation_status": {
+    "PASSED": 1123
+  },
+  "cross_subject_by_source_document_top10": {
+    "ncert-books-class-11-chemistry-chapter-4.pdf": 163,
+    "ncert-books-class-11-biology-chapter-9.pdf": 69,
+    "ncert-books-class-12-chemistry-chapter-3.pdf": 69,
+    "ncert-books-class-12-biology-chapter-9.pdf": 66,
+    "ncert-books-class-11-chemistry-chapter-2.pdf": 47,
+    "ncert-books-class-11-physics-chapter-11.pdf": 47,
+    "ncert-books-class-12-chemistry-chapter-2.pdf": 46,
+    "ncert-books-class-11-chemistry-chapter-9.pdf": 45,
+    "leph202.pdf": 44,
+    "ncert-books-class-11-biology-chapter-10.pdf": 41
+  }
+}

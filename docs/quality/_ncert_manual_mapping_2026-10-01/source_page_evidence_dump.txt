@@ -1,0 +1,2719 @@
+=== BIOLOGY C11 | Biology/Class 11-Biology/ncert-books-class-11-biology-chapter-1.pdf ===
+Biology is the science of life forms and living processes. The living world
+comprises an amazing diversity of living organisms. Early man could
+easily perceive the difference between inanimate matter and living
+organisms. Early man deified some of the inanimate matter (wind, sea,
+fire etc.) and some among the animals and plants. A common feature of
+all such forms of inanimate and animate objects was the sense of awe
+or fear that they evoked. The description of living organisms including
+human beings began much later in human history. Societies which
+indulged in anthropocentric view of biology could register limited
+progress in biological knowledge. Systematic and monumental
+description of life forms brought in, out of necessity, detailed systems
+of identification, nomenclature and classification. The biggest spin off
+of such studies was the recognition of the sharing of similarities among
+living organisms both horizontally and vertically. That all present day
+living organisms are related to each other and also to all organisms
+that ever lived on this earth, was a revelation which humbled man and
+led to cultural movements for conservation of biodiversity. In the
+following chapters of this unit, you will get a description, including
+classification, of animals and plants from a taxonomist’s perspective.
+DIVERSITY IN THE LIVING WORLD
+Chapter 1
+The Living World
+Chapter 2
+Biological Classification
+Chapter 3
+Plant Kingdom
+Chapter 4
+Animal Kingdom
+UNIT 1
+2024-25
+
+Born on 5 July 1904,
+
+=== BIOLOGY C11 | Biology/Class 11-Biology/ncert-books-class-11-biology-chapter-10.pdf ===
+120
+BIOLOGY
+Are you aware that all organisms, even the largest, start their life from a
+single cell? You may wonder how a single cell then goes on to form such
+large organisms. Growth and reproduction are characteristics of cells,
+indeed of all living organisms. All cells reproduce by dividing into two,
+with each parental cell giving rise to two daughter cells each time they
+divide. These newly formed daughter cells can themselves grow and divide,
+giving rise to a new cell population that is formed by the growth and
+division of a single parental cell and its progeny. In other words, such
+cycles of growth and division allow a single cell to form a structure
+consisting of millions of cells.
+10.1
+CELL CYCLE
+Cell division is a very important  process in all living organisms. During
+the division of a cell, DNA replication and cell growth also take place. All
+these processes, i.e., cell division, DNA replication, and cell growth, hence,
+have to take place in a coordinated way to ensure correct division and
+formation of progeny cells containing intact genomes. The sequence of
+events by which a cell duplicates its genome, synthesises the other
+constituents of the cell and eventually divides into two daughter cells is
+termed cell cycle. Although cell growth (in terms of cytoplasmic increase)
+is a continuous process, DNA synthesis occurs only during one specific
+stage in the cell cycle. The replicated chromosomes (DNA) are then
+distributed to daughter nuclei by a complex series of even
+
+=== BIOLOGY C11 | Biology/Class 11-Biology/ncert-books-class-11-biology-chapter-11.pdf ===
+UNIT 4
+The description of structure and variation of living organisms over a
+period of time, ended up as two, apparently irreconcilable perspectives
+on biology. The two perspectives essentially rested on two levels of
+organisation of life forms and phenomena. One described at organismic
+and above level of organisation while the second described at cellular
+and molecular level of organisation. The first resulted in ecology and
+related disciplines. The second resulted in physiology and biochemistry.
+Description of physiological processes, in flowering plants as an
+example, is what is given in the chapters in this unit. The processes of
+photosynthesis, respiration and ultimately plant growth and
+development are described in molecular terms but in the context of
+cellular activities and even at organism level. Wherever appropriate,
+the relation of the physiological processes to environment is also
+discussed.
+PLANT PHYSIOLOGY
+Chapter 11
+Photosynthesis in Higher
+Plants
+Chapter 12
+Respiration in Plants
+Chapter 13
+Plant Growth and
+Development
+2024-25
+
+MELVIN CALVIN born in Minnesota in April, 1911, received his
+Ph.D. in Chemistry from the University of Minnesota. He served
+as Professor of Chemistry at the University of California,
+Berkeley.
+Just after world war II, when the world was under shock
+after the Hiroshima-Nagasaki bombings, and seeing the ill-
+effects of radio-activity, Calvin and co-workers put radio-
+activity to beneficial use. He along with J.A. Bassham studied
+reactions 
+
+=== BIOLOGY C11 | Biology/Class 11-Biology/ncert-books-class-11-biology-chapter-12.pdf ===
+RESPIRATION IN PLANTS
+153
+All of us breathe to live, but why is breathing so essential to life? What
+happens when we breathe? Also, do all living organisms, including plants
+and microbes, breathe? If so, how?
+All living organisms need energy for carrying out daily life activities,
+be it absorption, transport, movement, reproduction or even breathing.
+Where does all this energy come from? We know we eat food for energy –
+but how is this energy taken from food?  How is this energy utilised? Do
+all foods give the same amount of energy? Do plants ‘eat’? Where do plants
+get their energy from? And micro-organisms – for their energy
+requirements, do they eat ‘food’?
+You may wonder at the several questions raised above – they may
+seem to be very disconnected.  But in reality, the process of breathing is
+very much connected to the process of release of energy from food.  Let us
+try and understand how this happens.
+All the energy required for ‘life’ processes is obtained by oxidation of
+some macromolecules that we call ‘food’. Only green plants and
+cyanobacteria can prepare their own food; by the process of photosynthesis
+they trap light energy and convert it into chemical energy that is stored in
+the bonds of carbohydrates like glucose, sucrose and starch.  We must
+remember that in green plants too, not all cells, tissues and organs
+photosynthesise; only cells containing chloroplasts, that are most often
+located in the superficial layers, carry out photosynthesis.  Hence, even
+in gree
+
+=== BIOLOGY C11 | Biology/Class 11-Biology/ncert-books-class-11-biology-chapter-13.pdf ===
+166
+BIOLOGY
+You have already studied the organisation of a flowering plant in Chapter
+5. Have you ever thought about where and how the structures like roots,
+stems, leaves, flowers, fruits and seeds arise and that too in an orderly
+sequence? You are, by now, aware of the terms seed, seedling, plantlet,
+mature plant. You have also seen that trees continue to increase in height
+or girth over a period of time. However, the leaves, flowers and fruits of the
+same tree not only have limited dimensions but also appear and fall
+periodically and some time repeatedly. Why does vegetative phase precede
+flowering in a plant? All plant organs are made up of a variety of tissues; is
+there any relationship between the structure of a cell, a tissue, an organ
+and the function they perform? Can the structure and the function of these
+be altered? All cells of a plant are descendents of the zygote. The question
+is, then, why and how do they have different structural and functional
+attributes? Development is the sum of two processes: growth and
+differentiation. To begin with, it is essential and sufficient to know that the
+development of a mature plant from a zygote (fertilised egg) follow a precise
+and highly ordered succession of events. During this process a complex
+body organisation is formed that produces roots, leaves, branches, flowers,
+fruits, and seeds, and eventually they die (Figure 13.1). The first step in the
+process of plant growth is seed germination. The seed germinates when
+favou
+
+=== BIOLOGY C11 | Biology/Class 11-Biology/ncert-books-class-11-biology-chapter-14.pdf ===
+UNIT 5
+The reductionist  approach to study of life forms resulted in increasing
+use of physico-chemical concepts and techniques. Majority of these
+studies employed either surviving tissue model or straightaway cell-
+free systems. An explosion of knowledge resulted in molecular biology.
+Molecular physiology became almost synonymous with biochemistry
+and biophysics. However, it is now being increasingly realised that
+neither a purely organismic approach nor a purely reductionistic
+molecular approach would reveal the truth about biological processes
+or living phenomena. Systems biology makes us believe that all living
+phenomena are emergent properties due to interaction among
+components of the system under study. Regulatory network of
+molecules, supra molecular assemblies, cells, tissues, organisms and
+indeed, populations and communities, each create emergent
+properties. In the chapters under this unit, major human physiological
+processes like, exchange of gases, blood circulation, locomotion and
+movement are described in cellular and molecular terms. The last
+two chapters point to the coordination and regulation of body events
+at the organismic level.
+HUMAN PHYSIOLOGY
+Chapter 14
+Breathing and Exchange
+of Gases
+Chapter 15
+Body Fluids and
+Circulation
+Chapter 16
+Excretory Products and
+their Elimination
+Chapter 17
+Locomotion and Movement
+Chapter 18
+Neural Control and
+Coordination
+Chapter 19
+Chemical Coordination
+and Integration
+2024-25
+
+ALFONSO CORTI, Italian anatomist, was born in
+
+=== BIOLOGY C11 | Biology/Class 11-Biology/ncert-books-class-11-biology-chapter-15.pdf ===
+BODY FLUIDS AND CIRCULATION
+193
+You have learnt that all living cells have to be provided with nutrients, O2
+and other essential substances. Also, the waste or harmful substances
+produced, have to be removed continuously for healthy functioning of
+tissues. It is therefore, essential to have efficient mechanisms for the
+movement of these substances to the cells and from the cells. Different
+groups of animals have evolved different methods for this transport. Simple
+organisms like sponges and coelenterates circulate water from their
+surroundings through their body cavities to facilitate the cells to exchange
+these substances. More complex organisms use special fluids within their
+bodies to transport such materials. Blood is the most commonly used body
+fluid by most of the higher organisms including humans for this purpose.
+Another body fluid, lymph, also helps in the transport of certain substances.
+In this chapter, you will learn about the composition and properties of
+blood and lymph (tissue fluid) and the mechanism of circulation of blood
+is also explained herein.
+15.1
+BLOOD
+Blood is a special connective tissue consisting of a fluid matrix, plasma,
+and formed elements.
+15.1.1 Plasma
+Plasma is a straw coloured, viscous fluid constituting nearly 55 per cent of
+the blood. 90-92 per cent of plasma is water and proteins contribute 6-8
+per cent of it. Fibrinogen, globulins and albumins are the major proteins.
+BODY FLUIDS AND CIRCULATION
+CHAPTER  15
+15.1 Blood
+15.2 Lymph (Tissue
+Fl
+
+=== BIOLOGY C11 | Biology/Class 11-Biology/ncert-books-class-11-biology-chapter-16.pdf ===
+EXCRETORY PRODUCTS AND THEIR ELIMINATION
+205
+Animals accumulate ammonia, urea, uric acid, carbon dioxide, water
+and ions like Na+, K+, Cl–, phosphate, sulphate, etc., either by metabolic
+activities or by other means like excess ingestion. These substances have
+to be removed totally or partially. In this chapter, you will learn the
+mechanisms of elimination of these substances with special emphasis on
+common nitrogenous wastes. Ammonia, urea and uric acid are the major
+forms of nitrogenous wastes excreted by the animals. Ammonia is the
+most toxic form and requires large amount of water for its elimination,
+whereas uric acid, being the least toxic, can be removed with a minimum
+loss of water.
+The process of excreting ammonia is Ammonotelism. Many bony fishes,
+aquatic amphibians and aquatic insects are ammonotelic
+ammonotelic
+ammonotelic
+ammonotelic
+ammonotelic in nature.
+Ammonia, as it is readily soluble, is generally excreted by diffusion across
+body surfaces or through gill surfaces (in fish) as ammonium ions. Kidneys
+do not play any significant role in its removal. Terrestrial adaptation
+necessitated the production of lesser toxic nitrogenous wastes like urea
+and uric acid for conservation of water. Mammals, many terrestrial
+amphibians and marine fishes mainly excrete urea and are called ureotelic
+ureotelic
+ureotelic
+ureotelic
+ureotelic
+animals. Ammonia produced by metabolism is converted into urea in the
+liver of these animals and released into the blood which is filtered a
+
+=== BIOLOGY C11 | Biology/Class 11-Biology/ncert-books-class-11-biology-chapter-17.pdf ===
+LOCOMOTION AND MOVEMENT
+217
+Movement is one of the  significant features of living beings. Animals and
+plants exhibit a wide range of movements. Streaming of protoplasm in
+the unicellular organisms like Amoeba is a simple form of movement.
+Movement of cilia, flagella and tentacles are shown by many organisms.
+Human beings can move limbs, jaws, eyelids, tongue, etc. Some of the
+movements result in a change of place or location. Such voluntary
+movements are called locomotion. Walking, running, climbing, flying,
+swimming are all some forms of locomotory movements. Locomotory
+structures need not be different from those affecting other types of
+movements. For example, in Paramoecium, cilia helps in the movement of
+food through cytopharynx and in locomotion as well. Hydra can use its
+tentacles for capturing its prey and also use them for locomotion. We use
+limbs for changes in body postures and locomotion as well. The above
+observations suggest that movements and locomotion cannot be studied
+separately. The two may be linked by stating that all locomotions are
+movements but all movements are not locomotions.
+Methods of locomotion performed by animals vary with their habitats
+and the demand of the situation. However, locomotion is generally for
+search of food, shelter, mate, suitable breeding grounds, favourable
+climatic conditions or to escape from enemies/predators.
+17.1
+TYPES OF MOVEMENT
+Cells of the human body exhibit three main types of movements, namely,
+amoeboid, ciliary and 
+
+=== BIOLOGY C11 | Biology/Class 11-Biology/ncert-books-class-11-biology-chapter-18.pdf ===
+230
+BIOLOGY
+As you know, the functions of the organs/organ systems in our body
+must be coordinated to maintain homeostasis. Coordination is the
+process through which two or more organs interact and complement the
+functions of one another. For example, when we do physical exercises,
+the energy demand is increased for maintaining an increased muscular
+activity. The supply of oxygen is also increased. The increased supply of
+oxygen necessitates an increase in the rate of respiration, heart beat and
+increased blood flow via blood vessels. When physical exercise is stopped,
+the activities of nerves, lungs, heart and kidney gradually return to their
+normal conditions. Thus, the functions of muscles, lungs, heart, blood
+vessels, kidney and other organs are coordinated while performing physical
+exercises. In our body the neural system and the endocrine system jointly
+coordinate and integrate all the activities of the organs so that they function
+in a synchronised fashion.
+The neural system provides an organised network of point-to-point
+connections for a quick coordination. The endocrine system provides
+chemical integration through hormones. In this chapter, you will learn
+about the neural system of human, mechanisms of neural coordination
+like transmission of nerve impulse, impulse conduction across a synapse.
+NEURAL CONTROL AND
+COORDINATION
+CHAPTER  18
+18.1 Neural System
+18.2 Human Neural
+System
+18.3 Neuron as
+Structural and
+Functional Unit
+of Neural
+System
+18.4  Central Neural
+Sys
+
+=== BIOLOGY C11 | Biology/Class 11-Biology/ncert-books-class-11-biology-chapter-19.pdf ===
+239
+239
+CHEMICAL COORDINATION AND INTEGRATION
+You have already learnt that the neural system provides a
+point-to-point rapid coordination among organs. The neural
+coordination is fast but short-lived. As the nerve fibres do not innervate
+all cells of the body and the cellular functions need to be continuously
+regulated; a special kind of coordination and integration has to be
+provided. This function is carried out by hormones. The neural system
+and the endocrine system jointly coordinate and regulate the
+physiological functions in the body.
+19.1
+ENDOCRINE GLANDS AND HORMONES
+Endocrine glands lack ducts and are hence, called ductless glands. Their
+secretions are called hormones. The classical definition of hormone as a
+chemical produced by endocrine glands and released into the blood and
+transported to a distantly located target organ has current scientific
+definition as follows: Hormones are non-nutrient chemicals which
+act as intercellular messengers and are produced in trace amounts.
+The new definition covers a number of new molecules in addition to the
+hormones secreted by the organised endocrine glands. Invertebrates
+possess very simple endocrine systems with few hormones whereas a large
+number of chemicals act as hormones and provide coordination in the
+vertebrates. The human endocrine system is described here.
+CHEMICAL COORDINATION
+AND INTEGRATION
+CHAPTER  19
+19.1 Endocrine
+Glands and
+Hormones
+19.2 Human
+Endocrine
+System
+19.3 Hormones of
+Heart, Kidney
+and
+Gastrointestin
+
+=== BIOLOGY C11 | Biology/Class 11-Biology/ncert-books-class-11-biology-chapter-2.pdf ===
+10
+BIOLOGY
+Since the dawn of civilisation, there have been many attempts to classify
+living organisms. It was done instinctively not using criteria that were
+scientific but borne out of a need to use organisms for our own use – for
+food, shelter and clothing.  Aristotle was the earliest to attempt a more
+scientific basis for classification. He used simple morphological characters
+to classify plants into trees, shrubs and herbs. He also divided animals
+into two groups, those which had red blood and those that did not.
+In Linnaeus' time a Two Kingdom system of classification with
+Plantae  and Animalia kingdoms was developed that included all
+plants and animals respectively. This system did not distinguish between
+the eukaryotes and prokaryotes, unicellular and multicellular organisms
+and photosynthetic (green algae) and non-photosynthetic (fungi)
+organisms. Classification of organisms into plants and animals was easily
+done and was easy to understand, but, a large number of organisms
+did not fall into either category. Hence the two kingdom classification
+used for a long time was found inadequate.  Besides, gross morphology
+a need was also felt for including other characteristics like cell structure,
+nature of wall, mode of nutrition, habitat, methods of reproduction,
+evolutionary relationships, etc.  Classification systems for the living
+organisms have hence, undergone several changes over the time.
+Though plant and animal kingdoms have been a constant under all
+different syste
+
+=== BIOLOGY C11 | Biology/Class 11-Biology/ncert-books-class-11-biology-chapter-3.pdf ===
+PLANT KINGDOM
+23
+In the previous chapter, we looked at the broad classification of living
+organisms under the system proposed by Whittaker (1969) wherein he
+suggested the Five Kingdom classification viz. Monera, Protista, Fungi,
+Animalia and Plantae.  In this chapter, we will deal in detail with further
+classification within Kingdom Plantae popularly known as the ‘plant
+kingdom’.
+We must stress here that our understanding of the plant kingdom
+has changed over time. Fungi, and members of the Monera and Protista
+having cell walls have now been excluded from Plantae though earlier
+classifications placed them in the same kingdom.  So, the cyanobacteria
+that are also referred to as blue green algae are not ‘algae’ any more.  In
+this chapter, we will describe Algae, Bryophytes, Pteridophytes,
+Gymnosperms and Angiosperms under Plantae .
+Let us also look at classification within angiosperms to understand
+some of the concerns  that influenced the classification systems. The
+earliest systems of classification used only gross superficial morphological
+characters such as habit, colour, number and shape of leaves, etc.  They
+were based mainly on vegetative characters or on the androecium
+structure (system given by Linnaeus). Such systems were artificial; they
+separated the closely related species since they were based on a few
+characteristics. Also, the artificial systems gave equal weightage to
+vegetative and sexual characteristics; this is not acceptable since we know
+that often the veg
+
+=== BIOLOGY C11 | Biology/Class 11-Biology/ncert-books-class-11-biology-chapter-4.pdf ===
+ANIMAL KINGDOM
+37
+37
+When you look around, you will observe different animals with different
+structures and forms.  As over a million species of animals have been
+described till now, the need for classification becomes all the more
+important. The classification also helps in assigning a systematic position
+to newly described species.
+4.1
+BASIS OF CLASSIFICATION
+Inspite of differences in structure and form of different animals, there are
+fundamental features common to various individuals in relation to the
+arrangement of cells, body symmetry, nature of coelom, patterns of
+digestive, circulatory or reproductive systems. These features are used
+as the basis of animal classification and some of them are discussed here.
+4.1.1
+Levels of Organisation
+Though all members of Animalia are multicellular, all of them do not
+exhibit the same pattern of organisation of cells. For example, in sponges,
+the cells are arranged as loose cell aggregates, i.e., they exhibit cellular
+level of organisation. Some division of labour (activities) occur among
+the cells. In coelenterates, the arrangement of cells is more complex. Here
+the cells performing the same function are arranged into tissues, hence is
+called tissue level of organisation. A still higher level of organisation, i.e.,
+organ level is exhibited by members of Platyhelminthes and other higher
+phyla where tissues are grouped together to form organs, each specialised
+for a particular function. In animals like Annelids, Arthropods, Molluscs,
+
+=== BIOLOGY C11 | Biology/Class 11-Biology/ncert-books-class-11-biology-chapter-5.pdf ===
+UNIT 2
+The description of the diverse forms of life on earth was made only by
+observation – through naked eyes or later through magnifying lenses
+and microscopes. This description is mainly of gross structural features,
+both external and internal. In addition, observable and perceivable
+living phenomena were also recorded as part of this description. Before
+experimental biology or more specifically, physiology, was established
+as a part of biology, naturalists described only biology. Hence, biology
+remained as a natural history for a long time. The description, by itself,
+was amazing in terms of detail. While the initial reaction of a student
+could be boredom, one should keep in mind  that the detailed description,
+was utilised in the later day reductionist biology where living processes
+drew more attention from scientists than the description of life forms
+and their structure. Hence, this description became meaningful and
+helpful in framing research questions in physiology or evolutionary
+biology. In the following chapters of this unit, the structural organisation
+of plants and animals, including the structural basis of physiologial or
+behavioural phenomena, is described. For convenience, this description
+of morphological and anatomical features is presented separately for
+plants and animals.
+STRUCTURAL ORGANISATION
+IN PLANTS AND ANIMALS
+Chapter 5
+Morphology of
+Flowering Plants
+Chapter 6
+Anatomy of Flowering
+Plants
+Chapter 7
+Structural Organisation in
+Animals
+2024-25
+
+KATHER
+
+=== BIOLOGY C11 | Biology/Class 11-Biology/ncert-books-class-11-biology-chapter-6.pdf ===
+ANATOMY OF FLOWERING PLANTS
+71
+You can very easily see the structural similarities and variations in the
+external morphology of the larger living organism, both plants and
+animals. Similarly, if we were to study the internal structure, one also
+finds several similarities as well as differences. This chapter introduces
+you to the internal structure and functional organisation of higher plants.
+Study of internal structure of plants is called anatomy. Plants have cells
+as the basic unit, cells are organised into tissues and in turn the tissues
+are organised into organs. Different organs in a plant show differences in
+their internal structure. Within angiosperms, the monocots and dicots
+are also seen to be anatomically different. Internal structures also show
+adaptations to diverse environments.
+6.1
+THE TISSUE SYSTEM
+We were discussing types of tissues based on the types of cells present.
+Let us now consider how tissues vary depending on their location in the
+plant body. Their structure and function would also be dependent on
+location. On the basis of their structure and location, there are three types
+of tissue systems. These are the epidermal tissue system, the ground or
+fundamental tissue system and the vascular or conducting tissue system.
+6.1.1
+Epidermal Tissue System
+The epidermal tissue system forms the outer-most covering of the whole
+plant body and comprises epidermal cells, stomata and the epidermal
+appendages – the trichomes and hairs. The epidermis is the outermost
+la
+
+=== BIOLOGY C11 | Biology/Class 11-Biology/ncert-books-class-11-biology-chapter-7.pdf ===
+STRUCTURAL ORGANISATION IN ANIMALS
+79
+In the preceding chapters you came across a large variety of organisms,
+both unicellular and multicellular, of the animal kingdom. In unicellular
+organisms, all functions like digestion, respiration and reproduction
+are performed by a single cell. In the complex body of multicellular
+animals the same basic functions are carried out by different groups of
+cells in a well organised manner. The body of a simple organism like
+Hydra is made of different types of cells and the number of cells in each
+type can be in thousands. The human body is composed of billions of
+cells to perform various functions. How do these cells in the body work
+together? As you have already learnt in your earlier classes, in
+multicellular animals, a group of similar cells alongwith intercellular
+substances perform a specific function. Such an organisation is called
+tissue.
+You may be surprised to know that all complex animals consist of
+only four basic types of tissues. These tissues are organised in specific
+proportion and pattern to form an organ like stomach, lung, heart and
+kidney. When two or more organs perform a common function by their
+physical and/or chemical interaction, they together form organ system,
+e.g., digestive system, respiratory system, etc. Cells, tissues, organs and
+organ systems split up the work in a way that exhibits division of labour
+and contribute to the survival of the body as a whole.
+7.1 ORGAN AND ORGAN SYSTEM
+The basic tissues as you ha
+
+=== BIOLOGY C11 | Biology/Class 11-Biology/ncert-books-class-11-biology-chapter-8.pdf ===
+UNIT 3
+Biology is the study of living organisms. The detailed description of
+their form and appearance only brought out their diversity. It is the
+cell theory that emphasised the unity underlying this diversity of forms,
+i.e., the cellular organisation of all life forms. A description of cell
+structure and cell growth by division is given in the chapters comprising
+this unit. Cell theory also created a sense of mystery around living
+phenomena, i.e., physiological and behavioural processes. This mystery
+was the requirement of integrity of cellular organisation for living
+phenomena to be demonstrated or observed. In studying and
+understanding the physiological and behavioural processes, one can
+take a physico-chemical approach and use cell-free systems to
+investigate. This approach enables us to describe the various processes
+in molecular terms. The approach is established by analysis of living
+tissues for elements and compounds. It will tell us what types of organic
+compounds are present in living organisms. In the next stage, one can
+ask the question: What are these compounds doing inside a cell? And,
+in what way they carry out gross physiological processes like digestion,
+excretion, memory, defense, recognition, etc. In other words we answer
+the question, what is the molecular basis of all physiological processes?
+It can also explain the abnormal processes that occur during any
+diseased condition. This physico-chemical approach to study and
+understand living organisms is cal
+
+=== BIOLOGY C11 | Biology/Class 11-Biology/ncert-books-class-11-biology-chapter-9.pdf ===
+104
+BIOLOGY
+There is a wide diversity in living organisms in our biosphere. Now a
+question that arises in our minds is: Are all living organisms made of the
+same chemicals, i.e., elements and compounds? You have learnt in
+chemistry how elemental analysis is performed. If we perform such an
+analysis on a plant tissue, animal tissue or a microbial paste, we obtain a
+list of elements like carbon, hydrogen, oxygen and several others and
+their respective content per unit mass of a living tissue. If the same analysis
+is performed on a piece of earth’s crust as an example of non-living matter,
+we obtain a similar list. What are the differences between the two lists? In
+absolute terms, no such differences could be made out. All the elements
+present in a sample of earth’s crust are also present in a sample of living
+tissue. However, a closer examination reveals that the relative abundance
+of carbon and hydrogen with respect to other elements is higher in any
+living organism than in earth’s crust (Table 9.1).
+9.1 HOW TO ANALYSE CHEMICAL COMPOSITION?
+We can continue asking in the same way, what type of organic compounds
+are found in living organisms? How does one go about finding the answer?
+To get an answer, one has to perform a chemical analysis. We can take any
+living tissue (a vegetable or a piece of liver, etc.) and grind it in trichloroacetic
+acid (Cl3CCOOH) using a mortar and a pestle. We obtain a thick slurry. If
+we were to strain this through a cheesecloth or cotton we would ob
+
+=== BIOLOGY C12 | Biology/Class 12-Biology/ncert-books-class-12-biology-chapter-1.pdf ===
+Biology in essence is the story of life on earth. While individual
+organisms die without fail, species continue to live through
+millions of years unless threatened by natural or anthropogenic
+extinction. Reproduction becomes a vital process without
+which species cannot survive for long. Each individual leaves
+its progeny by asexual or sexual means. Sexual mode of
+reproduction enables creation of new variants, so that survival
+advantage is enhanced. This unit explains the details of
+reproductive processes in flowering plants and humans as easy
+to relate representative examples. A related perspective on
+human reproductive health and how reproductive ill health
+can be avoided is also presented to complete our
+understanding of biology of reproduction.
+Chapter 1
+Sexual Reproduction in
+flowering Plants
+Chapter 2
+Human Reproduction
+Chapter 3
+Reproductive Health
+2024-25
+
+PANCHANAN MAHESHWARI
+(1904-1966)
+Born in November 1904 in Jaipur (Rajasthan) Panchanan Maheshwari
+rose to become one of the most distinguished botanists not only of India
+but of the entire world. He moved to Allahabad for higher education
+where he obtained his D.Sc. During his college days, he was inspired
+by Dr W. Dudgeon, an American missionary teacher, to develop interest
+in Botany and especially morphology. His teacher once expressed that
+if his student progresses ahead of him, it will give him a great satisfaction.
+These words encouraged Panchanan to enquire what he could do for
+his teacher in return.
+He worked 
+
+=== BIOLOGY C12 | Biology/Class 12-Biology/ncert-books-class-12-biology-chapter-10.pdf ===
+Biotechnology, as you would have learnt from the
+previous chapter, essentially deals with industrial scale
+production of biopharmaceuticals and biologicals using
+genetically modified microbes, fungi, plants and animals.
+The applications of biotechnology include therapeutics,
+diagnostics, genetically modified crops for agriculture,
+processed food, bioremediation, waste treatment, and
+energy production. Three critical research areas of
+biotechnology are:
+(i)
+Providing the best catalyst in the form of improved
+organism usually a microbe or pure enzyme.
+(ii)
+Creating optimal conditions through engineering for
+a catalyst to act, and
+(iii)
+Downstream processing technologies to purify the
+protein/organic compound.
+Let us now learn how human beings have used
+biotechnology to improve the quality of human life,
+especially in the field of food production and health.
+10.1 BIOTECHNOLOGICAL APPLICATIONS IN
+AGRICULTURE
+Let us take a look at the three options that can be thought
+for increasing food production
+(i)
+agro-chemical based agriculture;
+CHAPTER 10
+BIOTECHNOLOGY AND ITS
+APPLICATIONS
+10.1 Biotechnological
+Applications in
+Agriculture
+10.2 Biotechnological
+Applications in
+Medicine
+10.3 Transgenic Animals
+10.4 Ethical Issues
+2024-25
+
+178
+BIOLOGY
+(ii)
+organic agriculture; and
+(iii)
+genetically engineered crop-based agriculture.
+The Green Revolution succeeded in tripling the food supply but yet
+it was not enough to feed the growing human population. Increased yields
+have partly been due to
+
+=== BIOLOGY C12 | Biology/Class 12-Biology/ncert-books-class-12-biology-chapter-13.pdf ===
+If an alien from a distant galaxy were to visit our planet
+Earth, the first thing that would amaze and baffle him
+would most probably be the enormous diversity of life
+that he would encounter. Even for humans, the rich variety
+of living organisms with which they share this planet never
+ceases to astonish and fascinate us.  The common man
+would find it hard to believe that there are more than
+20,000 species of ants, 3,00,000 species of beetles, 28,000
+species of fishes and nearly 20,000 species of orchids.
+Ecologists and evolutionary biologists have been trying
+to understand the significance of such diversity by asking
+important questions– Why are there so many species?
+Did such great diversity exist throughout earth’s history?
+How did this diversification come about?  How and why
+is this diversity important to the biosphere? Would it
+function any differently if the diversity was much less?
+How do humans benefit from the diversity of life?
+13.1 BIODIVERSITY
+In our biosphere immense diversity (or heterogeneity)
+exists not only at the species level but at all levels of
+biological organisation ranging from macromolecules
+within cells to biomes.  Biodiversity is the term popularised
+by the sociobiologist Edward Wilson to describe the
+CHAPTER 13
+BIODIVERSITY AND
+CONSERVATION
+13.1 Biodiversity
+13.2 Biodiversity Conservation
+2024-25
+
+217
+BIODIVERSITY AND CONSERVATION
+combined diversity at all the levels of biological organisation.
+The most important of them are–
+(i)
+Genetic diversity
+
+=== BIOLOGY C12 | Biology/Class 12-Biology/ncert-books-class-12-biology-chapter-3.pdf ===
+You have learnt about human reproductive system and its
+functions in Chapter 2. Now, let’s discuss a closely related
+topic – reproductive health. What do we understand by
+this term?  The term simply refers to healthy reproductive
+organs with normal functions. However, it has a broader
+perspective and includes the emotional and social aspects
+of reproduction also. According to the World Health
+Organisation (WHO), reproductive health means a total
+well-being in all aspects of reproduction, i.e., physical,
+emotional, behavioural and social. Therefore, a society with
+people having physically and functionally normal
+reproductive organs and normal emotional and behavioural
+interactions among them in all sex-related aspects might
+be called reproductively healthy. Why is it significant to
+maintain reproductive health and what are the methods
+taken up to achieve it? Let us examine them.
+3.1 REPRODUCTIVE HEALTH – PROBLEMS AND
+STRATEGIES
+India was amongst the first countries in the world to
+initiate action plans and programmes at a national level
+to attain total reproductive health as a social goal.
+These programmes called ‘family planning’ were
+initiated in 1951 and were periodically assessed over
+the past decades. Improved programmes covering wider
+CHAPTER 3
+REPRODUCTIVE HEALTH
+3.1
+Reproductive Health –
+Problems and Strategies
+3.2
+Population Explosion and
+Birth Control
+3.3
+Medical Termination of
+Pregnancy
+3.4
+Sexually Transmitted
+Diseases
+3.5
+Infertility
+2024-25
+
+42
+BIOLOGY
+reproducti
+
+=== BIOLOGY C12 | Biology/Class 12-Biology/ncert-books-class-12-biology-chapter-4.pdf ===
+The work of Mendel and others who followed him gave us an
+idea of inheritance patterns. However the nature of those ‘factors’
+which determine the phenotype was not very clear. As these
+‘factors’ represent the genetic basis of inheritance, understanding
+the structure of genetic material and the structural basis of
+genotype and phenotype conversion became the focus of
+attention in biology for the next century. The entire body of
+molecular biology was a consequent development with major
+contributions from Watson, Crick, Nirenberg, Khorana, Kornbergs
+(father and son), Benzer, Monod, Brenner, etc. A parallel problem
+being tackled was the mechanism of evolution. Awareness in the
+areas of molecular genetics, structural biology and bio informatics
+have enriched our understanding of the molecular basis of
+evolution. In this unit the structure and function of DNA and the
+story and theory of evolution have been examined and explained.
+Chapter 4
+Principles of Inheritance
+and Variation
+Chapter 5
+Molecular Basis of Inheritance
+Chapter 6
+Evolution
+2024-25
+
+James Dewey Watson was born in Chicago on 6 April 1928. In 1947, he
+received B.Sc. degree in Zoology. During these years his interest in
+bird-watching had matured into a serious desire to learn genetics. This
+became possible when he received a Fellowship for graduate study in
+Zoology at Indiana University, Bloomington, where he received his Ph.D.
+degree in 1950 on a study of the effect of hard X-rays on bacteriophage
+multiplication.
+He me
+
+=== BIOLOGY C12 | Biology/Class 12-Biology/ncert-books-class-12-biology-chapter-5.pdf ===
+CHAPTER 5
+MOLECULAR BASIS OF
+INHERITANCE
+5.1
+The DNA
+5.2
+The Search for Genetic
+Material
+5.3
+RNA World
+5.4
+Replication
+5.5
+Transcription
+5.6
+Genetic Code
+5.7
+Translation
+5.8
+Regulation of Gene
+Expression
+5.9
+Human Genome Project
+5.10 DNA Fingerprinting
+In the previous chapter, you have learnt the inheritance
+patterns and the genetic basis of such patterns. At the
+time of Mendel, the nature of those ‘factors’ regulating
+the pattern of inheritance was not clear. Over the next
+hundred years, the nature of the putative genetic material
+was investigated culminating in the realisation that
+DNA – deoxyribonucleic acid – is the genetic material, at
+least for the majority of organisms. In class XI you have
+learnt that nucleic acids are polymers of nucleotides.
+Deoxyribonucleic acid (DNA) and ribonucleic acid
+(RNA) are the two types of nucleic acids found in living
+systems. DNA acts as the genetic material in most of the
+organisms. RNA though it also acts as a genetic material
+in some viruses, mostly functions as a messenger. RNA
+has additional roles as well. It functions as adapter,
+structural, and in some cases as a catalytic molecule. In
+Class XI you have already learnt the structures of
+nucleotides and the way these monomer units are linked
+to form nucleic acid polymers. In this chapter we are going
+to discuss the structure of DNA, its replication, the process
+of making RNA from DNA (transcription), the genetic code
+that determines the sequences of amino acids in proteins,
+the proc
+
+=== BIOLOGY C12 | Biology/Class 12-Biology/ncert-books-class-12-biology-chapter-6.pdf ===
+110
+BIOLOGY
+Evolutionary Biology is the study of history of life forms
+on earth. What exactly is evolution? To understand the
+changes in flora and fauna that have occurred over millions
+of years on earth, we must have an understanding of the
+context of origin of life, i.e., evolution of earth, of stars and
+indeed of the universe itself. What follows is the longest of
+all the construed and conjectured stories. This is the story
+of origin of life and evolution of life forms or biodiversity on
+planet earth in the context of evolution of earth and against
+the background of evolution of universe itself.
+6.1 ORIGIN OF LIFE
+When we look at stars on a clear night sky we are, in a
+way,  looking back in time. Stellar distances are measured
+in light years. What we see today is an object whose emitted
+light started its journey millions of year back and from
+trillions of kilometres away and reaching our eyes now.
+However, when we see objects in our immediate
+surroundings we see them instantly and hence in the
+present time. Therefore, when we see stars we apparently
+are peeping into the past.
+The origin of life is considered a unique event in the
+history of universe. The universe is vast. Relatively speaking
+the earth itself is almost only a speck. The universe is very
+CHAPTER 6
+EVOLUTION
+6.1
+Origin of Life
+6.2
+Evolution of Life Forms - A
+Theory
+6.3
+What are the Evidences
+for Evolution?
+6.4
+What is Adaptive
+Radiation?
+6.5
+Biological Evolution
+6.6
+Mechanism of Evolution
+6.7
+Hardy - Weinberg
+
+=== BIOLOGY C12 | Biology/Class 12-Biology/ncert-books-class-12-biology-chapter-7.pdf ===
+Chapter 7
+Human Health and Disease
+Chapter 8
+Microbes in Human Welfare
+Biology is the youngest of the formalised disciplines of natural
+science. Progress in physics and chemistry proceeded much
+faster than in Biology. Applications of physics and chemistry in
+our daily life also have a higher visibility than those of biology.
+However, twentieth century and certainly twenty-first century
+has demonstrated the utility of biological knowledge in
+furthering human welfare, be it in health sector or agriculture.
+The discovery of antibiotics, and synthetic plant-derived drugs,
+anaesthetics have changed medical practice on one hand
+and human health on the other hand. Life expectancy of
+human beings have dramatically changed over the years.
+Agricultural practices, food processing and diagnostics have
+brought socio-cultural changes in human communities. These
+are briefly described in the following three chapters of this unit.
+2024-25
+
+Born in August 1925 in Kumbakonam in Tamil Nadu, Monkambu Sambasivan
+Swaminathan did his graduation and post-graduation in Botany from
+Madras University. He worked in different capacities in large number of
+institutions in India and abroad and developed his expertise in genetics
+and plant breeding.
+The School of Cytogenetics and Radiation Research established at the
+Indian Agricultural Research Institute (IARI) enabled Swaminathan and his
+team to develop short-duration high-yielding varieties of rice including scented
+Basmati. He is also known for the devel
+
+=== BIOLOGY C12 | Biology/Class 12-Biology/ncert-books-class-12-biology-chapter-8.pdf ===
+Besides macroscopic plants and animals, microbes are
+the major components of biological systems on this earth.
+You have studied about the diversity of living organisms
+in Class XI. Do you remember which Kingdoms among
+the living organisms contain micro-organisms? Which are
+the ones that are only microscopic? Microbes are present
+everywhere – in soil, water, air, inside our bodies and that
+of other animals and plants. They are present even at sites
+where no other life-form could possibly exist–sites such
+as deep inside the geysers (thermal vents) where the
+temperature may be as high as 1000C, deep in the soil,
+under the layers of snow several metres thick, and in highly
+acidic environments. Microbes are diverse–protozoa,
+bacteria, fungi and microscopic animal and plant viruses,
+viroids and also prions that are proteinacious infectious
+agents. Some of the microbes are shown in Figures 8.1
+and 8.2.
+Microbes like bacteria and many fungi can be grown
+on nutritive media to form colonies (Figure 8.3), that can
+be seen with the naked eyes.  Such cultures are useful in
+studies on micro-organisms.
+CHAPTER 8
+MICROBES IN HUMAN WELFARE
+8.1
+Microbes in Household
+Products
+8.2
+Microbes in Industrial
+Products
+8.3
+Microbes in Sewage
+Treatment
+8.4
+Microbes in Production of
+Biogas
+8.5
+Microbes as Biocontrol
+Agents
+8.6
+Microbes as Biofertilisers
+2024-25
+
+150
+BIOLOGY
+(a)
+(b)
+(c)
+(a)
+(b)
+Figure 8.3
+(a) Colonies of bacteria growing in a petri dish;
+(b) Fungal colony growing in a petri dish
+(a)
+(b)
+(
+
+=== BIOLOGY C12 | Biology/Class 12-Biology/ncert-books-class-12-biology-chapter-9.pdf ===
+Ever since the days of Rene Descartes, the French philosopher,
+mathematician and biologist of seventeenth century, all human
+knowledge especially natural sciences were directed to develop
+technologies which add to the creature comforts of human
+lives, as also value to human life. The whole approach to
+understanding natural phenomena became anthropocentric.
+Physics and chemistry gave rise to engineering, technologies
+and industries which all worked for human comfort and welfare.
+The major utility of the biological world is as a source of food.
+Biotechnology, the twentieth century off-shoot of modern
+biology, changed our daily life as its products  brought
+qualitative improvement in health and food production. The
+basic principles underlying biotechnological processes and some
+applications are highlighted and discussed in this unit.
+Chapter 9
+Biotechnology : Principles and
+Processes
+Chapter 10
+Biotechnology and Its
+Applications
+2024-25
+
+Herbert Boyer was born in 1936 and brought up in a corner of western
+Pennsylvania where railroads and mines were the destiny of most young
+men. He completed graduate work at the University of Pittsburgh, in
+1963, followed by three years of post-graduate studies at Yale.
+In 1966, Boyer took over assistant professorship at the University of
+California at San Francisco. By 1969, he performed studies on a couple
+of restriction enzymes of the E. coli bacterium with especially useful
+properties. Boyer observed that these enzymes have the capability of
+
+=== CHEMISTRY C11 | Chemistry/Class 11- Chemistry/ncert-books-class-11-chemistry-chapter-1.pdf ===
+UNIT 1
+SOME BASIC CONCEPTS OF CHEMISTRY
+Science can be viewed as a continuing human effort to 
+systematise knowledge for describing and understanding 
+nature. You have learnt in your previous classes that we 
+come across diverse substances present in nature and 
+changes in them in daily life. Curd formation from milk, 
+formation of vinegar from sugarcane juice on keeping 
+for prolonged time and rusting of iron are some of the 
+examples of changes which we come across many times. 
+For the sake of convenience, science is sub-divided into 
+various disciplines: chemistry, physics, biology, geology, 
+etc. The branch of science that studies the preparation, 
+properties, structure and reactions of material substances 
+is called chemistry.
+DEVELOPMENT OF CHEMISTRY
+Chemistry, as we understand it today, is not a very old 
+discipline. Chemistry was not studied for its own sake, rather 
+it came up as a result of search for two interesting things:
+	
+i.	 Philosopher’s stone (Paras) which would convert 
+all baser metals e.g., iron and copper into gold.
+	
+ii.	 ‘Elixir of life’ which would grant immortality.
+People in ancient India, already had the knowledge of 
+many scientific phenomenon much before the advent of 
+modern science. They applied that knowledge in various 
+walks of life. Chemistry developed mainly in the form 
+of Alchemy and Iatrochemistry during 1300-1600 CE. 
+Modern chemistry took shape in the 18th century Europe, 
+after a few centuries of alchemical traditions which were 
+int
+
+=== CHEMISTRY C11 | Chemistry/Class 11- Chemistry/ncert-books-class-11-chemistry-chapter-2.pdf ===
+The rich diversity of chemical behaviour of different 
+elements can be traced to the differences in the internal 
+structure of atoms of these elements.
+Unit 2
+structure of atom
+After studying this unit you will be 
+able to
+•	
+know about the discovery of 
+electron, proton and neutron and 
+their characteristics;
+•	
+describe Thomson, Rutherford 
+and Bohr atomic models;
+•	
+understand the important features 
+of the quantum mechanical model 
+of atom;
+•	
+u n d e r s t a n d  n a t u r e  o f 
+electromagnetic radiation and 
+Planck’s quantum theory; 
+•	
+explain the photoelectric effect 
+and describe features of atomic 
+spectra;
+•	
+state the de Broglie relation and 
+Heisenberg uncertainty principle; 
+• 
+define an atomic orbital in terms 
+of quantum numbers;
+•	
+state aufbau principle, Pauli 
+exclusion principle and Hund’s 
+rule of maximum multiplicity; and
+• 
+write the electronic configurations 
+of atoms.
+The existence of atoms has been proposed since the time 
+of early Indian and Greek philosophers (400 B.C.) who 
+were of the view that atoms are the fundamental building 
+blocks of matter. According to them, the continued 
+subdivisions of matter would ultimately yield atoms 
+which would not be further divisible. The word ‘atom’ 
+has been derived from the Greek word ‘a-tomio’ which 
+means ‘uncut-able’ or ‘non-divisible’. These earlier ideas 
+were mere speculations and there was no way to test 
+them experimentally. These ideas remained dormant  for 
+a very long time and were revived again
+
+=== CHEMISTRY C11 | Chemistry/Class 11- Chemistry/ncert-books-class-11-chemistry-chapter-3.pdf ===
+The Periodic Table is arguably the most important concept 
+in chemistry, both in principle and in practice. It is the 
+everyday support for students, it suggests new avenues 
+of research to professionals, and it provides a succinct 
+organization of the whole of chemistry. It is a remarkable 
+demonstration of the fact that the chemical elements are 
+not a random cluster of entities but instead display trends 
+and lie together in families. An awareness of the Periodic 
+Table is essential to anyone who wishes to disentangle 
+the world and see how it is built up from the fundamental 
+building blocks of the chemistry, the chemical elements.
+	
+Glenn T. Seaborg
+Unit 3
+Classification of Elements and 
+Periodicity in Properties
+After studying this Unit, you will be 
+able to 
+• 
+appreciate how the concept of 
+grouping elements in accordance 
+to their properties led to the 
+development of Periodic Table.
+• 
+understand  the Periodic Law; 
+• understand the  significance of 
+atomic number and electronic 
+configuration as the basis for 
+periodic classification;
+• 
+n a m e  t h e  e l e m e n t s  w i t h  
+Z >100 according to IUPAC 
+nomenclature; 
+• 
+classify elements into s, p, d, 
+f blocks and learn their main 
+characteristics;
+• 
+recognise the periodic trends in 
+physical and chemical properties 
+of elements;
+• 
+compare the reactivity of elements 
+and correlate it with their 
+occurrence in nature;
+• 
+explain the relationship  between 
+ionization enthalpy and metallic 
+character;
+• 
+use  s
+
+=== CHEMISTRY C11 | Chemistry/Class 11- Chemistry/ncert-books-class-11-chemistry-chapter-5.pdf ===
+Thermodynamics
+It is the only physical theory of universal content concerning 
+which I am convinced that, within the framework of the 
+applicability of its basic concepts, it will never be overthrown.
+Albert Einstein
+Chemical energy stored by molecules can be released as 
+heat during chemical reactions when a fuel like methane, 
+cooking gas or coal burns in air. The chemical energy may 
+also be used to do mechanical work when a fuel burns 
+in an engine or to provide electrical energy through a 
+galvanic cell like dry cell. Thus, various forms of energy 
+are interrelated and under certain conditions, these may 
+be transformed from one form into  another. The study 
+of these energy transformations forms the subject matter 
+of thermodynamics. The laws of thermodynamics deal 
+with energy changes of macroscopic systems involving 
+a large number of molecules rather than microscopic 
+systems containing a few molecules. Thermodynamics is 
+not concerned about how and at what rate these energy 
+transformations are carried out, but is based on initial and 
+final states of a system undergoing the change. Laws of 
+thermodynamics apply only when a system is in equilibrium 
+or moves from one equilibrium state to another equilibrium 
+state. Macroscopic properties like pressure and temperature 
+do not change with time for a system in equilibrium state. 
+In this unit, we would like to answer some of the important 
+questions through thermodynamics, like:
+How do we determine the energy changes i
+
+=== CHEMISTRY C11 | Chemistry/Class 11- Chemistry/ncert-books-class-11-chemistry-chapter-6.pdf ===
+Unit 6
+Equilibrium
+Chemical equilibria are important in numerous biological 
+and environmental processes. For example, equilibria 
+involving O2 molecules and the protein hemoglobin play 
+a crucial role in the transport and delivery of O2 from 
+our lungs to our muscles. Similar equilibria involving CO 
+molecules and hemoglobin account for the toxicity of CO.
+When a liquid evaporates in a closed container, 
+molecules with relatively higher kinetic energy escape 
+the liquid surface into the vapour phase and number of 
+liquid molecules from the vapour phase strike the liquid 
+surface and are retained in the liquid phase. It gives rise 
+to a constant vapour pressure because of an equilibrium in 
+which the number of molecules leaving the liquid equals the 
+number returning to liquid from the vapour. We say that 
+the system has reached equilibrium state at this stage. 
+However, this is not static equilibrium and there is a lot of 
+activity at the boundary between the liquid and the vapour. 
+Thus, at equilibrium, the rate of evaporation is equal to the 
+rate of condensation. It may be represented by
+H2O (l)  
+ H2O (vap)
+The double half arrows indicate that the processes 
+in both the directions are going on simultaneously. The 
+mixture of reactants and products in the equilibrium state 
+is called an equilibrium mixture.
+Equilibrium can be established for both physical 
+processes and chemical reactions. The reaction may be 
+fast or slow depending on the experimental conditions and 
+the
+
+=== CHEMISTRY C11 | Chemistry/Class 11- Chemistry/ncert-books-class-11-chemistry-chapter-7.pdf ===
+235
+redox reactions
+Chemistry deals with varieties of matter and change 
+of one kind of matter into the other. Transformation of 
+matter from one kind into another occurs through the 
+various types of reactions. One important category of such 
+reactions is Redox Reactions. A number of phenomena, 
+both physical as well as biological, are concerned with 
+redox reactions. These reactions find extensive use in 
+pharmaceutical, biological, industrial, metallurgical and 
+agricultural areas. The importance of these reactions is 
+apparent from the fact that burning of different types of 
+fuels for obtaining energy for domestic, transport and 
+other commercial purposes, electrochemical processes 
+for extraction of highly reactive metals and non-metals, 
+manufacturing of  chemical  compounds like  caustic 
+soda, operation of dry and wet batteries and corrosion of 
+metals fall within the purview of redox processes. Of late, 
+environmental issues like Hydrogen Economy (use of 
+liquid hydrogen as fuel) and development of ‘Ozone Hole’ 
+have started figuring under redox phenomenon. 
+7.1 CLASSICAL IDEA OF REDOX REACTIONS – 
+OXIDATION AND REDUCTION REACTIONS
+Originally, the term oxidation was used to describe the 
+addition of oxygen to an element or a compound. Because 
+of the presence of dioxygen in the atmosphere (~20%), 
+many elements combine with it and this is the principal 
+reason why they commonly occur on the earth in the  
+form of their oxides. The following reactions represent 
+oxid
+
+=== CHEMISTRY C11 | Chemistry/Class 11- Chemistry/ncert-books-class-11-chemistry-chapter-8.pdf ===
+256
+chemistry
+Organic Chemistry – Some Basic  
+Principles and Techniques
+After studying this unit, you will 
+be able to 
+•	
+u n d e r s t a n d  r e a s o n s  f o r 
+tetravalence of carbon and 
+shapes of organic molecules; 
+•	
+write structures of organic 
+molecules in various ways;
+•	
+classify the organic compounds; 
+•	
+name the compounds according 
+to IUPAC system of nomenclature 
+and also derive their structures 
+from the given names;
+•	
+understand the concept of 
+organic reaction mechanism;
+•	
+explain the influence of electronic 
+displacements on structure and 
+reactivity of organic compounds;
+•	
+recognise the types of organic 
+reactions;
+•	
+lear n the techniques of 
+p u r i f i c a t i o n  o f  o r g a n i c 
+compounds;
+•	
+write the chemical reactions 
+involved in the qualitative 
+analysis of organic compounds;
+•	
+understand the principles 
+involved in quantitative analysis 
+of organic compounds.
+In the previous unit you have learnt that the element 
+carbon has the unique property called catenation due to 
+which it forms covalent bonds with other carbon atoms. 
+It also forms covalent bonds with atoms of other elements 
+like hydrogen, oxygen, nitrogen, sulphur, phosphorus 
+and halogens. The resulting compounds are studied 
+under a separate branch of chemistry called organic 
+chemistry. This unit incorporates some basic principles 
+and techniques of analysis required for understanding the 
+formation and properties of organic compounds.
+8.1 General Introduction
+Organic com
+
+=== CHEMISTRY C11 | Chemistry/Class 11- Chemistry/ncert-books-class-11-chemistry-chapter-9.pdf ===
+295
+Hydrocarbons
+Unit 9
+After studying this unit, you will be 
+able to 
+•	
+name hydrocarbons according to 
+IUPAC system of nomenclature; 
+•	
+recognise and write structures  
+o f  i s o m e r s  o f  a l k a n e s , 
+alkenes, alkynes and aromatic 
+hydrocarbons;
+•	
+learn about various methods of 
+preparation of hydrocarbons;
+•	
+distinguish between alkanes, 
+alkenes, alkynes and aromatic 
+hydrocarbons on the basis of 
+physical and chemical properties;
+•	
+draw and differentiate between 
+various conformations of ethane;
+•	
+a p p r e c i a t e  t h e  r o l e  o f 
+hydrocarbons as sources of  
+energy and for other industrial 
+applications;
+•	
+pr edict the for mation of 
+the addition products of 
+unsymmetrical alkenes and 
+alkynes on the basis of electronic 
+mechanism;
+•	
+comprehend the structure of 
+benzene, explain aromaticity  
+and understand mechanism  
+of electrophilic substitution 
+reactions of benzene; 
+•	
+predict the directive influence of 
+substituents in monosubstituted 
+benzene ring;
+•	
+learn about carcinogenicity and 
+toxicity.
+Hydrocarbons
+The term ‘hydrocarbon’ is self-explanatory which means 
+compounds of carbon and hydrogen only. Hydrocarbons 
+play a key role in our daily life. You must be familiar 
+with the terms ‘LPG’ and ‘CNG’ used as fuels. LPG is the 
+abbreviated form of liquified petroleum gas whereas CNG 
+stands for compressed natural gas. Another term ‘LNG’ 
+(liquified natural gas) is also in news these days. This is 
+also a fuel and is obtained by liquifacti
+
+=== CHEMISTRY C12 | Chemistry/Class 12- Chemistry/ncert-books-class-12-chemistry-chapter-1.pdf ===
+After studying this Unit, you will be
+able to
+·
+describe the formation of different
+types of solutions;
+·
+express concentration of solution
+in different units;
+·
+state and explain Henry’s law and
+Raoult’s law;
+·
+distinguish between ideal and
+non-ideal solutions;
+·
+explain deviations of real solutions
+from Raoult’s law;
+·
+describe colligative properties of
+solutions and correlate these with
+molar masses of the solutes;
+·
+explain abnormal colligative
+properties exhibited by some
+solutes in solutions.
+In normal life we rarely come across pure substances.
+Most of these are mixtures containing two or more pure
+substances. Their utility or importance in life depends
+on their composition. For example, the properties of
+brass (mixture of copper and zinc) are quite different
+from those of German silver (mixture of copper, zinc
+and nickel) or bronze (mixture of copper and tin);
+1 part per million (ppm) of fluoride ions in water
+prevents tooth decay, while 1.5 ppm causes the tooth
+to become mottled and high concentrations of fluoride
+ions can be poisonous (for example, sodium fluoride is
+used in rat poison); intravenous injections are always
+dissolved in water containing salts at particular ionic
+concentrations that match with blood plasma
+concentrations and so on.
+In this Unit, we will consider mostly liquid
+solutions and their formation. This will be followed by
+studying the properties of the solutions, like vapour
+pressure and colligative properties. We will begin with
+types of solut
+
+=== CHEMISTRY C12 | Chemistry/Class 12- Chemistry/ncert-books-class-12-chemistry-chapter-10.pdf ===
+A living system grows, sustains and reproduces itself.
+The most amazing thing about a living system is that it
+is composed of non-living atoms and molecules. The
+pursuit of knowledge of what goes on chemically within
+a living system falls in the domain of biochemistry. Living
+systems are made up of various complex biomolecules
+like carbohydrates, proteins, nucleic acids, lipids, etc.
+Proteins and carbohydrates are essential constituents of
+our food. These biomolecules interact with each other
+and constitute the molecular logic of life processes. In
+addition, some simple molecules like vitamins and
+mineral salts also play an important role in the functions
+of organisms.  Structures and functions of some of these
+biomolecules are discussed in this Unit.
+Biomolecules
+Biomolecules
+Biomolecules
+Biomolecules
+Biomolecules
+Biomolecules
+Biomolecules
+Biomolecules
+Biomolecules
+Biomolecules
+After studying this Unit, you will be
+able to
+•
+explain the characteristics of
+biomolecules like carbohydrates,
+proteins and nucleic acids and
+hormones;
+•
+classify carbohydrates, proteins,
+nucleic acids and vitamins on the
+basis of their structures;
+•
+explain the difference between
+DNA and RNA;
+•
+describe the role of biomolecules
+in biosystem.
+Objectives
+“It is the harmonious and synchronous progress of chemical
+reactions in body which leads to life”.
+10
+Unit
+Unit
+Unit
+Unit
+Unit10
+Carbohydrates are primarily produced by plants and form a very large
+group of naturally occurring organic compounds. Some 
+
+=== CHEMISTRY C12 | Chemistry/Class 12- Chemistry/ncert-books-class-12-chemistry-chapter-2.pdf ===
+Electrochemistry is the study of production of
+electricity from energy released during spontaneous
+chemical reactions  and the use of electrical energy
+to bring about non-spontaneous chemical
+transformations. The subject is of importance both
+for theoretical and practical considerations. A large
+number of metals, sodium hydroxide, chlorine,
+fluorine and many other chemicals are produced by
+electrochemical methods. Batteries and fuel cells
+convert chemical energy into electrical energy and are
+used on a large scale in various instruments and
+devices. The reactions carried out electrochemically
+can be energy efficient and less polluting. Therefore,
+study of electrochemistry is important for creating new
+technologies that are ecofriendly. The transmission of
+sensory signals through cells to brain and vice versa
+and communication between the cells are known to
+have electrochemical origin. Electrochemistry, is
+therefore, a very vast and interdisciplinary subject. In
+this Unit, we will cover only some of its important
+elementary aspects.
+After studying this Unit, you will be
+able to
+·
+describe an electrochemical cell
+and differentiate between galvanic
+and electrolytic cells;
+·
+apply 
+Nernst 
+equation 
+for
+calculating the emf of galvanic cell
+and define standard potential of
+the cell;
+·
+derive relation between standard
+potential of the cell, Gibbs energy
+of cell reaction and its equilibrium
+constant;
+·
+define resistivity (r), conductivity
+(k) and molar conductivity (✆m) of
+ionic sol
+
+=== CHEMISTRY C12 | Chemistry/Class 12- Chemistry/ncert-books-class-12-chemistry-chapter-3.pdf ===
+Chemistry, by its very nature, is concerned with change.
+Substances with well defined properties are converted
+by chemical reactions into other substances with
+different properties. For any chemical reaction, chemists
+try to find out
+(a) the feasibility of a chemical reaction which can be
+predicted by thermodynamics ( as you know that a
+reaction with DG < 0, at constant temperature and
+pressure is feasible);
+(b) extent to which a reaction will proceed can be
+determined from chemical equilibrium;
+(c) speed of a reaction i.e. time taken by a reaction to
+reach equilibrium.
+Along with feasibility and extent, it is equally
+important to know the rate and the factors controlling
+the rate of a chemical reaction for its complete
+understanding. For example, which parameters
+determine as to how rapidly food gets spoiled? How
+to design a rapidly setting material for dental filling?
+Or what controls the rate at which fuel burns in an
+auto engine? All these questions can be answered by
+the branch of chemistry, which deals with the study
+of reaction rates and their mechanisms, called
+chemical kinetics. The word kinetics is derived from
+the Greek word ‘kinesis’ meaning movement.
+Thermodynamics tells only about the feasibility of a
+reaction whereas chemical kinetics tells about the rate
+of a reaction.  For example, thermodynamic data
+indicate that diamond shall convert to graphite but
+in reality the conversion rate is so slow that the change
+is not perceptible at all. Therefore, most people t
+
+=== CHEMISTRY C12 | Chemistry/Class 12- Chemistry/ncert-books-class-12-chemistry-chapter-4.pdf ===
+The d-block of the periodic table contains the elements
+of the groups 3-12 in which the d orbitals are
+progressively filled in each of the four long periods.
+The f-block consists of elements in which 4 f and 5 f
+orbitals are progressively filled. They are placed in a
+separate panel at the bottom of the periodic table. The
+names transition metals and inner transition metals
+are often used to refer to the elements of d-and
+f-blocks respectively.
+There are mainly four series of the transition metals,
+3d series (Sc to Zn), 4d series (Y to Cd), 5d series (La
+and Hf to Hg) and 6d series which has Ac and elements
+from Rf to Cn. The two series of the inner transition
+metals; 4f (Ce to Lu) and 5f (Th to Lr) are known as
+lanthanoids and actinoids respectively.
+Originally the name transition metals was derived
+from the fact that their chemical properties were
+transitional between those of s and p-block elements.
+Now according to IUPAC, transition metals are defined
+as metals which have incomplete d subshell either in
+neutral atom or in their ions. Zinc, cadmium and
+mercury of group 12 have full d
+10 configuration in their
+ground state as well as in their common oxidation states
+and hence, are not regarded as transition metals.
+However, being the end members of the 3d, 4d and 5d
+transition series, respectively, their chemistry is studied
+along with the chemistry of the transition metals.
+The presence of partly filled d or f orbitals in their
+atoms makes transition elements different from
+
+=== CHEMISTRY C12 | Chemistry/Class 12- Chemistry/ncert-books-class-12-chemistry-chapter-5.pdf ===
+118
+Chemistry
+In the previous Unit we learnt that the transition metals
+form a large number of complex compounds in which
+the metal atoms are bound to a number of anions or
+neutral molecules by sharing of electrons. In modern
+terminology such compounds are called coordination
+compounds. The chemistry of coordination compounds
+is an important and challenging area of modern
+inorganic chemistry. New concepts of chemical bonding
+and molecular structure have provided insights into
+the functioning of these compounds as vital components
+of biological systems. Chlorophyll, haemoglobin and
+vitamin B12 are coordination compounds of magnesium,
+iron and cobalt respectively. Variety of metallurgical
+processes, industrial catalysts and analytical reagents
+involve 
+the 
+use 
+of 
+coordination 
+compounds.
+Coordination compounds also find many applications
+in electroplating, textile dyeing and medicinal chemistry.
+Coordination
+Compounds
+After studying this Unit, you will be
+able to
+•
+appreciate 
+the 
+postulates 
+of
+Werner’s theory of coordination
+compounds;
+•
+know the meaning of the terms:
+coordination entity, central atom/
+ion, ligand, coordination number,
+coordination sphere, coordination
+polyhedron, oxidation number,
+homoleptic and heteroleptic;
+•
+learn the rules of nomenclature
+of coordination compounds;
+•
+write the formulas and names
+of 
+mononuclear 
+coordination
+compounds;
+•
+define different types of isomerism
+in coordination compounds;
+•
+understand the nature of bonding
+in coordination 
+
+=== CHEMISTRY C12 | Chemistry/Class 12- Chemistry/ncert-books-class-12-chemistry-chapter-6.pdf ===
+The replacement of hydrogen atom(s) in an aliphatic
+or aromatic hydrocarbon by halogen atom(s) results
+in the formation of alkyl halide (haloalkane) and aryl
+halide (haloarene), respectively. Haloalkanes contain
+halogen atom(s) attached to the sp3 hybridised carbon
+atom of an alkyl group whereas haloarenes contain
+halogen atom(s) attached to sp2 hybridised carbon
+atom(s) of an aryl group. Many halogen containing
+organic compounds occur in nature and some of
+these are clinically useful. These classes of compounds
+find wide applications in industry as well as in day-
+to-day life. They are used as solvents for relatively
+non-polar compounds and as starting materials for
+the synthesis of wide range of organic compounds.
+Chlorine containing antibiotic, chloramphenicol,
+produced by microorganisms is very effective for the
+treatment of typhoid fever. Our body produces iodine
+containing hormone, thyroxine, the deficiency of which
+causes a disease called goiter. Synthetic halogen
+compounds, viz. chloroquine is used for the treatment
+of malaria; halothane is used as an anaesthetic
+during surgery. Certain fully fluorinated compounds
+are being considered as potential blood substitutes
+in surgery.
+In this Unit, you will study the important methods
+of preparation, physical and chemical properties and
+uses of organohalogen compounds.
+After studying this Unit, you will be
+able to
+·
+name haloalkanes and haloarenes
+according to the IUPAC system of
+nomenclature from their given
+structures;
+·
+de
+
+=== CHEMISTRY C12 | Chemistry/Class 12- Chemistry/ncert-books-class-12-chemistry-chapter-7.pdf ===
+After studying this Unit, you will be
+able to
+•
+name 
+alcohols, 
+phenols 
+and
+ethers according to the IUPAC
+system of nomenclature;
+•
+discuss the reactions involved in
+the preparation of alcohols from
+alkenes, aldehydes, ketones and
+carboxylic acids;
+•
+discuss the reactions involved in
+the preparation of phenols from
+haloarenes, benzene sulphonic
+acids, 
+diazonium 
+salts 
+and
+cumene;
+•
+discuss 
+the 
+reactions 
+for
+preparation 
+of 
+ethers 
+from
+(i) alcohols and (ii) alkyl halides
+and sodium alkoxides/aryloxides;
+•
+correlate physical properties of
+alcohols, phenols and ethers with
+their structures;
+•
+discuss chemical reactions of the
+three classes of compounds on
+the basis of their functional
+groups.
+Objectives
+Alcohols, phenols and ethers are the basic compounds for the
+formation of detergents, antiseptics and fragrances, respectively.
+7
+Unit
+Unit
+Unit
+Unit
+Unit7
+Alcohols
+Alcohols
+Alcohols
+Alcohols
+Alcohols,,,,,     Phenols
+Phenols
+Phenols
+Phenols
+Phenols
+and
+and
+and
+and
+and     EEEEEther
+ther
+ther
+ther
+thersssss
+Alcohols
+Alcohols
+Alcohols
+Alcohols
+Alcohols,,,,,     Phenols
+Phenols
+Phenols
+Phenols
+Phenols
+and
+and
+and
+and
+and     EEEEEther
+ther
+ther
+ther
+thersssss
+You have learnt that substitution of one or more
+hydrogen atom(s) from a hydrocarbon by another atom
+or a group of atoms result in the formation of an entirely
+new compound having altogether different properties
+and applications. Alcohols and phenols are formed
+when a hydrogen atom in a hydrocarbon, aliphatic and
+arom
+
+=== CHEMISTRY C12 | Chemistry/Class 12- Chemistry/ncert-books-class-12-chemistry-chapter-8.pdf ===
+After studying this Unit, you will be
+able to
+•
+write the common  and IUPAC
+names of aldehydes, ketones and
+carboxylic acids;
+•
+write 
+the 
+structures 
+of 
+the
+compounds containing functional
+groups namely carbonyl and
+carboxyl groups;
+•
+describe the important methods
+of preparation and reactions of
+these classes of compounds;
+•
+correlate physical properties and
+chemical reactions of aldehydes,
+ketones and carboxylic acids,
+with their structures;
+•
+explain the mechanism of a few
+selected reactions of aldehydes
+and ketones;
+•
+understand 
+various 
+factors
+affecting the acidity of carboxylic
+acids and their reactions;
+•
+describe the uses of aldehydes,
+ketones and carboxylic acids.
+Objectives
+Carbonyl compounds are of utmost importance to organic
+chemistry. They are constituents of fabrics, flavourings, plastics
+and drugs.
+8
+Unit
+Unit
+Unit
+Unit
+Unit8
+Aldehydes
+Aldehydes
+Aldehydes
+Aldehydes
+Aldehydes,,,,,     KKKKKeeeeetones
+tones
+tones
+tones
+tones
+and
+and
+and
+and
+and     Carboxylic
+Carboxylic
+Carboxylic
+Carboxylic
+Carboxylic
+AAAAAcids
+cids
+cids
+cids
+cids
+Aldehydes
+Aldehydes
+Aldehydes
+Aldehydes
+Aldehydes,,,,,     KKKKKeeeeetones
+tones
+tones
+tones
+tones
+and
+and
+and
+and
+and     Carboxylic
+Carboxylic
+Carboxylic
+Carboxylic
+Carboxylic
+AAAAAcids
+cids
+cids
+cids
+cids
+In the previous Unit, you have studied organic
+compounds with functional groups containing carbon-
+oxygen single bond. In this Unit, we will study about the
+organic compounds containing carbon-oxygen double
+bond (>C=O) called
+
+=== CHEMISTRY C12 | Chemistry/Class 12- Chemistry/ncert-books-class-12-chemistry-chapter-9.pdf ===
+Amines constitute an important class of organic
+compounds derived by replacing one or more hydrogen
+atoms of ammonia molecule by alkyl/aryl group(s). In
+nature, they occur among proteins, vitamins, alkaloids
+and hormones. Synthetic examples include polymers,
+dye stuffs and drugs. Two biologically active
+compounds, namely adrenaline and ephedrine, both
+containing secondary amino group, are used to increase
+blood pressure. Novocain, a synthetic amino compound,
+is used as an anaesthetic in dentistry. Benadryl, a well
+known antihistaminic drug also contains tertiary amino
+group. Quaternary ammonium salts are used as
+surfactants. Diazonium salts are intermediates in the
+preparation of a  variety of aromatic compounds
+including dyes. In this Unit, you will learn about amines
+and diazonium salts.
+I. AMINES
+Amines can be considered as derivatives of ammonia,
+obtained by replacement of one, two or all the three
+hydrogen atoms by alkyl and/or aryl groups.
+For example:
+Like ammonia, nitrogen atom of amines is trivalent and
+carries an unshared pair of electrons.  Nitrogen orbitals
+in amines are therefore, sp3 hybridised and the geometry
+of amines is pyramidal. Each of  the three sp3 hybridised
+orbitals of nitrogen overlap with orbitals of hydrogen or
+carbon depending upon the composition of the amines.
+The fourth orbital of nitrogen in all amines contains an
+unshared pair of electrons.  Due to the presence of
+unshared pair of electrons, the angle C–N–E, (where E is
+After studying this Un
+
+=== PHYSICS C11 | Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-1.pdf ===
+CHAPTER ONE
+UNITS AND MEASUREMENT
+1.1  INTRODUCTION
+Measurement of any physical quantity involves comparison
+with a certain basic, arbitrarily chosen, internationally
+accepted reference standard called unit. The result of a
+measurement of a physical quantity is expressed by a
+number (or numerical measure) accompanied by a unit.
+Although the number of physical quantities appears to be
+very large, we need only a limited number of units for
+expressing all the physical quantities, since they are inter-
+related with one another. The units for the fundamental or
+base quantities are called fundamental or base units. The
+units of all other physical quantities can be expressed as
+combinations of the base units. Such units obtained for the
+derived quantities are called derived units. A complete set
+of these units, both the base units and derived units, is
+known as the system of units.
+1.2  THE INTERNATIONAL SYSTEM OF UNITS
+In earlier time scientists of different countries were using
+different systems of units for measurement. Three such
+systems, the CGS, the FPS (or British) system and the MKS
+system were in use extensively till recently.
+The base units for length, mass and time in these systems
+were as follows :
+•
+In CGS system they were centimetre, gram and second
+respectively.
+•
+In FPS system they were foot, pound and second
+respectively.
+•
+In MKS system they were metre, kilogram and second
+respectively.
+The system of units which is at present internationally
+accepted for measuremen
+
+=== PHYSICS C11 | Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-11.pdf ===
+CHAPTER ELEVEN
+THERMODYNAMICS
+11.1  INTRODUCTION
+In previous chapter we have studied thermal properties of
+matter. In this chapter we shall study laws that govern
+thermal energy. We shall study the processes where work is
+converted into heat and vice versa. In winter, when we rub
+our palms together, we feel warmer; here work done in rubbing
+produces the  ‘heat’.  Conversely, in a steam engine, the ‘heat’
+of the steam is used to do useful work in moving the pistons,
+which in turn rotate the wheels of the train.
+In physics, we need to define the notions of heat,
+temperature, work, etc. more carefully.  Historically, it took a
+long time to arrive at the proper concept of ‘heat’. Before the
+modern picture, heat was regarded as a fine invisible fluid
+filling in the pores of a substance.  On contact between a hot
+body and a cold body, the fluid  (called caloric) flowed from
+the colder to the hotter body ! This is similar to what happens
+when a horizontal pipe connects two tanks containing water
+up to different heights. The flow continues until the levels of
+water in the two tanks are the same.  Likewise, in the ‘caloric’
+picture of heat, heat flows until the ‘caloric levels’ (i.e., the
+temperatures) equalise.
+In time, the picture of heat as a fluid was discarded in
+favour of the modern concept of heat as a form of energy. An
+important experiment in this connection was due to Benjamin
+Thomson (also known as Count Rumford) in 1798. He
+observed that boring of a brass cannon generated 
+
+=== PHYSICS C11 | Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-12.pdf ===
+CHAPTER TWELVE
+KINETIC THEORY
+12.1 INTRODUCTION
+Boyle discovered the law named after him in 1661. Boyle,
+Newton and several others tried to explain the behaviour of
+gases by considering that gases are made up of tiny atomic
+particles. The actual atomic theory got established more than
+150 years later. Kinetic theory explains the behaviour of gases
+based on the idea that the gas  consists of rapidly moving
+atoms or molecules. This is possible as the inter-atomic forces,
+which are short range forces that are important for solids
+and liquids,  can be neglected for gases. The kinetic theory
+was developed in the nineteenth century by Maxwell,
+Boltzmann and others. It has been remarkably successful. It
+gives a molecular interpretation of  pressure and temperature
+of a gas, and is consistent with gas laws and Avogadro’s
+hypothesis. It correctly explains specific heat capacities of
+many gases. It also relates measurable properties of gases
+such as viscosity, conduction and diffusion with molecular
+parameters, yielding estimates of molecular sizes and masses.
+This chapter gives an introduction to kinetic theory.
+12.2 MOLECULAR NATURE OF MATTER
+Richard Feynman, one of the great physicists of 20th century
+considers the discovery that “Matter is made up of atoms” to
+be a very significant one. Humanity may suffer annihilation
+(due to nuclear catastrophe) or extinction (due to
+environmental disasters) if we do not act wisely. If that
+happens, and all of scientific knowledge were to be dest
+
+=== PHYSICS C11 | Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-13.pdf ===
+CHAPTER THIRTEEN
+OSCILLATIONS
+13.1
+INTRODUCTION
+In our daily life we come across various kinds of motions.
+You have already learnt about some of them, e.g., rectilinear
+motion and motion of a projectile. Both these motions are
+non-repetitive. We have also learnt about uniform circular
+motion and orbital motion of planets in the solar system. In
+these cases, the motion is repeated after a certain interval of
+time, that is, it is periodic. In your childhood, you must have
+enjoyed rocking in a cradle or swinging on a swing. Both
+these motions are repetitive in nature but different from the
+periodic motion of a planet. Here, the object moves to and fro
+about a mean position. The pendulum of a wall clock executes
+a similar motion. Examples of such periodic to and fro
+motion abound: a boat tossing up and down in a river, the
+piston in a steam engine going back and forth, etc. Such a
+motion is termed as oscillatory motion. In this chapter we
+study this motion.
+The study of oscillatory motion is basic to physics; its
+concepts are required for the understanding of many physical
+phenomena. In musical instruments, like the sitar, the guitar
+or the violin, we come across vibrating strings that produce
+pleasing sounds. The membranes in drums and diaphragms
+in telephone and speaker systems vibrate to and fro about
+their mean positions. The vibrations of air molecules make
+the propagation of sound possible. In a solid, the atoms vibrate
+about their equilibrium positions, the average energy 
+
+=== PHYSICS C11 | Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-14.pdf ===
+CHAPTER FOURTEEN
+WAVES
+14.1
+INTRODUCTION
+In the previous Chapter, we studied the motion of objects
+oscillating in isolation. What happens in a system, which is
+a collection of such objects? A material medium provides
+such an example. Here, elastic forces bind the constituents
+to each other and, therefore, the motion of one affects that of
+the other. If you drop a little pebble in a pond of still water,
+the water surface gets disturbed. The disturbance does not
+remain confined to one place, but propagates outward along
+a circle. If you continue dropping pebbles in the pond, you
+see circles rapidly moving outward from the point where the
+water surface is disturbed. It gives a feeling as if the water is
+moving outward from the point of disturbance. If you put
+some cork pieces on the disturbed surface, it is seen that
+the cork pieces move up and down but do not move away
+from the centre of disturbance. This shows that the water
+mass does not flow outward with the circles, but rather a
+moving disturbance is created. Similarly, when we speak,
+the sound moves outward from us, without any flow of air
+from one part of the medium to another. The disturbances
+produced in air are much less obvious and only our ears or
+a microphone can detect them. These patterns, which move
+without the actual physical transfer or flow of matter as a
+whole, are called waves. In this Chapter, we will study such
+waves.
+Waves transport energy and the pattern of disturbance has
+information that propagate from
+
+=== PHYSICS C11 | Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-2.pdf ===
+CHAPTER TWO
+MOTION IN A STRAIGHT LINE
+2.1
+Introduction
+2.2
+Instantaneous velocity and
+speed
+2.3
+Acceleration
+2.4
+Kinematic equations for
+uniformly accelerated motion
+2.5
+Relative velocity
+Summary
+Points to ponder
+Exercises
+2.1  INTRODUCTION
+Motion is common to everything in the universe. We walk,
+run and ride a bicycle.  Even when we are sleeping, air moves
+into and out of our lungs and blood flows in arteries and
+veins.  We see leaves falling from trees and water flowing
+down a dam.  Automobiles and planes carry people from one
+place to the other. The earth rotates once every twenty-four
+hours and revolves round the sun once in a year. The sun
+itself is in motion in the Milky Way, which is again moving
+within its local group of galaxies.
+Motion is change in position of an object with time. How
+does the position change with time ? In this chapter, we shall
+learn how to describe motion. For this, we develop the
+concepts of velocity and acceleration. We shall confine
+ourselves to the study of motion of objects along a straight
+line, also known as rectilinear motion. For the case of
+rectilinear motion with uniform acceleration, a set of simple
+equations can be obtained. Finally, to understand the relative
+nature of motion, we introduce the concept of relative velocity.
+In our discussions, we shall treat the objects in motion as
+point objects. This approximation is valid so far as the size
+of the object is much smaller than the distance it moves in a
+reasonable duration of time. 
+
+=== PHYSICS C11 | Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-3.pdf ===
+CHAPTER THREE
+MOTION IN A PLANE
+3.1  INTRODUCTION
+In the last chapter we developed the concepts of position,
+displacement, velocity and acceleration that are needed to
+describe the motion of an object along a straight line. We
+found that the directional aspect of these quantities can be
+taken care of by + and – signs, as in one dimension only two
+directions are possible. But in order to describe motion of an
+object in two dimensions (a plane) or three dimensions
+(space), we need to use vectors to describe the above-
+mentioned physical quantities.  Therefore, it is first necessary
+to learn the language of vectors. What is a vector? How to
+add, subtract and multiply vectors ? What is the result of
+multiplying a vector by a real number ? We shall learn this
+to enable us to use vectors for defining velocity and
+acceleration in a plane. We then discuss motion of an object
+in a plane.  As a simple case of motion in a plane, we shall
+discuss motion with constant acceleration and treat in detail
+the projectile motion. Circular motion is a familiar class of
+motion that has a special significance in daily-life situations.
+We shall discuss uniform circular motion in some detail.
+The equations developed in this chapter for motion in a
+plane can be easily extended to the case of three dimensions.
+3.2  SCALARS AND VECTORS
+In physics, we can classify quantities as scalars or
+vectors.  Basically, the difference is that a direction is
+associated with a vector but not with a scalar.  A scalar
+
+
+=== PHYSICS C11 | Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-4.pdf ===
+CHAPTER FOUR
+LAWS OF MOTION
+4.1  INTRODUCTION
+In the preceding Chapter, our concern was to describe the
+motion of a particle in space quantitatively. We saw that
+uniform motion needs the concept of velocity alone whereas
+non-uniform motion requires the concept of acceleration in
+addition.  So far, we have not asked the question as to what
+governs the motion of bodies. In this chapter, we turn to this
+basic question.
+Let us first guess the answer based on our common
+experience. To move a football at rest, someone must kick it.
+To throw a stone upwards, one has to  give it an upward
+push.  A breeze causes the branches of a tree to swing; a
+strong wind can even move heavy objects. A boat moves in a
+flowing river without anyone rowing it. Clearly, some external
+agency is needed to provide force to move a body from rest.
+Likewise, an external force is needed also to retard or stop
+motion.  You can stop a ball rolling down an inclined plane by
+applying a force against the direction of its motion.
+In these examples, the external agency of force (hands,
+wind, stream, etc) is in contact with the object. This is not
+always necessary. A stone released from the top of a building
+accelerates downward due to the gravitational pull of the
+earth.  A bar magnet can attract an iron nail from a distance.
+This shows that external agencies (e.g. gravitational and
+magnetic forces )  can exert  force on a body even from a
+distance.
+In short, a force is required to put a stationary body in
+motion or
+
+=== PHYSICS C11 | Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-5.pdf ===
+CHAPTER FIVE
+WORK, ENERGY AND POWER
+5.1  INTRODUCTION
+The terms ‘work’, ‘energy’ and ‘power’ are frequently used
+in everyday language. A farmer ploughing the field, a
+construction worker carrying bricks, a student studying for
+a competitive examination, an artist painting a beautiful
+landscape, all are said to be working. In physics, however,
+the word ‘Work’ covers a definite and precise meaning.
+Somebody who has the capacity to work for 14-16 hours a
+day is said to have a large stamina or energy. We admire a
+long distance runner for her stamina or energy. Energy is
+thus our capacity to do work. In Physics too, the term ‘energy’
+is related to work in this sense, but as said above the term
+‘work’ itself is defined much more precisely. The word ‘power’
+is used in everyday life with different shades of meaning. In
+karate or boxing we talk of ‘powerful’ punches. These are
+delivered at a great speed. This shade of meaning is close to
+the meaning of the word ‘power’ used in physics. We shall
+find that there is at best a loose correlation between the
+physical definitions and the physiological pictures these
+terms generate in our minds. The aim of this chapter is to
+develop an understanding of these three physical quantities.
+Before we proceed to this task, we need to develop a
+mathematical prerequisite, namely the scalar product of two
+vectors.
+5.1.1 The Scalar Product
+We have learnt about vectors and their use in Chapter 3.
+Physical quantities like displacement, velocity, accelerat
+
+=== PHYSICS C11 | Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-6.pdf ===
+CHAPTER SIX
+SYSTEMS OF PARTICLES AND ROTATIONAL MOTION
+6.1 INTRODUCTION
+In the earlier chapters we primarily considered the motion
+of a single particle. (A particle is ideally represented as a
+point mass having no size.)  We applied the results of our
+study even to the motion of bodies of finite size, assuming
+that motion of such bodies can be described in terms of the
+motion of a particle.
+Any real body which we encounter in daily life has a
+finite size.  In dealing with the motion of extended bodies
+(bodies of finite size) often the idealised model of a particle is
+inadequate.  In this chapter we shall try to go beyond this
+inadequacy.  We shall attempt to build an understanding of
+the motion of extended bodies.  An extended body, in the
+first place, is a system of particles.  We shall begin with the
+consideration of motion of the system as a whole.  The centre
+of mass of a system of particles will be a key concept here.
+We shall discuss the motion of the centre of mass of a system
+of particles and usefulness of this concept in understanding
+the motion of extended bodies.
+A large class of problems with extended bodies can be
+solved by considering them to be rigid bodies.  Ideally a
+rigid body is a body with a perfectly definite and
+unchanging shape.  The distances between all pairs of
+particles of such a body do not change. It is evident from
+this definition of a rigid body that no real body is truly rigid,
+since real bodies deform under the influence of forces. But in
+many
+
+=== PHYSICS C11 | Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-8.pdf ===
+CHAPTER EIGHT
+MECHANICAL PROPERTIES OF SOLIDS
+8.1
+INTRODUCTION
+In Chapter 6, we studied the rotation of the bodies and then
+realised that the motion of a body depends on how mass is
+distributed within the body.  We restricted ourselves to simpler
+situations of rigid bodies.  A rigid body generally means a
+hard solid object having a definite shape and size.  But in
+reality,  bodies can be stretched, compressed and bent. Even
+the  appreciably  rigid  steel bar can be deformed when a
+sufficiently large external force is applied on it.  This means
+that solid bodies are not perfectly rigid.
+A solid has  definite shape and size. In order to change (or
+deform) the shape or size of a body, a force  is required. If
+you stretch a helical spring by gently pulling its ends, the
+length of the spring increases slightly. When you leave the
+ends of the spring, it regains its original size and shape.  The
+property of a body, by virtue of  which  it tends to regain its
+original size and shape when the applied force is removed, is
+known as elasticity and the deformation caused is known
+as elastic deformation. However, if you apply force to a lump
+of putty or mud, they have no gross tendency to regain their
+previous shape, and they get permanently deformed. Such
+substances are called plastic and this property is called
+plasticity. Putty and mud are close to ideal plastics.
+ The elastic behaviour of materials plays an important role
+in engineering design.  For example, while designing a
+building,
+
+=== PHYSICS C11 | Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-9.pdf ===
+CHAPTER NINE
+MECHANICAL PROPERTIES OF FLUIDS
+9.1 INTRODUCTION
+In this chapter, we shall study  some common physical
+properties of liquids and gases. Liquids and gases can  flow
+and are therefore, called  fluids.  It is this property that
+distinguishes liquids and gases from solids in a basic way.
+Fluids are everywhere around us. Earth has an envelop of
+air and two-thirds of its surface is covered with water.  Water
+is not only necessary for our existence; every mammalian
+body constitute mostly of water. All the  processes occurring
+in living beings including plants are mediated by fluids. Thus
+understanding the behaviour and properties of fluids is
+important.
+How are fluids different from solids? What is common in
+liquids and gases? Unlike  a solid, a fluid has no definite
+shape of its own. Solids and liquids have a fixed volume,
+whereas a gas fills the entire volume of its container. We
+have learnt in the previous chapter that the volume of solids
+can be changed by stress. The volume of solid, liquid or gas
+depends on the stress or pressure acting on it. When we
+talk about fixed volume of solid or liquid, we mean its volume
+under atmospheric pressure. The difference between gases
+and solids or liquids is that for solids or liquids the change
+in volume due to  change of external pressure is rather small.
+In other words solids and liquids have much lower
+compressibility as compared to gases.
+Shear stress can change the shape of a solid keeping its
+volume fixed. The key propert
+
+=== PHYSICS C12 | Physics/Class 12-Physics/leph201.pdf ===
+Chapter Nine
+RAY OPTICS
+AND OPTICAL
+INSTRUMENTS
+9.1  INTRODUCTION
+Nature has endowed the human eye (retina) with the sensitivity to detect
+electromagnetic waves within a small range of the electromagnetic
+spectrum. Electromagnetic radiation belonging to this region of the
+spectrum (wavelength of about 400 nm to 750 nm) is called light. It is
+mainly through light and the sense of vision that we know and interpret
+the world around us.
+There are two things that we can intuitively mention about light from
+common experience. First, that it travels with enormous speed and second,
+that it travels in a straight line. It took some time for people to realise that
+the speed of light is finite and measurable. Its presently accepted value
+in vacuum is c = 2.99792458 × 108 m s–1.  For many purposes, it suffices
+to take c = 3 × 108 m s–1. The speed of light in vacuum is the highest
+speed attainable in nature.
+The intuitive notion that light travels in a straight line seems to
+contradict what we have learnt in Chapter 8, that light is an
+electromagnetic wave of wavelength belonging to the visible part of the
+spectrum. How to reconcile the two facts? The answer is that the
+wavelength of light is very small compared to the size of ordinary objects
+that we encounter commonly (generally of the order of a few cm or larger).
+In this situation, as you will learn in Chapter 10, a light wave can be
+considered to travel from one point to another, along a straight line joining
+Reprint 2026-27
+
+Physics
+
+
+=== PHYSICS C12 | Physics/Class 12-Physics/leph202.pdf ===
+255
+Wave Optics
+Chapter Ten
+WAVE OPTICS
+10.1  INTRODUCTION
+In 1637 Descartes gave the corpuscular model of light and derived Snell’s
+law. It explained the laws of reflection and refraction of light at an interface.
+The corpuscular model predicted that if the ray of light (on refraction)
+bends towards the normal then the speed of light would be greater in the
+second medium. This corpuscular model of light was further developed
+by Isaac Newton in his famous book entitled OPTICKS and because of
+the tremendous popularity of this book, the corpuscular model is very
+often attributed to Newton.
+In 1678, the Dutch physicist Christiaan Huygens put forward the
+wave theory of light – it is this wave model of light that we will discuss in
+this chapter. As we will see, the wave model could satisfactorily explain
+the phenomena of reflection and refraction; however, it predicted that on
+refraction if the wave bends towards the normal then the speed of light
+would be less in the second medium. This is in contradiction to the
+prediction made by using the corpuscular model of light. It was much
+later confirmed by experiments where it was shown that the speed of
+light in water is less than the speed in air confirming the prediction of the
+wave model; Foucault carried out this experiment in 1850.
+The wave theory was not readily accepted primarily because of
+Newton’s authority and also because light could travel through vacuum
+Reprint 2026-27
+
+Physics
+256
+and it was felt that a wave would always 
+
+=== PHYSICS C12 | Physics/Class 12-Physics/leph203.pdf ===
+Physics
+274
+11.1  INTRODUCTION
+The Maxwell’s equations of electromagnetism and Hertz experiments on
+the generation and detection of electromagnetic waves in 1887 strongly
+established the wave nature of light. Towards the same period at the end
+of 19th century, experimental investigations on conduction of electricity
+(electric discharge) through gases at low pressure in a discharge tube led
+to many historic discoveries. The discovery of X-rays by Roentgen in 1895,
+and of electron by J. J. Thomson in 1897, were important milestones in
+the understanding of atomic structure. It was found that at sufficiently
+low pressure of about 0.001 mm of mercury column, a discharge took
+place between the two electrodes on applying the electric field to the gas
+in the discharge tube. A fluorescent glow appeared on the glass opposite
+to cathode. The colour of glow of the glass depended on the type of glass,
+it  being  yellowish-green for soda glass. The cause of this fluorescence
+was attributed to the radiation which appeared to be coming from the
+cathode. These cathode rays were discovered, in 1870, by William
+Crookes who later, in 1879, suggested that these rays consisted of streams
+of fast moving negatively charged particles. The British physicist
+J. J. Thomson (1856-1940) confirmed this hypothesis. By applying
+mutually perpendicular electric and magnetic fields across the discharge
+tube, J. J. Thomson was the first to determine experimentally the speed
+Chapter Eleven
+DUAL NATURE OF
+RADIATIO
+
+=== PHYSICS C12 | Physics/Class 12-Physics/leph204.pdf ===
+Physics
+290
+12.1  INTRODUCTION
+By the nineteenth century, enough evidence had accumulated in favour of
+atomic hypothesis of matter. In 1897, the experiments on electric discharge
+through gases carried out by the English physicist J. J. Thomson (1856 –
+1940) revealed that atoms of different elements contain negatively charged
+constituents (electrons) that are identical for all atoms. However, atoms on a
+whole are electrically neutral. Therefore, an atom must also contain some
+positive charge to neutralise the negative charge of the electrons. But what
+is the arrangement of the positive charge and the electrons inside the atom?
+In other words, what is the structure of an atom?
+The first model of atom was proposed by J. J. Thomson in 1898.
+According to this model, the positive charge of the atom is uniformly
+distributed throughout the volume of the atom and the negatively charged
+electrons are embedded in it like seeds in a watermelon. This model was
+picturesquely called plum pudding model of the atom. However
+subsequent studies on atoms, as described in this chapter, showed that
+the distribution of the electrons and positive charges are very different
+from that proposed in this model.
+We know that condensed matter (solids and liquids) and dense gases at
+all temperatures emit electromagnetic radiation in which a continuous
+distribution of several wavelengths is present, though with different
+intensities. This radiation is considered to be due to oscillations of atoms
+Chapter Twe
+
+=== PHYSICS C12 | Physics/Class 12-Physics/leph205.pdf ===
+Physics
+306
+13.1  INTRODUCTION
+In the previous chapter, we have learnt that in every atom, the positive
+charge and mass are densely concentrated at the centre of the atom
+forming its nucleus. The overall dimensions of a nucleus are much smaller
+than those of an atom. Experiments on scattering of a-particles
+demonstrated that the radius of a nucleus was smaller than the radius
+of an atom by a factor of about 104. This means the volume of a nucleus
+is about 10–12 times the volume of the atom. In other words, an atom is
+almost empty. If an atom is enlarged to the size of a classroom, the nucleus
+would be of the size of pinhead. Nevertheless, the nucleus contains most
+(more than 99.9%) of the mass of an atom.
+Does the nucleus have a structure, just as the atom does?  If so, what
+are the constituents of the nucleus?  How are these held together? In this
+chapter, we shall look for answers to such questions. We shall discuss
+various properties of nuclei such as their size, mass and stability, and
+also associated nuclear phenomena such as radioactivity, fission and fusion.
+13.2  ATOMIC MASSES AND COMPOSITION OF NUCLEUS
+The mass of an atom is very small, compared to a kilogram;  for example,
+the mass of a carbon atom, 12C, is 1.992647 × 10–26 kg. Kilogram is not
+a very convenient unit to measure such small quantities. Therefore, a
+Chapter Thirteen
+NUCLEI
+Reprint 2026-27
+
+307
+Nuclei
+different mass unit is used for expressing atomic masses. This unit is the
+atomic mass unit (u), defined
+
+=== PHYSICS C12 | Physics/Class 12-Physics/leph206.pdf ===
+14.1  INTRODUCTION
+Devices in which a controlled flow of electrons can be obtained are the
+basic building blocks of all the electronic circuits. Before the discovery of
+transistor in 1948, such devices were mostly vacuum tubes (also called
+valves) like the vacuum diode which has two electrodes, viz., anode (often
+called plate) and cathode; triode which has three electrodes – cathode,
+plate and grid; tetrode and pentode (respectively with 4 and 5 electrodes).
+In a vacuum tube, the electrons are supplied by a heated cathode and
+the controlled flow of these electrons in vacuum is obtained by varying
+the voltage between its different electrodes. Vacuum is required in the
+inter-electrode space; otherwise the moving electrons may lose their
+energy on collision with the air molecules in their path. In these devices
+the electrons can flow only from the cathode to the anode (i.e., only in one
+direction). Therefore, such devices are generally referred to as valves.
+These vacuum tube devices are bulky, consume high power, operate
+generally at high voltages (~100 V) and have limited life and low reliability.
+The seed of the development of modern solid-state semiconductor
+electronics goes back to 1930’s when it was realised that some solid-
+state semiconductors and their junctions offer the possibility of controlling
+the number and the direction of flow of charge carriers through them.
+Simple excitations like light, heat or small applied voltage can change
+the number of mobile charges in 
+
+=== PHYSICS C12 | Physics/Class 12-Physics/leph2an.pdf ===
+344
+Physics
+ APPENDICES
+APPENDIX  A 1
+THE GREEK ALPHABET
+APPENDIX  A 2
+COMMON SI PREFIXES AND SYMBOLS FOR MULTIPLES AND SUB-MULTIPLES
+Reprint 2026-27
+
+345
+Answers
+Appendices
+APPENDIX  A 3
+SOME IMPORTANT CONSTANTS
+OTHER USEFUL CONSTANTS
+Reprint 2026-27
+
+
+=== PHYSICS C12 | Physics/Class 12-Physics/leph2dd/leph2ps.pdf ===
+PHYSICS
+PART – II
+TEXTBOOK FOR CLASS XII
+
+
+
+=== PHYSICS C12 | Physics/Class 12-Physics/ncert-book-class-12-physics-part-1-chapter-1.pdf ===
+Chapter One
+ELECTRIC CHARGES
+AND FIELDS
+1.1  INTRODUCTION
+All of us have the experience of seeing a spark or hearing a crackle when
+we take off our synthetic clothes or sweater, particularly in dry weather.
+Have you ever tried to find any explanation for this phenomenon? Another
+common example of electric discharge is the lightning that we see in the
+sky during thunderstorms. We also experience a sensation of an electric
+shock either while opening the door of a car or holding the iron bar of a
+bus after sliding from our seat. The reason for these experiences is
+discharge of electric charges through our body, which were accumulated
+due to rubbing of insulating surfaces. You might have also heard that
+this is due to generation of static electricity. This is precisely the topic we
+are going to discuss in this and the next chapter. Static means anything
+that does not move or change with time. Electrostatics deals with
+the study of forces, fields and potentials arising from
+static charges.
+1.2  ELECTRIC CHARGE
+Historically the credit of discovery of the fact that amber rubbed with
+wool or silk cloth attracts light objects goes to Thales of Miletus, Greece,
+around 600 BC. The name electricity is coined from the Greek word
+2024-25
+2024-25
+
+2
+Physics
+elektron meaning amber. Many such pairs of materials were known which
+on rubbing could attract light objects like straw, pith balls and bits of
+papers.
+It was observed that if two glass rods rubbed with wool or silk cloth
+are brought clo
+
+=== PHYSICS C12 | Physics/Class 12-Physics/ncert-book-class-12-physics-part-1-chapter-2.pdf ===
+2.1  I
+2.1  I
+2.1  I
+2.1  I
+2.1  INTRODUCTION
+NTRODUCTION
+NTRODUCTION
+NTRODUCTION
+NTRODUCTION
+In Chapters 5 and 7 (Class XI), the notion of potential energy was
+introduced. When an external force does work in taking a body from a
+point to another against a force like spring force or gravitational force,
+that work gets stored as potential energy of the body. When the external
+force is removed, the body moves, gaining kinetic energy and losing
+an equal amount of potential energy. The sum of kinetic and
+potential energies is thus conserved. Forces of this kind are called
+conservative forces. Spring force and gravitational force are examples of
+conservative forces.
+Coulomb force between two (stationary) charges is also a conservative
+force. This is not surprising, since both have inverse-square dependence
+on distance and differ mainly in the proportionality constants – the
+masses in the gravitational law are replaced by charges in Coulomb’s
+law. Thus, like the potential energy of a mass in a gravitational
+field, we can define electrostatic potential energy of a charge in an
+electrostatic field.
+Consider an electrostatic field E
+ E
+ E
+ E
+ E due to some charge configuration.
+First, for simplicity, consider the field EEEEE due to a charge Q placed at the
+origin. Now, imagine that we bring a test charge q from a point R to a
+point P against the repulsive force on it due to the charge Q. With reference
+Chapter Two
+ELECTROSTATIC
+POTENTIAL AND
+CAPACITANCE
+2024-25
+
+Physics
+46
+to Fig. 2.1
+
+=== PHYSICS C12 | Physics/Class 12-Physics/ncert-book-class-12-physics-part-1-chapter-4.pdf ===
+4.1  INTRODUCTION
+Both Electricity and Magnetism have been known for more than 2000
+years. However, it was only about 200 years ago, in 1820, that it was
+realised that they were intimately related. During a lecture demonstration
+in the summer of 1820, Danish physicist Hans Christian Oersted noticed
+that a current in a straight wire caused a noticeable deflection in a nearby
+magnetic compass needle. He investigated this phenomenon. He found
+that the alignment of the needle is tangential to an imaginary circle which
+has the straight wire as its centre and has its plane perpendicular to the
+wire. This situation is depicted in Fig.4.1(a). It is noticeable when the
+current is large and the needle sufficiently close to the wire so that the
+earth’s magnetic field may be ignored. Reversing the direction of the
+current reverses the orientation of the needle [Fig. 4.1(b)]. The deflection
+increases on increasing the current or bringing the needle closer to the
+wire. Iron filings sprinkled around the wire arrange themselves in
+concentric circles with the wire as the centre [Fig. 4.1(c)]. Oersted
+concluded that moving charges or currents produced a magnetic field
+in the surrounding space.
+Following this, there was intense experimentation. In 1864, the laws
+obeyed by electricity and magnetism were unified and formulated by
+Chapter Four
+MOVING CHARGES
+AND MAGNETISM
+2024-25
+
+Physics
+108
+James Maxwell who then realised that light was electromagnetic waves.
+Radio waves were discovered by Hertz
+
+=== PHYSICS C12 | Physics/Class 12-Physics/ncert-book-class-12-physics-part-1-chapter-5.pdf ===
+Physics
+136
+5.1  INTRODUCTION
+Magnetic phenomena are universal in nature. Vast, distant galaxies, the
+tiny invisible atoms, humans and beasts all are permeated through and
+through with a host of magnetic fields from a variety of sources. The earth’s
+magnetism predates human evolution. The word magnet is derived from
+the name of an island in Greece called magnesia where magnetic ore
+deposits were found, as early as 600 BC.
+In the previous chapter we have learned that moving charges or electric
+currents produce magnetic fields. This discovery, which was made in the
+early part of the nineteenth century is credited to Oersted, Ampere, Biot
+and Savart, among others.
+In the present chapter, we take a look at magnetism as a subject in its
+own right.
+Some of the commonly known ideas regarding magnetism are:
+(i)
+The earth behaves as a magnet with the magnetic field pointing
+approximately from the geographic south to the north.
+(ii) When a bar magnet is freely suspended, it points in  the north-south
+direction. The tip which points to the geographic north is called the
+north pole and the tip which points to the geographic south is called
+the south pole of the magnet.
+Chapter Five
+MAGNETISM AND
+MATTER
+2024-25
+
+137
+Magnetism and
+Matter
+(iii) There is a repulsive force when north poles ( or south poles ) of two
+magnets are brought close together. Conversely, there is an attractive
+force between the north pole of one magnet and the south pole of
+the other.
+(iv) We cannot isolate the north,
+
+=== PHYSICS C12 | Physics/Class 12-Physics/ncert-book-class-12-physics-part-1-chapter-6.pdf ===
+Physics
+154
+6.1  INTRODUCTION
+Electricity and magnetism were considered separate and unrelated
+phenomena for a long time. In the early decades of the nineteenth century,
+experiments on electric current by Oersted, Ampere and a few others
+established the fact that electricity and magnetism are inter-related. They
+found that moving electric charges produce magnetic fields. For example,
+an electric current deflects a magnetic compass needle placed in its vicinity.
+This naturally raises the questions like: Is the converse effect possible?
+Can moving magnets produce electric currents? Does the nature permit
+such a relation between electricity and magnetism? The answer is
+resounding yes! The experiments of Michael Faraday in England and
+Joseph Henry in USA, conducted around 1830, demonstrated
+conclusively that electric currents were induced in closed coils when
+subjected to changing magnetic fields. In this chapter, we will study the
+phenomena associated with changing magnetic fields and understand
+the underlying principles. The phenomenon in which electric current is
+generated by varying magnetic fields is appropriately called
+electromagnetic induction.
+When Faraday first made public his discovery that relative motion
+between a bar magnet and a wire loop produced a small current in the
+latter, he was asked, “What is the use of it?” His reply was: “What is the
+use of a new born baby?” The phenomenon of electromagnetic induction
+Chapter Six
+ELECTROMAGNETIC
+INDUCTION
+2024-25
+
+Electro
+
+=== PHYSICS C12 | Physics/Class 12-Physics/ncert-book-class-12-physics-part-1-chapter-7.pdf ===
+7.1  INTRODUCTION
+We have so far considered direct current (dc) sources and circuits with dc
+sources. These currents do not change direction with time. But voltages
+and currents that vary with time are very common. The electric mains
+supply in our homes and offices is a voltage that varies like a sine function
+with time. Such a voltage is called alternating voltage (ac voltage) and
+the current driven by it in a circuit is called the alternating current (ac
+current)*. Today, most of the electrical devices we use require ac voltage.
+This is mainly because most of the electrical energy sold by power
+companies is transmitted and distributed as alternating current. The main
+reason for preferring use of ac voltage over dc voltage is that ac voltages
+can be easily and efficiently converted from one voltage to the other by
+means of transformers. Further, electrical energy can also be transmitted
+economically over long distances. AC circuits exhibit characteristics which
+are exploited in many devices of daily use. For example, whenever we
+tune our radio to a favourite station, we are taking advantage of a special
+property of ac circuits – one of many that you will study in this chapter.
+Chapter Seven
+ALTERNATING
+CURRENT
+*
+The phrases ac voltage and ac current are contradictory and redundant,
+respectively, since they mean, literally, alternating current voltage and alternating
+current current. Still, the abbreviation ac to designate an electrical quantity
+displaying simple harmonic tim
+
+=== PHYSICS C12 | Physics/Class 12-Physics/ncert-book-class-12-physics-part-1-chapter-8.pdf ===
+Chapter Eight
+ELECTROMAGNETIC
+WAVES
+8.1  INTRODUCTION
+In Chapter 4, we learnt that an electric current produces magnetic field
+and that two current-carrying wires exert a magnetic force on each other.
+Further, in Chapter 6, we have seen that a magnetic field changing with
+time gives rise to an electric field. Is the converse also true? Does an
+electric field changing with time give rise to a magnetic field? James Clerk
+Maxwell (1831-1879), argued that this was indeed the case – not only
+an electric current but also a time-varying electric field generates magnetic
+field. While applying the Ampere’s circuital law to find magnetic field at a
+point outside a capacitor connected to a time-varying current, Maxwell
+noticed an inconsistency in the Ampere’s circuital law. He suggested the
+existence of an additional current, called by him, the displacement
+current to remove this inconsistency.
+Maxwell formulated a set of equations involving electric and magnetic
+fields, and their sources, the charge and current densities. These
+equations are known as Maxwell’s equations. Together with the Lorentz
+force formula (Chapter 4), they mathematically express all the basic laws
+of electromagnetism.
+The most important prediction to emerge from Maxwell’s equations
+is the existence of electromagnetic waves, which are (coupled) time-
+varying electric and magnetic fields that propagate in space. The speed
+of the waves,  according to these equations, turned out to be very close to
+2024-25
+
+Physics
+20

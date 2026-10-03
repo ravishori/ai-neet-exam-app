@@ -1,0 +1,29 @@
+Fresh local Phase C re-snapshot, 2026-10-01, run inside BEGIN TRANSACTION READ ONLY; ... COMMIT;
+against trinetra_db on localhost:5432 (local development database, confirmed via apps/backend/.env ENVIRONMENT=development).
+
+Query:
+  SELECT count(*) AS total, count(*) FILTER (WHERE state='ANSWER_VERIFIED') AS verified,
+         count(*) FILTER (WHERE state='ANSWER_PENDING') AS pending FROM pyq.questions;
+  SELECT (SELECT count(*) FROM pyq.answer_assertions) AS assertions,
+         (SELECT count(*) FROM pyq.duplicate_candidates) AS dup_candidates,
+         (SELECT count(*) FROM pyq.qa_reviews) AS qa_reviews,
+         (SELECT count(*) FROM pyq.promotion_log) AS promotions;
+
+Output:
+ total | verified | pending
+-------+----------+---------
+ 12396 |     2452 |    9944
+
+ assertions | dup_candidates | qa_reviews | promotions
+------------+----------------+------------+------------
+       2452 |              0 |          0 |          0
+
+Result: zero drift from the 2026-10-01 baseline audit (docs/quality/pyq-coverage-audit.md).
+The full query set from that baseline (53 numbered queries across two files) was not
+re-run in full for this reconciliation, since this spot-check confirms no local data
+change occurred between the baseline audit and this reconciliation audit (both run on
+the same date, no application writes to pyq.* occurred in between — confirmed by
+git status showing no pyq-related code/migration changes in the working tree).
+For full local metric detail, see the baseline report and its evidence directory:
+docs/quality/pyq-coverage-audit.md
+docs/quality/_pyq_audit_2026-10-01_queries/

@@ -1,0 +1,21 @@
+{
+  "sample_files": [
+    "Paper_20231108005448.pdf",
+    "Paper_20231108010819.pdf",
+    "Paper_20231108005054.pdf",
+    "Paper_20231108010507.pdf",
+    "Paper_20250124133115.pdf"
+  ],
+  "questions_evaluated": 13,
+  "rendering_dpi": 300,
+  "ocr_engine_version": "tesseract 5.5.0.20241111",
+  "ocr_languages_available": [
+    "eng",
+    "osd"
+  ],
+  "ocr_languages_used": [
+    "eng"
+  ],
+  "hindi_language_pack_available": false,
+  "rows_with_zero_token_overlap_on_best_page": 0
+}

@@ -1,0 +1,143 @@
+question_id,subject,stem_text,stem_char_len,stem_significant_word_count,options_text_preview,options_significant_word_count,candidate_query_representation,likely_mechanism
+cb5b50e5-9dd7-4cac-9518-d3ef2fd9c09b,,ol a1 p-4 ol,12,0,"A: 3x10"" °C | B: 3x10"" °C | C: 3x103 °C""! | D: : 3x10-2 °c""!",0,,stem_and_options_both_lack_significant_terms
+06de2796-b781-4574-9ebf-3c399079e888,,"2p, <(z 2p, ="" 2p, )<o 2p,",26,0,"A:  | B:  | C: ols<o"" Is<o2s<o"" 2s<o 2p, <
+(2p, ="" 2p,)<(x°2p, =1""2py}<o"" 2p, | D: ois<o* Is<o2s<o° 2s<o2p, <
+o” 2p, < (n2p, =n 2p, ) < (x* 2p, =n"" 2p,",0,,stem_and_options_both_lack_significant_terms
+01a52aaa-6010-4ad8-8723-0218714b7509,,wel 2| 1 ti d fi,16,0,"A:  | B:  | C: Gr|'—Z| pointed away from page
+Hoi 2 . . | D: Zpl|!—Z| pointed into the page
+10",3,away page pointed,options_contain_scientific_terms_stem_does_not
+b74a768f-e21b-47fd-ac1d-dbcbe96e52c9,,"mH 3 «102 41
+7 our
+320 V, 50 Hz",31,0,A: 10¥2 a | B: 159 | C: 5¥5Q | D: 252,0,,stem_and_options_both_lack_significant_terms
+01f2e940-1f57-498c-825b-0733935a8403,,"2p, <(x""2p, = x 2p, ) <o"" 2p,",29,0,"A:  | B: ols<o"" Is<o2s<o"" 2s<o 2p, <
+* * *
+(72, = 2p,)<(x PR =m 2r,)<o Pr | C: oIs<o"" Is<o2s<o"" 2s<o2p, <
+7 . .
+o 2p, <(72p, = 2p, <(x 2Py = 2py) | D: ols<o"" Is<028<0"" 2s <(12p, = 2p, )<",0,,stem_and_options_both_lack_significant_terms
+5136087a-c2b9-40e7-9511-5be639450f45,,"hat is th le of RNA pol Il i
+6",30,0,A:  | B:  | C:  | D: ,0,,stem_and_options_both_lack_significant_terms
+d92e91b3-36c0-452b-863d-f9927f97478d,,Bi hs I and S i,15,0,"A: Both Statement I and Statement
+are true. | B: Both Statement I and Statement IT
+are false. | C: Statement I is true but Statement II
+is false. | D: Statement I is false but Statement II",3,false statement true,options_contain_scientific_terms_stem_does_not
+b8ac7a6d-c1a3-4e90-8120-deaf281e9415,,"n IL 5 ‘ ‘ av
+ee",16,0,"A:  | B:  | C:  | D: AcIl, B-IV, C-IIl, D-I
+107",1,acil,options_contain_scientific_terms_stem_does_not
+4c471a4e-9259-4d83-9788-5bad853c813a,,"“CO ; B= i@)
+H3C H3C
+87",23,0,A:  | B:  | C:  | D: ,0,,stem_and_options_both_lack_significant_terms
+77c3299a-fb7d-4e66-89ab-618502569c2f,,eo mnt 300 3,12,0,A:  | B:  | C: 1985 | D: 1992,0,,stem_and_options_both_lack_significant_terms
+3d80c3e3-51c7-42d8-ae14-82197870776e,,and oe “a d ori,15,0,"A:  | B:  | C:  | D: Antipodals, synergids, and primary
+endosperm nucleus
+130",5,antipodals endosperm nucleus primary synergids,options_contain_scientific_terms_stem_does_not
+12b4217b-2bd0-45d7-b443-0bfa720108f3,,"| b 4 - 1 10t,
+(G3) sin lay",27,0,"A:  | B:  | C:  | D: sin |
+12",0,,stem_and_options_both_lack_significant_terms
+c9195714-b404-4fb7-b029-63beba9daadf,,¢ rj ina & hi,13,0,A:  | B:  | C:  | D: Corpora quadrigemina ippocampus,3,corpora ippocampus quadrigemina,options_contain_scientific_terms_stem_does_not
+c491cac1-ac69-441d-be6b-bacd9cae5517,,"10V 5V 10 ;
+E
+D C
+70",20,0,A: 1.5 A from B to A through E | B: 0.2 A from B to A through E | C: 0.5 A from A to B through E | D: 2 A from A to B through E,0,,stem_and_options_both_lack_significant_terms
+de50662f-d9c1-4807-a65f-43df6d2294d3,,"2p, <(r""2p, = x""2p, )<o"" 2p,
+. .",32,0,"A:  | B:  | C: ols<o"" Is<o2s<o"" 2s<o 2p, <
+(x2, = 2p,)<(x""2p, _ n*2p,)<o"" 2p, | D: ois<o* Is<o2s<o"" 2s<o2p, <
+. . .
+o 2p, <(n2p, =n 2p, )<(z 2p, =m 2p, }
+76",0,,stem_and_options_both_lack_significant_terms
+2e1442b6-32f8-46ed-beb5-bc864ee35217,,"(Li2+) =17.6 pm
+E,(He*) = -8.72*10-18 J;
+r,(He*) = 26.4 pm",58,0,A:  | B:  | C:  | D: ,0,,stem_and_options_both_lack_significant_terms
+a4cf0fa3-2460-4f86-a5dc-047880f63f85,,"2p, <(r 2Py =m 2p, <o 2p,
+5 . .",31,0,"A:  | B:  | C: als<o"" Is<o2s<o"" 2s<o 2p, <
+. . .
+(72, = m2py)<(x 2p. =m 2p, ) <o 2p,
+. . | D: als<o"" Is<o2s<o"" 2s<o 2p, <
+. . .
+o 2p, <(r2p, =n 2p, )<(x 2p, =m 2p,
+. .
+56",0,,stem_and_options_both_lack_significant_terms
+25bbf62d-a741-407d-81d3-33ec6d435fce,,-6 2) 1.6«10-°T,15,0,"A: Lex10""T 2) 1.6 | B:  | C: 1.6x10-°T | D: 1.6x10-7T",0,,stem_and_options_both_lack_significant_terms
+9474a352-a516-45d7-b383-da6789b8faa1,,"2p, <(x 2p, =m 2p, )<o 2p,",26,0,"A:  | B:  | C: ols<o"" Is<o2s<o"" 2s<o 2p, <
+(2p, =n 2p, ) < (x"" 2p,= 2p, ) <o° 2p, | D: ois<o* Is<o2s<o* 2s<o2p, <
+* * *
+o 2p, <(72p, == 2py)<(z 2p, =m 2p, }
+54",0,,stem_and_options_both_lack_significant_terms
+c4fb7507-469d-48e6-addd-880b464552ba,,"2p, <(x""2p, = x 2p, ) <6"" 2p,",29,0,"A:  | B:  | C:  | D: ols<o* Is<o2s<o"" 2s<o 2p, <
+2
+. . .
+(=2p, ~ n2p,)<(x 2px = 2p,)< o 2p,",0,,stem_and_options_both_lack_significant_terms
+bf2bd7c5-13e3-4d5b-b338-23acc5ff5314,,"2: 2: 2p, =m2
+. . .
+(x 2p, =a 2p, )<o 2p, < oO 2p,
+(6)) 6 Is<o"" Is<o2s<o"" 2s<(n2p, = 2p, )<
+y
+6",95,0,A:  | B:  | C:  | D: ,0,,stem_and_options_both_lack_significant_terms
+6a67e7ca-1dd2-4853-9d58-1b63fde9369f,,"2p, <(x*2p, =n"" 2p, )<o"" 2p,",28,0,A:  | B:  | C:  | D: ,0,,stem_and_options_both_lack_significant_terms
+13f4d365-c090-4519-bdd0-f1faa9be2325,,§ ids. Z do Pri,15,0,"A:  | B: Synergids, Zygote an rimary
+endosperm nucleus | C: Synergids, antipodals and Polar nuclei
+: : | D: Synergids, Primary endosperm nucleus
+and zygote
+132",9,antipodals endosperm nuclei nucleus polar primary rimary synergids zygote,options_contain_scientific_terms_stem_does_not
+15980905-eefd-46c9-bcd0-4eb1c0bbc773,,1 B=-1 1 5 5,12,0,"A:  | B:  | C: 2 2 y 2 2
+a=-~—,0=-—,p=-ly=-—,5==
+1 1 ] 7 | D: a=-5,0=-5,B=-bLy=5.8=5",0,,stem_and_options_both_lack_significant_terms
+3a3f3f14-beca-491b-84ae-02a3f7dabcdd,,"2p, <(n""2p, = x 2p,)<o"" 2p, 70",30,0,"A:  | B: ols<o"" Is<o2s<o"" 2s<o 2p, <
+Zz
+. . .
+(72, =T 2p,)<(x 2Px = 2p,)<o °P, | C: ois<o* Is<o2s<o"" 2s<o2p, <
+o 2p, <(2p, = 2p, )< (*2p, = x"" 2p, ) | D: ols<o* Is<o2s<o"" 2s <(n2p, =n 2p,)<
+(x""2p, = x 2p,)<o 2p, < o 2p,",0,,stem_and_options_both_lack_significant_terms
+137da9f4-c364-4484-b599-e7908fc898c2,,"2p, <(x*2p, = x"" 2p, } <o"" 2p,",30,0,"A:  | B: ols<o"" Is<o2s<o"" 2s<o 2p, <
+(n2p, =n 2p, )< (x*2p, _ ""2p, )< o* 2p,
+‘ | C: ols<o"" Is<o2s<o"" 2s<o2p, <
+. . .
+o 2p, <(72p, =n 2p, )<(z 2p, =7 2p,
+* * | D: ols<o Is<o2s<o 2s< (72p, =%2Py <
+(x""2p, _ x"" 2p, <0 2p, < o* 2p,
+66",0,,stem_and_options_both_lack_significant_terms
+ff08f003-1e2a-4630-a4cb-4b34d841ab9e,,"ii) H30* [A] 4 [5]
+ot
+ar [(] Was ner? [PI
+HB",44,0,"A: CyHyo | B: HC=C® Na* | C: CY
+oT | D: ",1,cyhyo,options_contain_scientific_terms_stem_does_not
+abd4ab39-be35-4f64-9045-3c5cb73a94ec,,"2: 2: 2p, =m2
+(x""2p, =x° 2p, <o2p, < 6” 2p,",43,0,"A:  | B:  | C:  | D: ols<o"" Is<o2s<o"" 2s <(n2p, =n 2p, )<
+. . .
+5",0,,stem_and_options_both_lack_significant_terms
+ba6e1b64-62d8-4be7-bbfd-42d4a8bda26d,,"2p, <(x 2p, =1 2p, )<o 2p,",26,0,A:  | B:  | C:  | D: ,0,,stem_and_options_both_lack_significant_terms
+13bf8afd-62b4-4361-a5fd-eb4f5a821f0e,,"L BAL. CL D-Iv
+G) Ac, BAL, Ci, D-",33,0,"A:  | B:  | C:  | D: AUlIl, B-l, C-IV, D-II
+;
+172",1,aulil,options_contain_scientific_terms_stem_does_not
+030dc7b8-c176-4c2f-9116-a633816cd219,,"kPa - -- 43 1b
+100cm> 400 cm?
+v—",32,0,A: -907 | B: -60/ | C: 9a | D: 307,0,,stem_and_options_both_lack_significant_terms
+1f50c77b-0e70-49dc-ae54-25beda0fc723,,"g mol""!, 1F = 96487 C)",22,0,"A: 31.52 | B: 0.0315 g
+G) 3.15¢ | C:  | D: 0.315 g
+| g7 ua afte X FAH 32%, BH 20% aire sre whisra C
+& laa X ar Gergana: 3:
+(Remmren?: van A = 64: B=40;C=32u)",5,afte aire gergana remmren whisra,options_contain_scientific_terms_stem_does_not
+868b96ec-6d5a-4e8c-85dd-1d9989552b07,,"he A: fui - - . a
+mt te Ion : ""
+11.",35,0,A:  | B:  | C:  | D: ,0,,stem_and_options_both_lack_significant_terms
+a13449f8-ace8-4735-99d8-a3f11049109c,,"10! N m™®, is:",14,0,A: 0.4mm | B: 40mm | C: 8mm | D: 4mm,0,,stem_and_options_both_lack_significant_terms
+65ee6efe-0a4a-4bb8-986d-c37b71f5fa4f,,Atl BL Cw hn,12,0,"A:  | B:  | C:  | D: A-Il, B-IV, C-L, D-III
+:
+143",0,,stem_and_options_both_lack_significant_terms
+1e9839b1-a151-4f5f-84a7-f4ab0a224b87,,AIL BAL CW. DI,14,0,"A:  | B:  | C:  | D: A-II, B-IIL, C-IV, D-I",0,,stem_and_options_both_lack_significant_terms
+e05f582f-950c-4228-94e2-577bba6ce968,,"2p, < (x""2p, =0 2Py ) <6"" 2p,
+. *",33,0,"A:  | B: Gis<o' Is<o2s<o° 2s<o 2p, <
+(72p, =n2p,)<(x 2Py =™ 2py}<o 2P, | C: ols<o* Ils<o2s<o"" 2s<o2p, <
+o 2p, <(72p, =n 2py)<(x 2p, = 2,) | D: ols <o* Ils<o2s<o"" 2s< (x2, =n2p, ) e
+(x 2p, =™ 2py ) <o2p,< © 2p,",0,,stem_and_options_both_lack_significant_terms
+66dadabe-df6f-4a8b-9da6-07b19f945678,,ATL BA. Ch bd,13,0,"A:  | B:  | C:  | D: A-II, B-III, C-I, D-IV
+160",0,,stem_and_options_both_lack_significant_terms
+329b6c67-5e51-4c05-b7d0-00574f8aed2a,,"Gi bel t tat t
+1",16,0,A:  | B:  | C:  | D: ,0,,stem_and_options_both_lack_significant_terms
+f5ebfe43-c6b7-4b90-a403-eead64f2d26f,,= Which 1 i le?,15,0,"A: [ CoCl, (en), | NOs | B: [Co( NH), (SO), | C: [Co(NH,), (H,0)Br |(No,), | D: [co(NH,), (NO),",1,cocl,options_contain_scientific_terms_stem_does_not
+3c3a3410-1e2b-41a6-908f-6eb971f11a66,,"2p, <(n*2p, =n"" 2p, }<o* 2p",27,0,"A:  | B:  | C:  | D: cls<o"" Is<o2s<o"" 2s<o 2p, <
+(72, =n 2p, ) < (x° 2p, =n 2p, <o"" 2p,",0,,stem_and_options_both_lack_significant_terms
+a57c6b04-7b2b-4fa0-92ca-256eaccefe94,,"2p, < (x""2p, - x 2p, ) <o* 2p,",30,0,"A:  | B: ols<o"" Is<o2s<o"" 2s<o 2p, <
+(2p, =n 2p, )<(x""2p, =n"" 2p, )<o” 2p, | C: ols<o"" Is<o2s<o"" 2s<o2p, <
+5° 2p, <(n2p, = 2 2p, )<(x°2p, =2""2p,) | D: ols<o"" Is<628<o"" 2s<(n2p, =n 2p, )<
+(x*2p, =2°2p,)<o 2p, < o 2p,",0,,stem_and_options_both_lack_significant_terms

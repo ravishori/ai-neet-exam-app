@@ -1,0 +1,292 @@
+BEGIN
+=== 1. TOTAL QUESTIONS ===
+ total_questions 
+-----------------
+           12396
+(1 row)
+
+=== 2. STATE DISTRIBUTION ===
+      state      | count 
+-----------------+-------
+ ANSWER_PENDING  |  9944
+ ANSWER_VERIFIED |  2452
+(2 rows)
+
+=== 3. VALIDATION_STATUS DISTRIBUTION ===
+ validation_status | count 
+-------------------+-------
+ EXTRACTED         | 12396
+(1 row)
+
+=== 4. SUBJECT DISTRIBUTION (incl NULL) ===
+  subject  | count 
+-----------+-------
+ (null)    |  7597
+ Physics   |  1200
+ Zoology   |  1200
+ Chemistry |  1200
+ Botany    |  1199
+(5 rows)
+
+=== 5. CLASS_LEVEL DISTRIBUTION ===
+ class_level | count 
+-------------+-------
+ (null)      | 12396
+(1 row)
+
+=== 6. QUESTIONS WITH NULL concept_id ===
+ null_concept | has_concept 
+--------------+-------------
+        12396 |           0
+(1 row)
+
+=== 7. QUESTIONS WITH AT LEAST ONE ANSWER ASSERTION (any status) ===
+ questions_with_any_assertion 
+------------------------------
+                         2452
+(1 row)
+
+=== 8. QUESTIONS WITH NO ANSWER ASSERTION AT ALL ===
+ questions_with_no_assertion 
+-----------------------------
+                        9944
+(1 row)
+
+=== 9. ANSWER ASSERTION VERIFICATION_STATUS DISTRIBUTION (row-level, not question-level) ===
+ verification_status | count 
+---------------------+-------
+ VERIFIED            |  2452
+(1 row)
+
+=== 10. QUESTIONS WITH >=1 VERIFIED ASSERTION ===
+ count 
+-------
+  2452
+(1 row)
+
+=== 11. QUESTIONS WITH >=1 DISPUTED ASSERTION ===
+ count 
+-------
+     0
+(1 row)
+
+=== 12. QUESTIONS WITH ONLY ASSERTED (no VERIFIED, no DISPUTED) ===
+ count 
+-------
+     0
+(1 row)
+
+=== 13. QUESTIONS WITH MULTIPLE DISTINCT ASSERTED_OPTION VALUES (conflicting assertions) ===
+ count 
+-------
+     0
+(1 row)
+
+=== 13b. SAME, BROKEN DOWN BY WHETHER question.state = ANSWER_CONFLICT ===
+ state | count 
+-------+-------
+(0 rows)
+
+=== 14. ASSERTION_SOURCE DISTRIBUTION ===
+           assertion_source           | verification_status | count 
+--------------------------------------+---------------------+-------
+ pyq_gemini_ncert_recovery:2026-09-29 | VERIFIED            |  2300
+ pyq_local_ncert_recovery:2026-09-28  | VERIFIED            |   152
+(2 rows)
+
+=== 15. ASSERTIONS WITH NULL/EMPTY evidence_note, BY VERIFICATION_STATUS ===
+ verification_status | no_evidence_note | has_evidence_note | total 
+---------------------+------------------+-------------------+-------
+ VERIFIED            |                0 |              2452 |  2452
+(1 row)
+
+=== 16. ASSERTIONS WITH NULL explanation vs present, BY STATUS ===
+ verification_status | no_explanation | has_explanation 
+---------------------+----------------+-----------------
+ VERIFIED            |           2452 |               0
+(1 row)
+
+=== 17. resolver_version DISTRIBUTION ===
+ resolver_version | count 
+------------------+-------
+ (null)           |  2452
+(1 row)
+
+=== 18. DUPLICATE_CANDIDATES: CLASSIFICATION DISTRIBUTION ===
+ classification | count 
+----------------+-------
+(0 rows)
+
+=== 19. DUPLICATE_CANDIDATES: METHOD DISTRIBUTION ===
+ method | classification | count 
+--------+----------------+-------
+(0 rows)
+
+=== 20. QUESTIONS INVOLVED IN >=1 DUPLICATE_CANDIDATE ROW (as source) ===
+ count 
+-------
+     0
+(1 row)
+
+=== 21. CONFIRMED DUPLICATES (QA_CONFIRMED or EXACT_HASH) vs POSSIBLE (CANDIDATE/LIKELY) vs REJECTED ===
+ confirmed_duplicate_questions | possible_duplicate_questions | rejected_not_duplicate_questions 
+-------------------------------+------------------------------+----------------------------------
+                             0 |                            0 |                                0
+(1 row)
+
+=== 22. SOURCE_FILES: EXAM_YEAR DISTRIBUTION ===
+ exam_year | source_files 
+-----------+--------------
+ (null)    |            1
+ 2020      |           16
+ 2021      |           24
+ 2023      |           24
+ 2024      |            3
+ 2025      |            4
+(6 rows)
+
+=== 23. QUESTIONS PER EXAM_YEAR (via source_files join) ===
+ exam_year | questions 
+-----------+-----------
+ 2020      |      2880
+ 2021      |      4799
+ 2023      |      3536
+ 2024      |       646
+ 2025      |       535
+(5 rows)
+
+=== 24. QUESTIONS PER SUBJECT x EXAM_YEAR ===
+  subject  | exam_year | questions 
+-----------+-----------+-----------
+ (null)    | 2020      |      2880
+ (null)    | 2023      |      3536
+ (null)    | 2024      |       646
+ (null)    | 2025      |       535
+ Botany    | 2021      |      1199
+ Chemistry | 2021      |      1200
+ Physics   | 2021      |      1200
+ Zoology   | 2021      |      1200
+(8 rows)
+
+=== 25. SOURCE PROVENANCE COMPLETENESS: source_files missing paper_code ===
+ missing_paper_code | missing_exam_year | total_source_files 
+--------------------+-------------------+--------------------
+                  1 |                 1 |                 72
+(1 row)
+
+=== 26. RAW_OPTIONS SHAPE SANITY: questions where raw_options is not a 4-element array-like / jsonb type check ===
+ raw_options_type | count 
+------------------+-------
+ object           | 12396
+(1 row)
+
+=== 26b. QUESTIONS WHERE raw_options ARRAY LENGTH <> 4 (when array type) ===
+ option_count | count 
+--------------+-------
+(0 rows)
+
+=== 27. EXTRACTION_CONFIDENCE: NULL vs distribution buckets ===
+ null_confidence | ge_0_9 | b_0_7_0_9 | lt_0_7 
+-----------------+--------+-----------+--------
+               0 |   7383 |         0 |   5013
+(1 row)
+
+=== 28. QA_REVIEWS: DECISION DISTRIBUTION ===
+ decision | count 
+----------+-------
+(0 rows)
+
+=== 29. QUESTIONS WITH NO QA_REVIEW AT ALL (by current state) ===
+      state      | count 
+-----------------+-------
+ ANSWER_PENDING  |  9944
+ ANSWER_VERIFIED |  2452
+(2 rows)
+
+=== 30. PROMOTION_LOG: OUTCOME DISTRIBUTION ===
+ outcome | count 
+---------+-------
+(0 rows)
+
+=== 31. QUESTIONS PROMOTED (state=PROMOTED) vs promotion_log rows (sanity cross-check) ===
+ state_promoted_count | log_promoted_count 
+----------------------+--------------------
+                    0 |                  0
+(1 row)
+
+=== 32. SUBJECT_CONFLICT_REVIEWS: STATUS DISTRIBUTION ===
+ review_status | count 
+---------------+-------
+(0 rows)
+
+=== 33. SUBJECT_CLASSIFICATION_AUDIT: STATUS / CONFIDENCE DISTRIBUTION ===
+ classification_status | confidence | count 
+-----------------------+------------+-------
+(0 rows)
+
+=== 34. SUBJECT_CLASSIFICATION_AUDIT: NCERT_SOURCE presence ===
+ has_ncert_source | no_ncert_source | total 
+------------------+-----------------+-------
+                0 |               0 |     0
+(1 row)
+
+=== 35. GEMINI_BATCH_ITEMS: STATUS DISTRIBUTION ===
+ status | count 
+--------+-------
+(0 rows)
+
+=== 36. GEMINI_BATCH_JOBS: overview ===
+ count 
+-------
+     0
+(1 row)
+
+=== 37. IMPORT_BATCHES: STATUS DISTRIBUTION ===
+  status   | count 
+-----------+-------
+ COMPLETED |     1
+(1 row)
+
+=== 38. SOURCES: LIST ===
+    source_key     |                          name                           |   authority_type    
+-------------------+---------------------------------------------------------+---------------------
+ NEET_PYQ_OFFICIAL | NEET Official PYQ Papers (2020-2025, staged extraction) | OFFICIAL_NEET_PAPER
+(1 row)
+
+=== 39. EXACT HASH DUPLICATES WITHIN QUESTIONS TABLE ITSELF (question_hash appearing >1x) ===
+ groups_with_duplicate_hash | rows_involved 
+----------------------------+---------------
+                       1680 |          7125
+(1 row)
+
+=== 40. NORMALIZED_QUESTION_HASH DUPLICATES ===
+ groups_with_duplicate_norm_hash | rows_involved 
+---------------------------------+---------------
+                            1675 |          7168
+(1 row)
+
+=== 41. QUESTIONS MISSING normalized_stem/normalized_options (NORMALIZED or later state expected to have these) ===
+      state      | missing_normalized_stem | missing_normalized_options | total 
+-----------------+-------------------------+----------------------------+-------
+ ANSWER_PENDING  |                    9944 |                       9944 |  9944
+ ANSWER_VERIFIED |                    2452 |                       2452 |  2452
+(2 rows)
+
+=== 42. BLOCKED QUESTIONS (state=BLOCKED) - sample reasons via promotion_log/qa_reviews if any ===
+ count 
+-------
+     0
+(1 row)
+
+=== 43. TOTAL distinct question ids referenced vs promotion-eligible-but-not-promoted ===
+ state | count 
+-------+-------
+(0 rows)
+
+=== 44. CMS content_items linked back from promotion_log (sanity: promoted content exists) ===
+ promotion_log_rows | with_content_item | without_content_item 
+--------------------+-------------------+----------------------
+                  0 |                 0 |                    0
+(1 row)
+
+COMMIT

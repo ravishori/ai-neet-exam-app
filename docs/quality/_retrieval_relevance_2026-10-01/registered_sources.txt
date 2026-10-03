@@ -1,0 +1,77 @@
+registered count 76
+leph201.pdf | Physics/Class 12-Physics/leph201.pdf | 5c9570cc9f45
+leph202.pdf | Physics/Class 12-Physics/leph202.pdf | 315c746f4733
+leph203.pdf | Physics/Class 12-Physics/leph203.pdf | 8b465f3a3fdd
+leph204.pdf | Physics/Class 12-Physics/leph204.pdf | 6ddc6d11f464
+leph205.pdf | Physics/Class 12-Physics/leph205.pdf | 1f58e5308701
+leph206.pdf | Physics/Class 12-Physics/leph206.pdf | a7e5dc3f4128
+leph2an.pdf | Physics/Class 12-Physics/leph2an.pdf | 008ef2d56113
+leph2ps.pdf | Physics/Class 12-Physics/leph2dd/leph2ps.pdf | ec55ddcdc762
+ncert-book-class-12-physics-part-1-chapter-1.pdf | Physics/Class 12-Physics/ncert-book-class-12-physics-part-1-chapter-1.pdf | 98c9fce4f3f5
+ncert-book-class-12-physics-part-1-chapter-2.pdf | Physics/Class 12-Physics/ncert-book-class-12-physics-part-1-chapter-2.pdf | 84fdc8796e78
+ncert-book-class-12-physics-part-1-chapter-3.pdf | Physics/Class 12-Physics/ncert-book-class-12-physics-part-1-chapter-3.pdf | 76cd7927ef3c
+ncert-book-class-12-physics-part-1-chapter-4.pdf | Physics/Class 12-Physics/ncert-book-class-12-physics-part-1-chapter-4.pdf | bdd0d2aa0027
+ncert-book-class-12-physics-part-1-chapter-5.pdf | Physics/Class 12-Physics/ncert-book-class-12-physics-part-1-chapter-5.pdf | 866fae3f3198
+ncert-book-class-12-physics-part-1-chapter-6.pdf | Physics/Class 12-Physics/ncert-book-class-12-physics-part-1-chapter-6.pdf | 80912e330dc1
+ncert-book-class-12-physics-part-1-chapter-7.pdf | Physics/Class 12-Physics/ncert-book-class-12-physics-part-1-chapter-7.pdf | a76a376dd512
+ncert-book-class-12-physics-part-1-chapter-8.pdf | Physics/Class 12-Physics/ncert-book-class-12-physics-part-1-chapter-8.pdf | dd154366b5cb
+ncert-books-class-11-biology-chapter-1.pdf | Biology/Class 11-Biology/ncert-books-class-11-biology-chapter-1.pdf | 62408711fab3
+ncert-books-class-11-biology-chapter-10.pdf | Biology/Class 11-Biology/ncert-books-class-11-biology-chapter-10.pdf | 26dcb5a4021c
+ncert-books-class-11-biology-chapter-11.pdf | Biology/Class 11-Biology/ncert-books-class-11-biology-chapter-11.pdf | e2dbdb1ec779
+ncert-books-class-11-biology-chapter-12.pdf | Biology/Class 11-Biology/ncert-books-class-11-biology-chapter-12.pdf | a6e2c42534a8
+ncert-books-class-11-biology-chapter-13.pdf | Biology/Class 11-Biology/ncert-books-class-11-biology-chapter-13.pdf | 39014c593bb6
+ncert-books-class-11-biology-chapter-14.pdf | Biology/Class 11-Biology/ncert-books-class-11-biology-chapter-14.pdf | a4b1d577517f
+ncert-books-class-11-biology-chapter-15.pdf | Biology/Class 11-Biology/ncert-books-class-11-biology-chapter-15.pdf | ad30d706c7f9
+ncert-books-class-11-biology-chapter-16.pdf | Biology/Class 11-Biology/ncert-books-class-11-biology-chapter-16.pdf | 33985e227406
+ncert-books-class-11-biology-chapter-17.pdf | Biology/Class 11-Biology/ncert-books-class-11-biology-chapter-17.pdf | d9afb221cc68
+ncert-books-class-11-biology-chapter-18.pdf | Biology/Class 11-Biology/ncert-books-class-11-biology-chapter-18.pdf | bfdae5a581e1
+ncert-books-class-11-biology-chapter-19.pdf | Biology/Class 11-Biology/ncert-books-class-11-biology-chapter-19.pdf | dd3a77420a33
+ncert-books-class-11-biology-chapter-2.pdf | Biology/Class 11-Biology/ncert-books-class-11-biology-chapter-2.pdf | 023adc154e4b
+ncert-books-class-11-biology-chapter-3.pdf | Biology/Class 11-Biology/ncert-books-class-11-biology-chapter-3.pdf | 7fc8d9e8416e
+ncert-books-class-11-biology-chapter-4.pdf | Biology/Class 11-Biology/ncert-books-class-11-biology-chapter-4.pdf | 2c092dd3d16c
+ncert-books-class-11-biology-chapter-5.pdf | Biology/Class 11-Biology/ncert-books-class-11-biology-chapter-5.pdf | 2eaa97b21ca5
+ncert-books-class-11-biology-chapter-6.pdf | Biology/Class 11-Biology/ncert-books-class-11-biology-chapter-6.pdf | 6fc1a4034e49
+ncert-books-class-11-biology-chapter-7.pdf | Biology/Class 11-Biology/ncert-books-class-11-biology-chapter-7.pdf | 9e5c8d0da46c
+ncert-books-class-11-biology-chapter-8.pdf | Biology/Class 11-Biology/ncert-books-class-11-biology-chapter-8.pdf | aba8c632b490
+ncert-books-class-11-biology-chapter-9.pdf | Biology/Class 11-Biology/ncert-books-class-11-biology-chapter-9.pdf | 765d3b377196
+ncert-books-class-11-chemistry-chapter-1.pdf | Chemistry/Class 11- Chemistry/ncert-books-class-11-chemistry-chapter-1.pdf | 6bf950c4390c
+ncert-books-class-11-chemistry-chapter-2.pdf | Chemistry/Class 11- Chemistry/ncert-books-class-11-chemistry-chapter-2.pdf | 68fc9ec16cc7
+ncert-books-class-11-chemistry-chapter-3.pdf | Chemistry/Class 11- Chemistry/ncert-books-class-11-chemistry-chapter-3.pdf | 1bcf97d721b9
+ncert-books-class-11-chemistry-chapter-4.pdf | Chemistry/Class 11- Chemistry/ncert-books-class-11-chemistry-chapter-4.pdf | 3c583e5d705b
+ncert-books-class-11-chemistry-chapter-5.pdf | Chemistry/Class 11- Chemistry/ncert-books-class-11-chemistry-chapter-5.pdf | f11159a7fda0
+ncert-books-class-11-chemistry-chapter-6.pdf | Chemistry/Class 11- Chemistry/ncert-books-class-11-chemistry-chapter-6.pdf | 24f9d0236260
+ncert-books-class-11-chemistry-chapter-7.pdf | Chemistry/Class 11- Chemistry/ncert-books-class-11-chemistry-chapter-7.pdf | 12b98a00f69b
+ncert-books-class-11-chemistry-chapter-8.pdf | Chemistry/Class 11- Chemistry/ncert-books-class-11-chemistry-chapter-8.pdf | 6b3e7a38c4f7
+ncert-books-class-11-chemistry-chapter-9.pdf | Chemistry/Class 11- Chemistry/ncert-books-class-11-chemistry-chapter-9.pdf | ba399faf5d94
+ncert-books-class-11-physics-chapter-1.pdf | Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-1.pdf | 3efff81bec6f
+ncert-books-class-11-physics-chapter-11.pdf | Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-11.pdf | eab94e616f83
+ncert-books-class-11-physics-chapter-12.pdf | Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-12.pdf | 413ea2c7afc7
+ncert-books-class-11-physics-chapter-13.pdf | Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-13.pdf | 55abe21cd9ef
+ncert-books-class-11-physics-chapter-14.pdf | Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-14.pdf | 048d43cc03a3
+ncert-books-class-11-physics-chapter-2.pdf | Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-2.pdf | 3b6359fd23dd
+ncert-books-class-11-physics-chapter-3.pdf | Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-3.pdf | 190e8b0401c5
+ncert-books-class-11-physics-chapter-4.pdf | Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-4.pdf | 038112bf72e6
+ncert-books-class-11-physics-chapter-5.pdf | Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-5.pdf | 354d40302e7d
+ncert-books-class-11-physics-chapter-6.pdf | Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-6.pdf | fff94dc8268c
+ncert-books-class-11-physics-chapter-8.pdf | Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-8.pdf | c63a59bf3392
+ncert-books-class-11-physics-chapter-9.pdf | Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-9.pdf | 83f687e060f1
+ncert-books-class-12-biology-chapter-1.pdf | Biology/Class 12-Biology/ncert-books-class-12-biology-chapter-1.pdf | 9c77b052df55
+ncert-books-class-12-biology-chapter-10.pdf | Biology/Class 12-Biology/ncert-books-class-12-biology-chapter-10.pdf | 6a3541201178
+ncert-books-class-12-biology-chapter-13.pdf | Biology/Class 12-Biology/ncert-books-class-12-biology-chapter-13.pdf | c02b00783a53
+ncert-books-class-12-biology-chapter-3.pdf | Biology/Class 12-Biology/ncert-books-class-12-biology-chapter-3.pdf | 5ada20f49683
+ncert-books-class-12-biology-chapter-4.pdf | Biology/Class 12-Biology/ncert-books-class-12-biology-chapter-4.pdf | f907fc983037
+ncert-books-class-12-biology-chapter-5.pdf | Biology/Class 12-Biology/ncert-books-class-12-biology-chapter-5.pdf | de949d428a52
+ncert-books-class-12-biology-chapter-6.pdf | Biology/Class 12-Biology/ncert-books-class-12-biology-chapter-6.pdf | 7b5556a14b7d
+ncert-books-class-12-biology-chapter-7.pdf | Biology/Class 12-Biology/ncert-books-class-12-biology-chapter-7.pdf | d84fe669807c
+ncert-books-class-12-biology-chapter-8.pdf | Biology/Class 12-Biology/ncert-books-class-12-biology-chapter-8.pdf | 0d6e1b7edf95
+ncert-books-class-12-biology-chapter-9.pdf | Biology/Class 12-Biology/ncert-books-class-12-biology-chapter-9.pdf | f9c042d02fdb
+ncert-books-class-12-chemistry-chapter-1.pdf | Chemistry/Class 12- Chemistry/ncert-books-class-12-chemistry-chapter-1.pdf | 118c5745258e
+ncert-books-class-12-chemistry-chapter-10.pdf | Chemistry/Class 12- Chemistry/ncert-books-class-12-chemistry-chapter-10.pdf | 6a2af1b8eb5d
+ncert-books-class-12-chemistry-chapter-2.pdf | Chemistry/Class 12- Chemistry/ncert-books-class-12-chemistry-chapter-2.pdf | 4451b11856a1
+ncert-books-class-12-chemistry-chapter-3.pdf | Chemistry/Class 12- Chemistry/ncert-books-class-12-chemistry-chapter-3.pdf | 4bd8d9f62cd5
+ncert-books-class-12-chemistry-chapter-4.pdf | Chemistry/Class 12- Chemistry/ncert-books-class-12-chemistry-chapter-4.pdf | e6c1ffee237f
+ncert-books-class-12-chemistry-chapter-5.pdf | Chemistry/Class 12- Chemistry/ncert-books-class-12-chemistry-chapter-5.pdf | a96fcf6ce050
+ncert-books-class-12-chemistry-chapter-6.pdf | Chemistry/Class 12- Chemistry/ncert-books-class-12-chemistry-chapter-6.pdf | e1c48ac69640
+ncert-books-class-12-chemistry-chapter-7.pdf | Chemistry/Class 12- Chemistry/ncert-books-class-12-chemistry-chapter-7.pdf | 7d1ec26a4886
+ncert-books-class-12-chemistry-chapter-8.pdf | Chemistry/Class 12- Chemistry/ncert-books-class-12-chemistry-chapter-8.pdf | d749b90f53b5
+ncert-books-class-12-chemistry-chapter-9.pdf | Chemistry/Class 12- Chemistry/ncert-books-class-12-chemistry-chapter-9.pdf | a47ce63c870b

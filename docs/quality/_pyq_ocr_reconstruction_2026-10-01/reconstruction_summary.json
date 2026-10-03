@@ -1,0 +1,15 @@
+{
+  "total_questions": 42,
+  "classification_counts": {
+    "SOURCE_MISMATCH": 7,
+    "PARTIALLY_RECOVERABLE": 33,
+    "UNRESOLVED": 2
+  },
+  "confidence_counts": {
+    "LOW": 15,
+    "MEDIUM": 25,
+    "": 2
+  },
+  "distinct_source_pdfs_processed": 23,
+  "rows_with_proposed_reconstruction_placeholder": 0
+}

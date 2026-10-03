@@ -1,0 +1,108 @@
+{
+  "total_failed_units": 126,
+  "questions_covered_exclusively_by_a_failed_unit_at_strict_threshold": 0,
+  "total_question_x_failed_unit_strict_match_pairs": 6788,
+  "conclusion": "Zero questions depend exclusively on a FAILED unit at the production 0.50 threshold (matches the current_covered == passed_only_strict check above).",
+  "sample_failed_units": [
+    {
+      "id": "10423a58-dd53-4c3b-a17e-0204d51e73ab",
+      "chapter_code": "CHEMISTRY-U01",
+      "validation_detail": "duplicate of existing knowledge unit 7f57381c-7644-4cef-a7dc-d5650a5b9d08"
+    },
+    {
+      "id": "7551c4fe-c044-432d-951d-c44e47173253",
+      "chapter_code": "CHEMISTRY-U01",
+      "validation_detail": "duplicate of existing knowledge unit 06d8a7ab-b6e5-417d-b925-554bf321a619"
+    },
+    {
+      "id": "ccbb4fe3-0ea7-4d2d-a22e-54295a60abf2",
+      "chapter_code": "BIOLOGY-U01",
+      "validation_detail": "duplicate of existing knowledge unit a724f4d1-7392-4d14-8a6b-52e7081bbcab"
+    },
+    {
+      "id": "ed780e18-9340-4679-af80-6dbed024b6ca",
+      "chapter_code": "CHEMISTRY-U01",
+      "validation_detail": "duplicate of existing knowledge unit 7983d1ea-4eeb-4d0b-a59e-3e8ef4cbe42f"
+    },
+    {
+      "id": "4f9e3aff-5e9c-4b68-92c1-809ff5478df6",
+      "chapter_code": "CHEMISTRY-U01",
+      "validation_detail": "duplicate of existing knowledge unit 95304d59-9a46-47fa-9b93-b3f960a8f532"
+    },
+    {
+      "id": "28f8ebfe-7223-4565-a80d-96009a4bb990",
+      "chapter_code": "CHEMISTRY-U01",
+      "validation_detail": "duplicate of existing knowledge unit 7cb64584-7276-4269-adc2-705cf28d572c"
+    },
+    {
+      "id": "d5b6769e-65c4-43db-a9be-7ce345e20a4f",
+      "chapter_code": "CHEMISTRY-U01",
+      "validation_detail": "duplicate of existing knowledge unit b5ef3b6d-700f-43a2-a006-d22a0307e4d9"
+    },
+    {
+      "id": "116b6596-463f-4901-ae13-f78fda5fb169",
+      "chapter_code": "CHEMISTRY-U01",
+      "validation_detail": "duplicate of existing knowledge unit d5bc3523-a8e3-44ea-9bf5-8aa49e6dedc2"
+    },
+    {
+      "id": "3380af45-0b70-4e17-8cf8-20e9377ff528",
+      "chapter_code": "CHEMISTRY-U01",
+      "validation_detail": "duplicate of existing knowledge unit f092f903-e254-4fd9-aee2-82176c21049e"
+    },
+    {
+      "id": "15391130-c875-41b8-9a7e-6a0ed54bb6d9",
+      "chapter_code": "CHEMISTRY-U01",
+      "validation_detail": "duplicate of existing knowledge unit c20956f4-8810-4f4a-b0f0-ad0ceedd2817"
+    },
+    {
+      "id": "1b2d0535-dbff-4b24-ae45-cad61cc5d6fa",
+      "chapter_code": "CHEMISTRY-U01",
+      "validation_detail": "duplicate of existing knowledge unit c018593d-5ad3-492d-8ca5-16d228e3a4f9"
+    },
+    {
+      "id": "5f7a4dee-b6a9-4013-a250-e6a0bf35ab9d",
+      "chapter_code": "CHEMISTRY-U01",
+      "validation_detail": "duplicate of existing knowledge unit 1c565389-055d-4923-a1cc-f9cf98766df7"
+    },
+    {
+      "id": "ade3e2be-02ac-4321-96e2-28cf4b2db884",
+      "chapter_code": "CHEMISTRY-U01",
+      "validation_detail": "duplicate of existing knowledge unit 14d36526-7dad-4c9a-81f6-1e89c0bc1b3c"
+    },
+    {
+      "id": "327ffd0a-c791-46f6-8f9d-4ad84ed2f0d9",
+      "chapter_code": "CHEMISTRY-U01",
+      "validation_detail": "duplicate of existing knowledge unit 5998a7ca-63ab-4759-b4a7-b2f1ce43395d"
+    },
+    {
+      "id": "467b297c-bf07-4a2d-b037-519aa185256a",
+      "chapter_code": "CHEMISTRY-U01",
+      "validation_detail": "duplicate of existing knowledge unit b2c8ecd7-5650-462b-a449-f5e430c39d30"
+    },
+    {
+      "id": "7b331bb9-b581-44ee-b115-4f4181d8d672",
+      "chapter_code": "CHEMISTRY-U01",
+      "validation_detail": "duplicate of existing knowledge unit 92894898-2b46-4b95-b486-e092de9fddc6"
+    },
+    {
+      "id": "fc633e72-9a11-4b8a-8372-3fc827afe79e",
+      "chapter_code": "CHEMISTRY-U01",
+      "validation_detail": "duplicate of existing knowledge unit 99894dce-a99e-4d65-a354-8fe77ae092a4"
+    },
+    {
+      "id": "1288234f-355b-4728-8b35-a2b3003f7921",
+      "chapter_code": "CHEMISTRY-U01",
+      "validation_detail": "duplicate of existing knowledge unit e8cc5e5c-851f-43e7-a355-6a22017daa55"
+    },
+    {
+      "id": "a742e72b-bbb9-48f9-a818-7d2d9a38ac23",
+      "chapter_code": "CHEMISTRY-U01",
+      "validation_detail": "duplicate of existing knowledge unit 4be7fc17-df71-4d7c-b14f-c660da66de32"
+    },
+    {
+      "id": "c17c4aec-0cd7-4e54-befe-08bb85e62c0a",
+      "chapter_code": "CHEMISTRY-U01",
+      "validation_detail": "duplicate of existing knowledge unit 02382bf4-93f1-4984-a469-5e3762326fad"
+    }
+  ]
+}

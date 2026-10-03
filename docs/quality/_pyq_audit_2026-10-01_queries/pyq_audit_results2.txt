@@ -1,0 +1,90 @@
+BEGIN
+=== 45. STATE x EXAM_YEAR ===
+ exam_year |      state      | count 
+-----------+-----------------+-------
+ 2020      | ANSWER_PENDING  |  2270
+ 2020      | ANSWER_VERIFIED |   610
+ 2021      | ANSWER_PENDING  |  4346
+ 2021      | ANSWER_VERIFIED |   453
+ 2023      | ANSWER_PENDING  |  2265
+ 2023      | ANSWER_VERIFIED |  1271
+ 2024      | ANSWER_PENDING  |   547
+ 2024      | ANSWER_VERIFIED |    99
+ 2025      | ANSWER_PENDING  |   516
+ 2025      | ANSWER_VERIFIED |    19
+(10 rows)
+
+=== 46. STATE x SUBJECT ===
+  subject  |      state      | count 
+-----------+-----------------+-------
+ (null)    | ANSWER_PENDING  |  5598
+ (null)    | ANSWER_VERIFIED |  1999
+ Botany    | ANSWER_PENDING  |  1053
+ Botany    | ANSWER_VERIFIED |   146
+ Chemistry | ANSWER_PENDING  |  1118
+ Chemistry | ANSWER_VERIFIED |    82
+ Physics   | ANSWER_PENDING  |  1089
+ Physics   | ANSWER_VERIFIED |   111
+ Zoology   | ANSWER_PENDING  |  1086
+ Zoology   | ANSWER_VERIFIED |   114
+(10 rows)
+
+=== 47. EXACT question_hash DUPLICATES: WITHIN SAME source_file vs ACROSS DIFFERENT source_files ===
+ groups_within_single_file | groups_across_multiple_files | rows_within_single_file | rows_across_multiple_files 
+---------------------------+------------------------------+-------------------------+----------------------------
+                         0 |                         1680 |                         |                       7125
+(1 row)
+
+=== 48. SAMPLE OF WITHIN-SAME-FILE EXACT HASH DUPLICATE GROUPS (first 5, question_number list) ===
+ question_hash | source_file_id | qnums | n 
+---------------+----------------+-------+---
+(0 rows)
+
+=== 49. source_files with NULL exam_year / paper_code: which rows ===
+                  id                  |     paper_id     | paper_code | exam_year |                                         relative_path                                          
+--------------------------------------+------------------+------------+-----------+------------------------------------------------------------------------------------------------
+ ad8de52a-e381-4337-8132-76fbf9f73481 | cf69a2a4a46e6ce4 |            |           | NEET_PYQ_OFFICIAL/unknown/cf69a2a4a46e6ce451f23490fda4db1cf5021879e6ace71d0fb2be7aacb36eff.pdf
+(1 row)
+
+=== 50. VERIFIED assertions: asserted_option DISTRIBUTION (answer-key letter balance sanity) ===
+ asserted_option | count 
+-----------------+-------
+ A               |   604
+ B               |   586
+ C               |   607
+ D               |   655
+(4 rows)
+
+=== 51. VERIFIED questions BY exam_year x subject (coverage of the 2452 verified rows) ===
+ exam_year |  subject  | verified_count 
+-----------+-----------+----------------
+ 2020      | (null)    |            610
+ 2021      | Botany    |            146
+ 2021      | Chemistry |             82
+ 2021      | Physics   |            111
+ 2021      | Zoology   |            114
+ 2023      | (null)    |           1271
+ 2024      | (null)    |             99
+ 2025      | (null)    |             19
+(8 rows)
+
+=== 52. extraction_confidence bucket x state (is low-confidence correlated with pending) ===
+      state      | ge_0_9 | lt_0_9 
+-----------------+--------+--------
+ ANSWER_VERIFIED |   1063 |   1389
+ ANSWER_PENDING  |   6320 |   3624
+(2 rows)
+
+=== 53. Distinct extraction_confidence values actually present (coarse/binary check) ===
+ extraction_confidence | count 
+-----------------------+-------
+                  0.45 |   344
+                   0.5 |   232
+                 0.625 |    64
+                  0.65 |  4373
+                 0.939 |  1925
+                  0.94 |   875
+                  0.95 |  4583
+(7 rows)
+
+COMMIT
