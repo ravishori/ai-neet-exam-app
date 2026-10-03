@@ -6,6 +6,7 @@ import time
 from dataclasses import dataclass, field
 from typing import Any
 
+from app.core.logging import sanitize_error_text
 from app.modules.ai.gateway.base import (
     PROVIDER_BLOCKED,
     PROVIDER_ERROR,
@@ -210,8 +211,13 @@ class ProviderRouter:
                     break
                 continue
             except Exception as exc:  # noqa: BLE001
+                # Not a ProviderError, so this exception was never normalized
+                # by a provider's own sanitized error handling — str(exc) on
+                # an httpx exception can embed its full request URL. Scrub
+                # before it is logged or persisted (AIRequestLog.error_message).
                 latency_ms = int((time.perf_counter() - started) * 1000)
-                err = ProviderError(PROVIDER_ERROR, str(exc)[:300], provider=name)
+                safe_message = sanitize_error_text(str(exc), limit=300)
+                err = ProviderError(PROVIDER_ERROR, safe_message, provider=name)
                 attempts.append(
                     ProviderAttempt(
                         attempt_no=idx,
@@ -220,7 +226,7 @@ class ProviderRouter:
                         status=PROVIDER_ERROR,
                         latency_ms=latency_ms,
                         error_code=PROVIDER_ERROR,
-                        error_message=str(exc)[:300],
+                        error_message=safe_message,
                     )
                 )
                 last_error = err

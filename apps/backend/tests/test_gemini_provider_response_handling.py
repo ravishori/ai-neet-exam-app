@@ -93,7 +93,7 @@ class _FakeAsyncClient:
         return None
 
     async def post(self, url: str, json: dict | None = None, **kwargs: object) -> _FakeResponse:
-        _FakeAsyncClient.last_request = {"url": url, "json": json or {}}
+        _FakeAsyncClient.last_request = {"url": url, "json": json or {}, "headers": kwargs.get("headers") or {}}
         return self._response
 
 
@@ -290,5 +290,43 @@ async def test_system_instruction_and_contents_present(monkeypatch: pytest.Monke
     assert body["systemInstruction"]["parts"][0]["text"] == "SYSTEM_RULES"
     assert body["contents"][0]["parts"][0]["text"] == "USER_PROMPT"
     assert body["generationConfig"]["thinkingConfig"]["thinkingLevel"] == "MINIMAL"
-    # URL contains query key placeholder from constructor — ensure we do not print it in asserts
     assert "models/gemini-3.6-flash:generateContent" in _FakeAsyncClient.last_request["url"]
+
+
+# ---------------------------------------------------------------------------
+# Credential-exposure regression (production incident: Gemini API key logged
+# in plaintext via httpx's own "HTTP Request: {method} {url}" INFO line,
+# because the key was a `?key=` URL query param). Fix: key moves to the
+# `x-goog-api-key` header, never the URL.
+# ---------------------------------------------------------------------------
+
+
+async def test_api_key_never_appears_in_request_url(monkeypatch: pytest.MonkeyPatch) -> None:
+    _FakeAsyncClient.last_request = {}
+    _patch_httpx(monkeypatch, _gemini_body(finish_reason="STOP"))
+    secret = "AIzaSy-super-secret-test-key-FAKE"
+    p = GeminiProvider(api_key=secret, model="gemini-3.6-flash")
+    await p.generate_request(GenerateRequest(system_prompt="s", user_prompt="u", max_tokens=100))
+    url = _FakeAsyncClient.last_request["url"]
+    assert secret not in url
+    assert "key=" not in url
+    assert "?" not in url
+
+
+async def test_api_key_sent_via_header_not_query_string(monkeypatch: pytest.MonkeyPatch) -> None:
+    _FakeAsyncClient.last_request = {}
+    _patch_httpx(monkeypatch, _gemini_body(finish_reason="STOP"))
+    secret = "AIzaSy-super-secret-test-key-FAKE"
+    p = GeminiProvider(api_key=secret, model="gemini-3.6-flash")
+    await p.generate_request(GenerateRequest(system_prompt="s", user_prompt="u", max_tokens=100))
+    headers = _FakeAsyncClient.last_request["headers"]
+    assert headers.get("x-goog-api-key") == secret
+
+
+async def test_api_key_never_appears_in_safe_metadata_or_response(monkeypatch: pytest.MonkeyPatch) -> None:
+    _patch_httpx(monkeypatch, _gemini_body(finish_reason="STOP"))
+    secret = "AIzaSy-super-secret-test-key-FAKE"
+    p = GeminiProvider(api_key=secret, model="gemini-3.6-flash")
+    resp = await p.generate_request(GenerateRequest(system_prompt="s", user_prompt="u", max_tokens=100))
+    assert secret not in json.dumps(resp.safe_metadata)
+    assert secret not in resp.text

@@ -8,7 +8,7 @@ import uuid
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.config import get_settings
-from app.core.logging import get_logger
+from app.core.logging import get_logger, sanitize_error_text
 from app.modules.ai.gateway.base import AIProvider, AIResponse, GenerateRequest, ProviderError
 from app.modules.ai.gateway.fallback_provider import FallbackProvider
 from app.modules.ai.gateway.pricing import estimate_cost
@@ -189,7 +189,11 @@ class AIGateway:
         except ProviderError:
             raise
         except Exception as exc:  # noqa: BLE001
+            # Not a ProviderError — str(exc) on an unnormalized exception
+            # (e.g. raw httpx error) can embed its request URL. Scrub before
+            # logging or persisting to AIRequestLog.error_message.
             latency_ms = int((time.perf_counter() - started) * 1000)
+            safe_message = sanitize_error_text(str(exc), limit=500)
             await self._log(
                 agent_type,
                 user_id,
@@ -200,9 +204,9 @@ class AIGateway:
                 latency_ms,
                 is_fallback=False,
                 success=False,
-                error_message=str(exc)[:500],
+                error_message=safe_message,
             )
-            logger.error("ai_request_failed", agent_type=agent_type, error=str(exc)[:200])
+            logger.error("ai_request_failed", agent_type=agent_type, error=(safe_message or "")[:200])
             raise
 
     async def _log(

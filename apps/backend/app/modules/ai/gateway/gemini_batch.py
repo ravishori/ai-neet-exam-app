@@ -84,7 +84,9 @@ async def submit_batch(
     Never sends anything beyond what the caller put in each item's
     system_prompt/user_prompt — this module has no retrieval logic of its
     own and does not read from the database."""
-    url = f"{_BASE_URL}/models/{model}:batchGenerateContent?key={api_key}"
+    # Key goes in the header, never the URL — see gemini_provider.py.
+    url = f"{_BASE_URL}/models/{model}:batchGenerateContent"
+    headers = {"x-goog-api-key": api_key}
     payload = {
         "batch": {
             "displayName": display_name,
@@ -99,7 +101,7 @@ async def submit_batch(
     }
     try:
         async with httpx.AsyncClient(timeout=timeout) as client:
-            resp = await client.post(url, json=payload)
+            resp = await client.post(url, headers=headers, json=payload)
         if resp.status_code >= 400:
             raise classify_http_error("gemini", resp.status_code, resp.text[:500])
         data = resp.json()
@@ -118,10 +120,11 @@ async def get_batch_status(*, api_key: str, batch_name: str, timeout: float = 60
     """Polls a previously submitted batch job. Safe to call repeatedly —
     read-only. Returns is_terminal=False while still running; once
     terminal, `results` is populated only on BATCH_STATE_SUCCEEDED."""
-    url = f"{_BASE_URL}/{batch_name}?key={api_key}"
+    url = f"{_BASE_URL}/{batch_name}"
+    headers = {"x-goog-api-key": api_key}
     try:
         async with httpx.AsyncClient(timeout=timeout) as client:
-            resp = await client.get(url)
+            resp = await client.get(url, headers=headers)
         if resp.status_code >= 400:
             raise classify_http_error("gemini", resp.status_code, resp.text[:500])
         data = resp.json()

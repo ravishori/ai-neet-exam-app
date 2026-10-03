@@ -52,11 +52,11 @@ class GeminiProvider(AIProvider):
 
     async def generate_request(self, request: GenerateRequest) -> AIResponse:
         model = request.model or self._model
-        url = (
-            f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
-            f"?key={self._api_key}"
-        )
-        # System instruction + user content; do not put API key in logs elsewhere.
+        # Key goes in the header, never the URL — httpx's own request logger
+        # (and any exception message embedding the URL) logs the URL verbatim,
+        # bypassing structlog's redaction, which only inspects dict keys.
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
+        headers = {"x-goog-api-key": self._api_key}
         # Gemini 3.6 Flash enables thinking by default; MINIMAL reserves output budget for
         # structured MCQ JSON under maxOutputTokens (see FACTORY-P3.1 thinking diagnostic).
         payload: dict = {
@@ -74,7 +74,7 @@ class GeminiProvider(AIProvider):
 
         try:
             async with httpx.AsyncClient(timeout=self._timeout) as client:
-                resp = await client.post(url, json=payload)
+                resp = await client.post(url, headers=headers, json=payload)
             if resp.status_code >= 400:
                 raise classify_http_error(self.name, resp.status_code, resp.text[:500])
             data = resp.json()
