@@ -18,6 +18,11 @@ PROVIDER_INVALID_RESPONSE = "PROVIDER_INVALID_RESPONSE"
 PROVIDER_UNAVAILABLE = "PROVIDER_UNAVAILABLE"
 PROVIDER_ERROR = "PROVIDER_ERROR"
 PROVIDER_COST_UNKNOWN = "PROVIDER_COST_UNKNOWN"
+# Raised by a provider's own constructor when its feature flag is off (e.g.
+# GeminiProvider when settings.gemini_enabled is False) — a fail-closed
+# guard independent of which code path tried to construct it (CLI script,
+# admin endpoint, scheduled worker, or the shared AIGateway router).
+PROVIDER_DISABLED = "PROVIDER_DISABLED"
 
 
 class ProviderError(Exception):

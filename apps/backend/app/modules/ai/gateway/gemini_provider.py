@@ -4,7 +4,14 @@ from __future__ import annotations
 
 import httpx
 
-from app.modules.ai.gateway.base import PROVIDER_INVALID_RESPONSE, AIProvider, AIResponse, GenerateRequest, ProviderError
+from app.modules.ai.gateway.base import (
+    PROVIDER_DISABLED,
+    PROVIDER_INVALID_RESPONSE,
+    AIProvider,
+    AIResponse,
+    GenerateRequest,
+    ProviderError,
+)
 from app.modules.ai.gateway.errors import classify_http_error, map_exception
 
 # Successful terminal states for generateContent (Gemini API).
@@ -41,6 +48,23 @@ class GeminiProvider(AIProvider):
     name = "gemini"
 
     def __init__(self, api_key: str, model: str, *, timeout: float = 60.0):
+        # Fail-closed guard: every known call site (the shared AIGateway
+        # router, the PYQ resolver's Stage-2 direct construction, the admin
+        # Gemini-backfill endpoint, and every ad hoc script under scripts/)
+        # instantiates this class to make a real call. Checking the flag
+        # once here, in the one place nothing can bypass, means disabling
+        # settings.gemini_enabled blocks ALL of them -- not just whichever
+        # callers happen to check the flag themselves. See
+        # docs/quality/gemini-stop-and-zero-cost-pipeline-2026-10-03.md.
+        from app.core.config import get_settings
+
+        if not get_settings().gemini_enabled:
+            raise ProviderError(
+                PROVIDER_DISABLED,
+                "Gemini is disabled (settings.gemini_enabled=False) — construction refused.",
+                provider="gemini",
+                retryable=False,
+            )
         self._api_key = api_key
         self._model = model
         self._timeout = timeout
