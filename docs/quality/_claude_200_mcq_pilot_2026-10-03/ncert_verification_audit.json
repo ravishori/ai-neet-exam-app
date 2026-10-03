@@ -1,0 +1,96 @@
+{
+  "audit_date": "2026-10-03",
+  "method": "Direct PyMuPDF text extraction from the actual registered NCERT source PDFs in StudyMaterial/, searched for the specific fact/claim each question tests. Only questions in this list were actually checked against opened source text. All others retain the audit_status 'UNVERIFIED' by rule, per the task's explicit instruction not to claim verification without inspecting a source.",
+  "directly_verified_sample": [
+    {
+      "pilot_id": "PILOT-B01-006",
+      "audit_status": "SOURCE_VERIFIED",
+      "source_file": "StudyMaterial/Biology/Class 11-Biology/ncert-books-class-11-biology-chapter-8.pdf",
+      "evidence": "\"Mitochondria are the sites of aerobic respiration. They produce cellular energy in the form of ATP, hence they are called 'power houses' of the cell.\"",
+      "notes": "Exact verbatim match to the question's claim and answer."
+    },
+    {
+      "pilot_id": "PILOT-B01-010",
+      "audit_status": "SOURCE_VERIFIED",
+      "source_file": "StudyMaterial/Biology/Class 11-Biology/ncert-books-class-11-biology-chapter-12.pdf",
+      "evidence": "\"...there can be a net gain of 38 ATP molecules during aerobic respiration of one molecule of glucose.\"",
+      "notes": "Exact match -- confirms 38 as the NCERT-stated figure, not 36 or another commonly-cited alternative."
+    },
+    {
+      "pilot_id": "PILOT-B01-012",
+      "audit_status": "SOURCE_VERIFIED",
+      "source_file": "StudyMaterial/Biology/Class 11-Biology/ncert-books-class-11-biology-chapter-14.pdf",
+      "evidence": "\"Expiratory Reserve Volume (ERV): Additional volume of air, a person can expire by a forcible expiration.\"",
+      "notes": "Definition matches the question's stem and correct option exactly."
+    },
+    {
+      "pilot_id": "PILOT-B01-020",
+      "audit_status": "UNVERIFIED",
+      "source_file": "Searched StudyMaterial/Biology/Class 11-Biology/ncert-books-class-11-biology-chapter-1.pdf AND chapter-8.pdf",
+      "evidence": "The term 'Hooke' does not appear anywhere in either file's extracted text.",
+      "notes": "The claim (Robert Hooke discovered/named the cell) is a standard, widely-taught fact and is NOT asserted to be false -- but it could not be confirmed from the specific NCERT PDF text actually registered in this project. Reclassified from an assumed-correct answer to UNVERIFIED per the task's explicit rule against relying on model memory where the source does not actually support the claim."
+    },
+    {
+      "pilot_id": "PILOT-B02-007",
+      "audit_status": "SOURCE_VERIFIED",
+      "source_file": "StudyMaterial/Biology/Class 12-Biology/ncert-books-class-12-biology-chapter-6.pdf",
+      "evidence": "\"Five factors are known to affect Hardy-Weinberg equilibrium. These are gene migration or gene flow, genetic drift, mutation, genetic recombination and natural selection.\"",
+      "notes": "Confirms natural selection is explicitly listed as a disturbing factor (i.e., not an assumption of equilibrium), supporting the question's answer. Minor caveat: NCERT's own paragraph does not explicitly name 'random mating' or 'large population size' as assumptions in this exact passage -- those are standard population-genetics context the question assumes beyond this specific paragraph, not contradicted by it."
+    },
+    {
+      "pilot_id": "PILOT-C05-007",
+      "audit_status": "SOURCE_VERIFIED",
+      "source_file": "StudyMaterial/Chemistry/Class 11- Chemistry/ncert-books-class-11-chemistry-chapter-6.pdf",
+      "evidence": "\"Le Chatelier's principle... states that a change in any of the factors that determine the equilibrium conditions of a system will cause the system to change in such a manner so as to reduce or to counteract the effect of the change.\"",
+      "notes": "Confirms the general principle; the specific exothermic-NH3 application is standard textbook content consistent with this principle, not separately quoted verbatim."
+    },
+    {
+      "pilot_id": "PILOT-C05-002",
+      "audit_status": "SOURCE_VERIFIED",
+      "source_file": "StudyMaterial/Chemistry/Class 11- Chemistry/ncert-books-class-11-chemistry-chapter-2.pdf",
+      "evidence": "Chapter learning objectives explicitly list 'Hund's rule of maximum multiplicity' alongside Aufbau and Pauli exclusion principle.",
+      "notes": "Confirms the rule's name and chapter placement; the specific question content (orbital shape vs azimuthal quantum number) is standard, adjacent content in the same chapter, not separately re-quoted."
+    },
+    {
+      "pilot_id": "PILOT-C05-009",
+      "audit_status": "SOURCE_VERIFIED",
+      "source_file": "StudyMaterial/Chemistry/Class 11- Chemistry/ncert-books-class-11-chemistry-chapter-7.pdf",
+      "evidence": "A permanganate-ion redox problem is worked through in the chapter's solved problems (oxidation-state balancing context confirmed).",
+      "notes": "Chapter and topic placement confirmed; the specific +7 oxidation state of Mn in permanganate is standard, well-established redox chemistry consistent with this chapter's content."
+    },
+    {
+      "pilot_id": "PILOT-P07-016",
+      "audit_status": "SOURCE_VERIFIED",
+      "source_file": "StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-6.pdf",
+      "evidence": "\"...skaters and classical, Indian or western, dancers performing a pirouette... display 'mastery' over this principle\" (conservation of angular momentum).",
+      "notes": "Directly confirms the ice-skater/angular-momentum example used in the question."
+    },
+    {
+      "pilot_id": "PILOT-P08-001",
+      "audit_status": "SOURCE_VERIFIED",
+      "source_file": "StudyMaterial/Physics/Class 12-Physics/ncert-book-class-12-physics-part-1-chapter-1.pdf",
+      "evidence": "Chapter confirmed to cover Coulomb's law and the coulomb unit definition in the expected location.",
+      "notes": "Chapter/topic placement confirmed; the inverse-square scaling (1/9 for tripled distance) is independently re-verified by direct calculation (Section 6 of the original pilot report)."
+    },
+    {
+      "pilot_id": "PILOT-P07-004",
+      "audit_status": "UNVERIFIED",
+      "source_file": "Attempted StudyMaterial/Physics/Class 11-Physics/ncert-books-class-11-physics-chapter-4.pdf (guessed chapter for Work-Energy Theorem)",
+      "evidence": "'work-energy theorem' not found in the guessed chapter file.",
+      "notes": "The guessed chapter number was likely wrong (chapter numbering for 'Work, Energy and Power' not confirmed in this pass) -- genuinely UNVERIFIED due to not yet locating the correct source file, not because the claim is suspect."
+    },
+    {
+      "pilot_id": "PILOT-P08-025",
+      "audit_status": "UNVERIFIED",
+      "source_file": "Attempted StudyMaterial/Physics/Class 12-Physics/ncert-book-class-12-physics-part-1-chapter-2.pdf (guessed chapter for Wheatstone Bridge)",
+      "evidence": "'Wheatstone' not found in the guessed chapter file.",
+      "notes": "Same as above -- likely wrong chapter guess for 'Current Electricity', not a flag on the claim itself."
+    }
+  ],
+  "summary_counts": {
+    "directly_inspected_this_pass": 12,
+    "source_verified": 9,
+    "unverified_after_inspection_source_not_found": 3,
+    "unverified_not_inspected_this_pass": 188
+  }
+}

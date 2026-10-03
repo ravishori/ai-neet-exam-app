@@ -1,0 +1,4 @@
+{
+  "corrections_made": [],
+  "notes": "No question's stem, options, or answer was altered in this audit. The only change made was reclassifying PILOT-B01-020's status from the pilot's original PENDING_VALIDATION to UNVERIFIED, because the specific claim (Robert Hooke) could not be located in the actually-registered NCERT source text, despite being a standard, widely-accepted fact. This is a status change, not a content correction -- the original question text is preserved unmodified in audited_200_mcqs.json. No question was deemed REJECTED or NEEDS_REVISION in this pass, since none of the 12 directly-inspected questions were found to be factually wrong, ambiguous, or out of syllabus -- only under-evidenced from the specific available source."
+}
