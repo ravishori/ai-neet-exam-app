@@ -32,6 +32,7 @@ from app.modules.cms.api.content_factory_router import router as content_factory
 from app.modules.cms.api.human_gold_sandbox_router import router as human_gold_sandbox_router
 from app.modules.cms.api.search_router import router as search_router
 from app.modules.cms.pyq.api.gemini_backfill_router import router as pyq_gemini_backfill_router
+from app.modules.cms.pyq.api.pyq_answer_review_router import router as pyq_answer_review_router
 from app.modules.cms.pyq.pyq_resolver_worker import run_worker_loop as run_pyq_resolver_worker_loop
 from app.modules.commerce.api.commerce_router import router as commerce_router
 from app.modules.identity.api.auth_router import router as auth_router
@@ -118,6 +119,7 @@ app.include_router(commerce_router)
 app.include_router(ingestion_router)
 app.include_router(knowledge_router)
 app.include_router(pyq_gemini_backfill_router)
+app.include_router(pyq_answer_review_router)
 app.include_router(whatsapp_webhook_router)
 app.include_router(whatsapp_link_router)
 

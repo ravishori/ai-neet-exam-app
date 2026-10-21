@@ -11,6 +11,7 @@ Publish re-runs the same validation (status flip alone is not enough).
 
 from __future__ import annotations
 
+import unicodedata
 from typing import Literal
 
 from pydantic import BaseModel, Field, field_validator, model_validator
@@ -18,6 +19,32 @@ from pydantic import BaseModel, Field, field_validator, model_validator
 from app.modules.cms.schemas.question_evidence import NcertEvidence, NumericalEvidence, ProvenanceBlock
 
 NEET_OPTION_LABELS = ("A", "B", "C", "D")
+
+# Legitimate whitespace control characters a stem/option may contain —
+# never flagged. Every other Unicode "Cc" (control) codepoint (C0 codes
+# \x00-\x08, \x0B, \x0C, \x0E-\x1F, plus DEL \x7F and the C1 range
+# \x80-\x9F) is a mis-segmented-extraction artifact in this corpus (see
+# the 2026-10-22 PYQ integrity audit, docs/content-factory/
+# PYQ_ANSWER_KEY_STATUS.md), never legitimate exam content.
+_ALLOWED_CONTROL_CHARS = frozenset({"\t", "\n", "\r"})
+
+
+def find_prohibited_control_characters(text: str) -> list[str]:
+    """Returns the distinct prohibited control characters found in `text`,
+    using Unicode category "Cc" (not an ASCII-range check) so this never
+    flags ordinary printable Unicode — scientific notation (×, ⁻, ³),
+    chemical formula subscripts/superscripts (₂, ₄), Greek letters (α, β,
+    Δ), arrows (→, ⇌), the degree symbol (°), or any other non-control
+    codepoint are all category "Ll"/"Lu"/"Sm"/"No"/etc., never "Cc", and
+    are therefore always preserved untouched."""
+    return sorted({ch for ch in text if unicodedata.category(ch) == "Cc" and ch not in _ALLOWED_CONTROL_CHARS})
+
+
+def reject_prohibited_control_characters(text: str, *, field_label: str) -> None:
+    bad = find_prohibited_control_characters(text)
+    if bad:
+        codepoints = ", ".join(f"U+{ord(c):04X}" for c in bad)
+        raise ValueError(f"{field_label} contains prohibited control character(s): {codepoints}")
 
 
 class ConceptNoteBody(BaseModel):
@@ -41,6 +68,7 @@ class QuestionOption(BaseModel):
         cleaned = value.strip()
         if not cleaned:
             raise ValueError("option text must be non-empty")
+        reject_prohibited_control_characters(cleaned, field_label="option text")
         return cleaned
 
 
@@ -68,6 +96,7 @@ class QuestionBody(BaseModel):
         cleaned = value.strip()
         if not cleaned:
             raise ValueError("must be non-empty")
+        reject_prohibited_control_characters(cleaned, field_label="stem/explanation")
         return cleaned
 
     @field_validator("correct_option")

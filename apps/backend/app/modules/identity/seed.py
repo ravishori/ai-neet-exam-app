@@ -49,6 +49,8 @@ PERMISSIONS = [
         "without the EVALUATOR LLM call (TRUSTED-FACTORY-SUBMIT-001; never "
         "bypasses review()/publish())",
     ),
+    # TALOS — individual human review of NEET_PYQ_OFFICIAL ANSWER_PENDING questions
+    ("pyq.answer_review", "Review individual pending PYQ questions and record an answer assertion"),
 ]
 
 ROLE_PERMISSIONS = {
@@ -62,6 +64,7 @@ ROLE_PERMISSIONS = {
         "knowledge.manage", "visual_assets.review", "search.admin", "audit.view",
         "content.factory.view", "content.factory.create", "content.factory.execute", "content.factory.certify",
         "content.factory.trusted_submit",
+        "pyq.answer_review",
     ],
     "CONTENT_MANAGER": [
         "questions.read", "questions.create", "questions.update",
@@ -70,6 +73,7 @@ ROLE_PERMISSIONS = {
         "knowledge.manage", "visual_assets.review",
         "content.factory.view", "content.factory.create", "content.factory.execute", "content.factory.certify",
         "content.factory.trusted_submit",
+        "pyq.answer_review",
     ],
     "TEACHER": [
         "questions.read", "questions.create", "reports.view",
