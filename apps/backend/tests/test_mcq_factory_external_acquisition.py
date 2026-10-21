@@ -21,6 +21,7 @@ from app.modules.cms.mcq_factory_groq.external_sources.hf_dataset_adapter import
     HfSampleFetchError,
     acquire_sweatsmile_biology_sample,
     build_hf_rows_url,
+    default_http_get,
     fetch_hf_sample_rows,
     normalize_sweatsmile_biology_row,
 )
@@ -124,6 +125,30 @@ def test_build_hf_rows_url_rejects_bulk_length():
 def test_build_hf_rows_url_rejects_non_positive_length():
     with pytest.raises(ValueError):
         build_hf_rows_url(dataset="sweatSmile/neet-biology-qa", length=0)
+
+
+# ---------------------------------------------------------------------------
+# default_http_get -- scheme/host trust-boundary guard (never reaches
+# urlopen for a rejected URL, so this stays a zero-network-call test)
+# ---------------------------------------------------------------------------
+
+
+def test_default_http_get_rejects_non_https_scheme():
+    with pytest.raises(ValueError, match="refusing to fetch"):
+        default_http_get("file:///etc/passwd")
+
+
+def test_default_http_get_rejects_foreign_host():
+    with pytest.raises(ValueError, match="refusing to fetch"):
+        default_http_get("https://evil.example.com/rows?dataset=x")
+
+
+def test_default_http_get_rejects_http_scheme_on_the_right_host():
+    # Same host, wrong scheme -- the guard checks (scheme, netloc) together,
+    # not host alone, so a plaintext-http variant of the real host is still
+    # refused. Never reaches urlopen, so this stays a zero-network-call test.
+    with pytest.raises(ValueError, match="refusing to fetch"):
+        default_http_get("http://datasets-server.huggingface.co/rows?dataset=x")
 
 
 # ---------------------------------------------------------------------------

@@ -37,6 +37,7 @@ from __future__ import annotations
 
 import json
 import urllib.error
+import urllib.parse
 import urllib.request
 from collections.abc import Callable
 from dataclasses import dataclass, field
@@ -62,11 +63,23 @@ def default_http_get(url: str, *, timeout_s: float = 20.0) -> str:
     """The ONE real network call site in this module. Production use
     only — every test injects a fake ``http_get`` instead (see module
     docstring). No retries, no auth, no POST — a single read-only GET of
-    a public API endpoint."""
+    a public API endpoint.
+
+    Enforces the trust boundary itself (scheme + host must match
+    ``_HF_ROWS_ENDPOINT`` exactly) rather than relying on every caller
+    routing through ``build_hf_rows_url`` — so the guarantee holds even
+    if a future caller passes a URL built some other way."""
+    parsed = urllib.parse.urlsplit(url)
+    expected = urllib.parse.urlsplit(_HF_ROWS_ENDPOINT)
+    if (parsed.scheme, parsed.netloc) != (expected.scheme, expected.netloc):
+        raise ValueError(
+            f"refusing to fetch {url!r}: scheme/host must be "
+            f"{expected.scheme}://{expected.netloc} (got {parsed.scheme}://{parsed.netloc})"
+        )
     request = urllib.request.Request(
         url, headers={"User-Agent": "neet-mcq-acquisition-pilot/1.0 (read-only sample check)"}
     )
-    with urllib.request.urlopen(request, timeout=timeout_s) as response:  # noqa: S310 — fixed https host
+    with urllib.request.urlopen(request, timeout=timeout_s) as response:  # nosec B310 - scheme/host checked against the fixed _HF_ROWS_ENDPOINT constant immediately above; never an attacker-controlled scheme (e.g. file:/) or host
         return response.read().decode("utf-8")
 
 
