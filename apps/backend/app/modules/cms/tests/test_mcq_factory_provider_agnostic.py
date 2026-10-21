@@ -59,6 +59,7 @@ from app.modules.cms.services.mcq_llm_provider import (
 )
 from app.modules.cms.syllabus.neet_2026_parser import NeetSyllabusRegistry, NeetSyllabusTopic, NeetSyllabusUnit
 
+
 def _settings(**overrides) -> Settings:
     base = {
         "database_url": "postgresql+asyncpg://u:p@localhost:5432/db",

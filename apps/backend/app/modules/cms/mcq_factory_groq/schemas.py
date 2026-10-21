@@ -113,7 +113,7 @@ class GeneratedMcqCandidate(BaseModel):
         return value.strip().upper()
 
     @model_validator(mode="after")
-    def _validate_shape(self) -> "GeneratedMcqCandidate":
+    def _validate_shape(self) -> GeneratedMcqCandidate:
         labels = [opt.label for opt in self.options]
         if sorted(labels) != sorted(OPTION_LABELS):
             raise ValueError("options must be labeled A, B, C, D exactly once each")

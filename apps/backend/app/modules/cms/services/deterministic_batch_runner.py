@@ -28,9 +28,10 @@ import hashlib
 import json
 import re
 import time
+from collections.abc import Iterable
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Any, Iterable
+from typing import Any
 
 from app.modules.cms.schemas.deterministic_fact_pack import DeterministicFact
 from app.modules.cms.services.deterministic_fact_adapter import (
@@ -198,7 +199,7 @@ def _context_for_fact(fact: DeterministicFact) -> DeterministicEvidenceContext:
 
 def make_batch_id(seed: int) -> str:
     ts = time.strftime("%Y%m%dT%H%M%S")
-    short_hash = hashlib.sha256(f"{ts}:{seed}".encode("utf-8")).hexdigest()[:8]
+    short_hash = hashlib.sha256(f"{ts}:{seed}".encode()).hexdigest()[:8]
     return f"{ts}-{short_hash}"
 
 

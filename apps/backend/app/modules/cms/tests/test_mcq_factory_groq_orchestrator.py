@@ -51,8 +51,6 @@ from app.modules.cms.mcq_factory_groq.validators import InMemoryTaxonomyResolver
 from app.modules.cms.services.mcq_factory_groq_controls import (
     GroqFactoryCheckpoint,
     GroqFactoryLimits,
-    RetryBudgetExceeded,
-    SpendCeilingExceeded,
 )
 from app.modules.cms.syllabus.neet_2026_parser import NeetSyllabusRegistry, NeetSyllabusTopic, NeetSyllabusUnit
 

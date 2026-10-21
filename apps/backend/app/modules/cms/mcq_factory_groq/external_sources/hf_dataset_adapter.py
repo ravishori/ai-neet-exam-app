@@ -36,13 +36,13 @@ NEVER inferred from question text, NEVER left silently absent.
 from __future__ import annotations
 
 import json
-import re
 import urllib.error
 import urllib.request
+from collections.abc import Callable
 from dataclasses import dataclass, field
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
-from typing import Any, Callable
+from typing import Any
 
 HttpGet = Callable[[str], str]
 
@@ -153,7 +153,7 @@ def fetch_hf_sample_rows(
         rows=parsed_rows,
         raw_entry_count=len(raw_rows),
         num_rows_total=payload.get("num_rows_total"),
-        fetched_at_utc=datetime.now(timezone.utc).isoformat(),
+        fetched_at_utc=datetime.now(UTC).isoformat(),
         source_url=url,
     )
 
@@ -234,7 +234,7 @@ def normalize_sweatsmile_biology_row(
     if not isinstance(answer, str) or answer.strip().upper() not in _VALID_ANSWER_LETTERS:
         return NormalizationOutcome(None, f"ANSWER_NOT_A_D:{answer!r}")
 
-    options = [{"label": label, "text": text.strip()} for label, text in zip(_OPTION_LABELS, choices)]
+    options = [{"label": label, "text": text.strip()} for label, text in zip(_OPTION_LABELS, choices, strict=False)]
     subject_norm = subject_raw.strip().upper() if isinstance(subject_raw, str) and subject_raw.strip() else None
 
     stable_id = f"hf:{dataset}:row{row_idx}"

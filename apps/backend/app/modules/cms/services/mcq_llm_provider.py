@@ -616,12 +616,12 @@ def build_mcq_factory_stage_provider(
     or unconfigured — callers decide how to fail closed per stage (see
     ``build_mcq_factory_stage_caller``).
     """
+    from app.modules.ai.gateway.pricing import PriceRate
     from app.modules.ai.gateway.registry import (
         AVAILABLE,
         build_registry_from_settings,
         construct_groq_provider_for_model,
     )
-    from app.modules.ai.gateway.pricing import PriceRate
 
     s = settings or get_settings()
     selection = resolve_mcq_factory_stage_selection(stage, settings=s)

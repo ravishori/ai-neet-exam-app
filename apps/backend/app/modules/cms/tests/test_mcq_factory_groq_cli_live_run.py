@@ -31,13 +31,12 @@ from unittest.mock import AsyncMock
 import fitz
 import pytest
 
+import scripts.mcq_factory_groq_bulk_run as cli
 from app.core.config import Settings
 from app.modules.ai.gateway.pricing import PriceRate, register_rate
 from app.modules.cms.mcq_factory_groq.validators import InMemoryTaxonomyResolver
 from app.modules.cms.services.generation_staging_store import NotLocalDatabaseError
 from app.modules.cms.syllabus.neet_2026_parser import NeetSyllabusRegistry, NeetSyllabusTopic, NeetSyllabusUnit
-
-import scripts.mcq_factory_groq_bulk_run as cli
 
 pytestmark = pytest.mark.asyncio
 

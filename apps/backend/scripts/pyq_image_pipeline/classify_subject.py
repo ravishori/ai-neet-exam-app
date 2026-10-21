@@ -22,7 +22,9 @@ import sys
 from dataclasses import dataclass, field
 from pathlib import Path
 
-TAXONOMY_PATH = Path(r"D:\ravishori\AI Neet Exam App\NEET_UG_2026_Curriculum_Taxonomy.txt")
+# Repo-relative, not a machine-specific absolute path -- apps/backend/scripts/
+# pyq_image_pipeline/classify_subject.py -> parents[2] is apps/backend.
+TAXONOMY_PATH = Path(__file__).resolve().parents[2] / "data" / "NEET_UG_2026_Curriculum_Taxonomy.txt"
 
 TOP_SUBJECTS = {
     "1. PHYSICS": "Physics",

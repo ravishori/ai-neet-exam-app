@@ -46,8 +46,9 @@ from __future__ import annotations
 
 import json
 import logging
+from collections.abc import Awaitable, Callable
 from dataclasses import dataclass, field
-from typing import Any, Awaitable, Callable, Protocol
+from typing import Any, Protocol
 
 from pydantic import ValidationError
 
@@ -64,8 +65,6 @@ from app.modules.cms.mcq_factory_groq.prompt_templates import (
 )
 from app.modules.cms.mcq_factory_groq.schemas import GeneratedMcqCandidate, TaxonomyIds
 from app.modules.cms.mcq_factory_groq.syllabus_gate import check_generation_topic_in_syllabus
-from app.modules.cms.syllabus.neet_2026_parser import NeetSyllabusRegistry
-from app.modules.cms.services.factory_candidate_validation import normalize_stem, stem_hash
 from app.modules.cms.mcq_factory_groq.validators import (
     CorpusAnswerRecord,
     DuplicateCandidateSnapshot,
@@ -75,6 +74,7 @@ from app.modules.cms.mcq_factory_groq.validators import (
     evaluate_publication_readiness,
     run_deterministic_validation_pipeline,
 )
+from app.modules.cms.services.factory_candidate_validation import normalize_stem, stem_hash
 from app.modules.cms.services.mcq_factory_groq_controls import (
     CheckpointEntry,
     GroqFactoryCheckpoint,
@@ -87,6 +87,7 @@ from app.modules.cms.services.mcq_factory_groq_controls import (
     enforce_token_cap,
 )
 from app.modules.cms.services.mcq_llm_provider import classify_mcq_error, is_retryable_provider_error
+from app.modules.cms.syllabus.neet_2026_parser import NeetSyllabusRegistry
 
 logger = logging.getLogger(__name__)
 
@@ -454,7 +455,7 @@ class GroqFactoryOrchestrator:
                 )
                 if not is_retryable_provider_error(provider_error):
                     provider_error.partial_calls = calls  # type: ignore[attr-defined]
-                    raise provider_error
+                    raise provider_error from exc
                 # Bounded retries: consume() itself raises RetryBudgetExceeded
                 # once exhausted — this loop never retries unboundedly.
                 try:

@@ -9,8 +9,6 @@ it only stores api_key/model/base_url), and nothing here invokes
 
 from __future__ import annotations
 
-import pytest
-
 from app.core.config import Settings
 from app.modules.ai.gateway.openai_provider import OpenAIProvider
 from app.modules.ai.gateway.registry import AVAILABLE, BLOCKED, DISABLED, build_registry_from_settings

@@ -598,8 +598,8 @@ def run_deterministic_validation_pipeline(
         not placeholder_labels and not duplicate_labels,
         "RED" if (placeholder_labels or duplicate_labels) else "INFO",
         failures=(
-            [f"PLACEHOLDER_OPTION:{l}" for l in placeholder_labels]
-            + [f"DUPLICATE_OPTION:{l}" for l in duplicate_labels]
+            [f"PLACEHOLDER_OPTION:{label}" for label in placeholder_labels]
+            + [f"DUPLICATE_OPTION:{label}" for label in duplicate_labels]
         ),
     )
 

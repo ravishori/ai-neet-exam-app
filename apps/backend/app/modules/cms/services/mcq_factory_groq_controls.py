@@ -48,9 +48,9 @@ from __future__ import annotations
 import json
 import threading
 import time
-from dataclasses import dataclass, field
+from collections.abc import Callable
+from dataclasses import dataclass
 from pathlib import Path
-from typing import Callable
 
 from app.core.config import Settings, get_settings
 
@@ -88,7 +88,7 @@ class GroqFactoryLimits:
             raise ValueError("rate limits must be positive")
 
     @classmethod
-    def from_settings(cls, settings: Settings | None = None) -> "GroqFactoryLimits":
+    def from_settings(cls, settings: Settings | None = None) -> GroqFactoryLimits:
         s = settings or get_settings()
         return cls(
             max_total_spend_usd=s.mcq_factory_groq_max_spend_usd,
@@ -100,7 +100,7 @@ class GroqFactoryLimits:
         )
 
     @classmethod
-    def pilot_profile(cls, settings: Settings | None = None) -> "GroqFactoryLimits":
+    def pilot_profile(cls, settings: Settings | None = None) -> GroqFactoryLimits:
         """Named pilot-profile limits for the human-authorized 100-question
         pilot run — identical to ``from_settings`` except the spend ceiling
         uses the dedicated, stricter ``settings.mcq_factory_groq_pilot_max_spend_usd``
@@ -124,7 +124,7 @@ class GroqFactoryLimits:
         verification_provider: str,
         verification_model: str,
         settings: Settings | None = None,
-    ) -> "GroqFactoryLimits":
+    ) -> GroqFactoryLimits:
         """NEET-MCQ-FACTORY-OPENROUTER-PRODUCTIONIZED-20261013 — genuinely
         per-(provider, model) token-cap resolution, instead of always
         reading the Groq-specific ``mcq_factory_groq_max_generation_tokens``
@@ -208,7 +208,7 @@ class GroqFactoryLimits:
         verification_provider: str,
         verification_model: str,
         settings: Settings | None = None,
-    ) -> "GroqFactoryLimits":
+    ) -> GroqFactoryLimits:
         """Same per-(provider, model) token-cap resolution as
         ``from_stage_selections``, but using the dedicated, stricter pilot
         spend ceiling — mirrors ``pilot_profile`` vs ``from_settings``

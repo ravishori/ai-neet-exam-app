@@ -1,0 +1,886 @@
+NEET_UG_2026_CURRICULUM_TAXONOMY
+│
+├── 1. PHYSICS
+│   ├── UNIT 01: Physics and Measurement
+│   │   ├── Units and Measurement Systems
+│   │   │   ├── Units of measurements
+│   │   │   ├── System of Units
+│   │   │   ├── SI Units
+│   │   │   └── Fundamental and derived units
+│   │   ├── Measurement Precision and Uncertainty
+│   │   │   ├── Least count
+│   │   │   ├── Significant figures
+│   │   │   └── Errors in measurements
+│   │   └── Dimensional Analysis
+│   │       ├── Dimensions of Physics quantities
+│   │       ├── Dimensional analysis
+│   │       └── Applications of dimensional analysis
+│   │
+│   ├── UNIT 02: Kinematics
+│   │   ├── Motion in a Straight Line
+│   │   │   ├── Frame of reference
+│   │   │   ├── Position-time graph
+│   │   │   ├── Speed and velocity
+│   │   │   ├── Uniform and non-uniform motion
+│   │   │   ├── Average speed and instantaneous velocity
+│   │   │   ├── Uniformly accelerated motion
+│   │   │   ├── Velocity-time graph
+│   │   │   └── Relations for uniformly accelerated motion
+│   │   ├── Vector Kinematics
+│   │   │   ├── Scalars and Vectors
+│   │   │   ├── Vector Addition and subtraction
+│   │   │   ├── Scalar and vector products
+│   │   │   ├── Unit Vector
+│   │   │   └── Resolution of a Vector
+│   │   └── Motion in a Plane
+│   │       ├── Relative Velocity
+│   │       ├── Projectile Motion
+│   │       └── Uniform Circular Motion
+│   │
+│   ├── UNIT 03: Laws of Motion
+│   │   ├── Newton's Laws and Momentum
+│   │   │   ├── Force and inertia
+│   │   │   ├── Newton's First law of motion
+│   │   │   ├── Momentum
+│   │   │   ├── Newton's Second Law of motion
+│   │   │   ├── Impulses
+│   │   │   ├── Newton's Third Law of motion
+│   │   │   ├── Law of conservation of linear momentum and applications
+│   │   │   └── Equilibrium of concurrent forces
+│   │   ├── Friction
+│   │   │   ├── Static and Kinetic friction
+│   │   │   ├── Laws of friction
+│   │   │   └── Rolling friction
+│   │   └── Circular Dynamics
+│   │       ├── Centripetal force
+│   │       ├── Vehicle on a level circular road
+│   │       └── Vehicle on a banked road
+│   │
+│   ├── UNIT 04: Work, Energy, and Power
+│   │   ├── Work and Kinetic Principles
+│   │   │   ├── Work done by a constant force
+│   │   │   ├── Work done by a variable force
+│   │   │   ├── Kinetic and potential energies
+│   │   │   ├── Work-energy theorem
+│   │   │   └── Power
+│   │   ├── Potential Energy and Conservation
+│   │   │   ├── Potential energy of a spring
+│   │   │   ├── Conservation of mechanical energy
+│   │   │   ├── Conservative and non-conservative forces
+│   │   │   └── Motion in a vertical circle
+│   │   └── Collisions
+│   │       ├── Elastic collisions in one and two dimensions
+│   │       └── Inelastic collisions in one and two dimensions
+│   │
+│   ├── UNIT 05: Rotational Motion
+│   │   ├── Centre of Mass
+│   │   │   ├── Centre of mass of a two-particle system
+│   │   │   └── Centre of mass of a rigid body
+│   │   ├── Rotational Dynamics
+│   │   │   ├── Moment of a force
+│   │   │   ├── Torque
+│   │   │   ├── Angular momentum
+│   │   │   ├── Conservation of angular momentum and applications
+│   │   │   ├── Equilibrium of rigid bodies
+│   │   │   ├── Rigid body rotation and equations of rotational motion
+│   │   │   └── Comparison of linear and rotational motions
+│   │   └── Moment of Inertia
+│   │       ├── Moment of inertia
+│   │       ├── Radius of gyration
+│   │       ├── Values of moments of inertia for simple geometrical objects
+│   │       ├── Parallel axis theorem and applications
+│   │       └── Perpendicular axis theorem and applications
+│   │
+│   ├── UNIT 06: Gravitation
+│   │   ├── Gravitational Laws and Field
+│   │   │   ├── Universal law of gravitation
+│   │   │   ├── Acceleration due to gravity
+│   │   │   ├── Variation of g with altitude
+│   │   │   ├── Variation of g with depth
+│   │   │   └── Kepler's laws of planetary motion
+│   │   └── Potential and Orbital Dynamics
+│   │       ├── Gravitational potential energy
+│   │       ├── Gravitational potential
+│   │       ├── Escape velocity
+│   │       ├── Motion of a satellite
+│   │       ├── Orbital velocity
+│   │       ├── Time period of satellite
+│   │       └── Energy of satellite
+│   │
+│   ├── UNIT 07: Properties of Solids and Liquids
+│   │   ├── Elasticity
+│   │   │   ├── Elastic behaviour
+│   │   │   ├── Stress-strain relationship
+│   │   │   ├── Hooke's Law
+│   │   │   ├── Young's modulus
+│   │   │   ├── Bulk modulus
+│   │   │   └── Modulus of rigidity
+│   │   ├── Fluid Mechanics
+│   │   │   ├── Pressure due to a fluid column
+│   │   │   ├── Pascal's law and applications
+│   │   │   ├── Effect of gravity on fluid pressure
+│   │   │   ├── Viscosity
+│   │   │   ├── Stokes' law
+│   │   │   ├── Terminal velocity
+│   │   │   ├── Streamline and turbulent flow
+│   │   │   ├── Critical velocity
+│   │   │   └── Bernoulli's principle and applications
+│   │   ├── Surface Tension
+│   │   │   ├── Surface energy and surface tension
+│   │   │   ├── Angle of contact
+│   │   │   ├── Excess pressure across a curved surface
+│   │   │   └── Application to drops, bubbles, and capillary rise
+│   │   └── Thermal Physics and Heat Transfer
+│   │       ├── Heat and temperature
+│   │       ├── Thermal expansion
+│   │       ├── Specific heat capacity and calorimetry
+│   │       ├── Change of state and latent heat
+│   │       └── Heat transfer: conduction, convection, and radiation
+│   │
+│   ├── UNIT 08: Thermodynamics
+│   │   ├── Fundamental Laws
+│   │   │   ├── Thermal equilibrium
+│   │   │   ├── Zeroth law of thermodynamics
+│   │   │   ├── Concept of temperature
+│   │   │   ├── Heat, work, and internal energy
+│   │   │   └── First law of thermodynamics
+│   │   └── Thermodynamic Processes
+│   │       ├── Isothermal processes
+│   │       ├── Adiabatic processes
+│   │       ├── Second law of thermodynamics
+│   │       └── Reversible and irreversible processes
+│   │
+│   ├── UNIT 09: Kinetic Theory of Gases
+│   │   ├── Gas Laws and Pressure
+│   │   │   ├── Equation of state of a perfect gas
+│   │   │   ├── Work done on compressing a gas
+│   │   │   ├── Kinetic theory of gases assumptions
+│   │   │   └── Concept of pressure
+│   │   └── Molecular Distribution and Energy
+│   │       ├── Kinetic interpretation of temperature
+│   │       ├── RMS speed of gas molecules
+│   │       ├── Degrees of freedom
+│   │       ├── Law of equipartition of energy
+│   │       ├── Specific heat capacities of gases
+│   │       ├── Mean free path
+│   │       └── Avogadro's number
+│   │
+│   ├── UNIT 10: Oscillations and Waves
+│   │   ├── Simple Harmonic Motion
+│   │   │   ├── Oscillations and periodic motion
+│   │   │   ├── Time period, frequency, displacement as a function of time
+│   │   │   ├── Periodic functions
+│   │   │   ├── Simple Harmonic Motion (S.H.M.) and its equation
+│   │   │   ├── Phase in S.H.M.
+│   │   │   ├── Oscillations of a spring (restoring force and force constant)
+│   │   │   ├── Kinetic and potential energy in S.H.M.
+│   │   │   └── Simple pendulum time period derivation
+│   │   └── Wave Propagation and Superposition
+│   │       ├── Wave motion
+│   │       ├── Longitudinal and transverse waves
+│   │       ├── Speed of travelling wave
+│   │       ├── Displacement relation for a progressive wave
+│   │       ├── Principle of superposition of waves
+│   │       ├── Reflection of waves
+│   │       ├── Standing waves in strings and organ pipes
+│   │       ├── Fundamental mode and harmonics
+│   │       └── Beats
+│   │
+│   ├── UNIT 11: Electrostatics
+│   │   ├── Electric Charge and Coulomb's Law
+│   │   │   ├── Conservation of charge
+│   │   │   ├── Coulomb's law between two point charges
+│   │   │   ├── Forces between multiple charges
+│   │   │   ├── Superposition principle
+│   │   │   └── Continuous charge distribution
+│   │   ├── Electric Field and Gauss's Law
+│   │   │   ├── Electric field due to a point charge
+│   │   │   ├── Electric field lines
+│   │   │   ├── Electric dipole and field due to a dipole
+│   │   │   ├── Torque on a dipole in a uniform electric field
+│   │   │   ├── Electric flux
+│   │   │   ├── Gauss's law
+│   │   │   ├── Field due to infinitely long uniformly charged straight wire
+│   │   │   ├── Field due to uniformly charged infinite plane sheet
+│   │   │   └── Field due to uniformly charged thin spherical shell
+│   │   ├── Electric Potential and Energy
+│   │   │   ├── Electric potential of point charge, dipole, and charges system
+│   │   │   ├── Potential difference
+│   │   │   ├── Equipotential surfaces
+│   │   │   ├── Electrical potential energy of two point charges
+│   │   │   └── Electrical potential energy of dipole in electrostatic field
+│   │   └── Conductors, Dielectrics, and Capacitance
+│   │       ├── Conductors and insulators
+│   │       ├── Dielectrics and electric polarization
+│   │       ├── Capacitors and capacitances
+│   │       ├── Combination of capacitors in series and parallel
+│   │       ├── Capacitance of parallel plate capacitor (with/without dielectric)
+│   │       └── Energy stored in a capacitor
+│   │
+│   ├── UNIT 12: Current Electricity
+│   │   ├── Conduction and Resistance
+│   │   │   ├── Electric current
+│   │   │   ├── Drift velocity and mobility
+│   │   │   ├── Ohm's law
+│   │   │   ├── Electrical resistance
+│   │   │   ├── V-I characteristics of Ohmic and non-ohmic conductors
+│   │   │   ├── Electrical energy and power
+│   │   │   ├── Electrical resistivity and conductivity
+│   │   │   ├── Series and parallel combinations of resistors
+│   │   │   └── Temperature dependence of resistance
+│   │   └── Cells and DC Circuits
+│   │       ├── Internal resistance, potential difference, and EMF of a cell
+│   │       ├── Combination of cells in series and parallel
+│   │       ├── Kirchhoff's laws and applications
+│   │       ├── Wheatstone bridge
+│   │       └── Metre Bridge
+│   │
+│   ├── UNIT 13: Magnetic Effects of Current and Magnetism
+│   │   ├── Magnetic Field of Currents
+│   │   │   ├── Biot Savart law and circular loop application
+│   │   │   ├── Ampere's law and infinitely long straight wire
+│   │   │   └── Ampere's law application to solenoid
+│   │   ├── Magnetic Forces and Torques
+│   │   │   ├── Force on moving charge in magnetic and electric fields
+│   │   │   ├── Force on current-carrying conductor in uniform magnetic field
+│   │   │   ├── Force between two parallel current-carrying conductors
+│   │   │   ├── Definition of ampere
+│   │   │   ├── Torque on current loop in uniform magnetic field
+│   │   │   ├── Moving coil galvanometer and sensitivity
+│   │   │   └── Galvanometer conversion to ammeter and voltmeter
+│   │   └── Magnetism and Matter
+│   │       ├── Current loop as magnetic dipole and dipole moment
+│   │       ├── Bar magnet as equivalent solenoid
+│   │       ├── Magnetic field lines
+│   │       ├── Field due to magnetic dipole along axis and perpendicular to axis
+│   │       ├── Torque on magnetic dipole in uniform magnetic field
+│   │       ├── Para-, dia- and ferromagnetic substances with examples
+│   │       └── Effect of temperature on magnetic properties
+│   │
+│   ├── UNIT 14: Electromagnetic Induction and Alternating Currents
+│   │   ├── Electromagnetic Induction
+│   │   │   ├── Faraday's law
+│   │   │   ├── Induced EMF and current
+│   │   │   ├── Lenz's Law
+│   │   │   ├── Eddy currents
+│   │   │   └── Self and mutual inductance
+│   │   └── Alternating Currents and Devices
+│   │       ├── Alternating currents, peak and RMS value of AC voltage/current
+│   │       ├── Reactance and impedance
+│   │       ├── LCR series circuit
+│   │       ├── Resonance
+│   │       ├── Power in AC circuits
+│   │       ├── Wattless current
+│   │       ├── AC generator
+│   │       └── Transformer
+│   │
+│   ├── UNIT 15: Electromagnetic Waves
+│   │   ├── Nature of EM Waves
+│   │   │   ├── Displacement current
+│   │   │   ├── Electromagnetic waves and their characteristics
+│   │   │   └── Transverse nature of electromagnetic waves
+│   │   └── Electromagnetic Spectrum
+│   │       ├── Radio waves, microwaves, infrared
+│   │       ├── Visible, ultraviolet, X-rays, Gamma rays
+│   │       └── Applications of e.m. waves
+│   │
+│   ├── UNIT 16: Optics
+│   │   ├── Ray Optics
+│   │   │   ├── Reflection of light, spherical mirrors, mirror formula
+│   │   │   ├── Refraction at plane and spherical surfaces
+│   │   │   ├── Thin lens formula and lens maker formula
+│   │   │   ├── Total internal reflection and applications
+│   │   │   ├── Magnification and Power of a Lens
+│   │   │   ├── Combination of thin lenses in contact
+│   │   │   ├── Refraction of light through a prism
+│   │   │   ├── Microscope (reflecting and refracting)
+│   │   │   ├── Astronomical Telescope (reflecting and refracting)
+│   │   │   └── Magnifying powers of optical instruments
+│   │   └── Wave Optics
+│   │       ├── Wavefront and Huygens' principle
+│   │       ├── Laws of reflection and refraction using Huygens principle
+│   │       ├── Interference and coherent sources
+│   │       ├── Young's double-slit experiment and fringe width expression
+│   │       ├── Sustained interference of light
+│   │       ├── Diffraction due to a single slit and central maximum width
+│   │       ├── Polarization and plane-polarized light
+│   │       ├── Brewster's law
+│   │       └── Uses of plane-polarized light and Polaroid
+│   │
+│   ├── UNIT 17: Dual Nature of Matter and Radiation
+│   │   ├── Photoelectric Effect
+│   │   │   ├── Dual nature of radiation
+│   │   │   ├── Hertz and Lenard's observations
+│   │   │   ├── Einstein's photoelectric equation
+│   │   │   └── Particle nature of light
+│   │   └── Matter Waves
+│   │       ├── Matter waves
+│   │       ├── Wave nature of particle
+│   │       └── De Broglie relation
+│   │
+│   ├── UNIT 18: Atoms and Nuclei
+│   │   ├── Atomic Physics
+│   │   │   ├── Alpha-particle scattering experiment
+│   │   │   ├── Rutherford's model of atom
+│   │   │   ├── Bohr model and postulates
+│   │   │   ├── Energy levels
+│   │   │   └── Hydrogen spectrum
+│   │   └── Nuclear Physics
+│   │       ├── Composition and size of nucleus
+│   │       ├── Atomic masses
+│   │       ├── Mass-energy relation
+│   │       ├── Mass defect
+│   │       ├── Binding energy per nucleon and variation with mass number
+│   │       ├── Nuclear fission
+│   │       └── Nuclear fusion
+│   │
+│   ├── UNIT 19: Electronic Devices
+│   │   ├── Semiconductor Diodes
+│   │   │   ├── Semiconductors
+│   │   │   ├── Semiconductor diode
+│   │   │   ├── I-V characteristics in forward and reverse bias
+│   │   │   ├── Diode as a rectifier
+│   │   │   ├── I-V characteristics of LED, photodiode, and solar cell
+│   │   │   ├── Zener diode I-V characteristics
+│   │   │   └── Zener diode as a voltage regulator
+│   │   └── Logic Gates
+│   │       └── Logic gates (OR, AND, NOT, NAND and NOR)
+│   │
+│   └── UNIT 20: Experimental Skills
+│       ├── Measurement and Kinematic Apparatus
+│       │   ├── 01. Vernier calipers: internal/external diameter and depth
+│       │   ├── 02. Screw gauge: thickness/diameter of thin sheet/wire
+│       │   ├── 03. Simple Pendulum: dissipation of energy (amplitude^2 vs time)
+│       │   ├── 04. Metre Scale: mass of object by principle of moments
+│       │   └── 05. Young's modulus of elasticity of metallic wire
+│       ├── Fluid, Thermal, and Acoustic Experiments
+│       │   ├── 06. Surface tension of water by capillary rise & detergents
+│       │   ├── 07. Co-efficient of Viscosity of liquid via terminal velocity
+│       │   ├── 08. Speed of sound in air at room temperature via resonance tube
+│       │   └── 09. Specific heat capacity of solid and liquid by mixtures
+│       ├── Electrical and Galvanometric Experiments
+│       │   ├── 10. Resistivity of material of wire using metre bridge
+│       │   ├── 11. Resistance of wire using Ohm's law
+│       │   └── 12. Resistance and figure of merit of galvanometer (half deflection)
+│       └── Optics and Semiconductor Experiments
+│           ├── 13. Focal length (convex mirror, concave mirror, convex lens)
+│           ├── 14. Plot of angle of deviation vs angle of incidence for prism
+│           ├── 15. Refractive index of glass slab using travelling microscope
+│           ├── 16. Characteristic curves of p-n junction diode
+│           ├── 17. Characteristic curves of Zener diode and reverse breakdown
+│           └── 18. Identification of Diode, LED, Resistor, Capacitor
+│
+├── 2. CHEMISTRY
+│   ├── [PHYSICAL CHEMISTRY]
+│   │   ├── UNIT 01: Some Basic Concepts in Chemistry
+│   │   │   ├── Nature of Matter and Atomic Theory
+│   │   │   │   ├── Matter and its nature
+│   │   │   │   ├── Dalton's atomic theory
+│   │   │   │   ├── Concept of atom, molecule, element, and compound
+│   │   │   │   └── Laws of chemical combination
+│   │   │   └── Stoichiometry and Quantitative Relations
+│   │   │       ├── Atomic and molecular masses
+│   │   │       ├── Mole concept and molar mass
+│   │   │       ├── Percentage composition
+│   │   │       ├── Empirical and molecular formulae
+│   │   │       └── Chemical equations and stoichiometry
+│   │   │
+│   │   ├── UNIT 02: Atomic Structure
+│   │   │   ├── Early Quantum Concepts and Bohr Model
+│   │   │   │   ├── Nature of electromagnetic radiation and photoelectric effect
+│   │   │   │   ├── Spectrum of the hydrogen atom
+│   │   │   │   ├── Bohr model postulates
+│   │   │   │   ├── Electron energy and orbit radii derivations
+│   │   │   │   └── Limitations of Bohr's model
+│   │   │   ├── Quantum Mechanics and Uncertainty
+│   │   │   │   ├── Dual nature of matter and de Broglie's relationship
+│   │   │   │   ├── Heisenberg uncertainty principle
+│   │   │   │   ├── Quantum mechanical model of atom and features
+│   │   │   │   ├── Concept of atomic orbitals as one-electron wave functions
+│   │   │   │   └── Variation of psi and psi^2 with r for 1s and 2s orbitals
+│   │   │   └── Electronic Configuration
+│   │   │       ├── Quantum numbers (principal, angular momentum, magnetic)
+│   │   │       ├── Shapes of s, p, and d orbitals
+│   │   │       ├── Electron spin and spin quantum number
+│   │   │       ├── Aufbau principle, Pauli's exclusion principle, Hund's rule
+│   │   │       ├── Electronic configuration of elements
+│   │   │       └── Extra stability of half-filled and completely filled orbitals
+│   │   │
+│   │   ├── UNIT 03: Chemical Bonding and Molecular Structure
+│   │   │   ├── Ionic Bonding
+│   │   │   │   ├── Kossel-Lewis approach to bond formation
+│   │   │   │   ├── Formation of ionic bonds
+│   │   │   │   ├── Factors affecting formation of ionic bonds
+│   │   │   │   └── Calculation of lattice enthalpy
+│   │   │   ├── Covalent Bonding and Geometry
+│   │   │   │   ├── Concept of covalent bonds
+│   │   │   │   ├── Electronegativity and Fajan's rule
+│   │   │   │   ├── Dipole moment
+│   │   │   │   └── VSEPR theory and shapes of simple molecules
+│   │   │   ├── Valence Bond Theory and Hybridization
+│   │   │   │   ├── Valence bond theory features
+│   │   │   │   ├── Concept of hybridization involving s, p, and d orbitals
+│   │   │   │   └── Resonance
+│   │   │   └── Molecular Orbital and Secondary Bonding
+│   │   │       ├── Molecular Orbital Theory features and LCAOs
+│   │   │       ├── Types of molecular orbitals (bonding, antibonding)
+│   │   │       ├── Sigma and pi-bonds
+│   │   │       ├── MO configurations of homonuclear diatomic molecules
+│   │   │       ├── Bond order, bond length, and bond energy
+│   │   │       ├── Elementary idea of metallic bonding
+│   │   │       └── Hydrogen bonding and applications
+│   │   │
+│   │   ├── UNIT 04: Chemical Thermodynamics
+│   │   │   ├── Fundamentals and First Law
+│   │   │   │   ├── System and surroundings
+│   │   │   │   ├── Extensive and intensive properties, state functions
+│   │   │   │   ├── Types of thermodynamic processes
+│   │   │   │   ├── First law: work, heat, internal energy, enthalpy
+│   │   │   │   ├── Heat capacity and molar heat capacity
+│   │   │   │   └── Hess's law of constant heat summation
+│   │   │   ├── Enthalpies of Reactions and Transitions
+│   │   │   │   └── Enthalpies of bond dissociation, combustion, formation,
+│   │   │   │       atomization, sublimation, phase transition, hydration,
+│   │   │   │       ionization, and solution
+│   │   │   └── Second Law and Spontaneity
+│   │   │       ├── Spontaneity of processes
+│   │   │       ├── Delta S of the universe and Delta G of system
+│   │   │       └── Delta G-degree (Standard Gibbs energy) and equilibrium constant
+│   │   │
+│   │   ├── UNIT 05: Solutions
+│   │   │   ├── Concentration and Vapour Pressure
+│   │   │   │   ├── Molality, molarity, mole fraction, percentage (w/w, v/v)
+│   │   │   │   ├── Vapour pressure of solutions and Raoult's Law
+│   │   │   │   └── Ideal and non-ideal solutions, VP-composition plots
+│   │   │   └── Colligative Properties
+│   │   │       ├── Relative lowering of vapour pressure
+│   │   │       ├── Depression of freezing point
+│   │   │       ├── Elevation of boiling point
+│   │   │       ├── Osmotic pressure
+│   │   │       ├── Molecular mass determination using colligative properties
+│   │   │       └── Abnormal value of molar mass and van't Hoff factor
+│   │   │
+│   │   ├── UNIT 06: Equilibrium
+│   │   │   ├── Physical and Chemical Equilibrium
+│   │   │   │   ├── Dynamic equilibrium
+│   │   │   │   ├── Solid-liquid, liquid-gas, and solid-gas equilibria
+│   │   │   │   ├── Henry's law
+│   │   │   │   ├── Law of chemical equilibrium
+│   │   │   │   ├── Equilibrium constants (Kp and Kc) and significance
+│   │   │   │   ├── Significance of Delta G and Delta G-degree in equilibrium
+│   │   │   │   ├── Factors affecting equilibrium (conc., P, T, catalyst)
+│   │   │   │   └── Le Chatelier's principle
+│   │   │   └── Ionic Equilibrium
+│   │   │       ├── Weak and strong electrolytes, ionization
+│   │   │       ├── Acid-base concepts (Arrhenius, Bronsted-Lowry, Lewis)
+│   │   │       ├── Acid-base equilibria and ionization constants
+│   │   │       ├── Ionization of water and pH scale
+│   │   │       ├── Common ion effect
+│   │   │       ├── Hydrolysis of salts and pH of solutions
+│   │   │       ├── Solubility of sparingly soluble salts and solubility products
+│   │   │       └── Buffer solutions
+│   │   │
+│   │   ├── UNIT 07: Redox Reactions and Electrochemistry
+│   │   │   ├── Redox Chemistry
+│   │   │   │   ├── Electronic concepts of oxidation and reduction
+│   │   │   │   ├── Oxidation number and assignment rules
+│   │   │   │   └── Balancing of redox reactions
+│   │   │   ├── Electrolytic Conduction
+│   │   │   │   ├── Electrolytic and metallic conduction
+│   │   │   │   ├── Conductance in electrolytic solutions
+│   │   │   │   ├── Molar conductivities and variation with concentration
+│   │   │   │   └── Kohlrausch's law and applications
+│   │   │   └── Electrochemical Cells
+│   │   │       ├── Electrolytic and Galvanic cells
+│   │   │       ├── Electrodes and electrode potentials
+│   │   │       ├── Half-cell and cell reactions, EMF of Galvanic cell
+│   │   │       ├── Nernst equation and applications
+│   │   │       ├── Relationship between cell potential and Gibbs' energy
+│   │   │       └── Dry cell, lead accumulator, and fuel cells
+│   │   │
+│   │   └── UNIT 08: Chemical Kinetics
+│   │       ├── Rate Laws and Orders
+│   │       │   ├── Rate of chemical reaction
+│   │       │   ├── Factors affecting rate (conc., temp., pressure, catalyst)
+│   │       │   ├── Elementary and complex reactions
+│   │       │   ├── Order and molecularity of reactions
+│   │       │   ├── Rate law and rate constant units
+│   │       │   ├── Differential and integral forms of zero and 1st order
+│   │       │   └── Characteristics and half-lives of zero and 1st order
+│   │       └── Reaction Dynamics
+│   │           ├── Effect of temperature on rate of reactions
+│   │           ├── Arrhenius theory and activation energy calculation
+│   │           └── Collision theory of bimolecular gaseous reactions
+│   │
+│   ├── [INORGANIC CHEMISTRY]
+│   │   ├── UNIT 09: Classification of Elements and Periodicity in Properties
+│   │   │   ├── Periodic Table Organization
+│   │   │   │   ├── Modern periodic law and periodic table form
+│   │   │   │   └── s, p, d, and f block elements
+│   │   │   └── Periodic Trends in Properties
+│   │   │       ├── Atomic and ionic radii
+│   │   │       ├── Ionization enthalpy
+│   │   │       ├── Electron gain enthalpy
+│   │   │       └── Valence, oxidation states, and chemical reactivity
+│   │   │
+│   │   ├── UNIT 10: p-Block Elements
+│   │   │   └── Group 13 to Group 18 Elements
+│   │   │       ├── Electronic configuration
+│   │   │       ├── Trends in physical properties across periods and groups
+│   │   │       ├── Trends in chemical properties across periods and groups
+│   │   │       └── Unique behaviour of the first element in each group
+│   │   │
+│   │   ├── UNIT 11: d and f-Block Elements
+│   │   │   ├── Transition Elements (First-Row 3d)
+│   │   │   │   ├── Electronic configuration, occurrence, characteristics
+│   │   │   │   ├── Physical properties, ionization enthalpy, oxidation states
+│   │   │   │   ├── Atomic radii, colour, catalytic behaviour, magnetic properties
+│   │   │   │   ├── Complex formation, interstitial compounds, alloy formation
+│   │   │   │   └── Preparation, properties, and uses of K2Cr2O7 and KMnO4
+│   │   │   └── Inner Transition Elements
+│   │   │       ├── Lanthanoids: electronic config., oxidation states, contraction
+│   │   │       └── Actinoids: electronic configuration and oxidation states
+│   │   │
+│   │   └── UNIT 12: Co-ordination Compounds
+│   │       ├── Coordination Principles and Nomenclature
+│   │       │   ├── Werner's theory
+│   │       │   ├── Ligands, coordination number, denticity, chelation
+│   │       │   ├── IUPAC nomenclature of mononuclear coordination compounds
+│   │       │   └── Isomerism in coordination compounds
+│   │       └── Bonding and Significance
+│   │           ├── Valence bond approach
+│   │           ├── Crystal field theory basic ideas
+│   │           ├── Colour and magnetic properties
+│   │           └── Importance (qualitative analysis, metal extraction, biology)
+│   │
+│   └── [ORGANIC CHEMISTRY]
+│       ├── UNIT 13: Purification and Characterisation of Organic Compounds
+│       │   ├── Purification Techniques
+│       │   │   ├── Crystallization, sublimation, distillation
+│       │   │   └── Differential extraction and chromatography
+│       │   └── Qualitative and Quantitative Analysis
+│       │       ├── Detection of nitrogen, sulphur, phosphorus, and halogens
+│       │       ├── Estimation of carbon, hydrogen, nitrogen, halogens, S, P
+│       │       ├── Calculations of empirical and molecular formulae
+│       │       └── Numerical problems in organic quantitative analysis
+│       │
+│       ├── UNIT 14: Some Basic Principles of Organic Chemistry
+│       │   ├── Structure, Hybridization, and Isomerism
+│       │   │   ├── Tetravalency of carbon and shapes of simple molecules (s, p)
+│       │   │   ├── Classification based on functional groups (halogens, O, N, S)
+│       │   │   ├── Homologous series
+│       │   │   ├── Isomerism: structural and stereoisomerism
+│       │   │   └── Nomenclature (Trivial and IUPAC)
+│       │   └── Reaction Intermediates and Electronic Effects
+│       │       ├── Covalent bond fission: homolytic and heterolytic
+│       │       ├── Free radicals, carbocations, and carbanions (stability)
+│       │       ├── Electrophiles and nucleophiles
+│       │       ├── Electronic displacement: inductive, electromeric, resonance
+│       │       ├── Hyperconjugation
+│       │       └── Reaction types: substitution, addition, elimination, rearrangement
+│       │
+│       ├── UNIT 15: Hydrocarbons
+│       │   ├── Alkanes
+│       │   │   ├── Classification, isomerism, IUPAC nomenclature, preparation
+│       │   │   ├── Conformations: Sawhorse and Newman projections of ethane
+│       │   │   └── Mechanism of halogenation of alkanes
+│       │   ├── Alkenes and Alkynes
+│       │   │   ├── Alkenes: geometrical isomerism, electrophilic addition
+│       │   │   ├── Addition of H2, halogens, water, HX (Markovnikov & peroxide)
+│       │   │   ├── Ozonolysis and polymerization of alkenes
+│       │   │   ├── Alkynes: acidic character
+│       │   │   └── Addition of H2, halogens, water, HX, and alkyne polymerization
+│       │   └── Aromatic Hydrocarbons
+│       │       ├── Nomenclature, benzene structure, and aromaticity
+│       │       ├── Electrophilic substitution: halogenation, nitration
+│       │       ├── Friedel-Crafts alkylation and acylation
+│       │       └── Directive influence of functional group in mono-substituted benzene
+│       │
+│       ├── UNIT 16: Organic Compounds Containing Halogens
+│       │   ├── Haloalkanes and Haloarenes
+│       │   │   ├── Preparation, properties, and reactions
+│       │   │   ├── Nature of C-X bond
+│       │   │   └── Mechanisms of substitution reactions
+│       │   └── Polyhalogen Compounds and Environment
+│       │       └── Uses and environmental effects: chloroform, iodoform, freons, DDT
+│       │
+│       ├── UNIT 17: Organic Compounds Containing Oxygen
+│       │   ├── Alcohols, Phenols, and Ethers
+│       │   │   ├── Alcohols: primary, secondary, tertiary identification, dehydration
+│       │   │   ├── Phenols: acidic nature, halogenation, nitration, sulphonation
+│       │   │   ├── Reimer-Tiemann reaction
+│       │   │   └── Ethers: structure, preparation, properties, and uses
+│       │   ├── Aldehydes and Ketones
+│       │   │   ├── Nature of carbonyl group and relative reactivities
+│       │   │   ├── Nucleophilic addition (HCN, NH3 and derivatives), Grignard
+│       │   │   ├── Oxidation and reduction (Wolff-Kishner and Clemmensen)
+│       │   │   ├── Acidity of alpha-hydrogen, aldol condensation, Cannizzaro
+│       │   │   ├── Haloform reaction
+│       │   │   └── Chemical tests to distinguish aldehydes and ketones
+│       │   └── Carboxylic Acids
+│       │       └── Acidic strength and factors affecting carboxylic acids
+│       │
+│       ├── UNIT 18: Organic Compounds Containing Nitrogen
+│       │   ├── Amines
+│       │   │   ├── Nomenclature, classification, and structure
+│       │   │   ├── Basic character of amines
+│       │   │   └── Identification of primary, secondary, and tertiary amines
+│       │   └── Diazonium Salts
+│       │       └── Importance of diazonium salts in synthetic organic chemistry
+│       │
+│       ├── UNIT 19: Biomolecules
+│       │   ├── Carbohydrates
+│       │   │   ├── Classification: aldoses and ketoses
+│       │   │   ├── Monosaccharides (glucose and fructose)
+│       │   │   └── Constituent monosaccharides of oligosaccharides (sucrose, lactose, maltose)
+│       │   ├── Proteins and Enzymes
+│       │   │   ├── Elementary idea of alpha-amino acids and peptide bond
+│       │   │   ├── Polypeptides and primary, secondary, tertiary, quaternary structures
+│       │   │   ├── Denaturation of proteins
+│       │   │   └── Enzymes
+│       │   └── Vitamins, Nucleic Acids, and Hormones
+│       │       ├── Vitamins classification and functions
+│       │       ├── Chemical constitution of DNA and RNA
+│       │       ├── Biological functions of nucleic acids
+│       │       └── Hormones general introduction
+│       │
+│       └── UNIT 20: Principles Related to Practical Chemistry
+│           ├── Organic Analysis and Preparations
+│           │   ├── Detection of extra elements (N, S, halogens)
+│           │   ├── Detection of hydroxyl (alcoholic, phenolic), carbonyl, carboxyl, amino
+│           │   ├── Preparation of Mohr's salt and potash alum
+│           │   └── Preparation of acetanilide, p-nitroacetanilide, aniline yellow, iodoform
+│           ├── Titrimetric Exercises
+│           │   ├── Acids, bases, and use of indicators
+│           │   ├── Oxalic acid vs KMnO4 titration
+│           │   └── Mohr's salt vs KMnO4 titration
+│           ├── Qualitative Salt Analysis
+│           │   ├── Cations: Pb2+, Cu2+, Al3+, Fe3+, Zn2+, Ni2+, Ca2+, Ba2+, Mg2+, NH4+
+│           │   └── Anions: CO3(2-), S(2-), SO4(2-), NO3(-), NO2(-), Cl(-), Br(-), I(-)
+│           └── Physical Experiments
+│               ├── Enthalpy of solution of CuSO4
+│               ├── Enthalpy of neutralization of strong acid and strong base
+│               ├── Preparation of lyophilic and lyophobic sols
+│               └── Kinetic study of iodide ions with hydrogen peroxide at room temp
+│
+└── 3. BIOLOGY
+    ├── UNIT 01: Diversity in Living World
+    │   ├── Taxonomy and Systematics
+    │   │   ├── What is living?
+    │   │   ├── Biodiversity
+    │   │   ├── Need for classification
+    │   │   ├── Taxonomy & Systematics
+    │   │   ├── Concept of species and taxonomical hierarchy
+    │   │   └── Binomial nomenclature
+    │   ├── Five Kingdom System and Microorganisms
+    │   │   ├── Five kingdom classification
+    │   │   ├── Salient features and classification of Monera into major groups
+    │   │   ├── Salient features and classification of Protista into major groups
+    │   │   ├── Salient features and classification of Fungi into major groups
+    │   │   ├── Lichens
+    │   │   └── Viruses and Viroids
+    │   ├── Plant Kingdom (Botany)
+    │   │   ├── Salient features and classification of Algae (3-5 features, 2 examples)
+    │   │   ├── Salient features and classification of Bryophytes (3-5 features, 2 examples)
+    │   │   ├── Salient features and classification of Pteridophytes (3-5 features, 2 examples)
+    │   │   └── Salient features and classification of Gymnosperms (3-5 features, 2 examples)
+    │   └── Animal Kingdom (Zoology)
+    │       ├── Non-chordate classification up to phyla level (3-5 features, 2 examples)
+    │       └── Chordate classification up to classes level (3-5 features, 2 examples)
+    │
+    ├── UNIT 02: Structural Organisation in Animals and Plants
+    │   ├── Plant Morphology and Anatomy (Botany)
+    │   │   ├── Morphology, modifications, anatomy, and functions of Root
+    │   │   ├── Morphology, modifications, anatomy, and functions of Stem
+    │   │   ├── Morphology, modifications, anatomy, and functions of Leaf
+    │   │   ├── Inflorescence: cymose and racemose
+    │   │   ├── Flower anatomy, fruit, and seed
+    │   │   ├── Plant tissues
+    │   │   └── Families: Malvaceae, Cruciferae, Leguminosae, Compositae, Graminae
+    │   └── Animal Tissues and Organ Systems (Zoology)
+    │       ├── Animal tissues
+    │       └── Frog: morphology, anatomy, and functions of systems
+    │           ├── Digestive system of Frog
+    │           ├── Circulatory system of Frog
+    │           ├── Respiratory system of Frog
+    │           ├── Nervous system of Frog
+    │           └── Reproductive system of Frog
+    │
+    ├── UNIT 03: Cell Structure and Function
+    │   ├── Cell Structure and Organelles
+    │   │   ├── Cell theory and cell as basic unit of life
+    │   │   ├── Structure of prokaryotic and eukaryotic cell
+    │   │   ├── Comparison of plant cell and animal cell
+    │   │   ├── Cell envelope, cell membrane, cell wall
+    │   │   ├── Endomembrane system: endoplasmic reticulum, Golgi, lysosomes, vacuoles
+    │   │   ├── Mitochondria, ribosomes, plastids, micro bodies
+    │   │   ├── Cytoskeleton, cilia, flagella, centrioles (ultrastructure/function)
+    │   │   └── Nucleus: nuclear membrane, chromatin, nucleolus
+    │   ├── Biomolecules and Enzymes
+    │   │   ├── Chemical constituents of living cells
+    │   │   ├── Structure and function of proteins, carbohydrates, lipids, nucleic acids
+    │   │   └── Enzymes: types, properties, enzyme action, classification, nomenclature
+    │   └── Cell Division
+    │       ├── Cell cycle
+    │       ├── Mitosis and its significance
+    │       └── Meiosis and its significance
+    │
+    ├── UNIT 04: Plant Physiology (Botany)
+    │   ├── Photosynthesis in Higher Plants
+    │   │   ├── Photosynthesis as autotrophic nutrition and site of photosynthesis
+    │   │   ├── Pigments involved in photosynthesis
+    │   │   ├── Photochemical and biosynthetic phases
+    │   │   ├── Cyclic and non-cyclic photophosphorylation
+    │   │   ├── Chemiosmotic hypothesis
+    │   │   ├── Photorespiration
+    │   │   ├── C3 and C4 pathways
+    │   │   └── Factors affecting photosynthesis
+    │   ├── Plant Respiration
+    │   │   ├── Exchange of gases
+    │   │   ├── Cellular respiration: glycolysis, fermentation (anaerobic)
+    │   │   ├── TCA cycle and electron transport system (aerobic)
+    │   │   ├── Energy relations: number of ATP molecules generated
+    │   │   ├── Amphibolic pathways
+    │   │   └── Respiratory quotient
+    │   └── Plant Growth and Development
+    │       ├── Seed germination
+    │       ├── Phases of plant growth and plant growth rate
+    │       ├── Conditions of growth
+    │       ├── Differentiation, dedifferentiation, and redifferentiation
+    │       ├── Sequence of developmental process in a plant cell
+    │       └── Growth regulators: auxin, gibberellin, cytokinin, ethylene, ABA
+    │
+    ├── UNIT 05: Human Physiology (Zoology)
+    │   ├── Breathing and Respiration
+    │   │   ├── Respiratory organs in animals (recall only)
+    │   │   ├── Respiratory system in humans
+    │   │   ├── Mechanism of breathing and regulation in humans
+    │   │   ├── Exchange of gases, transport of gases
+    │   │   ├── Respiratory volumes
+    │   │   └── Disorders: Asthma, Emphysema, Occupational respiratory disorders
+    │   ├── Body Fluids and Circulation
+    │   │   ├── Composition of blood, blood groups, coagulation of blood
+    │   │   ├── Composition of lymph and its function
+    │   │   ├── Human circulatory system: heart and blood vessels
+    │   │   ├── Cardiac cycle, cardiac output, ECG, double circulation
+    │   │   ├── Regulation of cardiac activity
+    │   │   └── Disorders: Hypertension, Coronary artery disease, Angina pectoris, Heart failure
+    │   ├── Excretory Products and Their Elimination
+    │   │   ├── Modes of excretion: Ammonotelism, ureotelism, uricotelism
+    │   │   ├── Human excretory system structure and function
+    │   │   ├── Urine formation and osmoregulation
+    │   │   ├── Regulation of kidney: Renin-angiotensin, ANF, ADH, Diabetes insipidus
+    │   │   ├── Role of other organs in excretion
+    │   │   ├── Disorders: Uraemia, Renal failure, Renal calculi, Nephritis
+    │   │   └── Dialysis and artificial kidney
+    │   ├── Locomotion and Movement
+    │   │   ├── Types of movement: ciliary, flagellar, muscular
+    │   │   ├── Skeletal muscle, contractile proteins, and muscle contraction
+    │   │   ├── Skeletal system and its functions
+    │   │   ├── Joints
+    │   │   └── Disorders: Myasthenia gravis, Tetany, Muscular dystrophy, Arthritis, Osteoporosis, Gout
+    │   ├── Neural Control and Coordination
+    │   │   ├── Neuron and nerves
+    │   │   ├── Central nervous system, peripheral nervous system, visceral nervous system
+    │   │   └── Generation and conduction of nerve impulse
+    │   └── Chemical Coordination and Regulation
+    │       ├── Endocrine glands and hormones
+    │       ├── Human endocrine system: Hypothalamus, Pituitary, Pineal, Thyroid
+    │       ├── Parathyroid, Adrenal, Pancreas, Gonads
+    │       ├── Mechanism of hormone action
+    │       ├── Role of hormones as messengers and regulators
+    │       └── Disorders: Dwarfism, Acromegaly, Cretinism, Goiter, Exophthalmic goiter, Diabetes, Addison's disease
+    │
+    ├── UNIT 06: Reproduction
+    │   ├── Sexual Reproduction in Flowering Plants (Botany)
+    │   │   ├── Flower structure
+    │   │   ├── Development of male and female gametophytes
+    │   │   ├── Pollination: types, agencies, and examples
+    │   │   ├── Outbreeding devices and Pollen-Pistil interaction
+    │   │   ├── Double fertilization
+    │   │   ├── Post fertilization: endosperm and embryo development
+    │   │   ├── Seed development and fruit formation (significance)
+    │   │   └── Special modes: apomixis, parthenocarpy, polyembryony
+    │   ├── Human Reproduction (Zoology)
+    │   │   ├── Male and female reproductive systems
+    │   │   ├── Microscopic anatomy of testis and ovary
+    │   │   ├── Gametogenesis: spermatogenesis and oogenesis
+    │   │   ├── Menstrual cycle
+    │   │   ├── Fertilisation and embryo development up to blastocyst formation
+    │   │   ├── Implantation, pregnancy, and placenta formation
+    │   │   └── Parturition and lactation
+    │   └── Reproductive Health (Zoology)
+    │       ├── Need for reproductive health and prevention of STDs
+    │       ├── Birth control: need and methods, contraception
+    │       ├── Medical Termination of Pregnancy (MTP) and Amniocentesis
+    │       └── Infertility and ART: IVF, ZIFT, GIFT
+    │
+    ├── UNIT 07: Genetics and Evolution
+    │   ├── Heredity and Variation
+    │   │   ├── Mendelian Inheritance
+    │   │   ├── Deviations: Incomplete dominance, Co-dominance
+    │   │   ├── Multiple alleles and Inheritance of blood groups
+    │   │   ├── Pleiotropy and polygenic inheritance
+    │   │   ├── Chromosome theory of inheritance, chromosomes and genes
+    │   │   ├── Sex determination: in humans, birds, honey bee
+    │   │   ├── Linkage and crossing over
+    │   │   ├── Sex linked inheritance: Haemophilia, Colour blindness
+    │   │   ├── Mendelian disorders in humans: Thalassemia
+    │   │   └── Chromosomal disorders: Down's, Turner's, Klinefelter's syndromes
+    │   ├── Molecular Basis of Inheritance
+    │   │   ├── Search for genetic material and DNA as genetic material
+    │   │   ├── Structure of DNA and RNA
+    │   │   ├── DNA packaging and DNA replication
+    │   │   ├── Central dogma: transcription, genetic code, translation
+    │   │   ├── Gene expression and regulation: Lac Operon
+    │   │   └── Genome, Human Genome Project, DNA finger printing, protein biosynthesis
+    │   └── Evolution
+    │       ├── Origin of life
+    │       ├── Evidence: Paleontology, comparative anatomy, embryology, molecular
+    │       ├── Darwin's contribution and Modern Synthetic theory of Evolution
+    │       ├── Mechanism: Variation (Mutation/Recombination) and Natural Selection
+    │       ├── Types of natural selection
+    │       ├── Gene flow and genetic drift
+    │       ├── Hardy-Weinberg's principle
+    │       └── Adaptive Radiation and Human evolution
+    │
+    ├── UNIT 08: Biology and Human Welfare
+    │   ├── Health and Disease
+    │   │   ├── Pathogens and parasites causing human diseases:
+    │   │   │   └── Malaria, Filariasis, Ascariasis, Typhoid, Pneumonia,
+    │   │   │       common cold, amoebiasis, ring worm, dengue, chikungunya
+    │   │   ├── Basic concepts of immunology and vaccines
+    │   │   ├── Cancer, HIV and AIDS
+    │   │   └── Adolescence, drug abuse, alcohol abuse, tobacco abuse
+    │   └── Microbes in Human Welfare
+    │       ├── Microbes in household food processing
+    │       ├── Microbes in industrial production
+    │       ├── Microbes in sewage treatment and energy generation
+    │       └── Microbes as biocontrol agents and biofertilizers
+    │
+    ├── UNIT 09: Biotechnology and Its Applications
+    │   ├── Principles and Processes of Biotechnology
+    │   │   ├── Genetic engineering
+    │   │   └── Recombinant DNA technology
+    │   └── Applications in Health and Agriculture
+    │       ├── Human insulin and vaccine production
+    │       ├── Gene therapy
+    │       ├── Genetically modified organisms: Bt crops
+    │       ├── Transgenic Animals
+    │       └── Biosafety issues: Biopiracy and patents
+    │
+    └── UNIT 10: Ecology and Environment
+        ├── Organisms and Environment
+        │   ├── Population interactions: mutualism, competition, predation, parasitism
+        │   └── Population attributes: growth, birth/death rate, age distribution
+        ├── Ecosystem
+        │   ├── Patterns and components of ecosystems
+        │   ├── Productivity and decomposition
+        │   ├── Energy flow
+        │   └── Pyramids of number, biomass, energy
+        └── Biodiversity and Its Conservation
+            ├── Concept, patterns, and importance of Biodiversity
+            ├── Loss of Biodiversity
+            ├── Biodiversity conservation strategies
+            └── Hotspots, endangered organisms, extinction, Red Data Book,
+                biosphere reserves, National parks, sanctuaries, Sacred Groves
