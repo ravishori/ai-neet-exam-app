@@ -84,7 +84,7 @@ async def get_queue_counts(db: AsyncSession) -> dict:
     rows = (
         await db.execute(
             text(
-                f"SELECT q.raw_options, q.raw_stem FROM pyq.questions q "
+                f"SELECT q.raw_options, q.raw_stem FROM pyq.questions q "  # nosec B608 - _SOURCE_FILTER is a fixed module constant; no external input reaches this string
                 f"JOIN pyq.source_files sf ON sf.id = q.source_file_id "
                 f"JOIN pyq.import_batches b ON b.id = sf.batch_id "
                 f"JOIN pyq.sources src ON src.id = b.source_id "
@@ -106,7 +106,7 @@ async def get_queue_counts(db: AsyncSession) -> dict:
     reviewed = (
         await db.execute(
             text(
-                f"SELECT COUNT(DISTINCT q.id) FROM pyq.questions q "
+                f"SELECT COUNT(DISTINCT q.id) FROM pyq.questions q "  # nosec B608 - _SOURCE_FILTER and HUMAN_REVIEW_SOURCE_PREFIX are fixed module constants; no external input reaches this string
                 f"JOIN pyq.source_files sf ON sf.id = q.source_file_id "
                 f"JOIN pyq.import_batches b ON b.id = sf.batch_id "
                 f"JOIN pyq.sources src ON src.id = b.source_id "
@@ -172,7 +172,7 @@ async def list_review_queue(db: AsyncSession, filters: ReviewQueueFilters) -> di
     rows = (
         await db.execute(
             text(
-                f"SELECT q.id, q.staging_id, q.subject, q.class_level, q.raw_stem, q.raw_options, "
+                f"SELECT q.id, q.staging_id, q.subject, q.class_level, q.raw_stem, q.raw_options, "  # nosec B608 - where_sql is built only from this function's own hardcoded predicate strings (_SOURCE_FILTER, fixed state literal, fixed-column bind-parameter predicates); every actual request-derived value (exam_year, subject, search) is passed as a bind parameter below, never interpolated
                 f"sf.exam_year, sf.paper_code "
                 f"FROM pyq.questions q "
                 f"JOIN pyq.source_files sf ON sf.id = q.source_file_id "
@@ -208,7 +208,7 @@ async def get_question_review_detail(db: AsyncSession, question_id: uuid.UUID) -
     row = (
         await db.execute(
             text(
-                f"SELECT q.id, q.staging_id, q.subject, q.class_level, q.raw_stem, q.raw_options, "
+                f"SELECT q.id, q.staging_id, q.subject, q.class_level, q.raw_stem, q.raw_options, "  # nosec B608 - _SOURCE_FILTER is a fixed module constant; question_id is a SQLAlchemy bind parameter (:qid), never interpolated
                 f"q.state, sf.exam_year, sf.paper_code, sf.paper_id "
                 f"FROM pyq.questions q "
                 f"JOIN pyq.source_files sf ON sf.id = q.source_file_id "
@@ -290,7 +290,7 @@ async def skip_question_review(
     row = (
         await db.execute(
             text(
-                f"SELECT q.id FROM pyq.questions q "
+                f"SELECT q.id FROM pyq.questions q "  # nosec B608 - _SOURCE_FILTER is a fixed module constant; question_id is a SQLAlchemy bind parameter (:qid), never interpolated
                 f"JOIN pyq.source_files sf ON sf.id = q.source_file_id "
                 f"JOIN pyq.import_batches b ON b.id = sf.batch_id "
                 f"JOIN pyq.sources src ON src.id = b.source_id "
@@ -347,7 +347,7 @@ async def save_answer_review(
     row = (
         await db.execute(
             text(
-                f"SELECT q.id, q.state, q.raw_options, q.raw_stem FROM pyq.questions q "
+                f"SELECT q.id, q.state, q.raw_options, q.raw_stem FROM pyq.questions q "  # nosec B608 - _SOURCE_FILTER is a fixed module constant; question_id is a SQLAlchemy bind parameter (:qid), never interpolated
                 f"JOIN pyq.source_files sf ON sf.id = q.source_file_id "
                 f"JOIN pyq.import_batches b ON b.id = sf.batch_id "
                 f"JOIN pyq.sources src ON src.id = b.source_id "
