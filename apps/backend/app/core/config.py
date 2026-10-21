@@ -121,10 +121,133 @@ class Settings(BaseSettings):
     sarvam_api_key: str = ""
     sarvam_enabled: bool = False
     sarvam_model: str = "sarvam-105b"
+
+    # MCQ-FACTORY-GROQ-001 — Groq's OpenAI-compatible Chat Completions API
+    # (console.groq.com). Reuses OpenAIProvider as the HTTP client (same
+    # wire protocol) rather than a bespoke SDK. Never enabled/configured by
+    # default — an operator must set GROQ_ENABLED=true and GROQ_API_KEY.
+    # Two DISTINCT models are required, never one shared string: a cheaper/
+    # faster model for first-pass generation and a larger, more capable
+    # model for independent verification/review of what the first model
+    # wrote. See app/modules/cms/services/mcq_factory_groq_controls.py and
+    # docs/quality/neet_mcq_factory_implementation_20261011.md.
+    groq_api_key: str = ""
+    groq_enabled: bool = False
+    groq_base_url: str = "https://api.groq.com/openai/v1"
+    groq_generation_model: str = "openai/gpt-oss-20b"
+    groq_verification_model: str = "openai/gpt-oss-120b"
+
+    # MCQ-FACTORY-OPENROUTER-001 — OpenRouter's OpenAI-compatible Chat
+    # Completions API (openrouter.ai/api/v1). Mirrors the Groq wiring
+    # above exactly (OpenRouterProvider(OpenAIProvider), same HTTP-client
+    # reuse, same fail-closed discipline) — see openrouter_provider.py.
+    # Never enabled by default: an operator must explicitly set
+    # OPENROUTER_ENABLED=true AND OPENROUTER_API_KEY AND a CONFIRMED real
+    # OPENROUTER_MODEL id. OpenRouter's documented free-tier model id
+    # convention is "<org>/<model>:free" — this was NOT verified against
+    # OpenRouter's live /models listing as part of this change, so the
+    # default here is deliberately an empty placeholder. An empty/
+    # placeholder openrouter_model is treated as "not configured" by
+    # registry.build_registry_from_settings and
+    # mcq_llm_provider.resolve_mcq_factory_stage_selection (status stays
+    # BLOCKED, never silently sent as a literal string to the API).
+    openrouter_api_key: str = ""
+    openrouter_enabled: bool = False
+    openrouter_base_url: str = "https://openrouter.ai/api/v1"
+    openrouter_model: str = ""  # empty = not configured (fails closed); must be a confirmed real model id
+
+    # MCQ-FACTORY-KRUTRIM-001 — Krutrim's (Ola Krutrim AI Cloud) OpenAI-
+    # compatible Chat Completions API (cloud.olakrutrim.com/v1). Mirrors
+    # the OpenRouter/Groq wiring above exactly (KrutrimProvider(OpenAIProvider),
+    # same HTTP-client reuse, same fail-closed discipline) — see
+    # krutrim_provider.py. Never enabled by default: an operator must
+    # explicitly set KRUTRIM_ENABLED=true AND KRUTRIM_API_KEY AND a
+    # KRUTRIM_MODEL id. The real, confirmed API model id is
+    # "Krutrim-spectre-v2" (from the official krutrim-cloud-python
+    # client's api.md/completions.py — NOT "Krutrim-2", which is only the
+    # catalog/marketing display name). krutrim_model is deliberately left
+    # empty by default (same as openrouter_model) so an operator must
+    # explicitly opt into a model; an empty krutrim_model is treated as
+    # "not configured" by registry.build_registry_from_settings /
+    # mcq_llm_provider.resolve_mcq_factory_stage_selection (status stays
+    # BLOCKED, never silently sent as a literal string to the API).
+    krutrim_api_key: str = ""
+    krutrim_enabled: bool = False
+    krutrim_base_url: str = "https://cloud.olakrutrim.com/v1"
+    krutrim_model: str = ""  # empty = not configured (fails closed); set to "Krutrim-spectre-v2" to opt in
+
+    # MCQ-FACTORY-DEEPSEEK-001 — DeepSeek's (api.deepseek.com) OpenAI-
+    # compatible Chat Completions API. Mirrors the OpenRouter/Krutrim
+    # wiring above exactly (DeepSeekProvider(OpenAIProvider), same
+    # HTTP-client reuse, same fail-closed discipline) — see
+    # deepseek_provider.py. Never enabled by default: an operator must
+    # explicitly set DEEPSEEK_ENABLED=true AND DEEPSEEK_API_KEY AND a
+    # DEEPSEEK_MODEL id. The real, confirmed, current API model id is
+    # "deepseek-flash" (DeepSeek-V4.1-Flash under the hood; the legacy
+    # aliases "deepseek-v4-flash"/"deepseek-chat" are deprecated/being
+    # phased out). IMPORTANT: deepseek_base_url deliberately has NO
+    # "/v1" suffix (unlike groq_base_url/openrouter_base_url/
+    # krutrim_base_url above) — DeepSeek's real, documented endpoint is
+    # https://api.deepseek.com/chat/completions, confirmed against
+    # DeepSeek's official docs; see deepseek_provider.py's module
+    # docstring for the full explanation. deepseek_model is deliberately
+    # left empty by default (same as openrouter_model/krutrim_model) so
+    # an operator must explicitly opt into a model; an empty
+    # deepseek_model is treated as "not configured" by
+    # registry.build_registry_from_settings /
+    # mcq_llm_provider.resolve_mcq_factory_stage_selection (status stays
+    # BLOCKED, never silently sent as a literal string to the API).
+    deepseek_api_key: str = ""
+    deepseek_enabled: bool = False
+    deepseek_base_url: str = "https://api.deepseek.com"
+    deepseek_model: str = ""  # empty = not configured (fails closed); set to "deepseek-flash" to opt in
+
+    # Hard safety rails for the Groq-backed NEW QUESTION GENERATION pilot
+    # (deterministic, independently unit-testable — see
+    # mcq_factory_groq_controls.py). These are conservative PLACEHOLDER
+    # defaults documented in docs/quality/neet_mcq_factory_implementation_
+    # 20261011.md; real Groq rate limits (console.groq.com/docs/rate-limits
+    # for openai/gpt-oss-20b and openai/gpt-oss-120b) must be confirmed and
+    # these values updated before any live pilot run authorized by a human.
+    mcq_factory_groq_max_spend_usd: float = 20.0
+    mcq_factory_groq_max_generation_tokens: int = 900
+    mcq_factory_groq_max_verification_tokens: int = 700
+    mcq_factory_groq_max_retries: int = 3
+    mcq_factory_groq_rate_limit_rpm: int = 30
+    mcq_factory_groq_rate_limit_tpm: int = 60000
+
+    # MCQ-FACTORY-GROQ-ORCHESTRATOR-001 — a SEPARATE, stricter named
+    # budget profile for the specific, human-authorized 100-question pilot
+    # run (see docs/quality/neet_mcq_factory_ORCHESTRATOR_20261012.md).
+    # This is intentionally distinct from (and never overrides)
+    # mcq_factory_groq_max_spend_usd above, which remains the general
+    # configurable ceiling for any other/future run. scripts/
+    # mcq_factory_groq_bulk_run.py defaults to this pilot profile; an
+    # operator must pass --budget-profile general to opt into the wider
+    # ceiling instead.
+    mcq_factory_groq_pilot_max_spend_usd: float = 5.0
+
     # Routing: fixed | fixed_model | fallback_chain — never silent cross-provider
     factory_provider_mode: str = "fixed"
     factory_provider: str = "anthropic"
     factory_provider_fallback_chain: str = ""  # e.g. openai,gemini,mistral
+
+    # MCQ-FACTORY-PROVIDER-AGNOSTIC-001 — independent provider+model
+    # selection for the TWO Groq-orchestrator call sites (generation vs
+    # verification; see app/modules/cms/mcq_factory_groq/orchestrator.py
+    # and mcq_llm_provider.resolve_mcq_factory_stage_selection). Each is
+    # empty by default, which resolves to Groq and that stage's existing
+    # groq_generation_model / groq_verification_model (so Groq remains the
+    # default and no existing deployment's behavior changes). Setting
+    # either provider field to an unsupported name fails closed (raises)
+    # rather than silently falling back to Groq — only "left unset" means
+    # "use Groq". These are deliberately separate from the older, generic
+    # mcq_provider/factory_provider fields above, which drive the
+    # non-Groq content_factory_generation_service.py path.
+    mcq_factory_generation_provider: str = ""  # empty -> groq
+    mcq_factory_generation_model: str = ""  # empty -> groq_generation_model (or chosen provider's default model)
+    mcq_factory_verification_provider: str = ""  # empty -> groq
+    mcq_factory_verification_model: str = ""  # empty -> groq_verification_model (or chosen provider's default model)
 
     # MCQ-PROVIDER-ABSTRACTION-001 — explicit MCQ provider (aliases FACTORY_PROVIDER).
     # Env: MCQ_PROVIDER=anthropic|google|gemini|openai|local|mistral|sarvam

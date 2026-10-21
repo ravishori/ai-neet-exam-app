@@ -15,6 +15,7 @@ from sqlalchemy.orm import selectinload
 
 from conftest import csrf_headers
 from helpers_publishable_question import publishable_question_body
+from app.core.exceptions import AppError
 from app.modules.assessment.repositories.assessment_repository import AssessmentRepository
 from app.modules.cms.models import ContentItem
 from app.modules.cms.repositories.cms_repository import CmsRepository
@@ -227,8 +228,10 @@ async def test_ecaep_distractor_style_and_rstar_lineage(client, db_session, regi
             assert refreshed.replaces_id == old.id
 
 
-async def test_missing_concept_and_ncert_unverified_block_gates(client, db_session, register_user):
-    """concept_id missing blocks submit; NOT_VERIFIED blocks publish after approve."""
+async def test_missing_concept_does_not_block_submit_but_ncert_unverified_blocks_publish(client, db_session, register_user):
+    """concept_id missing no longer blocks submit (optional metadata — see
+    docs/PRODUCTION_READINESS.md); NOT_VERIFIED NCERT evidence still blocks
+    publish after approve (that gate is untouched)."""
     author_id = await _author_id(client, db_session, register_user)
     concept_id = await _concept_id(db_session)
     service = ContentWorkflowService(db_session)
@@ -242,13 +245,23 @@ async def test_missing_concept_and_ncert_unverified_block_gates(client, db_sessi
         body=_unverified_body(stem=f"Unmapped {uuid.uuid4().hex}?"),
         concept_id=None,
     )
-    from app.core.exceptions import AppError
 
-    with pytest.raises(AppError) as exc:
-        await service.submit_for_review(unmapped.id)
-    assert exc.value.code == "MISSING_ACADEMIC_MAPPING"
-    still = await repo.get_item(unmapped.id)
-    assert still.status == "DRAFT"
+    submitted_unmapped = await service.submit_for_review(unmapped.id)
+    assert submitted_unmapped.status == "IN_REVIEW"
+    assert submitted_unmapped.concept_id is None
+
+    gate_unmapped = await evaluate_question_publication_gates(
+        db_session,
+        item_id=unmapped.id,
+        status="APPROVED",
+        content_type="QUESTION",
+        concept_id=None,
+        body=(await repo.get_version(submitted_unmapped.latest_version_id)).body,
+        tags=list(submitted_unmapped.tags or []),
+        model_used=None,
+        knowledge_unit_id=None,
+    )
+    assert gate_unmapped.taxonomy_ok is True
 
     unverified = await _create_question(
         service,

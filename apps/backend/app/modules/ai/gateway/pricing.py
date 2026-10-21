@@ -45,6 +45,24 @@ _RATES: dict[tuple[str, str], PriceRate] = {
     # observability rate. Cached-input pricing is not represented here.
     ("sarvam", "sarvam-105b"): PriceRate(29.28 / 83.0, 73.20 / 83.0),
     ("sarvam", "sarvam-105b-conversations"): PriceRate(29.28 / 83.0, 73.20 / 83.0),
+    # MCQ-FACTORY-KRUTRIM-001 — Krutrim's real, confirmed published rate
+    # (Krutrim AI Studio billing docs) is ₹6.6 per 1,000,000 tokens, for
+    # BOTH input and output. Converted to USD/1M here at the project's
+    # existing ₹83/USD observability rate (the same rate already used for
+    # the Sarvam rows above and for settings.p2_3_usd_inr) — i.e.
+    # 6.6 / 83.0 ≈ $0.0795 per 1M tokens, both directions. Observability
+    # estimate only, not billing-grade.
+    ("krutrim", "Krutrim-spectre-v2"): PriceRate(6.6 / 83.0, 6.6 / 83.0),
+    # MCQ-FACTORY-DEEPSEEK-001 — DeepSeek's real, confirmed published rate
+    # (api-docs.deepseek.com) per 1,000,000 tokens is time-of-day
+    # dependent: cache-miss input $0.15 off-peak / $0.30 peak, output
+    # $0.60 off-peak / $1.20 peak (peak = 01:00-04:00 and 06:00-10:00 UTC
+    # Mon-Fri). PriceRate has no time-of-day axis, so the PEAK (higher,
+    # more conservative) cache-miss rate is stored here as the single safe
+    # default — off-peak is cheaper but every one of this project's
+    # prompts includes a different evidence chunk, so a cache hit is never
+    # guaranteed. Observability estimate only, not billing-grade.
+    ("deepseek", "deepseek-flash"): PriceRate(0.30, 1.20),
 }
 
 

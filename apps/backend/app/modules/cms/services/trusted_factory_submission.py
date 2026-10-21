@@ -73,9 +73,10 @@ async def evaluate_trusted_factory_submission(
     if item.status != "DRAFT":
         out.reasons.append("NOT_DRAFT")
         return out
-    if not item.concept_id:
-        out.reasons.append("MISSING_CONCEPT_ID")
-        return out
+    # concept_id is optional academic-mapping metadata, not an eligibility
+    # blocker (see docs/PRODUCTION_READINESS.md). It is passed through to
+    # evaluate_question_publication_gates below unchanged, which no longer
+    # treats a missing concept_id as a taxonomy-gate failure either.
 
     if not item.latest_version_id:
         out.reasons.append("NO_VERSION")

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Phase 3.2 — DB-derived content readiness + inventory truth (SELECT-only).
+"""Phase 3.2 â€” DB-derived content readiness + inventory truth (SELECT-only).
 
 Never mutates the database. Never publishes.
 
@@ -48,7 +48,7 @@ def _sync_url() -> tuple[str, dict[str, str]]:
     live = async_url.replace("+asyncpg", "+psycopg")
     meta = {
         "audit_target": live.split("@")[-1] if "@" in live else live,
-        "note": "Uses DATABASE_URL (live app). SELECT-only.",
+        "note": "Uses configured DATABASE_URL; PostgreSQL transaction is enforced read-only. Writes audit reports locally.",
     }
     return live, meta
 
@@ -237,7 +237,7 @@ def subject_readiness(conn, subject_name: str) -> dict[str, Any]:
         )
         readiness_counts[label] += 1
 
-    # Chapters/topics/concepts with zero published — from academic tree for subject
+    # Chapters/topics/concepts with zero published â€” from academic tree for subject
     all_chapters = mappings(
         conn,
         """
@@ -287,7 +287,7 @@ def subject_readiness(conn, subject_name: str) -> dict[str, Any]:
         "structurally_complete": structural_ok_n,
         "with_provenance_lineage": with_provenance,
         "ncert_verified_count": ncert_verified,
-        "ncert_note": "Provenance ≠ NCERT certification. Count uses tags/body ncert evidence only.",
+        "ncert_note": "Provenance â‰  NCERT certification. Count uses tags/body ncert evidence only.",
         "possible_duplicate_stem_groups": len(dup_stems),
         "readiness_counts": dict(readiness_counts),
         "chapter_distribution_published": dict(chapter_pub),
@@ -359,7 +359,7 @@ def unmapped_disposition(conn, *, sample_limit: int = 10000) -> dict[str, Any]:
             suspected_duplicate=stem in dup,
             has_stem=stem_ok,
         )
-        # concept_id IS NULL → never READY_FOR_ECAEP; stay UNMAPPED unless INVALID/DUP
+        # concept_id IS NULL â†’ never READY_FOR_ECAEP; stay UNMAPPED unless INVALID/DUP
         if code in ("READY_FOR_ECAEP", "NEEDS_SOURCE", "MAPPABLE") and not r["concept_id"]:
             code = "UNMAPPED"
         counts[code] += 1
@@ -373,7 +373,7 @@ def unmapped_disposition(conn, *, sample_limit: int = 10000) -> dict[str, Any]:
             "classification_is_heuristic": True,
             "does_not_certify_validity": True,
             "tag_prefix": "disposition:",
-            "apply_tags": "Use explicit operator tooling only — this script never writes tags.",
+            "apply_tags": "Use explicit operator tooling only â€” this script never writes tags.",
         },
     }
 
@@ -469,7 +469,7 @@ def to_markdown(report: dict[str, Any]) -> str:
     lines = [
         f"# Content readiness inventory ({report['generated_at'][:10]})",
         "",
-        "**Phase 3.2** · SELECT-only · DB-derived · never publish",
+        "**Phase 3.2** Â· SELECT-only Â· DB-derived Â· never publish",
         "",
         f"Target: `{report['database'].get('audit_target')}`",
         "",
@@ -477,7 +477,7 @@ def to_markdown(report: dict[str, Any]) -> str:
         "",
         "- Student-visible status: **PUBLISHED** only",
         "- No auto-publish; do not mass-publish unmapped drafts",
-        "- Provenance ≠ NCERT certification",
+        "- Provenance â‰  NCERT certification",
         "",
         "## Chemistry",
         "",
@@ -517,45 +517,85 @@ def to_markdown(report: dict[str, Any]) -> str:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Phase 3.2 content readiness inventory (SELECT-only)")
+    parser = argparse.ArgumentParser(
+        description="Phase 3.2 content readiness inventory (SELECT-only)"
+    )
     parser.add_argument("--json-only", action="store_true")
     parser.add_argument("--subject", choices=["Chemistry", "Zoology"], default=None)
     args = parser.parse_args()
 
     url, meta = _sync_url()
     engine = create_engine(url)
-    with engine.connect() as conn:
-        if args.subject:
-            report = {
-                "generated_at": datetime.now(timezone.utc).isoformat(),
-                "subject_focus": subject_readiness(conn, args.subject),
-                "database": meta,
-            }
-        else:
-            report = build_report(conn, meta)
+    try:
+        # Create the output directory, but never overwrite a report from an earlier run.
+        OUT_DIR.mkdir(parents=True, exist_ok=True)
+        json_path = OUT_DIR / f"content_readiness_inventory_{TODAY}.json"
+        md_path = OUT_DIR / f"content_readiness_inventory_{TODAY}.md"
 
-    OUT_DIR.mkdir(parents=True, exist_ok=True)
-    json_path = OUT_DIR / f"content_readiness_inventory_{TODAY}.json"
-    md_path = OUT_DIR / f"content_readiness_inventory_{TODAY}.md"
-    json_path.write_text(json.dumps(report, indent=2, default=str), encoding="utf-8")
-    if not args.subject:
-        md_path.write_text(to_markdown(report), encoding="utf-8")
-
-    if args.json_only:
-        print(json.dumps(report, indent=2, default=str))
-    else:
-        print(f"Wrote {json_path}")
+        output_paths = [json_path]
         if not args.subject:
-            print(f"Wrote {md_path}")
-        chem = report.get("chemistry") or report.get("subject_focus")
-        if chem:
-            print(f"{chem.get('subject')}: status={chem.get('status_counts')} readiness={chem.get('readiness_counts')}")
-        if report.get("zoology"):
-            z = report["zoology"]
-            print(f"Zoology: status={z['status_counts']} readiness={z['readiness_counts']}")
-        if report.get("unmapped_draft_disposition"):
-            print(f"Unmapped disposition: {report['unmapped_draft_disposition']['disposition_counts']}")
-    return 0
+            output_paths.append(md_path)
+        existing = [str(path) for path in output_paths if path.exists()]
+        if existing:
+            raise FileExistsError(
+                "Refusing to overwrite existing inventory report(s): "
+                + ", ".join(existing)
+                + ". Preserve them and choose a new output date/name before rerunning."
+            )
+
+        with engine.connect() as conn:
+            # Enforce PostgreSQL read-only mode before any inventory query.
+            conn.exec_driver_sql("SET TRANSACTION READ ONLY")
+            read_only = conn.exec_driver_sql(
+                "SHOW transaction_read_only"
+            ).scalar_one()
+            if str(read_only).lower() != "on":
+                raise RuntimeError(
+                    "Safety check failed: PostgreSQL transaction is not read-only."
+                )
+
+            if args.subject:
+                report = {
+                    "generated_at": datetime.now(timezone.utc).isoformat(),
+                    "subject_focus": subject_readiness(conn, args.subject),
+                    "database": meta,
+                }
+            else:
+                report = build_report(conn, meta)
+
+        # These are local filesystem writes, not database writes.
+        json_path.write_text(
+            json.dumps(report, indent=2, default=str), encoding="utf-8"
+        )
+        if not args.subject:
+            md_path.write_text(to_markdown(report), encoding="utf-8")
+
+        if args.json_only:
+            print(json.dumps(report, indent=2, default=str))
+        else:
+            print(f"Wrote {json_path}")
+            if not args.subject:
+                print(f"Wrote {md_path}")
+            chem = report.get("chemistry") or report.get("subject_focus")
+            if chem:
+                print(
+                    f"{chem.get('subject')}: status={chem.get('status_counts')} "
+                    f"readiness={chem.get('readiness_counts')}"
+                )
+            if report.get("zoology"):
+                zoology = report["zoology"]
+                print(
+                    f"Zoology: status={zoology['status_counts']} "
+                    f"readiness={zoology['readiness_counts']}"
+                )
+            if report.get("unmapped_draft_disposition"):
+                print(
+                    "Unmapped disposition: "
+                    f"{report['unmapped_draft_disposition']['disposition_counts']}"
+                )
+        return 0
+    finally:
+        engine.dispose()
 
 
 if __name__ == "__main__":

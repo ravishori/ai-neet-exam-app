@@ -26,12 +26,36 @@ PROVIDER_DISABLED = "PROVIDER_DISABLED"
 
 
 class ProviderError(Exception):
-    """Normalized provider failure — never embeds secrets."""
+    """Normalized provider failure — never embeds secrets.
 
-    def __init__(self, code: str, message: str, *, provider: str | None = None, retryable: bool = False):
+    ``http_status``/``provider_detail`` retain the real HTTP status code and
+    a short, already-redacted excerpt of the provider's own response body
+    (never the request, so never the Authorization header/API key) — this
+    is diagnostic-only and must never be set from request data. Without
+    these, every unrecognized HTTP error collapses to the same generic
+    "Provider error" string, which made a real 2026-10-13 Krutrim 404
+    ("Cannot POST /v1/chat/completions") indistinguishable from any other
+    failure until someone bypassed this layer entirely to inspect the raw
+    response.
+    """
+
+    def __init__(
+        self,
+        code: str,
+        message: str,
+        *,
+        provider: str | None = None,
+        retryable: bool = False,
+        http_status: int | None = None,
+        provider_detail: str | None = None,
+    ):
         self.code = code
         self.provider = provider
         self.retryable = retryable
+        self.http_status = http_status
+        self.provider_detail = provider_detail
+        if http_status is not None or provider_detail:
+            message = f"{message} (http_status={http_status}, detail={provider_detail!r})"
         super().__init__(message)
 
 

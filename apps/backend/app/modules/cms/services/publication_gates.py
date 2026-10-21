@@ -119,9 +119,13 @@ async def evaluate_question_publication_gates(
         qb = None
 
     # Taxonomy
+    # concept_id is optional metadata (academic-mapping enrichment), not an
+    # eligibility/publication blocker — see docs/PRODUCTION_READINESS.md
+    # ("concept_id NULL must not block publication"). A question with no
+    # concept_id yet is taxonomy_ok; a question WITH a concept_id must still
+    # point at a real, non-deleted Concept — that check is unchanged.
     if not concept_id:
-        report.taxonomy_ok = False
-        report.reasons.append("taxonomy:missing_concept_id")
+        report.taxonomy_ok = True
     else:
         row = (
             await session.execute(

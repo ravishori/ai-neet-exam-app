@@ -51,10 +51,24 @@ _PROVIDER_ALIASES: dict[str, str] = {
     "local": "openai",  # OpenAI-compatible local endpoint via openai_base_url
     "mistral": "mistral",
     "sarvam": "sarvam",
+    "groq": "groq",  # MCQ-FACTORY-GROQ-001 — generation model only (see registry.py)
+    "openrouter": "openrouter",  # MCQ-FACTORY-OPENROUTER-001 (see registry.py)
+    "krutrim": "krutrim",  # MCQ-FACTORY-KRUTRIM-001 (see registry.py)
+    "deepseek": "deepseek",  # MCQ-FACTORY-DEEPSEEK-001 (see registry.py)
 }
 
 # Providers exposed for MCQ factory configuration (must have adapters)
-MCQ_SUPPORTED_PROVIDERS = ("anthropic", "gemini", "openai", "mistral", "sarvam")
+MCQ_SUPPORTED_PROVIDERS = (
+    "anthropic",
+    "gemini",
+    "openai",
+    "mistral",
+    "sarvam",
+    "groq",
+    "openrouter",
+    "krutrim",
+    "deepseek",
+)
 
 
 @runtime_checkable
@@ -107,7 +121,7 @@ def normalize_mcq_provider_name(raw: str) -> str:
     if key not in _PROVIDER_ALIASES:
         raise AppError(
             f"Unsupported MCQ provider '{raw}'. "
-            f"Allowed: anthropic|google|gemini|openai|local|mistral|sarvam",
+            f"Allowed: anthropic|google|gemini|openai|local|mistral|sarvam|groq|openrouter|krutrim|deepseek",
             code="MCQ_PROVIDER_UNSUPPORTED",
             status_code=400,
         )
@@ -146,6 +160,10 @@ def resolve_mcq_provider_selection(settings: Settings | None = None) -> McqProvi
         "openai": s.openai_model,
         "mistral": s.mistral_model,
         "sarvam": s.sarvam_model,
+        "groq": s.groq_generation_model,
+        "openrouter": s.openrouter_model,
+        "krutrim": s.krutrim_model,
+        "deepseek": s.deepseek_model,
     }
     model = model_map.get(registry_name, s.ai_default_model)
 
@@ -339,6 +357,337 @@ def list_implemented_mcq_providers(settings: Settings | None = None) -> list[dic
             }
         )
     return out
+
+
+@dataclass(frozen=True)
+class McqVerificationSelection:
+    """Resolved VERIFICATION-model selection — always the Groq
+    openai/gpt-oss-120b-class model, never the generation model. There is
+    no multi-provider selection here (unlike ``McqProviderSelection``):
+    verification is Groq-only by design (see registry.py's
+    ``construct_groq_verification_provider``)."""
+
+    registry_name: str  # always "groq"
+    model: str
+    enabled: bool
+    configured: bool
+
+
+VERIFICATION_AGENT_TYPE = "CONTENT_FACTORY_MCQ_VERIFY"  # must fit ai.ai_requests.agent_type VARCHAR(30)
+
+
+def resolve_mcq_verification_selection(settings: Settings | None = None) -> McqVerificationSelection:
+    """Resolve the independent VERIFICATION-model selection.
+
+    Mirrors ``resolve_mcq_provider_selection``'s shape (so callers can
+    reason about the two symmetrically) but is intentionally simpler: it
+    is never routed, aliased, or fallback-chained — it is always Groq's
+    ``settings.groq_verification_model``.
+    """
+    s = settings or get_settings()
+    return McqVerificationSelection(
+        registry_name="groq",
+        model=s.groq_verification_model,
+        enabled=bool(s.groq_enabled),
+        configured=bool((s.groq_api_key or "").strip()),
+    )
+
+
+class GatewayMcqVerificationProvider:
+    """Production adapter for the independent VERIFICATION call site.
+
+    Deliberately a SEPARATE class from ``GatewayMcqLlmProvider`` (not a
+    mode flag on it) — this is "the genuinely separate call site" the
+    orchestrator (``app/modules/cms/mcq_factory_groq/orchestrator.py``)
+    must use so a verification result can never be silently satisfied by
+    re-using the generation call's own response. It still goes through
+    the same ``AIGateway`` façade (same cost/latency logging contract,
+    same ``AIRequestLog`` lineage) as generation — just with its own
+    ``agent_type`` (``VERIFICATION_AGENT_TYPE``) and its own explicitly
+    injected provider instance (never the router/registry's single
+    ``groq`` slot, which only ever carries the generation model).
+    """
+
+    def __init__(self, gateway: AIGateway, *, selection: McqVerificationSelection) -> None:
+        self._gateway = gateway
+        self._selection = selection
+
+    @property
+    def provider_name(self) -> str:
+        return self._selection.registry_name
+
+    @property
+    def model_name(self) -> str:
+        return self._selection.model
+
+    @property
+    def selection(self) -> McqVerificationSelection:
+        return self._selection
+
+    async def verify_candidate(
+        self,
+        *,
+        system_prompt: str,
+        user_prompt: str,
+        max_tokens: int = 700,
+        user_id: UUID | None = None,
+        correlation_id: str | None = None,
+        generation_run_id: str | None = None,
+    ) -> AIResponse:
+        try:
+            return await self._gateway.generate(
+                agent_type=VERIFICATION_AGENT_TYPE,
+                system_prompt=system_prompt,
+                user_prompt=user_prompt,
+                user_id=user_id,
+                max_tokens=max_tokens,
+                generation_run_id=generation_run_id,
+                require_json=True,
+                correlation_id=correlation_id,
+                model=self._selection.model,
+            )
+        except ProviderError:
+            raise
+
+    def health_check(self) -> dict[str, Any]:
+        if not self._selection.enabled:
+            status, detail = "DISABLED", "Provider disabled"
+        elif not self._selection.configured:
+            status, detail = "BLOCKED", "API key missing"
+        else:
+            status, detail = "AVAILABLE", None
+        return {
+            "provider": self.provider_name,
+            "model": self.model_name,
+            "status": status,
+            "enabled": self._selection.enabled,
+            "configured": self._selection.configured,
+            "detail": detail,
+            "live_ping": False,
+            "note": "Config-only health_check — does not call provider APIs",
+        }
+
+    def classify_error(self, exc: BaseException) -> ProviderError:
+        return classify_mcq_error(exc, provider=self.provider_name)
+
+
+def build_mcq_verification_provider(
+    session: Any,
+    *,
+    provider: AIProvider | None = None,
+    settings: Settings | None = None,
+) -> GatewayMcqVerificationProvider | None:
+    """Construct the VERIFICATION façade, or ``None`` when Groq
+    verification is disabled/unconfigured.
+
+    Mirrors ``build_mcq_llm_provider``'s construction pattern exactly
+    (same ``AIGateway`` wrapping) but always resolves to the Groq
+    verification model via ``registry.construct_groq_verification_provider``
+    rather than the multi-provider router — the two are never conflated.
+    A caller (the orchestrator) that receives ``None`` back MUST treat
+    verification as unavailable for this run and fail closed (route to
+    REVIEW_REQUIRED), never silently skip the reviewer gate.
+    """
+    from app.modules.ai.gateway.registry import construct_groq_verification_provider
+
+    s = settings or get_settings()
+    selection = resolve_mcq_verification_selection(s)
+    if provider is None:
+        provider = construct_groq_verification_provider(s)
+        if provider is None:
+            return None
+    gateway = AIGateway(session, provider=provider)
+    return GatewayMcqVerificationProvider(gateway, selection=selection)
+
+
+@dataclass(frozen=True)
+class McqFactoryStageSelection:
+    """Resolved, explicit provider+model selection for ONE MCQ-factory
+    orchestrator call site (``stage`` is ``"generation"`` or
+    ``"verification"``) — MCQ-FACTORY-PROVIDER-AGNOSTIC-001.
+
+    Generalizes ``McqVerificationSelection`` (which stayed hard-coded to
+    Groq) to any ``MCQ_SUPPORTED_PROVIDERS`` entry, independently for each
+    stage, each defaulting to Groq when
+    ``settings.mcq_factory_<stage>_provider`` is left unset. Never a
+    silent fallback to Groq for an explicitly unsupported/misspelled
+    name — ``normalize_mcq_provider_name`` (reused, not reimplemented)
+    raises ``AppError`` for that case.
+    """
+
+    stage: str
+    requested: str
+    registry_name: str
+    model: str
+    enabled: bool
+    configured: bool
+
+
+def _default_model_for_stage_provider(registry_name: str, stage: str, s: Settings) -> str:
+    """Same model-per-registry-name convention already used by
+    ``resolve_mcq_provider_selection``'s ``model_map`` above, duplicated
+    narrowly here (rather than refactoring that function) so this
+    additive stage-selection path never risks changing the existing
+    generic MCQ-provider resolution's behavior."""
+    if registry_name == "groq":
+        return s.groq_generation_model if stage == "generation" else s.groq_verification_model
+    model_map = {
+        "anthropic": s.anthropic_model or s.ai_default_model,
+        "gemini": s.gemini_model,
+        "openai": s.openai_model,
+        "mistral": s.mistral_model,
+        "sarvam": s.sarvam_model,
+        "openrouter": s.openrouter_model,
+        "krutrim": s.krutrim_model,
+        "deepseek": s.deepseek_model,
+    }
+    return model_map.get(registry_name, s.ai_default_model)
+
+
+def resolve_mcq_factory_stage_selection(
+    stage: str, *, settings: Settings | None = None
+) -> McqFactoryStageSelection:
+    """Resolve the independent provider+model for one MCQ-factory call
+    site from ``settings.mcq_factory_<stage>_provider`` /
+    ``_model``, defaulting to Groq when unset. Fails closed (``AppError``,
+    via ``normalize_mcq_provider_name``) on a genuinely unsupported
+    provider name — it never silently substitutes Groq for a typo.
+    """
+    if stage not in ("generation", "verification"):
+        raise ValueError(f"Unknown MCQ factory stage: {stage!r}")
+    s = settings or get_settings()
+    raw_provider = (getattr(s, f"mcq_factory_{stage}_provider", "") or "").strip()
+    requested = raw_provider or "groq"
+    registry_name = normalize_mcq_provider_name(requested)
+
+    raw_model = (getattr(s, f"mcq_factory_{stage}_model", "") or "").strip()
+    model = raw_model or _default_model_for_stage_provider(registry_name, stage, s)
+
+    if registry_name == "groq":
+        enabled = bool(s.groq_enabled)
+        configured = bool((s.groq_api_key or "").strip())
+    else:
+        enabled = bool(getattr(s, f"{registry_name}_enabled", False))
+        key = (getattr(s, f"{registry_name}_api_key", "") or "").strip()
+        base_url = (getattr(s, "openai_base_url", "") or "").strip()
+        configured = bool(key) or (registry_name == "openai" and bool(base_url))
+        if registry_name in ("openrouter", "krutrim", "deepseek"):
+            # Fails closed on an empty/placeholder model — mirrors the
+            # identical check in registry.build_registry_from_settings
+            # (see openrouter_provider.py's / krutrim_provider.py's /
+            # deepseek_provider.py's module docstrings). A key alone is
+            # never enough: an unconfirmed model string must never
+            # silently reach a live HTTP call.
+            configured = configured and bool(model.strip())
+
+    return McqFactoryStageSelection(
+        stage=stage,
+        requested=requested,
+        registry_name=registry_name,
+        model=model,
+        enabled=enabled,
+        configured=configured,
+    )
+
+
+def build_mcq_factory_stage_provider(
+    stage: str, *, settings: Settings | None = None
+) -> tuple[AIProvider | None, McqFactoryStageSelection]:
+    """Construct (or fail closed to ``None``) the ``AIProvider`` instance
+    for one MCQ-factory stage, reusing the EXISTING abstractions for
+    every provider — never a bespoke HTTP client:
+
+    - ``groq`` reuses ``registry.construct_groq_provider_for_model`` (the
+      same ``GroqProvider``-over-``OpenAIProvider`` reuse the generation/
+      verification call sites always used), bound to whatever model this
+      stage resolved to (not necessarily ``groq_generation_model`` /
+      ``groq_verification_model`` — an operator may override either via
+      ``mcq_factory_<stage>_model``).
+    - any other ``MCQ_SUPPORTED_PROVIDERS`` entry reuses the already-
+      available instance from a freshly-built ``ProviderRegistry``
+      (``registry.build_registry_from_settings``) — the SAME instance
+      construction every other gateway caller uses. The stage's resolved
+      ``model`` is passed per-call via ``AIGateway.generate(model=...)``
+      (see ``build_mcq_factory_stage_caller`` below), not baked into the
+      instance, since ``AIProvider.generate_request`` already supports an
+      explicit per-call model override.
+
+    Returns ``(None, selection)`` when the resolved provider is disabled
+    or unconfigured — callers decide how to fail closed per stage (see
+    ``build_mcq_factory_stage_caller``).
+    """
+    from app.modules.ai.gateway.registry import (
+        AVAILABLE,
+        build_registry_from_settings,
+        construct_groq_provider_for_model,
+    )
+    from app.modules.ai.gateway.pricing import PriceRate
+
+    s = settings or get_settings()
+    selection = resolve_mcq_factory_stage_selection(stage, settings=s)
+    if not selection.enabled or not selection.configured:
+        return None, selection
+
+    if selection.registry_name == "groq":
+        # Same published-rate placeholders build_registry_from_settings /
+        # construct_groq_verification_provider already use per stage —
+        # verify before any live run (see those functions' docstrings).
+        default_rate = PriceRate(0.10, 0.50) if stage == "generation" else PriceRate(0.40, 0.75)
+        provider = construct_groq_provider_for_model(s, selection.model, default_rate=default_rate)
+    else:
+        reg = build_registry_from_settings(s)
+        entry = reg.get(selection.registry_name)
+        provider = entry.instance if entry and entry.status == AVAILABLE else None
+
+    return provider, selection
+
+
+def build_mcq_factory_stage_caller(
+    session: Any, *, stage: str, settings: Settings | None = None
+) -> Any:
+    """Build a plain async caller (``system_prompt``/``user_prompt``/
+    ``max_tokens`` -> ``AIResponse``) for one MCQ-factory stage, resolved
+    independently via ``mcq_factory_<stage>_provider`` / ``_model``
+    (defaulting to Groq). Matches the orchestrator's
+    ``GenerationCaller``/``VerificationCaller`` protocol shape exactly
+    (``app/modules/cms/mcq_factory_groq/orchestrator.py``) — drops in
+    wherever ``build_groq_generation_caller``/``build_groq_verification_caller``
+    do today; those two functions are left untouched for existing callers.
+
+    Generation: raises ``AppError`` (fail closed) when the resolved
+    provider is disabled/unconfigured — a batch cannot run without a
+    generation caller.
+    Verification: returns ``None`` (fail closed to ``REVIEW_REQUIRED``,
+    exactly like ``build_mcq_verification_provider``'s existing contract)
+    rather than raising, since a missing verifier is "optional but never
+    silently skipped" by the orchestrator's routing rule.
+    """
+    s = settings or get_settings()
+    provider, selection = build_mcq_factory_stage_provider(stage, settings=s)
+    if provider is None:
+        if stage == "generation":
+            raise AppError(
+                f"MCQ factory generation provider '{selection.registry_name}' is unavailable "
+                f"(enabled={selection.enabled}, configured={selection.configured})",
+                code="MCQ_FACTORY_GENERATION_PROVIDER_UNAVAILABLE",
+                status_code=400,
+            )
+        return None
+
+    gateway = AIGateway(session, provider=provider)
+    agent_type = VERIFICATION_AGENT_TYPE if stage == "verification" else "CONTENT_FACTORY_MCQ"
+
+    async def _caller(*, system_prompt: str, user_prompt: str, max_tokens: int) -> AIResponse:
+        return await gateway.generate(
+            agent_type=agent_type,
+            system_prompt=system_prompt,
+            user_prompt=user_prompt,
+            max_tokens=max_tokens,
+            model=selection.model,
+            require_json=True,
+        )
+
+    return _caller
 
 
 def assert_provider_metadata_consistent(

@@ -25,7 +25,7 @@ logger = get_logger("cms")
 #                  \-> CHANGES_REQUESTED -> DRAFT (after edit)
 # DRAFT acquisition repair path (orthogonal to publish archival):
 # DRAFT -> SUPERSEDED  (via supersede_draft; replacement remains DRAFT)
-# Publish re-validates body; QUESTION also requires concept_id.
+# Publish re-validates body. concept_id is optional metadata, not a gate.
 
 DRAFT_EDITABLE_STATUSES = frozenset({"DRAFT", "CHANGES_REQUESTED"})
 
@@ -386,14 +386,11 @@ class ContentWorkflowService:
                 "latest": latest,
             }
 
-        if item.content_type == "QUESTION" and not item.concept_id:
-            return {
-                "eligible": False,
-                "rejection_code": "MISSING_ACADEMIC_MAPPING",
-                "rejection_reason": "QUESTION must be mapped to a concept before review.",
-                "item": item,
-                "latest": latest,
-            }
+        # NOTE: a missing concept_id is NOT an eligibility blocker — it is
+        # optional academic-mapping metadata. See docs/PRODUCTION_READINESS.md
+        # ("concept_id NULL must not block publication"). All other
+        # structural/scientific/NCERT/provenance gates remain enforced via
+        # assert_body_publishable above and the publication gates at publish().
 
         return {
             "eligible": True,

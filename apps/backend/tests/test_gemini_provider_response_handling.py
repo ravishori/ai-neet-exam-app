@@ -1,4 +1,24 @@
-"""Gemini provider response-handling hardening — mocked HTTP only (no live API)."""
+"""Gemini provider response-handling hardening — mocked HTTP only (no live API).
+
+CI-failure root cause (docs/audits/auth-otp-feature-audit.md §4c): this
+module's own tests never monkeypatch `settings.gemini_enabled`, so every
+test here was failing at `GeminiProvider(...)` construction itself --
+`gemini_provider.py`'s own `__init__` deliberately refuses to construct at
+all when `settings.gemini_enabled` is False (by design, to make an
+accidental paid call structurally impossible), and CI's default config has
+it False. These tests never got far enough to exercise the thing they're
+actually testing (response-handling logic against `httpx.AsyncClient`,
+which every test below already replaces with `_FakeAsyncClient` -- zero
+real HTTP is possible here regardless of this fixture).
+
+`_enable_gemini_for_construction_only` flips that one setting attribute
+for the duration of each test in this module (monkeypatch restores it
+automatically), so construction succeeds -- it does not, and cannot,
+cause a live/paid call: `httpx.AsyncClient` is unconditionally replaced by
+`_patch_httpx` in every test that reaches an actual request, and the two
+tests that don't call `_patch_httpx` (if any) never reach a network call
+at all, construction being the only gate this fixture affects.
+"""
 
 from __future__ import annotations
 
@@ -8,11 +28,17 @@ from typing import Any
 import httpx
 import pytest
 
+from app.core.config import get_settings
 from app.modules.ai.gateway.base import PROVIDER_INVALID_RESPONSE, GenerateRequest, ProviderError
 from app.modules.ai.gateway.gemini_provider import GeminiProvider
 from app.modules.cms.services.factory_candidate_validation import parse_mcq_json
 
 pytestmark = pytest.mark.asyncio(loop_scope="session")
+
+
+@pytest.fixture(autouse=True)
+def _enable_gemini_for_construction_only(monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setattr(get_settings(), "gemini_enabled", True)
 
 _VALID_MCQ = {
     "stem": "What is Ohm's law?",

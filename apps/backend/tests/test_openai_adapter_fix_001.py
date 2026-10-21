@@ -209,6 +209,29 @@ def test_error_classification_intact():
     assert bad.code == PROVIDER_INVALID_RESPONSE
 
 
+def test_404_classified_distinctly_with_real_diagnostic_detail():
+    """2026-10-13: a real Krutrim live-test 404 ('Cannot POST /v1/chat/completions')
+    collapsed to the generic 'Provider error' message, with the real status
+    code and response body discarded entirely — making a misconfigured
+    endpoint/model indistinguishable from any other failure without bypassing
+    this layer with a raw httpx call. http_status/provider_detail must now be
+    retained (from the response body only, never the request/API key)."""
+    not_found = classify_http_error("krutrim", 404, "<!DOCTYPE html><pre>Cannot POST /v1/chat/completions</pre>")
+    assert not_found.code == PROVIDER_INVALID_RESPONSE
+    assert not_found.retryable is False
+    assert not_found.http_status == 404
+    assert "Cannot POST" in not_found.provider_detail
+    assert "Cannot POST" in str(not_found)
+    assert "endpoint/model not found" in str(not_found)
+
+    # The fallback branch (genuinely unrecognized status/body) must ALSO
+    # retain real diagnostics now, not just the specific branches above.
+    unrecognized = classify_http_error("krutrim", 418, "I'm a teapot")
+    assert unrecognized.http_status == 418
+    assert "I'm a teapot" in unrecognized.provider_detail
+    assert "I'm a teapot" in str(unrecognized)
+
+
 def test_other_adapters_unchanged_import_surface():
     # Smoke that sibling adapters still import and do not share OpenAI payload helper.
     from app.modules.ai.gateway import claude_provider, gemini_provider, mistral_provider

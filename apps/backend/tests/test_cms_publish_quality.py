@@ -36,10 +36,12 @@ async def _author(client, db_session, register_user):
     await register_user(client, role_codes=["CONTENT_MANAGER"], db_session=db_session)
 
 
-async def test_cannot_publish_question_without_concept_mapping(client, db_session, register_user):
-    """Case D — a QUESTION without a concept_id is blocked at
-    submit_for_review with MISSING_ACADEMIC_MAPPING and never reaches a
-    state where publish would be attempted."""
+async def test_question_without_concept_mapping_is_not_blocked(client, db_session, register_user):
+    """Case D (updated) — a NULL concept_id is optional academic-mapping
+    metadata, not an eligibility/publication blocker (PRODUCTION_READINESS.md:
+    "concept_id NULL must not block publication"). An otherwise-eligible
+    QUESTION with concept_id=None must reach IN_REVIEW via submit_for_review,
+    not be rejected with MISSING_ACADEMIC_MAPPING."""
     await _author(client, db_session, register_user)
     create = await client.post(
         "/api/v1/cms/content-items",
@@ -56,8 +58,9 @@ async def test_cannot_publish_question_without_concept_mapping(client, db_sessio
     item_id = create.json()["data"]["id"]
 
     submit = await client.post(f"/api/v1/cms/content-items/{item_id}/submit", headers=csrf_headers(client))
-    assert submit.status_code == 422
-    assert submit.json()["errors"][0]["code"] == "MISSING_ACADEMIC_MAPPING"
+    assert submit.status_code == 200, submit.text
+    assert submit.json()["data"]["status"] == "IN_REVIEW"
+    assert submit.json()["data"]["concept_id"] is None
 
 
 async def test_question_workflow_publish_requires_approval_and_gates(client, db_session, register_user):
