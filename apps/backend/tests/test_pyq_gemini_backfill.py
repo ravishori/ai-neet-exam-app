@@ -98,7 +98,7 @@ async def _seed_knowledge_unit(db_session, *, concept_id, section_id, summary: s
             "INSERT INTO knowledge.knowledge_units "
             "(id, version, content_hash, structured_facts, summary, source_section_id, concept_id, "
             "extraction_confidence, validation_status) "
-            "VALUES (:i, 1, :hash, :facts, :summary, :sid, :cid, 0.9, 'VALIDATED')"
+            "VALUES (:i, 1, :hash, :facts, :summary, :sid, :cid, 0.9, 'PASSED')"
         ),
         {
             "i": ku_id, "hash": uuid.uuid4().hex, "facts": json.dumps([summary]), "summary": summary,
