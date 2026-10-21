@@ -16,7 +16,7 @@ python-multipart==0.0.31
 anthropic==0.42.0
 pymupdf==1.25.1
 pytesseract==0.3.13
-pillow==12.3.0
+pillow==13.0.0
 pyotp==2.9.0
 cryptography==50.0.0
 defusedxml==0.7.1
