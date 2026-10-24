@@ -337,7 +337,16 @@ async def change_password(
 
 @router.post(
     "/otp/request",
-    dependencies=[Depends(rate_limit("otp_request", limit=5, window_seconds=300, fail_closed=True))],
+    dependencies=[
+        Depends(rate_limit("otp_request", limit=5, window_seconds=300, fail_closed=True)),
+        # Same shared-IP-bucket problem as /login (rate_limit_by_email's own
+        # docstring) -- additive, not a replacement. Without this, a user
+        # behind Railway's edge can be denied an OTP purely because
+        # unrelated traffic exhausted the global IP bucket, indistinguishable
+        # to them from a real failure. This is the diagnosed root cause of
+        # reported Email OTP failures (see docs/audits/auth-otp-feature-audit.md).
+        Depends(rate_limit_by_email("otp_request_by_email", limit=5, window_seconds=300, fail_closed=True)),
+    ],
 )
 async def otp_request(payload: OtpRequest, db: AsyncSession = Depends(get_db)):
     if payload.purpose not in _ALLOWED_OTP_PURPOSES:
@@ -351,7 +360,11 @@ async def otp_request(payload: OtpRequest, db: AsyncSession = Depends(get_db)):
 
 @router.post(
     "/otp/verify",
-    dependencies=[Depends(rate_limit("otp_verify", limit=10, window_seconds=300, fail_closed=True))],
+    dependencies=[
+        Depends(rate_limit("otp_verify", limit=10, window_seconds=300, fail_closed=True)),
+        # Same rationale as otp_request above.
+        Depends(rate_limit_by_email("otp_verify_by_email", limit=10, window_seconds=300, fail_closed=True)),
+    ],
 )
 async def otp_verify(payload: OtpVerifyRequest, request: Request, db: AsyncSession = Depends(get_db)):
     if payload.purpose not in _ALLOWED_OTP_PURPOSES:
