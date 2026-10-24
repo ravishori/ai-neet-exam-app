@@ -85,24 +85,38 @@ def _item(item: ContentItem) -> dict:
     }
 
 
-def _can_edit(item: ContentItem, user: User) -> bool:
-    return "SUPER_ADMIN" in user.role_codes or "ADMIN" in user.role_codes or item.created_by == user.id
-
-
-async def _can_edit_published(user: User, db: AsyncSession) -> bool:
-    """Editing a PUBLISHED item's content is a stricter action than editing
-    your own draft -- correcting live content requires the already-seeded
-    content.force_edit_published permission (seed.py: "Hotfix published
-    content, bypassing the review pipeline" -- ADMIN/SUPER_ADMIN only, never
-    CONTENT_MANAGER), not just content.edit_own_draft. Previously seeded
-    but unused; this is its first wiring. SUPER_ADMIN always passes, same
-    convention as require_permission()."""
+async def _has_permission(user: User, db: AsyncSession, code: str) -> bool:
+    """Same convention as identity.dependencies.require_permission (which
+    can't be reused directly here -- it's a route-level FastAPI dependency,
+    evaluated before the target item is even loaded, so it can't express
+    "this permission, but only when the item isn't the caller's own").
+    SUPER_ADMIN always passes."""
     if "SUPER_ADMIN" in user.role_codes:
         return True
     role_repo = RoleRepository(db)
     role_ids = [ur.role_id for ur in user.roles]
     permissions = await role_repo.get_permission_codes_for_roles(role_ids)
-    return "content.force_edit_published" in permissions
+    return code in permissions
+
+
+async def _can_edit_item(item: ContentItem, user: User, db: AsyncSession) -> bool:
+    """Single, shared authorization policy for PATCH /content-items/{id},
+    for a content item in ANY status (DRAFT, CHANGES_REQUESTED, PUBLISHED,
+    ...): the author of the item may always edit their own work (content.
+    edit_own_draft, already required by the route dependency); editing
+    anyone else's item -- regardless of its status, not special-cased to
+    "published" -- requires content.force_edit_published (seed.py: "Hotfix
+    published content, bypassing the review pipeline"; ADMIN/SUPER_ADMIN
+    only by the current role-permission seed, CONTENT_MANAGER does not
+    have it). Permission-based, not a hardcoded role-name list -- stays
+    correct if roles are renamed or the permission is reassigned, and
+    applies uniformly instead of only gating the published case. PUBLISHED
+    content always requires the permission, even for the original author
+    -- it's live, student-facing, and correcting it is a more sensitive
+    action than editing an unpublished draft regardless of who wrote it."""
+    if item.status != "PUBLISHED" and item.created_by == user.id:
+        return True
+    return await _has_permission(user, db, "content.force_edit_published")
 
 
 def _question_version(item: ContentItem) -> ContentVersion | None:
@@ -768,13 +782,12 @@ async def update_content_item(
     existing = await repo.get_item(item_id)
     if not existing:
         raise NotFoundError("Content item not found")
-    if not _can_edit(existing, user):
-        raise PermissionDeniedError("You can only edit your own drafts")
+    if not await _can_edit_item(existing, user, db):
+        raise PermissionDeniedError(
+            "You can only edit your own drafts, or any item if you have content.force_edit_published"
+        )
 
     is_published = existing.status == "PUBLISHED"
-    if is_published and not await _can_edit_published(user, db):
-        raise PermissionDeniedError("Correcting a published question requires content.force_edit_published")
-
     service = ContentWorkflowService(db)
     item = await service.update_draft(
         item_id,

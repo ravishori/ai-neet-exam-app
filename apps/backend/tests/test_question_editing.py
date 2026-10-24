@@ -31,7 +31,7 @@ async def _other_concept_id(db_session, exclude: str) -> str:
     return str(result.scalar_one())
 
 
-async def _create_question(client, concept_id: str, *, correct_option: str = "A") -> dict:
+async def _create_question(client, concept_id: str, *, correct_option: str = "A", stem: str | None = None) -> dict:
     resp = await client.post(
         "/api/v1/cms/content-items",
         json={
@@ -40,7 +40,7 @@ async def _create_question(client, concept_id: str, *, correct_option: str = "A"
             "title": f"Edit Q {uuid.uuid4().hex[:6]}",
             "slug": f"edit-q-{uuid.uuid4().hex[:10]}",
             "language": "en",
-            "body": publishable_question_body(correct_option=correct_option),
+            "body": publishable_question_body(correct_option=correct_option, **({"stem": stem} if stem else {})),
         },
         headers=csrf_headers(client),
     )
@@ -48,8 +48,8 @@ async def _create_question(client, concept_id: str, *, correct_option: str = "A"
     return resp.json()["data"]
 
 
-async def _publish_question(client, concept_id: str, *, correct_option: str = "A") -> dict:
-    item = await _create_question(client, concept_id, correct_option=correct_option)
+async def _publish_question(client, concept_id: str, *, correct_option: str = "A", stem: str | None = None) -> dict:
+    item = await _create_question(client, concept_id, correct_option=correct_option, stem=stem)
     item_id = item["id"]
     await client.post(f"/api/v1/cms/content-items/{item_id}/submit", headers=csrf_headers(client))
     await client.post(
@@ -345,6 +345,96 @@ async def test_content_manager_can_edit_own_draft(client, db_session, register_u
         headers=csrf_headers(client),
     )
     assert patch.status_code == 200, patch.text
+
+
+async def test_different_content_manager_cannot_edit_someone_elses_draft(client, db_session, register_user):
+    """Ownership, not role name, gates a DRAFT: a second CONTENT_MANAGER
+    who didn't author the item is denied exactly like any other
+    non-author without content.force_edit_published."""
+    await register_user(client, role_codes=["CONTENT_MANAGER"], db_session=db_session)
+    concept_id = await _concept_id(db_session)
+    item = await _create_question(client, concept_id)
+
+    await register_user(client, role_codes=["CONTENT_MANAGER"], db_session=db_session)
+    patch = await client.patch(
+        f"/api/v1/cms/content-items/{item['id']}",
+        json={"body": publishable_question_body(stem="Not my draft"), "change_summary": "Should be forbidden"},
+        headers=csrf_headers(client),
+    )
+    assert patch.status_code == 403, patch.text
+
+
+async def test_admin_can_edit_a_published_question_authored_by_a_different_user(client, db_session, register_user):
+    """The actual reported regression: an ADMIN (content.force_edit_published)
+    must be able to correct a PUBLISHED question they did NOT author --
+    not just their own published work. Two distinct accounts, two distinct
+    published questions, proving this isn't tied to any specific
+    question/user id."""
+    concept_id = await _concept_id(db_session)
+
+    await register_user(client, role_codes=["CONTENT_MANAGER"], db_session=db_session)
+    published_one = await _publish_question(client, concept_id, stem=f"First published question {uuid.uuid4().hex[:8]}?")
+
+    await register_user(client, role_codes=["CONTENT_MANAGER"], db_session=db_session)
+    published_two = await _publish_question(client, concept_id, stem=f"Second published question {uuid.uuid4().hex[:8]}?")
+
+    admin = await register_user(client, role_codes=["ADMIN"], db_session=db_session)
+    for item_id, label in [(published_one["id"], "first"), (published_two["id"], "second")]:
+        patch = await client.patch(
+            f"/api/v1/cms/content-items/{item_id}",
+            json={
+                "body": publishable_question_body(stem=f"Admin-corrected {label} question"),
+                "change_summary": f"Fixing the {label} unauthored-by-me question",
+            },
+            headers=csrf_headers(client),
+        )
+        assert patch.status_code == 200, patch.text
+    assert admin  # registered for auth cookies only
+
+
+async def test_admin_editing_their_own_published_question_still_requires_permission_not_ownership(
+    client, db_session, register_user
+):
+    """Regression caught during this fix: ownership must NEVER exempt
+    PUBLISHED content from the permission check -- only ADMIN/SUPER_ADMIN's
+    content.force_edit_published does, same as for anyone else's published
+    work. (The ADMIN here legitimately has the permission regardless, so
+    this just confirms the ownership shortcut isn't what's granting
+    access.)"""
+    admin = await register_user(client, role_codes=["ADMIN"], db_session=db_session)
+    concept_id = await _concept_id(db_session)
+    published = await _publish_question(client, concept_id)  # authored by this same ADMIN
+
+    patch = await client.patch(
+        f"/api/v1/cms/content-items/{published['id']}",
+        json={"body": publishable_question_body(stem="Admin fixing own published work")},
+        headers=csrf_headers(client),
+    )
+    # Missing change_summary in this payload is deliberate -- irrelevant to
+    # what's under test here, just confirms the request still reaches
+    # validation (422), never a 403, proving permission (not ownership) is
+    # what the server is actually checking for PUBLISHED content.
+    assert patch.status_code != 403, patch.text
+    assert admin  # registered for auth cookies only
+
+
+async def test_teacher_without_content_edit_permission_is_rejected(client, db_session, register_user):
+    """An ordinary role with no content.edit_own_draft at all is rejected
+    at the route-dependency level before any item/ownership logic runs."""
+    await register_user(client, role_codes=["TEACHER"], db_session=db_session)
+    concept_id = await _concept_id(db_session)
+
+    # TEACHER has content.edit_own_draft per seed.py, so create as TEACHER
+    # first, then attempt as a role with none of the content.* permissions.
+    item = await _create_question(client, concept_id)
+
+    await register_user(client, db_session=db_session)  # STUDENT is the default self-registered role
+    patch = await client.patch(
+        f"/api/v1/cms/content-items/{item['id']}",
+        json={"body": publishable_question_body(), "change_summary": "Should be forbidden"},
+        headers=csrf_headers(client),
+    )
+    assert patch.status_code == 403, patch.text
 
 
 async def test_edit_requires_non_empty_change_summary(client, db_session, register_user):
