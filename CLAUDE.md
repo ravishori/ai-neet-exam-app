@@ -83,6 +83,36 @@ The invariant is also documented for humans in `apps/web/README.md`
 under "Dev-server invariant"; the static guard is
 `apps/web/src/app/layout.stylesheet.test.ts`.
 
+## Audit documentation protocol (agent rule — always follow, never ask first)
+
+`docs/audits/` is the permanent, living record of every audit, investigation,
+fix, and test run on this repo. Start at `docs/audits/README.md`.
+
+- **Before any audit/investigation**: read the relevant report in
+  `docs/audits/` first (and `findings-register.md` for that module's open
+  items). Reuse valid findings; investigate only what has changed or what's
+  flagged STALE. Never re-derive from scratch what's already documented and
+  still valid.
+- **After any audit, investigation, fix, or test run** — update the
+  relevant `docs/audits/*.md` report automatically, without being asked.
+  Record: scope, date, status, findings with severity, exact file:line,
+  reproduction steps, exact commands run, actual results (never estimated),
+  limitations, fixes, next actions. Then update `findings-register.md` and
+  `README.md`'s status table if the module's overall status changed.
+- **Evidence tiers** — label every claim one of: Implemented / Tested /
+  Independently verified / Sandbox-tested / Production-verified / STALE.
+  Never claim a tier you didn't actually establish (e.g. don't call
+  something "tested" if you only read the code).
+- **Never overwrite a report blindly** — read it first, then edit/append;
+  preserve prior findings as historical record unless they're confirmed
+  superseded.
+- **Never put secrets, password hashes, tokens, or unmasked PII in these
+  reports** — mask emails, never record hash/token values, counts and
+  structure only for anything sensitive.
+- This protocol itself lives here so every future session follows it
+  automatically — do not ask the user whether to maintain this system, just
+  maintain it.
+
 ## Where to look
 
 - `docs/product/` — **authoritative current product status**, gaps, forward
