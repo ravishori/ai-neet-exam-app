@@ -285,6 +285,7 @@ class Settings(BaseSettings):
 
     razorpay_key_id: str = ""
     razorpay_key_secret: str = ""
+    razorpay_webhook_secret: str = ""
 
     # Public web origin used in email links (no trailing slash required)
     web_app_url: str = "http://localhost:3000"

@@ -20,7 +20,7 @@ class Order(Base):
     )
     amount_inr: Mapped[float] = mapped_column(Numeric(10, 2), nullable=False)
     status: Mapped[str] = mapped_column(String(20), default="CREATED", nullable=False)
-    razorpay_order_id: Mapped[str | None] = mapped_column(String(100), nullable=True)
+    razorpay_order_id: Mapped[str | None] = mapped_column(String(100), nullable=True, index=True)
     razorpay_payment_id: Mapped[str | None] = mapped_column(String(100), nullable=True)
     razorpay_signature: Mapped[str | None] = mapped_column(String(200), nullable=True)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())

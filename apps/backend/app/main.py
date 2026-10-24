@@ -35,6 +35,7 @@ from app.modules.cms.pyq.api.gemini_backfill_router import router as pyq_gemini_
 from app.modules.cms.pyq.api.pyq_answer_review_router import router as pyq_answer_review_router
 from app.modules.cms.pyq.pyq_resolver_worker import run_worker_loop as run_pyq_resolver_worker_loop
 from app.modules.commerce.api.commerce_router import router as commerce_router
+from app.modules.commerce.api.commerce_router import webhook_router as commerce_webhook_router
 from app.modules.identity.api.auth_router import router as auth_router
 from app.modules.identity.api.locations_router import router as locations_router
 from app.modules.identity.api.roles_router import router as roles_router
@@ -116,6 +117,7 @@ app.include_router(student_preference_router)
 app.include_router(admin_router)
 app.include_router(analytics_router)
 app.include_router(commerce_router)
+app.include_router(commerce_webhook_router)
 app.include_router(ingestion_router)
 app.include_router(knowledge_router)
 app.include_router(pyq_gemini_backfill_router)

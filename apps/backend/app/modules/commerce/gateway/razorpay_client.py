@@ -21,6 +21,18 @@ def verify_payment_signature(*, razorpay_order_id: str, razorpay_payment_id: str
     return hmac.compare_digest(expected, razorpay_signature)
 
 
+def verify_webhook_signature(*, raw_body: bytes, signature: str, webhook_secret: str) -> bool:
+    """Matches Razorpay's webhook verification: HMAC-SHA256(raw request body,
+    webhook secret), sent in the X-Razorpay-Signature header. Distinct from
+    verify_payment_signature above (different secret, different payload —
+    raw bytes here, not an order_id|payment_id string) per Razorpay's
+    webhook docs."""
+    if not webhook_secret or not signature:
+        return False
+    expected = hmac.new(webhook_secret.encode(), raw_body, hashlib.sha256).hexdigest()
+    return hmac.compare_digest(expected, signature)
+
+
 async def create_razorpay_order(*, amount_inr: float, receipt: str, key_id: str, key_secret: str) -> dict:
     if not key_id or not key_secret:
         raise RazorpayNotConfiguredError("RAZORPAY_KEY_ID / RAZORPAY_KEY_SECRET are not configured")

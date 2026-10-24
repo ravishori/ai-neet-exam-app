@@ -85,3 +85,50 @@ class CommerceService:
 
     async def get_status(self, user_id: uuid.UUID) -> dict:
         return {"is_premium": await self.repo.has_paid_order(user_id)}
+
+    async def apply_webhook_event(
+        self,
+        *,
+        provider_event_id: str,
+        event_type: str,
+        razorpay_order_id: str,
+        razorpay_payment_id: str | None,
+    ) -> None:
+        """Webhook reconciliation path — no authenticated user, order is
+        looked up by razorpay_order_id (never by session/user_id). Caller
+        (the router) MUST have already verified the webhook signature
+        before this is called; this method never re-checks it.
+
+        Idempotency + the order-status update happen inside one DB
+        transaction via this single commit: record_webhook_event() only
+        flushes (no commit), so if this method raises before the final
+        commit, nothing — neither the dedup row nor the order mutation —
+        is persisted. A crash between flush and commit rolls back both,
+        never leaving the event marked-processed without the order update.
+
+        Unknown/unmatched razorpay_order_id: logged by the caller and
+        treated as a no-op here (never invents a new Order row).
+        """
+        is_new_event = await self.repo.record_webhook_event(
+            provider="razorpay", provider_event_id=provider_event_id, event_type=event_type
+        )
+        if not is_new_event:
+            # Replay of an already-processed (or concurrently-being-processed)
+            # event — safe no-op, never double-apply the state transition.
+            return
+
+        order = await self.repo.get_by_razorpay_order_id(razorpay_order_id)
+        if not order:
+            await self.repo.commit()
+            return
+
+        if event_type == "payment.captured":
+            if order.status != "PAID":
+                order.status = "PAID"
+                if razorpay_payment_id:
+                    order.razorpay_payment_id = razorpay_payment_id
+        elif event_type == "payment.failed":
+            if order.status != "PAID":
+                order.status = "FAILED"
+
+        await self.repo.commit()

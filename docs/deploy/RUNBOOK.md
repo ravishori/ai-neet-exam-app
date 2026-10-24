@@ -142,6 +142,74 @@ authorized. With keys omitted, commerce order creation returns
 `PAYMENT_GATEWAY_NOT_CONFIGURED` (fail-closed). **Do not enable live
 payments** as part of H1.
 
+### Razorpay webhook (H6)
+
+Code, migration and tests are implemented (`apps/backend/app/modules/commerce/`).
+Not yet enabled against production — see the three approvals below before
+flipping this on.
+
+Two Railway (or Coolify) env vars are required, **names only, never
+values in docs or chat**:
+
+| Variable | Required | Notes |
+|---|---|---|
+| `RAZORPAY_KEY_ID` | yes | publishable key id — get from the Razorpay dashboard (Settings → API Keys). As of this writing it is **absent** from the `ai-neet-exam-app` Railway service even though `RAZORPAY_KEY_SECRET` is present — order creation is currently broken in production until this is set. |
+| `RAZORPAY_WEBHOOK_SECRET` | yes, for the webhook | a separate secret, generated when you create the webhook in the Razorpay dashboard (Settings → Webhooks → Create Webhook) — not the same value as `RAZORPAY_KEY_SECRET`. |
+
+**Setting `RAZORPAY_KEY_ID` (exact steps, do not run until approved):**
+
+```
+railway variables --service ai-neet-exam-app --set "RAZORPAY_KEY_ID=<value from Razorpay dashboard>"
+```
+
+or via the Railway dashboard: Project → `ai-neet-exam-app` service →
+Variables tab → New Variable → name `RAZORPAY_KEY_ID`. The value comes
+from the user's own Razorpay dashboard (Settings → API Keys) — never
+paste it into chat or a doc.
+
+**Webhook URL to configure in Razorpay's dashboard** (Settings → Webhooks →
+Create Webhook, once `RAZORPAY_WEBHOOK_SECRET` is generated there and set
+in Railway):
+
+```
+https://api.neet.trinetralab.net/api/v1/commerce/webhooks/razorpay
+```
+
+Subscribe to at minimum `payment.captured` and `payment.failed`.
+
+**Testing against Razorpay's sandbox/test mode:**
+1. Use a test-mode API key pair and test-mode webhook secret (Razorpay
+   dashboard has a Test/Live toggle — keep test and live keys separate).
+2. Razorpay's dashboard webhook page has a "Test Webhook" / send-sample-event
+   button that POSTs a signed sample payload to the configured URL — use
+   this to confirm `/api/v1/commerce/webhooks/razorpay` returns 200 and the
+   corresponding test order (created via a test-mode checkout) moves CREATED
+   → PAID.
+3. Alternatively, replay a captured sample payload locally with `curl`,
+   signing it with the test webhook secret (same HMAC-SHA256 scheme as
+   `verify_webhook_signature` in `razorpay_client.py`), against a local dev
+   server — never against production.
+4. This implementation has **not** been exercised against a live Razorpay
+   sandbox in this session (no outbound Razorpay API calls were made) — it
+   is code-reviewed and unit/integration-tested only.
+
+**Deploy steps:**
+1. `alembic upgrade head` — adds `commerce.webhook_events`
+   (revision `c7d8e9f0a1b2`, parent `d2e3f4a5b6c7`). Applied and verified
+   locally against `trinetra_test_db` only; **not yet run against production.**
+2. Set `RAZORPAY_KEY_ID` and `RAZORPAY_WEBHOOK_SECRET` in Railway (see above).
+3. Deploy the backend.
+4. Configure the webhook URL in the Razorpay dashboard (see above) and send
+   a test event before relying on it.
+
+**Rollback:**
+- `alembic downgrade c7d8e9f0a1b2` → `d2e3f4a5b6c7` drops
+  `commerce.webhook_events` only — additive migration, no existing table
+  touched, downgrade verified locally.
+- To stop new webhook deliveries without a redeploy: disable or delete the
+  webhook URL in the Razorpay dashboard (Settings → Webhooks). The
+  `/orders/{id}/verify` client-driven path is unaffected either way.
+
 ### Database backups
 
 Docker volumes persist across redeploys but are **not** a backup.
