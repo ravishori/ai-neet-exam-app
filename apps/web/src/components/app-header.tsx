@@ -17,6 +17,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { ApiError } from "@/lib/api-client";
 import { useLogout, useMe, useSwitchRole } from "@/features/auth/use-auth";
 import { useMounted } from "@/hooks/use-mounted";
 import { cn } from "@/lib/utils";
@@ -33,6 +34,10 @@ const ROLE_LABELS: Record<string, string> = {
 
 function roleLabel(code: string): string {
   return ROLE_LABELS[code] ?? code;
+}
+
+function roleSwitchErrorMessage(error: unknown): string {
+  return error instanceof ApiError ? error.message : "Couldn't switch roles. Please try again.";
 }
 
 export type NavLink = { href: string; label: string };
@@ -379,12 +384,16 @@ export function AppHeader({
                     <DropdownMenuSeparator className="my-1.5" />
                     <DropdownMenuGroup>
                       <DropdownMenuLabel className="text-meta px-2 py-1.5 tracking-[0.1em]">
-                        Acting as
+                        Acting as{switchRole.isPending ? " — switching…" : ""}
                       </DropdownMenuLabel>
                       <DropdownMenuRadioGroup
                         value={user.active_role}
                         onValueChange={(value) => {
-                          if (typeof value === "string" && value !== user.active_role) {
+                          if (
+                            typeof value === "string" &&
+                            value !== user.active_role &&
+                            !switchRole.isPending
+                          ) {
                             switchRole.mutate({ role: value });
                           }
                         }}
@@ -393,15 +402,31 @@ export function AppHeader({
                           <DropdownMenuRadioItem
                             key={code}
                             value={code}
-                            className="min-h-9 cursor-pointer px-2 py-2"
+                            disabled={switchRole.isPending}
+                            className="min-h-9 cursor-pointer px-2 py-2 data-disabled:cursor-default"
                           >
                             {roleLabel(code)}
                           </DropdownMenuRadioItem>
                         ))}
                       </DropdownMenuRadioGroup>
+                      {switchRole.isError && (
+                        <p
+                          role="alert"
+                          className="px-2 pt-1 pb-0.5 text-xs leading-snug text-destructive"
+                        >
+                          {roleSwitchErrorMessage(switchRole.error)}
+                        </p>
+                      )}
                       <p className="px-2 pt-1 pb-1.5 text-xs leading-snug text-muted-foreground">
-                        This only changes what the menu shows — switching never reduces what
-                        your account is actually allowed to do.
+                        Display only — switching never grants or reduces what your account is
+                        actually allowed to do.
+                        {user.available_roles.includes("SUPER_ADMIN") && (
+                          <>
+                            {" "}
+                            A SUPER_ADMIN account stays fully privileged no matter which role is
+                            shown here.
+                          </>
+                        )}
                       </p>
                     </DropdownMenuGroup>
                   </>
