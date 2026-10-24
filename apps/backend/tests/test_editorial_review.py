@@ -226,6 +226,80 @@ async def test_review_packet_normalizes_dict_shaped_options(client, db_session, 
     ]
 
 
+async def test_review_packet_structural_check_normalizes_dict_options_but_keeps_genuine_warnings(
+    client, db_session, register_user
+):
+    """Regression (production follow-up, 7fb11a6b-9295-40e7-b85c-146c8bcfd69f):
+    after F-17 fixed the admin-page crash, this exact legacy PYQ item's
+    review packet rendered a "Structural issues: Input should be a valid
+    list; Input should be a valid string; Missing academic concept
+    mapping" banner.
+
+    _structural_assessment() (editorial_review_service.py) independently
+    calls validate_body() -- a separate code path from normalize_options(),
+    which only feeds the `question` display dict used for rendering
+    stem/options/explanation. QuestionBody's schema requires
+    `options: list[QuestionOption]` (content_bodies.py:77) and
+    `correct_option: str` (non-optional, content_bodies.py:78) -- this
+    item's actual stored shape (dict `options`, null `correct_option`,
+    null concept_id) failed all three checks.
+
+    Of those three, only the `options`-shape one was noise: a dict keyed
+    by letter is a format the system already treats as legitimate and
+    displays correctly (same shape normalize_options() handles
+    everywhere else), so re-flagging it here added nothing a reviewer
+    could act on. The other two are genuine, real content gaps (an
+    unverified/null correct_option; a question with no academic concept
+    mapping) and must keep being reported. The fix: _structural_assessment
+    now normalizes only `options` (QUESTION only) before calling
+    validate_body -- every other field, including correct_option, is
+    still checked against the raw, unnormalized body.
+    """
+    await register_user(client, role_codes=["CONTENT_MANAGER"], db_session=db_session)
+    concept_id = await _concept_id(db_session)
+    item = await _create_question(client, concept_id)
+
+    from sqlalchemy import select
+
+    from app.modules.cms.models import ContentItem, ContentVersion
+
+    result = await db_session.execute(
+        select(ContentVersion).where(ContentVersion.id == uuid.UUID(item["latest_version"]["id"]))
+    )
+    version = result.scalar_one()
+    body = dict(version.body)
+    body["options"] = {"A": "x", "B": "y", "C": "z", "D": "w"}
+    body["correct_option"] = None
+    version.body = body
+    db_session.add(version)
+
+    content_item = await db_session.get(ContentItem, uuid.UUID(item["id"]))
+    content_item.concept_id = None
+    db_session.add(content_item)
+    await db_session.commit()
+
+    packet = await client.get(f"/api/v1/cms/content-items/{item['id']}/review-packet")
+    assert packet.status_code == 200, packet.text
+    data = packet.json()["data"]
+
+    # The crash is gone (F-17): the question block still renders normalized.
+    assert data["question"]["options"] == [
+        {"label": "A", "text": "x"},
+        {"label": "B", "text": "y"},
+        {"label": "C", "text": "z"},
+        {"label": "D", "text": "w"},
+    ]
+
+    # The options-shape false positive is gone (normalized before the check)...
+    structural = data["structural"]
+    assert structural["valid"] is False
+    assert "Input should be a valid list" not in structural["issues"]
+    # ...but both genuine warnings remain: a real missing answer and a real
+    # missing concept mapping are still worth a reviewer's attention.
+    assert "Input should be a valid string" in structural["issues"]
+    assert "Missing academic concept mapping" in structural["issues"]
+
+
 async def test_editorial_coverage_endpoint(client, db_session, register_user):
     await register_user(client, role_codes=["CONTENT_MANAGER"], db_session=db_session)
     resp = await client.get("/api/v1/cms/editorial-coverage")

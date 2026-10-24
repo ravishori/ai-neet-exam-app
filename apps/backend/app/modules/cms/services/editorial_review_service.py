@@ -166,7 +166,16 @@ def _structural_assessment(content_type: str, body: dict | None, concept_id: uui
         return {"valid": False, "issues": issues, "review_ready": False}
 
     try:
-        validate_body(content_type, body)
+        # Only `options`, and only for QUESTION, is normalized before this
+        # check -- a dict keyed by letter (legacy PYQ shape, see F-17) is a
+        # format this system already treats as legitimate and displays
+        # correctly, so flagging it here too is noise, not a real gap. Every
+        # other field (correct_option, stem, explanation, ...) is still
+        # validated against the raw body unchanged, so a genuinely missing/
+        # null correct_option or any other real schema violation is still
+        # reported exactly as before.
+        check_body = {**body, "options": normalize_options(body.get("options"))} if content_type == "QUESTION" else body
+        validate_body(content_type, check_body)
     except ValidationError as exc:
         issues.extend(err.get("msg", str(err)) for err in exc.errors())
     except Exception as exc:  # noqa: BLE001 — surface unexpected schema failures as issues
