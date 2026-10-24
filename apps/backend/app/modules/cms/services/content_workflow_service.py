@@ -145,22 +145,43 @@ class ContentWorkflowService:
         author_id: uuid.UUID,
         title: str | None = None,
         tags: list[str] | None = None,
+        concept_id: uuid.UUID | None = None,
+        allow_published: bool = False,
         commit: bool = True,
     ) -> ContentItem:
-        """Create a new DRAFT version. Optionally update title/tags on DRAFT only.
+        """Create a new DRAFT version. Optionally update title/tags/concept_id.
 
-        Published/approved/archived/superseded items cannot be edited here.
+        Approved/archived/superseded items can never be edited here. A
+        PUBLISHED item can only be edited when `allow_published=True` (the
+        caller -- the PATCH /content-items/{id} router -- is responsible for
+        requiring the stricter `content.force_edit_published` permission
+        before passing that flag; this method itself does no permission
+        checking).
+        Either way this only ever creates a new ContentVersion and points
+        `item.latest_version_id` at it -- `item.current_version_id` (what
+        `get_content_body`/search/assessment actually serve to students) is
+        never touched here, so a correction to a PUBLISHED item never
+        changes what's already live until a separate publish() call moves
+        current_version_id forward. `item.status` does flip to "DRAFT" (same
+        as any other draft edit), which also means the item temporarily
+        drops out of PUBLISHED-only search/browse listings while the
+        correction is in review -- an accepted trade-off of reusing the
+        existing single-status-field workflow rather than inventing a
+        parallel "published but has a pending correction" state.
         """
         item = await self.repo.get_item(item_id)
         if not item:
             raise AppError("Content item not found", code="NOT_FOUND", status_code=404)
-        if item.status not in DRAFT_EDITABLE_STATUSES:
+        editable = item.status in DRAFT_EDITABLE_STATUSES or (allow_published and item.status == "PUBLISHED")
+        if not editable:
             raise ContentWorkflowError(f"Cannot edit content in state {item.status}")
 
+        was_published = item.status == "PUBLISHED"
         validated_body = assert_body_publishable(item.content_type, body)
         next_version_no = max((v.version_no for v in item.versions), default=0) + 1
         by_id = {v.id: v for v in item.versions}
         previous = by_id.get(item.latest_version_id)
+        previous_body = dict(previous.body) if previous and previous.body else {}
 
         version = ContentVersion(
             content_item_id=item.id,
@@ -180,6 +201,16 @@ class ContentWorkflowService:
         )
         self.repo.add_version(version)
         await self.repo.flush()
+        # Pre-existing gap, surfaced by adding real test coverage to this
+        # endpoint for the first time: `item` was already loaded (with its
+        # `versions` collection) earlier in this same call, so the identity
+        # map holds a now-stale copy -- a later selectinload-based refetch
+        # of the same PK (e.g. the final `get_item` below, or any other
+        # in-request read of this item) does not re-run the relationship
+        # query once it's already "loaded", even after commit, unless the
+        # attribute is explicitly expired. Without this, every PATCH
+        # response's `latest_version` came back null.
+        self.session.expire(item, ["versions"])
 
         item.latest_version_id = version.id
         item.status = "DRAFT"
@@ -192,6 +223,28 @@ class ContentWorkflowService:
         if tags is not None:
             item.tags = _normalize_tags(tags)
             item.updated_by = author_id
+        if concept_id is not None:
+            item.concept_id = concept_id
+            item.updated_by = author_id
+
+        changed_fields = sorted(
+            k for k in set(previous_body) | set(validated_body) if previous_body.get(k) != validated_body.get(k)
+        )
+        self.session.add(
+            AuditLog(
+                actor_user_id=author_id,
+                action="content.update_draft",
+                entity_type="content_item",
+                entity_id=item.id,
+                log_metadata={
+                    "version_no": next_version_no,
+                    "was_published": was_published,
+                    "change_summary": change_summary,
+                    "fields_changed": changed_fields,
+                    "concept_id_changed": concept_id is not None,
+                },
+            )
+        )
 
         if commit:
             await self.repo.commit()

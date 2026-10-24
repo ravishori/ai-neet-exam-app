@@ -9,9 +9,147 @@ import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Badge } from "@/components/ui/badge";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { ConceptPicker } from "@/components/concept-picker";
 import { ApiError } from "@/lib/api-client";
 import { cn } from "@/lib/utils";
 import { cmsApi, type ReviewChecklistItem } from "@/features/cms/api";
+
+type EditFormState = {
+  stem: string;
+  options: { label: string; text: string }[];
+  correctOption: string;
+  explanation: string;
+  conceptId: string | null;
+  changeSummary: string;
+  markVerified: boolean;
+};
+
+function QuestionEditForm({
+  initial,
+  onCancel,
+  onSave,
+  saving,
+  error,
+}: {
+  initial: EditFormState;
+  onCancel: () => void;
+  onSave: (form: EditFormState) => void;
+  saving: boolean;
+  error: string | null;
+}) {
+  const [form, setForm] = useState<EditFormState>(initial);
+  const canVerify = form.options.every((o) => o.text.trim().length > 0) && !!form.correctOption;
+
+  return (
+    <div className="flex flex-col gap-4 text-sm">
+      {error && (
+        <Alert variant="destructive">
+          <AlertDescription>{error}</AlertDescription>
+        </Alert>
+      )}
+      <div>
+        <Label htmlFor="edit-stem">Stem</Label>
+        <Textarea
+          id="edit-stem"
+          className="mt-1"
+          rows={4}
+          value={form.stem}
+          onChange={(e) => setForm((f) => ({ ...f, stem: e.target.value }))}
+        />
+      </div>
+      <div className="space-y-2">
+        <Label>Options (select the correct one)</Label>
+        {form.options.map((opt, idx) => (
+          <div key={opt.label} className="flex items-center gap-2">
+            <input
+              type="radio"
+              name="correct-option"
+              className="size-4"
+              checked={form.correctOption === opt.label}
+              onChange={() => setForm((f) => ({ ...f, correctOption: opt.label }))}
+            />
+            <span className="w-5 font-medium">{opt.label}.</span>
+            <Input
+              value={opt.text}
+              onChange={(e) =>
+                setForm((f) => ({
+                  ...f,
+                  options: f.options.map((o, i) => (i === idx ? { ...o, text: e.target.value } : o)),
+                }))
+              }
+            />
+          </div>
+        ))}
+      </div>
+      <div>
+        <Label htmlFor="edit-explanation">Explanation</Label>
+        <Textarea
+          id="edit-explanation"
+          className="mt-1"
+          rows={3}
+          value={form.explanation}
+          onChange={(e) => setForm((f) => ({ ...f, explanation: e.target.value }))}
+        />
+      </div>
+      <div>
+        <Label>Academic concept mapping</Label>
+        <div className="mt-1">
+          <ConceptPicker value={form.conceptId} onChange={(id) => setForm((f) => ({ ...f, conceptId: id }))} />
+        </div>
+      </div>
+      <label className="flex items-start gap-2">
+        <input
+          type="checkbox"
+          className="mt-1 size-4"
+          checked={form.markVerified}
+          disabled={!canVerify}
+          onChange={(e) => setForm((f) => ({ ...f, markVerified: e.target.checked }))}
+        />
+        <span>
+          Mark answer verified
+          {!canVerify && (
+            <span className="block text-xs text-muted-foreground">
+              Requires all 4 options filled in and a correct option selected. The server additionally requires
+              recorded evidence (e.g. an NCERT reference) -- never inferred or guessed here.
+            </span>
+          )}
+        </span>
+      </label>
+      <div>
+        <Label htmlFor="edit-change-summary">Change summary (required)</Label>
+        <Input
+          id="edit-change-summary"
+          className="mt-1"
+          value={form.changeSummary}
+          onChange={(e) => setForm((f) => ({ ...f, changeSummary: e.target.value }))}
+          placeholder="e.g. Fixed legacy dict-shaped options; confirmed answer against NCERT"
+        />
+      </div>
+      <div className="flex gap-2">
+        <Button
+          size="sm"
+          disabled={
+            saving ||
+            !form.stem.trim() ||
+            !form.explanation.trim() ||
+            !form.correctOption ||
+            !form.changeSummary.trim() ||
+            form.options.some((o) => !o.text.trim())
+          }
+          onClick={() => onSave(form)}
+        >
+          {saving ? "Saving…" : "Save"}
+        </Button>
+        <Button size="sm" variant="outline" disabled={saving} onClick={onCancel}>
+          Cancel
+        </Button>
+      </div>
+    </div>
+  );
+}
 
 function Checklist({
   items,
@@ -69,6 +207,7 @@ export default function ContentDetailPage() {
   const [comment, setComment] = useState("");
   const [checked, setChecked] = useState<Record<string, boolean>>({});
   const [ackChecklist, setAckChecklist] = useState(false);
+  const [isEditing, setIsEditing] = useState(false);
 
   const itemQuery = useQuery({
     queryKey: ["cms", "item", itemId],
@@ -98,6 +237,25 @@ export default function ContentDetailPage() {
   });
   const publishMutation = useMutation({ mutationFn: () => cmsApi.publish(itemId), onSuccess: invalidate });
   const archiveMutation = useMutation({ mutationFn: () => cmsApi.archive(itemId), onSuccess: invalidate });
+  const editMutation = useMutation({
+    mutationFn: (form: EditFormState) =>
+      cmsApi.updateDraft(itemId, {
+        body: {
+          ...(item?.latest_version?.body ?? {}),
+          stem: form.stem,
+          options: form.options,
+          correct_option: form.correctOption,
+          explanation: form.explanation,
+          answer_status: form.markVerified ? "ANSWER_VERIFIED" : "ANSWER_PENDING",
+        },
+        change_summary: form.changeSummary,
+        concept_id: form.conceptId,
+      }),
+    onSuccess: () => {
+      invalidate();
+      setIsEditing(false);
+    },
+  });
 
   const item = itemQuery.data;
   const packet = packetQuery.data;
@@ -153,16 +311,23 @@ export default function ContentDetailPage() {
         </div>
 
         <Card>
-          <CardHeader>
-            <CardTitle>{item.title}</CardTitle>
-            <CardDescription>
-              {item.content_type} · v{item.latest_version?.version_no}
-              {packet?.academic?.subject?.name
-                ? ` · ${packet.academic.subject.name} / ${packet.academic.chapter?.name ?? "—"} / ${packet.academic.topic?.name ?? "—"}`
-                : item.concept_id
-                  ? ` · concept ${item.concept_id.slice(0, 8)}…`
-                  : " · unmapped"}
-            </CardDescription>
+          <CardHeader className="flex flex-row items-start justify-between gap-2">
+            <div>
+              <CardTitle>{item.title}</CardTitle>
+              <CardDescription>
+                {item.content_type} · v{item.latest_version?.version_no}
+                {packet?.academic?.subject?.name
+                  ? ` · ${packet.academic.subject.name} / ${packet.academic.chapter?.name ?? "—"} / ${packet.academic.topic?.name ?? "—"}`
+                  : item.concept_id
+                    ? ` · concept ${item.concept_id.slice(0, 8)}…`
+                    : " · unmapped"}
+              </CardDescription>
+            </div>
+            {item.content_type === "QUESTION" && !isEditing && (
+              <Button size="sm" variant="outline" onClick={() => setIsEditing(true)}>
+                Edit
+              </Button>
+            )}
           </CardHeader>
           <CardContent className="flex flex-col gap-4">
             {lastError && (
@@ -190,7 +355,33 @@ export default function ContentDetailPage() {
               </Alert>
             )}
 
-            {question ? (
+            {isEditing && question ? (
+              <QuestionEditForm
+                initial={{
+                  stem: question.stem ?? "",
+                  options: (question.options ?? []).length === 4
+                    ? question.options
+                    : [
+                        { label: "A", text: "" },
+                        { label: "B", text: "" },
+                        { label: "C", text: "" },
+                        { label: "D", text: "" },
+                      ],
+                  correctOption: question.correct_option ?? "",
+                  explanation: question.explanation ?? "",
+                  conceptId: item.concept_id,
+                  changeSummary: "",
+                  markVerified: false,
+                }}
+                saving={editMutation.isPending}
+                error={editMutation.error instanceof ApiError ? editMutation.error.message : null}
+                onCancel={() => {
+                  setIsEditing(false);
+                  editMutation.reset();
+                }}
+                onSave={(form) => editMutation.mutate(form)}
+              />
+            ) : question ? (
               <div className="space-y-4 text-sm">
                 <div>
                   <p className="mb-1 text-xs font-medium uppercase tracking-wide text-muted-foreground">Stem</p>

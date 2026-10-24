@@ -72,6 +72,9 @@ class QuestionOption(BaseModel):
         return cleaned
 
 
+AnswerStatus = Literal["ANSWER_VERIFIED", "ANSWER_PENDING"]
+
+
 class QuestionBody(BaseModel):
     stem: str = Field(min_length=1)
     options: list[QuestionOption] = Field(min_length=4, max_length=4)
@@ -80,6 +83,11 @@ class QuestionBody(BaseModel):
     difficulty: Literal["easy", "medium", "hard"] = "medium"
     bloom_level: str | None = None
     pyq_year: int | None = None
+    # Explicit, admin-set answer-verification status. Never inferred/guessed
+    # -- see validate_neet_mcq_shape below: ANSWER_VERIFIED additionally
+    # requires real evidence (ncert_evidence beyond NOT_VERIFIED), not just
+    # a correct_option being present (every QUESTION already requires that).
+    answer_status: AnswerStatus | None = None
     # T6-E-FIX: optional on draft; mandatory at publish via publication_gates
     ncert_evidence: NcertEvidence | None = None
     provenance: ProvenanceBlock | None = None
@@ -114,6 +122,14 @@ class QuestionBody(BaseModel):
             raise ValueError("option texts must be unique")
         if self.correct_option not in labels:
             raise ValueError("correct_option must match an option label")
+        if self.answer_status == "ANSWER_VERIFIED" and (
+            self.ncert_evidence is None or self.ncert_evidence.verification_level == "NOT_VERIFIED"
+        ):
+            raise ValueError(
+                "answer_status ANSWER_VERIFIED requires verified evidence "
+                "(ncert_evidence with a verification_level beyond NOT_VERIFIED) -- "
+                "never mark an answer verified without recording what verified it"
+            )
         return self
 
 

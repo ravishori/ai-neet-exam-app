@@ -391,6 +391,9 @@ export type QuestionBody = {
   explanation: string;
   difficulty: string;
   bloom_level?: string;
+  answer_status?: "ANSWER_VERIFIED" | "ANSWER_PENDING" | null;
+  ncert_evidence?: Record<string, unknown> | null;
+  provenance?: Record<string, unknown> | null;
 };
 
 export type ContentReport = {
@@ -518,8 +521,10 @@ export const cmsApi = {
     language?: string;
     body: Record<string, unknown>;
   }) => apiClient.post<ContentItem>("/api/v1/cms/content-items", data),
-  updateDraft: (id: string, data: { body: Record<string, unknown>; change_summary?: string }) =>
-    apiClient.patch<ContentItem>(`/api/v1/cms/content-items/${id}`, data),
+  updateDraft: (
+    id: string,
+    data: { body: Record<string, unknown>; change_summary: string; concept_id?: string | null; title?: string; tags?: string[] },
+  ) => apiClient.patch<ContentItem>(`/api/v1/cms/content-items/${id}`, data),
   submit: (id: string) => apiClient.post<ContentItem>(`/api/v1/cms/content-items/${id}/submit`),
   review: (id: string, data: { decision: "approve" | "request_changes"; comment?: string }) =>
     apiClient.post<ContentItem>(`/api/v1/cms/content-items/${id}/review`, data),

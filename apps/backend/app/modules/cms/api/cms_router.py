@@ -25,6 +25,7 @@ from app.modules.cms.services.review_pilot_service import build_pilot_report, re
 from app.modules.cms.services.review_queue_service import ReviewQueueService
 from app.modules.identity.dependencies import get_current_user, require_permission, verify_csrf
 from app.modules.identity.models.user import User
+from app.modules.identity.repositories.role_repository import RoleRepository
 from app.modules.system.services.audit_service import AuditService, request_context
 from app.shared.question_options import normalize_options
 from app.shared.responses import envelope
@@ -80,6 +81,22 @@ def _item(item: ContentItem) -> dict:
 
 def _can_edit(item: ContentItem, user: User) -> bool:
     return "SUPER_ADMIN" in user.role_codes or "ADMIN" in user.role_codes or item.created_by == user.id
+
+
+async def _can_edit_published(user: User, db: AsyncSession) -> bool:
+    """Editing a PUBLISHED item's content is a stricter action than editing
+    your own draft -- correcting live content requires the already-seeded
+    content.force_edit_published permission (seed.py: "Hotfix published
+    content, bypassing the review pipeline" -- ADMIN/SUPER_ADMIN only, never
+    CONTENT_MANAGER), not just content.edit_own_draft. Previously seeded
+    but unused; this is its first wiring. SUPER_ADMIN always passes, same
+    convention as require_permission()."""
+    if "SUPER_ADMIN" in user.role_codes:
+        return True
+    role_repo = RoleRepository(db)
+    role_ids = [ur.role_id for ur in user.roles]
+    permissions = await role_repo.get_permission_codes_for_roles(role_ids)
+    return "content.force_edit_published" in permissions
 
 
 def _question_version(item: ContentItem) -> ContentVersion | None:
@@ -748,6 +765,10 @@ async def update_content_item(
     if not _can_edit(existing, user):
         raise PermissionDeniedError("You can only edit your own drafts")
 
+    is_published = existing.status == "PUBLISHED"
+    if is_published and not await _can_edit_published(user, db):
+        raise PermissionDeniedError("Correcting a published question requires content.force_edit_published")
+
     service = ContentWorkflowService(db)
     item = await service.update_draft(
         item_id,
@@ -756,6 +777,8 @@ async def update_content_item(
         author_id=user.id,
         title=payload.title,
         tags=payload.tags,
+        concept_id=uuid.UUID(payload.concept_id) if payload.concept_id else None,
+        allow_published=is_published,
     )
     return envelope(success=True, data=_item(item))
 

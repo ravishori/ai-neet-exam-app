@@ -17,8 +17,9 @@ class ContentItemCreateRequest(BaseModel):
 class ContentItemUpdateRequest(BaseModel):
     title: str | None = None
     tags: list[str] | None = None
+    concept_id: str | None = None
     body: dict
-    change_summary: str | None = None
+    change_summary: str = Field(min_length=1)
 
 
 class ReviewDecisionRequest(BaseModel):

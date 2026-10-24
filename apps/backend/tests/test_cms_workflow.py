@@ -103,7 +103,7 @@ async def test_changes_requested_sends_it_back_to_draft_editable_state(client, d
 
     update = await client.patch(
         f"/api/v1/cms/content-items/{item['id']}",
-        json={"body": {"summary": "Updated with more detail.", "sections": []}},
+        json={"body": {"summary": "Updated with more detail.", "sections": []}, "change_summary": "Addressed reviewer feedback"},
         headers=csrf_headers(client),
     )
     assert update.status_code == 200, update.text
