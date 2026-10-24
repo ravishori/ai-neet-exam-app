@@ -155,6 +155,37 @@ async def test_request_changes_records_comment(client, db_session, register_user
     assert any("Option C ambiguous" in (r.get("comment") or "") for r in reviews)
 
 
+async def test_review_packet_handles_question_with_null_options(client, db_session, register_user):
+    """Regression: malformed/ingested QUESTION rows can have body["options"] stored as
+    JSON null (not merely absent), e.g. from legacy imports that bypass the create-time
+    schema validation. review_packet() must never surface a null `options` field —
+    the admin content-detail page renders it with `.map(...)`, which crashes with a
+    generic Next.js error boundary ("Something went wrong") if `options` is null.
+    """
+    await register_user(client, role_codes=["CONTENT_MANAGER"], db_session=db_session)
+    concept_id = await _concept_id(db_session)
+    item = await _create_question(client, concept_id)
+
+    from sqlalchemy import select
+
+    from app.modules.cms.models import ContentVersion
+
+    result = await db_session.execute(
+        select(ContentVersion).where(ContentVersion.id == uuid.UUID(item["latest_version"]["id"]))
+    )
+    version = result.scalar_one()
+    body = dict(version.body)
+    body["options"] = None
+    version.body = body
+    db_session.add(version)
+    await db_session.commit()
+
+    packet = await client.get(f"/api/v1/cms/content-items/{item['id']}/review-packet")
+    assert packet.status_code == 200, packet.text
+    data = packet.json()["data"]
+    assert data["question"]["options"] == []
+
+
 async def test_editorial_coverage_endpoint(client, db_session, register_user):
     await register_user(client, role_codes=["CONTENT_MANAGER"], db_session=db_session)
     resp = await client.get("/api/v1/cms/editorial-coverage")

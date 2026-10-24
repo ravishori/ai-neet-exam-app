@@ -110,7 +110,23 @@ export default function ContentDetailPage() {
   if (error instanceof ApiError && error.status === 404) {
     return <main className="flex-1 px-6 py-12 text-center text-sm text-muted-foreground">Not found.</main>;
   }
-  if (!item) return null;
+  if (error instanceof ApiError && (error.status === 401 || error.status === 403)) {
+    return (
+      <main className="flex-1 px-6 py-12 text-center text-sm text-muted-foreground">
+        You don&apos;t have permission to view this content item.
+      </main>
+    );
+  }
+  if (error || !item) {
+    return (
+      <main className="flex flex-1 flex-col items-center gap-3 px-6 py-12 text-center text-sm text-muted-foreground">
+        <p>We couldn&apos;t load this content item right now.</p>
+        <Button size="sm" variant="outline" onClick={() => itemQuery.refetch()}>
+          Retry
+        </Button>
+      </main>
+    );
+  }
 
   const anyPending =
     submitMutation.isPending ||
@@ -182,7 +198,10 @@ export default function ContentDetailPage() {
                 </div>
                 <div className="space-y-2">
                   <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">Options</p>
-                  {question.options.map((opt) => {
+                  {(question.options ?? []).length === 0 && (
+                    <p className="text-xs text-muted-foreground">No options recorded for this item.</p>
+                  )}
+                  {(question.options ?? []).map((opt) => {
                     const isCorrect = opt.label === question.correct_option;
                     return (
                       <div
