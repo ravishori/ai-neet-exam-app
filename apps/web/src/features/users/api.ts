@@ -70,4 +70,6 @@ export const usersApi = {
     apiClient.patch<UserProfile>(`/api/v1/users/${userId}`, data),
   bulkAction: (userIds: string[], action: "suspend" | "activate") =>
     apiClient.post<BulkUserActionResult[]>("/api/v1/users/bulk", { user_ids: userIds, action }),
+  resetPassword: (userId: string) =>
+    apiClient.post<{ message: string }>(`/api/v1/users/${userId}/reset-password`, {}),
 };

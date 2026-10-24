@@ -6,15 +6,20 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.database import get_db
 from app.core.exceptions import NotFoundError
+from app.core.logging import get_logger
+from app.core.rate_limit import rate_limit_per_user
 from app.modules.identity.dependencies import get_current_user, require_permission, verify_csrf
 from app.modules.identity.models.user import User
 from app.modules.identity.repositories.role_repository import RoleRepository
 from app.modules.identity.repositories.user_repository import UserRepository
 from app.modules.identity.schemas.user import AdminUserUpdateRequest, UserCreateRequest, UserResponse, UserUpdateRequest
-from app.modules.identity.services.email_service import send_mobile_changed_email
+from app.modules.identity.services.auth_service import AuthService
+from app.modules.identity.services.email_service import send_mobile_changed_email, send_password_reset_email
 from app.modules.identity.services.password_service import hash_password, validate_password_policy
 from app.modules.system.services.audit_service import AuditService, request_context
 from app.shared.responses import envelope
+
+logger = get_logger("identity.users")
 
 router = APIRouter(prefix="/api/v1/users", tags=["users"])
 
@@ -219,6 +224,56 @@ async def update_user(
         **request_context(request),
     )
     return envelope(success=True, data=_to_response(updated))
+
+
+@router.post(
+    "/{user_id}/reset-password",
+    dependencies=[
+        Depends(require_permission("users.manage")),
+        Depends(verify_csrf),
+        Depends(rate_limit_per_user("admin_reset_password", limit=5, window_seconds=300)),
+    ],
+)
+async def admin_reset_password(
+    user_id: uuid.UUID,
+    request: Request,
+    actor: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db),
+):
+    """Admin-initiated password reset. Reuses the exact same token
+    generation/hashing/expiry and email template as self-service
+    forgot-password (AuthService.request_password_reset) — the only
+    difference is who triggers it and that we audit-log the actor.
+
+    Always returns a generic success response, independent of whether the
+    email actually sent, so this endpoint cannot be used to probe delivery
+    status or enumerate accounts beyond what the 404-on-missing-user already
+    reveals to an already-permissioned admin.
+    """
+    repo = UserRepository(db)
+    target = await repo.get_by_id(user_id)
+    if not target:
+        raise NotFoundError("User not found")
+
+    service = AuthService(db)
+    token = await service.request_password_reset(target.email)
+    if token:
+        try:
+            await send_password_reset_email(to=target.email, token=token)
+        except Exception:
+            # Best-effort — a provider outage must never block the admin's
+            # action or leak delivery status back to the caller.
+            logger.error("admin_password_reset_email_send_failed", user_id=str(target.id), exc_info=True)
+
+    await AuditService(db).log(
+        actor_user_id=actor.id,
+        action="user.password_reset_initiated",
+        entity_type="user",
+        entity_id=target.id,
+        **request_context(request),
+    )
+
+    return envelope(success=True, data={"message": "If that account can receive email, a reset link has been sent."})
 
 
 BULK_USER_ACTIONS = {"suspend", "activate"}

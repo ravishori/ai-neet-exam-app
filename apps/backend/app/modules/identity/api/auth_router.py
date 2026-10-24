@@ -4,7 +4,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from app.core.config import get_settings
 from app.core.database import get_db
 from app.core.exceptions import AppError
-from app.core.rate_limit import rate_limit, rate_limit_by_mobile, rate_limit_per_user
+from app.core.rate_limit import rate_limit, rate_limit_by_email, rate_limit_by_mobile, rate_limit_per_user
 from app.modules.identity.cookies import clear_auth_cookies, set_auth_cookies
 from app.modules.identity.dependencies import REFRESH_COOKIE, get_current_user, verify_csrf
 from app.modules.identity.models.user import User
@@ -68,6 +68,19 @@ def _mfa_challenge(user: User):
     )
 
 
+# Roles for which we want MFA eventually mandatory. Soft-gate only (see
+# docs/authentication.md "MFA enforcement migration path") — this never
+# blocks login, it only tells the frontend to nudge the user toward
+# /admin/mfa-setup (or wherever the existing TOTP-setup screen lives).
+_PRIVILEGED_MFA_ROLES = frozenset({"SUPER_ADMIN", "ADMIN"})
+
+
+def _mfa_setup_required(user: User) -> bool:
+    if bool(user.totp_enabled):
+        return False
+    return bool(_PRIVILEGED_MFA_ROLES.intersection(user.role_codes))
+
+
 def _user_to_me(user: User) -> dict:
     from datetime import UTC, datetime
 
@@ -80,7 +93,7 @@ def _user_to_me(user: User) -> dict:
         delta = datetime.now(UTC) - pca_aware
         age_days = max(0, delta.days)
         reminder_due = age_days >= PASSWORD_MAX_AGE_DAYS
-    return MeResponse(
+    data = MeResponse(
         id=str(user.id),
         email=user.email,
         first_name=user.first_name,
@@ -96,6 +109,10 @@ def _user_to_me(user: User) -> dict:
         password_age_days=age_days,
         password_reminder_due=reminder_due,
     ).model_dump()
+    # Additive soft-gate signal — not part of MeResponse's typed schema so
+    # existing callers that don't look for it are unaffected.
+    data["mfa_setup_required"] = _mfa_setup_required(user)
+    return data
 
 
 # Twilio Verify service is stateless (holds only a settings ref); the client
@@ -156,7 +173,19 @@ async def register(payload: RegisterRequest, request: Request, db: AsyncSession 
     return result
 
 
-@router.post("/login", dependencies=[Depends(rate_limit("login", limit=10, window_seconds=60))])
+@router.post(
+    "/login",
+    dependencies=[
+        Depends(rate_limit("login", limit=10, window_seconds=60)),
+        # Additive, not a replacement -- see rate_limit_by_email's own
+        # docstring. The IP-keyed limit above is unreliable behind Railway's
+        # edge (request.client.host does not give a stable per-caller
+        # identity there); this per-email layer ensures unrelated users'
+        # login attempts can never consume each other's budget regardless
+        # of what the IP-keyed layer sees.
+        Depends(rate_limit_by_email("login_by_email", limit=15, window_seconds=60)),
+    ],
+)
 async def login(payload: LoginRequest, request: Request, db: AsyncSession = Depends(get_db)):
     ip, user_agent = _client_meta(request)
     service = AuthService(db)

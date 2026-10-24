@@ -34,12 +34,18 @@ function UserRow({
   const queryClient = useQueryClient();
   const [status, setStatus] = useState(user.status);
   const [roleCodes, setRoleCodes] = useState<string[]>(user.roles);
+  const [confirmingReset, setConfirmingReset] = useState(false);
 
   const dirty = status !== user.status || roleCodes.sort().join(",") !== [...user.roles].sort().join(",");
 
   const save = useMutation({
     mutationFn: () => usersApi.updateUser(user.id, { status, role_codes: roleCodes }),
     onSuccess: () => queryClient.invalidateQueries({ queryKey: ["users", "list"] }),
+  });
+
+  const resetPassword = useMutation({
+    mutationFn: () => usersApi.resetPassword(user.id),
+    onSuccess: () => setConfirmingReset(false),
   });
 
   const toggleRole = (code: string) => {
@@ -93,6 +99,41 @@ function UserRow({
         <Button size="sm" className="w-fit" disabled={!dirty || save.isPending} onClick={() => save.mutate()}>
           {save.isPending ? "Saving…" : "Save"}
         </Button>
+
+        <div className="flex flex-col gap-1.5 border-t pt-3">
+          {resetPassword.isError && (
+            <Alert variant="destructive">
+              <AlertDescription>
+                {resetPassword.error instanceof ApiError ? resetPassword.error.message : "Something went wrong"}
+              </AlertDescription>
+            </Alert>
+          )}
+          {resetPassword.isSuccess && (
+            <p className="text-xs text-muted-foreground">Reset email sent (if the account can receive mail).</p>
+          )}
+          {!confirmingReset ? (
+            <Button size="sm" variant="outline" className="w-fit" onClick={() => setConfirmingReset(true)}>
+              Reset password
+            </Button>
+          ) : (
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="text-xs text-muted-foreground">
+                Send a password reset email to {user.email}?
+              </span>
+              <Button
+                size="sm"
+                variant="destructive"
+                disabled={resetPassword.isPending}
+                onClick={() => resetPassword.mutate()}
+              >
+                {resetPassword.isPending ? "Sending…" : "Confirm reset"}
+              </Button>
+              <Button size="sm" variant="ghost" disabled={resetPassword.isPending} onClick={() => setConfirmingReset(false)}>
+                Cancel
+              </Button>
+            </div>
+          )}
+        </div>
       </CardContent>
     </Card>
   );
