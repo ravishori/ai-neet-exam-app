@@ -13,6 +13,7 @@ from app.modules.cms.repositories.cms_repository import CmsRepository
 from app.modules.identity.dependencies import get_current_user, verify_csrf
 from app.modules.identity.models.user import User
 from app.modules.learning.repositories.question_repository import QuestionRepository
+from app.shared.question_options import normalize_options
 from app.shared.responses import envelope
 
 router = APIRouter(prefix="/api/v1", tags=["assessment"], dependencies=[Depends(get_current_user)])
@@ -93,7 +94,7 @@ def _public_question(item, answer, names: dict, visual_assets_by_ku: dict, bookm
     return {
         "content_item_id": str(item.id),
         "stem": body.get("stem"),
-        "options": body.get("options", []),
+        "options": normalize_options(body.get("options")),
         "difficulty": body.get("difficulty"),
         "pyq_year": body.get("pyq_year"),
         "selected_option": answer.selected_option if answer else None,
@@ -109,7 +110,7 @@ def _result_question(item, answer, names: dict, visual_assets_by_ku: dict, bookm
     return {
         "content_item_id": str(item.id),
         "stem": body.get("stem"),
-        "options": body.get("options", []),
+        "options": normalize_options(body.get("options")),
         "correct_option": body.get("correct_option"),
         "explanation": body.get("explanation"),
         "difficulty": body.get("difficulty"),

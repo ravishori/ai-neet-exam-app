@@ -26,6 +26,7 @@ from app.modules.cms.services.review_queue_service import ReviewQueueService
 from app.modules.identity.dependencies import get_current_user, require_permission, verify_csrf
 from app.modules.identity.models.user import User
 from app.modules.system.services.audit_service import AuditService, request_context
+from app.shared.question_options import normalize_options
 from app.shared.responses import envelope
 
 router = APIRouter(prefix="/api/v1/cms", tags=["cms"])
@@ -175,7 +176,7 @@ def _question_summary(item: ContentItem, names: dict, visual_assets_by_ku: dict 
     return {
         "id": str(item.id),
         "stem": body.get("stem"),
-        "options": body.get("options") or [],
+        "options": normalize_options(body.get("options")),
         "difficulty": body.get("difficulty"),
         "bloom_level": body.get("bloom_level"),
         "pyq_year": body.get("pyq_year"),

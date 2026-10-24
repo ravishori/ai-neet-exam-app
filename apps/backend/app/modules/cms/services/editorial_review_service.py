@@ -24,6 +24,7 @@ from app.modules.cms.services.draft_disposition import (
     ncert_state_from_evidence,
     readiness_label_for_question,
 )
+from app.shared.question_options import normalize_options
 
 # Human checklist — assist only; never auto-certifies publish readiness.
 REVIEW_CHECKLIST: list[dict[str, str]] = [
@@ -858,7 +859,7 @@ class EditorialReviewService:
         if item.content_type == "QUESTION" and body:
             question = {
                 "stem": body.get("stem"),
-                "options": body.get("options") or [],
+                "options": normalize_options(body.get("options")),
                 "correct_option": body.get("correct_option"),
                 "explanation": body.get("explanation"),
                 "difficulty": body.get("difficulty"),

@@ -251,3 +251,60 @@ async def test_search_only_returns_published_questions(client, db_session, regis
     resp = await client.get("/api/v1/cms/search", params={"q": tag})
     assert resp.status_code == 200, resp.text
     assert draft_id not in [r["id"] for r in resp.json()["data"]]
+
+
+async def test_search_normalizes_dict_shaped_options_and_reindex_does_not_crash(client, db_session, register_user):
+    """Regression (F-17 follow-up). Two distinct bugs in one item's data:
+
+    1. search_service._to_public_result passed body["options"] straight
+       through -- for the ~12,396 production PUBLISHED questions whose
+       options are stored as a dict keyed by letter (legacy PYQ import,
+       not the create-API's array shape), the public search response would
+       carry an unnormalized dict, crashing the frontend the same way the
+       admin review packet did (F-17).
+    2. search_repository.py's raw SQL computed options_text via
+       `jsonb_array_elements(cv.body -> 'options')` with no type guard --
+       Postgres raises `cannot extract elements from an object` for any
+       dict-shaped row, which would abort reindex_item/reindex_all_published
+       outright (confirmed directly against the production DB: `SELECT
+       jsonb_array_elements('{"A":"x"}'::jsonb)` errors). This is why
+       production's 12,396 dict-shaped questions all have search_vector
+       IS NULL today -- their reindex silently failed/was never run,
+       leaving them unsearchable but not (yet) crashing anyone else's
+       search, since a NULL search_vector never matches
+       `@@ websearch_to_tsquery`. The CASE-guarded jsonb_typeof check
+       added to all three SQL templates fixes this so these questions can
+       finally be indexed and found.
+    """
+    await register_user(client, role_codes=["CONTENT_MANAGER", "ADMIN"], db_session=db_session)
+    lineage = await _concept_with_lineage(db_session)
+    tag = uuid.uuid4().hex[:6]
+    item_id = await _publish_question(client, lineage["concept_id"], stem=f"Dict options probe {tag}")
+
+    from app.modules.cms.models import ContentVersion
+
+    item_row = (
+        await db_session.execute(select(ContentVersion).where(ContentVersion.content_item_id == uuid.UUID(item_id)))
+    ).scalar_one()
+    body = dict(item_row.body)
+    body["options"] = {"A": "Wrong 1", "B": "Correct answer", "C": "Wrong 2", "D": "Wrong 3"}
+    item_row.body = body
+    db_session.add(item_row)
+    await db_session.commit()
+
+    # reindex_all_published must not raise/abort on this dict-shaped row.
+    reindex = await client.post("/api/v1/cms/search/reindex", headers=csrf_headers(client))
+    assert reindex.status_code == 200, reindex.text
+    assert reindex.json()["data"]["reindexed_count"] >= 1
+
+    resp = await client.get("/api/v1/cms/search", params={"q": tag})
+    assert resp.status_code == 200, resp.text
+    results = resp.json()["data"]
+    assert item_id in [r["id"] for r in results]
+    matched = results[[r["id"] for r in results].index(item_id)]
+    assert matched["options"] == [
+        {"label": "A", "text": "Wrong 1"},
+        {"label": "B", "text": "Correct answer"},
+        {"label": "C", "text": "Wrong 2"},
+        {"label": "D", "text": "Wrong 3"},
+    ]

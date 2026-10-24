@@ -32,6 +32,7 @@ from app.modules.cms.repositories.content_factory_planning_repository import Con
 from app.modules.cms.repositories.content_factory_repository import ContentFactoryRepository
 from app.modules.system.models.audit_log import AuditLog
 from app.modules.system.repositories.audit_repository import AuditRepository
+from app.shared.question_options import normalize_options
 
 logger = get_logger("content_factory_human_review")
 
@@ -454,7 +455,7 @@ class ContentFactoryHumanReviewService:
             },
             "question": {
                 "stem": body.get("stem"),
-                "options": body.get("options") or [],
+                "options": normalize_options(body.get("options")),
                 "correct_option": body.get("correct_option"),
                 "explanation": body.get("explanation"),
                 "difficulty": body.get("difficulty"),

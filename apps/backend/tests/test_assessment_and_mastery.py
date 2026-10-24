@@ -151,6 +151,127 @@ async def _publish_pending_answer_question(db_session, concept_id: str) -> str:
     return str(item_id)
 
 
+async def _publish_dict_options_question(db_session, concept_id: str, *, correct_option: str | None = "B") -> str:
+    """Inserts a PUBLISHED QUESTION content_item with body["options"] stored
+    as a dict keyed by letter ({"A": ..., "B": ...}) instead of the
+    [{"label", "text"}] array the create/publish API's QuestionBody schema
+    requires — the shape a legacy PYQ-ingestion path wrote directly into
+    content_versions.body, bypassing API validation (same mechanism as
+    F-17/production item 7fb11a6b-9295-40e7-b85c-146c8bcfd69f). Raw INSERT
+    is the only way to construct this state in a test, same reasoning as
+    _publish_pending_answer_question above."""
+    import uuid as _uuid
+    from datetime import UTC, datetime
+
+    from app.modules.cms.models import ContentItem, ContentVersion
+
+    item_id = _uuid.uuid4()
+    version_id = _uuid.uuid4()
+    body = {
+        "stem": "Legacy dict-options PYQ: 2 + 2 = ?",
+        "options": {"A": "3", "B": "4", "C": "5", "D": "22"},
+        "correct_option": correct_option,
+        "explanation": "Basic arithmetic.",
+    }
+    db_session.add(
+        ContentItem(
+            id=item_id, content_type="QUESTION", concept_id=concept_id, title="Dict-options PYQ",
+            slug=f"dict-options-pyq-{str(item_id)[:8]}", tags=["PYQ"], language="en", status="PUBLISHED",
+            current_version_id=None, latest_version_id=None, version=1,
+        )
+    )
+    await db_session.flush()
+    db_session.add(
+        ContentVersion(
+            id=version_id, content_item_id=item_id, version_no=1, body=body,
+            workflow_state="PUBLISHED", authored_at=datetime.now(UTC),
+        )
+    )
+    await db_session.flush()
+    item = await db_session.get(ContentItem, item_id)
+    item.current_version_id = version_id
+    item.latest_version_id = version_id
+    await db_session.commit()
+    return str(item_id)
+
+
+async def test_attempt_in_progress_view_normalizes_dict_shaped_options(client, db_session, register_user):
+    """Regression (F-17 follow-up): assessment_router.py's _public_question
+    (the in-progress attempt view) must normalize a dict-shaped options
+    field the same way editorial_review_service.review_packet does —
+    passing the raw dict through crashes the student practice/mock-test
+    renderer with `options.map is not a function` for any of the 12,396
+    production PUBLISHED questions sharing this legacy shape."""
+    await register_user(client, role_codes=["CONTENT_MANAGER"], db_session=db_session)
+    concept_id = await _any_concept_id(db_session)
+    question_id = await _publish_dict_options_question(db_session, concept_id)
+
+    generate = await client.post(
+        "/api/v1/assessments/practice",
+        json={"scope_type": "CONCEPT", "scope_id": concept_id},
+        headers=csrf_headers(client),
+    )
+    assert generate.status_code == 201, generate.text
+    assessment_id = generate.json()["data"]["id"]
+
+    start = await client.post(f"/api/v1/assessments/{assessment_id}/attempts", headers=csrf_headers(client))
+    assert start.status_code == 201, start.text
+    attempt_id = start.json()["data"]["id"]
+
+    attempt = await client.get(f"/api/v1/attempts/{attempt_id}")
+    assert attempt.status_code == 200, attempt.text
+    questions = attempt.json()["data"]["questions"]
+    match = next(q for q in questions if q["content_item_id"] == question_id)
+    assert match["options"] == [
+        {"label": "A", "text": "3"},
+        {"label": "B", "text": "4"},
+        {"label": "C", "text": "5"},
+        {"label": "D", "text": "22"},
+    ]
+
+
+async def test_attempt_result_view_normalizes_dict_shaped_options(client, db_session, register_user):
+    """Same as above for _result_question (the post-submit review view) —
+    the correct_option letter ("B") must still match the normalized
+    options' label after the dict->array conversion, so the "Correct"
+    badge keys off the right option."""
+    await register_user(client, role_codes=["CONTENT_MANAGER"], db_session=db_session)
+    concept_id = await _any_concept_id(db_session)
+    question_id = await _publish_dict_options_question(db_session, concept_id, correct_option="B")
+
+    generate = await client.post(
+        "/api/v1/assessments/practice",
+        json={"scope_type": "CONCEPT", "scope_id": concept_id},
+        headers=csrf_headers(client),
+    )
+    assessment_id = generate.json()["data"]["id"]
+    start = await client.post(f"/api/v1/assessments/{assessment_id}/attempts", headers=csrf_headers(client))
+    attempt_id = start.json()["data"]["id"]
+
+    await client.post(
+        f"/api/v1/attempts/{attempt_id}/answers",
+        json={"content_item_id": question_id, "selected_option": "B"},
+        headers=csrf_headers(client),
+    )
+    submit = await client.post(f"/api/v1/attempts/{attempt_id}/submit", headers=csrf_headers(client))
+    assert submit.status_code == 200, submit.text
+    assert submit.json()["data"]["correct_count"] == 1
+
+    attempt = await client.get(f"/api/v1/attempts/{attempt_id}")
+    assert attempt.status_code == 200, attempt.text
+    questions = attempt.json()["data"]["questions"]
+    match = next(q for q in questions if q["content_item_id"] == question_id)
+    assert match["options"] == [
+        {"label": "A", "text": "3"},
+        {"label": "B", "text": "4"},
+        {"label": "C", "text": "5"},
+        {"label": "D", "text": "22"},
+    ]
+    assert match["correct_option"] == "B"
+    assert match["selected_option"] == "B"
+    assert match["is_correct"] is True
+
+
 async def test_practice_attempt_with_pending_answer_scores_neutrally(client, db_session, register_user):
     """A question with no verified correct_option (e.g. an ANSWER_PENDING
     PYQ, represented the same way — correct_option missing/empty in the

@@ -186,6 +186,46 @@ async def test_review_packet_handles_question_with_null_options(client, db_sessi
     assert data["question"]["options"] == []
 
 
+async def test_review_packet_normalizes_dict_shaped_options(client, db_session, register_user):
+    """Regression (F-17, reproduced against production): some legacy PYQ-ingested
+    QUESTION rows store body["options"] as a dict keyed by letter
+    (e.g. {"A": "...", "B": "...", "C": "...", "D": "..."}) instead of the
+    [{"label": ..., "text": ...}] array the create-API's schema enforces.
+    review_packet() must normalize this to the array shape -- passing the raw
+    dict through crashes the admin content-detail page (question.options.map
+    is not a function) and, since this item is PUBLISHED, the same shape also
+    reaches students via assessment_router.py and crashes practice/mock-test
+    rendering there.
+    """
+    await register_user(client, role_codes=["CONTENT_MANAGER"], db_session=db_session)
+    concept_id = await _concept_id(db_session)
+    item = await _create_question(client, concept_id)
+
+    from sqlalchemy import select
+
+    from app.modules.cms.models import ContentVersion
+
+    result = await db_session.execute(
+        select(ContentVersion).where(ContentVersion.id == uuid.UUID(item["latest_version"]["id"]))
+    )
+    version = result.scalar_one()
+    body = dict(version.body)
+    body["options"] = {"A": "Option A text", "B": "Option B text", "C": "Option C text", "D": "Option D text"}
+    version.body = body
+    db_session.add(version)
+    await db_session.commit()
+
+    packet = await client.get(f"/api/v1/cms/content-items/{item['id']}/review-packet")
+    assert packet.status_code == 200, packet.text
+    options = packet.json()["data"]["question"]["options"]
+    assert options == [
+        {"label": "A", "text": "Option A text"},
+        {"label": "B", "text": "Option B text"},
+        {"label": "C", "text": "Option C text"},
+        {"label": "D", "text": "Option D text"},
+    ]
+
+
 async def test_editorial_coverage_endpoint(client, db_session, register_user):
     await register_user(client, role_codes=["CONTENT_MANAGER"], db_session=db_session)
     resp = await client.get("/api/v1/cms/editorial-coverage")

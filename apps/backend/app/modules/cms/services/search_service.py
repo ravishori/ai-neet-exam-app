@@ -23,6 +23,7 @@ from dataclasses import dataclass, field
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.modules.cms.repositories.search_repository import SearchRepository
+from app.shared.question_options import normalize_options
 
 _MATCHED_FIELD_COLUMNS = {
     "matched_stem": "stem",
@@ -97,7 +98,7 @@ def _to_public_result(row: dict) -> dict:
     return {
         "id": str(row["id"]),
         "stem": body.get("stem"),
-        "options": body.get("options") or [],
+        "options": normalize_options(body.get("options")),
         "difficulty": body.get("difficulty"),
         "bloom_level": body.get("bloom_level"),
         "pyq_year": body.get("pyq_year"),

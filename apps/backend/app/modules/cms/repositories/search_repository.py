@@ -26,7 +26,7 @@ WITH item_data AS (
         ci.id AS item_id,
         cv.body ->> 'stem' AS stem,
         cv.body ->> 'explanation' AS explanation,
-        (SELECT string_agg(opt ->> 'text', ' ') FROM jsonb_array_elements(cv.body -> 'options') AS opt) AS options_text,
+        (SELECT string_agg(opt ->> 'text', ' ') FROM jsonb_array_elements(CASE WHEN jsonb_typeof(cv.body -> 'options') = 'array' THEN cv.body -> 'options' ELSE '[]'::jsonb END) AS opt) AS options_text,
         concept.name AS concept_name,
         topic.name AS topic_name,
         chapter.name AS chapter_name,
@@ -91,7 +91,7 @@ _SEARCH_FULLTEXT_QUERY_TEMPLATE = """
             'MaxFragments=1, MaxWords=25, MinWords=5, StartSel=<mark>, StopSel=</mark>'
         ) AS full_snippet,
         to_tsvector('english', coalesce(cv.body ->> 'stem', '')) @@ websearch_to_tsquery('english', :query) AS matched_stem,
-        to_tsvector('english', coalesce((SELECT string_agg(opt ->> 'text', ' ') FROM jsonb_array_elements(cv.body -> 'options') AS opt), ''))
+        to_tsvector('english', coalesce((SELECT string_agg(opt ->> 'text', ' ') FROM jsonb_array_elements(CASE WHEN jsonb_typeof(cv.body -> 'options') = 'array' THEN cv.body -> 'options' ELSE '[]'::jsonb END) AS opt), ''))
             @@ websearch_to_tsquery('english', :query) AS matched_options,
         to_tsvector('english', coalesce(cv.body ->> 'explanation', '')) @@ websearch_to_tsquery('english', :query) AS matched_explanation,
         to_tsvector('english', coalesce(concept.name, '')) @@ websearch_to_tsquery('english', :query) AS matched_concept,
@@ -117,7 +117,7 @@ _SEARCH_FUZZY_QUERY_TEMPLATE = """
         {result_columns},
         word_similarity(:query, coalesce(ci.search_text, '')) AS rank,
         (:query <% coalesce(cv.body ->> 'stem', '')) AS matched_stem,
-        (:query <% coalesce((SELECT string_agg(opt ->> 'text', ' ') FROM jsonb_array_elements(cv.body -> 'options') AS opt), '')) AS matched_options,
+        (:query <% coalesce((SELECT string_agg(opt ->> 'text', ' ') FROM jsonb_array_elements(CASE WHEN jsonb_typeof(cv.body -> 'options') = 'array' THEN cv.body -> 'options' ELSE '[]'::jsonb END) AS opt), '')) AS matched_options,
         (:query <% coalesce(cv.body ->> 'explanation', '')) AS matched_explanation,
         (:query <% coalesce(concept.name, '')) AS matched_concept,
         (:query <% coalesce(topic.name, '')) AS matched_topic,
