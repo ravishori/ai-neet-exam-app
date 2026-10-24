@@ -109,6 +109,89 @@ def rate_limit_per_user(key_prefix: str, *, limit: int, window_seconds: int, fai
     return dependency
 
 
+def rate_limit_by_email(key_prefix: str, *, limit: int, window_seconds: int, fail_closed: bool = False):
+    """Fixed-window limiter keyed on the request's normalized (lowercased,
+    stripped) login email, not the caller's IP.
+
+    Added for /auth/login specifically (docs/audits/auth-otp-feature-audit.md
+    "Login rate-limit follow-up"): the existing IP-keyed ``rate_limit`` on
+    that route shares exactly the problem ``rate_limit_by_mobile`` above was
+    already built to work around -- behind Railway's edge, ``request.client.
+    host`` does not give a stable per-external-caller identity (see that
+    function's own docstring, written by an earlier session with direct
+    knowledge of this). For login specifically this is worse than merely
+    "ineffective": it can make genuine, correctly-credentialed logins from
+    unrelated users collide into one shared bucket and get 429'd together.
+
+    This does NOT replace the IP-keyed layer (kept in place, unchanged, as a
+    coarse volumetric backstop) and does NOT touch the existing per-account
+    failed-password lockout in AuthService.authenticate (MAX_FAILED_ATTEMPTS/
+    LOCKOUT_MINUTES) -- that is a separate, already-correct, IP-independent
+    protection against credential guessing on one account. This dependency
+    adds a THIRD, additive layer: a per-email ceiling on login *attempts*
+    (successful or not), so a flood of attempts against other people's
+    emails can never consume a legitimate user's own budget, regardless of
+    what request.client.host resolves to for either of them. Trusts no
+    client-supplied header (no X-Forwarded-For) -- the identity here is the
+    login request's own submitted email, already required to reach the
+    database lookup downstream, so this adds no new spoofing surface: an
+    attacker can already submit any email; they just get their own bucket
+    for it, never anyone else's.
+
+    Falls back to the IP-based key if the email is missing/malformed, so
+    those requests stay bounded rather than silently exempt. The Redis key
+    embeds a salted hash of the email (never the plaintext) so a Redis
+    failure's warning log never puts an email address in cleartext logs --
+    same convention as rate_limit_by_mobile's phone-number hashing.
+
+    Known, accepted trade-off (reviewed explicitly, not overlooked -- see
+    docs/audits/auth-otp-feature-audit.md "rate_limit_by_email review"):
+    because this counts every attempt against an email regardless of
+    outcome, anyone who knows (or guesses) a target's login email can
+    submit `limit` requests for it within `window_seconds` and cause that
+    target's own, correctly-credentialed next login attempt to receive a
+    429 until the window rolls over -- a small, bounded, single-account
+    denial-of-service window, not an account takeover or credential
+    exposure. This is the exact same shape of trade-off already present,
+    unmodified, in `rate_limit_by_mobile` above (a known phone number lets
+    an attacker exhaust that OTP-request bucket the same way) -- extending
+    an already-accepted pattern to login, not introducing a new category
+    of risk. `window_seconds`/`limit` should be tuned generous enough that
+    legitimate retry bursts never hit it while keeping the window short
+    enough that the DoS is self-resolving in under a minute; see
+    test_login_rate_limit_shared_proxy_mitigation.py's
+    `test_rate_limit_by_email_creates_a_bounded_targeted_dos_window` for a
+    concrete demonstration of this exact trade-off, not just a description
+    of it.
+    """
+    from app.modules.identity.services.token_service import hash_opaque_token
+
+    async def dependency(request: Request) -> None:
+        try:
+            body = await request.json()
+            raw_email = str(body.get("email") or "").strip().lower()
+        except Exception:
+            raw_email = ""
+
+        if raw_email:
+            identity = f"email:{hash_opaque_token(raw_email)[:16]}"
+            log_identity = identity  # already non-reversible; safe to log as-is
+        else:
+            ip = _client_ip(request)
+            identity = f"ip:{ip}"
+            log_identity = identity
+
+        await _check(
+            f"ratelimit:{key_prefix}:{identity}",
+            limit=limit,
+            window_seconds=window_seconds,
+            fail_closed=fail_closed,
+            log_key=f"ratelimit:{key_prefix}:{log_identity}",
+        )
+
+    return dependency
+
+
 def rate_limit_by_mobile(key_prefix: str, *, limit: int, window_seconds: int, fail_closed: bool = False):
     """Fixed-window limiter keyed on the request's normalized mobile number,
     not the caller's IP.
