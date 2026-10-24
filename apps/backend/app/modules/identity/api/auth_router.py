@@ -339,6 +339,7 @@ async def change_password(
 @router.post(
     "/otp/request",
     dependencies=[
+        # Fast-burst IP-keyed backstop (unchanged from Step 1).
         Depends(rate_limit("otp_request", limit=5, window_seconds=300, fail_closed=True)),
         # Same shared-IP-bucket problem as /login (rate_limit_by_email's own
         # docstring) -- additive, not a replacement. Without this, a user
@@ -347,6 +348,27 @@ async def change_password(
         # to them from a real failure. This is the diagnosed root cause of
         # reported Email OTP failures (see docs/audits/auth-otp-feature-audit.md).
         Depends(rate_limit_by_email("otp_request_by_email", limit=5, window_seconds=300, fail_closed=True)),
+        # Step 3: the per-account send ceiling named by the audit -- max 5
+        # OTP emails per account per rolling 2 hours. Additive to the 5/300s
+        # burst layer above (that one bounds how fast; this one bounds how
+        # many over a much longer horizon). Being a fixed window, once the
+        # 6th request in a 2-hour window is rejected, the account's own
+        # cooldown lasts up to the remainder of that same 2-hour window --
+        # i.e. a 2-hour cooldown after the limit is hit, as specified.
+        # fail_closed=True: a Redis outage must not silently remove this
+        # ceiling on a sensitive, abuse-prone send path.
+        Depends(rate_limit_by_email("otp_request_by_email_2h", limit=5, window_seconds=7200, fail_closed=True)),
+        # Step 3: additional IP-based layering, as a coarse volumetric
+        # backstop against one source hammering many different destination
+        # emails (which the per-email layers above cannot see, since each
+        # email gets its own independent budget). Deliberately generous
+        # (20/hour, well above any single legitimate user's traffic) and
+        # fail-open (fail_closed=False) given the already-documented
+        # shared-proxy-IP caveat (see rate_limit_by_mobile's docstring) --
+        # a Redis blip here should not add a second way to block legitimate
+        # OTP requests on top of the fail_closed layers already covering
+        # the sensitive cases.
+        Depends(rate_limit("otp_request_ip_hourly", limit=20, window_seconds=3600, fail_closed=False)),
     ],
 )
 async def otp_request(payload: OtpRequest, db: AsyncSession = Depends(get_db)):
