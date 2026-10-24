@@ -25,10 +25,13 @@ Optional TOTP MFA. Optional email OTP challenges (hashed at rest).
 - `POST /api/v1/auth/otp/verify` — codes hashed (SHA-256), TTL 10m, max 5 attempts; never returned in API JSON.
 - SMS channel reserved in schema; gateway not wired (REQUIRES INFRASTRUCTURE).
 
-### TOTP 2FA (optional)
+### TOTP 2FA (optional for most accounts; see "MFA enforcement" below for privileged ones)
 - `POST /api/v1/auth/totp/setup` — returns secret + otpauth URL once; secret encrypted with `ENCRYPTION_KEY` (Fernet).
 - `POST /api/v1/auth/totp/confirm` — enables MFA; returns one-time recovery codes (hashed at rest).
 - `POST /api/v1/auth/totp/disable` — requires valid TOTP or recovery code.
+- `POST /api/v1/auth/mfa-setup/begin` / `POST /api/v1/auth/mfa-setup/confirm` — same enrollment,
+  authenticated by a short-lived `mfa_setup_pending` token (from `_mfa_setup_gate`) instead of a
+  cookie session. Only reachable via the `MFA_SETUP_REQUIRED` response below.
 
 ### Email / alerts
 - Settings: `SMTP_*`, `WEB_APP_URL`, `ALERT_EMAIL`, `ENCRYPTION_KEY`.
@@ -66,7 +69,7 @@ register, refresh). It is `true` when the user's role intersects `{SUPER_ADMIN, 
 setup screen after a normal login. No new DB column was needed; this derives purely from the
 existing `User.totp_enabled` column and the existing role-code relationship.
 
-### Safe migration path to mandatory MFA (planned, NOT implemented)
+### Safe migration path to mandatory MFA
 1. **Soft-gate rollout** (done): ship `mfa_setup_required` and have the admin-portal frontend
    redirect to `/admin/mfa-setup` (or wherever the existing TOTP setup page lives) when the flag
    is `true` after login. Reversible — purely additive, nobody is locked out.
@@ -78,10 +81,24 @@ existing `User.totp_enabled` column and the existing role-code relationship.
    JOIN identity.roles r ON r.id = ur.role_id WHERE r.code IN ('SUPER_ADMIN','ADMIN') AND
    u.totp_confirmed_at IS NULL;` and confirm it returns **zero rows**. Do this immediately before
    flipping the setting in step 4 — not days before, since new admins can be created at any time.
-4. **Hard enforcement**: only after step 3 returns zero rows, add a settings flag (e.g.
-   `ENFORCE_MFA_FOR_PRIVILEGED_ROLES`) and, when set, reject login for a SUPER_ADMIN/ADMIN user
-   whose `totp_enabled` is `false` with a distinct error code (e.g. `MFA_SETUP_REQUIRED`, HTTP 403)
-   instead of issuing session cookies — forcing setup through a short-lived, MFA-setup-only token
-   rather than a full session. Re-run the step-3 query as a pre-flight check inside the login path
-   itself (not just at rollout time) so a newly-created, not-yet-MFA'd admin account fails safely
-   with a clear setup-required error rather than a silent lockout.
+   **Not yet run against production** — do this before ever setting the flag below to `true` there.
+4. **Hard enforcement (implemented this session, OFF by default)**: a settings flag,
+   `ENFORCE_MFA_FOR_PRIVILEGED_ROLES` (default `false` — see `app/core/config.py`). When `true`,
+   `_mfa_setup_gate()` in `auth_router.py` is checked by every login path that would otherwise
+   issue a full session — password login, email-OTP login, and mobile-OTP login — immediately
+   after authentication succeeds and before any session cookies are set. For a SUPER_ADMIN/ADMIN
+   account whose `totp_enabled` is `false`, it rejects with `MFA_SETUP_REQUIRED` (HTTP 403) and a
+   short-lived (15-minute) `mfa_setup_pending` token instead of a session. That token is accepted
+   by two new routes, `POST /api/v1/auth/mfa-setup/begin` and `POST /api/v1/auth/mfa-setup/confirm`
+   (mirroring `/totp/setup` and `/totp/confirm`, but authenticated by the setup token instead of a
+   cookie session, since the whole point is that no session exists yet) — completing enrollment
+   through `/mfa-setup/confirm` issues a real session immediately, with recovery codes, so the
+   admin does not have to log in a second time. An account that already has `totp_enabled: true`
+   is never routed through this gate — it goes through the pre-existing, unaffected `mfaRequired`
+   challenge, exactly as before (no double-gating).
+
+   **Do not set `ENFORCE_MFA_FOR_PRIVILEGED_ROLES=true` in production until step 3's query has
+   been re-run against production and returns zero rows** — as of 2026-10-24 that is known to be
+   false for every existing admin row, so flipping this today would lock out every current admin,
+   including the sole SUPER_ADMIN. This flag must not be turned on without that explicit check and
+   separate deployment approval.

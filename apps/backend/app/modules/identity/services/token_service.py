@@ -51,6 +51,31 @@ def decode_mfa_pending_token(token: str) -> dict:
     return payload
 
 
+def create_mfa_setup_pending_token(*, user_id: uuid.UUID) -> str:
+    """Issued instead of a full session when ENFORCE_MFA_FOR_PRIVILEGED_ROLES
+    is on and a SUPER_ADMIN/ADMIN account without TOTP enabled completes
+    password/email-OTP/mobile-OTP login -- lets that one account finish TOTP
+    enrollment (via /mfa-setup/begin + /mfa-setup/confirm) without ever
+    holding a real access/refresh token first. 15 minutes: longer than
+    mfa_pending's 5, since this covers scanning a QR code and typing the
+    first code into an authenticator app, not just re-entering one."""
+    now = datetime.now(UTC)
+    payload = {
+        "sub": str(user_id),
+        "iat": now,
+        "exp": now + timedelta(minutes=15),
+        "type": "mfa_setup_pending",
+    }
+    return jwt.encode(payload, settings.jwt_secret, algorithm=ALGORITHM)
+
+
+def decode_mfa_setup_pending_token(token: str) -> dict:
+    payload = jwt.decode(token, settings.jwt_secret, algorithms=[ALGORITHM])
+    if payload.get("type") != "mfa_setup_pending":
+        raise jwt.InvalidTokenError("Not an MFA setup pending token")
+    return payload
+
+
 def generate_refresh_token() -> tuple[str, str, datetime]:
     """Returns (plaintext_token, token_hash, expires_at). Only the hash is ever stored."""
     plaintext = secrets.token_urlsafe(48)

@@ -341,6 +341,16 @@ class Settings(BaseSettings):
     # login method.
     mobile_otp_login_enabled: bool = False
 
+    # Step 4 of the auth/OTP audit (docs/authentication.md "MFA enforcement
+    # for privileged accounts"). False by default -- flipping this on
+    # BEFORE every SUPER_ADMIN/ADMIN row has totp_confirmed_at set would
+    # lock every admin out with no recovery path (see that doc's step-3
+    # pre-flight query). When true, any login path that would otherwise
+    # issue a full session to a SUPER_ADMIN/ADMIN account without TOTP
+    # enabled instead returns a short-lived setup-only token (see
+    # auth_router._mfa_setup_gate and the /mfa-setup/* routes).
+    enforce_mfa_for_privileged_roles: bool = False
+
     # WhatsApp bot (M1 foundation — ADR-WHATSAPP-PROVIDER-ABSTRACTION).
     # ``whatsapp_provider`` selects the active provider adapter; only
     # "twilio" exists today. Twilio-specific credentials are deliberately

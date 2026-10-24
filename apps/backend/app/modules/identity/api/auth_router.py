@@ -8,11 +8,14 @@ from app.core.rate_limit import rate_limit, rate_limit_by_email, rate_limit_by_m
 from app.modules.identity.cookies import clear_auth_cookies, set_auth_cookies
 from app.modules.identity.dependencies import REFRESH_COOKIE, get_current_user, verify_csrf
 from app.modules.identity.models.user import User
+from app.modules.identity.repositories.user_repository import UserRepository
 from app.modules.identity.schemas.auth import (
     ChangePasswordRequest,
     ForgotPasswordRequest,
     LoginRequest,
     MeResponse,
+    MfaSetupBeginRequest,
+    MfaSetupConfirmRequest,
     MfaVerifyRequest,
     MobileOtpSendRequest,
     MobileOtpVerifyRequest,
@@ -33,7 +36,12 @@ from app.modules.identity.services.email_service import (
 from app.modules.identity.services.otp_service import OtpService
 from app.modules.identity.services.password_service import PASSWORD_MAX_AGE_DAYS
 from app.modules.identity.services.profile_validation import normalize_indian_mobile
-from app.modules.identity.services.token_service import create_mfa_pending_token, decode_mfa_pending_token
+from app.modules.identity.services.token_service import (
+    create_mfa_pending_token,
+    create_mfa_setup_pending_token,
+    decode_mfa_pending_token,
+    decode_mfa_setup_pending_token,
+)
 from app.modules.identity.services.totp_service import TotpService
 from app.modules.identity.services.twilio_verify_service import (
     TwilioVerifyError,
@@ -79,6 +87,62 @@ def _mfa_setup_required(user: User) -> bool:
     if bool(user.totp_enabled):
         return False
     return bool(_PRIVILEGED_MFA_ROLES.intersection(user.role_codes))
+
+
+def _mfa_setup_gate(user: User):
+    """Step 4 hard-enforcement check (docs/authentication.md "MFA
+    enforcement for privileged accounts", step 4). When
+    ENFORCE_MFA_FOR_PRIVILEGED_ROLES is on, called by every login path that
+    is about to issue a full session (password, email-OTP login, mobile-OTP
+    login) BEFORE it does so. Returns the response to return immediately in
+    place of a session, or None if the caller should proceed normally.
+
+    Deliberately checked before the existing `user.totp_enabled` /
+    `_mfa_challenge` branch in each caller: if TOTP is already enabled,
+    `_mfa_setup_required` is already False, so this never fires for an
+    account that has already completed enrollment -- it only intercepts the
+    specific gap this step closes (a privileged account that has NOT yet
+    enrolled)."""
+    if not get_settings().enforce_mfa_for_privileged_roles:
+        return None
+    if not _mfa_setup_required(user):
+        return None
+    setup_token = create_mfa_setup_pending_token(user_id=user.id)
+    return envelope(
+        success=False,
+        errors=[
+            {
+                "code": "MFA_SETUP_REQUIRED",
+                "message": "Multi-factor authentication setup is required for this account before signing in.",
+            }
+        ],
+        data={"mfaSetupToken": setup_token, "email": user.email},
+        status_code=403,
+    )
+
+
+async def _resolve_mfa_setup_pending_user(token: str, db: AsyncSession) -> User:
+    """Resolve the user behind an mfa_setup_pending token for the
+    /mfa-setup/* routes. Deliberately independent of get_current_user --
+    at this point the caller holds no access/refresh token at all (that is
+    the entire point of _mfa_setup_gate), so there is no cookie session to
+    authenticate with."""
+    import uuid
+
+    import jwt as _jwt
+
+    try:
+        claims = decode_mfa_setup_pending_token(token)
+    except _jwt.PyJWTError as exc:
+        raise AppError("Invalid or expired setup session", code="MFA_SETUP_TOKEN_INVALID", status_code=401) from exc
+    try:
+        user_id = uuid.UUID(str(claims["sub"]))
+    except (KeyError, ValueError) as exc:
+        raise AppError("Invalid or expired setup session", code="MFA_SETUP_TOKEN_INVALID", status_code=401) from exc
+    user = await UserRepository(db).get_by_id(user_id)
+    if not user or user.status != "active":
+        raise AppError("Invalid or expired setup session", code="MFA_SETUP_TOKEN_INVALID", status_code=401)
+    return user
 
 
 def _user_to_me(user: User) -> dict:
@@ -191,6 +255,10 @@ async def login(payload: LoginRequest, request: Request, db: AsyncSession = Depe
     ip, user_agent = _client_meta(request)
     service = AuthService(db)
     user = await service.authenticate(email=payload.email, password=payload.password, ip_address=ip, user_agent=user_agent)
+
+    gate = _mfa_setup_gate(user)
+    if gate is not None:
+        return gate
 
     if user.totp_enabled:
         return _mfa_challenge(user)
@@ -406,6 +474,10 @@ async def otp_verify(payload: OtpVerifyRequest, request: Request, db: AsyncSessi
     if user is None:
         raise AppError("Invalid or expired verification code", code="OTP_INVALID", status_code=400)
 
+    gate = _mfa_setup_gate(user)
+    if gate is not None:
+        return gate
+
     # Email-OTP proves mailbox possession, not the second factor — a user who
     # has voluntarily enabled TOTP must still complete MFA step-up, exactly
     # like password login. Unlike mobile-OTP, email possession is not treated
@@ -461,6 +533,51 @@ async def totp_disable(
 ):
     await TotpService(db).disable(user, payload.code)
     return envelope(success=True, data={"enabled": False})
+
+
+@router.post(
+    "/mfa-setup/begin",
+    dependencies=[Depends(rate_limit("mfa_setup_begin", limit=5, window_seconds=300, fail_closed=True))],
+)
+async def mfa_setup_begin(payload: MfaSetupBeginRequest, db: AsyncSession = Depends(get_db)):
+    """Counterpart to /totp/setup for an account blocked by _mfa_setup_gate
+    -- authenticated by the short-lived mfa_setup_pending token instead of
+    a cookie session, since that account holds no session at all yet. No
+    CSRF dependency: this token is a bearer credential supplied explicitly
+    in the request body, not an ambient cookie, so it carries none of the
+    cross-site risk verify_csrf exists to protect against (same reasoning
+    already applied to /mfa/verify's mfa_token, which also has no CSRF
+    dependency)."""
+    user = await _resolve_mfa_setup_pending_user(payload.setup_token, db)
+    data = await TotpService(db).begin_enrollment(user)
+    return envelope(success=True, data=data)
+
+
+@router.post(
+    "/mfa-setup/confirm",
+    dependencies=[Depends(rate_limit("mfa_setup_confirm", limit=10, window_seconds=300, fail_closed=True))],
+)
+async def mfa_setup_confirm(payload: MfaSetupConfirmRequest, request: Request, db: AsyncSession = Depends(get_db)):
+    user = await _resolve_mfa_setup_pending_user(payload.setup_token, db)
+    recovery_codes = await TotpService(db).confirm_enrollment(user, payload.code)
+
+    # Enrollment just succeeded -- issue the full session immediately
+    # rather than forcing the admin through a second, separate login purely
+    # to re-prove the password/OTP factor they already proved to get here.
+    ip, user_agent = _client_meta(request)
+    service = AuthService(db)
+    access_token, csrf_token = service.issue_tokens(user)
+    refresh_token = await service.issue_refresh_token(user, ip_address=ip, user_agent=user_agent)
+    result = envelope(
+        success=True,
+        data={
+            **_user_to_me(user),
+            "recoveryCodes": recovery_codes,
+            "message": "Store recovery codes offline. They are shown only once.",
+        },
+    )
+    set_auth_cookies(result, access_token=access_token, refresh_token=refresh_token, csrf_token=csrf_token)
+    return result
 
 
 @router.post(
@@ -560,6 +677,10 @@ async def mobile_otp_verify(
     )
     if user is None:
         raise generic_error
+
+    gate = _mfa_setup_gate(user)
+    if gate is not None:
+        return gate
 
     # Mobile-OTP is a strong factor: skip the TOTP step-up requirement here
     # (mirrors the mfa/verify branch — user proved possession of the device).

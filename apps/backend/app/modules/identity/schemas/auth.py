@@ -66,6 +66,15 @@ class TotpDisableRequest(BaseModel):
     code: str = Field(min_length=4, max_length=64)
 
 
+class MfaSetupBeginRequest(BaseModel):
+    setup_token: str
+
+
+class MfaSetupConfirmRequest(BaseModel):
+    setup_token: str
+    code: str = Field(min_length=6, max_length=8)
+
+
 class MeResponse(BaseModel):
     id: str
     email: str
