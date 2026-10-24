@@ -11,9 +11,9 @@ import { Button, buttonVariants } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
 import { ConceptPicker } from "@/components/concept-picker";
 import { MarkdownRenderer } from "@/components/markdown-renderer";
+import { RichTextEditor } from "@/components/rich-text-editor";
 import { ApiError } from "@/lib/api-client";
 import { cn } from "@/lib/utils";
 import { cmsApi, type ReviewChecklistItem } from "@/features/cms/api";
@@ -53,13 +53,9 @@ function QuestionEditForm({
       )}
       <div>
         <Label htmlFor="edit-stem">Stem</Label>
-        <Textarea
-          id="edit-stem"
-          className="mt-1"
-          rows={4}
-          value={form.stem}
-          onChange={(e) => setForm((f) => ({ ...f, stem: e.target.value }))}
-        />
+        <div className="mt-1" id="edit-stem">
+          <RichTextEditor value={form.stem} onChange={(md) => setForm((f) => ({ ...f, stem: md }))} />
+        </div>
       </div>
       <div className="space-y-2">
         <Label>Options (select the correct one)</Label>
@@ -87,13 +83,9 @@ function QuestionEditForm({
       </div>
       <div>
         <Label htmlFor="edit-explanation">Explanation</Label>
-        <Textarea
-          id="edit-explanation"
-          className="mt-1"
-          rows={3}
-          value={form.explanation}
-          onChange={(e) => setForm((f) => ({ ...f, explanation: e.target.value }))}
-        />
+        <div className="mt-1" id="edit-explanation">
+          <RichTextEditor value={form.explanation} onChange={(md) => setForm((f) => ({ ...f, explanation: md }))} />
+        </div>
       </div>
       <div>
         <Label>Academic concept mapping</Label>

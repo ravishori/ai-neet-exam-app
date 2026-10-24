@@ -37,6 +37,18 @@ vi.mock("@/features/academic/api", () => ({
   },
 }));
 
+// RichTextEditor wraps Tiptap's contentEditable surface -- its own
+// behavior (toolbar commands, Markdown serialization, image upload) is
+// out of scope for this page's tests and belongs in a focused test for
+// the component itself. Stubbed here as a plain labeled textarea so this
+// file can keep testing what IS in scope: that the edit form prefills,
+// validates, and saves the right payload.
+vi.mock("@/components/rich-text-editor", () => ({
+  RichTextEditor: ({ value, onChange }: { value: string; onChange: (v: string) => void }) => (
+    <textarea aria-label="rich-text-stub" value={value} onChange={(e) => onChange(e.target.value)} />
+  ),
+}));
+
 import ContentDetailPage from "@/app/admin/content/[itemId]/page";
 import { ApiError } from "@/lib/api-client";
 

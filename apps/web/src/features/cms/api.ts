@@ -525,6 +525,11 @@ export const cmsApi = {
     id: string,
     data: { body: Record<string, unknown>; change_summary: string; concept_id?: string | null; title?: string; tags?: string[] },
   ) => apiClient.patch<ContentItem>(`/api/v1/cms/content-items/${id}`, data),
+  uploadImage: (file: File) => {
+    const form = new FormData();
+    form.append("file", file);
+    return apiClient.postForm<{ filename: string; url: string }>("/api/v1/cms/images", form);
+  },
   submit: (id: string) => apiClient.post<ContentItem>(`/api/v1/cms/content-items/${id}/submit`),
   review: (id: string, data: { decision: "approve" | "request_changes"; comment?: string }) =>
     apiClient.post<ContentItem>(`/api/v1/cms/content-items/${id}/review`, data),
