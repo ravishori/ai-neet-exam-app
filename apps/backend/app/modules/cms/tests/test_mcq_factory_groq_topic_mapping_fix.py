@@ -46,6 +46,7 @@ from app.modules.cms.mcq_factory_groq.orchestrator import (
     GroqFactoryOrchestrator,
 )
 from app.modules.cms.mcq_factory_groq.schemas import TaxonomyIds
+from app.modules.cms.mcq_factory_groq.syllabus_driven_fact_builder import load_all_hand_curated_facts
 from app.modules.cms.mcq_factory_groq.syllabus_gate import check_generation_topic_in_syllabus
 from app.modules.cms.mcq_factory_groq.syllabus_topic_mapping import (
     FACT_ID_TO_SYLLABUS_TOPIC_ID,
@@ -75,12 +76,6 @@ register_rate("fake-groq", "fake-verify-model", PriceRate(1_000_000.0, 0.0))
 
 BACKEND_ROOT = Path(__file__).resolve().parents[4]
 FACT_PACK_PATH = BACKEND_ROOT / "data" / "generated_mcqs" / "mcq_factory_pilot" / "fact_pack.json"
-# NEET-MCQ-FACTORY-FACT-POOL-EXPANSION-20261013 added this second pack (34
-# more facts, all resolved in FACT_ID_TO_SYLLABUS_TOPIC_ID) — referenced only
-# by test_lookup_table_topic_ids_all_exist_in_real_registry_and_match_unit
-# below, which must look fact_ids up in BOTH packs now that the lookup
-# table's real total is 128 (94 from fact_pack.json + 34 from this file).
-FACT_PACK_BATCH2_PATH = BACKEND_ROOT / "data" / "generated_mcqs" / "mcq_factory_pilot" / "fact_pack_batch2.json"
 
 
 # ---------------------------------------------------------------------------
@@ -290,12 +285,18 @@ async def test_unmapped_fact_is_blocked_not_force_matched(tmp_path):
     assert writer_calls[0].outcome == STATUS_REJECTED
 
 
+@pytest.mark.skipif(not FACT_PACK_PATH.exists(), reason="real local fact_pack.json pilot data must be present")
 def test_each_deliberately_unresolved_fact_is_confirmed_out_of_scope():
     """Every fact_id this task left out of the lookup table must still be
     rejected by the real gate when given no topic_id and its own
     (non-matching) free-text topic -- i.e. nothing elsewhere in the
     pipeline accidentally authorizes them some other way."""
-    facts_by_id = {f["fact_id"]: f for f in json.loads(FACT_PACK_PATH.read_text(encoding="utf-8"))}
+    # Uses the production loader's own canonical file list (fact_pack.json
+    # + all batch2-7 packs) rather than fact_pack.json alone -- two of the
+    # 8 UNRESOLVED_FACT_IDS (chem-oxygencompounds-001/002) only exist in
+    # fact_pack_batch3.json, added by NEET-MCQ-FACTORY-FACT-POOL-EXPANSION-
+    # R3-20261014 (see syllabus_topic_mapping.py's module docstring).
+    facts_by_id = {f["fact_id"]: f for f in load_all_hand_curated_facts()}
     registry = load_neet_2026_registry()
     for fact_id in UNRESOLVED_FACT_IDS:
         fact = facts_by_id[fact_id]
@@ -316,6 +317,7 @@ def test_each_deliberately_unresolved_fact_is_confirmed_out_of_scope():
 # ---------------------------------------------------------------------------
 
 
+@pytest.mark.skipif(not FACT_PACK_PATH.exists(), reason="real local fact_pack.json pilot data must be present")
 def test_real_fact_pack_resolves_to_94_in_syllabus_6_blocked():
     registry = load_neet_2026_registry()
     facts = json.loads(FACT_PACK_PATH.read_text(encoding="utf-8"))
@@ -350,27 +352,24 @@ def test_real_fact_pack_resolves_to_94_in_syllabus_6_blocked():
 # ---------------------------------------------------------------------------
 
 
+@pytest.mark.skipif(not FACT_PACK_PATH.exists(), reason="real local fact_pack.json pilot data must be present")
 def test_lookup_table_topic_ids_all_exist_in_real_registry_and_match_unit():
     registry = load_neet_2026_registry()
-    facts_by_id = {f["fact_id"]: f for f in json.loads(FACT_PACK_PATH.read_text(encoding="utf-8"))}
-    # NEET-MCQ-FACTORY-FACT-POOL-EXPANSION-20261013 added fact_pack_batch2.json
-    # (34 more facts, all resolved into FACT_ID_TO_SYLLABUS_TOPIC_ID too) —
-    # merge both packs so every fact_id this lookup table now covers can
-    # actually be found below; fact_pack.json/fact_pack_batch2.json have
-    # disjoint fact_id namespaces (confirmed in
-    # docs/quality/neet_mcq_factory_OPENROUTER_WIRING_20261013.md), so this
-    # merge can never silently shadow one pack's fact with the other's.
-    facts_by_id.update({f["fact_id"]: f for f in json.loads(FACT_PACK_BATCH2_PATH.read_text(encoding="utf-8"))})
+    # Uses the production loader's own canonical file list (fact_pack.json
+    # + all batch2-7 packs), not a manual two-file merge -- the lookup
+    # table now resolves fact_ids added across all 7 documented expansion
+    # rounds (see syllabus_topic_mapping.py's module docstring), so the
+    # per-fact lookup loop below needs every pack to avoid a KeyError on
+    # any batch3-7 fact_id.
+    facts_by_id = {f["fact_id"]: f for f in load_all_hand_curated_facts()}
 
-    # This assertion was stale (still asserting the pre-expansion 94) — fixed
-    # as part of NEET-MCQ-FACTORY-OPENROUTER-PRODUCTIONIZED-20261013 per the
-    # stale-assertion flag raised in
-    # docs/quality/neet_mcq_factory_OPENROUTER_WIRING_20261013.md. Fixing the
-    # count alone (94 -> 128) also required the facts_by_id merge above —
-    # the lookup table now resolves fact_ids from BOTH packs, so the lookup
-    # loop below needs both to avoid a KeyError on a batch-2 fact_id.
-    assert len(FACT_ID_TO_SYLLABUS_TOPIC_ID) == 128
-    assert len(UNRESOLVED_FACT_IDS) == 6
+    # 204 resolved + 8 unresolved = 212, the real total across all 7 fact
+    # packs (100+34+31+17+27+2+1) -- verified directly against the on-disk
+    # files, not assumed. The prior 128/6 values were correct only through
+    # batch2 (94+34=128) and were never updated across the 5 later,
+    # individually documented expansion rounds (batches 3-7).
+    assert len(FACT_ID_TO_SYLLABUS_TOPIC_ID) == 204
+    assert len(UNRESOLVED_FACT_IDS) == 8
     assert set(FACT_ID_TO_SYLLABUS_TOPIC_ID) & UNRESOLVED_FACT_IDS == set()
 
     for fact_id, topic_id in FACT_ID_TO_SYLLABUS_TOPIC_ID.items():

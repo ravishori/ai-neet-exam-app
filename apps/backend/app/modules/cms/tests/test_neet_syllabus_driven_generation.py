@@ -26,6 +26,8 @@ from __future__ import annotations
 
 from pathlib import Path
 
+import pytest
+
 from app.modules.cms.mcq_factory_groq.ncert_corpus_lookup import find_ncert_passage
 from app.modules.cms.mcq_factory_groq.orchestrator import FactSpec
 from app.modules.cms.mcq_factory_groq.syllabus_driven_fact_builder import (
@@ -46,6 +48,14 @@ from app.modules.cms.syllabus.neet_2026_subtopics import (
 
 REPO_ROOT = Path(__file__).resolve().parents[6]
 NCERT_CORPUS_ROOT = REPO_ROOT / "NCERT Books"
+# Same real, on-disk, intentionally-never-committed pilot data this task's
+# sibling test_mcq_factory_groq_topic_mapping_fix.py already names
+# FACT_PACK_PATH -- load_all_hand_curated_facts()'s default_fact_pack_dir()
+# reads fact_pack.json from this exact directory (see
+# syllabus_driven_fact_builder.py's _FACT_PACK_FILENAMES), so any test here
+# that depends on real hand-curated fact data resolving needs this guard
+# too, independent of the NCERT corpus guard above.
+FACT_PACK_PATH = Path(__file__).resolve().parents[4] / "data" / "generated_mcqs" / "mcq_factory_pilot" / "fact_pack.json"
 
 
 def _real_registry():
@@ -131,6 +141,7 @@ def test_coverage_inventory_document_shape():
 # ---------------------------------------------------------------------------
 
 
+@pytest.mark.skipif(not NCERT_CORPUS_ROOT.exists(), reason="real local NCERT corpus must be present")
 def test_find_ncert_passage_locates_real_cell_theory_passage():
     pdf = (
         NCERT_CORPUS_ROOT
@@ -153,6 +164,7 @@ def test_find_ncert_passage_locates_real_cell_theory_passage():
     assert len(result.chunk.text) > 0
 
 
+@pytest.mark.skipif(not NCERT_CORPUS_ROOT.exists(), reason="real local NCERT corpus must be present")
 def test_find_ncert_passage_locates_real_gravitational_potential_passage():
     result = find_ncert_passage(
         subject="PHYSICS",
@@ -166,6 +178,7 @@ def test_find_ncert_passage_locates_real_gravitational_potential_passage():
     assert "potential energy" in result.chunk.text.lower() or "gravitational" in result.chunk.text.lower()
 
 
+@pytest.mark.skipif(not NCERT_CORPUS_ROOT.exists(), reason="real local NCERT corpus must be present")
 def test_find_ncert_passage_returns_none_for_deliberately_unfindable_subtopic():
     pdf = NCERT_CORPUS_ROOT / "Class 11" / "Biology" / "kebo1dd" / "kebo108.pdf"
     assert pdf.exists()
@@ -185,6 +198,10 @@ def test_find_ncert_passage_returns_none_for_deliberately_unfindable_subtopic():
 # ---------------------------------------------------------------------------
 
 
+@pytest.mark.skipif(
+    not (NCERT_CORPUS_ROOT.exists() and FACT_PACK_PATH.exists()),
+    reason="real local NCERT corpus and hand-curated fact-pack data must both be present",
+)
 def test_build_syllabus_driven_fact_ready_case_passes_real_syllabus_gate():
     registry = _real_registry()
     subtopics = build_subtopic_inventory(registry)
@@ -234,6 +251,7 @@ def test_build_syllabus_driven_fact_ready_case_passes_real_syllabus_gate():
     assert scope.status == "IN_SYLLABUS"
 
 
+@pytest.mark.skipif(not FACT_PACK_PATH.exists(), reason="real local hand-curated fact-pack data must be present")
 def test_build_syllabus_driven_fact_skips_duplicate_before_any_pdf_lookup():
     registry = _real_registry()
     subtopics = build_subtopic_inventory(registry)
@@ -269,6 +287,7 @@ def test_build_syllabus_driven_fact_skips_duplicate_before_any_pdf_lookup():
 # ---------------------------------------------------------------------------
 
 
+@pytest.mark.skipif(not FACT_PACK_PATH.exists(), reason="real local hand-curated fact-pack data must be present")
 def test_duplicate_check_flags_overlap_with_existing_hand_curated_fact():
     registry = _real_registry()
     subtopics = build_subtopic_inventory(registry)

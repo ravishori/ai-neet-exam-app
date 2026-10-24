@@ -97,7 +97,7 @@ def _to_public_result(row: dict) -> dict:
     return {
         "id": str(row["id"]),
         "stem": body.get("stem"),
-        "options": body.get("options", []),
+        "options": body.get("options") or [],
         "difficulty": body.get("difficulty"),
         "bloom_level": body.get("bloom_level"),
         "pyq_year": body.get("pyq_year"),

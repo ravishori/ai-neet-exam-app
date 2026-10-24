@@ -454,7 +454,7 @@ class ContentFactoryHumanReviewService:
             },
             "question": {
                 "stem": body.get("stem"),
-                "options": body.get("options"),
+                "options": body.get("options") or [],
                 "correct_option": body.get("correct_option"),
                 "explanation": body.get("explanation"),
                 "difficulty": body.get("difficulty"),

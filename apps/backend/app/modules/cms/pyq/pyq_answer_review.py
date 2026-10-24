@@ -245,7 +245,7 @@ async def get_question_review_detail(db: AsyncSession, question_id: uuid.UUID) -
         "paper_id": row.paper_id,
         "state": row.state,
         "stem": row.raw_stem,
-        "options": row.raw_options,
+        "options": row.raw_options or {},
         "option_structure": classification.value,
         "is_review_eligible": classification.value == "FOUR_VALID_OPTIONS",
         "existing_assertions": [

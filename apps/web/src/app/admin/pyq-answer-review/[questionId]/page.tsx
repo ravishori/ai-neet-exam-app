@@ -129,7 +129,7 @@ export default function PyqAnswerReviewDetailPage() {
                   }`}
                 >
                   <span className="mr-2 font-semibold">{label}.</span>
-                  {detail.options[label] ?? ""}
+                  {detail.options?.[label] ?? ""}
                 </button>
               );
             })}

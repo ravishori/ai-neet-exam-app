@@ -175,7 +175,7 @@ def _question_summary(item: ContentItem, names: dict, visual_assets_by_ku: dict 
     return {
         "id": str(item.id),
         "stem": body.get("stem"),
-        "options": body.get("options", []),
+        "options": body.get("options") or [],
         "difficulty": body.get("difficulty"),
         "bloom_level": body.get("bloom_level"),
         "pyq_year": body.get("pyq_year"),
