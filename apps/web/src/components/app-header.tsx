@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { ChevronDown, LogOut, Menu, Settings, UserCircle } from "lucide-react";
 
+import { Badge } from "@/components/ui/badge";
 import { ThemeToggle } from "@/components/ds/theme-toggle";
 import {
   DropdownMenu,
@@ -11,12 +12,28 @@ import {
   DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuLabel,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { useLogout, useMe } from "@/features/auth/use-auth";
+import { useLogout, useMe, useSwitchRole } from "@/features/auth/use-auth";
 import { useMounted } from "@/hooks/use-mounted";
 import { cn } from "@/lib/utils";
+
+// Mirrors app.modules.identity.seed.ROLES' display names on the backend.
+const ROLE_LABELS: Record<string, string> = {
+  SUPER_ADMIN: "Super Admin",
+  ADMIN: "Admin",
+  CONTENT_MANAGER: "Content Manager",
+  TEACHER: "Teacher",
+  STUDENT: "Student",
+  SUPPORT: "Support",
+};
+
+function roleLabel(code: string): string {
+  return ROLE_LABELS[code] ?? code;
+}
 
 export type NavLink = { href: string; label: string };
 export type NavSection = { label: string; links: NavLink[] };
@@ -82,6 +99,7 @@ export function AppHeader({
 }) {
   const { data: user } = useMe();
   const logout = useLogout();
+  const switchRole = useSwitchRole();
   const router = useRouter();
   const pathname = usePathname();
   const mounted = useMounted();
@@ -327,6 +345,11 @@ export function AppHeader({
                 >
                   {user?.display_name ?? user?.email}
                 </span>
+                {user?.active_role && (
+                  <Badge variant="secondary" className="hidden sm:inline-flex">
+                    {roleLabel(user.active_role)}
+                  </Badge>
+                )}
                 <ChevronDown
                   className="hidden size-3.5 opacity-70 transition-transform duration-150 motion-reduce:transition-none group-data-[popup-open]/account:rotate-180 sm:block"
                   aria-hidden="true"
@@ -350,6 +373,38 @@ export function AppHeader({
                       </span>
                     </DropdownMenuLabel>
                   </DropdownMenuGroup>
+                )}
+                {user && user.available_roles && user.available_roles.length > 1 && (
+                  <>
+                    <DropdownMenuSeparator className="my-1.5" />
+                    <DropdownMenuGroup>
+                      <DropdownMenuLabel className="text-meta px-2 py-1.5 tracking-[0.1em]">
+                        Acting as
+                      </DropdownMenuLabel>
+                      <DropdownMenuRadioGroup
+                        value={user.active_role}
+                        onValueChange={(value) => {
+                          if (typeof value === "string" && value !== user.active_role) {
+                            switchRole.mutate({ role: value });
+                          }
+                        }}
+                      >
+                        {user.available_roles.map((code) => (
+                          <DropdownMenuRadioItem
+                            key={code}
+                            value={code}
+                            className="min-h-9 cursor-pointer px-2 py-2"
+                          >
+                            {roleLabel(code)}
+                          </DropdownMenuRadioItem>
+                        ))}
+                      </DropdownMenuRadioGroup>
+                      <p className="px-2 pt-1 pb-1.5 text-xs leading-snug text-muted-foreground">
+                        This only changes what the menu shows — switching never reduces what
+                        your account is actually allowed to do.
+                      </p>
+                    </DropdownMenuGroup>
+                  </>
                 )}
                 <DropdownMenuSeparator className="my-1.5" />
                 <DropdownMenuGroup>

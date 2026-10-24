@@ -11,6 +11,7 @@ vi.mock("next/navigation", () => ({
 vi.mock("@/features/auth/use-auth", () => ({
   useMe: () => ({ data: undefined }),
   useLogout: () => ({ mutate: vi.fn() }),
+  useSwitchRole: () => ({ mutate: vi.fn() }),
 }));
 
 vi.mock("@/hooks/use-mounted", () => ({

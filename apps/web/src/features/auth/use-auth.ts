@@ -81,6 +81,14 @@ export function useRegister() {
   });
 }
 
+export function useSwitchRole() {
+  const queryClient = useQueryClient();
+  return useMutation({
+    mutationFn: authApi.switchRole,
+    onSuccess: (user: MeResponse) => queryClient.setQueryData(ME_QUERY_KEY, user),
+  });
+}
+
 export function useLogout() {
   const queryClient = useQueryClient();
   return useMutation({

@@ -18,6 +18,14 @@ export type MeResponse = {
   // history; clients must NOT nag in that case.
   password_age_days?: number | null;
   password_reminder_due?: boolean;
+  // Session-time role selector (see docs/authentication.md "MFA
+  // enforcement" neighbour section on role switching, and
+  // app.modules.identity.role_priority): `active_role` is which of the
+  // account's own `available_roles` this session is currently presenting
+  // as. Display/UX only -- switching it never changes what the account
+  // can actually do; authorization always checks the full role set.
+  active_role?: string;
+  available_roles?: string[];
 };
 
 export type RegisterPayload = {
@@ -78,6 +86,7 @@ export const authApi = {
     apiClient.post<{ message: string }>("/api/v1/auth/otp/request", { ...data, purpose: "email_login" }),
   emailOtpVerify: (data: { email: string; code: string }) =>
     apiClient.post<LoginResult>("/api/v1/auth/otp/verify", { ...data, purpose: "email_login" }),
+  switchRole: (data: { role: string }) => apiClient.post<MeResponse>("/api/v1/auth/switch-role", data),
 };
 
 export { isMfaChallenge };

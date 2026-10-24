@@ -12,6 +12,7 @@ vi.mock("next/navigation", () => ({
 vi.mock("@/features/auth/use-auth", () => ({
   useMe: () => ({ data: { display_name: "Asha", email: "asha@example.com", roles: [] } }),
   useLogout: () => ({ mutate: vi.fn() }),
+  useSwitchRole: () => ({ mutate: vi.fn() }),
 }));
 
 vi.mock("@/hooks/use-mounted", () => ({
