@@ -332,6 +332,14 @@ class Settings(BaseSettings):
     twilio_account_sid: str = ""
     twilio_auth_token: str = ""
     twilio_verify_service_sid: str = ""
+    # Mobile OTP login (distinct from Twilio *credentials* being configured
+    # above) -- explicit kill switch, checked ahead of/regardless of
+    # credential presence, in both /methods (hides the frontend tab) and
+    # the /mobile/otp/send and /mobile/otp/verify routes themselves (so a
+    # direct POST to either can't bypass hiding the UI). Email OTP and
+    # password login are unaffected -- this flag touches only this one
+    # login method.
+    mobile_otp_login_enabled: bool = False
 
     # WhatsApp bot (M1 foundation — ADR-WHATSAPP-PROVIDER-ABSTRACTION).
     # ``whatsapp_provider`` selects the active provider adapter; only

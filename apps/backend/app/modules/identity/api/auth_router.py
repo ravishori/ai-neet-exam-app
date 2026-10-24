@@ -134,7 +134,8 @@ async def auth_methods():
         data={
             "emailPassword": True,
             "mobileOtp": bool(
-                settings.twilio_account_sid
+                settings.mobile_otp_login_enabled
+                and settings.twilio_account_sid
                 and settings.twilio_auth_token
                 and settings.twilio_verify_service_sid
             ),
@@ -457,6 +458,8 @@ async def mobile_otp_send(
     cannot probe for existing accounts. Actual Twilio API is only called for
     known accounts — but the wall-clock timing difference is small (a single
     DB lookup) and acceptable within the existing rate-limit window."""
+    if not get_settings().mobile_otp_login_enabled:
+        raise AppError("Mobile OTP login is currently disabled.", code="FEATURE_DISABLED", status_code=404)
     # Uniform response — computed BEFORE the DB check so it cannot leak
     # through error paths.
     UNIFORM = {
@@ -503,6 +506,8 @@ async def mobile_otp_verify(
     expired code, or Twilio outage — returns the same generic 401. We never
     tell the client which of these it was.
     """
+    if not get_settings().mobile_otp_login_enabled:
+        raise AppError("Mobile OTP login is currently disabled.", code="FEATURE_DISABLED", status_code=404)
     generic_error = AppError(
         "Invalid or expired code",
         code="MOBILE_OTP_INVALID",

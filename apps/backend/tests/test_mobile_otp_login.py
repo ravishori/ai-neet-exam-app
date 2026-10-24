@@ -24,6 +24,17 @@ def _bypass_rate_limit(monkeypatch):
     monkeypatch.setattr(rl, "_check", no_limit)
 
 
+@pytest.fixture(autouse=True)
+def _mobile_otp_enabled(monkeypatch):
+    """Mobile OTP login is disabled by default (settings.mobile_otp_login_
+    enabled=False) -- this file tests the feature's own mechanics, which
+    must still work correctly if it's ever explicitly re-enabled, so these
+    tests enable it for their own scope only."""
+    from app.core.config import get_settings
+
+    monkeypatch.setattr(get_settings(), "mobile_otp_login_enabled", True)
+
+
 def _payload(email: str, mobile: str = "9876500101") -> dict:
     return {
         "email": email,

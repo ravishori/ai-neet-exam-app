@@ -47,6 +47,16 @@ class FakeRedis:
         return 60
 
 
+@pytest.fixture(autouse=True)
+def _mobile_otp_enabled(monkeypatch):
+    """Mobile OTP login is disabled by default -- this file tests its
+    rate-limiting mechanics, which must still work if ever explicitly
+    re-enabled, so enable it for this file's tests only."""
+    from app.core.config import get_settings
+
+    monkeypatch.setattr(get_settings(), "mobile_otp_login_enabled", True)
+
+
 @pytest.fixture
 def fake_redis(monkeypatch):
     fake = FakeRedis()
