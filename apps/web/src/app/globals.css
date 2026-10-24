@@ -1076,3 +1076,14 @@
   --glass-bg: color-mix(in oklab, oklch(0.19 0.015 250) 78%, transparent);
   --glass-border: rgba(180, 210, 255, 0.1);
 }
+
+/* Tiptap Placeholder extension (components/rich-text-editor.tsx) -- the
+   extension sets data-placeholder + the is-editor-empty class; it ships
+   no CSS of its own, this is the documented minimal rule to show it. */
+.ProseMirror p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  float: left;
+  height: 0;
+  pointer-events: none;
+  color: var(--muted-foreground);
+}

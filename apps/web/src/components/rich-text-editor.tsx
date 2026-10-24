@@ -8,6 +8,7 @@ import { Table } from "@tiptap/extension-table";
 import TableRow from "@tiptap/extension-table-row";
 import TableCell from "@tiptap/extension-table-cell";
 import TableHeader from "@tiptap/extension-table-header";
+import Placeholder from "@tiptap/extension-placeholder";
 import { Markdown } from "tiptap-markdown";
 import {
   Bold,
@@ -142,6 +143,11 @@ export function RichTextEditor({
       TableHeader,
       TableCell,
       Markdown.configure({ html: false, transformPastedText: true }),
+      // Without this, an empty field (e.g. a legacy question's null
+      // explanation) renders as a blank box indistinguishable from a
+      // loading/empty-but-fine state -- there was no visual cue telling
+      // the admin this field still needs content before Save can enable.
+      Placeholder.configure({ placeholder: placeholder || "Type here…" }),
     ],
     content: value,
     editorProps: {
@@ -206,7 +212,7 @@ export function RichTextEditor({
         }}
       />
       {uploadError && <p className="px-3 pt-2 text-xs text-destructive">{uploadError}</p>}
-      <EditorContent editor={editor} placeholder={placeholder} />
+      <EditorContent editor={editor} />
     </div>
   );
 }

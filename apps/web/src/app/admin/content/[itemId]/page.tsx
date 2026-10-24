@@ -44,6 +44,18 @@ function QuestionEditForm({
   const [form, setForm] = useState<EditFormState>(initial);
   const canVerify = form.options.every((o) => o.text.trim().length > 0) && !!form.correctOption;
 
+  // Drives both the Save button's disabled state and the visible message
+  // explaining it -- a single source of truth so the two can never drift
+  // apart. Each entry names exactly which field still needs attention
+  // (e.g. a legacy item's null explanation prefills empty with no other
+  // visual cue besides the placeholder text now shown in that field).
+  const missingRequirements: string[] = [];
+  if (!form.stem.trim()) missingRequirements.push("the stem");
+  if (form.options.some((o) => !o.text.trim())) missingRequirements.push("all 4 option texts");
+  if (!form.correctOption) missingRequirements.push("a selected correct option");
+  if (!form.explanation.trim()) missingRequirements.push("the explanation");
+  if (!form.changeSummary.trim()) missingRequirements.push("a change summary");
+
   return (
     <div className="flex flex-col gap-4 text-sm">
       {error && (
@@ -54,7 +66,11 @@ function QuestionEditForm({
       <div>
         <Label htmlFor="edit-stem">Stem</Label>
         <div className="mt-1" id="edit-stem">
-          <RichTextEditor value={form.stem} onChange={(md) => setForm((f) => ({ ...f, stem: md }))} />
+          <RichTextEditor
+            value={form.stem}
+            onChange={(md) => setForm((f) => ({ ...f, stem: md }))}
+            placeholder="Type the question stem (required)…"
+          />
         </div>
       </div>
       <div className="space-y-2">
@@ -84,7 +100,11 @@ function QuestionEditForm({
       <div>
         <Label htmlFor="edit-explanation">Explanation</Label>
         <div className="mt-1" id="edit-explanation">
-          <RichTextEditor value={form.explanation} onChange={(md) => setForm((f) => ({ ...f, explanation: md }))} />
+          <RichTextEditor
+            value={form.explanation}
+            onChange={(md) => setForm((f) => ({ ...f, explanation: md }))}
+            placeholder="Type the explanation (required) -- legacy items with a missing explanation prefill empty here…"
+          />
         </div>
       </div>
       <div>
@@ -121,19 +141,13 @@ function QuestionEditForm({
           placeholder="e.g. Fixed legacy dict-shaped options; confirmed answer against NCERT"
         />
       </div>
+      {missingRequirements.length > 0 && (
+        <p className="text-xs text-muted-foreground" data-testid="save-blocked-reasons">
+          Save is disabled until: {missingRequirements.join("; ")}.
+        </p>
+      )}
       <div className="flex gap-2">
-        <Button
-          size="sm"
-          disabled={
-            saving ||
-            !form.stem.trim() ||
-            !form.explanation.trim() ||
-            !form.correctOption ||
-            !form.changeSummary.trim() ||
-            form.options.some((o) => !o.text.trim())
-          }
-          onClick={() => onSave(form)}
-        >
+        <Button size="sm" disabled={saving || missingRequirements.length > 0} onClick={() => onSave(form)}>
           {saving ? "Saving…" : "Save"}
         </Button>
         <Button size="sm" variant="outline" disabled={saving} onClick={onCancel}>

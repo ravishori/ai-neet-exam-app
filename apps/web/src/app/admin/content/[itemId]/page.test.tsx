@@ -341,4 +341,60 @@ describe("admin content detail page", () => {
     // Form stays open with the entered data intact -- nothing was silently discarded.
     expect(screen.getByLabelText(/change summary/i)).toHaveValue("Attempted save");
   });
+
+  it(
+    "reproduces the reported production case (7fb11a6b-...): a legacy question with " +
+      "null explanation opens with Save disabled, explains exactly why, and enables " +
+      "once explanation and change summary are filled in",
+    async () => {
+      const legacyQuestion = {
+        ...EDITABLE_QUESTION,
+        stem: "Match the following columns and select the correct option.",
+        explanation: null, // the actual stored shape for this item
+      };
+      get.mockResolvedValue(ITEM);
+      reviewPacket.mockResolvedValue({ ...BASE_PACKET, question: legacyQuestion });
+      renderPage();
+      await waitFor(() => expect(screen.getByText(/match the following columns/i)).toBeInTheDocument());
+      fireEvent.click(screen.getByRole("button", { name: /^edit$/i }));
+      await waitFor(() => expect(screen.getByLabelText(/change summary/i)).toBeInTheDocument());
+
+      // Stem and options and correct_option are already filled from the
+      // packet; only explanation (null -> "") and change summary are not.
+      const saveButton = screen.getByRole("button", { name: /^save$/i });
+      expect(saveButton).toBeDisabled();
+      const reasons = screen.getByTestId("save-blocked-reasons").textContent ?? "";
+      expect(reasons).toMatch(/explanation/i);
+      expect(reasons).toMatch(/change summary/i);
+      expect(reasons).not.toMatch(/stem/i);
+      expect(reasons).not.toMatch(/option/i);
+
+      const [stemField, explanationField] = screen.getAllByLabelText("rich-text-stub");
+      expect(stemField).toHaveValue(legacyQuestion.stem);
+      expect(explanationField).toHaveValue(""); // confirms the blank box is genuinely empty, not a sync bug
+
+      fireEvent.change(explanationField, { target: { value: "Filled in by SME during correction." } });
+      expect(saveButton).toBeDisabled(); // change summary still missing
+      expect(screen.getByTestId("save-blocked-reasons").textContent).toMatch(/change summary/i);
+      expect(screen.queryByTestId("save-blocked-reasons")?.textContent).not.toMatch(/explanation/i);
+
+      fireEvent.change(screen.getByLabelText(/change summary/i), {
+        target: { value: "Filled missing explanation" },
+      });
+      expect(saveButton).toBeEnabled();
+      expect(screen.queryByTestId("save-blocked-reasons")).not.toBeInTheDocument();
+
+      updateDraft.mockResolvedValue({
+        ...ITEM,
+        status: "DRAFT",
+        latest_version: { ...ITEM.latest_version, id: "v2", version_no: 2, body: legacyQuestion },
+      });
+      fireEvent.click(saveButton);
+
+      await waitFor(() => expect(updateDraft).toHaveBeenCalledTimes(1));
+      const [, payload] = updateDraft.mock.calls[0];
+      expect(payload.body.explanation).toBe("Filled in by SME during correction.");
+      expect(payload.change_summary).toBe("Filled missing explanation");
+    },
+  );
 });
