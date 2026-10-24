@@ -14,6 +14,8 @@ from helpers_publishable_question import publishable_question_body
 
 pytestmark = pytest.mark.asyncio(loop_scope="session")
 
+_UNSET = object()
+
 
 async def _concept_id(db_session) -> str:
     from app.modules.academic.models import Concept
@@ -58,10 +60,16 @@ async def _publish_question(client, concept_id: str, *, correct_option: str = "A
     return pub.json()["data"]
 
 
-async def _force_dict_options(db_session, item_id: str, *, correct_option=None) -> None:
+async def _force_dict_options(
+    db_session, item_id: str, *, correct_option=None, explanation=_UNSET, answer_status=_UNSET
+) -> None:
     """Direct DB mutation -- simulates the legacy PYQ-import shape (F-17),
     the only way to construct this state since the create/publish API
-    always validates options as an array."""
+    always validates options as an array. `explanation`/`answer_status`
+    optionally reproduce the exact production item (7fb11a6b-9295-40e7-
+    b85c-146c8bcfd69f): explanation=None and answer_status="ANSWER_VERIFIED"
+    with no ncert_evidence -- a legacy row that claims a verified answer
+    without ever having recorded what verified it."""
     from app.modules.cms.models import ContentVersion
 
     result = await db_session.execute(
@@ -72,6 +80,10 @@ async def _force_dict_options(db_session, item_id: str, *, correct_option=None) 
     body["options"] = {o["label"]: o["text"] for o in body["options"]}
     if correct_option is not None:
         body["correct_option"] = correct_option
+    if explanation is not _UNSET:
+        body["explanation"] = explanation
+    if answer_status is not _UNSET:
+        body["answer_status"] = answer_status
     version.body = body
     db_session.add(version)
     await db_session.commit()
@@ -129,19 +141,14 @@ async def test_edit_blocks_answer_verified_without_evidence(client, db_session, 
         json={"body": body, "change_summary": "Attempt to mark verified without evidence"},
         headers=csrf_headers(client),
     )
-    # assert_body_publishable wraps the underlying Pydantic ValidationError
-    # into a generic client-facing message (by design, matches every other
-    # publish-gate rejection) -- the 422 itself is the behavior under test;
-    # the exact evidence requirement is unit-tested directly in
-    # test_content_bodies.py style via the schema below.
     assert patch.status_code == 422, patch.text
-
-    from pydantic import ValidationError
-
-    from app.modules.cms.schemas.content_bodies import validate_body
-
-    with pytest.raises(ValidationError, match="evidence"):
-        validate_body("QUESTION", publishable_question_body(correct_option="B", ncert_evidence=None, answer_status="ANSWER_VERIFIED"))
+    # The save/edit path (unlike publish's deliberately generic message)
+    # must surface specifically why -- not just "failed quality gates".
+    # This is a whole-body (model-level) validator, so Pydantic reports no
+    # single field loc for it; the specific message still comes through.
+    errors = patch.json()["errors"]
+    assert any("evidence" in e["message"] for e in errors)
+    assert "Content body failed publishing quality gates" not in patch.text
 
 
 async def test_edit_blocks_answer_verified_without_valid_correct_option(client, db_session, register_user):
@@ -173,6 +180,94 @@ async def test_edit_allows_answer_verified_with_valid_option_and_evidence(client
     )
     assert patch.status_code == 200, patch.text
     assert patch.json()["data"]["latest_version"]["body"]["answer_status"] == "ANSWER_VERIFIED"
+
+
+async def test_edit_save_error_is_actionable_not_generic(client, db_session, register_user):
+    """Regression, reproduces the exact reported production failure on
+    7fb11a6b-9295-40e7-b85c-146c8bcfd69f: a legacy row with explanation=None
+    AND answer_status="ANSWER_VERIFIED" with no ncert_evidence. Before this
+    fix, update_draft() used assert_body_publishable() (the publish-time
+    gate, deliberately generic by design) for the SAVE path too, so every
+    failure surfaced as the same opaque "Content body failed publishing
+    quality gates" with no indication of which field was wrong -- the admin
+    had no way to know what to fix, experienced as "Save does not work"."""
+    await register_user(client, role_codes=["ADMIN"], db_session=db_session)
+    concept_id = await _concept_id(db_session)
+    item = await _create_question(client, concept_id)
+    item_id = item["id"]
+    await _force_dict_options(db_session, item_id, explanation=None, answer_status="ANSWER_VERIFIED")
+
+    # Submit the body exactly as the review-packet's normalized/prefilled
+    # question would be re-serialized by the edit form, still carrying the
+    # same (now-invalid) explanation=None forward -- the admin hasn't
+    # touched the explanation field yet.
+    packet = await client.get(f"/api/v1/cms/content-items/{item_id}/review-packet")
+    question = packet.json()["data"]["question"]
+    assert question["explanation"] is None
+    assert question["answer_status"] == "ANSWER_VERIFIED"
+
+    body = {
+        "stem": question["stem"],
+        "options": question["options"],
+        "correct_option": question["correct_option"],
+        "explanation": question["explanation"],
+        "answer_status": question["answer_status"],
+    }
+    patch = await client.patch(
+        f"/api/v1/cms/content-items/{item_id}",
+        json={"body": body, "change_summary": "Attempted edit without fixing explanation first"},
+        headers=csrf_headers(client),
+    )
+    assert patch.status_code == 422, patch.text
+    errors = patch.json()["errors"]
+    # Specific and field-attributed -- the admin is told exactly what to fix.
+    assert any(e.get("field") == "explanation" for e in errors)
+    assert "Content body failed publishing quality gates" not in patch.text
+
+
+async def test_edit_legacy_published_question_saves_after_fixing_explanation_and_concept(
+    client, db_session, register_user
+):
+    """The actual "legitimate edit must succeed" case: an admin fixing the
+    real gaps (explanation, concept mapping) on this exact legacy shape,
+    without touching answer verification, must be able to save -- proving
+    the fix doesn't just produce a better error message but actually
+    unblocks saving once the admin addresses what's flagged."""
+    admin = await register_user(client, role_codes=["ADMIN"], db_session=db_session)
+    concept_id = await _concept_id(db_session)
+    other_concept_id = await _other_concept_id(db_session, concept_id)
+    published = await _publish_question(client, concept_id)
+    item_id = published["id"]
+    await _force_dict_options(db_session, item_id, explanation=None, answer_status="ANSWER_VERIFIED")
+
+    packet = await client.get(f"/api/v1/cms/content-items/{item_id}/review-packet")
+    question = packet.json()["data"]["question"]
+    assert isinstance(question["options"], list) and len(question["options"]) == 4
+
+    body = {
+        "stem": question["stem"],
+        "options": question["options"],
+        "correct_option": question["correct_option"],
+        "explanation": "Filled in by SME during correction.",
+        # Mirrors the frontend's safe default: don't re-assert ANSWER_VERIFIED
+        # since there's no recorded evidence backing the legacy claim.
+        "answer_status": "ANSWER_PENDING",
+    }
+    patch = await client.patch(
+        f"/api/v1/cms/content-items/{item_id}",
+        json={"body": body, "change_summary": "Filled missing explanation; reassigned concept", "concept_id": other_concept_id},
+        headers=csrf_headers(client),
+    )
+    assert patch.status_code == 200, patch.text
+    data = patch.json()["data"]
+    assert data["concept_id"] == other_concept_id
+    assert data["latest_version"]["body"]["explanation"] == "Filled in by SME during correction."
+
+    reget = await client.get(f"/api/v1/cms/content-items/{item_id}")
+    reloaded = reget.json()["data"]
+    assert reloaded["concept_id"] == other_concept_id
+    assert reloaded["latest_version"]["body"]["explanation"] == "Filled in by SME during correction."
+    assert admin  # registered for auth cookies only
 
 
 # ---------------------------------------------------------------------------

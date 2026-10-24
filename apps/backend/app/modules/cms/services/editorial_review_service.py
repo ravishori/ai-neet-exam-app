@@ -874,6 +874,8 @@ class EditorialReviewService:
                 "difficulty": body.get("difficulty"),
                 "bloom_level": body.get("bloom_level"),
                 "pyq_year": body.get("pyq_year"),
+                "answer_status": body.get("answer_status"),
+                "ncert_evidence": body.get("ncert_evidence"),
             }
 
         duplicates = await self.find_suspected_duplicates(item, (body or {}).get("stem") if isinstance(body, dict) else None)

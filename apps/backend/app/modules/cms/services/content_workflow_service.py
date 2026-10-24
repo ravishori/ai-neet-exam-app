@@ -3,16 +3,17 @@ import uuid
 from datetime import UTC, datetime
 from typing import Any, Literal
 
+from pydantic import ValidationError
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm.attributes import flag_modified
 
-from app.core.exceptions import AppError
+from app.core.exceptions import AppError, ContentBodyValidationError
 from app.core.logging import get_logger
 from app.modules.cms.models import ContentItem, ContentReview, ContentVersion, ContentVersionKnowledgeUnit
 from app.modules.cms.repositories.cms_repository import CmsRepository
 from app.modules.cms.repositories.search_repository import SearchRepository
-from app.modules.cms.schemas.content_bodies import CONTENT_TYPES, assert_body_publishable
+from app.modules.cms.schemas.content_bodies import CONTENT_TYPES, assert_body_publishable, validate_body
 from app.modules.cms.schemas.question_evidence import NcertEvidence
 from app.modules.cms.services.ai_check_service import run_ai_check
 from app.modules.cms.services.publication_gates import assert_question_publishable
@@ -177,7 +178,23 @@ class ContentWorkflowService:
             raise ContentWorkflowError(f"Cannot edit content in state {item.status}")
 
         was_published = item.status == "PUBLISHED"
-        validated_body = assert_body_publishable(item.content_type, body)
+        # Deliberately NOT assert_body_publishable here (that's the
+        # publish-time gate -- same schema, but a single generic message by
+        # design: see its own docstring). Saving a draft is a different
+        # context: the admin is actively trying to fix content and needs to
+        # know exactly which field is wrong (e.g. "answer_status
+        # ANSWER_VERIFIED requires verified evidence" vs. a generic "failed
+        # quality gates"), not just that something failed. Validation
+        # strictness is unchanged -- same QuestionBody schema, same
+        # required fields -- only the error detail surfaced differs.
+        try:
+            validated_body = validate_body(item.content_type, body)
+        except ValidationError as exc:
+            raise ContentBodyValidationError(
+                [(".".join(str(p) for p in err["loc"]), err["msg"]) for err in exc.errors()]
+            ) from exc
+        except ValueError as exc:
+            raise AppError(str(exc), code="INVALID_CONTENT_TYPE", status_code=400) from exc
         next_version_no = max((v.version_no for v in item.versions), default=0) + 1
         by_id = {v.id: v for v in item.versions}
         previous = by_id.get(item.latest_version_id)

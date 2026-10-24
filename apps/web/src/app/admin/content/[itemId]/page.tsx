@@ -371,10 +371,29 @@ export default function ContentDetailPage() {
                   explanation: question.explanation ?? "",
                   conceptId: item.concept_id,
                   changeSummary: "",
-                  markVerified: false,
+                  // Reflects the item's current stored answer_status -- but
+                  // only when real evidence actually backs it, so an
+                  // unrelated edit (e.g. just the concept mapping) never
+                  // silently blocks on a legacy "ANSWER_VERIFIED" claim
+                  // that has no recorded evidence (the server would reject
+                  // re-saving that as-is), while a genuinely verified
+                  // answer's checked state is preserved, not silently
+                  // downgraded.
+                  markVerified:
+                    question.answer_status === "ANSWER_VERIFIED" &&
+                    !!question.ncert_evidence &&
+                    (question.ncert_evidence as { verification_level?: string }).verification_level !== "NOT_VERIFIED",
                 }}
                 saving={editMutation.isPending}
-                error={editMutation.error instanceof ApiError ? editMutation.error.message : null}
+                error={
+                  editMutation.error instanceof ApiError
+                    ? Object.keys(editMutation.error.fieldErrors).length > 0
+                      ? Object.entries(editMutation.error.fieldErrors)
+                          .map(([field, message]) => `${field}: ${message}`)
+                          .join("; ")
+                      : editMutation.error.message
+                    : null
+                }
                 onCancel={() => {
                   setIsEditing(false);
                   editMutation.reset();

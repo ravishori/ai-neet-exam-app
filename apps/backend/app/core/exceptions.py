@@ -42,6 +42,23 @@ class PermissionDeniedError(AppError):
         super().__init__(message, code="PERMISSION_DENIED", status_code=403)
 
 
+class ContentBodyValidationError(AppError):
+    """Like assert_body_publishable's generic AppError, but for the
+    edit/save context (not the publish gate) -- an admin actively fixing
+    content needs to know exactly WHICH field is wrong (e.g. "ANSWER_VERIFIED
+    requires verified evidence" vs. a generic "failed quality gates"), not
+    just that something is. Carries one {field, message} pair per Pydantic
+    error so the client's existing ApiError.fieldErrors mechanism (already
+    used for request-schema errors like a missing change_summary) also
+    works for body-schema errors, without discarding anything the user
+    typed -- the frontend form keeps its state on any 422."""
+
+    def __init__(self, field_errors: list[tuple[str, str]]):
+        summary = "; ".join(f"{field}: {message}" for field, message in field_errors) or "Invalid content body"
+        super().__init__(summary, code="INVALID_CONTENT_BODY", status_code=422)
+        self.field_errors = field_errors
+
+
 def _new_error_id() -> str:
     import uuid
 
@@ -60,9 +77,16 @@ def _error_payload(*, code: str, message: str, field: str | None = None, error_i
 async def app_error_handler(request: Request, exc: AppError):
     trace_id = getattr(request.state, "trace_id", None)
     error_id = exc.error_id or _new_error_id()
+    if isinstance(exc, ContentBodyValidationError):
+        errors = [
+            _error_payload(code=exc.code, message=message, field=field, error_id=error_id)
+            for field, message in exc.field_errors
+        ]
+    else:
+        errors = [_error_payload(code=exc.code, message=exc.message, error_id=error_id)]
     return envelope(
         success=False,
-        errors=[_error_payload(code=exc.code, message=exc.message, error_id=error_id)],
+        errors=errors,
         trace_id=trace_id,
         status_code=exc.status_code,
         meta={"errorId": error_id},
