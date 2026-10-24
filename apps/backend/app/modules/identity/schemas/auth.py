@@ -66,6 +66,10 @@ class TotpDisableRequest(BaseModel):
     code: str = Field(min_length=4, max_length=64)
 
 
+class SwitchRoleRequest(BaseModel):
+    role: str = Field(min_length=2, max_length=50)
+
+
 class MfaSetupBeginRequest(BaseModel):
     setup_token: str
 

@@ -11,6 +11,7 @@ from app.modules.identity.models.user import User
 from app.modules.identity.repositories.refresh_token_repository import RefreshTokenRepository
 from app.modules.identity.repositories.role_repository import RoleRepository
 from app.modules.identity.repositories.user_repository import UserRepository
+from app.modules.identity.role_priority import default_active_role
 from app.modules.identity.services.email_service import send_password_changed_email
 from app.modules.identity.services.password_service import (
     hash_password,
@@ -187,11 +188,17 @@ class AuthService:
         )
         await self.session.commit()
 
-    def issue_tokens(self, user: User) -> tuple[str, str, str]:
-        """Returns (access_token, refresh_token_plaintext, csrf_token)."""
-        access_token = create_access_token(user_id=user.id, role_codes=user.role_codes)
+    def issue_tokens(self, user: User, *, active_role: str | None = None) -> tuple[str, str, str]:
+        """Returns (access_token, csrf_token, active_role). ``active_role``
+        is which of the user's own roles to present as this session --
+        resolved to the role-priority default when omitted or when the
+        caller passes a role the user doesn't actually hold (see
+        app.modules.identity.role_priority). Never itself a grant: every
+        authorization check still reads the full role_codes set."""
+        role = active_role if active_role in user.role_codes else default_active_role(user.role_codes)
+        access_token = create_access_token(user_id=user.id, role_codes=user.role_codes, active_role=role)
         csrf_token = generate_csrf_token()
-        return access_token, csrf_token
+        return access_token, csrf_token, role
 
     async def issue_refresh_token(
         self, user: User, *, ip_address: str | None, user_agent: str | None

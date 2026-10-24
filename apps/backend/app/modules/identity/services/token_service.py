@@ -12,11 +12,17 @@ settings = get_settings()
 ALGORITHM = "HS256"
 
 
-def create_access_token(*, user_id: uuid.UUID, role_codes: list[str]) -> str:
+def create_access_token(*, user_id: uuid.UUID, role_codes: list[str], active_role: str | None = None) -> str:
+    """``active_role`` is a display/UX claim only (which of the user's own
+    ``role_codes`` they're currently presenting as -- see
+    app.modules.identity.role_priority) -- it is never itself a grant.
+    Every authorization check still reads the full ``roles`` claim/
+    ``user.role_codes``, exactly as before this claim existed."""
     now = datetime.now(UTC)
     payload = {
         "sub": str(user_id),
         "roles": role_codes,
+        "active_role": active_role,
         "iat": now,
         "exp": now + timedelta(minutes=settings.jwt_access_token_minutes),
         "type": "access",
@@ -74,6 +80,31 @@ def decode_mfa_setup_pending_token(token: str) -> dict:
     if payload.get("type") != "mfa_setup_pending":
         raise jwt.InvalidTokenError("Not an MFA setup pending token")
     return payload
+
+
+def peek_active_role(token: str | None, role_codes: list[str]) -> str:
+    """Best-effort read of the ``active_role`` claim from a (possibly
+    expired) access-token cookie, WITHOUT verifying its expiry -- used only
+    by /refresh to carry a chosen persona across a silent token refresh, so
+    switching roles doesn't get reset back to the default just because the
+    access token happened to expire first. This is not an authorization
+    decision: the claimed role is only ever trusted if it's still in the
+    caller's own, freshly-fetched ``role_codes`` (so a role revoked since
+    the old token was issued can't be carried forward), and the token's
+    signature is still verified -- only the expiry check is skipped, since
+    an access token that is merely expired (not forged) is still good
+    evidence of what the user was last presenting as."""
+    from app.modules.identity.role_priority import default_active_role
+
+    if token:
+        try:
+            payload = jwt.decode(token, settings.jwt_secret, algorithms=[ALGORITHM], options={"verify_exp": False})
+            claimed = payload.get("active_role")
+            if claimed in role_codes:
+                return claimed
+        except jwt.PyJWTError:
+            pass
+    return default_active_role(role_codes)
 
 
 def generate_refresh_token() -> tuple[str, str, datetime]:

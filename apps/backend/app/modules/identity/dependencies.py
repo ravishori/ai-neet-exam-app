@@ -50,6 +50,27 @@ async def get_optional_user(request: Request, db: AsyncSession = Depends(get_db)
         return None
 
 
+async def get_active_role(request: Request, user: User = Depends(get_current_user)) -> str:
+    """Which of the user's own roles the current session is presenting
+    as, read from the access token's active_role claim (set at login /
+    /switch-role). Display/UX only -- never used for authorization (see
+    app.modules.identity.role_priority). Falls back to the role-priority
+    default if the cookie is missing/unparseable or claims a role the
+    user no longer holds (e.g. revoked since the token was issued)."""
+    from app.modules.identity.role_priority import default_active_role
+
+    token = request.cookies.get(ACCESS_COOKIE)
+    if token:
+        try:
+            payload = decode_access_token(token)
+            claimed = payload.get("active_role")
+            if claimed in user.role_codes:
+                return claimed
+        except jwt.PyJWTError:
+            pass
+    return default_active_role(user.role_codes)
+
+
 def require_permission(permission_code: str):
     async def _check(
         user: User = Depends(get_current_user), db: AsyncSession = Depends(get_db)

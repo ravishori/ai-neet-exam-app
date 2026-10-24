@@ -5,10 +5,11 @@ from app.core.config import get_settings
 from app.core.database import get_db
 from app.core.exceptions import AppError
 from app.core.rate_limit import rate_limit, rate_limit_by_email, rate_limit_by_mobile, rate_limit_per_user
-from app.modules.identity.cookies import clear_auth_cookies, set_auth_cookies
-from app.modules.identity.dependencies import REFRESH_COOKIE, get_current_user, verify_csrf
+from app.modules.identity.cookies import clear_auth_cookies, set_access_cookie, set_auth_cookies
+from app.modules.identity.dependencies import ACCESS_COOKIE, REFRESH_COOKIE, get_active_role, get_current_user, verify_csrf
 from app.modules.identity.models.user import User
 from app.modules.identity.repositories.user_repository import UserRepository
+from app.modules.identity.role_priority import default_active_role
 from app.modules.identity.schemas.auth import (
     ChangePasswordRequest,
     ForgotPasswordRequest,
@@ -23,6 +24,7 @@ from app.modules.identity.schemas.auth import (
     OtpVerifyRequest,
     RegisterRequest,
     ResetPasswordRequest,
+    SwitchRoleRequest,
     TotpConfirmRequest,
     TotpDisableRequest,
     VerifyEmailRequest,
@@ -41,6 +43,7 @@ from app.modules.identity.services.token_service import (
     create_mfa_setup_pending_token,
     decode_mfa_pending_token,
     decode_mfa_setup_pending_token,
+    peek_active_role,
 )
 from app.modules.identity.services.totp_service import TotpService
 from app.modules.identity.services.twilio_verify_service import (
@@ -145,7 +148,7 @@ async def _resolve_mfa_setup_pending_user(token: str, db: AsyncSession) -> User:
     return user
 
 
-def _user_to_me(user: User) -> dict:
+def _user_to_me(user: User, *, active_role: str | None = None) -> dict:
     from datetime import UTC, datetime
 
     pca = getattr(user, "password_changed_at", None)
@@ -176,6 +179,12 @@ def _user_to_me(user: User) -> dict:
     # Additive soft-gate signal — not part of MeResponse's typed schema so
     # existing callers that don't look for it are unaffected.
     data["mfa_setup_required"] = _mfa_setup_required(user)
+    # Session-time role selector (Prompt B): which of the user's own roles
+    # this session is currently presenting as, plus the full set they can
+    # switch between via /switch-role. Display/UX only -- see
+    # app.modules.identity.role_priority.
+    data["active_role"] = active_role if active_role in user.role_codes else default_active_role(user.role_codes)
+    data["available_roles"] = user.role_codes
     return data
 
 
@@ -230,10 +239,10 @@ async def register(payload: RegisterRequest, request: Request, db: AsyncSession 
     # v1, not a login gate (no SMTP wired up yet, see email_service.py), so
     # gating login on it here would just lock every new user out.
     ip, user_agent = _client_meta(request)
-    access_token, csrf_token = service.issue_tokens(user)
+    access_token, csrf_token, active_role = service.issue_tokens(user)
     refresh_token = await service.issue_refresh_token(user, ip_address=ip, user_agent=user_agent)
 
-    result = envelope(success=True, data=_user_to_me(user), status_code=201)
+    result = envelope(success=True, data=_user_to_me(user, active_role=active_role), status_code=201)
     set_auth_cookies(result, access_token=access_token, refresh_token=refresh_token, csrf_token=csrf_token)
     return result
 
@@ -263,13 +272,13 @@ async def login(payload: LoginRequest, request: Request, db: AsyncSession = Depe
     if user.totp_enabled:
         return _mfa_challenge(user)
 
-    access_token, csrf_token = service.issue_tokens(user)
+    access_token, csrf_token, active_role = service.issue_tokens(user)
     refresh_token = await service.issue_refresh_token(user, ip_address=ip, user_agent=user_agent)
 
     # Cookies must be set on the response object actually returned — a
     # separately-injected `Response` dependency's headers are discarded
     # whenever the endpoint returns a Response (like envelope()) directly.
-    result = envelope(success=True, data=_user_to_me(user))
+    result = envelope(success=True, data=_user_to_me(user, active_role=active_role))
     set_auth_cookies(result, access_token=access_token, refresh_token=refresh_token, csrf_token=csrf_token)
     return result
 
@@ -303,9 +312,9 @@ async def mfa_verify(payload: MfaVerifyRequest, request: Request, db: AsyncSessi
         raise AppError("Invalid authenticator code", code="TOTP_INVALID", status_code=401)
 
     ip, user_agent = _client_meta(request)
-    access_token, csrf_token = service.issue_tokens(user)
+    access_token, csrf_token, active_role = service.issue_tokens(user)
     refresh_token = await service.issue_refresh_token(user, ip_address=ip, user_agent=user_agent)
-    result = envelope(success=True, data=_user_to_me(user))
+    result = envelope(success=True, data=_user_to_me(user, active_role=active_role))
     set_auth_cookies(result, access_token=access_token, refresh_token=refresh_token, csrf_token=csrf_token)
     return result
 
@@ -316,12 +325,20 @@ async def refresh(request: Request, db: AsyncSession = Depends(get_db)):
     if not refresh_token:
         raise AppError("No refresh token presented", code="NO_REFRESH_TOKEN", status_code=401)
 
+    # Carry the caller's current active_role across the silent refresh
+    # (read before rotate_refresh_token overwrites anything -- this cookie
+    # is untouched by that call either way) so switching roles doesn't
+    # get reset back to the default purely because the access token
+    # happened to expire before the refresh token did.
+    old_access_token = request.cookies.get(ACCESS_COOKIE)
+
     ip, user_agent = _client_meta(request)
     service = AuthService(db)
     user, new_refresh_token = await service.rotate_refresh_token(refresh_token, ip_address=ip, user_agent=user_agent)
 
-    access_token, csrf_token = service.issue_tokens(user)
-    result = envelope(success=True, data=_user_to_me(user))
+    carried_role = peek_active_role(old_access_token, user.role_codes)
+    access_token, csrf_token, active_role = service.issue_tokens(user, active_role=carried_role)
+    result = envelope(success=True, data=_user_to_me(user, active_role=active_role))
     set_auth_cookies(result, access_token=access_token, refresh_token=new_refresh_token, csrf_token=csrf_token)
     return result
 
@@ -367,7 +384,7 @@ async def reset_password(payload: ResetPasswordRequest, db: AsyncSession = Depen
 async def verify_email(payload: VerifyEmailRequest, db: AsyncSession = Depends(get_db)):
     service = AuthService(db)
     user = await service.verify_email(payload.token)
-    return envelope(success=True, data=_user_to_me(user))
+    return envelope(success=True, data=_user_to_me(user, active_role=default_active_role(user.role_codes)))
 
 
 @router.post(
@@ -485,9 +502,9 @@ async def otp_verify(payload: OtpVerifyRequest, request: Request, db: AsyncSessi
     if user.totp_enabled:
         return _mfa_challenge(user)
 
-    access_token, csrf_token = service.issue_tokens(user)
+    access_token, csrf_token, active_role = service.issue_tokens(user)
     refresh_token = await service.issue_refresh_token(user, ip_address=ip, user_agent=user_agent)
-    result = envelope(success=True, data=_user_to_me(user))
+    result = envelope(success=True, data=_user_to_me(user, active_role=active_role))
     set_auth_cookies(result, access_token=access_token, refresh_token=refresh_token, csrf_token=csrf_token)
     return result
 
@@ -566,12 +583,12 @@ async def mfa_setup_confirm(payload: MfaSetupConfirmRequest, request: Request, d
     # to re-prove the password/OTP factor they already proved to get here.
     ip, user_agent = _client_meta(request)
     service = AuthService(db)
-    access_token, csrf_token = service.issue_tokens(user)
+    access_token, csrf_token, active_role = service.issue_tokens(user)
     refresh_token = await service.issue_refresh_token(user, ip_address=ip, user_agent=user_agent)
     result = envelope(
         success=True,
         data={
-            **_user_to_me(user),
+            **_user_to_me(user, active_role=active_role),
             "recoveryCodes": recovery_codes,
             "message": "Store recovery codes offline. They are shown only once.",
         },
@@ -684,13 +701,38 @@ async def mobile_otp_verify(
 
     # Mobile-OTP is a strong factor: skip the TOTP step-up requirement here
     # (mirrors the mfa/verify branch — user proved possession of the device).
-    access_token, csrf_token = service.issue_tokens(user)
+    access_token, csrf_token, active_role = service.issue_tokens(user)
     refresh_token = await service.issue_refresh_token(user, ip_address=ip, user_agent=user_agent)
-    result_env = envelope(success=True, data=_user_to_me(user))
+    result_env = envelope(success=True, data=_user_to_me(user, active_role=active_role))
     set_auth_cookies(result_env, access_token=access_token, refresh_token=refresh_token, csrf_token=csrf_token)
     return result_env
 
 
 @router.get("/me")
-async def me(user: User = Depends(get_current_user)):
-    return envelope(success=True, data=_user_to_me(user))
+async def me(user: User = Depends(get_current_user), active_role: str = Depends(get_active_role)):
+    return envelope(success=True, data=_user_to_me(user, active_role=active_role))
+
+
+@router.post(
+    "/switch-role",
+    dependencies=[Depends(verify_csrf), Depends(rate_limit_per_user("switch_role", limit=20, window_seconds=300))],
+)
+async def switch_role(
+    payload: SwitchRoleRequest,
+    user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db),
+):
+    """Lets an account holding multiple roles (Prompt B: one account, one
+    login identity, choose which role to present as for this session --
+    see docs/authentication.md and app.modules.identity.role_priority).
+    Display/UX only: does not change what the account can actually do --
+    every permission check still reads the full, unchanged role_codes
+    set, never this claim."""
+    if payload.role not in user.role_codes:
+        raise AppError("You do not hold that role", code="ROLE_NOT_ASSIGNED", status_code=403)
+
+    service = AuthService(db)
+    access_token, csrf_token, active_role = service.issue_tokens(user, active_role=payload.role)
+    result = envelope(success=True, data=_user_to_me(user, active_role=active_role))
+    set_access_cookie(result, access_token=access_token, csrf_token=csrf_token)
+    return result
