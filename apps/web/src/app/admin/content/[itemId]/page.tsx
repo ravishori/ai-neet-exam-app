@@ -13,6 +13,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { ConceptPicker } from "@/components/concept-picker";
+import { MarkdownRenderer } from "@/components/markdown-renderer";
 import { ApiError } from "@/lib/api-client";
 import { cn } from "@/lib/utils";
 import { cmsApi, type ReviewChecklistItem } from "@/features/cms/api";
@@ -404,7 +405,7 @@ export default function ContentDetailPage() {
               <div className="space-y-4 text-sm">
                 <div>
                   <p className="mb-1 text-xs font-medium uppercase tracking-wide text-muted-foreground">Stem</p>
-                  <p className="whitespace-pre-wrap leading-relaxed">{question.stem}</p>
+                  <MarkdownRenderer content={question.stem ?? ""} />
                 </div>
                 <div className="space-y-2">
                   <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">Options</p>
@@ -430,7 +431,11 @@ export default function ContentDetailPage() {
                 </div>
                 <div>
                   <p className="mb-1 text-xs font-medium uppercase tracking-wide text-muted-foreground">Explanation</p>
-                  <p className="whitespace-pre-wrap text-muted-foreground">{question.explanation || "—"}</p>
+                  {question.explanation ? (
+                    <MarkdownRenderer content={question.explanation} className="text-muted-foreground" />
+                  ) : (
+                    <p className="text-muted-foreground">—</p>
+                  )}
                 </div>
                 <p className="text-xs text-muted-foreground">Difficulty: {question.difficulty ?? "—"}</p>
               </div>

@@ -19,6 +19,7 @@ import {
 import { Label } from "@/components/ui/label";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Textarea } from "@/components/ui/textarea";
+import { MarkdownRenderer } from "@/components/markdown-renderer";
 import { ApiError } from "@/lib/api-client";
 import { cmsApi } from "@/features/cms/api";
 
@@ -406,7 +407,7 @@ export default function ReviewSessionPage() {
               {packet.provenance?.model_used ? <Badge variant="outline">{packet.provenance.model_used}</Badge> : null}
             </div>
             <CardTitle className="text-base" data-testid="question-stem">
-              {packet.question?.stem}
+              <MarkdownRenderer content={packet.question?.stem ?? ""} />
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4 text-sm">
@@ -419,9 +420,9 @@ export default function ReviewSessionPage() {
               ))}
             </ul>
             {packet.question?.explanation ? (
-              <p className="text-muted-foreground" data-testid="question-explanation">
-                {packet.question.explanation}
-              </p>
+              <div className="text-muted-foreground" data-testid="question-explanation">
+                <MarkdownRenderer content={packet.question.explanation} />
+              </div>
             ) : null}
 
             <div className="rounded-md border p-3" data-testid="ncert-evidence">

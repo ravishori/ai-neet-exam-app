@@ -11,6 +11,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { EmptyState } from "@/components/ui/empty-state";
 import { Skeleton } from "@/components/ui/skeleton";
+import { MarkdownRenderer } from "@/components/markdown-renderer";
 import { questionsApi, type QuestionProvenance } from "@/features/questions/api";
 import { practiceStartMessage, useStartPractice } from "@/features/assessment/use-start-practice";
 import { ApiError } from "@/lib/api-client";
@@ -150,7 +151,7 @@ export default function QuestionDetailPage() {
             <CardHeader>
               <div className="flex items-start justify-between gap-3">
                 <CardTitle className="text-lg font-semibold leading-snug">
-                  <h1>{query.data.stem}</h1>
+                  <MarkdownRenderer content={query.data.stem ?? ""} />
                 </CardTitle>
                 <DifficultyBadge difficulty={query.data.difficulty} />
               </div>

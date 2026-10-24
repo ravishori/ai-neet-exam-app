@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Skeleton } from "@/components/ui/skeleton";
+import { MarkdownRenderer } from "@/components/markdown-renderer";
 import { ApiError } from "@/lib/api-client";
 import { pyqAnswerReviewApi, type EvidenceSourceType } from "@/features/pyq-answer-review/api";
 
@@ -114,7 +115,7 @@ export default function PyqAnswerReviewDetailPage() {
           <CardTitle className="text-base">Question</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
-          <p className="whitespace-pre-wrap text-sm">{detail.stem}</p>
+          <MarkdownRenderer content={detail.stem ?? ""} className="text-sm" />
           <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
             {OPTION_LABELS.map((label) => {
               const isSelected = selectedOption === label;

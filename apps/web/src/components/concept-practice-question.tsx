@@ -11,6 +11,7 @@ import {
   SurfaceCardTitle,
 } from "@/components/ds";
 import type { QuestionBody } from "@/features/cms/api";
+import { MarkdownRenderer } from "@/components/markdown-renderer";
 import { cn } from "@/lib/utils";
 
 type Props = {
@@ -55,7 +56,7 @@ export function ConceptPracticeQuestion({ id, title = "Practice question", body 
         <SurfaceCardTitle className="text-base">{title}</SurfaceCardTitle>
       </SurfaceCardHeader>
       <SurfaceCardContent className="flex flex-col gap-3">
-        <p className="text-question text-foreground">{body.stem}</p>
+        <MarkdownRenderer content={body.stem ?? ""} className="text-question text-foreground" />
 
         <div className="flex flex-col gap-2" role="group" aria-label="Answer options">
           {options.map((o, idx) => (
