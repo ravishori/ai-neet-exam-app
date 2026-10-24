@@ -396,6 +396,13 @@ class Settings(BaseSettings):
     # something to default toward speculatively.
     visual_assets_dir: str = _default_data_dir("VisualAssets")
 
+    # Admin-uploaded rich-content images (question stem/explanation editor).
+    # Same local-filesystem convention as visual_assets_dir -- a separate
+    # directory, not reused, since these are admin-uploaded editor images,
+    # not AI-detected/reviewed visual assets (a different workflow with its
+    # own review_status gate).
+    cms_image_upload_dir: str = _default_data_dir("CmsImages")
+
     @model_validator(mode="after")
     def _normalize_database_urls(self) -> "Settings":
         """Coerce ``database_url`` to the async-driver form and, if

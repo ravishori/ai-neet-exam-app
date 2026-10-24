@@ -1,10 +1,15 @@
+import re
 import uuid
+from pathlib import Path
 
-from fastapi import APIRouter, Depends, Query, Request
+from fastapi import APIRouter, Depends, File, Query, Request, UploadFile
+from fastapi.responses import FileResponse
 from sqlalchemy.ext.asyncio import AsyncSession
 
+from app.core.config import get_settings
 from app.core.database import get_db
 from app.core.exceptions import AppError, NotFoundError, PermissionDeniedError
+from app.core.logging import get_logger
 from app.modules.cms.models import ContentItem, ContentReport, ContentVersion
 from app.modules.cms.repositories.cms_repository import CmsRepository
 from app.modules.cms.schemas.content_item import (
@@ -31,6 +36,7 @@ from app.shared.question_options import normalize_options
 from app.shared.responses import envelope
 
 router = APIRouter(prefix="/api/v1/cms", tags=["cms"])
+logger = get_logger("cms")
 
 # Extended for PYQ question-quality feedback (docs/quality/pyq-gemini-one-pass-resolution-*.md):
 # WRONG_EXPLANATION / BAD_OPTIONS / MISSING_INFO added alongside the original five.
@@ -1025,3 +1031,100 @@ async def get_published_content_for_concept(
         data=[_item(i) for i in items],
         meta={"language": requested_language, "language_fallback": language_fallback},
     )
+
+
+# ---------------------------------------------------------------------------
+# Rich-content editor image uploads (question stem/explanation)
+# ---------------------------------------------------------------------------
+# A separate directory/endpoint pair from the knowledge module's
+# visual-assets image route (knowledge_router.py:38) -- these are
+# admin-uploaded editor images, not AI-detected crops with their own
+# review_status workflow. Same local-filesystem convention as
+# visual_assets_dir/study_material_dir (ADR-0026): no object storage is
+# provisioned for this project.
+
+_IMAGE_MAX_BYTES = 5 * 1024 * 1024  # 5 MB -- generous for a diagram/photo, bounded against abuse
+_UNSAFE_IMAGE_FILENAME_CHARS = re.compile(r"[^A-Za-z0-9._-]+")
+# Re-encoded output is always one of these two formats (see _reencode_image),
+# so the content-type map below only ever needs to cover them.
+_IMAGE_CONTENT_TYPE = {"png": "image/png", "jpeg": "image/jpeg"}
+
+
+def _safe_image_filename(original_filename: str, ext: str) -> str:
+    base = Path(original_filename or "image").stem
+    safe = _UNSAFE_IMAGE_FILENAME_CHARS.sub("_", base) or "image"
+    return f"{uuid.uuid4().hex}_{safe}.{ext}"
+
+
+def _reencode_image(raw: bytes) -> tuple[bytes, str]:
+    """Re-encodes via Pillow -- this both verifies the bytes are a real,
+    decodable image (a far more robust signature check than a hand-rolled
+    magic-byte comparison, since it actually parses the format) and strips
+    EXIF/metadata, which can otherwise carry GPS coordinates, camera
+    identifiers, or crafted polyglot payloads. Output is always PNG
+    (preserving transparency) or JPEG (re-compressed, no alpha) -- never
+    the original bytes, and never a format Pillow doesn't already
+    normalize on save."""
+    import io
+
+    from PIL import Image, UnidentifiedImageError
+
+    try:
+        image = Image.open(io.BytesIO(raw))
+        image.load()  # force full decode now, not lazily later -- a truncated/corrupt file must fail here
+    except (UnidentifiedImageError, OSError) as exc:
+        raise AppError("Uploaded file is not a valid image", code="INVALID_FILE_TYPE", status_code=400) from exc
+
+    has_alpha = image.mode in ("RGBA", "LA") or (image.mode == "P" and "transparency" in image.info)
+    out = io.BytesIO()
+    if has_alpha:
+        image.convert("RGBA").save(out, format="PNG", optimize=True)
+        return out.getvalue(), "png"
+    image.convert("RGB").save(out, format="JPEG", quality=88, optimize=True)
+    return out.getvalue(), "jpeg"
+
+
+@router.post(
+    "/images",
+    dependencies=[Depends(require_permission("content.create")), Depends(verify_csrf)],
+)
+async def upload_content_image(file: UploadFile = File(...), user: User = Depends(get_current_user)):
+    """Uploads an image for insertion into a QUESTION stem/explanation
+    (Markdown ``![alt](url)``). Never stores the uploaded bytes as-is --
+    see _reencode_image. The returned path is served back by
+    get_content_image below, gated on the same questions.read permission
+    every other question-content read already requires."""
+    raw = await file.read(_IMAGE_MAX_BYTES + 1)
+    if len(raw) > _IMAGE_MAX_BYTES:
+        raise AppError(f"Image exceeds the {_IMAGE_MAX_BYTES // (1024 * 1024)} MB upload limit", code="FILE_TOO_LARGE", status_code=400)
+    if not raw:
+        raise AppError("Uploaded file is empty", code="INVALID_FILE_TYPE", status_code=400)
+
+    encoded, ext = _reencode_image(raw)
+
+    settings = get_settings()
+    upload_dir = Path(settings.cms_image_upload_dir)
+    upload_dir.mkdir(parents=True, exist_ok=True)
+    filename = _safe_image_filename(file.filename or "image", ext)
+    (upload_dir / filename).write_bytes(encoded)
+
+    logger.info("cms_image_uploaded", filename=filename, size_bytes=len(encoded), actor_id=str(user.id))
+    return envelope(success=True, data={"filename": filename, "url": f"/api/v1/cms/images/{filename}"})
+
+
+@router.get("/images/{filename}", dependencies=[Depends(require_permission("questions.read"))])
+async def get_content_image(filename: str):
+    settings = get_settings()
+    upload_dir = Path(settings.cms_image_upload_dir).resolve()
+    # Re-derive the filename from the path-stripped basename before
+    # resolving -- never trust the raw path segment for traversal safety,
+    # same convention as ingestion_router._resolve_and_guard_path.
+    resolved = (upload_dir / Path(filename).name).resolve()
+    if upload_dir not in resolved.parents and resolved != upload_dir:
+        raise NotFoundError("Image not found")
+    if not resolved.is_file():
+        raise NotFoundError("Image not found")
+
+    ext = resolved.suffix.lstrip(".").lower()
+    content_type = _IMAGE_CONTENT_TYPE.get(ext, "application/octet-stream")
+    return FileResponse(resolved, media_type=content_type)
