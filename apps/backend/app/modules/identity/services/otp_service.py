@@ -10,15 +10,28 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.exceptions import AppError
 from app.core.logging import get_logger
-from app.modules.identity.models.otp import OtpChallenge
+from app.modules.identity.models.otp import OtpAbuseCounter, OtpChallenge
 from app.modules.identity.services.email_service import send_email_verification_otp_email, send_login_otp_email
 from app.modules.identity.services.token_service import hash_opaque_token
 
 logger = get_logger("otp")
 
-OTP_TTL_MINUTES = 10
+OTP_TTL_MINUTES = 5
 OTP_LENGTH = 6
 RESEND_COOLDOWN_SECONDS = 60
+# Persistent, cross-challenge verification-attempt cap (see OtpAbuseCounter's
+# own docstring) -- deliberately the same ceiling as a single challenge's
+# max_attempts, since this counter is what actually governs abuse now; a
+# fresh challenge's own `attempts` field still exists for per-code
+# visibility/logging, but no longer gives an attacker a fresh 5-attempt
+# budget just by requesting a new code.
+MAX_ABUSE_ATTEMPTS = 5
+# How long a period of failed attempts is remembered before resetting on
+# its own -- prevents a few wrong attempts days apart from ever
+# accumulating into a permanent lockout for a legitimate user who
+# occasionally mistypes their code. A successful verification also resets
+# this immediately, independent of the window.
+ABUSE_WINDOW_MINUTES = 60
 
 # email_login is the only purpose that establishes a session (see
 # auth_router._LOGIN_OTP_PURPOSES) — it gets the LOGIN_OTP template/subject.
@@ -35,6 +48,28 @@ def _generate_otp() -> str:
 class OtpService:
     def __init__(self, session: AsyncSession):
         self.session = session
+
+    async def _get_abuse_counter(self, *, destination: str, purpose: str) -> OtpAbuseCounter:
+        """Fetch-or-create the persistent counter for this (destination,
+        purpose) pair, resetting it first if its rolling window has
+        expired. Never resets it just because a new OtpChallenge was
+        requested -- only this window expiry or a successful verification
+        (see verify_email_otp) ever clears it."""
+        now = datetime.now(UTC)
+        result = await self.session.execute(
+            select(OtpAbuseCounter).where(
+                OtpAbuseCounter.destination == destination, OtpAbuseCounter.purpose == purpose
+            )
+        )
+        counter = result.scalar_one_or_none()
+        if counter is None:
+            counter = OtpAbuseCounter(destination=destination, purpose=purpose, failed_attempts=0, window_started_at=now)
+            self.session.add(counter)
+            await self.session.flush()
+        elif (now - counter.window_started_at).total_seconds() > ABUSE_WINDOW_MINUTES * 60:
+            counter.failed_attempts = 0
+            counter.window_started_at = now
+        return counter
 
     async def request_email_otp(self, *, email: str, purpose: str) -> None:
         email_norm = email.lower().strip()
@@ -78,6 +113,16 @@ class OtpService:
         if not code.isdigit() or len(code) != OTP_LENGTH:
             raise AppError("Invalid verification code", code="OTP_INVALID", status_code=400)
 
+        # Persistent, cross-challenge abuse ceiling -- checked BEFORE
+        # looking at any individual challenge, so once it trips, no further
+        # guesses are evaluated even against a brand-new code requested
+        # after this point.
+        counter = await self._get_abuse_counter(destination=email_norm, purpose=purpose)
+        if counter.failed_attempts >= MAX_ABUSE_ATTEMPTS:
+            await self.session.commit()  # persist any window-reset _get_abuse_counter already staged
+            logger.info("otp_failed", reason="abuse_locked", purpose=purpose, failed_attempts=counter.failed_attempts)
+            raise AppError("Too many invalid attempts", code="OTP_LOCKED", status_code=429)
+
         result = await self.session.execute(
             select(OtpChallenge)
             .where(
@@ -90,6 +135,7 @@ class OtpService:
         )
         challenge = result.scalar_one_or_none()
         if not challenge or challenge.expires_at <= datetime.now(UTC):
+            await self.session.commit()
             logger.info("otp_failed", reason="expired_or_missing", purpose=purpose)
             raise AppError("Invalid or expired verification code", code="OTP_INVALID", status_code=400)
 
@@ -101,11 +147,19 @@ class OtpService:
 
         if not secrets.compare_digest(challenge.code_hash, hash_opaque_token(code)):
             challenge.attempts += 1
+            counter.failed_attempts += 1
             await self.session.commit()
-            logger.info("otp_failed", reason="mismatch", purpose=purpose, attempts=challenge.attempts)
+            logger.info(
+                "otp_failed",
+                reason="mismatch",
+                purpose=purpose,
+                attempts=challenge.attempts,
+                abuse_attempts=counter.failed_attempts,
+            )
             raise AppError("Invalid or expired verification code", code="OTP_INVALID", status_code=400)
 
         challenge.consumed_at = datetime.now(UTC)
+        counter.failed_attempts = 0  # legitimate success clears the abuse window immediately
         await self.session.commit()
         logger.info("otp_verified", purpose=purpose, channel="email")
         return True

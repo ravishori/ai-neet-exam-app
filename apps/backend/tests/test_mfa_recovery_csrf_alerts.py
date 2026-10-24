@@ -216,12 +216,18 @@ async def test_normal_auth_failures_do_not_trigger_admin_alert(client, monkeypat
     not_found = await client.get("/api/v1/auth/does-not-exist")
     assert not_found.status_code == 404
 
-    # invalid mobile OTP verify -> 401
+    # Mobile OTP login is disabled by default (settings.mobile_otp_login_
+    # enabled=False, see test_mobile_otp_disabled.py) -- the route itself
+    # now rejects with 404 FEATURE_DISABLED before ever reaching the
+    # invalid-code path this originally exercised. Still a "normal auth
+    # failure" for the purposes of this test (must not trigger an alert),
+    # which is the only thing actually under test here.
     try:
         bad_otp = await client.post(
             "/api/v1/auth/mobile/otp/verify", json={"mobile": "+919876500999", "code": "000000"}
         )
-        assert bad_otp.status_code == 401
+        assert bad_otp.status_code == 404
+        assert bad_otp.json()["errors"][0]["code"] == "FEATURE_DISABLED"
     finally:
         app.dependency_overrides.pop(get_twilio_verify, None)
 
