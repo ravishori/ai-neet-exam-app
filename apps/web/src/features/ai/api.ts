@@ -36,6 +36,11 @@ export type StudyPlan = {
     weekly_focus: string[];
     daily_schedule: { day: number; focus: string; duration_minutes: number }[];
   };
+  // True when `plan` is the deterministic baseline, not an AI-
+  // personalized one (AI disabled/unavailable/over its spend cap/
+  // returned an invalid response) -- the UI must never claim a
+  // deterministic plan is "AI-generated".
+  is_fallback: boolean;
   created_at: string;
 };
 

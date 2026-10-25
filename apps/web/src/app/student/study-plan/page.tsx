@@ -125,9 +125,16 @@ export default function StudyPlanPage() {
       {plan && (
         <SurfaceCard accent="none">
           <SurfaceCardHeader>
-            <SurfaceCardTitle>Your plan</SurfaceCardTitle>
+            <div className="flex items-center gap-2">
+              <SurfaceCardTitle>Your plan</SurfaceCardTitle>
+              <Badge variant={plan.is_fallback ? "outline" : "secondary"}>
+                {plan.is_fallback ? "Standard plan" : "AI-personalized"}
+              </Badge>
+            </div>
             <SurfaceCardDescription>
-              AI-generated from the inputs above — not a certified NEET prep plan. Verify weekly focus against your NCERT syllabus before you commit to it.
+              {plan.is_fallback
+                ? "A standard plan built from your inputs — AI personalization wasn't available for this request, so weak-concept prioritization here is rule-based, not model-generated."
+                : "AI-personalized from the inputs above — not a certified NEET prep plan. Verify weekly focus against your NCERT syllabus before you commit to it."}
             </SurfaceCardDescription>
           </SurfaceCardHeader>
           <SurfaceCardContent className="flex flex-col gap-3">
