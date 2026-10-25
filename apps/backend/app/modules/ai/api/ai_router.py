@@ -39,6 +39,7 @@ def _study_plan(p: StudyPlan) -> dict:
         "exam_date": p.exam_date.isoformat(),
         "hours_per_day": p.hours_per_day,
         "plan": p.plan,
+        "is_fallback": bool(p.is_fallback),
         "created_at": p.created_at,
     }
 

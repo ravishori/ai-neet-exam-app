@@ -232,6 +232,32 @@ class Settings(BaseSettings):
     factory_provider: str = "anthropic"
     factory_provider_fallback_chain: str = ""  # e.g. openai,gemini,mistral
 
+    # Study Planner (NEET-STUDY-PLANNER-PROVIDER-001) — independent of the
+    # factory_provider*/ai_provider_default settings above by design, so
+    # changing either never affects the other. Both empty by default,
+    # which makes StudyPlannerService inherit ai_provider_default (today:
+    # "anthropic") exactly as before this feature existed — i.e. this
+    # ships with ZERO behavior change until an operator explicitly sets
+    # these. Recommended production values (see docs/ai/study-planner.md):
+    # STUDY_PLANNER_PROVIDER=gemini, STUDY_PLANNER_PROVIDER_FALLBACK_CHAIN=openai,
+    # with GEMINI_ENABLED/GEMINI_API_KEY and OPENAI_ENABLED/OPENAI_API_KEY
+    # also set — gemini-2.0-flash + gpt-4o-mini are the lowest-cost
+    # reliable pairing evaluated for this feature.
+    study_planner_provider: str = ""
+    study_planner_provider_fallback_chain: str = ""
+    # AI personalization is always optional — a deterministic, rule-based
+    # plan is computed first and used whenever the AI call is disabled,
+    # unavailable, over its spend cap, or returns a response that fails
+    # schema validation. See StudyPlannerService.generate.
+    study_planner_cache_ttl_seconds: int = 3600
+    # Persistent (ai.ai_requests-backed) daily USD cap for agent_type=
+    # STUDY_PLANNER specifically — independent of mcq_factory_groq_max_spend_usd
+    # above (different feature, different table rows via agent_type).
+    # <= 0 means "no AI spend allowed" (always falls back to the
+    # deterministic plan), not "unlimited" — a deliberately safe default
+    # for an unset/misconfigured cap. See app/modules/ai/spend_guard.py.
+    study_planner_daily_spend_cap_usd: float = 1.0
+
     # MCQ-FACTORY-PROVIDER-AGNOSTIC-001 — independent provider+model
     # selection for the TWO Groq-orchestrator call sites (generation vs
     # verification; see app/modules/cms/mcq_factory_groq/orchestrator.py
