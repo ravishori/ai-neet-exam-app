@@ -220,24 +220,42 @@ def is_student_eligible(content_type: str, body: dict) -> tuple[bool, str | None
     publishable-question fixture, which never sets it either), and
     requiring it retroactively would silently empty the entire existing
     practice pool rather than fixing the actual defect this gate targets.
-    What this DOES exclude, unconditionally: a body that fails the same
-    structural validation publish already re-checks (assert_body_
-    publishable's own schema -- 4 unique-text options A-D, a correct_option
-    matching one of them, non-empty stem/explanation), and a body whose
-    answer_status is explicitly ANSWER_PENDING or ANSWER_CONFLICT -- i.e.
-    an explicit "this isn't resolved yet" flag always wins over
-    publication status, exactly as asked.
+
+    Deliberately does NOT reuse assert_body_publishable/QuestionBody.
+    model_validate wholesale -- a live production read-only audit (this
+    change's own verification pass) found that doing so made ~2,575 of
+    ~2,576 "structurally invalid" rows fail for exactly one reason:
+    explanation is None. QuestionBody's full schema is the bar for an
+    EDITOR CREATING new content (explanation, difficulty, bloom_level
+    etc. all required there, reasonably), not the bar for whether an
+    already-answered PYQ can be PRACTICED -- a verified correct_option
+    with no written explanation yet is still a perfectly practicable,
+    scoreable question. Conflating "would a human editor's new
+    submission pass today's content-quality bar" with "can an already-
+    published question be selected for practice" would have wrongly
+    excluded thousands of genuinely good, answer-verified questions.
+    What eligibility actually requires, checked directly below (not
+    via the full schema): a non-empty stem, exactly one each of options
+    A/B/C/D with non-empty, pairwise-unique text, and a correct_option
+    that matches one of those labels. Nothing about explanation,
+    difficulty, bloom_level, or any other presentation/metadata field.
+
+    What this DOES exclude, unconditionally: the structural failure
+    above, and a body whose answer_status is explicitly ANSWER_PENDING
+    or ANSWER_CONFLICT -- i.e. an explicit "this isn't resolved yet"
+    flag always wins over publication status, exactly as asked.
 
     Normalizes ``options`` via ``app.shared.question_options.normalize_options``
-    before validating -- the SAME normalization every student-facing
+    before checking -- the SAME normalization every student-facing
     renderer (assessment_router._public_question/_result_question,
     editorial_review_service.review_packet, search_service) already
     applies. A production format audit (F-17) found 12,396 of 19,589
     QUESTION rows store options as a dict keyed by letter, not the list
-    shape QuestionBody's own schema expects -- validating the raw,
-    unnormalized body here would make this gate reject the majority of
-    real, already-correctly-rendered published content as "structurally
-    invalid", which is not the defect this gate exists to catch."""
+    shape a raw structural check would otherwise expect -- checking the
+    raw, unnormalized body here would make this gate reject the
+    majority of real, already-correctly-rendered published content as
+    structurally invalid, which is not the defect this gate exists to
+    catch."""
     if content_type != "QUESTION":
         return True, None
 
@@ -247,13 +265,22 @@ def is_student_eligible(content_type: str, body: dict) -> tuple[bool, str | None
 
     from app.shared.question_options import normalize_options
 
-    body = {**body, "options": normalize_options(body.get("options"))}
+    stem = body.get("stem")
+    if not isinstance(stem, str) or not stem.strip():
+        return False, "STRUCTURALLY_INVALID"
 
-    from pydantic import ValidationError
+    options = normalize_options(body.get("options"))
+    labels = [opt.get("label") for opt in options if isinstance(opt, dict)]
+    if sorted(label for label in labels if isinstance(label, str)) != ["A", "B", "C", "D"]:
+        return False, "STRUCTURALLY_INVALID"
+    texts = [opt.get("text") for opt in options]
+    if any(not isinstance(t, str) or not t.strip() for t in texts):
+        return False, "STRUCTURALLY_INVALID"
+    if len({t.strip().lower() for t in texts}) != 4:
+        return False, "STRUCTURALLY_INVALID"
 
-    try:
-        validate_body(content_type, body)
-    except (ValidationError, ValueError):
+    correct_option = body.get("correct_option")
+    if not isinstance(correct_option, str) or correct_option.strip().upper() not in labels:
         return False, "STRUCTURALLY_INVALID"
 
     return True, None
