@@ -194,6 +194,71 @@ def validate_body(content_type: str, body: dict) -> dict:
     return schema.model_validate(body).model_dump()
 
 
+# Disqualifying answer_status values that must never reach a student
+# practice/scored-assessment selection pool, even on a PUBLISHED item --
+# "pending" or "conflicted" are "ANSWER_PENDING"/"ANSWER_CONFLICT" at the
+# PYQ-staging layer (pyq.questions.state); if either value is ever copied
+# into a content_item body's own answer_status (today's QuestionBody.
+# AnswerStatus type only names ANSWER_VERIFIED/ANSWER_PENDING, but a raw
+# DB write bypassing this schema could still carry ANSWER_CONFLICT), it
+# must be excluded here too -- defensive on the raw dict value, checked
+# BEFORE/independent of schema validation, not assumed impossible.
+_DISQUALIFYING_ANSWER_STATUSES = frozenset({"ANSWER_PENDING", "ANSWER_CONFLICT"})
+
+
+def is_student_eligible(content_type: str, body: dict) -> tuple[bool, str | None]:
+    """Whether this content body may be served to a student for practice
+    or a scored assessment -- publication status (PUBLISHED) alone never
+    implies this; call this ON TOP OF that status check, never instead of
+    it. Returns (eligible, reason) -- reason is None when eligible, else a
+    short machine-readable code for audit logging.
+
+    Deliberately does NOT require an explicit answer_status of
+    "ANSWER_VERIFIED" -- most of today's real content was published
+    before that field was consistently populated (see
+    helpers_publishable_question.py, the test suite's own shared
+    publishable-question fixture, which never sets it either), and
+    requiring it retroactively would silently empty the entire existing
+    practice pool rather than fixing the actual defect this gate targets.
+    What this DOES exclude, unconditionally: a body that fails the same
+    structural validation publish already re-checks (assert_body_
+    publishable's own schema -- 4 unique-text options A-D, a correct_option
+    matching one of them, non-empty stem/explanation), and a body whose
+    answer_status is explicitly ANSWER_PENDING or ANSWER_CONFLICT -- i.e.
+    an explicit "this isn't resolved yet" flag always wins over
+    publication status, exactly as asked.
+
+    Normalizes ``options`` via ``app.shared.question_options.normalize_options``
+    before validating -- the SAME normalization every student-facing
+    renderer (assessment_router._public_question/_result_question,
+    editorial_review_service.review_packet, search_service) already
+    applies. A production format audit (F-17) found 12,396 of 19,589
+    QUESTION rows store options as a dict keyed by letter, not the list
+    shape QuestionBody's own schema expects -- validating the raw,
+    unnormalized body here would make this gate reject the majority of
+    real, already-correctly-rendered published content as "structurally
+    invalid", which is not the defect this gate exists to catch."""
+    if content_type != "QUESTION":
+        return True, None
+
+    raw_status = body.get("answer_status")
+    if raw_status in _DISQUALIFYING_ANSWER_STATUSES:
+        return False, raw_status
+
+    from app.shared.question_options import normalize_options
+
+    body = {**body, "options": normalize_options(body.get("options"))}
+
+    from pydantic import ValidationError
+
+    try:
+        validate_body(content_type, body)
+    except (ValidationError, ValueError):
+        return False, "STRUCTURALLY_INVALID"
+
+    return True, None
+
+
 def assert_body_publishable(content_type: str, body: dict) -> dict:
     """Re-validate body at publish time. Raises AppError on failure."""
     from pydantic import ValidationError

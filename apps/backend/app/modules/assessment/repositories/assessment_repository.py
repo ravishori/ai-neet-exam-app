@@ -7,7 +7,8 @@ from sqlalchemy.orm import selectinload
 
 from app.modules.academic.models import Chapter, Concept, Topic
 from app.modules.assessment.models import Assessment, AssessmentQuestion, Attempt, AttemptAnswer
-from app.modules.cms.models import ContentItem
+from app.modules.cms.models import ContentItem, ContentVersion
+from app.modules.cms.schemas.content_bodies import is_student_eligible
 
 
 class AssessmentRepository:
@@ -15,11 +16,28 @@ class AssessmentRepository:
         self.session = session
 
     async def published_question_ids_for_scope(self, scope_type: str, scope_id: uuid.UUID | None) -> list[uuid.UUID]:
-        query = select(ContentItem.id).where(
+        """Student-facing eligibility gate for every practice/mock-test
+        question-selection path (generate_practice, generate_mock,
+        generate_full_mock all funnel through this one method).
+
+        PUBLISHED is necessary but never sufficient on its own -- a
+        structurally-defective body, or one explicitly flagged
+        ANSWER_PENDING/ANSWER_CONFLICT, can still be the current PUBLISHED
+        version (nothing re-runs content.schemas.content_bodies.
+        is_student_eligible at publish time beyond assert_body_publishable's
+        structural check, which does not look at answer_status at all).
+        This filters those out AFTER the PUBLISHED query, in Python, reusing
+        the same body-validation schema the publish endpoint already uses
+        (see is_student_eligible's own docstring for exactly what it does
+        and deliberately does NOT require). Excluded rows remain fully
+        intact and visible to authorized admins via the existing CMS
+        content-item endpoints -- this never deletes or edits anything,
+        only narrows what THIS method returns."""
+        query = select(ContentItem.id, ContentVersion.body).where(
             ContentItem.content_type == "QUESTION",
             ContentItem.status == "PUBLISHED",
             ContentItem.deleted_at.is_(None),
-        )
+        ).join(ContentVersion, ContentVersion.id == ContentItem.current_version_id)
 
         if scope_type == "CONCEPT":
             query = query.where(ContentItem.concept_id == scope_id)
@@ -53,7 +71,11 @@ class AssessmentRepository:
         # FULL: no extra filter
 
         result = await self.session.execute(query)
-        return list(result.scalars().all())
+        return [
+            item_id
+            for item_id, body in result.all()
+            if is_student_eligible("QUESTION", body or {})[0]
+        ]
 
     def add_assessment(self, assessment: Assessment) -> None:
         self.session.add(assessment)

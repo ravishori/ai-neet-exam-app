@@ -272,21 +272,65 @@ async def test_attempt_result_view_normalizes_dict_shaped_options(client, db_ses
     assert match["is_correct"] is True
 
 
+async def _assessment_with_explicit_questions(db_session, *, scope_type: str, scope_id: str, question_ids: list[str], created_by: str) -> str:
+    """Builds an Assessment + its AssessmentQuestion rows directly,
+    bypassing /assessments/practice generation entirely. Needed for any
+    test that wants to exercise a SPECIFIC content_item_id regardless of
+    whether the eligibility gate (assessment_repository.
+    published_question_ids_for_scope / is_student_eligible) would select
+    it — e.g. a pending-answer or otherwise-ineligible question, which
+    the gate now correctly refuses to pick on its own (see
+    test_practice_attempt_with_pending_answer_scores_neutrally's own
+    docstring). This still exercises the real scoring/submit path
+    end-to-end; only question SELECTION is bypassed, not scoring."""
+    import uuid as _uuid
+
+    from app.modules.assessment.models import Assessment, AssessmentQuestion
+
+    assessment_id = _uuid.uuid4()
+    db_session.add(
+        Assessment(
+            id=assessment_id,
+            assessment_type="PRACTICE",
+            scope_type=scope_type,
+            scope_id=_uuid.UUID(scope_id) if scope_id else None,
+            title="Direct-injection test assessment",
+            marks_per_question=1,
+            negative_marks_per_question=0,
+            question_count=len(question_ids),
+            created_by=_uuid.UUID(created_by),
+        )
+    )
+    for order_no, qid in enumerate(question_ids):
+        db_session.add(AssessmentQuestion(assessment_id=assessment_id, content_item_id=_uuid.UUID(qid), order_no=order_no))
+    await db_session.commit()
+    return str(assessment_id)
+
+
 async def test_practice_attempt_with_pending_answer_scores_neutrally(client, db_session, register_user):
     """A question with no verified correct_option (e.g. an ANSWER_PENDING
     PYQ, represented the same way — correct_option missing/empty in the
     published body) must never be counted correct or incorrect, and must
-    never attract negative marking — it is genuinely unknown, not wrong."""
+    never attract negative marking — it is genuinely unknown, not wrong.
+
+    This question is deliberately NOT reachable via /assessments/practice
+    generation any more (the eligibility gate added alongside this test
+    correctly excludes ANSWER_PENDING questions from selection — see
+    assessment_repository.published_question_ids_for_scope and
+    content_bodies.is_student_eligible) -- so this test constructs the
+    assessment directly to prove the scoring layer's own, separate,
+    defense-in-depth tolerance for a pending-answer question that reached
+    an attempt some other way (e.g. one generated before this question's
+    answer was un-verified)."""
     await register_user(client, role_codes=["CONTENT_MANAGER"], db_session=db_session)
     concept_id = await _any_concept_id(db_session)
     question_id = await _publish_pending_answer_question(db_session, concept_id)
 
-    generate = await client.post(
-        "/api/v1/assessments/practice",
-        json={"scope_type": "CONCEPT", "scope_id": concept_id},
-        headers=csrf_headers(client),
+    me = await client.get("/api/v1/auth/me")
+    user_id = me.json()["data"]["id"]
+    assessment_id = await _assessment_with_explicit_questions(
+        db_session, scope_type="CONCEPT", scope_id=concept_id, question_ids=[question_id], created_by=user_id
     )
-    assessment_id = generate.json()["data"]["id"]
     start = await client.post(f"/api/v1/assessments/{assessment_id}/attempts", headers=csrf_headers(client))
     attempt_id = start.json()["data"]["id"]
 
