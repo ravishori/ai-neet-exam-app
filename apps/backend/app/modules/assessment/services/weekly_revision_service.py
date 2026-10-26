@@ -37,7 +37,8 @@ from app.modules.assessment.models import (
     AttemptAnswer,
     WeeklyRevisionRecommendation,
 )
-from app.modules.cms.models import ContentItem
+from app.modules.cms.models import ContentItem, ContentVersion
+from app.modules.cms.schemas.content_bodies import is_student_eligible
 from app.modules.learning.models.concept_mastery import ConceptMastery
 
 logger = get_logger("weekly_revision")
@@ -550,11 +551,17 @@ class WeeklyRevisionService:
     ) -> list[uuid.UUID]:
         if want <= 0:
             return []
+        # PUBLISHED alone is not sufficient -- see assessment_repository.
+        # published_question_ids_for_scope and content_bodies.
+        # is_student_eligible, which this independently constructed query
+        # must also apply (it does not funnel through that repository
+        # method).
         query = (
-            select(ContentItem.id, Chapter.id.label("chapter_id"))
+            select(ContentItem.id, Chapter.id.label("chapter_id"), ContentVersion.body)
             .join(Concept, Concept.id == ContentItem.concept_id)
             .join(Topic, Topic.id == Concept.topic_id)
             .join(Chapter, Chapter.id == Topic.chapter_id)
+            .join(ContentVersion, ContentVersion.id == ContentItem.current_version_id)
             .where(
                 ContentItem.content_type == "QUESTION",
                 ContentItem.status == "PUBLISHED",
@@ -567,7 +574,7 @@ class WeeklyRevisionService:
             query = query.where(Chapter.subject_id.in_(subject_ids))
         else:
             return []
-        rows = (await self.session.execute(query)).all()
+        rows = [r for r in (await self.session.execute(query)).all() if is_student_eligible("QUESTION", r[2] or {})[0]]
         weak_pool = [r[0] for r in rows if r[1] in weak_chapter_ids and r[0] not in already]
         rest_pool = [r[0] for r in rows if r[1] not in weak_chapter_ids and r[0] not in already]
         rng.shuffle(weak_pool)

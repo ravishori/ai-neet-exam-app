@@ -203,6 +203,93 @@ async def test_student_start_attempt_selects_only_published_questions_no_duplica
     assert str(ass.weekly_assessment_id) == weekly_id
 
 
+async def _insert_published_raw_pending(db_session, concept_id: str, *, tag: str) -> str:
+    """ANSWER_PENDING raw-inserted QUESTION, same mechanism as
+    test_student_eligibility_gate.py's _insert_published_raw -- the
+    validated create/publish API cannot produce this shape."""
+    from app.modules.cms.models import ContentItem, ContentVersion
+
+    item_id = uuid.uuid4()
+    version_id = uuid.uuid4()
+    db_session.add(
+        ContentItem(
+            id=item_id, content_type="QUESTION", concept_id=uuid.UUID(concept_id), title=f"WA pending {tag}",
+            slug=f"wa-pending-{tag}-{str(item_id)[:8]}", tags=[], language="en", status="PUBLISHED",
+            current_version_id=None, latest_version_id=None, version=1,
+        )
+    )
+    await db_session.flush()
+    db_session.add(
+        ContentVersion(
+            id=version_id, content_item_id=item_id, version_no=1,
+            body={
+                "stem": f"WA pending question {tag}?",
+                "options": [
+                    {"label": "A", "text": "3"}, {"label": "B", "text": "4"},
+                    {"label": "C", "text": "5"}, {"label": "D", "text": "22"},
+                ],
+                "correct_option": None,
+                "answer_status": "ANSWER_PENDING",
+                "explanation": None,
+            },
+            workflow_state="PUBLISHED", authored_at=datetime.now(UTC),
+        )
+    )
+    await db_session.flush()
+    item = await db_session.get(ContentItem, item_id)
+    item.current_version_id = version_id
+    item.latest_version_id = version_id
+    await db_session.commit()
+    return str(item_id)
+
+
+async def test_weekly_assessment_excludes_answer_pending_question(client, db_session, register_user):
+    """Bypass regression: WeeklyAssessmentService._published_pool_for_blueprint
+    is an INDEPENDENT raw query, not routed through assessment_repository.
+    published_question_ids_for_scope -- confirms it applies the same
+    is_student_eligible gate (see commit da5af9c's own follow-up fix)."""
+    await _make_admin(client, db_session, register_user)
+    subject_id, concept_id = await _first_subject_id_and_concept_id(db_session)
+    published_ids = [await _publish_question(client, concept_id, correct_option="B", tag=f"wape{i}") for i in range(3)]
+    pending_id = await _insert_published_raw_pending(db_session, concept_id, tag="wa1")
+
+    starts, ends = _open_window()
+    create = await client.post(
+        "/api/v1/weekly-assessments",
+        json={
+            "assessment_key": f"wa-{uuid.uuid4().hex[:8]}",
+            "title": "Weekly Assessment pending exclusion",
+            "starts_at": starts.isoformat(),
+            "ends_at": ends.isoformat(),
+            "duration_minutes": 60,
+            "attempt_limit": 1,
+            "blueprint": [{"subject_id": subject_id, "question_count": 3}],
+        },
+        headers=csrf_headers(client),
+    )
+    assert create.status_code == 201, create.text
+    weekly_id = create.json()["data"]["id"]
+    publish = await client.post(f"/api/v1/weekly-assessments/{weekly_id}/publish", headers=csrf_headers(client))
+    assert publish.status_code == 200, publish.text
+
+    await client.post("/api/v1/auth/logout")
+    await register_user(client, db_session=db_session)
+    start = await client.post(f"/api/v1/weekly-assessments/{weekly_id}/attempts", headers=csrf_headers(client))
+    assert start.status_code == 201, start.text
+    assessment_id = start.json()["data"]["assessment_id"]
+
+    from app.modules.assessment.models import AssessmentQuestion
+
+    q_rows = (
+        await db_session.execute(
+            select(AssessmentQuestion).where(AssessmentQuestion.assessment_id == uuid.UUID(assessment_id))
+        )
+    ).scalars().all()
+    picked_ids = {str(r.content_item_id) for r in q_rows}
+    assert pending_id not in picked_ids
+    assert picked_ids.issubset(set(published_ids))
+
+
 async def test_start_before_window_is_blocked(client, db_session, register_user):
     await _make_admin(client, db_session, register_user)
     subject_id, _ = await _seed_subject_pool(client, db_session, count=3)

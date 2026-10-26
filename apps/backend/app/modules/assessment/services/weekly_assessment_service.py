@@ -36,7 +36,8 @@ from app.modules.assessment.repositories.assessment_repository import (
     AssessmentRepository,
     sample_question_ids,
 )
-from app.modules.cms.models import ContentItem
+from app.modules.cms.models import ContentItem, ContentVersion
+from app.modules.cms.schemas.content_bodies import is_student_eligible
 
 logger = get_logger("weekly_assessment")
 
@@ -316,13 +317,19 @@ class WeeklyAssessmentService:
     # ------------------------------------------------------------------- internals
 
     async def _published_pool_for_blueprint(self, bp: WeeklyAssessmentBlueprint) -> list[uuid.UUID]:
-        """Only PUBLISHED, non-deleted questions in the subject; optionally
-        narrowed by explicit chapter/topic ids from the blueprint row."""
+        """Only PUBLISHED, non-deleted, student-eligible questions in the
+        subject; optionally narrowed by explicit chapter/topic ids from
+        the blueprint row. PUBLISHED alone is not sufficient -- see
+        assessment_repository.published_question_ids_for_scope and
+        content_bodies.is_student_eligible, which this independently
+        constructed query must apply too (it does not funnel through
+        that repository method, unlike generate_practice/generate_mock)."""
         query = (
-            select(ContentItem.id)
+            select(ContentItem.id, ContentVersion.body)
             .join(Concept, Concept.id == ContentItem.concept_id)
             .join(Topic, Topic.id == Concept.topic_id)
             .join(Chapter, Chapter.id == Topic.chapter_id)
+            .join(ContentVersion, ContentVersion.id == ContentItem.current_version_id)
             .where(
                 ContentItem.content_type == "QUESTION",
                 ContentItem.status == "PUBLISHED",
@@ -335,7 +342,7 @@ class WeeklyAssessmentService:
         if bp.topic_ids:
             query = query.where(Topic.id.in_([uuid.UUID(x) for x in bp.topic_ids]))
         result = await self.session.execute(query)
-        return list(result.scalars().all())
+        return [item_id for item_id, body in result.all() if is_student_eligible("QUESTION", body or {})[0]]
 
     async def _assert_subjects_exist(self, subject_ids: list[uuid.UUID]) -> None:
         found = (

@@ -153,6 +153,85 @@ async def test_start_materialises_unique_published_questions_and_links_back(clie
     assert str(ass.weekly_revision_id) == current["id"]
 
 
+async def _insert_published_raw_pending(db_session, concept_id: str, *, tag: str) -> str:
+    """ANSWER_PENDING raw-inserted QUESTION -- the validated create/publish
+    API cannot produce this shape (same mechanism as
+    test_student_eligibility_gate.py's _insert_published_raw)."""
+    from datetime import UTC, datetime
+
+    from app.modules.cms.models import ContentItem, ContentVersion
+
+    item_id = uuid.uuid4()
+    version_id = uuid.uuid4()
+    db_session.add(
+        ContentItem(
+            id=item_id, content_type="QUESTION", concept_id=uuid.UUID(concept_id), title=f"WR pending {tag}",
+            slug=f"wr-pending-{tag}-{str(item_id)[:8]}", tags=[], language="en", status="PUBLISHED",
+            current_version_id=None, latest_version_id=None, version=1,
+        )
+    )
+    await db_session.flush()
+    db_session.add(
+        ContentVersion(
+            id=version_id, content_item_id=item_id, version_no=1,
+            body={
+                "stem": f"WR pending question {tag}?",
+                "options": [
+                    {"label": "A", "text": "3"}, {"label": "B", "text": "4"},
+                    {"label": "C", "text": "5"}, {"label": "D", "text": "22"},
+                ],
+                "correct_option": None,
+                "answer_status": "ANSWER_PENDING",
+                "explanation": None,
+            },
+            workflow_state="PUBLISHED", authored_at=datetime.now(UTC),
+        )
+    )
+    await db_session.flush()
+    item = await db_session.get(ContentItem, item_id)
+    item.current_version_id = version_id
+    item.latest_version_id = version_id
+    await db_session.commit()
+    return str(item_id)
+
+
+async def test_weekly_revision_excludes_answer_pending_questions(client, db_session, register_user):
+    """Bypass regression: WeeklyRevisionService._pick_from_chapters is an
+    INDEPENDENT raw query, not routed through assessment_repository.
+    published_question_ids_for_scope -- confirms it applies the same
+    is_student_eligible gate (see commit da5af9c's own follow-up fix)."""
+    await register_user(client, role_codes=["CONTENT_MANAGER"], db_session=db_session)
+    seeded = await _seed_pool_for_subjects(client, db_session, per_subject=16)
+    subj_to_concept = await _one_concept_per_subject(db_session)
+    pending_ids = {
+        await _insert_published_raw_pending(db_session, concept_id, tag=f"{subject.lower()}-pending")
+        for subject, concept_id in subj_to_concept.items()
+    }
+
+    await client.post("/api/v1/auth/logout")
+    await register_user(client, db_session=db_session)
+
+    current = (await client.get("/api/v1/weekly-revisions/current")).json()["data"]
+    if current["status"] != "RECOMMENDED":
+        pytest.skip("Seeded taxonomy does not yield a RECOMMENDED plan in this environment")
+
+    resp = await client.post("/api/v1/weekly-revisions/current/attempts", headers=csrf_headers(client))
+    assert resp.status_code == 201, resp.text
+    assessment_id = resp.json()["data"]["assessment_id"]
+
+    from app.modules.assessment.models import AssessmentQuestion
+
+    rows = (
+        await db_session.execute(
+            select(AssessmentQuestion).where(AssessmentQuestion.assessment_id == uuid.UUID(assessment_id))
+        )
+    ).scalars().all()
+    picked = {str(r.content_item_id) for r in rows}
+    assert picked.isdisjoint(pending_ids), f"ANSWER_PENDING questions must never be materialised: {picked & pending_ids}"
+    all_seeded = {qid for ids in seeded.values() for qid in ids}
+    assert picked.issubset(all_seeded), "every picked question must still come from the real, eligible seeded pool"
+
+
 async def test_second_start_resumes_the_in_progress_attempt(client, db_session, register_user):
     await register_user(client, role_codes=["CONTENT_MANAGER"], db_session=db_session)
     await _seed_pool_for_subjects(client, db_session, per_subject=16)
